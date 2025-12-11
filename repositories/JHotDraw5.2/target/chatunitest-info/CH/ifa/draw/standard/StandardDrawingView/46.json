@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "addBackground",
+  "brief": "public void addBackground(Painter painter) {}",
+  "methodSignature": "addBackground(Painter)",
+  "sourceCode": "public void addBackground(Painter painter)  {\n        if (fBackgrounds == null)\n            fBackgrounds = new Vector(3);\n        fBackgrounds.addElement(painter);\n        repaint();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Painter"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Painter": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "java.awt.Component": [
+      "repaint()"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a background.\n */\npublic void addBackground(Painter painter) {\n    if (fBackgrounds == null)\n        fBackgrounds = new Vector(3);\n    fBackgrounds.addElement(painter);\n    repaint();\n}",
+  "method_comment": "\n     * Adds a background.\n     ",
+  "method_annotation": ""
+}

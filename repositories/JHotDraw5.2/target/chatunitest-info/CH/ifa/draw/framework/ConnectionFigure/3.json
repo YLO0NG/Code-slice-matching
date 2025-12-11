@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "disconnectStart",
+  "brief": "public void disconnectStart();",
+  "methodSignature": "disconnectStart()",
+  "sourceCode": "public void disconnectStart();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Disconnects the start figure from the dependent figure\n */\npublic void disconnectStart();",
+  "method_comment": "\n     * Disconnects the start figure from the dependent figure\n     ",
+  "method_annotation": ""
+}

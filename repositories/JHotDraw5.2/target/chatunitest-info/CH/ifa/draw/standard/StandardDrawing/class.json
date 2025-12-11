@@ -1,0 +1,78 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.StandardDrawing",
+  "className": "StandardDrawing",
+  "index": 142,
+  "modifier": "[public ]",
+  "extend": "[CompositeFigure]",
+  "implement": "[Drawing]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class StandardDrawing",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.*;"
+  ],
+  "fields": [
+    "private transient Vector              fListeners;",
+    "private transient Thread    fDrawingLockHolder = null;",
+    "private static final long serialVersionUID = -2602151437447962046L;",
+    "private int drawingSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "CompositeFigure"
+  ],
+  "implementedTypes": [
+    "Drawing"
+  ],
+  "methodSigs": {
+    "addDrawingChangeListener(DrawingChangeListener)": "0",
+    "removeDrawingChangeListener(DrawingChangeListener)": "1",
+    "drawingChangeListeners()": "2",
+    "remove(Figure)": "3",
+    "figureRequestRemove(FigureChangeEvent)": "4",
+    "figureInvalidated(FigureChangeEvent)": "5",
+    "figureRequestUpdate(FigureChangeEvent)": "6",
+    "handles()": "7",
+    "displayBox()": "8",
+    "basicDisplayBox(Point, Point)": "9",
+    "lock()": "10",
+    "unlock()": "11",
+    "readObject(ObjectInputStream)": "12",
+    "StandardDrawing()": "13"
+  },
+  "methodsBrief": [
+    "public void addDrawingChangeListener(DrawingChangeListener listener){}",
+    "public void removeDrawingChangeListener(DrawingChangeListener listener){}",
+    "public Enumeration drawingChangeListeners(){}",
+    "public synchronized Figure remove(Figure figure){}",
+    "public void figureRequestRemove(FigureChangeEvent e){}",
+    "public void figureInvalidated(FigureChangeEvent e){}",
+    "public void figureRequestUpdate(FigureChangeEvent e){}",
+    "public Vector handles(){}",
+    "public Rectangle displayBox(){}",
+    "public void basicDisplayBox(Point p1, Point p2){}",
+    "public synchronized void lock(){}",
+    "public synchronized void unlock(){}",
+    "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+    "public StandardDrawing(){}"
+  ],
+  "constructorSigs": [
+    "StandardDrawing()"
+  ],
+  "constructorBrief": [
+    "public StandardDrawing(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)StandardDrawing.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\nimport java.awt.*;\nimport java.util.*;\nimport java.io.*;\n\n/**\n * The standard implementation of the Drawing interface.\n *\n * @see Drawing\n */\npublic class StandardDrawing extends CompositeFigure implements Drawing {\n\n    /**\n     * the registered listeners\n     */\n    private transient Vector fListeners;\n\n    /**\n     * boolean that serves as a condition variable\n     * to lock the access to the drawing.\n     * The lock is recursive and we keep track of the current\n     * lock holder.\n     */\n    private transient Thread fDrawingLockHolder = null;\n\n    /*\n     * Serialization support\n     */\n    private static final long serialVersionUID = -2602151437447962046L;\n\n    private int drawingSerializedDataVersion = 1;\n\n    public StandardDrawing() {\n        super();\n        fListeners = new Vector(2);\n    }\n\n    /**\n     * Adds a listener for this drawing.\n     */\n    public void addDrawingChangeListener(DrawingChangeListener listener) {\n        if (fListeners == null) {\n            fListeners = new Vector(2);\n        }\n        fListeners.addElement(listener);\n    }\n\n    /**\n     * Removes a listener from this drawing.\n     */\n    public void removeDrawingChangeListener(DrawingChangeListener listener) {\n        fListeners.removeElement(listener);\n    }\n\n    /**\n     * Adds a listener for this drawing.\n     */\n    public Enumeration drawingChangeListeners() {\n        return fListeners.elements();\n    }\n\n    /**\n     * Removes the figure from the drawing and releases it.\n     */\n    public synchronized Figure remove(Figure figure) {\n        // ensure that we remove the top level figure in a drawing\n        if (figure.listener() != null) {\n            figure.listener().figureRequestRemove(new FigureChangeEvent(figure, null));\n            return figure;\n        }\n        return null;\n    }\n\n    /**\n     * Handles a removeFromDrawing request that\n     * is passed up the figure container hierarchy.\n     * @see FigureChangeListener\n     */\n    public void figureRequestRemove(FigureChangeEvent e) {\n        Figure figure = e.getFigure();\n        if (fFigures.contains(figure)) {\n            fFigures.removeElement(figure);\n            // will invalidate figure\n            figure.removeFromContainer(this);\n            figure.release();\n        } else\n            System.out.println(\"Attempt to remove non-existing figure\");\n    }\n\n    /**\n     * Invalidates a rectangle and merges it with the\n     * existing damaged area.\n     * @see FigureChangeListener\n     */\n    public void figureInvalidated(FigureChangeEvent e) {\n        if (fListeners != null) {\n            for (int i = 0; i < fListeners.size(); i++) {\n                DrawingChangeListener l = (DrawingChangeListener) fListeners.elementAt(i);\n                l.drawingInvalidated(new DrawingChangeEvent(this, e.getInvalidatedRectangle()));\n            }\n        }\n    }\n\n    /**\n     * Forces an update\n     */\n    public void figureRequestUpdate(FigureChangeEvent e) {\n        if (fListeners != null) {\n            for (int i = 0; i < fListeners.size(); i++) {\n                DrawingChangeListener l = (DrawingChangeListener) fListeners.elementAt(i);\n                l.drawingRequestUpdate(new DrawingChangeEvent(this, null));\n            }\n        }\n    }\n\n    /**\n     * Return's the figure's handles. This is only used when a drawing\n     * is nested inside another drawing.\n     */\n    public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        return handles;\n    }\n\n    /**\n     * Gets the display box. This is the union of all figures.\n     */\n    public Rectangle displayBox() {\n        if (fFigures.size() > 0) {\n            FigureEnumeration k = figures();\n            Rectangle r = k.nextFigure().displayBox();\n            while (k.hasMoreElements()) r.add(k.nextFigure().displayBox());\n            return r;\n        }\n        return new Rectangle(0, 0, 0, 0);\n    }\n\n    public void basicDisplayBox(Point p1, Point p2) {\n    }\n\n    /**\n     * Acquires the drawing lock.\n     */\n    public synchronized void lock() {\n        // recursive lock\n        Thread current = Thread.currentThread();\n        if (fDrawingLockHolder == current)\n            return;\n        while (fDrawingLockHolder != null) {\n            try {\n                wait();\n            } catch (InterruptedException ex) {\n            }\n        }\n        fDrawingLockHolder = current;\n    }\n\n    /**\n     * Releases the drawing lock.\n     */\n    public synchronized void unlock() {\n        if (fDrawingLockHolder != null) {\n            fDrawingLockHolder = null;\n            notifyAll();\n        }\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        fListeners = new Vector(2);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * The standard implementation of the Drawing interface.\n *\n * @see Drawing\n */\npublic class StandardDrawing extends CompositeFigure implements Drawing {\n\n    /**\n     * the registered listeners\n     */\n    private transient Vector fListeners;\n\n    /**\n     * boolean that serves as a condition variable\n     * to lock the access to the drawing.\n     * The lock is recursive and we keep track of the current\n     * lock holder.\n     */\n    private transient Thread fDrawingLockHolder = null;\n\n    /*\n     * Serialization support\n     */\n    private static final long serialVersionUID = -2602151437447962046L;\n\n    private int drawingSerializedDataVersion = 1;\n\n    public StandardDrawing() {\n        super();\n        fListeners = new Vector(2);\n    }\n\n    /**\n     * Adds a listener for this drawing.\n     */\n    public void addDrawingChangeListener(DrawingChangeListener listener) {\n        if (fListeners == null) {\n            fListeners = new Vector(2);\n        }\n        fListeners.addElement(listener);\n    }\n\n    /**\n     * Removes a listener from this drawing.\n     */\n    public void removeDrawingChangeListener(DrawingChangeListener listener) {\n        fListeners.removeElement(listener);\n    }\n\n    /**\n     * Adds a listener for this drawing.\n     */\n    public Enumeration drawingChangeListeners() {\n        return fListeners.elements();\n    }\n\n    /**\n     * Removes the figure from the drawing and releases it.\n     */\n    public synchronized Figure remove(Figure figure) {\n        // ensure that we remove the top level figure in a drawing\n        if (figure.listener() != null) {\n            figure.listener().figureRequestRemove(new FigureChangeEvent(figure, null));\n            return figure;\n        }\n        return null;\n    }\n\n    /**\n     * Handles a removeFromDrawing request that\n     * is passed up the figure container hierarchy.\n     * @see FigureChangeListener\n     */\n    public void figureRequestRemove(FigureChangeEvent e) {\n        Figure figure = e.getFigure();\n        if (fFigures.contains(figure)) {\n            fFigures.removeElement(figure);\n            // will invalidate figure\n            figure.removeFromContainer(this);\n            figure.release();\n        } else\n            System.out.println(\"Attempt to remove non-existing figure\");\n    }\n\n    /**\n     * Invalidates a rectangle and merges it with the\n     * existing damaged area.\n     * @see FigureChangeListener\n     */\n    public void figureInvalidated(FigureChangeEvent e) {\n        if (fListeners != null) {\n            for (int i = 0; i < fListeners.size(); i++) {\n                DrawingChangeListener l = (DrawingChangeListener) fListeners.elementAt(i);\n                l.drawingInvalidated(new DrawingChangeEvent(this, e.getInvalidatedRectangle()));\n            }\n        }\n    }\n\n    /**\n     * Forces an update\n     */\n    public void figureRequestUpdate(FigureChangeEvent e) {\n        if (fListeners != null) {\n            for (int i = 0; i < fListeners.size(); i++) {\n                DrawingChangeListener l = (DrawingChangeListener) fListeners.elementAt(i);\n                l.drawingRequestUpdate(new DrawingChangeEvent(this, null));\n            }\n        }\n    }\n\n    /**\n     * Return's the figure's handles. This is only used when a drawing\n     * is nested inside another drawing.\n     */\n    public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        return handles;\n    }\n\n    /**\n     * Gets the display box. This is the union of all figures.\n     */\n    public Rectangle displayBox() {\n        if (fFigures.size() > 0) {\n            FigureEnumeration k = figures();\n            Rectangle r = k.nextFigure().displayBox();\n            while (k.hasMoreElements()) r.add(k.nextFigure().displayBox());\n            return r;\n        }\n        return new Rectangle(0, 0, 0, 0);\n    }\n\n    public void basicDisplayBox(Point p1, Point p2) {\n    }\n\n    /**\n     * Acquires the drawing lock.\n     */\n    public synchronized void lock() {\n        // recursive lock\n        Thread current = Thread.currentThread();\n        if (fDrawingLockHolder == current)\n            return;\n        while (fDrawingLockHolder != null) {\n            try {\n                wait();\n            } catch (InterruptedException ex) {\n            }\n        }\n        fDrawingLockHolder = current;\n    }\n\n    /**\n     * Releases the drawing lock.\n     */\n    public synchronized void unlock() {\n        if (fDrawingLockHolder != null) {\n            fDrawingLockHolder = null;\n            notifyAll();\n        }\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        fListeners = new Vector(2);\n    }\n}",
+  "subClasses": []
+}

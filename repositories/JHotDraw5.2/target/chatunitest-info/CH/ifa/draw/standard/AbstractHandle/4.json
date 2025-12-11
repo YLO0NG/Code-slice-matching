@@ -1,0 +1,31 @@
+{
+  "className": "AbstractHandle",
+  "methodName": "invokeStep",
+  "brief": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeStep(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {\n        invokeStep(x-anchorX, y-anchorY, view.drawing());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "invokeStep(int, int, Drawing)"
+    ]
+  },
+  "full_method_info": "/**\n * Tracks a step of the interaction.\n * @param x the current x position\n * @param y the current y position\n * @param anchorX the x position where the interaction started\n * @param anchorY the y position where the interaction started\n */\npublic void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    invokeStep(x - anchorX, y - anchorY, view.drawing());\n}",
+  "method_comment": "\n     * Tracks a step of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Customer",
+  "methodName": "getPhone",
+  "brief": "@Column(name=\"PHONE\", nullable=false)\r\n\tpublic Long getPhone(){}",
+  "methodSignature": "getPhone()",
+  "sourceCode": "@Column(name=\"PHONE\", nullable=false)\n\tpublic Long getPhone() {\n\t\treturn phone;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Column(name = \"PHONE\", nullable = false)\npublic Long getPhone() {\n    return phone;\n}",
+  "method_comment": "",
+  "method_annotation": "@Column(name = \"PHONE\", nullable = false)\n"
+}

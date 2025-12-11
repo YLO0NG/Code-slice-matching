@@ -1,0 +1,18 @@
+{
+  "className": "SVNFile",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\n\t\treturn name;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String toString() {\n    return name;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

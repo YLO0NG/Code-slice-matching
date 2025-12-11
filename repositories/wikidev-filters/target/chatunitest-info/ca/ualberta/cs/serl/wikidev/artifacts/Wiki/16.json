@@ -1,0 +1,25 @@
+{
+  "className": "Wiki",
+  "methodName": "compareTo",
+  "brief": "public int compareTo(IArtifact o){}",
+  "methodSignature": "compareTo(IArtifact)",
+  "sourceCode": "public int compareTo(IArtifact o) {\n\t\tif(o instanceof Wiki) {\n\t\t\tif(this.equals((Wiki)o)) {\n\t\t\t\treturn 0;\n\t\t\t}\n\t\t\telse {\n\t\t\t\treturn 1;\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\treturn 1;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.lang.Object": [
+      "equals(Object)"
+    ]
+  },
+  "full_method_info": "public int compareTo(IArtifact o) {\n    if (o instanceof Wiki) {\n        if (this.equals((Wiki) o)) {\n            return 0;\n        } else {\n            return 1;\n        }\n    } else {\n        return 1;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

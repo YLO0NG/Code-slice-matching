@@ -1,0 +1,21 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "splitSegment",
+  "brief": "public int splitSegment(int x, int y);",
+  "methodSignature": "splitSegment(int, int)",
+  "sourceCode": "public int splitSegment(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Splits the hit segment.\n * @param x, y the position where the figure should be split\n * @return the index of the splitting point\n */\npublic int splitSegment(int x, int y);",
+  "method_comment": "\n     * Splits the hit segment.\n     * @param x, y the position where the figure should be split\n     * @return the index of the splitting point\n     ",
+  "method_annotation": ""
+}

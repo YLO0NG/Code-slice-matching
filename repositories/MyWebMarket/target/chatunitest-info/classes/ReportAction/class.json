@@ -1,0 +1,72 @@
+{
+  "fullClassName": "classes.ReportAction",
+  "className": "ReportAction",
+  "index": 13,
+  "modifier": "[public ]",
+  "extend": "[ExampleSupport]",
+  "implement": "[]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class ReportAction",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.ByteArrayInputStream;",
+    "import java.io.InputStream;",
+    "import java.util.Date;",
+    "import java.util.HashMap;",
+    "import java.util.List;",
+    "import java.util.Map;",
+    "import javax.servlet.ServletContext;",
+    "import net.sf.jasperreports.engine.JasperCompileManager;",
+    "import net.sf.jasperreports.engine.JasperExportManager;",
+    "import net.sf.jasperreports.engine.JasperFillManager;",
+    "import net.sf.jasperreports.engine.JasperPrint;",
+    "import net.sf.jasperreports.engine.JasperReport;",
+    "import org.apache.log4j.Logger;",
+    "import org.apache.struts2.StrutsStatics;",
+    "import org.hibernate.Criteria;",
+    "import org.hibernate.Session;",
+    "import org.hibernate.Transaction;",
+    "import org.hibernate.criterion.Projections;",
+    "import com.opensymphony.xwork2.ActionContext;"
+  ],
+  "fields": [
+    "private static Logger logger = Logger.getLogger( ReportAction.class );",
+    "private InputStream inputStream;"
+  ],
+  "superClasses": [
+    "ExampleSupport"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getInputStream()": "0",
+    "setInputStream(InputStream)": "1",
+    "execute()": "2",
+    "productReport()": "3",
+    "customerReport()": "4"
+  },
+  "methodsBrief": [
+    "public InputStream getInputStream(){}",
+    "public void setInputStream( InputStream fileInputStream ){}",
+    "@Override\r\n\tpublic String execute() throws Exception{}",
+    "public String productReport() throws Exception{}",
+    "public String customerReport() throws Exception{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getInputStream()",
+    "setInputStream(InputStream)"
+  ],
+  "getterSetterBrief": [
+    "public InputStream getInputStream(){}",
+    "public void setInputStream( InputStream fileInputStream ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * $Id: Login.java 471756 2006-11-06 15:01:43Z husted $\n *\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *  http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\npackage classes;\n\nimport java.io.ByteArrayInputStream;\nimport java.io.InputStream;\nimport java.util.Date;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport javax.servlet.ServletContext;\nimport net.sf.jasperreports.engine.JasperCompileManager;\nimport net.sf.jasperreports.engine.JasperExportManager;\nimport net.sf.jasperreports.engine.JasperFillManager;\nimport net.sf.jasperreports.engine.JasperPrint;\nimport net.sf.jasperreports.engine.JasperReport;\nimport org.apache.log4j.Logger;\nimport org.apache.struts2.StrutsStatics;\nimport org.hibernate.Criteria;\nimport org.hibernate.Session;\nimport org.hibernate.Transaction;\nimport org.hibernate.criterion.Projections;\nimport com.opensymphony.xwork2.ActionContext;\n\npublic class ReportAction extends ExampleSupport {\n\n    // f:log\n    private static Logger logger = Logger.getLogger(ReportAction.class);\n\n    private InputStream inputStream;\n\n    public InputStream getInputStream() {\n        return this.inputStream;\n    }\n\n    public void setInputStream(InputStream fileInputStream) {\n        this.inputStream = fileInputStream;\n    }\n\n    @Override\n    public String execute() throws Exception {\n        return this.input();\n    }\n\n    public String productReport() throws Exception {\n        // f:log\n        logger.info(\"Starting productReport()\");\n        ActionContext ac = ActionContext.getContext();\n        ServletContext sc = (ServletContext) ac.get(StrutsStatics.SERVLET_CONTEXT);\n        // f:jr\n        JasperReport jasperReport = JasperCompileManager.compileReport(sc.getResourceAsStream(\"/WEB-INF/classes/ProductReport.xml\"));\n        // f:jr\n        Map<String, Object> parameters = new HashMap<String, Object>();\n        // f:jr\n        parameters.put(\"ReportTitle\", \"List of Products\");\n        // f:jr\n        parameters.put(\"DataFile\", new Date().toString());\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(Product.class);\n        // f:hibernate\n        criteria.setProjection(Projections.projectionList().add(Projections.property(\"id\")).add(Projections.property(\"name\")).add(Projections.property(\"price\")));\n        @SuppressWarnings(\"unchecked\")\n        List<Object[]> // f:hibernate\n        l = (List<Object[]>) criteria.list();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        // f:jr\n        HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Price\" });\n        // f:jr\n        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);\n        // f:jr\n        byte[] b = JasperExportManager.exportReportToPdf(jasperPrint);\n        this.inputStream = new ByteArrayInputStream(b);\n        // f:log\n        logger.info(\"Finishing productReport()\");\n        return \"download\";\n    }\n\n    public String customerReport() throws Exception {\n        // f:log\n        logger.info(\"Starting customerReport()\");\n        ActionContext ac = ActionContext.getContext();\n        ServletContext sc = (ServletContext) ac.get(StrutsStatics.SERVLET_CONTEXT);\n        // f:jr\n        JasperReport jasperReport = JasperCompileManager.compileReport(sc.getResourceAsStream(\"/WEB-INF/classes/CustomerReport.xml\"));\n        // f:jr\n        Map<String, Object> parameters = new HashMap<String, Object>();\n        // f:jr\n        parameters.put(\"ReportTitle\", \"List of Customers\");\n        // f:jr\n        parameters.put(\"DataFile\", new Date().toString());\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(Customer.class);\n        // f:hibernate\n        criteria.setProjection(Projections.projectionList().add(Projections.property(\"id\")).add(Projections.property(\"name\")).add(Projections.property(\"phone\")));\n        @SuppressWarnings(\"unchecked\")\n        List<Object[]> // f:hibernate\n        l = (List<Object[]>) criteria.list();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        // f:jr\n        HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Phone\" });\n        // f:jr\n        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);\n        // f:jr\n        byte[] b = JasperExportManager.exportReportToPdf(jasperPrint);\n        this.inputStream = new ByteArrayInputStream(b);\n        // f:log\n        logger.info(\"Finishing customerReport()\");\n        return \"download\";\n    }\n}\n",
+  "classDeclarationCode": "public class ReportAction extends ExampleSupport {\n\n    // f:log\n    private static Logger logger = Logger.getLogger(ReportAction.class);\n\n    private InputStream inputStream;\n\n    public InputStream getInputStream() {\n        return this.inputStream;\n    }\n\n    public void setInputStream(InputStream fileInputStream) {\n        this.inputStream = fileInputStream;\n    }\n\n    @Override\n    public String execute() throws Exception {\n        return this.input();\n    }\n\n    public String productReport() throws Exception {\n        // f:log\n        logger.info(\"Starting productReport()\");\n        ActionContext ac = ActionContext.getContext();\n        ServletContext sc = (ServletContext) ac.get(StrutsStatics.SERVLET_CONTEXT);\n        // f:jr\n        JasperReport jasperReport = JasperCompileManager.compileReport(sc.getResourceAsStream(\"/WEB-INF/classes/ProductReport.xml\"));\n        // f:jr\n        Map<String, Object> parameters = new HashMap<String, Object>();\n        // f:jr\n        parameters.put(\"ReportTitle\", \"List of Products\");\n        // f:jr\n        parameters.put(\"DataFile\", new Date().toString());\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(Product.class);\n        // f:hibernate\n        criteria.setProjection(Projections.projectionList().add(Projections.property(\"id\")).add(Projections.property(\"name\")).add(Projections.property(\"price\")));\n        @SuppressWarnings(\"unchecked\")\n        List<Object[]> // f:hibernate\n        l = (List<Object[]>) criteria.list();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        // f:jr\n        HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Price\" });\n        // f:jr\n        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);\n        // f:jr\n        byte[] b = JasperExportManager.exportReportToPdf(jasperPrint);\n        this.inputStream = new ByteArrayInputStream(b);\n        // f:log\n        logger.info(\"Finishing productReport()\");\n        return \"download\";\n    }\n\n    public String customerReport() throws Exception {\n        // f:log\n        logger.info(\"Starting customerReport()\");\n        ActionContext ac = ActionContext.getContext();\n        ServletContext sc = (ServletContext) ac.get(StrutsStatics.SERVLET_CONTEXT);\n        // f:jr\n        JasperReport jasperReport = JasperCompileManager.compileReport(sc.getResourceAsStream(\"/WEB-INF/classes/CustomerReport.xml\"));\n        // f:jr\n        Map<String, Object> parameters = new HashMap<String, Object>();\n        // f:jr\n        parameters.put(\"ReportTitle\", \"List of Customers\");\n        // f:jr\n        parameters.put(\"DataFile\", new Date().toString());\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(Customer.class);\n        // f:hibernate\n        criteria.setProjection(Projections.projectionList().add(Projections.property(\"id\")).add(Projections.property(\"name\")).add(Projections.property(\"phone\")));\n        @SuppressWarnings(\"unchecked\")\n        List<Object[]> // f:hibernate\n        l = (List<Object[]>) criteria.list();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        // f:jr\n        HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Phone\" });\n        // f:jr\n        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, ds);\n        // f:jr\n        byte[] b = JasperExportManager.exportReportToPdf(jasperPrint);\n        this.inputStream = new ByteArrayInputStream(b);\n        // f:log\n        logger.info(\"Finishing customerReport()\");\n        return \"download\";\n    }\n}",
+  "subClasses": []
+}

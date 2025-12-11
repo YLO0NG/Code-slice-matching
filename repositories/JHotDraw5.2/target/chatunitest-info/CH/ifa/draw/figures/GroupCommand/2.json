@@ -1,0 +1,24 @@
+{
+  "className": "GroupCommand",
+  "methodName": "GroupCommand",
+  "brief": "public GroupCommand(String name, DrawingView view){}",
+  "methodSignature": "GroupCommand(String, DrawingView)",
+  "sourceCode": "public GroupCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "public GroupCommand(String name, DrawingView view) {\n    super(name);\n    fView = view;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

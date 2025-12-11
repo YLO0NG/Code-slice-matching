@@ -1,0 +1,22 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "figures",
+  "brief": "public FigureEnumeration figures(){}",
+  "methodSignature": "figures()",
+  "sourceCode": "public FigureEnumeration figures() {\n        return fComponent.figures();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "figures()"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards figures to its contained figure.\n */\npublic FigureEnumeration figures() {\n    return fComponent.figures();\n}",
+  "method_comment": "\n     * Forwards figures to its contained figure.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "DrawApplication",
+  "methodName": "initDrawing",
+  "brief": "protected void initDrawing(){}",
+  "methodSignature": "initDrawing()",
+  "sourceCode": "protected void initDrawing() {\n        setDrawing(createDrawing());\n        setDrawingTitle(fgUntitled);\n        view().setDrawing(drawing());\n        toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()",
+      "createDrawing()",
+      "drawing()",
+      "setDrawing(Drawing)",
+      "toolDone()",
+      "setDrawingTitle(String)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "setDrawing(Drawing)"
+    ]
+  },
+  "full_method_info": "protected void initDrawing() {\n    setDrawing(createDrawing());\n    setDrawingTitle(fgUntitled);\n    view().setDrawing(drawing());\n    toolDone();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

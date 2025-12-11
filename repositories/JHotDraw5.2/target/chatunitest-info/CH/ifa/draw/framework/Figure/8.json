@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "isEmpty",
+  "brief": "public boolean isEmpty();",
+  "methodSignature": "isEmpty()",
+  "sourceCode": "public boolean isEmpty();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Checks if the Figure should be considered as empty.\n */\npublic boolean isEmpty();",
+  "method_comment": "\n     * Checks if the Figure should be considered as empty.\n     ",
+  "method_annotation": ""
+}

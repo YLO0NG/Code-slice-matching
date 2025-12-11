@@ -1,0 +1,27 @@
+{
+  "className": "Geom",
+  "methodName": "intersect",
+  "brief": "static public Point intersect(int xa, // line 1 point 1 x\r\n                                int ya, // line 1 point 1 y\r\n                                int xb, // line 1 point 2 x\r\n                                int yb, // line 1 point 2 y\r\n                                int xc, // line 2 point 1 x\r\n                                int yc, // line 2 point 1 y\r\n                                int xd, // line 2 point 2 x\r\n                                int yd){}",
+  "methodSignature": "intersect(int, int, int, int, int, int, int, int)",
+  "sourceCode": "static public Point intersect(int xa, // line 1 point 1 x\n                                int ya, // line 1 point 1 y\n                                int xb, // line 1 point 2 x\n                                int yb, // line 1 point 2 y\n                                int xc, // line 2 point 1 x\n                                int yc, // line 2 point 1 y\n                                int xd, // line 2 point 2 x\n                                int yd) { // line 2 point 2 y\n\n    // source: http://vision.dai.ed.ac.uk/andrewfg/c-g-a-faq.html\n    // eq: for lines AB and CD\n    //     (YA-YC)(XD-XC)-(XA-XC)(YD-YC)\n    // r = -----------------------------  (eqn 1)\n    //     (XB-XA)(YD-YC)-(YB-YA)(XD-XC)\n    //\n    //     (YA-YC)(XB-XA)-(XA-XC)(YB-YA)\n    // s = -----------------------------  (eqn 2)\n    //     (XB-XA)(YD-YC)-(YB-YA)(XD-XC)\n    //  XI = XA + r(XB-XA)\n    //  YI = YA + r(YB-YA)\n\n    double denom = ((xb - xa) * (yd - yc) - (yb - ya) * (xd - xc));\n\n    double rnum = ((ya - yc) * (xd - xc) - (xa - xc) * (yd - yc));\n\n    if (denom == 0.0) { // parallel\n      if (rnum == 0.0) { // coincident; pick one end of first line\n        if ((xa < xb && (xb < xc || xb < xd)) ||\n            (xa > xb && (xb > xc || xb > xd)))\n          return new Point(xb, yb);\n        else\n          return new Point(xa, ya);\n      }\n      else\n        return null;\n    }\n\n    double r = rnum / denom;\n\n    double snum = ((ya - yc) * (xb - xa) - (xa - xc) * (yb - ya));\n    double s = snum / denom;\n\n    if (0.0 <= r && r <= 1.0 && 0.0 <= s && s <= 1.0) {\n      int px = (int)(xa + (xb - xa) * r);\n      int py = (int)(ya + (yb - ya) * r);\n      return new Point(px, py);\n    }\n    else\n      return null;\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Standard line intersection algorithm\n * Return the point of intersection if it exists, else null\n */\n// from Doug Lea's PolygonFigure\nstatic public // line 1 point 1 x\nPoint // line 1 point 1 x\nintersect(// line 1 point 1 x\nint xa, // line 1 point 1 y\nint ya, // line 1 point 2 x\nint xb, // line 1 point 2 y\nint yb, // line 2 point 1 x\nint xc, // line 2 point 1 y\nint yc, // line 2 point 2 x\nint xd, int yd) {\n    // line 2 point 2 y\n    // source: http://vision.dai.ed.ac.uk/andrewfg/c-g-a-faq.html\n    // eq: for lines AB and CD\n    // (YA-YC)(XD-XC)-(XA-XC)(YD-YC)\n    // r = -----------------------------  (eqn 1)\n    // (XB-XA)(YD-YC)-(YB-YA)(XD-XC)\n    // \n    // (YA-YC)(XB-XA)-(XA-XC)(YB-YA)\n    // s = -----------------------------  (eqn 2)\n    // (XB-XA)(YD-YC)-(YB-YA)(XD-XC)\n    // XI = XA + r(XB-XA)\n    // YI = YA + r(YB-YA)\n    double denom = ((xb - xa) * (yd - yc) - (yb - ya) * (xd - xc));\n    double rnum = ((ya - yc) * (xd - xc) - (xa - xc) * (yd - yc));\n    if (denom == 0.0) {\n        // parallel\n        if (rnum == 0.0) {\n            // coincident; pick one end of first line\n            if ((xa < xb && (xb < xc || xb < xd)) || (xa > xb && (xb > xc || xb > xd)))\n                return new Point(xb, yb);\n            else\n                return new Point(xa, ya);\n        } else\n            return null;\n    }\n    double r = rnum / denom;\n    double snum = ((ya - yc) * (xb - xa) - (xa - xc) * (yb - ya));\n    double s = snum / denom;\n    if (0.0 <= r && r <= 1.0 && 0.0 <= s && s <= 1.0) {\n        int px = (int) (xa + (xb - xa) * r);\n        int py = (int) (ya + (yb - ya) * r);\n        return new Point(px, py);\n    } else\n        return null;\n}",
+  "method_comment": " from Doug Lea's PolygonFigure",
+  "method_annotation": ""
+}

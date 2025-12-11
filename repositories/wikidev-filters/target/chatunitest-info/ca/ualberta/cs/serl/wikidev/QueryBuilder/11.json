@@ -1,0 +1,38 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertCommunicationsBuildingData",
+  "brief": "public static String insertCommunicationsBuildingData(String type, int artifact_id, String week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, String lastEditor, Timestamp created, Timestamp lastModified){}",
+  "methodSignature": "insertCommunicationsBuildingData(String, int, String, int, int, int, int, String, int, String, Timestamp, Timestamp)",
+  "sourceCode": "public static String insertCommunicationsBuildingData(String type, int artifact_id, String week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, String lastEditor, Timestamp created, Timestamp lastModified) {\n\t\treturn \"insert into wikidev_wikidev3d_communications_city (type, artifact_id, week, height, neighborhoodX, neighborhoodY, cityBlock, url, project_id, last_editor, created, last_modified) values (\\\"\"+type+\"\\\", \\\"\"+artifact_id+\"\\\", \\\"\"+week+\"\\\", \\\"\"+height+\"\\\", \\\"\"+neighborhoodX+\"\\\", \\\"\"+neighborhoodY+\"\\\", \\\"\"+cityBlock+\"\\\", \\\"\"+url.replaceAll(\"\\\"\", \"\\\\\\\\\\\"\")+\"\\\", \\\"\"+projectid+\"\\\", \\\"\"+lastEditor+\"\\\", \\\"\"+created.toString()+\"\\\", \\\"\"+lastModified.toString()+\"\\\")\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int",
+    "String",
+    "int",
+    "int",
+    "int",
+    "int",
+    "String",
+    "int",
+    "String",
+    "Timestamp",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "replaceAll(String, String)"
+    ],
+    "java.sql.Timestamp": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public static String insertCommunicationsBuildingData(String type, int artifact_id, String week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, String lastEditor, Timestamp created, Timestamp lastModified) {\n    return \"insert into wikidev_wikidev3d_communications_city (type, artifact_id, week, height, neighborhoodX, neighborhoodY, cityBlock, url, project_id, last_editor, created, last_modified) values (\\\"\" + type + \"\\\", \\\"\" + artifact_id + \"\\\", \\\"\" + week + \"\\\", \\\"\" + height + \"\\\", \\\"\" + neighborhoodX + \"\\\", \\\"\" + neighborhoodY + \"\\\", \\\"\" + cityBlock + \"\\\", \\\"\" + url.replaceAll(\"\\\"\", \"\\\\\\\\\\\"\") + \"\\\", \\\"\" + projectid + \"\\\", \\\"\" + lastEditor + \"\\\", \\\"\" + created.toString() + \"\\\", \\\"\" + lastModified.toString() + \"\\\")\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

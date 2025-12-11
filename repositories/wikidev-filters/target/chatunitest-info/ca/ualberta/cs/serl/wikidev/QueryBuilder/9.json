@@ -1,0 +1,29 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectCommunicationsBuildingID",
+  "brief": "public static String selectCommunicationsBuildingID(CommunicationBuildingData building, int projectid){}",
+  "methodSignature": "selectCommunicationsBuildingID(CommunicationBuildingData, int)",
+  "sourceCode": "public static String selectCommunicationsBuildingID(CommunicationBuildingData building, int projectid) {\n\t\treturn \"select building_id from wikidev_wikidev3d_communications_city where project_id=\\'\"+projectid+\"\\' and week=\\'\"+building.getWeek()+\"\\' and type=\\'\"+building.getType()+\"\\' and artifact_id=\\'\"+building.getArtifact_id()+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "CommunicationBuildingData",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.CommunicationBuildingData": [
+      "getArtifact_id()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.BuildingData": [
+      "getType()",
+      "getWeek()"
+    ]
+  },
+  "full_method_info": "public static String selectCommunicationsBuildingID(CommunicationBuildingData building, int projectid) {\n    return \"select building_id from wikidev_wikidev3d_communications_city where project_id=\\'\" + projectid + \"\\' and week=\\'\" + building.getWeek() + \"\\' and type=\\'\" + building.getType() + \"\\' and artifact_id=\\'\" + building.getArtifact_id() + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

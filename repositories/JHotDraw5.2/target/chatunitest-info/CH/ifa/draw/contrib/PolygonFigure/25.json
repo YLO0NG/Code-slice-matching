@@ -1,0 +1,27 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    int size = dr.readInt();\n    int[] xs = new int[size];\n    int[] ys = new int[size];\n    for (int i = 0; i < size; i++) {\n      xs[i] = dr.readInt();\n      ys[i] = dr.readInt();\n    }\n    fPoly = new Polygon(xs, ys, size);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    int size = dr.readInt();\n    int[] xs = new int[size];\n    int[] ys = new int[size];\n    for (int i = 0; i < size; i++) {\n        xs[i] = dr.readInt();\n        ys[i] = dr.readInt();\n    }\n    fPoly = new Polygon(xs, ys, size);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

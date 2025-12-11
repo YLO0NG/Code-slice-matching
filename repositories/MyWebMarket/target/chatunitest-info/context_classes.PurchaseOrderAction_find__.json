@@ -1,0 +1,19 @@
+{
+  "targetClass": "classes.PurchaseOrderAction",
+  "targetMethod": "find()",
+  "dependentFields": {
+    "classes.HibernateUtil": "private static final SessionFactory sessionFactory = buildSessionFactory();",
+    "classes.PurchaseOrder": "private Integer id;\nprivate Customer customer;\nprivate Date orderDate;\nprivate Double discount;\nprivate Collection<PurchaseOrderItem> purchaseOrderItems;",
+    "classes.Customer": "private Integer id;\nprivate String name;\nprivate String address;\nprivate Long phone;\nprivate String email;"
+  },
+  "dependentMethods": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory(){}",
+    "classes.PurchaseOrder": "@Id\r\n\t@GenericGenerator(name = \"generator\", strategy = \"increment\")\r\n    @GeneratedValue(generator = \"generator\")\t\r\n\t@Column(name=\"ID_PURCHASE_ORDER\", nullable=false)\r\n\tpublic Integer getId(){}\n@ManyToOne(fetch=FetchType.EAGER)\r\n\t@JoinColumn(name=\"ID_CUSTOMER\",nullable=false)\r\n\tpublic Customer getCustomer(){}",
+    "classes.Customer": "@Id\r\n\t@Column(name=\"ID_CUSTOMER\", nullable=false)\r\n\tpublic Integer getId(){}"
+  },
+  "dependentMethodBodies": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}",
+    "classes.PurchaseOrder": "@Id\n\t@GenericGenerator(name = \"generator\", strategy = \"increment\")\n    @GeneratedValue(generator = \"generator\")\t\n\t@Column(name=\"ID_PURCHASE_ORDER\", nullable=false)\n\tpublic Integer getId() {\n\t\treturn this.id;\n\t}\n@ManyToOne(fetch=FetchType.EAGER)\n\t@JoinColumn(name=\"ID_CUSTOMER\",nullable=false)\n\tpublic Customer getCustomer() {\n\t\treturn customer;\n\t}",
+    "classes.Customer": "@Id\n\t@Column(name=\"ID_CUSTOMER\", nullable=false)\n\tpublic Integer getId() {\n\t\treturn this.id;\n\t}"
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.pert.PertFigure",
+  "className": "PertFigure",
+  "index": 90,
+  "modifier": "[public ]",
+  "extend": "[CompositeFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.pert",
+  "packageDeclaration": "package CH.ifa.draw.samples.pert;",
+  "classSignature": "public class PertFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private static final int BORDER = 3;",
+    "private Rectangle fDisplayBox;",
+    "private Vector fPreTasks;",
+    "private Vector fPostTasks;",
+    "private static final long serialVersionUID = -7877776240236946511L;",
+    "private int pertFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "CompositeFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "start()": "0",
+    "end()": "1",
+    "duration()": "2",
+    "setEnd(int)": "3",
+    "addPreTask(PertFigure)": "4",
+    "addPostTask(PertFigure)": "5",
+    "removePreTask(PertFigure)": "6",
+    "removePostTask(PertFigure)": "7",
+    "asInt(int)": "8",
+    "taskName()": "9",
+    "setInt(int, int)": "10",
+    "basicMoveBy(int, int)": "11",
+    "displayBox()": "12",
+    "basicDisplayBox(Point, Point)": "13",
+    "drawBorder(Graphics)": "14",
+    "draw(Graphics)": "15",
+    "handles()": "16",
+    "initialize()": "17",
+    "layout()": "18",
+    "needsLayout()": "19",
+    "update(FigureChangeEvent)": "20",
+    "figureChanged(FigureChangeEvent)": "21",
+    "figureRemoved(FigureChangeEvent)": "22",
+    "notifyPostTasks()": "23",
+    "updateDurations()": "24",
+    "hasCycle(Figure)": "25",
+    "write(StorableOutput)": "26",
+    "writeTasks(StorableOutput, Vector)": "27",
+    "read(StorableInput)": "28",
+    "connectionInsets()": "29",
+    "readTasks(StorableInput)": "30",
+    "PertFigure()": "31"
+  },
+  "methodsBrief": [
+    "public int start(){}",
+    "public int end(){}",
+    "public int duration(){}",
+    "public void setEnd(int value){}",
+    "public void addPreTask(PertFigure figure){}",
+    "public void addPostTask(PertFigure figure){}",
+    "public void removePreTask(PertFigure figure){}",
+    "public void removePostTask(PertFigure figure){}",
+    "private int asInt(int figureIndex){}",
+    "private String taskName(){}",
+    "private void setInt(int figureIndex, int value){}",
+    "protected void basicMoveBy(int x, int y){}",
+    "public Rectangle displayBox(){}",
+    "public void basicDisplayBox(Point origin, Point corner){}",
+    "private void drawBorder(Graphics g){}",
+    "public void draw(Graphics g){}",
+    "public Vector handles(){}",
+    "private void initialize(){}",
+    "private void layout(){}",
+    "private boolean needsLayout(){}",
+    "public void update(FigureChangeEvent e){}",
+    "public void figureChanged(FigureChangeEvent e){}",
+    "public void figureRemoved(FigureChangeEvent e){}",
+    "public void notifyPostTasks(){}",
+    "public void updateDurations(){}",
+    "public boolean hasCycle(Figure start){}",
+    "public void write(StorableOutput dw){}",
+    "public void writeTasks(StorableOutput dw, Vector v){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public Insets connectionInsets(){}",
+    "public Vector readTasks(StorableInput dr) throws IOException{}",
+    "public PertFigure(){}"
+  ],
+  "constructorSigs": [
+    "PertFigure()"
+  ],
+  "constructorBrief": [
+    "public PertFigure(){}"
+  ],
+  "getterSetterSigs": [
+    "setEnd(int)",
+    "setInt(int, int)"
+  ],
+  "getterSetterBrief": [
+    "public void setEnd(int value){}",
+    "private void setInt(int figureIndex, int value){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "initialize()"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)PertFigure.java 5.2\n *\n */\npackage CH.ifa.draw.samples.pert;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.util.*;\n\npublic class PertFigure extends CompositeFigure {\n\n    private static final int BORDER = 3;\n\n    private Rectangle fDisplayBox;\n\n    private Vector fPreTasks;\n\n    private Vector fPostTasks;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -7877776240236946511L;\n\n    private int pertFigureSerializedDataVersion = 1;\n\n    public PertFigure() {\n        initialize();\n    }\n\n    public int start() {\n        int start = 0;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            PertFigure f = (PertFigure) i.nextElement();\n            start = Math.max(start, f.end());\n        }\n        return start;\n    }\n\n    public int end() {\n        return asInt(2);\n    }\n\n    public int duration() {\n        return asInt(1);\n    }\n\n    public void setEnd(int value) {\n        setInt(2, value);\n    }\n\n    public void addPreTask(PertFigure figure) {\n        if (!fPreTasks.contains(figure)) {\n            fPreTasks.addElement(figure);\n        }\n    }\n\n    public void addPostTask(PertFigure figure) {\n        if (!fPostTasks.contains(figure)) {\n            fPostTasks.addElement(figure);\n        }\n    }\n\n    public void removePreTask(PertFigure figure) {\n        fPreTasks.removeElement(figure);\n    }\n\n    public void removePostTask(PertFigure figure) {\n        fPostTasks.removeElement(figure);\n    }\n\n    private int asInt(int figureIndex) {\n        NumberTextFigure t = (NumberTextFigure) figureAt(figureIndex);\n        return t.getValue();\n    }\n\n    private String taskName() {\n        TextFigure t = (TextFigure) figureAt(0);\n        return t.getText();\n    }\n\n    private void setInt(int figureIndex, int value) {\n        NumberTextFigure t = (NumberTextFigure) figureAt(figureIndex);\n        t.setValue(value);\n    }\n\n    protected void basicMoveBy(int x, int y) {\n        fDisplayBox.translate(x, y);\n        super.basicMoveBy(x, y);\n    }\n\n    public Rectangle displayBox() {\n        return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n        layout();\n    }\n\n    private void drawBorder(Graphics g) {\n        super.draw(g);\n        Rectangle r = displayBox();\n        Figure f = figureAt(0);\n        Rectangle rf = f.displayBox();\n        g.setColor(Color.gray);\n        g.drawLine(r.x, r.y + rf.height + 2, r.x + r.width, r.y + rf.height + 2);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y + rf.height + 3, r.x + r.width, r.y + rf.height + 3);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y, r.x, r.y + r.height);\n        g.drawLine(r.x, r.y, r.x + r.width, r.y);\n        g.setColor(Color.gray);\n        g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n        g.drawLine(r.x, r.y + r.height, r.x + r.width, r.y + r.height);\n    }\n\n    public void draw(Graphics g) {\n        drawBorder(g);\n        super.draw(g);\n    }\n\n    public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.east(), new PertDependency()));\n        return handles;\n    }\n\n    private void initialize() {\n        fPostTasks = new Vector();\n        fPreTasks = new Vector();\n        fDisplayBox = new Rectangle(0, 0, 0, 0);\n        Font f = new Font(\"Helvetica\", Font.PLAIN, 12);\n        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);\n        TextFigure name = new TextFigure();\n        name.setFont(fb);\n        name.setText(\"Task\");\n        // name.setAttribute(\"TextColor\",Color.white);\n        add(name);\n        NumberTextFigure duration = new NumberTextFigure();\n        duration.setValue(0);\n        duration.setFont(fb);\n        add(duration);\n        NumberTextFigure end = new NumberTextFigure();\n        end.setValue(0);\n        end.setFont(f);\n        end.setReadOnly(true);\n        add(end);\n    }\n\n    private void layout() {\n        Point partOrigin = new Point(fDisplayBox.x, fDisplayBox.y);\n        partOrigin.translate(BORDER, BORDER);\n        Dimension extent = new Dimension(0, 0);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            Dimension partExtent = f.size();\n            Point corner = new Point(partOrigin.x + partExtent.width, partOrigin.y + partExtent.height);\n            f.basicDisplayBox(partOrigin, corner);\n            extent.width = Math.max(extent.width, partExtent.width);\n            extent.height += partExtent.height;\n            partOrigin.y += partExtent.height;\n        }\n        fDisplayBox.width = extent.width + 2 * BORDER;\n        fDisplayBox.height = extent.height + 2 * BORDER;\n    }\n\n    private boolean needsLayout() {\n        Dimension extent = new Dimension(0, 0);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            extent.width = Math.max(extent.width, f.size().width);\n        }\n        int newExtent = extent.width + 2 * BORDER;\n        return newExtent != fDisplayBox.width;\n    }\n\n    public void update(FigureChangeEvent e) {\n        if (e.getFigure() == figureAt(1)) {\n            int newEnd = start() + duration();\n            if (newEnd != end()) {\n                setEnd(newEnd);\n                notifyPostTasks();\n            }\n        }\n        if (needsLayout()) {\n            layout();\n            changed();\n        }\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n        update(e);\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n        update(e);\n    }\n\n    public void notifyPostTasks() {\n        Enumeration i = fPostTasks.elements();\n        while (i.hasMoreElements()) ((PertFigure) i.nextElement()).updateDurations();\n    }\n\n    public void updateDurations() {\n        int newEnd = start() + duration();\n        if (newEnd != end()) {\n            setEnd(newEnd);\n            Enumeration i = fPostTasks.elements();\n            while (i.hasMoreElements()) ((PertFigure) i.nextElement()).updateDurations();\n        }\n    }\n\n    public boolean hasCycle(Figure start) {\n        if (start == this)\n            return true;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            if (((PertFigure) i.nextElement()).hasCycle(start))\n                return true;\n        }\n        return false;\n    }\n\n    // -- store / load ----------------------------------------------\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n        dw.writeInt(fPreTasks.size());\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) dw.writeStorable((Storable) i.nextElement());\n        writeTasks(dw, fPostTasks);\n    }\n\n    public void writeTasks(StorableOutput dw, Vector v) {\n        dw.writeInt(v.size());\n        Enumeration i = v.elements();\n        while (i.hasMoreElements()) dw.writeStorable((Storable) i.nextElement());\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n        layout();\n        int size = dr.readInt();\n        Vector v = new Vector(size);\n        for (int i = 0; i < size; i++) v.addElement((Figure) dr.readStorable());\n        fPreTasks = v;\n        fPostTasks = readTasks(dr);\n    }\n\n    public Insets connectionInsets() {\n        Rectangle r = fDisplayBox;\n        int cx = r.width / 2;\n        int cy = r.height / 2;\n        return new Insets(cy, cx, cy, cx);\n    }\n\n    public Vector readTasks(StorableInput dr) throws IOException {\n        int size = dr.readInt();\n        Vector v = new Vector(size);\n        for (int i = 0; i < size; i++) v.addElement((Figure) dr.readStorable());\n        return v;\n    }\n}\n",
+  "classDeclarationCode": "public class PertFigure extends CompositeFigure {\n\n    private static final int BORDER = 3;\n\n    private Rectangle fDisplayBox;\n\n    private Vector fPreTasks;\n\n    private Vector fPostTasks;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -7877776240236946511L;\n\n    private int pertFigureSerializedDataVersion = 1;\n\n    public PertFigure() {\n        initialize();\n    }\n\n    public int start() {\n        int start = 0;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            PertFigure f = (PertFigure) i.nextElement();\n            start = Math.max(start, f.end());\n        }\n        return start;\n    }\n\n    public int end() {\n        return asInt(2);\n    }\n\n    public int duration() {\n        return asInt(1);\n    }\n\n    public void setEnd(int value) {\n        setInt(2, value);\n    }\n\n    public void addPreTask(PertFigure figure) {\n        if (!fPreTasks.contains(figure)) {\n            fPreTasks.addElement(figure);\n        }\n    }\n\n    public void addPostTask(PertFigure figure) {\n        if (!fPostTasks.contains(figure)) {\n            fPostTasks.addElement(figure);\n        }\n    }\n\n    public void removePreTask(PertFigure figure) {\n        fPreTasks.removeElement(figure);\n    }\n\n    public void removePostTask(PertFigure figure) {\n        fPostTasks.removeElement(figure);\n    }\n\n    private int asInt(int figureIndex) {\n        NumberTextFigure t = (NumberTextFigure) figureAt(figureIndex);\n        return t.getValue();\n    }\n\n    private String taskName() {\n        TextFigure t = (TextFigure) figureAt(0);\n        return t.getText();\n    }\n\n    private void setInt(int figureIndex, int value) {\n        NumberTextFigure t = (NumberTextFigure) figureAt(figureIndex);\n        t.setValue(value);\n    }\n\n    protected void basicMoveBy(int x, int y) {\n        fDisplayBox.translate(x, y);\n        super.basicMoveBy(x, y);\n    }\n\n    public Rectangle displayBox() {\n        return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n        layout();\n    }\n\n    private void drawBorder(Graphics g) {\n        super.draw(g);\n        Rectangle r = displayBox();\n        Figure f = figureAt(0);\n        Rectangle rf = f.displayBox();\n        g.setColor(Color.gray);\n        g.drawLine(r.x, r.y + rf.height + 2, r.x + r.width, r.y + rf.height + 2);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y + rf.height + 3, r.x + r.width, r.y + rf.height + 3);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y, r.x, r.y + r.height);\n        g.drawLine(r.x, r.y, r.x + r.width, r.y);\n        g.setColor(Color.gray);\n        g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n        g.drawLine(r.x, r.y + r.height, r.x + r.width, r.y + r.height);\n    }\n\n    public void draw(Graphics g) {\n        drawBorder(g);\n        super.draw(g);\n    }\n\n    public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.east(), new PertDependency()));\n        return handles;\n    }\n\n    private void initialize() {\n        fPostTasks = new Vector();\n        fPreTasks = new Vector();\n        fDisplayBox = new Rectangle(0, 0, 0, 0);\n        Font f = new Font(\"Helvetica\", Font.PLAIN, 12);\n        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);\n        TextFigure name = new TextFigure();\n        name.setFont(fb);\n        name.setText(\"Task\");\n        // name.setAttribute(\"TextColor\",Color.white);\n        add(name);\n        NumberTextFigure duration = new NumberTextFigure();\n        duration.setValue(0);\n        duration.setFont(fb);\n        add(duration);\n        NumberTextFigure end = new NumberTextFigure();\n        end.setValue(0);\n        end.setFont(f);\n        end.setReadOnly(true);\n        add(end);\n    }\n\n    private void layout() {\n        Point partOrigin = new Point(fDisplayBox.x, fDisplayBox.y);\n        partOrigin.translate(BORDER, BORDER);\n        Dimension extent = new Dimension(0, 0);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            Dimension partExtent = f.size();\n            Point corner = new Point(partOrigin.x + partExtent.width, partOrigin.y + partExtent.height);\n            f.basicDisplayBox(partOrigin, corner);\n            extent.width = Math.max(extent.width, partExtent.width);\n            extent.height += partExtent.height;\n            partOrigin.y += partExtent.height;\n        }\n        fDisplayBox.width = extent.width + 2 * BORDER;\n        fDisplayBox.height = extent.height + 2 * BORDER;\n    }\n\n    private boolean needsLayout() {\n        Dimension extent = new Dimension(0, 0);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            extent.width = Math.max(extent.width, f.size().width);\n        }\n        int newExtent = extent.width + 2 * BORDER;\n        return newExtent != fDisplayBox.width;\n    }\n\n    public void update(FigureChangeEvent e) {\n        if (e.getFigure() == figureAt(1)) {\n            int newEnd = start() + duration();\n            if (newEnd != end()) {\n                setEnd(newEnd);\n                notifyPostTasks();\n            }\n        }\n        if (needsLayout()) {\n            layout();\n            changed();\n        }\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n        update(e);\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n        update(e);\n    }\n\n    public void notifyPostTasks() {\n        Enumeration i = fPostTasks.elements();\n        while (i.hasMoreElements()) ((PertFigure) i.nextElement()).updateDurations();\n    }\n\n    public void updateDurations() {\n        int newEnd = start() + duration();\n        if (newEnd != end()) {\n            setEnd(newEnd);\n            Enumeration i = fPostTasks.elements();\n            while (i.hasMoreElements()) ((PertFigure) i.nextElement()).updateDurations();\n        }\n    }\n\n    public boolean hasCycle(Figure start) {\n        if (start == this)\n            return true;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            if (((PertFigure) i.nextElement()).hasCycle(start))\n                return true;\n        }\n        return false;\n    }\n\n    // -- store / load ----------------------------------------------\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n        dw.writeInt(fPreTasks.size());\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) dw.writeStorable((Storable) i.nextElement());\n        writeTasks(dw, fPostTasks);\n    }\n\n    public void writeTasks(StorableOutput dw, Vector v) {\n        dw.writeInt(v.size());\n        Enumeration i = v.elements();\n        while (i.hasMoreElements()) dw.writeStorable((Storable) i.nextElement());\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n        layout();\n        int size = dr.readInt();\n        Vector v = new Vector(size);\n        for (int i = 0; i < size; i++) v.addElement((Figure) dr.readStorable());\n        fPreTasks = v;\n        fPostTasks = readTasks(dr);\n    }\n\n    public Insets connectionInsets() {\n        Rectangle r = fDisplayBox;\n        int cx = r.width / 2;\n        int cy = r.height / 2;\n        return new Insets(cy, cx, cy, cx);\n    }\n\n    public Vector readTasks(StorableInput dr) throws IOException {\n        int size = dr.readInt();\n        Vector v = new Vector(size);\n        for (int i = 0; i < size; i++) v.addElement((Figure) dr.readStorable());\n        return v;\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,18 @@
+{
+  "className": "URL",
+  "methodName": "getEntityType",
+  "brief": "public String getEntityType(){}",
+  "methodSignature": "getEntityType()",
+  "sourceCode": "public String getEntityType() {\n\t\treturn entityType;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"entityType\"\n */\npublic String getEntityType() {\n    return entityType;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"entityType\"\n\t ",
+  "method_annotation": ""
+}

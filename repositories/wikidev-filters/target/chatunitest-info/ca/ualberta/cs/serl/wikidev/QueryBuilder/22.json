@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectExternalSystemByProjectID",
+  "brief": "public static String selectExternalSystemByProjectID(int projectid){}",
+  "methodSignature": "selectExternalSystemByProjectID(int)",
+  "sourceCode": "public static String selectExternalSystemByProjectID(int projectid) {\n\t\treturn \"select externalsystem from wikidev_projects_system where project=\"+projectid;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectExternalSystemByProjectID(int projectid) {\n    return \"select externalsystem from wikidev_projects_system where project=\" + projectid;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

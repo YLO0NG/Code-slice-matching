@@ -1,0 +1,32 @@
+{
+  "className": "PertDependency",
+  "methodName": "handleConnect",
+  "brief": "public void handleConnect(Figure start, Figure end){}",
+  "methodSignature": "handleConnect(Figure, Figure)",
+  "sourceCode": "public void handleConnect(Figure start, Figure end) {\n        PertFigure source = (PertFigure)start;\n        PertFigure target = (PertFigure)end;\n        if (source.hasCycle(target)) {\n            setAttribute(\"FrameColor\", Color.red);\n        } else {\n            target.addPreTask(source);\n            source.addPostTask(target);\n            source.notifyPostTasks();\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "addPreTask(PertFigure)",
+      "addPostTask(PertFigure)",
+      "notifyPostTasks()",
+      "hasCycle(Figure)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setAttribute(String, Object)"
+    ]
+  },
+  "full_method_info": "public void handleConnect(Figure start, Figure end) {\n    PertFigure source = (PertFigure) start;\n    PertFigure target = (PertFigure) end;\n    if (source.hasCycle(target)) {\n        setAttribute(\"FrameColor\", Color.red);\n    } else {\n        target.addPreTask(source);\n        source.addPostTask(target);\n        source.notifyPostTasks();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

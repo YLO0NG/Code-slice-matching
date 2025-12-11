@@ -1,0 +1,34 @@
+{
+  "className": "PertFigure",
+  "methodName": "writeTasks",
+  "brief": "public void writeTasks(StorableOutput dw, Vector v){}",
+  "methodSignature": "writeTasks(StorableOutput, Vector)",
+  "sourceCode": "public void writeTasks(StorableOutput dw, Vector v) {\n        dw.writeInt(v.size());\n        Enumeration i = v.elements();\n        while (i.hasMoreElements())\n            dw.writeStorable((Storable) i.nextElement());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput",
+    "Vector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)"
+    ],
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ]
+  },
+  "full_method_info": "public void writeTasks(StorableOutput dw, Vector v) {\n    dw.writeInt(v.size());\n    Enumeration i = v.elements();\n    while (i.hasMoreElements()) dw.writeStorable((Storable) i.nextElement());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

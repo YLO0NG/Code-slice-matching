@@ -1,0 +1,22 @@
+{
+  "className": "CopyCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        copySelection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.FigureTransferCommand": [
+      "copySelection()"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    copySelection();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "containsStorageFormat",
+  "brief": "public boolean containsStorageFormat(StorageFormat checkStorageFormat){}",
+  "methodSignature": "containsStorageFormat(StorageFormat)",
+  "sourceCode": "public boolean containsStorageFormat(StorageFormat checkStorageFormat){\n\t\treturn myStorageFormats.contains(checkStorageFormat);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormat"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormat": [],
+    "java.util.Vector": [
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Test, whether a StorageFormat is supported by this StorageFormat\n */\npublic boolean containsStorageFormat(StorageFormat checkStorageFormat) {\n    return myStorageFormats.contains(checkStorageFormat);\n}",
+  "method_comment": "\n\t * Test, whether a StorageFormat is supported by this StorageFormat\n\t ",
+  "method_annotation": ""
+}

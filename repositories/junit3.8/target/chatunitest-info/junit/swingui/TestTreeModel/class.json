@@ -1,0 +1,93 @@
+{
+  "fullClassName": "junit.swingui.TestTreeModel",
+  "className": "TestTreeModel",
+  "index": 53,
+  "modifier": "[]",
+  "extend": "[]",
+  "implement": "[TreeModel]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "class TestTreeModel",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import javax.swing.event.*;",
+    "import javax.swing.tree.*;",
+    "import junit.extensions.TestDecorator;",
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "private Test fRoot;",
+    "private Vector fModelListeners= new Vector();",
+    "private Hashtable fFailures= new Hashtable();",
+    "private Hashtable fErrors= new Hashtable();",
+    "private Hashtable fRunTests= new Hashtable();"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "TreeModel"
+  ],
+  "methodSigs": {
+    "addTreeModelListener(TreeModelListener)": "0",
+    "removeTreeModelListener(TreeModelListener)": "1",
+    "findTest(Test, Test, Vector)": "2",
+    "fireNodeChanged(TreePath, int)": "3",
+    "getChild(Object, int)": "4",
+    "getChildCount(Object)": "5",
+    "getIndexOfChild(Object, Object)": "6",
+    "getRoot()": "7",
+    "isLeaf(Object)": "8",
+    "isTestSuite(Object)": "9",
+    "valueForPathChanged(TreePath, Object)": "10",
+    "addFailure(Test)": "11",
+    "addError(Test)": "12",
+    "addRunTest(Test)": "13",
+    "wasRun(Test)": "14",
+    "isError(Test)": "15",
+    "isFailure(Test)": "16",
+    "resetResults()": "17",
+    "TestTreeModel(Test)": "18"
+  },
+  "methodsBrief": [
+    "public void addTreeModelListener(TreeModelListener l){}",
+    "public void removeTreeModelListener(TreeModelListener l){}",
+    "public int findTest(Test target, Test node, Vector path){}",
+    "public void fireNodeChanged(TreePath path, int index){}",
+    "public Object getChild(Object parent, int index){}",
+    "public int getChildCount(Object parent){}",
+    "public int getIndexOfChild(Object parent, Object child){}",
+    "public Object getRoot(){}",
+    "public boolean isLeaf(Object node){}",
+    "TestSuite isTestSuite(Object node){}",
+    "public void valueForPathChanged(TreePath path, Object newValue){}",
+    "void addFailure(Test t){}",
+    "void addError(Test t){}",
+    "void addRunTest(Test t){}",
+    "boolean wasRun(Test t){}",
+    "boolean isError(Test t){}",
+    "boolean isFailure(Test t){}",
+    "void resetResults(){}",
+    "public TestTreeModel(Test root){}"
+  ],
+  "constructorSigs": [
+    "TestTreeModel(Test)"
+  ],
+  "constructorBrief": [
+    "public TestTreeModel(Test root){}"
+  ],
+  "getterSetterSigs": [
+    "getRoot()"
+  ],
+  "getterSetterBrief": [
+    "public Object getRoot(){}"
+  ],
+  "constructorDeps": {
+    "junit.framework.Test": []
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.util.*;\r\nimport javax.swing.event.*;\r\nimport javax.swing.tree.*;\r\nimport junit.extensions.TestDecorator;\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A tree model for a Test.\r\n */\r\nclass TestTreeModel implements TreeModel {\r\n\r\n    private Test fRoot;\r\n\r\n    private Vector fModelListeners = new Vector();\r\n\r\n    private Hashtable fFailures = new Hashtable();\r\n\r\n    private Hashtable fErrors = new Hashtable();\r\n\r\n    private Hashtable fRunTests = new Hashtable();\r\n\r\n    public TestTreeModel(Test root) {\r\n        super();\r\n        fRoot = root;\r\n    }\r\n\r\n    /**\r\n     * adds a TreeModelListener\r\n     */\r\n    public void addTreeModelListener(TreeModelListener l) {\r\n        if (!fModelListeners.contains(l))\r\n            fModelListeners.addElement(l);\r\n    }\r\n\r\n    /**\r\n     * Removes a TestModelListener\r\n     */\r\n    public void removeTreeModelListener(TreeModelListener l) {\r\n        fModelListeners.removeElement(l);\r\n    }\r\n\r\n    /**\r\n     * Finds the path to a test. Returns the index of the test in its\r\n     * parent test suite.\r\n     */\r\n    public int findTest(Test target, Test node, Vector path) {\r\n        if (target.equals(node))\r\n            return 0;\r\n        TestSuite suite = isTestSuite(node);\r\n        for (int i = 0; i < getChildCount(node); i++) {\r\n            Test t = suite.testAt(i);\r\n            int index = findTest(target, t, path);\r\n            if (index >= 0) {\r\n                path.insertElementAt(node, 0);\r\n                if (path.size() == 1)\r\n                    return i;\r\n                return index;\r\n            }\r\n        }\r\n        return -1;\r\n    }\r\n\r\n    /**\r\n     * Fires a node changed event\r\n     */\r\n    public void fireNodeChanged(TreePath path, int index) {\r\n        int[] indices = { index };\r\n        Object[] changedChildren = { getChild(path.getLastPathComponent(), index) };\r\n        TreeModelEvent event = new TreeModelEvent(this, path, indices, changedChildren);\r\n        Enumeration e = fModelListeners.elements();\r\n        while (e.hasMoreElements()) {\r\n            TreeModelListener l = (TreeModelListener) e.nextElement();\r\n            l.treeNodesChanged(event);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Gets the test at the given index\r\n     */\r\n    public Object getChild(Object parent, int index) {\r\n        TestSuite suite = isTestSuite(parent);\r\n        if (suite != null)\r\n            return suite.testAt(index);\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Gets the number of tests.\r\n     */\r\n    public int getChildCount(Object parent) {\r\n        TestSuite suite = isTestSuite(parent);\r\n        if (suite != null)\r\n            return suite.testCount();\r\n        return 0;\r\n    }\r\n\r\n    /**\r\n     * Gets the index of a test in a test suite\r\n     */\r\n    public int getIndexOfChild(Object parent, Object child) {\r\n        TestSuite suite = isTestSuite(parent);\r\n        if (suite != null) {\r\n            int i = 0;\r\n            for (Enumeration e = suite.tests(); e.hasMoreElements(); i++) {\r\n                if (child.equals((Test) e.nextElement()))\r\n                    return i;\r\n            }\r\n        }\r\n        return -1;\r\n    }\r\n\r\n    /**\r\n     * Returns the root of the tree\r\n     */\r\n    public Object getRoot() {\r\n        return fRoot;\r\n    }\r\n\r\n    /**\r\n     * Tests if the test is a leaf.\r\n     */\r\n    public boolean isLeaf(Object node) {\r\n        return isTestSuite(node) == null;\r\n    }\r\n\r\n    /**\r\n     * Tests if the node is a TestSuite.\r\n     */\r\n    TestSuite isTestSuite(Object node) {\r\n        if (node instanceof TestSuite)\r\n            return (TestSuite) node;\r\n        if (node instanceof TestDecorator) {\r\n            Test baseTest = ((TestDecorator) node).getTest();\r\n            return isTestSuite(baseTest);\r\n        }\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Called when the value of the model object was changed in the view\r\n     */\r\n    public void valueForPathChanged(TreePath path, Object newValue) {\r\n        // we don't support direct editing of the model\r\n        System.out.println(\"TreeModel.valueForPathChanged: not implemented\");\r\n    }\r\n\r\n    /**\r\n     * Remembers a test failure\r\n     */\r\n    void addFailure(Test t) {\r\n        fFailures.put(t, t);\r\n    }\r\n\r\n    /**\r\n     * Remembers a test error\r\n     */\r\n    void addError(Test t) {\r\n        fErrors.put(t, t);\r\n    }\r\n\r\n    /**\r\n     * Remembers that a test was run\r\n     */\r\n    void addRunTest(Test t) {\r\n        fRunTests.put(t, t);\r\n    }\r\n\r\n    /**\r\n     * Returns whether a test was run\r\n     */\r\n    boolean wasRun(Test t) {\r\n        return fRunTests.get(t) != null;\r\n    }\r\n\r\n    /**\r\n     * Tests whether a test was an error\r\n     */\r\n    boolean isError(Test t) {\r\n        return (fErrors != null) && fErrors.get(t) != null;\r\n    }\r\n\r\n    /**\r\n     * Tests whether a test was a failure\r\n     */\r\n    boolean isFailure(Test t) {\r\n        return (fFailures != null) && fFailures.get(t) != null;\r\n    }\r\n\r\n    /**\r\n     * Resets the test results\r\n     */\r\n    void resetResults() {\r\n        fFailures = new Hashtable();\r\n        fRunTests = new Hashtable();\r\n        fErrors = new Hashtable();\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A tree model for a Test.\r\n */\r\nclass TestTreeModel implements TreeModel {\r\n\r\n    private Test fRoot;\r\n\r\n    private Vector fModelListeners = new Vector();\r\n\r\n    private Hashtable fFailures = new Hashtable();\r\n\r\n    private Hashtable fErrors = new Hashtable();\r\n\r\n    private Hashtable fRunTests = new Hashtable();\r\n\r\n    public TestTreeModel(Test root) {\r\n        super();\r\n        fRoot = root;\r\n    }\r\n\r\n    /**\r\n     * adds a TreeModelListener\r\n     */\r\n    public void addTreeModelListener(TreeModelListener l) {\r\n        if (!fModelListeners.contains(l))\r\n            fModelListeners.addElement(l);\r\n    }\r\n\r\n    /**\r\n     * Removes a TestModelListener\r\n     */\r\n    public void removeTreeModelListener(TreeModelListener l) {\r\n        fModelListeners.removeElement(l);\r\n    }\r\n\r\n    /**\r\n     * Finds the path to a test. Returns the index of the test in its\r\n     * parent test suite.\r\n     */\r\n    public int findTest(Test target, Test node, Vector path) {\r\n        if (target.equals(node))\r\n            return 0;\r\n        TestSuite suite = isTestSuite(node);\r\n        for (int i = 0; i < getChildCount(node); i++) {\r\n            Test t = suite.testAt(i);\r\n            int index = findTest(target, t, path);\r\n            if (index >= 0) {\r\n                path.insertElementAt(node, 0);\r\n                if (path.size() == 1)\r\n                    return i;\r\n                return index;\r\n            }\r\n        }\r\n        return -1;\r\n    }\r\n\r\n    /**\r\n     * Fires a node changed event\r\n     */\r\n    public void fireNodeChanged(TreePath path, int index) {\r\n        int[] indices = { index };\r\n        Object[] changedChildren = { getChild(path.getLastPathComponent(), index) };\r\n        TreeModelEvent event = new TreeModelEvent(this, path, indices, changedChildren);\r\n        Enumeration e = fModelListeners.elements();\r\n        while (e.hasMoreElements()) {\r\n            TreeModelListener l = (TreeModelListener) e.nextElement();\r\n            l.treeNodesChanged(event);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Gets the test at the given index\r\n     */\r\n    public Object getChild(Object parent, int index) {\r\n        TestSuite suite = isTestSuite(parent);\r\n        if (suite != null)\r\n            return suite.testAt(index);\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Gets the number of tests.\r\n     */\r\n    public int getChildCount(Object parent) {\r\n        TestSuite suite = isTestSuite(parent);\r\n        if (suite != null)\r\n            return suite.testCount();\r\n        return 0;\r\n    }\r\n\r\n    /**\r\n     * Gets the index of a test in a test suite\r\n     */\r\n    public int getIndexOfChild(Object parent, Object child) {\r\n        TestSuite suite = isTestSuite(parent);\r\n        if (suite != null) {\r\n            int i = 0;\r\n            for (Enumeration e = suite.tests(); e.hasMoreElements(); i++) {\r\n                if (child.equals((Test) e.nextElement()))\r\n                    return i;\r\n            }\r\n        }\r\n        return -1;\r\n    }\r\n\r\n    /**\r\n     * Returns the root of the tree\r\n     */\r\n    public Object getRoot() {\r\n        return fRoot;\r\n    }\r\n\r\n    /**\r\n     * Tests if the test is a leaf.\r\n     */\r\n    public boolean isLeaf(Object node) {\r\n        return isTestSuite(node) == null;\r\n    }\r\n\r\n    /**\r\n     * Tests if the node is a TestSuite.\r\n     */\r\n    TestSuite isTestSuite(Object node) {\r\n        if (node instanceof TestSuite)\r\n            return (TestSuite) node;\r\n        if (node instanceof TestDecorator) {\r\n            Test baseTest = ((TestDecorator) node).getTest();\r\n            return isTestSuite(baseTest);\r\n        }\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Called when the value of the model object was changed in the view\r\n     */\r\n    public void valueForPathChanged(TreePath path, Object newValue) {\r\n        // we don't support direct editing of the model\r\n        System.out.println(\"TreeModel.valueForPathChanged: not implemented\");\r\n    }\r\n\r\n    /**\r\n     * Remembers a test failure\r\n     */\r\n    void addFailure(Test t) {\r\n        fFailures.put(t, t);\r\n    }\r\n\r\n    /**\r\n     * Remembers a test error\r\n     */\r\n    void addError(Test t) {\r\n        fErrors.put(t, t);\r\n    }\r\n\r\n    /**\r\n     * Remembers that a test was run\r\n     */\r\n    void addRunTest(Test t) {\r\n        fRunTests.put(t, t);\r\n    }\r\n\r\n    /**\r\n     * Returns whether a test was run\r\n     */\r\n    boolean wasRun(Test t) {\r\n        return fRunTests.get(t) != null;\r\n    }\r\n\r\n    /**\r\n     * Tests whether a test was an error\r\n     */\r\n    boolean isError(Test t) {\r\n        return (fErrors != null) && fErrors.get(t) != null;\r\n    }\r\n\r\n    /**\r\n     * Tests whether a test was a failure\r\n     */\r\n    boolean isFailure(Test t) {\r\n        return (fFailures != null) && fFailures.get(t) != null;\r\n    }\r\n\r\n    /**\r\n     * Resets the test results\r\n     */\r\n    void resetResults() {\r\n        fFailures = new Hashtable();\r\n        fRunTests = new Hashtable();\r\n        fErrors = new Hashtable();\r\n    }\r\n}",
+  "subClasses": []
+}

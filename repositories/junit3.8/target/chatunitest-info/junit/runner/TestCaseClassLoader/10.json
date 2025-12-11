@@ -1,0 +1,47 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "readExcludedPackages",
+  "brief": "private void readExcludedPackages(){}",
+  "methodSignature": "readExcludedPackages()",
+  "sourceCode": "private void readExcludedPackages() {\t\t\r\n\t\tfExcluded= new Vector(10);\r\n\t\tfor (int i= 0; i < defaultExclusions.length; i++)\r\n\t\t\tfExcluded.addElement(defaultExclusions[i]);\r\n\t\t\t\r\n\t\tInputStream is= getClass().getResourceAsStream(EXCLUDED_FILE);\r\n\t\tif (is == null) \r\n\t\t\treturn;\r\n\t\tProperties p= new Properties();\r\n\t\ttry {\r\n\t\t\tp.load(is);\r\n\t\t}\r\n\t\tcatch (IOException e) {\r\n\t\t\treturn;\r\n\t\t} finally {\r\n\t\t\ttry {\r\n\t\t\t\tis.close();\r\n\t\t\t} catch (IOException e) {\r\n\t\t\t}\r\n\t\t}\r\n\t\tfor (Enumeration e= p.propertyNames(); e.hasMoreElements(); ) {\r\n\t\t\tString key= (String)e.nextElement();\r\n\t\t\tif (key.startsWith(\"excluded.\")) {\r\n\t\t\t\tString path= p.getProperty(key);\r\n\t\t\t\tpath= path.trim();\r\n\t\t\t\tif (path.endsWith(\"*\"))\r\n\t\t\t\t\tpath= path.substring(0, path.length()-1);\r\n\t\t\t\tif (path.length() > 0) \r\n\t\t\t\t\tfExcluded.addElement(path);\t\t\t\t\r\n\t\t\t}\r\n\t\t}\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "java.lang.Class": [
+      "getResourceAsStream(String)"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ],
+    "java.util.Properties": [
+      "propertyNames()",
+      "load(InputStream)",
+      "getProperty(String)"
+    ],
+    "java.io.InputStream": [
+      "close()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.lang.String": [
+      "startsWith(String)",
+      "substring(int, int)",
+      "trim()",
+      "length()",
+      "endsWith(String)"
+    ]
+  },
+  "full_method_info": "private void readExcludedPackages() {\r\n    fExcluded = new Vector(10);\r\n    for (int i = 0; i < defaultExclusions.length; i++) fExcluded.addElement(defaultExclusions[i]);\r\n    InputStream is = getClass().getResourceAsStream(EXCLUDED_FILE);\r\n    if (is == null)\r\n        return;\r\n    Properties p = new Properties();\r\n    try {\r\n        p.load(is);\r\n    } catch (IOException e) {\r\n        return;\r\n    } finally {\r\n        try {\r\n            is.close();\r\n        } catch (IOException e) {\r\n        }\r\n    }\r\n    for (Enumeration e = p.propertyNames(); e.hasMoreElements(); ) {\r\n        String key = (String) e.nextElement();\r\n        if (key.startsWith(\"excluded.\")) {\r\n            String path = p.getProperty(key);\r\n            path = path.trim();\r\n            if (path.endsWith(\"*\"))\r\n                path = path.substring(0, path.length() - 1);\r\n            if (path.length() > 0)\r\n                fExcluded.addElement(path);\r\n        }\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

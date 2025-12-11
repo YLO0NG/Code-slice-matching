@@ -1,0 +1,32 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "joinSegments",
+  "brief": "public boolean joinSegments(int x, int y){}",
+  "methodSignature": "joinSegments(int, int)",
+  "sourceCode": "public boolean joinSegments(int x, int y) {\n        for (int i= 1; i < fPoints.size()-1; i++) {\n            Point p = pointAt(i);\n            if (Geom.length(x, y, p.x, p.y) < 3) {\n                removePointAt(i);\n                return true;\n            }\n        }\n        return false;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointAt(int)",
+      "removePointAt(int)"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "length(int, int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Joins to segments into one if the given point hits a node\n * of the polyline.\n * @return true if the two segments were joined.\n */\npublic boolean joinSegments(int x, int y) {\n    for (int i = 1; i < fPoints.size() - 1; i++) {\n        Point p = pointAt(i);\n        if (Geom.length(x, y, p.x, p.y) < 3) {\n            removePointAt(i);\n            return true;\n        }\n    }\n    return false;\n}",
+  "method_comment": "\n     * Joins to segments into one if the given point hits a node\n     * of the polyline.\n     * @return true if the two segments were joined.\n     ",
+  "method_annotation": ""
+}

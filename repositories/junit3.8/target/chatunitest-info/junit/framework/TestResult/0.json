@@ -1,0 +1,38 @@
+{
+  "className": "TestResult",
+  "methodName": "addError",
+  "brief": "public synchronized void addError(Test test, Throwable t){}",
+  "methodSignature": "addError(Test, Throwable)",
+  "sourceCode": "public synchronized void addError(Test test, Throwable t) {\r\n\t\tfErrors.addElement(new TestFailure(test, t));\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).addError(test, t);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [],
+    "java.util.Vector": [
+      "addElement(E)",
+      "elements()"
+    ],
+    "junit.framework.TestResult": [
+      "cloneListeners()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.framework.TestListener": [
+      "addError(Test, Throwable)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Adds an error to the list of errors. The passed in exception\r\n * caused the error.\r\n */\r\npublic synchronized void addError(Test test, Throwable t) {\r\n    fErrors.addElement(new TestFailure(test, t));\r\n    for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n        ((TestListener) e.nextElement()).addError(test, t);\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Adds an error to the list of errors. The passed in exception\r\n\t * caused the error.\r\n\t ",
+  "method_annotation": ""
+}

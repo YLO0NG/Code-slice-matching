@@ -1,0 +1,55 @@
+{
+  "className": "ClusterData",
+  "methodName": "calculateBuildingData",
+  "brief": "public void calculateBuildingData(){}",
+  "methodSignature": "calculateBuildingData()",
+  "sourceCode": "public void calculateBuildingData() {\n\t\tfor(IArtifact artifact : artifacts.keySet()) {\n\t\t\tif(!artifact.getType().equals(\"ChangeSet\")) {\n\t\t\t\ttry {\n\t\t\t\t\tArrayList<CommunicationBuildingData> buildingHistory = DataManager.getCommunicationsBuildingHistory(artifact.getType(), artifact.getId(), artifact.getProject().getProjectID());\n\t\t\t\t\tfor(CommunicationBuildingData building : buildingHistory) {\n\t\t\t\t\t\tif(building.getWeek().equals(week)) {\n\t\t\t\t\t\t\tbuildings.put(building, artifacts.get(artifact));\n\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t} catch (SQLException e) {\n\t\t\t\t\t// TODO Auto-generated catch block\n\t\t\t\t\te.printStackTrace();\n\t\t\t\t}\n\t\t\t}\n\t\t\telse {\n\t\t\t\tChangeSet changeset = (ChangeSet)artifact;\n\t\t\t\tfor(ChangeSetDetail detail : changeset.getChangesetDetails()) {\n\t\t\t\t\tString url = Layout.URLprefix+changeset.getProject().getProjectName()+\"_File:\"+detail.getFilename();\n\t\t\t\t\ttry {\n\t\t\t\t\t\tArrayList<FileBuildingData> buildingHistory = DataManager.getFilesBuildingHistory(url);\n\t\t\t\t\t\tfor(FileBuildingData building : buildingHistory) {\n\t\t\t\t\t\t\tif(building.getWeek().equals(week)) {\n\t\t\t\t\t\t\t\tbuildings.put(building, artifacts.get(artifact));\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t} catch (SQLException e) {\n\t\t\t\t\t\t// TODO Auto-generated catch block\n\t\t\t\t\t\te.printStackTrace();\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()",
+      "put(K, V)"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getId()",
+      "getProject()",
+      "getType()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getFilesBuildingHistory(String)",
+      "getCommunicationsBuildingHistory(String, int, int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectID()",
+      "getProjectName()"
+    ],
+    "java.sql.Timestamp": [
+      "equals(Timestamp)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.BuildingData": [
+      "getWeek()"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getChangesetDetails()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail": [
+      "getFilename()"
+    ]
+  },
+  "full_method_info": "public void calculateBuildingData() {\n    for (IArtifact artifact : artifacts.keySet()) {\n        if (!artifact.getType().equals(\"ChangeSet\")) {\n            try {\n                ArrayList<CommunicationBuildingData> buildingHistory = DataManager.getCommunicationsBuildingHistory(artifact.getType(), artifact.getId(), artifact.getProject().getProjectID());\n                for (CommunicationBuildingData building : buildingHistory) {\n                    if (building.getWeek().equals(week)) {\n                        buildings.put(building, artifacts.get(artifact));\n                        break;\n                    }\n                }\n            } catch (SQLException e) {\n                // TODO Auto-generated catch block\n                e.printStackTrace();\n            }\n        } else {\n            ChangeSet changeset = (ChangeSet) artifact;\n            for (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n                String url = Layout.URLprefix + changeset.getProject().getProjectName() + \"_File:\" + detail.getFilename();\n                try {\n                    ArrayList<FileBuildingData> buildingHistory = DataManager.getFilesBuildingHistory(url);\n                    for (FileBuildingData building : buildingHistory) {\n                        if (building.getWeek().equals(week)) {\n                            buildings.put(building, artifacts.get(artifact));\n                            break;\n                        }\n                    }\n                } catch (SQLException e) {\n                    // TODO Auto-generated catch block\n                    e.printStackTrace();\n                }\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

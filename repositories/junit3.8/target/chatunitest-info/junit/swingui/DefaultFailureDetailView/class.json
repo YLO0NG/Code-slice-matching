@@ -1,0 +1,55 @@
+{
+  "fullClassName": "junit.swingui.DefaultFailureDetailView",
+  "className": "DefaultFailureDetailView",
+  "index": 35,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[FailureDetailView]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "public class DefaultFailureDetailView",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import javax.swing.*;",
+    "import junit.framework.TestFailure;",
+    "import junit.runner.*;"
+  ],
+  "fields": [
+    "JList fList;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "FailureDetailView"
+  ],
+  "methodSigs": {
+    "getComponent()": "0",
+    "showFailure(TestFailure)": "1",
+    "clear()": "2",
+    "getModel()": "3"
+  },
+  "methodsBrief": [
+    "public Component getComponent(){}",
+    "public void showFailure(TestFailure failure){}",
+    "public void clear(){}",
+    "private StackTraceListModel getModel(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getComponent()",
+    "getModel()"
+  ],
+  "getterSetterBrief": [
+    "public Component getComponent(){}",
+    "private StackTraceListModel getModel(){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.*;\r\nimport java.util.*;\r\nimport javax.swing.*;\r\nimport junit.framework.TestFailure;\r\nimport junit.runner.*;\r\n\r\n/**\r\n * A view that shows a stack trace of a failure\r\n */\r\npublic class DefaultFailureDetailView implements FailureDetailView {\r\n\r\n    JList fList;\r\n\r\n    /**\r\n     * A ListModel representing the scanned failure stack trace.\r\n     */\r\n    static class StackTraceListModel extends AbstractListModel {\r\n\r\n        private Vector fLines = new Vector(20);\r\n\r\n        public Object getElementAt(int index) {\r\n            return fLines.elementAt(index);\r\n        }\r\n\r\n        public int getSize() {\r\n            return fLines.size();\r\n        }\r\n\r\n        public void setTrace(String trace) {\r\n            scan(trace);\r\n            fireContentsChanged(this, 0, fLines.size());\r\n        }\r\n\r\n        public void clear() {\r\n            fLines.removeAllElements();\r\n            fireContentsChanged(this, 0, fLines.size());\r\n        }\r\n\r\n        private void scan(String trace) {\r\n            fLines.removeAllElements();\r\n            StringTokenizer st = new StringTokenizer(trace, \"\\n\\r\", false);\r\n            while (st.hasMoreTokens()) fLines.add(st.nextToken());\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Renderer for stack entries\r\n     */\r\n    static class StackEntryRenderer extends DefaultListCellRenderer {\r\n\r\n        public Component getListCellRendererComponent(JList list, Object value, int modelIndex, boolean isSelected, boolean cellHasFocus) {\r\n            String text = ((String) value).replace('\\t', ' ');\r\n            Component c = super.getListCellRendererComponent(list, text, modelIndex, isSelected, cellHasFocus);\r\n            setText(text);\r\n            setToolTipText(text);\r\n            return c;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Returns the component used to present the trace\r\n     */\r\n    public Component getComponent() {\r\n        if (fList == null) {\r\n            fList = new JList(new StackTraceListModel());\r\n            fList.setFont(new Font(\"Dialog\", Font.PLAIN, 12));\r\n            fList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n            fList.setVisibleRowCount(5);\r\n            fList.setCellRenderer(new StackEntryRenderer());\r\n        }\r\n        return fList;\r\n    }\r\n\r\n    /**\r\n     * Shows a TestFailure\r\n     */\r\n    public void showFailure(TestFailure failure) {\r\n        getModel().setTrace(BaseTestRunner.getFilteredTrace(failure.trace()));\r\n    }\r\n\r\n    /**\r\n     * Clears the output.\r\n     */\r\n    public void clear() {\r\n        getModel().clear();\r\n    }\r\n\r\n    private StackTraceListModel getModel() {\r\n        return (StackTraceListModel) fList.getModel();\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A view that shows a stack trace of a failure\r\n */\r\npublic class DefaultFailureDetailView implements FailureDetailView {\r\n\r\n    JList fList;\r\n\r\n    /**\r\n     * A ListModel representing the scanned failure stack trace.\r\n     */\r\n    static class StackTraceListModel extends AbstractListModel {\r\n\r\n        private Vector fLines = new Vector(20);\r\n\r\n        public Object getElementAt(int index) {\r\n            return fLines.elementAt(index);\r\n        }\r\n\r\n        public int getSize() {\r\n            return fLines.size();\r\n        }\r\n\r\n        public void setTrace(String trace) {\r\n            scan(trace);\r\n            fireContentsChanged(this, 0, fLines.size());\r\n        }\r\n\r\n        public void clear() {\r\n            fLines.removeAllElements();\r\n            fireContentsChanged(this, 0, fLines.size());\r\n        }\r\n\r\n        private void scan(String trace) {\r\n            fLines.removeAllElements();\r\n            StringTokenizer st = new StringTokenizer(trace, \"\\n\\r\", false);\r\n            while (st.hasMoreTokens()) fLines.add(st.nextToken());\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Renderer for stack entries\r\n     */\r\n    static class StackEntryRenderer extends DefaultListCellRenderer {\r\n\r\n        public Component getListCellRendererComponent(JList list, Object value, int modelIndex, boolean isSelected, boolean cellHasFocus) {\r\n            String text = ((String) value).replace('\\t', ' ');\r\n            Component c = super.getListCellRendererComponent(list, text, modelIndex, isSelected, cellHasFocus);\r\n            setText(text);\r\n            setToolTipText(text);\r\n            return c;\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Returns the component used to present the trace\r\n     */\r\n    public Component getComponent() {\r\n        if (fList == null) {\r\n            fList = new JList(new StackTraceListModel());\r\n            fList.setFont(new Font(\"Dialog\", Font.PLAIN, 12));\r\n            fList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n            fList.setVisibleRowCount(5);\r\n            fList.setCellRenderer(new StackEntryRenderer());\r\n        }\r\n        return fList;\r\n    }\r\n\r\n    /**\r\n     * Shows a TestFailure\r\n     */\r\n    public void showFailure(TestFailure failure) {\r\n        getModel().setTrace(BaseTestRunner.getFilteredTrace(failure.trace()));\r\n    }\r\n\r\n    /**\r\n     * Clears the output.\r\n     */\r\n    public void clear() {\r\n        getModel().clear();\r\n    }\r\n\r\n    private StackTraceListModel getModel() {\r\n        return (StackTraceListModel) fList.getModel();\r\n    }\r\n}",
+  "subClasses": []
+}

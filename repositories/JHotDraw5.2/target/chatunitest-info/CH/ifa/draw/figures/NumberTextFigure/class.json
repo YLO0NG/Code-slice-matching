@@ -1,0 +1,54 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.NumberTextFigure",
+  "className": "NumberTextFigure",
+  "index": 42,
+  "modifier": "[public ]",
+  "extend": "[TextFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class NumberTextFigure",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -4056859232918336475L;",
+    "private int numberTextFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "TextFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "overlayColumns()": "0",
+    "getValue()": "1",
+    "setValue(int)": "2"
+  },
+  "methodsBrief": [
+    "public int overlayColumns(){}",
+    "public int getValue(){}",
+    "public void setValue(int value){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getValue()",
+    "setValue(int)"
+  ],
+  "getterSetterBrief": [
+    "public int getValue(){}",
+    "public void setValue(int value){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)NumberTextFigure.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.util.*;\nimport java.awt.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * A TextFigure specialized to edit numbers.\n */\npublic class NumberTextFigure extends TextFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -4056859232918336475L;\n\n    private int numberTextFigureSerializedDataVersion = 1;\n\n    /**\n     * Gets the number of columns to be used by the text overlay.\n     * @see CH.ifa.draw.util.FloatingTextField\n     */\n    public int overlayColumns() {\n        return Math.max(4, getText().length());\n    }\n\n    /**\n     * Gets the numerical value of the contained text.\n     * return the value or 0 in the case of an illegal number format.\n     */\n    public int getValue() {\n        int value = 0;\n        try {\n            value = Integer.parseInt(getText());\n        } catch (NumberFormatException e) {\n            value = 0;\n        }\n        return value;\n    }\n\n    /**\n     * Sets the numberical value of the contained text.\n     */\n    public void setValue(int value) {\n        setText(Integer.toString(value));\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A TextFigure specialized to edit numbers.\n */\npublic class NumberTextFigure extends TextFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -4056859232918336475L;\n\n    private int numberTextFigureSerializedDataVersion = 1;\n\n    /**\n     * Gets the number of columns to be used by the text overlay.\n     * @see CH.ifa.draw.util.FloatingTextField\n     */\n    public int overlayColumns() {\n        return Math.max(4, getText().length());\n    }\n\n    /**\n     * Gets the numerical value of the contained text.\n     * return the value or 0 in the case of an illegal number format.\n     */\n    public int getValue() {\n        int value = 0;\n        try {\n            value = Integer.parseInt(getText());\n        } catch (NumberFormatException e) {\n            value = 0;\n        }\n        return value;\n    }\n\n    /**\n     * Sets the numberical value of the contained text.\n     */\n    public void setValue(int value) {\n        setText(Integer.toString(value));\n    }\n}",
+  "subClasses": []
+}

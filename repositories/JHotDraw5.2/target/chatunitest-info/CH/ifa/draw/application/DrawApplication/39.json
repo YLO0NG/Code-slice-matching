@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplication",
+  "methodName": "showStatus",
+  "brief": "public void showStatus(String string){}",
+  "methodSignature": "showStatus(String)",
+  "sourceCode": "public void showStatus(String string) {\n        fStatusLine.setText(string);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "javax.swing.text.JTextComponent": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Shows a status message.\n * @see DrawingEditor\n */\npublic void showStatus(String string) {\n    fStatusLine.setText(string);\n}",
+  "method_comment": "\n     * Shows a status message.\n     * @see DrawingEditor\n     ",
+  "method_annotation": ""
+}

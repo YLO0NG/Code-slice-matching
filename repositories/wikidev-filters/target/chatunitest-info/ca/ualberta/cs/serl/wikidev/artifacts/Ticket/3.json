@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getProjectID",
+  "brief": "public int getProjectID(){}",
+  "methodSignature": "getProjectID()",
+  "sourceCode": "public int getProjectID() {\n\t\treturn project;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getProjectID() {\n    return project;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

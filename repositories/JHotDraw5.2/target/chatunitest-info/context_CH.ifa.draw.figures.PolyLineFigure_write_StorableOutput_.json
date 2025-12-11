@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.figures.PolyLineFigure",
+  "targetMethod": "write(StorableOutput)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.AbstractFigure": "private transient FigureChangeListener fListener;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int abstractFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.StorableOutput": "private PrintWriter     fStream;\nprivate Vector          fMap;\nprivate int             fIndent;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": "public void write(StorableOutput dw){}",
+    "CH.ifa.draw.util.StorableOutput": "public void writeInt(int i){}\npublic void writeStorable(Storable storable){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.AbstractFigure": "* Stores the Figure to a StorableOutput.\n     \npublic void write(StorableOutput dw) {\n    }",
+    "CH.ifa.draw.util.StorableOutput": "* Writes an int to the output stream.\n     \npublic void writeInt(int i) {\n        fStream.print(i);\n        space();\n    }\n\n     * Writes a storable object to the output stream.\n     \npublic void writeStorable(Storable storable) {\n        if (storable == null) {\n            fStream.print(\"NULL\");\n            space();\n            return;\n        }\n\n        if (mapped(storable)) {\n            int ref = fMap.indexOf(storable);\n\t\t\t\n\t\t\tfStream.print(\"REF\");\n\t\t\tspace();\n\t\t\tfStream.print(ref);\n\t\t\tspace();\n            return;\n        }\n\n        incrementIndent();\n        startNewLine();\n        map(storable);\n        fStream.print(storable.getClass().getName());\n        space();\n        storable.write(this);\n        space();\n        decrementIndent();\n    }"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "fullClassName": "classes.CustomerAction",
+  "className": "CustomerAction",
+  "index": 2,
+  "modifier": "[public ]",
+  "extend": "[ExampleSupport]",
+  "implement": "[RequestAware, ParameterAware]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class CustomerAction",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.List;",
+    "import java.util.Map;",
+    "import org.apache.log4j.Logger;",
+    "import org.apache.struts2.interceptor.ParameterAware;",
+    "import org.apache.struts2.interceptor.RequestAware;",
+    "import org.hibernate.Criteria;",
+    "import org.hibernate.Session;",
+    "import org.hibernate.Transaction;",
+    "import org.hibernate.criterion.Example;",
+    "import org.hibernate.criterion.MatchMode;",
+    "import org.hibernate.criterion.Restrictions;"
+  ],
+  "fields": [
+    "private static Logger logger = Logger.getLogger(CustomerAction.class);",
+    "private Map<String, Object> request;",
+    "private Map<String, String[]> parameters;",
+    "private Customer customer;",
+    "private String task;"
+  ],
+  "superClasses": [
+    "ExampleSupport"
+  ],
+  "implementedTypes": [
+    "RequestAware",
+    "ParameterAware"
+  ],
+  "methodSigs": {
+    "setRequest(Map)": "0",
+    "setParameters(Map)": "1",
+    "getCustomer()": "2",
+    "setCustomer(Customer)": "3",
+    "getTask()": "4",
+    "setTask(String)": "5",
+    "execute()": "6",
+    "input()": "7",
+    "find()": "8",
+    "save()": "9",
+    "update()": "10",
+    "delete()": "11",
+    "edit()": "12"
+  },
+  "methodsBrief": [
+    "@Override\r\n\tpublic void setRequest( Map<String, Object> map ){}",
+    "@Override\r\n\tpublic void setParameters( Map<String, String[]> parameters ){}",
+    "public Customer getCustomer(){}",
+    "public void setCustomer( Customer customer ){}",
+    "public String getTask(){}",
+    "public void setTask( String task ){}",
+    "@Override\r\n\tpublic String execute() throws Exception{}",
+    "@Override\r\n\tpublic String input() throws Exception{}",
+    "public String find() throws Exception{}",
+    "public String save() throws Exception{}",
+    "public String update() throws Exception{}",
+    "public String delete() throws Exception{}",
+    "public String edit() throws Exception{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "setRequest(Map)",
+    "setParameters(Map)",
+    "getCustomer()",
+    "setCustomer(Customer)",
+    "getTask()",
+    "setTask(String)"
+  ],
+  "getterSetterBrief": [
+    "@Override\r\n\tpublic void setRequest( Map<String, Object> map ){}",
+    "@Override\r\n\tpublic void setParameters( Map<String, String[]> parameters ){}",
+    "public Customer getCustomer(){}",
+    "public void setCustomer( Customer customer ){}",
+    "public String getTask(){}",
+    "public void setTask( String task ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * $Id: Login.java 471756 2006-11-06 15:01:43Z husted $\n *\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *  http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\npackage classes;\n\nimport java.util.List;\nimport java.util.Map;\nimport org.apache.log4j.Logger;\nimport org.apache.struts2.interceptor.ParameterAware;\nimport org.apache.struts2.interceptor.RequestAware;\nimport org.hibernate.Criteria;\nimport org.hibernate.Session;\nimport org.hibernate.Transaction;\nimport org.hibernate.criterion.Example;\nimport org.hibernate.criterion.MatchMode;\nimport org.hibernate.criterion.Restrictions;\n\npublic class CustomerAction extends ExampleSupport implements RequestAware, ParameterAware {\n\n    private static Logger logger = Logger.getLogger(CustomerAction.class);\n\n    private Map<String, Object> request;\n\n    private Map<String, String[]> parameters;\n\n    private Customer customer;\n\n    private String task;\n\n    @Override\n    public void setRequest(Map<String, Object> map) {\n        request = map;\n    }\n\n    @Override\n    public void setParameters(Map<String, String[]> parameters) {\n        this.parameters = parameters;\n    }\n\n    public Customer getCustomer() {\n        return customer;\n    }\n\n    public void setCustomer(Customer customer) {\n        this.customer = customer;\n    }\n\n    public String getTask() {\n        return this.task;\n    }\n\n    public void setTask(String task) {\n        this.task = task;\n    }\n\n    @Override\n    public String execute() throws Exception {\n        return this.input();\n    }\n\n    @Override\n    public String input() throws Exception {\n        this.task = SystemConstants.CR_MODE;\n        this.customer = null;\n        return super.input();\n    }\n\n    public String find() throws Exception {\n        // f:log\n        logger.info(\"Starting find()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(Customer.class);\n        // f:hibernate\n        criteria.add(Example.create(this.customer).excludeZeroes().ignoreCase().enableLike(MatchMode.ANYWHERE));\n        if (this.customer.getId() != null) {\n            // f:hibernate\n            // f:hibernate\n            criteria.add(Restrictions.idEq(this.customer.getId()));\n        }\n        // f:hibernate\n        @SuppressWarnings(\"unchecked\")\n        List<Customer> // f:hibernate\n        l = (List<Customer>) criteria.list();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        request.put(\"list\", l);\n        this.task = SystemConstants.CR_MODE;\n        // f:log\n        logger.info(\"Finishing find()\");\n        return INPUT;\n    }\n\n    public String save() throws Exception {\n        // f:log\n        logger.info(\"Starting save()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        sess.save(this.customer);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.task = SystemConstants.UD_MODE;\n        this.addActionMessage(this.getText(\"saveSuccessful\", new String[] { \"customer\" }));\n        // f:log\n        logger.info(\"Finishing save()\");\n        return INPUT;\n    }\n\n    public String update() throws Exception {\n        // f:log\n        logger.info(\"Starting update()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        sess.update(this.customer);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.task = SystemConstants.UD_MODE;\n        this.addActionMessage(this.getText(\"updateSuccessful\", new String[] { \"customer\" }));\n        // f:log\n        logger.info(\"Finishing update()\");\n        return INPUT;\n    }\n\n    public String delete() throws Exception {\n        // f:log\n        logger.info(\"Starting delete()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        sess.delete(this.customer);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.task = SystemConstants.CR_MODE;\n        this.addActionMessage(this.getText(\"deleteSuccessful\", new String[] { \"customer\" }));\n        // f:log\n        logger.info(\"Finishing delete()\");\n        return this.input();\n    }\n\n    public String edit() throws Exception {\n        // f:log\n        logger.info(\"Starting edit()\");\n        Integer id = Integer.valueOf(this.parameters.get(\"id\")[0]);\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Customer c = (Customer) sess.get(Customer.class, id);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.setCustomer(c);\n        // f:log\n        logger.info(\"Finishing edit()\");\n        this.task = SystemConstants.UD_MODE;\n        return INPUT;\n    }\n}\n",
+  "classDeclarationCode": "public class CustomerAction extends ExampleSupport implements RequestAware, ParameterAware {\n\n    private static Logger logger = Logger.getLogger(CustomerAction.class);\n\n    private Map<String, Object> request;\n\n    private Map<String, String[]> parameters;\n\n    private Customer customer;\n\n    private String task;\n\n    @Override\n    public void setRequest(Map<String, Object> map) {\n        request = map;\n    }\n\n    @Override\n    public void setParameters(Map<String, String[]> parameters) {\n        this.parameters = parameters;\n    }\n\n    public Customer getCustomer() {\n        return customer;\n    }\n\n    public void setCustomer(Customer customer) {\n        this.customer = customer;\n    }\n\n    public String getTask() {\n        return this.task;\n    }\n\n    public void setTask(String task) {\n        this.task = task;\n    }\n\n    @Override\n    public String execute() throws Exception {\n        return this.input();\n    }\n\n    @Override\n    public String input() throws Exception {\n        this.task = SystemConstants.CR_MODE;\n        this.customer = null;\n        return super.input();\n    }\n\n    public String find() throws Exception {\n        // f:log\n        logger.info(\"Starting find()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(Customer.class);\n        // f:hibernate\n        criteria.add(Example.create(this.customer).excludeZeroes().ignoreCase().enableLike(MatchMode.ANYWHERE));\n        if (this.customer.getId() != null) {\n            // f:hibernate\n            // f:hibernate\n            criteria.add(Restrictions.idEq(this.customer.getId()));\n        }\n        // f:hibernate\n        @SuppressWarnings(\"unchecked\")\n        List<Customer> // f:hibernate\n        l = (List<Customer>) criteria.list();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        request.put(\"list\", l);\n        this.task = SystemConstants.CR_MODE;\n        // f:log\n        logger.info(\"Finishing find()\");\n        return INPUT;\n    }\n\n    public String save() throws Exception {\n        // f:log\n        logger.info(\"Starting save()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        sess.save(this.customer);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.task = SystemConstants.UD_MODE;\n        this.addActionMessage(this.getText(\"saveSuccessful\", new String[] { \"customer\" }));\n        // f:log\n        logger.info(\"Finishing save()\");\n        return INPUT;\n    }\n\n    public String update() throws Exception {\n        // f:log\n        logger.info(\"Starting update()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        sess.update(this.customer);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.task = SystemConstants.UD_MODE;\n        this.addActionMessage(this.getText(\"updateSuccessful\", new String[] { \"customer\" }));\n        // f:log\n        logger.info(\"Finishing update()\");\n        return INPUT;\n    }\n\n    public String delete() throws Exception {\n        // f:log\n        logger.info(\"Starting delete()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        sess.delete(this.customer);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.task = SystemConstants.CR_MODE;\n        this.addActionMessage(this.getText(\"deleteSuccessful\", new String[] { \"customer\" }));\n        // f:log\n        logger.info(\"Finishing delete()\");\n        return this.input();\n    }\n\n    public String edit() throws Exception {\n        // f:log\n        logger.info(\"Starting edit()\");\n        Integer id = Integer.valueOf(this.parameters.get(\"id\")[0]);\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Customer c = (Customer) sess.get(Customer.class, id);\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        this.setCustomer(c);\n        // f:log\n        logger.info(\"Finishing edit()\");\n        this.task = SystemConstants.UD_MODE;\n        return INPUT;\n    }\n}",
+  "subClasses": []
+}

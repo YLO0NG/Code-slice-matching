@@ -1,0 +1,22 @@
+{
+  "className": "PertFigure",
+  "methodName": "duration",
+  "brief": "public int duration(){}",
+  "methodSignature": "duration()",
+  "sourceCode": "public int duration() {\n        return asInt(1);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "asInt(int)"
+    ]
+  },
+  "full_method_info": "public int duration() {\n    return asInt(1);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

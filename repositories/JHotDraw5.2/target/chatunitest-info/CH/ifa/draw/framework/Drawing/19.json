@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "sendToBack",
+  "brief": "public void sendToBack(Figure figure);",
+  "methodSignature": "sendToBack(Figure)",
+  "sourceCode": "public void sendToBack(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Sends a figure to the back of the drawing.\n */\npublic void sendToBack(Figure figure);",
+  "method_comment": "\n     * Sends a figure to the back of the drawing.\n     ",
+  "method_annotation": ""
+}

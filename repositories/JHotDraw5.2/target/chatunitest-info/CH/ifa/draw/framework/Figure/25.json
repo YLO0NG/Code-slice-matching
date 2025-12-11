@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "canConnect",
+  "brief": "public boolean canConnect();",
+  "methodSignature": "canConnect()",
+  "sourceCode": "public boolean canConnect();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Checks if this figure can be connected\n */\npublic boolean canConnect();",
+  "method_comment": "\n     * Checks if this figure can be connected\n     ",
+  "method_annotation": ""
+}

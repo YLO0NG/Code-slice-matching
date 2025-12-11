@@ -1,0 +1,26 @@
+{
+  "className": "TestSelector",
+  "methodName": "defineLayout",
+  "brief": "private void defineLayout(){}",
+  "methodSignature": "defineLayout()",
+  "sourceCode": "private void defineLayout() {\r\n\t\tgetContentPane().setLayout(new GridBagLayout());\r\n\t\tGridBagConstraints labelConstraints = new GridBagConstraints();\r\n\t\tlabelConstraints.gridx= 0; labelConstraints.gridy= 0;\r\n\t\tlabelConstraints.gridwidth= 1; labelConstraints.gridheight= 1;\r\n\t\tlabelConstraints.fill= GridBagConstraints.BOTH;\r\n\t\tlabelConstraints.anchor= GridBagConstraints.WEST;\r\n\t\tlabelConstraints.weightx= 1.0;\r\n\t\tlabelConstraints.weighty= 0.0;\r\n\t\tlabelConstraints.insets= new Insets(8, 8, 0, 8);\r\n\t\tgetContentPane().add(fDescription, labelConstraints);\r\n\r\n\t\tGridBagConstraints listConstraints = new GridBagConstraints();\r\n\t\tlistConstraints.gridx= 0; listConstraints.gridy= 1;\r\n\t\tlistConstraints.gridwidth= 4; listConstraints.gridheight= 1;\r\n\t\tlistConstraints.fill= GridBagConstraints.BOTH;\r\n\t\tlistConstraints.anchor= GridBagConstraints.CENTER;\r\n\t\tlistConstraints.weightx= 1.0;\r\n\t\tlistConstraints.weighty= 1.0;\r\n\t\tlistConstraints.insets= new Insets(8, 8, 8, 8);\r\n\t\tgetContentPane().add(fScrolledList, listConstraints);\r\n\t\t\r\n\t\tGridBagConstraints okConstraints= new GridBagConstraints();\r\n\t\tokConstraints.gridx= 2; okConstraints.gridy= 2;\r\n\t\tokConstraints.gridwidth= 1; okConstraints.gridheight= 1;\r\n\t\tokConstraints.anchor= java.awt.GridBagConstraints.EAST;\r\n\t\tokConstraints.insets= new Insets(0, 8, 8, 8);\r\n\t\tgetContentPane().add(fOk, okConstraints);\r\n\r\n\r\n\t\tGridBagConstraints cancelConstraints = new GridBagConstraints();\r\n\t\tcancelConstraints.gridx= 3; cancelConstraints.gridy= 2;\r\n\t\tcancelConstraints.gridwidth= 1; cancelConstraints.gridheight= 1;\r\n\t\tcancelConstraints.anchor= java.awt.GridBagConstraints.EAST;\r\n\t\tcancelConstraints.insets= new Insets(0, 8, 8, 8);\r\n\t\tgetContentPane().add(fCancel, cancelConstraints);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "add(Component, Object)",
+      "setLayout(LayoutManager)"
+    ],
+    "javax.swing.JDialog": [
+      "getContentPane()"
+    ]
+  },
+  "full_method_info": "private void defineLayout() {\r\n    getContentPane().setLayout(new GridBagLayout());\r\n    GridBagConstraints labelConstraints = new GridBagConstraints();\r\n    labelConstraints.gridx = 0;\r\n    labelConstraints.gridy = 0;\r\n    labelConstraints.gridwidth = 1;\r\n    labelConstraints.gridheight = 1;\r\n    labelConstraints.fill = GridBagConstraints.BOTH;\r\n    labelConstraints.anchor = GridBagConstraints.WEST;\r\n    labelConstraints.weightx = 1.0;\r\n    labelConstraints.weighty = 0.0;\r\n    labelConstraints.insets = new Insets(8, 8, 0, 8);\r\n    getContentPane().add(fDescription, labelConstraints);\r\n    GridBagConstraints listConstraints = new GridBagConstraints();\r\n    listConstraints.gridx = 0;\r\n    listConstraints.gridy = 1;\r\n    listConstraints.gridwidth = 4;\r\n    listConstraints.gridheight = 1;\r\n    listConstraints.fill = GridBagConstraints.BOTH;\r\n    listConstraints.anchor = GridBagConstraints.CENTER;\r\n    listConstraints.weightx = 1.0;\r\n    listConstraints.weighty = 1.0;\r\n    listConstraints.insets = new Insets(8, 8, 8, 8);\r\n    getContentPane().add(fScrolledList, listConstraints);\r\n    GridBagConstraints okConstraints = new GridBagConstraints();\r\n    okConstraints.gridx = 2;\r\n    okConstraints.gridy = 2;\r\n    okConstraints.gridwidth = 1;\r\n    okConstraints.gridheight = 1;\r\n    okConstraints.anchor = java.awt.GridBagConstraints.EAST;\r\n    okConstraints.insets = new Insets(0, 8, 8, 8);\r\n    getContentPane().add(fOk, okConstraints);\r\n    GridBagConstraints cancelConstraints = new GridBagConstraints();\r\n    cancelConstraints.gridx = 3;\r\n    cancelConstraints.gridy = 2;\r\n    cancelConstraints.gridwidth = 1;\r\n    cancelConstraints.gridheight = 1;\r\n    cancelConstraints.anchor = java.awt.GridBagConstraints.EAST;\r\n    cancelConstraints.insets = new Insets(0, 8, 8, 8);\r\n    getContentPane().add(fCancel, cancelConstraints);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,35 @@
+{
+  "className": "PertFigure",
+  "methodName": "drawBorder",
+  "brief": "private void drawBorder(Graphics g){}",
+  "methodSignature": "drawBorder(Graphics)",
+  "sourceCode": "private void drawBorder(Graphics g) {\n        super.draw(g);\n\n        Rectangle r = displayBox();\n\n        Figure f = figureAt(0);\n        Rectangle rf = f.displayBox();\n        g.setColor(Color.gray);\n        g.drawLine(r.x, r.y+rf.height+2, r.x+r.width, r.y + rf.height+2);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y+rf.height+3, r.x+r.width, r.y + rf.height+3);\n\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y, r.x, r.y + r.height);\n        g.drawLine(r.x, r.y, r.x + r.width, r.y);\n        g.setColor(Color.gray);\n        g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n        g.drawLine(r.x , r.y + r.height, r.x + r.width, r.y + r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawLine(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "draw(Graphics)",
+      "figureAt(int)"
+    ],
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "private void drawBorder(Graphics g) {\n    super.draw(g);\n    Rectangle r = displayBox();\n    Figure f = figureAt(0);\n    Rectangle rf = f.displayBox();\n    g.setColor(Color.gray);\n    g.drawLine(r.x, r.y + rf.height + 2, r.x + r.width, r.y + rf.height + 2);\n    g.setColor(Color.white);\n    g.drawLine(r.x, r.y + rf.height + 3, r.x + r.width, r.y + rf.height + 3);\n    g.setColor(Color.white);\n    g.drawLine(r.x, r.y, r.x, r.y + r.height);\n    g.drawLine(r.x, r.y, r.x + r.width, r.y);\n    g.setColor(Color.gray);\n    g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n    g.drawLine(r.x, r.y + r.height, r.x + r.width, r.y + r.height);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,39 @@
+{
+  "className": "TestHierarchyRunView",
+  "methodName": "revealFailure",
+  "brief": "public void revealFailure(Test failure){}",
+  "methodSignature": "revealFailure(Test)",
+  "sourceCode": "public void revealFailure(Test failure) {\r\n\t\tJTree tree= fTreeBrowser.getTree();\r\n\t\tTestTreeModel model= (TestTreeModel)tree.getModel();\r\n\t\tVector vpath= new Vector();\r\n\t\tint index= model.findTest(failure, (Test)model.getRoot(), vpath);\r\n\t\tif (index >= 0) {\r\n\t\t\tObject[] path= new Object[vpath.size()+1];\r\n\t\t\tvpath.copyInto(path);\r\n\t\t\tObject last= path[vpath.size()-1];\r\n\t\t\tpath[vpath.size()]= model.getChild(last, index);\r\n\t\t\tTreePath selectionPath= new TreePath(path);\r\n\t\t\ttree.setSelectionPath(selectionPath);\r\n\t\t\ttree.makeVisible(selectionPath);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.swingui.TestSuitePanel": [
+      "getTree()"
+    ],
+    "javax.swing.JTree": [
+      "makeVisible(TreePath)",
+      "getModel()",
+      "setSelectionPath(TreePath)"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "getRoot()",
+      "findTest(Test, Test, Vector)",
+      "getChild(Object, int)"
+    ],
+    "java.util.Vector": [
+      "copyInto(Object[])",
+      "size()"
+    ]
+  },
+  "full_method_info": "public void revealFailure(Test failure) {\r\n    JTree tree = fTreeBrowser.getTree();\r\n    TestTreeModel model = (TestTreeModel) tree.getModel();\r\n    Vector vpath = new Vector();\r\n    int index = model.findTest(failure, (Test) model.getRoot(), vpath);\r\n    if (index >= 0) {\r\n        Object[] path = new Object[vpath.size() + 1];\r\n        vpath.copyInto(path);\r\n        Object last = path[vpath.size() - 1];\r\n        path[vpath.size()] = model.getChild(last, index);\r\n        TreePath selectionPath = new TreePath(path);\r\n        tree.setSelectionPath(selectionPath);\r\n        tree.makeVisible(selectionPath);\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

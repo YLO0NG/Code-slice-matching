@@ -1,0 +1,22 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "setBorderColor",
+  "brief": "public void setBorderColor(Color borderColor){}",
+  "methodSignature": "setBorderColor(Color)",
+  "sourceCode": "public void setBorderColor(Color borderColor) {\n        fBorderColor = borderColor;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": []
+  },
+  "full_method_info": "/**\n * Sets color of arrow's border\n */\npublic void setBorderColor(Color borderColor) {\n    fBorderColor = borderColor;\n}",
+  "method_comment": "\n\t * Sets color of arrow's border\n\t ",
+  "method_annotation": ""
+}

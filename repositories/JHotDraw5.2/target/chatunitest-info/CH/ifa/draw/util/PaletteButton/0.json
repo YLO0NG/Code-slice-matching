@@ -1,0 +1,18 @@
+{
+  "className": "PaletteButton",
+  "methodName": "value",
+  "brief": "public Object value(){}",
+  "methodSignature": "value()",
+  "sourceCode": "public Object value() {\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Object value() {\n    return null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

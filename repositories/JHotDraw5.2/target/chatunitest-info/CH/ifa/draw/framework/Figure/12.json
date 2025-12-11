@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "clone",
+  "brief": "public Object clone();",
+  "methodSignature": "clone()",
+  "sourceCode": "public Object clone();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns a Clone of this figure\n */\npublic Object clone();",
+  "method_comment": "\n     * Returns a Clone of this figure\n     ",
+  "method_annotation": ""
+}

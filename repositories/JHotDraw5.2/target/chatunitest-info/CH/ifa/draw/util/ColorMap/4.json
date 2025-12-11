@@ -1,0 +1,24 @@
+{
+  "className": "ColorMap",
+  "methodName": "colorIndex",
+  "brief": "public static int colorIndex(Color color){}",
+  "methodSignature": "colorIndex(Color)",
+  "sourceCode": "public static int colorIndex(Color color) {\n        for (int i=0; i<fMap.length; i++)\n            if (fMap[i].fColor.equals(color))\n                return i;\n        return 0;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": [
+      "equals(Object)"
+    ]
+  },
+  "full_method_info": "public static int colorIndex(Color color) {\n    for (int i = 0; i < fMap.length; i++) if (fMap[i].fColor.equals(color))\n        return i;\n    return 0;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

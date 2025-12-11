@@ -1,0 +1,394 @@
+[
+    {
+        "class_name": "CH.ifa.draw.util.StorableOutput",
+        "function_name": "writeStorable(Storable)",
+        "line_start": 47,
+        "line_end": 52,
+        "code_snippet": "int ref = fMap.indexOf(storable);\n\t\t\t\n\t\t\tfStream.print(\"REF\");\n\t\t\tspace();\n\t\t\tfStream.print(ref);\n\t\t\tspace();"
+    },
+    {
+        "class_name": "CH.ifa.draw.util.StandardStorageFormat",
+        "function_name": "store(String, Drawing)",
+        "line_start": 165,
+        "line_end": 170,
+        "code_snippet": "if (!hasCorrectFileExtension(fileName)) {\n\t\t\treturn fileName + \".\" + getFileExtension();\n\t\t}\n\t\telse {\n\t\t\treturn fileName;\n\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.util.Iconkit",
+        "function_name": "getImage(String)",
+        "line_start": 132,
+        "line_end": 134,
+        "code_snippet": "if (fMap.containsKey(filename))\n\t\t    return (Image) fMap.get(filename);\n\t\treturn null;"
+    },
+    {
+        "class_name": "CH.ifa.draw.util.Geom",
+        "function_name": "angleToPoint(Rectangle, double)",
+        "line_start": 139,
+        "line_end": 145,
+        "code_snippet": "int max = r.width;\n\t\t\tint value = x;\n\t\t\tif (value < 0)\n\t\t\t    value = 0;\n\t\t\tif (value > max)\n\t\t\t    value = max;\n\t\t    x= value;"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+        "function_name": "setDrawing(Drawing)",
+        "line_start": 178,
+        "line_end": 189,
+        "code_snippet": "FigureEnumeration k = drawing().figures();\n\t\tDimension d1 = new Dimension(0, 0);\n\t\twhile (k.hasMoreElements()) {\n\t\t    Rectangle r = k.nextFigure().displayBox();\n\t\t    d1.width = Math.max(d1.width, r.x+r.width);\n\t\t    d1.height = Math.max(d1.height, r.y+r.height);\n\t\t}\n\t\tif (fViewSize.height < d1.height || fViewSize.width < d1.width) {\n\t\t    fViewSize.height = d1.height+10;\n\t\t    fViewSize.width = d1.width+10;\n\t\t    setSize(fViewSize);\n\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+        "function_name": "findHandle(int, int)",
+        "line_start": 381,
+        "line_end": 392,
+        "code_snippet": "if (fSelectionHandles == null) {\n\t\t    fSelectionHandles = new Vector();\n\t\t    FigureEnumeration k1 = selectionElements();\n\t\t    while (k1.hasMoreElements()) {\n\t\t        Figure figure = k1.nextFigure();\n\t\t        Enumeration kk = figure.handles().elements();\n\t\t        while (kk.hasMoreElements())\n\t\t            fSelectionHandles.addElement(kk.nextElement());\n\t\t    }\n\t\t}\n\n        Enumeration k = fSelectionHandles.elements();"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+        "function_name": "constrainPoint(Point)",
+        "line_start": 437,
+        "line_end": 445,
+        "code_snippet": "int max = size.width;\n\t\tint value = p.x;\n\t\tif (value < 1)\n\t\t    value = 1;\n\t\tif (value > max)\n\t\t    value = max;\n        //p.x = Math.min(size.width, Math.max(1, p.x));\n        //p.y = Math.min(size.height, Math.max(1, p.y));\n        p.x = value;"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.PasteCommand",
+        "function_name": "execute()",
+        "line_start": 37,
+        "line_end": 42,
+        "code_snippet": "Enumeration k = figures.elements();\n\t\t\tRectangle r1 = ((Figure) k.nextElement()).displayBox();\n\t\t\twhile (k.hasMoreElements())\n\t\t\t    r1.add(((Figure) k.nextElement()).displayBox());\n\n            Rectangle r = r1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.FigureChangeEventMulticaster",
+        "function_name": "remove(EventListener)",
+        "line_start": 74,
+        "line_end": 78,
+        "code_snippet": "FigureChangeListener a1 = (FigureChangeListener)a2;\n\t\t\tFigureChangeListener b1 = (FigureChangeListener)b2;\n\t\t\tif (a1 == null)  return b1;\n\t\t\tif (b1 == null)  return a1;\n\t\t\treturn new FigureChangeEventMulticaster(a1, b1);"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.ConnectionTool",
+        "function_name": "mouseDrag(MouseEvent, int, int)",
+        "line_start": 116,
+        "line_end": 138,
+        "code_snippet": "Figure c = null;\n\t\t\t\n\t\t\tif (fStartConnector == null)\n\t\t\t    c = findSource(x, y, drawing());\n\t\t\telse\n\t\t\t    c = findTarget(x, y, drawing());\n\t\t\t\n\t\t\t// track the figure containing the mouse\n\t\t\tif (c != fTarget) {\n\t\t\t    if (fTarget != null)\n\t\t\t        fTarget.connectorVisibility(false);\n\t\t\t    fTarget = c;\n\t\t\t    if (fTarget != null)\n\t\t\t        fTarget.connectorVisibility(true);\n\t\t\t}\n\t\t\t\n\t\t\tConnector cc = null;\n\t\t\tif (c != null)\n\t\t\t    cc = findConnector(e.getX(), e.getY(), c);\n\t\t\tif (cc != fConnectorTarget)\n\t\t\t    fConnectorTarget = cc;\n\t\t\t\n\t\t\tview().checkDamage();"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.CompositeFigure",
+        "function_name": "findFigureWithout(int, int, Figure)",
+        "line_start": 241,
+        "line_end": 247,
+        "code_snippet": "FigureEnumeration k1 = figuresReverse();\n\t\t\twhile (k1.hasMoreElements()) {\n\t\t\t    Figure figure1 = k1.nextFigure();\n\t\t\t    if (figure1.containsPoint(x, y))\n\t\t\t        return figure1;\n\t\t\t}\n\t\t\treturn null;"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.CompositeFigure",
+        "function_name": "findFigure(Rectangle, Figure)",
+        "line_start": 266,
+        "line_end": 273,
+        "code_snippet": "FigureEnumeration k1 = figuresReverse();\n\t\t\twhile (k1.hasMoreElements()) {\n\t\t\t    Figure figure1 = k1.nextFigure();\n\t\t\t    Rectangle fr1 = figure1.displayBox();\n\t\t\t    if (r.intersects(fr1))\n\t\t\t        return figure1;\n\t\t\t}\n\t\t\treturn null;"
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.BoxHandleKit",
+        "function_name": "addHandles(Figure, Vector#RAW)",
+        "line_start": 38,
+        "line_end": 41,
+        "code_snippet": "handles.addElement(southEast(f));\n\t\thandles.addElement(southWest(f));\n\t\thandles.addElement(northEast(f));\n\t\thandles.addElement(northWest(f));"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "update(FigureChangeEvent)",
+        "line_start": 210,
+        "line_end": 214,
+        "code_snippet": "int newEnd = start()+duration();\n\t\t\tif (newEnd != end()) {\n\t\t\t    setEnd(newEnd);\n\t\t\t    notifyPostTasks();\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "updateDurations()",
+        "line_start": 241,
+        "line_end": 243,
+        "code_snippet": "Enumeration i = fPostTasks.elements();\n\t\t\twhile (i.hasMoreElements())\n\t\t\t    ((PertFigure) i.nextElement()).updateDurations();"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "write(StorableOutput)",
+        "line_start": 267,
+        "line_end": 270,
+        "code_snippet": "dw.writeInt(fPreTasks.size());\n\t\tEnumeration i = fPreTasks.elements();\n\t\twhile (i.hasMoreElements())\n\t\t    dw.writeStorable((Storable) i.nextElement());"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "read(StorableInput)",
+        "line_start": 289,
+        "line_end": 293,
+        "code_snippet": "int size = dr.readInt();\n\t\tVector v = new Vector(size);\n\t\tfor (int i=0; i<size; i++)\n\t\t    v.addElement((Figure)dr.readStorable());\n        fPreTasks = v;"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.net.NodeFigure",
+        "function_name": "initialize()",
+        "line_start": 131,
+        "line_end": 135,
+        "code_snippet": "fConnectors = new Vector(4);\n\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()) );\n\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()) );\n\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()) );\n\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()) );"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "line_start": 37,
+        "line_end": 54,
+        "code_snippet": "if (fTextField == null) {\n\t\t\t    fTextField = new FloatingTextField();\n\t\t\t    fTextField.addActionListener(\n\t\t\t        new ActionListener() {\n\t\t\t            public void actionPerformed(ActionEvent event) {\n\t\t\t                endAction(event);\n\t\t\t            }\n\t\t\t        }\n\t\t\t    );\n\t\t\t}\n\t\t\t\n\t\t\tif (pressedFigure != fURLTarget && fURLTarget != null)\n\t\t\t    endEdit();\n\t\t\tif (pressedFigure != fURLTarget) {\n\t\t\t    fTextField.createOverlay((Container)view());\n\t\t\t    fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));\n\t\t\t    fURLTarget = pressedFigure;\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
+        "function_name": "beginEdit(Figure)",
+        "line_start": 85,
+        "line_end": 89,
+        "code_snippet": "if (fURLTarget != null) {\n\t\t\t    setURL(fURLTarget, fTextField.getText());\n\t\t\t    fURLTarget = null;\n\t\t\t    fTextField.endOverlay();\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawViewer",
+        "function_name": "init()",
+        "line_start": 39,
+        "line_end": 48,
+        "code_snippet": "try {\n\t\t\t    URL url = new URL(getCodeBase(), filename);\n\t\t\t    InputStream stream = url.openStream();\n\t\t\t    StorableInput reader = new StorableInput(stream);\n\t\t\t    fDrawing = (Drawing)reader.readStorable();\n\t\t\t} catch (IOException e) {\n\t\t\t    fDrawing = new StandardDrawing();\n\t\t\t    System.out.println(\"Error when Loading: \" + e);\n\t\t\t    showStatus(\"Error when Loading: \" + e);\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApplet",
+        "function_name": "createButtons(JPanel)",
+        "line_start": 83,
+        "line_end": 86,
+        "code_snippet": "if (fAnimator != null)\n\t\t\t\t\t    endAnimation();\n\t\t\t\t\telse\n\t\t\t\t\t    startAnimation();"
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApp",
+        "function_name": "createAnimationMenu()",
+        "line_start": 112,
+        "line_end": 115,
+        "code_snippet": "if (drawing() instanceof Animatable && fAnimator == null) {\n\t\t\t\t\t    fAnimator = new Animator((Animatable)drawing(), view());\n\t\t\t\t\t    fAnimator.start();\n\t\t\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "line_start": 49,
+        "line_end": 59,
+        "code_snippet": "if (fTextField == null)\n\t\t\t    fTextField = new FloatingTextField();\n\t\t\t\n\t\t\tif (textHolder != getTypingTarget() && getTypingTarget() != null)\n\t\t\t    endEdit();\n\t\t\t\n\t\t\tfTextField.createOverlay((Container)view(), textHolder.getFont());\n\t\t\tfTextField.setBounds(fieldBounds(textHolder), textHolder.getText());\n\t\t\tsetTypingTarget(textHolder);\n\t\t\t\n\t\t\tview().checkDamage();"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextTool",
+        "function_name": "beginEdit(TextHolder)",
+        "line_start": 111,
+        "line_end": 120,
+        "code_snippet": "if (getTypingTarget() != null) {\n\t\t\t    if (fTextField.getText().length() > 0)\n\t\t\t        getTypingTarget().setText(fTextField.getText());\n\t\t\t    else {\n\t\t\t        drawing().remove((Figure)getTypingTarget());\n\t\t\t    }\n\t\t\t    setTypingTarget(null);\n\t\t\t    fTextField.endOverlay();\n\t\t\t    view().checkDamage();\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextFigure",
+        "function_name": "setAttribute(String, Object)",
+        "line_start": 148,
+        "line_end": 151,
+        "code_snippet": "willChange();\n\t\t\tfFont = new Font(font.getName(), font.getStyle(), s.intValue());\n\t\t\tmarkDirty();\n\t\t\tchanged();"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextFigure",
+        "function_name": "connect(Figure)",
+        "line_start": 287,
+        "line_end": 297,
+        "code_snippet": "if (fLocator != null) {\n\t\t    Point p = fLocator.locate(fObservedFigure);\n\t\t    p.x -= size().width/2 + fOriginX;\n\t\t    p.y -= size().height/2 + fOriginY;\n\t\t\n\t\t    if (p.x != 0 || p.y != 0) {\n\t\t        willChange();\n\t\t        basicMoveBy(p.x, p.y);\n\t\t        changed();\n\t\t    }\n\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ScribbleTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "line_start": 60,
+        "line_end": 69,
+        "code_snippet": "int x1 = e.getX();\n\t\t\tint y1 = e.getY();\n\t\t\tif (fScribble == null) {\n\t\t\t    fScribble = new PolyLineFigure(x1, y1);\n\t\t\t    view().add(fScribble);\n\t\t\t} else if (fLastX != x1 || fLastY != y1)\n\t\t\t    fScribble.addPoint(x1, y1);\n\t\t\t\n\t\t\tfLastX = x1;\n\t\t\tfLastY = y1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.RadiusHandle",
+        "function_name": "invokeStep(int, int, int, int, DrawingView)",
+        "line_start": 37,
+        "line_end": 43,
+        "code_snippet": "int max = r.width;\n\t\tint value = 2*(fRadius.x + dx);\n\t\tif (value < 0)\n\t\t    value = 0;\n\t\tif (value > max)\n\t\t    value = max;\n        int rx = value;"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.PolyLineFigure",
+        "function_name": "draw(Graphics)",
+        "line_start": 193,
+        "line_end": 202,
+        "code_snippet": "if (getStartDecoration() != null) {\n\t\t    Point p11 = (Point)fPoints.elementAt(0);\n\t\t    Point p21 = (Point)fPoints.elementAt(1);\n\t\t    getStartDecoration().draw(g, p11.x, p11.y, p21.x, p21.y);\n\t\t}\n\t\tif (getEndDecoration() != null) {\n\t\t    Point p3 = (Point)fPoints.elementAt(fPoints.size()-2);\n\t\t    Point p4 = (Point)fPoints.elementAt(fPoints.size()-1);\n\t\t    getEndDecoration().draw(g, p4.x, p4.y, p3.x, p3.y);\n\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.PolyLineFigure",
+        "function_name": "write(StorableOutput)",
+        "line_start": 318,
+        "line_end": 320,
+        "code_snippet": "dw.writeInt(fFrameColor.getRed());\n\t\tdw.writeInt(fFrameColor.getGreen());\n\t\tdw.writeInt(fFrameColor.getBlue());"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.InsertImageCommand",
+        "function_name": "execute()",
+        "line_start": 37,
+        "line_end": 40,
+        "code_snippet": "Iconkit r = Iconkit.instance();\n\t\tr.registerImage(fImage);\n\t\tr.loadRegisteredImages((Component)fView);\n\t\tImage image = r.getImage(fImage);"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.GroupCommand",
+        "function_name": "execute()",
+        "line_start": 41,
+        "line_end": 43,
+        "code_snippet": "Enumeration k = selected.elements();\n\t\t\twhile (k.hasMoreElements())\n\t\t\t    group.add((Figure) k.nextElement());"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowHandle",
+        "function_name": "invokeStep(int, int, int, int, DrawingView)",
+        "line_start": 42,
+        "line_end": 62,
+        "code_snippet": "int x1 = p1.x + ddx;\n\t\t\tLineConnection line1 = ownerConnection();\n\t\t\tFigure startFigure = line1.start().owner();\n\t\t\tFigure endFigure = line1.end().owner();\n\t\t\tRectangle start = startFigure.displayBox();\n\t\t\tRectangle end = endFigure.displayBox();\n\t\t\tInsets i1 = startFigure.connectionInsets();\n\t\t\tInsets i2 = endFigure.connectionInsets();\n\t\t\t\n\t\t\tint r1x, r1width, r2x, r2width;\n\t\t\tr1x = start.x + i1.left;\n\t\t\tr1width = start.width - i1.left - i1.right-1;\n\t\t\t\n\t\t\tr2x = end.x + i2.left;\n\t\t\tr2width = end.width - i2.left - i2.right-1;\n\t\t\t\n\t\t\tif (fSegment == 0)\n\t\t\t    x1 = Geom.range(r1x, r1x + r1width, x1);\n\t\t\tif (fSegment == line1.pointCount()-2)\n\t\t\t    x1 = Geom.range(r2x, r2x + r2width, x1);\n\t\t\tint cx = x1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowHandle",
+        "function_name": "constrainX(int)",
+        "line_start": 115,
+        "line_end": 121,
+        "code_snippet": "int max = r1x + r1width;\n\t\t\tint value = x;\n\t\t\tif (value < r1x)\n\t\t\t    value = r1x;\n\t\t\tif (value > max)\n\t\t\t    value = max;\n\t\t\tx = value;"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowHandle",
+        "function_name": "constrainY(int)",
+        "line_start": 144,
+        "line_end": 150,
+        "code_snippet": "int max = r1y + r1height;\n\t\t\tint value = y;\n\t\t\tif (value < r1y)\n\t\t\t    value = r1y;\n\t\t\tif (value > max)\n\t\t\t    value = max;\n\t\t\ty = value;"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowConnection",
+        "function_name": "updatePoints()",
+        "line_start": 72,
+        "line_end": 84,
+        "code_snippet": "int direction = 0;\n\t\t\tint vx = r2.x + r2.width/2 - (r1.x + r1.width/2);\n\t\t\tint vy = r2.y + r2.height/2 - (r1.y + r1.height/2);\n\t\t\t\n\t\t\tif (vy < vx && vx > -vy)\n\t\t\t    direction = Geom.EAST;\n\t\t\telse if (vy > vx && vy > -vx)\n\t\t\t    direction = Geom.NORTH;\n\t\t\telse if (vx < vy && vx < -vy)\n\t\t\t    direction = Geom.WEST;\n\t\t\telse\n\t\t\t    direction = Geom.SOUTH;\n            int dir = direction;"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.AttributeFigure",
+        "function_name": "getAttribute(String)",
+        "line_start": 136,
+        "line_end": 138,
+        "code_snippet": "if (fgDefaultAttributes == null)\n\t\t    initializeAttributes();\n\t\treturn fgDefaultAttributes.get(name);"
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.AbstractLineDecoration",
+        "function_name": "write(StorableOutput)",
+        "line_start": 64,
+        "line_end": 70,
+        "code_snippet": "Color color = getFillColor();\n\t\t\tif (color != null) {\n\t\t\t    dw.writeString(\"FillColor\");\n\t\t\t    dw.writeInt(color.getRed());\n\t\t\t    dw.writeInt(color.getGreen());\n\t\t\t    dw.writeInt(color.getBlue());\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.SplitPaneDrawApplication",
+        "function_name": "createContents(StandardDrawingView)",
+        "line_start": 60,
+        "line_end": 63,
+        "code_snippet": "JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n\t\t\tdividedContents.setAlignmentX(LEFT_ALIGNMENT);\n\t\t\tdividedContents.setOneTouchExpandable(true);\n\t\t\treturn dividedContents;"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "line_start": 70,
+        "line_end": 80,
+        "code_snippet": "int x1 = e.getX();\n\t\tint y1 = e.getY();\n\t\tif (fPolygon == null) {\n\t\t      fPolygon = new PolygonFigure(x1, y1);\n\t\t      view().add(fPolygon);\n\t\t      fPolygon.addPoint(x1, y1);\n\t\t  } else if (fLastX != x1 || fLastY != y1)\n\t\t      fPolygon.addPoint(x1, y1);\n\t\t\n\t\t  fLastX = x1;\n\t\t  fLastY = y1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+        "function_name": "scaleRotate(Point, Polygon, Point)",
+        "line_start": 192,
+        "line_end": 201,
+        "code_snippet": "long sx = 0;\n\tlong sy = 0;\n\tint n1 = originalPolygon.npoints;\n\tfor (int i1 = 0; i1 < n1; i1++) {\n\t  sx += originalPolygon.xpoints[i1];\n\t  sy += originalPolygon.ypoints[i1];\n\t}\n\n    // use center to determine relative angles and lengths\n    Point ctr = new Point((int)(sx/n1), (int)(sy/n1));"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+        "function_name": "splitSegment(int, int)",
+        "line_start": 268,
+        "line_end": 281,
+        "code_snippet": "double dist = TOO_CLOSE;\n\tint best = -1;\n\t\n\tfor (int i1 = 0; i1 < fPoly.npoints; i1++) {\n\t  int n = (i1 + 1) % fPoly.npoints;\n\t  double d =  distanceFromLine(fPoly.xpoints[i1], fPoly.ypoints[i1],\n\t                               fPoly.xpoints[n], fPoly.ypoints[n],\n\t                               x, y);\n\t  if (d < dist) {\n\t    dist = d;\n\t    best = i1;\n\t  }\n\t}\n\tint i = best;"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+        "function_name": "chop(Polygon, Point)",
+        "line_start": 481,
+        "line_end": 488,
+        "code_snippet": "long sx = 0;\n\tlong sy = 0;\n\tint n = poly.npoints;\n\tfor (int i1 = 0; i1 < n; i1++) {\n\t  sx += poly.xpoints[i1];\n\t  sy += poly.ypoints[i1];\n\t}\n\tPoint ctr = new Point((int)(sx/n), (int)(sy/n));"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.DiamondFigure",
+        "function_name": "draw(Graphics)",
+        "line_start": 42,
+        "line_end": 48,
+        "code_snippet": "Rectangle r = displayBox();\n\tPolygon p1 = new Polygon();\n\tp1.addPoint(r.x, r.y+r.height/2);\n\tp1.addPoint(r.x+r.width/2, r.y);\n\tp1.addPoint(r.x+r.width, r.y+r.height/2);\n\tp1.addPoint(r.x+r.width/2, r.y+r.height);\n\tPolygon p = p1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "line_start": 51,
+        "line_end": 60,
+        "code_snippet": "Figure figure = drawing().findFigure(e.getX(), e.getY());\n\t\t\tif (figure != null) {\n\t\t\t    Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n\t\t\t    if (attribute == null) {\n\t\t\t        figure = drawing().findFigureInside(e.getX(), e.getY());\n\t\t\t    }\n\t\t\t\tif (figure != null) {\n\t\t\t    \tshowPopupMenu(figure, e.getX(), e.getY(), e.getComponent());\n\t\t\t    }\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+        "function_name": "mouseUp(MouseEvent, int, int)",
+        "line_start": 94,
+        "line_end": 103,
+        "code_snippet": "Figure figure = drawing().findFigure(e.getX(), e.getY());\n\t\t\tif (figure != null) {\n\t\t\t    Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n\t\t\t    if (attribute == null) {\n\t\t\t        figure = drawing().findFigureInside(e.getX(), e.getY());\n\t\t\t    }\n\t\t\t\tif (figure != null) {\n\t\t\t    \tshowPopupMenu(figure, e.getX(), e.getY(), e.getComponent());\n\t\t\t    }\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+        "function_name": "handlePopupMenu(MouseEvent, int, int)",
+        "line_start": 155,
+        "line_end": 168,
+        "code_snippet": "Component comp = e.getComponent();\n\t\t\t\tObject attribute1 = figure.getAttribute(Figure.POPUP_MENU);\n\t\t\t\tif ((attribute1 != null) && (attribute1 instanceof JPopupMenu)) {\n\t\t\t\t    JPopupMenu popup = (JPopupMenu)attribute1;\n\t\t\t\t    if (popup instanceof PopupMenuFigureSelection) {\n\t\t\t\t        ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);\n\t\t\t\t    }\n\t\t\t\t    // calculate offsets for internal MDI frames\n\t\t\t\t    Point newLocation = new Point(e.getX(), e.getY());\n\t\t\t\t    adjustOffsets(comp.getParent(), newLocation);\n\t\t\t\t\tpopup.setLocation(newLocation);\n\t\t\t\t\tpopup.setInvoker(comp);\n\t\t\t\t\tpopup.setVisible(true);\n\t\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.application.DrawApplication",
+        "function_name": "promptOpen()",
+        "line_start": 698,
+        "line_end": 711,
+        "code_snippet": "String file = openDialog.getSelectedFile().getAbsolutePath();\n\t\t\t\ttry {\n\t\t\t\t    Drawing restoredDrawing = foundFormat.restore(file);\n\t\t\t\t    if (restoredDrawing != null) {\n\t\t\t\t        newWindow();\n\t\t\t\t        setDrawing(restoredDrawing);\n\t\t\t\t        setDrawingTitle(file);\n\t\t\t\t    }\n\t\t\t\t    else {\n\t\t\t\t       showStatus(\"Unknown file type: could not open file '\" + file + \"'\");\n\t\t\t\t    }\n\t\t\t\t} catch (IOException e) {\n\t\t\t\t    showStatus(\"Error: \" + e);\n\t\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.application.DrawApplication",
+        "function_name": "promptSaveAs()",
+        "line_start": 724,
+        "line_end": 726,
+        "code_snippet": "JFileChooser saveDialog1 = new JFileChooser();\n\t\tsaveDialog1.setDialogTitle(\"Save File...\");\n        JFileChooser saveDialog = saveDialog1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "init()",
+        "line_start": 71,
+        "line_end": 94,
+        "code_snippet": "attributes.add(new JLabel(\"Fill\"));\n\t\tfFillColor = createColorChoice(\"FillColor\");\n\t\tattributes.add(fFillColor);\n\t\t\n\t\tattributes.add(new JLabel(\"Text\"));\n\t\tfTextColor = createColorChoice(\"TextColor\");\n\t\tattributes.add(fTextColor);\n\t\t\n\t\tattributes.add(new JLabel(\"Pen\"));\n\t\tfFrameColor = createColorChoice(\"FrameColor\");\n\t\tattributes.add(fFrameColor);\n\t\t\n\t\tattributes.add(new JLabel(\"Arrow\"));\n\t\tCommandChoice choice = new CommandChoice();\n\t\tfArrowChoice = choice;\n\t\tchoice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));\n\t\tchoice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));\n\t\tchoice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));\n\t\tchoice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));\n\t\tattributes.add(fArrowChoice);\n\t\t\n\t\tattributes.add(new JLabel(\"Font\"));\n\t\tfFontChoice = createFontChoice();\n\t\tattributes.add(fFontChoice);"
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "createAttributeChoices(JPanel)",
+        "line_start": 163,
+        "line_end": 167,
+        "code_snippet": "CommandChoice choice1 = new CommandChoice();\n\t\tString fonts[] = Toolkit.getDefaultToolkit().getFontList();\n\t\tfor (int i = 0; i < fonts.length; i++)\n\t\t    choice1.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i],  fView));\n        fFontChoice = choice1;"
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "loadDrawing(String)",
+        "line_start": 435,
+        "line_end": 442,
+        "code_snippet": "toolDone();\n\t\t\tString type = guessType(filename);\n\t\t\tif (type.equals(\"storable\"))\n\t\t\t    readFromStorableInput(filename);\n\t\t\telse if (type.equals(\"serialized\"))\n\t\t\t    readFromObjectInput(filename);\n\t\t\telse\n\t\t\t    showStatus(\"Unknown file type\");"
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "readDrawing(String)",
+        "line_start": 452,
+        "line_end": 465,
+        "code_snippet": "try {\n\t\t\t    URL url = new URL(getCodeBase(), filename);\n\t\t\t    InputStream stream = url.openStream();\n\t\t\t    ObjectInput input = new ObjectInputStream(stream);\n\t\t\t    fDrawing.release();\n\t\t\t    fDrawing = (Drawing)input.readObject();\n\t\t\t    fView.setDrawing(fDrawing);\n\t\t\t} catch (IOException e) {\n\t\t\t    initDrawing();\n\t\t\t    showStatus(\"Error: \" + e);\n\t\t\t} catch (ClassNotFoundException e) {\n\t\t\t    initDrawing();\n\t\t\t    showStatus(\"Class not found: \" + e);\n\t\t\t}"
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "readFromStorableInput(String)",
+        "line_start": 480,
+        "line_end": 482,
+        "code_snippet": "fDrawing = createDrawing();\n\t\t\tfView.setDrawing(fDrawing);\n\t\t\ttoolDone();"
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "readFromObjectInput(String)",
+        "line_start": 496,
+        "line_end": 498,
+        "code_snippet": "fDrawing = createDrawing();\n\t\t\tfView.setDrawing(fDrawing);\n\t\t\ttoolDone();"
+    }
+]

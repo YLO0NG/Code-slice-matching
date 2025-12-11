@@ -1,0 +1,35 @@
+{
+  "className": "TextParser",
+  "methodName": "calculateTFIDF",
+  "brief": "public TreeMap<String, Double> calculateTFIDF(){}",
+  "methodSignature": "calculateTFIDF()",
+  "sourceCode": "public TreeMap<String, Double> calculateTFIDF() {\n\t\tTreeMap<String, Double> tfidf = new TreeMap<String, Double>();\n\t\tdouble numberOfDocuments = 0.0;\n\t\tdouble idf = 0.0;\n\t\tfor(String word : frequencies.keySet()) {\n\t\t\tfor(Document document : documents) {\n\t\t\t\tif(document.contains(word)) {\n\t\t\t\t\tnumberOfDocuments++;\n\t\t\t\t}\n\t\t\t}\n\t\t\tidf = Math.log(1 + documents.size()/numberOfDocuments);\n\t\t\ttfidf.put(word, Math.log(1+frequencies.get(word))*idf);\n\t\t\tnumberOfDocuments = 0.0;\n\t\t}\n\t\treturn tfidf;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Document": [
+      "contains(String)"
+    ],
+    "java.lang.Math": [
+      "log(double)"
+    ],
+    "java.util.ArrayList": [
+      "size()"
+    ],
+    "java.util.TreeMap": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "public TreeMap<String, Double> calculateTFIDF() {\n    TreeMap<String, Double> tfidf = new TreeMap<String, Double>();\n    double numberOfDocuments = 0.0;\n    double idf = 0.0;\n    for (String word : frequencies.keySet()) {\n        for (Document document : documents) {\n            if (document.contains(word)) {\n                numberOfDocuments++;\n            }\n        }\n        idf = Math.log(1 + documents.size() / numberOfDocuments);\n        tfidf.put(word, Math.log(1 + frequencies.get(word)) * idf);\n        numberOfDocuments = 0.0;\n    }\n    return tfidf;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

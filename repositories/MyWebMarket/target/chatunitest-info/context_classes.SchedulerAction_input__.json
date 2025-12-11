@@ -1,0 +1,7 @@
+{
+  "targetClass": "classes.SchedulerAction",
+  "targetMethod": "input()",
+  "dependentFields": {},
+  "dependentMethods": {},
+  "dependentMethodBodies": {}
+}

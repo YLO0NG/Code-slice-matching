@@ -1,0 +1,23 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectArtifactByURL",
+  "brief": "public static String selectArtifactByURL(String entityType, String URL){}",
+  "methodSignature": "selectArtifactByURL(String, String)",
+  "sourceCode": "public static String selectArtifactByURL(String entityType, String URL) {\n\t\treturn \"select * from \"+entityType+\" where url=\\'\"+URL+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String selectArtifactByURL(String entityType, String URL) {\n    return \"select * from \" + entityType + \" where url=\\'\" + URL + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

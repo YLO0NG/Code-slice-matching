@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.standard.CompositeFigure",
+  "targetMethod": "findFigure(Rectangle, Figure)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.standard.CompositeFigure": "protected Vector fFigures;\nprivate static final long serialVersionUID = 7408153435700021866L;\nprivate int compositeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.FigureEnumeration": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public Rectangle displayBox();\npublic boolean includes(Figure figure);",
+    "CH.ifa.draw.standard.CompositeFigure": "public final FigureEnumeration figuresReverse(){}",
+    "CH.ifa.draw.framework.FigureEnumeration": "public Figure nextFigure();"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Gets the display box of a figure\n     * @see #basicDisplayBox\n     \npublic Rectangle displayBox();\n\n     * Checks whether the given figure is contained in this figure.\n     \npublic boolean includes(Figure figure);",
+    "CH.ifa.draw.standard.CompositeFigure": "* Returns an Enumeration for accessing the contained figures\n     * in the reverse drawing order.\n     \npublic final FigureEnumeration figuresReverse() {\n        return new ReverseFigureEnumerator(fFigures);\n    }",
+    "CH.ifa.draw.framework.FigureEnumeration": "* Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     \npublic Figure nextFigure();"
+  }
+}

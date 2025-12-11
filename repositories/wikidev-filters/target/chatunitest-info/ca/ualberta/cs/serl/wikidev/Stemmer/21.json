@@ -1,0 +1,18 @@
+{
+  "className": "Stemmer",
+  "methodName": "Stemmer",
+  "brief": "public Stemmer()\r\n  {}",
+  "methodSignature": "Stemmer()",
+  "sourceCode": "public Stemmer()\n   {  b = new char[INC];\n      i = 0;\n      i_end = 0;\n   }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Stemmer() {\n    b = new char[INC];\n    i = 0;\n    i_end = 0;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

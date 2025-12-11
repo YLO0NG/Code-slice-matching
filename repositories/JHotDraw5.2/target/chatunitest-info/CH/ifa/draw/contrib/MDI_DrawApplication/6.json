@@ -1,0 +1,22 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "setDesktop",
+  "brief": "protected void setDesktop(JComponent newDesktop){}",
+  "methodSignature": "setDesktop(JComponent)",
+  "sourceCode": "protected void setDesktop(JComponent newDesktop) {\n\t\tdesktop = newDesktop;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JComponent"
+  ],
+  "dependentMethods": {
+    "javax.swing.JComponent": []
+  },
+  "full_method_info": "/**\n * Set the component, in which the content is embedded. This component\n * acts as a desktop for the content.\n */\nprotected void setDesktop(JComponent newDesktop) {\n    desktop = newDesktop;\n}",
+  "method_comment": "\n\t* Set the component, in which the content is embedded. This component\n\t* acts as a desktop for the content.\n\t",
+  "method_annotation": ""
+}

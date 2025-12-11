@@ -1,0 +1,22 @@
+{
+  "className": "URL",
+  "methodName": "setUrl",
+  "brief": "public void setUrl(String url){}",
+  "methodSignature": "setUrl(String)",
+  "sourceCode": "public void setUrl(String url) {\n\t\tthis.url = url;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param  url\n * @uml.property  name=\"url\"\n */\npublic void setUrl(String url) {\n    this.url = url;\n}",
+  "method_comment": "\n\t * @param  url\n\t * @uml.property  name=\"url\"\n\t ",
+  "method_annotation": ""
+}

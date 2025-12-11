@@ -1,0 +1,24 @@
+{
+  "className": "CreationTool",
+  "methodName": "CreationTool",
+  "brief": "public CreationTool(DrawingView view, Figure prototype){}",
+  "methodSignature": "CreationTool(DrawingView, Figure)",
+  "sourceCode": "public CreationTool(DrawingView view, Figure prototype) {\n        super(view);\n        fPrototype = prototype;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "public CreationTool(DrawingView view, Figure prototype) {\n    super(view);\n    fPrototype = prototype;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

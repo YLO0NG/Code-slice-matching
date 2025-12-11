@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getUser_name",
+  "brief": "public String getUser_name(){}",
+  "methodSignature": "getUser_name()",
+  "sourceCode": "public String getUser_name() {\n\t\treturn user_name;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"user_name\"\n */\npublic String getUser_name() {\n    return user_name;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"user_name\"\n\t ",
+  "method_annotation": ""
+}

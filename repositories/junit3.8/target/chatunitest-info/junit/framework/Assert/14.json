@@ -1,0 +1,27 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(String message, long expected, long actual){}",
+  "methodSignature": "assertEquals(String, long, long)",
+  "sourceCode": "static public void assertEquals(String message, long expected, long actual) {\r\n\t    assertEquals(message, new Long(expected), new Long(actual));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "long",
+    "long"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.framework.Assert": [
+      "assertEquals(String, Object, Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two longs are equal. If they are not\r\n * an AssertionFailedError is thrown with the given message.\r\n */\r\nstatic public void assertEquals(String message, long expected, long actual) {\r\n    assertEquals(message, new Long(expected), new Long(actual));\r\n}",
+  "method_comment": "\r\n\t * Asserts that two longs are equal. If they are not\r\n\t * an AssertionFailedError is thrown with the given message.\r\n\t ",
+  "method_annotation": ""
+}

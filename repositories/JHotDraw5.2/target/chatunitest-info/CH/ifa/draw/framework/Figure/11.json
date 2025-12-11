@@ -1,0 +1,21 @@
+{
+  "className": "Figure",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y);",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Checks if a point is inside the figure.\n */\npublic boolean containsPoint(int x, int y);",
+  "method_comment": "\n     * Checks if a point is inside the figure.\n     ",
+  "method_annotation": ""
+}

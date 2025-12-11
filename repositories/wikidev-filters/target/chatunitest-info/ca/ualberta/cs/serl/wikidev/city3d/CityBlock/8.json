@@ -1,0 +1,26 @@
+{
+  "className": "CityBlock",
+  "methodName": "addArtifact",
+  "brief": "public void addArtifact(IArtifact artifact, int index){}",
+  "methodSignature": "addArtifact(IArtifact, int)",
+  "sourceCode": "public void addArtifact(IArtifact artifact, int index) {\n\t\tartifacts.put(artifact, index);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.util.HashMap": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "public void addArtifact(IArtifact artifact, int index) {\n    artifacts.put(artifact, index);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

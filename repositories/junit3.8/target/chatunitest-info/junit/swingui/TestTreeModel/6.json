@@ -1,0 +1,35 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "getIndexOfChild",
+  "brief": "public int getIndexOfChild(Object parent, Object child){}",
+  "methodSignature": "getIndexOfChild(Object, Object)",
+  "sourceCode": "public int getIndexOfChild(Object parent, Object child) {\r\n\t\tTestSuite suite= isTestSuite(parent);\r\n\t\tif (suite != null) {\r\n\t\t\tint i= 0;\r\n\t\t\tfor (Enumeration e= suite.tests(); e.hasMoreElements(); i++) {\r\n\t\t\t\tif (child.equals((Test)e.nextElement()))\r\n\t\t\t\t\treturn i;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn -1; \r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "isTestSuite(Object)"
+    ],
+    "junit.framework.TestSuite": [
+      "tests()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Gets the index of a test in a test suite\r\n */\r\npublic int getIndexOfChild(Object parent, Object child) {\r\n    TestSuite suite = isTestSuite(parent);\r\n    if (suite != null) {\r\n        int i = 0;\r\n        for (Enumeration e = suite.tests(); e.hasMoreElements(); i++) {\r\n            if (child.equals((Test) e.nextElement()))\r\n                return i;\r\n        }\r\n    }\r\n    return -1;\r\n}",
+  "method_comment": "\r\n\t * Gets the index of a test in a test suite\r\n\t ",
+  "method_annotation": ""
+}

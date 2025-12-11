@@ -1,0 +1,22 @@
+{
+  "className": "TestSetup",
+  "methodName": "TestSetup",
+  "brief": "public TestSetup(Test test){}",
+  "methodSignature": "TestSetup(Test)",
+  "sourceCode": "public TestSetup(Test test) {\r\n\t\tsuper(test);\r\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": []
+  },
+  "full_method_info": "public TestSetup(Test test) {\r\n    super(test);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

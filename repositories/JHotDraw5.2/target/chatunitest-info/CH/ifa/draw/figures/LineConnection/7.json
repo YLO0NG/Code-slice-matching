@@ -1,0 +1,23 @@
+{
+  "className": "LineConnection",
+  "methodName": "handleDisconnect",
+  "brief": "protected void handleDisconnect(Figure start, Figure end){}",
+  "methodSignature": "handleDisconnect(Figure, Figure)",
+  "sourceCode": "protected void handleDisconnect(Figure start, Figure end) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Handles the disconnection of a connection.\n * Override this method to handle this event.\n */\nprotected void handleDisconnect(Figure start, Figure end) {\n}",
+  "method_comment": "\n     * Handles the disconnection of a connection.\n     * Override this method to handle this event.\n     ",
+  "method_annotation": ""
+}

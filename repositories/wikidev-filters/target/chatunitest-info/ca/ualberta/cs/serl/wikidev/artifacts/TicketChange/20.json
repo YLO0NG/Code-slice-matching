@@ -1,0 +1,31 @@
+{
+  "className": "TicketChange",
+  "methodName": "TicketChange",
+  "brief": "public TicketChange(String externalAuthorUsername,\r\n\t\t\tString fieldChanged, int id, String newValue, String oldValue,\r\n\t\t\tint ticket_dr_id, int ticket_id, int ticket_project_name,\r\n\t\t\tTimestamp timestamp){}",
+  "methodSignature": "TicketChange(String, String, int, String, String, int, int, int, Timestamp)",
+  "sourceCode": "public TicketChange(String externalAuthorUsername,\n\t\t\tString fieldChanged, int id, String newValue, String oldValue,\n\t\t\tint ticket_dr_id, int ticket_id, int ticket_project_name,\n\t\t\tTimestamp timestamp) {\n\t\tthis.externalAuthorUsername = externalAuthorUsername;\n\t\tthis.fieldChanged = fieldChanged;\n\t\tthis.id = id;\n\t\tthis.newValue = newValue;\n\t\tthis.oldValue = oldValue;\n\t\tthis.project_ticket_id = ticket_dr_id;\n\t\tthis.ticket_id = ticket_id;\n\t\tthis.project_id = ticket_project_name;\n\t\tthis.timestamp = timestamp;\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String",
+    "int",
+    "String",
+    "String",
+    "int",
+    "int",
+    "int",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public TicketChange(String externalAuthorUsername, String fieldChanged, int id, String newValue, String oldValue, int ticket_dr_id, int ticket_id, int ticket_project_name, Timestamp timestamp) {\n    this.externalAuthorUsername = externalAuthorUsername;\n    this.fieldChanged = fieldChanged;\n    this.id = id;\n    this.newValue = newValue;\n    this.oldValue = oldValue;\n    this.project_ticket_id = ticket_dr_id;\n    this.ticket_id = ticket_id;\n    this.project_id = ticket_project_name;\n    this.timestamp = timestamp;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

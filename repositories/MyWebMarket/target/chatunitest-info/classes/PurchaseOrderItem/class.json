@@ -1,0 +1,92 @@
+{
+  "fullClassName": "classes.PurchaseOrderItem",
+  "className": "PurchaseOrderItem",
+  "index": 12,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Serializable]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "@Entity(name=\"PURCHASE_ORDER_ITEM\")\r\npublic class PurchaseOrderItem",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.Serializable;",
+    "import javax.persistence.Column;",
+    "import javax.persistence.Entity;",
+    "import javax.persistence.FetchType;",
+    "import javax.persistence.GeneratedValue;",
+    "import javax.persistence.Id;",
+    "import javax.persistence.JoinColumn;",
+    "import javax.persistence.ManyToOne;",
+    "import org.hibernate.annotations.GenericGenerator;",
+    "import org.hibernate.annotations.NaturalId;"
+  ],
+  "fields": [
+    "private PurchaseOrder purchaseOrder;",
+    "private Integer id;",
+    "private Product product;",
+    "private Double price;",
+    "private Integer quantity;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Serializable"
+  ],
+  "methodSigs": {
+    "getPurchaseOrder()": "0",
+    "setPurchaseOrder(PurchaseOrder)": "1",
+    "getId()": "2",
+    "setId(Integer)": "3",
+    "getProduct()": "4",
+    "setProduct(Product)": "5",
+    "getPrice()": "6",
+    "setPrice(Double)": "7",
+    "getQuantity()": "8",
+    "setQuantity(Integer)": "9"
+  },
+  "methodsBrief": [
+    "@NaturalId\r\n\t@ManyToOne(fetch=FetchType.EAGER)\r\n\t@JoinColumn(name=\"ID_PURCHASE_ORDER\",nullable=false)\r\n\tpublic PurchaseOrder getPurchaseOrder(){}",
+    "public void setPurchaseOrder( PurchaseOrder purchaseOrder ){}",
+    "@Id\r\n\t@GenericGenerator(name = \"generator\", strategy = \"increment\")\r\n    @GeneratedValue(generator = \"generator\")\r\n    @Column(name=\"ID_PURCHASE_ORDER_ITEM\", nullable=false)\r\n\tpublic Integer getId(){}",
+    "public void setId( Integer id ){}",
+    "@ManyToOne(fetch=FetchType.EAGER)\r\n\t@JoinColumn(name=\"ID_PRODUCT\",nullable=false)\r\n\tpublic Product getProduct(){}",
+    "public void setProduct( Product product ){}",
+    "@Column(name=\"PRICE\", nullable=false)\r\n\tpublic Double getPrice(){}",
+    "public void setPrice( Double price ){}",
+    "@Column(name=\"QUANTITY\", nullable=false)\r\n\tpublic Integer getQuantity(){}",
+    "public void setQuantity( Integer quantity ){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getPurchaseOrder()",
+    "setPurchaseOrder(PurchaseOrder)",
+    "getId()",
+    "setId(Integer)",
+    "getProduct()",
+    "setProduct(Product)",
+    "getPrice()",
+    "setPrice(Double)",
+    "getQuantity()",
+    "setQuantity(Integer)"
+  ],
+  "getterSetterBrief": [
+    "@NaturalId\r\n\t@ManyToOne(fetch=FetchType.EAGER)\r\n\t@JoinColumn(name=\"ID_PURCHASE_ORDER\",nullable=false)\r\n\tpublic PurchaseOrder getPurchaseOrder(){}",
+    "public void setPurchaseOrder( PurchaseOrder purchaseOrder ){}",
+    "@Id\r\n\t@GenericGenerator(name = \"generator\", strategy = \"increment\")\r\n    @GeneratedValue(generator = \"generator\")\r\n    @Column(name=\"ID_PURCHASE_ORDER_ITEM\", nullable=false)\r\n\tpublic Integer getId(){}",
+    "public void setId( Integer id ){}",
+    "@ManyToOne(fetch=FetchType.EAGER)\r\n\t@JoinColumn(name=\"ID_PRODUCT\",nullable=false)\r\n\tpublic Product getProduct(){}",
+    "public void setProduct( Product product ){}",
+    "@Column(name=\"PRICE\", nullable=false)\r\n\tpublic Double getPrice(){}",
+    "public void setPrice( Double price ){}",
+    "@Column(name=\"QUANTITY\", nullable=false)\r\n\tpublic Integer getQuantity(){}",
+    "public void setQuantity( Integer quantity ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package classes;\n\nimport java.io.Serializable;\nimport javax.persistence.Column;\nimport javax.persistence.Entity;\nimport javax.persistence.FetchType;\nimport javax.persistence.GeneratedValue;\nimport javax.persistence.Id;\nimport javax.persistence.JoinColumn;\nimport javax.persistence.ManyToOne;\nimport org.hibernate.annotations.GenericGenerator;\nimport org.hibernate.annotations.NaturalId;\n\n@Entity(name = \"PURCHASE_ORDER_ITEM\")\npublic class PurchaseOrderItem implements Serializable {\n\n    private PurchaseOrder purchaseOrder;\n\n    private Integer id;\n\n    private Product product;\n\n    private Double price;\n\n    private Integer quantity;\n\n    @NaturalId\n    @ManyToOne(fetch = FetchType.EAGER)\n    @JoinColumn(name = \"ID_PURCHASE_ORDER\", nullable = false)\n    public PurchaseOrder getPurchaseOrder() {\n        return purchaseOrder;\n    }\n\n    public void setPurchaseOrder(PurchaseOrder purchaseOrder) {\n        this.purchaseOrder = purchaseOrder;\n    }\n\n    @Id\n    @GenericGenerator(name = \"generator\", strategy = \"increment\")\n    @GeneratedValue(generator = \"generator\")\n    @Column(name = \"ID_PURCHASE_ORDER_ITEM\", nullable = false)\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    @ManyToOne(fetch = FetchType.EAGER)\n    @JoinColumn(name = \"ID_PRODUCT\", nullable = false)\n    public Product getProduct() {\n        return product;\n    }\n\n    public void setProduct(Product product) {\n        this.product = product;\n    }\n\n    @Column(name = \"PRICE\", nullable = false)\n    public Double getPrice() {\n        return price;\n    }\n\n    public void setPrice(Double price) {\n        this.price = price;\n    }\n\n    @Column(name = \"QUANTITY\", nullable = false)\n    public Integer getQuantity() {\n        return quantity;\n    }\n\n    public void setQuantity(Integer quantity) {\n        this.quantity = quantity;\n    }\n}\n",
+  "classDeclarationCode": "@Entity(name = \"PURCHASE_ORDER_ITEM\")\npublic class PurchaseOrderItem implements Serializable {\n\n    private PurchaseOrder purchaseOrder;\n\n    private Integer id;\n\n    private Product product;\n\n    private Double price;\n\n    private Integer quantity;\n\n    @NaturalId\n    @ManyToOne(fetch = FetchType.EAGER)\n    @JoinColumn(name = \"ID_PURCHASE_ORDER\", nullable = false)\n    public PurchaseOrder getPurchaseOrder() {\n        return purchaseOrder;\n    }\n\n    public void setPurchaseOrder(PurchaseOrder purchaseOrder) {\n        this.purchaseOrder = purchaseOrder;\n    }\n\n    @Id\n    @GenericGenerator(name = \"generator\", strategy = \"increment\")\n    @GeneratedValue(generator = \"generator\")\n    @Column(name = \"ID_PURCHASE_ORDER_ITEM\", nullable = false)\n    public Integer getId() {\n        return id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    @ManyToOne(fetch = FetchType.EAGER)\n    @JoinColumn(name = \"ID_PRODUCT\", nullable = false)\n    public Product getProduct() {\n        return product;\n    }\n\n    public void setProduct(Product product) {\n        this.product = product;\n    }\n\n    @Column(name = \"PRICE\", nullable = false)\n    public Double getPrice() {\n        return price;\n    }\n\n    public void setPrice(Double price) {\n        this.price = price;\n    }\n\n    @Column(name = \"QUANTITY\", nullable = false)\n    public Integer getQuantity() {\n        return quantity;\n    }\n\n    public void setQuantity(Integer quantity) {\n        this.quantity = quantity;\n    }\n}",
+  "subClasses": []
+}

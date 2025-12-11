@@ -1,0 +1,27 @@
+{
+  "className": "LocatorConnector",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fLocator);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "/**\n * Stores the arrow tip to a StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeStorable(fLocator);\n}",
+  "method_comment": "\n     * Stores the arrow tip to a StorableOutput.\n     ",
+  "method_annotation": ""
+}

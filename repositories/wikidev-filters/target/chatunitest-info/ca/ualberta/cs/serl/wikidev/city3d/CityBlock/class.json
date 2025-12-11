@@ -1,0 +1,83 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.city3d.CityBlock",
+  "className": "CityBlock",
+  "index": 19,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.city3d",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.city3d;",
+  "classSignature": "public class CityBlock",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import java.util.ArrayList;",
+    "import java.util.HashMap;",
+    "import ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;"
+  ],
+  "fields": [
+    "private Point index;",
+    "private HashMap<IArtifact, Integer> artifacts;",
+    "private double[] center;",
+    "private boolean marked;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "isMarked()": "0",
+    "setMarked(boolean)": "1",
+    "getCenter()": "2",
+    "setCenter(double[])": "3",
+    "getIndex()": "4",
+    "setIndex(Point)": "5",
+    "getArtifacts()": "6",
+    "setArtifacts(HashMap)": "7",
+    "addArtifact(IArtifact, int)": "8",
+    "CityBlock(Point)": "9"
+  },
+  "methodsBrief": [
+    "public boolean isMarked(){}",
+    "public void setMarked(boolean marked){}",
+    "public double[] getCenter(){}",
+    "public void setCenter(double[] center){}",
+    "public Point getIndex(){}",
+    "public void setIndex(Point index){}",
+    "public HashMap<IArtifact, Integer> getArtifacts(){}",
+    "public void setArtifacts(HashMap<IArtifact, Integer> artifacts){}",
+    "public void addArtifact(IArtifact artifact, int index){}",
+    "public CityBlock(Point index){}"
+  ],
+  "constructorSigs": [
+    "CityBlock(Point)"
+  ],
+  "constructorBrief": [
+    "public CityBlock(Point index){}"
+  ],
+  "getterSetterSigs": [
+    "setMarked(boolean)",
+    "getCenter()",
+    "setCenter(double[])",
+    "getIndex()",
+    "setIndex(Point)",
+    "getArtifacts()",
+    "setArtifacts(HashMap)"
+  ],
+  "getterSetterBrief": [
+    "public void setMarked(boolean marked){}",
+    "public double[] getCenter(){}",
+    "public void setCenter(double[] center){}",
+    "public Point getIndex(){}",
+    "public void setIndex(Point index){}",
+    "public HashMap<IArtifact, Integer> getArtifacts(){}",
+    "public void setArtifacts(HashMap<IArtifact, Integer> artifacts){}"
+  ],
+  "constructorDeps": {
+    "java.awt.Point": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.city3d;\n\nimport java.awt.Point;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;\n\npublic class CityBlock {\n\n    private Point index;\n\n    private HashMap<IArtifact, Integer> artifacts;\n\n    private double[] center;\n\n    private boolean marked;\n\n    public CityBlock(Point index) {\n        this.index = index;\n        this.artifacts = new HashMap<IArtifact, Integer>();\n    }\n\n    public boolean isMarked() {\n        return marked;\n    }\n\n    public void setMarked(boolean marked) {\n        this.marked = marked;\n    }\n\n    public double[] getCenter() {\n        return center;\n    }\n\n    public void setCenter(double[] center) {\n        this.center = center;\n    }\n\n    public Point getIndex() {\n        return index;\n    }\n\n    public void setIndex(Point index) {\n        this.index = index;\n    }\n\n    public HashMap<IArtifact, Integer> getArtifacts() {\n        return artifacts;\n    }\n\n    public void setArtifacts(HashMap<IArtifact, Integer> artifacts) {\n        this.artifacts = artifacts;\n    }\n\n    public void addArtifact(IArtifact artifact, int index) {\n        artifacts.put(artifact, index);\n    }\n}\n",
+  "classDeclarationCode": "public class CityBlock {\n\n    private Point index;\n\n    private HashMap<IArtifact, Integer> artifacts;\n\n    private double[] center;\n\n    private boolean marked;\n\n    public CityBlock(Point index) {\n        this.index = index;\n        this.artifacts = new HashMap<IArtifact, Integer>();\n    }\n\n    public boolean isMarked() {\n        return marked;\n    }\n\n    public void setMarked(boolean marked) {\n        this.marked = marked;\n    }\n\n    public double[] getCenter() {\n        return center;\n    }\n\n    public void setCenter(double[] center) {\n        this.center = center;\n    }\n\n    public Point getIndex() {\n        return index;\n    }\n\n    public void setIndex(Point index) {\n        this.index = index;\n    }\n\n    public HashMap<IArtifact, Integer> getArtifacts() {\n        return artifacts;\n    }\n\n    public void setArtifacts(HashMap<IArtifact, Integer> artifacts) {\n        this.artifacts = artifacts;\n    }\n\n    public void addArtifact(IArtifact artifact, int index) {\n        artifacts.put(artifact, index);\n    }\n}",
+  "subClasses": []
+}

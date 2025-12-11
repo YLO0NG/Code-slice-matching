@@ -1,0 +1,24 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "setAttribute",
+  "brief": "public void setAttribute(String name, Object value){}",
+  "methodSignature": "setAttribute(String, Object)",
+  "sourceCode": "public void setAttribute(String name, Object value) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": []
+  },
+  "full_method_info": "/**\n * Sets the named attribute to the new value. By default\n * figures don't have any attributes and the request is ignored.\n */\npublic void setAttribute(String name, Object value) {\n}",
+  "method_comment": "\n     * Sets the named attribute to the new value. By default\n     * figures don't have any attributes and the request is ignored.\n     ",
+  "method_annotation": ""
+}

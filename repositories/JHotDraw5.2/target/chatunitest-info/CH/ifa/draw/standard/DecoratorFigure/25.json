@@ -1,0 +1,25 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "connectorAt",
+  "brief": "public Connector connectorAt(int x, int y){}",
+  "methodSignature": "connectorAt(int, int)",
+  "sourceCode": "public Connector connectorAt(int x, int y) {\n        return fComponent.connectorAt(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "connectorAt(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the Connector for the given location.\n */\npublic Connector connectorAt(int x, int y) {\n    return fComponent.connectorAt(x, y);\n}",
+  "method_comment": "\n     * Returns the Connector for the given location.\n     ",
+  "method_annotation": ""
+}

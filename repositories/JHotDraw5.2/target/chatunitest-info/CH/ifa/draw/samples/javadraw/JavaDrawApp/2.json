@@ -1,0 +1,25 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "destroy",
+  "brief": "public void destroy(){}",
+  "methodSignature": "destroy()",
+  "sourceCode": "public void destroy() {\n        super.destroy();\n        endAnimation();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "destroy()"
+    ],
+    "CH.ifa.draw.samples.javadraw.JavaDrawApp": [
+      "endAnimation()"
+    ]
+  },
+  "full_method_info": "// -- application life cycle --------------------------------------------\npublic void destroy() {\n    super.destroy();\n    endAnimation();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

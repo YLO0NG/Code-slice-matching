@@ -1,0 +1,25 @@
+{
+  "className": "DiamondFigure",
+  "methodName": "polygon",
+  "brief": "protected Polygon polygon(){}",
+  "methodSignature": "polygon()",
+  "sourceCode": "protected Polygon polygon() {\n    Rectangle r = displayBox();\n    Polygon p = new Polygon();\n    p.addPoint(r.x, r.y+r.height/2);\n    p.addPoint(r.x+r.width/2, r.y);\n    p.addPoint(r.x+r.width, r.y+r.height/2);\n    p.addPoint(r.x+r.width/2, r.y+r.height);\n    return p;\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "displayBox()"
+    ],
+    "java.awt.Polygon": [
+      "addPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Return the polygon describing the diamond *\n */\nprotected Polygon polygon() {\n    Rectangle r = displayBox();\n    Polygon p = new Polygon();\n    p.addPoint(r.x, r.y + r.height / 2);\n    p.addPoint(r.x + r.width / 2, r.y);\n    p.addPoint(r.x + r.width, r.y + r.height / 2);\n    p.addPoint(r.x + r.width / 2, r.y + r.height);\n    return p;\n}",
+  "method_comment": " Return the polygon describing the diamond *",
+  "method_annotation": ""
+}

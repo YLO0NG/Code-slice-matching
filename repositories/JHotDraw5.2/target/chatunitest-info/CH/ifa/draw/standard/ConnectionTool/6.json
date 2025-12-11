@@ -1,0 +1,27 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "findSource",
+  "brief": "protected Figure findSource(int x, int y, Drawing drawing){}",
+  "methodSignature": "findSource(int, int, Drawing)",
+  "sourceCode": "protected Figure findSource(int x, int y, Drawing drawing) {\n        return findConnectableFigure(x, y, drawing);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "findConnectableFigure(int, int, Drawing)"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a connectable figure target.\n */\nprotected Figure findSource(int x, int y, Drawing drawing) {\n    return findConnectableFigure(x, y, drawing);\n}",
+  "method_comment": "\n     * Finds a connectable figure target.\n     ",
+  "method_annotation": ""
+}

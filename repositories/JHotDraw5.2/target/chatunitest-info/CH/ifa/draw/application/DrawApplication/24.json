@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createDrawing",
+  "brief": "protected Drawing createDrawing(){}",
+  "methodSignature": "createDrawing()",
+  "sourceCode": "protected Drawing createDrawing() {\n        return new StandardDrawing();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Creates the drawing used in this application.\n * You need to override this method to use a Drawing\n * subclass in your application. By default a standard\n * Drawing is returned.\n */\nprotected Drawing createDrawing() {\n    return new StandardDrawing();\n}",
+  "method_comment": "\n     * Creates the drawing used in this application.\n     * You need to override this method to use a Drawing\n     * subclass in your application. By default a standard\n     * Drawing is returned.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,29 @@
+{
+  "className": "NodeFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        super.draw(g);\n        drawBorder(g);\n        drawConnectors(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "draw(Graphics)"
+    ],
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "drawBorder(Graphics)",
+      "drawConnectors(Graphics)"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g) {\n    super.draw(g);\n    drawBorder(g);\n    drawConnectors(g);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

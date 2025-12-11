@@ -1,0 +1,30 @@
+{
+  "className": "LineConnection",
+  "methodName": "connectEnd",
+  "brief": "public void connectEnd(Connector end){}",
+  "methodSignature": "connectEnd(Connector)",
+  "sourceCode": "public void connectEnd(Connector end) {\n        fEnd = end;\n        endFigure().addFigureChangeListener(this);\n        handleConnect(startFigure(), endFigure());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Connector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Connector": [],
+    "CH.ifa.draw.framework.Figure": [
+      "addFigureChangeListener(FigureChangeListener)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "startFigure()",
+      "handleConnect(Figure, Figure)",
+      "endFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the end figure of the connection.\n */\npublic void connectEnd(Connector end) {\n    fEnd = end;\n    endFigure().addFigureChangeListener(this);\n    handleConnect(startFigure(), endFigure());\n}",
+  "method_comment": "\n     * Sets the end figure of the connection.\n     ",
+  "method_annotation": ""
+}

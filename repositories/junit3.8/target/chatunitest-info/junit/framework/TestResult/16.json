@@ -1,0 +1,23 @@
+{
+  "className": "TestResult",
+  "methodName": "wasSuccessful",
+  "brief": "public synchronized boolean wasSuccessful(){}",
+  "methodSignature": "wasSuccessful()",
+  "sourceCode": "public synchronized boolean wasSuccessful() {\r\n\t\treturn failureCount() == 0 && errorCount() == 0;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "failureCount()",
+      "errorCount()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns whether the entire test was successful or not.\r\n */\r\npublic synchronized boolean wasSuccessful() {\r\n    return failureCount() == 0 && errorCount() == 0;\r\n}",
+  "method_comment": "\r\n\t * Returns whether the entire test was successful or not.\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "getDiscount",
+  "brief": "@Column(name=\"DISCOUNT\", nullable=false)\r\n\tpublic Double getDiscount(){}",
+  "methodSignature": "getDiscount()",
+  "sourceCode": "@Column(name=\"DISCOUNT\", nullable=false)\n\tpublic Double getDiscount() {\n\t\treturn discount;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Column(name = \"DISCOUNT\", nullable = false)\npublic Double getDiscount() {\n    return discount;\n}",
+  "method_comment": "",
+  "method_annotation": "@Column(name = \"DISCOUNT\", nullable = false)\n"
+}

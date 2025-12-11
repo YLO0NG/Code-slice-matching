@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "selectionZOrdered",
+  "brief": "public Vector selectionZOrdered();",
+  "methodSignature": "selectionZOrdered()",
+  "sourceCode": "public Vector selectionZOrdered();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the currently selected figures in Z order.\n * @see #selection\n * @return a vector with the selected figures. The vector\n * is a copy of the current selection.\n */\npublic Vector selectionZOrdered();",
+  "method_comment": "\n     * Gets the currently selected figures in Z order.\n     * @see #selection\n     * @return a vector with the selected figures. The vector\n     * is a copy of the current selection.\n     ",
+  "method_annotation": ""
+}

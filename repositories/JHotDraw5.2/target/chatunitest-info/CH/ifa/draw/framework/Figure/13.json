@@ -1,0 +1,22 @@
+{
+  "className": "Figure",
+  "methodName": "displayBox",
+  "brief": "public void displayBox(Rectangle r);",
+  "methodSignature": "displayBox(Rectangle)",
+  "sourceCode": "public void displayBox(Rectangle r);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": []
+  },
+  "full_method_info": "/**\n * Changes the display box of a figure. This is a\n * convenience method. Implementors should only\n * have to override basicDisplayBox\n * @see #displayBox\n */\npublic void displayBox(Rectangle r);",
+  "method_comment": "\n     * Changes the display box of a figure. This is a\n     * convenience method. Implementors should only\n     * have to override basicDisplayBox\n     * @see #displayBox\n     ",
+  "method_annotation": ""
+}

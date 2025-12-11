@@ -1,0 +1,42 @@
+{
+  "className": "TestRunner",
+  "methodName": "appendFailure",
+  "brief": "private void appendFailure(String kind, Test test, Throwable t){}",
+  "methodSignature": "appendFailure(String, Test, Throwable)",
+  "sourceCode": "private void appendFailure(String kind, Test test, Throwable t) {\r\n\t\tkind+= \": \" + test;\r\n\t\tString msg= t.getMessage();\r\n\t\tif (msg != null) {\r\n\t\t\tkind+= \":\" + truncate(msg);\r\n\t\t}\r\n\t\tfFailureList.add(kind);\r\n\t\tfExceptions.addElement(t);\r\n\t\tfFailedTests.addElement(test);\r\n\t\tif (fFailureList.getItemCount() == 1) {\r\n\t\t\tfFailureList.select(0);\r\n\t\t\tfailureSelected();\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [
+      "getMessage()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "truncate(String)"
+    ],
+    "java.awt.List": [
+      "add(String)",
+      "getItemCount()",
+      "select(int)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "junit.awtui.TestRunner": [
+      "failureSelected()"
+    ]
+  },
+  "full_method_info": "private void appendFailure(String kind, Test test, Throwable t) {\r\n    kind += \": \" + test;\r\n    String msg = t.getMessage();\r\n    if (msg != null) {\r\n        kind += \":\" + truncate(msg);\r\n    }\r\n    fFailureList.add(kind);\r\n    fExceptions.addElement(t);\r\n    fFailedTests.addElement(test);\r\n    if (fFailureList.getItemCount() == 1) {\r\n        fFailureList.select(0);\r\n        failureSelected();\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "getNewBetaMatrix",
+  "brief": "private double[][] getNewBetaMatrix(){}",
+  "methodSignature": "getNewBetaMatrix()",
+  "sourceCode": "private double[][] getNewBetaMatrix() {\n\t\t/*double[] rowSums = new double[distanceMatrix.length];\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\trowSums[i] = MatrixOperator.getRowSum(distanceMatrix, i);\n\t\t}\n\t\tdouble[] rowAvgs = MatrixOperator.scaleVector(rowSums, 1.0/distanceMatrix.length);\n\t\tdouble[] colSums = new double[distanceMatrix.length];\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\tcolSums[i] = MatrixOperator.getColumnSum(distanceMatrix, i);\n\t\t}\n\t\tdouble[] colAvgs = MatrixOperator.scaleVector(colSums, 1.0/distanceMatrix.length);\n\t\tdouble totalAvg = (1.0/Math.pow(distanceMatrix.length, 2))*MatrixOperator.getTotalSum(distanceMatrix);\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\tfor(int j=0; j<distanceMatrix.length; j++) {\n\t\t\t\tbetaMatrix[i][j] = -(1.0/2.0)*(distanceMatrix[i][j] - rowAvgs[i] - colAvgs[j] + totalAvg);\n\t\t\t}\n\t\t}*/\n\t\tdouble[][] scaled = MatrixOperator.scaleMatrix(hMatrix, -1.0/2.0);\n\t\tbetaMatrix = MatrixOperator.matrixProduct(scaled, squareDistanceMatrix);\n\t\tbetaMatrix = MatrixOperator.matrixProduct(betaMatrix, hMatrix);\n\t\treturn betaMatrix;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "scaleMatrix(double[][], double)",
+      "matrixProduct(double[][], double[][])"
+    ]
+  },
+  "full_method_info": "private double[][] getNewBetaMatrix() {\n    /*double[] rowSums = new double[distanceMatrix.length];\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\trowSums[i] = MatrixOperator.getRowSum(distanceMatrix, i);\n\t\t}\n\t\tdouble[] rowAvgs = MatrixOperator.scaleVector(rowSums, 1.0/distanceMatrix.length);\n\t\tdouble[] colSums = new double[distanceMatrix.length];\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\tcolSums[i] = MatrixOperator.getColumnSum(distanceMatrix, i);\n\t\t}\n\t\tdouble[] colAvgs = MatrixOperator.scaleVector(colSums, 1.0/distanceMatrix.length);\n\t\tdouble totalAvg = (1.0/Math.pow(distanceMatrix.length, 2))*MatrixOperator.getTotalSum(distanceMatrix);\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\tfor(int j=0; j<distanceMatrix.length; j++) {\n\t\t\t\tbetaMatrix[i][j] = -(1.0/2.0)*(distanceMatrix[i][j] - rowAvgs[i] - colAvgs[j] + totalAvg);\n\t\t\t}\n\t\t}*/\n    double[][] scaled = MatrixOperator.scaleMatrix(hMatrix, -1.0 / 2.0);\n    betaMatrix = MatrixOperator.matrixProduct(scaled, squareDistanceMatrix);\n    betaMatrix = MatrixOperator.matrixProduct(betaMatrix, hMatrix);\n    return betaMatrix;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

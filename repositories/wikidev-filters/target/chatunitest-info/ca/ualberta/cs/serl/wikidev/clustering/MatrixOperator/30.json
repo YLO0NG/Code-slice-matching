@@ -1,0 +1,23 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getColumn",
+  "brief": "public static double[] getColumn(double[][] matrix, int i){}",
+  "methodSignature": "getColumn(double[][], int)",
+  "sourceCode": "public static double[] getColumn(double[][] matrix, int i) {\n\t\t   return DoubleArray.getColumnCopy(matrix, i);\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]",
+    "int"
+  ],
+  "dependentMethods": {
+    "double[]": []
+  },
+  "full_method_info": "public static double[] getColumn(double[][] matrix, int i) {\n    return DoubleArray.getColumnCopy(matrix, i);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "TestRunListener",
+  "methodName": "testFailed",
+  "brief": "public void testFailed(int status, String testName, String trace);",
+  "methodSignature": "testFailed(int, String, String)",
+  "sourceCode": "public void testFailed(int status, String testName, String trace);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void testFailed(int status, String testName, String trace);",
+  "method_comment": "",
+  "method_annotation": ""
+}

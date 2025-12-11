@@ -1,0 +1,43 @@
+{
+  "className": "DrawApplet",
+  "methodName": "readFromObjectInput",
+  "brief": "private void readFromObjectInput(String filename){}",
+  "methodSignature": "readFromObjectInput(String)",
+  "sourceCode": "private void readFromObjectInput(String filename) {\n        try {\n            URL url = new URL(getCodeBase(), filename);\n            InputStream stream = url.openStream();\n            ObjectInput input = new ObjectInputStream(stream);\n            fDrawing.release();\n            fDrawing = (Drawing)input.readObject();\n            fView.setDrawing(fDrawing);\n        } catch (IOException e) {\n            fDrawing = createDrawing();\n\t\t\tfView.setDrawing(fDrawing);\n\t\t\ttoolDone();\n            showStatus(\"Error: \" + e);\n        } catch (ClassNotFoundException e) {\n            initDrawing();\n            showStatus(\"Class not found: \" + e);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.applet.Applet": [
+      "showStatus(String)",
+      "getCodeBase()"
+    ],
+    "java.net.URL": [
+      "openStream()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "release()"
+    ],
+    "java.io.ObjectInput": [
+      "readObject()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDrawing(Drawing)"
+    ],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "createDrawing()",
+      "toolDone()",
+      "initDrawing()"
+    ]
+  },
+  "full_method_info": "private void readFromObjectInput(String filename) {\n    try {\n        URL url = new URL(getCodeBase(), filename);\n        InputStream stream = url.openStream();\n        ObjectInput input = new ObjectInputStream(stream);\n        fDrawing.release();\n        fDrawing = (Drawing) input.readObject();\n        fView.setDrawing(fDrawing);\n    } catch (IOException e) {\n        fDrawing = createDrawing();\n        fView.setDrawing(fDrawing);\n        toolDone();\n        showStatus(\"Error: \" + e);\n    } catch (ClassNotFoundException e) {\n        initDrawing();\n        showStatus(\"Class not found: \" + e);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Drawing",
+  "methodName": "lock",
+  "brief": "public void lock();",
+  "methodSignature": "lock()",
+  "sourceCode": "public void lock();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Acquires the drawing lock.\n */\npublic void lock();",
+  "method_comment": "\n     * Acquires the drawing lock.\n     ",
+  "method_annotation": ""
+}

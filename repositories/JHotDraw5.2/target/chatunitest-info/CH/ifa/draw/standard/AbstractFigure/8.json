@@ -1,0 +1,22 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "isEmpty",
+  "brief": "public boolean isEmpty(){}",
+  "methodSignature": "isEmpty()",
+  "sourceCode": "public boolean isEmpty() {\n        return (size().width < 3) || (size().height < 3);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\n * Checks if the figure is empty. The default implementation returns\n * true if the width or height of its display box is < 3\n * @see Figure#isEmpty\n */\npublic boolean isEmpty() {\n    return (size().width < 3) || (size().height < 3);\n}",
+  "method_comment": "\n     * Checks if the figure is empty. The default implementation returns\n     * true if the width or height of its display box is < 3\n     * @see Figure#isEmpty\n     ",
+  "method_annotation": ""
+}

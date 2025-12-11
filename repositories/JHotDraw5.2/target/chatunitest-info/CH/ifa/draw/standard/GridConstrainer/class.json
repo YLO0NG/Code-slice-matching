@@ -1,0 +1,63 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.GridConstrainer",
+  "className": "GridConstrainer",
+  "index": 129,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[PointConstrainer, Serializable]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class GridConstrainer",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.Serializable;",
+    "import CH.ifa.draw.framework.PointConstrainer;"
+  ],
+  "fields": [
+    "private int fGridX;",
+    "private int fGridY;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "PointConstrainer",
+    "Serializable"
+  ],
+  "methodSigs": {
+    "constrainPoint(Point)": "0",
+    "getStepX()": "1",
+    "getStepY()": "2",
+    "GridConstrainer(int, int)": "3"
+  },
+  "methodsBrief": [
+    "public Point constrainPoint(Point p){}",
+    "public int getStepX(){}",
+    "public int getStepY(){}",
+    "public GridConstrainer(int x, int y){}"
+  ],
+  "constructorSigs": [
+    "GridConstrainer(int, int)"
+  ],
+  "constructorBrief": [
+    "public GridConstrainer(int x, int y){}"
+  ],
+  "getterSetterSigs": [
+    "getStepX()",
+    "getStepY()"
+  ],
+  "getterSetterBrief": [
+    "public int getStepX(){}",
+    "public int getStepY(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.Math": [
+      "max(int, int)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)GridConstrainer.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.io.Serializable;\nimport CH.ifa.draw.framework.PointConstrainer;\n\n/**\n * Constrains a point such that it falls on a grid.\n *\n * @see CH.ifa.draw.framework.DrawingView\n */\npublic class GridConstrainer implements PointConstrainer, Serializable {\n\n    private int fGridX;\n\n    private int fGridY;\n\n    public GridConstrainer(int x, int y) {\n        fGridX = Math.max(1, x);\n        fGridY = Math.max(1, y);\n    }\n\n    /**\n     * Constrains the given point.\n     * @return constrained point.\n     */\n    public Point constrainPoint(Point p) {\n        p.x = ((p.x + fGridX / 2) / fGridX) * fGridX;\n        p.y = ((p.y + fGridY / 2) / fGridY) * fGridY;\n        return p;\n    }\n\n    /**\n     * Gets the x offset to move an object.\n     */\n    public int getStepX() {\n        return fGridX;\n    }\n\n    /**\n     * Gets the y offset to move an object.\n     */\n    public int getStepY() {\n        return fGridY;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Constrains a point such that it falls on a grid.\n *\n * @see CH.ifa.draw.framework.DrawingView\n */\npublic class GridConstrainer implements PointConstrainer, Serializable {\n\n    private int fGridX;\n\n    private int fGridY;\n\n    public GridConstrainer(int x, int y) {\n        fGridX = Math.max(1, x);\n        fGridY = Math.max(1, y);\n    }\n\n    /**\n     * Constrains the given point.\n     * @return constrained point.\n     */\n    public Point constrainPoint(Point p) {\n        p.x = ((p.x + fGridX / 2) / fGridX) * fGridX;\n        p.y = ((p.y + fGridY / 2) / fGridY) * fGridY;\n        return p;\n    }\n\n    /**\n     * Gets the x offset to move an object.\n     */\n    public int getStepX() {\n        return fGridX;\n    }\n\n    /**\n     * Gets the y offset to move an object.\n     */\n    public int getStepY() {\n        return fGridY;\n    }\n}",
+  "subClasses": []
+}

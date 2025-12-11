@@ -1,0 +1,52 @@
+{
+  "className": "TestRunner",
+  "methodName": "testFailed",
+  "brief": "public void testFailed(int status, Test test, Throwable t){}",
+  "methodSignature": "testFailed(int, Test, Throwable)",
+  "sourceCode": "public void testFailed(int status, Test test, Throwable t) {\r\n\t\tswitch (status) {\r\n\t\t\tcase TestRunListener.STATUS_ERROR:\r\n\t\t\t\tfNumberOfErrors.setText(Integer.toString(fTestResult.errorCount()));\r\n\t\t\t\t/*{*/String kind = \"Error\";\r\n\t\t\tkind+= \": \" + test;\r\n\t\t\tString msg= t.getMessage();\r\n\t\t\tif (msg != null) {\r\n\t\t\t\tkind+= \":\" + truncate(msg);\r\n\t\t\t}\r\n\t\t\tfFailureList.add(kind);\r\n\t\t\tfExceptions.addElement(t);\r\n\t\t\tfFailedTests.addElement(test);\r\n\t\t\tif (fFailureList.getItemCount() == 1) {\r\n\t\t\t\tfFailureList.select(0);\r\n\t\t\t\tfailureSelected();\r\n\t\t\t}/*}*/\r\n\t\t\t\tbreak;\r\n\t\t\tcase TestRunListener.STATUS_FAILURE:\r\n\t\t\t\tfNumberOfFailures.setText(Integer.toString(fTestResult.failureCount()));\r\n\t\t\t\tappendFailure(\"Failure\", test, t);\r\n\t\t\t\tbreak;\r\n\t\t}\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [
+      "getMessage()"
+    ],
+    "java.awt.Label": [
+      "setText(String)"
+    ],
+    "java.lang.Integer": [
+      "toString(int)"
+    ],
+    "junit.framework.TestResult": [
+      "failureCount()",
+      "errorCount()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "truncate(String)"
+    ],
+    "java.awt.List": [
+      "add(String)",
+      "getItemCount()",
+      "select(int)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "junit.awtui.TestRunner": [
+      "failureSelected()",
+      "appendFailure(String, Test, Throwable)"
+    ]
+  },
+  "full_method_info": "public void testFailed(int status, Test test, Throwable t) {\r\n    switch(status) {\r\n        case TestRunListener.STATUS_ERROR:\r\n            fNumberOfErrors.setText(Integer.toString(fTestResult.errorCount()));\r\n            /*{*/\r\n            String kind = \"Error\";\r\n            kind += \": \" + test;\r\n            String msg = t.getMessage();\r\n            if (msg != null) {\r\n                kind += \":\" + truncate(msg);\r\n            }\r\n            fFailureList.add(kind);\r\n            fExceptions.addElement(t);\r\n            fFailedTests.addElement(test);\r\n            if (fFailureList.getItemCount() == 1) {\r\n                fFailureList.select(0);\r\n                failureSelected();\r\n            }\r\n            /*}*/\r\n            break;\r\n        case TestRunListener.STATUS_FAILURE:\r\n            fNumberOfFailures.setText(Integer.toString(fTestResult.failureCount()));\r\n            appendFailure(\"Failure\", test, t);\r\n            break;\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

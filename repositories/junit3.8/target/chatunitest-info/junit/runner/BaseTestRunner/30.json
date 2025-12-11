@@ -1,0 +1,24 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "filterLine",
+  "brief": "static boolean filterLine(String line){}",
+  "methodSignature": "filterLine(String)",
+  "sourceCode": "static boolean filterLine(String line) {\r\n\t\tString[] patterns= new String[] {\r\n\t\t\t\"junit.framework.TestCase\",\r\n\t\t\t\"junit.framework.TestResult\",\r\n\t\t\t\"junit.framework.TestSuite\",\r\n\t\t\t\"junit.framework.Assert.\", // don't filter AssertionFailure\r\n\t\t\t\"junit.swingui.TestRunner\",\r\n\t\t\t\"junit.awtui.TestRunner\",\r\n\t\t\t\"junit.textui.TestRunner\",\r\n\t\t\t\"java.lang.reflect.Method.invoke(\"\r\n\t\t};\r\n\t\tfor (int i= 0; i < patterns.length; i++) {\r\n\t\t\tif (line.indexOf(patterns[i]) > 0)\r\n\t\t\t\treturn true;\r\n\t\t}\r\n\t\treturn false;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "indexOf(String)"
+    ]
+  },
+  "full_method_info": "static boolean filterLine(String line) {\r\n    String[] patterns = new String[] { \"junit.framework.TestCase\", \"junit.framework.TestResult\", \"junit.framework.TestSuite\", // don't filter AssertionFailure\r\n    \"junit.framework.Assert.\", \"junit.swingui.TestRunner\", \"junit.awtui.TestRunner\", \"junit.textui.TestRunner\", \"java.lang.reflect.Method.invoke(\" };\r\n    for (int i = 0; i < patterns.length; i++) {\r\n        if (line.indexOf(patterns[i]) > 0)\r\n            return true;\r\n    }\r\n    return false;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

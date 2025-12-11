@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrderItem",
+  "methodName": "setQuantity",
+  "brief": "public void setQuantity( Integer quantity ){}",
+  "methodSignature": "setQuantity(Integer)",
+  "sourceCode": "public void setQuantity( Integer quantity ) {\n\t\tthis.quantity = quantity;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Integer"
+  ],
+  "dependentMethods": {
+    "java.lang.Integer": []
+  },
+  "full_method_info": "public void setQuantity(Integer quantity) {\n    this.quantity = quantity;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

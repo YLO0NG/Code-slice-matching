@@ -1,0 +1,26 @@
+{
+  "className": "User",
+  "methodName": "addRelatedArtifacts",
+  "brief": "public void addRelatedArtifacts(IArtifact artifact, int weight){}",
+  "methodSignature": "addRelatedArtifacts(IArtifact, int)",
+  "sourceCode": "public void addRelatedArtifacts(IArtifact artifact, int weight) {\n\t\trelatedArtifacts.put(artifact, weight);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.util.HashMap": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "public void addRelatedArtifacts(IArtifact artifact, int weight) {\n    relatedArtifacts.put(artifact, weight);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

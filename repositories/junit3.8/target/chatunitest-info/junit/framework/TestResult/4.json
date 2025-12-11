@@ -1,0 +1,22 @@
+{
+  "className": "TestResult",
+  "methodName": "cloneListeners",
+  "brief": "private synchronized Vector cloneListeners(){}",
+  "methodSignature": "cloneListeners()",
+  "sourceCode": "private synchronized Vector cloneListeners() {\r\n\t\treturn (Vector)fListeners.clone();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "clone()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns a copy of the listeners.\r\n */\r\nprivate synchronized Vector cloneListeners() {\r\n    return (Vector) fListeners.clone();\r\n}",
+  "method_comment": "\r\n\t * Returns a copy of the listeners.\r\n\t ",
+  "method_annotation": ""
+}

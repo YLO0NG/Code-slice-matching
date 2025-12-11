@@ -1,0 +1,28 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "internalFrameActivated",
+  "brief": "public void internalFrameActivated(InternalFrameEvent e){}",
+  "methodSignature": "internalFrameActivated(InternalFrameEvent)",
+  "sourceCode": "public void internalFrameActivated(InternalFrameEvent e) {\n\t\tactivateFrame((MDI_InternalFrame)e.getSource());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InternalFrameEvent"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.InternalFrameEvent": [],
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "activateFrame(MDI_InternalFrame)"
+    ],
+    "java.util.EventObject": [
+      "getSource()"
+    ]
+  },
+  "full_method_info": "/**\n * Notification method from InternalFrameListener, which is called\n * if a internal frame gets selected.\n */\npublic void internalFrameActivated(InternalFrameEvent e) {\n    activateFrame((MDI_InternalFrame) e.getSource());\n}",
+  "method_comment": "\n\t* Notification method from InternalFrameListener, which is called\n\t* if a internal frame gets selected.\n\t",
+  "method_annotation": ""
+}

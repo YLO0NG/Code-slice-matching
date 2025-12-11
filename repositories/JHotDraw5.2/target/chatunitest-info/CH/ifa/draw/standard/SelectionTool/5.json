@@ -1,0 +1,22 @@
+{
+  "className": "SelectionTool",
+  "methodName": "createAreaTracker",
+  "brief": "protected Tool createAreaTracker(DrawingView view){}",
+  "methodSignature": "createAreaTracker(DrawingView)",
+  "sourceCode": "protected Tool createAreaTracker(DrawingView view) {\n        return new SelectAreaTracker(view);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * Factory method to create an area tracker. It is used to select an\n * area.\n */\nprotected Tool createAreaTracker(DrawingView view) {\n    return new SelectAreaTracker(view);\n}",
+  "method_comment": "\n     * Factory method to create an area tracker. It is used to select an\n     * area.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "PaletteListener",
+  "methodName": "paletteUserSelected",
+  "brief": "void paletteUserSelected(PaletteButton button);",
+  "methodSignature": "paletteUserSelected(PaletteButton)",
+  "sourceCode": "void paletteUserSelected(PaletteButton button);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PaletteButton"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.PaletteButton": []
+  },
+  "full_method_info": "/**\n * The user selected a palette entry. The selected button is\n * passed as an argument.\n */\nvoid paletteUserSelected(PaletteButton button);",
+  "method_comment": "\n     * The user selected a palette entry. The selected button is\n     * passed as an argument.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "TestRunner",
+  "methodName": "createMenus",
+  "brief": "protected void createMenus(MenuBar mb){}",
+  "methodSignature": "createMenus(MenuBar)",
+  "sourceCode": "protected void createMenus(MenuBar mb) {\r\n\t\tmb.add(createJUnitMenu());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MenuBar"
+  ],
+  "dependentMethods": {
+    "java.awt.MenuBar": [
+      "add(Menu)"
+    ],
+    "junit.awtui.TestRunner": [
+      "createJUnitMenu()"
+    ]
+  },
+  "full_method_info": "protected void createMenus(MenuBar mb) {\r\n    mb.add(createJUnitMenu());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

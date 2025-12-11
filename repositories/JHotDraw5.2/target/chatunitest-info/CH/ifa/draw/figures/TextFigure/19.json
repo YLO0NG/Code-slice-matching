@@ -1,0 +1,25 @@
+{
+  "className": "TextFigure",
+  "methodName": "overlayColumns",
+  "brief": "public int overlayColumns(){}",
+  "methodSignature": "overlayColumns()",
+  "sourceCode": "public int overlayColumns() {\n        int length = getText().length();\n        int columns = 20;\n        if (length != 0)\n            columns = getText().length()+ 3;\n        return columns;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.String": [
+      "length()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "getText()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the number of columns to be overlaid when the figure is edited.\n */\npublic int overlayColumns() {\n    int length = getText().length();\n    int columns = 20;\n    if (length != 0)\n        columns = getText().length() + 3;\n    return columns;\n}",
+  "method_comment": "\n     * Gets the number of columns to be overlaid when the figure is edited.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "BorderDecorator",
+  "methodName": "initialize",
+  "brief": "protected void initialize(){}",
+  "methodSignature": "initialize()",
+  "sourceCode": "protected void initialize() {\n        setBorderOffset(new Point(3,3));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.BorderDecorator": [
+      "setBorderOffset(Point)"
+    ]
+  },
+  "full_method_info": "/**\n * Performs additional initialization code before the figure is decorated\n * Subclasses may override this method.\n */\nprotected void initialize() {\n    setBorderOffset(new Point(3, 3));\n}",
+  "method_comment": "\n\t * Performs additional initialization code before the figure is decorated\n     * Subclasses may override this method.\n\t ",
+  "method_annotation": ""
+}

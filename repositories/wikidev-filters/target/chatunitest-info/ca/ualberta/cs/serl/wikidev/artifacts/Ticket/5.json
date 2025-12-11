@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getOwnerName",
+  "brief": "public String getOwnerName(){}",
+  "methodSignature": "getOwnerName()",
+  "sourceCode": "public String getOwnerName() {\n\t\treturn ownerName;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"ownerName\"\n */\npublic String getOwnerName() {\n    return ownerName;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"ownerName\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "StandardLayouter",
+  "methodName": "getLayoutable",
+  "brief": "public Layoutable getLayoutable(){}",
+  "methodSignature": "getLayoutable()",
+  "sourceCode": "public Layoutable getLayoutable() {\n\t\treturn myLayoutable;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get the figure upon which the layout strategy operates.\n *\n * @return associated figure which should be laid out\n */\npublic Layoutable getLayoutable() {\n    return myLayoutable;\n}",
+  "method_comment": "\n\t * Get the figure upon which the layout strategy operates.\n\t *\n\t * @return associated figure which should be laid out\n\t ",
+  "method_annotation": ""
+}

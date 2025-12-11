@@ -1,0 +1,28 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "drawLine",
+  "brief": "protected void drawLine(Graphics g, int x1, int y1, int x2, int y2){}",
+  "methodSignature": "drawLine(Graphics, int, int, int, int)",
+  "sourceCode": "protected void drawLine(Graphics g, int x1, int y1, int x2, int y2) {\n        g.drawLine(x1, y1, x2, y2);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawLine(int, int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Can be overriden in subclasses to draw different types of lines\n * (e.g. dotted lines)\n */\nprotected void drawLine(Graphics g, int x1, int y1, int x2, int y2) {\n    g.drawLine(x1, y1, x2, y2);\n}",
+  "method_comment": " \n\t * Can be overriden in subclasses to draw different types of lines\n\t * (e.g. dotted lines)\n\t ",
+  "method_annotation": ""
+}

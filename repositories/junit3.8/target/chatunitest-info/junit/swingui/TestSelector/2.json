@@ -1,0 +1,28 @@
+{
+  "className": "TestSelector",
+  "methodName": "checkEnableOK",
+  "brief": "public void checkEnableOK(ListSelectionEvent e){}",
+  "methodSignature": "checkEnableOK(ListSelectionEvent)",
+  "sourceCode": "public void checkEnableOK(ListSelectionEvent e) {\r\n\t\tfOk.setEnabled(fList.getSelectedIndex() != -1);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ListSelectionEvent"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.ListSelectionEvent": [],
+    "javax.swing.AbstractButton": [
+      "setEnabled(boolean)"
+    ],
+    "javax.swing.JList": [
+      "getSelectedIndex()"
+    ]
+  },
+  "full_method_info": "public void checkEnableOK(ListSelectionEvent e) {\r\n    fOk.setEnabled(fList.getSelectedIndex() != -1);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

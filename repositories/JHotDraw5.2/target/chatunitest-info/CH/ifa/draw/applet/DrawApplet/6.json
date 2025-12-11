@@ -1,0 +1,50 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createButtons",
+  "brief": "protected void createButtons(JPanel panel){}",
+  "methodSignature": "createButtons(JPanel)",
+  "sourceCode": "protected void createButtons(JPanel panel) {\n        panel.add(new Filler(24,20));\n\n        JComboBox drawingChoice = new JComboBox();\n        drawingChoice.addItem(fgUntitled);\n\n\t    String param = getParameter(\"DRAWINGS\");\n\t    if (param == null)\n\t        param = \"\";\n       \tStringTokenizer st = new StringTokenizer(param);\n        while (st.hasMoreTokens())\n            drawingChoice.addItem(st.nextToken());\n        // offer choice only if more than one\n        if (drawingChoice.getItemCount() > 1)\n            panel.add(drawingChoice);\n        else\n            panel.add(new JLabel(fgUntitled));\n\n\t\tdrawingChoice.addItemListener(\n\t\t    new ItemListener() {\n\t\t        public void itemStateChanged(ItemEvent e) {\n\t\t            if (e.getStateChange() == ItemEvent.SELECTED) {\n\t\t                loadDrawing((String)e.getItem());\n\t\t            }\n\t\t        }\n\t\t    }\n\t\t);\n\n        panel.add(new Filler(6,20));\n\n        JButton button;\n        button = new CommandButton(new DeleteCommand(\"Delete\", fView));\n        panel.add(button);\n\n        button = new CommandButton(new DuplicateCommand(\"Duplicate\", fView));\n        panel.add(button);\n\n        button = new CommandButton(new GroupCommand(\"Group\", fView));\n        panel.add(button);\n\n        button = new CommandButton(new UngroupCommand(\"Ungroup\", fView));\n        panel.add(button);\n\n        button = new JButton(\"Help\");\n\t\tbutton.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            showHelp();\n\t\t        }\n\t\t    }\n\t\t);\n        panel.add(button);\n\n        fUpdateButton = new JButton(\"Simple Update\");\n\t\tfUpdateButton.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n                    if (fSimpleUpdate)\n                        setBufferedDisplayUpdate();\n                    else\n                        setSimpleDisplayUpdate();\n\t\t        }\n\t\t    }\n\t\t);\n\n        // panel.add(fUpdateButton); // not shown currently\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JPanel"
+  ],
+  "dependentMethods": {
+    "javax.swing.JPanel": [],
+    "java.awt.Container": [
+      "add(Component)"
+    ],
+    "javax.swing.JComboBox": [
+      "addItemListener(ItemListener)",
+      "addItem(E)",
+      "getItemCount()"
+    ],
+    "java.applet.Applet": [
+      "getParameter(String)"
+    ],
+    "java.util.StringTokenizer": [
+      "nextToken()",
+      "hasMoreTokens()"
+    ],
+    "java.awt.event.ItemEvent": [
+      "getStateChange()",
+      "getItem()"
+    ],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "setBufferedDisplayUpdate()",
+      "loadDrawing(String)",
+      "setSimpleDisplayUpdate()",
+      "showHelp()"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the buttons shown in the buttons panel. Override to\n * add additional buttons.\n * @param panel the buttons panel.\n */\nprotected void createButtons(JPanel panel) {\n    panel.add(new Filler(24, 20));\n    JComboBox drawingChoice = new JComboBox();\n    drawingChoice.addItem(fgUntitled);\n    String param = getParameter(\"DRAWINGS\");\n    if (param == null)\n        param = \"\";\n    StringTokenizer st = new StringTokenizer(param);\n    while (st.hasMoreTokens()) drawingChoice.addItem(st.nextToken());\n    // offer choice only if more than one\n    if (drawingChoice.getItemCount() > 1)\n        panel.add(drawingChoice);\n    else\n        panel.add(new JLabel(fgUntitled));\n    drawingChoice.addItemListener(new ItemListener() {\n\n        public void itemStateChanged(ItemEvent e) {\n            if (e.getStateChange() == ItemEvent.SELECTED) {\n                loadDrawing((String) e.getItem());\n            }\n        }\n    });\n    panel.add(new Filler(6, 20));\n    JButton button;\n    button = new CommandButton(new DeleteCommand(\"Delete\", fView));\n    panel.add(button);\n    button = new CommandButton(new DuplicateCommand(\"Duplicate\", fView));\n    panel.add(button);\n    button = new CommandButton(new GroupCommand(\"Group\", fView));\n    panel.add(button);\n    button = new CommandButton(new UngroupCommand(\"Ungroup\", fView));\n    panel.add(button);\n    button = new JButton(\"Help\");\n    button.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            showHelp();\n        }\n    });\n    panel.add(button);\n    fUpdateButton = new JButton(\"Simple Update\");\n    fUpdateButton.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            if (fSimpleUpdate)\n                setBufferedDisplayUpdate();\n            else\n                setSimpleDisplayUpdate();\n        }\n    });\n    // panel.add(fUpdateButton); // not shown currently\n}",
+  "method_comment": "\n     * Creates the buttons shown in the buttons panel. Override to\n     * add additional buttons.\n     * @param panel the buttons panel.\n     ",
+  "method_annotation": ""
+}

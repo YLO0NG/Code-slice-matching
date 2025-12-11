@@ -1,0 +1,28 @@
+{
+  "className": "CreationTool",
+  "methodName": "activate",
+  "brief": "public void activate(){}",
+  "methodSignature": "activate()",
+  "sourceCode": "public void activate() {\n        view().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "setCursor(Cursor)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ],
+    "java.awt.Cursor": [
+      "getPredefinedCursor(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the cross hair cursor.\n */\npublic void activate() {\n    view().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));\n}",
+  "method_comment": "\n     * Sets the cross hair cursor.\n     ",
+  "method_annotation": ""
+}

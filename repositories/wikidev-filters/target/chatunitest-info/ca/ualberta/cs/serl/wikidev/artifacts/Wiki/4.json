@@ -1,0 +1,18 @@
+{
+  "className": "Wiki",
+  "methodName": "getProjectID",
+  "brief": "public int getProjectID(){}",
+  "methodSignature": "getProjectID()",
+  "sourceCode": "public int getProjectID() {\n\t\treturn project;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"project\"\n */\npublic int getProjectID() {\n    return project;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"project\"\n\t ",
+  "method_annotation": ""
+}

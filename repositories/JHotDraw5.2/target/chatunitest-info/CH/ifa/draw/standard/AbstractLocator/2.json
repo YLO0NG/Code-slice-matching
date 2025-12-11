@@ -1,0 +1,22 @@
+{
+  "className": "AbstractLocator",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": []
+  },
+  "full_method_info": "/**\n * Reads the arrow tip from a StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n}",
+  "method_comment": "\n     * Reads the arrow tip from a StorableInput.\n     ",
+  "method_annotation": ""
+}

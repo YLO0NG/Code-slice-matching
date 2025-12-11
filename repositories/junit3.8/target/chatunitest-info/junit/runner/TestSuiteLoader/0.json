@@ -1,0 +1,22 @@
+{
+  "className": "TestSuiteLoader",
+  "methodName": "load",
+  "brief": "abstract public Class load(String suiteClassName) throws ClassNotFoundException;",
+  "methodSignature": "load(String)",
+  "sourceCode": "abstract public Class load(String suiteClassName) throws ClassNotFoundException;",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "abstract public Class load(String suiteClassName) throws ClassNotFoundException;",
+  "method_comment": "",
+  "method_annotation": ""
+}

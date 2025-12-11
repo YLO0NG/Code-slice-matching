@@ -1,0 +1,71 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.FigureSelection",
+  "className": "FigureSelection",
+  "index": 66,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public class FigureSelection",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.util.*;",
+    "import java.util.*;",
+    "import java.io.*;"
+  ],
+  "fields": [
+    "private byte[] fData;",
+    "public final static String TYPE = \"CH.ifa.draw.Figures\";"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getType()": "0",
+    "getData(String)": "1",
+    "FigureSelection(Vector)": "2"
+  },
+  "methodsBrief": [
+    "public String getType(){}",
+    "public Object getData(String type){}",
+    "public FigureSelection(Vector figures){}"
+  ],
+  "constructorSigs": [
+    "FigureSelection(Vector)"
+  ],
+  "constructorBrief": [
+    "public FigureSelection(Vector figures){}"
+  ],
+  "getterSetterSigs": [
+    "getType()"
+  ],
+  "getterSetterBrief": [
+    "public String getType(){}"
+  ],
+  "constructorDeps": {
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)",
+      "close()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.io.ByteArrayOutputStream": [
+      "toByteArray()"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)FigureSelection.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport CH.ifa.draw.util.*;\nimport java.util.*;\nimport java.io.*;\n\n/**\n * FigureSelection enables to transfer the selected figures\n * to a clipboard.<p>\n * Will soon be converted to the JDK 1.1 Transferable interface.\n *\n * @see Clipboard\n */\npublic class FigureSelection extends Object {\n\n    // flattend figures, ready to be resurrected\n    private byte[] fData;\n\n    /**\n     * The type identifier of the selection.\n     */\n    public final static String TYPE = \"CH.ifa.draw.Figures\";\n\n    public FigureSelection(Vector figures) {\n        // a FigureSelection is represented as a flattened ByteStream\n        // of figures.\n        ByteArrayOutputStream output = new ByteArrayOutputStream(200);\n        StorableOutput writer = new StorableOutput(output);\n        writer.writeInt(figures.size());\n        Enumeration selected = figures.elements();\n        while (selected.hasMoreElements()) {\n            Figure figure = (Figure) selected.nextElement();\n            writer.writeStorable(figure);\n        }\n        writer.close();\n        fData = output.toByteArray();\n    }\n\n    /**\n     * Gets the type of the selection.\n     */\n    public String getType() {\n        return TYPE;\n    }\n\n    /**\n     * Gets the data of the selection. The result is returned\n     * as a Vector of Figures.\n     *\n     * @return a copy of the figure selection.\n     */\n    public Object getData(String type) {\n        if (type.equals(TYPE)) {\n            InputStream input = new ByteArrayInputStream(fData);\n            Vector result = new Vector(10);\n            StorableInput reader = new StorableInput(input);\n            int numRead = 0;\n            try {\n                int count = reader.readInt();\n                while (numRead < count) {\n                    Figure newFigure = (Figure) reader.readStorable();\n                    result.addElement(newFigure);\n                    numRead++;\n                }\n            } catch (IOException e) {\n                System.out.println(e.toString());\n            }\n            return result;\n        }\n        return null;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * FigureSelection enables to transfer the selected figures\n * to a clipboard.<p>\n * Will soon be converted to the JDK 1.1 Transferable interface.\n *\n * @see Clipboard\n */\npublic class FigureSelection extends Object {\n\n    // flattend figures, ready to be resurrected\n    private byte[] fData;\n\n    /**\n     * The type identifier of the selection.\n     */\n    public final static String TYPE = \"CH.ifa.draw.Figures\";\n\n    public FigureSelection(Vector figures) {\n        // a FigureSelection is represented as a flattened ByteStream\n        // of figures.\n        ByteArrayOutputStream output = new ByteArrayOutputStream(200);\n        StorableOutput writer = new StorableOutput(output);\n        writer.writeInt(figures.size());\n        Enumeration selected = figures.elements();\n        while (selected.hasMoreElements()) {\n            Figure figure = (Figure) selected.nextElement();\n            writer.writeStorable(figure);\n        }\n        writer.close();\n        fData = output.toByteArray();\n    }\n\n    /**\n     * Gets the type of the selection.\n     */\n    public String getType() {\n        return TYPE;\n    }\n\n    /**\n     * Gets the data of the selection. The result is returned\n     * as a Vector of Figures.\n     *\n     * @return a copy of the figure selection.\n     */\n    public Object getData(String type) {\n        if (type.equals(TYPE)) {\n            InputStream input = new ByteArrayInputStream(fData);\n            Vector result = new Vector(10);\n            StorableInput reader = new StorableInput(input);\n            int numRead = 0;\n            try {\n                int count = reader.readInt();\n                while (numRead < count) {\n                    Figure newFigure = (Figure) reader.readStorable();\n                    result.addElement(newFigure);\n                    numRead++;\n                }\n            } catch (IOException e) {\n                System.out.println(e.toString());\n            }\n            return result;\n        }\n        return null;\n    }\n}",
+  "subClasses": []
+}

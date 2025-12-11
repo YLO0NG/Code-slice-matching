@@ -1,0 +1,37 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        if (fFigures.size() > 0) {\n            FigureEnumeration k = figures();\n\n            Rectangle r = k.nextFigure().displayBox();\n\n            while (k.hasMoreElements())\n                r.add(k.nextFigure().displayBox());\n            return r;\n        }\n        return new Rectangle(0, 0, 0, 0);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "java.awt.Rectangle": [
+      "add(Rectangle)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the display box. This is the union of all figures.\n */\npublic Rectangle displayBox() {\n    if (fFigures.size() > 0) {\n        FigureEnumeration k = figures();\n        Rectangle r = k.nextFigure().displayBox();\n        while (k.hasMoreElements()) r.add(k.nextFigure().displayBox());\n        return r;\n    }\n    return new Rectangle(0, 0, 0, 0);\n}",
+  "method_comment": "\n     * Gets the display box. This is the union of all figures.\n     ",
+  "method_annotation": ""
+}

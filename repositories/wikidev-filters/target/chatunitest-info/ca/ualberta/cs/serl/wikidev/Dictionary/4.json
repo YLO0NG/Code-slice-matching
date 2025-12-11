@@ -1,0 +1,25 @@
+{
+  "className": "Dictionary",
+  "methodName": "matchesPattern",
+  "brief": "public static boolean matchesPattern(String word, String pattern){}",
+  "methodSignature": "matchesPattern(String, String)",
+  "sourceCode": "public static boolean matchesPattern(String word, String pattern) {\n\t\treturn word.matches(pattern);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "matches(String)"
+    ]
+  },
+  "full_method_info": "public static boolean matchesPattern(String word, String pattern) {\n    return word.matches(pattern);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

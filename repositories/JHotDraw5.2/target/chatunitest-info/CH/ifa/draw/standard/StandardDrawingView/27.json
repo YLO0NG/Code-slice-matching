@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "constrainPoint",
+  "brief": "protected Point constrainPoint(Point p){}",
+  "methodSignature": "constrainPoint(Point)",
+  "sourceCode": "protected Point constrainPoint(Point p) {\n        // constrin to view size\n        Dimension size = getSize();\n        int max = size.width;\n\t\tint value = p.x;\n\t\tif (value < 1)\n\t\t    value = 1;\n\t\tif (value > max)\n\t\t    value = max;\n        //p.x = Math.min(size.width, Math.max(1, p.x));\n        //p.y = Math.min(size.height, Math.max(1, p.y));\n        p.x = value;\n        p.y = Geom.range(1, size.height, p.y);\n\n        if (fConstrainer != null )\n            return fConstrainer.constrainPoint(p);\n        return p;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "java.awt.Component": [
+      "getSize()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "range(int, int, int)"
+    ],
+    "CH.ifa.draw.framework.PointConstrainer": [
+      "constrainPoint(Point)"
+    ]
+  },
+  "full_method_info": "/**\n * Constrains a point to the current grid.\n */\nprotected Point constrainPoint(Point p) {\n    // constrin to view size\n    Dimension size = getSize();\n    int max = size.width;\n    int value = p.x;\n    if (value < 1)\n        value = 1;\n    if (value > max)\n        value = max;\n    // p.x = Math.min(size.width, Math.max(1, p.x));\n    // p.y = Math.min(size.height, Math.max(1, p.y));\n    p.x = value;\n    p.y = Geom.range(1, size.height, p.y);\n    if (fConstrainer != null)\n        return fConstrainer.constrainPoint(p);\n    return p;\n}",
+  "method_comment": "\n     * Constrains a point to the current grid.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "IArtifact",
+  "methodName": "getUid",
+  "brief": "public int getUid(){}",
+  "methodSignature": "getUid()",
+  "sourceCode": "public int getUid() {\n\t\treturn uid;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"uid\"\n */\npublic int getUid() {\n    return uid;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"uid\"\n\t ",
+  "method_annotation": ""
+}

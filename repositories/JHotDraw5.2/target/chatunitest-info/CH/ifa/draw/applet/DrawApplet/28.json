@@ -1,0 +1,44 @@
+{
+  "className": "DrawApplet",
+  "methodName": "setupAttributes",
+  "brief": "private void setupAttributes(){}",
+  "methodSignature": "setupAttributes()",
+  "sourceCode": "private void setupAttributes() {\n        Color   frameColor = (Color)   AttributeFigure.getDefaultAttribute(\"FrameColor\");\n        Color   fillColor  = (Color)   AttributeFigure.getDefaultAttribute(\"FillColor\");\n        Color   textColor  = (Color)   AttributeFigure.getDefaultAttribute(\"TextColor\");\n        Integer arrowMode  = (Integer) AttributeFigure.getDefaultAttribute(\"ArrowMode\");\n        String  fontName   = (String)  AttributeFigure.getDefaultAttribute(\"FontName\");\n\n        FigureEnumeration k = fView.selectionElements();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            frameColor = (Color) f.getAttribute(\"FrameColor\");\n            fillColor  = (Color) f.getAttribute(\"FillColor\");\n            textColor  = (Color) f.getAttribute(\"TextColor\");\n            arrowMode  = (Integer) f.getAttribute(\"ArrowMode\");\n            fontName   = (String) f.getAttribute(\"FontName\");\n        }\n\n        fFrameColor.setSelectedIndex(ColorMap.colorIndex(frameColor));\n        fFillColor.setSelectedIndex(ColorMap.colorIndex(fillColor));\n        //fTextColor.select(ColorMap.colorIndex(textColor));\n        if (arrowMode != null)\n            fArrowChoice.setSelectedIndex(arrowMode.intValue());\n        if (fontName != null)\n            fFontChoice.setSelectedItem(fontName);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getDefaultAttribute(String)"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionElements()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "javax.swing.JComboBox": [
+      "setSelectedItem(Object)",
+      "setSelectedIndex(int)"
+    ],
+    "CH.ifa.draw.util.ColorMap": [
+      "colorIndex(Color)"
+    ],
+    "java.lang.Integer": [
+      "intValue()"
+    ]
+  },
+  "full_method_info": "private void setupAttributes() {\n    Color frameColor = (Color) AttributeFigure.getDefaultAttribute(\"FrameColor\");\n    Color fillColor = (Color) AttributeFigure.getDefaultAttribute(\"FillColor\");\n    Color textColor = (Color) AttributeFigure.getDefaultAttribute(\"TextColor\");\n    Integer arrowMode = (Integer) AttributeFigure.getDefaultAttribute(\"ArrowMode\");\n    String fontName = (String) AttributeFigure.getDefaultAttribute(\"FontName\");\n    FigureEnumeration k = fView.selectionElements();\n    while (k.hasMoreElements()) {\n        Figure f = k.nextFigure();\n        frameColor = (Color) f.getAttribute(\"FrameColor\");\n        fillColor = (Color) f.getAttribute(\"FillColor\");\n        textColor = (Color) f.getAttribute(\"TextColor\");\n        arrowMode = (Integer) f.getAttribute(\"ArrowMode\");\n        fontName = (String) f.getAttribute(\"FontName\");\n    }\n    fFrameColor.setSelectedIndex(ColorMap.colorIndex(frameColor));\n    fFillColor.setSelectedIndex(ColorMap.colorIndex(fillColor));\n    // fTextColor.select(ColorMap.colorIndex(textColor));\n    if (arrowMode != null)\n        fArrowChoice.setSelectedIndex(arrowMode.intValue());\n    if (fontName != null)\n        fFontChoice.setSelectedItem(fontName);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

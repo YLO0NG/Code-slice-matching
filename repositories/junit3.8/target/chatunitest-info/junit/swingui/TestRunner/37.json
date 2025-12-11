@@ -1,0 +1,22 @@
+{
+  "className": "TestRunner",
+  "methodName": "getSettingsFile",
+  "brief": "private File getSettingsFile(){}",
+  "methodSignature": "getSettingsFile()",
+  "sourceCode": "private File getSettingsFile() {\r\n\t \tString home= System.getProperty(\"user.home\");\r\n \t\treturn new File(home,\".junitsession\");\r\n \t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.System": [
+      "getProperty(String)"
+    ]
+  },
+  "full_method_info": "private File getSettingsFile() {\r\n    String home = System.getProperty(\"user.home\");\r\n    return new File(home, \".junitsession\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

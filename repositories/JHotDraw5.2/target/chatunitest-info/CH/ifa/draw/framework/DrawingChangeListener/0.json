@@ -1,0 +1,22 @@
+{
+  "className": "DrawingChangeListener",
+  "methodName": "drawingInvalidated",
+  "brief": "public void drawingInvalidated(DrawingChangeEvent e);",
+  "methodSignature": "drawingInvalidated(DrawingChangeEvent)",
+  "sourceCode": "public void drawingInvalidated(DrawingChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingChangeEvent": []
+  },
+  "full_method_info": "/**\n *  Sent when an area is invalid\n */\npublic void drawingInvalidated(DrawingChangeEvent e);",
+  "method_comment": "\n     *  Sent when an area is invalid\n     ",
+  "method_annotation": ""
+}

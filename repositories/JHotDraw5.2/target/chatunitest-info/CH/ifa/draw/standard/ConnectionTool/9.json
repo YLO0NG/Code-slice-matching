@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "createdFigure",
+  "brief": "protected ConnectionFigure createdFigure(){}",
+  "methodSignature": "createdFigure()",
+  "sourceCode": "protected ConnectionFigure createdFigure() {\n        return fConnection;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the currently created figure\n */\nprotected ConnectionFigure createdFigure() {\n    return fConnection;\n}",
+  "method_comment": "\n     * Gets the currently created figure\n     ",
+  "method_annotation": ""
+}

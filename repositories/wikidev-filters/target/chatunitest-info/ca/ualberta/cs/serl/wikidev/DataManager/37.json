@@ -1,0 +1,32 @@
+{
+  "className": "DataManager",
+  "methodName": "getProjectNamespaceByNamespaceID",
+  "brief": "private static String getProjectNamespaceByNamespaceID(int page_namespace_id) throws SQLException{}",
+  "methodSignature": "getProjectNamespaceByNamespaceID(int)",
+  "sourceCode": "private static String getProjectNamespaceByNamespaceID(int page_namespace_id) throws SQLException {\n\t\tString namespace = \"\";\n\t\tString sqlStmt = QueryBuilder.selectProjectNamespaceByNamespaceID(page_namespace_id);\n\t\tResultSet res = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile(res.next()) {\n\t\t\tnamespace = res.getString(\"nsName\");\n\t\t}\n\t\tif(res != null) res.close();\n\t\treturn namespace;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectProjectNamespaceByNamespaceID(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "next()",
+      "close()"
+    ]
+  },
+  "full_method_info": "private static String getProjectNamespaceByNamespaceID(int page_namespace_id) throws SQLException {\n    String namespace = \"\";\n    String sqlStmt = QueryBuilder.selectProjectNamespaceByNamespaceID(page_namespace_id);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        namespace = res.getString(\"nsName\");\n    }\n    if (res != null)\n        res.close();\n    return namespace;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "ChangeConnectionStartHandle",
+  "methodName": "connect",
+  "brief": "protected void connect(Connector c){}",
+  "methodSignature": "connect(Connector)",
+  "sourceCode": "protected void connect(Connector c) {\n        fConnection.connectStart(c);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Connector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Connector": [],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "connectStart(Connector)"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the start of the connection.\n */\nprotected void connect(Connector c) {\n    fConnection.connectStart(c);\n}",
+  "method_comment": "\n     * Sets the start of the connection.\n     ",
+  "method_annotation": ""
+}

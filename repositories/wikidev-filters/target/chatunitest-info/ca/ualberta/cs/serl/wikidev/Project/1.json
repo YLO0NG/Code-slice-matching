@@ -1,0 +1,20 @@
+{
+  "className": "Project",
+  "methodName": "setSystem",
+  "brief": "public void setSystem(int system){}",
+  "methodSignature": "setSystem(int)",
+  "sourceCode": "public void setSystem(int system) {\n\t\tthis.system = system;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param system\n * @uml.property  name=\"system\"\n */\npublic void setSystem(int system) {\n    this.system = system;\n}",
+  "method_comment": "\n\t * @param system\n\t * @uml.property  name=\"system\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,77 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.RelativeLocator",
+  "className": "RelativeLocator",
+  "index": 136,
+  "modifier": "[public ]",
+  "extend": "[AbstractLocator]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class RelativeLocator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = 2619148876087898602L;",
+    "private int relativeLocatorSerializedDataVersion = 1;",
+    "double  fRelativeX;",
+    "double  fRelativeY;"
+  ],
+  "superClasses": [
+    "AbstractLocator"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "locate(Figure)": "0",
+    "write(StorableOutput)": "1",
+    "read(StorableInput)": "2",
+    "east()": "3",
+    "north()": "4",
+    "west()": "5",
+    "northEast()": "6",
+    "northWest()": "7",
+    "south()": "8",
+    "southEast()": "9",
+    "southWest()": "10",
+    "center()": "11",
+    "RelativeLocator()": "12",
+    "RelativeLocator(double, double)": "13"
+  },
+  "methodsBrief": [
+    "public Point locate(Figure owner){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "static public Locator east(){}",
+    "static public Locator north(){}",
+    "static public Locator west(){}",
+    "static public Locator northEast(){}",
+    "static public Locator northWest(){}",
+    "static public Locator south(){}",
+    "static public Locator southEast(){}",
+    "static public Locator southWest(){}",
+    "static public Locator center(){}",
+    "public RelativeLocator(){}",
+    "public RelativeLocator(double relativeX, double relativeY){}"
+  ],
+  "constructorSigs": [
+    "RelativeLocator()",
+    "RelativeLocator(double, double)"
+  ],
+  "constructorBrief": [
+    "public RelativeLocator(){}",
+    "public RelativeLocator(double relativeX, double relativeY){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)RelativeLocator.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A locator that specfies a point that is relative to the bounds\n * of a figure.\n * @see Locator\n */\npublic class RelativeLocator extends AbstractLocator {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 2619148876087898602L;\n\n    private int relativeLocatorSerializedDataVersion = 1;\n\n    double fRelativeX;\n\n    double fRelativeY;\n\n    public RelativeLocator() {\n        fRelativeX = 0.0;\n        fRelativeY = 0.0;\n    }\n\n    public RelativeLocator(double relativeX, double relativeY) {\n        fRelativeX = relativeX;\n        fRelativeY = relativeY;\n    }\n\n    public Point locate(Figure owner) {\n        Rectangle r = owner.displayBox();\n        return new Point(r.x + (int) (r.width * fRelativeX), r.y + (int) (r.height * fRelativeY));\n    }\n\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeDouble(fRelativeX);\n        dw.writeDouble(fRelativeY);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fRelativeX = dr.readDouble();\n        fRelativeY = dr.readDouble();\n    }\n\n    static public Locator east() {\n        return new RelativeLocator(1.0, 0.5);\n    }\n\n    /**\n     * North.\n     */\n    static public Locator north() {\n        return new RelativeLocator(0.5, 0.0);\n    }\n\n    /**\n     * West.\n     */\n    static public Locator west() {\n        return new RelativeLocator(0.0, 0.5);\n    }\n\n    /**\n     * North east.\n     */\n    static public Locator northEast() {\n        return new RelativeLocator(1.0, 0.0);\n    }\n\n    /**\n     * North west.\n     */\n    static public Locator northWest() {\n        return new RelativeLocator(0.0, 0.0);\n    }\n\n    /**\n     * South.\n     */\n    static public Locator south() {\n        return new RelativeLocator(0.5, 1.0);\n    }\n\n    /**\n     * South east.\n     */\n    static public Locator southEast() {\n        return new RelativeLocator(1.0, 1.0);\n    }\n\n    /**\n     * South west.\n     */\n    static public Locator southWest() {\n        return new RelativeLocator(0.0, 1.0);\n    }\n\n    /**\n     * Center.\n     */\n    static public Locator center() {\n        return new RelativeLocator(0.5, 0.5);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A locator that specfies a point that is relative to the bounds\n * of a figure.\n * @see Locator\n */\npublic class RelativeLocator extends AbstractLocator {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 2619148876087898602L;\n\n    private int relativeLocatorSerializedDataVersion = 1;\n\n    double fRelativeX;\n\n    double fRelativeY;\n\n    public RelativeLocator() {\n        fRelativeX = 0.0;\n        fRelativeY = 0.0;\n    }\n\n    public RelativeLocator(double relativeX, double relativeY) {\n        fRelativeX = relativeX;\n        fRelativeY = relativeY;\n    }\n\n    public Point locate(Figure owner) {\n        Rectangle r = owner.displayBox();\n        return new Point(r.x + (int) (r.width * fRelativeX), r.y + (int) (r.height * fRelativeY));\n    }\n\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeDouble(fRelativeX);\n        dw.writeDouble(fRelativeY);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fRelativeX = dr.readDouble();\n        fRelativeY = dr.readDouble();\n    }\n\n    static public Locator east() {\n        return new RelativeLocator(1.0, 0.5);\n    }\n\n    /**\n     * North.\n     */\n    static public Locator north() {\n        return new RelativeLocator(0.5, 0.0);\n    }\n\n    /**\n     * West.\n     */\n    static public Locator west() {\n        return new RelativeLocator(0.0, 0.5);\n    }\n\n    /**\n     * North east.\n     */\n    static public Locator northEast() {\n        return new RelativeLocator(1.0, 0.0);\n    }\n\n    /**\n     * North west.\n     */\n    static public Locator northWest() {\n        return new RelativeLocator(0.0, 0.0);\n    }\n\n    /**\n     * South.\n     */\n    static public Locator south() {\n        return new RelativeLocator(0.5, 1.0);\n    }\n\n    /**\n     * South east.\n     */\n    static public Locator southEast() {\n        return new RelativeLocator(1.0, 1.0);\n    }\n\n    /**\n     * South west.\n     */\n    static public Locator southWest() {\n        return new RelativeLocator(0.0, 1.0);\n    }\n\n    /**\n     * Center.\n     */\n    static public Locator center() {\n        return new RelativeLocator(0.5, 0.5);\n    }\n}",
+  "subClasses": []
+}

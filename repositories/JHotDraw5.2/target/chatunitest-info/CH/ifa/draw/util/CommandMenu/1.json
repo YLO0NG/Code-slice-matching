@@ -1,0 +1,40 @@
+{
+  "className": "CommandMenu",
+  "methodName": "add",
+  "brief": "public synchronized void add(Command command, MenuShortcut shortcut){}",
+  "methodSignature": "add(Command, MenuShortcut)",
+  "sourceCode": "public synchronized void add(Command command, MenuShortcut shortcut) {\n        JMenuItem m = new JMenuItem(command.name(), shortcut.getKey());\n        m.setName(command.name());\n        m.addActionListener(this);\n        add(m);\n        fCommands.addElement(command);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Command",
+    "MenuShortcut"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Command": [
+      "name()"
+    ],
+    "java.awt.MenuShortcut": [
+      "getKey()"
+    ],
+    "java.awt.Component": [
+      "setName(String)"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "javax.swing.JMenu": [
+      "add(JMenuItem)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a command with the given short cut to the menu. The item's label is\n * the command's name.\n */\npublic synchronized void add(Command command, MenuShortcut shortcut) {\n    JMenuItem m = new JMenuItem(command.name(), shortcut.getKey());\n    m.setName(command.name());\n    m.addActionListener(this);\n    add(m);\n    fCommands.addElement(command);\n}",
+  "method_comment": "\n     * Adds a command with the given short cut to the menu. The item's label is\n     * the command's name.\n     ",
+  "method_annotation": ""
+}

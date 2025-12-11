@@ -1,0 +1,22 @@
+{
+  "className": "Figure",
+  "methodName": "removeFigureChangeListener",
+  "brief": "public void removeFigureChangeListener(FigureChangeListener l);",
+  "methodSignature": "removeFigureChangeListener(FigureChangeListener)",
+  "sourceCode": "public void removeFigureChangeListener(FigureChangeListener l);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": []
+  },
+  "full_method_info": "/**\n * Removes a listener for this figure.\n */\npublic void removeFigureChangeListener(FigureChangeListener l);",
+  "method_comment": "\n     * Removes a listener for this figure.\n     ",
+  "method_annotation": ""
+}

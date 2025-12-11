@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "setEditor",
+  "brief": "public void setEditor(DrawingEditor editor){}",
+  "methodSignature": "setEditor(DrawingEditor)",
+  "sourceCode": "public void setEditor(DrawingEditor editor) {\n        fEditor = editor;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingEditor"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingEditor": []
+  },
+  "full_method_info": "/**\n * Sets the view's editor.\n */\npublic void setEditor(DrawingEditor editor) {\n    fEditor = editor;\n}",
+  "method_comment": "\n     * Sets the view's editor.\n     ",
+  "method_annotation": ""
+}

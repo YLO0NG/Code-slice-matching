@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrderItem",
+  "methodName": "setPurchaseOrder",
+  "brief": "public void setPurchaseOrder( PurchaseOrder purchaseOrder ){}",
+  "methodSignature": "setPurchaseOrder(PurchaseOrder)",
+  "sourceCode": "public void setPurchaseOrder( PurchaseOrder purchaseOrder ) {\n\t\tthis.purchaseOrder = purchaseOrder;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PurchaseOrder"
+  ],
+  "dependentMethods": {
+    "classes.PurchaseOrder": []
+  },
+  "full_method_info": "public void setPurchaseOrder(PurchaseOrder purchaseOrder) {\n    this.purchaseOrder = purchaseOrder;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

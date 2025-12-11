@@ -1,0 +1,25 @@
+{
+  "className": "OffsetLocator",
+  "methodName": "locate",
+  "brief": "public Point locate(Figure owner){}",
+  "methodSignature": "locate(Figure)",
+  "sourceCode": "public Point locate(Figure owner) {\n        Point p = fBase.locate(owner);\n        p.x += fOffsetX;\n        p.y += fOffsetY;\n        return p;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Locator": [
+      "locate(Figure)"
+    ]
+  },
+  "full_method_info": "public Point locate(Figure owner) {\n    Point p = fBase.locate(owner);\n    p.x += fOffsetX;\n    p.y += fOffsetY;\n    return p;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

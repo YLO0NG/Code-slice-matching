@@ -1,0 +1,77 @@
+{
+  "fullClassName": "CH.ifa.draw.util.StorableOutput",
+  "className": "StorableOutput",
+  "index": 168,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class StorableOutput",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import java.io.*;",
+    "import java.awt.Color;"
+  ],
+  "fields": [
+    "private PrintWriter     fStream;",
+    "private Vector          fMap;",
+    "private int             fIndent;"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "writeStorable(Storable)": "0",
+    "writeInt(int)": "1",
+    "writeColor(Color)": "2",
+    "writeDouble(double)": "3",
+    "writeBoolean(boolean)": "4",
+    "writeString(String)": "5",
+    "close()": "6",
+    "mapped(Storable)": "7",
+    "map(Storable)": "8",
+    "writeRef(Storable)": "9",
+    "incrementIndent()": "10",
+    "decrementIndent()": "11",
+    "startNewLine()": "12",
+    "space()": "13",
+    "StorableOutput(OutputStream)": "14"
+  },
+  "methodsBrief": [
+    "public void writeStorable(Storable storable){}",
+    "public void writeInt(int i){}",
+    "public void writeColor(Color c){}",
+    "public void writeDouble(double d){}",
+    "public void writeBoolean(boolean b){}",
+    "public void writeString(String s){}",
+    "public void close(){}",
+    "private boolean mapped(Storable storable){}",
+    "private void map(Storable storable){}",
+    "private void writeRef(Storable storable){}",
+    "private void incrementIndent(){}",
+    "private void decrementIndent(){}",
+    "private void startNewLine(){}",
+    "private void space(){}",
+    "public StorableOutput(OutputStream stream){}"
+  ],
+  "constructorSigs": [
+    "StorableOutput(OutputStream)"
+  ],
+  "constructorBrief": [
+    "public StorableOutput(OutputStream stream){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.io.OutputStream": []
+  },
+  "compilationUnitCode": "/*\n * @(#)StorableOutput.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.util.*;\nimport java.io.*;\nimport java.awt.Color;\n\n/**\n * An output stream that can be used to flatten Storable objects.\n * StorableOutput preserves the object identity of the stored objects.\n *\n * @see Storable\n * @see StorableInput\n */\npublic class StorableOutput extends Object {\n\n    private PrintWriter fStream;\n\n    private Vector fMap;\n\n    private int fIndent;\n\n    public StorableOutput(OutputStream stream) {\n        fStream = new PrintWriter(stream);\n        fMap = new Vector();\n        fIndent = 0;\n    }\n\n    /**\n     * Writes a storable object to the output stream.\n     */\n    public void writeStorable(Storable storable) {\n        if (storable == null) {\n            fStream.print(\"NULL\");\n            space();\n            return;\n        }\n        if (mapped(storable)) {\n            int ref = fMap.indexOf(storable);\n            fStream.print(\"REF\");\n            space();\n            fStream.print(ref);\n            space();\n            return;\n        }\n        incrementIndent();\n        startNewLine();\n        map(storable);\n        fStream.print(storable.getClass().getName());\n        space();\n        storable.write(this);\n        space();\n        decrementIndent();\n    }\n\n    /**\n     * Writes an int to the output stream.\n     */\n    public void writeInt(int i) {\n        fStream.print(i);\n        space();\n    }\n\n    public void writeColor(Color c) {\n        writeInt(c.getRed());\n        writeInt(c.getGreen());\n        writeInt(c.getBlue());\n    }\n\n    /**\n     * Writes an int to the output stream.\n     */\n    public void writeDouble(double d) {\n        fStream.print(d);\n        space();\n    }\n\n    /**\n     * Writes an int to the output stream.\n     */\n    public void writeBoolean(boolean b) {\n        if (b)\n            fStream.print(1);\n        else\n            fStream.print(0);\n        space();\n    }\n\n    /**\n     * Writes a string to the output stream. Special characters\n     * are quoted.\n     */\n    public void writeString(String s) {\n        fStream.print('\"');\n        for (int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            switch(c) {\n                case '\\n':\n                    fStream.print('\\\\');\n                    fStream.print('n');\n                    break;\n                case '\"':\n                    fStream.print('\\\\');\n                    fStream.print('\"');\n                    break;\n                case '\\\\':\n                    fStream.print('\\\\');\n                    fStream.print('\\\\');\n                    break;\n                case '\\t':\n                    fStream.print('\\\\');\n                    fStream.print('\\t');\n                    break;\n                default:\n                    fStream.print(c);\n            }\n        }\n        fStream.print('\"');\n        space();\n    }\n\n    /**\n     * Closes a storable output stream.\n     */\n    public void close() {\n        fStream.close();\n    }\n\n    private boolean mapped(Storable storable) {\n        return fMap.contains(storable);\n    }\n\n    private void map(Storable storable) {\n        if (!fMap.contains(storable))\n            fMap.addElement(storable);\n    }\n\n    private void writeRef(Storable storable) {\n        int ref = fMap.indexOf(storable);\n        fStream.print(\"REF\");\n        space();\n        fStream.print(ref);\n        space();\n    }\n\n    private void incrementIndent() {\n        fIndent += 4;\n    }\n\n    private void decrementIndent() {\n        fIndent -= 4;\n        if (fIndent < 0)\n            fIndent = 0;\n    }\n\n    private void startNewLine() {\n        fStream.println();\n        for (int i = 0; i < fIndent; i++) space();\n    }\n\n    private void space() {\n        fStream.print(' ');\n    }\n}\n",
+  "classDeclarationCode": "/**\n * An output stream that can be used to flatten Storable objects.\n * StorableOutput preserves the object identity of the stored objects.\n *\n * @see Storable\n * @see StorableInput\n */\npublic class StorableOutput extends Object {\n\n    private PrintWriter fStream;\n\n    private Vector fMap;\n\n    private int fIndent;\n\n    public StorableOutput(OutputStream stream) {\n        fStream = new PrintWriter(stream);\n        fMap = new Vector();\n        fIndent = 0;\n    }\n\n    /**\n     * Writes a storable object to the output stream.\n     */\n    public void writeStorable(Storable storable) {\n        if (storable == null) {\n            fStream.print(\"NULL\");\n            space();\n            return;\n        }\n        if (mapped(storable)) {\n            int ref = fMap.indexOf(storable);\n            fStream.print(\"REF\");\n            space();\n            fStream.print(ref);\n            space();\n            return;\n        }\n        incrementIndent();\n        startNewLine();\n        map(storable);\n        fStream.print(storable.getClass().getName());\n        space();\n        storable.write(this);\n        space();\n        decrementIndent();\n    }\n\n    /**\n     * Writes an int to the output stream.\n     */\n    public void writeInt(int i) {\n        fStream.print(i);\n        space();\n    }\n\n    public void writeColor(Color c) {\n        writeInt(c.getRed());\n        writeInt(c.getGreen());\n        writeInt(c.getBlue());\n    }\n\n    /**\n     * Writes an int to the output stream.\n     */\n    public void writeDouble(double d) {\n        fStream.print(d);\n        space();\n    }\n\n    /**\n     * Writes an int to the output stream.\n     */\n    public void writeBoolean(boolean b) {\n        if (b)\n            fStream.print(1);\n        else\n            fStream.print(0);\n        space();\n    }\n\n    /**\n     * Writes a string to the output stream. Special characters\n     * are quoted.\n     */\n    public void writeString(String s) {\n        fStream.print('\"');\n        for (int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            switch(c) {\n                case '\\n':\n                    fStream.print('\\\\');\n                    fStream.print('n');\n                    break;\n                case '\"':\n                    fStream.print('\\\\');\n                    fStream.print('\"');\n                    break;\n                case '\\\\':\n                    fStream.print('\\\\');\n                    fStream.print('\\\\');\n                    break;\n                case '\\t':\n                    fStream.print('\\\\');\n                    fStream.print('\\t');\n                    break;\n                default:\n                    fStream.print(c);\n            }\n        }\n        fStream.print('\"');\n        space();\n    }\n\n    /**\n     * Closes a storable output stream.\n     */\n    public void close() {\n        fStream.close();\n    }\n\n    private boolean mapped(Storable storable) {\n        return fMap.contains(storable);\n    }\n\n    private void map(Storable storable) {\n        if (!fMap.contains(storable))\n            fMap.addElement(storable);\n    }\n\n    private void writeRef(Storable storable) {\n        int ref = fMap.indexOf(storable);\n        fStream.print(\"REF\");\n        space();\n        fStream.print(ref);\n        space();\n    }\n\n    private void incrementIndent() {\n        fIndent += 4;\n    }\n\n    private void decrementIndent() {\n        fIndent -= 4;\n        if (fIndent < 0)\n            fIndent = 0;\n    }\n\n    private void startNewLine() {\n        fStream.println();\n        for (int i = 0; i < fIndent; i++) space();\n    }\n\n    private void space() {\n        fStream.print(' ');\n    }\n}",
+  "subClasses": []
+}

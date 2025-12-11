@@ -1,0 +1,39 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.clustering.Helper",
+  "className": "Helper",
+  "index": 27,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.clustering",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.clustering;",
+  "classSignature": "public class Helper",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Random;"
+  ],
+  "fields": [
+    "private static Random _rnd = new Random();"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "ManhattenDistance(double[], double[])": "0",
+    "FisherYatesShuffle(int[])": "1"
+  },
+  "methodsBrief": [
+    "public static double ManhattenDistance(double[] vec1, double[] vec2)\r\n{}",
+    "public static void FisherYatesShuffle(int[] array)\r\n{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.clustering;\n\nimport java.util.Random;\n\npublic class Helper {\n\n    private static Random _rnd = new Random();\n\n    // ---------------------------------------------------------------------\n    public static double ManhattenDistance(double[] vec1, double[] vec2) {\n        double distance = 0;\n        for (int i = 0; i < vec1.length; i++) distance += Math.abs(vec1[i] - vec2[i]);\n        return distance;\n    }\n\n    // ---------------------------------------------------------------------\n    public static void FisherYatesShuffle(int[] array) {\n        for (int i = array.length - 1; i > 0; i--) {\n            // Pick random positoin:\n            int pos = _rnd.nextInt(i + 1);\n            // Swap:\n            int tmp = array[i];\n            array[i] = array[pos];\n            array[pos] = tmp;\n        }\n    }\n}\n",
+  "classDeclarationCode": "public class Helper {\n\n    private static Random _rnd = new Random();\n\n    // ---------------------------------------------------------------------\n    public static double ManhattenDistance(double[] vec1, double[] vec2) {\n        double distance = 0;\n        for (int i = 0; i < vec1.length; i++) distance += Math.abs(vec1[i] - vec2[i]);\n        return distance;\n    }\n\n    // ---------------------------------------------------------------------\n    public static void FisherYatesShuffle(int[] array) {\n        for (int i = array.length - 1; i > 0; i--) {\n            // Pick random positoin:\n            int pos = _rnd.nextInt(i + 1);\n            // Swap:\n            int tmp = array[i];\n            array[i] = array[pos];\n            array[pos] = tmp;\n        }\n    }\n}",
+  "subClasses": []
+}

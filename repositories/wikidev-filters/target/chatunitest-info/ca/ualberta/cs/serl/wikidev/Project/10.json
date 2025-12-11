@@ -1,0 +1,20 @@
+{
+  "className": "Project",
+  "methodName": "setChangesets",
+  "brief": "public void setChangesets(Set<ChangeSet> changesets){}",
+  "methodSignature": "setChangesets(Set)",
+  "sourceCode": "public void setChangesets(Set<ChangeSet> changesets) {\n\t\tthis.changesets = changesets;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Set<ChangeSet>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setChangesets(Set<ChangeSet> changesets) {\n    this.changesets = changesets;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

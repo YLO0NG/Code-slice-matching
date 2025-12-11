@@ -1,0 +1,25 @@
+{
+  "className": "NodeFigure",
+  "methodName": "connectorAt",
+  "brief": "public Connector connectorAt(int x, int y){}",
+  "methodSignature": "connectorAt(int, int)",
+  "sourceCode": "public Connector connectorAt(int x, int y) {\n        return findConnector(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "findConnector(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n */\npublic Connector connectorAt(int x, int y) {\n    return findConnector(x, y);\n}",
+  "method_comment": "\n     ",
+  "method_annotation": ""
+}

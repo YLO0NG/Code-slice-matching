@@ -1,0 +1,34 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        String fillColorId = dr.readString();\n\t\t// read color only if one has been written\n        if (fillColorId.equals(\"FillColor\")) {\n\t        setFillColor(FigureAttributes.readColor(dr));\n        }\n        String borderColorId = dr.readString();\n\t\t// read color only if one has been written\n        if (borderColorId.equals(\"BorderColor\")) {\n\t        setBorderColor(FigureAttributes.readColor(dr));\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readString()"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.figures.AbstractLineDecoration": [
+      "setBorderColor(Color)",
+      "setFillColor(Color)"
+    ],
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "readColor(StorableInput)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the arrow tip from a StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    String fillColorId = dr.readString();\n    // read color only if one has been written\n    if (fillColorId.equals(\"FillColor\")) {\n        setFillColor(FigureAttributes.readColor(dr));\n    }\n    String borderColorId = dr.readString();\n    // read color only if one has been written\n    if (borderColorId.equals(\"BorderColor\")) {\n        setBorderColor(FigureAttributes.readColor(dr));\n    }\n}",
+  "method_comment": "\n     * Reads the arrow tip from a StorableInput.\n     ",
+  "method_annotation": ""
+}

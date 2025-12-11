@@ -1,0 +1,42 @@
+{
+  "className": "TextParser",
+  "methodName": "parseURL",
+  "brief": "public void parseURL(String text){}",
+  "methodSignature": "parseURL(String)",
+  "sourceCode": "public void parseURL(String text) {\n\t\tURL newURL = new URL();\n\t\tnewURL.setUrl(text);\n\t\tif(text.startsWith(\"http://\")) {\n\t\t\ttext = text.substring(7);\n\t\t}\n\t\telse if(text.startsWith(\"https://\") || text.startsWith(\"file:///\")) {\n\t\t\ttext = text.substring(8);\n\t\t}\n\t\tint indexOfNextSlash = text.indexOf(\"/\");\n\t\tif (indexOfNextSlash != -1) {\n\t\t\tnewURL.setHost(text.substring(0, indexOfNextSlash));\n\t\t\ttext = text.substring(indexOfNextSlash + 1);\n\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\tif (indexOfNextSlash != -1) {\n\t\t\t\tif (text.substring(0, indexOfNextSlash).contains(\".\")) {\n\t\t\t\t\ttext = text.substring(indexOfNextSlash + 1);\n\t\t\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\t\t}\n\t\t\t\tif (indexOfNextSlash != -1) {\n\t\t\t\t\tif (text.substring(0, indexOfNextSlash).equals(\"drproject\")) {\n\t\t\t\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\t\t\t\ttext = text.substring(indexOfNextSlash + 1);\n\t\t\t\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\t\t\t\tnewURL.setProjectName(text.substring(0,\n\t\t\t\t\t\t\t\tindexOfNextSlash));\n\t\t\t\t\t\ttext = text.substring(indexOfNextSlash + 1);\n\t\t\t\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\t\t\t\tif (indexOfNextSlash != -1) {\n\t\t\t\t\t\t\tnewURL.setEntityType(Dictionary\n\t\t\t\t\t\t\t\t\t.getDataBaseTable(text.substring(0,\n\t\t\t\t\t\t\t\t\t\t\tindexOfNextSlash)));\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse {\n\t\t\t\t\t\t\tnewURL.setEntityType(Dictionary\n\t\t\t\t\t\t\t\t\t.getDataBaseTable(text));\n\t\t\t\t\t\t}\n\t\t\t\t\t} else if (text.substring(0, indexOfNextSlash)\n\t\t\t\t\t\t\t.equals(\"svn\")) {\n\t\t\t\t\t\tnewURL.setEntityType(Dictionary.getDataBaseTable(text\n\t\t\t\t\t\t\t\t.substring(0, indexOfNextSlash)));\n\t\t\t\t\t\ttext = text.substring(indexOfNextSlash + 1);\n\t\t\t\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\t\t\t\tif (indexOfNextSlash != -1) {\n\t\t\t\t\t\t\tnewURL.setProjectName(text.substring(0,\n\t\t\t\t\t\t\t\t\tindexOfNextSlash));\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse {\n\t\t\t\t\t\t\tnewURL.setProjectName(text);\n\t\t\t\t\t\t}\n\t\t\t\t\t} else {\n\t\t\t\t\t\tnewURL.setProjectName(text.substring(0,\n\t\t\t\t\t\t\t\tindexOfNextSlash));\n\t\t\t\t\t\ttext = text.substring(indexOfNextSlash + 1);\n\t\t\t\t\t\tindexOfNextSlash = text.indexOf(\"/\");\n\t\t\t\t\t\tif (indexOfNextSlash != -1) {\n\t\t\t\t\t\t\tnewURL.setEntityType(Dictionary\n\t\t\t\t\t\t\t\t\t.getDataBaseTable(text.substring(0,\n\t\t\t\t\t\t\t\t\t\t\tindexOfNextSlash)));\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse {\n\t\t\t\t\t\t\tnewURL.setEntityType(Dictionary\n\t\t\t\t\t\t\t\t\t.getDataBaseTable(text));\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\tnewURL.setHost(text);\n\t\t}\n\t\tif(newURL.getUrl().contains(\"src\")) {\n\t\t\tnewURL.setEntityType(Dictionary.getDataBaseTable(\"src\"));\n\t\t}\n\t\tthis.urls.add(newURL);\t\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "startsWith(String)",
+      "equals(Object)",
+      "substring(int)",
+      "substring(int, int)",
+      "indexOf(String)",
+      "contains(CharSequence)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.URL": [
+      "setProjectName(String)",
+      "setHost(String)",
+      "setEntityType(String)",
+      "getUrl()",
+      "setUrl(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Dictionary": [
+      "getDataBaseTable(String)"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void parseURL(String text) {\n    URL newURL = new URL();\n    newURL.setUrl(text);\n    if (text.startsWith(\"http://\")) {\n        text = text.substring(7);\n    } else if (text.startsWith(\"https://\") || text.startsWith(\"file:///\")) {\n        text = text.substring(8);\n    }\n    int indexOfNextSlash = text.indexOf(\"/\");\n    if (indexOfNextSlash != -1) {\n        newURL.setHost(text.substring(0, indexOfNextSlash));\n        text = text.substring(indexOfNextSlash + 1);\n        indexOfNextSlash = text.indexOf(\"/\");\n        if (indexOfNextSlash != -1) {\n            if (text.substring(0, indexOfNextSlash).contains(\".\")) {\n                text = text.substring(indexOfNextSlash + 1);\n                indexOfNextSlash = text.indexOf(\"/\");\n            }\n            if (indexOfNextSlash != -1) {\n                if (text.substring(0, indexOfNextSlash).equals(\"drproject\")) {\n                    indexOfNextSlash = text.indexOf(\"/\");\n                    text = text.substring(indexOfNextSlash + 1);\n                    indexOfNextSlash = text.indexOf(\"/\");\n                    newURL.setProjectName(text.substring(0, indexOfNextSlash));\n                    text = text.substring(indexOfNextSlash + 1);\n                    indexOfNextSlash = text.indexOf(\"/\");\n                    if (indexOfNextSlash != -1) {\n                        newURL.setEntityType(Dictionary.getDataBaseTable(text.substring(0, indexOfNextSlash)));\n                    } else {\n                        newURL.setEntityType(Dictionary.getDataBaseTable(text));\n                    }\n                } else if (text.substring(0, indexOfNextSlash).equals(\"svn\")) {\n                    newURL.setEntityType(Dictionary.getDataBaseTable(text.substring(0, indexOfNextSlash)));\n                    text = text.substring(indexOfNextSlash + 1);\n                    indexOfNextSlash = text.indexOf(\"/\");\n                    if (indexOfNextSlash != -1) {\n                        newURL.setProjectName(text.substring(0, indexOfNextSlash));\n                    } else {\n                        newURL.setProjectName(text);\n                    }\n                } else {\n                    newURL.setProjectName(text.substring(0, indexOfNextSlash));\n                    text = text.substring(indexOfNextSlash + 1);\n                    indexOfNextSlash = text.indexOf(\"/\");\n                    if (indexOfNextSlash != -1) {\n                        newURL.setEntityType(Dictionary.getDataBaseTable(text.substring(0, indexOfNextSlash)));\n                    } else {\n                        newURL.setEntityType(Dictionary.getDataBaseTable(text));\n                    }\n                }\n            }\n        }\n    } else {\n        newURL.setHost(text);\n    }\n    if (newURL.getUrl().contains(\"src\")) {\n        newURL.setEntityType(Dictionary.getDataBaseTable(\"src\"));\n    }\n    this.urls.add(newURL);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

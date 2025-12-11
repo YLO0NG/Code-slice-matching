@@ -1,0 +1,29 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "sendToBack",
+  "brief": "public synchronized void sendToBack(Figure figure){}",
+  "methodSignature": "sendToBack(Figure)",
+  "sourceCode": "public synchronized void sendToBack(Figure figure) {\n        if (fFigures.contains(figure)) {\n            fFigures.removeElement(figure);\n            fFigures.insertElementAt(figure,0);\n            figure.changed();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "changed()"
+    ],
+    "java.util.Vector": [
+      "insertElementAt(E, int)",
+      "removeElement(Object)",
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Sends a figure to the back of the drawing.\n */\npublic synchronized void sendToBack(Figure figure) {\n    if (fFigures.contains(figure)) {\n        fFigures.removeElement(figure);\n        fFigures.insertElementAt(figure, 0);\n        figure.changed();\n    }\n}",
+  "method_comment": "\n     * Sends a figure to the back of the drawing.\n     ",
+  "method_annotation": ""
+}

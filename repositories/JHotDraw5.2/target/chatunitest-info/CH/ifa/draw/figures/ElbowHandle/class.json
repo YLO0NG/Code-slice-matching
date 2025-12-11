@@ -1,0 +1,65 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.ElbowHandle",
+  "className": "ElbowHandle",
+  "index": 30,
+  "modifier": "[public ]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class ElbowHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "private int fSegment;",
+    "private int fLastX, fLastY;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStart(int, int, DrawingView)": "0",
+    "invokeStep(int, int, int, int, DrawingView)": "1",
+    "isVertical(Point, Point)": "2",
+    "locate()": "3",
+    "draw(Graphics)": "4",
+    "constrainX(int)": "5",
+    "constrainY(int)": "6",
+    "ownerConnection()": "7",
+    "ElbowHandle(LineConnection, int)": "8"
+  },
+  "methodsBrief": [
+    "public void invokeStart(int  x, int  y, DrawingView view){}",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "private boolean isVertical(Point p1, Point p2){}",
+    "public Point locate(){}",
+    "public void draw(Graphics g){}",
+    "private int constrainX(int x){}",
+    "private int constrainY(int y){}",
+    "private LineConnection ownerConnection(){}",
+    "public ElbowHandle(LineConnection owner, int segment){}"
+  ],
+  "constructorSigs": [
+    "ElbowHandle(LineConnection, int)"
+  ],
+  "constructorBrief": [
+    "public ElbowHandle(LineConnection owner, int segment){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.figures.LineConnection": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ElbowHandle.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * A Handle to move an ElbowConnection left/right or up/down.\n */\npublic class ElbowHandle extends AbstractHandle {\n\n    private int fSegment;\n\n    // previous mouse position\n    private int fLastX, fLastY;\n\n    public ElbowHandle(LineConnection owner, int segment) {\n        super(owner);\n        fSegment = segment;\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        fLastX = x;\n        fLastY = y;\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        LineConnection line = ownerConnection();\n        Point p1 = line.pointAt(fSegment);\n        Point p2 = line.pointAt(fSegment + 1);\n        int ddx = x - fLastX;\n        int ddy = y - fLastY;\n        Point np1;\n        Point np2;\n        if (isVertical(p1, p2)) {\n            int x1 = p1.x + ddx;\n            LineConnection line1 = ownerConnection();\n            Figure startFigure = line1.start().owner();\n            Figure endFigure = line1.end().owner();\n            Rectangle start = startFigure.displayBox();\n            Rectangle end = endFigure.displayBox();\n            Insets i1 = startFigure.connectionInsets();\n            Insets i2 = endFigure.connectionInsets();\n            int r1x, r1width, r2x, r2width;\n            r1x = start.x + i1.left;\n            r1width = start.width - i1.left - i1.right - 1;\n            r2x = end.x + i2.left;\n            r2width = end.width - i2.left - i2.right - 1;\n            if (fSegment == 0)\n                x1 = Geom.range(r1x, r1x + r1width, x1);\n            if (fSegment == line1.pointCount() - 2)\n                x1 = Geom.range(r2x, r2x + r2width, x1);\n            int cx = x1;\n            np1 = new Point(cx, p1.y);\n            np2 = new Point(cx, p2.y);\n        } else {\n            int cy = constrainY(p1.y + ddy);\n            np1 = new Point(p1.x, cy);\n            np2 = new Point(p2.x, cy);\n        }\n        line.setPointAt(np1, fSegment);\n        line.setPointAt(np2, fSegment + 1);\n        fLastX = x;\n        fLastY = y;\n    }\n\n    private boolean isVertical(Point p1, Point p2) {\n        return p1.x == p2.x;\n    }\n\n    public Point locate() {\n        LineConnection line = ownerConnection();\n        int segment = Math.min(fSegment, line.pointCount() - 2);\n        Point p1 = line.pointAt(segment);\n        Point p2 = line.pointAt(segment + 1);\n        return new Point((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n\n    private int constrainX(int x) {\n        LineConnection line = ownerConnection();\n        Figure startFigure = line.start().owner();\n        Figure endFigure = line.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        int r1x, r1width, r2x, r2width;\n        r1x = start.x + i1.left;\n        r1width = start.width - i1.left - i1.right - 1;\n        r2x = end.x + i2.left;\n        r2width = end.width - i2.left - i2.right - 1;\n        if (fSegment == 0) {\n            int max = r1x + r1width;\n            int value = x;\n            if (value < r1x)\n                value = r1x;\n            if (value > max)\n                value = max;\n            x = value;\n        }\n        if (fSegment == line.pointCount() - 2)\n            x = Geom.range(r2x, r2x + r2width, x);\n        return x;\n    }\n\n    private int constrainY(int y) {\n        LineConnection line = ownerConnection();\n        Figure startFigure = line.start().owner();\n        Figure endFigure = line.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        int r1y, r1height, r2y, r2height;\n        r1y = start.y + i1.top;\n        r1height = start.height - i1.top - i1.bottom - 1;\n        r2y = end.y + i2.top;\n        r2height = end.height - i2.top - i2.bottom - 1;\n        if (fSegment == 0) {\n            int max = r1y + r1height;\n            int value = y;\n            if (value < r1y)\n                value = r1y;\n            if (value > max)\n                value = max;\n            y = value;\n        }\n        if (fSegment == line.pointCount() - 2)\n            y = Geom.range(r2y, r2y + r2height, y);\n        return y;\n    }\n\n    private LineConnection ownerConnection() {\n        return (LineConnection) owner();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Handle to move an ElbowConnection left/right or up/down.\n */\npublic class ElbowHandle extends AbstractHandle {\n\n    private int fSegment;\n\n    // previous mouse position\n    private int fLastX, fLastY;\n\n    public ElbowHandle(LineConnection owner, int segment) {\n        super(owner);\n        fSegment = segment;\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        fLastX = x;\n        fLastY = y;\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        LineConnection line = ownerConnection();\n        Point p1 = line.pointAt(fSegment);\n        Point p2 = line.pointAt(fSegment + 1);\n        int ddx = x - fLastX;\n        int ddy = y - fLastY;\n        Point np1;\n        Point np2;\n        if (isVertical(p1, p2)) {\n            int x1 = p1.x + ddx;\n            LineConnection line1 = ownerConnection();\n            Figure startFigure = line1.start().owner();\n            Figure endFigure = line1.end().owner();\n            Rectangle start = startFigure.displayBox();\n            Rectangle end = endFigure.displayBox();\n            Insets i1 = startFigure.connectionInsets();\n            Insets i2 = endFigure.connectionInsets();\n            int r1x, r1width, r2x, r2width;\n            r1x = start.x + i1.left;\n            r1width = start.width - i1.left - i1.right - 1;\n            r2x = end.x + i2.left;\n            r2width = end.width - i2.left - i2.right - 1;\n            if (fSegment == 0)\n                x1 = Geom.range(r1x, r1x + r1width, x1);\n            if (fSegment == line1.pointCount() - 2)\n                x1 = Geom.range(r2x, r2x + r2width, x1);\n            int cx = x1;\n            np1 = new Point(cx, p1.y);\n            np2 = new Point(cx, p2.y);\n        } else {\n            int cy = constrainY(p1.y + ddy);\n            np1 = new Point(p1.x, cy);\n            np2 = new Point(p2.x, cy);\n        }\n        line.setPointAt(np1, fSegment);\n        line.setPointAt(np2, fSegment + 1);\n        fLastX = x;\n        fLastY = y;\n    }\n\n    private boolean isVertical(Point p1, Point p2) {\n        return p1.x == p2.x;\n    }\n\n    public Point locate() {\n        LineConnection line = ownerConnection();\n        int segment = Math.min(fSegment, line.pointCount() - 2);\n        Point p1 = line.pointAt(segment);\n        Point p2 = line.pointAt(segment + 1);\n        return new Point((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n\n    private int constrainX(int x) {\n        LineConnection line = ownerConnection();\n        Figure startFigure = line.start().owner();\n        Figure endFigure = line.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        int r1x, r1width, r2x, r2width;\n        r1x = start.x + i1.left;\n        r1width = start.width - i1.left - i1.right - 1;\n        r2x = end.x + i2.left;\n        r2width = end.width - i2.left - i2.right - 1;\n        if (fSegment == 0) {\n            int max = r1x + r1width;\n            int value = x;\n            if (value < r1x)\n                value = r1x;\n            if (value > max)\n                value = max;\n            x = value;\n        }\n        if (fSegment == line.pointCount() - 2)\n            x = Geom.range(r2x, r2x + r2width, x);\n        return x;\n    }\n\n    private int constrainY(int y) {\n        LineConnection line = ownerConnection();\n        Figure startFigure = line.start().owner();\n        Figure endFigure = line.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        int r1y, r1height, r2y, r2height;\n        r1y = start.y + i1.top;\n        r1height = start.height - i1.top - i1.bottom - 1;\n        r2y = end.y + i2.top;\n        r2height = end.height - i2.top - i2.bottom - 1;\n        if (fSegment == 0) {\n            int max = r1y + r1height;\n            int value = y;\n            if (value < r1y)\n                value = r1y;\n            if (value > max)\n                value = max;\n            y = value;\n        }\n        if (fSegment == line.pointCount() - 2)\n            y = Geom.range(r2y, r2y + r2height, y);\n        return y;\n    }\n\n    private LineConnection ownerConnection() {\n        return (LineConnection) owner();\n    }\n}",
+  "subClasses": []
+}

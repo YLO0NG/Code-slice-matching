@@ -1,0 +1,63 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.PolygonTool",
+  "className": "PolygonTool",
+  "index": 15,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class PolygonTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import java.awt.event.MouseEvent;",
+    "import CH.ifa.draw.framework.DrawingView;",
+    "import CH.ifa.draw.standard.AbstractTool;"
+  ],
+  "fields": [
+    "private PolygonFigure  fPolygon;",
+    "private int            fLastX, fLastY;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "activate()": "0",
+    "deactivate()": "1",
+    "addPoint(int, int)": "2",
+    "mouseDown(MouseEvent, int, int)": "3",
+    "mouseMove(MouseEvent, int, int)": "4",
+    "mouseDrag(MouseEvent, int, int)": "5",
+    "mouseUp(MouseEvent, int, int)": "6",
+    "PolygonTool(DrawingView)": "7"
+  },
+  "methodsBrief": [
+    "public void activate(){}",
+    "public void deactivate(){}",
+    "private void addPoint(int x, int y){}",
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseMove(MouseEvent e, int x, int y){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "public PolygonTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "PolygonTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public PolygonTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * Fri Feb 28 07:47:05 1997  Doug Lea  (dl at gee)\n * Based on ScribbleTool\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Point;\nimport java.awt.event.MouseEvent;\nimport CH.ifa.draw.framework.DrawingView;\nimport CH.ifa.draw.standard.AbstractTool;\n\n/**\n */\npublic class PolygonTool extends AbstractTool {\n\n    private PolygonFigure fPolygon;\n\n    private int fLastX, fLastY;\n\n    public PolygonTool(DrawingView view) {\n        super(view);\n    }\n\n    public void activate() {\n        super.activate();\n        fPolygon = null;\n    }\n\n    public void deactivate() {\n        super.deactivate();\n        if (fPolygon != null) {\n            fPolygon.smoothPoints();\n            if (fPolygon.pointCount() < 3 || fPolygon.size().width < 4 || fPolygon.size().height < 4)\n                drawing().remove(fPolygon);\n        }\n        fPolygon = null;\n    }\n\n    private void addPoint(int x, int y) {\n        if (fPolygon == null) {\n            fPolygon = new PolygonFigure(x, y);\n            view().add(fPolygon);\n            fPolygon.addPoint(x, y);\n        } else if (fLastX != x || fLastY != y)\n            fPolygon.addPoint(x, y);\n        fLastX = x;\n        fLastY = y;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        // replace pts by actual event pts\n        x = e.getX();\n        y = e.getY();\n        if (e.getClickCount() >= 2) {\n            if (fPolygon != null) {\n                fPolygon.smoothPoints();\n                editor().toolDone();\n            }\n            fPolygon = null;\n        } else {\n            // use original event coordinates to avoid\n            // supress that the scribble is constrained to\n            // the grid\n            int x1 = e.getX();\n            int y1 = e.getY();\n            if (fPolygon == null) {\n                fPolygon = new PolygonFigure(x1, y1);\n                view().add(fPolygon);\n                fPolygon.addPoint(x1, y1);\n            } else if (fLastX != x1 || fLastY != y1)\n                fPolygon.addPoint(x1, y1);\n            fLastX = x1;\n            fLastY = y1;\n        }\n    }\n\n    public void mouseMove(MouseEvent e, int x, int y) {\n        if (fPolygon != null) {\n            if (fPolygon.pointCount() > 1) {\n                fPolygon.setPointAt(new Point(x, y), fPolygon.pointCount() - 1);\n                view().checkDamage();\n            }\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        // replace pts by actual event pts\n        x = e.getX();\n        y = e.getY();\n        addPoint(x, y);\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n}\n",
+  "classDeclarationCode": "/**\n */\npublic class PolygonTool extends AbstractTool {\n\n    private PolygonFigure fPolygon;\n\n    private int fLastX, fLastY;\n\n    public PolygonTool(DrawingView view) {\n        super(view);\n    }\n\n    public void activate() {\n        super.activate();\n        fPolygon = null;\n    }\n\n    public void deactivate() {\n        super.deactivate();\n        if (fPolygon != null) {\n            fPolygon.smoothPoints();\n            if (fPolygon.pointCount() < 3 || fPolygon.size().width < 4 || fPolygon.size().height < 4)\n                drawing().remove(fPolygon);\n        }\n        fPolygon = null;\n    }\n\n    private void addPoint(int x, int y) {\n        if (fPolygon == null) {\n            fPolygon = new PolygonFigure(x, y);\n            view().add(fPolygon);\n            fPolygon.addPoint(x, y);\n        } else if (fLastX != x || fLastY != y)\n            fPolygon.addPoint(x, y);\n        fLastX = x;\n        fLastY = y;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        // replace pts by actual event pts\n        x = e.getX();\n        y = e.getY();\n        if (e.getClickCount() >= 2) {\n            if (fPolygon != null) {\n                fPolygon.smoothPoints();\n                editor().toolDone();\n            }\n            fPolygon = null;\n        } else {\n            // use original event coordinates to avoid\n            // supress that the scribble is constrained to\n            // the grid\n            int x1 = e.getX();\n            int y1 = e.getY();\n            if (fPolygon == null) {\n                fPolygon = new PolygonFigure(x1, y1);\n                view().add(fPolygon);\n                fPolygon.addPoint(x1, y1);\n            } else if (fLastX != x1 || fLastY != y1)\n                fPolygon.addPoint(x1, y1);\n            fLastX = x1;\n            fLastY = y1;\n        }\n    }\n\n    public void mouseMove(MouseEvent e, int x, int y) {\n        if (fPolygon != null) {\n            if (fPolygon.pointCount() > 1) {\n                fPolygon.setPointAt(new Point(x, y), fPolygon.pointCount() - 1);\n                view().checkDamage();\n            }\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        // replace pts by actual event pts\n        x = e.getX();\n        y = e.getY();\n        addPoint(x, y);\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n}",
+  "subClasses": []
+}

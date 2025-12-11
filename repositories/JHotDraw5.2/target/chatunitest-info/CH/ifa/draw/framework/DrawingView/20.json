@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "clearSelection",
+  "brief": "public void clearSelection();",
+  "methodSignature": "clearSelection()",
+  "sourceCode": "public void clearSelection();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Clears the current selection.\n */\npublic void clearSelection();",
+  "method_comment": "\n     * Clears the current selection.\n     ",
+  "method_annotation": ""
+}

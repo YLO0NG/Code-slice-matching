@@ -1,0 +1,22 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "setDefaultStorageFormat",
+  "brief": "public void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat){}",
+  "methodSignature": "setDefaultStorageFormat(StorageFormat)",
+  "sourceCode": "public void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat) {\n\t\tmyDefaultStorageFormat = newDefaultStorageFormat;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormat"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormat": []
+  },
+  "full_method_info": "/**\n * Set a StorageFormat as the default storage format which is selected in a\n * javax.swing.JFileChooser. The default storage format must be already\n * added with addStorageFormat. Setting the default storage format to null\n * does not automatically remove the StorageFormat from the list of\n * supported StorageFormats.\n *\n * @param newDefaultStorageFormat StorageFormat that should be selected in a JFileChooser\n */\npublic void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat) {\n    myDefaultStorageFormat = newDefaultStorageFormat;\n}",
+  "method_comment": "\n\t * Set a StorageFormat as the default storage format which is selected in a\n\t * javax.swing.JFileChooser. The default storage format must be already\n\t * added with addStorageFormat. Setting the default storage format to null\n\t * does not automatically remove the StorageFormat from the list of\n\t * supported StorageFormats.\n\t *\n\t * @param newDefaultStorageFormat StorageFormat that should be selected in a JFileChooser\n\t ",
+  "method_annotation": ""
+}

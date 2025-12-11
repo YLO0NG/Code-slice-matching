@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getSummary",
+  "brief": "public String getSummary(){}",
+  "methodSignature": "getSummary()",
+  "sourceCode": "public String getSummary() {\n\t\treturn summary;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"summary\"\n */\npublic String getSummary() {\n    return summary;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"summary\"\n\t ",
+  "method_annotation": ""
+}

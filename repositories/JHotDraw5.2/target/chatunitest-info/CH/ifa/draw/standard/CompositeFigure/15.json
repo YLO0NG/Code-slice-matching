@@ -1,0 +1,34 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "findFigure",
+  "brief": "public Figure findFigure(int x, int y){}",
+  "methodSignature": "findFigure(int, int)",
+  "sourceCode": "public Figure findFigure(int x, int y) {\n        FigureEnumeration k = figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            if (figure.containsPoint(x, y))\n                return figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "containsPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a top level Figure. Use this call for hit detection that\n * should not descend into the figure's children.\n */\npublic Figure findFigure(int x, int y) {\n    FigureEnumeration k = figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        if (figure.containsPoint(x, y))\n            return figure;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds a top level Figure. Use this call for hit detection that\n     * should not descend into the figure's children.\n     ",
+  "method_annotation": ""
+}

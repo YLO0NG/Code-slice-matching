@@ -1,0 +1,35 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "getFilteredTrace",
+  "brief": "public static String getFilteredTrace(String stack){}",
+  "methodSignature": "getFilteredTrace(String)",
+  "sourceCode": "public static String getFilteredTrace(String stack) {\r\n\t\tif (showStackRaw())\r\n\t\t\treturn stack;\r\n\r\n\t\tStringWriter sw= new StringWriter();\r\n\t\tPrintWriter pw= new PrintWriter(sw);\r\n\t\tStringReader sr= new StringReader(stack);\r\n\t\tBufferedReader br= new BufferedReader(sr);\r\n\r\n\t\tString line;\r\n\t\ttry {\r\n\t\t\twhile ((line= br.readLine()) != null) {\r\n\t\t\t\tif (!filterLine(line))\r\n\t\t\t\t\tpw.println(line);\r\n\t\t\t}\r\n\t\t} catch (Exception IOException) {\r\n\t\t\treturn stack; // return the stack unfiltered\r\n\t\t}\r\n\t\treturn sw.toString();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.runner.BaseTestRunner": [
+      "showStackRaw()",
+      "filterLine(String)"
+    ],
+    "java.io.BufferedReader": [
+      "readLine()"
+    ],
+    "java.io.PrintWriter": [
+      "println(String)"
+    ],
+    "java.io.StringWriter": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Filters stack frames from internal JUnit classes\r\n */\r\npublic static String getFilteredTrace(String stack) {\r\n    if (showStackRaw())\r\n        return stack;\r\n    StringWriter sw = new StringWriter();\r\n    PrintWriter pw = new PrintWriter(sw);\r\n    StringReader sr = new StringReader(stack);\r\n    BufferedReader br = new BufferedReader(sr);\r\n    String line;\r\n    try {\r\n        while ((line = br.readLine()) != null) {\r\n            if (!filterLine(line))\r\n                pw.println(line);\r\n        }\r\n    } catch (Exception IOException) {\r\n        // return the stack unfiltered\r\n        return stack;\r\n    }\r\n    return sw.toString();\r\n}",
+  "method_comment": "\r\n\t * Filters stack frames from internal JUnit classes\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,31 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "getAttribute",
+  "brief": "public Object getAttribute(String name){}",
+  "methodSignature": "getAttribute(String)",
+  "sourceCode": "public Object getAttribute(String name) {\n\t\tif (getPresentationFigure() != null) {\t\n\t\t\treturn getPresentationFigure().getAttribute(name);\n\t\t}\n\t\telse {\n\t\t\treturn super.getAttribute(name);\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Delegate capabilities for storing and retrieving attributes to a\n * CompositeFigure if the encapsulated presentation figure. If no\n * presentation figure is found then the superclass' getAttribute()\n * will be invoked (which currently returns always \"null\").\n *\n * @param\tname\tname of the attribute whose value should be returned\n * @return\tvalue of the attribute with the given name\n */\npublic Object getAttribute(String name) {\n    if (getPresentationFigure() != null) {\n        return getPresentationFigure().getAttribute(name);\n    } else {\n        return super.getAttribute(name);\n    }\n}",
+  "method_comment": "\n\t * Delegate capabilities for storing and retrieving attributes to a\n\t * CompositeFigure if the encapsulated presentation figure. If no\n\t * presentation figure is found then the superclass' getAttribute()\n\t * will be invoked (which currently returns always \"null\").\n\t *\n\t * @param\tname\tname of the attribute whose value should be returned\n\t * @return\tvalue of the attribute with the given name\n\t ",
+  "method_annotation": ""
+}

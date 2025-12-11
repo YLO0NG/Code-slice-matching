@@ -1,0 +1,22 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "setLayouter",
+  "brief": "public void setLayouter(Layouter newLayouter){}",
+  "methodSignature": "setLayouter(Layouter)",
+  "sourceCode": "public void setLayouter(Layouter newLayouter) {\n\t\tmyLayouter = newLayouter;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Layouter"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.Layouter": []
+  },
+  "full_method_info": "/**\n * Set a Layouter object which encapsulated a layout\n * algorithm for this figure. Typically, a Layouter\n * accesses the child components of this figure and arranges\n * their graphical presentation. It is a good idea to set\n * the Layouter in the protected initialize() method\n * so it can be recreated if a GraphicalCompositeFigure is\n * read and restored from a StorableInput stream.\n *\n * @param\tnewLayouter\tencapsulation of a layout algorithm.\n */\npublic void setLayouter(Layouter newLayouter) {\n    myLayouter = newLayouter;\n}",
+  "method_comment": "\n\t * Set a Layouter object which encapsulated a layout\n\t * algorithm for this figure. Typically, a Layouter\n\t * accesses the child components of this figure and arranges\n\t * their graphical presentation. It is a good idea to set\n\t * the Layouter in the protected initialize() method\n\t * so it can be recreated if a GraphicalCompositeFigure is\n\t * read and restored from a StorableInput stream.\n\t *\n\t * @param\tnewLayouter\tencapsulation of a layout algorithm.\n\t ",
+  "method_annotation": ""
+}

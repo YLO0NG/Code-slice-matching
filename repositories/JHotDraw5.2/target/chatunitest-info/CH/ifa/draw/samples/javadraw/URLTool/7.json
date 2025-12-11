@@ -1,0 +1,24 @@
+{
+  "className": "URLTool",
+  "methodName": "getURL",
+  "brief": "private String getURL(Figure figure){}",
+  "methodSignature": "getURL(Figure)",
+  "sourceCode": "private String getURL(Figure figure) {\n        String url = (String) figure.getAttribute(\"URL\");\n        if (url == null)\n            url = \"\";\n        return url;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "private String getURL(Figure figure) {\n    String url = (String) figure.getAttribute(\"URL\");\n    if (url == null)\n        url = \"\";\n    return url;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

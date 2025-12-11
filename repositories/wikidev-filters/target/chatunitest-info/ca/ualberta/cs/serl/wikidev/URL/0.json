@@ -1,0 +1,18 @@
+{
+  "className": "URL",
+  "methodName": "getHost",
+  "brief": "public String getHost(){}",
+  "methodSignature": "getHost()",
+  "sourceCode": "public String getHost() {\n\t\treturn host;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"host\"\n */\npublic String getHost() {\n    return host;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"host\"\n\t ",
+  "method_annotation": ""
+}

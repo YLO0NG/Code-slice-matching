@@ -1,0 +1,30 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n\t\tsuper.write(dw);\n\t\tdw.writeStorable(getPresentationFigure());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "write(StorableOutput)"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes the contained figures to the StorableOutput. The\n * figure responsible for graphical presentation is written\n * together with all child components. The Layouter\n * is not written.\n */\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeStorable(getPresentationFigure());\n}",
+  "method_comment": "\n\t * Writes the contained figures to the StorableOutput. The\n\t * figure responsible for graphical presentation is written\n\t * together with all child components. The Layouter\n\t * is not written.\n\t ",
+  "method_annotation": ""
+}

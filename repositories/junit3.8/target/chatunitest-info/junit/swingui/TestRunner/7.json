@@ -1,0 +1,26 @@
+{
+  "className": "TestRunner",
+  "methodName": "pruneHistory",
+  "brief": "private void pruneHistory(){}",
+  "methodSignature": "pruneHistory()",
+  "sourceCode": "private void pruneHistory() {\r\n\t\tint historyLength= getPreference(\"maxhistory\", HISTORY_LENGTH);\r\n\t\tif (historyLength < 1)\r\n\t\t\thistoryLength= 1;\r\n\t\tfor (int i= fSuiteCombo.getItemCount()-1; i > historyLength-1; i--)\r\n\t\t\tfSuiteCombo.removeItemAt(i);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "getPreference(String, int)"
+    ],
+    "javax.swing.JComboBox": [
+      "removeItemAt(int)",
+      "getItemCount()"
+    ]
+  },
+  "full_method_info": "private void pruneHistory() {\r\n    int historyLength = getPreference(\"maxhistory\", HISTORY_LENGTH);\r\n    if (historyLength < 1)\r\n        historyLength = 1;\r\n    for (int i = fSuiteCombo.getItemCount() - 1; i > historyLength - 1; i--) fSuiteCombo.removeItemAt(i);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

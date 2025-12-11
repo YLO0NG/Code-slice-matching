@@ -1,0 +1,18 @@
+{
+  "className": "TicketChange",
+  "methodName": "getNewValue",
+  "brief": "public String getNewValue(){}",
+  "methodSignature": "getNewValue()",
+  "sourceCode": "public String getNewValue() {\n\t\treturn newValue;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"newValue\"\n */\npublic String getNewValue() {\n    return newValue;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"newValue\"\n\t ",
+  "method_annotation": ""
+}

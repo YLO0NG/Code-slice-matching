@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        return handles;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "CH.ifa.draw.standard.RelativeLocator": [
+      "northEast()",
+      "northWest()",
+      "southWest()",
+      "southEast()"
+    ]
+  },
+  "full_method_info": "/**\n * Return's the figure's handles. This is only used when a drawing\n * is nested inside another drawing.\n */\npublic Vector handles() {\n    Vector handles = new Vector();\n    handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n    handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n    handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n    handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n    return handles;\n}",
+  "method_comment": "\n     * Return's the figure's handles. This is only used when a drawing\n     * is nested inside another drawing.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,102 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile",
+  "className": "SVNFile",
+  "index": 7,
+  "modifier": "[public ]",
+  "extend": "[IArtifact]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class SVNFile",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.Timestamp;",
+    "import java.util.Set;",
+    "import java.util.TreeSet;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [
+    "private String name;",
+    "private boolean deleted;",
+    "private int changes;",
+    "private String type;",
+    "private TreeSet<User> users;"
+  ],
+  "superClasses": [
+    "IArtifact"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getUsers()": "0",
+    "addUser(User)": "1",
+    "increaseChanges()": "2",
+    "isDeleted()": "3",
+    "setDeleted(boolean)": "4",
+    "getName()": "5",
+    "getChanges()": "6",
+    "equals(Object)": "7",
+    "toString()": "8",
+    "getType()": "9",
+    "setType()": "10",
+    "getAssociatedUsers()": "11",
+    "compareTo(IArtifact)": "12",
+    "setLastModified(Timestamp)": "13",
+    "setLastEditor(User)": "14",
+    "SVNFile(String)": "15"
+  },
+  "methodsBrief": [
+    "public TreeSet<User> getUsers(){}",
+    "public void addUser(User user){}",
+    "public void increaseChanges(){}",
+    "public boolean isDeleted(){}",
+    "public void setDeleted(boolean deleted){}",
+    "public String getName(){}",
+    "public int getChanges(){}",
+    "public boolean equals(Object o){}",
+    "public String toString(){}",
+    "public String getType(){}",
+    "public void setType(){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "public int compareTo(IArtifact arg0){}",
+    "public void setLastModified(Timestamp timestamp){}",
+    "public void setLastEditor(User editor){}",
+    "public SVNFile(String name){}"
+  ],
+  "constructorSigs": [
+    "SVNFile(String)"
+  ],
+  "constructorBrief": [
+    "public SVNFile(String name){}"
+  ],
+  "getterSetterSigs": [
+    "getUsers()",
+    "setDeleted(boolean)",
+    "getName()",
+    "getChanges()",
+    "getType()",
+    "setType()",
+    "getAssociatedUsers()",
+    "setLastModified(Timestamp)",
+    "setLastEditor(User)"
+  ],
+  "getterSetterBrief": [
+    "public TreeSet<User> getUsers(){}",
+    "public void setDeleted(boolean deleted){}",
+    "public String getName(){}",
+    "public int getChanges(){}",
+    "public String getType(){}",
+    "public void setType(){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "public void setLastModified(Timestamp timestamp){}",
+    "public void setLastEditor(User editor){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\nimport java.sql.Timestamp;\nimport java.util.Set;\nimport java.util.TreeSet;\nimport ca.ualberta.cs.serl.wikidev.User;\n\npublic class SVNFile extends IArtifact {\n\n    private String name;\n\n    private boolean deleted;\n\n    private int changes;\n\n    private String type;\n\n    private TreeSet<User> users;\n\n    public SVNFile(String name) {\n        this.name = name;\n        this.deleted = false;\n        this.changes = 1;\n        this.users = new TreeSet<User>();\n    }\n\n    public TreeSet<User> getUsers() {\n        return users;\n    }\n\n    public void addUser(User user) {\n        users.add(user);\n    }\n\n    public void increaseChanges() {\n        changes++;\n    }\n\n    public boolean isDeleted() {\n        return deleted;\n    }\n\n    public void setDeleted(boolean deleted) {\n        this.deleted = deleted;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public int getChanges() {\n        return changes;\n    }\n\n    public boolean equals(Object o) {\n        return this.name.equals(((SVNFile) o).name);\n    }\n\n    public String toString() {\n        return name;\n    }\n\n    public String getType() {\n        return type;\n    }\n\n    public void setType() {\n        if (name.endsWith(\"txt\") || name.endsWith(\"doc\") || name.endsWith(\"docx\") || name.endsWith(\"rtf\") || name.endsWith(\"pdf\")) {\n            type = \"Text\";\n        } else if (name.endsWith(\"jpeg\") || name.endsWith(\"png\") || name.endsWith(\"mpeg\") || name.endsWith(\"avi\") || name.endsWith(\"ppt\")) {\n            type = \"Media\";\n        } else if (name.endsWith(\".java\") || name.endsWith(\".php\") || name.endsWith(\".py\") || name.endsWith(\".c\") || name.endsWith(\".cpp\") || name.endsWith(\".as\") || name.endsWith(\".rb\") || name.endsWith(\".vb\") || name.endsWith(\".cgi\") || name.endsWith(\".js\")) {\n            type = \"Source\";\n        } else if (name.endsWith(\"html\")) {\n            type = \"Html\";\n        } else {\n            type = \"Misc\";\n        }\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        // TODO Auto-generated method stub\n        return null;\n    }\n\n    public int compareTo(IArtifact arg0) {\n        // TODO Auto-generated method stub\n        return 0;\n    }\n\n    public void setLastModified(Timestamp timestamp) {\n        lastModified = timestamp;\n    }\n\n    public void setLastEditor(User editor) {\n        lastEditor = editor;\n    }\n}\n",
+  "classDeclarationCode": "public class SVNFile extends IArtifact {\n\n    private String name;\n\n    private boolean deleted;\n\n    private int changes;\n\n    private String type;\n\n    private TreeSet<User> users;\n\n    public SVNFile(String name) {\n        this.name = name;\n        this.deleted = false;\n        this.changes = 1;\n        this.users = new TreeSet<User>();\n    }\n\n    public TreeSet<User> getUsers() {\n        return users;\n    }\n\n    public void addUser(User user) {\n        users.add(user);\n    }\n\n    public void increaseChanges() {\n        changes++;\n    }\n\n    public boolean isDeleted() {\n        return deleted;\n    }\n\n    public void setDeleted(boolean deleted) {\n        this.deleted = deleted;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public int getChanges() {\n        return changes;\n    }\n\n    public boolean equals(Object o) {\n        return this.name.equals(((SVNFile) o).name);\n    }\n\n    public String toString() {\n        return name;\n    }\n\n    public String getType() {\n        return type;\n    }\n\n    public void setType() {\n        if (name.endsWith(\"txt\") || name.endsWith(\"doc\") || name.endsWith(\"docx\") || name.endsWith(\"rtf\") || name.endsWith(\"pdf\")) {\n            type = \"Text\";\n        } else if (name.endsWith(\"jpeg\") || name.endsWith(\"png\") || name.endsWith(\"mpeg\") || name.endsWith(\"avi\") || name.endsWith(\"ppt\")) {\n            type = \"Media\";\n        } else if (name.endsWith(\".java\") || name.endsWith(\".php\") || name.endsWith(\".py\") || name.endsWith(\".c\") || name.endsWith(\".cpp\") || name.endsWith(\".as\") || name.endsWith(\".rb\") || name.endsWith(\".vb\") || name.endsWith(\".cgi\") || name.endsWith(\".js\")) {\n            type = \"Source\";\n        } else if (name.endsWith(\"html\")) {\n            type = \"Html\";\n        } else {\n            type = \"Misc\";\n        }\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        // TODO Auto-generated method stub\n        return null;\n    }\n\n    public int compareTo(IArtifact arg0) {\n        // TODO Auto-generated method stub\n        return 0;\n    }\n\n    public void setLastModified(Timestamp timestamp) {\n        lastModified = timestamp;\n    }\n\n    public void setLastEditor(User editor) {\n        lastEditor = editor;\n    }\n}",
+  "subClasses": []
+}

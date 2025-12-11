@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "destroy",
+  "brief": "protected void destroy(){}",
+  "methodSignature": "destroy()",
+  "sourceCode": "protected void destroy() {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Handles additional clean up operations. Override to destroy\n * or release drawing editor resources.\n */\nprotected void destroy() {\n}",
+  "method_comment": "\n     * Handles additional clean up operations. Override to destroy\n     * or release drawing editor resources.\n     ",
+  "method_annotation": ""
+}

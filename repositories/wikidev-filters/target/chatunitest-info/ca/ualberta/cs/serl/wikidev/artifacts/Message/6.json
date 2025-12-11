@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setAddress",
+  "brief": "public void setAddress(String address){}",
+  "methodSignature": "setAddress(String)",
+  "sourceCode": "public void setAddress(String address) {\n\t\tthis.address = address;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param address\n * @uml.property  name=\"address\"\n */\npublic void setAddress(String address) {\n    this.address = address;\n}",
+  "method_comment": "\n\t * @param address\n\t * @uml.property  name=\"address\"\n\t ",
+  "method_annotation": ""
+}

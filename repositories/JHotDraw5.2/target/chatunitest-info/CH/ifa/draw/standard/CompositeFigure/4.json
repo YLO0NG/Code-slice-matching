@@ -1,0 +1,34 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "removeAll",
+  "brief": "public void removeAll(){}",
+  "methodSignature": "removeAll()",
+  "sourceCode": "public void removeAll() {\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            figure.removeFromContainer(this);\n        }\n        fFigures.removeAllElements();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "removeFromContainer(FigureChangeListener)"
+    ],
+    "java.util.Vector": [
+      "removeAllElements()"
+    ]
+  },
+  "full_method_info": "/**\n * Removes all children.\n * @see #remove\n */\npublic void removeAll() {\n    FigureEnumeration k = figures();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        figure.removeFromContainer(this);\n    }\n    fFigures.removeAllElements();\n}",
+  "method_comment": "\n     * Removes all children.\n     * @see #remove\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "TestRunContext",
+  "methodName": "handleTestSelected",
+  "brief": "public void handleTestSelected(Test test);",
+  "methodSignature": "handleTestSelected(Test)",
+  "sourceCode": "public void handleTestSelected(Test test);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": []
+  },
+  "full_method_info": "/**\r\n * Handles the selection of a Test.\r\n */\r\npublic void handleTestSelected(Test test);",
+  "method_comment": "\r\n\t * Handles the selection of a Test.\r\n\t ",
+  "method_annotation": ""
+}

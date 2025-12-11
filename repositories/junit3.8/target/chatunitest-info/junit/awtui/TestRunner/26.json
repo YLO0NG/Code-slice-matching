@@ -1,0 +1,31 @@
+{
+  "className": "TestRunner",
+  "methodName": "showErrorTrace",
+  "brief": "private void showErrorTrace(){}",
+  "methodSignature": "showErrorTrace()",
+  "sourceCode": "private void showErrorTrace() {\r\n\t\tint index= fFailureList.getSelectedIndex();\r\n\t\tif (index == -1)\r\n\t\t\treturn;\r\n\r\n\t\tThrowable t= (Throwable) fExceptions.elementAt(index);\r\n\t\tfTraceArea.setText(getFilteredTrace(t));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.List": [
+      "getSelectedIndex()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)"
+    ],
+    "java.awt.TextComponent": [
+      "setText(String)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getFilteredTrace(Throwable)"
+    ]
+  },
+  "full_method_info": "private void showErrorTrace() {\r\n    int index = fFailureList.getSelectedIndex();\r\n    if (index == -1)\r\n        return;\r\n    Throwable t = (Throwable) fExceptions.elementAt(index);\r\n    fTraceArea.setText(getFilteredTrace(t));\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

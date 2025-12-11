@@ -1,0 +1,48 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.pert.PertApplet",
+  "className": "PertApplet",
+  "index": 87,
+  "modifier": "[public ]",
+  "extend": "[DrawApplet]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.pert",
+  "packageDeclaration": "package CH.ifa.draw.samples.pert;",
+  "classSignature": "public  class PertApplet",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.applet.Applet;",
+    "// import java.awt.*;\r\nimport java.util.*;",
+    "import java.io.*;",
+    "import java.net.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.applet.*;"
+  ],
+  "fields": [
+    "private final static String PERTIMAGES = \"/CH/ifa/draw/samples/pert/images/\";"
+  ],
+  "superClasses": [
+    "DrawApplet"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createTools(JPanel)": "0"
+  },
+  "methodsBrief": [
+    "protected void createTools(JPanel palette){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)PertApplet.java 5.2\n *\n */\npackage CH.ifa.draw.samples.pert;\n\nimport javax.swing.*;\nimport java.applet.Applet;\n// import java.awt.*;\nimport java.util.*;\nimport java.io.*;\nimport java.net.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.applet.*;\n\npublic class PertApplet extends DrawApplet {\n\n    private final static String PERTIMAGES = \"/CH/ifa/draw/samples/pert/images/\";\n\n    protected void createTools(JPanel palette) {\n        super.createTools(palette);\n        Tool tool;\n        tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new PertFigureCreationTool(view());\n        palette.add(createToolButton(PERTIMAGES + \"PERT\", \"Task Tool\", tool));\n        tool = new ConnectionTool(view(), new PertDependency());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Dependency Tool\", tool));\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES + \"Line\", \"Line Tool\", tool));\n    }\n}\n",
+  "classDeclarationCode": "public class PertApplet extends DrawApplet {\n\n    private final static String PERTIMAGES = \"/CH/ifa/draw/samples/pert/images/\";\n\n    protected void createTools(JPanel palette) {\n        super.createTools(palette);\n        Tool tool;\n        tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new PertFigureCreationTool(view());\n        palette.add(createToolButton(PERTIMAGES + \"PERT\", \"Task Tool\", tool));\n        tool = new ConnectionTool(view(), new PertDependency());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Dependency Tool\", tool));\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES + \"Line\", \"Line Tool\", tool));\n    }\n}",
+  "subClasses": []
+}

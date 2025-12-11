@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "addRelatedArtifact",
+  "brief": "public void addRelatedArtifact(IArtifact artifact){}",
+  "methodSignature": "addRelatedArtifact(IArtifact)",
+  "sourceCode": "public void addRelatedArtifact(IArtifact artifact) {\n\t\trelatedArtifacts.add(artifact);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addRelatedArtifact(IArtifact artifact) {\n    relatedArtifacts.add(artifact);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

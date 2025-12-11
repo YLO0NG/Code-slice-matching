@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "runFailed",
+  "brief": "protected void runFailed(String message){}",
+  "methodSignature": "runFailed(String)",
+  "sourceCode": "protected void runFailed(String message) {\r\n\t\tshowStatus(message);\r\n\t\tfRun.setText(\"Run\");\r\n\t\tfRunner= null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.swingui.TestRunner": [
+      "showStatus(String)"
+    ],
+    "javax.swing.AbstractButton": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "protected void runFailed(String message) {\r\n    showStatus(message);\r\n    fRun.setText(\"Run\");\r\n    fRunner = null;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

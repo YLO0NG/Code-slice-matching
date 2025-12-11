@@ -1,0 +1,22 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "size",
+  "brief": "public Dimension size(){}",
+  "methodSignature": "size()",
+  "sourceCode": "public Dimension size() {\n        return new Dimension(displayBox().width, displayBox().height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the size of the figure. A convenience method.\n */\npublic Dimension size() {\n    return new Dimension(displayBox().width, displayBox().height);\n}",
+  "method_comment": "\n     * Gets the size of the figure. A convenience method.\n     ",
+  "method_annotation": ""
+}

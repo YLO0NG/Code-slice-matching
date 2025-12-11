@@ -1,0 +1,22 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "setArtifact",
+  "brief": "public void setArtifact(IArtifact artifact){}",
+  "methodSignature": "setArtifact(IArtifact)",
+  "sourceCode": "public void setArtifact(IArtifact artifact) {\n\t\tthis.artifact = artifact;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": []
+  },
+  "full_method_info": "/**\n * @param artifact\n * @uml.property  name=\"artifact\"\n */\npublic void setArtifact(IArtifact artifact) {\n    this.artifact = artifact;\n}",
+  "method_comment": "\n\t * @param artifact\n\t * @uml.property  name=\"artifact\"\n\t ",
+  "method_annotation": ""
+}

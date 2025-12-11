@@ -1,0 +1,55 @@
+{
+  "fullClassName": "junit.runner.LoadingTestCollector",
+  "className": "LoadingTestCollector",
+  "index": 22,
+  "modifier": "[public ]",
+  "extend": "[ClassPathTestCollector]",
+  "implement": "[]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public class LoadingTestCollector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.lang.reflect.*;",
+    "import junit.runner.*;",
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "TestCaseClassLoader fLoader;"
+  ],
+  "superClasses": [
+    "ClassPathTestCollector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "isTestClass(String)": "0",
+    "classFromFile(String)": "1",
+    "isTestClass(Class)": "2",
+    "hasSuiteMethod(Class)": "3",
+    "hasPublicConstructor(Class)": "4",
+    "LoadingTestCollector()": "5"
+  },
+  "methodsBrief": [
+    "protected boolean isTestClass(String classFileName){}",
+    "Class classFromFile(String classFileName) throws ClassNotFoundException{}",
+    "boolean isTestClass(Class testClass){}",
+    "boolean hasSuiteMethod(Class testClass){}",
+    "boolean hasPublicConstructor(Class testClass){}",
+    "public LoadingTestCollector(){}"
+  ],
+  "constructorSigs": [
+    "LoadingTestCollector()"
+  ],
+  "constructorBrief": [
+    "public LoadingTestCollector(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\nimport java.lang.reflect.*;\r\nimport junit.runner.*;\r\nimport junit.framework.*;\r\n\r\n/**\r\n * An implementation of a TestCollector that loads\r\n * all classes on the class path and tests whether\r\n * it is assignable from Test or provides a static suite method.\r\n * @see TestCollector\r\n */\r\npublic class LoadingTestCollector extends ClassPathTestCollector {\r\n\r\n    TestCaseClassLoader fLoader;\r\n\r\n    public LoadingTestCollector() {\r\n        fLoader = new TestCaseClassLoader();\r\n    }\r\n\r\n    protected boolean isTestClass(String classFileName) {\r\n        try {\r\n            if (classFileName.endsWith(\".class\")) {\r\n                Class testClass = classFromFile(classFileName);\r\n                return (testClass != null) && isTestClass(testClass);\r\n            }\r\n        } catch (ClassNotFoundException expected) {\r\n        } catch (NoClassDefFoundError notFatal) {\r\n        }\r\n        return false;\r\n    }\r\n\r\n    Class classFromFile(String classFileName) throws ClassNotFoundException {\r\n        String className = classNameFromFile(classFileName);\r\n        if (!fLoader.isExcluded(className))\r\n            return fLoader.loadClass(className, false);\r\n        return null;\r\n    }\r\n\r\n    boolean isTestClass(Class testClass) {\r\n        if (hasSuiteMethod(testClass))\r\n            return true;\r\n        if (Test.class.isAssignableFrom(testClass) && Modifier.isPublic(testClass.getModifiers()) && hasPublicConstructor(testClass))\r\n            return true;\r\n        return false;\r\n    }\r\n\r\n    boolean hasSuiteMethod(Class testClass) {\r\n        try {\r\n            testClass.getMethod(BaseTestRunner.SUITE_METHODNAME, new Class[0]);\r\n        } catch (Exception e) {\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n\r\n    boolean hasPublicConstructor(Class testClass) {\r\n        try {\r\n            TestSuite.getTestConstructor(testClass);\r\n        } catch (NoSuchMethodException e) {\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * An implementation of a TestCollector that loads\r\n * all classes on the class path and tests whether\r\n * it is assignable from Test or provides a static suite method.\r\n * @see TestCollector\r\n */\r\npublic class LoadingTestCollector extends ClassPathTestCollector {\r\n\r\n    TestCaseClassLoader fLoader;\r\n\r\n    public LoadingTestCollector() {\r\n        fLoader = new TestCaseClassLoader();\r\n    }\r\n\r\n    protected boolean isTestClass(String classFileName) {\r\n        try {\r\n            if (classFileName.endsWith(\".class\")) {\r\n                Class testClass = classFromFile(classFileName);\r\n                return (testClass != null) && isTestClass(testClass);\r\n            }\r\n        } catch (ClassNotFoundException expected) {\r\n        } catch (NoClassDefFoundError notFatal) {\r\n        }\r\n        return false;\r\n    }\r\n\r\n    Class classFromFile(String classFileName) throws ClassNotFoundException {\r\n        String className = classNameFromFile(classFileName);\r\n        if (!fLoader.isExcluded(className))\r\n            return fLoader.loadClass(className, false);\r\n        return null;\r\n    }\r\n\r\n    boolean isTestClass(Class testClass) {\r\n        if (hasSuiteMethod(testClass))\r\n            return true;\r\n        if (Test.class.isAssignableFrom(testClass) && Modifier.isPublic(testClass.getModifiers()) && hasPublicConstructor(testClass))\r\n            return true;\r\n        return false;\r\n    }\r\n\r\n    boolean hasSuiteMethod(Class testClass) {\r\n        try {\r\n            testClass.getMethod(BaseTestRunner.SUITE_METHODNAME, new Class[0]);\r\n        } catch (Exception e) {\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n\r\n    boolean hasPublicConstructor(Class testClass) {\r\n        try {\r\n            TestSuite.getTestConstructor(testClass);\r\n        } catch (NoSuchMethodException e) {\r\n            return false;\r\n        }\r\n        return true;\r\n    }\r\n}",
+  "subClasses": []
+}

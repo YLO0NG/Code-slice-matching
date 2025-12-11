@@ -1,0 +1,24 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "decorate",
+  "brief": "public void decorate(Figure figure){}",
+  "methodSignature": "decorate(Figure)",
+  "sourceCode": "public void decorate(Figure figure) {\n        fComponent = figure;\n        fComponent.addToContainer(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "addToContainer(FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Decorates the given figure.\n */\npublic void decorate(Figure figure) {\n    fComponent = figure;\n    fComponent.addToContainer(this);\n}",
+  "method_comment": "\n     * Decorates the given figure.\n     ",
+  "method_annotation": ""
+}

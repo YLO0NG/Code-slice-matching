@@ -1,0 +1,81 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.SplitPaneDrawApplication",
+  "className": "SplitPaneDrawApplication",
+  "index": 17,
+  "modifier": "[public ]",
+  "extend": "[DrawApplication]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public  class SplitPaneDrawApplication",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.JComponent;",
+    "import javax.swing.JList;",
+    "import javax.swing.JScrollPane;",
+    "import javax.swing.JSplitPane;",
+    "import CH.ifa.draw.application.DrawApplication;",
+    "import CH.ifa.draw.standard.StandardDrawingView;"
+  ],
+  "fields": [
+    "private JComponent leftComponent;",
+    "private JComponent rightComponent;"
+  ],
+  "superClasses": [
+    "DrawApplication"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createContents(StandardDrawingView)": "0",
+    "createSplitPane(StandardDrawingView)": "1",
+    "createLeftComponent(StandardDrawingView)": "2",
+    "setLeftComponent(JComponent)": "3",
+    "getLeftComponent()": "4",
+    "createRightComponent(StandardDrawingView)": "5",
+    "setRightComponent(JComponent)": "6",
+    "getRightComponent()": "7",
+    "SplitPaneDrawApplication()": "8",
+    "SplitPaneDrawApplication(String)": "9"
+  },
+  "methodsBrief": [
+    "protected JComponent createContents(StandardDrawingView view){}",
+    "protected JSplitPane createSplitPane(StandardDrawingView view){}",
+    "protected void createLeftComponent(StandardDrawingView view){}",
+    "protected final void setLeftComponent(JComponent newLeftComponent){}",
+    "public JComponent getLeftComponent(){}",
+    "protected void createRightComponent(StandardDrawingView view){}",
+    "protected final void setRightComponent(JComponent newRightComponent){}",
+    "public JComponent getRightComponent(){}",
+    "public SplitPaneDrawApplication(){}",
+    "public SplitPaneDrawApplication(String title){}"
+  ],
+  "constructorSigs": [
+    "SplitPaneDrawApplication()",
+    "SplitPaneDrawApplication(String)"
+  ],
+  "constructorBrief": [
+    "public SplitPaneDrawApplication(){}",
+    "public SplitPaneDrawApplication(String title){}"
+  ],
+  "getterSetterSigs": [
+    "setLeftComponent(JComponent)",
+    "getLeftComponent()",
+    "setRightComponent(JComponent)",
+    "getRightComponent()"
+  ],
+  "getterSetterBrief": [
+    "protected final void setLeftComponent(JComponent newLeftComponent){}",
+    "public JComponent getLeftComponent(){}",
+    "protected final void setRightComponent(JComponent newRightComponent){}",
+    "public JComponent getRightComponent(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "/*\n * @(#)SplitPaneDrawApplication.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport javax.swing.JComponent;\nimport javax.swing.JList;\nimport javax.swing.JScrollPane;\nimport javax.swing.JSplitPane;\nimport CH.ifa.draw.application.DrawApplication;\nimport CH.ifa.draw.standard.StandardDrawingView;\n\n/**\n * A specialised DrawApplication, which offers basic support for a simple\n * splitted pane content.\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.08.1999\n */\npublic class SplitPaneDrawApplication extends DrawApplication {\n\n    private JComponent leftComponent;\n\n    private JComponent rightComponent;\n\n    public SplitPaneDrawApplication() {\n        super(\"JHotDraw\");\n    }\n\n    public SplitPaneDrawApplication(String title) {\n        super(title);\n    }\n\n    /**\n     * Opens the window and initializes its contents.\n     * Clients usually only call but don't override it.\n     */\n    protected JComponent createContents(StandardDrawingView view) {\n        createLeftComponent(view);\n        createRightComponent(view);\n        if ((getLeftComponent() == null) && (getRightComponent() == null)) {\n            return super.createContents(view);\n        } else if (getLeftComponent() == null) {\n            return getRightComponent();\n        } else if (getRightComponent() == null) {\n            return getLeftComponent();\n        } else {\n            JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n            dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n            dividedContents.setOneTouchExpandable(true);\n            return dividedContents;\n        }\n    }\n\n    /**\n     * Method which creates the basic split pane. Subclasses may override\n     * this method.\n     *\n     * @param   view    StandardDrawingView for which the JSplitPane should be created\n     * @return          the created JSplitPane\n     */\n    protected JSplitPane createSplitPane(StandardDrawingView view) {\n        JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n        dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n        dividedContents.setOneTouchExpandable(true);\n        return dividedContents;\n    }\n\n    /**\n     * Method which creates the left component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     */\n    protected void createLeftComponent(StandardDrawingView view) {\n        setLeftComponent(new JScrollPane(new JList()));\n    }\n\n    /**\n     * Set the left component of the JSplitPane.\n     *\n     * @param\tnewLeftComponent\tleft component\n     */\n    protected final void setLeftComponent(JComponent newLeftComponent) {\n        leftComponent = newLeftComponent;\n    }\n\n    /**\n     * Get the left component of the JSplitPane.\n     *\n     * @return\tnewLeftComponent\tleft component\n     */\n    public JComponent getLeftComponent() {\n        return leftComponent;\n    }\n\n    /**\n     * Method which creates the right component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     */\n    protected void createRightComponent(StandardDrawingView view) {\n        setRightComponent(super.createContents(view));\n    }\n\n    /**\n     * Set the right component of the JSplitPane.\n     *\n     * @param\tnewLeftComponent\tright component\n     */\n    protected final void setRightComponent(JComponent newRightComponent) {\n        rightComponent = newRightComponent;\n    }\n\n    /**\n     * Get the right component of the JSplitPane.\n     *\n     * @return\tnewLeftComponent\tright component\n     */\n    public JComponent getRightComponent() {\n        return rightComponent;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A specialised DrawApplication, which offers basic support for a simple\n * splitted pane content.\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.08.1999\n */\npublic class SplitPaneDrawApplication extends DrawApplication {\n\n    private JComponent leftComponent;\n\n    private JComponent rightComponent;\n\n    public SplitPaneDrawApplication() {\n        super(\"JHotDraw\");\n    }\n\n    public SplitPaneDrawApplication(String title) {\n        super(title);\n    }\n\n    /**\n     * Opens the window and initializes its contents.\n     * Clients usually only call but don't override it.\n     */\n    protected JComponent createContents(StandardDrawingView view) {\n        createLeftComponent(view);\n        createRightComponent(view);\n        if ((getLeftComponent() == null) && (getRightComponent() == null)) {\n            return super.createContents(view);\n        } else if (getLeftComponent() == null) {\n            return getRightComponent();\n        } else if (getRightComponent() == null) {\n            return getLeftComponent();\n        } else {\n            JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n            dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n            dividedContents.setOneTouchExpandable(true);\n            return dividedContents;\n        }\n    }\n\n    /**\n     * Method which creates the basic split pane. Subclasses may override\n     * this method.\n     *\n     * @param   view    StandardDrawingView for which the JSplitPane should be created\n     * @return          the created JSplitPane\n     */\n    protected JSplitPane createSplitPane(StandardDrawingView view) {\n        JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n        dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n        dividedContents.setOneTouchExpandable(true);\n        return dividedContents;\n    }\n\n    /**\n     * Method which creates the left component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     */\n    protected void createLeftComponent(StandardDrawingView view) {\n        setLeftComponent(new JScrollPane(new JList()));\n    }\n\n    /**\n     * Set the left component of the JSplitPane.\n     *\n     * @param\tnewLeftComponent\tleft component\n     */\n    protected final void setLeftComponent(JComponent newLeftComponent) {\n        leftComponent = newLeftComponent;\n    }\n\n    /**\n     * Get the left component of the JSplitPane.\n     *\n     * @return\tnewLeftComponent\tleft component\n     */\n    public JComponent getLeftComponent() {\n        return leftComponent;\n    }\n\n    /**\n     * Method which creates the right component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     */\n    protected void createRightComponent(StandardDrawingView view) {\n        setRightComponent(super.createContents(view));\n    }\n\n    /**\n     * Set the right component of the JSplitPane.\n     *\n     * @param\tnewLeftComponent\tright component\n     */\n    protected final void setRightComponent(JComponent newRightComponent) {\n        rightComponent = newRightComponent;\n    }\n\n    /**\n     * Get the right component of the JSplitPane.\n     *\n     * @return\tnewLeftComponent\tright component\n     */\n    public JComponent getRightComponent() {\n        return rightComponent;\n    }\n}",
+  "subClasses": []
+}

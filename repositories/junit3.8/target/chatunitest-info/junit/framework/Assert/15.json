@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(long expected, long actual){}",
+  "methodSignature": "assertEquals(long, long)",
+  "sourceCode": "static public void assertEquals(long expected, long actual) {\r\n\t    assertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "long",
+    "long"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, long, long)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two longs are equal.\r\n */\r\nstatic public void assertEquals(long expected, long actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two longs are equal.\r\n\t ",
+  "method_annotation": ""
+}

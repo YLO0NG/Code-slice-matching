@@ -1,0 +1,23 @@
+{
+  "className": "RadiusHandle",
+  "methodName": "locate",
+  "brief": "public Point locate(){}",
+  "methodSignature": "locate()",
+  "sourceCode": "public Point locate() {\n        Point radius = fOwner.getArc();\n        Rectangle r = fOwner.displayBox();\n        return new Point(r.x+radius.x/2+OFFSET, r.y+radius.y/2+OFFSET);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.RoundRectangleFigure": [
+      "getArc()",
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public Point locate() {\n    Point radius = fOwner.getArc();\n    Rectangle r = fOwner.displayBox();\n    return new Point(r.x + radius.x / 2 + OFFSET, r.y + radius.y / 2 + OFFSET);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

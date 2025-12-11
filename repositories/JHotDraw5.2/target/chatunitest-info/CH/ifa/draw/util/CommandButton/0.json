@@ -1,0 +1,33 @@
+{
+  "className": "CommandButton",
+  "methodName": "actionPerformed",
+  "brief": "public void actionPerformed(ActionEvent e){}",
+  "methodSignature": "actionPerformed(ActionEvent)",
+  "sourceCode": "public void actionPerformed(ActionEvent e) {\n        fCommand.execute();\n        if (!getLabel().equals(fCommand.name()) ) {\n            setLabel(fCommand.name());\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ActionEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.ActionEvent": [],
+    "CH.ifa.draw.util.Command": [
+      "name()",
+      "execute()"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "javax.swing.AbstractButton": [
+      "getLabel()",
+      "setLabel(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Executes the command. If the command's name was changed\n * as a result of the command the button's label is updated\n * accordingly.\n */\npublic void actionPerformed(ActionEvent e) {\n    fCommand.execute();\n    if (!getLabel().equals(fCommand.name())) {\n        setLabel(fCommand.name());\n    }\n}",
+  "method_comment": "\n     * Executes the command. If the command's name was changed\n     * as a result of the command the button's label is updated\n     * accordingly.\n     ",
+  "method_annotation": ""
+}

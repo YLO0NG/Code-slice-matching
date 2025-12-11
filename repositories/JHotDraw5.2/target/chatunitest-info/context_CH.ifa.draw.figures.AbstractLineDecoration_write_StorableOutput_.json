@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.figures.AbstractLineDecoration",
+  "targetMethod": "write(StorableOutput)",
+  "dependentFields": {
+    "CH.ifa.draw.util.StorableOutput": "private PrintWriter     fStream;\nprivate Vector          fMap;\nprivate int             fIndent;",
+    "CH.ifa.draw.figures.AbstractLineDecoration": "static final long serialVersionUID = 1577970039258356627L;\nprivate Color   fFillColor;\nprivate Color   fBorderColor;",
+    "CH.ifa.draw.figures.FigureAttributes": "private Hashtable fMap;\nprivate static final long serialVersionUID = -6886355144423666716L;\nprivate int figureAttributesSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": "public void writeInt(int i){}\npublic void writeString(String s){}",
+    "CH.ifa.draw.figures.AbstractLineDecoration": "public Color getFillColor(){}\npublic Color getBorderColor(){}",
+    "CH.ifa.draw.figures.FigureAttributes": "public static void writeColor(StorableOutput dw, String colorName, Color color){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.util.StorableOutput": "* Writes an int to the output stream.\n     \npublic void writeInt(int i) {\n        fStream.print(i);\n        space();\n    }\n\n     * Writes a string to the output stream. Special characters\n     * are quoted.\n     \npublic void writeString(String s) {\n        fStream.print('\"');\n        for(int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            switch(c) {\n                case '\\n': fStream.print('\\\\'); fStream.print('n'); break;\n                case '\"' : fStream.print('\\\\'); fStream.print('\"'); break;\n                case '\\\\': fStream.print('\\\\'); fStream.print('\\\\'); break;\n                case '\\t': fStream.print('\\\\'); fStream.print('\\t'); break;\n                default: fStream.print(c);\n            }\n\n        }\n        fStream.print('\"');\n        space();\n    }",
+    "CH.ifa.draw.figures.AbstractLineDecoration": "* Returns color with which arrow is filled\n\t \npublic Color getFillColor() {\n        return fFillColor;\n    }\n\n\t * Returns color of arrow's border\n\t \npublic Color getBorderColor() {\n        return fBorderColor;\n    }",
+    "CH.ifa.draw.figures.FigureAttributes": "public static void writeColor(StorableOutput dw, String colorName, Color color) {\n       if (color != null) {\n            dw.writeString(colorName);\n            dw.writeInt(color.getRed());\n            dw.writeInt(color.getGreen());\n            dw.writeInt(color.getBlue());\n        }\n    }"
+  }
+}

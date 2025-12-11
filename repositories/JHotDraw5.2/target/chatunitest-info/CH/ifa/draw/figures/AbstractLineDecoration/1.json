@@ -1,0 +1,23 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "outline",
+  "brief": "public abstract Polygon outline(int x1, int y1, int x2, int y2);",
+  "methodSignature": "outline(int, int, int, int)",
+  "sourceCode": "public abstract Polygon outline(int x1, int y1, int x2, int y2);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Hook method to calculates the outline of an arrow tip.\n */\npublic abstract Polygon outline(int x1, int y1, int x2, int y2);",
+  "method_comment": "\n    * Hook method to calculates the outline of an arrow tip.\n    ",
+  "method_annotation": ""
+}

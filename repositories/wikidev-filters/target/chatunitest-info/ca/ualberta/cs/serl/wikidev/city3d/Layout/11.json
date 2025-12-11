@@ -1,0 +1,37 @@
+{
+  "className": "Layout",
+  "methodName": "assignUserColors",
+  "brief": "private ArrayList<User> assignUserColors(int projectid){}",
+  "methodSignature": "assignUserColors(int)",
+  "sourceCode": "private ArrayList<User> assignUserColors(int projectid) {\n\t\tArrayList<User> users = null;\n\t\ttry {\n\t\t\tusers = DataManager.getUsersPerProject(projectid);\n\t\t\tboolean emptyUsers = false;\n\t\t\tint count = 0;\n\t\t\tfor(int r=0; r<=255; r+=127) {\n\t\t\t\tfor(int g=0; g<=255; g+=127) {\n\t\t\t\t\tfor(int b=0; b<=255; b+=127) {\n\t\t\t\t\t\tif (!(new Color(r,g,b).equals(Color.black) || new Color(r,g,b).equals(Color.white))) {\n\t\t\t\t\t\t\tusers.get(count).setColor(new Color(r, g, b));\n\t\t\t\t\t\t\tcount++;\n\t\t\t\t\t\t\tif (users.size() == count) {\n\t\t\t\t\t\t\t\temptyUsers = true;\n\t\t\t\t\t\t\t\tbreak;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\tif(emptyUsers) break;\n\t\t\t\t}\n\t\t\t\tif(emptyUsers) break;\n\t\t\t}\n\t\t\t\n\t\t} catch (SQLException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}\n\t\treturn users;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getUsersPerProject(int)"
+    ],
+    "java.awt.Color": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "setColor(Color)"
+    ],
+    "java.util.ArrayList": [
+      "get(int)",
+      "size()"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ]
+  },
+  "full_method_info": "private ArrayList<User> assignUserColors(int projectid) {\n    ArrayList<User> users = null;\n    try {\n        users = DataManager.getUsersPerProject(projectid);\n        boolean emptyUsers = false;\n        int count = 0;\n        for (int r = 0; r <= 255; r += 127) {\n            for (int g = 0; g <= 255; g += 127) {\n                for (int b = 0; b <= 255; b += 127) {\n                    if (!(new Color(r, g, b).equals(Color.black) || new Color(r, g, b).equals(Color.white))) {\n                        users.get(count).setColor(new Color(r, g, b));\n                        count++;\n                        if (users.size() == count) {\n                            emptyUsers = true;\n                            break;\n                        }\n                    }\n                }\n                if (emptyUsers)\n                    break;\n            }\n            if (emptyUsers)\n                break;\n        }\n    } catch (SQLException e) {\n        // TODO Auto-generated catch block\n        e.printStackTrace();\n    }\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

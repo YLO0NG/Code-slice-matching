@@ -1,0 +1,26 @@
+{
+  "className": "Handle",
+  "methodName": "invokeEnd",
+  "brief": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view);",
+  "methodSignature": "invokeEnd(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * Tracks the end of the interaction.\n * @param x the current x position\n * @param y the current y position\n * @param anchorX the x position where the interaction started\n * @param anchorY the y position where the interaction started\n */\npublic void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view);",
+  "method_comment": "\n     * Tracks the end of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     ",
+  "method_annotation": ""
+}

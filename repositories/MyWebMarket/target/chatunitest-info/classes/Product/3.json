@@ -1,0 +1,22 @@
+{
+  "className": "Product",
+  "methodName": "setName",
+  "brief": "public void setName( String nome ){}",
+  "methodSignature": "setName(String)",
+  "sourceCode": "public void setName( String nome ) {\n\t\tthis.name = nome;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setName(String nome) {\n    this.name = nome;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

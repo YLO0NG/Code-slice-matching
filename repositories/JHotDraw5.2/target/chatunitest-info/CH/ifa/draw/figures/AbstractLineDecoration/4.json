@@ -1,0 +1,22 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "setFillColor",
+  "brief": "public void setFillColor(Color fillColor){}",
+  "methodSignature": "setFillColor(Color)",
+  "sourceCode": "public void setFillColor(Color fillColor) {\n        fFillColor = fillColor;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": []
+  },
+  "full_method_info": "/**\n * Sets color with which arrow is filled\n */\npublic void setFillColor(Color fillColor) {\n    fFillColor = fillColor;\n}",
+  "method_comment": "\n\t * Sets color with which arrow is filled\n\t ",
+  "method_annotation": ""
+}

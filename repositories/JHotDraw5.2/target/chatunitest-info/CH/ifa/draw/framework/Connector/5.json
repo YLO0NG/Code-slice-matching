@@ -1,0 +1,22 @@
+{
+  "className": "Connector",
+  "methodName": "draw",
+  "brief": "public abstract void draw(Graphics g);",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public abstract void draw(Graphics g);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": []
+  },
+  "full_method_info": "/**\n * Draws this connector. Connectors don't have to be visible\n * and it is OK leave this method empty.\n */\npublic abstract void draw(Graphics g);",
+  "method_comment": "\n     * Draws this connector. Connectors don't have to be visible\n     * and it is OK leave this method empty.\n     ",
+  "method_annotation": ""
+}

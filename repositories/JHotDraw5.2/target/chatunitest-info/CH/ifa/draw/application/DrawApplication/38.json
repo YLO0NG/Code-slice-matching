@@ -1,0 +1,31 @@
+{
+  "className": "DrawApplication",
+  "methodName": "selectionChanged",
+  "brief": "public void selectionChanged(DrawingView view){}",
+  "methodSignature": "selectionChanged(DrawingView)",
+  "sourceCode": "public void selectionChanged(DrawingView view) {\n        JMenuBar mb = getJMenuBar();\n        CommandMenu editMenu = (CommandMenu)mb.getMenu(EDIT_MENU);\n        editMenu.checkEnabled();\n        CommandMenu alignmentMenu = (CommandMenu)mb.getMenu(ALIGNMENT_MENU);\n        alignmentMenu.checkEnabled();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "javax.swing.JFrame": [
+      "getJMenuBar()"
+    ],
+    "javax.swing.JMenuBar": [
+      "getMenu(int)"
+    ],
+    "CH.ifa.draw.util.CommandMenu": [
+      "checkEnabled()"
+    ]
+  },
+  "full_method_info": "/**\n * Handles a change of the current selection. Updates all\n * menu items that are selection sensitive.\n * @see DrawingEditor\n */\npublic void selectionChanged(DrawingView view) {\n    JMenuBar mb = getJMenuBar();\n    CommandMenu editMenu = (CommandMenu) mb.getMenu(EDIT_MENU);\n    editMenu.checkEnabled();\n    CommandMenu alignmentMenu = (CommandMenu) mb.getMenu(ALIGNMENT_MENU);\n    alignmentMenu.checkEnabled();\n}",
+  "method_comment": "\n     * Handles a change of the current selection. Updates all\n     * menu items that are selection sensitive.\n     * @see DrawingEditor\n     ",
+  "method_annotation": ""
+}

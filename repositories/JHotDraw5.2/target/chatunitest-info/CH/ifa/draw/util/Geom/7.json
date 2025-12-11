@@ -1,0 +1,22 @@
+{
+  "className": "Geom",
+  "methodName": "range",
+  "brief": "static public int range(int min, int max, int value){}",
+  "methodSignature": "range(int, int, int)",
+  "sourceCode": "static public int range(int min, int max, int value) {\n        if (value < min)\n            value = min;\n        if (value > max)\n            value = max;\n        return value;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Constains a value to the given range.\n * @return the constrained value\n */\nstatic public int range(int min, int max, int value) {\n    if (value < min)\n        value = min;\n    if (value > max)\n        value = max;\n    return value;\n}",
+  "method_comment": "\n     * Constains a value to the given range.\n     * @return the constrained value\n     ",
+  "method_annotation": ""
+}

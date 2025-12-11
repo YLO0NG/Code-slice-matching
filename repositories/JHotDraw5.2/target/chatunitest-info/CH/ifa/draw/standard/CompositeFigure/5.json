@@ -1,0 +1,25 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "orphan",
+  "brief": "public synchronized Figure orphan(Figure figure){}",
+  "methodSignature": "orphan(Figure)",
+  "sourceCode": "public synchronized Figure orphan(Figure figure) {\n        fFigures.removeElement(figure);\n        return figure;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "java.util.Vector": [
+      "removeElement(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a figure from the figure list, but\n * doesn't release it. Use this method to temporarily\n * manipulate a figure outside of the drawing.\n */\npublic synchronized Figure orphan(Figure figure) {\n    fFigures.removeElement(figure);\n    return figure;\n}",
+  "method_comment": "\n     * Removes a figure from the figure list, but\n     * doesn't release it. Use this method to temporarily\n     * manipulate a figure outside of the drawing.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "LineConnection",
+  "methodName": "endFigure",
+  "brief": "public Figure endFigure(){}",
+  "methodSignature": "endFigure()",
+  "sourceCode": "public Figure endFigure() {\n        if (end() != null)\n            return end().owner();\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineConnection": [
+      "end()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the end figure of the connection.\n */\npublic Figure endFigure() {\n    if (end() != null)\n        return end().owner();\n    return null;\n}",
+  "method_comment": "\n     * Gets the end figure of the connection.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "add",
+  "brief": "public Figure add(Figure figure){}",
+  "methodSignature": "add(Figure)",
+  "sourceCode": "public Figure add(Figure figure) {\n        if (!fFigures.contains(figure)) {\n            fFigures.addElement(figure);\n            figure.addToContainer(this);\n        }\n        return figure;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "addToContainer(FigureChangeListener)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a figure to the list of figures. Initializes the\n * the figure's container.\n */\npublic Figure add(Figure figure) {\n    if (!fFigures.contains(figure)) {\n        fFigures.addElement(figure);\n        figure.addToContainer(this);\n    }\n    return figure;\n}",
+  "method_comment": "\n     * Adds a figure to the list of figures. Initializes the\n     * the figure's container.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "TestSuitePanel",
+  "methodName": "showTestTree",
+  "brief": "public void showTestTree(Test root){}",
+  "methodSignature": "showTestTree(Test)",
+  "sourceCode": "public void showTestTree(Test root) {\r\n\t\tfModel= new TestTreeModel(root);\r\n\t\tfTree.setModel(fModel);\r\n\t\tfTree.setCellRenderer(new TestTreeCellRenderer());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "javax.swing.JTree": [
+      "setCellRenderer(TreeCellRenderer)",
+      "setModel(TreeModel)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Shows the test hierarchy starting at the given test\r\n */\r\npublic void showTestTree(Test root) {\r\n    fModel = new TestTreeModel(root);\r\n    fTree.setModel(fModel);\r\n    fTree.setCellRenderer(new TestTreeCellRenderer());\r\n}",
+  "method_comment": "\r\n\t * Shows the test hierarchy starting at the given test\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "SelectionTool",
+  "methodName": "mouseDrag",
+  "brief": "public void mouseDrag(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDrag(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDrag(MouseEvent e, int x, int y) {\n        if (fChild != null) // JDK1.1 doesn't guarantee mouseDown, mouseDrag, mouseUp\n            fChild.mouseDrag(e, x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Tool": [
+      "mouseDrag(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse drag events. The events are forwarded to the\n * current tracker.\n */\npublic void mouseDrag(MouseEvent e, int x, int y) {\n    if (// JDK1.1 doesn't guarantee mouseDown, mouseDrag, mouseUp\n    fChild != null)\n        fChild.mouseDrag(e, x, y);\n}",
+  "method_comment": "\n     * Handles mouse drag events. The events are forwarded to the\n     * current tracker.\n     ",
+  "method_annotation": ""
+}

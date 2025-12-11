@@ -1,0 +1,18 @@
+{
+  "className": "TextParser",
+  "methodName": "getKeywords",
+  "brief": "public ArrayList<String> getKeywords(){}",
+  "methodSignature": "getKeywords()",
+  "sourceCode": "public ArrayList<String> getKeywords() {\n\t\treturn keywords;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public ArrayList<String> getKeywords() {\n    return keywords;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

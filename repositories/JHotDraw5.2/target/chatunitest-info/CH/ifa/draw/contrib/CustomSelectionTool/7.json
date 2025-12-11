@@ -1,0 +1,54 @@
+{
+  "className": "CustomSelectionTool",
+  "methodName": "handlePopupMenu",
+  "brief": "protected void handlePopupMenu(MouseEvent e, int x, int y){}",
+  "methodSignature": "handlePopupMenu(MouseEvent, int, int)",
+  "sourceCode": "protected void handlePopupMenu(MouseEvent e, int x, int y) {\n\t\tFigure figure = drawing().findFigure(e.getX(), e.getY());\n        if (figure != null) {\n            Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n            if (attribute == null) {\n                figure = drawing().findFigureInside(e.getX(), e.getY());\n            }\n        \tif (figure != null) {\n            \tComponent comp = e.getComponent();\n\t\t\t\tObject attribute1 = figure.getAttribute(Figure.POPUP_MENU);\n\t\t\t\tif ((attribute1 != null) && (attribute1 instanceof JPopupMenu)) {\n\t\t\t\t    JPopupMenu popup = (JPopupMenu)attribute1;\n\t\t\t\t    if (popup instanceof PopupMenuFigureSelection) {\n\t\t\t\t        ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);\n\t\t\t\t    }\n\t\t\t\t    // calculate offsets for internal MDI frames\n\t\t\t\t    Point newLocation = new Point(e.getX(), e.getY());\n\t\t\t\t    adjustOffsets(comp.getParent(), newLocation);\n\t\t\t\t\tpopup.setLocation(newLocation);\n\t\t\t\t\tpopup.setInvoker(comp);\n\t\t\t\t\tpopup.setVisible(true);\n\t\t\t\t}\n            }\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)",
+      "findFigure(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "java.awt.event.ComponentEvent": [
+      "getComponent()"
+    ],
+    "CH.ifa.draw.contrib.PopupMenuFigureSelection": [
+      "setSelectedFigure(Figure)"
+    ],
+    "CH.ifa.draw.contrib.CustomSelectionTool": [
+      "adjustOffsets(Component, Point)"
+    ],
+    "java.awt.Component": [
+      "getParent()",
+      "setLocation(Point)"
+    ],
+    "javax.swing.JPopupMenu": [
+      "setInvoker(Component)",
+      "setVisible(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Hook method which can be overriden by subclasses to provide\n * specialised behaviour in the event of a popup trigger.\n */\nprotected void handlePopupMenu(MouseEvent e, int x, int y) {\n    Figure figure = drawing().findFigure(e.getX(), e.getY());\n    if (figure != null) {\n        Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n        if (attribute == null) {\n            figure = drawing().findFigureInside(e.getX(), e.getY());\n        }\n        if (figure != null) {\n            Component comp = e.getComponent();\n            Object attribute1 = figure.getAttribute(Figure.POPUP_MENU);\n            if ((attribute1 != null) && (attribute1 instanceof JPopupMenu)) {\n                JPopupMenu popup = (JPopupMenu) attribute1;\n                if (popup instanceof PopupMenuFigureSelection) {\n                    ((PopupMenuFigureSelection) popup).setSelectedFigure(figure);\n                }\n                // calculate offsets for internal MDI frames\n                Point newLocation = new Point(e.getX(), e.getY());\n                adjustOffsets(comp.getParent(), newLocation);\n                popup.setLocation(newLocation);\n                popup.setInvoker(comp);\n                popup.setVisible(true);\n            }\n        }\n    }\n}",
+  "method_comment": "\n\t * Hook method which can be overriden by subclasses to provide\n\t * specialised behaviour in the event of a popup trigger.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "getFileFilter",
+  "brief": "public FileFilter getFileFilter(){}",
+  "methodSignature": "getFileFilter()",
+  "sourceCode": "public FileFilter getFileFilter() {\n\t\treturn myFileFilter;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the FileFilter used to identify Drawing files with the correct file\n * extension for this StorageFormat.\n *\n * @return FileFilter for this StorageFormat\n */\npublic FileFilter getFileFilter() {\n    return myFileFilter;\n}",
+  "method_comment": "\n\t * Return the FileFilter used to identify Drawing files with the correct file\n\t * extension for this StorageFormat.\n\t *\n\t * @return FileFilter for this StorageFormat\n\t ",
+  "method_annotation": ""
+}

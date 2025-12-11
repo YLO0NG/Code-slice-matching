@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "getArtifacts",
+  "brief": "public ArrayList<IArtifact> getArtifacts(){}",
+  "methodSignature": "getArtifacts()",
+  "sourceCode": "public ArrayList<IArtifact> getArtifacts() {\n\t\treturn artifacts;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public ArrayList<IArtifact> getArtifacts() {\n    return artifacts;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

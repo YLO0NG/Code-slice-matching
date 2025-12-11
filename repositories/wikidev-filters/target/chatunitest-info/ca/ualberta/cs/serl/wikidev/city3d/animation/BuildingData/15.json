@@ -1,0 +1,18 @@
+{
+  "className": "BuildingData",
+  "methodName": "getUsers",
+  "brief": "public ArrayList<UserData> getUsers(){}",
+  "methodSignature": "getUsers()",
+  "sourceCode": "public ArrayList<UserData> getUsers() {\n\t\treturn users;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public ArrayList<UserData> getUsers() {\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

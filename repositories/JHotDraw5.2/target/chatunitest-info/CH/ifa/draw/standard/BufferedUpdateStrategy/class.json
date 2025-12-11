@@ -1,0 +1,45 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.BufferedUpdateStrategy",
+  "className": "BufferedUpdateStrategy",
+  "index": 109,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Painter]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public  class BufferedUpdateStrategy",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.image.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "transient private Image   fOffscreen;",
+    "private int     fImagewidth = -1;",
+    "private int     fImageheight = -1;",
+    "private static final long serialVersionUID = 6489532222954612824L;",
+    "private int bufferedUpdateSerializedDataVersion = 1;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Painter"
+  ],
+  "methodSigs": {
+    "draw(Graphics, DrawingView)": "0"
+  },
+  "methodsBrief": [
+    "public void draw(Graphics g, DrawingView view){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)BufferedUpdateStrategy.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.awt.image.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * The BufferedUpdateStrategy implements an update\n * strategy that first draws a view into a buffer\n * followed by copying the buffer to the DrawingView.\n * @see DrawingView\n */\npublic class BufferedUpdateStrategy implements Painter {\n\n    /**\n     * The offscreen image\n     */\n    transient private Image fOffscreen;\n\n    private int fImagewidth = -1;\n\n    private int fImageheight = -1;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 6489532222954612824L;\n\n    private int bufferedUpdateSerializedDataVersion = 1;\n\n    /**\n     * Draws the view contents.\n     */\n    public void draw(Graphics g, DrawingView view) {\n        // create the buffer if necessary\n        Dimension d = view.getSize();\n        if ((fOffscreen == null) || (d.width != fImagewidth) || (d.height != fImageheight)) {\n            fOffscreen = view.createImage(d.width, d.height);\n            fImagewidth = d.width;\n            fImageheight = d.height;\n        }\n        // let the view draw on offscreen buffer\n        Graphics g2 = fOffscreen.getGraphics();\n        view.drawAll(g2);\n        g.drawImage(fOffscreen, 0, 0, view);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * The BufferedUpdateStrategy implements an update\n * strategy that first draws a view into a buffer\n * followed by copying the buffer to the DrawingView.\n * @see DrawingView\n */\npublic class BufferedUpdateStrategy implements Painter {\n\n    /**\n     * The offscreen image\n     */\n    transient private Image fOffscreen;\n\n    private int fImagewidth = -1;\n\n    private int fImageheight = -1;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 6489532222954612824L;\n\n    private int bufferedUpdateSerializedDataVersion = 1;\n\n    /**\n     * Draws the view contents.\n     */\n    public void draw(Graphics g, DrawingView view) {\n        // create the buffer if necessary\n        Dimension d = view.getSize();\n        if ((fOffscreen == null) || (d.width != fImagewidth) || (d.height != fImageheight)) {\n            fOffscreen = view.createImage(d.width, d.height);\n            fImagewidth = d.width;\n            fImageheight = d.height;\n        }\n        // let the view draw on offscreen buffer\n        Graphics g2 = fOffscreen.getGraphics();\n        view.drawAll(g2);\n        g.drawImage(fOffscreen, 0, 0, view);\n    }\n}",
+  "subClasses": []
+}

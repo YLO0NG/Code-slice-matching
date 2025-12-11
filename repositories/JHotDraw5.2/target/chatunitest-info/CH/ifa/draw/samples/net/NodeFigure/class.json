@@ -1,0 +1,79 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.net.NodeFigure",
+  "className": "NodeFigure",
+  "index": 84,
+  "modifier": "[public ]",
+  "extend": "[TextFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.net",
+  "packageDeclaration": "package CH.ifa.draw.samples.net;",
+  "classSignature": "public class NodeFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private static final int BORDER = 6;",
+    "private Vector      fConnectors;",
+    "private boolean     fConnectorsVisible;"
+  ],
+  "superClasses": [
+    "TextFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "displayBox()": "0",
+    "containsPoint(int, int)": "1",
+    "drawBorder(Graphics)": "2",
+    "draw(Graphics)": "3",
+    "handles()": "4",
+    "drawConnectors(Graphics)": "5",
+    "connectorVisibility(boolean)": "6",
+    "connectorAt(int, int)": "7",
+    "connectors()": "8",
+    "createConnectors()": "9",
+    "findConnector(int, int)": "10",
+    "initialize()": "11",
+    "NodeFigure()": "12"
+  },
+  "methodsBrief": [
+    "public Rectangle displayBox(){}",
+    "public boolean containsPoint(int x, int y){}",
+    "private void drawBorder(Graphics g){}",
+    "public void draw(Graphics g){}",
+    "public Vector handles(){}",
+    "private void drawConnectors(Graphics g){}",
+    "public void connectorVisibility(boolean isVisible){}",
+    "public Connector connectorAt(int x, int y){}",
+    "private Vector connectors(){}",
+    "private void createConnectors(){}",
+    "private Connector findConnector(int x, int y){}",
+    "private void initialize(){}",
+    "public NodeFigure(){}"
+  ],
+  "constructorSigs": [
+    "NodeFigure()"
+  ],
+  "constructorBrief": [
+    "public NodeFigure(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "initialize()"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)NodeFigure.java 5.2\n *\n */\npackage CH.ifa.draw.samples.net;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.util.*;\n\npublic class NodeFigure extends TextFigure {\n\n    private static final int BORDER = 6;\n\n    private Vector fConnectors;\n\n    private boolean fConnectorsVisible;\n\n    public NodeFigure() {\n        initialize();\n        fConnectors = null;\n    }\n\n    public Rectangle displayBox() {\n        Rectangle box = super.displayBox();\n        int d = BORDER;\n        box.grow(d, d);\n        return box;\n    }\n\n    public boolean containsPoint(int x, int y) {\n        // add slop for connectors\n        if (fConnectorsVisible) {\n            Rectangle r = displayBox();\n            int d = LocatorConnector.SIZE / 2;\n            r.grow(d, d);\n            return r.contains(x, y);\n        }\n        return super.containsPoint(x, y);\n    }\n\n    private void drawBorder(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(getFrameColor());\n        g.drawRect(r.x, r.y, r.width - 1, r.height - 1);\n    }\n\n    public void draw(Graphics g) {\n        super.draw(g);\n        drawBorder(g);\n        drawConnectors(g);\n    }\n\n    public Vector handles() {\n        ConnectionFigure prototype = new LineConnection();\n        Vector handles = new Vector();\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.east(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.west(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.south(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.north(), prototype));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        return handles;\n    }\n\n    private void drawConnectors(Graphics g) {\n        if (fConnectorsVisible) {\n            Enumeration e = connectors().elements();\n            while (e.hasMoreElements()) ((Connector) e.nextElement()).draw(g);\n        }\n    }\n\n    /**\n     */\n    public void connectorVisibility(boolean isVisible) {\n        fConnectorsVisible = isVisible;\n        invalidate();\n    }\n\n    /**\n     */\n    public Connector connectorAt(int x, int y) {\n        return findConnector(x, y);\n    }\n\n    /**\n     */\n    private Vector connectors() {\n        if (fConnectors == null)\n            createConnectors();\n        return fConnectors;\n    }\n\n    private void createConnectors() {\n        fConnectors = new Vector(4);\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()));\n    }\n\n    private Connector findConnector(int x, int y) {\n        // return closest connector\n        long min = Long.MAX_VALUE;\n        Connector closest = null;\n        Enumeration e = connectors().elements();\n        while (e.hasMoreElements()) {\n            Connector c = (Connector) e.nextElement();\n            Point p2 = Geom.center(c.displayBox());\n            long d = Geom.length2(x, y, p2.x, p2.y);\n            if (d < min) {\n                min = d;\n                closest = c;\n            }\n        }\n        return closest;\n    }\n\n    private void initialize() {\n        setText(\"node\");\n        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);\n        setFont(fb);\n        fConnectors = new Vector(4);\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()));\n    }\n}\n",
+  "classDeclarationCode": "public class NodeFigure extends TextFigure {\n\n    private static final int BORDER = 6;\n\n    private Vector fConnectors;\n\n    private boolean fConnectorsVisible;\n\n    public NodeFigure() {\n        initialize();\n        fConnectors = null;\n    }\n\n    public Rectangle displayBox() {\n        Rectangle box = super.displayBox();\n        int d = BORDER;\n        box.grow(d, d);\n        return box;\n    }\n\n    public boolean containsPoint(int x, int y) {\n        // add slop for connectors\n        if (fConnectorsVisible) {\n            Rectangle r = displayBox();\n            int d = LocatorConnector.SIZE / 2;\n            r.grow(d, d);\n            return r.contains(x, y);\n        }\n        return super.containsPoint(x, y);\n    }\n\n    private void drawBorder(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(getFrameColor());\n        g.drawRect(r.x, r.y, r.width - 1, r.height - 1);\n    }\n\n    public void draw(Graphics g) {\n        super.draw(g);\n        drawBorder(g);\n        drawConnectors(g);\n    }\n\n    public Vector handles() {\n        ConnectionFigure prototype = new LineConnection();\n        Vector handles = new Vector();\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.east(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.west(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.south(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.north(), prototype));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        return handles;\n    }\n\n    private void drawConnectors(Graphics g) {\n        if (fConnectorsVisible) {\n            Enumeration e = connectors().elements();\n            while (e.hasMoreElements()) ((Connector) e.nextElement()).draw(g);\n        }\n    }\n\n    /**\n     */\n    public void connectorVisibility(boolean isVisible) {\n        fConnectorsVisible = isVisible;\n        invalidate();\n    }\n\n    /**\n     */\n    public Connector connectorAt(int x, int y) {\n        return findConnector(x, y);\n    }\n\n    /**\n     */\n    private Vector connectors() {\n        if (fConnectors == null)\n            createConnectors();\n        return fConnectors;\n    }\n\n    private void createConnectors() {\n        fConnectors = new Vector(4);\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()));\n    }\n\n    private Connector findConnector(int x, int y) {\n        // return closest connector\n        long min = Long.MAX_VALUE;\n        Connector closest = null;\n        Enumeration e = connectors().elements();\n        while (e.hasMoreElements()) {\n            Connector c = (Connector) e.nextElement();\n            Point p2 = Geom.center(c.displayBox());\n            long d = Geom.length2(x, y, p2.x, p2.y);\n            if (d < min) {\n                min = d;\n                closest = c;\n            }\n        }\n        return closest;\n    }\n\n    private void initialize() {\n        setText(\"node\");\n        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);\n        setFont(fb);\n        fConnectors = new Vector(4);\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()));\n        fConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()));\n    }\n}",
+  "subClasses": []
+}

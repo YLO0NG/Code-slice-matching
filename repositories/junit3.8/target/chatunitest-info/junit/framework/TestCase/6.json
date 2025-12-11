@@ -1,0 +1,18 @@
+{
+  "className": "TestCase",
+  "methodName": "setUp",
+  "brief": "protected void setUp() throws Exception{}",
+  "methodSignature": "setUp()",
+  "sourceCode": "protected void setUp() throws Exception {\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Sets up the fixture, for example, open a network connection.\r\n * This method is called before a test is executed.\r\n */\r\nprotected void setUp() throws Exception {\r\n}",
+  "method_comment": "\r\n\t * Sets up the fixture, for example, open a network connection.\r\n\t * This method is called before a test is executed.\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,2052 @@
+[
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "find()",
+        "code_lines": [
+            {
+                "line": 86,
+                "code": "\tpublic String find() throws Exception {"
+            },
+            {
+                "line": 87,
+                "code": "\t\tlogger.info( \"Starting find()\" ); //f:log"
+            },
+            {
+                "line": 88,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 89,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 90,
+                "code": ""
+            },
+            {
+                "line": 91,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Customer.class ); //f:hibernate"
+            },
+            {
+                "line": 92,
+                "code": ""
+            },
+            {
+                "line": 93,
+                "code": "\t\tcriteria.add( Example.create( this.customer ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) ); //f:hibernate"
+            },
+            {
+                "line": 94,
+                "code": "\t\tif ( this.customer.getId() != null ) { //f:hibernate"
+            },
+            {
+                "line": 95,
+                "code": "\t\t\tcriteria.add( Restrictions.idEq( this.customer.getId() ) ); //f:hibernate"
+            },
+            {
+                "line": 96,
+                "code": "\t\t} //f:hibernate"
+            },
+            {
+                "line": 97,
+                "code": ""
+            },
+            {
+                "line": 98,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 99,
+                "code": "\t\tList<Customer> l = (List<Customer>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 100,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 101,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 102,
+                "code": "\t\trequest.put( \"list\", l );"
+            },
+            {
+                "line": 103,
+                "code": ""
+            },
+            {
+                "line": 104,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 105,
+                "code": "\t\tlogger.info( \"Finishing find()\" ); //f:log"
+            },
+            {
+                "line": 106,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 107,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "save()",
+        "code_lines": [
+            {
+                "line": 109,
+                "code": "\tpublic String save() throws Exception {"
+            },
+            {
+                "line": 110,
+                "code": "\t\tlogger.info( \"Starting save()\" ); //f:log"
+            },
+            {
+                "line": 111,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 112,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 113,
+                "code": "\t\t"
+            },
+            {
+                "line": 114,
+                "code": "\t\tsess.save( this.customer ); //f:hibernate"
+            },
+            {
+                "line": 115,
+                "code": "\t\t"
+            },
+            {
+                "line": 116,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 117,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 118,
+                "code": ""
+            },
+            {
+                "line": 119,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 120,
+                "code": "\t\tthis.addActionMessage( this.getText( \"saveSuccessful\", new String[]{\"customer\"})  );"
+            },
+            {
+                "line": 121,
+                "code": "\t\t"
+            },
+            {
+                "line": 122,
+                "code": "\t\tlogger.info( \"Finishing save()\" ); //f:log"
+            },
+            {
+                "line": 123,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 124,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "update()",
+        "code_lines": [
+            {
+                "line": 126,
+                "code": "\tpublic String update() throws Exception {"
+            },
+            {
+                "line": 127,
+                "code": "\t\tlogger.info( \"Starting update()\" ); //f:log"
+            },
+            {
+                "line": 128,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 129,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 130,
+                "code": "\t\t"
+            },
+            {
+                "line": 131,
+                "code": "\t\tsess.update( this.customer ); //f:hibernate"
+            },
+            {
+                "line": 132,
+                "code": "\t\t"
+            },
+            {
+                "line": 133,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 134,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 135,
+                "code": ""
+            },
+            {
+                "line": 136,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 137,
+                "code": "\t\tthis.addActionMessage( this.getText( \"updateSuccessful\", new String[]{\"customer\"})  );"
+            },
+            {
+                "line": 138,
+                "code": "\t\t"
+            },
+            {
+                "line": 139,
+                "code": "\t\tlogger.info( \"Finishing update()\" ); //f:log"
+            },
+            {
+                "line": 140,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 141,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "delete()",
+        "code_lines": [
+            {
+                "line": 143,
+                "code": "\tpublic String delete() throws Exception {"
+            },
+            {
+                "line": 144,
+                "code": "\t\tlogger.info( \"Starting delete()\" ); //f:log"
+            },
+            {
+                "line": 145,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 146,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 147,
+                "code": "\t\t"
+            },
+            {
+                "line": 148,
+                "code": "\t\tsess.delete( this.customer ); //f:hibernate"
+            },
+            {
+                "line": 149,
+                "code": "\t\t"
+            },
+            {
+                "line": 150,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 151,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 152,
+                "code": ""
+            },
+            {
+                "line": 153,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 154,
+                "code": "\t\tthis.addActionMessage( this.getText( \"deleteSuccessful\", new String[]{\"customer\"})  );"
+            },
+            {
+                "line": 155,
+                "code": "\t\t"
+            },
+            {
+                "line": 156,
+                "code": "\t\tlogger.info( \"Finishing delete()\" ); //f:log"
+            },
+            {
+                "line": 157,
+                "code": "\t\treturn this.input();"
+            },
+            {
+                "line": 158,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "edit()",
+        "code_lines": [
+            {
+                "line": 160,
+                "code": "\tpublic String edit() throws Exception {"
+            },
+            {
+                "line": 161,
+                "code": "\t\tlogger.info( \"Starting edit()\" ); //f:log"
+            },
+            {
+                "line": 162,
+                "code": "\t\tInteger id = Integer.valueOf( this.parameters.get( \"id\" )[0] );"
+            },
+            {
+                "line": 163,
+                "code": ""
+            },
+            {
+                "line": 164,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 165,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 166,
+                "code": ""
+            },
+            {
+                "line": 167,
+                "code": "\t\tCustomer c = (Customer) sess.get( Customer.class, id ); //f:hibernate"
+            },
+            {
+                "line": 168,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 169,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 170,
+                "code": ""
+            },
+            {
+                "line": 171,
+                "code": "\t\tthis.setCustomer( c );"
+            },
+            {
+                "line": 172,
+                "code": ""
+            },
+            {
+                "line": 173,
+                "code": "\t\tlogger.info( \"Finishing edit()\" ); //f:log"
+            },
+            {
+                "line": 174,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 175,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 176,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.LoginAction",
+        "function_name": "execute()",
+        "code_lines": [
+            {
+                "line": 44,
+                "code": "\tpublic String execute() throws Exception {"
+            },
+            {
+                "line": 45,
+                "code": "\t\tlogger.info( \"Starting execute()\" ); //f:log"
+            },
+            {
+                "line": 46,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 47,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 48,
+                "code": ""
+            },
+            {
+                "line": 49,
+                "code": "\t\tCriteria criteria = sess.createCriteria( User.class ); //f:hibernate"
+            },
+            {
+                "line": 50,
+                "code": ""
+            },
+            {
+                "line": 51,
+                "code": "\t\tcriteria.add( Restrictions.idEq( this.user.getUsername() ) ); //f:hibernate"
+            },
+            {
+                "line": 52,
+                "code": "\t\tcriteria.add( Restrictions.eq( \"password\", this.user.getPassword() ) ); //f:hibernate"
+            },
+            {
+                "line": 53,
+                "code": ""
+            },
+            {
+                "line": 54,
+                "code": "\t\tUser user = (User) criteria.uniqueResult(); //f:hibernate"
+            },
+            {
+                "line": 55,
+                "code": ""
+            },
+            {
+                "line": 56,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 57,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 58,
+                "code": ""
+            },
+            {
+                "line": 59,
+                "code": "\t\tif ( user != null ) {"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\tActionContext.getContext().getSession().put( SystemConstants.AUTHENTICATED_USER, user );"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\tlogger.info( \"Finishing execute() -- Success\" ); //f:log"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\treturn SUCCESS;"
+            },
+            {
+                "line": 63,
+                "code": "\t\t}"
+            },
+            {
+                "line": 64,
+                "code": ""
+            },
+            {
+                "line": 65,
+                "code": "\t\tthis.addActionError( this.getText( \"login.failure\" ) );"
+            },
+            {
+                "line": 66,
+                "code": "\t\tlogger.info( \"Finishing execute() -- Failure\" ); //f:log\t\t"
+            },
+            {
+                "line": 67,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 68,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "find()",
+        "code_lines": [
+            {
+                "line": 88,
+                "code": "\tpublic String find() throws Exception {"
+            },
+            {
+                "line": 89,
+                "code": "\t\tlogger.info( \"Starting find()\" ); //f:log"
+            },
+            {
+                "line": 90,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 91,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 92,
+                "code": ""
+            },
+            {
+                "line": 93,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate"
+            },
+            {
+                "line": 94,
+                "code": ""
+            },
+            {
+                "line": 95,
+                "code": "\t\tcriteria.add( Example.create( this.product ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) ); //f:hibernate"
+            },
+            {
+                "line": 96,
+                "code": "\t\tif ( this.product.getId() != null ) { //f:hibernate"
+            },
+            {
+                "line": 97,
+                "code": "\t\t\tcriteria.add( Restrictions.idEq( this.product.getId() ) ); //f:hibernate"
+            },
+            {
+                "line": 98,
+                "code": "\t\t} //f:hibernate"
+            },
+            {
+                "line": 99,
+                "code": ""
+            },
+            {
+                "line": 100,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 101,
+                "code": "\t\tList<Product> l = (List<Product>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 102,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 103,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 104,
+                "code": "\t\trequest.put( \"list\", l );"
+            },
+            {
+                "line": 105,
+                "code": ""
+            },
+            {
+                "line": 106,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 107,
+                "code": "\t\tlogger.info( \"Finishing find()\" ); //f:log"
+            },
+            {
+                "line": 108,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 109,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "save()",
+        "code_lines": [
+            {
+                "line": 111,
+                "code": "\tpublic String save() throws Exception {"
+            },
+            {
+                "line": 112,
+                "code": "\t\tlogger.info( \"Starting save()\" ); //f:log"
+            },
+            {
+                "line": 113,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 114,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 115,
+                "code": "\t\t"
+            },
+            {
+                "line": 116,
+                "code": "\t\tsess.save( this.product ); //f:hibernate"
+            },
+            {
+                "line": 117,
+                "code": "\t\t"
+            },
+            {
+                "line": 118,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 119,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 120,
+                "code": ""
+            },
+            {
+                "line": 121,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 122,
+                "code": "\t\tthis.addActionMessage( this.getText( \"saveSuccessful\", new String[]{\"product\"})  );"
+            },
+            {
+                "line": 123,
+                "code": "\t\t"
+            },
+            {
+                "line": 124,
+                "code": "\t\tlogger.info( \"Finishing save()\" ); //f:log"
+            },
+            {
+                "line": 125,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 126,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "update()",
+        "code_lines": [
+            {
+                "line": 128,
+                "code": "\tpublic String update() throws Exception {"
+            },
+            {
+                "line": 129,
+                "code": "\t\tlogger.info( \"Starting update()\" ); //f:log"
+            },
+            {
+                "line": 130,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 131,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 132,
+                "code": "\t\t"
+            },
+            {
+                "line": 133,
+                "code": "\t\tsess.update( this.product ); //f:hibernate"
+            },
+            {
+                "line": 134,
+                "code": "\t\t"
+            },
+            {
+                "line": 135,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 136,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 137,
+                "code": ""
+            },
+            {
+                "line": 138,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 139,
+                "code": "\t\tthis.addActionMessage( this.getText( \"updateSuccessful\", new String[]{\"product\"})  );"
+            },
+            {
+                "line": 140,
+                "code": "\t\t"
+            },
+            {
+                "line": 141,
+                "code": "\t\tlogger.info( \"Finishing update()\" ); //f:log"
+            },
+            {
+                "line": 142,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 143,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "delete()",
+        "code_lines": [
+            {
+                "line": 145,
+                "code": "\tpublic String delete() throws Exception {"
+            },
+            {
+                "line": 146,
+                "code": "\t\tlogger.info( \"Starting delete()\" ); //f:log"
+            },
+            {
+                "line": 147,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 148,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 149,
+                "code": "\t\t"
+            },
+            {
+                "line": 150,
+                "code": "\t\tsess.delete( this.product ); //f:hibernate"
+            },
+            {
+                "line": 151,
+                "code": "\t\t"
+            },
+            {
+                "line": 152,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 153,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 154,
+                "code": ""
+            },
+            {
+                "line": 155,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 156,
+                "code": "\t\tthis.addActionMessage( this.getText( \"deleteSuccessful\", new String[]{\"product\"})  );"
+            },
+            {
+                "line": 157,
+                "code": "\t\t"
+            },
+            {
+                "line": 158,
+                "code": "\t\tlogger.info( \"Finishing delete()\" ); //f:log"
+            },
+            {
+                "line": 159,
+                "code": "\t\treturn this.input();"
+            },
+            {
+                "line": 160,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "edit()",
+        "code_lines": [
+            {
+                "line": 162,
+                "code": "\tpublic String edit() throws Exception {"
+            },
+            {
+                "line": 163,
+                "code": "\t\tlogger.info( \"Starting edit()\" ); //f:log"
+            },
+            {
+                "line": 164,
+                "code": "\t\tInteger id = Integer.valueOf( this.parameters.get( \"id\" )[0] );"
+            },
+            {
+                "line": 165,
+                "code": ""
+            },
+            {
+                "line": 166,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 167,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 168,
+                "code": ""
+            },
+            {
+                "line": 169,
+                "code": "\t\tProduct p = (Product) sess.get( Product.class, id ); //f:hibernate"
+            },
+            {
+                "line": 170,
+                "code": ""
+            },
+            {
+                "line": 171,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 172,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 173,
+                "code": ""
+            },
+            {
+                "line": 174,
+                "code": "\t\tthis.setProduct( p );"
+            },
+            {
+                "line": 175,
+                "code": ""
+            },
+            {
+                "line": 176,
+                "code": ""
+            },
+            {
+                "line": 177,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 178,
+                "code": "\t\tlogger.info( \"Finishing edit()\" ); //f:log"
+            },
+            {
+                "line": 179,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 180,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "input()",
+        "code_lines": [
+            {
+                "line": 78,
+                "code": "\t\treturn this.input();"
+            },
+            {
+                "line": 79,
+                "code": "\t}"
+            },
+            {
+                "line": 80,
+                "code": ""
+            },
+            {
+                "line": 81,
+                "code": "\t@Override"
+            },
+            {
+                "line": 82,
+                "code": "\tpublic String input() throws Exception {"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "find()",
+        "code_lines": [
+            {
+                "line": 109,
+                "code": "\tpublic String find() throws Exception {"
+            },
+            {
+                "line": 110,
+                "code": "\t\tlogger.info( \"Starting find()\" ); //f:log"
+            },
+            {
+                "line": 111,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 112,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 113,
+                "code": ""
+            },
+            {
+                "line": 114,
+                "code": "\t\tCriteria criteria = sess.createCriteria( PurchaseOrder.class ); //f:hibernate"
+            },
+            {
+                "line": 115,
+                "code": ""
+            },
+            {
+                "line": 116,
+                "code": "\t\tcriteria.add( Example.create( this.purchaseOrder ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) ); //f:hibernate"
+            },
+            {
+                "line": 117,
+                "code": "\t\tif ( this.purchaseOrder.getId() != null ) { //f:hibernate"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\tcriteria.add( Restrictions.idEq( this.purchaseOrder.getId() ) ); //f:hibernate"
+            },
+            {
+                "line": 119,
+                "code": "\t\t} //f:hibernate"
+            },
+            {
+                "line": 120,
+                "code": ""
+            },
+            {
+                "line": 121,
+                "code": "\t\tif ( this.purchaseOrder.getCustomer().getId() != null ) { //f:hibernate"
+            },
+            {
+                "line": 122,
+                "code": "\t\t\tcriteria.add( Restrictions.eq( \"customer\", this.purchaseOrder.getCustomer() ) ); //f:hibernate"
+            },
+            {
+                "line": 123,
+                "code": "\t\t} //f:hibernate"
+            },
+            {
+                "line": 124,
+                "code": ""
+            },
+            {
+                "line": 125,
+                "code": "\t\tcriteria.setResultTransformer( Criteria.DISTINCT_ROOT_ENTITY ); //f:hibernate"
+            },
+            {
+                "line": 126,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 127,
+                "code": "\t\tList<PurchaseOrder> l = (List<PurchaseOrder>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 128,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 129,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 130,
+                "code": "\t\trequest.put( \"list\", l );"
+            },
+            {
+                "line": 131,
+                "code": ""
+            },
+            {
+                "line": 132,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 133,
+                "code": "\t\tlogger.info( \"Finishing input()\" ); //f:log"
+            },
+            {
+                "line": 134,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 135,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "save()",
+        "code_lines": [
+            {
+                "line": 137,
+                "code": "\tpublic String save() throws Exception {"
+            },
+            {
+                "line": 138,
+                "code": "\t\tlogger.info( \"Starting save()\" ); //f:log"
+            },
+            {
+                "line": 139,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 140,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 141,
+                "code": ""
+            },
+            {
+                "line": 142,
+                "code": "\t\tsess.save( this.purchaseOrder ); //f:hibernate"
+            },
+            {
+                "line": 143,
+                "code": ""
+            },
+            {
+                "line": 144,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 145,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 146,
+                "code": ""
+            },
+            {
+                "line": 147,
+                "code": "\t\tthis.purchaseOrder.setOrderDate( new Date() );"
+            },
+            {
+                "line": 148,
+                "code": ""
+            },
+            {
+                "line": 149,
+                "code": "\t\tfor (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems()) {  "
+            },
+            {
+                "line": 150,
+                "code": "\t\t\titem.setPurchaseOrder( this.purchaseOrder );"
+            },
+            {
+                "line": 151,
+                "code": "\t\t}"
+            },
+            {
+                "line": 152,
+                "code": "\t\t"
+            },
+            {
+                "line": 153,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 154,
+                "code": "\t\tthis.addActionMessage( this.getText( \"saveSuccessful\", new String[] { \"order\" } ) );"
+            },
+            {
+                "line": 155,
+                "code": ""
+            },
+            {
+                "line": 156,
+                "code": "\t\tlogger.info( \"Finishing save()\" ); //f:log"
+            },
+            {
+                "line": 157,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 158,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "update()",
+        "code_lines": [
+            {
+                "line": 160,
+                "code": "\tpublic String update() throws Exception {"
+            },
+            {
+                "line": 161,
+                "code": "\t\tlogger.info( \"Starting update()\" ); //f:log"
+            },
+            {
+                "line": 162,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 163,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 164,
+                "code": "\t\tsess.update( this.purchaseOrder ); //f:hibernate"
+            },
+            {
+                "line": 165,
+                "code": ""
+            },
+            {
+                "line": 166,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 167,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 168,
+                "code": ""
+            },
+            {
+                "line": 169,
+                "code": "\t\tfor (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems()){"
+            },
+            {
+                "line": 170,
+                "code": "\t\t\titem.setPurchaseOrder( this.purchaseOrder );"
+            },
+            {
+                "line": 171,
+                "code": "\t\t}"
+            },
+            {
+                "line": 172,
+                "code": "\t\t"
+            },
+            {
+                "line": 173,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 174,
+                "code": "\t\tthis.addActionMessage( this.getText( \"updateSuccessful\", new String[] { \"order\" } ) );"
+            },
+            {
+                "line": 175,
+                "code": ""
+            },
+            {
+                "line": 176,
+                "code": "\t\tlogger.info( \"Finishing update()\" ); //f:log"
+            },
+            {
+                "line": 177,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 178,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "delete()",
+        "code_lines": [
+            {
+                "line": 180,
+                "code": "\tpublic String delete() throws Exception {"
+            },
+            {
+                "line": 181,
+                "code": "\t\tlogger.info( \"Starting delete()\" ); //f:log"
+            },
+            {
+                "line": 182,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 183,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 184,
+                "code": ""
+            },
+            {
+                "line": 185,
+                "code": "\t\tsess.delete( this.purchaseOrder ); //f:hibernate"
+            },
+            {
+                "line": 186,
+                "code": ""
+            },
+            {
+                "line": 187,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 188,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 189,
+                "code": ""
+            },
+            {
+                "line": 190,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 191,
+                "code": "\t\tthis.addActionMessage( this.getText( \"deleteSuccessful\", new String[] { \"order\" } ) );"
+            },
+            {
+                "line": 192,
+                "code": "\t\tlogger.info( \"Finishing delete()\" ); //f:log"
+            },
+            {
+                "line": 193,
+                "code": "\t\treturn this.input();"
+            },
+            {
+                "line": 194,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "edit()",
+        "code_lines": [
+            {
+                "line": 196,
+                "code": "\tpublic String edit() throws Exception {"
+            },
+            {
+                "line": 197,
+                "code": "\t\tlogger.info( \"Starting edit()\" ); //f:log"
+            },
+            {
+                "line": 198,
+                "code": "\t\tInteger id = Integer.valueOf( this.parameters.get( \"id\" )[0] );"
+            },
+            {
+                "line": 199,
+                "code": ""
+            },
+            {
+                "line": 200,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 201,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 202,
+                "code": ""
+            },
+            {
+                "line": 203,
+                "code": "\t\tPurchaseOrder po = (PurchaseOrder) sess.get( PurchaseOrder.class, id ); //f:hibernate"
+            },
+            {
+                "line": 204,
+                "code": ""
+            },
+            {
+                "line": 205,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 206,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 207,
+                "code": ""
+            },
+            {
+                "line": 208,
+                "code": "\t\tthis.setPurchaseOrder( po );"
+            },
+            {
+                "line": 209,
+                "code": ""
+            },
+            {
+                "line": 210,
+                "code": "\t\tthis.task = SystemConstants.UD_MODE;"
+            },
+            {
+                "line": 211,
+                "code": "\t\tlogger.info( \"Finishing edit()\" ); //f:log"
+            },
+            {
+                "line": 212,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 213,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.PurchaseOrderAjax",
+        "function_name": "getProductPrice(Integer)",
+        "code_lines": [
+            {
+                "line": 13,
+                "code": "\tpublic Double getProductPrice(Integer idProduct){"
+            },
+            {
+                "line": 14,
+                "code": "\t\tlogger.info( \"Starting getProductPrice()\" ); //f:log"
+            },
+            {
+                "line": 15,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 16,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 17,
+                "code": ""
+            },
+            {
+                "line": 18,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate"
+            },
+            {
+                "line": 19,
+                "code": "\t\t"
+            },
+            {
+                "line": 20,
+                "code": "\t\t"
+            },
+            {
+                "line": 21,
+                "code": "\t\tcriteria.setProjection( Projections.property( \"price\" ) ); //f:hibernate"
+            },
+            {
+                "line": 22,
+                "code": "\t\t"
+            },
+            {
+                "line": 23,
+                "code": "\t\tcriteria.add( Restrictions.eq( \"id\", idProduct ) ); //f:hibernate"
+            },
+            {
+                "line": 24,
+                "code": ""
+            },
+            {
+                "line": 25,
+                "code": "\t\tDouble price = (Double) criteria.uniqueResult(); //f:hibernate"
+            },
+            {
+                "line": 26,
+                "code": "\t\t"
+            },
+            {
+                "line": 27,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 28,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 29,
+                "code": "\t\tlogger.info( \"Finishing getProductPrice()\" ); //f:log"
+            },
+            {
+                "line": 30,
+                "code": "\t\treturn price;"
+            },
+            {
+                "line": 31,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ReportAction",
+        "function_name": "productReport()",
+        "code_lines": [
+            {
+                "line": 65,
+                "code": "\tpublic String productReport() throws Exception {"
+            },
+            {
+                "line": 66,
+                "code": "\t\tlogger.info( \"Starting productReport()\" ); //f:log"
+            },
+            {
+                "line": 67,
+                "code": ""
+            },
+            {
+                "line": 68,
+                "code": "\t\tActionContext ac = ActionContext.getContext();"
+            },
+            {
+                "line": 69,
+                "code": "\t\tServletContext sc = (ServletContext) ac.get( StrutsStatics.SERVLET_CONTEXT );"
+            },
+            {
+                "line": 70,
+                "code": ""
+            },
+            {
+                "line": 71,
+                "code": "\t\tJasperReport jasperReport = JasperCompileManager.compileReport( sc.getResourceAsStream( \"/WEB-INF/classes/ProductReport.xml\" ) ); //f:jr"
+            },
+            {
+                "line": 72,
+                "code": ""
+            },
+            {
+                "line": 73,
+                "code": "\t\tMap<String, Object> parameters = new HashMap<String, Object>(); //f:jr"
+            },
+            {
+                "line": 74,
+                "code": "\t\tparameters.put( \"ReportTitle\", \"List of Products\" ); //f:jr"
+            },
+            {
+                "line": 75,
+                "code": "\t\tparameters.put( \"DataFile\", new Date().toString() ); //f:jr"
+            },
+            {
+                "line": 76,
+                "code": ""
+            },
+            {
+                "line": 77,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 78,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 79,
+                "code": ""
+            },
+            {
+                "line": 80,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate"
+            },
+            {
+                "line": 81,
+                "code": ""
+            },
+            {
+                "line": 82,
+                "code": "\t\tcriteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"price\" ) ) ); //f:hibernate"
+            },
+            {
+                "line": 83,
+                "code": ""
+            },
+            {
+                "line": 84,
+                "code": "\t\t"
+            },
+            {
+                "line": 85,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 86,
+                "code": "\t\tList<Object[]> l = (List<Object[]>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 87,
+                "code": ""
+            },
+            {
+                "line": 88,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 89,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 90,
+                "code": ""
+            },
+            {
+                "line": 91,
+                "code": "\t\tHibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Price\" }); //f:jr"
+            },
+            {
+                "line": 92,
+                "code": ""
+            },
+            {
+                "line": 93,
+                "code": "\t\tJasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport, parameters, ds ); //f:jr"
+            },
+            {
+                "line": 94,
+                "code": ""
+            },
+            {
+                "line": 95,
+                "code": "\t\tbyte b[] = JasperExportManager.exportReportToPdf( jasperPrint ); //f:jr"
+            },
+            {
+                "line": 96,
+                "code": ""
+            },
+            {
+                "line": 97,
+                "code": "\t\tthis.inputStream = new ByteArrayInputStream( b );"
+            },
+            {
+                "line": 98,
+                "code": ""
+            },
+            {
+                "line": 99,
+                "code": "\t\tlogger.info( \"Finishing productReport()\" ); //f:log"
+            },
+            {
+                "line": 100,
+                "code": "\t\treturn \"download\";"
+            },
+            {
+                "line": 101,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.ReportAction",
+        "function_name": "customerReport()",
+        "code_lines": [
+            {
+                "line": 104,
+                "code": "\tpublic String customerReport() throws Exception {"
+            },
+            {
+                "line": 105,
+                "code": "\t\tlogger.info( \"Starting customerReport()\" ); //f:log"
+            },
+            {
+                "line": 106,
+                "code": ""
+            },
+            {
+                "line": 107,
+                "code": "\t\tActionContext ac = ActionContext.getContext();"
+            },
+            {
+                "line": 108,
+                "code": "\t\tServletContext sc = (ServletContext) ac.get( StrutsStatics.SERVLET_CONTEXT );"
+            },
+            {
+                "line": 109,
+                "code": ""
+            },
+            {
+                "line": 110,
+                "code": "\t\tJasperReport jasperReport = JasperCompileManager.compileReport( sc.getResourceAsStream( \"/WEB-INF/classes/CustomerReport.xml\" ) ); //f:jr"
+            },
+            {
+                "line": 111,
+                "code": ""
+            },
+            {
+                "line": 112,
+                "code": "\t\tMap<String, Object> parameters = new HashMap<String, Object>(); //f:jr"
+            },
+            {
+                "line": 113,
+                "code": "\t\tparameters.put( \"ReportTitle\", \"List of Customers\" ); //f:jr"
+            },
+            {
+                "line": 114,
+                "code": "\t\tparameters.put( \"DataFile\", new Date().toString() ); //f:jr"
+            },
+            {
+                "line": 115,
+                "code": ""
+            },
+            {
+                "line": 116,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 117,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 118,
+                "code": ""
+            },
+            {
+                "line": 119,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Customer.class ); //f:hibernate"
+            },
+            {
+                "line": 120,
+                "code": ""
+            },
+            {
+                "line": 121,
+                "code": "\t\tcriteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"phone\" ) ) ); //f:hibernate"
+            },
+            {
+                "line": 122,
+                "code": ""
+            },
+            {
+                "line": 123,
+                "code": "\t\t"
+            },
+            {
+                "line": 124,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 125,
+                "code": "\t\tList<Object[]> l = (List<Object[]>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 126,
+                "code": ""
+            },
+            {
+                "line": 127,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 128,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 129,
+                "code": ""
+            },
+            {
+                "line": 130,
+                "code": "\t\tHibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Phone\" }); //f:jr"
+            },
+            {
+                "line": 131,
+                "code": ""
+            },
+            {
+                "line": 132,
+                "code": "\t\tJasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport, parameters, ds ); //f:jr"
+            },
+            {
+                "line": 133,
+                "code": ""
+            },
+            {
+                "line": 134,
+                "code": "\t\tbyte b[] = JasperExportManager.exportReportToPdf( jasperPrint ); //f:jr"
+            },
+            {
+                "line": 135,
+                "code": ""
+            },
+            {
+                "line": 136,
+                "code": "\t\tthis.inputStream = new ByteArrayInputStream( b );"
+            },
+            {
+                "line": 137,
+                "code": ""
+            },
+            {
+                "line": 138,
+                "code": "\t\tlogger.info( \"Finishing customerReport()\" ); //f:log"
+            },
+            {
+                "line": 139,
+                "code": "\t\treturn \"download\";"
+            },
+            {
+                "line": 140,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.SchedulerAction",
+        "function_name": "input()",
+        "code_lines": [
+            {
+                "line": 50,
+                "code": "\t\treturn this.input();"
+            },
+            {
+                "line": 51,
+                "code": "\t}"
+            },
+            {
+                "line": 52,
+                "code": ""
+            },
+            {
+                "line": 53,
+                "code": "\t@Override"
+            },
+            {
+                "line": 54,
+                "code": "\tpublic String input() throws Exception {"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.SchedulerAction",
+        "function_name": "schedule()",
+        "code_lines": [
+            {
+                "line": 69,
+                "code": "\tpublic String schedule() throws Exception {"
+            },
+            {
+                "line": 70,
+                "code": "\t\tlogger.info( \"Starting schedule()\" ); //f:log"
+            },
+            {
+                "line": 71,
+                "code": ""
+            },
+            {
+                "line": 72,
+                "code": "\t\tSchedulerFactory sf = new StdSchedulerFactory(); //f:quartz"
+            },
+            {
+                "line": 73,
+                "code": "\t\tScheduler sc = sf.getScheduler(); //f:quartz"
+            },
+            {
+                "line": 74,
+                "code": ""
+            },
+            {
+                "line": 75,
+                "code": "\t\tJobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz"
+            },
+            {
+                "line": 76,
+                "code": ""
+            },
+            {
+                "line": 77,
+                "code": "\t\tif ( job != null ) { //f:quartz"
+            },
+            {
+                "line": 78,
+                "code": "\t\t\tsc.deleteJob( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz"
+            },
+            {
+                "line": 79,
+                "code": "\t\t} //f:quartz"
+            },
+            {
+                "line": 80,
+                "code": ""
+            },
+            {
+                "line": 81,
+                "code": "\t\tjob = newJob( SupplyMailJob.class ).withIdentity( \"supplyMailJob\", \"group\" ).build(); //f:quartz"
+            },
+            {
+                "line": 82,
+                "code": "\t\tjob.getJobDataMap().put( \"timeInterval\", this.timeInterval ); //f:quartz"
+            },
+            {
+                "line": 83,
+                "code": ""
+            },
+            {
+                "line": 84,
+                "code": "\t\tTrigger trigger = newTrigger().withIdentity( \"supplyMailTrigger\", \"group\" ).startNow().withSchedule( CronScheduleBuilder.cronSchedule( \"0 0/\""
+            },
+            {
+                "line": 85,
+                "code": "\t\t\t\t+ (this.timeInterval * 60) + \" * * * ?\" ) ).build(); //f:quartz"
+            },
+            {
+                "line": 86,
+                "code": ""
+            },
+            {
+                "line": 87,
+                "code": "\t\tsc.scheduleJob( job, trigger ); //f:quartz"
+            },
+            {
+                "line": 88,
+                "code": ""
+            },
+            {
+                "line": 89,
+                "code": "\t\tlogger.info( \"Finishing schedule()\" ); //f:log"
+            },
+            {
+                "line": 90,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 91,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "classes.SupplyMailJob",
+        "function_name": "execute(JobExecutionContext)",
+        "code_lines": [
+            {
+                "line": 29,
+                "code": "\tpublic void execute( JobExecutionContext context )"
+            },
+            {
+                "line": 30,
+                "code": "\t\t\tthrows JobExecutionException {"
+            },
+            {
+                "line": 31,
+                "code": "\t\tlogger.info( \"Starting execute() in job\" ); //f:log"
+            },
+            {
+                "line": 32,
+                "code": ""
+            },
+            {
+                "line": 33,
+                "code": "\t\torg.hibernate.Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 34,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 35,
+                "code": ""
+            },
+            {
+                "line": 36,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate"
+            },
+            {
+                "line": 37,
+                "code": "\t\tcriteria.add( Restrictions.lt( \"supply\", 5 ) ); //f:hibernate"
+            },
+            {
+                "line": 38,
+                "code": ""
+            },
+            {
+                "line": 39,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 40,
+                "code": "\t\tList<Product> l = (List<Product>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 41,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 42,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 43,
+                "code": ""
+            },
+            {
+                "line": 44,
+                "code": "\t\tif ( !l.isEmpty() ) {"
+            },
+            {
+                "line": 45,
+                "code": "\t\t\tStringBuilder str = new StringBuilder();"
+            },
+            {
+                "line": 46,
+                "code": "\t\t\tstr.append( \"The following products are getting over:\\n\" );"
+            },
+            {
+                "line": 47,
+                "code": ""
+            },
+            {
+                "line": 48,
+                "code": "\t\t\tProperties props = new Properties(); //f:mail"
+            },
+            {
+                "line": 49,
+                "code": "\t\t\tprops.setProperty( \"mail.smtp.submitter\", \"terra\" ); //f:mail"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\tprops.setProperty( \"mail.smtp.auth\", \"false\" ); //f:mail"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\tprops.setProperty( \"mail.smtp.host\", this.host ); //f:mail"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\tprops.setProperty( \"mail.smtp.port\", \"25\" ); //f:mail"
+            },
+            {
+                "line": 53,
+                "code": ""
+            },
+            {
+                "line": 54,
+                "code": "\t\t\tjavax.mail.Session session = javax.mail.Session.getInstance( props ); //f:mail"
+            },
+            {
+                "line": 55,
+                "code": ""
+            },
+            {
+                "line": 56,
+                "code": "\t\t\ttry { //f:mail"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\t\tMessage msg = new MimeMessage( session ); //f:mail"
+            },
+            {
+                "line": 58,
+                "code": ""
+            },
+            {
+                "line": 59,
+                "code": "\t\t\t\tmsg.setFrom( new InternetAddress( this.from ) ); //f:mail"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\t\tInternetAddress[] address = { new InternetAddress( this.to ) }; //f:mail"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\t\tmsg.setRecipients( Message.RecipientType.TO, address ); //f:mail"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\t\tmsg.setSubject( \"Low Supply of Products\" ); //f:mail"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\t\tmsg.setSentDate( new Date() ); //f:mail"
+            },
+            {
+                "line": 64,
+                "code": ""
+            },
+            {
+                "line": 65,
+                "code": "\t\t\t\tmsg.setText( str.toString() ); //f:mail"
+            },
+            {
+                "line": 66,
+                "code": ""
+            },
+            {
+                "line": 67,
+                "code": "\t\t\t\tTransport.send( msg ); //f:mail"
+            },
+            {
+                "line": 68,
+                "code": "\t\t\t} catch (MessagingException mex) {"
+            },
+            {
+                "line": 69,
+                "code": "\t\t\t\tmex.printStackTrace();"
+            },
+            {
+                "line": 70,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 71,
+                "code": ""
+            },
+            {
+                "line": 72,
+                "code": "\t\t\tfor ( Product p : l ) {"
+            },
+            {
+                "line": 73,
+                "code": "\t\t\t\tstr.append( p.getName() + \"\\t\\t\" + p.getSupply() + \"\\n\" );"
+            },
+            {
+                "line": 74,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 75,
+                "code": "\t\t}"
+            },
+            {
+                "line": 76,
+                "code": ""
+            },
+            {
+                "line": 77,
+                "code": "\t\tlogger.info( \"Finishing execute() in job\" ); //f:log"
+            },
+            {
+                "line": 78,
+                "code": "\t}"
+            }
+        ]
+    }
+]

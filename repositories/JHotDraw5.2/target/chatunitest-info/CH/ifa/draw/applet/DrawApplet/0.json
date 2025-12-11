@@ -1,0 +1,42 @@
+{
+  "className": "DrawApplet",
+  "methodName": "init",
+  "brief": "public void init(){}",
+  "methodSignature": "init()",
+  "sourceCode": "public void init() {\n        fIconkit = new Iconkit(this);\n\n\t\tgetContentPane().setLayout(new BorderLayout());\n\n        fView = createDrawingView();\n        \n        JPanel attributes = createAttributesPanel();\n        attributes.add(new JLabel(\"Fill\"));\n\t\tfFillColor = createColorChoice(\"FillColor\");\n\t\tattributes.add(fFillColor);\n\t\t\n\t\tattributes.add(new JLabel(\"Text\"));\n\t\tfTextColor = createColorChoice(\"TextColor\");\n\t\tattributes.add(fTextColor);\n\t\t\n\t\tattributes.add(new JLabel(\"Pen\"));\n\t\tfFrameColor = createColorChoice(\"FrameColor\");\n\t\tattributes.add(fFrameColor);\n\t\t\n\t\tattributes.add(new JLabel(\"Arrow\"));\n\t\tCommandChoice choice = new CommandChoice();\n\t\tfArrowChoice = choice;\n\t\tchoice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));\n\t\tchoice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));\n\t\tchoice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));\n\t\tchoice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));\n\t\tattributes.add(fArrowChoice);\n\t\t\n\t\tattributes.add(new JLabel(\"Font\"));\n\t\tfFontChoice = createFontChoice();\n\t\tattributes.add(fFontChoice);\n        getContentPane().add(\"North\", attributes);\n\n        JPanel toolPanel = createToolPalette();\n        createTools(toolPanel);\n        getContentPane().add(\"West\", toolPanel);\n\n        getContentPane().add(\"Center\", fView);\n        JPanel buttonPalette = createButtonPanel();\n        createButtons(buttonPalette);\n        getContentPane().add(\"South\", buttonPalette);\n\n        initDrawing();\n        // JFC should have its own internal double buffering...\n        //setBufferedDisplayUpdate();\n        setupAttributes();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "setLayout(LayoutManager)",
+      "add(String, Component)",
+      "add(Component)"
+    ],
+    "javax.swing.JApplet": [
+      "getContentPane()"
+    ],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "createColorChoice(String)",
+      "createButtonPanel()",
+      "createTools(JPanel)",
+      "createButtons(JPanel)",
+      "createAttributesPanel()",
+      "createFontChoice()",
+      "createDrawingView()",
+      "createToolPalette()",
+      "initDrawing()",
+      "setupAttributes()"
+    ],
+    "CH.ifa.draw.util.CommandChoice": [
+      "addItem(Command)"
+    ]
+  },
+  "full_method_info": "/**\n * Initializes the applet and creates its contents.\n */\npublic void init() {\n    fIconkit = new Iconkit(this);\n    getContentPane().setLayout(new BorderLayout());\n    fView = createDrawingView();\n    JPanel attributes = createAttributesPanel();\n    attributes.add(new JLabel(\"Fill\"));\n    fFillColor = createColorChoice(\"FillColor\");\n    attributes.add(fFillColor);\n    attributes.add(new JLabel(\"Text\"));\n    fTextColor = createColorChoice(\"TextColor\");\n    attributes.add(fTextColor);\n    attributes.add(new JLabel(\"Pen\"));\n    fFrameColor = createColorChoice(\"FrameColor\");\n    attributes.add(fFrameColor);\n    attributes.add(new JLabel(\"Arrow\"));\n    CommandChoice choice = new CommandChoice();\n    fArrowChoice = choice;\n    choice.addItem(new ChangeAttributeCommand(\"none\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE), fView));\n    choice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));\n    choice.addItem(new ChangeAttributeCommand(\"at End\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END), fView));\n    choice.addItem(new ChangeAttributeCommand(\"at Both\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH), fView));\n    attributes.add(fArrowChoice);\n    attributes.add(new JLabel(\"Font\"));\n    fFontChoice = createFontChoice();\n    attributes.add(fFontChoice);\n    getContentPane().add(\"North\", attributes);\n    JPanel toolPanel = createToolPalette();\n    createTools(toolPanel);\n    getContentPane().add(\"West\", toolPanel);\n    getContentPane().add(\"Center\", fView);\n    JPanel buttonPalette = createButtonPanel();\n    createButtons(buttonPalette);\n    getContentPane().add(\"South\", buttonPalette);\n    initDrawing();\n    // JFC should have its own internal double buffering...\n    // setBufferedDisplayUpdate();\n    setupAttributes();\n}",
+  "method_comment": "\n     * Initializes the applet and creates its contents.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "getBackground",
+  "brief": "public Color getBackground();",
+  "methodSignature": "getBackground()",
+  "sourceCode": "public Color getBackground();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the background color of the DrawingView\n */\npublic Color getBackground();",
+  "method_comment": "\n     * Gets the background color of the DrawingView\n     ",
+  "method_annotation": ""
+}

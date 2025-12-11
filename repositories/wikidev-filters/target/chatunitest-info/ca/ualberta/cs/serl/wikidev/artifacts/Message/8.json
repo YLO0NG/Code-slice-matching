@@ -1,0 +1,20 @@
+{
+  "className": "Message",
+  "methodName": "setDeleted",
+  "brief": "public void setDeleted(int deleted){}",
+  "methodSignature": "setDeleted(int)",
+  "sourceCode": "public void setDeleted(int deleted) {\n\t\tthis.deleted = deleted;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param deleted\n * @uml.property  name=\"deleted\"\n */\npublic void setDeleted(int deleted) {\n    this.deleted = deleted;\n}",
+  "method_comment": "\n\t * @param deleted\n\t * @uml.property  name=\"deleted\"\n\t ",
+  "method_annotation": ""
+}

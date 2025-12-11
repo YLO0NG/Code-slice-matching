@@ -1,0 +1,24 @@
+{
+  "className": "FigureAttributes",
+  "methodName": "readColor",
+  "brief": "public static Color readColor(StorableInput dr) throws IOException{}",
+  "methodSignature": "readColor(StorableInput)",
+  "sourceCode": "public static Color readColor(StorableInput dr) throws IOException {\n        return new Color(dr.readInt(), dr.readInt(), dr.readInt());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()"
+    ]
+  },
+  "full_method_info": "public static Color readColor(StorableInput dr) throws IOException {\n    return new Color(dr.readInt(), dr.readInt(), dr.readInt());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "URL",
+  "methodName": "getProjectName",
+  "brief": "public String getProjectName(){}",
+  "methodSignature": "getProjectName()",
+  "sourceCode": "public String getProjectName() {\n\t\treturn projectName;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"projectName\"\n */\npublic String getProjectName() {\n    return projectName;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"projectName\"\n\t ",
+  "method_annotation": ""
+}

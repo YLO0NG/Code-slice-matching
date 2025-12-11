@@ -1,0 +1,23 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertUserInCluster",
+  "brief": "public static String insertUserInCluster(String username, int clusterid){}",
+  "methodSignature": "insertUserInCluster(String, int)",
+  "sourceCode": "public static String insertUserInCluster(String username, int clusterid) {\n\t\treturn \"insert into wikidev_users_in_clusters values (\\'\"+username+\"\\', \"+clusterid+\")\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String insertUserInCluster(String username, int clusterid) {\n    return \"insert into wikidev_users_in_clusters values (\\'\" + username + \"\\', \" + clusterid + \")\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,52 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.SendToBackCommand",
+  "className": "SendToBackCommand",
+  "index": 140,
+  "modifier": "[public ]",
+  "extend": "[Command]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class SendToBackCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private DrawingView fView;"
+  ],
+  "superClasses": [
+    "Command"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "isExecutable()": "1",
+    "SendToBackCommand(String, DrawingView)": "2"
+  },
+  "methodsBrief": [
+    "public void execute(){}",
+    "public boolean isExecutable(){}",
+    "public SendToBackCommand(String name, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "SendToBackCommand(String, DrawingView)"
+  ],
+  "constructorBrief": [
+    "public SendToBackCommand(String name, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)SendToBackCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A command to send the selection to the back of the drawing.\n */\npublic class SendToBackCommand extends Command {\n\n    private DrawingView fView;\n\n    public SendToBackCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }\n\n    public void execute() {\n        FigureEnumeration k = new ReverseFigureEnumerator(fView.selectionZOrdered());\n        while (k.hasMoreElements()) {\n            fView.drawing().sendToBack(k.nextFigure());\n        }\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A command to send the selection to the back of the drawing.\n */\npublic class SendToBackCommand extends Command {\n\n    private DrawingView fView;\n\n    public SendToBackCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }\n\n    public void execute() {\n        FigureEnumeration k = new ReverseFigureEnumerator(fView.selectionZOrdered());\n        while (k.hasMoreElements()) {\n            fView.drawing().sendToBack(k.nextFigure());\n        }\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}",
+  "subClasses": []
+}

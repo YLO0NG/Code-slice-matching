@@ -1,0 +1,40 @@
+{
+  "className": "TestResult",
+  "methodName": "run",
+  "brief": "protected void run(final TestCase test){}",
+  "methodSignature": "run(TestCase)",
+  "sourceCode": "protected void run(final TestCase test) {\r\n\t\t/*{*/final int count= test.countTestCases();\r\n\t\tsynchronized(this) {\r\n\t\t\tfRunTests+= count;\r\n\t\t}\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).startTest(test);\r\n\t\t}/*}*/\r\n\t\tProtectable p= new Protectable() {\r\n\t\t\tpublic void protect() throws Throwable {\r\n\t\t\t\ttest.runBare();\r\n\t\t\t}\r\n\t\t};\r\n\t\trunProtected(test, p);\r\n\r\n\t\tendTest(test);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestCase"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestCase": [
+      "runBare()",
+      "countTestCases()"
+    ],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "junit.framework.TestResult": [
+      "cloneListeners()",
+      "runProtected(Test, Protectable)",
+      "endTest(Test)"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.framework.TestListener": [
+      "startTest(Test)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Runs a TestCase.\r\n */\r\nprotected void run(final TestCase test) {\r\n    /*{*/\r\n    final int count = test.countTestCases();\r\n    synchronized (this) {\r\n        fRunTests += count;\r\n    }\r\n    for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n        ((TestListener) e.nextElement()).startTest(test);\r\n    }\r\n    /*}*/\r\n    Protectable p = new Protectable() {\r\n\r\n        public void protect() throws Throwable {\r\n            test.runBare();\r\n        }\r\n    };\r\n    runProtected(test, p);\r\n    endTest(test);\r\n}",
+  "method_comment": "\r\n\t * Runs a TestCase.\r\n\t ",
+  "method_annotation": ""
+}

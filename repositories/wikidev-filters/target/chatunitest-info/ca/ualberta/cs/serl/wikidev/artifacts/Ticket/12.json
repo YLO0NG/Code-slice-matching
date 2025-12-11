@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getTicketChanges",
+  "brief": "public ArrayList<TicketChange> getTicketChanges(){}",
+  "methodSignature": "getTicketChanges()",
+  "sourceCode": "public ArrayList<TicketChange> getTicketChanges() {\n\t\treturn ticketChanges;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"ticketChanges\"\n */\npublic ArrayList<TicketChange> getTicketChanges() {\n    return ticketChanges;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"ticketChanges\"\n\t ",
+  "method_annotation": ""
+}

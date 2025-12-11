@@ -1,0 +1,41 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "getCosineDistance",
+  "brief": "private double getCosineDistance(IArtifact artifact1, IArtifact artifact2){}",
+  "methodSignature": "getCosineDistance(IArtifact, IArtifact)",
+  "sourceCode": "private double getCosineDistance(IArtifact artifact1, IArtifact artifact2) {\n\t\tTreeMap<String, Double> unified = new TreeMap<String, Double>();\n\t\tunified.putAll(artifact1.getDocument().getTfidf());\n\t\tunified.putAll(artifact2.getDocument().getTfidf());\n\t\tint size = unified.keySet().size();\n\t\tdouble[] vector1 = new double[size];\n\t\tdouble[] vector2 = new double[size];\n\t\tint index=-1;\n\t\tfor(String term : unified.keySet()) {\n\t\t\tindex++;\n\t\t\tif(artifact1.getDocument().getTfidf().containsKey(term)) {\n\t\t\t\tvector1[index] = artifact1.getDocument().getTfidf().get(term);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tvector1[index] = 0;\n\t\t\t}\n\t\t\tif(artifact2.getDocument().getTfidf().containsKey(term)) {\n\t\t\t\tvector2[index] = artifact2.getDocument().getTfidf().get(term);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tvector2[index] = 0;\n\t\t\t}\n\t\t}\n\t\tdouble sum=0;\n\t\tdouble norm1=0;\n\t\tdouble norm2=0;\n\t\tfor(int i=0; i<size; i++) {\n\t\t\tsum += vector1[i]*vector2[i];\n\t\t\tnorm1 += Math.pow(vector1[i], 2);\n\t\t\tnorm2 += Math.pow(vector2[i], 2);\n\t\t}\n\t\tdouble dis = 1-sum/(Math.sqrt(norm1)*Math.sqrt(norm2));\n\t\treturn dis;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getDocument()"
+    ],
+    "java.util.TreeMap": [
+      "get(Object)",
+      "keySet()",
+      "putAll(Map<? extends K, ? extends V>)",
+      "containsKey(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Document": [
+      "getTfidf()"
+    ],
+    "java.util.Set": [
+      "size()"
+    ],
+    "java.lang.Math": [
+      "pow(double, double)",
+      "sqrt(double)"
+    ]
+  },
+  "full_method_info": "private double getCosineDistance(IArtifact artifact1, IArtifact artifact2) {\n    TreeMap<String, Double> unified = new TreeMap<String, Double>();\n    unified.putAll(artifact1.getDocument().getTfidf());\n    unified.putAll(artifact2.getDocument().getTfidf());\n    int size = unified.keySet().size();\n    double[] vector1 = new double[size];\n    double[] vector2 = new double[size];\n    int index = -1;\n    for (String term : unified.keySet()) {\n        index++;\n        if (artifact1.getDocument().getTfidf().containsKey(term)) {\n            vector1[index] = artifact1.getDocument().getTfidf().get(term);\n        } else {\n            vector1[index] = 0;\n        }\n        if (artifact2.getDocument().getTfidf().containsKey(term)) {\n            vector2[index] = artifact2.getDocument().getTfidf().get(term);\n        } else {\n            vector2[index] = 0;\n        }\n    }\n    double sum = 0;\n    double norm1 = 0;\n    double norm2 = 0;\n    for (int i = 0; i < size; i++) {\n        sum += vector1[i] * vector2[i];\n        norm1 += Math.pow(vector1[i], 2);\n        norm2 += Math.pow(vector2[i], 2);\n    }\n    double dis = 1 - sum / (Math.sqrt(norm1) * Math.sqrt(norm2));\n    return dis;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

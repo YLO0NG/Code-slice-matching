@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "getFigureSelection",
+  "brief": "public FigureSelection getFigureSelection(){}",
+  "methodSignature": "getFigureSelection()",
+  "sourceCode": "public FigureSelection getFigureSelection() {\n        return new FigureSelection(selectionZOrdered());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionZOrdered()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the current selection as a FigureSelection. A FigureSelection\n * can be cut, copied, pasted.\n */\npublic FigureSelection getFigureSelection() {\n    return new FigureSelection(selectionZOrdered());\n}",
+  "method_comment": "\n     * Gets the current selection as a FigureSelection. A FigureSelection\n     * can be cut, copied, pasted.\n     ",
+  "method_annotation": ""
+}

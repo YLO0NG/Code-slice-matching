@@ -1,0 +1,31 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "containsArtifact",
+  "brief": "private boolean containsArtifact(User user, IArtifact artifact){}",
+  "methodSignature": "containsArtifact(User, IArtifact)",
+  "sourceCode": "private boolean containsArtifact(User user, IArtifact artifact) {\n\t\tif(!user.getRelatedArtifacts().isEmpty()) {\n\t\t\tif(user.getRelatedArtifacts().containsKey(artifact)) {\n\t\t\t\tif(user.getRelatedArtifacts().get(artifact) == 0) {\n\t\t\t\t\treturn true;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t}\n\t\t\telse {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\treturn false;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User",
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getRelatedArtifacts()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.util.HashMap": [
+      "isEmpty()",
+      "get(Object)",
+      "containsKey(Object)"
+    ]
+  },
+  "full_method_info": "/*private boolean containsArtifact(IArtifact artifact1, IArtifact artifact2) {\n\t\tif (!artifact1.equals(artifact2)) {\n\t\t\tif (!artifact1.getRelatedArtifacts().isEmpty()) {\n\t\t\t\tif (artifact1.getRelatedArtifacts().containsKey(artifact2)) {\n\t\t\t\t\tif (artifact1.getRelatedArtifacts().get(artifact2) == 0) {\n\t\t\t\t\t\treturn true;\n\t\t\t\t\t} else {\n\t\t\t\t\t\treturn false;\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\treturn true;\n\t\t}\n\t}*/\nprivate boolean containsArtifact(User user, IArtifact artifact) {\n    if (!user.getRelatedArtifacts().isEmpty()) {\n        if (user.getRelatedArtifacts().containsKey(artifact)) {\n            if (user.getRelatedArtifacts().get(artifact) == 0) {\n                return true;\n            } else {\n                return false;\n            }\n        } else {\n            return false;\n        }\n    } else {\n        return false;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

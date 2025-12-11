@@ -1,0 +1,30 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawPainters",
+  "brief": "private void drawPainters(Graphics g, Vector v){}",
+  "methodSignature": "drawPainters(Graphics, Vector)",
+  "sourceCode": "private void drawPainters(Graphics g, Vector v) {\n        for (int i = 0; i < v.size(); i++)\n            ((Painter)v.elementAt(i)).draw(g, this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "CH.ifa.draw.framework.Painter": [
+      "draw(Graphics, DrawingView)"
+    ]
+  },
+  "full_method_info": "private void drawPainters(Graphics g, Vector v) {\n    for (int i = 0; i < v.size(); i++) ((Painter) v.elementAt(i)).draw(g, this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

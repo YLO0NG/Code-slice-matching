@@ -1,0 +1,18 @@
+{
+  "className": "TestRunContext",
+  "methodName": "getFailures",
+  "brief": "public ListModel getFailures();",
+  "methodSignature": "getFailures()",
+  "sourceCode": "public ListModel getFailures();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Returns the failure model\r\n */\r\npublic ListModel getFailures();",
+  "method_comment": "\r\n\t * Returns the failure model\r\n\t ",
+  "method_annotation": ""
+}

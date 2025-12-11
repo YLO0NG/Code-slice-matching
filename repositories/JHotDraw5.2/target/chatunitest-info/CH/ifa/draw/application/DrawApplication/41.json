@@ -1,0 +1,26 @@
+{
+  "className": "DrawApplication",
+  "methodName": "setSelected",
+  "brief": "private void setSelected(ToolButton button){}",
+  "methodSignature": "setSelected(ToolButton)",
+  "sourceCode": "private void setSelected(ToolButton button) {\n        if (fSelectedToolButton != null)\n            fSelectedToolButton.reset();\n        fSelectedToolButton = button;\n        if (fSelectedToolButton != null)\n            fSelectedToolButton.select();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ToolButton"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.ToolButton": [],
+    "CH.ifa.draw.util.PaletteButton": [
+      "reset()",
+      "select()"
+    ]
+  },
+  "full_method_info": "private void setSelected(ToolButton button) {\n    if (fSelectedToolButton != null)\n        fSelectedToolButton.reset();\n    fSelectedToolButton = button;\n    if (fSelectedToolButton != null)\n        fSelectedToolButton.select();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(String message, char expected, char actual){}",
+  "methodSignature": "assertEquals(String, char, char)",
+  "sourceCode": "static public void assertEquals(String message, char expected, char actual) {\r\n    \t\tassertEquals(message, new Character(expected), new Character(actual));\r\n  \t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "char",
+    "char"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.framework.Assert": [
+      "assertEquals(String, Object, Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two chars are equal. If they are not\r\n * an AssertionFailedError is thrown with the given message.\r\n */\r\nstatic public void assertEquals(String message, char expected, char actual) {\r\n    assertEquals(message, new Character(expected), new Character(actual));\r\n}",
+  "method_comment": "\r\n\t * Asserts that two chars are equal. If they are not\r\n\t * an AssertionFailedError is thrown with the given message.\r\n\t ",
+  "method_annotation": ""
+}

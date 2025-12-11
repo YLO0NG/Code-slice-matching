@@ -1,0 +1,18 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "getArtifact",
+  "brief": "public IArtifact getArtifact(){}",
+  "methodSignature": "getArtifact()",
+  "sourceCode": "public IArtifact getArtifact() {\n\t\treturn artifact;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"artifact\"\n */\npublic IArtifact getArtifact() {\n    return artifact;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"artifact\"\n\t ",
+  "method_annotation": ""
+}

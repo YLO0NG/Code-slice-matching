@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setLineschanged",
+  "brief": "public void setLineschanged(int lineschanged){}",
+  "methodSignature": "setLineschanged(int)",
+  "sourceCode": "public void setLineschanged(int lineschanged) {\n\t\tthis.lineschanged = lineschanged;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param lineschanged\n * @uml.property  name=\"lineschanged\"\n */\npublic void setLineschanged(int lineschanged) {\n    this.lineschanged = lineschanged;\n}",
+  "method_comment": "\n\t * @param lineschanged\n\t * @uml.property  name=\"lineschanged\"\n\t ",
+  "method_annotation": ""
+}

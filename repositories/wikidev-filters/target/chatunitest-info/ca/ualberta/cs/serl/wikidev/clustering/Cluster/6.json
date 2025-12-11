@@ -1,0 +1,22 @@
+{
+  "className": "Cluster",
+  "methodName": "setCluster_set_name",
+  "brief": "public void setCluster_set_name(String cluster_set_name){}",
+  "methodSignature": "setCluster_set_name(String)",
+  "sourceCode": "public void setCluster_set_name(String cluster_set_name) {\n\t\tthis.cluster_set_name = cluster_set_name;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setCluster_set_name(String cluster_set_name) {\n    this.cluster_set_name = cluster_set_name;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

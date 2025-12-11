@@ -1,0 +1,25 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "removeStorageFormat",
+  "brief": "public void removeStorageFormat(StorageFormat oldStorageFormat){}",
+  "methodSignature": "removeStorageFormat(StorageFormat)",
+  "sourceCode": "public void removeStorageFormat(StorageFormat oldStorageFormat) {\n\t\tmyStorageFormats.remove(oldStorageFormat);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormat"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormat": [],
+    "java.util.Vector": [
+      "remove(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Remove a StorageFormat that should no longer be supported by this StorageFormatManager.\n * The StorageFormat is excluded in when search for a StorageFormat.\n *\n * @param oldStorageFormat old StorageFormat no longer to be supported\n */\npublic void removeStorageFormat(StorageFormat oldStorageFormat) {\n    myStorageFormats.remove(oldStorageFormat);\n}",
+  "method_comment": "\n\t * Remove a StorageFormat that should no longer be supported by this StorageFormatManager.\n\t * The StorageFormat is excluded in when search for a StorageFormat.\n\t *\n\t * @param oldStorageFormat old StorageFormat no longer to be supported\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout",
+  "targetMethod": "printCityBlocks(ArrayList, HashMap)",
+  "dependentFields": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "private Point index;\nprivate HashMap<IArtifact, Integer> artifacts;\nprivate double[] center;\nprivate boolean marked;",
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": "private String name;\nprivate boolean deleted;\nprivate int changes;\nprivate String type;\nprivate TreeSet<User> users;",
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail": "private int id;\nprivate int externalsystem_id;\nprivate String filename;\nprivate int rev;\nprivate String kind;\nprivate String props;\nprivate String changetype;\nprivate int linesadded;\nprivate int linesremoved;\nprivate int lineschanged;\nprivate String file;",
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": "protected ArrayList<RelatedArtifact> directlyRelatedArtifacts;\nprotected User owner;\nprotected Timestamp timestamp;\nprotected Project project;\nprotected Document document;\nprotected int index;\nprotected int uid;\nprotected double[] coords;\nprotected boolean enforced;\nprivate String type;\nprivate int id;\nprotected User lastEditor;\nprotected Timestamp lastModified;\nprotected Timestamp created;",
+    "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout": "public static final String CITY_TYPE = \"files\";\nprivate HashMap<ChangeSet, ArrayList<SVNFile>> filesPerChangeset;\nprivate ArrayList<SVNFile> totalFiles;\nprivate ArrayList<ChangeSet> changesets;\nprivate int projectid;",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "protected ArrayList<CityBlock> cityBlocks;\npublic static final String URLprefix = \"http://hypatia.cs.ualberta.ca/ucosp/index.php/\";",
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": "private int changeSetID;\nprivate int externalSystemID;\nprivate String comment;\nprivate String externalAuthorUserName;\nprivate int project;\nprivate int revision;\nprivate ArrayList<ChangeSetDetail> changesetDetails;",
+    "ca.ualberta.cs.serl.wikidev.User": "public static final String ROLE_DEVELOPER = \"Developer\";\npublic static final String ROLE_MANAGER = \"Manager\";\nprivate int userID;\nprivate String userName;\nprivate String userRealName;\nprivate ArrayList<Project> projects;\nprivate HashMap<IArtifact, Integer> relatedArtifacts;\nprivate HashMap<Project, String> rolePerProject;\nprivate ArrayList<String> aliases;\nprivate int index;\nprivate Color color;"
+  },
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public HashMap<IArtifact, Integer> getArtifacts(){}\npublic Point getIndex(){}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": "public String getType(){}\npublic TreeSet<User> getUsers(){}",
+    "ca.ualberta.cs.serl.wikidev.User": "public Color getColor(){}\npublic String getUserName(){}"
+  },
+  "dependentMethodBodies": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public HashMap<IArtifact, Integer> getArtifacts() {\n\t\treturn artifacts;\n\t}\npublic Point getIndex() {\n\t\treturn index;\n\t}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": "public String getType() {\n\t\treturn type;\n\t}\npublic TreeSet<User> getUsers() {\n\t\treturn users;\n\t}",
+    "ca.ualberta.cs.serl.wikidev.User": "public Color getColor() {\n\t\treturn color;\n\t}\n\n\t * @return\n\t * @uml.property  name=\"userName\"\n\t \npublic String getUserName() {\n\t\treturn userName;\n\t}"
+  }
+}

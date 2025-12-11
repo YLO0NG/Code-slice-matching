@@ -1,0 +1,37 @@
+{
+  "className": "CreationTool",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n        if (fCreatedFigure.isEmpty())\n            drawing().remove(fCreatedFigure);\n        fCreatedFigure = null;\n        editor().toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Figure": [
+      "isEmpty()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()",
+      "editor()"
+    ],
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "toolDone()"
+    ]
+  },
+  "full_method_info": "/**\n * Checks if the created figure is empty. If it is, the figure\n * is removed from the drawing.\n * @see Figure#isEmpty\n */\npublic void mouseUp(MouseEvent e, int x, int y) {\n    if (fCreatedFigure.isEmpty())\n        drawing().remove(fCreatedFigure);\n    fCreatedFigure = null;\n    editor().toolDone();\n}",
+  "method_comment": "\n     * Checks if the created figure is empty. If it is, the figure\n     * is removed from the drawing.\n     * @see Figure#isEmpty\n     ",
+  "method_annotation": ""
+}

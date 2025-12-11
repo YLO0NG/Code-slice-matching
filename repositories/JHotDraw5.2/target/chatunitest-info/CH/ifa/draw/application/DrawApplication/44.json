@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "promptNew",
+  "brief": "public void promptNew(){}",
+  "methodSignature": "promptNew()",
+  "sourceCode": "public void promptNew() {\n        initDrawing();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "initDrawing()"
+    ]
+  },
+  "full_method_info": "/**\n * Resets the drawing to a new empty drawing.\n */\npublic void promptNew() {\n    initDrawing();\n}",
+  "method_comment": "\n     * Resets the drawing to a new empty drawing.\n     ",
+  "method_annotation": ""
+}

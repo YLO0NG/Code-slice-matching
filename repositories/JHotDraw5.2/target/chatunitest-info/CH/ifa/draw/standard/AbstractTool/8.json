@@ -1,0 +1,25 @@
+{
+  "className": "AbstractTool",
+  "methodName": "editor",
+  "brief": "public DrawingEditor editor(){}",
+  "methodSignature": "editor()",
+  "sourceCode": "public DrawingEditor editor() {\n        return view().editor();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "editor()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the tool's editor.\n */\npublic DrawingEditor editor() {\n    return view().editor();\n}",
+  "method_comment": "\n     * Gets the tool's editor.\n     ",
+  "method_annotation": ""
+}

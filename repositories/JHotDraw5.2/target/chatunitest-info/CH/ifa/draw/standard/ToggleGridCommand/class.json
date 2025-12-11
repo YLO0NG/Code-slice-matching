@@ -1,0 +1,53 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ToggleGridCommand",
+  "className": "ToggleGridCommand",
+  "index": 145,
+  "modifier": "[public ]",
+  "extend": "[Command]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class ToggleGridCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import java.awt.Point;",
+    "import CH.ifa.draw.util.Command;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private DrawingView fView;",
+    "private Point fGrid;"
+  ],
+  "superClasses": [
+    "Command"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "ToggleGridCommand(String, DrawingView, Point)": "1"
+  },
+  "methodsBrief": [
+    "public void execute(){}",
+    "public ToggleGridCommand(String name, DrawingView view, Point grid){}"
+  ],
+  "constructorSigs": [
+    "ToggleGridCommand(String, DrawingView, Point)"
+  ],
+  "constructorBrief": [
+    "public ToggleGridCommand(String name, DrawingView view, Point grid){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": [],
+    "java.awt.Point": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ToggleGridCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport java.awt.Point;\nimport CH.ifa.draw.util.Command;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A command to toggle the snap to grid behavior.\n */\npublic class ToggleGridCommand extends Command {\n\n    private DrawingView fView;\n\n    private Point fGrid;\n\n    public ToggleGridCommand(String name, DrawingView view, Point grid) {\n        super(name);\n        fView = view;\n        fGrid = new Point(grid.x, grid.y);\n    }\n\n    public void execute() {\n        PointConstrainer grid = fView.getConstrainer();\n        if (grid != null) {\n            fView.setConstrainer(null);\n        } else {\n            fView.setConstrainer(new GridConstrainer(fGrid.x, fGrid.y));\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A command to toggle the snap to grid behavior.\n */\npublic class ToggleGridCommand extends Command {\n\n    private DrawingView fView;\n\n    private Point fGrid;\n\n    public ToggleGridCommand(String name, DrawingView view, Point grid) {\n        super(name);\n        fView = view;\n        fGrid = new Point(grid.x, grid.y);\n    }\n\n    public void execute() {\n        PointConstrainer grid = fView.getConstrainer();\n        if (grid != null) {\n            fView.setConstrainer(null);\n        } else {\n            fView.setConstrainer(new GridConstrainer(fGrid.x, fGrid.y));\n        }\n    }\n}",
+  "subClasses": []
+}

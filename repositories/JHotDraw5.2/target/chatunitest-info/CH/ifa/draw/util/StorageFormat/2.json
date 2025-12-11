@@ -1,0 +1,22 @@
+{
+  "className": "StorageFormat",
+  "methodName": "restore",
+  "brief": "public Drawing restore(String fileName) throws IOException;",
+  "methodSignature": "restore(String)",
+  "sourceCode": "public Drawing restore(String fileName) throws IOException;",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Restore a Drawing from a file with a given name.\n *\n * @param name of the file in which the Drawing has been saved\n * @return restored Drawing\n */\npublic Drawing restore(String fileName) throws IOException;",
+  "method_comment": "\n\t * Restore a Drawing from a file with a given name. \n\t *\n\t * @param name of the file in which the Drawing has been saved\n\t * @return restored Drawing\n\t ",
+  "method_annotation": ""
+}

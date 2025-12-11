@@ -1,0 +1,45 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.FigureChangeAdapter",
+  "className": "FigureChangeAdapter",
+  "index": 125,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[FigureChangeListener]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class FigureChangeAdapter",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [
+    "FigureChangeListener"
+  ],
+  "methodSigs": {
+    "figureChanged(FigureChangeEvent)": "0",
+    "figureInvalidated(FigureChangeEvent)": "1",
+    "figureRemoved(FigureChangeEvent)": "2",
+    "figureRequestRemove(FigureChangeEvent)": "3",
+    "figureRequestUpdate(FigureChangeEvent)": "4"
+  },
+  "methodsBrief": [
+    "public void figureChanged(FigureChangeEvent e){}",
+    "public void figureInvalidated(FigureChangeEvent e){}",
+    "public void figureRemoved(FigureChangeEvent e){}",
+    "public void figureRequestRemove(FigureChangeEvent e){}",
+    "public void figureRequestUpdate(FigureChangeEvent e){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package CH.ifa.draw.standard;\n\nimport CH.ifa.draw.framework.*;\n\npublic class FigureChangeAdapter implements FigureChangeListener {\n\n    public void figureChanged(FigureChangeEvent e) {\n    }\n\n    public void figureInvalidated(FigureChangeEvent e) {\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n    }\n\n    public void figureRequestRemove(FigureChangeEvent e) {\n    }\n\n    public void figureRequestUpdate(FigureChangeEvent e) {\n    }\n}\n",
+  "classDeclarationCode": "public class FigureChangeAdapter implements FigureChangeListener {\n\n    public void figureChanged(FigureChangeEvent e) {\n    }\n\n    public void figureInvalidated(FigureChangeEvent e) {\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n    }\n\n    public void figureRequestRemove(FigureChangeEvent e) {\n    }\n\n    public void figureRequestUpdate(FigureChangeEvent e) {\n    }\n}",
+  "subClasses": []
+}

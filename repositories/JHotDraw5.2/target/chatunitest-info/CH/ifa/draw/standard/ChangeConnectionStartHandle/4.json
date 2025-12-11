@@ -1,0 +1,22 @@
+{
+  "className": "ChangeConnectionStartHandle",
+  "methodName": "locate",
+  "brief": "public Point locate(){}",
+  "methodSignature": "locate()",
+  "sourceCode": "public Point locate() {\n        return fConnection.startPoint();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "startPoint()"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the start point of the connection.\n */\npublic Point locate() {\n    return fConnection.startPoint();\n}",
+  "method_comment": "\n     * Returns the start point of the connection.\n     ",
+  "method_annotation": ""
+}

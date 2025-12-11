@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectUsersPerProject",
+  "brief": "public static String selectUsersPerProject(int projectid){}",
+  "methodSignature": "selectUsersPerProject(int)",
+  "sourceCode": "public static String selectUsersPerProject(int projectid) {\n\t\treturn \"select userid from wikidev_projectroles where projectid=\\'\"+projectid+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectUsersPerProject(int projectid) {\n    return \"select userid from wikidev_projectroles where projectid=\\'\" + projectid + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

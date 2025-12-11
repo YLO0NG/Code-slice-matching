@@ -1,0 +1,20 @@
+{
+  "className": "TicketChange",
+  "methodName": "setId",
+  "brief": "public void setId(int id){}",
+  "methodSignature": "setId(int)",
+  "sourceCode": "public void setId(int id) {\n\t\tthis.id = id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param id\n * @uml.property  name=\"id\"\n */\npublic void setId(int id) {\n    this.id = id;\n}",
+  "method_comment": "\n\t * @param id\n\t * @uml.property  name=\"id\"\n\t ",
+  "method_annotation": ""
+}

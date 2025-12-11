@@ -1,0 +1,60 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.CustomToolBar",
+  "className": "CustomToolBar",
+  "index": 5,
+  "modifier": "[public ]",
+  "extend": "[JToolBar]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class CustomToolBar",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Component;",
+    "import java.util.Enumeration;",
+    "import java.util.Vector;",
+    "import javax.swing.JComponent;",
+    "import javax.swing.JToolBar;"
+  ],
+  "fields": [
+    "private Vector standardTools;",
+    "private Vector editTools;",
+    "private Vector currentTools;",
+    "private boolean needsUpdate;"
+  ],
+  "superClasses": [
+    "JToolBar"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "switchToolBar()": "0",
+    "switchToEditTools()": "1",
+    "switchToStandardTools()": "2",
+    "activateTools()": "3",
+    "add(Component)": "4",
+    "CustomToolBar()": "5"
+  },
+  "methodsBrief": [
+    "public void switchToolBar(){}",
+    "public void switchToEditTools(){}",
+    "public void switchToStandardTools(){}",
+    "public void activateTools(){}",
+    "public Component add(Component newTool){}",
+    "public CustomToolBar(){}"
+  ],
+  "constructorSigs": [
+    "CustomToolBar()"
+  ],
+  "constructorBrief": [
+    "public CustomToolBar(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package CH.ifa.draw.contrib;\n\nimport java.awt.Component;\nimport java.util.Enumeration;\nimport java.util.Vector;\nimport javax.swing.JComponent;\nimport javax.swing.JToolBar;\n\n/**\n * This ToolBar allows to use several panels with tools. It manages each\n * panel and enables to swap between them. There can only one panel with\n * tools be activated at a time. Currently, only two panels are supported\n * (standard tools and edit tools).\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.08.1999\n */\npublic class CustomToolBar extends JToolBar {\n\n    /**\n     * Vector containing all tools for the standard ToolBar\n     */\n    private Vector standardTools;\n\n    /**\n     * Vector containing all tools for the edit ToolBar\n     */\n    private Vector editTools;\n\n    /**\n     * Vector containing all tools, which are currently activated\n     */\n    private Vector currentTools;\n\n    /**\n     * Flag which determines whether the tool palette must be updated\n     */\n    private boolean needsUpdate;\n\n    public CustomToolBar() {\n        super();\n        standardTools = new Vector();\n        editTools = new Vector();\n        currentTools = standardTools;\n        needsUpdate = false;\n    }\n\n    /**\n     * Switch between the two available palettes with tools\n     */\n    public void switchToolBar() {\n        if (currentTools == standardTools) {\n            switchToEditTools();\n        } else {\n            switchToStandardTools();\n        }\n    }\n\n    /**\n     * Select the palette with the edit tools\n     */\n    public void switchToEditTools() {\n        if (currentTools != editTools) {\n            currentTools = editTools;\n            needsUpdate = true;\n        }\n    }\n\n    /**\n     * Select the palette with the standard tools\n     */\n    public void switchToStandardTools() {\n        if (currentTools != standardTools) {\n            currentTools = standardTools;\n            needsUpdate = true;\n        }\n    }\n\n    /**\n     * Activate a palette of the ToolBar by setting all Tools\n     */\n    public void activateTools() {\n        if (!needsUpdate) {\n            return;\n        } else {\n            removeAll();\n            JComponent currentTool = null;\n            Enumeration enumeration = currentTools.elements();\n            while (enumeration.hasMoreElements()) {\n                currentTool = (JComponent) enumeration.nextElement();\n                super.add(currentTool);\n            }\n            validate();\n            needsUpdate = false;\n        }\n    }\n\n    /**\n     * Add a new tool the the current palette of the ToolBar\n     */\n    public Component add(Component newTool) {\n        if (currentTools == editTools) {\n            editTools.addElement(newTool);\n        } else {\n            standardTools.addElement(newTool);\n        }\n        needsUpdate = true;\n        return super.add(newTool);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * This ToolBar allows to use several panels with tools. It manages each\n * panel and enables to swap between them. There can only one panel with\n * tools be activated at a time. Currently, only two panels are supported\n * (standard tools and edit tools).\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.08.1999\n */\npublic class CustomToolBar extends JToolBar {\n\n    /**\n     * Vector containing all tools for the standard ToolBar\n     */\n    private Vector standardTools;\n\n    /**\n     * Vector containing all tools for the edit ToolBar\n     */\n    private Vector editTools;\n\n    /**\n     * Vector containing all tools, which are currently activated\n     */\n    private Vector currentTools;\n\n    /**\n     * Flag which determines whether the tool palette must be updated\n     */\n    private boolean needsUpdate;\n\n    public CustomToolBar() {\n        super();\n        standardTools = new Vector();\n        editTools = new Vector();\n        currentTools = standardTools;\n        needsUpdate = false;\n    }\n\n    /**\n     * Switch between the two available palettes with tools\n     */\n    public void switchToolBar() {\n        if (currentTools == standardTools) {\n            switchToEditTools();\n        } else {\n            switchToStandardTools();\n        }\n    }\n\n    /**\n     * Select the palette with the edit tools\n     */\n    public void switchToEditTools() {\n        if (currentTools != editTools) {\n            currentTools = editTools;\n            needsUpdate = true;\n        }\n    }\n\n    /**\n     * Select the palette with the standard tools\n     */\n    public void switchToStandardTools() {\n        if (currentTools != standardTools) {\n            currentTools = standardTools;\n            needsUpdate = true;\n        }\n    }\n\n    /**\n     * Activate a palette of the ToolBar by setting all Tools\n     */\n    public void activateTools() {\n        if (!needsUpdate) {\n            return;\n        } else {\n            removeAll();\n            JComponent currentTool = null;\n            Enumeration enumeration = currentTools.elements();\n            while (enumeration.hasMoreElements()) {\n                currentTool = (JComponent) enumeration.nextElement();\n                super.add(currentTool);\n            }\n            validate();\n            needsUpdate = false;\n        }\n    }\n\n    /**\n     * Add a new tool the the current palette of the ToolBar\n     */\n    public Component add(Component newTool) {\n        if (currentTools == editTools) {\n            editTools.addElement(newTool);\n        } else {\n            standardTools.addElement(newTool);\n        }\n        needsUpdate = true;\n        return super.add(newTool);\n    }\n}",
+  "subClasses": []
+}

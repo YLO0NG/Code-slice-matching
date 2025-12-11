@@ -1,0 +1,23 @@
+{
+  "className": "AbstractTool",
+  "methodName": "keyDown",
+  "brief": "public void keyDown(KeyEvent evt, int key){}",
+  "methodSignature": "keyDown(KeyEvent, int)",
+  "sourceCode": "public void keyDown(KeyEvent evt, int key) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "KeyEvent",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.KeyEvent": []
+  },
+  "full_method_info": "/**\n * Handles key down events in the drawing view.\n */\npublic void keyDown(KeyEvent evt, int key) {\n}",
+  "method_comment": "\n     * Handles key down events in the drawing view.\n     ",
+  "method_annotation": ""
+}

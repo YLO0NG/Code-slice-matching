@@ -1,0 +1,37 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n\t\tif (getFillColor() != null) {\n\t\t\tColor color = getFillColor();\n\t\t\tif (color != null) {\n\t\t\t    dw.writeString(\"FillColor\");\n\t\t\t    dw.writeInt(color.getRed());\n\t\t\t    dw.writeInt(color.getGreen());\n\t\t\t    dw.writeInt(color.getBlue());\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\tdw.writeString(\"noFillColor\");\n\t\t}\n\t\t\n\t\tif (getBorderColor() != null) {\n\t\t\tFigureAttributes.writeColor(dw, \"BorderColor\", getBorderColor());\n\t\t}\n\t\telse {\n\t\t\tdw.writeString(\"noBorderColor\");\n\t\t}\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeString(String)"
+    ],
+    "CH.ifa.draw.figures.AbstractLineDecoration": [
+      "getFillColor()",
+      "getBorderColor()"
+    ],
+    "java.awt.Color": [
+      "getGreen()",
+      "getBlue()",
+      "getRed()"
+    ],
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "writeColor(StorableOutput, String, Color)"
+    ]
+  },
+  "full_method_info": "/**\n * Stores the arrow tip to a StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    if (getFillColor() != null) {\n        Color color = getFillColor();\n        if (color != null) {\n            dw.writeString(\"FillColor\");\n            dw.writeInt(color.getRed());\n            dw.writeInt(color.getGreen());\n            dw.writeInt(color.getBlue());\n        }\n    } else {\n        dw.writeString(\"noFillColor\");\n    }\n    if (getBorderColor() != null) {\n        FigureAttributes.writeColor(dw, \"BorderColor\", getBorderColor());\n    } else {\n        dw.writeString(\"noBorderColor\");\n    }\n}",
+  "method_comment": "\n     * Stores the arrow tip to a StorableOutput.\n     ",
+  "method_annotation": ""
+}

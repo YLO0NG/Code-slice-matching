@@ -1,0 +1,24 @@
+{
+  "className": "Filler",
+  "methodName": "Filler",
+  "brief": "public Filler(int width, int height, Color background){}",
+  "methodSignature": "Filler(int, int, Color)",
+  "sourceCode": "public Filler(int width, int height, Color background) {\n        fWidth = width;\n        fHeight = height;\n        fBackground = background;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": []
+  },
+  "full_method_info": "public Filler(int width, int height, Color background) {\n    fWidth = width;\n    fHeight = height;\n    fBackground = background;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

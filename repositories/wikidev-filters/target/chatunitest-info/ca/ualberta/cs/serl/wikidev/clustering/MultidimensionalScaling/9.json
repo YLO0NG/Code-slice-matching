@@ -1,0 +1,36 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "cMDS",
+  "brief": "public double[][] cMDS(){}",
+  "methodSignature": "cMDS()",
+  "sourceCode": "public double[][] cMDS() {\n\t\t//dimensions = 2;\n\t\t\n\t\tgetHMatrix();\n\t\tdouble[][] B = getNewBetaMatrix();\n\t\tdouble[] eigenValues = MatrixOperator.getEigenValues(B);\n\t\tdouble[][] eigenVectors = MatrixOperator.getEigenVectors(B);\n\t\tfor(int k=0; k<eigenValues.length; k++) {\n\t\t\tif(eigenValues[k] < 0) {\n\t\t\t\teigenValues[k] = 0;\n\t\t\t}\n\t\t}\n\t\tfor(int k=0; k<eigenValues.length; k++) {\n\t\t\tif(eigenValues[k] > 0) {\n\t\t\t\tdimensions++;\n\t\t\t}\n\t\t}\n\t\t//dimensions = 2;\n\t\tdouble[][] coordinates = new double[distanceMatrix.length][dimensions];\n\t\tdouble[] sqrtEigenValues = MatrixOperator.vectorPower(eigenValues, 1.0/2.0);\n\t\tdouble[][] eigenValuesDiagonal = MatrixOperator.diagonal(sqrtEigenValues);\n\t\tdouble[][] x = MatrixOperator.matrixProduct(eigenVectors, eigenValuesDiagonal);\n\t\t/*for(int i=0;i<distanceMatrix.length;i++) {\n\t\t\tfor(int j=0;j<dimensions;j++) {\n\t\t\t\tif(eigenVectors[j][i] >= 0.0) {\n\t\t\t\t\tcoordinates[i][j] = (float)eigenVectors[j][i];\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tcoordinates[i][j] = (float)-eigenVectors[j][i];\n\t\t\t\t}\n\t\t\t}\n\t\t}*/\n\t\tArrayList<Integer> indices = new ArrayList<Integer>();\n\t\tint counter = 0;\n\t\tfor(int i=0; i<x.length;i++) {\n\t\t\tif(x[0][i] != 0.0) {\n\t\t\t\tindices.add(i);\n\t\t\t\tcounter++;\n\t\t\t}\n\t\t\tif(counter == dimensions) break;\n\t\t}\n\t\tif (!indices.isEmpty()) {\n\t\t\tfor (int i = 0; i < x.length; i++) {\n\t\t\t\tfor (int j = 0; j < indices.size(); j++) {\n\t\t\t\t\tcoordinates[i][j] = x[i][indices.get(j)];\n\t\t\t\t}\n\t\t\t}\n\t\t\treturn coordinates;\n\t\t}\n\t\telse {\n\t\t\treturn coordinates;\n\t\t}\n\t\t\t\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MultidimensionalScaling": [
+      "getNewBetaMatrix()",
+      "getHMatrix()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "getEigenValues(double[][])",
+      "vectorPower(double[], double)",
+      "diagonal(double[])",
+      "matrixProduct(double[][], double[][])",
+      "getEigenVectors(double[][])"
+    ],
+    "java.util.ArrayList": [
+      "isEmpty()",
+      "get(int)",
+      "add(E)",
+      "size()"
+    ]
+  },
+  "full_method_info": "public double[][] cMDS() {\n    // dimensions = 2;\n    getHMatrix();\n    double[][] B = getNewBetaMatrix();\n    double[] eigenValues = MatrixOperator.getEigenValues(B);\n    double[][] eigenVectors = MatrixOperator.getEigenVectors(B);\n    for (int k = 0; k < eigenValues.length; k++) {\n        if (eigenValues[k] < 0) {\n            eigenValues[k] = 0;\n        }\n    }\n    for (int k = 0; k < eigenValues.length; k++) {\n        if (eigenValues[k] > 0) {\n            dimensions++;\n        }\n    }\n    // dimensions = 2;\n    double[][] coordinates = new double[distanceMatrix.length][dimensions];\n    double[] sqrtEigenValues = MatrixOperator.vectorPower(eigenValues, 1.0 / 2.0);\n    double[][] eigenValuesDiagonal = MatrixOperator.diagonal(sqrtEigenValues);\n    double[][] x = MatrixOperator.matrixProduct(eigenVectors, eigenValuesDiagonal);\n    /*for(int i=0;i<distanceMatrix.length;i++) {\n\t\t\tfor(int j=0;j<dimensions;j++) {\n\t\t\t\tif(eigenVectors[j][i] >= 0.0) {\n\t\t\t\t\tcoordinates[i][j] = (float)eigenVectors[j][i];\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tcoordinates[i][j] = (float)-eigenVectors[j][i];\n\t\t\t\t}\n\t\t\t}\n\t\t}*/\n    ArrayList<Integer> indices = new ArrayList<Integer>();\n    int counter = 0;\n    for (int i = 0; i < x.length; i++) {\n        if (x[0][i] != 0.0) {\n            indices.add(i);\n            counter++;\n        }\n        if (counter == dimensions)\n            break;\n    }\n    if (!indices.isEmpty()) {\n        for (int i = 0; i < x.length; i++) {\n            for (int j = 0; j < indices.size(); j++) {\n                coordinates[i][j] = x[i][indices.get(j)];\n            }\n        }\n        return coordinates;\n    } else {\n        return coordinates;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

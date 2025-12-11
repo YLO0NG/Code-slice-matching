@@ -1,0 +1,22 @@
+{
+  "className": "RepeatedTest",
+  "methodName": "countTestCases",
+  "brief": "public int countTestCases(){}",
+  "methodSignature": "countTestCases()",
+  "sourceCode": "public int countTestCases() {\r\n\t\treturn super.countTestCases()*fTimesRepeat;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.extensions.TestDecorator": [
+      "countTestCases()"
+    ]
+  },
+  "full_method_info": "public int countTestCases() {\r\n    return super.countTestCases() * fTimesRepeat;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

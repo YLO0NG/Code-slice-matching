@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSet",
+  "methodName": "getExternalAuthorUserName",
+  "brief": "public String getExternalAuthorUserName(){}",
+  "methodSignature": "getExternalAuthorUserName()",
+  "sourceCode": "public String getExternalAuthorUserName() {\n\t\treturn externalAuthorUserName;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"externalAuthorUserName\"\n */\npublic String getExternalAuthorUserName() {\n    return externalAuthorUserName;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"externalAuthorUserName\"\n\t ",
+  "method_annotation": ""
+}

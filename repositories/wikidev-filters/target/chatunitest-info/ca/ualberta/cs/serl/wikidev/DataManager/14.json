@@ -1,0 +1,91 @@
+{
+  "className": "DataManager",
+  "methodName": "getArtifactByTypeAndID",
+  "brief": "private static IArtifact getArtifactByTypeAndID(IArtifact anArtifact, int projectid) throws SQLExceptio{}",
+  "methodSignature": "getArtifactByTypeAndID(IArtifact, int)",
+  "sourceCode": "private static IArtifact getArtifactByTypeAndID(IArtifact anArtifact, int projectid) throws SQLException{\n\t\tProject project = DataManager.getProjectByID(projectid);\n    \tString sqlStmt = QueryBuilder.selectArtifactByTypeAndID(anArtifact.getType(), anArtifact.getId(), projectid);\n\t\tResultSet res = null;\n\t\tIArtifact artifact = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile (res.next()) {\n\t\t\tif (anArtifact.getType().equals(\"ChangeSet\")) {\n\t\t\t\tartifact = new ChangeSet(res.getInt(\"id\"), res\n\t\t\t\t\t\t.getString(\"comment\"), res\n\t\t\t\t\t\t.getString(\"externalauthor\"), res\n\t\t\t\t\t\t.getInt(\"externalsystem_id\"), res\n\t\t\t\t\t\t.getTimestamp(\"timestamp\"), res.getInt(\"rev\"),\n\t\t\t\t\t\tres.getInt(\"project_id\"));\n\t\t\t} else if (anArtifact.getType().equals(\"Ticket\")) {\n\t\t\t\tartifact = new Ticket(res.getTimestamp(\"created\"), res\n\t\t\t\t\t\t.getString(\"description\"), res\n\t\t\t\t\t\t.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"), \n\t\t\t\t\t\tres.getString(\"summary\"),\n\t\t\t\t\t\tres.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));\n\t\t\t} else if (anArtifact.getType().equals(\"Wiki\")) {\n\t\t\t\tartifact = new Wiki(res.getInt(\"page_id\"), res.getInt(\"page_namespace\"), res.getString(\"page_title\"), res.getTimestamp(\"page_touched\"));\n\t\t\t}\n\t\t\telse if(anArtifact.getType().equals(\"Message\")) {\n            \tartifact = new Message(res.getString(\"address\"), res.getString(\"author\"), res.getString(\"body\"), res.getInt(\"id\"),\n\t\t\t\t\t\tres.getInt(\"deleted\"), res.getString(\"mid_header\"), \n\t\t\t\t\t\tres.getInt(\"project_id\"),  res.getString(\"subject\"), res.getTimestamp(\"date\"), res.getString(\"user_name\"), res.getString(\"refid_header\"));;\n            }\n\t\t}\n\t\tif(res !=null) res.close();\n\t\t\tif (artifact instanceof ChangeSet) {\n\t\t\t\tChangeSet changeSet = (ChangeSet)artifact;\n\t\t\t\tchangeSet.setOwner(getUserByUserName(changeSet.getExternalAuthorUserName()));\n\t\t\t\tchangeSet.setProject(project);\n\t\t\t\tchangeSet.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeSet.getRevision(), changeSet.getExternalSystemID()));\n\t\t\t\tfor(ChangeSetDetail detail : changeSet.getChangesetDetails()) {\n\t\t\t\t\tdetail.setTimestamp(changeSet.getTimestamp());\n\t\t\t\t}\n\t\t\t\tchangeSet.setAuthorForChangeSetDetails();\n\t\t\t\tchangeSet.setType(\"ChangeSet\");\n\t\t\t\tproject.addChangeset(changeSet);\n\t\t\t} else if (artifact instanceof Ticket) {\n\t\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\t\tticket.setOwner(getUserByUserName(ticket.getOwnerName()));\n\t\t\t\tticket.setReporter(getUserByUserName(ticket.getReporterName()));\n\t\t\t\tticket.setTicketChanges(getTicketChangesByTicketID(ticket\n\t\t\t\t\t\t.getTicketID()));\n\t\t\t\tticket.setProject(project);\n\t\t\t\tticket.setType(\"Ticket\");\n\t\t\t\tproject.addTicket(ticket);\n\t\t\t} else if (artifact instanceof Message) {\n\t\t\t\tMessage communication = (Message)artifact;\n\t\t\t\tUser user = getUserByUserName(communication\n\t\t\t\t\t\t.getUser_name());\n\t\t\t\tcommunication.setOwner(user);\n\t\t\t\tuser.setUserRealName(communication.getAuthor());\n\t\t\t\tcommunication.setProject(project);\n\t\t\t\tcommunication.setType(\"Message\");\n\t\t\t\tproject.addMessage(communication);\n\t\t\t}\n\t\t\telse if(artifact instanceof Wiki) {\n\t        \tWiki wiki = (Wiki)artifact;\n\t        \twiki.setRevisions(getRevisionsByWikiID(wiki.getPage_id()));\n\t        \twiki.setProject(DataManager.getProjectByName(getProjectNamespaceByNamespaceID(wiki.getPage_namespace_id())));\n\t        \twiki.setProjectID(wiki.getProject().getProjectID());\n\t        \twiki.setType(\"Wiki\");\n\t        }\n\t\treturn artifact;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getId()",
+      "getProject()",
+      "setOwner(User)",
+      "getType()",
+      "setTimestamp(Timestamp)",
+      "setProject(Project)",
+      "getTimestamp()",
+      "setType(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getRevisionsByWikiID(int)",
+      "getProjectByName(String)",
+      "getProjectNamespaceByNamespaceID(int)",
+      "getUserByUserName(String)",
+      "getChangeSetDetailsByRevAndProject(int, int)",
+      "getProjectByID(int)",
+      "getTicketChangesByTicketID(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectArtifactByTypeAndID(String, int, int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "getTimestamp(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getExternalSystemID()",
+      "getRevision()",
+      "setChangesetDetails(ChangeSetDetail>)",
+      "setAuthorForChangeSetDetails()",
+      "getChangesetDetails()",
+      "getExternalAuthorUserName()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "addTicket(Ticket)",
+      "addChangeset(ChangeSet)",
+      "getProjectID()",
+      "addMessage(Message)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "getOwnerName()",
+      "getReporterName()",
+      "setReporter(User)",
+      "getTicketID()",
+      "setTicketChanges(TicketChange>)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [
+      "getUser_name()",
+      "getAuthor()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "setUserRealName(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": [
+      "getPage_id()",
+      "setProjectID(int)",
+      "setRevisions(WikiRevision>)",
+      "getPage_namespace_id()"
+    ]
+  },
+  "full_method_info": "private static IArtifact getArtifactByTypeAndID(IArtifact anArtifact, int projectid) throws SQLException {\n    Project project = DataManager.getProjectByID(projectid);\n    String sqlStmt = QueryBuilder.selectArtifactByTypeAndID(anArtifact.getType(), anArtifact.getId(), projectid);\n    ResultSet res = null;\n    IArtifact artifact = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        if (anArtifact.getType().equals(\"ChangeSet\")) {\n            artifact = new ChangeSet(res.getInt(\"id\"), res.getString(\"comment\"), res.getString(\"externalauthor\"), res.getInt(\"externalsystem_id\"), res.getTimestamp(\"timestamp\"), res.getInt(\"rev\"), res.getInt(\"project_id\"));\n        } else if (anArtifact.getType().equals(\"Ticket\")) {\n            artifact = new Ticket(res.getTimestamp(\"created\"), res.getString(\"description\"), res.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"), res.getString(\"summary\"), res.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));\n        } else if (anArtifact.getType().equals(\"Wiki\")) {\n            artifact = new Wiki(res.getInt(\"page_id\"), res.getInt(\"page_namespace\"), res.getString(\"page_title\"), res.getTimestamp(\"page_touched\"));\n        } else if (anArtifact.getType().equals(\"Message\")) {\n            artifact = new Message(res.getString(\"address\"), res.getString(\"author\"), res.getString(\"body\"), res.getInt(\"id\"), res.getInt(\"deleted\"), res.getString(\"mid_header\"), res.getInt(\"project_id\"), res.getString(\"subject\"), res.getTimestamp(\"date\"), res.getString(\"user_name\"), res.getString(\"refid_header\"));\n            ;\n        }\n    }\n    if (res != null)\n        res.close();\n    if (artifact instanceof ChangeSet) {\n        ChangeSet changeSet = (ChangeSet) artifact;\n        changeSet.setOwner(getUserByUserName(changeSet.getExternalAuthorUserName()));\n        changeSet.setProject(project);\n        changeSet.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeSet.getRevision(), changeSet.getExternalSystemID()));\n        for (ChangeSetDetail detail : changeSet.getChangesetDetails()) {\n            detail.setTimestamp(changeSet.getTimestamp());\n        }\n        changeSet.setAuthorForChangeSetDetails();\n        changeSet.setType(\"ChangeSet\");\n        project.addChangeset(changeSet);\n    } else if (artifact instanceof Ticket) {\n        Ticket ticket = (Ticket) artifact;\n        ticket.setOwner(getUserByUserName(ticket.getOwnerName()));\n        ticket.setReporter(getUserByUserName(ticket.getReporterName()));\n        ticket.setTicketChanges(getTicketChangesByTicketID(ticket.getTicketID()));\n        ticket.setProject(project);\n        ticket.setType(\"Ticket\");\n        project.addTicket(ticket);\n    } else if (artifact instanceof Message) {\n        Message communication = (Message) artifact;\n        User user = getUserByUserName(communication.getUser_name());\n        communication.setOwner(user);\n        user.setUserRealName(communication.getAuthor());\n        communication.setProject(project);\n        communication.setType(\"Message\");\n        project.addMessage(communication);\n    } else if (artifact instanceof Wiki) {\n        Wiki wiki = (Wiki) artifact;\n        wiki.setRevisions(getRevisionsByWikiID(wiki.getPage_id()));\n        wiki.setProject(DataManager.getProjectByName(getProjectNamespaceByNamespaceID(wiki.getPage_namespace_id())));\n        wiki.setProjectID(wiki.getProject().getProjectID());\n        wiki.setType(\"Wiki\");\n    }\n    return artifact;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

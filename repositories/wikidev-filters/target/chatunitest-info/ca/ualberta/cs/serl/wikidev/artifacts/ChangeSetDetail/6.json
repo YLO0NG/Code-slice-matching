@@ -1,0 +1,22 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setFilename",
+  "brief": "public void setFilename(String filename){}",
+  "methodSignature": "setFilename(String)",
+  "sourceCode": "public void setFilename(String filename) {\n\t\tthis.filename = filename;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param filename\n * @uml.property  name=\"filename\"\n */\npublic void setFilename(String filename) {\n    this.filename = filename;\n}",
+  "method_comment": "\n\t * @param filename\n\t * @uml.property  name=\"filename\"\n\t ",
+  "method_annotation": ""
+}

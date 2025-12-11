@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getDeleted",
+  "brief": "public int getDeleted(){}",
+  "methodSignature": "getDeleted()",
+  "sourceCode": "public int getDeleted() {\n\t\treturn deleted;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"deleted\"\n */\npublic int getDeleted() {\n    return deleted;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"deleted\"\n\t ",
+  "method_annotation": ""
+}

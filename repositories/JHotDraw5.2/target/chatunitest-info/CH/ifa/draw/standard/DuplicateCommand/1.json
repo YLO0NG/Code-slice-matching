@@ -1,0 +1,22 @@
+{
+  "className": "DuplicateCommand",
+  "methodName": "isExecutable",
+  "brief": "public boolean isExecutable(){}",
+  "methodSignature": "isExecutable()",
+  "sourceCode": "public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "selectionCount()"
+    ]
+  },
+  "full_method_info": "public boolean isExecutable() {\n    return fView.selectionCount() > 0;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

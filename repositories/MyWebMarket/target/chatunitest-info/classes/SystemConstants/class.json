@@ -1,0 +1,33 @@
+{
+  "fullClassName": "classes.SystemConstants",
+  "className": "SystemConstants",
+  "index": 16,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public interface SystemConstants",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "String AUTHENTICATED_USER = \"authenticatedUser\";",
+    "String CR_MODE = \"cr\";",
+    "String UD_MODE = \"ud\";"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {},
+  "methodsBrief": [],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package classes;\n\npublic interface SystemConstants {\n\n    String AUTHENTICATED_USER = \"authenticatedUser\";\n\n    String CR_MODE = \"cr\";\n\n    String UD_MODE = \"ud\";\n}\n",
+  "classDeclarationCode": "public interface SystemConstants {\n\n    String AUTHENTICATED_USER = \"authenticatedUser\";\n\n    String CR_MODE = \"cr\";\n\n    String UD_MODE = \"ud\";\n}",
+  "subClasses": []
+}

@@ -1,0 +1,22 @@
+{
+  "targetClass": "CH.ifa.draw.figures.ScribbleTool",
+  "targetMethod": "mouseDown(MouseEvent, int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;",
+    "CH.ifa.draw.figures.PolyLineFigure": "public final static int ARROW_TIP_NONE  = 0;\npublic final static int ARROW_TIP_START = 1;\npublic final static int ARROW_TIP_END   = 2;\npublic final static int ARROW_TIP_BOTH  = 3;\nprotected Vector              fPoints;\nprotected LineDecoration      fStartDecoration = null;\nprotected LineDecoration      fEndDecoration = null;\nprotected Color               fFrameColor = Color.black;\nprivate static final long serialVersionUID = -7951352179906577773L;\nprivate int polyLineFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.DrawingEditor": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": "public Figure add(Figure figure);",
+    "CH.ifa.draw.standard.AbstractTool": "public DrawingView view(){}\npublic DrawingEditor editor(){}",
+    "CH.ifa.draw.figures.PolyLineFigure": "public void addPoint(int x, int y){}",
+    "CH.ifa.draw.framework.DrawingEditor": "void        toolDone();"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.DrawingView": "* Adds a figure to the drawing.\n     * @return the added figure.\n     \npublic Figure add(Figure figure);",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's view.\n     \npublic DrawingView view() {\n        return fView;\n    }\n\n     * Gets the tool's editor.\n     \npublic DrawingEditor editor() {\n        return view().editor();\n    }",
+    "CH.ifa.draw.figures.PolyLineFigure": "* Adds a node to the list of points.\n     \npublic void addPoint(int x, int y) {\n        fPoints.addElement(new Point(x, y));\n        changed();\n    }",
+    "CH.ifa.draw.framework.DrawingEditor": "* Informs the editor that a tool has done its interaction.\n     * This method can be used to switch back to the default tool.\n     \nvoid        toolDone();"
+  }
+}

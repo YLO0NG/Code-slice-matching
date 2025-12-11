@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "getProject",
+  "brief": "public int getProject(){}",
+  "methodSignature": "getProject()",
+  "sourceCode": "public int getProject() {\n\t\treturn project;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"project\"\n */\npublic int getProject() {\n    return project;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"project\"\n\t ",
+  "method_annotation": ""
+}

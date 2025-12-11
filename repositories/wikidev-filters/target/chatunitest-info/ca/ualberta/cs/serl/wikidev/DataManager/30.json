@@ -1,0 +1,46 @@
+{
+  "className": "DataManager",
+  "methodName": "getProjectByExternalSystem",
+  "brief": "public static Project getProjectByExternalSystem(int system) throws SQLException{}",
+  "methodSignature": "getProjectByExternalSystem(int)",
+  "sourceCode": "public static Project getProjectByExternalSystem(int system) throws SQLException {\n    \tProject aProject = null;\n    \tint projectid = 0;\n    \tif (!systems.contains(system)) {\n\t\t\tString sqlStmt = QueryBuilder.selectProjectIDByExternalSystem(system);\n\t\t\tResultSet res = null;\n\t\t\tres = statement.executeQuery(sqlStmt);\n\t\t\twhile (res.next()) {\n\t\t\t\tprojectid = res.getInt(\"project\");\n\t\t\t}\n\t\t\tif (res != null)\n\t\t\t\tres.close();\n\t\t\taProject = getProjectByID(projectid);\n\t\t\taProject.setUsers(getProjectUsers(projectid));\n\t\t\taProject.setSystem(system);\n\t    \tprojects.add(aProject);\n\t\t\tprojectIDs.add(aProject.getProjectID());\n\t\t\tsystems.add(system);\n\t\t}\n    \telse {\n    \t\tfor(Project project : projects) {\n    \t\t\tif(project.getSystem() == system) {\n    \t\t\t\taProject = project;\n    \t\t\t}\n    \t\t}\n    \t}\n    \treturn aProject;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Set": [
+      "contains(Object)",
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectProjectIDByExternalSystem(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectUsers(int)",
+      "getProjectByID(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "setUsers(User>)",
+      "getProjectID()",
+      "getSystem()",
+      "setSystem(int)"
+    ]
+  },
+  "full_method_info": "public static Project getProjectByExternalSystem(int system) throws SQLException {\n    Project aProject = null;\n    int projectid = 0;\n    if (!systems.contains(system)) {\n        String sqlStmt = QueryBuilder.selectProjectIDByExternalSystem(system);\n        ResultSet res = null;\n        res = statement.executeQuery(sqlStmt);\n        while (res.next()) {\n            projectid = res.getInt(\"project\");\n        }\n        if (res != null)\n            res.close();\n        aProject = getProjectByID(projectid);\n        aProject.setUsers(getProjectUsers(projectid));\n        aProject.setSystem(system);\n        projects.add(aProject);\n        projectIDs.add(aProject.getProjectID());\n        systems.add(system);\n    } else {\n        for (Project project : projects) {\n            if (project.getSystem() == system) {\n                aProject = project;\n            }\n        }\n    }\n    return aProject;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

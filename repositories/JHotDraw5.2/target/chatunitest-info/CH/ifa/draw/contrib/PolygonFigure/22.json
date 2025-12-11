@@ -1,0 +1,25 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "findSegment",
+  "brief": "public int findSegment(int x, int y){}",
+  "methodSignature": "findSegment(int, int)",
+  "sourceCode": "public int findSegment(int x, int y) {\n    double dist = TOO_CLOSE;\n    int best = -1;\n\n    for (int i = 0; i < fPoly.npoints; i++) {\n      int n = (i + 1) % fPoly.npoints;\n      double d =  distanceFromLine(fPoly.xpoints[i], fPoly.ypoints[i],\n                                   fPoly.xpoints[n], fPoly.ypoints[n],\n                                   x, y);\n      if (d < dist) {\n        dist = d;\n        best = i;\n      }\n    }\n    return best;\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "distanceFromLine(int, int, int, int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the segment that is hit by the given point.\n * @return the index of the segment or -1 if no segment was hit.\n */\npublic int findSegment(int x, int y) {\n    double dist = TOO_CLOSE;\n    int best = -1;\n    for (int i = 0; i < fPoly.npoints; i++) {\n        int n = (i + 1) % fPoly.npoints;\n        double d = distanceFromLine(fPoly.xpoints[i], fPoly.ypoints[i], fPoly.xpoints[n], fPoly.ypoints[n], x, y);\n        if (d < dist) {\n            dist = d;\n            best = i;\n        }\n    }\n    return best;\n}",
+  "method_comment": "\n   * Gets the segment that is hit by the given point.\n   * @return the index of the segment or -1 if no segment was hit.\n   ",
+  "method_annotation": ""
+}

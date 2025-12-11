@@ -1,0 +1,39 @@
+{
+  "className": "ElbowConnection",
+  "methodName": "updatePoints",
+  "brief": "protected void updatePoints(){}",
+  "methodSignature": "updatePoints()",
+  "sourceCode": "protected void updatePoints() {\n        willChange();\n        Point start = startPoint();\n        Point end = endPoint();\n        fPoints.removeAllElements();\n        fPoints.addElement(start);\n\n        if (start.x == end.x || start.y == end.y) {\n            fPoints.addElement(end);\n        }\n        else {\n            Rectangle r1 = start().owner().displayBox();\n            Rectangle r2 = end().owner().displayBox();\n\n            int x1, y1, x2, y2;\n            int direction = 0;\n\t\t\tint vx = r2.x + r2.width/2 - (r1.x + r1.width/2);\n\t\t\tint vy = r2.y + r2.height/2 - (r1.y + r1.height/2);\n\t\t\t\n\t\t\tif (vy < vx && vx > -vy)\n\t\t\t    direction = Geom.EAST;\n\t\t\telse if (vy > vx && vy > -vx)\n\t\t\t    direction = Geom.NORTH;\n\t\t\telse if (vx < vy && vx < -vy)\n\t\t\t    direction = Geom.WEST;\n\t\t\telse\n\t\t\t    direction = Geom.SOUTH;\n            int dir = direction;\n            if (dir == Geom.NORTH || dir == Geom.SOUTH) {\n                fPoints.addElement(new Point(start.x, (start.y + end.y)/2));\n                fPoints.addElement(new Point(end.x, (start.y + end.y)/2));\n            }\n            else {\n                fPoints.addElement(new Point((start.x + end.x)/2, start.y));\n                fPoints.addElement(new Point((start.x + end.x)/2, end.y));\n            }\n            fPoints.addElement(end);\n        }\n        changed();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "startPoint()",
+      "endPoint()",
+      "start()",
+      "end()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "removeAllElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "protected void updatePoints() {\n    willChange();\n    Point start = startPoint();\n    Point end = endPoint();\n    fPoints.removeAllElements();\n    fPoints.addElement(start);\n    if (start.x == end.x || start.y == end.y) {\n        fPoints.addElement(end);\n    } else {\n        Rectangle r1 = start().owner().displayBox();\n        Rectangle r2 = end().owner().displayBox();\n        int x1, y1, x2, y2;\n        int direction = 0;\n        int vx = r2.x + r2.width / 2 - (r1.x + r1.width / 2);\n        int vy = r2.y + r2.height / 2 - (r1.y + r1.height / 2);\n        if (vy < vx && vx > -vy)\n            direction = Geom.EAST;\n        else if (vy > vx && vy > -vx)\n            direction = Geom.NORTH;\n        else if (vx < vy && vx < -vy)\n            direction = Geom.WEST;\n        else\n            direction = Geom.SOUTH;\n        int dir = direction;\n        if (dir == Geom.NORTH || dir == Geom.SOUTH) {\n            fPoints.addElement(new Point(start.x, (start.y + end.y) / 2));\n            fPoints.addElement(new Point(end.x, (start.y + end.y) / 2));\n        } else {\n            fPoints.addElement(new Point((start.x + end.x) / 2, start.y));\n            fPoints.addElement(new Point((start.x + end.x) / 2, end.y));\n        }\n        fPoints.addElement(end);\n    }\n    changed();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

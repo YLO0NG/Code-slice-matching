@@ -1,0 +1,50 @@
+{
+  "className": "TextTool",
+  "methodName": "beginEdit",
+  "brief": "protected void beginEdit(TextHolder figure){}",
+  "methodSignature": "beginEdit(TextHolder)",
+  "sourceCode": "protected void beginEdit(TextHolder figure) {\n        if (fTextField == null)\n            fTextField = new FloatingTextField();\n\n\t    if (figure != getTypingTarget() && getTypingTarget() != null)\n\t    \tif (getTypingTarget() != null) {\n\t\t\t    if (fTextField.getText().length() > 0)\n\t\t\t        getTypingTarget().setText(fTextField.getText());\n\t\t\t    else {\n\t\t\t        drawing().remove((Figure)getTypingTarget());\n\t\t\t    }\n\t\t\t    setTypingTarget(null);\n\t\t\t    fTextField.endOverlay();\n\t\t\t    view().checkDamage();\n\t\t\t}\n\n        fTextField.createOverlay((Container)view(), figure.getFont());\n\t    fTextField.setBounds(fieldBounds(figure), figure.getText());\n\t    setTypingTarget(figure);\n\n\t    view().checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TextHolder"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.TextHolder": [
+      "getFont()",
+      "getText()",
+      "setText(String)"
+    ],
+    "CH.ifa.draw.figures.TextTool": [
+      "setTypingTarget(TextHolder)",
+      "getTypingTarget()",
+      "fieldBounds(TextHolder)"
+    ],
+    "java.lang.String": [
+      "length()"
+    ],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "getText()",
+      "setBounds(Rectangle, String)",
+      "endOverlay()",
+      "createOverlay(Container, Font)"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "checkDamage()"
+    ]
+  },
+  "full_method_info": "protected void beginEdit(TextHolder figure) {\n    if (fTextField == null)\n        fTextField = new FloatingTextField();\n    if (figure != getTypingTarget() && getTypingTarget() != null)\n        if (getTypingTarget() != null) {\n            if (fTextField.getText().length() > 0)\n                getTypingTarget().setText(fTextField.getText());\n            else {\n                drawing().remove((Figure) getTypingTarget());\n            }\n            setTypingTarget(null);\n            fTextField.endOverlay();\n            view().checkDamage();\n        }\n    fTextField.createOverlay((Container) view(), figure.getFont());\n    fTextField.setBounds(fieldBounds(figure), figure.getText());\n    setTypingTarget(figure);\n    view().checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

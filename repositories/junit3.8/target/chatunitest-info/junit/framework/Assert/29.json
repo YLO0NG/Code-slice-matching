@@ -1,0 +1,27 @@
+{
+  "className": "Assert",
+  "methodName": "assertNull",
+  "brief": "static public void assertNull(String message, Object object){}",
+  "methodSignature": "assertNull(String, Object)",
+  "sourceCode": "static public void assertNull(String message, Object object) {\r\n\t\tassertTrue(message, object == null);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "junit.framework.Assert": [
+      "assertTrue(String, boolean)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that an object is null.  If it is not\r\n * an AssertionFailedError is thrown with the given message.\r\n */\r\nstatic public void assertNull(String message, Object object) {\r\n    assertTrue(message, object == null);\r\n}",
+  "method_comment": "\r\n\t * Asserts that an object is null.  If it is not\r\n\t * an AssertionFailedError is thrown with the given message.\r\n\t ",
+  "method_annotation": ""
+}

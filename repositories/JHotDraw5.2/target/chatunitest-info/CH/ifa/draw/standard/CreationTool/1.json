@@ -1,0 +1,36 @@
+{
+  "className": "CreationTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorPoint = new Point(x,y);\n        fCreatedFigure = createFigure();\n        fCreatedFigure.displayBox(fAnchorPoint, fAnchorPoint);\n        view().add(fCreatedFigure);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.standard.CreationTool": [
+      "createFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox(Point, Point)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "add(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates a new figure by cloning the prototype.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    fAnchorPoint = new Point(x, y);\n    fCreatedFigure = createFigure();\n    fCreatedFigure.displayBox(fAnchorPoint, fAnchorPoint);\n    view().add(fCreatedFigure);\n}",
+  "method_comment": "\n     * Creates a new figure by cloning the prototype.\n     ",
+  "method_annotation": ""
+}

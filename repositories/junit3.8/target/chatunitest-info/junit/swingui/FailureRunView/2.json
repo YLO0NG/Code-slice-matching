@@ -1,0 +1,30 @@
+{
+  "className": "FailureRunView",
+  "methodName": "addTab",
+  "brief": "public void addTab(JTabbedPane pane){}",
+  "methodSignature": "addTab(JTabbedPane)",
+  "sourceCode": "public void addTab(JTabbedPane pane) {\r\n\t\tJScrollPane scrollPane= new JScrollPane(fFailureList, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\r\n\t\tIcon errorIcon= TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n\t\tpane.addTab(\"Failures\", errorIcon, scrollPane, \"The list of failed tests\");\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JTabbedPane"
+  ],
+  "dependentMethods": {
+    "javax.swing.JTabbedPane": [
+      "addTab(String, Icon, Component, String)"
+    ],
+    "junit.swingui.TestRunner": [
+      "getIconResource(Class, String)"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ]
+  },
+  "full_method_info": "public void addTab(JTabbedPane pane) {\r\n    JScrollPane scrollPane = new JScrollPane(fFailureList, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\r\n    Icon errorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n    pane.addTab(\"Failures\", errorIcon, scrollPane, \"The list of failed tests\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

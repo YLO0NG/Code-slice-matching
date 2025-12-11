@@ -1,0 +1,13 @@
+{
+  "targetClass": "CH.ifa.draw.samples.pert.PertFigure",
+  "targetMethod": "updateDurations()",
+  "dependentFields": {
+    "CH.ifa.draw.samples.pert.PertFigure": "private static final int BORDER = 3;\nprivate Rectangle fDisplayBox;\nprivate Vector fPreTasks;\nprivate Vector fPostTasks;\nprivate static final long serialVersionUID = -7877776240236946511L;\nprivate int pertFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.samples.pert.PertFigure": "public int duration(){}\npublic void updateDurations(){}\npublic int start(){}\npublic void setEnd(int value){}\npublic int end(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.samples.pert.PertFigure": "public int duration() {\n        return asInt(1);\n    }\npublic void updateDurations() {\n        int newEnd = start()+duration();\n        if (newEnd != end()) {\n            setEnd(newEnd);\n            Enumeration i = fPostTasks.elements();\n\t\t\twhile (i.hasMoreElements())\n\t\t\t    ((PertFigure) i.nextElement()).updateDurations();\n        }\n    }\npublic int start() {\n        int start = 0;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            PertFigure f = (PertFigure) i.nextElement();\n            start = Math.max(start, f.end());\n        }\n        return start;\n    }\npublic void setEnd(int value) {\n        setInt(2, value);\n    }\npublic int end() {\n        return asInt(2);\n    }"
+  }
+}

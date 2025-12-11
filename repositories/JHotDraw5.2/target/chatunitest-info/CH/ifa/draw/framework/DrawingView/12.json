@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "selection",
+  "brief": "public Vector selection();",
+  "methodSignature": "selection()",
+  "sourceCode": "public Vector selection();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the currently selected figures.\n * @return a vector with the selected figures. The vector\n * is a copy of the current selection.\n */\npublic Vector selection();",
+  "method_comment": "\n     * Gets the currently selected figures.\n     * @return a vector with the selected figures. The vector\n     * is a copy of the current selection.\n     ",
+  "method_annotation": ""
+}

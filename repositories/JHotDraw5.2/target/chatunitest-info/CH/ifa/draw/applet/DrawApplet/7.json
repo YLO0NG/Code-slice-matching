@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createToolPalette",
+  "brief": "protected JPanel createToolPalette(){}",
+  "methodSignature": "createToolPalette()",
+  "sourceCode": "protected JPanel createToolPalette() {\n        JPanel palette = new JPanel();\n        palette.setLayout(new PaletteLayout(2,new Point(2,2)));\n        return palette;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "setLayout(LayoutManager)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the tools palette.\n */\nprotected JPanel createToolPalette() {\n    JPanel palette = new JPanel();\n    palette.setLayout(new PaletteLayout(2, new Point(2, 2)));\n    return palette;\n}",
+  "method_comment": "\n     * Creates the tools palette.\n     ",
+  "method_annotation": ""
+}

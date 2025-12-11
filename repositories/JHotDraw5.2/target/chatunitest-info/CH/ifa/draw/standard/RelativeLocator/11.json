@@ -1,0 +1,18 @@
+{
+  "className": "RelativeLocator",
+  "methodName": "center",
+  "brief": "static public Locator center(){}",
+  "methodSignature": "center()",
+  "sourceCode": "static public Locator center() {\n        return new RelativeLocator(0.5, 0.5);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Center.\n */\nstatic public Locator center() {\n    return new RelativeLocator(0.5, 0.5);\n}",
+  "method_comment": "\n     * Center.\n     ",
+  "method_annotation": ""
+}

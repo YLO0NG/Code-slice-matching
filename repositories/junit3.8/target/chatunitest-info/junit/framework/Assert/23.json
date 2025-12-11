@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(short expected, short actual){}",
+  "methodSignature": "assertEquals(short, short)",
+  "sourceCode": "static public void assertEquals(short expected, short actual) {\r\n\t\tassertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "short",
+    "short"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, short, short)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two shorts are equal.\r\n */\r\nstatic public void assertEquals(short expected, short actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two shorts are equal.\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,121 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.Wiki",
+  "className": "Wiki",
+  "index": 11,
+  "modifier": "[public ]",
+  "extend": "[IArtifact]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class Wiki",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.SQLException;",
+    "import java.sql.Timestamp;",
+    "import java.util.ArrayList;",
+    "import java.util.HashMap;",
+    "import java.util.HashSet;",
+    "import java.util.Set;",
+    "import java.util.TreeSet;",
+    "import ca.ualberta.cs.serl.wikidev.DataManager;",
+    "import ca.ualberta.cs.serl.wikidev.Project;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [
+    "private int page_id;",
+    "private int page_namespace_id;",
+    "private int project;",
+    "private String page_title;",
+    "private ArrayList<WikiRevision> revisions;"
+  ],
+  "superClasses": [
+    "IArtifact"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getPage_id()": "0",
+    "setPage_id(int)": "1",
+    "getPage_namespace_id()": "2",
+    "setPage_namespace_id(int)": "3",
+    "getProjectID()": "4",
+    "setProjectID(int)": "5",
+    "getPage_title()": "6",
+    "setPage_title(String)": "7",
+    "getRevisions()": "8",
+    "setRevisions(ArrayList)": "9",
+    "getNumberOfRevisionsBeforeDate(Timestamp)": "10",
+    "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)": "11",
+    "setTimeCreatedBeforeDate(Timestamp)": "12",
+    "getUserContributionBeforeDate(Timestamp, ArrayList)": "13",
+    "getAssociatedUsers()": "14",
+    "toString()": "15",
+    "compareTo(IArtifact)": "16",
+    "Wiki(int, int, String, Timestamp)": "17"
+  },
+  "methodsBrief": [
+    "public int getPage_id(){}",
+    "public void setPage_id(int page_id){}",
+    "public int getPage_namespace_id(){}",
+    "public void setPage_namespace_id(int page_namespace_id){}",
+    "public int getProjectID(){}",
+    "public void setProjectID(int project){}",
+    "public String getPage_title(){}",
+    "public void setPage_title(String page_title){}",
+    "public ArrayList<WikiRevision> getRevisions(){}",
+    "public void setRevisions(ArrayList<WikiRevision> revisions){}",
+    "public int getNumberOfRevisionsBeforeDate(Timestamp timestamp){}",
+    "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp){}",
+    "public void setTimeCreatedBeforeDate(Timestamp timestamp){}",
+    "public HashMap<User, Double> getUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "@Override\r\n\tpublic String toString(){}",
+    "public int compareTo(IArtifact o){}",
+    "public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp){}"
+  ],
+  "constructorSigs": [
+    "Wiki(int, int, String, Timestamp)"
+  ],
+  "constructorBrief": [
+    "public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp){}"
+  ],
+  "getterSetterSigs": [
+    "getPage_id()",
+    "setPage_id(int)",
+    "getPage_namespace_id()",
+    "setPage_namespace_id(int)",
+    "getProjectID()",
+    "setProjectID(int)",
+    "getPage_title()",
+    "setPage_title(String)",
+    "getRevisions()",
+    "setRevisions(ArrayList)",
+    "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)",
+    "setTimeCreatedBeforeDate(Timestamp)",
+    "getAssociatedUsers()"
+  ],
+  "getterSetterBrief": [
+    "public int getPage_id(){}",
+    "public void setPage_id(int page_id){}",
+    "public int getPage_namespace_id(){}",
+    "public void setPage_namespace_id(int page_namespace_id){}",
+    "public int getProjectID(){}",
+    "public void setProjectID(int project){}",
+    "public String getPage_title(){}",
+    "public void setPage_title(String page_title){}",
+    "public ArrayList<WikiRevision> getRevisions(){}",
+    "public void setRevisions(ArrayList<WikiRevision> revisions){}",
+    "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp){}",
+    "public void setTimeCreatedBeforeDate(Timestamp timestamp){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\nimport java.sql.SQLException;\nimport java.sql.Timestamp;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.HashSet;\nimport java.util.Set;\nimport java.util.TreeSet;\nimport ca.ualberta.cs.serl.wikidev.DataManager;\nimport ca.ualberta.cs.serl.wikidev.Project;\nimport ca.ualberta.cs.serl.wikidev.User;\n\n/**\n * @author   User\n */\npublic class Wiki extends IArtifact {\n\n    /**\n     * @uml.property  name=\"page_id\"\n     */\n    private int page_id;\n\n    /**\n     * @uml.property  name=\"page_namespace_id\"\n     */\n    private int page_namespace_id;\n\n    /**\n     * @uml.property  name=\"project\"\n     * @uml.associationEnd  inverse=\"wikis:ca.ualberta.cs.serl.wikidev.Project\"\n     */\n    private int project;\n\n    /**\n     * @uml.property  name=\"page_title\"\n     */\n    private String page_title;\n\n    /**\n     * @uml.property  name=\"revisions\"\n     */\n    private ArrayList<WikiRevision> revisions;\n\n    public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp) {\n        this.page_id = page_id;\n        this.page_namespace_id = page_namespace_id;\n        this.page_title = page_title;\n        this.timestamp = timestamp;\n        this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n        this.revisions = new ArrayList<WikiRevision>();\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"page_id\"\n     */\n    public int getPage_id() {\n        return page_id;\n    }\n\n    /**\n     * @param page_id\n     * @uml.property  name=\"page_id\"\n     */\n    public void setPage_id(int page_id) {\n        this.page_id = page_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"page_namespace_id\"\n     */\n    public int getPage_namespace_id() {\n        return page_namespace_id;\n    }\n\n    /**\n     * @param page_namespace_id\n     * @uml.property  name=\"page_namespace_id\"\n     */\n    public void setPage_namespace_id(int page_namespace_id) {\n        this.page_namespace_id = page_namespace_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"project\"\n     */\n    public int getProjectID() {\n        return project;\n    }\n\n    /**\n     * @param project\n     * @uml.property  name=\"project\"\n     */\n    public void setProjectID(int project) {\n        this.project = project;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"page_title\"\n     */\n    public String getPage_title() {\n        return page_title;\n    }\n\n    /**\n     * @param page_title\n     * @uml.property  name=\"page_title\"\n     */\n    public void setPage_title(String page_title) {\n        this.page_title = page_title;\n    }\n\n    public ArrayList<WikiRevision> getRevisions() {\n        return revisions;\n    }\n\n    public void setRevisions(ArrayList<WikiRevision> revisions) {\n        this.revisions = revisions;\n    }\n\n    public int getNumberOfRevisionsBeforeDate(Timestamp timestamp) {\n        int count = 0;\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp)) {\n                count++;\n            }\n        }\n        return count;\n    }\n\n    public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp) {\n        lastModified = created;\n        lastEditor = owner;\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp) && rev.getRev_timestamp().after(lastModified)) {\n                lastModified = rev.getRev_timestamp();\n                lastEditor = rev.getRev_user();\n            }\n        }\n    }\n\n    public void setTimeCreatedBeforeDate(Timestamp timestamp) {\n        created = Timestamp.valueOf(\"2300-01-01 00:00:00\");\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp) && rev.getRev_timestamp().before(this.getCreated())) {\n                created = rev.getRev_timestamp();\n            }\n        }\n    }\n\n    public HashMap<User, Double> getUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users) {\n        HashMap<User, Double> userChanges = new HashMap<User, Double>();\n        for (User user : users) {\n            userChanges.put(user, 0.0);\n        }\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp)) {\n                userChanges.put(rev.getRev_user(), userChanges.get(rev.getRev_user()) + 1.0);\n            }\n        }\n        if (getNumberOfRevisionsBeforeDate(timestamp) != 0) {\n            for (User user : userChanges.keySet()) {\n                userChanges.put(user, userChanges.get(user) / (double) getNumberOfRevisionsBeforeDate(timestamp));\n            }\n        }\n        return userChanges;\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        for (WikiRevision rev : revisions) {\n            users.add(rev.getRev_user());\n        }\n        return users;\n    }\n\n    @Override\n    public String toString() {\n        return \"Wiki\" + page_id + \" \" + super.toString();\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof Wiki) {\n            if (this.equals((Wiki) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * @author   User\n */\npublic class Wiki extends IArtifact {\n\n    /**\n     * @uml.property  name=\"page_id\"\n     */\n    private int page_id;\n\n    /**\n     * @uml.property  name=\"page_namespace_id\"\n     */\n    private int page_namespace_id;\n\n    /**\n     * @uml.property  name=\"project\"\n     * @uml.associationEnd  inverse=\"wikis:ca.ualberta.cs.serl.wikidev.Project\"\n     */\n    private int project;\n\n    /**\n     * @uml.property  name=\"page_title\"\n     */\n    private String page_title;\n\n    /**\n     * @uml.property  name=\"revisions\"\n     */\n    private ArrayList<WikiRevision> revisions;\n\n    public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp) {\n        this.page_id = page_id;\n        this.page_namespace_id = page_namespace_id;\n        this.page_title = page_title;\n        this.timestamp = timestamp;\n        this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n        this.revisions = new ArrayList<WikiRevision>();\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"page_id\"\n     */\n    public int getPage_id() {\n        return page_id;\n    }\n\n    /**\n     * @param page_id\n     * @uml.property  name=\"page_id\"\n     */\n    public void setPage_id(int page_id) {\n        this.page_id = page_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"page_namespace_id\"\n     */\n    public int getPage_namespace_id() {\n        return page_namespace_id;\n    }\n\n    /**\n     * @param page_namespace_id\n     * @uml.property  name=\"page_namespace_id\"\n     */\n    public void setPage_namespace_id(int page_namespace_id) {\n        this.page_namespace_id = page_namespace_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"project\"\n     */\n    public int getProjectID() {\n        return project;\n    }\n\n    /**\n     * @param project\n     * @uml.property  name=\"project\"\n     */\n    public void setProjectID(int project) {\n        this.project = project;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"page_title\"\n     */\n    public String getPage_title() {\n        return page_title;\n    }\n\n    /**\n     * @param page_title\n     * @uml.property  name=\"page_title\"\n     */\n    public void setPage_title(String page_title) {\n        this.page_title = page_title;\n    }\n\n    public ArrayList<WikiRevision> getRevisions() {\n        return revisions;\n    }\n\n    public void setRevisions(ArrayList<WikiRevision> revisions) {\n        this.revisions = revisions;\n    }\n\n    public int getNumberOfRevisionsBeforeDate(Timestamp timestamp) {\n        int count = 0;\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp)) {\n                count++;\n            }\n        }\n        return count;\n    }\n\n    public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp) {\n        lastModified = created;\n        lastEditor = owner;\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp) && rev.getRev_timestamp().after(lastModified)) {\n                lastModified = rev.getRev_timestamp();\n                lastEditor = rev.getRev_user();\n            }\n        }\n    }\n\n    public void setTimeCreatedBeforeDate(Timestamp timestamp) {\n        created = Timestamp.valueOf(\"2300-01-01 00:00:00\");\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp) && rev.getRev_timestamp().before(this.getCreated())) {\n                created = rev.getRev_timestamp();\n            }\n        }\n    }\n\n    public HashMap<User, Double> getUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users) {\n        HashMap<User, Double> userChanges = new HashMap<User, Double>();\n        for (User user : users) {\n            userChanges.put(user, 0.0);\n        }\n        for (WikiRevision rev : revisions) {\n            if (rev.getRev_timestamp().before(timestamp)) {\n                userChanges.put(rev.getRev_user(), userChanges.get(rev.getRev_user()) + 1.0);\n            }\n        }\n        if (getNumberOfRevisionsBeforeDate(timestamp) != 0) {\n            for (User user : userChanges.keySet()) {\n                userChanges.put(user, userChanges.get(user) / (double) getNumberOfRevisionsBeforeDate(timestamp));\n            }\n        }\n        return userChanges;\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        for (WikiRevision rev : revisions) {\n            users.add(rev.getRev_user());\n        }\n        return users;\n    }\n\n    @Override\n    public String toString() {\n        return \"Wiki\" + page_id + \" \" + super.toString();\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof Wiki) {\n            if (this.equals((Wiki) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n}",
+  "subClasses": []
+}

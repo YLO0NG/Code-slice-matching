@@ -1,0 +1,18 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "getDistanceMatrix",
+  "brief": "public double[][] getDistanceMatrix(){}",
+  "methodSignature": "getDistanceMatrix()",
+  "sourceCode": "public double[][] getDistanceMatrix() {\n\t\treturn distanceMatrix;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public double[][] getDistanceMatrix() {\n    return distanceMatrix;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

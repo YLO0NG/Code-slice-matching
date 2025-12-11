@@ -1,0 +1,18 @@
+{
+  "className": "User",
+  "methodName": "getRolePerProject",
+  "brief": "public HashMap<Project, String> getRolePerProject(){}",
+  "methodSignature": "getRolePerProject()",
+  "sourceCode": "public HashMap<Project, String> getRolePerProject() {\n\t\treturn rolePerProject;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rolePerProject\"\n */\npublic HashMap<Project, String> getRolePerProject() {\n    return rolePerProject;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rolePerProject\"\n\t ",
+  "method_annotation": ""
+}

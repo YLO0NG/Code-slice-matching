@@ -1,0 +1,34 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "notifyUsers",
+  "brief": "private void notifyUsers(IArtifact artifact1, IArtifact artifact2){}",
+  "methodSignature": "notifyUsers(IArtifact, IArtifact)",
+  "sourceCode": "private void notifyUsers(IArtifact artifact1, IArtifact artifact2) {\n\t\tfor(User user : artifact1.getAssociatedUsers()) {\n\t\t\tif (user != null) {\n\t\t\t\tif (!containsArtifact(user, artifact2)) {\n\t\t\t\t\tuser.addRelatedArtifacts(artifact2, 1);\n\t\t\t\t\tusersChanged.add(user);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getAssociatedUsers()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": [
+      "containsArtifact(User, IArtifact)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "addRelatedArtifacts(IArtifact, int)"
+    ],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "/*private void calculateTransitiveRelationship(IArtifact artifact1, IArtifact artifact2) {\n\t\tif(artifact1.getDirectlyRelatedArtifacts().containsKey(artifact2)) {\n\t\t\t\tfor(IArtifact artifact : artifact1.getDirectlyRelatedArtifacts().keySet()) {\n\t\t\t\t\tif(!artifact2.getDirectlyRelatedArtifacts().containsKey(artifact) && !artifact2.equals(artifact)) {\n\t\t\t\t\t\tartifact2.addIndirectlyRelatedArtifact(artifact, artifact1);\n\t\t\t\t\t\tartifactsChanged.add(artifact2);\n\t\t\t\t\t}\n\t\t\t\t\tif(!artifact.getDirectlyRelatedArtifacts().containsKey(artifact2) && !artifact.equals(artifact2)) {\n\t\t\t\t\t\tartifact.addIndirectlyRelatedArtifact(artifact2, artifact1);\n\t\t\t\t\t\tartifactsChanged.add(artifact);\n\t\t\t\t\t}\n\t\t\t\t\tnotifyUsers(artifact, artifact2);\n\t\t\t\t}\n\t\t}\n\t\tif(artifact2.getDirectlyRelatedArtifacts().containsKey(artifact1)) {\n\t\t\tfor(IArtifact artifact : artifact2.getDirectlyRelatedArtifacts().keySet()) {\n\t\t\t\tif(!artifact1.getDirectlyRelatedArtifacts().containsKey(artifact) && !artifact1.equals(artifact)) {\n\t\t\t\t\tartifact1.addIndirectlyRelatedArtifact(artifact, artifact2);\n\t\t\t\t\tartifactsChanged.add(artifact1);\n\t\t\t\t}\n\t\t\t\tif(!artifact.getDirectlyRelatedArtifacts().containsKey(artifact1) && !artifact.equals(artifact1)) {\n\t\t\t\t\tartifact.addIndirectlyRelatedArtifact(artifact1, artifact2);\n\t\t\t\t\tartifactsChanged.add(artifact);\n\t\t\t\t}\n\t\t\t\tnotifyUsers(artifact, artifact1);\n\t\t\t}\n\t\t}\n\t}*/\nprivate void notifyUsers(IArtifact artifact1, IArtifact artifact2) {\n    for (User user : artifact1.getAssociatedUsers()) {\n        if (user != null) {\n            if (!containsArtifact(user, artifact2)) {\n                user.addRelatedArtifacts(artifact2, 1);\n                usersChanged.add(user);\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

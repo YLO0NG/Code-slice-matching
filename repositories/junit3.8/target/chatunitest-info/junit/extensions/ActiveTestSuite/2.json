@@ -1,0 +1,25 @@
+{
+  "className": "ActiveTestSuite",
+  "methodName": "waitUntilFinished",
+  "brief": "synchronized void waitUntilFinished(){}",
+  "methodSignature": "waitUntilFinished()",
+  "sourceCode": "synchronized void waitUntilFinished() {\r\n\t\twhile (fActiveTestDeathCount < testCount()) {\r\n\t\t\ttry {\r\n\t\t\t\twait();\r\n\t\t\t} catch (InterruptedException e) {\r\n\t\t\t\treturn; // ignore\r\n\t\t\t}\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestSuite": [
+      "testCount()"
+    ],
+    "java.lang.Object": [
+      "wait()"
+    ]
+  },
+  "full_method_info": "synchronized void waitUntilFinished() {\r\n    while (fActiveTestDeathCount < testCount()) {\r\n        try {\r\n            wait();\r\n        } catch (InterruptedException e) {\r\n            // ignore\r\n            return;\r\n        }\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

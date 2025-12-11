@@ -1,0 +1,18 @@
+{
+  "className": "TicketChange",
+  "methodName": "getTimestamp",
+  "brief": "public Timestamp getTimestamp(){}",
+  "methodSignature": "getTimestamp()",
+  "sourceCode": "public Timestamp getTimestamp() {\n\t\treturn timestamp;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"timestamp\"\n */\npublic Timestamp getTimestamp() {\n    return timestamp;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"timestamp\"\n\t ",
+  "method_annotation": ""
+}

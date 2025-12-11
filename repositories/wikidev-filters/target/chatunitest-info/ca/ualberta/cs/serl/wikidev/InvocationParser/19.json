@@ -1,0 +1,22 @@
+{
+  "className": "InvocationParser",
+  "methodName": "setWindow",
+  "brief": "public void setWindow(String window){}",
+  "methodSignature": "setWindow(String)",
+  "sourceCode": "public void setWindow(String window) {\n\t\tthis.window = window;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setWindow(String window) {\n    this.window = window;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

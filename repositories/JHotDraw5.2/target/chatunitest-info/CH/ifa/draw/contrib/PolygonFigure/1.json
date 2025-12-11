@@ -1,0 +1,22 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "isEmpty",
+  "brief": "public boolean isEmpty(){}",
+  "methodSignature": "isEmpty()",
+  "sourceCode": "public boolean isEmpty() {\n    return (fPoly.npoints < 3 ||\n            (size().width < TOO_CLOSE) && (size().height < TOO_CLOSE));\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "size()"
+    ]
+  },
+  "full_method_info": "public boolean isEmpty() {\n    return (fPoly.npoints < 3 || (size().width < TOO_CLOSE) && (size().height < TOO_CLOSE));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,42 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "invokeStep",
+  "brief": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeStep(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Point p = new Point(x, y);\n        Figure f = findConnectableFigure(x, y, view.drawing());\n        // track the figure containing the mouse\n        if (f != fTarget) {\n            if (fTarget != null)\n                fTarget.connectorVisibility(false);\n            fTarget = f;\n            if (fTarget != null)\n                fTarget.connectorVisibility(true);\n        }\n\n        Connector target = findConnectionTarget(p.x, p.y, view.drawing());\n        if (target != null)\n            p = Geom.center(target.displayBox());\n        setPoint(p.x, p.y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.ChangeConnectionHandle": [
+      "findConnectionTarget(int, int, Drawing)",
+      "findConnectableFigure(int, int, Drawing)",
+      "setPoint(int, int)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorVisibility(boolean)"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "center(Rectangle)"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a new target of the connection.\n */\npublic void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    Point p = new Point(x, y);\n    Figure f = findConnectableFigure(x, y, view.drawing());\n    // track the figure containing the mouse\n    if (f != fTarget) {\n        if (fTarget != null)\n            fTarget.connectorVisibility(false);\n        fTarget = f;\n        if (fTarget != null)\n            fTarget.connectorVisibility(true);\n    }\n    Connector target = findConnectionTarget(p.x, p.y, view.drawing());\n    if (target != null)\n        p = Geom.center(target.displayBox());\n    setPoint(p.x, p.y);\n}",
+  "method_comment": "\n     * Finds a new target of the connection.\n     ",
+  "method_annotation": ""
+}

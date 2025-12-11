@@ -1,0 +1,31 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printDefectHeader",
+  "brief": "protected void printDefectHeader(TestFailure booBoo, int count){}",
+  "methodSignature": "printDefectHeader(TestFailure, int)",
+  "sourceCode": "protected void printDefectHeader(TestFailure booBoo, int count) {\r\n\t\t// I feel like making this a println, then adding a line giving the throwable a chance to print something\r\n\t\t// before we get to the stack trace.\r\n\t\tgetWriter().print(count + \") \" + booBoo.failedTest());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestFailure",
+    "int"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestFailure": [
+      "failedTest()"
+    ],
+    "java.io.PrintStream": [
+      "print(String)"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ]
+  },
+  "full_method_info": "protected void printDefectHeader(TestFailure booBoo, int count) {\r\n    // I feel like making this a println, then adding a line giving the throwable a chance to print something\r\n    // before we get to the stack trace.\r\n    getWriter().print(count + \") \" + booBoo.failedTest());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

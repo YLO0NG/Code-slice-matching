@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getSubject",
+  "brief": "public String getSubject(){}",
+  "methodSignature": "getSubject()",
+  "sourceCode": "public String getSubject() {\n\t\treturn subject;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"subject\"\n */\npublic String getSubject() {\n    return subject;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"subject\"\n\t ",
+  "method_annotation": ""
+}

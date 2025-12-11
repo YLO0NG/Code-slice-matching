@@ -1,0 +1,23 @@
+{
+  "className": "TextFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point newOrigin, Point newCorner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point newOrigin, Point newCorner) {\n        fOriginX = newOrigin.x;\n        fOriginY = newOrigin.y;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "public void basicDisplayBox(Point newOrigin, Point newCorner) {\n    fOriginX = newOrigin.x;\n    fOriginY = newOrigin.y;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

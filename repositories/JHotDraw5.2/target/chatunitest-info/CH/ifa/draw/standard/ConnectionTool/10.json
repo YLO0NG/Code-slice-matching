@@ -1,0 +1,42 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "trackConnectors",
+  "brief": "protected void trackConnectors(MouseEvent e, int x, int y){}",
+  "methodSignature": "trackConnectors(MouseEvent, int, int)",
+  "sourceCode": "protected void trackConnectors(MouseEvent e, int x, int y) {\n        Figure c = null;\n\n        if (fStartConnector == null)\n            c = findSource(x, y, drawing());\n        else\n            c = findTarget(x, y, drawing());\n\n        // track the figure containing the mouse\n        if (c != fTarget) {\n            if (fTarget != null)\n                fTarget.connectorVisibility(false);\n            fTarget = c;\n            if (fTarget != null)\n                fTarget.connectorVisibility(true);\n        }\n\n        Connector cc = null;\n        if (c != null)\n            cc = findConnector(e.getX(), e.getY(), c);\n        if (cc != fConnectorTarget)\n            fConnectorTarget = cc;\n\n        view().checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "findSource(int, int, Drawing)",
+      "findConnector(int, int, Figure)",
+      "findTarget(int, int, Drawing)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorVisibility(boolean)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "checkDamage()"
+    ]
+  },
+  "full_method_info": "protected void trackConnectors(MouseEvent e, int x, int y) {\n    Figure c = null;\n    if (fStartConnector == null)\n        c = findSource(x, y, drawing());\n    else\n        c = findTarget(x, y, drawing());\n    // track the figure containing the mouse\n    if (c != fTarget) {\n        if (fTarget != null)\n            fTarget.connectorVisibility(false);\n        fTarget = c;\n        if (fTarget != null)\n            fTarget.connectorVisibility(true);\n    }\n    Connector cc = null;\n    if (c != null)\n        cc = findConnector(e.getX(), e.getY(), c);\n    if (cc != fConnectorTarget)\n        fConnectorTarget = cc;\n    view().checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

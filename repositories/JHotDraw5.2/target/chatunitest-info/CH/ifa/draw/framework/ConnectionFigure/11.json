@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "startPoint",
+  "brief": "public Point startPoint();",
+  "methodSignature": "startPoint()",
+  "sourceCode": "public Point startPoint();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the start point.\n */\npublic Point startPoint();",
+  "method_comment": "\n     * Gets the start point.\n     ",
+  "method_annotation": ""
+}

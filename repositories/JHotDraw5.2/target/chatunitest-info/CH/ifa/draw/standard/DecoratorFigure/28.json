@@ -1,0 +1,30 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        decorate((Figure)dr.readStorable());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "read(StorableInput)"
+    ],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "decorate(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads itself and the contained figure from the StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    decorate((Figure) dr.readStorable());\n}",
+  "method_comment": "\n     * Reads itself and the contained figure from the StorableInput.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n    return bounds(fPoly);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "bounds(Polygon)"
+    ]
+  },
+  "full_method_info": "public Rectangle displayBox() {\n    return bounds(fPoly);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

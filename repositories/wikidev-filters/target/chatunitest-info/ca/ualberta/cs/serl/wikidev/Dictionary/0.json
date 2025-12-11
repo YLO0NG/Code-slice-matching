@@ -1,0 +1,24 @@
+{
+  "className": "Dictionary",
+  "methodName": "getDataBaseTable",
+  "brief": "public static String getDataBaseTable(String entityType){}",
+  "methodSignature": "getDataBaseTable(String)",
+  "sourceCode": "public static String getDataBaseTable(String entityType) {\n\t\tif(entityType.matches(GLOBAL_SVN)) {\n\t\t\treturn \"wikidev_changesets\";\n\t\t}\n\t\telse if(entityType.matches(GLOBAL_TICKET)) {\n\t\t\treturn \"wikidev_tickets\";\n\t\t}\n\t\telse if(entityType.matches(GLOBAL_WIKI)) {\n\t\t\treturn \"wikidev_wikis\";\n\t\t}\n\t\telse if(entityType.matches(GLOBAL_MAIL)) {\n\t\t\treturn \"wikidev_communications\";\n\t\t}\n\t\telse if(entityType.matches(GLOBAL_SRC)) {\n\t\t\treturn \"wikidev_sourceclasses\";\n\t\t}\n\t\telse {\n\t\t\treturn \"\";\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "matches(String)"
+    ]
+  },
+  "full_method_info": "public static String getDataBaseTable(String entityType) {\n    if (entityType.matches(GLOBAL_SVN)) {\n        return \"wikidev_changesets\";\n    } else if (entityType.matches(GLOBAL_TICKET)) {\n        return \"wikidev_tickets\";\n    } else if (entityType.matches(GLOBAL_WIKI)) {\n        return \"wikidev_wikis\";\n    } else if (entityType.matches(GLOBAL_MAIL)) {\n        return \"wikidev_communications\";\n    } else if (entityType.matches(GLOBAL_SRC)) {\n        return \"wikidev_sourceclasses\";\n    } else {\n        return \"\";\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

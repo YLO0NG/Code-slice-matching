@@ -1,0 +1,58 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.PolygonHandle",
+  "className": "PolygonHandle",
+  "index": 13,
+  "modifier": "[public ]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class PolygonHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import CH.ifa.draw.framework.DrawingView;",
+    "import CH.ifa.draw.framework.Locator;",
+    "import CH.ifa.draw.standard.AbstractHandle;"
+  ],
+  "fields": [
+    "private int fIndex;",
+    "private Locator fLocator;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStep(int, int, int, int, DrawingView)": "0",
+    "invokeEnd(int, int, int, int, DrawingView)": "1",
+    "locate()": "2",
+    "myOwner()": "3",
+    "PolygonHandle(PolygonFigure, Locator, int)": "4"
+  },
+  "methodsBrief": [
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public void invokeEnd  (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public Point locate(){}",
+    "private PolygonFigure myOwner(){}",
+    "public PolygonHandle(PolygonFigure owner, Locator l, int index){}"
+  ],
+  "constructorSigs": [
+    "PolygonHandle(PolygonFigure, Locator, int)"
+  ],
+  "constructorBrief": [
+    "public PolygonHandle(PolygonFigure owner, Locator l, int index){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.contrib.PolygonFigure": [],
+    "CH.ifa.draw.framework.Locator": []
+  },
+  "compilationUnitCode": "/*\n * Fri Feb 28 07:47:13 1997  Doug Lea  (dl at gee)\n * Based on PolyLineHandle\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Point;\nimport CH.ifa.draw.framework.DrawingView;\nimport CH.ifa.draw.framework.Locator;\nimport CH.ifa.draw.standard.AbstractHandle;\n\n/**\n * A handle for a node on the polygon.\n */\npublic class PolygonHandle extends AbstractHandle {\n\n    private int fIndex;\n\n    private Locator fLocator;\n\n    public PolygonHandle(PolygonFigure owner, Locator l, int index) {\n        super(owner);\n        fLocator = l;\n        fIndex = index;\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        myOwner().setPointAt(new Point(x, y), fIndex);\n    }\n\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        myOwner().smoothPoints();\n    }\n\n    public Point locate() {\n        return fLocator.locate(owner());\n    }\n\n    private PolygonFigure myOwner() {\n        return (PolygonFigure) owner();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A handle for a node on the polygon.\n */\npublic class PolygonHandle extends AbstractHandle {\n\n    private int fIndex;\n\n    private Locator fLocator;\n\n    public PolygonHandle(PolygonFigure owner, Locator l, int index) {\n        super(owner);\n        fLocator = l;\n        fIndex = index;\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        myOwner().setPointAt(new Point(x, y), fIndex);\n    }\n\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        myOwner().smoothPoints();\n    }\n\n    public Point locate() {\n        return fLocator.locate(owner());\n    }\n\n    private PolygonFigure myOwner() {\n        return (PolygonFigure) owner();\n    }\n}",
+  "subClasses": []
+}

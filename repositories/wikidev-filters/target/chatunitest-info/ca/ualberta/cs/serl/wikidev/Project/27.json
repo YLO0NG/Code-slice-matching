@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "compareTo",
+  "brief": "public int compareTo(Project o){}",
+  "methodSignature": "compareTo(Project)",
+  "sourceCode": "public int compareTo(Project o) {\n\t\tif(this.equals(o)) {\n\t\t\treturn 0;\n\t\t}\n\t\telse {\n\t\t\treturn 1;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Project"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Project": [],
+    "java.lang.Object": [
+      "equals(Object)"
+    ]
+  },
+  "full_method_info": "public int compareTo(Project o) {\n    if (this.equals(o)) {\n        return 0;\n    } else {\n        return 1;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

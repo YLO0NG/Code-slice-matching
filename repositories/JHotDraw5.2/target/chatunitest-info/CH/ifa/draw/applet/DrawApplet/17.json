@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplet",
+  "methodName": "view",
+  "brief": "public DrawingView view(){}",
+  "methodSignature": "view()",
+  "sourceCode": "public DrawingView view() {\n        return fView;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the current drawing view.\n * @see DrawingEditor\n */\npublic DrawingView view() {\n    return fView;\n}",
+  "method_comment": "\n     * Gets the current drawing view.\n     * @see DrawingEditor\n     ",
+  "method_annotation": ""
+}

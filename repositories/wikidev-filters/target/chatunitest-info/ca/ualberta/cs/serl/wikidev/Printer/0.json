@@ -1,0 +1,47 @@
+{
+  "className": "Printer",
+  "methodName": "printVertice",
+  "brief": "public void printVertice(BufferedWriter out, IArtifact artifact) throws IOException{}",
+  "methodSignature": "printVertice(BufferedWriter, IArtifact)",
+  "sourceCode": "public void printVertice(BufferedWriter out, IArtifact artifact) throws IOException {\n\t\tif (artifact instanceof Ticket) {\n\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\tticket.setIndex(index);\n\t\t\tout.write(ticket.getIndex() + \" \\\"\" + ticket.toString()\n\t\t\t\t\t+ \"\\\" ic Green x_fact\");\n\t\t\tout.newLine();\n\t\t\tindex++;\n\t\t}\n\t\telse if (artifact instanceof Message) {\n\t\t\tMessage message = (Message)artifact;\n\t\t\tmessage.setIndex(index);\n\t\t\tout.write(message.getIndex() + \" \\\"\" + message.toString()\n\t\t\t\t\t+ \"\\\" ic Yellow x_fact \");\n\t\t\tout.newLine();\n\t\t\tindex++;\n\t\t}\n\t\telse if (artifact instanceof Wiki) {\n\t\t\tWiki wiki = (Wiki)artifact;\n\t\t\twiki.setIndex(index);\n\t\t\tout.write(wiki.getIndex() + \" \\\"\" + wiki.toString()\n\t\t\t\t\t+ \"\\\" ic Blue x_fact \");\n\t\t\tout.newLine();\n\t\t\tindex++;\n\t\t}\n\t\telse if (artifact instanceof ChangeSet) {\n\t\t\tChangeSet changeset = (ChangeSet)artifact;\n\t\t\tchangeset.setIndex(index);\n\t\t\tout.write(changeset.getIndex() + \" \\\"\" + changeset.toString()\n\t\t\t\t\t+ \"\\\" ic Black x_fact \");\n\t\t\tout.newLine();\n\t\t\tindex++;\n\t\t}\n\t\telse if (artifact instanceof ChangeSetDetail) {\n\t\t\tChangeSetDetail changesetdetail = (ChangeSetDetail)artifact;\n\t\t\tchangesetdetail.setIndex(index);\n\t\t\tout.write(changesetdetail.getIndex() + \" \\\"\" + changesetdetail.toString()\n\t\t\t\t\t+ \"\\\" ic Magenta x_fact \");\n\t\t\tout.newLine();\n\t\t\tindex++;\n\t\t}\n\t\t\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "BufferedWriter",
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "java.io.BufferedWriter": [
+      "newLine()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setIndex(int)",
+      "getIndex()"
+    ],
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "toString()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [
+      "toString()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": [
+      "toString()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "toString()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "/*public void print(RelationshipMiner rm) throws IOException {\n\t\tindex=1;\n\t\tfor(IArtifact artifact : rm.getArtifactsChanged()) {\n\t\t\tBufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\wikidev-files\\\\\"+artifact.toString()+\".net\"));\n\t\t\tint size = artifact.getDirectlyRelatedArtifacts().size()+artifact.getRelatedArtifactsWithWeights().size()+1;\n\t\t\tout.write(\"*Vertices \" + size);\n\t\t\tout.newLine();\n\t\t\tprintVertice(out, artifact);\n\t\t\tfor(IArtifact directArtifact : artifact.getDirectlyRelatedArtifacts().keySet()) {\n\t\t\t\tprintVertice(out, directArtifact);\n\t\t\t}\n\t\t\tfor(IArtifact indirectArtifact : artifact.getRelatedArtifactsWithWeights().keySet()) {\n\t\t\t\tprintVertice(out, indirectArtifact);\n\t\t\t}\n\t\t\tout.write(\"*Edges\");\n\t\t\tout.newLine();\n\t\t\tfor(IArtifact directArtifact : artifact.getDirectlyRelatedArtifacts().keySet()) {\n\t\t\t\tif(directArtifact.getIndex() == 0) {\n\t\t\t\t\tdirectArtifact.setIndex(index);\n\t\t\t\t\tindex++;\n\t\t\t\t}\n\t\t\t\tif (directArtifact.getIndex() <= size) {\n\t\t\t\t\tString text = artifact.getIndex() + \" \"\n\t\t\t\t\t\t\t+ directArtifact.getIndex() + \" \"\n\t\t\t\t\t\t\t+ artifact.getDirectlyRelatedArtifacts().get(directArtifact);\n\t\t\t\t\ttext += \" c Blue\";\n\t\t\t\t\tout.write(text);\n\t\t\t\t\tout.newLine();\n\t\t\t\t}\n\t\t\t}\n\t\t\tfor(IArtifact indirectArtifact : artifact.getRelatedArtifactsWithWeights().keySet()) {\n\t\t\t\tif(indirectArtifact.getIndex() == 0) {\n\t\t\t\t\tindirectArtifact.setIndex(index);\n\t\t\t\t\tindex++;\n\t\t\t\t}\n\t\t\t\tif (indirectArtifact.getIndex() <= size) {\n\t\t\t\t\tString text = artifact.getIndex() + \" \"\n\t\t\t\t\t\t\t+ indirectArtifact.getIndex() + \" \"\n\t\t\t\t\t\t\t+ ((artifact.getRelatedArtifactsWithWeights().get(indirectArtifact)/SCALEFACTOR)+1);\n\t\t\t\t\ttext += \" c Red\";\n\t\t\t\t\tout.write(text);\n\t\t\t\t\tout.newLine();\n\t\t\t\t}\n\t\t\t}\n\t\t\tout.close();\n\t\t\tindex=1;\n\t\t}\n\t}*/\npublic void printVertice(BufferedWriter out, IArtifact artifact) throws IOException {\n    if (artifact instanceof Ticket) {\n        Ticket ticket = (Ticket) artifact;\n        ticket.setIndex(index);\n        out.write(ticket.getIndex() + \" \\\"\" + ticket.toString() + \"\\\" ic Green x_fact\");\n        out.newLine();\n        index++;\n    } else if (artifact instanceof Message) {\n        Message message = (Message) artifact;\n        message.setIndex(index);\n        out.write(message.getIndex() + \" \\\"\" + message.toString() + \"\\\" ic Yellow x_fact \");\n        out.newLine();\n        index++;\n    } else if (artifact instanceof Wiki) {\n        Wiki wiki = (Wiki) artifact;\n        wiki.setIndex(index);\n        out.write(wiki.getIndex() + \" \\\"\" + wiki.toString() + \"\\\" ic Blue x_fact \");\n        out.newLine();\n        index++;\n    } else if (artifact instanceof ChangeSet) {\n        ChangeSet changeset = (ChangeSet) artifact;\n        changeset.setIndex(index);\n        out.write(changeset.getIndex() + \" \\\"\" + changeset.toString() + \"\\\" ic Black x_fact \");\n        out.newLine();\n        index++;\n    } else if (artifact instanceof ChangeSetDetail) {\n        ChangeSetDetail changesetdetail = (ChangeSetDetail) artifact;\n        changesetdetail.setIndex(index);\n        out.write(changesetdetail.getIndex() + \" \\\"\" + changesetdetail.toString() + \"\\\" ic Magenta x_fact \");\n        out.newLine();\n        index++;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

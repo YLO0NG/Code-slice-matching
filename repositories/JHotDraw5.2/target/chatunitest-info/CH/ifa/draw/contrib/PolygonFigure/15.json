@@ -1,0 +1,27 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "insertPointAt",
+  "brief": "public  void insertPointAt(Point p, int i){}",
+  "methodSignature": "insertPointAt(Point, int)",
+  "sourceCode": "public  void insertPointAt(Point p, int i) {\n    willChange();\n    int n = fPoly.npoints + 1;\n    int[] xs = new int[n];\n    int[] ys = new int[n];\n    for (int j = 0; j < i; ++j) {\n      xs[j] = fPoly.xpoints[j];\n      ys[j] = fPoly.ypoints[j];\n    }\n    xs[i] = p.x;\n    ys[i] = p.y;\n    for (int j = i; j < fPoly.npoints; ++j) {\n      xs[j+1] = fPoly.xpoints[j];\n      ys[j+1] = fPoly.ypoints[j];\n    }\n\n    fPoly = new Polygon(xs, ys, n);\n    changed();\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Insert a node at the given point.\n */\npublic void insertPointAt(Point p, int i) {\n    willChange();\n    int n = fPoly.npoints + 1;\n    int[] xs = new int[n];\n    int[] ys = new int[n];\n    for (int j = 0; j < i; ++j) {\n        xs[j] = fPoly.xpoints[j];\n        ys[j] = fPoly.ypoints[j];\n    }\n    xs[i] = p.x;\n    ys[i] = p.y;\n    for (int j = i; j < fPoly.npoints; ++j) {\n        xs[j + 1] = fPoly.xpoints[j];\n        ys[j + 1] = fPoly.ypoints[j];\n    }\n    fPoly = new Polygon(xs, ys, n);\n    changed();\n}",
+  "method_comment": "\n   * Insert a node at the given point.\n   ",
+  "method_annotation": ""
+}

@@ -1,0 +1,38 @@
+{
+  "className": "DataManager",
+  "methodName": "getProjectUsers",
+  "brief": "private static Set<User> getProjectUsers(int projectID) throws SQLException{}",
+  "methodSignature": "getProjectUsers(int)",
+  "sourceCode": "private static Set<User> getProjectUsers(int projectID) throws SQLException {\n    \tSet<String> usersID = new HashSet<String>();\n    \tSet<User> users = new HashSet<User>();\n    \tString sqlStmt = QueryBuilder.selectProjectUsers(projectID);\n    \tResultSet res = null;\n    \tres = statement.executeQuery(sqlStmt);\n    \twhile(res.next()) {\n    \t\tusersID.add(res.getString(\"userid\"));\n    \t}\n    \tif(res != null) res.close();\n    \tfor (String userID : usersID) {\n\t\t\tusers.add(getUserByUserName(userID));\n\t\t}\n\t\treturn users;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectProjectUsers(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "next()",
+      "close()"
+    ],
+    "java.util.Set": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getUserByUserName(String)"
+    ]
+  },
+  "full_method_info": "private static Set<User> getProjectUsers(int projectID) throws SQLException {\n    Set<String> usersID = new HashSet<String>();\n    Set<User> users = new HashSet<User>();\n    String sqlStmt = QueryBuilder.selectProjectUsers(projectID);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        usersID.add(res.getString(\"userid\"));\n    }\n    if (res != null)\n        res.close();\n    for (String userID : usersID) {\n        users.add(getUserByUserName(userID));\n    }\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

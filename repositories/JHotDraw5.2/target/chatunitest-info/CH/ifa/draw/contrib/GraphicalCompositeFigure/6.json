@@ -1,0 +1,31 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n\t\tgetPresentationFigure().draw(g);\n\t\tsuper.draw(g);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.Figure": [
+      "draw(Graphics)"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "draw(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Draw the figure. This method is delegated to the encapsulated presentation figure.\n */\npublic void draw(Graphics g) {\n    getPresentationFigure().draw(g);\n    super.draw(g);\n}",
+  "method_comment": "\n\t * Draw the figure. This method is delegated to the encapsulated presentation figure.\n\t ",
+  "method_annotation": ""
+}

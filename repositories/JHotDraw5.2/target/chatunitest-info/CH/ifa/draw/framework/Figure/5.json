@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "handles",
+  "brief": "public Vector handles();",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the handles used to manipulate\n * the figure. Handles is a Factory Method for\n * creating handle objects.\n *\n * @return a Vector of handles\n * @see Handle\n */\npublic Vector handles();",
+  "method_comment": "\n     * Returns the handles used to manipulate\n     * the figure. Handles is a Factory Method for\n     * creating handle objects.\n     *\n     * @return a Vector of handles\n     * @see Handle\n     ",
+  "method_annotation": ""
+}

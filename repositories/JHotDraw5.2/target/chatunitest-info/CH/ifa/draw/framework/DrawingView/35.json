@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "drawDrawing",
+  "brief": "public void drawDrawing(Graphics g);",
+  "methodSignature": "drawDrawing(Graphics)",
+  "sourceCode": "public void drawDrawing(Graphics g);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": []
+  },
+  "full_method_info": "/**\n * Draws the drawing.\n */\npublic void drawDrawing(Graphics g);",
+  "method_comment": "\n     * Draws the drawing.\n     ",
+  "method_annotation": ""
+}

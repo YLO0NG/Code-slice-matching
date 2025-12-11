@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "lastClick",
+  "brief": "public Point lastClick();",
+  "methodSignature": "lastClick()",
+  "sourceCode": "public Point lastClick();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the position of the last click inside the view.\n */\npublic Point lastClick();",
+  "method_comment": "\n     * Gets the position of the last click inside the view.\n     ",
+  "method_annotation": ""
+}

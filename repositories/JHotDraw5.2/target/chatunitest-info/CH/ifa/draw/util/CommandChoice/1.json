@@ -1,0 +1,32 @@
+{
+  "className": "CommandChoice",
+  "methodName": "itemStateChanged",
+  "brief": "public void itemStateChanged(ItemEvent e){}",
+  "methodSignature": "itemStateChanged(ItemEvent)",
+  "sourceCode": "public void itemStateChanged(ItemEvent e) {\n    \tif ((getSelectedIndex() >= 0) && (getSelectedIndex() < fCommands.size())) {\n    \t    Command command = (Command)fCommands.elementAt(getSelectedIndex());\n\t        command.execute();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ItemEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.ItemEvent": [],
+    "javax.swing.JComboBox": [
+      "getSelectedIndex()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "CH.ifa.draw.util.Command": [
+      "execute()"
+    ]
+  },
+  "full_method_info": "/**\n * Executes the command.\n */\npublic void itemStateChanged(ItemEvent e) {\n    if ((getSelectedIndex() >= 0) && (getSelectedIndex() < fCommands.size())) {\n        Command command = (Command) fCommands.elementAt(getSelectedIndex());\n        command.execute();\n    }\n}",
+  "method_comment": "\n     * Executes the command.\n     ",
+  "method_annotation": ""
+}

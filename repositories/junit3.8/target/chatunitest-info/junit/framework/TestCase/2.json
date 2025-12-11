@@ -1,0 +1,23 @@
+{
+  "className": "TestCase",
+  "methodName": "run",
+  "brief": "public TestResult run(){}",
+  "methodSignature": "run()",
+  "sourceCode": "public TestResult run() {\r\n\t\tTestResult result= createResult();\r\n\t\trun(result);\r\n\t\treturn result;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestCase": [
+      "run(TestResult)",
+      "createResult()"
+    ]
+  },
+  "full_method_info": "/**\r\n * A convenience method to run this test, collecting the results with a\r\n * default TestResult object.\r\n *\r\n * @see TestResult\r\n */\r\npublic TestResult run() {\r\n    TestResult result = createResult();\r\n    run(result);\r\n    return result;\r\n}",
+  "method_comment": "\r\n\t * A convenience method to run this test, collecting the results with a\r\n\t * default TestResult object.\r\n\t *\r\n\t * @see TestResult\r\n\t ",
+  "method_annotation": ""
+}

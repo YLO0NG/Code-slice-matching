@@ -1,0 +1,27 @@
+class_name,function_name,offset_start,offset_end,line_start,line_end,match_type,matched_slice_count,matched_slice_ids,matched_slice_ranges
+ca.ualberta.cs.serl.wikidev.clustering.Hierarchical,clustering,737,932,26,31,Inside One LLM Slice,1,1,26-31
+ca.ualberta.cs.serl.wikidev.clustering.Hierarchical,clustering,1349,2467,50,81,Inside One LLM Slice,1,3,49-82
+ca.ualberta.cs.serl.wikidev.clustering.Hierarchical,clustering,2487,3579,84,114,Inside One LLM Slice,1,4,83-115
+ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator,getFiedlerVector,685,1180,26,38,Inside One LLM Slice,1,1,26-38
+ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator,getFiedlerVector,1541,2038,49,60,Inside One LLM Slice,1,3,49-60
+ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator,getFiedlerVector,2048,2417,62,72,Inside One LLM Slice,1,4,62-72
+ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator,getFiedlerVector,2426,2729,73,78,Inside One LLM Slice,1,5,73-79
+ca.ualberta.cs.serl.wikidev.RelationshipMiner,getRelationships,2607,4336,100,137,Inside One LLM Slice,1,1,98-137
+ca.ualberta.cs.serl.wikidev.RelationshipMiner,getRelationships,4342,5700,139,171,Inside One LLM Slice,1,2,139-171
+ca.ualberta.cs.serl.wikidev.RelationshipMiner,getRelationships,5706,7782,173,226,Inside One LLM Slice,1,3,173-226
+ca.ualberta.cs.serl.wikidev.ClusteringMain,main,2996,3227,67,74,Inside One LLM Slice,1,6,59-104
+ca.ualberta.cs.serl.wikidev.ClusteringMain,main,3302,3576,76,81,Inside One LLM Slice,1,6,59-104
+ca.ualberta.cs.serl.wikidev.DataManager,getArtifactByTypeAndID,11629,12914,255,275,Inside One LLM Slice,1,4,253-275
+ca.ualberta.cs.serl.wikidev.DataManager,getArtifactByTypeAndID,12952,14664,278,314,Covers Multiple,4,6;7;8;9,278-288;289-297;298-306;308-314
+ca.ualberta.cs.serl.wikidev.DataManager,getArtifactByTypeAndID,13575,13919,290,297,Inside One LLM Slice,1,7,289-297
+ca.ualberta.cs.serl.wikidev.DataManager,getArtifactByTypeAndID,14341,14653,309,313,Inside One LLM Slice,1,9,308-314
+ca.ualberta.cs.serl.wikidev.DataManager,getArtifactByTypeAndID,13969,14286,299,306,Inside One LLM Slice,1,8,298-306
+ca.ualberta.cs.serl.wikidev.RelationshipMiner,relateChangeSetToTicket,9968,10329,295,312,Inside One LLM Slice,1,2,295-312
+ca.ualberta.cs.serl.wikidev.city3d.Layout,getLayout,1302,1624,34,42,Inside One LLM Slice,1,1,34-42
+ca.ualberta.cs.serl.wikidev.city3d.Layout,getLayout,2342,2521,73,80,Inside One LLM Slice,1,4,73-80
+ca.ualberta.cs.serl.wikidev.city3d.Layout,cityBlockInitialization,2982,3353,97,106,Covers Multiple,2,1;2,97-97;98-106
+ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout,printCityBlocks,12288,12837,354,367,Covers Multiple,4,4;5;6;7,354-356;357-363;364-366;367-370
+ca.ualberta.cs.serl.wikidev.city3d.Layout,pushBuildings,4029,4221,124,131,Inside One LLM Slice,1,3,124-131
+ca.ualberta.cs.serl.wikidev.city3d.Layout,pushBuildings,4226,4525,132,140,Inside One LLM Slice,1,4,132-140
+ca.ualberta.cs.serl.wikidev.city3d.CityLayout,printCityBlocks,8329,9174,211,232,Covers Multiple,3,3;4;5,209-213;214-226;227-232
+ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator,getConnectedComponents,8940,9178,269,277,Covers Multiple,2,1;2,269-270;272-277

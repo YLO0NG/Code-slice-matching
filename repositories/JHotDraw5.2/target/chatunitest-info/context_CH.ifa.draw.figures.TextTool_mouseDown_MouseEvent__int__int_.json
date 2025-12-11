@@ -1,0 +1,35 @@
+{
+  "targetClass": "CH.ifa.draw.figures.TextTool",
+  "targetMethod": "mouseDown(MouseEvent, int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.figures.TextTool": "private FloatingTextField   fTextField;\nprivate TextHolder  fTypingTarget;",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.util.FloatingTextField": "private TextField   fEditWidget;\nprivate Container   fContainer;",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;",
+    "CH.ifa.draw.standard.TextHolder": "",
+    "CH.ifa.draw.framework.DrawingEditor": "",
+    "CH.ifa.draw.standard.CreationTool": "private Point   fAnchorPoint;\nprivate Figure  fCreatedFigure;\nprivate Figure  fPrototype;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.figures.TextTool": "protected void endEdit(){}\nprotected void setTypingTarget(TextHolder newTypingTarget){}\nprotected void beginEdit(TextHolder figure){}\nprotected TextHolder getTypingTarget(){}\nprivate Rectangle fieldBounds(TextHolder figure){}",
+    "CH.ifa.draw.framework.Drawing": "public Figure findFigureInside(int x, int y);",
+    "CH.ifa.draw.util.FloatingTextField": "public void setBounds(Rectangle r, String text){}\npublic void createOverlay(Container container, Font font){}",
+    "CH.ifa.draw.framework.DrawingView": "public void checkDamage();",
+    "CH.ifa.draw.standard.AbstractTool": "public DrawingView view(){}\npublic Drawing drawing(){}\npublic DrawingEditor editor(){}",
+    "CH.ifa.draw.standard.TextHolder": "public Font getFont();\npublic String getText();\npublic boolean acceptsTyping();",
+    "CH.ifa.draw.framework.DrawingEditor": "void        toolDone();",
+    "CH.ifa.draw.standard.CreationTool": "public void mouseDown(MouseEvent e, int x, int y){}\nprotected Figure createdFigure(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.figures.TextTool": "protected void endEdit() {\n\t    if (getTypingTarget() != null) {\n\t        if (fTextField.getText().length() > 0)\n\t            getTypingTarget().setText(fTextField.getText());\n\t        else {\n\t            drawing().remove((Figure)getTypingTarget());\n\t        }\n\t        setTypingTarget(null);\n\t        fTextField.endOverlay();\n\t        view().checkDamage();\n\t    }\n    }\nprotected void setTypingTarget(TextHolder newTypingTarget) {\n        fTypingTarget = newTypingTarget;\n    }\nprotected void beginEdit(TextHolder figure) {\n        if (fTextField == null)\n            fTextField = new FloatingTextField();\n\n\t    if (figure != getTypingTarget() && getTypingTarget() != null)\n\t    \tif (getTypingTarget() != null) {\n\t\t\t    if (fTextField.getText().length() > 0)\n\t\t\t        getTypingTarget().setText(fTextField.getText());\n\t\t\t    else {\n\t\t\t        drawing().remove((Figure)getTypingTarget());\n\t\t\t    }\n\t\t\t    setTypingTarget(null);\n\t\t\t    fTextField.endOverlay();\n\t\t\t    view().checkDamage();\n\t\t\t}\n\n        fTextField.createOverlay((Container)view(), figure.getFont());\n\t    fTextField.setBounds(fieldBounds(figure), figure.getText());\n\t    setTypingTarget(figure);\n\n\t    view().checkDamage();\n    }\nprotected TextHolder getTypingTarget() {\n        return fTypingTarget;\n    }\nprivate Rectangle fieldBounds(TextHolder figure) {\n    \tRectangle box = figure.textDisplayBox();\n    \tint nChars = figure.overlayColumns();\n        Dimension d = fTextField.getPreferredSize(nChars);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }",
+    "CH.ifa.draw.framework.Drawing": "* Finds a figure but descends into a figure's\n     * children. Use this method to implement <i>click-through</i>\n     * hit detection, that is, you want to detect the inner most\n     * figure containing the given point.\n     \npublic Figure findFigureInside(int x, int y);",
+    "CH.ifa.draw.util.FloatingTextField": "* Positions the overlay.\n     \npublic void setBounds(Rectangle r, String text) {\n\t    fEditWidget.setText(text);\n        fEditWidget.setBounds(r.x, r.y, r.width, r.height);\n        fEditWidget.setVisible(true);\n\t    fEditWidget.selectAll();\n\t    fEditWidget.requestFocus();\n    }\n\n     * Creates the overlay for the given Container using a\n     * specific font.\n     \npublic void createOverlay(Container container, Font font) {\n        container.add(fEditWidget, 0);\n        if (font != null)\n            fEditWidget.setFont(font);\n        fContainer = container;\n    }",
+    "CH.ifa.draw.framework.DrawingView": "* Checks whether the drawing has some accumulated damage\n     \npublic void checkDamage();",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's view.\n     \npublic DrawingView view() {\n        return fView;\n    }\n\n     * Gets the tool's drawing.\n     \npublic Drawing drawing() {\n        return view().drawing();\n    }\n\n     * Gets the tool's editor.\n     \npublic DrawingEditor editor() {\n        return view().editor();\n    }",
+    "CH.ifa.draw.standard.TextHolder": "* Gets the font.\n     \npublic Font getFont();\n\n     * Gets the text shown by the text figure.\n     \npublic String getText();\n\n     * Tests whether the figure accepts typing.\n     \npublic boolean acceptsTyping();",
+    "CH.ifa.draw.framework.DrawingEditor": "* Informs the editor that a tool has done its interaction.\n     * This method can be used to switch back to the default tool.\n     \nvoid        toolDone();",
+    "CH.ifa.draw.standard.CreationTool": "* Creates a new figure by cloning the prototype.\n     \npublic void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorPoint = new Point(x,y);\n        fCreatedFigure = createFigure();\n        fCreatedFigure.displayBox(fAnchorPoint, fAnchorPoint);\n        view().add(fCreatedFigure);\n    }\n\n     * Gets the currently created figure\n     \nprotected Figure createdFigure() {\n        return fCreatedFigure;\n    }"
+  }
+}

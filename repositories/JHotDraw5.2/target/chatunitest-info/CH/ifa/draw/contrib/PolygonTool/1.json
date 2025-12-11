@@ -1,0 +1,33 @@
+{
+  "className": "PolygonTool",
+  "methodName": "deactivate",
+  "brief": "public void deactivate(){}",
+  "methodSignature": "deactivate()",
+  "sourceCode": "public void deactivate() {\n    super.deactivate();\n    if (fPolygon != null) {\n      fPolygon.smoothPoints();\n      if (fPolygon.pointCount() < 3 ||\n          fPolygon.size().width < 4 || fPolygon.size().height < 4)\n        drawing().remove(fPolygon);\n    }\n    fPolygon = null;\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()",
+      "deactivate()"
+    ],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "smoothPoints()",
+      "pointCount()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "size()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "remove(Figure)"
+    ]
+  },
+  "full_method_info": "public void deactivate() {\n    super.deactivate();\n    if (fPolygon != null) {\n        fPolygon.smoothPoints();\n        if (fPolygon.pointCount() < 3 || fPolygon.size().width < 4 || fPolygon.size().height < 4)\n            drawing().remove(fPolygon);\n    }\n    fPolygon = null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

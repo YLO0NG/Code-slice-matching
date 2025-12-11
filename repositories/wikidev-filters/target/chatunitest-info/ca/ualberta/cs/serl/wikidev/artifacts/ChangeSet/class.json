@@ -1,0 +1,105 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet",
+  "className": "ChangeSet",
+  "index": 0,
+  "modifier": "[public ]",
+  "extend": "[IArtifact]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class ChangeSet",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.Timestamp;",
+    "import java.util.AbstractSet;",
+    "import java.util.ArrayList;",
+    "import java.util.HashMap;",
+    "import java.util.HashSet;",
+    "import java.util.Set;",
+    "import java.util.TreeSet;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [
+    "private int changeSetID;",
+    "private int externalSystemID;",
+    "private String comment;",
+    "private String externalAuthorUserName;",
+    "private int project;",
+    "private int revision;",
+    "private ArrayList<ChangeSetDetail> changesetDetails;"
+  ],
+  "superClasses": [
+    "IArtifact"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getRevision()": "0",
+    "setRevision(int)": "1",
+    "getChangesetDetails()": "2",
+    "setChangesetDetails(ArrayList)": "3",
+    "getExternalAuthorUserName()": "4",
+    "getChangeSetID()": "5",
+    "getExternalSystemID()": "6",
+    "getComment()": "7",
+    "getAssociatedUsers()": "8",
+    "toString()": "9",
+    "compareTo(IArtifact)": "10",
+    "setAuthorForChangeSetDetails()": "11",
+    "ChangeSet(int, String, String, int, Timestamp, int, int)": "12"
+  },
+  "methodsBrief": [
+    "public int getRevision(){}",
+    "public void setRevision(int revision){}",
+    "public ArrayList<ChangeSetDetail> getChangesetDetails(){}",
+    "public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails){}",
+    "public String getExternalAuthorUserName(){}",
+    "public int getChangeSetID(){}",
+    "public int getExternalSystemID(){}",
+    "public String getComment(){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "@Override\r\n\tpublic String toString(){}",
+    "public int compareTo(IArtifact o){}",
+    "public void setAuthorForChangeSetDetails(){}",
+    "public ChangeSet(int changeSetID, String comment, String externalAuthorUserName,\r\n\t\t\tint externalSystemID, Timestamp timestamp, int revision, int project){}"
+  ],
+  "constructorSigs": [
+    "ChangeSet(int, String, String, int, Timestamp, int, int)"
+  ],
+  "constructorBrief": [
+    "public ChangeSet(int changeSetID, String comment, String externalAuthorUserName,\r\n\t\t\tint externalSystemID, Timestamp timestamp, int revision, int project){}"
+  ],
+  "getterSetterSigs": [
+    "getRevision()",
+    "setRevision(int)",
+    "getChangesetDetails()",
+    "setChangesetDetails(ArrayList)",
+    "getExternalAuthorUserName()",
+    "getChangeSetID()",
+    "getExternalSystemID()",
+    "getComment()",
+    "getAssociatedUsers()",
+    "setAuthorForChangeSetDetails()"
+  ],
+  "getterSetterBrief": [
+    "public int getRevision(){}",
+    "public void setRevision(int revision){}",
+    "public ArrayList<ChangeSetDetail> getChangesetDetails(){}",
+    "public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails){}",
+    "public String getExternalAuthorUserName(){}",
+    "public int getChangeSetID(){}",
+    "public int getExternalSystemID(){}",
+    "public String getComment(){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "public void setAuthorForChangeSetDetails(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\nimport java.sql.Timestamp;\nimport java.util.AbstractSet;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.HashSet;\nimport java.util.Set;\nimport java.util.TreeSet;\nimport ca.ualberta.cs.serl.wikidev.User;\n\n/**\n * @author   User\n */\npublic class ChangeSet extends IArtifact {\n\n    /**\n     * @uml.property  name=\"changeSetID\"\n     */\n    private int changeSetID;\n\n    /**\n     * @uml.property  name=\"externalSystemID\"\n     */\n    private int externalSystemID;\n\n    /**\n     * @uml.property  name=\"comment\"\n     */\n    private String comment;\n\n    /**\n     * @uml.property  name=\"externalAuthorUserName\"\n     */\n    private String externalAuthorUserName;\n\n    /**\n     * @uml.property  name=\"project\"\n     */\n    private int project;\n\n    /**\n     * @uml.property  name=\"revision\"\n     */\n    private int revision;\n\n    /**\n     * @uml.property  name=\"changesetDetails\"\n     */\n    private ArrayList<ChangeSetDetail> changesetDetails;\n\n    public ChangeSet(int changeSetID, String comment, String externalAuthorUserName, int externalSystemID, Timestamp timestamp, int revision, int project) {\n        this.changeSetID = changeSetID;\n        this.comment = comment;\n        this.externalAuthorUserName = externalAuthorUserName;\n        this.externalSystemID = externalSystemID;\n        this.timestamp = timestamp;\n        this.revision = revision;\n        this.project = project;\n        this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n        // this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n        this.changesetDetails = new ArrayList<ChangeSetDetail>();\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"revision\"\n     */\n    public int getRevision() {\n        return revision;\n    }\n\n    /**\n     * @param revision\n     * @uml.property  name=\"revision\"\n     */\n    public void setRevision(int revision) {\n        this.revision = revision;\n    }\n\n    public ArrayList<ChangeSetDetail> getChangesetDetails() {\n        return changesetDetails;\n    }\n\n    public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails) {\n        this.changesetDetails = changesetDetails;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"externalAuthorUserName\"\n     */\n    public String getExternalAuthorUserName() {\n        return externalAuthorUserName;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"changeSetID\"\n     */\n    public int getChangeSetID() {\n        return changeSetID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"externalSystemID\"\n     */\n    public int getExternalSystemID() {\n        return externalSystemID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"comment\"\n     */\n    public String getComment() {\n        return comment;\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        users.add(owner);\n        return users;\n    }\n\n    @Override\n    public String toString() {\n        return \"Changeset\" + revision + \" \" + super.toString();\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof ChangeSet) {\n            if (this.equals((ChangeSet) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n\n    public void setAuthorForChangeSetDetails() {\n        for (ChangeSetDetail changeSetDetail : this.changesetDetails) {\n            changeSetDetail.setOwner(this.owner);\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * @author   User\n */\npublic class ChangeSet extends IArtifact {\n\n    /**\n     * @uml.property  name=\"changeSetID\"\n     */\n    private int changeSetID;\n\n    /**\n     * @uml.property  name=\"externalSystemID\"\n     */\n    private int externalSystemID;\n\n    /**\n     * @uml.property  name=\"comment\"\n     */\n    private String comment;\n\n    /**\n     * @uml.property  name=\"externalAuthorUserName\"\n     */\n    private String externalAuthorUserName;\n\n    /**\n     * @uml.property  name=\"project\"\n     */\n    private int project;\n\n    /**\n     * @uml.property  name=\"revision\"\n     */\n    private int revision;\n\n    /**\n     * @uml.property  name=\"changesetDetails\"\n     */\n    private ArrayList<ChangeSetDetail> changesetDetails;\n\n    public ChangeSet(int changeSetID, String comment, String externalAuthorUserName, int externalSystemID, Timestamp timestamp, int revision, int project) {\n        this.changeSetID = changeSetID;\n        this.comment = comment;\n        this.externalAuthorUserName = externalAuthorUserName;\n        this.externalSystemID = externalSystemID;\n        this.timestamp = timestamp;\n        this.revision = revision;\n        this.project = project;\n        this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n        // this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n        this.changesetDetails = new ArrayList<ChangeSetDetail>();\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"revision\"\n     */\n    public int getRevision() {\n        return revision;\n    }\n\n    /**\n     * @param revision\n     * @uml.property  name=\"revision\"\n     */\n    public void setRevision(int revision) {\n        this.revision = revision;\n    }\n\n    public ArrayList<ChangeSetDetail> getChangesetDetails() {\n        return changesetDetails;\n    }\n\n    public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails) {\n        this.changesetDetails = changesetDetails;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"externalAuthorUserName\"\n     */\n    public String getExternalAuthorUserName() {\n        return externalAuthorUserName;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"changeSetID\"\n     */\n    public int getChangeSetID() {\n        return changeSetID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"externalSystemID\"\n     */\n    public int getExternalSystemID() {\n        return externalSystemID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"comment\"\n     */\n    public String getComment() {\n        return comment;\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        users.add(owner);\n        return users;\n    }\n\n    @Override\n    public String toString() {\n        return \"Changeset\" + revision + \" \" + super.toString();\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof ChangeSet) {\n            if (this.equals((ChangeSet) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n\n    public void setAuthorForChangeSetDetails() {\n        for (ChangeSetDetail changeSetDetail : this.changesetDetails) {\n            changeSetDetail.setOwner(this.owner);\n        }\n    }\n}",
+  "subClasses": []
+}

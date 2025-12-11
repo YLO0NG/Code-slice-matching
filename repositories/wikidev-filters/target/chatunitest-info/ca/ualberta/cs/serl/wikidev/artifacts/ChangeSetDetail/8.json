@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setRev",
+  "brief": "public void setRev(int rev){}",
+  "methodSignature": "setRev(int)",
+  "sourceCode": "public void setRev(int rev) {\n\t\tthis.rev = rev;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param rev\n * @uml.property  name=\"rev\"\n */\npublic void setRev(int rev) {\n    this.rev = rev;\n}",
+  "method_comment": "\n\t * @param rev\n\t * @uml.property  name=\"rev\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "className": "PertDependency",
+  "methodName": "canConnect",
+  "brief": "public boolean canConnect(Figure start, Figure end){}",
+  "methodSignature": "canConnect(Figure, Figure)",
+  "sourceCode": "public boolean canConnect(Figure start, Figure end) {\n        return (start instanceof PertFigure && end instanceof PertFigure);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "public boolean canConnect(Figure start, Figure end) {\n    return (start instanceof PertFigure && end instanceof PertFigure);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

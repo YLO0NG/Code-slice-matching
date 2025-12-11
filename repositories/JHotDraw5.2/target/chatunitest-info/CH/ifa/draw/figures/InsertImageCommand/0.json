@@ -1,0 +1,32 @@
+{
+  "className": "InsertImageCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        // ugly cast to component, but AWT wants and Component instead of an ImageObserver...\n        Iconkit r = Iconkit.instance();\n\t\tr.registerImage(fImage);\n\t\tr.loadRegisteredImages((Component)fView);\n\t\tImage image = r.getImage(fImage);\n        ImageFigure figure = new ImageFigure(image, fImage, fView.lastClick());\n        fView.add(figure);\n        fView.clearSelection();\n        fView.addToSelection(figure);\n        fView.checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Iconkit": [
+      "registerImage(String)",
+      "instance()",
+      "getImage(String)",
+      "loadRegisteredImages(Component)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "clearSelection()",
+      "addToSelection(Figure)",
+      "lastClick()",
+      "add(Figure)",
+      "checkDamage()"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    // ugly cast to component, but AWT wants and Component instead of an ImageObserver...\n    Iconkit r = Iconkit.instance();\n    r.registerImage(fImage);\n    r.loadRegisteredImages((Component) fView);\n    Image image = r.getImage(fImage);\n    ImageFigure figure = new ImageFigure(image, fImage, fView.lastClick());\n    fView.add(figure);\n    fView.clearSelection();\n    fView.addToSelection(figure);\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

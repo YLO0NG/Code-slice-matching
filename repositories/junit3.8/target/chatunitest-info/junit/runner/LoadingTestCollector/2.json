@@ -1,0 +1,32 @@
+{
+  "className": "LoadingTestCollector",
+  "methodName": "isTestClass",
+  "brief": "boolean isTestClass(Class testClass){}",
+  "methodSignature": "isTestClass(Class)",
+  "sourceCode": "boolean isTestClass(Class testClass) {\r\n\t\tif (hasSuiteMethod(testClass))\r\n\t\t\treturn true;\r\n\t\tif (Test.class.isAssignableFrom(testClass) &&\r\n\t\t\tModifier.isPublic(testClass.getModifiers()) &&\r\n\t\t\thasPublicConstructor(testClass)) \r\n\t\t\treturn true;\r\n\t\treturn false;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Class"
+  ],
+  "dependentMethods": {
+    "java.lang.Class": [
+      "isAssignableFrom(Object>)",
+      "getModifiers()"
+    ],
+    "junit.runner.LoadingTestCollector": [
+      "hasPublicConstructor(Class)",
+      "hasSuiteMethod(Class)"
+    ],
+    "java.lang.reflect.Modifier": [
+      "isPublic(int)"
+    ]
+  },
+  "full_method_info": "boolean isTestClass(Class testClass) {\r\n    if (hasSuiteMethod(testClass))\r\n        return true;\r\n    if (Test.class.isAssignableFrom(testClass) && Modifier.isPublic(testClass.getModifiers()) && hasPublicConstructor(testClass))\r\n        return true;\r\n    return false;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

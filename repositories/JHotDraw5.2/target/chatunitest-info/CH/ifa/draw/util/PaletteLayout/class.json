@@ -1,0 +1,65 @@
+{
+  "fullClassName": "CH.ifa.draw.util.PaletteLayout",
+  "className": "PaletteLayout",
+  "index": 161,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[LayoutManager]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class PaletteLayout",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;"
+  ],
+  "fields": [
+    "private int         fGap;",
+    "private Point       fBorder;",
+    "private boolean     fVerticalLayout;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "LayoutManager"
+  ],
+  "methodSigs": {
+    "addLayoutComponent(String, Component)": "0",
+    "removeLayoutComponent(Component)": "1",
+    "preferredLayoutSize(Container)": "2",
+    "minimumLayoutSize(Container)": "3",
+    "layoutContainer(Container)": "4",
+    "PaletteLayout(int)": "5",
+    "PaletteLayout(int, Point)": "6",
+    "PaletteLayout(int, Point, boolean)": "7"
+  },
+  "methodsBrief": [
+    "public void addLayoutComponent(String name, Component comp){}",
+    "public void removeLayoutComponent(Component comp){}",
+    "public Dimension preferredLayoutSize(Container target){}",
+    "public Dimension minimumLayoutSize(Container target){}",
+    "public void layoutContainer(Container target){}",
+    "public PaletteLayout(int gap){}",
+    "public PaletteLayout(int gap, Point border){}",
+    "public PaletteLayout(int gap, Point border, boolean vertical){}"
+  ],
+  "constructorSigs": [
+    "PaletteLayout(int)",
+    "PaletteLayout(int, Point)",
+    "PaletteLayout(int, Point, boolean)"
+  ],
+  "constructorBrief": [
+    "public PaletteLayout(int gap){}",
+    "public PaletteLayout(int gap, Point border){}",
+    "public PaletteLayout(int gap, Point border, boolean vertical){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.awt.Point": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PaletteLayout.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.awt.*;\n\n/**\n * A custom layout manager for the palette.\n * @see PaletteButton\n */\npublic class PaletteLayout implements LayoutManager {\n\n    private int fGap;\n\n    private Point fBorder;\n\n    private boolean fVerticalLayout;\n\n    public PaletteLayout(int gap) {\n        this(gap, new Point(0, 0), true);\n    }\n\n    public PaletteLayout(int gap, Point border) {\n        this(gap, border, true);\n    }\n\n    public PaletteLayout(int gap, Point border, boolean vertical) {\n        fGap = gap;\n        fBorder = border;\n        fVerticalLayout = vertical;\n    }\n\n    public void addLayoutComponent(String name, Component comp) {\n    }\n\n    public void removeLayoutComponent(Component comp) {\n    }\n\n    public Dimension preferredLayoutSize(Container target) {\n        return minimumLayoutSize(target);\n    }\n\n    public Dimension minimumLayoutSize(Container target) {\n        Dimension dim = new Dimension(0, 0);\n        int nmembers = target.getComponentCount();\n        for (int i = 0; i < nmembers; i++) {\n            Component m = target.getComponent(i);\n            if (m.isVisible()) {\n                Dimension d = m.getMinimumSize();\n                if (fVerticalLayout) {\n                    dim.width = Math.max(dim.width, d.width);\n                    if (i > 0)\n                        dim.height += fGap;\n                    dim.height += d.height;\n                } else {\n                    dim.height = Math.max(dim.height, d.height);\n                    if (i > 0)\n                        dim.width += fGap;\n                    dim.width += d.width;\n                }\n            }\n        }\n        Insets insets = target.getInsets();\n        dim.width += insets.left + insets.right;\n        dim.width += 2 * fBorder.x;\n        dim.height += insets.top + insets.bottom;\n        dim.height += 2 * fBorder.y;\n        return dim;\n    }\n\n    public void layoutContainer(Container target) {\n        Insets insets = target.getInsets();\n        int nmembers = target.getComponentCount();\n        int x = insets.left + fBorder.x;\n        int y = insets.top + fBorder.y;\n        for (int i = 0; i < nmembers; i++) {\n            Component m = target.getComponent(i);\n            if (m.isVisible()) {\n                Dimension d = m.getMinimumSize();\n                m.setBounds(x, y, d.width, d.height);\n                if (fVerticalLayout) {\n                    y += d.height;\n                    y += fGap;\n                } else {\n                    x += d.width;\n                    x += fGap;\n                }\n            }\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A custom layout manager for the palette.\n * @see PaletteButton\n */\npublic class PaletteLayout implements LayoutManager {\n\n    private int fGap;\n\n    private Point fBorder;\n\n    private boolean fVerticalLayout;\n\n    public PaletteLayout(int gap) {\n        this(gap, new Point(0, 0), true);\n    }\n\n    public PaletteLayout(int gap, Point border) {\n        this(gap, border, true);\n    }\n\n    public PaletteLayout(int gap, Point border, boolean vertical) {\n        fGap = gap;\n        fBorder = border;\n        fVerticalLayout = vertical;\n    }\n\n    public void addLayoutComponent(String name, Component comp) {\n    }\n\n    public void removeLayoutComponent(Component comp) {\n    }\n\n    public Dimension preferredLayoutSize(Container target) {\n        return minimumLayoutSize(target);\n    }\n\n    public Dimension minimumLayoutSize(Container target) {\n        Dimension dim = new Dimension(0, 0);\n        int nmembers = target.getComponentCount();\n        for (int i = 0; i < nmembers; i++) {\n            Component m = target.getComponent(i);\n            if (m.isVisible()) {\n                Dimension d = m.getMinimumSize();\n                if (fVerticalLayout) {\n                    dim.width = Math.max(dim.width, d.width);\n                    if (i > 0)\n                        dim.height += fGap;\n                    dim.height += d.height;\n                } else {\n                    dim.height = Math.max(dim.height, d.height);\n                    if (i > 0)\n                        dim.width += fGap;\n                    dim.width += d.width;\n                }\n            }\n        }\n        Insets insets = target.getInsets();\n        dim.width += insets.left + insets.right;\n        dim.width += 2 * fBorder.x;\n        dim.height += insets.top + insets.bottom;\n        dim.height += 2 * fBorder.y;\n        return dim;\n    }\n\n    public void layoutContainer(Container target) {\n        Insets insets = target.getInsets();\n        int nmembers = target.getComponentCount();\n        int x = insets.left + fBorder.x;\n        int y = insets.top + fBorder.y;\n        for (int i = 0; i < nmembers; i++) {\n            Component m = target.getComponent(i);\n            if (m.isVisible()) {\n                Dimension d = m.getMinimumSize();\n                m.setBounds(x, y, d.width, d.height);\n                if (fVerticalLayout) {\n                    y += d.height;\n                    y += fGap;\n                } else {\n                    x += d.width;\n                    x += fGap;\n                }\n            }\n        }\n    }\n}",
+  "subClasses": []
+}

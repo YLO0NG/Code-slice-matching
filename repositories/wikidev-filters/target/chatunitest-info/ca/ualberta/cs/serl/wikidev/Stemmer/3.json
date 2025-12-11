@@ -1,0 +1,18 @@
+{
+  "className": "Stemmer",
+  "methodName": "getResultLength",
+  "brief": "public int getResultLength(){}",
+  "methodSignature": "getResultLength()",
+  "sourceCode": "public int getResultLength() { return i_end; }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the length of the word resulting from the stemming process.\n */\npublic int getResultLength() {\n    return i_end;\n}",
+  "method_comment": "\n    * Returns the length of the word resulting from the stemming process.\n    ",
+  "method_annotation": ""
+}

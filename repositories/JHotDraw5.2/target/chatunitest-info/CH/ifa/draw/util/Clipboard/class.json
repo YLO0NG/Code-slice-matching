@@ -1,0 +1,54 @@
+{
+  "fullClassName": "CH.ifa.draw.util.Clipboard",
+  "className": "Clipboard",
+  "index": 148,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public class Clipboard",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "static Clipboard fgClipboard = new Clipboard();",
+    "private Object fContents;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getClipboard()": "0",
+    "setContents(Object)": "1",
+    "getContents()": "2",
+    "Clipboard()": "3"
+  },
+  "methodsBrief": [
+    "static public Clipboard getClipboard(){}",
+    "public void setContents(Object contents){}",
+    "public Object getContents(){}",
+    "private Clipboard(){}"
+  ],
+  "constructorSigs": [
+    "Clipboard()"
+  ],
+  "constructorBrief": [
+    "private Clipboard(){}"
+  ],
+  "getterSetterSigs": [
+    "getClipboard()",
+    "setContents(Object)",
+    "getContents()"
+  ],
+  "getterSetterBrief": [
+    "static public Clipboard getClipboard(){}",
+    "public void setContents(Object contents){}",
+    "public Object getContents(){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Clipboard.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\n/**\n * A temporary replacement for a global clipboard.\n * It is a singleton that can be used to store and\n * get the contents of the clipboard.\n */\npublic class Clipboard {\n\n    static Clipboard fgClipboard = new Clipboard();\n\n    /**\n     * Gets the clipboard.\n     */\n    static public Clipboard getClipboard() {\n        return fgClipboard;\n    }\n\n    private Object fContents;\n\n    private Clipboard() {\n    }\n\n    /**\n     * Sets the contents of the clipboard.\n     */\n    public void setContents(Object contents) {\n        fContents = contents;\n    }\n\n    /**\n     * Gets the contents of the clipboard.\n     */\n    public Object getContents() {\n        return fContents;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A temporary replacement for a global clipboard.\n * It is a singleton that can be used to store and\n * get the contents of the clipboard.\n */\npublic class Clipboard {\n\n    static Clipboard fgClipboard = new Clipboard();\n\n    /**\n     * Gets the clipboard.\n     */\n    static public Clipboard getClipboard() {\n        return fgClipboard;\n    }\n\n    private Object fContents;\n\n    private Clipboard() {\n    }\n\n    /**\n     * Sets the contents of the clipboard.\n     */\n    public void setContents(Object contents) {\n        fContents = contents;\n    }\n\n    /**\n     * Gets the contents of the clipboard.\n     */\n    public Object getContents() {\n        return fContents;\n    }\n}",
+  "subClasses": []
+}

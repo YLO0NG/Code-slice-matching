@@ -1,0 +1,37 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.FigureEnumeration",
+  "className": "FigureEnumeration",
+  "index": 65,
+  "modifier": "[public ]",
+  "extend": "[Enumeration]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface FigureEnumeration",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "Enumeration"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "nextFigure()": "0"
+  },
+  "methodsBrief": [
+    "public Figure nextFigure();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)FigureEnumeration.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.util.*;\n\n/**\n * Interface for Enumerations that access Figures.\n * It provides a method nextFigure, that hides the down casting\n * from client code.\n */\npublic interface FigureEnumeration extends Enumeration {\n\n    /**\n     * Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     */\n    public Figure nextFigure();\n}\n",
+  "classDeclarationCode": "/**\n * Interface for Enumerations that access Figures.\n * It provides a method nextFigure, that hides the down casting\n * from client code.\n */\npublic interface FigureEnumeration extends Enumeration {\n\n    /**\n     * Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     */\n    public Figure nextFigure();\n}",
+  "subClasses": []
+}

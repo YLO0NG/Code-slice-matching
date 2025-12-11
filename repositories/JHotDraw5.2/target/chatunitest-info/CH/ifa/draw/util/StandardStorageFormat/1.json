@@ -1,0 +1,22 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "setFileExtension",
+  "brief": "public void setFileExtension(String newFileExtension){}",
+  "methodSignature": "setFileExtension(String)",
+  "sourceCode": "public void setFileExtension(String newFileExtension) {\n\t\tmyFileExtension = newFileExtension;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Set the file extension for the storage format\n *\n * @param file extension\n */\npublic void setFileExtension(String newFileExtension) {\n    myFileExtension = newFileExtension;\n}",
+  "method_comment": "\n\t * Set the file extension for the storage format\n\t *\n\t * @param file extension\n\t ",
+  "method_annotation": ""
+}

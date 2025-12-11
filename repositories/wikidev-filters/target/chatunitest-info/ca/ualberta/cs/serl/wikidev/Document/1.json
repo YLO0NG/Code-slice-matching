@@ -1,0 +1,18 @@
+{
+  "className": "Document",
+  "methodName": "getTerms",
+  "brief": "public Set<String> getTerms(){}",
+  "methodSignature": "getTerms()",
+  "sourceCode": "public Set<String> getTerms() {\n\t\treturn terms;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Set<String> getTerms() {\n    return terms;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

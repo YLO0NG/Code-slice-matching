@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "drawAll",
+  "brief": "public void drawAll(Graphics g);",
+  "methodSignature": "drawAll(Graphics)",
+  "sourceCode": "public void drawAll(Graphics g);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": []
+  },
+  "full_method_info": "/**\n * Draws the contents of the drawing view.\n * The view has three layers: background, drawing, handles.\n * The layers are drawn in back to front order.\n */\npublic void drawAll(Graphics g);",
+  "method_comment": "\n     * Draws the contents of the drawing view.\n     * The view has three layers: background, drawing, handles.\n     * The layers are drawn in back to front order.\n     ",
+  "method_annotation": ""
+}

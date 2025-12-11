@@ -1,0 +1,22 @@
+{
+  "className": "StandardLayouter",
+  "methodName": "setLayoutable",
+  "brief": "public void setLayoutable(Layoutable newLayoutable){}",
+  "methodSignature": "setLayoutable(Layoutable)",
+  "sourceCode": "public void setLayoutable(Layoutable newLayoutable) {\n\t\tmyLayoutable = newLayoutable;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Layoutable"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.Layoutable": []
+  },
+  "full_method_info": "/**\n * Set the figure upon which the layout strategy operates.\n *\n * @param\tnewLayoutable\tLayoutable to be laid out\n */\npublic void setLayoutable(Layoutable newLayoutable) {\n    myLayoutable = newLayoutable;\n}",
+  "method_comment": "\n\t * Set the figure upon which the layout strategy operates.\n\t *\n\t * @param\tnewLayoutable\tLayoutable to be laid out\n\t ",
+  "method_annotation": ""
+}

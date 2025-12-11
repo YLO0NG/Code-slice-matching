@@ -1,0 +1,22 @@
+{
+  "className": "ChangeSet",
+  "methodName": "setAuthorForChangeSetDetails",
+  "brief": "public void setAuthorForChangeSetDetails(){}",
+  "methodSignature": "setAuthorForChangeSetDetails()",
+  "sourceCode": "public void setAuthorForChangeSetDetails() {\n\t\tfor(ChangeSetDetail changeSetDetail : this.changesetDetails) {\n\t\t\tchangeSetDetail.setOwner(this.owner);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setOwner(User)"
+    ]
+  },
+  "full_method_info": "public void setAuthorForChangeSetDetails() {\n    for (ChangeSetDetail changeSetDetail : this.changesetDetails) {\n        changeSetDetail.setOwner(this.owner);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

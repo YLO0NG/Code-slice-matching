@@ -1,0 +1,18 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "getWord",
+  "brief": "public String getWord(){}",
+  "methodSignature": "getWord()",
+  "sourceCode": "public String getWord() {\n\t\treturn word;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"word\"\n */\npublic String getWord() {\n    return word;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"word\"\n\t ",
+  "method_annotation": ""
+}

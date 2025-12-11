@@ -1,0 +1,29 @@
+{
+  "className": "StorableOutput",
+  "methodName": "writeColor",
+  "brief": "public void writeColor(Color c){}",
+  "methodSignature": "writeColor(Color)",
+  "sourceCode": "public void writeColor(Color c) {\n        writeInt(c.getRed());\n        writeInt(c.getGreen());\n        writeInt(c.getBlue());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": [
+      "getGreen()",
+      "getBlue()",
+      "getRed()"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)"
+    ]
+  },
+  "full_method_info": "public void writeColor(Color c) {\n    writeInt(c.getRed());\n    writeInt(c.getGreen());\n    writeInt(c.getBlue());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

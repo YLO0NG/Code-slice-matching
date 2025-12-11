@@ -1,0 +1,21 @@
+{
+  "className": "DrawingView",
+  "methodName": "findHandle",
+  "brief": "public Handle findHandle(int x, int y);",
+  "methodSignature": "findHandle(int, int)",
+  "sourceCode": "public Handle findHandle(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Finds a handle at the given coordinates.\n * @return the hit handle, null if no handle is found.\n */\npublic Handle findHandle(int x, int y);",
+  "method_comment": "\n     * Finds a handle at the given coordinates.\n     * @return the hit handle, null if no handle is found.\n     ",
+  "method_annotation": ""
+}

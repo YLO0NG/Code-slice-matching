@@ -1,0 +1,53 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.GroupCommand",
+  "className": "GroupCommand",
+  "index": 34,
+  "modifier": "[public ]",
+  "extend": "[Command]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class GroupCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import CH.ifa.draw.util.Command;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private DrawingView fView;"
+  ],
+  "superClasses": [
+    "Command"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "isExecutable()": "1",
+    "GroupCommand(String, DrawingView)": "2"
+  },
+  "methodsBrief": [
+    "public void execute(){}",
+    "public boolean isExecutable(){}",
+    "public GroupCommand(String name, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "GroupCommand(String, DrawingView)"
+  ],
+  "constructorBrief": [
+    "public GroupCommand(String name, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)GroupCommand.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.util.*;\nimport CH.ifa.draw.util.Command;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * Command to group the selection into a GroupFigure.\n *\n * @see GroupFigure\n */\npublic class GroupCommand extends Command {\n\n    private DrawingView fView;\n\n    public GroupCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }\n\n    public void execute() {\n        Vector selected = fView.selectionZOrdered();\n        Drawing drawing = fView.drawing();\n        if (selected.size() > 0) {\n            fView.clearSelection();\n            drawing.orphanAll(selected);\n            GroupFigure group = new GroupFigure();\n            Enumeration k = selected.elements();\n            while (k.hasMoreElements()) group.add((Figure) k.nextElement());\n            fView.addToSelection(drawing.add(group));\n        }\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Command to group the selection into a GroupFigure.\n *\n * @see GroupFigure\n */\npublic class GroupCommand extends Command {\n\n    private DrawingView fView;\n\n    public GroupCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }\n\n    public void execute() {\n        Vector selected = fView.selectionZOrdered();\n        Drawing drawing = fView.drawing();\n        if (selected.size() > 0) {\n            fView.clearSelection();\n            drawing.orphanAll(selected);\n            GroupFigure group = new GroupFigure();\n            Enumeration k = selected.elements();\n            while (k.hasMoreElements()) group.add((Figure) k.nextElement());\n            fView.addToSelection(drawing.add(group));\n        }\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,22 @@
+{
+  "className": "PolygonHandle",
+  "methodName": "myOwner",
+  "brief": "private PolygonFigure myOwner(){}",
+  "methodSignature": "myOwner()",
+  "sourceCode": "private PolygonFigure myOwner() {\n    return (PolygonFigure)owner();\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "private PolygonFigure myOwner() {\n    return (PolygonFigure) owner();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

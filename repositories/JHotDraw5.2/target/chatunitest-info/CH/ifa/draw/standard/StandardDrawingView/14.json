@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "selectionCount",
+  "brief": "public int selectionCount(){}",
+  "methodSignature": "selectionCount()",
+  "sourceCode": "public int selectionCount() {\n        return fSelection.size();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the number of selected figures.\n */\npublic int selectionCount() {\n    return fSelection.size();\n}",
+  "method_comment": "\n     * Gets the number of selected figures.\n     ",
+  "method_annotation": ""
+}

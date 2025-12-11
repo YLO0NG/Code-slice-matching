@@ -1,0 +1,21 @@
+{
+  "className": "AnimationDecorator",
+  "methodName": "velocity",
+  "brief": "public void velocity(int xVelocity, int yVelocity){}",
+  "methodSignature": "velocity(int, int)",
+  "sourceCode": "public void velocity(int xVelocity, int yVelocity) {\n        fXVelocity = xVelocity;\n        fYVelocity = yVelocity;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void velocity(int xVelocity, int yVelocity) {\n    fXVelocity = xVelocity;\n    fYVelocity = yVelocity;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

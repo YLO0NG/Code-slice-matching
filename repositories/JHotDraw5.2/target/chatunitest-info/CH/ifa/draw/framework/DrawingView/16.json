@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "addToSelection",
+  "brief": "public void addToSelection(Figure figure);",
+  "methodSignature": "addToSelection(Figure)",
+  "sourceCode": "public void addToSelection(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Adds a figure to the current selection.\n */\npublic void addToSelection(Figure figure);",
+  "method_comment": "\n     * Adds a figure to the current selection.\n     ",
+  "method_annotation": ""
+}

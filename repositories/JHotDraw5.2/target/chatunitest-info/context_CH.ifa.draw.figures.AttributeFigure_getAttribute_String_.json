@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.figures.AttributeFigure",
+  "targetMethod": "getAttribute(String)",
+  "dependentFields": {
+    "CH.ifa.draw.figures.AttributeFigure": "private FigureAttributes        fAttributes;\nprivate static FigureAttributes fgDefaultAttributes = null;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int attributeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.figures.FigureAttributes": "private Hashtable fMap;\nprivate static final long serialVersionUID = -6886355144423666716L;\nprivate int figureAttributesSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.figures.AttributeFigure": "private static void initializeAttributes(){}",
+    "CH.ifa.draw.figures.FigureAttributes": "public boolean hasDefined(String name){}\npublic Object get(String name){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.figures.AttributeFigure": "private static void initializeAttributes() {\n        fgDefaultAttributes = new FigureAttributes();\n        fgDefaultAttributes.set(\"FrameColor\", Color.black);\n        fgDefaultAttributes.set(\"FillColor\",  new Color(0x70DB93));\n        fgDefaultAttributes.set(\"TextColor\",  Color.black);\n        fgDefaultAttributes.set(\"ArrowMode\",  new Integer(0));\n        fgDefaultAttributes.set(\"FontName\",  \"Helvetica\");\n        fgDefaultAttributes.set(\"FontSize\",   new Integer(12));\n        fgDefaultAttributes.set(\"FontStyle\",  new Integer(Font.PLAIN));\n    }",
+    "CH.ifa.draw.figures.FigureAttributes": "* Tests if an attribute is defined.\n     \npublic boolean hasDefined(String name) {\n        return fMap.containsKey(name);\n    }\n\n     * Gets the attribute with the given name.\n     * @returns attribute or null if the key is not defined\n     \npublic Object get(String name) {\n        return fMap.get(name);\n    }"
+  }
+}

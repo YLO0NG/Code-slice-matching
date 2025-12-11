@@ -1,0 +1,31 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createDebugMenu",
+  "brief": "protected JMenu createDebugMenu(){}",
+  "methodSignature": "createDebugMenu()",
+  "sourceCode": "protected JMenu createDebugMenu() {\n\t\tJMenu menu = new JMenu(\"Debug\");\n\n\t\tJMenuItem mi = new JMenuItem(\"Simple Update\");\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            view().setDisplayUpdate(new SimpleUpdateStrategy());\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\n\t\tmi = new JMenuItem(\"Buffered Update\");\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            view().setDisplayUpdate(new BufferedUpdateStrategy());\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\t\treturn menu;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "setDisplayUpdate(Painter)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ],
+    "javax.swing.JMenu": [
+      "add(JMenuItem)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the debug menu. Clients override this\n * method to add additional menu items.\n */\nprotected JMenu createDebugMenu() {\n    JMenu menu = new JMenu(\"Debug\");\n    JMenuItem mi = new JMenuItem(\"Simple Update\");\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            view().setDisplayUpdate(new SimpleUpdateStrategy());\n        }\n    });\n    menu.add(mi);\n    mi = new JMenuItem(\"Buffered Update\");\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            view().setDisplayUpdate(new BufferedUpdateStrategy());\n        }\n    });\n    menu.add(mi);\n    return menu;\n}",
+  "method_comment": "\n     * Creates the debug menu. Clients override this\n     * method to add additional menu items.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,31 @@
+{
+  "targetClass": "CH.ifa.draw.standard.ConnectionTool",
+  "targetMethod": "mouseDrag(MouseEvent, int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.standard.ConnectionTool": "private Connector   fStartConnector;\nprivate Connector   fEndConnector;\nprivate Connector   fConnectorTarget = null;\nprivate Figure fTarget = null;\nprivate ConnectionFigure  fConnection;\nprivate int  fSplitPoint;\nprivate ConnectionFigure  fEditedConnection = null;\nprivate ConnectionFigure  fPrototype;",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;",
+    "CH.ifa.draw.framework.Connector": "",
+    "CH.ifa.draw.util.Geom": "static public final int NORTH = 1;\nstatic public final int SOUTH = 2;\nstatic public final int WEST = 3;\nstatic public final int EAST = 4;",
+    "CH.ifa.draw.framework.ConnectionFigure": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public void connectorVisibility(boolean isVisible);",
+    "CH.ifa.draw.standard.ConnectionTool": "protected Figure findSource(int x, int y, Drawing drawing){}\nprivate Connector findConnector(int x, int y, Figure f){}\nprotected Figure findTarget(int x, int y, Drawing drawing){}",
+    "CH.ifa.draw.framework.DrawingView": "public void checkDamage();",
+    "CH.ifa.draw.standard.AbstractTool": "public DrawingView view(){}\npublic Drawing drawing(){}",
+    "CH.ifa.draw.framework.Connector": "public abstract Rectangle displayBox();",
+    "CH.ifa.draw.util.Geom": "static public Point center(Rectangle r){}",
+    "CH.ifa.draw.framework.ConnectionFigure": "public void setPointAt(Point p, int index);\npublic void endPoint(int x, int y);"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Sets whether the connectors should be visible.\n     * Connectors can be optionally visible. Implement\n     * this method and react on isVisible to turn the\n     * connectors on or off.\n     \npublic void connectorVisibility(boolean isVisible);",
+    "CH.ifa.draw.standard.ConnectionTool": "* Finds a connectable figure target.\n     \nprotected Figure findSource(int x, int y, Drawing drawing) {\n        return findConnectableFigure(x, y, drawing);\n    }\nprivate Connector findConnector(int x, int y, Figure f) {\n        return f.connectorAt(x, y);\n    }\n\n     * Finds a connectable figure target.\n     \nprotected Figure findTarget(int x, int y, Drawing drawing) {\n        Figure target = findConnectableFigure(x, y, drawing);\n        Figure start = fStartConnector.owner();\n\n        if (target != null\n             && fConnection != null\n             && target.canConnect()\n             && !target.includes(start)\n             && fConnection.canConnect(start, target))\n            return target;\n        return null;\n    }",
+    "CH.ifa.draw.framework.DrawingView": "* Checks whether the drawing has some accumulated damage\n     \npublic void checkDamage();",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's view.\n     \npublic DrawingView view() {\n        return fView;\n    }\n\n     * Gets the tool's drawing.\n     \npublic Drawing drawing() {\n        return view().drawing();\n    }",
+    "CH.ifa.draw.framework.Connector": "* Gets the display box of the connector.\n     \npublic abstract Rectangle displayBox();",
+    "CH.ifa.draw.util.Geom": "static public Point center(Rectangle r) {\n        return new Point(r.x + r.width /2, r.y + r.height/2);\n    }",
+    "CH.ifa.draw.framework.ConnectionFigure": "* Sets the position of the point at the given position\n     \npublic void setPointAt(Point p, int index);\n\n     * Sets the end point.\n     \npublic void endPoint(int x, int y);"
+  }
+}

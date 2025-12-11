@@ -1,0 +1,31 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "addAll",
+  "brief": "public void addAll(Vector newFigures){}",
+  "methodSignature": "addAll(Vector)",
+  "sourceCode": "public void addAll(Vector newFigures) {\n        Enumeration k = newFigures.elements();\n        while (k.hasMoreElements())\n            add((Figure) k.nextElement());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a vector of figures.\n * @see #add\n */\npublic void addAll(Vector newFigures) {\n    Enumeration k = newFigures.elements();\n    while (k.hasMoreElements()) add((Figure) k.nextElement());\n}",
+  "method_comment": "\n     * Adds a vector of figures.\n     * @see #add\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,31 @@
+{
+  "className": "ExceptionTestCase",
+  "methodName": "runTest",
+  "brief": "protected void runTest() throws Throwable{}",
+  "methodSignature": "runTest()",
+  "sourceCode": "protected void runTest() throws Throwable {\r\n\t\ttry {\r\n\t\t\tsuper.runTest();\r\n\t\t}\r\n\t\tcatch (Exception e) {\r\n\t\t\tif (fExpected.isAssignableFrom(e.getClass()))\r\n\t\t\t\treturn;\r\n\t\t\telse\r\n\t\t\t\tthrow e;\r\n\t\t}\r\n\t\tfail(\"Expected exception \" + fExpected);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestCase": [
+      "runTest()"
+    ],
+    "java.lang.Class": [
+      "isAssignableFrom(Object>)"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ],
+    "junit.framework.Assert": [
+      "fail(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Execute the test method expecting that an Exception of\r\n * class fExpected or one of its subclasses will be thrown\r\n */\r\nprotected void runTest() throws Throwable {\r\n    try {\r\n        super.runTest();\r\n    } catch (Exception e) {\r\n        if (fExpected.isAssignableFrom(e.getClass()))\r\n            return;\r\n        else\r\n            throw e;\r\n    }\r\n    fail(\"Expected exception \" + fExpected);\r\n}",
+  "method_comment": "\r\n\t * Execute the test method expecting that an Exception of\r\n\t * class fExpected or one of its subclasses will be thrown\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,41 @@
+{
+  "className": "ElbowHandle",
+  "methodName": "constrainY",
+  "brief": "private int constrainY(int y){}",
+  "methodSignature": "constrainY(int)",
+  "sourceCode": "private int constrainY(int y) {\n        LineConnection line = ownerConnection();\n        Figure startFigure = line.start().owner();\n        Figure endFigure = line.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n\n        int r1y, r1height, r2y, r2height;\n        r1y = start.y + i1.top;\n        r1height = start.height - i1.top - i1.bottom-1;\n        r2y = end.y + i2.top;\n        r2height = end.height - i2.top - i2.bottom-1;\n\n        if (fSegment == 0) {\n        \tint max = r1y + r1height;\n\t\t\tint value = y;\n\t\t\tif (value < r1y)\n\t\t\t    value = r1y;\n\t\t\tif (value > max)\n\t\t\t    value = max;\n\t\t\ty = value;\n\t\t}\n        if (fSegment == line.pointCount()-2)\n            y = Geom.range(r2y, r2y + r2height, y);\n        return y;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.ElbowHandle": [
+      "ownerConnection()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "start()",
+      "end()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectionInsets()",
+      "displayBox()"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointCount()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "range(int, int, int)"
+    ]
+  },
+  "full_method_info": "private int constrainY(int y) {\n    LineConnection line = ownerConnection();\n    Figure startFigure = line.start().owner();\n    Figure endFigure = line.end().owner();\n    Rectangle start = startFigure.displayBox();\n    Rectangle end = endFigure.displayBox();\n    Insets i1 = startFigure.connectionInsets();\n    Insets i2 = endFigure.connectionInsets();\n    int r1y, r1height, r2y, r2height;\n    r1y = start.y + i1.top;\n    r1height = start.height - i1.top - i1.bottom - 1;\n    r2y = end.y + i2.top;\n    r2height = end.height - i2.top - i2.bottom - 1;\n    if (fSegment == 0) {\n        int max = r1y + r1height;\n        int value = y;\n        if (value < r1y)\n            value = r1y;\n        if (value > max)\n            value = max;\n        y = value;\n    }\n    if (fSegment == line.pointCount() - 2)\n        y = Geom.range(r2y, r2y + r2height, y);\n    return y;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

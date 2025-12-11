@@ -1,0 +1,22 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "figures",
+  "brief": "public FigureEnumeration figures(){}",
+  "methodSignature": "figures()",
+  "sourceCode": "public FigureEnumeration figures() {\n        Vector figures = new Vector(1);\n        figures.addElement(this);\n        return new FigureEnumerator(figures);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Returns an Enumeration of the figures contained in this figure.\n * @see CompositeFigure\n */\npublic FigureEnumeration figures() {\n    Vector figures = new Vector(1);\n    figures.addElement(this);\n    return new FigureEnumerator(figures);\n}",
+  "method_comment": "\n     * Returns an Enumeration of the figures contained in this figure.\n     * @see CompositeFigure\n     ",
+  "method_annotation": ""
+}

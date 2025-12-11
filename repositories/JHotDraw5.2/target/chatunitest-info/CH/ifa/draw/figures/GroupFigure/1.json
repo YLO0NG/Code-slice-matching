@@ -1,0 +1,34 @@
+{
+  "className": "GroupFigure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        FigureEnumeration k = figures();\n        Rectangle r = k.nextFigure().displayBox();\n\n        while (k.hasMoreElements())\n            r.add(k.nextFigure().displayBox());\n        return r;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "java.awt.Rectangle": [
+      "add(Rectangle)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the display box. The display box is defined as the union\n * of the contained figures.\n */\npublic Rectangle displayBox() {\n    FigureEnumeration k = figures();\n    Rectangle r = k.nextFigure().displayBox();\n    while (k.hasMoreElements()) r.add(k.nextFigure().displayBox());\n    return r;\n}",
+  "method_comment": "\n    * Gets the display box. The display box is defined as the union\n    * of the contained figures.\n    ",
+  "method_annotation": ""
+}

@@ -1,0 +1,60 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.DiamondFigure",
+  "className": "DiamondFigure",
+  "index": 6,
+  "modifier": "[public ]",
+  "extend": "[RectangleFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public  class DiamondFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Graphics;",
+    "import java.awt.Insets;",
+    "import java.awt.Point;",
+    "import java.awt.Polygon;",
+    "import java.awt.Rectangle;",
+    "import CH.ifa.draw.figures.RectangleFigure;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "RectangleFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "polygon()": "0",
+    "draw(Graphics)": "1",
+    "connectionInsets()": "2",
+    "containsPoint(int, int)": "3",
+    "DiamondFigure()": "4",
+    "DiamondFigure(Point, Point)": "5"
+  },
+  "methodsBrief": [
+    "protected Polygon polygon(){}",
+    "public void draw(Graphics g){}",
+    "public Insets connectionInsets(){}",
+    "public boolean containsPoint(int x, int y){}",
+    "public DiamondFigure(){}",
+    "public DiamondFigure(Point origin, Point corner){}"
+  ],
+  "constructorSigs": [
+    "DiamondFigure()",
+    "DiamondFigure(Point, Point)"
+  ],
+  "constructorBrief": [
+    "public DiamondFigure(){}",
+    "public DiamondFigure(Point origin, Point corner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.awt.Point": []
+  },
+  "compilationUnitCode": "/*\n * Hacked together by Doug lea\n * Tue Feb 25 17:39:44 1997  Doug Lea  (dl at gee)\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Graphics;\nimport java.awt.Insets;\nimport java.awt.Point;\nimport java.awt.Polygon;\nimport java.awt.Rectangle;\nimport CH.ifa.draw.figures.RectangleFigure;\n\n/**\n * A diamond with vertices at the midpoints of its enclosing rectangle\n */\npublic class DiamondFigure extends RectangleFigure {\n\n    public DiamondFigure() {\n        super(new Point(0, 0), new Point(0, 0));\n    }\n\n    public DiamondFigure(Point origin, Point corner) {\n        super(origin, corner);\n    }\n\n    /**\n     * Return the polygon describing the diamond *\n     */\n    protected Polygon polygon() {\n        Rectangle r = displayBox();\n        Polygon p = new Polygon();\n        p.addPoint(r.x, r.y + r.height / 2);\n        p.addPoint(r.x + r.width / 2, r.y);\n        p.addPoint(r.x + r.width, r.y + r.height / 2);\n        p.addPoint(r.x + r.width / 2, r.y + r.height);\n        return p;\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        Polygon p1 = new Polygon();\n        p1.addPoint(r.x, r.y + r.height / 2);\n        p1.addPoint(r.x + r.width / 2, r.y);\n        p1.addPoint(r.x + r.width, r.y + r.height / 2);\n        p1.addPoint(r.x + r.width / 2, r.y + r.height);\n        Polygon p = p1;\n        g.setColor(getFillColor());\n        g.fillPolygon(p);\n        g.setColor(getFrameColor());\n        g.drawPolygon(p);\n    }\n\n    public Insets connectionInsets() {\n        Rectangle r = displayBox();\n        return new Insets(r.height / 2, r.width / 2, r.height / 2, r.width / 2);\n    }\n\n    public boolean containsPoint(int x, int y) {\n        return polygon().contains(x, y);\n    }\n    /*public Point chop(Point p) {\n    return PolygonFigure.chop(polygon(), p);\n  }*/\n}\n",
+  "classDeclarationCode": "/**\n * A diamond with vertices at the midpoints of its enclosing rectangle\n */\npublic class DiamondFigure extends RectangleFigure {\n\n    public DiamondFigure() {\n        super(new Point(0, 0), new Point(0, 0));\n    }\n\n    public DiamondFigure(Point origin, Point corner) {\n        super(origin, corner);\n    }\n\n    /**\n     * Return the polygon describing the diamond *\n     */\n    protected Polygon polygon() {\n        Rectangle r = displayBox();\n        Polygon p = new Polygon();\n        p.addPoint(r.x, r.y + r.height / 2);\n        p.addPoint(r.x + r.width / 2, r.y);\n        p.addPoint(r.x + r.width, r.y + r.height / 2);\n        p.addPoint(r.x + r.width / 2, r.y + r.height);\n        return p;\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        Polygon p1 = new Polygon();\n        p1.addPoint(r.x, r.y + r.height / 2);\n        p1.addPoint(r.x + r.width / 2, r.y);\n        p1.addPoint(r.x + r.width, r.y + r.height / 2);\n        p1.addPoint(r.x + r.width / 2, r.y + r.height);\n        Polygon p = p1;\n        g.setColor(getFillColor());\n        g.fillPolygon(p);\n        g.setColor(getFrameColor());\n        g.drawPolygon(p);\n    }\n\n    public Insets connectionInsets() {\n        Rectangle r = displayBox();\n        return new Insets(r.height / 2, r.width / 2, r.height / 2, r.width / 2);\n    }\n\n    public boolean containsPoint(int x, int y) {\n        return polygon().contains(x, y);\n    }\n    /*public Point chop(Point p) {\n    return PolygonFigure.chop(polygon(), p);\n  }*/\n}",
+  "subClasses": []
+}

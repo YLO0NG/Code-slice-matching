@@ -1,0 +1,28 @@
+{
+  "className": "TestSuitePanel",
+  "methodName": "endTest",
+  "brief": "public void endTest(Test test){}",
+  "methodSignature": "endTest(Test)",
+  "sourceCode": "public void endTest(Test test) {\r\n\t\tfModel.addRunTest(test);\r\n\t \tfireTestChanged(test, false);\r\n \t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.swingui.TestTreeModel": [
+      "addRunTest(Test)"
+    ],
+    "junit.swingui.TestSuitePanel": [
+      "fireTestChanged(Test, boolean)"
+    ]
+  },
+  "full_method_info": "/**\r\n * A test ended.\r\n */\r\npublic void endTest(Test test) {\r\n    fModel.addRunTest(test);\r\n    fireTestChanged(test, false);\r\n}",
+  "method_comment": "\r\n \t * A test ended.\r\n \t ",
+  "method_annotation": ""
+}

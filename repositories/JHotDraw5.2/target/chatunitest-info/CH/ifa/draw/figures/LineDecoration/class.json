@@ -1,0 +1,41 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.LineDecoration",
+  "className": "LineDecoration",
+  "index": 40,
+  "modifier": "[public ]",
+  "extend": "[Storable, Cloneable, Serializable]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public interface LineDecoration",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.Serializable;",
+    "import CH.ifa.draw.util.Storable;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "Storable",
+    "Cloneable",
+    "Serializable"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "draw(Graphics, int, int, int, int)": "0"
+  },
+  "methodsBrief": [
+    "public abstract void draw(Graphics g, int x1, int y1, int x2, int y2);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)LineDecoration.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.io.Serializable;\nimport CH.ifa.draw.util.Storable;\n\n/**\n * Decorate the start or end point of a line or poly line figure.\n * LineDecoration is the base class for the different line decorations.\n * @see PolyLineFigure\n */\npublic interface LineDecoration extends Storable, Cloneable, Serializable {\n\n    /**\n     * Draws the decoration in the direction specified by the two points.\n     */\n    public abstract void draw(Graphics g, int x1, int y1, int x2, int y2);\n}\n",
+  "classDeclarationCode": "/**\n * Decorate the start or end point of a line or poly line figure.\n * LineDecoration is the base class for the different line decorations.\n * @see PolyLineFigure\n */\npublic interface LineDecoration extends Storable, Cloneable, Serializable {\n\n    /**\n     * Draws the decoration in the direction specified by the two points.\n     */\n    public abstract void draw(Graphics g, int x1, int y1, int x2, int y2);\n}",
+  "subClasses": []
+}

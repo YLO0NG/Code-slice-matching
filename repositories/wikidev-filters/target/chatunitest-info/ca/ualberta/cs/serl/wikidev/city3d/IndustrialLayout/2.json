@@ -1,0 +1,46 @@
+{
+  "className": "IndustrialLayout",
+  "methodName": "setLastEditorAndTimeLastModifiedBeforeDate",
+  "brief": "public void setLastEditorAndTimeLastModifiedBeforeDate(SVNFile file, Timestamp timestamp){}",
+  "methodSignature": "setLastEditorAndTimeLastModifiedBeforeDate(SVNFile, Timestamp)",
+  "sourceCode": "public void setLastEditorAndTimeLastModifiedBeforeDate(SVNFile file, Timestamp timestamp) {\n\t\tfile.setLastModified(file.getCreated());\n\t\tfile.setLastEditor(file.getOwner());\n\t\tfor(ChangeSet changeset : changesets) {\n\t\t\tfor(ChangeSetDetail detail : changeset.getChangesetDetails()) {\n\t\t\t\tif(detail.getFilename().equals(file.getName()) && detail.getTimestamp().before(timestamp) && detail.getTimestamp().after(file.getLastModified())) {\n\t\t\t\t\tfile.setLastModified(detail.getTimestamp());\n\t\t\t\t\tfile.setLastEditor(detail.getOwner());\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "SVNFile",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": [
+      "setLastEditor(User)",
+      "getName()",
+      "setLastModified(Timestamp)"
+    ],
+    "java.sql.Timestamp": [
+      "after(Timestamp)",
+      "before(Timestamp)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getOwner()",
+      "getCreated()",
+      "getTimestamp()",
+      "getLastModified()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getChangesetDetails()"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail": [
+      "getFilename()"
+    ]
+  },
+  "full_method_info": "public void setLastEditorAndTimeLastModifiedBeforeDate(SVNFile file, Timestamp timestamp) {\n    file.setLastModified(file.getCreated());\n    file.setLastEditor(file.getOwner());\n    for (ChangeSet changeset : changesets) {\n        for (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n            if (detail.getFilename().equals(file.getName()) && detail.getTimestamp().before(timestamp) && detail.getTimestamp().after(file.getLastModified())) {\n                file.setLastModified(detail.getTimestamp());\n                file.setLastEditor(detail.getOwner());\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

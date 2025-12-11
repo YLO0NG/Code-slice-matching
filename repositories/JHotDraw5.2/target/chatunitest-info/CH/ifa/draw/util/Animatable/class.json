@@ -1,0 +1,33 @@
+{
+  "fullClassName": "CH.ifa.draw.util.Animatable",
+  "className": "Animatable",
+  "index": 147,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public interface Animatable",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "animationStep()": "0"
+  },
+  "methodsBrief": [
+    "void animationStep();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Animatable.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\n/**\n * Animatable defines a simple animation interface\n */\npublic interface Animatable {\n\n    /**\n     * Perform a step of the animation.\n     */\n    void animationStep();\n}\n",
+  "classDeclarationCode": "/**\n * Animatable defines a simple animation interface\n */\npublic interface Animatable {\n\n    /**\n     * Perform a step of the animation.\n     */\n    void animationStep();\n}",
+  "subClasses": []
+}

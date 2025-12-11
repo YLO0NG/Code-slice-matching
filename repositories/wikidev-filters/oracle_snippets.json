@@ -1,0 +1,184 @@
+[
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical",
+        "function_name": "clustering(ArrayList<IArtifact>)",
+        "line_start": 26,
+        "line_end": 31,
+        "code_snippet": "ArrayList<Cluster> clusters = new ArrayList<Cluster>();\n\t\tfor(IArtifact artifact : artifacts) {\n\t\t\tCluster cluster = new Cluster();\n\t\t\tcluster.addArtifact(artifact);\n\t\t\tclusters.add(cluster);\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical",
+        "function_name": "clustering(ArrayList<IArtifact>)",
+        "line_start": 50,
+        "line_end": 81,
+        "code_snippet": "clusters.get(minRow).addArtifacts(clusters.get(minCol).getArtifacts());\n\t\t\t\tdouble[] newDistances = new double[distanceMatrix.length-1];\n\t\t\t\tfor(int i=0;i<distanceMatrix.length;i++) {\n\t\t\t\t\t\tif (i != minCol) {\n\t\t\t\t\t\t\tif (i != minRow) {\n\t\t\t\t\t\t\t\tif (distanceMatrix[minRow][i] < distanceMatrix[minCol][i]) {\n\t\t\t\t\t\t\t\t\tif (i > minCol) {\n\t\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minRow][i];\n\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minRow][i];\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tif (i > minCol) {\n\t\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minCol][i];\n\t\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minCol][i];\n\t\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\telse {\n\t\t\t\t\t\t\t\tnewDistances[i] = 0.0;\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\t\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tdistanceMatrix = deleteRows(distanceMatrix, minRow, minCol);\n\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minCol);\n\t\t\t\tdistanceMatrix = insertRows(distanceMatrix, minRow, newDistances);\n\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minRow);\n\t\t\t\tdistanceMatrix = insertColumns(distanceMatrix, minRow, newDistances);\n\t\t\t\tclusters.remove(minCol);"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical",
+        "function_name": "clustering(ArrayList<IArtifact>)",
+        "line_start": 84,
+        "line_end": 114,
+        "code_snippet": "clusters.get(minCol).addArtifacts(clusters.get(minRow).getArtifacts());\n\t\t\t\tdouble[] newDistances = new double[distanceMatrix.length-1];\n\t\t\t\tfor(int i=0;i<distanceMatrix.length;i++) {\n\t\t\t\t\tif (i != minRow) {\n\t\t\t\t\t\tif (i != minCol) {\n\t\t\t\t\t\t\tif (distanceMatrix[minRow][i] < distanceMatrix[minCol][i]) {\n\t\t\t\t\t\t\t\tif (i > minRow) {\n\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minRow][i];\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minRow][i];\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tif (i > minRow) {\n\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minCol][i];\n\t\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minCol][i];\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse {\n\t\t\t\t\t\t\tnewDistances[i] = 0.0;\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t\t\n\t\t\t\t}\n\t\t\t\tdistanceMatrix = deleteRows(distanceMatrix, minRow, minCol);\n\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minCol);\n\t\t\t\tdistanceMatrix = insertRows(distanceMatrix, minCol, newDistances);\n\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minRow);\n\t\t\t\tdistanceMatrix = insertColumns(distanceMatrix, minCol, newDistances);\n\t\t\t\tclusters.remove(minRow);"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getFiedlerVector(double[][])",
+        "line_start": 26,
+        "line_end": 38,
+        "code_snippet": "double[][] D = new double[A.length][A[0].length];\n        //L - Laplacian matrix\n        double[][] L = new double[A.length][A[0].length];\n\n        //sumRow is row matrix, each column i in sumRow contains\n        //the sum value of column i in the adjacency matrix\n        double[] sumRow = sum(A);\n        //fill the degree matrix with the degrees of each node.\n        for(int i = 0; i < D[0].length;i++) {\n            D[i][i] = sumRow[i];\n        }\n        //L = D - A\n        L = minus(D,A);"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getFiedlerVector(double[][])",
+        "line_start": 49,
+        "line_end": 60,
+        "code_snippet": "TreeMap<Double,Integer> sortedEigenValues = new TreeMap<Double,Integer>();\n\n        for(int i = 0; i <eigenValues.getColumnDimension(); i++) {\n            //\\E1\\EB\\EB\\DC\\E6\\EF\\F5\\EC\\E5 \\F0\\F1\\FC\\F3\\E7\\EC\\EF \\F3\\F4\\E9\\F2 \\E1\\F1\\ED\\E7\\F4\\E9\\EA\\DD\\F2 \\F4\\E9\\EC\\DD\\F2\n            double value;\n            if(eigenValues.get(i,i) < 0.0)\n                value = -eigenValues.get(i,i);\n            else\n                value = eigenValues.get(i,i);\n\n            sortedEigenValues.put(value,i);\n        }"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getFiedlerVector(double[][])",
+        "line_start": 62,
+        "line_end": 72,
+        "code_snippet": "Set<Double> keySet = sortedEigenValues.keySet();\n        Iterator<Double> keyIt = keySet.iterator();\n        int minIndex = 0;\n        double threshold = 0.00001;\n        while(keyIt.hasNext()) {\n            Double key = keyIt.next();\n            if(key> threshold) {\n                minIndex = sortedEigenValues.get(key);\n                break;\n            }\n        }"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getFiedlerVector(double[][])",
+        "line_start": 73,
+        "line_end": 78,
+        "code_snippet": "double[][] eigenVectors2=new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];\n        for(int i=0;i<eigenVectors.getRowDimension();i++) {\n        \tfor(int j=0;j<eigenVectors.getColumnDimension();j++) {\n        \t\teigenVectors2[i][j] = eigenVectors.get(i,j);\n        \t}\n        }"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+        "function_name": "getRelationships()",
+        "line_start": 100,
+        "line_end": 137,
+        "code_snippet": "for(IArtifact artifact : artifacts) {\n\t\t\t\n\t\t\tif(artifact instanceof Ticket) {\n\t\t\t\tTextParser parser = new TextParser();\n\t\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\t\tparser.parseTextInWords(ticket.getDesription().toLowerCase());\n\t\t\t\tparser.parseTextInWords(ticket.getSummary().toLowerCase());\n\t\t\t\tdocuments.add(new Document(parser.getWords(), ticket.toString()));\n\t\t\t\tticket.setDocument(new Document(parser.getWords(), ticket.toString()));\n\t\t\t}\n\t\t\telse if(artifact instanceof ChangeSet) {\n\t\t\t\tTextParser parser = new TextParser();\n\t\t\t\tChangeSet changeset = (ChangeSet)artifact;\n\t\t\t\t//relateChangeSetToTicket(changeset);\n\t\t\t\tparser.parseTextInWords(changeset.getComment().toLowerCase());\n\t\t\t\tdocuments.add(new Document(parser.getWords(), changeset.toString()));\n\t\t\t\tchangeset.setDocument(new Document(parser.getWords(), changeset.toString()));\n\t\t\t}\n\t\t\telse if (artifact instanceof Message) {\n\t\t\t\tTextParser parser = new TextParser();\n\t\t\t\tMessage communication = (Message)artifact;\n\t\t\t\tparser.parseTextInWords(communication.getSubject().toLowerCase());\n\t\t\t\tparser.parseTextInWords(communication.getBody().toLowerCase());\n\t\t\t\tdocuments.add(new Document(parser.getWords(), communication.toString()));\n\t\t\t\tcommunication.setDocument(new Document(parser.getWords(), communication.toString()));\n\t\t\t}\n\t\t\telse if (artifact instanceof Wiki) {\n\t\t\t\tWiki wiki = (Wiki)artifact;\n\t\t\t\t\tTextParser parser = new TextParser();\n\t\t\t\t\tString text = \"\";\n\t\t\t\t\tfor (WikiRevision revision : wiki.getRevisions()) {\n\t\t\t\t\t\ttext += revision.getRev_text();\n\t\t\t\t\t}\n\t\t\t\t\tparser.parseTextInWords(text.toLowerCase());\n\t\t\t\t\tdocuments.add(new Document(parser.getWords(), wiki.toString()));\n\t\t\t\t\twiki.setDocument(new Document(parser.getWords(), wiki.toString()));\n\t\t\t}\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+        "function_name": "getRelationships()",
+        "line_start": 139,
+        "line_end": 171,
+        "code_snippet": "for(IArtifact artifact : artifacts) {\n\t\t\t\n\t\t\tif(artifact instanceof Ticket) {\n\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\t\tparser.parseTextInWords(ticket.getDesription().toLowerCase());\n\t\t\t\tparser.parseTextInWords(ticket.getSummary().toLowerCase());\n\t\t\t\tticket.getDocument().setTfidf(parser.calculateTFIDF());\n\t\t\t}\n\t\t\telse if(artifact instanceof ChangeSet) {\n\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\tChangeSet changeset = (ChangeSet)artifact;\n\t\t\t\tparser.parseTextInWords(changeset.getComment().toLowerCase());\n\t\t\t\tchangeset.getDocument().setTfidf(parser.calculateTFIDF());\n\t\t\t}\n\t\t\telse if (artifact instanceof Message) {\n\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\tMessage communication = (Message)artifact;\n\t\t\t\tparser.parseTextInWords(communication.getSubject().toLowerCase());\n\t\t\t\tparser.parseTextInWords(communication.getBody().toLowerCase());\n\t\t\t\tcommunication.getDocument().setTfidf(parser.calculateTFIDF());\n\t\t\t}\n\t\t\telse if (artifact instanceof Wiki) {\n\t\t\t\tWiki wiki = (Wiki)artifact;\n\t\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\t\tString text = \"\";\n\t\t\t\t\tfor (WikiRevision revision : wiki.getRevisions()) {\n\t\t\t\t\t\ttext += revision.getRev_text();\n\t\t\t\t\t}\n\t\t\t\t\tparser.parseTextInWords(text.toLowerCase());\n\t\t\t\t\twiki.getDocument().setTfidf(parser.calculateTFIDF());\n\t\t\t}\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+        "function_name": "getRelationships()",
+        "line_start": 173,
+        "line_end": 226,
+        "code_snippet": "for(IArtifact artifact : artifacts) {\n\t\t\tSystem.out.println(\"Relationships: \"+artifact.toString());\n\t\t\t\n\t\t\tsourceArtifact = artifact;\n\t\t\tproject = artifact.getProject();\n\t\t\tgetGenericRelationships(sourceArtifact);\n\t\t\tif(sourceArtifact instanceof Ticket) {\n\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\tTicket ticket = (Ticket)sourceArtifact;\n\t\t\t\tparser.parseTextInWords(ticket.getDesription().toLowerCase());\n\t\t\t\tbuffers.add(ticket.getDesription().toLowerCase());\n\t\t\t\tparser.parseTextInWords(ticket.getSummary().toLowerCase());\n\t\t\t\tbuffers.add(ticket.getSummary().toLowerCase());\n\t\t\t\tmineRelationshipsFromText();\n\t\t\t\t/*for(URL url : parser.getUrls()) {\n\t\t\t\t\tmineRelationshipsFromURL(url);\n\t\t\t\t}*/\n\t\t\t}\n\t\t\telse if(sourceArtifact instanceof ChangeSet) {\n\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\tChangeSet changeset = (ChangeSet)sourceArtifact;\n\t\t\t\t//relateChangeSetToTicket(changeset);\n\t\t\t\tparser.parseTextInWords(changeset.getComment().toLowerCase());\n\t\t\t\tbuffers.add(changeset.getComment().toLowerCase());\n\t\t\t\tmineRelationshipsFromText();\n\t\t\t\t/*for(URL url : parser.getUrls()) {\n\t\t\t\t\tmineRelationshipsFromURL(url);\n\t\t\t\t}*/\n\t\t\t\t\n\t\t\t}\n\t\t\telse if (sourceArtifact instanceof Message) {\n\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\tMessage communication = (Message)sourceArtifact;\n\t\t\t\tparser.parseTextInWords(communication.getSubject().toLowerCase());\n\t\t\t\tbuffers.add(communication.getSubject().toLowerCase());\n\t\t\t\tparser.parseTextInWords(communication.getBody().toLowerCase());\n\t\t\t\tbuffers.add(communication.getBody().toLowerCase());\n\t\t\t\tmineRelationshipsFromText();\n\t\t\t\t/*for(URL url : parser.getUrls()) {\n\t\t\t\t\tmineRelationshipsFromURL(url);\n\t\t\t\t}*/\n\t\t\t}\n\t\t\telse if (sourceArtifact instanceof Wiki) {\n\t\t\t\tWiki wiki = (Wiki)sourceArtifact;\n\t\t\t\t\tTextParser parser = new TextParser(documents);\n\t\t\t\t\tString text = \"\";\n\t\t\t\t\tfor (WikiRevision revision : wiki.getRevisions()) {\n\t\t\t\t\t\ttext += revision.getRev_text();\n\t\t\t\t\t}\n\t\t\t\t\tparser.parseTextInWords(text.toLowerCase());\n\t\t\t\t\tbuffers.add(text.toLowerCase());\n\t\t\t\t\tmineRelationshipsFromText();\n\t\t\t}\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.ClusteringMain",
+        "function_name": "main(String[])",
+        "line_start": 67,
+        "line_end": 74,
+        "code_snippet": "for (Cluster cluster : clusters) {\n\t\t\t\t\t\t\tif (cluster.getArtifacts().size() > 1) {\n\t\t\t\t\t\t\t\tif (!totalClusters.contains(cluster)) {\n\t\t\t\t\t\t\t\t\tfinalClusters.add(cluster);\n\t\t\t\t\t\t\t\t\ttotalClusters.add(cluster);\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.ClusteringMain",
+        "function_name": "main(String[])",
+        "line_start": 76,
+        "line_end": 81,
+        "code_snippet": "MultidimensionalScaling mds = new MultidimensionalScaling(\n\t\t\t\t\t\t\t\t\tdistanceMatrix);\n\t\t\t\t\t\t\tdouble[][] mdsCoords = mds.cMDS();\n\t\t\t\t\t\t\tSammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);\n\t\t\t\t\t\t\tsammon.CreateMapping();\n\t\t\t\t\t\t\tcoords = sammon.getProjection();"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+        "function_name": "getArtifactByTypeAndID(IArtifact, int)",
+        "line_start": 255,
+        "line_end": 275,
+        "code_snippet": "if (anArtifact.getType().equals(\"ChangeSet\")) {\n\t\t\t\tartifact = new ChangeSet(res.getInt(\"id\"), res\n\t\t\t\t\t\t.getString(\"comment\"), res\n\t\t\t\t\t\t.getString(\"externalauthor\"), res\n\t\t\t\t\t\t.getInt(\"externalsystem_id\"), res\n\t\t\t\t\t\t.getTimestamp(\"timestamp\"), res.getInt(\"rev\"),\n\t\t\t\t\t\tres.getInt(\"project_id\"));\n\t\t\t} else if (anArtifact.getType().equals(\"Ticket\")) {\n\t\t\t\tartifact = new Ticket(res.getTimestamp(\"created\"), res\n\t\t\t\t\t\t.getString(\"description\"), res\n\t\t\t\t\t\t.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"), \n\t\t\t\t\t\tres.getString(\"summary\"),\n\t\t\t\t\t\tres.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));\n\t\t\t} else if (anArtifact.getType().equals(\"Wiki\")) {\n\t\t\t\tartifact = new Wiki(res.getInt(\"page_id\"), res.getInt(\"page_namespace\"), res.getString(\"page_title\"), res.getTimestamp(\"page_touched\"));\n\t\t\t}\n\t\t\telse if(anArtifact.getType().equals(\"Message\")) {\n            \tartifact = new Message(res.getString(\"address\"), res.getString(\"author\"), res.getString(\"body\"), res.getInt(\"id\"),\n\t\t\t\t\t\tres.getInt(\"deleted\"), res.getString(\"mid_header\"), \n\t\t\t\t\t\tres.getInt(\"project_id\"),  res.getString(\"subject\"), res.getTimestamp(\"date\"), res.getString(\"user_name\"), res.getString(\"refid_header\"));;\n            }"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+        "function_name": "getArtifactByTypeAndID(IArtifact, int)",
+        "line_start": 278,
+        "line_end": 314,
+        "code_snippet": "if (artifact instanceof ChangeSet) {\n\t\t\t\tChangeSet changeSet = (ChangeSet)artifact;\n\t\t\t\tchangeSet.setOwner(getUserByUserName(changeSet.getExternalAuthorUserName()));\n\t\t\t\tchangeSet.setProject(project);\n\t\t\t\tchangeSet.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeSet.getRevision(), changeSet.getExternalSystemID()));\n\t\t\t\tfor(ChangeSetDetail detail : changeSet.getChangesetDetails()) {\n\t\t\t\t\tdetail.setTimestamp(changeSet.getTimestamp());\n\t\t\t\t}\n\t\t\t\tchangeSet.setAuthorForChangeSetDetails();\n\t\t\t\tchangeSet.setType(\"ChangeSet\");\n\t\t\t\tproject.addChangeset(changeSet);\n\t\t\t} else if (artifact instanceof Ticket) {\n\t\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\t\tticket.setOwner(getUserByUserName(ticket.getOwnerName()));\n\t\t\t\tticket.setReporter(getUserByUserName(ticket.getReporterName()));\n\t\t\t\tticket.setTicketChanges(getTicketChangesByTicketID(ticket\n\t\t\t\t\t\t.getTicketID()));\n\t\t\t\tticket.setProject(project);\n\t\t\t\tticket.setType(\"Ticket\");\n\t\t\t\tproject.addTicket(ticket);\n\t\t\t} else if (artifact instanceof Message) {\n\t\t\t\tMessage communication = (Message)artifact;\n\t\t\t\tUser user = getUserByUserName(communication\n\t\t\t\t\t\t.getUser_name());\n\t\t\t\tcommunication.setOwner(user);\n\t\t\t\tuser.setUserRealName(communication.getAuthor());\n\t\t\t\tcommunication.setProject(project);\n\t\t\t\tcommunication.setType(\"Message\");\n\t\t\t\tproject.addMessage(communication);\n\t\t\t}\n\t\t\telse if(artifact instanceof Wiki) {\n\t        \tWiki wiki = (Wiki)artifact;\n\t        \twiki.setRevisions(getRevisionsByWikiID(wiki.getPage_id()));\n\t        \twiki.setProject(DataManager.getProjectByName(getProjectNamespaceByNamespaceID(wiki.getPage_namespace_id())));\n\t        \twiki.setProjectID(wiki.getProject().getProjectID());\n\t        \twiki.setType(\"Wiki\");\n\t        }"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+        "function_name": "getArtifactByTypeAndID(IArtifact, int)",
+        "line_start": 290,
+        "line_end": 297,
+        "code_snippet": "Ticket ticket = (Ticket)artifact;\n\t\t\t\tticket.setOwner(getUserByUserName(ticket.getOwnerName()));\n\t\t\t\tticket.setReporter(getUserByUserName(ticket.getReporterName()));\n\t\t\t\tticket.setTicketChanges(getTicketChangesByTicketID(ticket\n\t\t\t\t\t\t.getTicketID()));\n\t\t\t\tticket.setProject(project);\n\t\t\t\tticket.setType(\"Ticket\");\n\t\t\t\tproject.addTicket(ticket);"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+        "function_name": "getArtifactByTypeAndID(IArtifact, int)",
+        "line_start": 309,
+        "line_end": 313,
+        "code_snippet": "Wiki wiki = (Wiki)artifact;\n\t        \twiki.setRevisions(getRevisionsByWikiID(wiki.getPage_id()));\n\t        \twiki.setProject(DataManager.getProjectByName(getProjectNamespaceByNamespaceID(wiki.getPage_namespace_id())));\n\t        \twiki.setProjectID(wiki.getProject().getProjectID());\n\t        \twiki.setType(\"Wiki\");"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+        "function_name": "getArtifactByTypeAndID(IArtifact, int)",
+        "line_start": 299,
+        "line_end": 306,
+        "code_snippet": "Message communication = (Message)artifact;\n\t\t\t\tUser user = getUserByUserName(communication\n\t\t\t\t\t\t.getUser_name());\n\t\t\t\tcommunication.setOwner(user);\n\t\t\t\tuser.setUserRealName(communication.getAuthor());\n\t\t\t\tcommunication.setProject(project);\n\t\t\t\tcommunication.setType(\"Message\");\n\t\t\t\tproject.addMessage(communication);"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+        "function_name": "relateChangeSetToTicket(ChangeSet)",
+        "line_start": 295,
+        "line_end": 312,
+        "code_snippet": "for(int i=0;i<comment.length(); i++) {\n\t\t\tif(comment.charAt(i) == '#') {\n\t\t\t\tint j=i+1;\n\t\t\t\tString ch = comment.substring(j, j+1);\n\t\t\t\twhile(ch.matches(pattern)) {\n\t\t\t\t\tticketid += ch;\n\t\t\t\t\tj++;\n\t\t\t\t\tif (j<comment.length()) {\n\t\t\t\t\t\tch = comment.substring(j, j + 1);\n\t\t\t\t\t}\n\t\t\t\t\telse {\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tids.add(ticketid);\n\t\t\t\tticketid = \"\";\n\t\t\t}\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "getLayout(ArrayList<IArtifact>, double[][])",
+        "line_start": 34,
+        "line_end": 42,
+        "code_snippet": "double[][] coords = null;\n\t\tif (distanceMatrix.length > 0) {\n\t\t\tMultidimensionalScaling mds = new MultidimensionalScaling(\n\t\t\t\t\tdistanceMatrix);\n\t\t\tdouble[][] mdsCoords = mds.cMDS();\n\t\t\tSammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);\n\t\t\tsammon.CreateMapping();\n\t\t\tcoords = sammon.getProjection();\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "getLayout(ArrayList<IArtifact>, double[][])",
+        "line_start": 73,
+        "line_end": 80,
+        "code_snippet": "double rangeX = Math.ceil(maxX - minX);\n\t\tdouble rangeY = Math.ceil(maxY - minY);\n\t\tdouble range = 0;\n\t\tif (rangeX > rangeY) {\n\t\t\trange = rangeX;\n\t\t} else {\n\t\t\trange = rangeY;\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "cityBlockInitialization(ArrayList<IArtifact>, double[][], double, double, double, double)",
+        "line_start": 97,
+        "line_end": 106,
+        "code_snippet": "this.cityBlocks = new ArrayList<CityBlock>();\n\t\tfor (int i = 0; i < blocks; i++) {\n\t\t\tfor (int j = 0; j < blocks; j++) {\n\t\t\t\tdouble[] center = { minX + i * (range / 16) + (range / 16) / 2,\n\t\t\t\t\t\tminY + j * (range / 16) + (range / 16) / 2 };\n\t\t\t\tCityBlock cityblock = new CityBlock(new Point(i, j));\n\t\t\t\tcityblock.setCenter(center);\n\t\t\t\tcityBlocks.add(cityblock);\n\t\t\t}\n\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout",
+        "function_name": "printCityBlocks(ArrayList<CityBlock>, HashMap<SVNFile, Integer>)",
+        "line_start": 354,
+        "line_end": 367,
+        "code_snippet": "String type = \"\"+index+\"\\t\";\n\t\t\t\tint height = 0;\n\t\t\t\tString line = \"\";\n\t\t\t\tif (artifact instanceof SVNFile) {\n\t\t\t\t\tSVNFile file = (SVNFile)artifact;\n\t\t\t\t\ttype += file.getType();\n\t\t\t\t\theight = fileCount.get(file);\n\t\t\t\t\tline += type + \"\\t\" + block.getIndex().x + \"\\t\"\n\t\t\t\t\t+ block.getIndex().y + \"\\t\"\n\t\t\t\t\t+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";\n\t\t\t\t\tfor(User user : file.getUsers()) {\n\t\t\t\t\t\tline += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";\n\t\t\t\t\t}\n\t\t\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "pushBuildings(double, double, double)",
+        "line_start": 124,
+        "line_end": 131,
+        "code_snippet": "double rX = Math.ceil(blockMaxX - blockMinX);\n\t\t\t\tdouble rY = Math.ceil(blockMaxY - blockMinY);\n\t\t\t\tdouble blockR = 0;\n\t\t\t\tif (rX > rY) {\n\t\t\t\t\tblockR = rX;\n\t\t\t\t} else {\n\t\t\t\t\tblockR = rY;\n\t\t\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "pushBuildings(double, double, double)",
+        "line_start": 132,
+        "line_end": 140,
+        "code_snippet": "double[][] subblockCenters = new double[16][3];\n\t\t\t\tfor (int i = 0; i < 4; i++) {\n\t\t\t\t\tfor (int j = 0; j < 4; j++) {\n\t\t\t\t\t\tdouble[] subCenter = {\n\t\t\t\t\t\t\t\tblockMinX + i * blockR + blockR / 2,\n\t\t\t\t\t\t\t\tblockMinY + j * blockR + blockR / 2, 0 };\n\t\t\t\t\t\tsubblockCenters[j + i * 4] = subCenter;\n\t\t\t\t\t}\n\t\t\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.CityLayout",
+        "function_name": "printCityBlocks(ArrayList<CityBlock>, HashMap<Message, Integer>)",
+        "line_start": 211,
+        "line_end": 232,
+        "code_snippet": "String type = \"\"+index+\"\\t\";\n\t\t\t\tint height = 0;\n\t\t\t\tString line = \"\";\n\t\t\t\tif (artifact instanceof Ticket) {\n\t\t\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\t\t\ttype += \"Ticket\";\n\t\t\t\t\theight = 6-ticket.getPriority();\n\t\t\t\t} else if (artifact instanceof Message) {\n\t\t\t\t\ttype += \"Message\";\n\t\t\t\t\tMessage message = (Message)artifact;\n\t\t\t\t\theight = messageCount.get(message);\n\t\t\t\t} else if (artifact instanceof Wiki) {\n\t\t\t\t\tWiki wiki = (Wiki)artifact;\n\t\t\t\t\ttype += \"Wiki\";\n\t\t\t\t\theight = wiki.getRevisions().size();\n\t\t\t\t}\n\t\t\t\tline += type + \"\\t\" + block.getIndex().x + \"\\t\"\n\t\t\t\t+ block.getIndex().y + \"\\t\"\n\t\t\t\t+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";\n\t\t\t\tfor(User user : artifact.getAssociatedUsers()) {\n\t\t\t\t\tline += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";\n\t\t\t\t}"
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getConnectedComponents()",
+        "line_start": 269,
+        "line_end": 277,
+        "code_snippet": "int[] component = new int[adjacencyMatrix.length];\n\t       int cn = 0;\n\n\t       for(int i=0; i<component.length; i++) {\n\t           if(component[i] == 0) {\n\t               cn++;\n\t               dfs(component,i,cn);\n\t           }\n\t       }"
+    }
+]

@@ -1,0 +1,37 @@
+{
+  "className": "TestRunner",
+  "methodName": "main",
+  "brief": "public static void main(String args[]){}",
+  "methodSignature": "main(String[])",
+  "sourceCode": "public static void main(String args[]) {\r\n\t\tTestRunner aTestRunner= new TestRunner();\r\n\t\ttry {\r\n\t\t\tTestResult r= aTestRunner.start(args);\r\n\t\t\tif (!r.wasSuccessful()) \r\n\t\t\t\tSystem.exit(FAILURE_EXIT);\r\n\t\t\tSystem.exit(SUCCESS_EXIT);\r\n\t\t} catch(Exception e) {\r\n\t\t\tSystem.err.println(e.getMessage());\r\n\t\t\tSystem.exit(EXCEPTION_EXIT);\r\n\t\t}\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.textui.TestRunner": [
+      "start(String[])"
+    ],
+    "junit.framework.TestResult": [
+      "wasSuccessful()"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.Throwable": [
+      "getMessage()"
+    ]
+  },
+  "full_method_info": "public static void main(String[] args) {\r\n    TestRunner aTestRunner = new TestRunner();\r\n    try {\r\n        TestResult r = aTestRunner.start(args);\r\n        if (!r.wasSuccessful())\r\n            System.exit(FAILURE_EXIT);\r\n        System.exit(SUCCESS_EXIT);\r\n    } catch (Exception e) {\r\n        System.err.println(e.getMessage());\r\n        System.exit(EXCEPTION_EXIT);\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.samples.pert.PertFigure",
+  "targetMethod": "write(StorableOutput)",
+  "dependentFields": {
+    "CH.ifa.draw.util.StorableOutput": "private PrintWriter     fStream;\nprivate Vector          fMap;\nprivate int             fIndent;",
+    "CH.ifa.draw.standard.CompositeFigure": "protected Vector fFigures;\nprivate static final long serialVersionUID = 7408153435700021866L;\nprivate int compositeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.samples.pert.PertFigure": "private static final int BORDER = 3;\nprivate Rectangle fDisplayBox;\nprivate Vector fPreTasks;\nprivate Vector fPostTasks;\nprivate static final long serialVersionUID = -7877776240236946511L;\nprivate int pertFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": "public void writeInt(int i){}\npublic void writeStorable(Storable storable){}",
+    "CH.ifa.draw.standard.CompositeFigure": "public void write(StorableOutput dw){}",
+    "CH.ifa.draw.samples.pert.PertFigure": "public void writeTasks(StorableOutput dw, Vector v){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.util.StorableOutput": "* Writes an int to the output stream.\n     \npublic void writeInt(int i) {\n        fStream.print(i);\n        space();\n    }\n\n     * Writes a storable object to the output stream.\n     \npublic void writeStorable(Storable storable) {\n        if (storable == null) {\n            fStream.print(\"NULL\");\n            space();\n            return;\n        }\n\n        if (mapped(storable)) {\n            int ref = fMap.indexOf(storable);\n\t\t\t\n\t\t\tfStream.print(\"REF\");\n\t\t\tspace();\n\t\t\tfStream.print(ref);\n\t\t\tspace();\n            return;\n        }\n\n        incrementIndent();\n        startNewLine();\n        map(storable);\n        fStream.print(storable.getClass().getName());\n        space();\n        storable.write(this);\n        space();\n        decrementIndent();\n    }",
+    "CH.ifa.draw.standard.CompositeFigure": "* Writes the contained figures to the StorableOutput.\n     \npublic void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fFigures.size());\n        Enumeration k = fFigures.elements();\n        while (k.hasMoreElements())\n            dw.writeStorable((Storable) k.nextElement());\n    }",
+    "CH.ifa.draw.samples.pert.PertFigure": "public void writeTasks(StorableOutput dw, Vector v) {\n        dw.writeInt(v.size());\n        Enumeration i = v.elements();\n        while (i.hasMoreElements())\n            dw.writeStorable((Storable) i.nextElement());\n    }"
+  }
+}

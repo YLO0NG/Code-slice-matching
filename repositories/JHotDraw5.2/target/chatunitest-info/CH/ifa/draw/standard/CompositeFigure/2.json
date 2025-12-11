@@ -1,0 +1,28 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "remove",
+  "brief": "public Figure remove(Figure figure){}",
+  "methodSignature": "remove(Figure)",
+  "sourceCode": "public Figure remove(Figure figure) {\n        if (fFigures.contains(figure)) {\n            figure.removeFromContainer(this);\n            fFigures.removeElement(figure);\n        }\n        return figure;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "removeFromContainer(FigureChangeListener)"
+    ],
+    "java.util.Vector": [
+      "removeElement(Object)",
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a figure from the composite.\n * @see #removeAll\n */\npublic Figure remove(Figure figure) {\n    if (fFigures.contains(figure)) {\n        figure.removeFromContainer(this);\n        fFigures.removeElement(figure);\n    }\n    return figure;\n}",
+  "method_comment": "\n     * Removes a figure from the composite.\n     * @see #removeAll\n     ",
+  "method_annotation": ""
+}

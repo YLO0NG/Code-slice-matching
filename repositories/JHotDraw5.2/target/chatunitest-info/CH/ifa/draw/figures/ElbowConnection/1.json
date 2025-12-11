@@ -1,0 +1,18 @@
+{
+  "className": "ElbowConnection",
+  "methodName": "layoutConnection",
+  "brief": "public void layoutConnection(){}",
+  "methodSignature": "layoutConnection()",
+  "sourceCode": "public void layoutConnection() {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public void layoutConnection() {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

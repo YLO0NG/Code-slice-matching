@@ -1,0 +1,28 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figureRequestUpdate",
+  "brief": "public void figureRequestUpdate(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestUpdate(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestUpdate(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestUpdate(e);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "listener()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestUpdate(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Propagates the requestUpdate request up to the container.\n * @see FigureChangeListener\n */\npublic void figureRequestUpdate(FigureChangeEvent e) {\n    if (listener() != null)\n        listener().figureRequestUpdate(e);\n}",
+  "method_comment": "\n     * Propagates the requestUpdate request up to the container.\n     * @see FigureChangeListener\n     ",
+  "method_annotation": ""
+}

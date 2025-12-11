@@ -1,0 +1,28 @@
+{
+  "className": "CustomToolBar",
+  "methodName": "add",
+  "brief": "public Component add(Component newTool){}",
+  "methodSignature": "add(Component)",
+  "sourceCode": "public Component add(Component newTool) {\n        if (currentTools == editTools) {\n            editTools.addElement(newTool);\n        }\n        else {\n            standardTools.addElement(newTool);\n        }\n        needsUpdate = true;\n        return super.add(newTool);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Component"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "/**\n * Add a new tool the the current palette of the ToolBar\n */\npublic Component add(Component newTool) {\n    if (currentTools == editTools) {\n        editTools.addElement(newTool);\n    } else {\n        standardTools.addElement(newTool);\n    }\n    needsUpdate = true;\n    return super.add(newTool);\n}",
+  "method_comment": "\n     * Add a new tool the the current palette of the ToolBar\n     ",
+  "method_annotation": ""
+}

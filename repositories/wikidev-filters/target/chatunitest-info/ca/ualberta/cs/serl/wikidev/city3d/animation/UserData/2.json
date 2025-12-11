@@ -1,0 +1,18 @@
+{
+  "className": "UserData",
+  "methodName": "getR",
+  "brief": "public int getR(){}",
+  "methodSignature": "getR()",
+  "sourceCode": "public int getR() {\n\t\treturn R;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getR() {\n    return R;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

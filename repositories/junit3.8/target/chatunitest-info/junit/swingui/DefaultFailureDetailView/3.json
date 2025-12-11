@@ -1,0 +1,22 @@
+{
+  "className": "DefaultFailureDetailView",
+  "methodName": "getModel",
+  "brief": "private StackTraceListModel getModel(){}",
+  "methodSignature": "getModel()",
+  "sourceCode": "private StackTraceListModel getModel() {\r\n\t\treturn \t(StackTraceListModel)fList.getModel();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JList": [
+      "getModel()"
+    ]
+  },
+  "full_method_info": "private StackTraceListModel getModel() {\r\n    return (StackTraceListModel) fList.getModel();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

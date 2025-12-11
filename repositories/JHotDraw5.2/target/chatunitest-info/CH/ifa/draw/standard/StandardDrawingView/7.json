@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "addAll",
+  "brief": "public void addAll(Vector figures){}",
+  "methodSignature": "addAll(Vector)",
+  "sourceCode": "public void addAll(Vector figures) {\n        FigureEnumeration k = new FigureEnumerator(figures);\n        while (k.hasMoreElements())\n            add(k.nextFigure());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "add(Figure)"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a vector of figures to the drawing.\n */\npublic void addAll(Vector figures) {\n    FigureEnumeration k = new FigureEnumerator(figures);\n    while (k.hasMoreElements()) add(k.nextFigure());\n}",
+  "method_comment": "\n     * Adds a vector of figures to the drawing.\n     ",
+  "method_annotation": ""
+}

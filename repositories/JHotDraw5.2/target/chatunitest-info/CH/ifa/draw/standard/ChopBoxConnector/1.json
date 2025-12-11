@@ -1,0 +1,34 @@
+{
+  "className": "ChopBoxConnector",
+  "methodName": "findEnd",
+  "brief": "public Point findEnd(ConnectionFigure connection){}",
+  "methodSignature": "findEnd(ConnectionFigure)",
+  "sourceCode": "public Point findEnd(ConnectionFigure connection) {\n        Figure endFigure = connection.end().owner();\n        Rectangle r1 = connection.start().displayBox();\n        Point r1c = null;\n\n        if (connection.pointCount() == 2)\n            r1c = new Point(r1.x + r1.width/2, r1.y + r1.height/2);\n         else\n            r1c = connection.pointAt(connection.pointCount()-2);\n\n        return chop(endFigure, r1c);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "pointCount()",
+      "pointAt(int)",
+      "start()",
+      "end()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()",
+      "displayBox()"
+    ],
+    "CH.ifa.draw.standard.ChopBoxConnector": [
+      "chop(Figure, Point)"
+    ]
+  },
+  "full_method_info": "public Point findEnd(ConnectionFigure connection) {\n    Figure endFigure = connection.end().owner();\n    Rectangle r1 = connection.start().displayBox();\n    Point r1c = null;\n    if (connection.pointCount() == 2)\n        r1c = new Point(r1.x + r1.width / 2, r1.y + r1.height / 2);\n    else\n        r1c = connection.pointAt(connection.pointCount() - 2);\n    return chop(endFigure, r1c);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

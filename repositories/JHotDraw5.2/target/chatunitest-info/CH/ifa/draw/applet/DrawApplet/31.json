@@ -1,0 +1,36 @@
+{
+  "className": "DrawApplet",
+  "methodName": "showHelp",
+  "brief": "protected void showHelp(){}",
+  "methodSignature": "showHelp()",
+  "sourceCode": "protected void showHelp() {\n        try {\n            String appletPath = getClass().getName().replace('.', '/');\n            URL url = new URL(getCodeBase(), appletPath+\"Help.html\");\n            getAppletContext().showDocument(url, \"Help\");\n        } catch (IOException e) {\n            showStatus(\"Help file not found\");\n        }\n\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.String": [
+      "replace(char, char)"
+    ],
+    "java.lang.Class": [
+      "getName()"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ],
+    "java.applet.Applet": [
+      "showStatus(String)",
+      "getAppletContext()",
+      "getCodeBase()"
+    ],
+    "java.applet.AppletContext": [
+      "showDocument(URL, String)"
+    ]
+  },
+  "full_method_info": "/**\n * Shows a help page for the applet. The URL of the help\n * page is derived as follows: codeBase+appletClassname+Help.html\"\n */\nprotected void showHelp() {\n    try {\n        String appletPath = getClass().getName().replace('.', '/');\n        URL url = new URL(getCodeBase(), appletPath + \"Help.html\");\n        getAppletContext().showDocument(url, \"Help\");\n    } catch (IOException e) {\n        showStatus(\"Help file not found\");\n    }\n}",
+  "method_comment": "\n     * Shows a help page for the applet. The URL of the help\n     * page is derived as follows: codeBase+appletClassname+Help.html\"\n     ",
+  "method_annotation": ""
+}

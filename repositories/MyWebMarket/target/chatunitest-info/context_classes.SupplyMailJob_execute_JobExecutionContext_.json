@@ -1,0 +1,16 @@
+{
+  "targetClass": "classes.SupplyMailJob",
+  "targetMethod": "execute(JobExecutionContext)",
+  "dependentFields": {
+    "classes.HibernateUtil": "private static final SessionFactory sessionFactory = buildSessionFactory();",
+    "classes.Product": "private Integer id;\nprivate String name;\nprivate Double price;\nprivate Integer supply;"
+  },
+  "dependentMethods": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory(){}",
+    "classes.Product": "@Column(name=\"SUPPLY\", nullable=false)\r\n\tpublic Integer getSupply(){}\n@Column(name=\"NAME\", length=60, nullable=false)\r\n\tpublic String getName(){}"
+  },
+  "dependentMethodBodies": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}",
+    "classes.Product": "@Column(name=\"SUPPLY\", nullable=false)\n\tpublic Integer getSupply() {\n\t\treturn this.supply;\n\t}\n@Column(name=\"NAME\", length=60, nullable=false)\n\tpublic String getName() {\n\t\treturn this.name;\n\t}"
+  }
+}

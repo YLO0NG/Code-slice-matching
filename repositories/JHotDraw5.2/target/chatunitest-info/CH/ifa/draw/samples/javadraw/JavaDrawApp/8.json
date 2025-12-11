@@ -1,0 +1,28 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "createImagesMenu",
+  "brief": "protected JMenu createImagesMenu(){}",
+  "methodSignature": "createImagesMenu()",
+  "sourceCode": "protected JMenu createImagesMenu() {\n\t\tCommandMenu menu = new CommandMenu(\"Images\");\n\t\tFile imagesDirectory = new File(fgSampleImagesPath);\n\t\ttry {\n\t\t    String[] list = imagesDirectory.list();\n\t\t    for (int i = 0; i < list.length; i++) {\n\t\t        String name = list[i];\n\t\t        String path = fgSampleImagesResourcePath+name;\n\t\t        menu.add(new InsertImageCommand(name, path, view()));\n\t\t    }\n\t\t} catch (Exception e) {}\n\t\treturn menu;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.File": [
+      "list()"
+    ],
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "protected JMenu createImagesMenu() {\n    CommandMenu menu = new CommandMenu(\"Images\");\n    File imagesDirectory = new File(fgSampleImagesPath);\n    try {\n        String[] list = imagesDirectory.list();\n        for (int i = 0; i < list.length; i++) {\n            String name = list[i];\n            String path = fgSampleImagesResourcePath + name;\n            menu.add(new InsertImageCommand(name, path, view()));\n        }\n    } catch (Exception e) {\n    }\n    return menu;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

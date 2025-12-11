@@ -1,0 +1,22 @@
+{
+  "className": "Ticket",
+  "methodName": "setReporter",
+  "brief": "public void setReporter(User reporter){}",
+  "methodSignature": "setReporter(User)",
+  "sourceCode": "public void setReporter(User reporter) {\n\t\tthis.reporter = reporter;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": []
+  },
+  "full_method_info": "/**\n * @param  reporter\n * @uml.property  name=\"reporter\"\n */\npublic void setReporter(User reporter) {\n    this.reporter = reporter;\n}",
+  "method_comment": "\n\t * @param  reporter\n\t * @uml.property  name=\"reporter\"\n\t ",
+  "method_annotation": ""
+}

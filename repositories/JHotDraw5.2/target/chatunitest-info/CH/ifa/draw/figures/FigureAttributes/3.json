@@ -1,0 +1,25 @@
+{
+  "className": "FigureAttributes",
+  "methodName": "clone",
+  "brief": "public Object clone(){}",
+  "methodSignature": "clone()",
+  "sourceCode": "public Object clone() {\n        try {\n            FigureAttributes a = (FigureAttributes) super.clone();\n            a.fMap = (Hashtable) fMap.clone();\n            return a;\n        } catch (CloneNotSupportedException e) {\n\t        throw new InternalError();\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Object": [
+      "clone()"
+    ],
+    "java.util.Hashtable": [
+      "clone()"
+    ]
+  },
+  "full_method_info": "/**\n * Clones the attributes.\n */\npublic Object clone() {\n    try {\n        FigureAttributes a = (FigureAttributes) super.clone();\n        a.fMap = (Hashtable) fMap.clone();\n        return a;\n    } catch (CloneNotSupportedException e) {\n        throw new InternalError();\n    }\n}",
+  "method_comment": "\n     * Clones the attributes.\n     ",
+  "method_annotation": ""
+}

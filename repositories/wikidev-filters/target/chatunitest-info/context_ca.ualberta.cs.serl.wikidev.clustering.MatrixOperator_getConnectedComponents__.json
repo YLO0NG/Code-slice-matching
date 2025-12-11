@@ -1,0 +1,13 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+  "targetMethod": "getConnectedComponents()",
+  "dependentFields": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": "private static double[][] adjacencyMatrix;"
+  },
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": "private static void dfs(int[] component, int v, int cn){}"
+  },
+  "dependentMethodBodies": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": "private static void dfs(int[] component, int v, int cn) {\n\t       component[v] = cn;\n\t       for(int w=0; w<adjacencyMatrix[v].length; w++) {\n\t           if(adjacencyMatrix[v][w] != 0)\n\t               if(component[w] == 0)\n\t                   dfs(component,w,cn);\n\t       }\n\t   }"
+  }
+}

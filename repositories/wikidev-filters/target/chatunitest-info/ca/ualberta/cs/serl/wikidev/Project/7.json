@@ -1,0 +1,18 @@
+{
+  "className": "Project",
+  "methodName": "getMessages",
+  "brief": "public Set<Message> getMessages(){}",
+  "methodSignature": "getMessages()",
+  "sourceCode": "public Set<Message> getMessages() {\n\t\treturn messages;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Set<Message> getMessages() {\n    return messages;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

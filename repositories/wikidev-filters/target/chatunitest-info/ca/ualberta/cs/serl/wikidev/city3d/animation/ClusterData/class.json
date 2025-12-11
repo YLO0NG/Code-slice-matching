@@ -1,0 +1,73 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.city3d.animation.ClusterData",
+  "className": "ClusterData",
+  "index": 15,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.city3d.animation",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.city3d.animation;",
+  "classSignature": "public class ClusterData",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.SQLException;",
+    "import java.sql.Timestamp;",
+    "import java.util.ArrayList;",
+    "import java.util.HashMap;",
+    "import ca.ualberta.cs.serl.wikidev.DataManager;",
+    "import ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet;",
+    "import ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail;",
+    "import ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;",
+    "import ca.ualberta.cs.serl.wikidev.city3d.Layout;"
+  ],
+  "fields": [
+    "private Timestamp week;",
+    "private HashMap<IArtifact, Double> artifacts;",
+    "private HashMap<String, Double> terms;",
+    "private HashMap<BuildingData, Double> buildings;",
+    "private ArrayList<String> artifactStrings;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getTerms()": "0",
+    "getArtifact(String)": "1",
+    "addArtifacts(HashMap)": "2",
+    "addTerms(HashMap)": "3",
+    "calculateBuildingData()": "4",
+    "getBuildings()": "5",
+    "ClusterData(Timestamp)": "6"
+  },
+  "methodsBrief": [
+    "public HashMap<String, Double> getTerms(){}",
+    "public double getArtifact(String art){}",
+    "public void addArtifacts(HashMap<IArtifact, Double> newArtifacts){}",
+    "public void addTerms(HashMap<String, Double> newTerms){}",
+    "public void calculateBuildingData(){}",
+    "public HashMap<BuildingData, Double> getBuildings(){}",
+    "public ClusterData(Timestamp week){}"
+  ],
+  "constructorSigs": [
+    "ClusterData(Timestamp)"
+  ],
+  "constructorBrief": [
+    "public ClusterData(Timestamp week){}"
+  ],
+  "getterSetterSigs": [
+    "getTerms()",
+    "getBuildings()"
+  ],
+  "getterSetterBrief": [
+    "public HashMap<String, Double> getTerms(){}",
+    "public HashMap<BuildingData, Double> getBuildings(){}"
+  ],
+  "constructorDeps": {
+    "java.sql.Timestamp": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.city3d.animation;\n\nimport java.sql.SQLException;\nimport java.sql.Timestamp;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport ca.ualberta.cs.serl.wikidev.DataManager;\nimport ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet;\nimport ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail;\nimport ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;\nimport ca.ualberta.cs.serl.wikidev.city3d.Layout;\n\npublic class ClusterData {\n\n    private Timestamp week;\n\n    private HashMap<IArtifact, Double> artifacts;\n\n    private HashMap<String, Double> terms;\n\n    private HashMap<BuildingData, Double> buildings;\n\n    private ArrayList<String> artifactStrings;\n\n    public ClusterData(Timestamp week) {\n        this.week = week;\n        this.artifacts = new HashMap<IArtifact, Double>();\n        this.terms = new HashMap<String, Double>();\n        this.buildings = new HashMap<BuildingData, Double>();\n        this.artifactStrings = new ArrayList<String>();\n    }\n\n    public HashMap<String, Double> getTerms() {\n        return terms;\n    }\n\n    public double getArtifact(String art) {\n        for (IArtifact artifact : artifacts.keySet()) {\n            if (artifact.toString().equals(art)) {\n                return artifacts.get(artifact);\n            }\n        }\n        return Double.MAX_VALUE;\n    }\n\n    public void addArtifacts(HashMap<IArtifact, Double> newArtifacts) {\n        if (artifacts.keySet().isEmpty()) {\n            artifacts.putAll(newArtifacts);\n            for (IArtifact artifact : artifacts.keySet()) {\n                artifactStrings.add(artifact.toString());\n            }\n        } else {\n            for (IArtifact artifact : newArtifacts.keySet()) {\n                if (artifactStrings.contains(artifact.toString())) {\n                    if (getArtifact(artifact.toString()) > newArtifacts.get(artifact)) {\n                        artifacts.put(artifact, newArtifacts.get(artifact));\n                        artifactStrings.add(artifact.toString());\n                    }\n                } else {\n                    artifacts.put(artifact, newArtifacts.get(artifact));\n                    artifactStrings.add(artifact.toString());\n                }\n            }\n        }\n    }\n\n    public void addTerms(HashMap<String, Double> newTerms) {\n        if (terms.keySet().isEmpty()) {\n            terms.putAll(newTerms);\n        } else {\n            for (String term : newTerms.keySet()) {\n                if (terms.containsKey(term)) {\n                    if (terms.get(term) > newTerms.get(term)) {\n                        terms.put(term, newTerms.get(term));\n                    }\n                } else {\n                    terms.put(term, newTerms.get(term));\n                }\n            }\n        }\n    }\n\n    public void calculateBuildingData() {\n        for (IArtifact artifact : artifacts.keySet()) {\n            if (!artifact.getType().equals(\"ChangeSet\")) {\n                try {\n                    ArrayList<CommunicationBuildingData> buildingHistory = DataManager.getCommunicationsBuildingHistory(artifact.getType(), artifact.getId(), artifact.getProject().getProjectID());\n                    for (CommunicationBuildingData building : buildingHistory) {\n                        if (building.getWeek().equals(week)) {\n                            buildings.put(building, artifacts.get(artifact));\n                            break;\n                        }\n                    }\n                } catch (SQLException e) {\n                    // TODO Auto-generated catch block\n                    e.printStackTrace();\n                }\n            } else {\n                ChangeSet changeset = (ChangeSet) artifact;\n                for (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n                    String url = Layout.URLprefix + changeset.getProject().getProjectName() + \"_File:\" + detail.getFilename();\n                    try {\n                        ArrayList<FileBuildingData> buildingHistory = DataManager.getFilesBuildingHistory(url);\n                        for (FileBuildingData building : buildingHistory) {\n                            if (building.getWeek().equals(week)) {\n                                buildings.put(building, artifacts.get(artifact));\n                                break;\n                            }\n                        }\n                    } catch (SQLException e) {\n                        // TODO Auto-generated catch block\n                        e.printStackTrace();\n                    }\n                }\n            }\n        }\n    }\n\n    public HashMap<BuildingData, Double> getBuildings() {\n        return buildings;\n    }\n}\n",
+  "classDeclarationCode": "public class ClusterData {\n\n    private Timestamp week;\n\n    private HashMap<IArtifact, Double> artifacts;\n\n    private HashMap<String, Double> terms;\n\n    private HashMap<BuildingData, Double> buildings;\n\n    private ArrayList<String> artifactStrings;\n\n    public ClusterData(Timestamp week) {\n        this.week = week;\n        this.artifacts = new HashMap<IArtifact, Double>();\n        this.terms = new HashMap<String, Double>();\n        this.buildings = new HashMap<BuildingData, Double>();\n        this.artifactStrings = new ArrayList<String>();\n    }\n\n    public HashMap<String, Double> getTerms() {\n        return terms;\n    }\n\n    public double getArtifact(String art) {\n        for (IArtifact artifact : artifacts.keySet()) {\n            if (artifact.toString().equals(art)) {\n                return artifacts.get(artifact);\n            }\n        }\n        return Double.MAX_VALUE;\n    }\n\n    public void addArtifacts(HashMap<IArtifact, Double> newArtifacts) {\n        if (artifacts.keySet().isEmpty()) {\n            artifacts.putAll(newArtifacts);\n            for (IArtifact artifact : artifacts.keySet()) {\n                artifactStrings.add(artifact.toString());\n            }\n        } else {\n            for (IArtifact artifact : newArtifacts.keySet()) {\n                if (artifactStrings.contains(artifact.toString())) {\n                    if (getArtifact(artifact.toString()) > newArtifacts.get(artifact)) {\n                        artifacts.put(artifact, newArtifacts.get(artifact));\n                        artifactStrings.add(artifact.toString());\n                    }\n                } else {\n                    artifacts.put(artifact, newArtifacts.get(artifact));\n                    artifactStrings.add(artifact.toString());\n                }\n            }\n        }\n    }\n\n    public void addTerms(HashMap<String, Double> newTerms) {\n        if (terms.keySet().isEmpty()) {\n            terms.putAll(newTerms);\n        } else {\n            for (String term : newTerms.keySet()) {\n                if (terms.containsKey(term)) {\n                    if (terms.get(term) > newTerms.get(term)) {\n                        terms.put(term, newTerms.get(term));\n                    }\n                } else {\n                    terms.put(term, newTerms.get(term));\n                }\n            }\n        }\n    }\n\n    public void calculateBuildingData() {\n        for (IArtifact artifact : artifacts.keySet()) {\n            if (!artifact.getType().equals(\"ChangeSet\")) {\n                try {\n                    ArrayList<CommunicationBuildingData> buildingHistory = DataManager.getCommunicationsBuildingHistory(artifact.getType(), artifact.getId(), artifact.getProject().getProjectID());\n                    for (CommunicationBuildingData building : buildingHistory) {\n                        if (building.getWeek().equals(week)) {\n                            buildings.put(building, artifacts.get(artifact));\n                            break;\n                        }\n                    }\n                } catch (SQLException e) {\n                    // TODO Auto-generated catch block\n                    e.printStackTrace();\n                }\n            } else {\n                ChangeSet changeset = (ChangeSet) artifact;\n                for (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n                    String url = Layout.URLprefix + changeset.getProject().getProjectName() + \"_File:\" + detail.getFilename();\n                    try {\n                        ArrayList<FileBuildingData> buildingHistory = DataManager.getFilesBuildingHistory(url);\n                        for (FileBuildingData building : buildingHistory) {\n                            if (building.getWeek().equals(week)) {\n                                buildings.put(building, artifacts.get(artifact));\n                                break;\n                            }\n                        }\n                    } catch (SQLException e) {\n                        // TODO Auto-generated catch block\n                        e.printStackTrace();\n                    }\n                }\n            }\n        }\n    }\n\n    public HashMap<BuildingData, Double> getBuildings() {\n        return buildings;\n    }\n}",
+  "subClasses": []
+}

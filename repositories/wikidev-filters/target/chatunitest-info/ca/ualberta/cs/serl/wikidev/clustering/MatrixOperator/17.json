@@ -1,0 +1,25 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "one",
+  "brief": "public static double[][] one(int m, int n){}",
+  "methodSignature": "one(int, int)",
+  "sourceCode": "public static double[][] one(int m, int n) {\n\t\t   return DoubleArray.fill(m, n, 1.0);\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "org.math.array.DoubleArray": [
+      "fill(int, int, double)"
+    ]
+  },
+  "full_method_info": "public static double[][] one(int m, int n) {\n    return DoubleArray.fill(m, n, 1.0);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

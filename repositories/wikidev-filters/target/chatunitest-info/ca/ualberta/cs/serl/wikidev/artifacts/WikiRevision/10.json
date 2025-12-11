@@ -1,0 +1,18 @@
+{
+  "className": "WikiRevision",
+  "methodName": "getRev_timestamp",
+  "brief": "public Timestamp getRev_timestamp(){}",
+  "methodSignature": "getRev_timestamp()",
+  "sourceCode": "public Timestamp getRev_timestamp() {\n\t\treturn rev_timestamp;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rev_timestamp\"\n */\npublic Timestamp getRev_timestamp() {\n    return rev_timestamp;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rev_timestamp\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "ProgressBar",
+  "methodName": "step",
+  "brief": "public void step(boolean successful){}",
+  "methodSignature": "step(boolean)",
+  "sourceCode": "public void step(boolean successful) {\r\n\t\tfProgress++;\r\n\t\tint x= fProgressX;\r\n\r\n\t\tfProgressX= scale(fProgress);\r\n\r\n\t\tif (!fError && !successful) {\r\n\t\t\tfError= true;\r\n\t\t\tx= 1;\r\n\t\t}\r\n\t\tpaintStep(x, fProgressX);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {
+    "junit.awtui.ProgressBar": [
+      "paintStep(int, int)",
+      "scale(int)"
+    ]
+  },
+  "full_method_info": "public void step(boolean successful) {\r\n    fProgress++;\r\n    int x = fProgressX;\r\n    fProgressX = scale(fProgress);\r\n    if (!fError && !successful) {\r\n        fError = true;\r\n        x = 1;\r\n    }\r\n    paintStep(x, fProgressX);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

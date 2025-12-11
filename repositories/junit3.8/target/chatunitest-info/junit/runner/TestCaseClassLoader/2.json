@@ -1,0 +1,25 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "getResourceAsStream",
+  "brief": "public InputStream getResourceAsStream(String name){}",
+  "methodSignature": "getResourceAsStream(String)",
+  "sourceCode": "public InputStream getResourceAsStream(String name) {\r\n\t\treturn ClassLoader.getSystemResourceAsStream(name);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.ClassLoader": [
+      "getSystemResourceAsStream(String)"
+    ]
+  },
+  "full_method_info": "public InputStream getResourceAsStream(String name) {\r\n    return ClassLoader.getSystemResourceAsStream(name);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

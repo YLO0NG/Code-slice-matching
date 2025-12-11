@@ -1,0 +1,28 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "collectTests",
+  "brief": "public Enumeration collectTests(){}",
+  "methodSignature": "collectTests()",
+  "sourceCode": "public Enumeration collectTests() {\r\n\t\tString classPath= System.getProperty(\"java.class.path\");\r\n\t\tHashtable result = collectFilesInPath(classPath);\r\n\t\treturn result.elements();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.System": [
+      "getProperty(String)"
+    ],
+    "junit.runner.ClassPathTestCollector": [
+      "collectFilesInPath(String)"
+    ],
+    "java.util.Hashtable": [
+      "elements()"
+    ]
+  },
+  "full_method_info": "public Enumeration collectTests() {\r\n    String classPath = System.getProperty(\"java.class.path\");\r\n    Hashtable result = collectFilesInPath(classPath);\r\n    return result.elements();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

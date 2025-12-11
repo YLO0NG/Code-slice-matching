@@ -1,0 +1,24 @@
+{
+  "className": "AbstractTool",
+  "methodName": "mouseMove",
+  "brief": "public void mouseMove(MouseEvent evt, int x, int y){}",
+  "methodSignature": "mouseMove(MouseEvent, int, int)",
+  "sourceCode": "public void mouseMove(MouseEvent evt, int x, int y) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": []
+  },
+  "full_method_info": "/**\n * Handles mouse moves (if the mouse button is up).\n */\npublic void mouseMove(MouseEvent evt, int x, int y) {\n}",
+  "method_comment": "\n     * Handles mouse moves (if the mouse button is up).\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "peelDecoration",
+  "brief": "public Figure peelDecoration(){}",
+  "methodSignature": "peelDecoration()",
+  "sourceCode": "public Figure peelDecoration() {\n        fComponent.removeFromContainer(this); //??? set the container to the listener()?\n        return fComponent;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "removeFromContainer(FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes the decoration from the contained figure.\n */\npublic Figure peelDecoration() {\n    // ??? set the container to the listener()?\n    fComponent.removeFromContainer(this);\n    return fComponent;\n}",
+  "method_comment": "\n     * Removes the decoration from the contained figure.\n     ",
+  "method_annotation": ""
+}

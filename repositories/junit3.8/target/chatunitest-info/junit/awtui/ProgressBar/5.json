@@ -1,0 +1,25 @@
+{
+  "className": "ProgressBar",
+  "methodName": "reset",
+  "brief": "public void reset(){}",
+  "methodSignature": "reset()",
+  "sourceCode": "public void reset() {\r\n\t\tfProgressX= 1;\r\n\t\tfProgress= 0;\r\n\t\tfError= false;\r\n\t\tpaint(getGraphics());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.awtui.ProgressBar": [
+      "paint(Graphics)"
+    ],
+    "java.awt.Component": [
+      "getGraphics()"
+    ]
+  },
+  "full_method_info": "public void reset() {\r\n    fProgressX = 1;\r\n    fProgress = 0;\r\n    fError = false;\r\n    paint(getGraphics());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

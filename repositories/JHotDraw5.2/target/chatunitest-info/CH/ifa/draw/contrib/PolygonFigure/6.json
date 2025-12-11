@@ -1,0 +1,23 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "points",
+  "brief": "public Enumeration points(){}",
+  "methodSignature": "points()",
+  "sourceCode": "public Enumeration points() {\n    Vector pts = new Vector(fPoly.npoints);\n    for (int i = 0; i < fPoly.npoints; ++i)\n      pts.addElement(new Point(fPoly.xpoints[i], fPoly.ypoints[i]));\n    return pts.elements();\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)",
+      "elements()"
+    ]
+  },
+  "full_method_info": "public Enumeration points() {\n    Vector pts = new Vector(fPoly.npoints);\n    for (int i = 0; i < fPoly.npoints; ++i) pts.addElement(new Point(fPoly.xpoints[i], fPoly.ypoints[i]));\n    return pts.elements();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

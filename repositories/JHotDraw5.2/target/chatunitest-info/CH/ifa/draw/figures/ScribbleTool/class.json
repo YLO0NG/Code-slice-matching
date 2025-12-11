@@ -1,0 +1,60 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.ScribbleTool",
+  "className": "ScribbleTool",
+  "index": 50,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class ScribbleTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.AbstractTool;"
+  ],
+  "fields": [
+    "private PolyLineFigure  fScribble;",
+    "private int             fLastX, fLastY;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "activate()": "0",
+    "deactivate()": "1",
+    "point(int, int)": "2",
+    "mouseDown(MouseEvent, int, int)": "3",
+    "mouseDrag(MouseEvent, int, int)": "4",
+    "ScribbleTool(DrawingView)": "5"
+  },
+  "methodsBrief": [
+    "public void activate(){}",
+    "public void deactivate(){}",
+    "private void point(int x, int y){}",
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public ScribbleTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "ScribbleTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public ScribbleTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ScribbleTool.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.AbstractTool;\n\n/**\n * Tool to scribble a PolyLineFigure\n * @see PolyLineFigure\n */\npublic class ScribbleTool extends AbstractTool {\n\n    private PolyLineFigure fScribble;\n\n    private int fLastX, fLastY;\n\n    public ScribbleTool(DrawingView view) {\n        super(view);\n    }\n\n    public void activate() {\n        super.activate();\n        fScribble = null;\n    }\n\n    public void deactivate() {\n        super.deactivate();\n        if (fScribble != null) {\n            if (fScribble.size().width < 4 || fScribble.size().height < 4)\n                drawing().remove(fScribble);\n        }\n    }\n\n    private void point(int x, int y) {\n        if (fScribble == null) {\n            fScribble = new PolyLineFigure(x, y);\n            view().add(fScribble);\n        } else if (fLastX != x || fLastY != y)\n            fScribble.addPoint(x, y);\n        fLastX = x;\n        fLastY = y;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        if (e.getClickCount() >= 2) {\n            fScribble = null;\n            editor().toolDone();\n        } else {\n            // use original event coordinates to avoid\n            // supress that the scribble is constrained to\n            // the grid\n            int x1 = e.getX();\n            int y1 = e.getY();\n            if (fScribble == null) {\n                fScribble = new PolyLineFigure(x1, y1);\n                view().add(fScribble);\n            } else if (fLastX != x1 || fLastY != y1)\n                fScribble.addPoint(x1, y1);\n            fLastX = x1;\n            fLastY = y1;\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        if (fScribble != null)\n            point(e.getX(), e.getY());\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Tool to scribble a PolyLineFigure\n * @see PolyLineFigure\n */\npublic class ScribbleTool extends AbstractTool {\n\n    private PolyLineFigure fScribble;\n\n    private int fLastX, fLastY;\n\n    public ScribbleTool(DrawingView view) {\n        super(view);\n    }\n\n    public void activate() {\n        super.activate();\n        fScribble = null;\n    }\n\n    public void deactivate() {\n        super.deactivate();\n        if (fScribble != null) {\n            if (fScribble.size().width < 4 || fScribble.size().height < 4)\n                drawing().remove(fScribble);\n        }\n    }\n\n    private void point(int x, int y) {\n        if (fScribble == null) {\n            fScribble = new PolyLineFigure(x, y);\n            view().add(fScribble);\n        } else if (fLastX != x || fLastY != y)\n            fScribble.addPoint(x, y);\n        fLastX = x;\n        fLastY = y;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        if (e.getClickCount() >= 2) {\n            fScribble = null;\n            editor().toolDone();\n        } else {\n            // use original event coordinates to avoid\n            // supress that the scribble is constrained to\n            // the grid\n            int x1 = e.getX();\n            int y1 = e.getY();\n            if (fScribble == null) {\n                fScribble = new PolyLineFigure(x1, y1);\n                view().add(fScribble);\n            } else if (fLastX != x1 || fLastY != y1)\n                fScribble.addPoint(x1, y1);\n            fLastX = x1;\n            fLastY = y1;\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        if (fScribble != null)\n            point(e.getX(), e.getY());\n    }\n}",
+  "subClasses": []
+}

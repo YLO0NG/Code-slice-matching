@@ -1,0 +1,25 @@
+{
+  "className": "LineConnection",
+  "methodName": "disconnectStart",
+  "brief": "public void disconnectStart(){}",
+  "methodSignature": "disconnectStart()",
+  "sourceCode": "public void disconnectStart() {\n        startFigure().removeFigureChangeListener(this);\n        fStart = null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "removeFigureChangeListener(FigureChangeListener)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "startFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Disconnects the start figure.\n */\npublic void disconnectStart() {\n    startFigure().removeFigureChangeListener(this);\n    fStart = null;\n}",
+  "method_comment": "\n     * Disconnects the start figure.\n     ",
+  "method_annotation": ""
+}

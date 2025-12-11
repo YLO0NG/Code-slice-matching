@@ -1,0 +1,30 @@
+{
+  "className": "CommandChoice",
+  "methodName": "addItem",
+  "brief": "public synchronized void addItem(Command command){}",
+  "methodSignature": "addItem(Command)",
+  "sourceCode": "public synchronized void addItem(Command command) {\n        addItem(command.name());\n        fCommands.addElement(command);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Command"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Command": [
+      "name()"
+    ],
+    "javax.swing.JComboBox": [
+      "addItem(E)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a command to the menu.\n */\npublic synchronized void addItem(Command command) {\n    addItem(command.name());\n    fCommands.addElement(command);\n}",
+  "method_comment": "\n     * Adds a command to the menu.\n     ",
+  "method_annotation": ""
+}

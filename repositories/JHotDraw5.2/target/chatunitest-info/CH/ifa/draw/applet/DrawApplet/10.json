@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createToolButton",
+  "brief": "protected ToolButton createToolButton(String iconName, String toolName, Tool tool){}",
+  "methodSignature": "createToolButton(String, String, Tool)",
+  "sourceCode": "protected ToolButton createToolButton(String iconName, String toolName, Tool tool) {\n        return new ToolButton(this, iconName, toolName, tool);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String",
+    "Tool"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.Tool": []
+  },
+  "full_method_info": "/**\n * Creates a tool button with the given image, tool, and text\n */\nprotected ToolButton createToolButton(String iconName, String toolName, Tool tool) {\n    return new ToolButton(this, iconName, toolName, tool);\n}",
+  "method_comment": "\n     * Creates a tool button with the given image, tool, and text\n     ",
+  "method_annotation": ""
+}

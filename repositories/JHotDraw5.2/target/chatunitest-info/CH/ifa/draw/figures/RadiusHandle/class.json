@@ -1,0 +1,58 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.RadiusHandle",
+  "className": "RadiusHandle",
+  "index": 47,
+  "modifier": "[]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "class RadiusHandle",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "private Point fRadius;",
+    "private RoundRectangleFigure fOwner;",
+    "private static final int OFFSET = 4;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStart(int, int, DrawingView)": "0",
+    "invokeStep(int, int, int, int, DrawingView)": "1",
+    "locate()": "2",
+    "draw(Graphics)": "3",
+    "RadiusHandle(RoundRectangleFigure)": "4"
+  },
+  "methodsBrief": [
+    "public void invokeStart(int  x, int  y, DrawingView view){}",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public Point locate(){}",
+    "public void draw(Graphics g){}",
+    "public RadiusHandle(RoundRectangleFigure owner){}"
+  ],
+  "constructorSigs": [
+    "RadiusHandle(RoundRectangleFigure)"
+  ],
+  "constructorBrief": [
+    "public RadiusHandle(RoundRectangleFigure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.figures.RoundRectangleFigure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)RadiusHandle.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * A Handle to manipulate the radius of a round corner rectangle.\n */\nclass RadiusHandle extends AbstractHandle {\n\n    private Point fRadius;\n\n    private RoundRectangleFigure fOwner;\n\n    private static final int OFFSET = 4;\n\n    public RadiusHandle(RoundRectangleFigure owner) {\n        super(owner);\n        fOwner = owner;\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        fRadius = fOwner.getArc();\n        fRadius.x = fRadius.x / 2;\n        fRadius.y = fRadius.y / 2;\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        int dx = x - anchorX;\n        int dy = y - anchorY;\n        Rectangle r = fOwner.displayBox();\n        int max = r.width;\n        int value = 2 * (fRadius.x + dx);\n        if (value < 0)\n            value = 0;\n        if (value > max)\n            value = max;\n        int rx = value;\n        int ry = Geom.range(0, r.height, 2 * (fRadius.y + dy));\n        fOwner.setArc(rx, ry);\n    }\n\n    public Point locate() {\n        Point radius = fOwner.getArc();\n        Rectangle r = fOwner.displayBox();\n        return new Point(r.x + radius.x / 2 + OFFSET, r.y + radius.y / 2 + OFFSET);\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Handle to manipulate the radius of a round corner rectangle.\n */\nclass RadiusHandle extends AbstractHandle {\n\n    private Point fRadius;\n\n    private RoundRectangleFigure fOwner;\n\n    private static final int OFFSET = 4;\n\n    public RadiusHandle(RoundRectangleFigure owner) {\n        super(owner);\n        fOwner = owner;\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        fRadius = fOwner.getArc();\n        fRadius.x = fRadius.x / 2;\n        fRadius.y = fRadius.y / 2;\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        int dx = x - anchorX;\n        int dy = y - anchorY;\n        Rectangle r = fOwner.displayBox();\n        int max = r.width;\n        int value = 2 * (fRadius.x + dx);\n        if (value < 0)\n            value = 0;\n        if (value > max)\n            value = max;\n        int rx = value;\n        int ry = Geom.range(0, r.height, 2 * (fRadius.y + dy));\n        fOwner.setArc(rx, ry);\n    }\n\n    public Point locate() {\n        Point radius = fOwner.getArc();\n        Rectangle r = fOwner.displayBox();\n        return new Point(r.x + radius.x / 2 + OFFSET, r.y + radius.y / 2 + OFFSET);\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n}",
+  "subClasses": []
+}

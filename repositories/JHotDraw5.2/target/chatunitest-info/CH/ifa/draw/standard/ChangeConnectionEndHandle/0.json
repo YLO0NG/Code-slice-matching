@@ -1,0 +1,22 @@
+{
+  "className": "ChangeConnectionEndHandle",
+  "methodName": "target",
+  "brief": "protected Connector target(){}",
+  "methodSignature": "target()",
+  "sourceCode": "protected Connector target() {\n        return fConnection.end();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "end()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the end figure of a connection.\n */\nprotected Connector target() {\n    return fConnection.end();\n}",
+  "method_comment": "\n     * Gets the end figure of a connection.\n     ",
+  "method_annotation": ""
+}

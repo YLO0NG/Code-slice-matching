@@ -1,0 +1,42 @@
+{
+  "fullClassName": "junit.swingui.TestRunContext",
+  "className": "TestRunContext",
+  "index": 43,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "public interface TestRunContext",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.ListModel;",
+    "import junit.framework.Test;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "handleTestSelected(Test)": "0",
+    "getFailures()": "1"
+  },
+  "methodsBrief": [
+    "public void handleTestSelected(Test test);",
+    "public ListModel getFailures();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getFailures()"
+  ],
+  "getterSetterBrief": [
+    "public ListModel getFailures();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport javax.swing.ListModel;\r\nimport junit.framework.Test;\r\n\r\n/**\r\n * The interface for accessing the Test run context. Test run views\r\n * should use this interface rather than accessing the TestRunner\r\n * directly.\r\n */\r\npublic interface TestRunContext {\r\n\r\n    /**\r\n     * Handles the selection of a Test.\r\n     */\r\n    public void handleTestSelected(Test test);\r\n\r\n    /**\r\n     * Returns the failure model\r\n     */\r\n    public ListModel getFailures();\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * The interface for accessing the Test run context. Test run views\r\n * should use this interface rather than accessing the TestRunner\r\n * directly.\r\n */\r\npublic interface TestRunContext {\r\n\r\n    /**\r\n     * Handles the selection of a Test.\r\n     */\r\n    public void handleTestSelected(Test test);\r\n\r\n    /**\r\n     * Returns the failure model\r\n     */\r\n    public ListModel getFailures();\r\n}",
+  "subClasses": []
+}

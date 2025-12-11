@@ -1,0 +1,30 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "toggleSelection",
+  "brief": "public void toggleSelection(Figure figure){}",
+  "methodSignature": "toggleSelection(Figure)",
+  "sourceCode": "public void toggleSelection(Figure figure) {\n        if (fSelection.contains(figure))\n            removeFromSelection(figure);\n        else\n            addToSelection(figure);\n        selectionChanged();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "java.util.Vector": [
+      "contains(Object)"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionChanged()",
+      "removeFromSelection(Figure)",
+      "addToSelection(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * If a figure isn't selected it is added to the selection.\n * Otherwise it is removed from the selection.\n */\npublic void toggleSelection(Figure figure) {\n    if (fSelection.contains(figure))\n        removeFromSelection(figure);\n    else\n        addToSelection(figure);\n    selectionChanged();\n}",
+  "method_comment": "\n     * If a figure isn't selected it is added to the selection.\n     * Otherwise it is removed from the selection.\n     ",
+  "method_annotation": ""
+}

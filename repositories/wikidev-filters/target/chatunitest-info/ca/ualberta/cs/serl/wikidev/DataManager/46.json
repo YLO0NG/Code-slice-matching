@@ -1,0 +1,44 @@
+{
+  "className": "DataManager",
+  "methodName": "getTicketChangesByTicketID",
+  "brief": "public static ArrayList<TicketChange> getTicketChangesByTicketID(int ticketID) throws SQLException{}",
+  "methodSignature": "getTicketChangesByTicketID(int)",
+  "sourceCode": "public static ArrayList<TicketChange> getTicketChangesByTicketID(int ticketID) throws SQLException {\n    \tArrayList<TicketChange> ticketChanges = new ArrayList<TicketChange>();\n    \tString sqlStmt = QueryBuilder.selectTicketChangesByTicketID(ticketID);\n\t\tResultSet res = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile (res.next()) {\n\t\t\tTicketChange ticketChange = new TicketChange(res.getString(\"author_name\"), res.getString(\"field_changed\"), res.getInt(\"id\")\n\t\t\t\t\t, res.getString(\"new_value\"), res.getString(\"old_value\"), res.getInt(\"project_ticket_id\"), res.getInt(\"ticket_id\"), res.getInt(\"project_id\"), res.getTimestamp(\"change_time\"));\n\t\t\tticketChanges.add(ticketChange);\n\t\t}\n\t\tif(res != null) res.close();\n\t\tfor(TicketChange ticketChange : ticketChanges) {\n\t\t\tticketChange.setExternalAuthor(getUserByUserName(ticketChange.getExternalAuthorUsername()));\n\t\t}\n\t\treturn ticketChanges;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectTicketChangesByTicketID(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "getTimestamp(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.TicketChange": [
+      "setExternalAuthor(User)",
+      "getExternalAuthorUsername()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getUserByUserName(String)"
+    ]
+  },
+  "full_method_info": "public static ArrayList<TicketChange> getTicketChangesByTicketID(int ticketID) throws SQLException {\n    ArrayList<TicketChange> ticketChanges = new ArrayList<TicketChange>();\n    String sqlStmt = QueryBuilder.selectTicketChangesByTicketID(ticketID);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        TicketChange ticketChange = new TicketChange(res.getString(\"author_name\"), res.getString(\"field_changed\"), res.getInt(\"id\"), res.getString(\"new_value\"), res.getString(\"old_value\"), res.getInt(\"project_ticket_id\"), res.getInt(\"ticket_id\"), res.getInt(\"project_id\"), res.getTimestamp(\"change_time\"));\n        ticketChanges.add(ticketChange);\n    }\n    if (res != null)\n        res.close();\n    for (TicketChange ticketChange : ticketChanges) {\n        ticketChange.setExternalAuthor(getUserByUserName(ticketChange.getExternalAuthorUsername()));\n    }\n    return ticketChanges;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

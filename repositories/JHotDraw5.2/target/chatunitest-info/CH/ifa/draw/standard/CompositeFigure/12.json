@@ -1,0 +1,18 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figures",
+  "brief": "public final FigureEnumeration figures(){}",
+  "methodSignature": "figures()",
+  "sourceCode": "public final FigureEnumeration figures() {\n        return new FigureEnumerator(fFigures);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns an Enumeration for accessing the contained figures.\n * The figures are returned in the drawing order.\n */\npublic final FigureEnumeration figures() {\n    return new FigureEnumerator(fFigures);\n}",
+  "method_comment": "\n     * Returns an Enumeration for accessing the contained figures.\n     * The figures are returned in the drawing order.\n     ",
+  "method_annotation": ""
+}

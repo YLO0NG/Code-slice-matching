@@ -1,0 +1,33 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "setAttribute",
+  "brief": "public void setAttribute(String name, Object value){}",
+  "methodSignature": "setAttribute(String, Object)",
+  "sourceCode": "public void setAttribute(String name, Object value) {\n\t\tif (getPresentationFigure() != null) {\n\t\t\tgetPresentationFigure().setAttribute(name, value);\n\t\t}\n\t\telse {\n\t\t\tsuper.setAttribute(name, value);\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "setAttribute(String, Object)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "setAttribute(String, Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Delegate capabilities for storing and retrieving attributes to a\n * CompositeFigure if the encapsulated presentation figure. If no\n * presentation figure is found then the superclass' setAttribute()\n * will be invoked (which currently does not set an attribute).\n *\n * @param\tname\tname of the attribute\n * @param\tvalue\tvalue associated with this attribute\n */\npublic void setAttribute(String name, Object value) {\n    if (getPresentationFigure() != null) {\n        getPresentationFigure().setAttribute(name, value);\n    } else {\n        super.setAttribute(name, value);\n    }\n}",
+  "method_comment": "\n\t * Delegate capabilities for storing and retrieving attributes to a\n\t * CompositeFigure if the encapsulated presentation figure. If no\n\t * presentation figure is found then the superclass' setAttribute()\n\t * will be invoked (which currently does not set an attribute).\n\t *\n\t * @param\tname\tname of the attribute\n\t * @param\tvalue\tvalue associated with this attribute\n\t ",
+  "method_annotation": ""
+}

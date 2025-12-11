@@ -1,0 +1,41 @@
+{
+  "className": "DataManager",
+  "methodName": "getClusterID",
+  "brief": "public static int getClusterID(Cluster cluster) throws SQLException{}",
+  "methodSignature": "getClusterID(Cluster)",
+  "sourceCode": "public static int getClusterID(Cluster cluster) throws SQLException {\n    \tProject project = DataManager.getProjectByID(cluster.getProject());\n    \tString sqlStmt = QueryBuilder.selectClusterID(cluster, project.getProjectName());\n    \tResultSet res = null;\n    \tint clusterid = 0;\n    \tres = statement.executeQuery(sqlStmt);\n    \twhile(res.next()) {\n    \t\tclusterid = res.getInt(\"clusterid\");\n    \t}\n    \tif(res != null) res.close();\n    \treturn clusterid;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Cluster"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getProject()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectByID(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectClusterID(Cluster, String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectName()"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "next()",
+      "getInt(String)",
+      "close()"
+    ]
+  },
+  "full_method_info": "public static int getClusterID(Cluster cluster) throws SQLException {\n    Project project = DataManager.getProjectByID(cluster.getProject());\n    String sqlStmt = QueryBuilder.selectClusterID(cluster, project.getProjectName());\n    ResultSet res = null;\n    int clusterid = 0;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        clusterid = res.getInt(\"clusterid\");\n    }\n    if (res != null)\n        res.close();\n    return clusterid;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

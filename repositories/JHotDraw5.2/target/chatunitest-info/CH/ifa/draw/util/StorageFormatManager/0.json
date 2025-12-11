@@ -1,0 +1,25 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "addStorageFormat",
+  "brief": "public void addStorageFormat(StorageFormat newStorageFormat){}",
+  "methodSignature": "addStorageFormat(StorageFormat)",
+  "sourceCode": "public void addStorageFormat(StorageFormat newStorageFormat) {\n\t\tmyStorageFormats.add(newStorageFormat);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormat"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormat": [],
+    "java.util.Vector": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Add a StorageFormat that should be supported by this StorageFormatManager.\n *\n * @param newStorageFormat new StorageFormat to be supported\n */\npublic void addStorageFormat(StorageFormat newStorageFormat) {\n    myStorageFormats.add(newStorageFormat);\n}",
+  "method_comment": "\n\t * Add a StorageFormat that should be supported by this StorageFormatManager.\n\t *\n\t * @param newStorageFormat new StorageFormat to be supported\n\t ",
+  "method_annotation": ""
+}

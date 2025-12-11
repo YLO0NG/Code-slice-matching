@@ -1,0 +1,37 @@
+{
+  "className": "FigureTransferCommand",
+  "methodName": "insertFigures",
+  "brief": "protected void insertFigures(Vector figures, int dx, int dy){}",
+  "methodSignature": "insertFigures(Vector, int, int)",
+  "sourceCode": "protected void insertFigures(Vector figures, int dx, int dy) {\n        FigureEnumeration e = new FigureEnumerator(figures);\n        while (e.hasMoreElements()) {\n            Figure figure = e.nextFigure();\n            figure.moveBy(dx, dy);\n            figure = fView.add(figure);\n            fView.addToSelection(figure);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "moveBy(int, int)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "addToSelection(Figure)",
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Inserts a vector of figures and translates them by the\n * given offset.\n */\nprotected void insertFigures(Vector figures, int dx, int dy) {\n    FigureEnumeration e = new FigureEnumerator(figures);\n    while (e.hasMoreElements()) {\n        Figure figure = e.nextFigure();\n        figure.moveBy(dx, dy);\n        figure = fView.add(figure);\n        fView.addToSelection(figure);\n    }\n}",
+  "method_comment": "\n    * Inserts a vector of figures and translates them by the\n    * given offset.\n    ",
+  "method_annotation": ""
+}

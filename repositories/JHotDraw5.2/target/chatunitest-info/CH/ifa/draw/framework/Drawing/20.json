@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "bringToFront",
+  "brief": "public void bringToFront(Figure figure);",
+  "methodSignature": "bringToFront(Figure)",
+  "sourceCode": "public void bringToFront(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Brings a figure to the front.\n */\npublic void bringToFront(Figure figure);",
+  "method_comment": "\n     * Brings a figure to the front.\n     ",
+  "method_annotation": ""
+}

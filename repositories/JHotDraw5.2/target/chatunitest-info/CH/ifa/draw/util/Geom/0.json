@@ -1,0 +1,36 @@
+{
+  "className": "Geom",
+  "methodName": "lineContainsPoint",
+  "brief": "static public boolean lineContainsPoint(int x1, int y1,\r\n                            int x2, int y2,\r\n                            int px, int py){}",
+  "methodSignature": "lineContainsPoint(int, int, int, int, int, int)",
+  "sourceCode": "static public boolean lineContainsPoint(int x1, int y1,\n                            int x2, int y2,\n                            int px, int py) {\n\n        Rectangle r = new Rectangle(new Point(x1, y1));\n        r.add(x2, y2);\n\n        r.grow(2,2);\n        if (! r.contains(px,py))\n            return false;\n\n        double a, b, x, y;\n\n        if (x1 == x2)\n            return (Math.abs(px - x1) < 3);\n\n        if (y1 == y2)\n            return (Math.abs(py - y1) < 3);\n\n        a = (double)(y1 - y2) / (double)(x1 - x2);\n        b = (double)y1 - a * (double)x1;\n        x = (py - b) / a;\n        y = a * px + b;\n\n        return (Math.min(Math.abs(x - px), Math.abs(y - py)) < 4);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "contains(int, int)",
+      "grow(int, int)",
+      "add(int, int)"
+    ],
+    "java.lang.Math": [
+      "abs(int)",
+      "abs(double)",
+      "min(double, double)"
+    ]
+  },
+  "full_method_info": "/**\n * Tests if a point is on a line.\n */\nstatic public boolean lineContainsPoint(int x1, int y1, int x2, int y2, int px, int py) {\n    Rectangle r = new Rectangle(new Point(x1, y1));\n    r.add(x2, y2);\n    r.grow(2, 2);\n    if (!r.contains(px, py))\n        return false;\n    double a, b, x, y;\n    if (x1 == x2)\n        return (Math.abs(px - x1) < 3);\n    if (y1 == y2)\n        return (Math.abs(py - y1) < 3);\n    a = (double) (y1 - y2) / (double) (x1 - x2);\n    b = (double) y1 - a * (double) x1;\n    x = (py - b) / a;\n    y = a * px + b;\n    return (Math.min(Math.abs(x - px), Math.abs(y - py)) < 4);\n}",
+  "method_comment": "\n     * Tests if a point is on a line.\n     ",
+  "method_annotation": ""
+}

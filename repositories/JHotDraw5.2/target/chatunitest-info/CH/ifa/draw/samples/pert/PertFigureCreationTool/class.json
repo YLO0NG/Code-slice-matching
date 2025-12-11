@@ -1,0 +1,47 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.pert.PertFigureCreationTool",
+  "className": "PertFigureCreationTool",
+  "index": 91,
+  "modifier": "[public ]",
+  "extend": "[CreationTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.pert",
+  "packageDeclaration": "package CH.ifa.draw.samples.pert;",
+  "classSignature": "public  class PertFigureCreationTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "CreationTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createFigure()": "0",
+    "PertFigureCreationTool(DrawingView)": "1"
+  },
+  "methodsBrief": [
+    "protected Figure createFigure(){}",
+    "public PertFigureCreationTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "PertFigureCreationTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public PertFigureCreationTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PertFigureCreationTool.java 5.2\n *\n */\npackage CH.ifa.draw.samples.pert;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * A more efficient version of the generic Pert creation\n * tool that is not based on cloning.\n */\npublic class PertFigureCreationTool extends CreationTool {\n\n    public PertFigureCreationTool(DrawingView view) {\n        super(view);\n    }\n\n    /**\n     * Creates a new PertFigure.\n     */\n    protected Figure createFigure() {\n        return new PertFigure();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A more efficient version of the generic Pert creation\n * tool that is not based on cloning.\n */\npublic class PertFigureCreationTool extends CreationTool {\n\n    public PertFigureCreationTool(DrawingView view) {\n        super(view);\n    }\n\n    /**\n     * Creates a new PertFigure.\n     */\n    protected Figure createFigure() {\n        return new PertFigure();\n    }\n}",
+  "subClasses": []
+}

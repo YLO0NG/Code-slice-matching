@@ -1,0 +1,18 @@
+{
+  "className": "InvocationParser",
+  "methodName": "getPassword",
+  "brief": "public String getPassword(){}",
+  "methodSignature": "getPassword()",
+  "sourceCode": "public String getPassword() {\n\t\treturn password;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String getPassword() {\n    return password;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

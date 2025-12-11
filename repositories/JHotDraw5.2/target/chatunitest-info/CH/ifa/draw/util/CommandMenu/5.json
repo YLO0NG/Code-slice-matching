@@ -1,0 +1,32 @@
+{
+  "className": "CommandMenu",
+  "methodName": "checkEnabled",
+  "brief": "public synchronized void checkEnabled(){}",
+  "methodSignature": "checkEnabled()",
+  "sourceCode": "public synchronized void checkEnabled() {\n        int j = 0;\n        for (int i = 0; i < getMenuComponentCount(); i++) {\n            // ignore separators\n            // a separator has a hyphen as its label\n            if (getMenuComponent(i) instanceof JSeparator)\n                continue;\n            Command cmd = (Command)fCommands.elementAt(j);\n            getMenuComponent(i).setEnabled(cmd.isExecutable());\n            j++;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JMenu": [
+      "getMenuComponent(int)",
+      "getMenuComponentCount()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)"
+    ],
+    "java.awt.Component": [
+      "setEnabled(boolean)"
+    ],
+    "CH.ifa.draw.util.Command": [
+      "isExecutable()"
+    ]
+  },
+  "full_method_info": "public synchronized void checkEnabled() {\n    int j = 0;\n    for (int i = 0; i < getMenuComponentCount(); i++) {\n        // ignore separators\n        // a separator has a hyphen as its label\n        if (getMenuComponent(i) instanceof JSeparator)\n            continue;\n        Command cmd = (Command) fCommands.elementAt(j);\n        getMenuComponent(i).setEnabled(cmd.isExecutable());\n        j++;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

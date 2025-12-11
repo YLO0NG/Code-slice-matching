@@ -1,0 +1,50 @@
+{
+  "className": "SelectionTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y)\r\n   {}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y)\n    {\n        // on MS-Windows NT: AWT generates additional mouse down events\n        // when the left button is down && right button is clicked.\n        // To avoid dead locks we ignore such events\n        if (fChild != null)\n            return;\n\n        view().freezeView();\n\n        Handle handle = view().findHandle(e.getX(), e.getY());\n        if (handle != null) {\n            fChild = createHandleTracker(view(), handle);\n        }\n        else {\n            Figure figure = drawing().findFigure(e.getX(), e.getY());\n            if (figure != null) {\n                fChild = createDragTracker(view(), figure);\n            }\n            else {\n                if (!e.isShiftDown()) {\n                    view().clearSelection();\n                }\n                fChild = createAreaTracker(view());\n            }\n        }\n        fChild.mouseDown(e, x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "findHandle(int, int)",
+      "clearSelection()",
+      "freezeView()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.SelectionTool": [
+      "createAreaTracker(DrawingView)",
+      "createDragTracker(DrawingView, Figure)",
+      "createHandleTracker(DrawingView, Handle)"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigure(int, int)"
+    ],
+    "java.awt.event.InputEvent": [
+      "isShiftDown()"
+    ],
+    "CH.ifa.draw.framework.Tool": [
+      "mouseDown(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse down events and starts the corresponding tracker.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    // on MS-Windows NT: AWT generates additional mouse down events\n    // when the left button is down && right button is clicked.\n    // To avoid dead locks we ignore such events\n    if (fChild != null)\n        return;\n    view().freezeView();\n    Handle handle = view().findHandle(e.getX(), e.getY());\n    if (handle != null) {\n        fChild = createHandleTracker(view(), handle);\n    } else {\n        Figure figure = drawing().findFigure(e.getX(), e.getY());\n        if (figure != null) {\n            fChild = createDragTracker(view(), figure);\n        } else {\n            if (!e.isShiftDown()) {\n                view().clearSelection();\n            }\n            fChild = createAreaTracker(view());\n        }\n    }\n    fChild.mouseDown(e, x, y);\n}",
+  "method_comment": "\n     * Handles mouse down events and starts the corresponding tracker.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "IArtifact",
+  "methodName": "setCreated",
+  "brief": "public void setCreated(Timestamp created){}",
+  "methodSignature": "setCreated(Timestamp)",
+  "sourceCode": "public void setCreated(Timestamp created) {\n\t\tthis.created = created;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public void setCreated(Timestamp created) {\n    this.created = created;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

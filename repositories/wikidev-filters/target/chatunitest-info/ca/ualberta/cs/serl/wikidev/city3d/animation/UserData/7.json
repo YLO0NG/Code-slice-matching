@@ -1,0 +1,29 @@
+{
+  "className": "UserData",
+  "methodName": "UserData",
+  "brief": "public UserData(String username, int r, int g, int b, double contribution,\r\n\t\t\tTimestamp week, String cityType){}",
+  "methodSignature": "UserData(String, int, int, int, double, Timestamp, String)",
+  "sourceCode": "public UserData(String username, int r, int g, int b, double contribution,\n\t\t\tTimestamp week, String cityType) {\n\t\tthis.username = username;\n\t\tR = r;\n\t\tG = g;\n\t\tB = b;\n\t\tthis.contribution = contribution;\n\t\tthis.week = week;\n\t\tthis.cityType = cityType;\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int",
+    "int",
+    "int",
+    "double",
+    "Timestamp",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public UserData(String username, int r, int g, int b, double contribution, Timestamp week, String cityType) {\n    this.username = username;\n    R = r;\n    G = g;\n    B = b;\n    this.contribution = contribution;\n    this.week = week;\n    this.cityType = cityType;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

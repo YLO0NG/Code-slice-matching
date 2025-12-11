@@ -1,0 +1,26 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(double expected, double actual, double delta){}",
+  "methodSignature": "assertEquals(double, double, double)",
+  "sourceCode": "static public void assertEquals(double expected, double actual, double delta) {\r\n\t    assertEquals(null, expected, actual, delta);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, double, double, double)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two doubles are equal concerning a delta. If the expected\r\n * value is infinity then the delta value is ignored.\r\n */\r\nstatic public void assertEquals(double expected, double actual, double delta) {\r\n    assertEquals(null, expected, actual, delta);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two doubles are equal concerning a delta. If the expected\r\n\t * value is infinity then the delta value is ignored.\r\n\t ",
+  "method_annotation": ""
+}

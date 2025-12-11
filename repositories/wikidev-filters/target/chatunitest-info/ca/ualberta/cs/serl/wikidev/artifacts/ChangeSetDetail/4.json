@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setExternalsystem_id",
+  "brief": "public void setExternalsystem_id(int externalsystem_id){}",
+  "methodSignature": "setExternalsystem_id(int)",
+  "sourceCode": "public void setExternalsystem_id(int externalsystem_id) {\n\t\tthis.externalsystem_id = externalsystem_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param externalsystem_id\n * @uml.property  name=\"externalsystem_id\"\n */\npublic void setExternalsystem_id(int externalsystem_id) {\n    this.externalsystem_id = externalsystem_id;\n}",
+  "method_comment": "\n\t * @param externalsystem_id\n\t * @uml.property  name=\"externalsystem_id\"\n\t ",
+  "method_annotation": ""
+}

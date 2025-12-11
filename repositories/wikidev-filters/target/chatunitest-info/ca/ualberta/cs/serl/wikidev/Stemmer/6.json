@@ -1,0 +1,22 @@
+{
+  "className": "Stemmer",
+  "methodName": "m",
+  "brief": "private final int m()\r\n  {}",
+  "methodSignature": "m()",
+  "sourceCode": "private final int m()\n   {  int n = 0;\n      int i = 0;\n      while(true)\n      {  if (i > j) return n;\n         if (! cons(i)) break; i++;\n      }\n      i++;\n      while(true)\n      {  while(true)\n         {  if (i > j) return n;\n               if (cons(i)) break;\n               i++;\n         }\n         i++;\n         n++;\n         while(true)\n         {  if (i > j) return n;\n            if (! cons(i)) break;\n            i++;\n         }\n         i++;\n       }\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "cons(int)"
+    ]
+  },
+  "full_method_info": "/* m() measures the number of consonant sequences between 0 and j. if c is\n      a consonant sequence and v a vowel sequence, and <..> indicates arbitrary\n      presence,\n\n         <c><v>       gives 0\n         <c>vc<v>     gives 1\n         <c>vcvc<v>   gives 2\n         <c>vcvcvc<v> gives 3\n         ....\n   */\nprivate final int m() {\n    int n = 0;\n    int i = 0;\n    while (true) {\n        if (i > j)\n            return n;\n        if (!cons(i))\n            break;\n        i++;\n    }\n    i++;\n    while (true) {\n        while (true) {\n            if (i > j)\n                return n;\n            if (cons(i))\n                break;\n            i++;\n        }\n        i++;\n        n++;\n        while (true) {\n            if (i > j)\n                return n;\n            if (!cons(i))\n                break;\n            i++;\n        }\n        i++;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

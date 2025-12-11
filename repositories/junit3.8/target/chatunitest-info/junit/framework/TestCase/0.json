@@ -1,0 +1,18 @@
+{
+  "className": "TestCase",
+  "methodName": "countTestCases",
+  "brief": "public int countTestCases(){}",
+  "methodSignature": "countTestCases()",
+  "sourceCode": "public int countTestCases() {\r\n\t\treturn 1;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Counts the number of test cases executed by run(TestResult result).\r\n */\r\npublic int countTestCases() {\r\n    return 1;\r\n}",
+  "method_comment": "\r\n\t * Counts the number of test cases executed by run(TestResult result).\r\n\t ",
+  "method_annotation": ""
+}

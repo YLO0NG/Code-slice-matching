@@ -1,0 +1,18 @@
+{
+  "className": "Version",
+  "methodName": "id",
+  "brief": "public static String id(){}",
+  "methodSignature": "id()",
+  "sourceCode": "public static String id() {\r\n\t\treturn \"3.8\";\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public static String id() {\r\n    return \"3.8\";\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

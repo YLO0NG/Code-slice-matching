@@ -1,0 +1,26 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectFilesBuildingID",
+  "brief": "public static String selectFilesBuildingID(FileBuildingData building, int projectid){}",
+  "methodSignature": "selectFilesBuildingID(FileBuildingData, int)",
+  "sourceCode": "public static String selectFilesBuildingID(FileBuildingData building, int projectid) {\n\t\treturn \"select building_id from wikidev_wikidev3d_files_city where project_id=\\'\"+projectid+\"\\' and url=\\'\"+building.getUrl()+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FileBuildingData",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.FileBuildingData": [],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.BuildingData": [
+      "getUrl()"
+    ]
+  },
+  "full_method_info": "public static String selectFilesBuildingID(FileBuildingData building, int projectid) {\n    return \"select building_id from wikidev_wikidev3d_files_city where project_id=\\'\" + projectid + \"\\' and url=\\'\" + building.getUrl() + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,34 @@
+{
+  "className": "BuildingData",
+  "methodName": "BuildingData",
+  "brief": "public BuildingData(String type, Timestamp week, int height,\r\n\t\t\tint neighborhoodX, int neighborhoodY, int cityBlock, String url,\r\n\t\t\tint projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified){}",
+  "methodSignature": "BuildingData(String, Timestamp, int, int, int, int, String, int, int, String, Timestamp, Timestamp)",
+  "sourceCode": "public BuildingData(String type, Timestamp week, int height,\n\t\t\tint neighborhoodX, int neighborhoodY, int cityBlock, String url,\n\t\t\tint projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified) {\n\t\tthis.type = type;\n\t\tthis.week = week;\n\t\tthis.height = height;\n\t\tthis.neighborhoodX = neighborhoodX;\n\t\tthis.neighborhoodY = neighborhoodY;\n\t\tthis.cityBlock = cityBlock;\n\t\tthis.url = url;\n\t\tthis.projectid = projectid;\n\t\tthis.buildingID = buildingID;\n\t\tthis.lastEditorString = lastEditorString;\n\t\tthis.created = created;\n\t\tthis.lastModified = lastModified;\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Timestamp",
+    "int",
+    "int",
+    "int",
+    "int",
+    "String",
+    "int",
+    "int",
+    "String",
+    "Timestamp",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public BuildingData(String type, Timestamp week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified) {\n    this.type = type;\n    this.week = week;\n    this.height = height;\n    this.neighborhoodX = neighborhoodX;\n    this.neighborhoodY = neighborhoodY;\n    this.cityBlock = cityBlock;\n    this.url = url;\n    this.projectid = projectid;\n    this.buildingID = buildingID;\n    this.lastEditorString = lastEditorString;\n    this.created = created;\n    this.lastModified = lastModified;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

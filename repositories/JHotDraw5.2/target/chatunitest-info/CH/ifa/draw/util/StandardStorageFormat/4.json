@@ -1,0 +1,22 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "setFileDescription",
+  "brief": "public void setFileDescription(String newFileDescription){}",
+  "methodSignature": "setFileDescription(String)",
+  "sourceCode": "public void setFileDescription(String newFileDescription) {\n\t\tmyFileDescription = newFileDescription;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Set the file description for the file type of the storage format\n *\n * @param newFileDescription description of the file type\n */\npublic void setFileDescription(String newFileDescription) {\n    myFileDescription = newFileDescription;\n}",
+  "method_comment": "\n\t * Set the file description for the file type of the storage format\n\t *\n\t * @param newFileDescription description of the file type\n\t ",
+  "method_annotation": ""
+}

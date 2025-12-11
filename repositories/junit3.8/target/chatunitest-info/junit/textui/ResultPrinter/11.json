@@ -1,0 +1,18 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "getWriter",
+  "brief": "public PrintStream getWriter(){}",
+  "methodSignature": "getWriter()",
+  "sourceCode": "public PrintStream getWriter() {\r\n\t\treturn fWriter;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public PrintStream getWriter() {\r\n    return fWriter;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,29 @@
+{
+  "className": "LineConnection",
+  "methodName": "connectsSame",
+  "brief": "public boolean connectsSame(ConnectionFigure other){}",
+  "methodSignature": "connectsSame(ConnectionFigure)",
+  "sourceCode": "public boolean connectsSame(ConnectionFigure other) {\n        return other.start() == start() && other.end() == end();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "start()",
+      "end()"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "start()",
+      "end()"
+    ]
+  },
+  "full_method_info": "/**\n * Tests whether a connection connects the same figures\n * as another ConnectionFigure.\n */\npublic boolean connectsSame(ConnectionFigure other) {\n    return other.start() == start() && other.end() == end();\n}",
+  "method_comment": "\n     * Tests whether a connection connects the same figures\n     * as another ConnectionFigure.\n     ",
+  "method_annotation": ""
+}

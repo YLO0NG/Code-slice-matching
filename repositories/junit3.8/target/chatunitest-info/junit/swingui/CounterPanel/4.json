@@ -1,0 +1,27 @@
+{
+  "className": "CounterPanel",
+  "methodName": "setRunValue",
+  "brief": "public void setRunValue(int value){}",
+  "methodSignature": "setRunValue(int)",
+  "sourceCode": "public void setRunValue(int value) {\r\n\t\tfNumberOfRuns.setText(Integer.toString(value) + \"/\" + fTotal);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "javax.swing.text.JTextComponent": [
+      "setText(String)"
+    ],
+    "java.lang.Integer": [
+      "toString(int)"
+    ]
+  },
+  "full_method_info": "public void setRunValue(int value) {\r\n    fNumberOfRuns.setText(Integer.toString(value) + \"/\" + fTotal);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

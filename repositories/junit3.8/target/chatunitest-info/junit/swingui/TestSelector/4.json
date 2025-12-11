@@ -1,0 +1,25 @@
+{
+  "className": "TestSelector",
+  "methodName": "isEmpty",
+  "brief": "public boolean isEmpty(){}",
+  "methodSignature": "isEmpty()",
+  "sourceCode": "public boolean isEmpty() {\r\n\t\treturn fList.getModel().getSize() == 0;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.ListModel": [
+      "getSize()"
+    ],
+    "javax.swing.JList": [
+      "getModel()"
+    ]
+  },
+  "full_method_info": "public boolean isEmpty() {\r\n    return fList.getModel().getSize() == 0;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

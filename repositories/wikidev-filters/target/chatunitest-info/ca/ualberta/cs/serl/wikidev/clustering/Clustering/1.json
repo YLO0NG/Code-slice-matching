@@ -1,0 +1,20 @@
+{
+  "className": "Clustering",
+  "methodName": "clustering",
+  "brief": "public abstract ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts);",
+  "methodSignature": "clustering(ArrayList)",
+  "sourceCode": "public abstract ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "ArrayList<IArtifact>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public abstract ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts);",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "ReloadingTestSuiteLoader",
+  "methodName": "reload",
+  "brief": "public Class reload(Class aClass) throws ClassNotFoundException{}",
+  "methodSignature": "reload(Class)",
+  "sourceCode": "public Class reload(Class aClass) throws ClassNotFoundException {\r\n\t\treturn createLoader().loadClass(aClass.getName(), true);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Class"
+  ],
+  "dependentMethods": {
+    "java.lang.Class": [
+      "getName()"
+    ],
+    "junit.runner.TestCaseClassLoader": [
+      "loadClass(String, boolean)"
+    ],
+    "junit.runner.ReloadingTestSuiteLoader": [
+      "createLoader()"
+    ]
+  },
+  "full_method_info": "public Class reload(Class aClass) throws ClassNotFoundException {\r\n    return createLoader().loadClass(aClass.getName(), true);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

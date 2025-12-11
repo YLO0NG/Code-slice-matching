@@ -1,0 +1,22 @@
+{
+  "className": "AbstractHandle",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        Point p = locate();\n        return new Rectangle(\n                p.x - HANDLESIZE / 2,\n                p.y - HANDLESIZE / 2,\n                HANDLESIZE,\n                HANDLESIZE);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "locate()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the display box of the handle.\n */\npublic Rectangle displayBox() {\n    Point p = locate();\n    return new Rectangle(p.x - HANDLESIZE / 2, p.y - HANDLESIZE / 2, HANDLESIZE, HANDLESIZE);\n}",
+  "method_comment": "\n     * Gets the display box of the handle.\n     ",
+  "method_annotation": ""
+}

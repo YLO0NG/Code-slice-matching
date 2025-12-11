@@ -1,0 +1,62 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.SelectAreaTracker",
+  "className": "SelectAreaTracker",
+  "index": 138,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class SelectAreaTracker",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Rectangle fSelectGroup;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "mouseDrag(MouseEvent, int, int)": "1",
+    "mouseUp(MouseEvent, int, int)": "2",
+    "rubberBand(int, int, int, int)": "3",
+    "eraseRubberBand()": "4",
+    "drawXORRect(Rectangle)": "5",
+    "selectGroup(boolean)": "6",
+    "SelectAreaTracker(DrawingView)": "7"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "private void rubberBand(int x1, int y1, int x2, int y2)\r\n   {}",
+    "private void eraseRubberBand()\r\n   {}",
+    "private void drawXORRect(Rectangle r)\r\n   {}",
+    "private void selectGroup(boolean toggle)\r\n   {}",
+    "public SelectAreaTracker(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "SelectAreaTracker(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public SelectAreaTracker(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)SelectAreaTracker.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * SelectAreaTracker implements a rubberband selection of an area.\n */\npublic class SelectAreaTracker extends AbstractTool {\n\n    private Rectangle fSelectGroup;\n\n    public SelectAreaTracker(DrawingView view) {\n        super(view);\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        // use event coordinates to supress any kind of\n        // transformations like constraining points to a grid\n        super.mouseDown(e, e.getX(), e.getY());\n        rubberBand(fAnchorX, fAnchorY, fAnchorX, fAnchorY);\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        eraseRubberBand();\n        rubberBand(fAnchorX, fAnchorY, x, y);\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n        super.mouseUp(e, x, y);\n        eraseRubberBand();\n        selectGroup(e.isShiftDown());\n    }\n\n    private void rubberBand(int x1, int y1, int x2, int y2) {\n        fSelectGroup = new Rectangle(new Point(x1, y1));\n        fSelectGroup.add(new Point(x2, y2));\n        drawXORRect(fSelectGroup);\n    }\n\n    private void eraseRubberBand() {\n        drawXORRect(fSelectGroup);\n    }\n\n    private void drawXORRect(Rectangle r) {\n        Graphics g = view().getGraphics();\n        g.setXORMode(view().getBackground());\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n\n    private void selectGroup(boolean toggle) {\n        FigureEnumeration k = drawing().figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            Rectangle r2 = figure.displayBox();\n            if (fSelectGroup.contains(r2.x, r2.y) && fSelectGroup.contains(r2.x + r2.width, r2.y + r2.height)) {\n                if (toggle)\n                    view().toggleSelection(figure);\n                else\n                    view().addToSelection(figure);\n            }\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * SelectAreaTracker implements a rubberband selection of an area.\n */\npublic class SelectAreaTracker extends AbstractTool {\n\n    private Rectangle fSelectGroup;\n\n    public SelectAreaTracker(DrawingView view) {\n        super(view);\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        // use event coordinates to supress any kind of\n        // transformations like constraining points to a grid\n        super.mouseDown(e, e.getX(), e.getY());\n        rubberBand(fAnchorX, fAnchorY, fAnchorX, fAnchorY);\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        eraseRubberBand();\n        rubberBand(fAnchorX, fAnchorY, x, y);\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n        super.mouseUp(e, x, y);\n        eraseRubberBand();\n        selectGroup(e.isShiftDown());\n    }\n\n    private void rubberBand(int x1, int y1, int x2, int y2) {\n        fSelectGroup = new Rectangle(new Point(x1, y1));\n        fSelectGroup.add(new Point(x2, y2));\n        drawXORRect(fSelectGroup);\n    }\n\n    private void eraseRubberBand() {\n        drawXORRect(fSelectGroup);\n    }\n\n    private void drawXORRect(Rectangle r) {\n        Graphics g = view().getGraphics();\n        g.setXORMode(view().getBackground());\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n\n    private void selectGroup(boolean toggle) {\n        FigureEnumeration k = drawing().figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            Rectangle r2 = figure.displayBox();\n            if (fSelectGroup.contains(r2.x, r2.y) && fSelectGroup.contains(r2.x + r2.width, r2.y + r2.height)) {\n                if (toggle)\n                    view().toggleSelection(figure);\n                else\n                    view().addToSelection(figure);\n            }\n        }\n    }\n}",
+  "subClasses": []
+}

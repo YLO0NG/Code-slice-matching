@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(byte expected, byte actual){}",
+  "methodSignature": "assertEquals(byte, byte)",
+  "sourceCode": "static public void assertEquals(byte expected, byte actual) {\r\n\t\tassertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "byte",
+    "byte"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, byte, byte)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two bytes are equal.\r\n */\r\nstatic public void assertEquals(byte expected, byte actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n   \t * Asserts that two bytes are equal.\r\n\t ",
+  "method_annotation": ""
+}

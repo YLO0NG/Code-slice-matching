@@ -1,0 +1,18 @@
+{
+  "className": "FigureSelection",
+  "methodName": "getType",
+  "brief": "public String getType(){}",
+  "methodSignature": "getType()",
+  "sourceCode": "public String getType() {\n        return TYPE;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the type of the selection.\n */\npublic String getType() {\n    return TYPE;\n}",
+  "method_comment": "\n     * Gets the type of the selection.\n     ",
+  "method_annotation": ""
+}

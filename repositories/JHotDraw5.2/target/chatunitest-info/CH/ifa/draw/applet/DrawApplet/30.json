@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplet",
+  "methodName": "setBufferedDisplayUpdate",
+  "brief": "protected void setBufferedDisplayUpdate(){}",
+  "methodSignature": "setBufferedDisplayUpdate()",
+  "sourceCode": "protected void setBufferedDisplayUpdate() {\n        fView.setDisplayUpdate(new BufferedUpdateStrategy());\n        fUpdateButton.setText(\"Buffered Update\");\n        fSimpleUpdate = false;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDisplayUpdate(Painter)"
+    ],
+    "javax.swing.AbstractButton": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "protected void setBufferedDisplayUpdate() {\n    fView.setDisplayUpdate(new BufferedUpdateStrategy());\n    fUpdateButton.setText(\"Buffered Update\");\n    fSimpleUpdate = false;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

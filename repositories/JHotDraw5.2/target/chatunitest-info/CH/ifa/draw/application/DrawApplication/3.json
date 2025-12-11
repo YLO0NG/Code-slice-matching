@@ -1,0 +1,50 @@
+{
+  "className": "DrawApplication",
+  "methodName": "open",
+  "brief": "public void open(){}",
+  "methodSignature": "open()",
+  "sourceCode": "public void open() {\n        fIconkit = new Iconkit(this);\n\t\tgetContentPane().setLayout(new BorderLayout());\n\t\t// Panel in which a JToolBar can be placed using a BoxLayout\n        JPanel fullPanel = new JPanel();\n        fullPanel.setLayout(new BoxLayout(fullPanel, BoxLayout.X_AXIS));\n        fView = createDrawingView();\n        JComponent contents = createContents((StandardDrawingView)view());\n        contents.setAlignmentX(LEFT_ALIGNMENT);\n\n        JToolBar tools = createToolPalette();\n        createTools(tools);\n\n        JPanel activePanel = new JPanel();\n        activePanel.setAlignmentX(LEFT_ALIGNMENT);\n\t    activePanel.setAlignmentY(TOP_ALIGNMENT);\n        activePanel.setLayout(new BorderLayout());\n        activePanel.add(tools, BorderLayout.NORTH);\n        activePanel.add(contents, BorderLayout.CENTER);\n\n        fullPanel.add(activePanel);\n\n        fStatusLine = createStatusLine();\n        getContentPane().add(fullPanel, BorderLayout.CENTER);\n        getContentPane().add(fStatusLine, BorderLayout.SOUTH);\n\n\t\tJMenuBar mb = new JMenuBar();\n\t\tcreateMenus(mb);\n\t\tsetJMenuBar(mb);\n\t\t\n        initDrawing();\n        \n        Dimension d = defaultSize();\n        if (d.width > mb.getPreferredSize().width) {\n    \t\tsetSize(d.width, d.height);\n\t\t}\n\t\telse {\n            setSize(mb.getPreferredSize().width, d.height);\n\t\t}\n        addListeners();\n        setVisible(true);\n        fStorageFormatManager = createStorageFormatManager();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "add(Component, Object)",
+      "setLayout(LayoutManager)",
+      "add(Component)"
+    ],
+    "javax.swing.JFrame": [
+      "getContentPane()",
+      "setJMenuBar(JMenuBar)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "defaultSize()",
+      "createStatusLine()",
+      "createMenus(JMenuBar)",
+      "view()",
+      "createStorageFormatManager()",
+      "createContents(StandardDrawingView)",
+      "createTools(JToolBar)",
+      "addListeners()",
+      "createDrawingView()",
+      "createToolPalette()",
+      "initDrawing()"
+    ],
+    "javax.swing.JComponent": [
+      "setAlignmentY(float)",
+      "setAlignmentX(float)",
+      "getPreferredSize()"
+    ],
+    "java.awt.Window": [
+      "setSize(int, int)",
+      "setVisible(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Opens the window and initializes its contents.\n * Clients usually only call but don't override it.\n */\npublic void open() {\n    fIconkit = new Iconkit(this);\n    getContentPane().setLayout(new BorderLayout());\n    // Panel in which a JToolBar can be placed using a BoxLayout\n    JPanel fullPanel = new JPanel();\n    fullPanel.setLayout(new BoxLayout(fullPanel, BoxLayout.X_AXIS));\n    fView = createDrawingView();\n    JComponent contents = createContents((StandardDrawingView) view());\n    contents.setAlignmentX(LEFT_ALIGNMENT);\n    JToolBar tools = createToolPalette();\n    createTools(tools);\n    JPanel activePanel = new JPanel();\n    activePanel.setAlignmentX(LEFT_ALIGNMENT);\n    activePanel.setAlignmentY(TOP_ALIGNMENT);\n    activePanel.setLayout(new BorderLayout());\n    activePanel.add(tools, BorderLayout.NORTH);\n    activePanel.add(contents, BorderLayout.CENTER);\n    fullPanel.add(activePanel);\n    fStatusLine = createStatusLine();\n    getContentPane().add(fullPanel, BorderLayout.CENTER);\n    getContentPane().add(fStatusLine, BorderLayout.SOUTH);\n    JMenuBar mb = new JMenuBar();\n    createMenus(mb);\n    setJMenuBar(mb);\n    initDrawing();\n    Dimension d = defaultSize();\n    if (d.width > mb.getPreferredSize().width) {\n        setSize(d.width, d.height);\n    } else {\n        setSize(mb.getPreferredSize().width, d.height);\n    }\n    addListeners();\n    setVisible(true);\n    fStorageFormatManager = createStorageFormatManager();\n}",
+  "method_comment": "\n     * Opens the window and initializes its contents.\n     * Clients usually only call but don't override it.\n     ",
+  "method_annotation": ""
+}

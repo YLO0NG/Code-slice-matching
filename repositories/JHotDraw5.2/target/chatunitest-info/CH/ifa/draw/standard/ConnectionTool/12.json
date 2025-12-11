@@ -1,0 +1,30 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "findConnectionStart",
+  "brief": "protected Figure findConnectionStart(int x, int y, Drawing drawing){}",
+  "methodSignature": "findConnectionStart(int, int, Drawing)",
+  "sourceCode": "protected Figure findConnectionStart(int x, int y, Drawing drawing) {\n        Figure target = findConnectableFigure(x, y, drawing);\n        if ((target != null) && target.canConnect())\n            return target;\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "findConnectableFigure(int, int, Drawing)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "canConnect()"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a connection start figure.\n */\nprotected Figure findConnectionStart(int x, int y, Drawing drawing) {\n    Figure target = findConnectableFigure(x, y, drawing);\n    if ((target != null) && target.canConnect())\n        return target;\n    return null;\n}",
+  "method_comment": "\n     * Finds a connection start figure.\n     ",
+  "method_annotation": ""
+}

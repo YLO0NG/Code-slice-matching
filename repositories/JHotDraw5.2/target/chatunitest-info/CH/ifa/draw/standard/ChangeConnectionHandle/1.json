@@ -1,0 +1,18 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "disconnect",
+  "brief": "protected abstract void disconnect();",
+  "methodSignature": "disconnect()",
+  "sourceCode": "protected abstract void disconnect();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Disconnects the connection.\n */\nprotected abstract void disconnect();",
+  "method_comment": "\n     * Disconnects the connection.\n     ",
+  "method_annotation": ""
+}

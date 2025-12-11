@@ -1,0 +1,26 @@
+{
+  "className": "Stemmer",
+  "methodName": "r",
+  "brief": "private final void r(String s){}",
+  "methodSignature": "r(String)",
+  "sourceCode": "private final void r(String s) { if (m() > 0) setto(s); }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "setto(String)",
+      "m()"
+    ]
+  },
+  "full_method_info": "/* r(s) is used further down. */\nprivate final void r(String s) {\n    if (m() > 0)\n        setto(s);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

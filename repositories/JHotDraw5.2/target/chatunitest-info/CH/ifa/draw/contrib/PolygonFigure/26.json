@@ -1,0 +1,25 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "locator",
+  "brief": "public static Locator locator(final int pointIndex){}",
+  "methodSignature": "locator(int)",
+  "sourceCode": "public static Locator locator(final int pointIndex) {\n    return new AbstractLocator() {\n      public Point locate(Figure owner) {\n        PolygonFigure plf = (PolygonFigure)owner;\n        // guard against changing PolygonFigures -> temporary hack\n        if (pointIndex < plf.pointCount())\n          return ((PolygonFigure)owner).pointAt(pointIndex);\n        return new Point(-1, -1);\n      }\n    };\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "pointCount()",
+      "pointAt(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates a locator for the point with the given index.\n */\npublic static Locator locator(final int pointIndex) {\n    return new AbstractLocator() {\n\n        public Point locate(Figure owner) {\n            PolygonFigure plf = (PolygonFigure) owner;\n            // guard against changing PolygonFigures -> temporary hack\n            if (pointIndex < plf.pointCount())\n                return ((PolygonFigure) owner).pointAt(pointIndex);\n            return new Point(-1, -1);\n        }\n    };\n}",
+  "method_comment": "\n   * Creates a locator for the point with the given index.\n   ",
+  "method_annotation": ""
+}

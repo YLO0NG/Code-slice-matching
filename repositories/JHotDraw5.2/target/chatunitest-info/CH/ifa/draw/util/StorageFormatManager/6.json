@@ -1,0 +1,35 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "findStorageFormat",
+  "brief": "public StorageFormat findStorageFormat(FileFilter findFileFilter){}",
+  "methodSignature": "findStorageFormat(FileFilter)",
+  "sourceCode": "public StorageFormat findStorageFormat(FileFilter findFileFilter) {\n\t\tIterator formatsIterator = myStorageFormats.iterator();\n\t\tStorageFormat currentStorageFormat = null;\n\t\twhile (formatsIterator.hasNext()) {\n\t\t\tcurrentStorageFormat = (StorageFormat)formatsIterator.next();\n\t\t\tif (currentStorageFormat.getFileFilter().equals(findFileFilter)) {\n\t\t\t\treturn currentStorageFormat;\n\t\t\t}\n\t\t}\n\t\t\n\t\treturn null;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FileFilter"
+  ],
+  "dependentMethods": {
+    "javax.swing.filechooser.FileFilter": [],
+    "java.util.Vector": [
+      "iterator()"
+    ],
+    "java.util.Iterator": [
+      "hasNext()",
+      "next()"
+    ],
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.util.StorageFormat": [
+      "getFileFilter()"
+    ]
+  },
+  "full_method_info": "/**\n * Find a StorageFormat that can be used according to a FileFilter to store a Drawing\n * in a file or restore it from a file respectively.\n *\n * @param findFileFilter FileFilter used to identify a StorageFormat\n * @return StorageFormat, if a matching file extension could be found, false otherwise\n */\npublic StorageFormat findStorageFormat(FileFilter findFileFilter) {\n    Iterator formatsIterator = myStorageFormats.iterator();\n    StorageFormat currentStorageFormat = null;\n    while (formatsIterator.hasNext()) {\n        currentStorageFormat = (StorageFormat) formatsIterator.next();\n        if (currentStorageFormat.getFileFilter().equals(findFileFilter)) {\n            return currentStorageFormat;\n        }\n    }\n    return null;\n}",
+  "method_comment": "\n\t * Find a StorageFormat that can be used according to a FileFilter to store a Drawing\n\t * in a file or restore it from a file respectively.\n\t *\n\t * @param findFileFilter FileFilter used to identify a StorageFormat\n\t * @return StorageFormat, if a matching file extension could be found, false otherwise\n\t ",
+  "method_annotation": ""
+}

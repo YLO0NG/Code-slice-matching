@@ -1,0 +1,30 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "MDI_DrawApplication",
+  "brief": "public MDI_DrawApplication(String title){}",
+  "methodSignature": "MDI_DrawApplication(String)",
+  "sourceCode": "public MDI_DrawApplication(String title) {\n\t\tsuper(title);\n\t\tsetDesktop(new JDesktopPane());\n\t\tgetDesktop().setAlignmentX(LEFT_ALIGNMENT);\n\t\tmdiListeners = new Vector();\n\t\taddInternalFrameListener(this);\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "addInternalFrameListener(InternalFrameListener)",
+      "setDesktop(JComponent)",
+      "getDesktop()"
+    ],
+    "javax.swing.JComponent": [
+      "setAlignmentX(float)"
+    ]
+  },
+  "full_method_info": "public MDI_DrawApplication(String title) {\n    super(title);\n    setDesktop(new JDesktopPane());\n    getDesktop().setAlignmentX(LEFT_ALIGNMENT);\n    mdiListeners = new Vector();\n    addInternalFrameListener(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

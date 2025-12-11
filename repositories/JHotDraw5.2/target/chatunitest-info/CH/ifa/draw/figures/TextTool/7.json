@@ -1,0 +1,43 @@
+{
+  "className": "TextTool",
+  "methodName": "endEdit",
+  "brief": "protected void endEdit(){}",
+  "methodSignature": "endEdit()",
+  "sourceCode": "protected void endEdit() {\n\t    if (getTypingTarget() != null) {\n\t        if (fTextField.getText().length() > 0)\n\t            getTypingTarget().setText(fTextField.getText());\n\t        else {\n\t            drawing().remove((Figure)getTypingTarget());\n\t        }\n\t        setTypingTarget(null);\n\t        fTextField.endOverlay();\n\t        view().checkDamage();\n\t    }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.TextTool": [
+      "setTypingTarget(TextHolder)",
+      "getTypingTarget()"
+    ],
+    "java.lang.String": [
+      "length()"
+    ],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "getText()",
+      "endOverlay()"
+    ],
+    "CH.ifa.draw.standard.TextHolder": [
+      "setText(String)"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "checkDamage()"
+    ]
+  },
+  "full_method_info": "protected void endEdit() {\n    if (getTypingTarget() != null) {\n        if (fTextField.getText().length() > 0)\n            getTypingTarget().setText(fTextField.getText());\n        else {\n            drawing().remove((Figure) getTypingTarget());\n        }\n        setTypingTarget(null);\n        fTextField.endOverlay();\n        view().checkDamage();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

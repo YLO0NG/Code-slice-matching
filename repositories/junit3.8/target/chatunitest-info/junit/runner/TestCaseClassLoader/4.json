@@ -1,0 +1,33 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "loadClass",
+  "brief": "public synchronized Class loadClass(String name, boolean resolve)\r\r\n\t\tthrows ClassNotFoundException{}",
+  "methodSignature": "loadClass(String, boolean)",
+  "sourceCode": "public synchronized Class loadClass(String name, boolean resolve)\r\n\t\tthrows ClassNotFoundException {\r\n\t\t\t\r\n\t\tClass c= findLoadedClass(name);\r\n\t\tif (c != null)\r\n\t\t\treturn c;\r\n\t\t//\r\n\t\t// Delegate the loading of excluded classes to the\r\n\t\t// standard class loader.\r\n\t\t//\r\n\t\tif (isExcluded(name)) {\r\n\t\t\ttry {\r\n\t\t\t\tc= findSystemClass(name);\r\n\t\t\t\treturn c;\r\n\t\t\t} catch (ClassNotFoundException e) {\r\n\t\t\t\t// keep searching\r\n\t\t\t}\r\n\t\t}\r\n\t\tif (c == null) {\r\n\t\t\tbyte[] data= lookupClassData(name);\r\n\t\t\tif (data == null)\r\n\t\t\t\tthrow new ClassNotFoundException();\r\n\t\t\tc= defineClass(name, data, 0, data.length);\r\n\t\t}\r\n\t\tif (resolve) \r\n\t\t\tresolveClass(c);\r\n\t\treturn c;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.ClassLoader": [
+      "resolveClass(Object>)",
+      "findSystemClass(String)",
+      "findLoadedClass(String)",
+      "defineClass(String, byte[], int, int)"
+    ],
+    "junit.runner.TestCaseClassLoader": [
+      "isExcluded(String)",
+      "lookupClassData(String)"
+    ]
+  },
+  "full_method_info": "public synchronized Class loadClass(String name, boolean resolve) throws ClassNotFoundException {\r\n    Class c = findLoadedClass(name);\r\n    if (c != null)\r\n        return c;\r\n    // \r\n    // Delegate the loading of excluded classes to the\r\n    // standard class loader.\r\n    // \r\n    if (isExcluded(name)) {\r\n        try {\r\n            c = findSystemClass(name);\r\n            return c;\r\n        } catch (ClassNotFoundException e) {\r\n            // keep searching\r\n        }\r\n    }\r\n    if (c == null) {\r\n        byte[] data = lookupClassData(name);\r\n        if (data == null)\r\n            throw new ClassNotFoundException();\r\n        c = defineClass(name, data, 0, data.length);\r\n    }\r\n    if (resolve)\r\n        resolveClass(c);\r\n    return c;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

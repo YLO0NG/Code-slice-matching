@@ -1,0 +1,27 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printDefect",
+  "brief": "public void printDefect(TestFailure booBoo, int count){}",
+  "methodSignature": "printDefect(TestFailure, int)",
+  "sourceCode": "public void printDefect(TestFailure booBoo, int count) { // only public for testing purposes\r\n\t\tprintDefectHeader(booBoo, count);\r\n\t\tprintDefectTrace(booBoo);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestFailure",
+    "int"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestFailure": [],
+    "junit.textui.ResultPrinter": [
+      "printDefectTrace(TestFailure)",
+      "printDefectHeader(TestFailure, int)"
+    ]
+  },
+  "full_method_info": "public void printDefect(TestFailure booBoo, int count) {\r\n    // only public for testing purposes\r\n    printDefectHeader(booBoo, count);\r\n    printDefectTrace(booBoo);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

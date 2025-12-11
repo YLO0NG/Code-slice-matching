@@ -1,0 +1,22 @@
+{
+  "className": "Figure",
+  "methodName": "addToContainer",
+  "brief": "public void addToContainer(FigureChangeListener c);",
+  "methodSignature": "addToContainer(FigureChangeListener)",
+  "sourceCode": "public void addToContainer(FigureChangeListener c);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": []
+  },
+  "full_method_info": "/**\n * Sets the Figure's container and registers the container\n * as a figure change listener. A figure's container can be\n * any kind of FigureChangeListener. A figure is not restricted\n * to have a single container.\n */\npublic void addToContainer(FigureChangeListener c);",
+  "method_comment": "\n     * Sets the Figure's container and registers the container\n     * as a figure change listener. A figure's container can be\n     * any kind of FigureChangeListener. A figure is not restricted\n     * to have a single container.\n     ",
+  "method_annotation": ""
+}

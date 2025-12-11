@@ -1,0 +1,26 @@
+{
+  "className": "BouncingDrawing",
+  "methodName": "replace",
+  "brief": "public synchronized void replace(Figure figure, Figure replacement){}",
+  "methodSignature": "replace(Figure, Figure)",
+  "sourceCode": "public synchronized void replace(Figure figure, Figure replacement) {\n        if (!(replacement instanceof AnimationDecorator))\n            replacement = new AnimationDecorator(replacement);\n        super.replace(figure, replacement);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "replace(Figure, Figure)"
+    ]
+  },
+  "full_method_info": "public synchronized void replace(Figure figure, Figure replacement) {\n    if (!(replacement instanceof AnimationDecorator))\n        replacement = new AnimationDecorator(replacement);\n    super.replace(figure, replacement);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

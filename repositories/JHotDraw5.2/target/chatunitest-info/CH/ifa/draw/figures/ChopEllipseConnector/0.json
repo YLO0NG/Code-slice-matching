@@ -1,0 +1,30 @@
+{
+  "className": "ChopEllipseConnector",
+  "methodName": "chop",
+  "brief": "protected Point chop(Figure target, Point from){}",
+  "methodSignature": "chop(Figure, Point)",
+  "sourceCode": "protected Point chop(Figure target, Point from) {\n        Rectangle r = target.displayBox();\n        double angle = Geom.pointToAngle(r, from);\n\t    return Geom.ovalAngleToPoint(r, angle);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Point"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "java.awt.Point": [],
+    "CH.ifa.draw.util.Geom": [
+      "pointToAngle(Rectangle, Point)",
+      "ovalAngleToPoint(Rectangle, double)"
+    ]
+  },
+  "full_method_info": "protected Point chop(Figure target, Point from) {\n    Rectangle r = target.displayBox();\n    double angle = Geom.pointToAngle(r, from);\n    return Geom.ovalAngleToPoint(r, angle);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "className": "PaletteListener",
+  "methodName": "paletteUserOver",
+  "brief": "void paletteUserOver(PaletteButton button, boolean inside);",
+  "methodSignature": "paletteUserOver(PaletteButton, boolean)",
+  "sourceCode": "void paletteUserOver(PaletteButton button, boolean inside);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PaletteButton",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.PaletteButton": []
+  },
+  "full_method_info": "/**\n * The user moved the mouse over the palette entry.\n */\nvoid paletteUserOver(PaletteButton button, boolean inside);",
+  "method_comment": "\n     * The user moved the mouse over the palette entry.\n     ",
+  "method_annotation": ""
+}

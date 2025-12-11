@@ -1,0 +1,24 @@
+{
+  "className": "TestListener",
+  "methodName": "addError",
+  "brief": "public void addError(Test test, Throwable t);",
+  "methodSignature": "addError(Test, Throwable)",
+  "sourceCode": "public void addError(Test test, Throwable t);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": []
+  },
+  "full_method_info": "/**\r\n * An error occurred.\r\n */\r\npublic void addError(Test test, Throwable t);",
+  "method_comment": "\r\n \t * An error occurred.\r\n \t ",
+  "method_annotation": ""
+}

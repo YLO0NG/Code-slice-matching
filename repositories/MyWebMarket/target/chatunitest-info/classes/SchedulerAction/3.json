@@ -1,0 +1,18 @@
+{
+  "className": "SchedulerAction",
+  "methodName": "input",
+  "brief": "@Override\r\n\tpublic String input() throws Exception{}",
+  "methodSignature": "input()",
+  "sourceCode": "@Override\n\tpublic String input() throws Exception {\n\t\tlogger.info( \"Starting input()\" ); //f:log\n\t\tSchedulerFactory sf = new StdSchedulerFactory(); //f:quartz\n\t\tScheduler sc = sf.getScheduler(); //f:quartz\n\n\t\tJobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz\n\n\t\tif ( job != null ) { //f:quartz\n\t\t\tthis.timeInterval = job.getJobDataMap().getIntValue( \"timeInterval\" ); //f:quartz\n\t\t} //f:quartz\n\n\t\tlogger.info( \"Finishing input()\" ); //f:log\n\t\treturn super.input();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Override\npublic String input() throws Exception {\n    // f:log\n    logger.info(\"Starting input()\");\n    // f:quartz\n    SchedulerFactory sf = new StdSchedulerFactory();\n    // f:quartz\n    Scheduler sc = sf.getScheduler();\n    // f:quartz\n    JobDetail job = sc.getJobDetail(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n    if (job != null) {\n        // f:quartz\n        // f:quartz\n        this.timeInterval = job.getJobDataMap().getIntValue(\"timeInterval\");\n    }\n    // f:quartz\n    // f:log\n    logger.info(\"Finishing input()\");\n    return super.input();\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

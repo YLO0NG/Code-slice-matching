@@ -1,0 +1,25 @@
+{
+  "className": "MDI_InternalFrame",
+  "methodName": "getDrawing",
+  "brief": "public Drawing getDrawing(){}",
+  "methodSignature": "getDrawing()",
+  "sourceCode": "public Drawing getDrawing() {\n\t\treturn getDrawingView().drawing();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.contrib.MDI_InternalFrame": [
+      "getDrawingView()"
+    ]
+  },
+  "full_method_info": "/**\n * Get the drawing which is represented in the internal frame\n *\n * @return\tdrawing for the internal frame\n */\npublic Drawing getDrawing() {\n    return getDrawingView().drawing();\n}",
+  "method_comment": "\n\t * Get the drawing which is represented in the internal frame\n\t *\n\t * @return\tdrawing for the internal frame\n\t ",
+  "method_annotation": ""
+}

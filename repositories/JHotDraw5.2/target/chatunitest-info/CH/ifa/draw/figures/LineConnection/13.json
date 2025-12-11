@@ -1,0 +1,23 @@
+{
+  "className": "LineConnection",
+  "methodName": "canConnect",
+  "brief": "public boolean canConnect(Figure start, Figure end){}",
+  "methodSignature": "canConnect(Figure, Figure)",
+  "sourceCode": "public boolean canConnect(Figure start, Figure end) {\n        return true;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Tests whether two figures can be connected.\n */\npublic boolean canConnect(Figure start, Figure end) {\n    return true;\n}",
+  "method_comment": "\n     * Tests whether two figures can be connected.\n     ",
+  "method_annotation": ""
+}

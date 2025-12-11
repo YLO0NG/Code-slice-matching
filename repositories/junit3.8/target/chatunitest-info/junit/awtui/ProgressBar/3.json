@@ -1,0 +1,31 @@
+{
+  "className": "ProgressBar",
+  "methodName": "paintStatus",
+  "brief": "public void paintStatus(Graphics g){}",
+  "methodSignature": "paintStatus(Graphics)",
+  "sourceCode": "public void paintStatus(Graphics g) {\r\n\t\tg.setColor(getStatusColor());\r\n\t\tRectangle r= new Rectangle(0, 0, fProgressX, getBounds().height);\r\n\t\tg.fillRect(1, 1, r.width-1, r.height-2);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillRect(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "junit.awtui.ProgressBar": [
+      "getStatusColor()"
+    ],
+    "java.awt.Component": [
+      "getBounds()"
+    ]
+  },
+  "full_method_info": "public void paintStatus(Graphics g) {\r\n    g.setColor(getStatusColor());\r\n    Rectangle r = new Rectangle(0, 0, fProgressX, getBounds().height);\r\n    g.fillRect(1, 1, r.width - 1, r.height - 2);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

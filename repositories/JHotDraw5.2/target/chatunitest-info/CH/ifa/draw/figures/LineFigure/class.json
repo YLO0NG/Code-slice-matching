@@ -1,0 +1,68 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.LineFigure",
+  "className": "LineFigure",
+  "index": 41,
+  "modifier": "[public ]",
+  "extend": "[PolyLineFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class LineFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = 511503575249212371L;",
+    "private int lineFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "PolyLineFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "startPoint()": "0",
+    "endPoint()": "1",
+    "startPoint(int, int)": "2",
+    "endPoint(int, int)": "3",
+    "setPoints(Point, Point)": "4",
+    "basicDisplayBox(Point, Point)": "5",
+    "LineFigure()": "6"
+  },
+  "methodsBrief": [
+    "public Point startPoint(){}",
+    "public Point endPoint(){}",
+    "public void  startPoint(int x, int y){}",
+    "public void  endPoint(int x, int y){}",
+    "public void setPoints(Point start, Point end){}",
+    "public void basicDisplayBox(Point origin, Point corner){}",
+    "public LineFigure(){}"
+  ],
+  "constructorSigs": [
+    "LineFigure()"
+  ],
+  "constructorBrief": [
+    "public LineFigure(){}"
+  ],
+  "getterSetterSigs": [
+    "setPoints(Point, Point)"
+  ],
+  "getterSetterBrief": [
+    "public void setPoints(Point start, Point end){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "addPoint(int, int)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)LineFigure.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A line figure.\n */\npublic class LineFigure extends PolyLineFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 511503575249212371L;\n\n    private int lineFigureSerializedDataVersion = 1;\n\n    public LineFigure() {\n        addPoint(0, 0);\n        addPoint(0, 0);\n    }\n\n    /**\n     * Gets a copy of the start point.\n     */\n    public Point startPoint() {\n        return pointAt(0);\n    }\n\n    /**\n     * Gets a copy of the end point.\n     */\n    public Point endPoint() {\n        return pointAt(1);\n    }\n\n    /**\n     * Sets the start point.\n     */\n    public void startPoint(int x, int y) {\n        setPointAt(new Point(x, y), 0);\n    }\n\n    /**\n     * Sets the end point.\n     */\n    public void endPoint(int x, int y) {\n        setPointAt(new Point(x, y), 1);\n    }\n\n    /**\n     * Sets the start and end point.\n     */\n    public void setPoints(Point start, Point end) {\n        setPointAt(start, 0);\n        setPointAt(end, 1);\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        setPoints(origin, corner);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A line figure.\n */\npublic class LineFigure extends PolyLineFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 511503575249212371L;\n\n    private int lineFigureSerializedDataVersion = 1;\n\n    public LineFigure() {\n        addPoint(0, 0);\n        addPoint(0, 0);\n    }\n\n    /**\n     * Gets a copy of the start point.\n     */\n    public Point startPoint() {\n        return pointAt(0);\n    }\n\n    /**\n     * Gets a copy of the end point.\n     */\n    public Point endPoint() {\n        return pointAt(1);\n    }\n\n    /**\n     * Sets the start point.\n     */\n    public void startPoint(int x, int y) {\n        setPointAt(new Point(x, y), 0);\n    }\n\n    /**\n     * Sets the end point.\n     */\n    public void endPoint(int x, int y) {\n        setPointAt(new Point(x, y), 1);\n    }\n\n    /**\n     * Sets the start and end point.\n     */\n    public void setPoints(Point start, Point end) {\n        setPointAt(start, 0);\n        setPointAt(end, 1);\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        setPoints(origin, corner);\n    }\n}",
+  "subClasses": []
+}

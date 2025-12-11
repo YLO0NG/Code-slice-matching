@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "isLeaf",
+  "brief": "public boolean isLeaf(Object node){}",
+  "methodSignature": "isLeaf(Object)",
+  "sourceCode": "public boolean isLeaf(Object node) {\r\n\t\treturn isTestSuite(node) == null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "junit.swingui.TestTreeModel": [
+      "isTestSuite(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Tests if the test is a leaf.\r\n */\r\npublic boolean isLeaf(Object node) {\r\n    return isTestSuite(node) == null;\r\n}",
+  "method_comment": "\r\n\t * Tests if the test is a leaf.\r\n\t ",
+  "method_annotation": ""
+}

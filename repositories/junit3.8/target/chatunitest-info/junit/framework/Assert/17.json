@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(boolean expected, boolean actual){}",
+  "methodSignature": "assertEquals(boolean, boolean)",
+  "sourceCode": "static public void assertEquals(boolean expected, boolean actual) {\r\n\t\tassertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, boolean, boolean)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two booleans are equal.\r\n */\r\nstatic public void assertEquals(boolean expected, boolean actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two booleans are equal.\r\n \t ",
+  "method_annotation": ""
+}

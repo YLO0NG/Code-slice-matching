@@ -1,0 +1,22 @@
+{
+  "className": "StackTraceListModel",
+  "methodName": "getSize",
+  "brief": "public int getSize(){}",
+  "methodSignature": "getSize()",
+  "sourceCode": "public int getSize() {\r\n\t\t\treturn fLines.size();\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "full_method_info": "public int getSize() {\r\n    return fLines.size();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

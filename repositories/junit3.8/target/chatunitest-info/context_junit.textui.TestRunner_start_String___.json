@@ -1,0 +1,28 @@
+{
+  "targetClass": "junit.textui.TestRunner",
+  "targetMethod": "start(String[])",
+  "dependentFields": {
+    "junit.runner.Version": "",
+    "junit.framework.Test": "",
+    "junit.framework.TestResult": "protected Vector fFailures;\nprotected Vector fErrors;\nprotected Vector fListeners;\nprotected int fRunTests;\nprivate boolean fStop;",
+    "junit.runner.BaseTestRunner": "public static final String SUITE_METHODNAME= \"suite\";\nprivate static Properties fPreferences;\nstatic int fgMaxMessageLength= 500;\nstatic boolean fgFilterStack= true;\nboolean fLoading= true;",
+    "junit.textui.TestRunner": "private ResultPrinter fPrinter;\npublic static final int SUCCESS_EXIT= 0;\npublic static final int FAILURE_EXIT= 1;\npublic static final int EXCEPTION_EXIT= 2;",
+    "junit.textui.ResultPrinter": "PrintStream fWriter;\nint fColumn= 0;"
+  },
+  "dependentMethods": {
+    "junit.runner.Version": "public static String id(){}",
+    "junit.framework.Test": "public abstract void run(TestResult result);",
+    "junit.framework.TestResult": "public synchronized void addListener(TestListener listener){}",
+    "junit.runner.BaseTestRunner": "public Test getTest(String suiteClassName){}\npublic String extractClassName(String className){}",
+    "junit.textui.TestRunner": "protected void pause(boolean wait){}\nprotected TestResult createTestResult(){}",
+    "junit.textui.ResultPrinter": "synchronized void print(TestResult result, long runTime){}"
+  },
+  "dependentMethodBodies": {
+    "junit.runner.Version": "public static String id() {\r\n\t\treturn \"3.8\";\r\n\t}",
+    "junit.framework.Test": "* Runs a test and collects its result in a TestResult instance.\r\n\t \npublic abstract void run(TestResult result);",
+    "junit.framework.TestResult": "* Registers a TestListener\r\n\t \npublic synchronized void addListener(TestListener listener) {\r\n\t\tfListeners.addElement(listener);\r\n\t}",
+    "junit.runner.BaseTestRunner": "* Returns the Test corresponding to the given suite. This is\r\n\t * a template method, subclasses override runFailed(), clearStatus().\r\n\t \npublic Test getTest(String suiteClassName) {\r\n\t\tif (suiteClassName.length() <= 0) {\r\n\t\t\tclearStatus();\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tClass testClass= null;\r\n\t\ttry {\r\n\t\t\ttestClass= loadSuiteClass(suiteClassName);\r\n\t\t} catch (ClassNotFoundException e) {\r\n\t\t\tString clazz= e.getMessage();\r\n\t\t\tif (clazz == null)\r\n\t\t\t\tclazz= suiteClassName;\r\n\t\t\trunFailed(\"Class not found \\\"\"+clazz+\"\\\"\");\r\n\t\t\treturn null;\r\n\t\t} catch(Exception e) {\r\n\t\t\trunFailed(\"Error: \"+e.toString());\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tMethod suiteMethod= null;\r\n\t\ttry {\r\n\t\t\tsuiteMethod= testClass.getMethod(SUITE_METHODNAME, new Class[0]);\r\n\t \t} catch(Exception e) {\r\n\t \t\t// try to extract a test suite automatically\r\n\t\t\tclearStatus();\r\n\t\t\treturn new TestSuite(testClass);\r\n\t\t}\r\n\t\tif (! Modifier.isStatic(suiteMethod.getModifiers())) {\r\n\t\t\trunFailed(\"Suite() method must be static\");\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tTest test= null;\r\n\t\ttry {\r\n\t\t\ttest= (Test)suiteMethod.invoke(null, new Class[0]); // static method\r\n\t\t\tif (test == null)\r\n\t\t\t\treturn test;\r\n\t\t}\r\n\t\tcatch (InvocationTargetException e) {\r\n\t\t\trunFailed(\"Failed to invoke suite():\" + e.getTargetException().toString());\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tcatch (IllegalAccessException e) {\r\n\t\t\trunFailed(\"Failed to invoke suite():\" + e.toString());\r\n\t\t\treturn null;\r\n\t\t}\r\n\r\n\t\tclearStatus();\r\n\t\treturn test;\r\n\t}\n\r\n\t * Extract the class name from a String in VA/Java style\r\n\t \npublic String extractClassName(String className) {\r\n\t\tif(className.startsWith(\"Default package for\"))\r\n\t\t\treturn className.substring(className.lastIndexOf(\".\")+1);\r\n\t\treturn className;\r\n\t}",
+    "junit.textui.TestRunner": "protected void pause(boolean wait) {\r\n\t\tif (!wait) return;\r\n\t\tfPrinter.printWaitPrompt();\r\n\t\ttry {\r\n\t\t\tSystem.in.read();\r\n\t\t}\r\n\t\tcatch(Exception e) {\r\n\t\t}\r\n\t}\n\r\n\t * Creates the TestResult to be used for the test run.\r\n\t \nprotected TestResult createTestResult() {\r\n\t\treturn new TestResult();\r\n\t}",
+    "junit.textui.ResultPrinter": "synchronized void print(TestResult result, long runTime) {\r\n\t\tprintHeader(runTime);\r\n\t    printErrors(result);\r\n\t    printFailures(result);\r\n\t    /*{*/if (result.wasSuccessful()) {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().print(\"OK\");\r\n\t\t\tgetWriter().println (\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\": \"s\") + \")\");\r\n\t\t\r\n\t\t} else {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().println(\"FAILURES!!!\");\r\n\t\t\tgetWriter().println(\"Tests run: \"+result.runCount()+ \r\n\t\t\t\t         \",  Failures: \"+result.failureCount()+\r\n\t\t\t\t         \",  Errors: \"+result.errorCount());\r\n\t\t}\r\n\t\tgetWriter().println();/*}*/\r\n\t}"
+  }
+}

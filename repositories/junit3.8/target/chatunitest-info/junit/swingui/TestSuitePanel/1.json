@@ -1,0 +1,30 @@
+{
+  "className": "TestSuitePanel",
+  "methodName": "addFailure",
+  "brief": "public void addFailure(final Test test, final AssertionFailedError t){}",
+  "methodSignature": "addFailure(Test, AssertionFailedError)",
+  "sourceCode": "public void addFailure(final Test test, final AssertionFailedError t) {\r\n \t\tfModel.addFailure(test);\r\n\t\tfireTestChanged(test, true);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "AssertionFailedError"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.AssertionFailedError": [],
+    "junit.swingui.TestTreeModel": [
+      "addFailure(Test)"
+    ],
+    "junit.swingui.TestSuitePanel": [
+      "fireTestChanged(Test, boolean)"
+    ]
+  },
+  "full_method_info": "public void addFailure(final Test test, final AssertionFailedError t) {\r\n    fModel.addFailure(test);\r\n    fireTestChanged(test, true);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

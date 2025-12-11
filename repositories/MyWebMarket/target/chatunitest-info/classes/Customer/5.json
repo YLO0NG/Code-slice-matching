@@ -1,0 +1,22 @@
+{
+  "className": "Customer",
+  "methodName": "setAddress",
+  "brief": "public void setAddress( String address ){}",
+  "methodSignature": "setAddress(String)",
+  "sourceCode": "public void setAddress( String address ) {\n\t\tthis.address = address;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setAddress(String address) {\n    this.address = address;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

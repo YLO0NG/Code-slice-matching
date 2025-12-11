@@ -1,0 +1,35 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createLookAndFeelMenu",
+  "brief": "public JMenu createLookAndFeelMenu(){}",
+  "methodSignature": "createLookAndFeelMenu()",
+  "sourceCode": "public JMenu createLookAndFeelMenu() {\n        JMenu menu = new JMenu(\"Look'n'Feel\");\n\n        UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();\n        JMenuItem mi = null;\n\n\t\tfor (int i = 0; i < lafs.length; i++) {\n            mi = new JMenuItem(lafs[i].getName());\n            final String lnfClassName = lafs[i].getClassName(); \n            mi.addActionListener(\n                new ActionListener() {\n\t                public void actionPerformed(ActionEvent event) {\n                        newLookAndFeel(lnfClassName);\n\t\t            }\n\t\t        }\n\t\t    );\n\t\t    menu.add(mi);\n\t\t}\n        return menu;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.UIManager": [
+      "getInstalledLookAndFeels()"
+    ],
+    "javax.swing.UIManager.LookAndFeelInfo": [
+      "getName()",
+      "getClassName()"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "newLookAndFeel(String)"
+    ],
+    "javax.swing.JMenu": [
+      "add(JMenuItem)"
+    ]
+  },
+  "full_method_info": "/**\n * Create a menu which allows the user to select a different look and feel at runtime.\n */\npublic JMenu createLookAndFeelMenu() {\n    JMenu menu = new JMenu(\"Look'n'Feel\");\n    UIManager.LookAndFeelInfo[] lafs = UIManager.getInstalledLookAndFeels();\n    JMenuItem mi = null;\n    for (int i = 0; i < lafs.length; i++) {\n        mi = new JMenuItem(lafs[i].getName());\n        final String lnfClassName = lafs[i].getClassName();\n        mi.addActionListener(new ActionListener() {\n\n            public void actionPerformed(ActionEvent event) {\n                newLookAndFeel(lnfClassName);\n            }\n        });\n        menu.add(mi);\n    }\n    return menu;\n}",
+  "method_comment": "\n\t * Create a menu which allows the user to select a different look and feel at runtime.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "DrawApplet",
+  "methodName": "setTool",
+  "brief": "private void setTool(Tool t, String name){}",
+  "methodSignature": "setTool(Tool, String)",
+  "sourceCode": "private void setTool(Tool t, String name) {\n        if (fTool != null)\n            fTool.deactivate();\n        fTool = t;\n        if (fTool != null) {\n            showStatus(name);\n            fTool.activate();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Tool",
+    "String"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Tool": [
+      "deactivate()",
+      "activate()"
+    ],
+    "java.lang.String": [],
+    "java.applet.Applet": [
+      "showStatus(String)"
+    ]
+  },
+  "full_method_info": "private void setTool(Tool t, String name) {\n    if (fTool != null)\n        fTool.deactivate();\n    fTool = t;\n    if (fTool != null) {\n        showStatus(name);\n        fTool.activate();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

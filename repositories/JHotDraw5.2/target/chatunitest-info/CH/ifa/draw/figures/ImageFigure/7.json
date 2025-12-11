@@ -1,0 +1,28 @@
+{
+  "className": "ImageFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n        dw.writeString(fFileName);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeString(String)"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "/**\n * Writes the ImageFigure to a StorableOutput. Only a reference to the\n * image, that is its pathname is saved.\n */\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeInt(fDisplayBox.x);\n    dw.writeInt(fDisplayBox.y);\n    dw.writeInt(fDisplayBox.width);\n    dw.writeInt(fDisplayBox.height);\n    dw.writeString(fFileName);\n}",
+  "method_comment": "\n    * Writes the ImageFigure to a StorableOutput. Only a reference to the\n    * image, that is its pathname is saved.\n    ",
+  "method_annotation": ""
+}

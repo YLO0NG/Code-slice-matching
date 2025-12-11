@@ -1,0 +1,18 @@
+{
+  "className": "Command",
+  "methodName": "execute",
+  "brief": "public abstract void execute();",
+  "methodSignature": "execute()",
+  "sourceCode": "public abstract void execute();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Executes the command.\n */\npublic abstract void execute();",
+  "method_comment": "\n     * Executes the command.\n     ",
+  "method_annotation": ""
+}

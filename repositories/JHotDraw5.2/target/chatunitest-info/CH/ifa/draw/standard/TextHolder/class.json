@@ -1,0 +1,57 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.TextHolder",
+  "className": "TextHolder",
+  "index": 144,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public interface TextHolder",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "textDisplayBox()": "0",
+    "getText()": "1",
+    "setText(String)": "2",
+    "acceptsTyping()": "3",
+    "overlayColumns()": "4",
+    "connect(Figure)": "5",
+    "getFont()": "6"
+  },
+  "methodsBrief": [
+    "public Rectangle textDisplayBox();",
+    "public String getText();",
+    "public void setText(String newText);",
+    "public boolean acceptsTyping();",
+    "public int overlayColumns();",
+    "public void connect(Figure connectedFigure);",
+    "public Font getFont();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getText()",
+    "setText(String)",
+    "getFont()"
+  ],
+  "getterSetterBrief": [
+    "public String getText();",
+    "public void setText(String newText);",
+    "public Font getFont();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)TextHolder.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * The interface of a figure that has some editable text contents.\n * @see Figure\n */\npublic interface TextHolder {\n\n    public Rectangle textDisplayBox();\n\n    /**\n     * Gets the text shown by the text figure.\n     */\n    public String getText();\n\n    /**\n     * Sets the text shown by the text figure.\n     */\n    public void setText(String newText);\n\n    /**\n     * Tests whether the figure accepts typing.\n     */\n    public boolean acceptsTyping();\n\n    /**\n     * Gets the number of columns to be overlaid when the figure is edited.\n     */\n    public int overlayColumns();\n\n    /**\n     * Connects a figure to another figure.\n     */\n    public void connect(Figure connectedFigure);\n\n    /**\n     * Gets the font.\n     */\n    public Font getFont();\n}\n",
+  "classDeclarationCode": "/**\n * The interface of a figure that has some editable text contents.\n * @see Figure\n */\npublic interface TextHolder {\n\n    public Rectangle textDisplayBox();\n\n    /**\n     * Gets the text shown by the text figure.\n     */\n    public String getText();\n\n    /**\n     * Sets the text shown by the text figure.\n     */\n    public void setText(String newText);\n\n    /**\n     * Tests whether the figure accepts typing.\n     */\n    public boolean acceptsTyping();\n\n    /**\n     * Gets the number of columns to be overlaid when the figure is edited.\n     */\n    public int overlayColumns();\n\n    /**\n     * Connects a figure to another figure.\n     */\n    public void connect(Figure connectedFigure);\n\n    /**\n     * Gets the font.\n     */\n    public Font getFont();\n}",
+  "subClasses": []
+}

@@ -1,0 +1,22 @@
+{
+  "className": "TextHolder",
+  "methodName": "setText",
+  "brief": "public void setText(String newText);",
+  "methodSignature": "setText(String)",
+  "sourceCode": "public void setText(String newText);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Sets the text shown by the text figure.\n */\npublic void setText(String newText);",
+  "method_comment": "\n     * Sets the text shown by the text figure.\n     ",
+  "method_annotation": ""
+}

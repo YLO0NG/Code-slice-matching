@@ -1,0 +1,23 @@
+{
+  "className": "ElbowHandle",
+  "methodName": "isVertical",
+  "brief": "private boolean isVertical(Point p1, Point p2){}",
+  "methodSignature": "isVertical(Point, Point)",
+  "sourceCode": "private boolean isVertical(Point p1, Point p2) {\n        return p1.x == p2.x;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "private boolean isVertical(Point p1, Point p2) {\n    return p1.x == p2.x;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

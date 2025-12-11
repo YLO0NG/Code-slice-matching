@@ -1,0 +1,64 @@
+{
+  "className": "IndustrialLayout",
+  "methodName": "IndustrialLayout",
+  "brief": "public IndustrialLayout(ArrayList<ChangeSet> changesets, int projectid) throws IOException{}",
+  "methodSignature": "IndustrialLayout(ArrayList, int)",
+  "sourceCode": "public IndustrialLayout(ArrayList<ChangeSet> changesets, int projectid) throws IOException {\n\t\tthis.projectid = projectid;\n\t\tthis.changesets = changesets;\n\t\tthis.totalFiles = new ArrayList<SVNFile>();\n\t\tthis.filesPerChangeset = new HashMap<ChangeSet, ArrayList<SVNFile>>();\n\t\tfor (ChangeSet changeset : changesets) {\n\t\t\tArrayList<SVNFile> fileList = new ArrayList<SVNFile>();\n\t\t\tfor (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n\t\t\t\tif (detail.getKind().equals(\"file\")) {\n\t\t\t\t\tSVNFile file = new SVNFile(detail.getFilename());\n\t\t\t\t\tfile.increaseChanges();\n\t\t\t\t\tif (detail.getChangetype().equals(\"deleted\")) {\n\t\t\t\t\t\tfile.setDeleted(true);\n\t\t\t\t\t}\n\t\t\t\t\tfile.addUser(changeset.getOwner());\n\t\t\t\t\tfile.setType();\n\t\t\t\t\tfileList.add(file);\n\t\t\t\t\tif (!totalFiles.contains(file)) {\n\t\t\t\t\t\tthis.totalFiles.add(file);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tthis.filesPerChangeset.put(changeset, fileList);\n\t\t}\n\t\tdouble[][] distanceMatrix = getCosineDistanceMatrix(changesets.size());\n\t\t/*try {\n\t\t\tprintDistanceMatrix(distanceMatrix);\n\t\t} catch (IOException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}*/\n\n\t\tArrayList<Integer> indicesToDelete = new ArrayList<Integer>();\n\t\tfor (int i = 0; i < distanceMatrix.length; i++) {\n\t\t\tint count = 0;\n\t\t\tfor (int j = 0; j < distanceMatrix.length; j++) {\n\t\t\t\tif (distanceMatrix[i][j] == 1) {\n\t\t\t\t\tcount++;\n\t\t\t\t}\n\t\t\t}\n\t\t\tif (count == distanceMatrix.length - 1) {\n\t\t\t\tindicesToDelete.add(i);\n\t\t\t}\n\t\t}\n\t\tArrayList<Integer> originalIndices = new ArrayList<Integer>();\n\t\toriginalIndices.addAll(indicesToDelete);\n\t\tfor (int i = 0; i < indicesToDelete.size(); i++) {\n\t\t\tdistanceMatrix = deleteRows(distanceMatrix, indicesToDelete.get(i));\n\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, indicesToDelete\n\t\t\t\t\t.get(i));\n\t\t\tindicesToDelete = decreaseIndices(indicesToDelete);\n\t\t}\n\t\tArrayList<IArtifact> fileArtifacts = new ArrayList<IArtifact>();\n\t\tArrayList<SVNFile> removedFiles = new ArrayList<SVNFile>();\n\t\tfor (int i = 0; i < totalFiles.size(); i++) {\n\t\t\tif (!originalIndices.contains(i)) {\n\t\t\t\tfileArtifacts.add(totalFiles.get(i));\n\t\t\t} else {\n\t\t\t\tremovedFiles.add(totalFiles.get(i));\n\t\t\t}\n\t\t}\n\t\ttotalFiles.removeAll(removedFiles);\n\t\tSystem.out.println(fileArtifacts.size());\n\t\tthis.getLayout(fileArtifacts, distanceMatrix);\n\t\tHashMap<SVNFile, Integer> fileCount = getFileCount(totalFiles);\n\t\t//printCityBlocks(cityBlocks, fileCount);\n\n\t\t/*\n\t\t * for(int i=0; i<distanceMatrix.length; i++) { for(int j=0;\n\t\t * j<distanceMatrix.length; j++) {\n\t\t * System.out.print(distanceMatrix[i][j]+\"\\t\"); } System.out.println();\n\t\t * }\n\t\t */\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<ChangeSet>",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getChangesetDetails()"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail": [
+      "getKind()",
+      "getFilename()",
+      "getChangetype()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": [
+      "addUser(User)",
+      "setType()",
+      "setDeleted(boolean)",
+      "increaseChanges()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getOwner()"
+    ],
+    "java.util.ArrayList": [
+      "get(int)",
+      "addAll(Collection<? extends E>)",
+      "removeAll(Object>)",
+      "contains(Object)",
+      "add(E)",
+      "size()"
+    ],
+    "java.util.HashMap": [
+      "put(K, V)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout": [
+      "decreaseIndices(Integer>)",
+      "getFileCount(SVNFile>)",
+      "getCosineDistanceMatrix(int)"
+    ],
+    "java.io.PrintStream": [
+      "println(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "getLayout(IArtifact>, double[][])"
+    ]
+  },
+  "full_method_info": "public IndustrialLayout(ArrayList<ChangeSet> changesets, int projectid) throws IOException {\n    this.projectid = projectid;\n    this.changesets = changesets;\n    this.totalFiles = new ArrayList<SVNFile>();\n    this.filesPerChangeset = new HashMap<ChangeSet, ArrayList<SVNFile>>();\n    for (ChangeSet changeset : changesets) {\n        ArrayList<SVNFile> fileList = new ArrayList<SVNFile>();\n        for (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n            if (detail.getKind().equals(\"file\")) {\n                SVNFile file = new SVNFile(detail.getFilename());\n                file.increaseChanges();\n                if (detail.getChangetype().equals(\"deleted\")) {\n                    file.setDeleted(true);\n                }\n                file.addUser(changeset.getOwner());\n                file.setType();\n                fileList.add(file);\n                if (!totalFiles.contains(file)) {\n                    this.totalFiles.add(file);\n                }\n            }\n        }\n        this.filesPerChangeset.put(changeset, fileList);\n    }\n    double[][] distanceMatrix = getCosineDistanceMatrix(changesets.size());\n    /*try {\n\t\t\tprintDistanceMatrix(distanceMatrix);\n\t\t} catch (IOException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}*/\n    ArrayList<Integer> indicesToDelete = new ArrayList<Integer>();\n    for (int i = 0; i < distanceMatrix.length; i++) {\n        int count = 0;\n        for (int j = 0; j < distanceMatrix.length; j++) {\n            if (distanceMatrix[i][j] == 1) {\n                count++;\n            }\n        }\n        if (count == distanceMatrix.length - 1) {\n            indicesToDelete.add(i);\n        }\n    }\n    ArrayList<Integer> originalIndices = new ArrayList<Integer>();\n    originalIndices.addAll(indicesToDelete);\n    for (int i = 0; i < indicesToDelete.size(); i++) {\n        distanceMatrix = deleteRows(distanceMatrix, indicesToDelete.get(i));\n        distanceMatrix = deleteColumns(distanceMatrix, indicesToDelete.get(i));\n        indicesToDelete = decreaseIndices(indicesToDelete);\n    }\n    ArrayList<IArtifact> fileArtifacts = new ArrayList<IArtifact>();\n    ArrayList<SVNFile> removedFiles = new ArrayList<SVNFile>();\n    for (int i = 0; i < totalFiles.size(); i++) {\n        if (!originalIndices.contains(i)) {\n            fileArtifacts.add(totalFiles.get(i));\n        } else {\n            removedFiles.add(totalFiles.get(i));\n        }\n    }\n    totalFiles.removeAll(removedFiles);\n    System.out.println(fileArtifacts.size());\n    this.getLayout(fileArtifacts, distanceMatrix);\n    HashMap<SVNFile, Integer> fileCount = getFileCount(totalFiles);\n    // printCityBlocks(cityBlocks, fileCount);\n    /*\n\t\t * for(int i=0; i<distanceMatrix.length; i++) { for(int j=0;\n\t\t * j<distanceMatrix.length; j++) {\n\t\t * System.out.print(distanceMatrix[i][j]+\"\\t\"); } System.out.println();\n\t\t * }\n\t\t */\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

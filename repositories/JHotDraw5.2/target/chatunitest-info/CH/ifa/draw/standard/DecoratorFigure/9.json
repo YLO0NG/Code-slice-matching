@@ -1,0 +1,25 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "findFigureInside",
+  "brief": "public Figure findFigureInside(int x, int y){}",
+  "methodSignature": "findFigureInside(int, int)",
+  "sourceCode": "public Figure findFigureInside(int x, int y) {\n        return fComponent.findFigureInside(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "findFigureInside(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards findFigureInside to its contained figure.\n */\npublic Figure findFigureInside(int x, int y) {\n    return fComponent.findFigureInside(x, y);\n}",
+  "method_comment": "\n     * Forwards findFigureInside to its contained figure.\n     ",
+  "method_annotation": ""
+}

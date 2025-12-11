@@ -1,0 +1,29 @@
+{
+  "className": "Ticket",
+  "methodName": "setLastEditorAndTimeLastModifiedBeforeDate",
+  "brief": "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp){}",
+  "methodSignature": "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)",
+  "sourceCode": "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp) {\n\t\tlastModified = created;\n\t\tlastEditor = owner;\n\t\tfor(TicketChange change : ticketChanges) {\n\t\t\tif(change.getTimestamp().before(timestamp) && change.getTimestamp().after(lastModified)) {\n\t\t\t\tlastModified = change.getTimestamp();\n\t\t\t\tlastEditor = change.getExternalAuthor();\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": [
+      "after(Timestamp)",
+      "before(Timestamp)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.TicketChange": [
+      "getExternalAuthor()",
+      "getTimestamp()"
+    ]
+  },
+  "full_method_info": "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp) {\n    lastModified = created;\n    lastEditor = owner;\n    for (TicketChange change : ticketChanges) {\n        if (change.getTimestamp().before(timestamp) && change.getTimestamp().after(lastModified)) {\n            lastModified = change.getTimestamp();\n            lastEditor = change.getExternalAuthor();\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

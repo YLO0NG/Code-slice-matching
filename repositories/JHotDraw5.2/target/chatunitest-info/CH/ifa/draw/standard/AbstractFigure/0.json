@@ -1,0 +1,27 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "moveBy",
+  "brief": "public void moveBy(int dx, int dy){}",
+  "methodSignature": "moveBy(int, int)",
+  "sourceCode": "public void moveBy(int dx, int dy) {\n        willChange();\n        basicMoveBy(dx, dy);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "basicMoveBy(int, int)",
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Moves the figure by the given offset.\n */\npublic void moveBy(int dx, int dy) {\n    willChange();\n    basicMoveBy(dx, dy);\n    changed();\n}",
+  "method_comment": "\n     * Moves the figure by the given offset.\n     ",
+  "method_annotation": ""
+}

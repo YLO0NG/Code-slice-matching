@@ -1,0 +1,29 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "insertPointAt",
+  "brief": "public void insertPointAt(Point p, int i){}",
+  "methodSignature": "insertPointAt(Point, int)",
+  "sourceCode": "public void insertPointAt(Point p, int i) {\n        fPoints.insertElementAt(p, i);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "java.util.Vector": [
+      "insertElementAt(E, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Insert a node at the given point.\n */\npublic void insertPointAt(Point p, int i) {\n    fPoints.insertElementAt(p, i);\n    changed();\n}",
+  "method_comment": "\n     * Insert a node at the given point.\n     ",
+  "method_annotation": ""
+}

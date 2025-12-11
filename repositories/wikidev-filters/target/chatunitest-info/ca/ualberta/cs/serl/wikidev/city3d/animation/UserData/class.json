@@ -1,0 +1,80 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.city3d.animation.UserData",
+  "className": "UserData",
+  "index": 18,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.city3d.animation",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.city3d.animation;",
+  "classSignature": "public class UserData",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.Timestamp;"
+  ],
+  "fields": [
+    "private String username;",
+    "private int R;",
+    "private int G;",
+    "private int B;",
+    "private double contribution;",
+    "private Timestamp week;",
+    "private String cityType;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getCityType()": "0",
+    "getUsername()": "1",
+    "getR()": "2",
+    "getG()": "3",
+    "getB()": "4",
+    "getContribution()": "5",
+    "getWeek()": "6",
+    "UserData(String, int, int, int, double, Timestamp, String)": "7"
+  },
+  "methodsBrief": [
+    "public String getCityType(){}",
+    "public String getUsername(){}",
+    "public int getR(){}",
+    "public int getG(){}",
+    "public int getB(){}",
+    "public double getContribution(){}",
+    "public Timestamp getWeek(){}",
+    "public UserData(String username, int r, int g, int b, double contribution,\r\n\t\t\tTimestamp week, String cityType){}"
+  ],
+  "constructorSigs": [
+    "UserData(String, int, int, int, double, Timestamp, String)"
+  ],
+  "constructorBrief": [
+    "public UserData(String username, int r, int g, int b, double contribution,\r\n\t\t\tTimestamp week, String cityType){}"
+  ],
+  "getterSetterSigs": [
+    "getCityType()",
+    "getUsername()",
+    "getR()",
+    "getG()",
+    "getB()",
+    "getContribution()",
+    "getWeek()"
+  ],
+  "getterSetterBrief": [
+    "public String getCityType(){}",
+    "public String getUsername(){}",
+    "public int getR(){}",
+    "public int getG(){}",
+    "public int getB(){}",
+    "public double getContribution(){}",
+    "public Timestamp getWeek(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.city3d.animation;\n\nimport java.sql.Timestamp;\n\npublic class UserData {\n\n    private String username;\n\n    private int R;\n\n    private int G;\n\n    private int B;\n\n    private double contribution;\n\n    private Timestamp week;\n\n    private String cityType;\n\n    public UserData(String username, int r, int g, int b, double contribution, Timestamp week, String cityType) {\n        this.username = username;\n        R = r;\n        G = g;\n        B = b;\n        this.contribution = contribution;\n        this.week = week;\n        this.cityType = cityType;\n    }\n\n    public String getCityType() {\n        return cityType;\n    }\n\n    public String getUsername() {\n        return username;\n    }\n\n    public int getR() {\n        return R;\n    }\n\n    public int getG() {\n        return G;\n    }\n\n    public int getB() {\n        return B;\n    }\n\n    public double getContribution() {\n        return contribution;\n    }\n\n    public Timestamp getWeek() {\n        return week;\n    }\n}\n",
+  "classDeclarationCode": "public class UserData {\n\n    private String username;\n\n    private int R;\n\n    private int G;\n\n    private int B;\n\n    private double contribution;\n\n    private Timestamp week;\n\n    private String cityType;\n\n    public UserData(String username, int r, int g, int b, double contribution, Timestamp week, String cityType) {\n        this.username = username;\n        R = r;\n        G = g;\n        B = b;\n        this.contribution = contribution;\n        this.week = week;\n        this.cityType = cityType;\n    }\n\n    public String getCityType() {\n        return cityType;\n    }\n\n    public String getUsername() {\n        return username;\n    }\n\n    public int getR() {\n        return R;\n    }\n\n    public int getG() {\n        return G;\n    }\n\n    public int getB() {\n        return B;\n    }\n\n    public double getContribution() {\n        return contribution;\n    }\n\n    public Timestamp getWeek() {\n        return week;\n    }\n}",
+  "subClasses": []
+}

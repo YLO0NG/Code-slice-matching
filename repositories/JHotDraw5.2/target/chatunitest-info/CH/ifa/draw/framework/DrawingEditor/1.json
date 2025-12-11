@@ -1,0 +1,18 @@
+{
+  "className": "DrawingEditor",
+  "methodName": "drawing",
+  "brief": "Drawing     drawing();",
+  "methodSignature": "drawing()",
+  "sourceCode": "Drawing     drawing();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the editor's drawing.\n */\nDrawing drawing();",
+  "method_comment": "\n     * Gets the editor's drawing.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "CityBlock",
+  "methodName": "getIndex",
+  "brief": "public Point getIndex(){}",
+  "methodSignature": "getIndex()",
+  "sourceCode": "public Point getIndex() {\n\t\treturn index;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Point getIndex() {\n    return index;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

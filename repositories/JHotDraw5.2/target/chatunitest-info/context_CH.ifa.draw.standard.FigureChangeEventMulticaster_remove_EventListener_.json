@@ -1,0 +1,13 @@
+{
+  "targetClass": "CH.ifa.draw.standard.FigureChangeEventMulticaster",
+  "targetMethod": "remove(EventListener)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.FigureChangeEventMulticaster": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.FigureChangeEventMulticaster": "protected static EventListener removeInternal(EventListener l, EventListener oldl){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.FigureChangeEventMulticaster": "protected static EventListener removeInternal(EventListener l, EventListener oldl) {\n    \tif (l == oldl || l == null) {\n    \t    return null;\n    \t} else if (l instanceof FigureChangeEventMulticaster) {\n    \t    return ((FigureChangeEventMulticaster)l).remove(oldl);\n    \t} else {\n    \t    return l;\t\t// it's not here\n    \t}\n    }"
+  }
+}

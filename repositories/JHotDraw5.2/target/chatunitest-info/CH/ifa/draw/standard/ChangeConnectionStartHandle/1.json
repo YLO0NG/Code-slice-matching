@@ -1,0 +1,22 @@
+{
+  "className": "ChangeConnectionStartHandle",
+  "methodName": "disconnect",
+  "brief": "protected void disconnect(){}",
+  "methodSignature": "disconnect()",
+  "sourceCode": "protected void disconnect() {\n        fConnection.disconnectStart();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "disconnectStart()"
+    ]
+  },
+  "full_method_info": "/**\n * Disconnects the start figure.\n */\nprotected void disconnect() {\n    fConnection.disconnectStart();\n}",
+  "method_comment": "\n     * Disconnects the start figure.\n     ",
+  "method_annotation": ""
+}

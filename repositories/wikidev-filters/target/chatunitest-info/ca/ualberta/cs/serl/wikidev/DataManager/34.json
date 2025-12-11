@@ -1,0 +1,38 @@
+{
+  "className": "DataManager",
+  "methodName": "getUsersPerProject",
+  "brief": "public static ArrayList<User> getUsersPerProject(int projectid) throws SQLException{}",
+  "methodSignature": "getUsersPerProject(int)",
+  "sourceCode": "public static ArrayList<User> getUsersPerProject(int projectid) throws SQLException {\n    \tArrayList<User> users = new ArrayList<User>();\n    \tArrayList<String> userNames = new ArrayList<String>();\n    \tString sqlStmt = QueryBuilder.selectUsersPerProject(projectid);\n    \tResultSet res = null;\n    \tres = statement.executeQuery(sqlStmt);\n    \twhile(res.next()) {\n    \t\tuserNames.add(res.getString(\"userid\"));\n    \t}\n    \tif(res != null) res.close();\n    \tfor(String username : userNames) {\n    \t\tusers.add(getUserByUserName(username));\n    \t}\n    \treturn users;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectUsersPerProject(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "next()",
+      "close()"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getUserByUserName(String)"
+    ]
+  },
+  "full_method_info": "public static ArrayList<User> getUsersPerProject(int projectid) throws SQLException {\n    ArrayList<User> users = new ArrayList<User>();\n    ArrayList<String> userNames = new ArrayList<String>();\n    String sqlStmt = QueryBuilder.selectUsersPerProject(projectid);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        userNames.add(res.getString(\"userid\"));\n    }\n    if (res != null)\n        res.close();\n    for (String username : userNames) {\n        users.add(getUserByUserName(username));\n    }\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

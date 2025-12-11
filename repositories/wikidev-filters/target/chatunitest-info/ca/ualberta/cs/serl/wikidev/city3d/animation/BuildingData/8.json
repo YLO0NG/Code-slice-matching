@@ -1,0 +1,18 @@
+{
+  "className": "BuildingData",
+  "methodName": "getHeight",
+  "brief": "public int getHeight(){}",
+  "methodSignature": "getHeight()",
+  "sourceCode": "public int getHeight() {\n\t\treturn height;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getHeight() {\n    return height;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "FailureDetailView",
+  "methodName": "showFailure",
+  "brief": "public void showFailure(TestFailure failure);",
+  "methodSignature": "showFailure(TestFailure)",
+  "sourceCode": "public void showFailure(TestFailure failure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestFailure"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestFailure": []
+  },
+  "full_method_info": "/**\r\n * Shows details of a TestFailure\r\n */\r\npublic void showFailure(TestFailure failure);",
+  "method_comment": "\r\n\t * Shows details of a TestFailure\r\n\t ",
+  "method_annotation": ""
+}

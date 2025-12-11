@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "run",
+  "brief": "static public TestResult run(Test test){}",
+  "methodSignature": "run(Test)",
+  "sourceCode": "static public TestResult run(Test test) {\r\n\t\tTestRunner runner= new TestRunner();\r\n\t\treturn runner.doRun(test);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.textui.TestRunner": [
+      "doRun(Test)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Runs a single test and collects its results.\r\n * This method can be used to start a test run\r\n * from your program.\r\n * <pre>\r\n * public static void main (String[] args) {\r\n *     test.textui.TestRunner.run(suite());\r\n * }\r\n * </pre>\r\n */\r\nstatic public TestResult run(Test test) {\r\n    TestRunner runner = new TestRunner();\r\n    return runner.doRun(test);\r\n}",
+  "method_comment": "\r\n\t * Runs a single test and collects its results.\r\n\t * This method can be used to start a test run\r\n\t * from your program.\r\n\t * <pre>\r\n\t * public static void main (String[] args) {\r\n\t *     test.textui.TestRunner.run(suite());\r\n\t * }\r\n\t * </pre>\r\n\t ",
+  "method_annotation": ""
+}

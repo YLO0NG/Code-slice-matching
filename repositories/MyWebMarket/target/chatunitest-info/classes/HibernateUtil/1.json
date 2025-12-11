@@ -1,0 +1,18 @@
+{
+  "className": "HibernateUtil",
+  "methodName": "getSessionFactory",
+  "brief": "public static SessionFactory getSessionFactory(){}",
+  "methodSignature": "getSessionFactory()",
+  "sourceCode": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public static SessionFactory getSessionFactory() {\n    return sessionFactory;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

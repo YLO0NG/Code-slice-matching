@@ -1,0 +1,23 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "canConnect",
+  "brief": "public boolean canConnect(Figure start, Figure end);",
+  "methodSignature": "canConnect(Figure, Figure)",
+  "sourceCode": "public boolean canConnect(Figure start, Figure end);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Checks if two figures can be connected. Implement this method\n * to constrain the allowed connections between figures.\n */\npublic boolean canConnect(Figure start, Figure end);",
+  "method_comment": "\n     * Checks if two figures can be connected. Implement this method\n     * to constrain the allowed connections between figures.\n     ",
+  "method_annotation": ""
+}

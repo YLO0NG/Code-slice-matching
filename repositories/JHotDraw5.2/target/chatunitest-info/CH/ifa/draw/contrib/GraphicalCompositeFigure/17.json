@@ -1,0 +1,30 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n\t\tsuper.read(dr);\n\t\tsetPresentationFigure((Figure)dr.readStorable());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "read(StorableInput)"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "setPresentationFigure(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the contained figures from StorableInput. The\n * figure responsible for graphical presentation is read\n * together with all child components. The Layouter\n * is not stored and therefore not read.\n */\npublic void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    setPresentationFigure((Figure) dr.readStorable());\n}",
+  "method_comment": "\n\t * Reads the contained figures from StorableInput. The\n\t * figure responsible for graphical presentation is read\n\t * together with all child components. The Layouter\n\t * is not stored and therefore not read.\n\t ",
+  "method_annotation": ""
+}

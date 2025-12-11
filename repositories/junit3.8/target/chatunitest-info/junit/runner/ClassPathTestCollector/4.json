@@ -1,0 +1,32 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "splitClassPath",
+  "brief": "Vector splitClassPath(String classPath){}",
+  "methodSignature": "splitClassPath(String)",
+  "sourceCode": "Vector splitClassPath(String classPath) {\r\n\t\tVector result= new Vector();\r\n\t\tString separator= System.getProperty(\"path.separator\");\r\n\t\tStringTokenizer tokenizer= new StringTokenizer(classPath, separator);\r\n\t\twhile (tokenizer.hasMoreTokens()) \r\n\t\t\tresult.addElement(tokenizer.nextToken());\r\n\t\treturn result;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.System": [
+      "getProperty(String)"
+    ],
+    "java.util.StringTokenizer": [
+      "nextToken()",
+      "hasMoreTokens()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "Vector splitClassPath(String classPath) {\r\n    Vector result = new Vector();\r\n    String separator = System.getProperty(\"path.separator\");\r\n    StringTokenizer tokenizer = new StringTokenizer(classPath, separator);\r\n    while (tokenizer.hasMoreTokens()) result.addElement(tokenizer.nextToken());\r\n    return result;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

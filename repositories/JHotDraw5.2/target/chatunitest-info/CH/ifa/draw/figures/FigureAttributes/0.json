@@ -1,0 +1,25 @@
+{
+  "className": "FigureAttributes",
+  "methodName": "get",
+  "brief": "public Object get(String name){}",
+  "methodSignature": "get(String)",
+  "sourceCode": "public Object get(String name) {\n        return fMap.get(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Hashtable": [
+      "get(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the attribute with the given name.\n * @returns attribute or null if the key is not defined\n */\npublic Object get(String name) {\n    return fMap.get(name);\n}",
+  "method_comment": "\n     * Gets the attribute with the given name.\n     * @returns attribute or null if the key is not defined\n     ",
+  "method_annotation": ""
+}

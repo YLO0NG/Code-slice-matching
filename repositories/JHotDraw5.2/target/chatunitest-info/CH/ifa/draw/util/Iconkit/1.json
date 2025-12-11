@@ -1,0 +1,39 @@
+{
+  "className": "Iconkit",
+  "methodName": "loadRegisteredImages",
+  "brief": "public void loadRegisteredImages(Component component){}",
+  "methodSignature": "loadRegisteredImages(Component)",
+  "sourceCode": "public void loadRegisteredImages(Component component) {\n        if (fRegisteredImages.size() == 0)\n            return;\n\n        MediaTracker tracker = new MediaTracker(component);\n\n        // register images with MediaTracker\n        Enumeration k = fRegisteredImages.elements();\n        while (k.hasMoreElements()) {\n            String fileName = (String) k.nextElement();\n            if (basicGetImage(fileName) == null) {\n                tracker.addImage(loadImage(fileName), ID);\n            }\n        }\n        fRegisteredImages.removeAllElements();\n\n        // block until all images are loaded\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {  }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Component"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": [],
+    "java.util.Vector": [
+      "removeAllElements()",
+      "elements()",
+      "size()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.util.Iconkit": [
+      "loadImage(String)",
+      "basicGetImage(String)"
+    ],
+    "java.awt.MediaTracker": [
+      "addImage(Image, int)",
+      "waitForAll()"
+    ]
+  },
+  "full_method_info": "/**\n * Loads all registered images.\n * @see #registerImage\n */\npublic void loadRegisteredImages(Component component) {\n    if (fRegisteredImages.size() == 0)\n        return;\n    MediaTracker tracker = new MediaTracker(component);\n    // register images with MediaTracker\n    Enumeration k = fRegisteredImages.elements();\n    while (k.hasMoreElements()) {\n        String fileName = (String) k.nextElement();\n        if (basicGetImage(fileName) == null) {\n            tracker.addImage(loadImage(fileName), ID);\n        }\n    }\n    fRegisteredImages.removeAllElements();\n    // block until all images are loaded\n    try {\n        tracker.waitForAll();\n    } catch (Exception e) {\n    }\n}",
+  "method_comment": "\n     * Loads all registered images.\n     * @see #registerImage\n     ",
+  "method_annotation": ""
+}

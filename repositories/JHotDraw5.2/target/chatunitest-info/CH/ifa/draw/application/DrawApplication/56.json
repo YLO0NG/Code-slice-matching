@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "getApplicationName",
+  "brief": "public String getApplicationName(){}",
+  "methodSignature": "getApplicationName()",
+  "sourceCode": "public String getApplicationName() {\n\t\treturn fApplicationName;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the name of the application build from this skeleton application\n */\npublic String getApplicationName() {\n    return fApplicationName;\n}",
+  "method_comment": "\n\t * Return the name of the application build from this skeleton application\n\t ",
+  "method_annotation": ""
+}

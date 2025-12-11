@@ -1,0 +1,22 @@
+{
+  "className": "TestHierarchyRunView",
+  "methodName": "getSelectedTest",
+  "brief": "public Test getSelectedTest(){}",
+  "methodSignature": "getSelectedTest()",
+  "sourceCode": "public Test getSelectedTest() {\r\n\t\treturn fTreeBrowser.getSelectedTest();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestSuitePanel": [
+      "getSelectedTest()"
+    ]
+  },
+  "full_method_info": "public Test getSelectedTest() {\r\n    return fTreeBrowser.getSelectedTest();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

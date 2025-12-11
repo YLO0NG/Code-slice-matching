@@ -1,0 +1,39 @@
+{
+  "fullClassName": "junit.framework.TestListener",
+  "className": "TestListener",
+  "index": 16,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public interface TestListener",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "addError(Test, Throwable)": "0",
+    "addFailure(Test, AssertionFailedError)": "1",
+    "endTest(Test)": "2",
+    "startTest(Test)": "3"
+  },
+  "methodsBrief": [
+    "public void addError(Test test, Throwable t);",
+    "public void addFailure(Test test, AssertionFailedError t);",
+    "public void endTest(Test test);",
+    "public void startTest(Test test);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.framework;\r\n\r\n/**\r\n * A Listener for test progress\r\n */\r\npublic interface TestListener {\r\n\r\n    /**\r\n     * An error occurred.\r\n     */\r\n    public void addError(Test test, Throwable t);\r\n\r\n    /**\r\n     * A failure occurred.\r\n     */\r\n    public void addFailure(Test test, AssertionFailedError t);\r\n\r\n    /**\r\n     * A test ended.\r\n     */\r\n    public void endTest(Test test);\r\n\r\n    /**\r\n     * A test started.\r\n     */\r\n    public void startTest(Test test);\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A Listener for test progress\r\n */\r\npublic interface TestListener {\r\n\r\n    /**\r\n     * An error occurred.\r\n     */\r\n    public void addError(Test test, Throwable t);\r\n\r\n    /**\r\n     * A failure occurred.\r\n     */\r\n    public void addFailure(Test test, AssertionFailedError t);\r\n\r\n    /**\r\n     * A test ended.\r\n     */\r\n    public void endTest(Test test);\r\n\r\n    /**\r\n     * A test started.\r\n     */\r\n    public void startTest(Test test);\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,27 @@
+{
+  "className": "AnimationDecorator",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fXVelocity = dr.readInt();\n        fYVelocity = dr.readInt();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()"
+    ],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    fXVelocity = dr.readInt();\n    fYVelocity = dr.readInt();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

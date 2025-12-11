@@ -1,0 +1,29 @@
+{
+  "className": "DrawApplication",
+  "methodName": "paletteUserOver",
+  "brief": "public void paletteUserOver(PaletteButton button, boolean inside){}",
+  "methodSignature": "paletteUserOver(PaletteButton, boolean)",
+  "sourceCode": "public void paletteUserOver(PaletteButton button, boolean inside) {\n        ToolButton toolButton = (ToolButton) button;\n        if (inside)\n            showStatus(toolButton.name());\n        else\n            showStatus(fSelectedToolButton.name());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PaletteButton",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.PaletteButton": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "showStatus(String)"
+    ],
+    "CH.ifa.draw.standard.ToolButton": [
+      "name()"
+    ]
+  },
+  "full_method_info": "/**\n * Handles when the mouse enters or leaves a palette button.\n * @see PaletteListener\n */\npublic void paletteUserOver(PaletteButton button, boolean inside) {\n    ToolButton toolButton = (ToolButton) button;\n    if (inside)\n        showStatus(toolButton.name());\n    else\n        showStatus(fSelectedToolButton.name());\n}",
+  "method_comment": "\n     * Handles when the mouse enters or leaves a palette button.\n     * @see PaletteListener\n     ",
+  "method_annotation": ""
+}

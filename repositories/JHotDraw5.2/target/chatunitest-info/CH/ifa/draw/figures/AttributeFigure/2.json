@@ -1,0 +1,22 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "drawFrame",
+  "brief": "protected void drawFrame(Graphics g){}",
+  "methodSignature": "drawFrame(Graphics)",
+  "sourceCode": "protected void drawFrame(Graphics g) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": []
+  },
+  "full_method_info": "/**\n * Draws the frame of the figure.\n * @see #draw\n */\nprotected void drawFrame(Graphics g) {\n}",
+  "method_comment": "\n     * Draws the frame of the figure.\n     * @see #draw\n     ",
+  "method_annotation": ""
+}

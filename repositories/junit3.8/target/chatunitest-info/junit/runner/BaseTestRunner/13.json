@@ -1,0 +1,31 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "processArguments",
+  "brief": "protected String processArguments(String[] args){}",
+  "methodSignature": "processArguments(String[])",
+  "sourceCode": "protected String processArguments(String[] args) {\r\n\t\tString suiteName= null;\r\n\t\tfor (int i= 0; i < args.length; i++) {\r\n\t\t\tif (args[i].equals(\"-noloading\")) {\r\n\t\t\t\tsetLoading(false);\r\n\t\t\t} else if (args[i].equals(\"-nofilterstack\")) {\r\n\t\t\t\tfgFilterStack= false;\r\n\t\t\t} else if (args[i].equals(\"-c\")) {\r\n\t\t\t\tif (args.length > i+1)\r\n\t\t\t\t\tsuiteName= extractClassName(args[i+1]);\r\n\t\t\t\telse\r\n\t\t\t\t\tSystem.out.println(\"Missing Test class name\");\r\n\t\t\t\ti++;\r\n\t\t\t} else {\r\n\t\t\t\tsuiteName= args[i];\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn suiteName;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "setLoading(boolean)",
+      "extractClassName(String)"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Processes the command line arguments and\r\n * returns the name of the suite class to run or null\r\n */\r\nprotected String processArguments(String[] args) {\r\n    String suiteName = null;\r\n    for (int i = 0; i < args.length; i++) {\r\n        if (args[i].equals(\"-noloading\")) {\r\n            setLoading(false);\r\n        } else if (args[i].equals(\"-nofilterstack\")) {\r\n            fgFilterStack = false;\r\n        } else if (args[i].equals(\"-c\")) {\r\n            if (args.length > i + 1)\r\n                suiteName = extractClassName(args[i + 1]);\r\n            else\r\n                System.out.println(\"Missing Test class name\");\r\n            i++;\r\n        } else {\r\n            suiteName = args[i];\r\n        }\r\n    }\r\n    return suiteName;\r\n}",
+  "method_comment": "\r\n\t * Processes the command line arguments and\r\n\t * returns the name of the suite class to run or null\r\n\t ",
+  "method_annotation": ""
+}

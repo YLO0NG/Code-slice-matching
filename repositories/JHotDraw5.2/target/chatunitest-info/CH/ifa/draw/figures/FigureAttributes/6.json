@@ -1,0 +1,33 @@
+{
+  "className": "FigureAttributes",
+  "methodName": "writeColor",
+  "brief": "public static void writeColor(StorableOutput dw, String colorName, Color color){}",
+  "methodSignature": "writeColor(StorableOutput, String, Color)",
+  "sourceCode": "public static void writeColor(StorableOutput dw, String colorName, Color color) {\n       if (color != null) {\n            dw.writeString(colorName);\n            dw.writeInt(color.getRed());\n            dw.writeInt(color.getGreen());\n            dw.writeInt(color.getBlue());\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput",
+    "String",
+    "Color"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeString(String)"
+    ],
+    "java.lang.String": [],
+    "java.awt.Color": [
+      "getGreen()",
+      "getBlue()",
+      "getRed()"
+    ]
+  },
+  "full_method_info": "public static void writeColor(StorableOutput dw, String colorName, Color color) {\n    if (color != null) {\n        dw.writeString(colorName);\n        dw.writeInt(color.getRed());\n        dw.writeInt(color.getGreen());\n        dw.writeInt(color.getBlue());\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

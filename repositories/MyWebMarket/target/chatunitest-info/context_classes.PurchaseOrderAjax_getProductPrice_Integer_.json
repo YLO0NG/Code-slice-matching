@@ -1,0 +1,13 @@
+{
+  "targetClass": "classes.PurchaseOrderAjax",
+  "targetMethod": "getProductPrice(Integer)",
+  "dependentFields": {
+    "classes.HibernateUtil": "private static final SessionFactory sessionFactory = buildSessionFactory();"
+  },
+  "dependentMethods": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory(){}"
+  },
+  "dependentMethodBodies": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}"
+  }
+}

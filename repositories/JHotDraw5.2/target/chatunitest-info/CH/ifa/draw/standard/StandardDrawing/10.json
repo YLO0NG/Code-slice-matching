@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "lock",
+  "brief": "public synchronized void lock(){}",
+  "methodSignature": "lock()",
+  "sourceCode": "public synchronized void lock() {\n        // recursive lock\n        Thread current = Thread.currentThread();\n        if (fDrawingLockHolder == current)\n            return;\n        while (fDrawingLockHolder != null) {\n            try { wait(); } catch (InterruptedException ex) { }\n        }\n        fDrawingLockHolder = current;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Thread": [
+      "currentThread()"
+    ],
+    "java.lang.Object": [
+      "wait()"
+    ]
+  },
+  "full_method_info": "/**\n * Acquires the drawing lock.\n */\npublic synchronized void lock() {\n    // recursive lock\n    Thread current = Thread.currentThread();\n    if (fDrawingLockHolder == current)\n        return;\n    while (fDrawingLockHolder != null) {\n        try {\n            wait();\n        } catch (InterruptedException ex) {\n        }\n    }\n    fDrawingLockHolder = current;\n}",
+  "method_comment": "\n     * Acquires the drawing lock.\n     ",
+  "method_annotation": ""
+}

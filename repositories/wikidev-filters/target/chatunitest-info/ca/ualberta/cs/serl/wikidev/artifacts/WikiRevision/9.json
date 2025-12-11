@@ -1,0 +1,22 @@
+{
+  "className": "WikiRevision",
+  "methodName": "setRev_user",
+  "brief": "public void setRev_user(User rev_user){}",
+  "methodSignature": "setRev_user(User)",
+  "sourceCode": "public void setRev_user(User rev_user) {\n\t\tthis.rev_user = rev_user;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": []
+  },
+  "full_method_info": "/**\n * @param rev_user\n * @uml.property  name=\"rev_user\"\n */\npublic void setRev_user(User rev_user) {\n    this.rev_user = rev_user;\n}",
+  "method_comment": "\n\t * @param rev_user\n\t * @uml.property  name=\"rev_user\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "targetClass": "CH.ifa.draw.samples.pert.PertFigure",
+  "targetMethod": "update(FigureChangeEvent)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.FigureChangeEvent": "private Rectangle fRectangle;\nprivate static final Rectangle  fgEmptyRectangle = new Rectangle(0, 0, 0, 0);",
+    "CH.ifa.draw.standard.AbstractFigure": "private transient FigureChangeListener fListener;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int abstractFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.standard.CompositeFigure": "protected Vector fFigures;\nprivate static final long serialVersionUID = 7408153435700021866L;\nprivate int compositeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.samples.pert.PertFigure": "private static final int BORDER = 3;\nprivate Rectangle fDisplayBox;\nprivate Vector fPreTasks;\nprivate Vector fPostTasks;\nprivate static final long serialVersionUID = -7877776240236946511L;\nprivate int pertFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": "public Figure getFigure(){}",
+    "CH.ifa.draw.standard.AbstractFigure": "public void changed(){}",
+    "CH.ifa.draw.standard.CompositeFigure": "public Figure figureAt(int i){}",
+    "CH.ifa.draw.samples.pert.PertFigure": "public int duration(){}\nprivate void layout(){}\nprivate boolean needsLayout(){}\npublic int start(){}\npublic void setEnd(int value){}\npublic void notifyPostTasks(){}\npublic int end(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.FigureChangeEvent": "*  Gets the changed figure\n     \npublic Figure getFigure() {\n        return (Figure)getSource();\n    }",
+    "CH.ifa.draw.standard.AbstractFigure": "* Informs that a figure changed the area of its display box.\n     *\n     * @see FigureChangeEvent\n     * @see Figure#changed\n     \npublic void changed() {\n        invalidate();\n        if (fListener != null)\n            fListener.figureChanged(new FigureChangeEvent(this));\n\n    }",
+    "CH.ifa.draw.standard.CompositeFigure": "* Gets a figure at the given index.\n     \npublic Figure figureAt(int i) {\n        return (Figure)fFigures.elementAt(i);\n    }",
+    "CH.ifa.draw.samples.pert.PertFigure": "public int duration() {\n        return asInt(1);\n    }\nprivate void layout() {\n\t    Point partOrigin = new Point(fDisplayBox.x, fDisplayBox.y);\n\t    partOrigin.translate(BORDER, BORDER);\n\t    Dimension extent = new Dimension(0, 0);\n\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n\n\t\t    Dimension partExtent = f.size();\n\t\t    Point corner = new Point(\n\t\t                        partOrigin.x+partExtent.width,\n\t\t                        partOrigin.y+partExtent.height);\n    \t\tf.basicDisplayBox(partOrigin, corner);\n\n\t\t    extent.width = Math.max(extent.width, partExtent.width);\n\t\t    extent.height += partExtent.height;\n\t\t    partOrigin.y += partExtent.height;\n        }\n\t    fDisplayBox.width = extent.width + 2*BORDER;\n\t    fDisplayBox.height = extent.height + 2*BORDER;\n    }\nprivate boolean needsLayout() {\n\t    Dimension extent = new Dimension(0, 0);\n\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n\t\t    extent.width = Math.max(extent.width, f.size().width);\n        }\n        int newExtent = extent.width + 2*BORDER;\n        return newExtent != fDisplayBox.width;\n    }\npublic int start() {\n        int start = 0;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            PertFigure f = (PertFigure) i.nextElement();\n            start = Math.max(start, f.end());\n        }\n        return start;\n    }\npublic void setEnd(int value) {\n        setInt(2, value);\n    }\npublic void notifyPostTasks() {\n        Enumeration i = fPostTasks.elements();\n        while (i.hasMoreElements())\n            ((PertFigure) i.nextElement()).updateDurations();\n    }\npublic int end() {\n        return asInt(2);\n    }"
+  }
+}

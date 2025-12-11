@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplet",
+  "methodName": "startSleeper",
+  "brief": "private void startSleeper(){}",
+  "methodSignature": "startSleeper()",
+  "sourceCode": "private void startSleeper() {\n        if (fSleeper == null)\n            fSleeper = new SleeperThread(this);\n        fSleeper.start();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Thread": [
+      "start()"
+    ]
+  },
+  "full_method_info": "/**\n * *** netscape browser work around ***\n */\nprivate void startSleeper() {\n    if (fSleeper == null)\n        fSleeper = new SleeperThread(this);\n    fSleeper.start();\n}",
+  "method_comment": "\n     * *** netscape browser work around ***\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "IArtifact",
+  "methodName": "getType",
+  "brief": "public String getType(){}",
+  "methodSignature": "getType()",
+  "sourceCode": "public String getType() {\n\t\treturn type;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String getType() {\n    return type;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

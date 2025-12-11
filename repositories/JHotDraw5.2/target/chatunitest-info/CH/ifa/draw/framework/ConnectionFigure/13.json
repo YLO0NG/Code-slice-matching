@@ -1,0 +1,23 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "setPointAt",
+  "brief": "public void setPointAt(Point p, int index);",
+  "methodSignature": "setPointAt(Point, int)",
+  "sourceCode": "public void setPointAt(Point p, int index);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/**\n * Sets the position of the point at the given position\n */\npublic void setPointAt(Point p, int index);",
+  "method_comment": "\n     * Sets the position of the point at the given position\n     ",
+  "method_annotation": ""
+}

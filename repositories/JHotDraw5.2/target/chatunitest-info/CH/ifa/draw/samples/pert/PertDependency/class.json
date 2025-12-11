@@ -1,0 +1,62 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.pert.PertDependency",
+  "className": "PertDependency",
+  "index": 89,
+  "modifier": "[public ]",
+  "extend": "[LineConnection]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.pert",
+  "packageDeclaration": "package CH.ifa.draw.samples.pert;",
+  "classSignature": "public class PertDependency",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -7959500008698525009L;",
+    "private int pertDependencySerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "LineConnection"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "handleConnect(Figure, Figure)": "0",
+    "handleDisconnect(Figure, Figure)": "1",
+    "canConnect(Figure, Figure)": "2",
+    "handles()": "3",
+    "PertDependency()": "4"
+  },
+  "methodsBrief": [
+    "public void handleConnect(Figure start, Figure end){}",
+    "public void handleDisconnect(Figure start, Figure end){}",
+    "public boolean canConnect(Figure start, Figure end){}",
+    "public Vector handles(){}",
+    "public PertDependency(){}"
+  ],
+  "constructorSigs": [
+    "PertDependency()"
+  ],
+  "constructorBrief": [
+    "public PertDependency(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setStartDecoration(LineDecoration)",
+      "setEndDecoration(LineDecoration)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)PertDependency.java 5.2\n *\n */\npackage CH.ifa.draw.samples.pert;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.standard.*;\n\npublic class PertDependency extends LineConnection {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -7959500008698525009L;\n\n    private int pertDependencySerializedDataVersion = 1;\n\n    public PertDependency() {\n        setEndDecoration(new ArrowTip());\n        setStartDecoration(null);\n    }\n\n    public void handleConnect(Figure start, Figure end) {\n        PertFigure source = (PertFigure) start;\n        PertFigure target = (PertFigure) end;\n        if (source.hasCycle(target)) {\n            setAttribute(\"FrameColor\", Color.red);\n        } else {\n            target.addPreTask(source);\n            source.addPostTask(target);\n            source.notifyPostTasks();\n        }\n    }\n\n    public void handleDisconnect(Figure start, Figure end) {\n        PertFigure source = (PertFigure) start;\n        PertFigure target = (PertFigure) end;\n        if (target != null) {\n            target.removePreTask(source);\n            target.updateDurations();\n        }\n        if (source != null)\n            source.removePostTask(target);\n    }\n\n    public boolean canConnect(Figure start, Figure end) {\n        return (start instanceof PertFigure && end instanceof PertFigure);\n    }\n\n    public Vector handles() {\n        Vector handles = super.handles();\n        // don't allow to reconnect the starting figure\n        handles.setElementAt(new NullHandle(this, PolyLineFigure.locator(0)), 0);\n        return handles;\n    }\n}\n",
+  "classDeclarationCode": "public class PertDependency extends LineConnection {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -7959500008698525009L;\n\n    private int pertDependencySerializedDataVersion = 1;\n\n    public PertDependency() {\n        setEndDecoration(new ArrowTip());\n        setStartDecoration(null);\n    }\n\n    public void handleConnect(Figure start, Figure end) {\n        PertFigure source = (PertFigure) start;\n        PertFigure target = (PertFigure) end;\n        if (source.hasCycle(target)) {\n            setAttribute(\"FrameColor\", Color.red);\n        } else {\n            target.addPreTask(source);\n            source.addPostTask(target);\n            source.notifyPostTasks();\n        }\n    }\n\n    public void handleDisconnect(Figure start, Figure end) {\n        PertFigure source = (PertFigure) start;\n        PertFigure target = (PertFigure) end;\n        if (target != null) {\n            target.removePreTask(source);\n            target.updateDurations();\n        }\n        if (source != null)\n            source.removePostTask(target);\n    }\n\n    public boolean canConnect(Figure start, Figure end) {\n        return (start instanceof PertFigure && end instanceof PertFigure);\n    }\n\n    public Vector handles() {\n        Vector handles = super.handles();\n        // don't allow to reconnect the starting figure\n        handles.setElementAt(new NullHandle(this, PolyLineFigure.locator(0)), 0);\n        return handles;\n    }\n}",
+  "subClasses": []
+}

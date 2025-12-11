@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "addRunTest",
+  "brief": "void addRunTest(Test t){}",
+  "methodSignature": "addRunTest(Test)",
+  "sourceCode": "void addRunTest(Test t) {\r\n\t\tfRunTests.put(t, t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Hashtable": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Remembers that a test was run\r\n */\r\nvoid addRunTest(Test t) {\r\n    fRunTests.put(t, t);\r\n}",
+  "method_comment": "\r\n\t * Remembers that a test was run\r\n\t ",
+  "method_annotation": ""
+}

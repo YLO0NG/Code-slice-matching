@@ -1,0 +1,22 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "setFrameColor",
+  "brief": "protected void setFrameColor(Color c){}",
+  "methodSignature": "setFrameColor(Color)",
+  "sourceCode": "protected void setFrameColor(Color c) {\n        fFrameColor = c;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": []
+  },
+  "full_method_info": "protected void setFrameColor(Color c) {\n    fFrameColor = c;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

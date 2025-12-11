@@ -1,0 +1,48 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "relateChangeSetToTicket",
+  "brief": "public void relateChangeSetToTicket(ChangeSet changeset) throws SQLException{}",
+  "methodSignature": "relateChangeSetToTicket(ChangeSet)",
+  "sourceCode": "public void relateChangeSetToTicket(ChangeSet changeset) throws SQLException {\n\t\tArrayList<String> ids = new ArrayList<String>();\n\t\tString comment = changeset.getComment();\n\t\tString ticketid = \"\";\n\t\tString pattern = \"[0-9]\";\n\t\tfor(int i=0;i<comment.length(); i++) {\n\t\t\tif(comment.charAt(i) == '#') {\n\t\t\t\tint j=i+1;\n\t\t\t\tString ch = comment.substring(j, j+1);\n\t\t\t\twhile(ch.matches(pattern)) {\n\t\t\t\t\tticketid += ch;\n\t\t\t\t\tj++;\n\t\t\t\t\tif (j<comment.length()) {\n\t\t\t\t\t\tch = comment.substring(j, j + 1);\n\t\t\t\t\t}\n\t\t\t\t\telse {\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tids.add(ticketid);\n\t\t\t\tticketid = \"\";\n\t\t\t}\n\t\t}\n\t\tfor (String ticket_id : ids) {\n\t\t\tif (!ticket_id.equals(\"\")) {\n\t\t\t\tint id = Integer.parseInt(ticket_id);\n\t\t\t\tProject project = DataManager.getProjectByExternalSystem(changeset.getExternalSystemID());\n\t\t\t\tTicket ticket = DataManager.getTicketByDrID(project.getProjectID(), id);\n\t\t\t\tif (ticket != null) {\n\t\t\t\t\trelateArtifacts(ticket, changeset, 0, \"<TicketReference>\");\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ChangeSet"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getExternalSystemID()",
+      "getComment()"
+    ],
+    "java.lang.String": [
+      "equals(Object)",
+      "substring(int, int)",
+      "matches(String)",
+      "length()",
+      "charAt(int)"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "java.lang.Integer": [
+      "parseInt(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectByExternalSystem(int)",
+      "getTicketByDrID(int, int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectID()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": [
+      "relateArtifacts(IArtifact, IArtifact, double, String)"
+    ]
+  },
+  "full_method_info": "/*private void saveResults(ArrayList<String> buffers, String filename) {\n\t\ttry {\n\t\t\tBufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\\"+filename+\".txt\"));\n\t\t\tfor(String buffer : buffers) {\n\t\t\t\tout.write(buffer);\n\t\t\t\tout.newLine();\n\t\t\t}\n\t\t\tout.close();\n\t\t} catch (IOException e) {\n\t\t\te.printStackTrace();\n\t\t}\n\t}*/\n/*public void mineRelationshipsFromURL(URL url) throws SQLException {\n\t\t\n\t\tString projectName = url.getProjectName();\n\t\tProject project = DataManager.getProjectByName(projectName);\n\t\tString entityType = url.getEntityType();\n\t\tIArtifact artifact = DataManager.getArtifactByURL(entityType, url.getUrl());\n\t\tproject.addRelatedArtifact(artifact);\n\t\tprojectsChanged.add(project);\n\t\trelateArtifacts(sourceArtifact, artifact);\n\t}*/\npublic void relateChangeSetToTicket(ChangeSet changeset) throws SQLException {\n    ArrayList<String> ids = new ArrayList<String>();\n    String comment = changeset.getComment();\n    String ticketid = \"\";\n    String pattern = \"[0-9]\";\n    for (int i = 0; i < comment.length(); i++) {\n        if (comment.charAt(i) == '#') {\n            int j = i + 1;\n            String ch = comment.substring(j, j + 1);\n            while (ch.matches(pattern)) {\n                ticketid += ch;\n                j++;\n                if (j < comment.length()) {\n                    ch = comment.substring(j, j + 1);\n                } else {\n                    break;\n                }\n            }\n            ids.add(ticketid);\n            ticketid = \"\";\n        }\n    }\n    for (String ticket_id : ids) {\n        if (!ticket_id.equals(\"\")) {\n            int id = Integer.parseInt(ticket_id);\n            Project project = DataManager.getProjectByExternalSystem(changeset.getExternalSystemID());\n            Ticket ticket = DataManager.getTicketByDrID(project.getProjectID(), id);\n            if (ticket != null) {\n                relateArtifacts(ticket, changeset, 0, \"<TicketReference>\");\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

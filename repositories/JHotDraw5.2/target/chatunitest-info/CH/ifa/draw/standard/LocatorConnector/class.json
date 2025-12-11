@@ -1,0 +1,68 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.LocatorConnector",
+  "className": "LocatorConnector",
+  "index": 131,
+  "modifier": "[public ]",
+  "extend": "[AbstractConnector]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class LocatorConnector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "public static final int SIZE = 8;",
+    "private Locator  fLocator;",
+    "private static final long serialVersionUID = 5062833203337604181L;",
+    "private int locatorConnectorSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "AbstractConnector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "locate(ConnectionFigure)": "0",
+    "containsPoint(int, int)": "1",
+    "displayBox()": "2",
+    "draw(Graphics)": "3",
+    "write(StorableOutput)": "4",
+    "read(StorableInput)": "5",
+    "LocatorConnector()": "6",
+    "LocatorConnector(Figure, Locator)": "7"
+  },
+  "methodsBrief": [
+    "protected Point locate(ConnectionFigure connection){}",
+    "public boolean containsPoint(int x, int y){}",
+    "public Rectangle displayBox(){}",
+    "public void draw(Graphics g){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public LocatorConnector(){}",
+    "public LocatorConnector(Figure owner, Locator l){}"
+  ],
+  "constructorSigs": [
+    "LocatorConnector()",
+    "LocatorConnector(Figure, Locator)"
+  ],
+  "constructorBrief": [
+    "public LocatorConnector(){}",
+    "public LocatorConnector(Figure owner, Locator l){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Locator": []
+  },
+  "compilationUnitCode": "/*\n * @(#)LocatorConnector.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A LocatorConnector locates connection points with\n * the help of a Locator. It supports the definition\n * of connection points to semantic locations.\n * @see Locator\n * @see Connector\n */\npublic class LocatorConnector extends AbstractConnector {\n\n    /**\n     * The standard size of the connector. The display box\n     * is centered around the located point.\n     */\n    public static final int SIZE = 8;\n\n    private Locator fLocator;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 5062833203337604181L;\n\n    private int locatorConnectorSerializedDataVersion = 1;\n\n    public LocatorConnector() {\n        // only used for Storable\n        fLocator = null;\n    }\n\n    public LocatorConnector(Figure owner, Locator l) {\n        super(owner);\n        fLocator = l;\n    }\n\n    protected Point locate(ConnectionFigure connection) {\n        return fLocator.locate(owner());\n    }\n\n    /**\n     * Tests if a point is contained in the connector.\n     */\n    public boolean containsPoint(int x, int y) {\n        return displayBox().contains(x, y);\n    }\n\n    /**\n     * Gets the display box of the connector.\n     */\n    public Rectangle displayBox() {\n        Point p = fLocator.locate(owner());\n        return new Rectangle(p.x - SIZE / 2, p.y - SIZE / 2, SIZE, SIZE);\n    }\n\n    /**\n     * Draws this connector.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.blue);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n\n    /**\n     * Stores the arrow tip to a StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fLocator);\n    }\n\n    /**\n     * Reads the arrow tip from a StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fLocator = (Locator) dr.readStorable();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A LocatorConnector locates connection points with\n * the help of a Locator. It supports the definition\n * of connection points to semantic locations.\n * @see Locator\n * @see Connector\n */\npublic class LocatorConnector extends AbstractConnector {\n\n    /**\n     * The standard size of the connector. The display box\n     * is centered around the located point.\n     */\n    public static final int SIZE = 8;\n\n    private Locator fLocator;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 5062833203337604181L;\n\n    private int locatorConnectorSerializedDataVersion = 1;\n\n    public LocatorConnector() {\n        // only used for Storable\n        fLocator = null;\n    }\n\n    public LocatorConnector(Figure owner, Locator l) {\n        super(owner);\n        fLocator = l;\n    }\n\n    protected Point locate(ConnectionFigure connection) {\n        return fLocator.locate(owner());\n    }\n\n    /**\n     * Tests if a point is contained in the connector.\n     */\n    public boolean containsPoint(int x, int y) {\n        return displayBox().contains(x, y);\n    }\n\n    /**\n     * Gets the display box of the connector.\n     */\n    public Rectangle displayBox() {\n        Point p = fLocator.locate(owner());\n        return new Rectangle(p.x - SIZE / 2, p.y - SIZE / 2, SIZE, SIZE);\n    }\n\n    /**\n     * Draws this connector.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.blue);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n\n    /**\n     * Stores the arrow tip to a StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fLocator);\n    }\n\n    /**\n     * Reads the arrow tip from a StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fLocator = (Locator) dr.readStorable();\n    }\n}",
+  "subClasses": []
+}

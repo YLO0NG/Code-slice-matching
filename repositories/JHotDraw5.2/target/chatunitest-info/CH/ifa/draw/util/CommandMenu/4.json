@@ -1,0 +1,35 @@
+{
+  "className": "CommandMenu",
+  "methodName": "enable",
+  "brief": "public synchronized void enable(String name, boolean state){}",
+  "methodSignature": "enable(String, boolean)",
+  "sourceCode": "public synchronized void enable(String name, boolean state) {\n        for (int i = 0; i < getItemCount(); i++) {\n            JMenuItem item = getItem(i);\n            if (name.equals(item.getLabel())) {\n                item.setEnabled(state);\n                return;\n            }\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "javax.swing.JMenu": [
+      "getItem(int)",
+      "getItemCount()"
+    ],
+    "javax.swing.AbstractButton": [
+      "getLabel()"
+    ],
+    "javax.swing.JMenuItem": [
+      "setEnabled(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Changes the enabling/disabling state of a named menu item.\n */\npublic synchronized void enable(String name, boolean state) {\n    for (int i = 0; i < getItemCount(); i++) {\n        JMenuItem item = getItem(i);\n        if (name.equals(item.getLabel())) {\n            item.setEnabled(state);\n            return;\n        }\n    }\n}",
+  "method_comment": "\n     * Changes the enabling/disabling state of a named menu item.\n     ",
+  "method_annotation": ""
+}

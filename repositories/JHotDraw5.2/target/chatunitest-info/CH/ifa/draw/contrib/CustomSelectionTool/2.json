@@ -1,0 +1,51 @@
+{
+  "className": "CustomSelectionTool",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n\t\tif (e.isPopupTrigger()) {\n\t\t    Figure figure = drawing().findFigure(e.getX(), e.getY());\n\t\t\tif (figure != null) {\n\t\t\t    Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n\t\t\t    if (attribute == null) {\n\t\t\t        figure = drawing().findFigureInside(e.getX(), e.getY());\n\t\t\t    }\n\t\t\t\tif (figure != null) {\n\t\t\t    \tshowPopupMenu(figure, e.getX(), e.getY(), e.getComponent());\n\t\t\t    }\n\t\t\t}\n\t\t}\n\t\telse if (e.getClickCount() == 2) {\n\t\t\thandleMouseDoubleClick(e, x, y);\n\t\t}\n\t\telse {\n\t\t\tsuper.mouseUp(e, x, y);\n\t\t\thandleMouseUp(e, x, y);\n\t\t\thandleMouseClick(e, x, y);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getClickCount()",
+      "getX()",
+      "getY()",
+      "isPopupTrigger()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)",
+      "findFigure(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "CH.ifa.draw.contrib.CustomSelectionTool": [
+      "showPopupMenu(Figure, int, int, Component)",
+      "handleMouseClick(MouseEvent, int, int)",
+      "handleMouseUp(MouseEvent, int, int)",
+      "handleMouseDoubleClick(MouseEvent, int, int)"
+    ],
+    "java.awt.event.ComponentEvent": [
+      "getComponent()"
+    ],
+    "CH.ifa.draw.standard.SelectionTool": [
+      "mouseUp(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * MouseListener method for mouseUp events. Depending on the kind of event\n * the appropriate hook method is called (popupMenuUp for popup trigger,\n * doubleMouseClick for a double click, and mouseUp() and mouseClick() for\n * normal mouse clicks).\n *\n * @param   e   MouseEvent which should be interpreted\n * @param   x   x coordinate of the MouseEvent\n * @param   y   y coordinate of the MouseEvent\n */\npublic void mouseUp(MouseEvent e, int x, int y) {\n    if (e.isPopupTrigger()) {\n        Figure figure = drawing().findFigure(e.getX(), e.getY());\n        if (figure != null) {\n            Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n            if (attribute == null) {\n                figure = drawing().findFigureInside(e.getX(), e.getY());\n            }\n            if (figure != null) {\n                showPopupMenu(figure, e.getX(), e.getY(), e.getComponent());\n            }\n        }\n    } else if (e.getClickCount() == 2) {\n        handleMouseDoubleClick(e, x, y);\n    } else {\n        super.mouseUp(e, x, y);\n        handleMouseUp(e, x, y);\n        handleMouseClick(e, x, y);\n    }\n}",
+  "method_comment": " \n\t * MouseListener method for mouseUp events. Depending on the kind of event\n\t * the appropriate hook method is called (popupMenuUp for popup trigger,\n\t * doubleMouseClick for a double click, and mouseUp() and mouseClick() for\n\t * normal mouse clicks).\n\t *\n\t * @param   e   MouseEvent which should be interpreted\n\t * @param   x   x coordinate of the MouseEvent\n\t * @param   y   y coordinate of the MouseEvent\n     ",
+  "method_annotation": ""
+}

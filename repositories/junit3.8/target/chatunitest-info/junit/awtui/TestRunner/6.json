@@ -1,0 +1,36 @@
+{
+  "className": "TestRunner",
+  "methodName": "createJUnitMenu",
+  "brief": "protected Menu createJUnitMenu(){}",
+  "methodSignature": "createJUnitMenu()",
+  "sourceCode": "protected Menu createJUnitMenu() {\r\n\t\tMenu menu= new Menu(\"JUnit\");\r\n\t\tMenuItem mi= new MenuItem(\"About...\");\r\n\t\tmi.addActionListener(\r\n\t\t    new ActionListener() {\r\n\t\t        public void actionPerformed(ActionEvent event) {\r\n\t\t            /*{*/AboutDialog about= new AboutDialog(fFrame);\r\n\t\t\t\t\tabout.setModal(true);\r\n\t\t\t\t\tabout.setLocation(300, 300);\r\n\t\t\t\t\tabout.setVisible(true);/*}*/\r\n\t\t        }\r\n\t\t    }\r\n\t\t);\r\n\t\tmenu.add(mi);\r\n\r\n\t\tmenu.addSeparator();\r\n\t\tmi= new MenuItem(\"Exit\");\r\n\t\tmi.addActionListener(\r\n\t\t    new ActionListener() {\r\n\t\t        public void actionPerformed(ActionEvent event) {\r\n\t\t            System.exit(0);\r\n\t\t        }\r\n\t\t    }\r\n\t\t);\r\n\t\tmenu.add(mi);\r\n\t\treturn menu;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.MenuItem": [
+      "addActionListener(ActionListener)"
+    ],
+    "java.awt.Dialog": [
+      "setVisible(boolean)",
+      "setModal(boolean)"
+    ],
+    "java.awt.Window": [
+      "setLocation(int, int)"
+    ],
+    "java.awt.Menu": [
+      "addSeparator()",
+      "add(MenuItem)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Creates the JUnit menu. Clients override this\r\n * method to add additional menu items.\r\n */\r\nprotected Menu createJUnitMenu() {\r\n    Menu menu = new Menu(\"JUnit\");\r\n    MenuItem mi = new MenuItem(\"About...\");\r\n    mi.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent event) {\r\n            /*{*/\r\n            AboutDialog about = new AboutDialog(fFrame);\r\n            about.setModal(true);\r\n            about.setLocation(300, 300);\r\n            about.setVisible(true);\r\n            /*}*/\r\n        }\r\n    });\r\n    menu.add(mi);\r\n    menu.addSeparator();\r\n    mi = new MenuItem(\"Exit\");\r\n    mi.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent event) {\r\n            System.exit(0);\r\n        }\r\n    });\r\n    menu.add(mi);\r\n    return menu;\r\n}",
+  "method_comment": "\r\n\t * Creates the JUnit menu. Clients override this\r\n\t * method to add additional menu items.\r\n\t ",
+  "method_annotation": ""
+}

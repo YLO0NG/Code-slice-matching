@@ -1,0 +1,72 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.URLTool",
+  "className": "URLTool",
+  "index": 82,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public  class URLTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private FloatingTextField   fTextField;",
+    "private Figure              fURLTarget;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "mouseUp(MouseEvent, int, int)": "1",
+    "deactivate(DrawingView)": "2",
+    "endAction(ActionEvent)": "3",
+    "beginEdit(Figure)": "4",
+    "endEdit()": "5",
+    "fieldBounds(Figure)": "6",
+    "getURL(Figure)": "7",
+    "setURL(Figure, String)": "8",
+    "URLTool(DrawingView)": "9"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y)\r\n   {}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "public void deactivate(DrawingView view){}",
+    "public void endAction(ActionEvent e){}",
+    "private void beginEdit(Figure figure){}",
+    "private void endEdit(){}",
+    "private Rectangle fieldBounds(Figure figure){}",
+    "private String getURL(Figure figure){}",
+    "private void setURL(Figure figure, String url){}",
+    "public URLTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "URLTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public URLTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [
+    "setURL(Figure, String)"
+  ],
+  "getterSetterBrief": [
+    "private void setURL(Figure figure, String url){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)URLTool.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport java.awt.*;\nimport java.awt.event.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A tool to attach URLs to figures.\n * The URLs are stored in the figure's \"URL\" attribute.\n * The URL text is entered with a FloatingTextField.\n * @see CH.ifa.draw.util.FloatingTextField\n */\npublic class URLTool extends AbstractTool {\n\n    private FloatingTextField fTextField;\n\n    private Figure fURLTarget;\n\n    public URLTool(DrawingView view) {\n        super(view);\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        Figure pressedFigure;\n        pressedFigure = drawing().findFigureInside(x, y);\n        if (pressedFigure != null) {\n            if (fTextField == null) {\n                fTextField = new FloatingTextField();\n                fTextField.addActionListener(new ActionListener() {\n\n                    public void actionPerformed(ActionEvent event) {\n                        endAction(event);\n                    }\n                });\n            }\n            if (pressedFigure != fURLTarget && fURLTarget != null)\n                endEdit();\n            if (pressedFigure != fURLTarget) {\n                fTextField.createOverlay((Container) view());\n                fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));\n                fURLTarget = pressedFigure;\n            }\n            return;\n        }\n        endEdit();\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n\n    public void deactivate(DrawingView view) {\n        super.deactivate();\n        endEdit();\n    }\n\n    public void endAction(ActionEvent e) {\n        endEdit();\n    }\n\n    private void beginEdit(Figure figure) {\n        if (fTextField == null) {\n            fTextField = new FloatingTextField();\n            fTextField.addActionListener(new ActionListener() {\n\n                public void actionPerformed(ActionEvent event) {\n                    endAction(event);\n                }\n            });\n        }\n        if (figure != fURLTarget && fURLTarget != null)\n            if (fURLTarget != null) {\n                setURL(fURLTarget, fTextField.getText());\n                fURLTarget = null;\n                fTextField.endOverlay();\n            }\n        if (figure != fURLTarget) {\n            fTextField.createOverlay((Container) view());\n            fTextField.setBounds(fieldBounds(figure), getURL(figure));\n            fURLTarget = figure;\n        }\n    }\n\n    private void endEdit() {\n        if (fURLTarget != null) {\n            setURL(fURLTarget, fTextField.getText());\n            fURLTarget = null;\n            fTextField.endOverlay();\n        }\n    }\n\n    private Rectangle fieldBounds(Figure figure) {\n        Rectangle box = figure.displayBox();\n        int nChars = Math.max(20, getURL(figure).length());\n        Dimension d = fTextField.getPreferredSize(nChars);\n        box.x = Math.max(0, box.x + (box.width - d.width) / 2);\n        box.y = Math.max(0, box.y + (box.height - d.height) / 2);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }\n\n    private String getURL(Figure figure) {\n        String url = (String) figure.getAttribute(\"URL\");\n        if (url == null)\n            url = \"\";\n        return url;\n    }\n\n    private void setURL(Figure figure, String url) {\n        figure.setAttribute(\"URL\", url);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A tool to attach URLs to figures.\n * The URLs are stored in the figure's \"URL\" attribute.\n * The URL text is entered with a FloatingTextField.\n * @see CH.ifa.draw.util.FloatingTextField\n */\npublic class URLTool extends AbstractTool {\n\n    private FloatingTextField fTextField;\n\n    private Figure fURLTarget;\n\n    public URLTool(DrawingView view) {\n        super(view);\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        Figure pressedFigure;\n        pressedFigure = drawing().findFigureInside(x, y);\n        if (pressedFigure != null) {\n            if (fTextField == null) {\n                fTextField = new FloatingTextField();\n                fTextField.addActionListener(new ActionListener() {\n\n                    public void actionPerformed(ActionEvent event) {\n                        endAction(event);\n                    }\n                });\n            }\n            if (pressedFigure != fURLTarget && fURLTarget != null)\n                endEdit();\n            if (pressedFigure != fURLTarget) {\n                fTextField.createOverlay((Container) view());\n                fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));\n                fURLTarget = pressedFigure;\n            }\n            return;\n        }\n        endEdit();\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n\n    public void deactivate(DrawingView view) {\n        super.deactivate();\n        endEdit();\n    }\n\n    public void endAction(ActionEvent e) {\n        endEdit();\n    }\n\n    private void beginEdit(Figure figure) {\n        if (fTextField == null) {\n            fTextField = new FloatingTextField();\n            fTextField.addActionListener(new ActionListener() {\n\n                public void actionPerformed(ActionEvent event) {\n                    endAction(event);\n                }\n            });\n        }\n        if (figure != fURLTarget && fURLTarget != null)\n            if (fURLTarget != null) {\n                setURL(fURLTarget, fTextField.getText());\n                fURLTarget = null;\n                fTextField.endOverlay();\n            }\n        if (figure != fURLTarget) {\n            fTextField.createOverlay((Container) view());\n            fTextField.setBounds(fieldBounds(figure), getURL(figure));\n            fURLTarget = figure;\n        }\n    }\n\n    private void endEdit() {\n        if (fURLTarget != null) {\n            setURL(fURLTarget, fTextField.getText());\n            fURLTarget = null;\n            fTextField.endOverlay();\n        }\n    }\n\n    private Rectangle fieldBounds(Figure figure) {\n        Rectangle box = figure.displayBox();\n        int nChars = Math.max(20, getURL(figure).length());\n        Dimension d = fTextField.getPreferredSize(nChars);\n        box.x = Math.max(0, box.x + (box.width - d.width) / 2);\n        box.y = Math.max(0, box.y + (box.height - d.height) / 2);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }\n\n    private String getURL(Figure figure) {\n        String url = (String) figure.getAttribute(\"URL\");\n        if (url == null)\n            url = \"\";\n        return url;\n    }\n\n    private void setURL(Figure figure, String url) {\n        figure.setAttribute(\"URL\", url);\n    }\n}",
+  "subClasses": []
+}

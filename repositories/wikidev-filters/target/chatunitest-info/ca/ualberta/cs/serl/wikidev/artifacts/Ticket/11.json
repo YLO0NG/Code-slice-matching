@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getDesription",
+  "brief": "public String getDesription(){}",
+  "methodSignature": "getDesription()",
+  "sourceCode": "public String getDesription() {\n\t\treturn desription;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"desription\"\n */\npublic String getDesription() {\n    return desription;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"desription\"\n\t ",
+  "method_annotation": ""
+}

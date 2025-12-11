@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplet",
+  "methodName": "selectionChanged",
+  "brief": "public void selectionChanged(DrawingView view){}",
+  "methodSignature": "selectionChanged(DrawingView)",
+  "sourceCode": "public void selectionChanged(DrawingView view) {\n        setupAttributes();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "setupAttributes()"
+    ]
+  },
+  "full_method_info": "/**\n * Handles a change of the current selection. Updates all\n * menu items that are selection sensitive.\n * @see DrawingEditor\n */\npublic void selectionChanged(DrawingView view) {\n    setupAttributes();\n}",
+  "method_comment": "\n     * Handles a change of the current selection. Updates all\n     * menu items that are selection sensitive.\n     * @see DrawingEditor\n     ",
+  "method_annotation": ""
+}

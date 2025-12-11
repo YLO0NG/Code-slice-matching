@@ -1,0 +1,22 @@
+{
+  "className": "TextFigure",
+  "methodName": "setCurrentFontName",
+  "brief": "static public void setCurrentFontName(String name){}",
+  "methodSignature": "setCurrentFontName(String)",
+  "sourceCode": "static public void setCurrentFontName(String name) {\n        fgCurrentFontName = name;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Sets the current font name\n */\nstatic public void setCurrentFontName(String name) {\n    fgCurrentFontName = name;\n}",
+  "method_comment": "\n     * Sets the current font name\n     ",
+  "method_annotation": ""
+}

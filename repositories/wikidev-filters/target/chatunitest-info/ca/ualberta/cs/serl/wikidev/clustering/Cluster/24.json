@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "Cluster",
+  "brief": "public Cluster(){}",
+  "methodSignature": "Cluster()",
+  "sourceCode": "public Cluster() {\n\t\tartifacts = new ArrayList<IArtifact>();\n\t\tcoordinates = new HashMap<IArtifact, ClusterPoint>();\n\t\twords = new HashSet<String>();\n\t\tusers = new HashSet<User>();\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "// private ArrayList<double[]> coordinates;\n// private ArrayList<ClusterPoint> points;\n// private ClusterPoint medoid;\n// private ArrayList<ClusterPoint> nonMedoids;\npublic Cluster() {\n    artifacts = new ArrayList<IArtifact>();\n    coordinates = new HashMap<IArtifact, ClusterPoint>();\n    words = new HashSet<String>();\n    users = new HashSet<User>();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

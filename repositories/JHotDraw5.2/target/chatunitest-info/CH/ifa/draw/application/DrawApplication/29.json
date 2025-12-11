@@ -1,0 +1,28 @@
+{
+  "className": "DrawApplication",
+  "methodName": "setDrawing",
+  "brief": "public void setDrawing(Drawing drawing){}",
+  "methodSignature": "setDrawing(Drawing)",
+  "sourceCode": "public void setDrawing(Drawing drawing) {\n        view().setDrawing(drawing);\n        fDrawing = drawing;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.framework.DrawingView": [
+      "setDrawing(Drawing)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the drawing to be edited.\n */\npublic void setDrawing(Drawing drawing) {\n    view().setDrawing(drawing);\n    fDrawing = drawing;\n}",
+  "method_comment": "\n     * Sets the drawing to be edited.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "targetClass": "CH.ifa.draw.standard.StandardDrawingView",
+  "targetMethod": "findHandle(int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.StandardDrawingView": "transient private DrawingEditor   fEditor;\nprivate Drawing         fDrawing;\nprivate transient Rectangle fDamage = null;\ntransient private Vector fSelection;\ntransient private Vector fSelectionHandles;\nprivate Dimension fViewSize;\nprivate Point fLastClick;\nprivate Vector fBackgrounds = null;\nprivate Vector fForegrounds = null;\nprivate Painter fUpdateStrategy;\nprivate PointConstrainer fConstrainer;\nprivate static final long serialVersionUID = -3878153366174603336L;\nprivate int drawingViewSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.framework.FigureEnumeration": "",
+    "CH.ifa.draw.framework.Handle": "public static final int HANDLESIZE = 8;",
+    "CH.ifa.draw.framework.DrawingEditor": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": "public FigureEnumeration selectionElements(){}",
+    "CH.ifa.draw.framework.Figure": "public Vector handles();",
+    "CH.ifa.draw.framework.FigureEnumeration": "public Figure nextFigure();",
+    "CH.ifa.draw.framework.Handle": "public boolean containsPoint(int x, int y);"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.StandardDrawingView": "* Gets an enumeration over the currently selected figures.\n     \npublic FigureEnumeration selectionElements() {\n        return new FigureEnumerator(fSelection);\n    }",
+    "CH.ifa.draw.framework.Figure": "* Returns the handles used to manipulate\n     * the figure. Handles is a Factory Method for\n     * creating handle objects.\n     *\n     * @return a Vector of handles\n     * @see Handle\n     \npublic Vector handles();",
+    "CH.ifa.draw.framework.FigureEnumeration": "* Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     \npublic Figure nextFigure();",
+    "CH.ifa.draw.framework.Handle": "* Tests if a point is contained in the handle.\n     \npublic boolean containsPoint(int x, int y);"
+  }
+}

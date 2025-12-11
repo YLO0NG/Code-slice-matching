@@ -1,0 +1,29 @@
+{
+  "className": "TestRunner",
+  "methodName": "textChanged",
+  "brief": "public void textChanged(){}",
+  "methodSignature": "textChanged()",
+  "sourceCode": "public void textChanged() {\r\n\t\tfRun.setEnabled(getSuiteText().length() > 0);\r\n\t\tclearStatus();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "setEnabled(boolean)"
+    ],
+    "java.lang.String": [
+      "length()"
+    ],
+    "junit.swingui.TestRunner": [
+      "getSuiteText()",
+      "clearStatus()"
+    ]
+  },
+  "full_method_info": "public void textChanged() {\r\n    fRun.setEnabled(getSuiteText().length() > 0);\r\n    clearStatus();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

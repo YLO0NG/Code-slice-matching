@@ -1,0 +1,26 @@
+{
+  "className": "ProgressBar",
+  "methodName": "paint",
+  "brief": "public void paint(Graphics g){}",
+  "methodSignature": "paint(Graphics)",
+  "sourceCode": "public void paint(Graphics g) {\r\n\t\tpaintBackground(g);\r\n\t\tpaintStatus(g);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "junit.awtui.ProgressBar": [
+      "paintStatus(Graphics)",
+      "paintBackground(Graphics)"
+    ]
+  },
+  "full_method_info": "public void paint(Graphics g) {\r\n    paintBackground(g);\r\n    paintStatus(g);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

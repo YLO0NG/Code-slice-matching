@@ -1,0 +1,22 @@
+{
+  "className": "IArtifact",
+  "methodName": "setOwner",
+  "brief": "public void setOwner(User owner){}",
+  "methodSignature": "setOwner(User)",
+  "sourceCode": "public void setOwner(User owner) {\n\t\tthis.owner = owner;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": []
+  },
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"projectID\"\n */\n// public int getProjectID() {\n// return projectID;\n// }\n/**\n * @return\n * @uml.property  name=\"owner\"\n */\npublic void setOwner(User owner) {\n    this.owner = owner;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"owner\"\n\t ",
+  "method_annotation": ""
+}

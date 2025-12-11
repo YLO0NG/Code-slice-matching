@@ -1,0 +1,22 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "setPreferences",
+  "brief": "protected static void setPreferences(Properties preferences){}",
+  "methodSignature": "setPreferences(Properties)",
+  "sourceCode": "protected static void setPreferences(Properties preferences) {\r\n\t\tfPreferences= preferences;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Properties"
+  ],
+  "dependentMethods": {
+    "java.util.Properties": []
+  },
+  "full_method_info": "protected static void setPreferences(Properties preferences) {\r\n    fPreferences = preferences;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

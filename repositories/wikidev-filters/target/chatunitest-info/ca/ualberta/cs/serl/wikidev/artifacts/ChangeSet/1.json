@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSet",
+  "methodName": "setRevision",
+  "brief": "public void setRevision(int revision){}",
+  "methodSignature": "setRevision(int)",
+  "sourceCode": "public void setRevision(int revision) {\n\t\tthis.revision = revision;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param revision\n * @uml.property  name=\"revision\"\n */\npublic void setRevision(int revision) {\n    this.revision = revision;\n}",
+  "method_comment": "\n\t * @param revision\n\t * @uml.property  name=\"revision\"\n\t ",
+  "method_annotation": ""
+}

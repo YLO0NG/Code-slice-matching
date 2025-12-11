@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.applet.DrawApplet",
+  "targetMethod": "readFromObjectInput(String)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.StandardDrawingView": "transient private DrawingEditor   fEditor;\nprivate Drawing         fDrawing;\nprivate transient Rectangle fDamage = null;\ntransient private Vector fSelection;\ntransient private Vector fSelectionHandles;\nprivate Dimension fViewSize;\nprivate Point fLastClick;\nprivate Vector fBackgrounds = null;\nprivate Vector fForegrounds = null;\nprivate Painter fUpdateStrategy;\nprivate PointConstrainer fConstrainer;\nprivate static final long serialVersionUID = -3878153366174603336L;\nprivate int drawingViewSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.applet.DrawApplet": "transient private Drawing         fDrawing;\ntransient private Tool            fTool;\ntransient private StandardDrawingView fView;\ntransient private ToolButton      fDefaultToolButton;\ntransient private ToolButton      fSelectedToolButton;\ntransient private boolean         fSimpleUpdate;\ntransient private JButton          fUpdateButton;\ntransient private JComboBox          fFrameColor;\ntransient private JComboBox          fFillColor;\ntransient private JComboBox          fTextColor;\ntransient private JComboBox          fArrowChoice;\ntransient private JComboBox          fFontChoice;\ntransient private Thread          fSleeper;\nprivate Iconkit                   fIconkit;\nstatic String                     fgUntitled = \"untitled\";\nprivate static final String       fgDrawPath = \"/CH/ifa/draw/\";\npublic static final String        IMAGES = fgDrawPath+\"images/\";"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": "public void setDrawing(Drawing d){}",
+    "CH.ifa.draw.framework.Drawing": "public void release();",
+    "CH.ifa.draw.applet.DrawApplet": "protected Drawing createDrawing(){}\npublic void toolDone(){}\nprivate void initDrawing(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.StandardDrawingView": "* Sets and installs another drawing in the view.\n     \npublic void setDrawing(Drawing d) {\n        if (fDrawing != null) {\n            clearSelection();\n            fDrawing.removeDrawingChangeListener(this);\n        }\n\n        fDrawing = d;\n        if (fDrawing != null)\n            fDrawing.addDrawingChangeListener(this);\n\n        FigureEnumeration k = drawing().figures();\n\t\tDimension d1 = new Dimension(0, 0);\n\t\twhile (k.hasMoreElements()) {\n\t\t    Rectangle r = k.nextFigure().displayBox();\n\t\t    d1.width = Math.max(d1.width, r.x+r.width);\n\t\t    d1.height = Math.max(d1.height, r.y+r.height);\n\t\t}\n\t\tif (fViewSize.height < d1.height || fViewSize.width < d1.width) {\n\t\t    fViewSize.height = d1.height+10;\n\t\t    fViewSize.width = d1.width+10;\n\t\t    setSize(fViewSize);\n\t\t}\n        repaint();\n    }",
+    "CH.ifa.draw.framework.Drawing": "* Releases the drawing and its contained figures.\n     \npublic void release();",
+    "CH.ifa.draw.applet.DrawApplet": "* Creates the drawing used in this application.\n     * You need to override this method to use a Drawing\n     * subclass in your application. By default a standard\n     * Drawing is returned.\n     \nprotected Drawing createDrawing() {\n        return new StandardDrawing();\n    }\n\n     * Sets the default tool of the editor.\n     * @see DrawingEditor\n     \npublic void toolDone() {\n        setTool(fDefaultToolButton.tool(), fDefaultToolButton.name());\n        setSelected(fDefaultToolButton);\n    }\nprivate void initDrawing() {\n        fDrawing = createDrawing();\n        fView.setDrawing(fDrawing);\n        toolDone();\n    }"
+  }
+}

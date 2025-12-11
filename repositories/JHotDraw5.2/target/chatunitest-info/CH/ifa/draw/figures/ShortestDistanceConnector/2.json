@@ -1,0 +1,44 @@
+{
+  "className": "ShortestDistanceConnector",
+  "methodName": "findPoint",
+  "brief": "protected Point findPoint(ConnectionFigure connection, boolean getStart){}",
+  "methodSignature": "findPoint(ConnectionFigure, boolean)",
+  "sourceCode": "protected Point findPoint(ConnectionFigure connection, boolean getStart) {\n        Figure startFigure = connection.start().owner();\n        Figure endFigure = connection.end().owner();\n\n        Rectangle r1 = startFigure.displayBox();\n        Rectangle r2 = endFigure.displayBox();\n\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n\n        Point p1, p2;\n        Point start = null, end = null, s = null, e = null;\n        long len2 = Long.MAX_VALUE, l2;\n        int x1, x2, y1, y2; // connection points\n        int xmin, xmax, ymin, ymax;\n\n        // X-dimension\n        // constrain width connection insets\n        int r1x, r1width, r2x, r2width, r1y, r1height, r2y, r2height;\n        r1x = r1.x + i1.left;\n        r1width = r1.width - i1.left - i1.right-1;\n        r2x = r2.x + i2.left;\n        r2width = r2.width - i2.left - i2.right-1;\n\n        // find x connection point\n        if (r1x + r1width < r2x) {\n            x1 = r1x + r1width;\n            x2 = r2x;\n        } else if (r1x > r2x + r2width) {\n            x1 = r1x;\n            x2 = r2x + r2width;\n        } else {\n            xmax = Math.max(r1x, r2x);\n            xmin = Math.min(r1x+r1width, r2x+r2width);\n            x1 = x2 = (xmax + xmin) /2;\n        }\n\n        // Y-Dimension\n        // constrain with connection insets\n        r1y = r1.y + i1.top;\n        r1height = r1.height - i1.top - i1.bottom-1;\n        r2y = r2.y + i2.top;\n        r2height = r2.height - i2.top - i2.bottom-1;\n\n        // y connection point\n        if (r1y + r1height < r2y) {\n            y1 = r1y + r1height;\n            y2 = r2y;\n        } else if (r1y > r2y + r2height) {\n            y1 = r1y;\n            y2 = r2y + r2height;\n        } else {\n            ymax = Math.max(r1y, r2y);\n            ymin = Math.min(r1y+r1height, r2y+r2height);\n            y1 = y2 = (ymax + ymin) /2;\n        }\n        // find shortest connection\n        for (int i = 0; i < 4; i++) {\n            switch(i) {\n            case 0:\n                // EAST-WEST\n                p1 = Geom.east(r1);\n                p2 = Geom.west(r2);\n                s = new Point(p1.x, y1);\n                e = new Point(p2.x, y2);\n                break;\n            case 1:\n                // WEST-EAST\n                p1 = Geom.west(r1);\n                p2 = Geom.east(r2);\n                s = new Point(p1.x, y1);\n                e = new Point(p2.x, y2);\n                break;\n            case 2:\n                // NORTH-SOUTH\n                p1 = Geom.north(r1);\n                p2 = Geom.south(r2);\n                s = new Point(x1, p1.y);\n                e = new Point(x2, p2.y);\n                break;\n            case 3:\n                // SOUTH-NORTH\n                p1 = Geom.south(r1);\n                p2 = Geom.north(r2);\n                s = new Point(x1, p1.y);\n                e = new Point(x2, p2.y);\n                break;\n            }\n            l2 = Geom.length2(s.x, s.y, e.x, e.y);\n            if (l2 < len2) {\n                start = s;\n                end = e;\n                len2 = l2;\n            }\n        }\n        if (getStart)\n            return start;\n        return end;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "start()",
+      "end()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectionInsets()",
+      "displayBox()"
+    ],
+    "java.lang.Math": [
+      "min(int, int)",
+      "max(int, int)"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "length2(int, int, int, int)",
+      "north(Rectangle)",
+      "west(Rectangle)",
+      "east(Rectangle)",
+      "south(Rectangle)"
+    ]
+  },
+  "full_method_info": "protected Point findPoint(ConnectionFigure connection, boolean getStart) {\n    Figure startFigure = connection.start().owner();\n    Figure endFigure = connection.end().owner();\n    Rectangle r1 = startFigure.displayBox();\n    Rectangle r2 = endFigure.displayBox();\n    Insets i1 = startFigure.connectionInsets();\n    Insets i2 = endFigure.connectionInsets();\n    Point p1, p2;\n    Point start = null, end = null, s = null, e = null;\n    long len2 = Long.MAX_VALUE, l2;\n    // connection points\n    int x1, x2, y1, y2;\n    int xmin, xmax, ymin, ymax;\n    // X-dimension\n    // constrain width connection insets\n    int r1x, r1width, r2x, r2width, r1y, r1height, r2y, r2height;\n    r1x = r1.x + i1.left;\n    r1width = r1.width - i1.left - i1.right - 1;\n    r2x = r2.x + i2.left;\n    r2width = r2.width - i2.left - i2.right - 1;\n    // find x connection point\n    if (r1x + r1width < r2x) {\n        x1 = r1x + r1width;\n        x2 = r2x;\n    } else if (r1x > r2x + r2width) {\n        x1 = r1x;\n        x2 = r2x + r2width;\n    } else {\n        xmax = Math.max(r1x, r2x);\n        xmin = Math.min(r1x + r1width, r2x + r2width);\n        x1 = x2 = (xmax + xmin) / 2;\n    }\n    // Y-Dimension\n    // constrain with connection insets\n    r1y = r1.y + i1.top;\n    r1height = r1.height - i1.top - i1.bottom - 1;\n    r2y = r2.y + i2.top;\n    r2height = r2.height - i2.top - i2.bottom - 1;\n    // y connection point\n    if (r1y + r1height < r2y) {\n        y1 = r1y + r1height;\n        y2 = r2y;\n    } else if (r1y > r2y + r2height) {\n        y1 = r1y;\n        y2 = r2y + r2height;\n    } else {\n        ymax = Math.max(r1y, r2y);\n        ymin = Math.min(r1y + r1height, r2y + r2height);\n        y1 = y2 = (ymax + ymin) / 2;\n    }\n    // find shortest connection\n    for (int i = 0; i < 4; i++) {\n        switch(i) {\n            case 0:\n                // EAST-WEST\n                p1 = Geom.east(r1);\n                p2 = Geom.west(r2);\n                s = new Point(p1.x, y1);\n                e = new Point(p2.x, y2);\n                break;\n            case 1:\n                // WEST-EAST\n                p1 = Geom.west(r1);\n                p2 = Geom.east(r2);\n                s = new Point(p1.x, y1);\n                e = new Point(p2.x, y2);\n                break;\n            case 2:\n                // NORTH-SOUTH\n                p1 = Geom.north(r1);\n                p2 = Geom.south(r2);\n                s = new Point(x1, p1.y);\n                e = new Point(x2, p2.y);\n                break;\n            case 3:\n                // SOUTH-NORTH\n                p1 = Geom.south(r1);\n                p2 = Geom.north(r2);\n                s = new Point(x1, p1.y);\n                e = new Point(x2, p2.y);\n                break;\n        }\n        l2 = Geom.length2(s.x, s.y, e.x, e.y);\n        if (l2 < len2) {\n            start = s;\n            end = e;\n            len2 = l2;\n        }\n    }\n    if (getStart)\n        return start;\n    return end;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

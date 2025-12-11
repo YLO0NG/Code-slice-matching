@@ -1,0 +1,26 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "splitSegment",
+  "brief": "public int splitSegment(int x, int y){}",
+  "methodSignature": "splitSegment(int, int)",
+  "sourceCode": "public int splitSegment(int x, int y) {\n        int i = findSegment(x, y);\n        if (i != -1)\n            insertPointAt(new Point(x, y), i+1);\n        return i+1;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "findSegment(int, int)",
+      "insertPointAt(Point, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Splits the segment at the given point if a segment was hit.\n * @return the index of the segment or -1 if no segment was hit.\n */\npublic int splitSegment(int x, int y) {\n    int i = findSegment(x, y);\n    if (i != -1)\n        insertPointAt(new Point(x, y), i + 1);\n    return i + 1;\n}",
+  "method_comment": "\n     * Splits the segment at the given point if a segment was hit.\n     * @return the index of the segment or -1 if no segment was hit.\n     ",
+  "method_annotation": ""
+}

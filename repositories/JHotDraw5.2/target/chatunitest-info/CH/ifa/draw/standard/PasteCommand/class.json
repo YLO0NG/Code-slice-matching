@@ -1,0 +1,51 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.PasteCommand",
+  "className": "PasteCommand",
+  "index": 135,
+  "modifier": "[public ]",
+  "extend": "[FigureTransferCommand]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class PasteCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import java.awt.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "FigureTransferCommand"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "bounds(Enumeration)": "1",
+    "PasteCommand(String, DrawingView)": "2"
+  },
+  "methodsBrief": [
+    "public void execute(){}",
+    "Rectangle bounds(Enumeration k){}",
+    "public PasteCommand(String name, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "PasteCommand(String, DrawingView)"
+  ],
+  "constructorBrief": [
+    "public PasteCommand(String name, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PasteCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport java.awt.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * Command to insert the clipboard into the drawing.\n * @see Clipboard\n */\npublic class PasteCommand extends FigureTransferCommand {\n\n    public PasteCommand(String name, DrawingView view) {\n        super(name, view);\n    }\n\n    public void execute() {\n        Point lastClick = fView.lastClick();\n        FigureSelection selection = (FigureSelection) Clipboard.getClipboard().getContents();\n        if (selection != null) {\n            Vector figures = (Vector) selection.getData(FigureSelection.TYPE);\n            if (figures.size() == 0)\n                return;\n            Enumeration k = figures.elements();\n            Rectangle r1 = ((Figure) k.nextElement()).displayBox();\n            while (k.hasMoreElements()) r1.add(((Figure) k.nextElement()).displayBox());\n            Rectangle r = r1;\n            fView.clearSelection();\n            insertFigures(figures, lastClick.x - r.x, lastClick.y - r.y);\n            fView.checkDamage();\n        }\n    }\n\n    Rectangle bounds(Enumeration k) {\n        Rectangle r = ((Figure) k.nextElement()).displayBox();\n        while (k.hasMoreElements()) r.add(((Figure) k.nextElement()).displayBox());\n        return r;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Command to insert the clipboard into the drawing.\n * @see Clipboard\n */\npublic class PasteCommand extends FigureTransferCommand {\n\n    public PasteCommand(String name, DrawingView view) {\n        super(name, view);\n    }\n\n    public void execute() {\n        Point lastClick = fView.lastClick();\n        FigureSelection selection = (FigureSelection) Clipboard.getClipboard().getContents();\n        if (selection != null) {\n            Vector figures = (Vector) selection.getData(FigureSelection.TYPE);\n            if (figures.size() == 0)\n                return;\n            Enumeration k = figures.elements();\n            Rectangle r1 = ((Figure) k.nextElement()).displayBox();\n            while (k.hasMoreElements()) r1.add(((Figure) k.nextElement()).displayBox());\n            Rectangle r = r1;\n            fView.clearSelection();\n            insertFigures(figures, lastClick.x - r.x, lastClick.y - r.y);\n            fView.checkDamage();\n        }\n    }\n\n    Rectangle bounds(Enumeration k) {\n        Rectangle r = ((Figure) k.nextElement()).displayBox();\n        while (k.hasMoreElements()) r.add(((Figure) k.nextElement()).displayBox());\n        return r;\n    }\n}",
+  "subClasses": []
+}

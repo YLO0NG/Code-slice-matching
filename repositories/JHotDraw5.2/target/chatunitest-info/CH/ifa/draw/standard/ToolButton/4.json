@@ -1,0 +1,23 @@
+{
+  "className": "ToolButton",
+  "methodName": "getPreferredSize",
+  "brief": "public Dimension getPreferredSize(){}",
+  "methodSignature": "getPreferredSize()",
+  "sourceCode": "public Dimension getPreferredSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.PaletteIcon": [
+      "getWidth()",
+      "getHeight()"
+    ]
+  },
+  "full_method_info": "public Dimension getPreferredSize() {\n    return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,33 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "getPreferences",
+  "brief": "protected static Properties getPreferences(){}",
+  "methodSignature": "getPreferences()",
+  "sourceCode": "protected static Properties getPreferences() {\r\n\t\tif (fPreferences == null) {\r\n\t\t\tfPreferences= new Properties();\r\n\t \t\tfPreferences.put(\"loading\", \"true\");\r\n \t\t\tfPreferences.put(\"filterstack\", \"true\");\r\n  \t\t\t/*{*/InputStream is= null;\r\n\t\t\ttry {\r\n\t\t\t\tis= new FileInputStream(getPreferencesFile());\r\n\t\t\t\tsetPreferences(new Properties(getPreferences()));\r\n\t\t\t\tgetPreferences().load(is);\r\n\t\t\t} catch (IOException e) {\r\n\t\t\t\ttry {\r\n\t\t\t\t\tif (is != null)\r\n\t\t\t\t\t\tis.close();\r\n\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t}\r\n\t\t\t}/*}*/\r\n\t\t}\r\n\t\treturn fPreferences;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Hashtable": [
+      "put(K, V)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getPreferencesFile()",
+      "setPreferences(Properties)",
+      "getPreferences()"
+    ],
+    "java.util.Properties": [
+      "load(InputStream)"
+    ],
+    "java.io.InputStream": [
+      "close()"
+    ]
+  },
+  "full_method_info": "protected static Properties getPreferences() {\r\n    if (fPreferences == null) {\r\n        fPreferences = new Properties();\r\n        fPreferences.put(\"loading\", \"true\");\r\n        fPreferences.put(\"filterstack\", \"true\");\r\n        /*{*/\r\n        InputStream is = null;\r\n        try {\r\n            is = new FileInputStream(getPreferencesFile());\r\n            setPreferences(new Properties(getPreferences()));\r\n            getPreferences().load(is);\r\n        } catch (IOException e) {\r\n            try {\r\n                if (is != null)\r\n                    is.close();\r\n            } catch (IOException e1) {\r\n            }\r\n        }\r\n        /*}*/\r\n    }\r\n    return fPreferences;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

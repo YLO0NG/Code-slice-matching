@@ -1,0 +1,27 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "valueForPathChanged",
+  "brief": "public void valueForPathChanged(TreePath path, Object newValue){}",
+  "methodSignature": "valueForPathChanged(TreePath, Object)",
+  "sourceCode": "public void valueForPathChanged(TreePath path, Object newValue) {\r\n\t\t// we don't support direct editing of the model\r\n\t\tSystem.out.println(\"TreeModel.valueForPathChanged: not implemented\");\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TreePath",
+    "Object"
+  ],
+  "dependentMethods": {
+    "javax.swing.tree.TreePath": [],
+    "java.lang.Object": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Called when the value of the model object was changed in the view\r\n */\r\npublic void valueForPathChanged(TreePath path, Object newValue) {\r\n    // we don't support direct editing of the model\r\n    System.out.println(\"TreeModel.valueForPathChanged: not implemented\");\r\n}",
+  "method_comment": "\r\n\t * Called when the value of the model object was changed in the view\r\n\t ",
+  "method_annotation": ""
+}

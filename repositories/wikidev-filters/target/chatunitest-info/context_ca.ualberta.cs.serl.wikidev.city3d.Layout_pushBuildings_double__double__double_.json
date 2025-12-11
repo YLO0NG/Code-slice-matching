@@ -1,0 +1,16 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+  "targetMethod": "pushBuildings(double, double, double)",
+  "dependentFields": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "private Point index;\nprivate HashMap<IArtifact, Integer> artifacts;\nprivate double[] center;\nprivate boolean marked;",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "protected ArrayList<CityBlock> cityBlocks;\npublic static final String URLprefix = \"http://hypatia.cs.ualberta.ca/ucosp/index.php/\";"
+  },
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public HashMap<IArtifact, Integer> getArtifacts(){}\npublic Point getIndex(){}",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "private void redistributeArtifactsInBlock(CityBlock block,\r\n\t\t\tdouble[][] subblocks){}"
+  },
+  "dependentMethodBodies": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public HashMap<IArtifact, Integer> getArtifacts() {\n\t\treturn artifacts;\n\t}\npublic Point getIndex() {\n\t\treturn index;\n\t}",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "private void redistributeArtifactsInBlock(CityBlock block,\n\t\t\tdouble[][] subblocks) {\n\t\tCollection<IArtifact> artifacts = new ArrayList<IArtifact>();\n\t\tartifacts.addAll(block.getArtifacts().keySet());\n\t\tblock.getArtifacts().clear();\n\t\tfor (IArtifact artifact : artifacts) {\n\t\t\tdouble minDist = Double.MAX_VALUE;\n\t\t\tint minSubblock = -1;\n\t\t\tfor (int i = 0; i < subblocks.length; i++) {\n\t\t\t\tif (subblocks[i][2] != 1) {\n\t\t\t\t\tdouble[] subcenter = new double[2];\n\t\t\t\t\tsubcenter[0] = subblocks[i][0];\n\t\t\t\t\tsubcenter[1] = subblocks[i][1];\n\t\t\t\t\tif (getEuclideanDistance(artifact.getCoords(), subcenter) < minDist) {\n\t\t\t\t\t\tminDist = getEuclideanDistance(artifact.getCoords(),\n\t\t\t\t\t\t\t\tsubcenter);\n\t\t\t\t\t\tminSubblock = i;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tsubblocks[minSubblock][2] = 1;\n\t\t\tblock.addArtifact(artifact, minSubblock);\n\t\t}\n\t}"
+  }
+}

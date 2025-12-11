@@ -1,0 +1,73 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.AnimationDecorator",
+  "className": "AnimationDecorator",
+  "index": 73,
+  "modifier": "[public ]",
+  "extend": "[DecoratorFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public class AnimationDecorator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private int fXVelocity;",
+    "private int fYVelocity;",
+    "private static final long serialVersionUID = 7894632974364110685L;",
+    "private int animationDecoratorSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "DecoratorFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "velocity(int, int)": "0",
+    "velocity()": "1",
+    "animationStep()": "2",
+    "basicMoveBy(int, int)": "3",
+    "basicDisplayBox(Point, Point)": "4",
+    "displayBox()": "5",
+    "write(StorableOutput)": "6",
+    "read(StorableInput)": "7",
+    "AnimationDecorator()": "8",
+    "AnimationDecorator(Figure)": "9"
+  },
+  "methodsBrief": [
+    "public void velocity(int xVelocity, int yVelocity){}",
+    "public Point velocity(){}",
+    "public void animationStep(){}",
+    "public synchronized void basicMoveBy(int x, int y){}",
+    "public synchronized void basicDisplayBox(Point origin, Point corner){}",
+    "public synchronized Rectangle displayBox(){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public AnimationDecorator(){}",
+    "public AnimationDecorator(Figure figure){}"
+  ],
+  "constructorSigs": [
+    "AnimationDecorator()",
+    "AnimationDecorator(Figure)"
+  ],
+  "constructorBrief": [
+    "public AnimationDecorator(){}",
+    "public AnimationDecorator(Figure figure){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)AnimationDecorator.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\npublic class AnimationDecorator extends DecoratorFigure {\n\n    private int fXVelocity;\n\n    private int fYVelocity;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 7894632974364110685L;\n\n    private int animationDecoratorSerializedDataVersion = 1;\n\n    public AnimationDecorator() {\n    }\n\n    public AnimationDecorator(Figure figure) {\n        super(figure);\n        fXVelocity = 4;\n        fYVelocity = 4;\n    }\n\n    public void velocity(int xVelocity, int yVelocity) {\n        fXVelocity = xVelocity;\n        fYVelocity = yVelocity;\n    }\n\n    public Point velocity() {\n        return new Point(fXVelocity, fYVelocity);\n    }\n\n    public void animationStep() {\n        int xSpeed = fXVelocity;\n        int ySpeed = fYVelocity;\n        Rectangle box = displayBox();\n        if ((box.x + box.width > 300) && (xSpeed > 0))\n            xSpeed = -xSpeed;\n        if ((box.y + box.height > 300) && (ySpeed > 0))\n            ySpeed = -ySpeed;\n        if ((box.x < 0) && (xSpeed < 0))\n            xSpeed = -xSpeed;\n        if ((box.y < 0) && (ySpeed < 0))\n            ySpeed = -ySpeed;\n        velocity(xSpeed, ySpeed);\n        moveBy(xSpeed, ySpeed);\n    }\n\n    // guard concurrent access to display box\n    public synchronized void basicMoveBy(int x, int y) {\n        super.basicMoveBy(x, y);\n    }\n\n    public synchronized void basicDisplayBox(Point origin, Point corner) {\n        super.basicDisplayBox(origin, corner);\n    }\n\n    public synchronized Rectangle displayBox() {\n        return super.displayBox();\n    }\n\n    // -- store / load ----------------------------------------------\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fXVelocity);\n        dw.writeInt(fYVelocity);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fXVelocity = dr.readInt();\n        fYVelocity = dr.readInt();\n    }\n}\n",
+  "classDeclarationCode": "public class AnimationDecorator extends DecoratorFigure {\n\n    private int fXVelocity;\n\n    private int fYVelocity;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 7894632974364110685L;\n\n    private int animationDecoratorSerializedDataVersion = 1;\n\n    public AnimationDecorator() {\n    }\n\n    public AnimationDecorator(Figure figure) {\n        super(figure);\n        fXVelocity = 4;\n        fYVelocity = 4;\n    }\n\n    public void velocity(int xVelocity, int yVelocity) {\n        fXVelocity = xVelocity;\n        fYVelocity = yVelocity;\n    }\n\n    public Point velocity() {\n        return new Point(fXVelocity, fYVelocity);\n    }\n\n    public void animationStep() {\n        int xSpeed = fXVelocity;\n        int ySpeed = fYVelocity;\n        Rectangle box = displayBox();\n        if ((box.x + box.width > 300) && (xSpeed > 0))\n            xSpeed = -xSpeed;\n        if ((box.y + box.height > 300) && (ySpeed > 0))\n            ySpeed = -ySpeed;\n        if ((box.x < 0) && (xSpeed < 0))\n            xSpeed = -xSpeed;\n        if ((box.y < 0) && (ySpeed < 0))\n            ySpeed = -ySpeed;\n        velocity(xSpeed, ySpeed);\n        moveBy(xSpeed, ySpeed);\n    }\n\n    // guard concurrent access to display box\n    public synchronized void basicMoveBy(int x, int y) {\n        super.basicMoveBy(x, y);\n    }\n\n    public synchronized void basicDisplayBox(Point origin, Point corner) {\n        super.basicDisplayBox(origin, corner);\n    }\n\n    public synchronized Rectangle displayBox() {\n        return super.displayBox();\n    }\n\n    // -- store / load ----------------------------------------------\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fXVelocity);\n        dw.writeInt(fYVelocity);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fXVelocity = dr.readInt();\n        fYVelocity = dr.readInt();\n    }\n}",
+  "subClasses": []
+}

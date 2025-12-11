@@ -1,0 +1,36 @@
+{
+  "className": "Layout",
+  "methodName": "pushBuildings",
+  "brief": "private void pushBuildings(double minX, double minY, double range){}",
+  "methodSignature": "pushBuildings(double, double, double)",
+  "sourceCode": "private void pushBuildings(double minX, double minY, double range) {\n\t\tfor (CityBlock block : cityBlocks) {\n\t\t\tif (block.getArtifacts().size() > 4\n\t\t\t\t\t&& block.getArtifacts().size() <= 16) {\n\t\t\t\tdouble blockMinX = minX + block.getIndex().x * (range / 16);\n\t\t\t\tdouble blockMaxX = minX + (block.getIndex().x + 1)\n\t\t\t\t\t\t* (range / 16);\n\t\t\t\tdouble blockMinY = minY + block.getIndex().y * (range / 16);\n\t\t\t\tdouble blockMaxY = minY + (block.getIndex().y + 1)\n\t\t\t\t\t\t* (range / 16);\n\t\t\t\tdouble rX = Math.ceil(blockMaxX - blockMinX);\n\t\t\t\tdouble rY = Math.ceil(blockMaxY - blockMinY);\n\t\t\t\tdouble blockR = 0;\n\t\t\t\tif (rX > rY) {\n\t\t\t\t\tblockR = rX;\n\t\t\t\t} else {\n\t\t\t\t\tblockR = rY;\n\t\t\t\t}\n\t\t\t\tdouble[][] subblockCenters = new double[16][3];\n\t\t\t\tfor (int i = 0; i < 4; i++) {\n\t\t\t\t\tfor (int j = 0; j < 4; j++) {\n\t\t\t\t\t\tdouble[] subCenter = {\n\t\t\t\t\t\t\t\tblockMinX + i * blockR + blockR / 2,\n\t\t\t\t\t\t\t\tblockMinY + j * blockR + blockR / 2, 0 };\n\t\t\t\t\t\tsubblockCenters[j + i * 4] = subCenter;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tredistributeArtifactsInBlock(block, subblockCenters);\n\t\t\t}\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.util.HashMap": [
+      "size()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "getArtifacts()",
+      "getIndex()"
+    ],
+    "java.lang.Math": [
+      "ceil(double)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "redistributeArtifactsInBlock(CityBlock, double[][])"
+    ]
+  },
+  "full_method_info": "private void pushBuildings(double minX, double minY, double range) {\n    for (CityBlock block : cityBlocks) {\n        if (block.getArtifacts().size() > 4 && block.getArtifacts().size() <= 16) {\n            double blockMinX = minX + block.getIndex().x * (range / 16);\n            double blockMaxX = minX + (block.getIndex().x + 1) * (range / 16);\n            double blockMinY = minY + block.getIndex().y * (range / 16);\n            double blockMaxY = minY + (block.getIndex().y + 1) * (range / 16);\n            double rX = Math.ceil(blockMaxX - blockMinX);\n            double rY = Math.ceil(blockMaxY - blockMinY);\n            double blockR = 0;\n            if (rX > rY) {\n                blockR = rX;\n            } else {\n                blockR = rY;\n            }\n            double[][] subblockCenters = new double[16][3];\n            for (int i = 0; i < 4; i++) {\n                for (int j = 0; j < 4; j++) {\n                    double[] subCenter = { blockMinX + i * blockR + blockR / 2, blockMinY + j * blockR + blockR / 2, 0 };\n                    subblockCenters[j + i * 4] = subCenter;\n                }\n            }\n            redistributeArtifactsInBlock(block, subblockCenters);\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

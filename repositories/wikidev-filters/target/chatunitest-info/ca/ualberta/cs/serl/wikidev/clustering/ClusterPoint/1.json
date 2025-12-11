@@ -1,0 +1,20 @@
+{
+  "className": "ClusterPoint",
+  "methodName": "setX",
+  "brief": "public void setX(double x){}",
+  "methodSignature": "setX(double)",
+  "sourceCode": "public void setX(double x) {\n\t\tthis.x = x;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setX(double x) {\n    this.x = x;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

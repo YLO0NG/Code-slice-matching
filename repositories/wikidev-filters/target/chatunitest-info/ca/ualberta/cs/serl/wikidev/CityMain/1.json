@@ -1,0 +1,41 @@
+{
+  "className": "CityMain",
+  "methodName": "printClusters",
+  "brief": "public static void printClusters(ArrayList<Cluster> clusters, String week) throws IOException{}",
+  "methodSignature": "printClusters(ArrayList, String)",
+  "sourceCode": "public static void printClusters(ArrayList<Cluster> clusters, String week) throws IOException {\n\t\t//BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));\n\t\tBufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\clusters\"+week+\".txt\"));\n\t\tint index = 1;\n\t\tfor(Cluster cluster : clusters) {\n\t\t\tout.write(\"======================================================================\");\n\t\t\tout.newLine();\n\t\t\tout.write(\"Cluster \"+index);\n\t\t\tout.newLine();\n\t\t\tout.write(\"======================================================================\");\n\t\t\tout.newLine();\n\t\t\tout.newLine();\n\t\t\tout.write(\"Users\");\n\t\t\tout.newLine();\n\t\t\tout.write(\"----------------------------------------------------------------------\");\n\t\t\tout.newLine();\n\t\t\tfor(User user : cluster.getUsers()) {\n\t\t\t\tout.write(user.toString());\n\t\t\t\tout.newLine();\n\t\t\t}\n\t\t\tout.newLine();\n\t\t\tout.write(\"Terms\");\n\t\t\tout.newLine();\n\t\t\tout.write(\"-----------------------------------------------------------------------\");\n\t\t\tout.newLine();\n\t\t\tfor(String term : cluster.getWords()) {\n\t\t\t\tout.write(term);\n\t\t\t\tout.newLine();\n\t\t\t}\n\t\t\tout.newLine();\n\t\t\tout.write(\"Artifacts\");\n\t\t\tout.newLine();\n\t\t\tout.write(\"----------------------------------------------------------------------\");\n\t\t\tout.newLine();\n\t\t\tfor(IArtifact artifact : cluster.getArtifacts()) {\n\t\t\t\tout.write(artifact.toString());\n\t\t\t\tout.newLine();\n\t\t\t}\n\t\t\tout.newLine();\n\t\t\tout.newLine();\n\t\t\tindex++;\n\t\t}\n\t\tout.close();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<Cluster>",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "java.io.BufferedWriter": [
+      "newLine()",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getWords()",
+      "getArtifacts()",
+      "getUsers()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "toString()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public static void printClusters(ArrayList<Cluster> clusters, String week) throws IOException {\n    // BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));\n    BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\clusters\" + week + \".txt\"));\n    int index = 1;\n    for (Cluster cluster : clusters) {\n        out.write(\"======================================================================\");\n        out.newLine();\n        out.write(\"Cluster \" + index);\n        out.newLine();\n        out.write(\"======================================================================\");\n        out.newLine();\n        out.newLine();\n        out.write(\"Users\");\n        out.newLine();\n        out.write(\"----------------------------------------------------------------------\");\n        out.newLine();\n        for (User user : cluster.getUsers()) {\n            out.write(user.toString());\n            out.newLine();\n        }\n        out.newLine();\n        out.write(\"Terms\");\n        out.newLine();\n        out.write(\"-----------------------------------------------------------------------\");\n        out.newLine();\n        for (String term : cluster.getWords()) {\n            out.write(term);\n            out.newLine();\n        }\n        out.newLine();\n        out.write(\"Artifacts\");\n        out.newLine();\n        out.write(\"----------------------------------------------------------------------\");\n        out.newLine();\n        for (IArtifact artifact : cluster.getArtifacts()) {\n            out.write(artifact.toString());\n            out.newLine();\n        }\n        out.newLine();\n        out.newLine();\n        index++;\n    }\n    out.close();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

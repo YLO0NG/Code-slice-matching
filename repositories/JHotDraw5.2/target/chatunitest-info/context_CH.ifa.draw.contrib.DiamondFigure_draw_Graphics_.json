@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.contrib.DiamondFigure",
+  "targetMethod": "draw(Graphics)",
+  "dependentFields": {
+    "CH.ifa.draw.figures.AttributeFigure": "private FigureAttributes        fAttributes;\nprivate static FigureAttributes fgDefaultAttributes = null;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int attributeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.figures.RectangleFigure": "private Rectangle   fDisplayBox;\nprivate static final long serialVersionUID = 184722075881789163L;\nprivate int rectangleFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.figures.AttributeFigure": "public Color getFrameColor(){}\npublic Color getFillColor(){}",
+    "CH.ifa.draw.figures.RectangleFigure": "public Rectangle displayBox(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.figures.AttributeFigure": "* Gets the frame color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     \npublic Color getFrameColor() {\n        return (Color) getAttribute(\"FrameColor\");\n    }\n\n     * Gets the fill color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     \npublic Color getFillColor() {\n        return (Color) getAttribute(\"FillColor\");\n    }",
+    "CH.ifa.draw.figures.RectangleFigure": "public Rectangle displayBox() {\n        return new Rectangle(\n            fDisplayBox.x,\n            fDisplayBox.y,\n            fDisplayBox.width,\n            fDisplayBox.height);\n    }"
+  }
+}

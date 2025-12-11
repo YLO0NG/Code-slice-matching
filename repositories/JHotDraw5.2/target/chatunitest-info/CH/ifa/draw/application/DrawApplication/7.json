@@ -1,0 +1,36 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createFileMenu",
+  "brief": "protected JMenu createFileMenu(){}",
+  "methodSignature": "createFileMenu()",
+  "sourceCode": "protected JMenu createFileMenu() {\n\t\tJMenu menu = new JMenu(\"File\");\n\t\tJMenuItem mi = new JMenuItem(\"New\", new MenuShortcut('n').getKey());\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            promptNew();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\n\t\tmi = new JMenuItem(\"Open...\", new MenuShortcut('o').getKey());\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            promptOpen();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\n\t\tmi = new JMenuItem(\"Save As...\", new MenuShortcut('s').getKey());\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            promptSaveAs();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\n\t\tmenu.addSeparator();\n\t\tmi = new JMenuItem(\"Print...\", new MenuShortcut('p').getKey());\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            print();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\t\tmenu.addSeparator();\n\t\tmi = new JMenuItem(\"Exit\");\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            exit();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\t\treturn menu;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.MenuShortcut": [
+      "getKey()"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "promptSaveAs()",
+      "print()",
+      "promptOpen()",
+      "promptNew()",
+      "exit()"
+    ],
+    "javax.swing.JMenu": [
+      "addSeparator()",
+      "add(JMenuItem)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the file menu. Clients override this\n * method to add additional menu items.\n */\nprotected JMenu createFileMenu() {\n    JMenu menu = new JMenu(\"File\");\n    JMenuItem mi = new JMenuItem(\"New\", new MenuShortcut('n').getKey());\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            promptNew();\n        }\n    });\n    menu.add(mi);\n    mi = new JMenuItem(\"Open...\", new MenuShortcut('o').getKey());\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            promptOpen();\n        }\n    });\n    menu.add(mi);\n    mi = new JMenuItem(\"Save As...\", new MenuShortcut('s').getKey());\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            promptSaveAs();\n        }\n    });\n    menu.add(mi);\n    menu.addSeparator();\n    mi = new JMenuItem(\"Print...\", new MenuShortcut('p').getKey());\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            print();\n        }\n    });\n    menu.add(mi);\n    menu.addSeparator();\n    mi = new JMenuItem(\"Exit\");\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            exit();\n        }\n    });\n    menu.add(mi);\n    return menu;\n}",
+  "method_comment": "\n     * Creates the file menu. Clients override this\n     * method to add additional menu items.\n     ",
+  "method_annotation": ""
+}

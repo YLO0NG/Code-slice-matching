@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "figureRequestUpdate",
+  "brief": "public void figureRequestUpdate(FigureChangeEvent e);",
+  "methodSignature": "figureRequestUpdate(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestUpdate(FigureChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "/**\n * Forces an update of the drawing change listeners.\n */\npublic void figureRequestUpdate(FigureChangeEvent e);",
+  "method_comment": "\n     * Forces an update of the drawing change listeners.\n     ",
+  "method_annotation": ""
+}

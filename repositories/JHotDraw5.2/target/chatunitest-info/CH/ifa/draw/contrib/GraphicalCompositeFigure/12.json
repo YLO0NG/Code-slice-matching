@@ -1,0 +1,32 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "layout",
+  "brief": "public void layout(){}",
+  "methodSignature": "layout()",
+  "sourceCode": "public void layout() {\n\t\tif (getLayouter() != null) {\n\t\t\tRectangle r = getLayouter().calculateLayout(displayBox().getLocation(), displayBox().getLocation());\n\t\t\tdisplayBox(r.getLocation(), new Point(r.x + r.width, r.y + r.height));\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "displayBox()",
+      "getLayouter()"
+    ],
+    "CH.ifa.draw.contrib.Layouter": [
+      "calculateLayout(Point, Point)"
+    ],
+    "java.awt.Rectangle": [
+      "getLocation()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "displayBox(Point, Point)"
+    ]
+  },
+  "full_method_info": "/**\n * A layout algorithm is used to define how the child components\n * should be laid out in relation to each other. The task for\n * layouting the child components for presentation is delegated\n * to a Layouter which can be plugged in at runtime.\n */\npublic void layout() {\n    if (getLayouter() != null) {\n        Rectangle r = getLayouter().calculateLayout(displayBox().getLocation(), displayBox().getLocation());\n        displayBox(r.getLocation(), new Point(r.x + r.width, r.y + r.height));\n    }\n}",
+  "method_comment": "\n\t * A layout algorithm is used to define how the child components\n\t * should be laid out in relation to each other. The task for\n\t * layouting the child components for presentation is delegated\n\t * to a Layouter which can be plugged in at runtime.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "clone",
+  "brief": "public Object clone(){}",
+  "methodSignature": "clone()",
+  "sourceCode": "public Object clone() {\n    \tObject cloneObject = super.clone();\n    \t((GraphicalCompositeFigure)cloneObject).initialize();\n    \treturn cloneObject;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "clone()"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "initialize()"
+    ]
+  },
+  "full_method_info": "/**\n * Clones a figure and initializes it\n *\n * @see Figure#clone\n */\npublic Object clone() {\n    Object cloneObject = super.clone();\n    ((GraphicalCompositeFigure) cloneObject).initialize();\n    return cloneObject;\n}",
+  "method_comment": "\n     * Clones a figure and initializes it\n     *\n     * @see Figure#clone\n     ",
+  "method_annotation": ""
+}

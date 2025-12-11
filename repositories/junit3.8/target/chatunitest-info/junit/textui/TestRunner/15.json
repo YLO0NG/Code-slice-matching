@@ -1,0 +1,18 @@
+{
+  "className": "TestRunner",
+  "methodName": "TestRunner",
+  "brief": "public TestRunner(){}",
+  "methodSignature": "TestRunner()",
+  "sourceCode": "public TestRunner() {\r\n\t\tthis(System.out);\r\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public TestRunner() {\r\n    this(System.out);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

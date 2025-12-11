@@ -1,0 +1,66 @@
+{
+  "fullClassName": "CH.ifa.draw.util.Iconkit",
+  "className": "Iconkit",
+  "index": 158,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public class Iconkit",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.image.ImageProducer;",
+    "import java.util.*;"
+  ],
+  "fields": [
+    "private Hashtable           fMap;",
+    "private Vector              fRegisteredImages;",
+    "private Component           fComponent;",
+    "private final static int    ID = 123;",
+    "private static Iconkit      fgIconkit = null;",
+    "private static boolean      fgDebug = false;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "instance()": "0",
+    "loadRegisteredImages(Component)": "1",
+    "registerImage(String)": "2",
+    "registerAndLoadImage(Component, String)": "3",
+    "loadImage(String)": "4",
+    "loadImageResource(String)": "5",
+    "getImage(String)": "6",
+    "basicGetImage(String)": "7",
+    "Iconkit(Component)": "8"
+  },
+  "methodsBrief": [
+    "public static Iconkit instance(){}",
+    "public void loadRegisteredImages(Component component){}",
+    "public void registerImage(String fileName){}",
+    "public Image registerAndLoadImage(Component component, String fileName){}",
+    "public Image loadImage(String filename){}",
+    "public Image loadImageResource(String resourcename){}",
+    "public Image getImage(String filename){}",
+    "private Image basicGetImage(String filename){}",
+    "public Iconkit(Component component){}"
+  ],
+  "constructorSigs": [
+    "Iconkit(Component)"
+  ],
+  "constructorBrief": [
+    "public Iconkit(Component component){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.awt.Component": []
+  },
+  "compilationUnitCode": "/*\n * @(#)Iconkit.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.awt.*;\nimport java.awt.image.ImageProducer;\nimport java.util.*;\n\n/**\n * The Iconkit class supports the sharing of images. It maintains\n * a map of image names and their corresponding images.\n *\n * Iconkit also supports to load a collection of images in\n * synchronized way.\n * The resolution of a path name to an image is delegated to the DrawingEditor.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld031.htm>Singleton</a></b><br>\n * The Iconkit is a singleton.\n * <hr>\n */\npublic class Iconkit {\n\n    private Hashtable fMap;\n\n    private Vector fRegisteredImages;\n\n    private Component fComponent;\n\n    private final static int ID = 123;\n\n    private static Iconkit fgIconkit = null;\n\n    private static boolean fgDebug = false;\n\n    public Iconkit(Component component) {\n        fMap = new Hashtable(53);\n        fRegisteredImages = new Vector(10);\n        fComponent = component;\n        fgIconkit = this;\n    }\n\n    /**\n     * Gets the single instance\n     */\n    public static Iconkit instance() {\n        return fgIconkit;\n    }\n\n    /**\n     * Loads all registered images.\n     * @see #registerImage\n     */\n    public void loadRegisteredImages(Component component) {\n        if (fRegisteredImages.size() == 0)\n            return;\n        MediaTracker tracker = new MediaTracker(component);\n        // register images with MediaTracker\n        Enumeration k = fRegisteredImages.elements();\n        while (k.hasMoreElements()) {\n            String fileName = (String) k.nextElement();\n            if (basicGetImage(fileName) == null) {\n                tracker.addImage(loadImage(fileName), ID);\n            }\n        }\n        fRegisteredImages.removeAllElements();\n        // block until all images are loaded\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {\n        }\n    }\n\n    /**\n     * Registers an image that is then loaded together with\n     * the other registered images by loadRegisteredImages.\n     * @see #loadRegisteredImages\n     */\n    public void registerImage(String fileName) {\n        fRegisteredImages.addElement(fileName);\n    }\n\n    /**\n     * Registers and loads an image.\n     */\n    public Image registerAndLoadImage(Component component, String fileName) {\n        registerImage(fileName);\n        loadRegisteredImages(component);\n        return getImage(fileName);\n    }\n\n    /**\n     * Loads an image with the given name.\n     */\n    public Image loadImage(String filename) {\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        Image image = loadImageResource(filename);\n        if (image != null)\n            fMap.put(filename, image);\n        return image;\n    }\n\n    public Image loadImageResource(String resourcename) {\n        Toolkit toolkit = Toolkit.getDefaultToolkit();\n        try {\n            java.net.URL url = getClass().getResource(resourcename);\n            if (fgDebug)\n                System.out.println(resourcename);\n            return toolkit.createImage((ImageProducer) url.getContent());\n        } catch (Exception ex) {\n            return null;\n        }\n    }\n\n    /**\n     * Gets the image with the given name. If the image\n     * can't be found it tries it again after loading\n     * all the registered images.\n     */\n    public Image getImage(String filename) {\n        Image image = basicGetImage(filename);\n        if (image != null)\n            return image;\n        // load registered images and try again\n        loadRegisteredImages(fComponent);\n        // try again\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        return null;\n    }\n\n    private Image basicGetImage(String filename) {\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        return null;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * The Iconkit class supports the sharing of images. It maintains\n * a map of image names and their corresponding images.\n *\n * Iconkit also supports to load a collection of images in\n * synchronized way.\n * The resolution of a path name to an image is delegated to the DrawingEditor.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld031.htm>Singleton</a></b><br>\n * The Iconkit is a singleton.\n * <hr>\n */\npublic class Iconkit {\n\n    private Hashtable fMap;\n\n    private Vector fRegisteredImages;\n\n    private Component fComponent;\n\n    private final static int ID = 123;\n\n    private static Iconkit fgIconkit = null;\n\n    private static boolean fgDebug = false;\n\n    public Iconkit(Component component) {\n        fMap = new Hashtable(53);\n        fRegisteredImages = new Vector(10);\n        fComponent = component;\n        fgIconkit = this;\n    }\n\n    /**\n     * Gets the single instance\n     */\n    public static Iconkit instance() {\n        return fgIconkit;\n    }\n\n    /**\n     * Loads all registered images.\n     * @see #registerImage\n     */\n    public void loadRegisteredImages(Component component) {\n        if (fRegisteredImages.size() == 0)\n            return;\n        MediaTracker tracker = new MediaTracker(component);\n        // register images with MediaTracker\n        Enumeration k = fRegisteredImages.elements();\n        while (k.hasMoreElements()) {\n            String fileName = (String) k.nextElement();\n            if (basicGetImage(fileName) == null) {\n                tracker.addImage(loadImage(fileName), ID);\n            }\n        }\n        fRegisteredImages.removeAllElements();\n        // block until all images are loaded\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {\n        }\n    }\n\n    /**\n     * Registers an image that is then loaded together with\n     * the other registered images by loadRegisteredImages.\n     * @see #loadRegisteredImages\n     */\n    public void registerImage(String fileName) {\n        fRegisteredImages.addElement(fileName);\n    }\n\n    /**\n     * Registers and loads an image.\n     */\n    public Image registerAndLoadImage(Component component, String fileName) {\n        registerImage(fileName);\n        loadRegisteredImages(component);\n        return getImage(fileName);\n    }\n\n    /**\n     * Loads an image with the given name.\n     */\n    public Image loadImage(String filename) {\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        Image image = loadImageResource(filename);\n        if (image != null)\n            fMap.put(filename, image);\n        return image;\n    }\n\n    public Image loadImageResource(String resourcename) {\n        Toolkit toolkit = Toolkit.getDefaultToolkit();\n        try {\n            java.net.URL url = getClass().getResource(resourcename);\n            if (fgDebug)\n                System.out.println(resourcename);\n            return toolkit.createImage((ImageProducer) url.getContent());\n        } catch (Exception ex) {\n            return null;\n        }\n    }\n\n    /**\n     * Gets the image with the given name. If the image\n     * can't be found it tries it again after loading\n     * all the registered images.\n     */\n    public Image getImage(String filename) {\n        Image image = basicGetImage(filename);\n        if (image != null)\n            return image;\n        // load registered images and try again\n        loadRegisteredImages(fComponent);\n        // try again\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        return null;\n    }\n\n    private Image basicGetImage(String filename) {\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        return null;\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,29 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createTools",
+  "brief": "protected void createTools(JToolBar palette){}",
+  "methodSignature": "createTools(JToolBar)",
+  "sourceCode": "protected void createTools(JToolBar palette) {\n        Tool tool = createSelectionTool();\n        fDefaultToolButton = createToolButton(IMAGES+\"SEL\", \"Selection Tool\", tool);\n        palette.add(fDefaultToolButton);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JToolBar"
+  ],
+  "dependentMethods": {
+    "javax.swing.JToolBar": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createSelectionTool()",
+      "createToolButton(String, String, Tool)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the tools. By default only the selection tool is added.\n * Override this method to add additional tools.\n * Call the inherited method to include the selection tool.\n * @param palette the palette where the tools are added.\n */\nprotected void createTools(JToolBar palette) {\n    Tool tool = createSelectionTool();\n    fDefaultToolButton = createToolButton(IMAGES + \"SEL\", \"Selection Tool\", tool);\n    palette.add(fDefaultToolButton);\n}",
+  "method_comment": "\n     * Creates the tools. By default only the selection tool is added.\n     * Override this method to add additional tools.\n     * Call the inherited method to include the selection tool.\n     * @param palette the palette where the tools are added.\n     ",
+  "method_annotation": ""
+}

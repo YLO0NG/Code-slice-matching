@@ -1,0 +1,46 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.BorderTool",
+  "className": "BorderTool",
+  "index": 25,
+  "modifier": "[public ]",
+  "extend": "[ActionTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class BorderTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "ActionTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "action(Figure)": "0",
+    "BorderTool(DrawingView)": "1"
+  },
+  "methodsBrief": [
+    "public void action(Figure figure){}",
+    "public BorderTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "BorderTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public BorderTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)BorderTool.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * BorderTool decorates the clicked figure with a BorderDecorator.\n *\n * @see BorderDecorator\n */\npublic class BorderTool extends ActionTool {\n\n    public BorderTool(DrawingView view) {\n        super(view);\n    }\n\n    /**\n     * Decorates the clicked figure with a border.\n     */\n    public void action(Figure figure) {\n        drawing().replace(figure, new BorderDecorator(figure));\n    }\n}\n",
+  "classDeclarationCode": "/**\n * BorderTool decorates the clicked figure with a BorderDecorator.\n *\n * @see BorderDecorator\n */\npublic class BorderTool extends ActionTool {\n\n    public BorderTool(DrawingView view) {\n        super(view);\n    }\n\n    /**\n     * Decorates the clicked figure with a border.\n     */\n    public void action(Figure figure) {\n        drawing().replace(figure, new BorderDecorator(figure));\n    }\n}",
+  "subClasses": []
+}

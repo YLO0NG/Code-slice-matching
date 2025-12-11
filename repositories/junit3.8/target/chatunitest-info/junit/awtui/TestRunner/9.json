@@ -1,0 +1,111 @@
+{
+  "className": "TestRunner",
+  "methodName": "createUI",
+  "brief": "protected Frame createUI(String suiteName){}",
+  "methodSignature": "createUI(String)",
+  "sourceCode": "protected Frame createUI(String suiteName) {\r\n\t\tFrame frame= new Frame(\"JUnit\");\r\n\t\tImage icon= loadFrameIcon();\r\n\t\tif (icon != null)\r\n\t\t\tframe.setIconImage(icon);\r\n\r\n\t\tframe.setLayout(new BorderLayout(0, 0));\r\n\t\tframe.setBackground(SystemColor.control);\r\n\t\tfinal Frame finalFrame= frame;\r\n\r\n\t\tframe.addWindowListener(\r\n\t\t\tnew WindowAdapter() {\r\n\t\t\t\tpublic void windowClosing(WindowEvent e) {\r\n\t\t\t\t\tfinalFrame.dispose();\r\n\t\t\t\t\tSystem.exit(0);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\r\n\t\tMenuBar mb = new MenuBar();\r\n\t\tcreateMenus(mb);\r\n\t\tframe.setMenuBar(mb);\r\n\r\n\t\t//---- first section\r\n\t\tLabel suiteLabel= new Label(\"Test class name:\");\r\n\r\n\t\tfSuiteField= new TextField(suiteName != null ? suiteName : \"\");\r\n\t\tfSuiteField.selectAll();\r\n\t\tfSuiteField.requestFocus();\r\n\t\tfSuiteField.setFont(PLAIN_FONT);\r\n\t\tfSuiteField.setColumns(40);\r\n\t\tfSuiteField.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\t/*{*/if (fRunner != null && fTestResult != null) {\r\n\t\t\t\t\t\tfTestResult.stop();\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\tsetLoading(shouldReload());\r\n\t\t\t\t\t\tfRun.setLabel(\"Stop\");\r\n\t\t\t\t\t\tshowInfo(\"Initializing...\");\r\n\t\t\t\t\t\treset();\r\n\t\t\t\t\t\r\n\t\t\t\t\t\tshowInfo(\"Load Test Case...\");\r\n\t\t\t\t\t\r\n\t\t\t\t\t\tfinal Test testSuite= getTest(fSuiteField.getText());\r\n\t\t\t\t\t\tif (testSuite != null) {\r\n\t\t\t\t\t\t\tfRunner= new Thread() {\r\n\t\t\t\t\t\t\t\tpublic void run() {\r\n\t\t\t\t\t\t\t\t\tfTestResult= createTestResult();\r\n\t\t\t\t\t\t\t\t\tfTestResult.addListener(TestRunner.this);\r\n\t\t\t\t\t\t\t\t\tfProgressIndicator.start(testSuite.countTestCases());\r\n\t\t\t\t\t\t\t\t\tshowInfo(\"Running...\");\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\t\t\t\t\t\t\ttestSuite.run(fTestResult);\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\tif (fTestResult.shouldStop()) {\r\n\t\t\t\t\t\t\t\t\t\tshowStatus(\"Stopped\");\r\n\t\t\t\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\t\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\t\t\t\t\t\t\t\tlong runTime= endTime-startTime;\r\n\t\t\t\t\t\t\t\t\t\tshowInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\tfTestResult= null;\r\n\t\t\t\t\t\t\t\t\tfRun.setLabel(\"Run\");\r\n\t\t\t\t\t\t\t\t\tfRunner= null;\r\n\t\t\t\t\t\t\t\t\tSystem.gc();\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t};\r\n\t\t\t\t\t\t\tfRunner.start();\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}/*}*/\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\tfSuiteField.addTextListener(\r\n\t\t\tnew TextListener() {\r\n\t\t\t\tpublic void textValueChanged(TextEvent e) {\r\n\t\t\t\t\tfRun.setEnabled(fSuiteField.getText().length() > 0);\r\n\t\t\t\t\tfStatusLine.setText(\"\");\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\tfRun= new Button(\"Run\");\r\n\t\tfRun.setEnabled(false);\r\n\t\tfRun.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\trunSuite();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\tboolean useLoader= useReloadingTestSuiteLoader();\r\n\t\tfUseLoadingRunner= new Checkbox(\"Reload classes every run\", useLoader);\r\n\t\tif (inVAJava())\r\n\t\t\tfUseLoadingRunner.setVisible(false);\r\n\r\n\t\t//---- second section\r\n\t\tfProgressIndicator= new ProgressBar();\r\n\r\n\t\t//---- third section\r\n\t\tfNumberOfErrors= new Label(\"0000\", Label.RIGHT);\r\n\t\tfNumberOfErrors.setText(\"0\");\r\n\t\tfNumberOfErrors.setFont(PLAIN_FONT);\r\n\r\n\t\tfNumberOfFailures= new Label(\"0000\", Label.RIGHT);\r\n\t\tfNumberOfFailures.setText(\"0\");\r\n\t\tfNumberOfFailures.setFont(PLAIN_FONT);\r\n\r\n\t\tfNumberOfRuns= new Label(\"0000\", Label.RIGHT);\r\n\t\tfNumberOfRuns.setText(\"0\");\r\n\t\tfNumberOfRuns.setFont(PLAIN_FONT);\r\n\r\n\t\tPanel numbersPanel= createCounterPanel();\r\n\r\n\t\t//---- fourth section\r\n\t\tLabel failureLabel= new Label(\"Errors and Failures:\");\r\n\r\n\t\tfFailureList= new List(5);\r\n\t\tfFailureList.addItemListener(\r\n\t\t\tnew ItemListener() {\r\n\t\t\t\tpublic void itemStateChanged(ItemEvent e) {\r\n\t\t\t\t\tfailureSelected();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\tfRerunButton= new Button(\"Run\");\r\n\t\tfRerunButton.setEnabled(false);\r\n\t\tfRerunButton.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\trerun();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\r\n\t\tPanel failedPanel= new Panel(new GridLayout(0, 1, 0, 2));\r\n\t\tfailedPanel.add(fRerunButton);\r\n\r\n\t\tfTraceArea= new TextArea();\r\n\t\tfTraceArea.setRows(5);\r\n\t\tfTraceArea.setColumns(60);\r\n\r\n\t\t//---- fifth section\r\n\t\tfStatusLine= new TextField();\r\n\t\tfStatusLine.setFont(PLAIN_FONT);\r\n\t\tfStatusLine.setEditable(false);\r\n\t\tfStatusLine.setForeground(Color.red);\r\n\r\n\t\tfQuitButton= new Button(\"Exit\");\r\n\t\tfQuitButton.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\tSystem.exit(0);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\r\n\t\t// ---------\r\n\t\tfLogo= new Logo();\r\n\r\n\t\t//---- overall layout\r\n\t\tPanel panel= new Panel(new GridBagLayout());\r\n\r\n\t\taddGrid(panel, suiteLabel,\t\t 0, 0, 2, GridBagConstraints.HORIZONTAL, \t1.0, GridBagConstraints.WEST);\r\n\r\n\t\taddGrid(panel, fSuiteField, \t 0, 1, 2, GridBagConstraints.HORIZONTAL, \t1.0, GridBagConstraints.WEST);\r\n\t\taddGrid(panel, fRun, \t\t\t 2, 1, 1, GridBagConstraints.HORIZONTAL, \t0.0, GridBagConstraints.CENTER);\r\n\t\taddGrid(panel, fUseLoadingRunner, 0, 2, 2, GridBagConstraints.NONE, \t1.0, GridBagConstraints.WEST);\r\n\t\taddGrid(panel, fProgressIndicator, 0, 3, 2, GridBagConstraints.HORIZONTAL, \t1.0, GridBagConstraints.WEST);\r\n\t\taddGrid(panel, fLogo, \t\t\t 2, 3, 1, GridBagConstraints.NONE, \t\t\t0.0, GridBagConstraints.NORTH);\r\n\r\n\t\taddGrid(panel, numbersPanel,\t 0, 4, 2, GridBagConstraints.NONE, \t\t\t0.0, GridBagConstraints.WEST);\r\n\r\n\t\taddGrid(panel, failureLabel, \t 0, 5, 2, GridBagConstraints.HORIZONTAL, \t1.0, GridBagConstraints.WEST);\r\n\t\taddGrid(panel, fFailureList, \t 0, 6, 2, GridBagConstraints.BOTH, \t\t\t1.0, GridBagConstraints.WEST);\r\n\t\taddGrid(panel, failedPanel, \t 2, 6, 1, GridBagConstraints.HORIZONTAL, \t0.0, GridBagConstraints.CENTER);\r\n\t\taddGrid(panel, fTraceArea, \t     0, 7, 2, GridBagConstraints.BOTH, \t\t\t1.0, GridBagConstraints.WEST);\r\n\r\n\t\taddGrid(panel, fStatusLine, \t 0, 8, 2, GridBagConstraints.HORIZONTAL, \t1.0, GridBagConstraints.CENTER);\r\n\t\taddGrid(panel, fQuitButton, \t 2, 8, 1, GridBagConstraints.HORIZONTAL, \t0.0, GridBagConstraints.CENTER);\r\n\r\n\t\tframe.add(panel, BorderLayout.CENTER);\r\n\t\tframe.pack();\r\n\t\treturn frame;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "length()"
+    ],
+    "junit.awtui.TestRunner": [
+      "showStatus(String)",
+      "reset()",
+      "rerun()",
+      "createMenus(MenuBar)",
+      "addGrid(Panel, Component, int, int, int, int, double, int)",
+      "failureSelected()",
+      "shouldReload()",
+      "createTestResult()",
+      "runSuite()",
+      "createCounterPanel()",
+      "showInfo(String)",
+      "loadFrameIcon()"
+    ],
+    "java.awt.Frame": [
+      "setMenuBar(MenuBar)",
+      "setBackground(Color)",
+      "setIconImage(Image)"
+    ],
+    "java.awt.Container": [
+      "add(Component, Object)",
+      "setLayout(LayoutManager)",
+      "add(Component)"
+    ],
+    "java.awt.Window": [
+      "dispose()",
+      "addWindowListener(WindowListener)",
+      "pack()"
+    ],
+    "java.lang.System": [
+      "exit(int)",
+      "currentTimeMillis()",
+      "gc()"
+    ],
+    "java.awt.TextComponent": [
+      "addTextListener(TextListener)",
+      "getText()",
+      "setEditable(boolean)",
+      "selectAll()"
+    ],
+    "java.awt.Component": [
+      "setEnabled(boolean)",
+      "setVisible(boolean)",
+      "requestFocus()",
+      "setFont(Font)",
+      "setForeground(Color)"
+    ],
+    "java.awt.TextField": [
+      "addActionListener(ActionListener)",
+      "setColumns(int)",
+      "setText(String)"
+    ],
+    "junit.framework.TestResult": [
+      "stop()",
+      "shouldStop()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getTest(String)",
+      "setLoading(boolean)",
+      "useReloadingTestSuiteLoader()",
+      "inVAJava()",
+      "elapsedTimeAsString(long)"
+    ],
+    "java.awt.Button": [
+      "addActionListener(ActionListener)",
+      "setLabel(String)"
+    ],
+    "junit.awtui.ProgressBar": [
+      "start(int)"
+    ],
+    "junit.framework.Test": [
+      "run(TestResult)",
+      "countTestCases()"
+    ],
+    "java.lang.Thread": [
+      "start()"
+    ],
+    "java.awt.Label": [
+      "setText(String)"
+    ],
+    "java.awt.List": [
+      "addItemListener(ItemListener)"
+    ],
+    "java.awt.TextArea": [
+      "setRows(int)",
+      "setColumns(int)"
+    ]
+  },
+  "full_method_info": "protected Frame createUI(String suiteName) {\r\n    Frame frame = new Frame(\"JUnit\");\r\n    Image icon = loadFrameIcon();\r\n    if (icon != null)\r\n        frame.setIconImage(icon);\r\n    frame.setLayout(new BorderLayout(0, 0));\r\n    frame.setBackground(SystemColor.control);\r\n    final Frame finalFrame = frame;\r\n    frame.addWindowListener(new WindowAdapter() {\r\n\r\n        public void windowClosing(WindowEvent e) {\r\n            finalFrame.dispose();\r\n            System.exit(0);\r\n        }\r\n    });\r\n    MenuBar mb = new MenuBar();\r\n    createMenus(mb);\r\n    frame.setMenuBar(mb);\r\n    // ---- first section\r\n    Label suiteLabel = new Label(\"Test class name:\");\r\n    fSuiteField = new TextField(suiteName != null ? suiteName : \"\");\r\n    fSuiteField.selectAll();\r\n    fSuiteField.requestFocus();\r\n    fSuiteField.setFont(PLAIN_FONT);\r\n    fSuiteField.setColumns(40);\r\n    fSuiteField.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            /*{*/\r\n            if (fRunner != null && fTestResult != null) {\r\n                fTestResult.stop();\r\n            } else {\r\n                setLoading(shouldReload());\r\n                fRun.setLabel(\"Stop\");\r\n                showInfo(\"Initializing...\");\r\n                reset();\r\n                showInfo(\"Load Test Case...\");\r\n                final Test testSuite = getTest(fSuiteField.getText());\r\n                if (testSuite != null) {\r\n                    fRunner = new Thread() {\r\n\r\n                        public void run() {\r\n                            fTestResult = createTestResult();\r\n                            fTestResult.addListener(TestRunner.this);\r\n                            fProgressIndicator.start(testSuite.countTestCases());\r\n                            showInfo(\"Running...\");\r\n                            long startTime = System.currentTimeMillis();\r\n                            testSuite.run(fTestResult);\r\n                            if (fTestResult.shouldStop()) {\r\n                                showStatus(\"Stopped\");\r\n                            } else {\r\n                                long endTime = System.currentTimeMillis();\r\n                                long runTime = endTime - startTime;\r\n                                showInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n                            }\r\n                            fTestResult = null;\r\n                            fRun.setLabel(\"Run\");\r\n                            fRunner = null;\r\n                            System.gc();\r\n                        }\r\n                    };\r\n                    fRunner.start();\r\n                }\r\n            }\r\n            /*}*/\r\n        }\r\n    });\r\n    fSuiteField.addTextListener(new TextListener() {\r\n\r\n        public void textValueChanged(TextEvent e) {\r\n            fRun.setEnabled(fSuiteField.getText().length() > 0);\r\n            fStatusLine.setText(\"\");\r\n        }\r\n    });\r\n    fRun = new Button(\"Run\");\r\n    fRun.setEnabled(false);\r\n    fRun.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            runSuite();\r\n        }\r\n    });\r\n    boolean useLoader = useReloadingTestSuiteLoader();\r\n    fUseLoadingRunner = new Checkbox(\"Reload classes every run\", useLoader);\r\n    if (inVAJava())\r\n        fUseLoadingRunner.setVisible(false);\r\n    // ---- second section\r\n    fProgressIndicator = new ProgressBar();\r\n    // ---- third section\r\n    fNumberOfErrors = new Label(\"0000\", Label.RIGHT);\r\n    fNumberOfErrors.setText(\"0\");\r\n    fNumberOfErrors.setFont(PLAIN_FONT);\r\n    fNumberOfFailures = new Label(\"0000\", Label.RIGHT);\r\n    fNumberOfFailures.setText(\"0\");\r\n    fNumberOfFailures.setFont(PLAIN_FONT);\r\n    fNumberOfRuns = new Label(\"0000\", Label.RIGHT);\r\n    fNumberOfRuns.setText(\"0\");\r\n    fNumberOfRuns.setFont(PLAIN_FONT);\r\n    Panel numbersPanel = createCounterPanel();\r\n    // ---- fourth section\r\n    Label failureLabel = new Label(\"Errors and Failures:\");\r\n    fFailureList = new List(5);\r\n    fFailureList.addItemListener(new ItemListener() {\r\n\r\n        public void itemStateChanged(ItemEvent e) {\r\n            failureSelected();\r\n        }\r\n    });\r\n    fRerunButton = new Button(\"Run\");\r\n    fRerunButton.setEnabled(false);\r\n    fRerunButton.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            rerun();\r\n        }\r\n    });\r\n    Panel failedPanel = new Panel(new GridLayout(0, 1, 0, 2));\r\n    failedPanel.add(fRerunButton);\r\n    fTraceArea = new TextArea();\r\n    fTraceArea.setRows(5);\r\n    fTraceArea.setColumns(60);\r\n    // ---- fifth section\r\n    fStatusLine = new TextField();\r\n    fStatusLine.setFont(PLAIN_FONT);\r\n    fStatusLine.setEditable(false);\r\n    fStatusLine.setForeground(Color.red);\r\n    fQuitButton = new Button(\"Exit\");\r\n    fQuitButton.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            System.exit(0);\r\n        }\r\n    });\r\n    // ---------\r\n    fLogo = new Logo();\r\n    // ---- overall layout\r\n    Panel panel = new Panel(new GridBagLayout());\r\n    addGrid(panel, suiteLabel, 0, 0, 2, GridBagConstraints.HORIZONTAL, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, fSuiteField, 0, 1, 2, GridBagConstraints.HORIZONTAL, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, fRun, 2, 1, 1, GridBagConstraints.HORIZONTAL, 0.0, GridBagConstraints.CENTER);\r\n    addGrid(panel, fUseLoadingRunner, 0, 2, 2, GridBagConstraints.NONE, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, fProgressIndicator, 0, 3, 2, GridBagConstraints.HORIZONTAL, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, fLogo, 2, 3, 1, GridBagConstraints.NONE, 0.0, GridBagConstraints.NORTH);\r\n    addGrid(panel, numbersPanel, 0, 4, 2, GridBagConstraints.NONE, 0.0, GridBagConstraints.WEST);\r\n    addGrid(panel, failureLabel, 0, 5, 2, GridBagConstraints.HORIZONTAL, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, fFailureList, 0, 6, 2, GridBagConstraints.BOTH, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, failedPanel, 2, 6, 1, GridBagConstraints.HORIZONTAL, 0.0, GridBagConstraints.CENTER);\r\n    addGrid(panel, fTraceArea, 0, 7, 2, GridBagConstraints.BOTH, 1.0, GridBagConstraints.WEST);\r\n    addGrid(panel, fStatusLine, 0, 8, 2, GridBagConstraints.HORIZONTAL, 1.0, GridBagConstraints.CENTER);\r\n    addGrid(panel, fQuitButton, 2, 8, 1, GridBagConstraints.HORIZONTAL, 0.0, GridBagConstraints.CENTER);\r\n    frame.add(panel, BorderLayout.CENTER);\r\n    frame.pack();\r\n    return frame;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

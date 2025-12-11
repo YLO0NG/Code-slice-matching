@@ -1,0 +1,31 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner) {\n    Rectangle r = displayBox();\n    int dx = origin.x - r.x;\n    int dy = origin.y - r.y;\n    fPoly.translate(dx, dy);\n    r = displayBox();\n    Point oldCorner = new Point(r.x + r.width, r.y + r.height);\n    Polygon p = getPolygon();\n    scaleRotate(oldCorner, p, corner);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "scaleRotate(Point, Polygon, Point)",
+      "displayBox()",
+      "getPolygon()"
+    ],
+    "java.awt.Polygon": [
+      "translate(int, int)"
+    ]
+  },
+  "full_method_info": "public void basicDisplayBox(Point origin, Point corner) {\n    Rectangle r = displayBox();\n    int dx = origin.x - r.x;\n    int dy = origin.y - r.y;\n    fPoly.translate(dx, dy);\n    r = displayBox();\n    Point oldCorner = new Point(r.x + r.width, r.y + r.height);\n    Polygon p = getPolygon();\n    scaleRotate(oldCorner, p, corner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "HandleTracker",
+  "methodName": "HandleTracker",
+  "brief": "public HandleTracker(DrawingView view, Handle anchorHandle){}",
+  "methodSignature": "HandleTracker(DrawingView, Handle)",
+  "sourceCode": "public HandleTracker(DrawingView view, Handle anchorHandle) {\n        super(view);\n        fAnchorHandle = anchorHandle;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView",
+    "Handle"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Handle": []
+  },
+  "full_method_info": "public HandleTracker(DrawingView view, Handle anchorHandle) {\n    super(view);\n    fAnchorHandle = anchorHandle;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

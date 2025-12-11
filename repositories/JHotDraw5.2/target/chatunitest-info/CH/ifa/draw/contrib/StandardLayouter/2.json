@@ -1,0 +1,51 @@
+{
+  "className": "StandardLayouter",
+  "methodName": "calculateLayout",
+  "brief": "public Rectangle calculateLayout(Point origin, Point corner){}",
+  "methodSignature": "calculateLayout(Point, Point)",
+  "sourceCode": "public Rectangle calculateLayout(Point origin, Point corner) {\n\t\tint maxWidth = Math.abs(corner.x - origin.x);\n\t\tint maxHeight = 0;\n\t\t\n\t\t// layout enclosed Layoutable and find maximum width\n\t\tFigureEnumeration enumeration = getLayoutable().figures();\n\t\twhile (enumeration.hasMoreElements()) {\n\t\t\tFigure currentFigure = enumeration.nextFigure();\n\t\t\tRectangle r = null;\n\t\t\tif (currentFigure instanceof Layoutable) {\n\t\t\t\tLayouter layoutStrategy = ((Layoutable)currentFigure).getLayouter();\n\t\t\t\tr = layoutStrategy.calculateLayout(\n\t\t\t\t\tnew Point(0, 0), new Point(0, 0));\n\t\t\t\t// add insets to calculated rectangle\n\t\t\t\tr.grow(layoutStrategy.getInsets().left + layoutStrategy.getInsets().right,\n\t\t\t\t\t\tlayoutStrategy.getInsets().top + layoutStrategy.getInsets().bottom);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tr = new Rectangle(currentFigure.displayBox().getBounds());\n\t\t\t}\n\t\t\tmaxWidth = Math.max(maxWidth, r.width);\n\t\t\tmaxHeight += r.height;\n\t\t}\n\n\t\treturn new Rectangle(origin.x, origin.y, maxWidth, maxHeight);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "java.lang.Math": [
+      "abs(int)",
+      "max(int, int)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()",
+      "figures()"
+    ],
+    "CH.ifa.draw.contrib.StandardLayouter": [
+      "getLayoutable()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.contrib.Layoutable": [
+      "getLayouter()"
+    ],
+    "CH.ifa.draw.contrib.Layouter": [
+      "calculateLayout(Point, Point)",
+      "getInsets()"
+    ],
+    "java.awt.Rectangle": [
+      "getBounds()",
+      "grow(int, int)"
+    ]
+  },
+  "full_method_info": "/*\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t * Insets are added for all non-top-level figures.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t */\npublic Rectangle calculateLayout(Point origin, Point corner) {\n    int maxWidth = Math.abs(corner.x - origin.x);\n    int maxHeight = 0;\n    // layout enclosed Layoutable and find maximum width\n    FigureEnumeration enumeration = getLayoutable().figures();\n    while (enumeration.hasMoreElements()) {\n        Figure currentFigure = enumeration.nextFigure();\n        Rectangle r = null;\n        if (currentFigure instanceof Layoutable) {\n            Layouter layoutStrategy = ((Layoutable) currentFigure).getLayouter();\n            r = layoutStrategy.calculateLayout(new Point(0, 0), new Point(0, 0));\n            // add insets to calculated rectangle\n            r.grow(layoutStrategy.getInsets().left + layoutStrategy.getInsets().right, layoutStrategy.getInsets().top + layoutStrategy.getInsets().bottom);\n        } else {\n            r = new Rectangle(currentFigure.displayBox().getBounds());\n        }\n        maxWidth = Math.max(maxWidth, r.width);\n        maxHeight += r.height;\n    }\n    return new Rectangle(origin.x, origin.y, maxWidth, maxHeight);\n}",
+  "method_comment": "\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t * Insets are added for all non-top-level figures.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t ",
+  "method_annotation": ""
+}

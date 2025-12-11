@@ -1,0 +1,58 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ChangeConnectionEndHandle",
+  "className": "ChangeConnectionEndHandle",
+  "index": 111,
+  "modifier": "[public ]",
+  "extend": "[ChangeConnectionHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class ChangeConnectionEndHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "ChangeConnectionHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "target()": "0",
+    "disconnect()": "1",
+    "connect(Connector)": "2",
+    "setPoint(int, int)": "3",
+    "locate()": "4",
+    "ChangeConnectionEndHandle(Figure)": "5"
+  },
+  "methodsBrief": [
+    "protected Connector target(){}",
+    "protected void disconnect(){}",
+    "protected void connect(Connector c){}",
+    "protected void setPoint(int x, int y){}",
+    "public Point locate(){}",
+    "public ChangeConnectionEndHandle(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "ChangeConnectionEndHandle(Figure)"
+  ],
+  "constructorBrief": [
+    "public ChangeConnectionEndHandle(Figure owner){}"
+  ],
+  "getterSetterSigs": [
+    "setPoint(int, int)"
+  ],
+  "getterSetterBrief": [
+    "protected void setPoint(int x, int y){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ChangeConnectionEndHandle.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.Point;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A handle to reconnect the end point of\n * a connection to another figure.\n */\npublic class ChangeConnectionEndHandle extends ChangeConnectionHandle {\n\n    public ChangeConnectionEndHandle(Figure owner) {\n        super(owner);\n    }\n\n    /**\n     * Gets the end figure of a connection.\n     */\n    protected Connector target() {\n        return fConnection.end();\n    }\n\n    /**\n     * Disconnects the end figure.\n     */\n    protected void disconnect() {\n        fConnection.disconnectEnd();\n    }\n\n    /**\n     * Sets the end of the connection.\n     */\n    protected void connect(Connector c) {\n        fConnection.connectEnd(c);\n    }\n\n    /**\n     * Sets the end point of the connection.\n     */\n    protected void setPoint(int x, int y) {\n        fConnection.endPoint(x, y);\n    }\n\n    /**\n     * Returns the end point of the connection.\n     */\n    public Point locate() {\n        return fConnection.endPoint();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A handle to reconnect the end point of\n * a connection to another figure.\n */\npublic class ChangeConnectionEndHandle extends ChangeConnectionHandle {\n\n    public ChangeConnectionEndHandle(Figure owner) {\n        super(owner);\n    }\n\n    /**\n     * Gets the end figure of a connection.\n     */\n    protected Connector target() {\n        return fConnection.end();\n    }\n\n    /**\n     * Disconnects the end figure.\n     */\n    protected void disconnect() {\n        fConnection.disconnectEnd();\n    }\n\n    /**\n     * Sets the end of the connection.\n     */\n    protected void connect(Connector c) {\n        fConnection.connectEnd(c);\n    }\n\n    /**\n     * Sets the end point of the connection.\n     */\n    protected void setPoint(int x, int y) {\n        fConnection.endPoint(x, y);\n    }\n\n    /**\n     * Returns the end point of the connection.\n     */\n    public Point locate() {\n        return fConnection.endPoint();\n    }\n}",
+  "subClasses": []
+}

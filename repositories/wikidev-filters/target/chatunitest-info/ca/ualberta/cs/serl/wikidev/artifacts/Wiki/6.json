@@ -1,0 +1,18 @@
+{
+  "className": "Wiki",
+  "methodName": "getPage_title",
+  "brief": "public String getPage_title(){}",
+  "methodSignature": "getPage_title()",
+  "sourceCode": "public String getPage_title() {\n\t\treturn page_title;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"page_title\"\n */\npublic String getPage_title() {\n    return page_title;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"page_title\"\n\t ",
+  "method_annotation": ""
+}

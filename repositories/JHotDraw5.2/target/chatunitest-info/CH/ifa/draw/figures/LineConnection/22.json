@@ -1,0 +1,27 @@
+{
+  "className": "LineConnection",
+  "methodName": "updateConnection",
+  "brief": "public void updateConnection(){}",
+  "methodSignature": "updateConnection()",
+  "sourceCode": "public void updateConnection() {\n        if (fStart != null) {\n            Point start = fStart.findStart(this);\n            startPoint(start.x, start.y);\n        }\n        if (fEnd != null) {\n            Point end = fEnd.findEnd(this);\n            endPoint(end.x, end.y);\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Connector": [
+      "findStart(ConnectionFigure)",
+      "findEnd(ConnectionFigure)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "startPoint(int, int)",
+      "endPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Updates the connection.\n */\npublic void updateConnection() {\n    if (fStart != null) {\n        Point start = fStart.findStart(this);\n        startPoint(start.x, start.y);\n    }\n    if (fEnd != null) {\n        Point end = fEnd.findEnd(this);\n        endPoint(end.x, end.y);\n    }\n}",
+  "method_comment": "\n     * Updates the connection.\n     ",
+  "method_annotation": ""
+}

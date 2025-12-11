@@ -1,0 +1,31 @@
+{
+  "className": "LineConnection",
+  "methodName": "startPoint",
+  "brief": "public void startPoint(int x, int y){}",
+  "methodSignature": "startPoint(int, int)",
+  "sourceCode": "public void startPoint(int x, int y) {\n        willChange();\n        if (fPoints.size() == 0)\n            fPoints.addElement(new Point(x, y));\n        else\n            fPoints.setElementAt(new Point(x, y), 0);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "setElementAt(E, int)",
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the start point.\n */\npublic void startPoint(int x, int y) {\n    willChange();\n    if (fPoints.size() == 0)\n        fPoints.addElement(new Point(x, y));\n    else\n        fPoints.setElementAt(new Point(x, y), 0);\n    changed();\n}",
+  "method_comment": "\n     * Sets the start point.\n     ",
+  "method_annotation": ""
+}

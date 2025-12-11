@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "getKind",
+  "brief": "public String getKind(){}",
+  "methodSignature": "getKind()",
+  "sourceCode": "public String getKind() {\n\t\treturn kind;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"kind\"\n */\npublic String getKind() {\n    return kind;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"kind\"\n\t ",
+  "method_annotation": ""
+}

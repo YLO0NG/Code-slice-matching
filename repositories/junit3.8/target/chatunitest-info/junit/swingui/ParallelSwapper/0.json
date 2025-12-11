@@ -1,0 +1,27 @@
+{
+  "className": "ParallelSwapper",
+  "methodName": "swap",
+  "brief": "public void swap(Vector values, int left, int right){}",
+  "methodSignature": "swap(Vector, int, int)",
+  "sourceCode": "public void swap(Vector values, int left, int right) {\r\n\t\t\tObject tmp= values.elementAt(left); \r\n\t\t\tvalues.setElementAt(values.elementAt(right), left); \r\n\t\t\tvalues.setElementAt(tmp, right);\r\n\t\t\tObject tmp2= fOther.elementAt(left);\r\n\t\t\tfOther.setElementAt(fOther.elementAt(right), left);\r\n\t\t\tfOther.setElementAt(tmp2, right);\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elementAt(int)",
+      "setElementAt(E, int)"
+    ]
+  },
+  "full_method_info": "public void swap(Vector values, int left, int right) {\r\n    Object tmp = values.elementAt(left);\r\n    values.setElementAt(values.elementAt(right), left);\r\n    values.setElementAt(tmp, right);\r\n    Object tmp2 = fOther.elementAt(left);\r\n    fOther.setElementAt(fOther.elementAt(right), left);\r\n    fOther.setElementAt(tmp2, right);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

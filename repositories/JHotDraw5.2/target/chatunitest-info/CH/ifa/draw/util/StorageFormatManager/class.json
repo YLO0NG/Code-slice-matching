@@ -1,0 +1,66 @@
+{
+  "fullClassName": "CH.ifa.draw.util.StorageFormatManager",
+  "className": "StorageFormatManager",
+  "index": 170,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public class StorageFormatManager",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import javax.swing.JFileChooser;",
+    "import javax.swing.filechooser.FileFilter;",
+    "import java.io.*;",
+    "import CH.ifa.draw.framework.Drawing;"
+  ],
+  "fields": [
+    "private Vector myStorageFormats;",
+    "private StorageFormat myDefaultStorageFormat;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "addStorageFormat(StorageFormat)": "0",
+    "removeStorageFormat(StorageFormat)": "1",
+    "containsStorageFormat(StorageFormat)": "2",
+    "setDefaultStorageFormat(StorageFormat)": "3",
+    "getDefaultStorageFormat()": "4",
+    "registerFileFilters(JFileChooser)": "5",
+    "findStorageFormat(FileFilter)": "6",
+    "StorageFormatManager()": "7"
+  },
+  "methodsBrief": [
+    "public void addStorageFormat(StorageFormat newStorageFormat){}",
+    "public void removeStorageFormat(StorageFormat oldStorageFormat){}",
+    "public boolean containsStorageFormat(StorageFormat checkStorageFormat){}",
+    "public void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat){}",
+    "public StorageFormat getDefaultStorageFormat(){}",
+    "public void registerFileFilters(JFileChooser fileChooser){}",
+    "public StorageFormat findStorageFormat(FileFilter findFileFilter){}",
+    "public StorageFormatManager(){}"
+  ],
+  "constructorSigs": [
+    "StorageFormatManager()"
+  ],
+  "constructorBrief": [
+    "public StorageFormatManager(){}"
+  ],
+  "getterSetterSigs": [
+    "setDefaultStorageFormat(StorageFormat)",
+    "getDefaultStorageFormat()"
+  ],
+  "getterSetterBrief": [
+    "public void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat){}",
+    "public StorageFormat getDefaultStorageFormat(){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)StorageFormatManager.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.util.*;\nimport javax.swing.JFileChooser;\nimport javax.swing.filechooser.FileFilter;\nimport java.io.*;\nimport CH.ifa.draw.framework.Drawing;\n\n/**\n * The StorageFormatManager is a contains StorageFormats.\n * It is not a Singleton because it could be necessary to deal with different\n * format managers, e.g. one for importing Drawings, one for exporting Drawings.\n * If one StorageFormat matches the file extension of the Drawing file, then this\n * StorageFormat can be used to store or restore the Drawing.\n *\n * @see StorageFormat\n * @author Wolfram Kaiser\n */\npublic class StorageFormatManager {\n\n    /**\n     * Vector containing all registered storage formats\n     */\n    private Vector myStorageFormats;\n\n    /**\n     * Default storage format that should be selected in a javax.swing.JFileChooser\n     */\n    private StorageFormat myDefaultStorageFormat;\n\n    public StorageFormatManager() {\n        myStorageFormats = new Vector();\n    }\n\n    /**\n     * Add a StorageFormat that should be supported by this StorageFormatManager.\n     *\n     * @param newStorageFormat new StorageFormat to be supported\n     */\n    public void addStorageFormat(StorageFormat newStorageFormat) {\n        myStorageFormats.add(newStorageFormat);\n    }\n\n    /**\n     * Remove a StorageFormat that should no longer be supported by this StorageFormatManager.\n     * The StorageFormat is excluded in when search for a StorageFormat.\n     *\n     * @param oldStorageFormat old StorageFormat no longer to be supported\n     */\n    public void removeStorageFormat(StorageFormat oldStorageFormat) {\n        myStorageFormats.remove(oldStorageFormat);\n    }\n\n    /**\n     * Test, whether a StorageFormat is supported by this StorageFormat\n     */\n    public boolean containsStorageFormat(StorageFormat checkStorageFormat) {\n        return myStorageFormats.contains(checkStorageFormat);\n    }\n\n    /**\n     * Set a StorageFormat as the default storage format which is selected in a\n     * javax.swing.JFileChooser. The default storage format must be already\n     * added with addStorageFormat. Setting the default storage format to null\n     * does not automatically remove the StorageFormat from the list of\n     * supported StorageFormats.\n     *\n     * @param newDefaultStorageFormat StorageFormat that should be selected in a JFileChooser\n     */\n    public void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat) {\n        myDefaultStorageFormat = newDefaultStorageFormat;\n    }\n\n    /**\n     * Return the StorageFormat which is used as selected file format in a javax.swing.JFileChooser\n     *\n     * @return default storage format\n     */\n    public StorageFormat getDefaultStorageFormat() {\n        return myDefaultStorageFormat;\n    }\n\n    /**\n     * Register all FileFilters supported by StorageFormats\n     *\n     * @param fileChooser javax.swing.JFileChooser to which FileFilters are added\n     */\n    public void registerFileFilters(JFileChooser fileChooser) {\n        Iterator formatsIterator = myStorageFormats.iterator();\n        while (formatsIterator.hasNext()) {\n            fileChooser.addChoosableFileFilter(((StorageFormat) formatsIterator.next()).getFileFilter());\n        }\n        // set a current activated file filter if a default storage Format has been defined\n        if (getDefaultStorageFormat() != null) {\n            fileChooser.setFileFilter(getDefaultStorageFormat().getFileFilter());\n        }\n    }\n\n    /**\n     * Find a StorageFormat that can be used according to a FileFilter to store a Drawing\n     * in a file or restore it from a file respectively.\n     *\n     * @param findFileFilter FileFilter used to identify a StorageFormat\n     * @return StorageFormat, if a matching file extension could be found, false otherwise\n     */\n    public StorageFormat findStorageFormat(FileFilter findFileFilter) {\n        Iterator formatsIterator = myStorageFormats.iterator();\n        StorageFormat currentStorageFormat = null;\n        while (formatsIterator.hasNext()) {\n            currentStorageFormat = (StorageFormat) formatsIterator.next();\n            if (currentStorageFormat.getFileFilter().equals(findFileFilter)) {\n                return currentStorageFormat;\n            }\n        }\n        return null;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * The StorageFormatManager is a contains StorageFormats.\n * It is not a Singleton because it could be necessary to deal with different\n * format managers, e.g. one for importing Drawings, one for exporting Drawings.\n * If one StorageFormat matches the file extension of the Drawing file, then this\n * StorageFormat can be used to store or restore the Drawing.\n *\n * @see StorageFormat\n * @author Wolfram Kaiser\n */\npublic class StorageFormatManager {\n\n    /**\n     * Vector containing all registered storage formats\n     */\n    private Vector myStorageFormats;\n\n    /**\n     * Default storage format that should be selected in a javax.swing.JFileChooser\n     */\n    private StorageFormat myDefaultStorageFormat;\n\n    public StorageFormatManager() {\n        myStorageFormats = new Vector();\n    }\n\n    /**\n     * Add a StorageFormat that should be supported by this StorageFormatManager.\n     *\n     * @param newStorageFormat new StorageFormat to be supported\n     */\n    public void addStorageFormat(StorageFormat newStorageFormat) {\n        myStorageFormats.add(newStorageFormat);\n    }\n\n    /**\n     * Remove a StorageFormat that should no longer be supported by this StorageFormatManager.\n     * The StorageFormat is excluded in when search for a StorageFormat.\n     *\n     * @param oldStorageFormat old StorageFormat no longer to be supported\n     */\n    public void removeStorageFormat(StorageFormat oldStorageFormat) {\n        myStorageFormats.remove(oldStorageFormat);\n    }\n\n    /**\n     * Test, whether a StorageFormat is supported by this StorageFormat\n     */\n    public boolean containsStorageFormat(StorageFormat checkStorageFormat) {\n        return myStorageFormats.contains(checkStorageFormat);\n    }\n\n    /**\n     * Set a StorageFormat as the default storage format which is selected in a\n     * javax.swing.JFileChooser. The default storage format must be already\n     * added with addStorageFormat. Setting the default storage format to null\n     * does not automatically remove the StorageFormat from the list of\n     * supported StorageFormats.\n     *\n     * @param newDefaultStorageFormat StorageFormat that should be selected in a JFileChooser\n     */\n    public void setDefaultStorageFormat(StorageFormat newDefaultStorageFormat) {\n        myDefaultStorageFormat = newDefaultStorageFormat;\n    }\n\n    /**\n     * Return the StorageFormat which is used as selected file format in a javax.swing.JFileChooser\n     *\n     * @return default storage format\n     */\n    public StorageFormat getDefaultStorageFormat() {\n        return myDefaultStorageFormat;\n    }\n\n    /**\n     * Register all FileFilters supported by StorageFormats\n     *\n     * @param fileChooser javax.swing.JFileChooser to which FileFilters are added\n     */\n    public void registerFileFilters(JFileChooser fileChooser) {\n        Iterator formatsIterator = myStorageFormats.iterator();\n        while (formatsIterator.hasNext()) {\n            fileChooser.addChoosableFileFilter(((StorageFormat) formatsIterator.next()).getFileFilter());\n        }\n        // set a current activated file filter if a default storage Format has been defined\n        if (getDefaultStorageFormat() != null) {\n            fileChooser.setFileFilter(getDefaultStorageFormat().getFileFilter());\n        }\n    }\n\n    /**\n     * Find a StorageFormat that can be used according to a FileFilter to store a Drawing\n     * in a file or restore it from a file respectively.\n     *\n     * @param findFileFilter FileFilter used to identify a StorageFormat\n     * @return StorageFormat, if a matching file extension could be found, false otherwise\n     */\n    public StorageFormat findStorageFormat(FileFilter findFileFilter) {\n        Iterator formatsIterator = myStorageFormats.iterator();\n        StorageFormat currentStorageFormat = null;\n        while (formatsIterator.hasNext()) {\n            currentStorageFormat = (StorageFormat) formatsIterator.next();\n            if (currentStorageFormat.getFileFilter().equals(findFileFilter)) {\n                return currentStorageFormat;\n            }\n        }\n        return null;\n    }\n}",
+  "subClasses": []
+}

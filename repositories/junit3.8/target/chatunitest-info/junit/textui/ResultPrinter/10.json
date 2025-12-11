@@ -1,0 +1,25 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "elapsedTimeAsString",
+  "brief": "protected String elapsedTimeAsString(long runTime){}",
+  "methodSignature": "elapsedTimeAsString(long)",
+  "sourceCode": "protected String elapsedTimeAsString(long runTime) {\r\n\t\treturn NumberFormat.getInstance().format((double)runTime/1000);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "long"
+  ],
+  "dependentMethods": {
+    "java.text.NumberFormat": [
+      "format(double)",
+      "getInstance()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns the formatted string of the elapsed time.\r\n * Duplicated from BaseTestRunner. Fix it.\r\n */\r\nprotected String elapsedTimeAsString(long runTime) {\r\n    return NumberFormat.getInstance().format((double) runTime / 1000);\r\n}",
+  "method_comment": "\r\n\t * Returns the formatted string of the elapsed time.\r\n\t * Duplicated from BaseTestRunner. Fix it.\r\n\t ",
+  "method_annotation": ""
+}

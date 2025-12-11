@@ -1,0 +1,22 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "center",
+  "brief": "public static Point center(Polygon p){}",
+  "methodSignature": "center(Polygon)",
+  "sourceCode": "public static Point center(Polygon p) {\n    long sx = 0;\n    long sy = 0;\n    int n = p.npoints;\n\tfor (int i = 0; i < n; i++) {\n      sx += p.xpoints[i];\n      sy += p.ypoints[i];\n    }\n\n\treturn new Point((int)(sx/n), (int)(sy/n));\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Polygon"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": []
+  },
+  "full_method_info": "public static Point center(Polygon p) {\n    long sx = 0;\n    long sy = 0;\n    int n = p.npoints;\n    for (int i = 0; i < n; i++) {\n        sx += p.xpoints[i];\n        sy += p.ypoints[i];\n    }\n    return new Point((int) (sx / n), (int) (sy / n));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

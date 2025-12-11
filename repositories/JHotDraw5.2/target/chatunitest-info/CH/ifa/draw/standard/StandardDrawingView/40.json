@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "paint",
+  "brief": "public void paint(Graphics g){}",
+  "methodSignature": "paint(Graphics)",
+  "sourceCode": "public void paint(Graphics g) {\n        fUpdateStrategy.draw(g, this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.Painter": [
+      "draw(Graphics, DrawingView)"
+    ]
+  },
+  "full_method_info": "/**\n * Paints the drawing view. The actual drawing is delegated to\n * the current update strategy.\n * @see Painter\n */\npublic void paint(Graphics g) {\n    fUpdateStrategy.draw(g, this);\n}",
+  "method_comment": "\n     * Paints the drawing view. The actual drawing is delegated to\n     * the current update strategy.\n     * @see Painter\n     ",
+  "method_annotation": ""
+}

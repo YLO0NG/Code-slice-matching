@@ -1,0 +1,30 @@
+{
+  "className": "JavaDrawApplet",
+  "methodName": "createTools",
+  "brief": "protected void createTools(JPanel palette){}",
+  "methodSignature": "createTools(JPanel)",
+  "sourceCode": "protected void createTools(JPanel palette) {\n        super.createTools(palette);\n\n        Tool tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES+\"TEXT\", \"Text Tool\", tool));\n\n        tool = new ConnectedTextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES+\"ATEXT\", \"Connected Text Tool\", tool));\n\n        tool = new URLTool(view());\n        palette.add(createToolButton(IMAGES+\"URL\", \"URL Tool\", tool));\n\n        tool = new CreationTool(view(), new RectangleFigure());\n        palette.add(createToolButton(IMAGES+\"RECT\", \"Rectangle Tool\", tool));\n\n        tool = new CreationTool(view(), new RoundRectangleFigure());\n        palette.add(createToolButton(IMAGES+\"RRECT\", \"Round Rectangle Tool\", tool));\n\n        tool = new CreationTool(view(), new EllipseFigure());\n        palette.add(createToolButton(IMAGES+\"ELLIPSE\", \"Ellipse Tool\", tool));\n\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES+\"LINE\", \"Line Tool\", tool));\n\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES+\"CONN\", \"Connection Tool\", tool));\n\n        tool = new ConnectionTool(view(), new ElbowConnection());\n        palette.add(createToolButton(IMAGES+\"OCONN\", \"Elbow Connection Tool\", tool));\n\n        tool = new ScribbleTool(view());\n        palette.add(createToolButton(IMAGES+\"SCRIBBL\", \"Scribble Tool\", tool));\n\n        tool = new PolygonTool(view());\n        palette.add(createToolButton(IMAGES+\"POLYGON\", \"Polygon Tool\", tool));\n\n        tool = new BorderTool(view());\n        palette.add(createToolButton(IMAGES+\"BORDDEC\", \"Border Tool\", tool));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JPanel"
+  ],
+  "dependentMethods": {
+    "javax.swing.JPanel": [],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "createTools(JPanel)",
+      "view()",
+      "createToolButton(String, String, Tool)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "// -- DrawApplet overrides -----------------------------------------\nprotected void createTools(JPanel palette) {\n    super.createTools(palette);\n    Tool tool = new TextTool(view(), new TextFigure());\n    palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n    tool = new ConnectedTextTool(view(), new TextFigure());\n    palette.add(createToolButton(IMAGES + \"ATEXT\", \"Connected Text Tool\", tool));\n    tool = new URLTool(view());\n    palette.add(createToolButton(IMAGES + \"URL\", \"URL Tool\", tool));\n    tool = new CreationTool(view(), new RectangleFigure());\n    palette.add(createToolButton(IMAGES + \"RECT\", \"Rectangle Tool\", tool));\n    tool = new CreationTool(view(), new RoundRectangleFigure());\n    palette.add(createToolButton(IMAGES + \"RRECT\", \"Round Rectangle Tool\", tool));\n    tool = new CreationTool(view(), new EllipseFigure());\n    palette.add(createToolButton(IMAGES + \"ELLIPSE\", \"Ellipse Tool\", tool));\n    tool = new CreationTool(view(), new LineFigure());\n    palette.add(createToolButton(IMAGES + \"LINE\", \"Line Tool\", tool));\n    tool = new ConnectionTool(view(), new LineConnection());\n    palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n    tool = new ConnectionTool(view(), new ElbowConnection());\n    palette.add(createToolButton(IMAGES + \"OCONN\", \"Elbow Connection Tool\", tool));\n    tool = new ScribbleTool(view());\n    palette.add(createToolButton(IMAGES + \"SCRIBBL\", \"Scribble Tool\", tool));\n    tool = new PolygonTool(view());\n    palette.add(createToolButton(IMAGES + \"POLYGON\", \"Polygon Tool\", tool));\n    tool = new BorderTool(view());\n    palette.add(createToolButton(IMAGES + \"BORDDEC\", \"Border Tool\", tool));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectRevisionTextByRevisionID",
+  "brief": "public static String selectRevisionTextByRevisionID(int rev_id){}",
+  "methodSignature": "selectRevisionTextByRevisionID(int)",
+  "sourceCode": "public static String selectRevisionTextByRevisionID(int rev_id) {\n\t\treturn \"select CAST(old_text AS CHAR) from mw_text where old_id=\\'\"+rev_id+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectRevisionTextByRevisionID(int rev_id) {\n    return \"select CAST(old_text AS CHAR) from mw_text where old_id=\\'\" + rev_id + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

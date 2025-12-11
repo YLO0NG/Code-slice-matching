@@ -1,0 +1,26 @@
+{
+  "className": "LineConnection",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        Vector handles = new Vector(fPoints.size());\n        handles.addElement(new ChangeConnectionStartHandle(this));\n        for (int i = 1; i < fPoints.size()-1; i++)\n            handles.addElement(new PolyLineHandle(this, locator(i), i));\n        handles.addElement(new ChangeConnectionEndHandle(this));\n        return handles;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)",
+      "size()"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "locator(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the handles of the figure. It returns the normal\n * PolyLineHandles but adds ChangeConnectionHandles at the\n * start and end.\n */\npublic Vector handles() {\n    Vector handles = new Vector(fPoints.size());\n    handles.addElement(new ChangeConnectionStartHandle(this));\n    for (int i = 1; i < fPoints.size() - 1; i++) handles.addElement(new PolyLineHandle(this, locator(i), i));\n    handles.addElement(new ChangeConnectionEndHandle(this));\n    return handles;\n}",
+  "method_comment": "\n     * Gets the handles of the figure. It returns the normal\n     * PolyLineHandles but adds ChangeConnectionHandles at the\n     * start and end.\n     ",
+  "method_annotation": ""
+}

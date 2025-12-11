@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "setBackground",
+  "brief": "public void setBackground(Color c);",
+  "methodSignature": "setBackground(Color)",
+  "sourceCode": "public void setBackground(Color c);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": []
+  },
+  "full_method_info": "/**\n * Gets the background color of the DrawingView\n */\npublic void setBackground(Color c);",
+  "method_comment": "\n     * Gets the background color of the DrawingView\n     ",
+  "method_annotation": ""
+}

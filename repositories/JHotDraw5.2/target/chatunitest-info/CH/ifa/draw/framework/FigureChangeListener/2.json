@@ -1,0 +1,22 @@
+{
+  "className": "FigureChangeListener",
+  "methodName": "figureRemoved",
+  "brief": "public void figureRemoved(FigureChangeEvent e);",
+  "methodSignature": "figureRemoved(FigureChangeEvent)",
+  "sourceCode": "public void figureRemoved(FigureChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "/**\n * Sent when a figure was removed\n */\npublic void figureRemoved(FigureChangeEvent e);",
+  "method_comment": "\n     * Sent when a figure was removed\n     ",
+  "method_annotation": ""
+}

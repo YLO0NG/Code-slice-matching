@@ -1,0 +1,50 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.MySelectionTool",
+  "className": "MySelectionTool",
+  "index": 80,
+  "modifier": "[public ]",
+  "extend": "[SelectionTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public  class MySelectionTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "SelectionTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "inspectFigure(Figure)": "1",
+    "MySelectionTool(DrawingView)": "2"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "protected void inspectFigure(Figure f){}",
+    "public MySelectionTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "MySelectionTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public MySelectionTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)MySelectionTool.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * A SelectionTool that interprets double clicks to inspect the clicked figure\n */\npublic class MySelectionTool extends SelectionTool {\n\n    public MySelectionTool(DrawingView view) {\n        super(view);\n    }\n\n    /**\n     * Handles mouse down events and starts the corresponding tracker.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        if (e.getClickCount() == 2) {\n            Figure figure = drawing().findFigure(e.getX(), e.getY());\n            if (figure != null) {\n                inspectFigure(figure);\n                return;\n            }\n        }\n        super.mouseDown(e, x, y);\n    }\n\n    protected void inspectFigure(Figure f) {\n        System.out.println(\"inspect figure\" + f);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A SelectionTool that interprets double clicks to inspect the clicked figure\n */\npublic class MySelectionTool extends SelectionTool {\n\n    public MySelectionTool(DrawingView view) {\n        super(view);\n    }\n\n    /**\n     * Handles mouse down events and starts the corresponding tracker.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        if (e.getClickCount() == 2) {\n            Figure figure = drawing().findFigure(e.getX(), e.getY());\n            if (figure != null) {\n                inspectFigure(figure);\n                return;\n            }\n        }\n        super.mouseDown(e, x, y);\n    }\n\n    protected void inspectFigure(Figure f) {\n        System.out.println(\"inspect figure\" + f);\n    }\n}",
+  "subClasses": []
+}

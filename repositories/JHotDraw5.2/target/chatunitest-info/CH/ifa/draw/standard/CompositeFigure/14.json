@@ -1,0 +1,18 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figuresReverse",
+  "brief": "public final FigureEnumeration figuresReverse(){}",
+  "methodSignature": "figuresReverse()",
+  "sourceCode": "public final FigureEnumeration figuresReverse() {\n        return new ReverseFigureEnumerator(fFigures);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns an Enumeration for accessing the contained figures\n * in the reverse drawing order.\n */\npublic final FigureEnumeration figuresReverse() {\n    return new ReverseFigureEnumerator(fFigures);\n}",
+  "method_comment": "\n     * Returns an Enumeration for accessing the contained figures\n     * in the reverse drawing order.\n     ",
+  "method_annotation": ""
+}

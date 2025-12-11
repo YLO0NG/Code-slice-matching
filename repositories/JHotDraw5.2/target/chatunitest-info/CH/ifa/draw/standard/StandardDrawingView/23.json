@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "selectionChanged",
+  "brief": "protected void selectionChanged(){}",
+  "methodSignature": "selectionChanged()",
+  "sourceCode": "protected void selectionChanged() {\n        fEditor.selectionChanged(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "selectionChanged(DrawingView)"
+    ]
+  },
+  "full_method_info": "/**\n * Informs that the current selection changed.\n * By default this event is forwarded to the\n * drawing editor.\n */\nprotected void selectionChanged() {\n    fEditor.selectionChanged(this);\n}",
+  "method_comment": "\n     * Informs that the current selection changed.\n     * By default this event is forwarded to the\n     * drawing editor.\n     ",
+  "method_annotation": ""
+}

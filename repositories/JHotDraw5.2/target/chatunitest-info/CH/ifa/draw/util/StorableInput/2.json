@@ -1,0 +1,26 @@
+{
+  "className": "StorableInput",
+  "methodName": "readInt",
+  "brief": "public int readInt() throws IOException{}",
+  "methodSignature": "readInt()",
+  "sourceCode": "public int readInt() throws IOException {\n        int token = fTokenizer.nextToken();\n        if (token == StreamTokenizer.TT_NUMBER)\n            return (int) fTokenizer.nval;\n\n        String msg = \"Integer expected in line: \" + fTokenizer.lineno();\n        IOException exception =  new IOException(msg);\n        exception.printStackTrace();\n        throw new IOException(msg);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.StreamTokenizer": [
+      "lineno()",
+      "nextToken()"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads an int from the input stream.\n */\npublic int readInt() throws IOException {\n    int token = fTokenizer.nextToken();\n    if (token == StreamTokenizer.TT_NUMBER)\n        return (int) fTokenizer.nval;\n    String msg = \"Integer expected in line: \" + fTokenizer.lineno();\n    IOException exception = new IOException(msg);\n    exception.printStackTrace();\n    throw new IOException(msg);\n}",
+  "method_comment": "\n     * Reads an int from the input stream.\n     ",
+  "method_annotation": ""
+}

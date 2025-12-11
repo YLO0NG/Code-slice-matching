@@ -1,0 +1,21 @@
+{
+  "className": "Drawing",
+  "methodName": "findFigure",
+  "brief": "public Figure findFigure(int x, int y);",
+  "methodSignature": "findFigure(int, int)",
+  "sourceCode": "public Figure findFigure(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Finds a top level Figure. Use this call for hit detection that\n * should not descend into the figure's children.\n */\npublic Figure findFigure(int x, int y);",
+  "method_comment": "\n     * Finds a top level Figure. Use this call for hit detection that\n     * should not descend into the figure's children.\n     ",
+  "method_annotation": ""
+}

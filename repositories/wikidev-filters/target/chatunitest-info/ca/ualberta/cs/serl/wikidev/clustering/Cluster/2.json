@@ -1,0 +1,27 @@
+{
+  "className": "Cluster",
+  "methodName": "addCoordinate",
+  "brief": "public void addCoordinate(IArtifact artifact, ClusterPoint point){}",
+  "methodSignature": "addCoordinate(IArtifact, ClusterPoint)",
+  "sourceCode": "public void addCoordinate(IArtifact artifact, ClusterPoint point) {\n\t\tcoordinates.put(artifact, point);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "ClusterPoint"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.ClusterPoint": [],
+    "java.util.HashMap": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "public void addCoordinate(IArtifact artifact, ClusterPoint point) {\n    coordinates.put(artifact, point);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

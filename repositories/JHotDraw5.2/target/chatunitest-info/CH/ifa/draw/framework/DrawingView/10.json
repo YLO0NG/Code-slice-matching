@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "getPreferredSize",
+  "brief": "public Dimension getPreferredSize();",
+  "methodSignature": "getPreferredSize()",
+  "sourceCode": "public Dimension getPreferredSize();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the preferred dimension of the drawing..\n */\npublic Dimension getPreferredSize();",
+  "method_comment": "\n     * Gets the preferred dimension of the drawing..\n     ",
+  "method_annotation": ""
+}

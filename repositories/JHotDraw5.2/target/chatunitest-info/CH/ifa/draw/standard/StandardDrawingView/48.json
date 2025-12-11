@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "removeForeground",
+  "brief": "public void removeForeground(Painter painter) {}",
+  "methodSignature": "removeForeground(Painter)",
+  "sourceCode": "public void removeForeground(Painter painter)  {\n        if (fForegrounds != null)\n            fForegrounds.removeElement(painter);\n        repaint();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Painter"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Painter": [],
+    "java.util.Vector": [
+      "removeElement(Object)"
+    ],
+    "java.awt.Component": [
+      "repaint()"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a foreground.\n */\npublic void removeForeground(Painter painter) {\n    if (fForegrounds != null)\n        fForegrounds.removeElement(painter);\n    repaint();\n}",
+  "method_comment": "\n     * Removes a foreground.\n     ",
+  "method_annotation": ""
+}

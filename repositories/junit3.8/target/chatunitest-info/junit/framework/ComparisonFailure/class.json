@@ -1,0 +1,50 @@
+{
+  "fullClassName": "junit.framework.ComparisonFailure",
+  "className": "ComparisonFailure",
+  "index": 11,
+  "modifier": "[public ]",
+  "extend": "[AssertionFailedError]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public class ComparisonFailure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "private String fExpected;",
+    "private String fActual;"
+  ],
+  "superClasses": [
+    "AssertionFailedError"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getMessage()": "0",
+    "ComparisonFailure(String, String, String)": "1"
+  },
+  "methodsBrief": [
+    "public String getMessage(){}",
+    "public ComparisonFailure (String message, String expected, String actual){}"
+  ],
+  "constructorSigs": [
+    "ComparisonFailure(String, String, String)"
+  ],
+  "constructorBrief": [
+    "public ComparisonFailure (String message, String expected, String actual){}"
+  ],
+  "getterSetterSigs": [
+    "getMessage()"
+  ],
+  "getterSetterBrief": [
+    "public String getMessage(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package junit.framework;\r\n\r\n/**\r\n * Thrown when an assert equals for Strings failed.\r\n *\r\n * Inspired by a patch from Alex Chaffee mailto:alex@purpletech.com\r\n */\r\npublic class ComparisonFailure extends AssertionFailedError {\r\n\r\n    private String fExpected;\r\n\r\n    private String fActual;\r\n\r\n    public ComparisonFailure(String message, String expected, String actual) {\r\n        super(message);\r\n        fExpected = expected;\r\n        fActual = actual;\r\n    }\r\n\r\n    /**\r\n     * Returns \"...\" in place of common prefix and \"...\" in\r\n     * place of common suffix between expected and actual.\r\n     *\r\n     * @see java.lang.Throwable#getMessage()\r\n     */\r\n    public String getMessage() {\r\n        String formatted = \"\";\r\n        String message = super.getMessage();\r\n        int end = Math.min(fExpected.length(), fActual.length());\r\n        int i = 0;\r\n        for (; i < end; i++) {\r\n            if (fExpected.charAt(i) != fActual.charAt(i))\r\n                break;\r\n        }\r\n        int j = fExpected.length() - 1;\r\n        int k = fActual.length() - 1;\r\n        for (; k >= i && j >= i; k--, j--) {\r\n            if (fExpected.charAt(j) != fActual.charAt(k))\r\n                break;\r\n        }\r\n        String actual, expected;\r\n        // equal strings\r\n        if (j < i && k < i) {\r\n            expected = fExpected;\r\n            actual = fActual;\r\n        } else {\r\n            expected = fExpected.substring(i, j + 1);\r\n            actual = fActual.substring(i, k + 1);\r\n            if (i <= end && i > 0) {\r\n                expected = \"...\" + expected;\r\n                actual = \"...\" + actual;\r\n            }\r\n            if (j < fExpected.length() - 1)\r\n                expected = expected + \"...\";\r\n            if (k < fActual.length() - 1)\r\n                actual = actual + \"...\";\r\n        }\r\n        if (message != null)\r\n            formatted = message + \": \";\r\n        return formatted + \"expected:<\" + expected + \"> but was:<\" + actual + \">\";\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * Thrown when an assert equals for Strings failed.\r\n *\r\n * Inspired by a patch from Alex Chaffee mailto:alex@purpletech.com\r\n */\r\npublic class ComparisonFailure extends AssertionFailedError {\r\n\r\n    private String fExpected;\r\n\r\n    private String fActual;\r\n\r\n    public ComparisonFailure(String message, String expected, String actual) {\r\n        super(message);\r\n        fExpected = expected;\r\n        fActual = actual;\r\n    }\r\n\r\n    /**\r\n     * Returns \"...\" in place of common prefix and \"...\" in\r\n     * place of common suffix between expected and actual.\r\n     *\r\n     * @see java.lang.Throwable#getMessage()\r\n     */\r\n    public String getMessage() {\r\n        String formatted = \"\";\r\n        String message = super.getMessage();\r\n        int end = Math.min(fExpected.length(), fActual.length());\r\n        int i = 0;\r\n        for (; i < end; i++) {\r\n            if (fExpected.charAt(i) != fActual.charAt(i))\r\n                break;\r\n        }\r\n        int j = fExpected.length() - 1;\r\n        int k = fActual.length() - 1;\r\n        for (; k >= i && j >= i; k--, j--) {\r\n            if (fExpected.charAt(j) != fActual.charAt(k))\r\n                break;\r\n        }\r\n        String actual, expected;\r\n        // equal strings\r\n        if (j < i && k < i) {\r\n            expected = fExpected;\r\n            actual = fActual;\r\n        } else {\r\n            expected = fExpected.substring(i, j + 1);\r\n            actual = fActual.substring(i, k + 1);\r\n            if (i <= end && i > 0) {\r\n                expected = \"...\" + expected;\r\n                actual = \"...\" + actual;\r\n            }\r\n            if (j < fExpected.length() - 1)\r\n                expected = expected + \"...\";\r\n            if (k < fActual.length() - 1)\r\n                actual = actual + \"...\";\r\n        }\r\n        if (message != null)\r\n            formatted = message + \": \";\r\n        return formatted + \"expected:<\" + expected + \"> but was:<\" + actual + \">\";\r\n    }\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createToolPalette",
+  "brief": "protected JToolBar createToolPalette(){}",
+  "methodSignature": "createToolPalette()",
+  "sourceCode": "protected JToolBar createToolPalette() {\n        JToolBar palette = new JToolBar();\n        palette.setBackground(Color.lightGray);\n        // use standard FlowLayout for JToolBar\n        // palette.setLayout(new PaletteLayout(2,new Point(2,2)));\n        return palette;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JComponent": [
+      "setBackground(Color)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the tool palette.\n */\nprotected JToolBar createToolPalette() {\n    JToolBar palette = new JToolBar();\n    palette.setBackground(Color.lightGray);\n    // use standard FlowLayout for JToolBar\n    // palette.setLayout(new PaletteLayout(2,new Point(2,2)));\n    return palette;\n}",
+  "method_comment": "\n     * Creates the tool palette.\n     ",
+  "method_annotation": ""
+}

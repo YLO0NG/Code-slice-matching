@@ -1,0 +1,28 @@
+{
+  "className": "PurchaseOrderAction",
+  "methodName": "update",
+  "brief": "public String update() throws Exception{}",
+  "methodSignature": "update()",
+  "sourceCode": "public String update() throws Exception {\n\t\tlogger.info( \"Starting update()\" ); //f:log\n\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\tsess.update( this.purchaseOrder ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close(); //f:hibernate\n\n\t\tfor (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems()){\n\t\t\titem.setPurchaseOrder( this.purchaseOrder );\n\t\t}\n\t\t\n\t\tthis.task = SystemConstants.UD_MODE;\n\t\tthis.addActionMessage( this.getText( \"updateSuccessful\", new String[] { \"order\" } ) );\n\n\t\tlogger.info( \"Finishing update()\" ); //f:log\n\t\treturn INPUT;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "classes.HibernateUtil": [
+      "getSessionFactory()"
+    ],
+    "classes.PurchaseOrder": [
+      "getPurchaseOrderItems()"
+    ],
+    "classes.PurchaseOrderItem": [
+      "setPurchaseOrder(PurchaseOrder)"
+    ]
+  },
+  "full_method_info": "public String update() throws Exception {\n    // f:log\n    logger.info(\"Starting update()\");\n    // f:hibernate\n    Session sess = HibernateUtil.getSessionFactory().openSession();\n    // f:hibernate\n    Transaction t = sess.beginTransaction();\n    // f:hibernate\n    sess.update(this.purchaseOrder);\n    // f:hibernate\n    t.commit();\n    // f:hibernate\n    sess.close();\n    for (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems()) {\n        item.setPurchaseOrder(this.purchaseOrder);\n    }\n    this.task = SystemConstants.UD_MODE;\n    this.addActionMessage(this.getText(\"updateSuccessful\", new String[] { \"order\" }));\n    // f:log\n    logger.info(\"Finishing update()\");\n    return INPUT;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "URLTool",
+  "methodName": "endAction",
+  "brief": "public void endAction(ActionEvent e){}",
+  "methodSignature": "endAction(ActionEvent)",
+  "sourceCode": "public void endAction(ActionEvent e) {\n        endEdit();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ActionEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.ActionEvent": [],
+    "CH.ifa.draw.samples.javadraw.URLTool": [
+      "endEdit()"
+    ]
+  },
+  "full_method_info": "public void endAction(ActionEvent e) {\n    endEdit();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

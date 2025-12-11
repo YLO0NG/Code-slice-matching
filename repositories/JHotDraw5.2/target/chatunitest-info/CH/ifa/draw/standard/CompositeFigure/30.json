@@ -1,0 +1,31 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        int size = dr.readInt();\n        fFigures = new Vector(size);\n        for (int i=0; i<size; i++)\n            add((Figure)dr.readStorable());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readStorable()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "read(StorableInput)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the contained figures from StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    int size = dr.readInt();\n    fFigures = new Vector(size);\n    for (int i = 0; i < size; i++) add((Figure) dr.readStorable());\n}",
+  "method_comment": "\n     * Reads the contained figures from StorableInput.\n     ",
+  "method_annotation": ""
+}

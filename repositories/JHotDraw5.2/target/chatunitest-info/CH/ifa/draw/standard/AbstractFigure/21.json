@@ -1,0 +1,22 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "willChange",
+  "brief": "public void willChange(){}",
+  "methodSignature": "willChange()",
+  "sourceCode": "public void willChange() {\n        invalidate();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "invalidate()"
+    ]
+  },
+  "full_method_info": "/**\n * Informes that a figure is about to change something that\n * affects the contents of its display box.\n *\n * @see Figure#willChange\n */\npublic void willChange() {\n    invalidate();\n}",
+  "method_comment": "\n     * Informes that a figure is about to change something that\n     * affects the contents of its display box.\n     *\n     * @see Figure#willChange\n     ",
+  "method_annotation": ""
+}

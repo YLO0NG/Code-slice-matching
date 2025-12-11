@@ -1,0 +1,60 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.AlignCommand",
+  "className": "AlignCommand",
+  "index": 98,
+  "modifier": "[public ]",
+  "extend": "[Command]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class AlignCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import java.awt.*;",
+    "import CH.ifa.draw.util.Command;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private DrawingView fView;",
+    "private int fOp;",
+    "public final static int LEFTS = 0;",
+    "public final static int CENTERS = 1;",
+    "public final static int RIGHTS = 2;",
+    "public final static int TOPS = 3;",
+    "public final static int MIDDLES = 4;",
+    "public final static int BOTTOMS = 5;"
+  ],
+  "superClasses": [
+    "Command"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "isExecutable()": "0",
+    "execute()": "1",
+    "AlignCommand(String, DrawingView, int)": "2"
+  },
+  "methodsBrief": [
+    "public boolean isExecutable(){}",
+    "public void execute(){}",
+    "public AlignCommand(String name, DrawingView view, int op){}"
+  ],
+  "constructorSigs": [
+    "AlignCommand(String, DrawingView, int)"
+  ],
+  "constructorBrief": [
+    "public AlignCommand(String name, DrawingView view, int op){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)AlignCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport java.awt.*;\nimport CH.ifa.draw.util.Command;\nimport CH.ifa.draw.framework.*;\n\n/**\n * Align a selection of figures relative to each other.\n */\npublic class AlignCommand extends Command {\n\n    private DrawingView fView;\n\n    private int fOp;\n\n    /**\n     * align left sides\n     */\n    public final static int LEFTS = 0;\n\n    /**\n     * align centers (horizontally)\n     */\n    public final static int CENTERS = 1;\n\n    /**\n     * align right sides\n     */\n    public final static int RIGHTS = 2;\n\n    /**\n     * align tops\n     */\n    public final static int TOPS = 3;\n\n    /**\n     * align middles (vertically)\n     */\n    public final static int MIDDLES = 4;\n\n    /**\n     * align bottoms\n     */\n    public final static int BOTTOMS = 5;\n\n    public AlignCommand(String name, DrawingView view, int op) {\n        super(name);\n        fView = view;\n        fOp = op;\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 1;\n    }\n\n    public void execute() {\n        FigureEnumeration selection = fView.selectionElements();\n        Figure anchorFigure = selection.nextFigure();\n        Rectangle r = anchorFigure.displayBox();\n        while (selection.hasMoreElements()) {\n            Figure f = selection.nextFigure();\n            Rectangle rr = f.displayBox();\n            switch(fOp) {\n                case LEFTS:\n                    f.moveBy(r.x - rr.x, 0);\n                    break;\n                case CENTERS:\n                    f.moveBy((r.x + r.width / 2) - (rr.x + rr.width / 2), 0);\n                    break;\n                case RIGHTS:\n                    f.moveBy((r.x + r.width) - (rr.x + rr.width), 0);\n                    break;\n                case TOPS:\n                    f.moveBy(0, r.y - rr.y);\n                    break;\n                case MIDDLES:\n                    f.moveBy(0, (r.y + r.height / 2) - (rr.y + rr.height / 2));\n                    break;\n                case BOTTOMS:\n                    f.moveBy(0, (r.y + r.height) - (rr.y + rr.height));\n                    break;\n            }\n        }\n        fView.checkDamage();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Align a selection of figures relative to each other.\n */\npublic class AlignCommand extends Command {\n\n    private DrawingView fView;\n\n    private int fOp;\n\n    /**\n     * align left sides\n     */\n    public final static int LEFTS = 0;\n\n    /**\n     * align centers (horizontally)\n     */\n    public final static int CENTERS = 1;\n\n    /**\n     * align right sides\n     */\n    public final static int RIGHTS = 2;\n\n    /**\n     * align tops\n     */\n    public final static int TOPS = 3;\n\n    /**\n     * align middles (vertically)\n     */\n    public final static int MIDDLES = 4;\n\n    /**\n     * align bottoms\n     */\n    public final static int BOTTOMS = 5;\n\n    public AlignCommand(String name, DrawingView view, int op) {\n        super(name);\n        fView = view;\n        fOp = op;\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 1;\n    }\n\n    public void execute() {\n        FigureEnumeration selection = fView.selectionElements();\n        Figure anchorFigure = selection.nextFigure();\n        Rectangle r = anchorFigure.displayBox();\n        while (selection.hasMoreElements()) {\n            Figure f = selection.nextFigure();\n            Rectangle rr = f.displayBox();\n            switch(fOp) {\n                case LEFTS:\n                    f.moveBy(r.x - rr.x, 0);\n                    break;\n                case CENTERS:\n                    f.moveBy((r.x + r.width / 2) - (rr.x + rr.width / 2), 0);\n                    break;\n                case RIGHTS:\n                    f.moveBy((r.x + r.width) - (rr.x + rr.width), 0);\n                    break;\n                case TOPS:\n                    f.moveBy(0, r.y - rr.y);\n                    break;\n                case MIDDLES:\n                    f.moveBy(0, (r.y + r.height / 2) - (rr.y + rr.height / 2));\n                    break;\n                case BOTTOMS:\n                    f.moveBy(0, (r.y + r.height) - (rr.y + rr.height));\n                    break;\n            }\n        }\n        fView.checkDamage();\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,47 @@
+{
+  "className": "TestRunner",
+  "methodName": "doRunTest",
+  "brief": "private void doRunTest(final Test testSuite){}",
+  "methodSignature": "doRunTest(Test)",
+  "sourceCode": "private void doRunTest(final Test testSuite) {\r\n\t\tsetButtonLabel(fRun, \"Stop\");\r\n\t\tfRunner= new Thread(\"TestRunner-Thread\") {\r\n\t\t\tpublic void run() {\r\n\t\t\t\tTestRunner.this.start(testSuite);\r\n\t\t\t\tpostInfo(\"Running...\");\r\n\r\n\t\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\t\ttestSuite.run(fTestResult);\r\n\r\n\t\t\t\tif (fTestResult.shouldStop()) {\r\n\t\t\t\t\tpostStatus(\"Stopped\");\r\n\t\t\t\t} else {\r\n\t\t\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\t\t\tlong runTime= endTime-startTime;\r\n\t\t\t\t\tpostInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n\t\t\t\t}\r\n\t\t\t\trunFinished(testSuite);\r\n\t\t\t\tsetButtonLabel(fRun, \"Run\");\r\n\t\t\t\tfRunner= null;\r\n\t\t\t\tSystem.gc();\r\n\t\t\t}\r\n\t\t};\r\n\t\t// make sure that the test result is created before we start the\r\n\t\t// test runner thread so that listeners can register for it.\r\n\t\tfTestResult= createTestResult();\r\n\t\tfTestResult.addListener(TestRunner.this);\r\n\t\taboutToStart(testSuite);\r\n\r\n\t\tfRunner.start();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [
+      "run(TestResult)"
+    ],
+    "junit.swingui.TestRunner": [
+      "setButtonLabel(JButton, String)",
+      "postInfo(String)",
+      "runFinished(Test)",
+      "postStatus(String)",
+      "aboutToStart(Test)",
+      "createTestResult()",
+      "start(Test)"
+    ],
+    "java.lang.System": [
+      "currentTimeMillis()",
+      "gc()"
+    ],
+    "junit.framework.TestResult": [
+      "addListener(TestListener)",
+      "shouldStop()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "elapsedTimeAsString(long)"
+    ],
+    "java.lang.Thread": [
+      "start()"
+    ]
+  },
+  "full_method_info": "private void doRunTest(final Test testSuite) {\r\n    setButtonLabel(fRun, \"Stop\");\r\n    fRunner = new Thread(\"TestRunner-Thread\") {\r\n\r\n        public void run() {\r\n            TestRunner.this.start(testSuite);\r\n            postInfo(\"Running...\");\r\n            long startTime = System.currentTimeMillis();\r\n            testSuite.run(fTestResult);\r\n            if (fTestResult.shouldStop()) {\r\n                postStatus(\"Stopped\");\r\n            } else {\r\n                long endTime = System.currentTimeMillis();\r\n                long runTime = endTime - startTime;\r\n                postInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n            }\r\n            runFinished(testSuite);\r\n            setButtonLabel(fRun, \"Run\");\r\n            fRunner = null;\r\n            System.gc();\r\n        }\r\n    };\r\n    // make sure that the test result is created before we start the\r\n    // test runner thread so that listeners can register for it.\r\n    fTestResult = createTestResult();\r\n    fTestResult.addListener(TestRunner.this);\r\n    aboutToStart(testSuite);\r\n    fRunner.start();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

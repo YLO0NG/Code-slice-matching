@@ -1,0 +1,28 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "getDefaultAttribute",
+  "brief": "public static Object getDefaultAttribute(String name){}",
+  "methodSignature": "getDefaultAttribute(String)",
+  "sourceCode": "public static Object getDefaultAttribute(String name) {\n        if (fgDefaultAttributes == null)\n            initializeAttributes();\n        return fgDefaultAttributes.get(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "initializeAttributes()"
+    ],
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "get(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets a the default value for a named attribute\n * @see #getAttribute\n */\npublic static Object getDefaultAttribute(String name) {\n    if (fgDefaultAttributes == null)\n        initializeAttributes();\n    return fgDefaultAttributes.get(name);\n}",
+  "method_comment": "\n     * Gets a the default value for a named attribute\n     * @see #getAttribute\n     ",
+  "method_annotation": ""
+}

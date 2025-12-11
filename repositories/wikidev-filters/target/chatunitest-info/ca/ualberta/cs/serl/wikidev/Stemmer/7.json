@@ -1,0 +1,22 @@
+{
+  "className": "Stemmer",
+  "methodName": "vowelinstem",
+  "brief": "private final boolean vowelinstem()\r\n  {}",
+  "methodSignature": "vowelinstem()",
+  "sourceCode": "private final boolean vowelinstem()\n   {  int i; for (i = 0; i <= j; i++) if (! cons(i)) return true;\n      return false;\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "cons(int)"
+    ]
+  },
+  "full_method_info": "/* vowelinstem() is true <=> 0,...j contains a vowel */\nprivate final boolean vowelinstem() {\n    int i;\n    for (i = 0; i <= j; i++) if (!cons(i))\n        return true;\n    return false;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

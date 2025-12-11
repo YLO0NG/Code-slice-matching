@@ -1,0 +1,36 @@
+{
+  "className": "MDI_InternalFrame",
+  "methodName": "replaceDrawingView",
+  "brief": "public StandardDrawingView replaceDrawingView(StandardDrawingView newDrawingView){}",
+  "methodSignature": "replaceDrawingView(StandardDrawingView)",
+  "sourceCode": "public StandardDrawingView replaceDrawingView(StandardDrawingView newDrawingView) {\n\t\tStandardDrawingView oldDrawingView = findDrawingView(newDrawingView, getContentPane());\n\t\tif (oldDrawingView != null) {\n\t\t\tContainer parent = ((StandardDrawingView)oldDrawingView).getParent();\n\t\t\tparent.remove(oldDrawingView);\n\t\t\tparent.add(newDrawingView);\n\t\t\tsetDrawingView(newDrawingView);\n\t\t\treturn oldDrawingView;\n\t\t}\n\t\telse {\n\t\t\t//DrawingView not found\n\t\t\treturn null;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "CH.ifa.draw.contrib.MDI_InternalFrame": [
+      "setDrawingView(DrawingView)",
+      "findDrawingView(StandardDrawingView, Container)"
+    ],
+    "javax.swing.JInternalFrame": [
+      "getContentPane()"
+    ],
+    "java.awt.Component": [
+      "getParent()"
+    ],
+    "java.awt.Container": [
+      "remove(Component)",
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "/**\n * Replace an existing drawing view with a new one. A JHotDraw application can\n * have only one DrawingView active at a time. Therefore, the currently active\n * internal frame gets the active DrawingView after its Drawing view has\n * been backed up for later restorage.\n *\n * @parame\tnewDrawingView\tDrawingView which should replace the current one\n */\npublic StandardDrawingView replaceDrawingView(StandardDrawingView newDrawingView) {\n    StandardDrawingView oldDrawingView = findDrawingView(newDrawingView, getContentPane());\n    if (oldDrawingView != null) {\n        Container parent = ((StandardDrawingView) oldDrawingView).getParent();\n        parent.remove(oldDrawingView);\n        parent.add(newDrawingView);\n        setDrawingView(newDrawingView);\n        return oldDrawingView;\n    } else {\n        // DrawingView not found\n        return null;\n    }\n}",
+  "method_comment": "\n     * Replace an existing drawing view with a new one. A JHotDraw application can\n     * have only one DrawingView active at a time. Therefore, the currently active\n     * internal frame gets the active DrawingView after its Drawing view has\n     * been backed up for later restorage.\n     *\n     * @parame\tnewDrawingView\tDrawingView which should replace the current one\n     ",
+  "method_annotation": ""
+}

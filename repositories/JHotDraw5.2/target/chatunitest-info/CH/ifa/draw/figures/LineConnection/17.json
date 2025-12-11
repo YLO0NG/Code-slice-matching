@@ -1,0 +1,22 @@
+{
+  "className": "LineConnection",
+  "methodName": "endPoint",
+  "brief": "public Point endPoint(){}",
+  "methodSignature": "endPoint()",
+  "sourceCode": "public Point endPoint() {\n        Point p = (Point)fPoints.lastElement();\n        return new Point(p.x, p.y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "lastElement()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the end point.\n */\npublic Point endPoint() {\n    Point p = (Point) fPoints.lastElement();\n    return new Point(p.x, p.y);\n}",
+  "method_comment": "\n     * Gets the end point.\n     ",
+  "method_annotation": ""
+}

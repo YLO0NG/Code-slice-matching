@@ -1,0 +1,18 @@
+{
+  "className": "Drawing",
+  "methodName": "release",
+  "brief": "public void release();",
+  "methodSignature": "release()",
+  "sourceCode": "public void release();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Releases the drawing and its contained figures.\n */\npublic void release();",
+  "method_comment": "\n     * Releases the drawing and its contained figures.\n     ",
+  "method_annotation": ""
+}

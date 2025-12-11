@@ -1,0 +1,22 @@
+{
+  "className": "LoginAction",
+  "methodName": "setUser",
+  "brief": "public void setUser( User user ){}",
+  "methodSignature": "setUser(User)",
+  "sourceCode": "public void setUser( User user ) {\n\t\tthis.user = user;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "classes.User": []
+  },
+  "full_method_info": "public void setUser(User user) {\n    this.user = user;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

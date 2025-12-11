@@ -1,0 +1,29 @@
+{
+  "className": "LoadingTestCollector",
+  "methodName": "classFromFile",
+  "brief": "Class classFromFile(String classFileName) throws ClassNotFoundException{}",
+  "methodSignature": "classFromFile(String)",
+  "sourceCode": "Class classFromFile(String classFileName) throws ClassNotFoundException {\r\n\t\tString className= classNameFromFile(classFileName);\r\n\t\tif (!fLoader.isExcluded(className))\r\n\t\t\treturn fLoader.loadClass(className, false);\r\n\t\treturn null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.runner.ClassPathTestCollector": [
+      "classNameFromFile(String)"
+    ],
+    "junit.runner.TestCaseClassLoader": [
+      "isExcluded(String)",
+      "loadClass(String, boolean)"
+    ]
+  },
+  "full_method_info": "Class classFromFile(String classFileName) throws ClassNotFoundException {\r\n    String className = classNameFromFile(classFileName);\r\n    if (!fLoader.isExcluded(className))\r\n        return fLoader.loadClass(className, false);\r\n    return null;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

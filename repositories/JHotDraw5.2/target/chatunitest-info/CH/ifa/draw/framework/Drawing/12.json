@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "add",
+  "brief": "public Figure add(Figure figure);",
+  "methodSignature": "add(Figure)",
+  "sourceCode": "public Figure add(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Adds a figure and sets its container to refer\n * to this drawing.\n * @return the figure that was inserted.\n */\npublic Figure add(Figure figure);",
+  "method_comment": "\n     * Adds a figure and sets its container to refer\n     * to this drawing.\n     * @return the figure that was inserted.\n     ",
+  "method_annotation": ""
+}

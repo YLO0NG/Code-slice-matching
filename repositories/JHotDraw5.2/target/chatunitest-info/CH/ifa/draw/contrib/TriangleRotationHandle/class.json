@@ -1,0 +1,69 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.TriangleRotationHandle",
+  "className": "TriangleRotationHandle",
+  "index": 20,
+  "modifier": "[]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "class TriangleRotationHandle",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Color;",
+    "import java.awt.Graphics;",
+    "import java.awt.Point;",
+    "import java.awt.Polygon;",
+    "import java.awt.Rectangle;",
+    "import CH.ifa.draw.framework.Drawing;",
+    "import CH.ifa.draw.standard.AbstractHandle;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "private Point fOrigin = null;",
+    "private Point fCenter = null;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStart(int, int, Drawing)": "0",
+    "invokeStep(int, int, Drawing)": "1",
+    "invokeEnd(int, int, Drawing)": "2",
+    "locate()": "3",
+    "getOrigin()": "4",
+    "draw(Graphics)": "5",
+    "TriangleRotationHandle(TriangleFigure)": "6"
+  },
+  "methodsBrief": [
+    "public void invokeStart(int  x, int  y, Drawing drawing){}",
+    "public void invokeStep (int dx, int dy, Drawing drawing){}",
+    "public void invokeEnd  (int dx, int dy, Drawing drawing){}",
+    "public Point locate(){}",
+    "Point getOrigin(){}",
+    "public void draw(Graphics g){}",
+    "public TriangleRotationHandle(TriangleFigure owner){}"
+  ],
+  "constructorSigs": [
+    "TriangleRotationHandle(TriangleFigure)"
+  ],
+  "constructorBrief": [
+    "public TriangleRotationHandle(TriangleFigure owner){}"
+  ],
+  "getterSetterSigs": [
+    "getOrigin()"
+  ],
+  "getterSetterBrief": [
+    "Point getOrigin(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.contrib.TriangleFigure": []
+  },
+  "compilationUnitCode": "/*\n * Sun Mar  2 19:15:28 1997  Doug Lea  (dl at gee)\n * Based on RadiusHandle\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Color;\nimport java.awt.Graphics;\nimport java.awt.Point;\nimport java.awt.Polygon;\nimport java.awt.Rectangle;\nimport CH.ifa.draw.framework.Drawing;\nimport CH.ifa.draw.standard.AbstractHandle;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * A Handle to rotate a TriangleFigure\n */\nclass TriangleRotationHandle extends AbstractHandle {\n\n    private Point fOrigin = null;\n\n    private Point fCenter = null;\n\n    public TriangleRotationHandle(TriangleFigure owner) {\n        super(owner);\n    }\n\n    public void invokeStart(int x, int y, Drawing drawing) {\n        fCenter = owner().center();\n        fOrigin = getOrigin();\n    }\n\n    public void invokeStep(int dx, int dy, Drawing drawing) {\n        double angle = Math.atan2(fOrigin.y + dy - fCenter.y, fOrigin.x + dx - fCenter.x);\n        ((TriangleFigure) (owner())).rotate(angle);\n    }\n\n    public void invokeEnd(int dx, int dy, Drawing drawing) {\n        fOrigin = null;\n        fCenter = null;\n    }\n\n    public Point locate() {\n        return getOrigin();\n    }\n\n    Point getOrigin() {\n        // find a nice place to put handle\n        // almost same code as PolygonScaleHandle\n        Polygon p = ((TriangleFigure) (owner())).polygon();\n        Point first = new Point(p.xpoints[0], p.ypoints[0]);\n        Point ctr = owner().center();\n        double len = Geom.length(first.x, first.y, ctr.x, ctr.y);\n        if (// best we can do?\n        len == 0)\n            return new Point(first.x - HANDLESIZE / 2, first.y + HANDLESIZE / 2);\n        double u = HANDLESIZE / len;\n        if (// best we can do?\n        u > 1.0)\n            return new Point((first.x * 3 + ctr.x) / 4, (first.y * 3 + ctr.y) / 4);\n        else\n            return new Point((int) (first.x * (1.0 - u) + ctr.x * u), (int) (first.y * (1.0 - u) + ctr.y * u));\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Handle to rotate a TriangleFigure\n */\nclass TriangleRotationHandle extends AbstractHandle {\n\n    private Point fOrigin = null;\n\n    private Point fCenter = null;\n\n    public TriangleRotationHandle(TriangleFigure owner) {\n        super(owner);\n    }\n\n    public void invokeStart(int x, int y, Drawing drawing) {\n        fCenter = owner().center();\n        fOrigin = getOrigin();\n    }\n\n    public void invokeStep(int dx, int dy, Drawing drawing) {\n        double angle = Math.atan2(fOrigin.y + dy - fCenter.y, fOrigin.x + dx - fCenter.x);\n        ((TriangleFigure) (owner())).rotate(angle);\n    }\n\n    public void invokeEnd(int dx, int dy, Drawing drawing) {\n        fOrigin = null;\n        fCenter = null;\n    }\n\n    public Point locate() {\n        return getOrigin();\n    }\n\n    Point getOrigin() {\n        // find a nice place to put handle\n        // almost same code as PolygonScaleHandle\n        Polygon p = ((TriangleFigure) (owner())).polygon();\n        Point first = new Point(p.xpoints[0], p.ypoints[0]);\n        Point ctr = owner().center();\n        double len = Geom.length(first.x, first.y, ctr.x, ctr.y);\n        if (// best we can do?\n        len == 0)\n            return new Point(first.x - HANDLESIZE / 2, first.y + HANDLESIZE / 2);\n        double u = HANDLESIZE / len;\n        if (// best we can do?\n        u > 1.0)\n            return new Point((first.x * 3 + ctr.x) / 4, (first.y * 3 + ctr.y) / 4);\n        else\n            return new Point((int) (first.x * (1.0 - u) + ctr.x * u), (int) (first.y * (1.0 - u) + ctr.y * u));\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n}",
+  "subClasses": []
+}

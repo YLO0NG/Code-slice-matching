@@ -1,0 +1,26 @@
+{
+  "className": "Wiki",
+  "methodName": "Wiki",
+  "brief": "public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp){}",
+  "methodSignature": "Wiki(int, int, String, Timestamp)",
+  "sourceCode": "public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp) {\n\t\tthis.page_id = page_id;\n\t\tthis.page_namespace_id = page_namespace_id;\n\t\tthis.page_title = page_title;\n\t\tthis.timestamp = timestamp;\n\t\tthis.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n\t\tthis.revisions = new ArrayList<WikiRevision>();\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "String",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public Wiki(int page_id, int page_namespace_id, String page_title, Timestamp timestamp) {\n    this.page_id = page_id;\n    this.page_namespace_id = page_namespace_id;\n    this.page_title = page_title;\n    this.timestamp = timestamp;\n    this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n    this.revisions = new ArrayList<WikiRevision>();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

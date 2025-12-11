@@ -1,0 +1,25 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y){}",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y) {\n        return fComponent.containsPoint(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "containsPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards containsPoint to its contained figure.\n */\npublic boolean containsPoint(int x, int y) {\n    return fComponent.containsPoint(x, y);\n}",
+  "method_comment": "\n     * Forwards containsPoint to its contained figure.\n     ",
+  "method_annotation": ""
+}

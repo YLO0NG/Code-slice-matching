@@ -1,0 +1,45 @@
+{
+  "className": "IndustrialLayout",
+  "methodName": "setTimeCreatedBeforeDate",
+  "brief": "public void setTimeCreatedBeforeDate(SVNFile file, Timestamp timestamp){}",
+  "methodSignature": "setTimeCreatedBeforeDate(SVNFile, Timestamp)",
+  "sourceCode": "public void setTimeCreatedBeforeDate(SVNFile file, Timestamp timestamp) {\n\t\tfile.setCreated(Timestamp.valueOf(\"2015-01-01 00:00:00\"));\n\t\tfor(ChangeSet changeset : changesets) {\n\t\t\tfor(ChangeSetDetail detail : changeset.getChangesetDetails()) {\n\t\t\t\tif(detail.getFilename().equals(file.getName()) && detail.getTimestamp().before(timestamp) && detail.getTimestamp().before(file.getCreated())) {\n\t\t\t\t\tfile.setCreated(detail.getTimestamp());\n\t\t\t\t\tfile.setOwner(changeset.getOwner());\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "SVNFile",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": [
+      "getName()"
+    ],
+    "java.sql.Timestamp": [
+      "valueOf(String)",
+      "before(Timestamp)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getOwner()",
+      "setCreated(Timestamp)",
+      "getCreated()",
+      "setOwner(User)",
+      "getTimestamp()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getChangesetDetails()"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSetDetail": [
+      "getFilename()"
+    ]
+  },
+  "full_method_info": "public void setTimeCreatedBeforeDate(SVNFile file, Timestamp timestamp) {\n    file.setCreated(Timestamp.valueOf(\"2015-01-01 00:00:00\"));\n    for (ChangeSet changeset : changesets) {\n        for (ChangeSetDetail detail : changeset.getChangesetDetails()) {\n            if (detail.getFilename().equals(file.getName()) && detail.getTimestamp().before(timestamp) && detail.getTimestamp().before(file.getCreated())) {\n                file.setCreated(detail.getTimestamp());\n                file.setOwner(changeset.getOwner());\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

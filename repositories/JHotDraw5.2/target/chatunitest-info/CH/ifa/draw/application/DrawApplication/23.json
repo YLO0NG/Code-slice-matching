@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "getDrawingViewSize",
+  "brief": "protected Dimension getDrawingViewSize(){}",
+  "methodSignature": "getDrawingViewSize()",
+  "sourceCode": "protected Dimension getDrawingViewSize() {\n        return new Dimension(800, 800);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Override to define the dimensions of the drawing view.\n */\nprotected Dimension getDrawingViewSize() {\n    return new Dimension(800, 800);\n}",
+  "method_comment": "\n     * Override to define the dimensions of the drawing view.\n     ",
+  "method_annotation": ""
+}

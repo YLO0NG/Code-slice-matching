@@ -1,0 +1,18 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "PolygonFigure",
+  "brief": "public PolygonFigure(){}",
+  "methodSignature": "PolygonFigure()",
+  "sourceCode": "public PolygonFigure() {\n    super();\n  }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public PolygonFigure() {\n    super();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

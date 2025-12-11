@@ -1,0 +1,60 @@
+{
+  "fullClassName": "classes.HibernateQueryResultDataSource",
+  "className": "HibernateQueryResultDataSource",
+  "index": 4,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[JRDataSource]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class HibernateQueryResultDataSource",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Iterator;",
+    "import java.util.List;",
+    "import net.sf.jasperreports.engine.JRDataSource;",
+    "import net.sf.jasperreports.engine.JRException;",
+    "import net.sf.jasperreports.engine.JRField;"
+  ],
+  "fields": [
+    "private String[] fields;",
+    "private Iterator iterator;",
+    "private Object currentValue;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "JRDataSource"
+  ],
+  "methodSigs": {
+    "getFieldValue(JRField)": "0",
+    "next()": "1",
+    "getFieldIndex(String)": "2",
+    "HibernateQueryResultDataSource(List, String[])": "3"
+  },
+  "methodsBrief": [
+    "public Object getFieldValue( JRField field ) throws JRException{}",
+    "public boolean next() throws JRException{}",
+    "private int getFieldIndex( String field ){}",
+    "public HibernateQueryResultDataSource(List list, String[] fields){}"
+  ],
+  "constructorSigs": [
+    "HibernateQueryResultDataSource(List, String[])"
+  ],
+  "constructorBrief": [
+    "public HibernateQueryResultDataSource(List list, String[] fields){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.util.List": [
+      "iterator()"
+    ]
+  },
+  "compilationUnitCode": "package classes;\n\nimport java.util.Iterator;\nimport java.util.List;\nimport net.sf.jasperreports.engine.JRDataSource;\nimport net.sf.jasperreports.engine.JRException;\nimport net.sf.jasperreports.engine.JRField;\n\npublic class HibernateQueryResultDataSource implements JRDataSource {\n\n    private String[] fields;\n\n    private Iterator iterator;\n\n    private Object currentValue;\n\n    public HibernateQueryResultDataSource(List list, String[] fields) {\n        this.fields = fields;\n        this.iterator = list.iterator();\n    }\n\n    public Object getFieldValue(JRField field) throws JRException {\n        Object value = null;\n        int index = getFieldIndex(field.getName());\n        if (index > -1) {\n            Object[] values = (Object[]) currentValue;\n            value = values[index];\n        }\n        return value;\n    }\n\n    public boolean next() throws JRException {\n        currentValue = iterator.hasNext() ? iterator.next() : null;\n        return (currentValue != null);\n    }\n\n    private int getFieldIndex(String field) {\n        int index = -1;\n        for (int i = 0; i < fields.length; i++) {\n            if (fields[i].equals(field)) {\n                index = i;\n                break;\n            }\n        }\n        return index;\n    }\n}\n",
+  "classDeclarationCode": "public class HibernateQueryResultDataSource implements JRDataSource {\n\n    private String[] fields;\n\n    private Iterator iterator;\n\n    private Object currentValue;\n\n    public HibernateQueryResultDataSource(List list, String[] fields) {\n        this.fields = fields;\n        this.iterator = list.iterator();\n    }\n\n    public Object getFieldValue(JRField field) throws JRException {\n        Object value = null;\n        int index = getFieldIndex(field.getName());\n        if (index > -1) {\n            Object[] values = (Object[]) currentValue;\n            value = values[index];\n        }\n        return value;\n    }\n\n    public boolean next() throws JRException {\n        currentValue = iterator.hasNext() ? iterator.next() : null;\n        return (currentValue != null);\n    }\n\n    private int getFieldIndex(String field) {\n        int index = -1;\n        for (int i = 0; i < fields.length; i++) {\n            if (fields[i].equals(field)) {\n                index = i;\n                break;\n            }\n        }\n        return index;\n    }\n}",
+  "subClasses": []
+}

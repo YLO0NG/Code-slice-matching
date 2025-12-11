@@ -1,0 +1,20 @@
+{
+  "className": "Wiki",
+  "methodName": "setPage_id",
+  "brief": "public void setPage_id(int page_id){}",
+  "methodSignature": "setPage_id(int)",
+  "sourceCode": "public void setPage_id(int page_id) {\n\t\tthis.page_id = page_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param page_id\n * @uml.property  name=\"page_id\"\n */\npublic void setPage_id(int page_id) {\n    this.page_id = page_id;\n}",
+  "method_comment": "\n\t * @param page_id\n\t * @uml.property  name=\"page_id\"\n\t ",
+  "method_annotation": ""
+}

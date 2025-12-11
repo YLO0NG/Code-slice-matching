@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "figureInvalidated",
+  "brief": "public void figureInvalidated(FigureChangeEvent e){}",
+  "methodSignature": "figureInvalidated(FigureChangeEvent)",
+  "sourceCode": "public void figureInvalidated(FigureChangeEvent e) {\n        if (fListeners != null) {\n            for (int i = 0; i < fListeners.size(); i++) {\n                DrawingChangeListener l = (DrawingChangeListener)fListeners.elementAt(i);\n                l.drawingInvalidated(new DrawingChangeEvent(this, e.getInvalidatedRectangle()));\n            }\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [
+      "getInvalidatedRectangle()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "CH.ifa.draw.framework.DrawingChangeListener": [
+      "drawingInvalidated(DrawingChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Invalidates a rectangle and merges it with the\n * existing damaged area.\n * @see FigureChangeListener\n */\npublic void figureInvalidated(FigureChangeEvent e) {\n    if (fListeners != null) {\n        for (int i = 0; i < fListeners.size(); i++) {\n            DrawingChangeListener l = (DrawingChangeListener) fListeners.elementAt(i);\n            l.drawingInvalidated(new DrawingChangeEvent(this, e.getInvalidatedRectangle()));\n        }\n    }\n}",
+  "method_comment": "\n     * Invalidates a rectangle and merges it with the\n     * existing damaged area.\n     * @see FigureChangeListener\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,58 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.clustering.ClusterPoint",
+  "className": "ClusterPoint",
+  "index": 26,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.clustering",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.clustering;",
+  "classSignature": "public class ClusterPoint",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "private double x;",
+    "private double y;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getX()": "0",
+    "setX(double)": "1",
+    "getY()": "2",
+    "setY(double)": "3",
+    "ClusterPoint(double, double)": "4"
+  },
+  "methodsBrief": [
+    "public double getX(){}",
+    "public void setX(double x){}",
+    "public double getY(){}",
+    "public void setY(double y){}",
+    "public ClusterPoint(double x, double y){}"
+  ],
+  "constructorSigs": [
+    "ClusterPoint(double, double)"
+  ],
+  "constructorBrief": [
+    "public ClusterPoint(double x, double y){}"
+  ],
+  "getterSetterSigs": [
+    "getX()",
+    "setX(double)",
+    "getY()",
+    "setY(double)"
+  ],
+  "getterSetterBrief": [
+    "public double getX(){}",
+    "public void setX(double x){}",
+    "public double getY(){}",
+    "public void setY(double y){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.clustering;\n\npublic class ClusterPoint {\n\n    private double x;\n\n    private double y;\n\n    public ClusterPoint(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    public double getX() {\n        return x;\n    }\n\n    public void setX(double x) {\n        this.x = x;\n    }\n\n    public double getY() {\n        return y;\n    }\n\n    public void setY(double y) {\n        this.y = y;\n    }\n}\n",
+  "classDeclarationCode": "public class ClusterPoint {\n\n    private double x;\n\n    private double y;\n\n    public ClusterPoint(double x, double y) {\n        this.x = x;\n        this.y = y;\n    }\n\n    public double getX() {\n        return x;\n    }\n\n    public void setX(double x) {\n        this.x = x;\n    }\n\n    public double getY() {\n        return y;\n    }\n\n    public void setY(double y) {\n        this.y = y;\n    }\n}",
+  "subClasses": []
+}

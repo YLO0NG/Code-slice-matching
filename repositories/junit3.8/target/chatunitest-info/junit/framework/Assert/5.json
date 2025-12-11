@@ -1,0 +1,22 @@
+{
+  "className": "Assert",
+  "methodName": "fail",
+  "brief": "static public void fail(){}",
+  "methodSignature": "fail()",
+  "sourceCode": "static public void fail() {\r\n\t\tfail(null);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "fail(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Fails a test with no message.\r\n */\r\nstatic public void fail() {\r\n    fail(null);\r\n}",
+  "method_comment": "\r\n\t * Fails a test with no message.\r\n\t ",
+  "method_annotation": ""
+}

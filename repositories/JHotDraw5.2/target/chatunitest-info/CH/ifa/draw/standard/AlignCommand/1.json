@@ -1,0 +1,33 @@
+{
+  "className": "AlignCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        FigureEnumeration selection = fView.selectionElements();\n        Figure anchorFigure = selection.nextFigure();\n        Rectangle r = anchorFigure.displayBox();\n\n        while (selection.hasMoreElements()) {\n            Figure f = selection.nextFigure();\n            Rectangle rr = f.displayBox();\n            switch (fOp) {\n            case LEFTS:\n                f.moveBy(r.x-rr.x, 0);\n                break;\n            case CENTERS:\n                f.moveBy((r.x+r.width/2) - (rr.x+rr.width/2), 0);\n                break;\n            case RIGHTS:\n                f.moveBy((r.x+r.width) - (rr.x+rr.width), 0);\n                break;\n            case TOPS:\n                f.moveBy(0, r.y-rr.y);\n                break;\n            case MIDDLES:\n                f.moveBy(0, (r.y+r.height/2) - (rr.y+rr.height/2));\n                break;\n            case BOTTOMS:\n                f.moveBy(0, (r.y+r.height) - (rr.y+rr.height));\n                break;\n            }\n        }\n        fView.checkDamage();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "selectionElements()",
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "moveBy(int, int)",
+      "displayBox()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    FigureEnumeration selection = fView.selectionElements();\n    Figure anchorFigure = selection.nextFigure();\n    Rectangle r = anchorFigure.displayBox();\n    while (selection.hasMoreElements()) {\n        Figure f = selection.nextFigure();\n        Rectangle rr = f.displayBox();\n        switch(fOp) {\n            case LEFTS:\n                f.moveBy(r.x - rr.x, 0);\n                break;\n            case CENTERS:\n                f.moveBy((r.x + r.width / 2) - (rr.x + rr.width / 2), 0);\n                break;\n            case RIGHTS:\n                f.moveBy((r.x + r.width) - (rr.x + rr.width), 0);\n                break;\n            case TOPS:\n                f.moveBy(0, r.y - rr.y);\n                break;\n            case MIDDLES:\n                f.moveBy(0, (r.y + r.height / 2) - (rr.y + rr.height / 2));\n                break;\n            case BOTTOMS:\n                f.moveBy(0, (r.y + r.height) - (rr.y + rr.height));\n                break;\n        }\n    }\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

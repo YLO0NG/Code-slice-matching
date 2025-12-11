@@ -1,0 +1,22 @@
+{
+  "className": "CounterPanel",
+  "methodName": "reset",
+  "brief": "public void reset(){}",
+  "methodSignature": "reset()",
+  "sourceCode": "public void reset() {\r\n\t\tsetLabelValue(fNumberOfErrors, 0);\r\n\t\tsetLabelValue(fNumberOfFailures, 0);\r\n\t\tsetLabelValue(fNumberOfRuns, 0);\r\n\t\tfTotal= 0;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.CounterPanel": [
+      "setLabelValue(JTextField, int)"
+    ]
+  },
+  "full_method_info": "public void reset() {\r\n    setLabelValue(fNumberOfErrors, 0);\r\n    setLabelValue(fNumberOfFailures, 0);\r\n    setLabelValue(fNumberOfRuns, 0);\r\n    fTotal = 0;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

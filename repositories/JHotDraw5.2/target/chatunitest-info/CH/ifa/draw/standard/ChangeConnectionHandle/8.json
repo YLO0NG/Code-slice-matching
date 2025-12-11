@@ -1,0 +1,42 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "findConnectionTarget",
+  "brief": "private Connector findConnectionTarget(int x, int y, Drawing drawing){}",
+  "methodSignature": "findConnectionTarget(int, int, Drawing)",
+  "sourceCode": "private Connector findConnectionTarget(int x, int y, Drawing drawing) {\n        Figure target = findConnectableFigure(x, y, drawing);\n\n        if ((target != null) && target.canConnect()\n             && target != fOriginalTarget\n             && !target.includes(owner())\n             && fConnection.canConnect(source().owner(), target)) {\n                return findConnector(x, y, target);\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.standard.ChangeConnectionHandle": [
+      "findConnectableFigure(int, int, Drawing)",
+      "findConnector(int, int, Figure)",
+      "source()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "canConnect()",
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "canConnect(Figure, Figure)"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "private Connector findConnectionTarget(int x, int y, Drawing drawing) {\n    Figure target = findConnectableFigure(x, y, drawing);\n    if ((target != null) && target.canConnect() && target != fOriginalTarget && !target.includes(owner()) && fConnection.canConnect(source().owner(), target)) {\n        return findConnector(x, y, target);\n    }\n    return null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

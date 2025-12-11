@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "selection",
+  "brief": "public Vector selection(){}",
+  "methodSignature": "selection()",
+  "sourceCode": "public Vector selection() {\n        // protect the vector with the current selection\n        return (Vector)fSelection.clone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "clone()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the currently selected figures.\n * @return a vector with the selected figures. The vector\n * is a copy of the current selection.\n */\npublic Vector selection() {\n    // protect the vector with the current selection\n    return (Vector) fSelection.clone();\n}",
+  "method_comment": "\n     * Gets the currently selected figures.\n     * @return a vector with the selected figures. The vector\n     * is a copy of the current selection.\n     ",
+  "method_annotation": ""
+}

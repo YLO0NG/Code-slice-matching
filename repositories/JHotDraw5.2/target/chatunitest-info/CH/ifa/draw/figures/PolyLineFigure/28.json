@@ -1,0 +1,20 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "locator",
+  "brief": "public static Locator locator(int pointIndex){}",
+  "methodSignature": "locator(int)",
+  "sourceCode": "public static Locator locator(int pointIndex) {\n        return new PolyLineLocator(pointIndex);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Creates a locator for the point with the given index.\n */\npublic static Locator locator(int pointIndex) {\n    return new PolyLineLocator(pointIndex);\n}",
+  "method_comment": "\n     * Creates a locator for the point with the given index.\n     ",
+  "method_annotation": ""
+}

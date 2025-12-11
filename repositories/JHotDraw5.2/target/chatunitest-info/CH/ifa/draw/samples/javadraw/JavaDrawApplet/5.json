@@ -1,0 +1,25 @@
+{
+  "className": "JavaDrawApplet",
+  "methodName": "endAnimation",
+  "brief": "public void endAnimation(){}",
+  "methodSignature": "endAnimation()",
+  "sourceCode": "public void endAnimation() {\n        if (fAnimator != null) {\n            fAnimator.end();\n            fAnimator = null;\n            fAnimationButton.setText(\"Start Animation\");\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.javadraw.Animator": [
+      "end()"
+    ],
+    "javax.swing.AbstractButton": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "public void endAnimation() {\n    if (fAnimator != null) {\n        fAnimator.end();\n        fAnimator = null;\n        fAnimationButton.setText(\"Start Animation\");\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

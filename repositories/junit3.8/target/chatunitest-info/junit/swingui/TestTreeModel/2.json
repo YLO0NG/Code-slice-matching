@@ -1,0 +1,39 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "findTest",
+  "brief": "public int findTest(Test target, Test node, Vector path){}",
+  "methodSignature": "findTest(Test, Test, Vector)",
+  "sourceCode": "public int findTest(Test target, Test node, Vector path) {\r\n\t\tif (target.equals(node)) \r\n\t\t\treturn 0;\r\n\t\t\t\r\n\t\tTestSuite suite= isTestSuite(node);\r\n\t\tfor (int i= 0; i < getChildCount(node); i++) {\r\n\t\t\tTest t= suite.testAt(i); \r\n\t\t\tint index= findTest(target, t, path);\r\n\t\t\tif (index >= 0) {\r\n\t\t\t\tpath.insertElementAt(node, 0);\r\n\t\t\t\tif (path.size() == 1)\r\n\t\t\t\t\treturn i;\r\n\t\t\t\treturn index;\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn -1;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "Test",
+    "Vector"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Vector": [
+      "insertElementAt(E, int)",
+      "size()"
+    ],
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "isTestSuite(Object)",
+      "getChildCount(Object)",
+      "findTest(Test, Test, Vector)"
+    ],
+    "junit.framework.TestSuite": [
+      "testAt(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Finds the path to a test. Returns the index of the test in its\r\n * parent test suite.\r\n */\r\npublic int findTest(Test target, Test node, Vector path) {\r\n    if (target.equals(node))\r\n        return 0;\r\n    TestSuite suite = isTestSuite(node);\r\n    for (int i = 0; i < getChildCount(node); i++) {\r\n        Test t = suite.testAt(i);\r\n        int index = findTest(target, t, path);\r\n        if (index >= 0) {\r\n            path.insertElementAt(node, 0);\r\n            if (path.size() == 1)\r\n                return i;\r\n            return index;\r\n        }\r\n    }\r\n    return -1;\r\n}",
+  "method_comment": "\r\n\t * Finds the path to a test. Returns the index of the test in its\r\n\t * parent test suite.\r\n\t ",
+  "method_annotation": ""
+}

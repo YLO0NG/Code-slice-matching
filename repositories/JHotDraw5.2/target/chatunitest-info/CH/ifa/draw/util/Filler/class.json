@@ -1,0 +1,66 @@
+{
+  "fullClassName": "CH.ifa.draw.util.Filler",
+  "className": "Filler",
+  "index": 155,
+  "modifier": "[public ]",
+  "extend": "[JPanel]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class Filler",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;"
+  ],
+  "fields": [
+    "private int     fWidth;",
+    "private int     fHeight;",
+    "private Color   fBackground;"
+  ],
+  "superClasses": [
+    "JPanel"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getMinimumSize()": "0",
+    "getPreferredSize()": "1",
+    "getBackground()": "2",
+    "Filler(int, int)": "3",
+    "Filler(int, int, Color)": "4"
+  },
+  "methodsBrief": [
+    "public Dimension getMinimumSize(){}",
+    "public Dimension getPreferredSize(){}",
+    "public Color getBackground(){}",
+    "public Filler(int width, int height){}",
+    "public Filler(int width, int height, Color background){}"
+  ],
+  "constructorSigs": [
+    "Filler(int, int)",
+    "Filler(int, int, Color)"
+  ],
+  "constructorBrief": [
+    "public Filler(int width, int height){}",
+    "public Filler(int width, int height, Color background){}"
+  ],
+  "getterSetterSigs": [
+    "getMinimumSize()",
+    "getPreferredSize()",
+    "getBackground()"
+  ],
+  "getterSetterBrief": [
+    "public Dimension getMinimumSize(){}",
+    "public Dimension getPreferredSize(){}",
+    "public Color getBackground(){}"
+  ],
+  "constructorDeps": {
+    "java.awt.Color": []
+  },
+  "compilationUnitCode": "/*\n * @(#)Filler.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.*;\nimport java.awt.*;\n\n/**\n * A component that can be used to reserve white space in a layout.\n */\npublic class Filler extends JPanel {\n\n    private int fWidth;\n\n    private int fHeight;\n\n    private Color fBackground;\n\n    public Filler(int width, int height) {\n        this(width, height, null);\n    }\n\n    public Filler(int width, int height, Color background) {\n        fWidth = width;\n        fHeight = height;\n        fBackground = background;\n    }\n\n    public Dimension getMinimumSize() {\n        return new Dimension(fWidth, fHeight);\n    }\n\n    public Dimension getPreferredSize() {\n        return getMinimumSize();\n    }\n\n    public Color getBackground() {\n        if (fBackground != null)\n            return fBackground;\n        return super.getBackground();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A component that can be used to reserve white space in a layout.\n */\npublic class Filler extends JPanel {\n\n    private int fWidth;\n\n    private int fHeight;\n\n    private Color fBackground;\n\n    public Filler(int width, int height) {\n        this(width, height, null);\n    }\n\n    public Filler(int width, int height, Color background) {\n        fWidth = width;\n        fHeight = height;\n        fBackground = background;\n    }\n\n    public Dimension getMinimumSize() {\n        return new Dimension(fWidth, fHeight);\n    }\n\n    public Dimension getPreferredSize() {\n        return getMinimumSize();\n    }\n\n    public Color getBackground() {\n        if (fBackground != null)\n            return fBackground;\n        return super.getBackground();\n    }\n}",
+  "subClasses": []
+}

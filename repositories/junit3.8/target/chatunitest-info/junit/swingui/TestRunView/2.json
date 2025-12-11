@@ -1,0 +1,22 @@
+{
+  "className": "TestRunView",
+  "methodName": "revealFailure",
+  "brief": "public void revealFailure(Test failure);",
+  "methodSignature": "revealFailure(Test)",
+  "sourceCode": "public void revealFailure(Test failure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": []
+  },
+  "full_method_info": "/**\r\n * Reveals the given failure\r\n */\r\npublic void revealFailure(Test failure);",
+  "method_comment": "\r\n\t * Reveals the given failure\r\n\t ",
+  "method_annotation": ""
+}

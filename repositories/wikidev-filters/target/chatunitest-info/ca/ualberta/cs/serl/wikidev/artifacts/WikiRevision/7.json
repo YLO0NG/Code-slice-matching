@@ -1,0 +1,22 @@
+{
+  "className": "WikiRevision",
+  "methodName": "setRev_user_text",
+  "brief": "public void setRev_user_text(String rev_user_text){}",
+  "methodSignature": "setRev_user_text(String)",
+  "sourceCode": "public void setRev_user_text(String rev_user_text) {\n\t\tthis.rev_user_text = rev_user_text;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param rev_user_text\n * @uml.property  name=\"rev_user_text\"\n */\npublic void setRev_user_text(String rev_user_text) {\n    this.rev_user_text = rev_user_text;\n}",
+  "method_comment": "\n\t * @param rev_user_text\n\t * @uml.property  name=\"rev_user_text\"\n\t ",
+  "method_annotation": ""
+}

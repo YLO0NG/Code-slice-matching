@@ -1,0 +1,22 @@
+{
+  "className": "TestFailure",
+  "methodName": "isFailure",
+  "brief": "public boolean isFailure(){}",
+  "methodSignature": "isFailure()",
+  "sourceCode": "public boolean isFailure() {\r\n\t\treturn thrownException() instanceof AssertionFailedError;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestFailure": [
+      "thrownException()"
+    ]
+  },
+  "full_method_info": "public boolean isFailure() {\r\n    return thrownException() instanceof AssertionFailedError;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

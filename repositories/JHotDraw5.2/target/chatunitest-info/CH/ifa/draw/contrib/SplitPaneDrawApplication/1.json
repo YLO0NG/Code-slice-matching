@@ -1,0 +1,32 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "createSplitPane",
+  "brief": "protected JSplitPane createSplitPane(StandardDrawingView view){}",
+  "methodSignature": "createSplitPane(StandardDrawingView)",
+  "sourceCode": "protected JSplitPane createSplitPane(StandardDrawingView view) {\n        JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n        dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n        dividedContents.setOneTouchExpandable(true);\n        return dividedContents;\n \t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": [
+      "getLeftComponent()",
+      "getRightComponent()"
+    ],
+    "javax.swing.JComponent": [
+      "setAlignmentX(float)"
+    ],
+    "javax.swing.JSplitPane": [
+      "setOneTouchExpandable(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Method which creates the basic split pane. Subclasses may override\n * this method.\n *\n * @param   view    StandardDrawingView for which the JSplitPane should be created\n * @return          the created JSplitPane\n */\nprotected JSplitPane createSplitPane(StandardDrawingView view) {\n    JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n    dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n    dividedContents.setOneTouchExpandable(true);\n    return dividedContents;\n}",
+  "method_comment": "\n     * Method which creates the basic split pane. Subclasses may override\n     * this method.\n     *\n     * @param   view    StandardDrawingView for which the JSplitPane should be created\n     * @return          the created JSplitPane\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,29 @@
+{
+  "className": "TestRunner",
+  "methodName": "createFailureDetailView",
+  "brief": "protected FailureDetailView createFailureDetailView(){}",
+  "methodSignature": "createFailureDetailView()",
+  "sourceCode": "protected FailureDetailView createFailureDetailView() {\r\n\t\tString className= BaseTestRunner.getPreference(FAILUREDETAILVIEW_KEY);\r\n\t\tif (className != null) {\r\n\t\t\tClass viewClass= null;\r\n\t\t\ttry {\r\n\t\t\t\tviewClass= Class.forName(className);\r\n\t\t\t\treturn (FailureDetailView)viewClass.newInstance();\r\n\t\t\t} catch(Exception e) {\r\n\t\t\t\tJOptionPane.showMessageDialog(fFrame, \"Could not create Failure DetailView - using default view\");\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn new DefaultFailureDetailView();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "getPreference(String)"
+    ],
+    "java.lang.Class": [
+      "newInstance()",
+      "forName(String)"
+    ],
+    "javax.swing.JOptionPane": [
+      "showMessageDialog(Component, Object)"
+    ]
+  },
+  "full_method_info": "protected FailureDetailView createFailureDetailView() {\r\n    String className = BaseTestRunner.getPreference(FAILUREDETAILVIEW_KEY);\r\n    if (className != null) {\r\n        Class viewClass = null;\r\n        try {\r\n            viewClass = Class.forName(className);\r\n            return (FailureDetailView) viewClass.newInstance();\r\n        } catch (Exception e) {\r\n            JOptionPane.showMessageDialog(fFrame, \"Could not create Failure DetailView - using default view\");\r\n        }\r\n    }\r\n    return new DefaultFailureDetailView();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

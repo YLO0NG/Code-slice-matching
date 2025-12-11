@@ -1,0 +1,22 @@
+{
+  "className": "LineFigure",
+  "methodName": "endPoint",
+  "brief": "public Point endPoint(){}",
+  "methodSignature": "endPoint()",
+  "sourceCode": "public Point endPoint() {\n        return pointAt(1);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointAt(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets a copy of the end point.\n */\npublic Point endPoint() {\n    return pointAt(1);\n}",
+  "method_comment": "\n     * Gets a copy of the end point.\n     ",
+  "method_annotation": ""
+}

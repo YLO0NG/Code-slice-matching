@@ -1,0 +1,36 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fFigures.size());\n        Enumeration k = fFigures.elements();\n        while (k.hasMoreElements())\n            dw.writeStorable((Storable) k.nextElement());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "write(StorableOutput)"
+    ],
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes the contained figures to the StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeInt(fFigures.size());\n    Enumeration k = fFigures.elements();\n    while (k.hasMoreElements()) dw.writeStorable((Storable) k.nextElement());\n}",
+  "method_comment": "\n     * Writes the contained figures to the StorableOutput.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,92 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ToolButton",
+  "className": "ToolButton",
+  "index": 146,
+  "modifier": "[public ]",
+  "extend": "[PaletteButton]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class ToolButton",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private String          fName;",
+    "private Tool            fTool;",
+    "private PaletteIcon     fIcon;"
+  ],
+  "superClasses": [
+    "PaletteButton"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "tool()": "0",
+    "name()": "1",
+    "attributeValue()": "2",
+    "getMinimumSize()": "3",
+    "getPreferredSize()": "4",
+    "getMaximumSize()": "5",
+    "paintSelected(Graphics)": "6",
+    "paint(Graphics)": "7",
+    "ToolButton(PaletteListener, String, String, Tool)": "8"
+  },
+  "methodsBrief": [
+    "public Tool tool(){}",
+    "public String name(){}",
+    "public Object attributeValue(){}",
+    "public Dimension getMinimumSize(){}",
+    "public Dimension getPreferredSize(){}",
+    "public Dimension getMaximumSize(){}",
+    "public void paintSelected(Graphics g){}",
+    "public void paint(Graphics g){}",
+    "public ToolButton(PaletteListener listener, String iconName, String name, Tool tool){}"
+  ],
+  "constructorSigs": [
+    "ToolButton(PaletteListener, String, String, Tool)"
+  ],
+  "constructorBrief": [
+    "public ToolButton(PaletteListener listener, String iconName, String name, Tool tool){}"
+  ],
+  "getterSetterSigs": [
+    "getMinimumSize()",
+    "getPreferredSize()",
+    "getMaximumSize()"
+  ],
+  "getterSetterBrief": [
+    "public Dimension getMinimumSize(){}",
+    "public Dimension getPreferredSize(){}",
+    "public Dimension getMaximumSize(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.util.PaletteListener": [],
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.Tool": [],
+    "CH.ifa.draw.util.Iconkit": [
+      "instance()",
+      "loadImageResource(String)"
+    ],
+    "java.awt.MediaTracker": [
+      "addImage(Image, int)",
+      "waitForAll()"
+    ],
+    "javax.swing.AbstractButton": [
+      "setSelectedIcon(Icon)",
+      "setIcon(Icon)",
+      "setPressedIcon(Icon)"
+    ],
+    "javax.swing.JComponent": [
+      "setToolTipText(String)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)ToolButton.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A PaletteButton that is associated with a tool.\n * @see Tool\n */\npublic class ToolButton extends PaletteButton {\n\n    private String fName;\n\n    private Tool fTool;\n\n    private PaletteIcon fIcon;\n\n    public ToolButton(PaletteListener listener, String iconName, String name, Tool tool) {\n        super(listener);\n        // use a Mediatracker to ensure that all the images are initially loaded\n        Iconkit kit = Iconkit.instance();\n        if (kit == null)\n            throw new HJDError(\"Iconkit instance isn't set\");\n        Image[] im = new Image[3];\n        im[0] = kit.loadImageResource(iconName + \"1.gif\");\n        im[1] = kit.loadImageResource(iconName + \"2.gif\");\n        im[2] = kit.loadImageResource(iconName + \"3.gif\");\n        MediaTracker tracker = new MediaTracker(this);\n        for (int i = 0; i < 3; i++) {\n            tracker.addImage(im[i], i);\n        }\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {\n        }\n        fIcon = new PaletteIcon(new Dimension(24, 24), im[0], im[1], im[2]);\n        fTool = tool;\n        fName = name;\n        setIcon(new ImageIcon(im[0]));\n        setPressedIcon(new ImageIcon(im[1]));\n        setSelectedIcon(new ImageIcon(im[2]));\n        setToolTipText(name);\n    }\n\n    public Tool tool() {\n        return fTool;\n    }\n\n    public String name() {\n        return fName;\n    }\n\n    public Object attributeValue() {\n        return tool();\n    }\n\n    public Dimension getMinimumSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }\n\n    public Dimension getPreferredSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }\n\n    public Dimension getMaximumSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }\n\n    // Not necessary anymore in JFC due to the support of Icons in JButton\n    /*\n    public void paintBackground(Graphics g) { }\n\n    public void paintNormal(Graphics g) {\n        if (fIcon.normal() != null)\n            g.drawImage(fIcon.normal(), 0, 0, this);\n    }\n\n    public void paintPressed(Graphics g) {\n        if (fIcon.pressed() != null)\n            g.drawImage(fIcon.pressed(), 0, 0, this);\n    }\n*/\n    public void paintSelected(Graphics g) {\n        if (fIcon.selected() != null)\n            g.drawImage(fIcon.selected(), 0, 0, this);\n    }\n\n    public void paint(Graphics g) {\n        // selecting does not work as expected with JFC1.1\n        // see JavaBug: 4228035, 4233965\n        if (isSelected()) {\n            paintSelected(g);\n        } else {\n            super.paint(g);\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A PaletteButton that is associated with a tool.\n * @see Tool\n */\npublic class ToolButton extends PaletteButton {\n\n    private String fName;\n\n    private Tool fTool;\n\n    private PaletteIcon fIcon;\n\n    public ToolButton(PaletteListener listener, String iconName, String name, Tool tool) {\n        super(listener);\n        // use a Mediatracker to ensure that all the images are initially loaded\n        Iconkit kit = Iconkit.instance();\n        if (kit == null)\n            throw new HJDError(\"Iconkit instance isn't set\");\n        Image[] im = new Image[3];\n        im[0] = kit.loadImageResource(iconName + \"1.gif\");\n        im[1] = kit.loadImageResource(iconName + \"2.gif\");\n        im[2] = kit.loadImageResource(iconName + \"3.gif\");\n        MediaTracker tracker = new MediaTracker(this);\n        for (int i = 0; i < 3; i++) {\n            tracker.addImage(im[i], i);\n        }\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {\n        }\n        fIcon = new PaletteIcon(new Dimension(24, 24), im[0], im[1], im[2]);\n        fTool = tool;\n        fName = name;\n        setIcon(new ImageIcon(im[0]));\n        setPressedIcon(new ImageIcon(im[1]));\n        setSelectedIcon(new ImageIcon(im[2]));\n        setToolTipText(name);\n    }\n\n    public Tool tool() {\n        return fTool;\n    }\n\n    public String name() {\n        return fName;\n    }\n\n    public Object attributeValue() {\n        return tool();\n    }\n\n    public Dimension getMinimumSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }\n\n    public Dimension getPreferredSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }\n\n    public Dimension getMaximumSize() {\n        return new Dimension(fIcon.getWidth(), fIcon.getHeight());\n    }\n\n    // Not necessary anymore in JFC due to the support of Icons in JButton\n    /*\n    public void paintBackground(Graphics g) { }\n\n    public void paintNormal(Graphics g) {\n        if (fIcon.normal() != null)\n            g.drawImage(fIcon.normal(), 0, 0, this);\n    }\n\n    public void paintPressed(Graphics g) {\n        if (fIcon.pressed() != null)\n            g.drawImage(fIcon.pressed(), 0, 0, this);\n    }\n*/\n    public void paintSelected(Graphics g) {\n        if (fIcon.selected() != null)\n            g.drawImage(fIcon.selected(), 0, 0, this);\n    }\n\n    public void paint(Graphics g) {\n        // selecting does not work as expected with JFC1.1\n        // see JavaBug: 4228035, 4233965\n        if (isSelected()) {\n            paintSelected(g);\n        } else {\n            super.paint(g);\n        }\n    }\n}",
+  "subClasses": []
+}

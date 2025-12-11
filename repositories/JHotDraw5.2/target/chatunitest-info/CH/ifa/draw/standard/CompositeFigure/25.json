@@ -1,0 +1,28 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figureRequestRemove",
+  "brief": "public void figureRequestRemove(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestRemove(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestRemove(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestRemove(new FigureChangeEvent(this));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "listener()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestRemove(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Propagates the removeFromDrawing request up to the container.\n * @see FigureChangeListener\n */\npublic void figureRequestRemove(FigureChangeEvent e) {\n    if (listener() != null)\n        listener().figureRequestRemove(new FigureChangeEvent(this));\n}",
+  "method_comment": "\n     * Propagates the removeFromDrawing request up to the container.\n     * @see FigureChangeListener\n     ",
+  "method_annotation": ""
+}

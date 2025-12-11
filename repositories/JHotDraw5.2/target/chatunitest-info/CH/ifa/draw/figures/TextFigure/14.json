@@ -1,0 +1,18 @@
+{
+  "className": "TextFigure",
+  "methodName": "acceptsTyping",
+  "brief": "public boolean acceptsTyping(){}",
+  "methodSignature": "acceptsTyping()",
+  "sourceCode": "public boolean acceptsTyping() {\n        return !fIsReadOnly;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Tests whether the figure accepts typing.\n */\npublic boolean acceptsTyping() {\n    return !fIsReadOnly;\n}",
+  "method_comment": "\n     * Tests whether the figure accepts typing.\n     ",
+  "method_annotation": ""
+}

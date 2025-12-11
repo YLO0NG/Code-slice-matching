@@ -1,0 +1,30 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "addFailure",
+  "brief": "public void addFailure(Test test, AssertionFailedError t){}",
+  "methodSignature": "addFailure(Test, AssertionFailedError)",
+  "sourceCode": "public void addFailure(Test test, AssertionFailedError t) {\r\n\t\tgetWriter().print(\"F\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "AssertionFailedError"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.AssertionFailedError": [],
+    "java.io.PrintStream": [
+      "print(String)"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ]
+  },
+  "full_method_info": "/**\r\n * @see junit.framework.TestListener#addFailure(Test, AssertionFailedError)\r\n */\r\npublic void addFailure(Test test, AssertionFailedError t) {\r\n    getWriter().print(\"F\");\r\n}",
+  "method_comment": "\r\n\t * @see junit.framework.TestListener#addFailure(Test, AssertionFailedError)\r\n\t ",
+  "method_annotation": ""
+}

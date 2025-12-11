@@ -1,0 +1,23 @@
+{
+  "className": "Stemmer",
+  "methodName": "step2",
+  "brief": "private final void step2(){}",
+  "methodSignature": "step2()",
+  "sourceCode": "private final void step2() { if (ends(\"y\") && vowelinstem()) b[k] = 'i'; }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "ends(String)",
+      "vowelinstem()"
+    ]
+  },
+  "full_method_info": "/* step2() turns terminal y to i when there is another vowel in the stem. */\nprivate final void step2() {\n    if (ends(\"y\") && vowelinstem())\n        b[k] = 'i';\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

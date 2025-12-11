@@ -1,0 +1,25 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n\t    return getPresentationFigure().displayBox();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Return the display area. This method is delegated to the encapsulated presentation figure.\n */\npublic Rectangle displayBox() {\n    return getPresentationFigure().displayBox();\n}",
+  "method_comment": "\n\t * Return the display area. This method is delegated to the encapsulated presentation figure.\n\t ",
+  "method_annotation": ""
+}

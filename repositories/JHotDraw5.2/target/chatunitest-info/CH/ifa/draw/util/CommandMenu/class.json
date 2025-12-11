@@ -1,0 +1,65 @@
+{
+  "fullClassName": "CH.ifa.draw.util.CommandMenu",
+  "className": "CommandMenu",
+  "index": 154,
+  "modifier": "[public ]",
+  "extend": "[JMenu]",
+  "implement": "[ActionListener]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class CommandMenu",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;",
+    "import java.util.*;",
+    "/**\r\n * A Command enabled menu. Selecting a menu item\r\n * executes the corresponding command.\r\n *\r\n * @see Command\r\n */\r\nimport java.awt.event.ActionListener;",
+    "import java.awt.event.ActionEvent;"
+  ],
+  "fields": [
+    "private Vector   fCommands;"
+  ],
+  "superClasses": [
+    "JMenu"
+  ],
+  "implementedTypes": [
+    "ActionListener"
+  ],
+  "methodSigs": {
+    "add(Command)": "0",
+    "add(Command, MenuShortcut)": "1",
+    "remove(Command)": "2",
+    "remove(MenuItem)": "3",
+    "enable(String, boolean)": "4",
+    "checkEnabled()": "5",
+    "actionPerformed(ActionEvent)": "6",
+    "CommandMenu(String)": "7"
+  },
+  "methodsBrief": [
+    "public synchronized void add(Command command){}",
+    "public synchronized void add(Command command, MenuShortcut shortcut){}",
+    "public synchronized void remove(Command command){}",
+    "public synchronized void remove(MenuItem item){}",
+    "public synchronized void enable(String name, boolean state){}",
+    "public synchronized void checkEnabled(){}",
+    "public void actionPerformed(ActionEvent e){}",
+    "public CommandMenu(String name){}"
+  ],
+  "constructorSigs": [
+    "CommandMenu(String)"
+  ],
+  "constructorBrief": [
+    "public CommandMenu(String name){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "/*\n * @(#)CommandMenu.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.util.*;\n/**\n * A Command enabled menu. Selecting a menu item\n * executes the corresponding command.\n *\n * @see Command\n */\nimport java.awt.event.ActionListener;\nimport java.awt.event.ActionEvent;\n\npublic class CommandMenu extends JMenu implements ActionListener {\n\n    private Vector fCommands;\n\n    public CommandMenu(String name) {\n        super(name);\n        fCommands = new Vector(10);\n    }\n\n    /**\n     * Adds a command to the menu. The item's label is\n     * the command's name.\n     */\n    public synchronized void add(Command command) {\n        JMenuItem m = new JMenuItem(command.name());\n        m.addActionListener(this);\n        add(m);\n        fCommands.addElement(command);\n    }\n\n    /**\n     * Adds a command with the given short cut to the menu. The item's label is\n     * the command's name.\n     */\n    public synchronized void add(Command command, MenuShortcut shortcut) {\n        JMenuItem m = new JMenuItem(command.name(), shortcut.getKey());\n        m.setName(command.name());\n        m.addActionListener(this);\n        add(m);\n        fCommands.addElement(command);\n    }\n\n    public synchronized void remove(Command command) {\n        System.out.println(\"not implemented\");\n    }\n\n    public synchronized void remove(MenuItem item) {\n        System.out.println(\"not implemented\");\n    }\n\n    /**\n     * Changes the enabling/disabling state of a named menu item.\n     */\n    public synchronized void enable(String name, boolean state) {\n        for (int i = 0; i < getItemCount(); i++) {\n            JMenuItem item = getItem(i);\n            if (name.equals(item.getLabel())) {\n                item.setEnabled(state);\n                return;\n            }\n        }\n    }\n\n    public synchronized void checkEnabled() {\n        int j = 0;\n        for (int i = 0; i < getMenuComponentCount(); i++) {\n            // ignore separators\n            // a separator has a hyphen as its label\n            if (getMenuComponent(i) instanceof JSeparator)\n                continue;\n            Command cmd = (Command) fCommands.elementAt(j);\n            getMenuComponent(i).setEnabled(cmd.isExecutable());\n            j++;\n        }\n    }\n\n    /**\n     * Executes the command.\n     */\n    public void actionPerformed(ActionEvent e) {\n        int j = 0;\n        Object source = e.getSource();\n        for (int i = 0; i < getItemCount(); i++) {\n            JMenuItem item = getItem(i);\n            // ignore separators\n            // a separator has a hyphen as its label\n            if (getMenuComponent(i) instanceof JSeparator)\n                continue;\n            if (source == item) {\n                Command cmd = (Command) fCommands.elementAt(j);\n                cmd.execute();\n                break;\n            }\n            j++;\n        }\n    }\n}\n",
+  "classDeclarationCode": "public class CommandMenu extends JMenu implements ActionListener {\n\n    private Vector fCommands;\n\n    public CommandMenu(String name) {\n        super(name);\n        fCommands = new Vector(10);\n    }\n\n    /**\n     * Adds a command to the menu. The item's label is\n     * the command's name.\n     */\n    public synchronized void add(Command command) {\n        JMenuItem m = new JMenuItem(command.name());\n        m.addActionListener(this);\n        add(m);\n        fCommands.addElement(command);\n    }\n\n    /**\n     * Adds a command with the given short cut to the menu. The item's label is\n     * the command's name.\n     */\n    public synchronized void add(Command command, MenuShortcut shortcut) {\n        JMenuItem m = new JMenuItem(command.name(), shortcut.getKey());\n        m.setName(command.name());\n        m.addActionListener(this);\n        add(m);\n        fCommands.addElement(command);\n    }\n\n    public synchronized void remove(Command command) {\n        System.out.println(\"not implemented\");\n    }\n\n    public synchronized void remove(MenuItem item) {\n        System.out.println(\"not implemented\");\n    }\n\n    /**\n     * Changes the enabling/disabling state of a named menu item.\n     */\n    public synchronized void enable(String name, boolean state) {\n        for (int i = 0; i < getItemCount(); i++) {\n            JMenuItem item = getItem(i);\n            if (name.equals(item.getLabel())) {\n                item.setEnabled(state);\n                return;\n            }\n        }\n    }\n\n    public synchronized void checkEnabled() {\n        int j = 0;\n        for (int i = 0; i < getMenuComponentCount(); i++) {\n            // ignore separators\n            // a separator has a hyphen as its label\n            if (getMenuComponent(i) instanceof JSeparator)\n                continue;\n            Command cmd = (Command) fCommands.elementAt(j);\n            getMenuComponent(i).setEnabled(cmd.isExecutable());\n            j++;\n        }\n    }\n\n    /**\n     * Executes the command.\n     */\n    public void actionPerformed(ActionEvent e) {\n        int j = 0;\n        Object source = e.getSource();\n        for (int i = 0; i < getItemCount(); i++) {\n            JMenuItem item = getItem(i);\n            // ignore separators\n            // a separator has a hyphen as its label\n            if (getMenuComponent(i) instanceof JSeparator)\n                continue;\n            if (source == item) {\n                Command cmd = (Command) fCommands.elementAt(j);\n                cmd.execute();\n                break;\n            }\n            j++;\n        }\n    }\n}",
+  "subClasses": []
+}

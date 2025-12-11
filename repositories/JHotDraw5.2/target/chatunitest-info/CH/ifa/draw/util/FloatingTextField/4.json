@@ -1,0 +1,35 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "setBounds",
+  "brief": "public void setBounds(Rectangle r, String text){}",
+  "methodSignature": "setBounds(Rectangle, String)",
+  "sourceCode": "public void setBounds(Rectangle r, String text) {\n\t    fEditWidget.setText(text);\n        fEditWidget.setBounds(r.x, r.y, r.width, r.height);\n        fEditWidget.setVisible(true);\n\t    fEditWidget.selectAll();\n\t    fEditWidget.requestFocus();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "java.lang.String": [],
+    "java.awt.TextField": [
+      "setText(String)"
+    ],
+    "java.awt.Component": [
+      "setVisible(boolean)",
+      "requestFocus()",
+      "setBounds(int, int, int, int)"
+    ],
+    "java.awt.TextComponent": [
+      "selectAll()"
+    ]
+  },
+  "full_method_info": "/**\n * Positions the overlay.\n */\npublic void setBounds(Rectangle r, String text) {\n    fEditWidget.setText(text);\n    fEditWidget.setBounds(r.x, r.y, r.width, r.height);\n    fEditWidget.setVisible(true);\n    fEditWidget.selectAll();\n    fEditWidget.requestFocus();\n}",
+  "method_comment": "\n     * Positions the overlay.\n     ",
+  "method_annotation": ""
+}

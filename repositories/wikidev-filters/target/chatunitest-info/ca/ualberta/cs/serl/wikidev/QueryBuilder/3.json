@@ -1,0 +1,22 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectProjectByName",
+  "brief": "public static String selectProjectByName(String projectName){}",
+  "methodSignature": "selectProjectByName(String)",
+  "sourceCode": "public static String selectProjectByName(String projectName) {\n\t\treturn \"select * from wikidev_projects where projectname=\\'\"+projectName+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String selectProjectByName(String projectName) {\n    return \"select * from wikidev_projects where projectname=\\'\" + projectName + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

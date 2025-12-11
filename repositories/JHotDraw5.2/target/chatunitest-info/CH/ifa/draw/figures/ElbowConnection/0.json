@@ -1,0 +1,25 @@
+{
+  "className": "ElbowConnection",
+  "methodName": "updateConnection",
+  "brief": "public void updateConnection(){}",
+  "methodSignature": "updateConnection()",
+  "sourceCode": "public void updateConnection() {\n        super.updateConnection();\n        updatePoints();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineConnection": [
+      "updateConnection()"
+    ],
+    "CH.ifa.draw.figures.ElbowConnection": [
+      "updatePoints()"
+    ]
+  },
+  "full_method_info": "public void updateConnection() {\n    super.updateConnection();\n    updatePoints();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

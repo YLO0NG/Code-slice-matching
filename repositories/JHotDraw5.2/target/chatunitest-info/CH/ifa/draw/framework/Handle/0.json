@@ -1,0 +1,18 @@
+{
+  "className": "Handle",
+  "methodName": "locate",
+  "brief": "public abstract Point locate();",
+  "methodSignature": "locate()",
+  "sourceCode": "public abstract Point locate();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Locates the handle on the figure. The handle is drawn\n * centered around the returned point.\n */\npublic abstract Point locate();",
+  "method_comment": "\n     * Locates the handle on the figure. The handle is drawn\n     * centered around the returned point.\n     ",
+  "method_annotation": ""
+}

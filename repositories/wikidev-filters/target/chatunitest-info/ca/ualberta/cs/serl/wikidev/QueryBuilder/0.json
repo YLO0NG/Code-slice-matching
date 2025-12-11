@@ -1,0 +1,18 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectTheEarliestTimeOfActivity",
+  "brief": "public static String selectTheEarliestTimeOfActivity(){}",
+  "methodSignature": "selectTheEarliestTimeOfActivity()",
+  "sourceCode": "public static String selectTheEarliestTimeOfActivity() {\n\t\treturn \"SELECT min(time) as time FROM (SELECT min(timestamp) as time from wikidev_changesets UNION SELECT min(date) as time from wikidev_messages UNION SELECT min(change_time) as time from wikidev_ticketchanges UNION SELECT min(created) as time from wikidev_tickets) times\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectTheEarliestTimeOfActivity() {\n    return \"SELECT min(time) as time FROM (SELECT min(timestamp) as time from wikidev_changesets UNION SELECT min(date) as time from wikidev_messages UNION SELECT min(change_time) as time from wikidev_ticketchanges UNION SELECT min(created) as time from wikidev_tickets) times\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

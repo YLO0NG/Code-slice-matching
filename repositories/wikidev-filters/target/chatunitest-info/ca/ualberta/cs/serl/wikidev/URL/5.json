@@ -1,0 +1,22 @@
+{
+  "className": "URL",
+  "methodName": "setEntityType",
+  "brief": "public void setEntityType(String entityType){}",
+  "methodSignature": "setEntityType(String)",
+  "sourceCode": "public void setEntityType(String entityType) {\n\t\tthis.entityType = entityType;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param  entityType\n * @uml.property  name=\"entityType\"\n */\npublic void setEntityType(String entityType) {\n    this.entityType = entityType;\n}",
+  "method_comment": "\n\t * @param  entityType\n\t * @uml.property  name=\"entityType\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "update",
+  "brief": "public void update(Graphics g){}",
+  "methodSignature": "update(Graphics)",
+  "sourceCode": "public void update(Graphics g) {\n        paint(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "paint(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Updates the drawing view.\n */\npublic void update(Graphics g) {\n    paint(g);\n}",
+  "method_comment": "\n     * Updates the drawing view.\n     ",
+  "method_annotation": ""
+}

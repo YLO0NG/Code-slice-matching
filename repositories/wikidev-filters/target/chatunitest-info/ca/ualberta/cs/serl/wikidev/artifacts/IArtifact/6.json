@@ -1,0 +1,31 @@
+{
+  "className": "IArtifact",
+  "methodName": "getId",
+  "brief": "public int getId(){}",
+  "methodSignature": "getId()",
+  "sourceCode": "public int getId() {\n\t\tif(this instanceof ChangeSet) {\n\t\t\treturn ((ChangeSet)this).getRevision();\n\t\t}\n\t\telse if(this instanceof Ticket) {\n\t\t\treturn ((Ticket)this).getTicketID();\n\t\t}\n\t\telse if(this instanceof Wiki) {\n\t\t\treturn ((Wiki)this).getPage_id();\n\t\t}\n\t\telse if(this instanceof Message) {\n\t\t\treturn ((Message)this).getCommunicationID();\n\t\t}\n\t\telse {\n\t\t\treturn this.id;\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getRevision()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "getTicketID()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": [
+      "getPage_id()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [
+      "getCommunicationID()"
+    ]
+  },
+  "full_method_info": "public int getId() {\n    if (this instanceof ChangeSet) {\n        return ((ChangeSet) this).getRevision();\n    } else if (this instanceof Ticket) {\n        return ((Ticket) this).getTicketID();\n    } else if (this instanceof Wiki) {\n        return ((Wiki) this).getPage_id();\n    } else if (this instanceof Message) {\n        return ((Message) this).getCommunicationID();\n    } else {\n        return this.id;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

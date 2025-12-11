@@ -1,0 +1,18 @@
+{
+  "className": "ReportAction",
+  "methodName": "getInputStream",
+  "brief": "public InputStream getInputStream(){}",
+  "methodSignature": "getInputStream()",
+  "sourceCode": "public InputStream getInputStream() {\n\t\treturn this.inputStream;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public InputStream getInputStream() {\n    return this.inputStream;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

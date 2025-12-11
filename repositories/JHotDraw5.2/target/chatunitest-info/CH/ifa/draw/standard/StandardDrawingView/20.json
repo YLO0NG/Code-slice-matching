@@ -1,0 +1,36 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "selectionHandles",
+  "brief": "private Enumeration selectionHandles(){}",
+  "methodSignature": "selectionHandles()",
+  "sourceCode": "private Enumeration selectionHandles() {\n        if (fSelectionHandles == null) {\n            fSelectionHandles = new Vector();\n            FigureEnumeration k = selectionElements();\n            while (k.hasMoreElements()) {\n                Figure figure = k.nextFigure();\n                Enumeration kk = figure.handles().elements();\n                while (kk.hasMoreElements())\n                    fSelectionHandles.addElement(kk.nextElement());\n            }\n        }\n        return fSelectionHandles.elements();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionElements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "elements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "handles()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets an enumeration of the currently active handles.\n */\nprivate Enumeration selectionHandles() {\n    if (fSelectionHandles == null) {\n        fSelectionHandles = new Vector();\n        FigureEnumeration k = selectionElements();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            Enumeration kk = figure.handles().elements();\n            while (kk.hasMoreElements()) fSelectionHandles.addElement(kk.nextElement());\n        }\n    }\n    return fSelectionHandles.elements();\n}",
+  "method_comment": "\n     * Gets an enumeration of the currently active handles.\n     ",
+  "method_annotation": ""
+}

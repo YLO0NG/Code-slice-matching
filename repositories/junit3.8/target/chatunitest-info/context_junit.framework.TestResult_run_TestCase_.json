@@ -1,0 +1,19 @@
+{
+  "targetClass": "junit.framework.TestResult",
+  "targetMethod": "run(TestCase)",
+  "dependentFields": {
+    "junit.framework.TestListener": "",
+    "junit.framework.TestResult": "protected Vector fFailures;\nprotected Vector fErrors;\nprotected Vector fListeners;\nprotected int fRunTests;\nprivate boolean fStop;",
+    "junit.framework.TestCase": "private String fName;"
+  },
+  "dependentMethods": {
+    "junit.framework.TestListener": "public void startTest(Test test);",
+    "junit.framework.TestResult": "private synchronized Vector cloneListeners(){}\npublic void runProtected(final Test test, Protectable p){}\npublic void endTest(Test test){}",
+    "junit.framework.TestCase": "public void runBare() throws Throwable{}\npublic int countTestCases(){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.TestListener": "* A test started.\r\n\t \npublic void startTest(Test test);",
+    "junit.framework.TestResult": "* Returns a copy of the listeners.\r\n\t \nprivate synchronized Vector cloneListeners() {\r\n\t\treturn (Vector)fListeners.clone();\r\n\t}\n\r\n\t * Runs a TestCase.\r\n\t \npublic void runProtected(final Test test, Protectable p) {\r\n\t\ttry {\r\n\t\t\tp.protect();\r\n\t\t} \r\n\t\tcatch (AssertionFailedError e) {\r\n\t\t\t/*{*/fFailures.addElement(new TestFailure(test, e));\r\n\t\t\tfor (Enumeration e1= cloneListeners().elements(); e1.hasMoreElements(); ) {\r\n\t\t\t\t((TestListener)e1.nextElement()).addFailure(test, e);\r\n\t\t\t}/*}*/\r\n\t\t}\r\n\t\tcatch (ThreadDeath e) { // don't catch ThreadDeath by accident\r\n\t\t\tthrow e;\r\n\t\t}\r\n\t\tcatch (Throwable e) {\r\n\t\t\taddError(test, e);\r\n\t\t}\r\n\t}\n\r\n\t * Informs the result that a test was completed.\r\n\t \npublic void endTest(Test test) {\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).endTest(test);\r\n\t\t}\r\n\t}",
+    "junit.framework.TestCase": "* Runs the bare test sequence.\r\n\t * @exception Throwable if any exception is thrown\r\n\t \npublic void runBare() throws Throwable {\r\n\t\tsetUp();\r\n\t\ttry {\r\n\t\t\trunTest();\r\n\t\t}\r\n\t\tfinally {\r\n\t\t\ttearDown();\r\n\t\t}\r\n\t}\n\r\n\t * Counts the number of test cases executed by run(TestResult result).\r\n\t \npublic int countTestCases() {\r\n\t\treturn 1;\r\n\t}"
+  }
+}

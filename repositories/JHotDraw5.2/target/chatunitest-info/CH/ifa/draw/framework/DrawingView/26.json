@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "checkDamage",
+  "brief": "public void checkDamage();",
+  "methodSignature": "checkDamage()",
+  "sourceCode": "public void checkDamage();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Checks whether the drawing has some accumulated damage\n */\npublic void checkDamage();",
+  "method_comment": "\n     * Checks whether the drawing has some accumulated damage\n     ",
+  "method_annotation": ""
+}

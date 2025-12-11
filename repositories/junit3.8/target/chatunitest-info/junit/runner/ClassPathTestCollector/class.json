@@ -1,0 +1,61 @@
+{
+  "fullClassName": "junit.runner.ClassPathTestCollector",
+  "className": "ClassPathTestCollector",
+  "index": 20,
+  "modifier": "[public , abstract ]",
+  "extend": "[]",
+  "implement": "[TestCollector]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public abstract class ClassPathTestCollector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import java.util.*;",
+    "import java.io.*;"
+  ],
+  "fields": [
+    "static final int SUFFIX_LENGTH= \".class\".length();"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "TestCollector"
+  ],
+  "methodSigs": {
+    "collectTests()": "0",
+    "collectFilesInPath(String)": "1",
+    "collectFilesInRoots(Vector)": "2",
+    "gatherFiles(File, String, Hashtable)": "3",
+    "splitClassPath(String)": "4",
+    "isTestClass(String)": "5",
+    "classNameFromFile(String)": "6",
+    "ClassPathTestCollector()": "7"
+  },
+  "methodsBrief": [
+    "public Enumeration collectTests(){}",
+    "public Hashtable collectFilesInPath(String classPath){}",
+    "Hashtable collectFilesInRoots(Vector roots){}",
+    "void gatherFiles(File classRoot, String classFileName, Hashtable result){}",
+    "Vector splitClassPath(String classPath){}",
+    "protected boolean isTestClass(String classFileName){}",
+    "protected String classNameFromFile(String classFileName){}",
+    "public ClassPathTestCollector(){}"
+  ],
+  "constructorSigs": [
+    "ClassPathTestCollector()"
+  ],
+  "constructorBrief": [
+    "public ClassPathTestCollector(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\nimport java.util.*;\r\nimport java.io.*;\r\n\r\n/**\r\n * An implementation of a TestCollector that consults the\r\n * class path. It considers all classes on the class path\r\n * excluding classes in JARs. It leaves it up to subclasses\r\n * to decide whether a class is a runnable Test.\r\n *\r\n * @see TestCollector\r\n */\r\npublic abstract class ClassPathTestCollector implements TestCollector {\r\n\r\n    static final int SUFFIX_LENGTH = \".class\".length();\r\n\r\n    public ClassPathTestCollector() {\r\n    }\r\n\r\n    public Enumeration collectTests() {\r\n        String classPath = System.getProperty(\"java.class.path\");\r\n        Hashtable result = collectFilesInPath(classPath);\r\n        return result.elements();\r\n    }\r\n\r\n    public Hashtable collectFilesInPath(String classPath) {\r\n        Hashtable result = collectFilesInRoots(splitClassPath(classPath));\r\n        return result;\r\n    }\r\n\r\n    Hashtable collectFilesInRoots(Vector roots) {\r\n        Hashtable result = new Hashtable(100);\r\n        Enumeration e = roots.elements();\r\n        while (e.hasMoreElements()) gatherFiles(new File((String) e.nextElement()), \"\", result);\r\n        return result;\r\n    }\r\n\r\n    void gatherFiles(File classRoot, String classFileName, Hashtable result) {\r\n        File thisRoot = new File(classRoot, classFileName);\r\n        if (thisRoot.isFile()) {\r\n            if (isTestClass(classFileName)) {\r\n                String className = classNameFromFile(classFileName);\r\n                result.put(className, className);\r\n            }\r\n            return;\r\n        }\r\n        String[] contents = thisRoot.list();\r\n        if (contents != null) {\r\n            for (int i = 0; i < contents.length; i++) gatherFiles(classRoot, classFileName + File.separatorChar + contents[i], result);\r\n        }\r\n    }\r\n\r\n    Vector splitClassPath(String classPath) {\r\n        Vector result = new Vector();\r\n        String separator = System.getProperty(\"path.separator\");\r\n        StringTokenizer tokenizer = new StringTokenizer(classPath, separator);\r\n        while (tokenizer.hasMoreTokens()) result.addElement(tokenizer.nextToken());\r\n        return result;\r\n    }\r\n\r\n    protected boolean isTestClass(String classFileName) {\r\n        return classFileName.endsWith(\".class\") && classFileName.indexOf('$') < 0 && classFileName.indexOf(\"Test\") > 0;\r\n    }\r\n\r\n    protected String classNameFromFile(String classFileName) {\r\n        // convert /a/b.class to a.b\r\n        String s = classFileName.substring(0, classFileName.length() - SUFFIX_LENGTH);\r\n        String s2 = s.replace(File.separatorChar, '.');\r\n        if (s2.startsWith(\".\"))\r\n            return s2.substring(1);\r\n        return s2;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * An implementation of a TestCollector that consults the\r\n * class path. It considers all classes on the class path\r\n * excluding classes in JARs. It leaves it up to subclasses\r\n * to decide whether a class is a runnable Test.\r\n *\r\n * @see TestCollector\r\n */\r\npublic abstract class ClassPathTestCollector implements TestCollector {\r\n\r\n    static final int SUFFIX_LENGTH = \".class\".length();\r\n\r\n    public ClassPathTestCollector() {\r\n    }\r\n\r\n    public Enumeration collectTests() {\r\n        String classPath = System.getProperty(\"java.class.path\");\r\n        Hashtable result = collectFilesInPath(classPath);\r\n        return result.elements();\r\n    }\r\n\r\n    public Hashtable collectFilesInPath(String classPath) {\r\n        Hashtable result = collectFilesInRoots(splitClassPath(classPath));\r\n        return result;\r\n    }\r\n\r\n    Hashtable collectFilesInRoots(Vector roots) {\r\n        Hashtable result = new Hashtable(100);\r\n        Enumeration e = roots.elements();\r\n        while (e.hasMoreElements()) gatherFiles(new File((String) e.nextElement()), \"\", result);\r\n        return result;\r\n    }\r\n\r\n    void gatherFiles(File classRoot, String classFileName, Hashtable result) {\r\n        File thisRoot = new File(classRoot, classFileName);\r\n        if (thisRoot.isFile()) {\r\n            if (isTestClass(classFileName)) {\r\n                String className = classNameFromFile(classFileName);\r\n                result.put(className, className);\r\n            }\r\n            return;\r\n        }\r\n        String[] contents = thisRoot.list();\r\n        if (contents != null) {\r\n            for (int i = 0; i < contents.length; i++) gatherFiles(classRoot, classFileName + File.separatorChar + contents[i], result);\r\n        }\r\n    }\r\n\r\n    Vector splitClassPath(String classPath) {\r\n        Vector result = new Vector();\r\n        String separator = System.getProperty(\"path.separator\");\r\n        StringTokenizer tokenizer = new StringTokenizer(classPath, separator);\r\n        while (tokenizer.hasMoreTokens()) result.addElement(tokenizer.nextToken());\r\n        return result;\r\n    }\r\n\r\n    protected boolean isTestClass(String classFileName) {\r\n        return classFileName.endsWith(\".class\") && classFileName.indexOf('$') < 0 && classFileName.indexOf(\"Test\") > 0;\r\n    }\r\n\r\n    protected String classNameFromFile(String classFileName) {\r\n        // convert /a/b.class to a.b\r\n        String s = classFileName.substring(0, classFileName.length() - SUFFIX_LENGTH);\r\n        String s2 = s.replace(File.separatorChar, '.');\r\n        if (s2.startsWith(\".\"))\r\n            return s2.substring(1);\r\n        return s2;\r\n    }\r\n}",
+  "subClasses": [
+    "junit.runner.LoadingTestCollector",
+    "junit.runner.SimpleTestCollector"
+  ]
+}

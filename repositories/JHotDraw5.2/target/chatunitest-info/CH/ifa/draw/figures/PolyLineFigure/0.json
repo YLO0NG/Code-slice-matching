@@ -1,0 +1,29 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        Enumeration k = points();\n        Rectangle r = new Rectangle((Point) k.nextElement());\n\n        while (k.hasMoreElements())\n            r.add((Point) k.nextElement());\n\n        return r;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "points()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.awt.Rectangle": [
+      "add(Point)"
+    ]
+  },
+  "full_method_info": "public Rectangle displayBox() {\n    Enumeration k = points();\n    Rectangle r = new Rectangle((Point) k.nextElement());\n    while (k.hasMoreElements()) r.add((Point) k.nextElement());\n    return r;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

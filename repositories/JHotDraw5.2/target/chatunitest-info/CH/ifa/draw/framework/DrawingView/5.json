@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "add",
+  "brief": "public Figure add(Figure figure);",
+  "methodSignature": "add(Figure)",
+  "sourceCode": "public Figure add(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Adds a figure to the drawing.\n * @return the added figure.\n */\npublic Figure add(Figure figure);",
+  "method_comment": "\n     * Adds a figure to the drawing.\n     * @return the added figure.\n     ",
+  "method_annotation": ""
+}

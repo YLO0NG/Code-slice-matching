@@ -1,0 +1,22 @@
+{
+  "className": "TriangleRotationHandle",
+  "methodName": "TriangleRotationHandle",
+  "brief": "public TriangleRotationHandle(TriangleFigure owner){}",
+  "methodSignature": "TriangleRotationHandle(TriangleFigure)",
+  "sourceCode": "public TriangleRotationHandle(TriangleFigure owner) {\n    super(owner);\n }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TriangleFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.TriangleFigure": []
+  },
+  "full_method_info": "public TriangleRotationHandle(TriangleFigure owner) {\n    super(owner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

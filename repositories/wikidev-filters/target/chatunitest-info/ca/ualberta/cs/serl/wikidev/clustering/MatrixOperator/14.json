@@ -1,0 +1,26 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getVectorNorm",
+  "brief": "private static double getVectorNorm(double[] vector){}",
+  "methodSignature": "getVectorNorm(double[])",
+  "sourceCode": "private static double getVectorNorm(double[] vector) {\n\t\t   double sum=0.0;\n\t\t   for(int i=0;i<vector.length;i++) {\n\t\t\t   sum += Math.pow(vector[i],2);\n\t\t   }\n\t\t   return Math.sqrt(sum);\n\t   }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[]"
+  ],
+  "dependentMethods": {
+    "double": [],
+    "java.lang.Math": [
+      "pow(double, double)",
+      "sqrt(double)"
+    ]
+  },
+  "full_method_info": "private static double getVectorNorm(double[] vector) {\n    double sum = 0.0;\n    for (int i = 0; i < vector.length; i++) {\n        sum += Math.pow(vector[i], 2);\n    }\n    return Math.sqrt(sum);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "Geom",
+  "methodName": "center",
+  "brief": "static public Point center(Rectangle r){}",
+  "methodSignature": "center(Rectangle)",
+  "sourceCode": "static public Point center(Rectangle r) {\n        return new Point(r.x + r.width /2, r.y + r.height/2);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": []
+  },
+  "full_method_info": "static public Point center(Rectangle r) {\n    return new Point(r.x + r.width / 2, r.y + r.height / 2);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

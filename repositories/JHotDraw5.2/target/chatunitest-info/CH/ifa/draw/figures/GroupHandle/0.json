@@ -1,0 +1,31 @@
+{
+  "className": "GroupHandle",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        Rectangle r = displayBox();\n\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n        r.grow(-1,-1);\n        g.setColor(Color.white);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawRect(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "displayBox()"
+    ],
+    "java.awt.Rectangle": [
+      "grow(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the Group handle.\n */\npublic void draw(Graphics g) {\n    Rectangle r = displayBox();\n    g.setColor(Color.black);\n    g.drawRect(r.x, r.y, r.width, r.height);\n    r.grow(-1, -1);\n    g.setColor(Color.white);\n    g.drawRect(r.x, r.y, r.width, r.height);\n}",
+  "method_comment": "\n     * Draws the Group handle.\n     ",
+  "method_annotation": ""
+}

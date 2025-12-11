@@ -1,0 +1,21 @@
+{
+  "className": "Figure",
+  "methodName": "findFigureInside",
+  "brief": "public Figure findFigureInside(int x, int y);",
+  "methodSignature": "findFigureInside(int, int)",
+  "sourceCode": "public Figure findFigureInside(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the figure that contains the given point.\n */\npublic Figure findFigureInside(int x, int y);",
+  "method_comment": "\n     * Returns the figure that contains the given point.\n     ",
+  "method_annotation": ""
+}

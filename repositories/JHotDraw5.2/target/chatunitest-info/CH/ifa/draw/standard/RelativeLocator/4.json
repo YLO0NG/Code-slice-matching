@@ -1,0 +1,18 @@
+{
+  "className": "RelativeLocator",
+  "methodName": "north",
+  "brief": "static public Locator north(){}",
+  "methodSignature": "north()",
+  "sourceCode": "static public Locator north() {\n        return new RelativeLocator(0.5, 0.0);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * North.\n */\nstatic public Locator north() {\n    return new RelativeLocator(0.5, 0.0);\n}",
+  "method_comment": "\n     * North.\n     ",
+  "method_annotation": ""
+}

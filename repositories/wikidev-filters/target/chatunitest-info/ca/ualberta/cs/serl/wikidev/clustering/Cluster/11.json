@@ -1,0 +1,20 @@
+{
+  "className": "Cluster",
+  "methodName": "setProject",
+  "brief": "public void setProject(int project){}",
+  "methodSignature": "setProject(int)",
+  "sourceCode": "public void setProject(int project) {\n\t\tthis.project = project;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param project\n * @uml.property  name=\"project\"\n */\npublic void setProject(int project) {\n    this.project = project;\n}",
+  "method_comment": "\n\t * @param project\n\t * @uml.property  name=\"project\"\n\t ",
+  "method_annotation": ""
+}

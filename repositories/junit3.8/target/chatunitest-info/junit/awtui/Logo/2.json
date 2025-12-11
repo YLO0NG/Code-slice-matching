@@ -1,0 +1,28 @@
+{
+  "className": "Logo",
+  "methodName": "paintBackground",
+  "brief": "public void paintBackground( java.awt.Graphics g){}",
+  "methodSignature": "paintBackground(java.awt.Graphics)",
+  "sourceCode": "public void paintBackground( java.awt.Graphics g) {\r\n\t\tg.setColor(SystemColor.control);\r\n\t\tg.fillRect(0, 0, getBounds().width, getBounds().height);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "java.awt.Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillRect(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "java.awt.Component": [
+      "getBounds()"
+    ]
+  },
+  "full_method_info": "public void paintBackground(java.awt.Graphics g) {\r\n    g.setColor(SystemColor.control);\r\n    g.fillRect(0, 0, getBounds().width, getBounds().height);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

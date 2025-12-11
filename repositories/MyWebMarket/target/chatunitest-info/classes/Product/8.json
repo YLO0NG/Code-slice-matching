@@ -1,0 +1,18 @@
+{
+  "className": "Product",
+  "methodName": "toString",
+  "brief": "@Override\r\n\tpublic String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "@Override\n\tpublic String toString() {\n\t\treturn this.id + \"\\t\" + this.name + \"\\t\" + this.price + \"\\t\" + this.supply;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Override\npublic String toString() {\n    return this.id + \"\\t\" + this.name + \"\\t\" + this.price + \"\\t\" + this.supply;\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

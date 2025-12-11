@@ -1,0 +1,28 @@
+{
+  "className": "TextFigure",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        handles.addElement(new FontSizeHandle(this, RelativeLocator.southWest()));\n        return handles;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "CH.ifa.draw.standard.RelativeLocator": [
+      "northEast()",
+      "northWest()",
+      "southWest()",
+      "southEast()"
+    ]
+  },
+  "full_method_info": "public Vector handles() {\n    Vector handles = new Vector();\n    handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n    handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n    handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n    handles.addElement(new FontSizeHandle(this, RelativeLocator.southWest()));\n    return handles;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,33 @@
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="sample" default="resolve">
+
+    <target name="resolve">
+<!--        <ivy:configure file="../ivysettings.xml"/>-->
+
+        <ivy:resolve file="ivy.xml" conf="default"/>
+
+    </target>
+
+<!--    <target name="retrieve-default" depends="resolve">-->
+<!--        <ivy:retrieve pattern="lib/default/[artifact]-[revision].[ext]" conf="default"/>-->
+<!--    </target>-->
+
+<!--    <target name="retrieve-myconf" depends="resolve">-->
+<!--        <ivy:retrieve pattern="lib/myconf/[artifact]-[revision].[ext]" conf="myconf"/>-->
+<!--    </target>-->
+
+<!--    <target name="retrieve-all" depends="resolve">-->
+<!--        <ivy:retrieve pattern="lib/[conf]/[artifact]-[revision].[ext]" conf="*"/>-->
+<!--    </target>-->
+
+<!--    <target name="deliver" depends="retrieve-all">-->
+<!--        <ivy:deliver deliverpattern="distrib/[artifact]-[revision].[ext]"-->
+<!--                     pubrevision="1.1b4" pubdate="20050115123254" status="milestone"/>-->
+<!--    </target>-->
+
+<!--    <target name="publish" depends="deliver">-->
+<!--        <ivy:publish resolver="internal"-->
+<!--                     artifactspattern="distrib/[artifact]-[revision].[ext]"-->
+<!--                     pubrevision="1.1b4"/>-->
+<!--    </target>-->
+</project>
+

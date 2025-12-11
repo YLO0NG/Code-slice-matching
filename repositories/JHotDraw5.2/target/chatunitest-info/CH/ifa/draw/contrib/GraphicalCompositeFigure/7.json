@@ -1,0 +1,25 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n\t\treturn getPresentationFigure().handles();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "handles()"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Return default handles from the presentation figure.\n */\npublic Vector handles() {\n    return getPresentationFigure().handles();\n}",
+  "method_comment": "\n\t * Return default handles from the presentation figure.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "SammonsProjection",
+  "methodName": "CreateMapping",
+  "brief": "public void CreateMapping()\r\n{}",
+  "methodSignature": "CreateMapping()",
+  "sourceCode": "public void CreateMapping()\n\t{\n\t\tfor (int i = maxIteration; i >= 0; i--)\n\t\t\tthis.Iterate();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.SammonsProjection": [
+      "Iterate()"
+    ]
+  },
+  "full_method_info": "public void CreateMapping() {\n    for (int i = maxIteration; i >= 0; i--) this.Iterate();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

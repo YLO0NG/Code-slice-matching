@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "getTodate",
+  "brief": "public Timestamp getTodate(){}",
+  "methodSignature": "getTodate()",
+  "sourceCode": "public Timestamp getTodate() {\n\t\treturn todate;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"todate\"\n */\npublic Timestamp getTodate() {\n    return todate;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"todate\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "PopupMenuFigureSelection",
+  "methodName": "setSelectedFigure",
+  "brief": "public void setSelectedFigure(Figure newSelectedFigure);",
+  "methodSignature": "setSelectedFigure(Figure)",
+  "sourceCode": "public void setSelectedFigure(Figure newSelectedFigure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Set the figure which was selected when the popup menu was invoked.\n *\n * @param   newSelectedFigure   figure which is selected (typically be a SelectionTool)\n */\npublic void setSelectedFigure(Figure newSelectedFigure);",
+  "method_comment": "\n\t * Set the figure which was selected when the popup menu was invoked.\n\t *\n\t * @param   newSelectedFigure   figure which is selected (typically be a SelectionTool)\n\t ",
+  "method_annotation": ""
+}

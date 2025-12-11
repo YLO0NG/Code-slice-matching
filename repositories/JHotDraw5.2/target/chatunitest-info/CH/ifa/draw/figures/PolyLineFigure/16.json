@@ -1,0 +1,18 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "getStartDecoration",
+  "brief": "public LineDecoration getStartDecoration(){}",
+  "methodSignature": "getStartDecoration()",
+  "sourceCode": "public LineDecoration getStartDecoration() {\n\t\treturn fStartDecoration;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the start decoration.\n */\npublic LineDecoration getStartDecoration() {\n    return fStartDecoration;\n}",
+  "method_comment": "\n\t * Returns the start decoration.\n\t ",
+  "method_annotation": ""
+}

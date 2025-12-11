@@ -1,0 +1,28 @@
+{
+  "className": "OffsetLocator",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fOffsetX);\n        dw.writeInt(fOffsetY);\n        dw.writeStorable(fBase);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.AbstractLocator": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "public void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeInt(fOffsetX);\n    dw.writeInt(fOffsetY);\n    dw.writeStorable(fBase);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

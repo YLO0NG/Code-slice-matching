@@ -1,0 +1,31 @@
+{
+  "className": "SerializationStorageFormat",
+  "methodName": "store",
+  "brief": "public String store(String fileName, Drawing saveDrawing) throws IOException{}",
+  "methodSignature": "store(String, Drawing)",
+  "sourceCode": "public String store(String fileName, Drawing saveDrawing) throws IOException {\n\t\tFileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n\t\tObjectOutput output = new ObjectOutputStream(stream);\n\t\toutput.writeObject(saveDrawing);\n\t\toutput.close();\n\t\treturn adjustFileName(fileName);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "adjustFileName(String)"
+    ],
+    "java.io.ObjectOutput": [
+      "writeObject(Object)",
+      "close()"
+    ]
+  },
+  "full_method_info": "/**\n * Store a Drawing under a given name. The name should be valid with regard to the FileFilter\n * that means, it should already contain the appropriate file extension.\n *\n * @param fileName file name of the Drawing under which it should be stored\n * @param saveDrawing drawing to be saved\n */\npublic String store(String fileName, Drawing saveDrawing) throws IOException {\n    FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n    ObjectOutput output = new ObjectOutputStream(stream);\n    output.writeObject(saveDrawing);\n    output.close();\n    return adjustFileName(fileName);\n}",
+  "method_comment": "\n\t * Store a Drawing under a given name. The name should be valid with regard to the FileFilter\n\t * that means, it should already contain the appropriate file extension.\n\t *\n\t * @param fileName file name of the Drawing under which it should be stored\n\t * @param saveDrawing drawing to be saved\n\t ",
+  "method_annotation": ""
+}

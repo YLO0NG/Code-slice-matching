@@ -1,0 +1,22 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "connectStart",
+  "brief": "public void connectStart(Connector start);",
+  "methodSignature": "connectStart(Connector)",
+  "sourceCode": "public void connectStart(Connector start);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Connector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Connector": []
+  },
+  "full_method_info": "/**\n * Sets the start Connector of the connection.\n * @param figure the start figure of the connection\n */\npublic void connectStart(Connector start);",
+  "method_comment": "\n     * Sets the start Connector of the connection.\n     * @param figure the start figure of the connection\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,53 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ReverseFigureEnumerator",
+  "className": "ReverseFigureEnumerator",
+  "index": 137,
+  "modifier": "[public , final ]",
+  "extend": "[]",
+  "implement": "[FigureEnumeration]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public final class ReverseFigureEnumerator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import CH.ifa.draw.util.ReverseVectorEnumerator;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "ReverseVectorEnumerator fEnumeration;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "FigureEnumeration"
+  ],
+  "methodSigs": {
+    "hasMoreElements()": "0",
+    "nextElement()": "1",
+    "nextFigure()": "2",
+    "ReverseFigureEnumerator(Vector)": "3"
+  },
+  "methodsBrief": [
+    "public boolean hasMoreElements(){}",
+    "public Object nextElement(){}",
+    "public Figure nextFigure(){}",
+    "public ReverseFigureEnumerator(Vector v){}"
+  ],
+  "constructorSigs": [
+    "ReverseFigureEnumerator(Vector)"
+  ],
+  "constructorBrief": [
+    "public ReverseFigureEnumerator(Vector v){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.util.Vector": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ReverseFigureEnumerator.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport CH.ifa.draw.util.ReverseVectorEnumerator;\nimport CH.ifa.draw.framework.*;\n\n/**\n * An Enumeration that enumerates a vector of figures back (size-1) to front (0).\n */\npublic final class ReverseFigureEnumerator implements FigureEnumeration {\n\n    ReverseVectorEnumerator fEnumeration;\n\n    public ReverseFigureEnumerator(Vector v) {\n        fEnumeration = new ReverseVectorEnumerator(v);\n    }\n\n    /**\n     * Returns true if the enumeration contains more elements; false\n     * if its empty.\n     */\n    public boolean hasMoreElements() {\n        return fEnumeration.hasMoreElements();\n    }\n\n    /**\n     * Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     */\n    public Object nextElement() {\n        return fEnumeration.nextElement();\n    }\n\n    /**\n     * Returns the next element casted as a figure of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     */\n    public Figure nextFigure() {\n        return (Figure) fEnumeration.nextElement();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * An Enumeration that enumerates a vector of figures back (size-1) to front (0).\n */\npublic final class ReverseFigureEnumerator implements FigureEnumeration {\n\n    ReverseVectorEnumerator fEnumeration;\n\n    public ReverseFigureEnumerator(Vector v) {\n        fEnumeration = new ReverseVectorEnumerator(v);\n    }\n\n    /**\n     * Returns true if the enumeration contains more elements; false\n     * if its empty.\n     */\n    public boolean hasMoreElements() {\n        return fEnumeration.hasMoreElements();\n    }\n\n    /**\n     * Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     */\n    public Object nextElement() {\n        return fEnumeration.nextElement();\n    }\n\n    /**\n     * Returns the next element casted as a figure of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     */\n    public Figure nextFigure() {\n        return (Figure) fEnumeration.nextElement();\n    }\n}",
+  "subClasses": []
+}

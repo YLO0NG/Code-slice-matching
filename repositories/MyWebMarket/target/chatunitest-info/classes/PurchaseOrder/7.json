@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "setDiscount",
+  "brief": "public void setDiscount( Double discount ){}",
+  "methodSignature": "setDiscount(Double)",
+  "sourceCode": "public void setDiscount( Double discount ) {\n\t\tthis.discount = discount;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Double"
+  ],
+  "dependentMethods": {
+    "java.lang.Double": []
+  },
+  "full_method_info": "public void setDiscount(Double discount) {\n    this.discount = discount;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

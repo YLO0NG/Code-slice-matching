@@ -1,0 +1,27 @@
+{
+  "className": "PertFigure",
+  "methodName": "asInt",
+  "brief": "private int asInt(int figureIndex){}",
+  "methodSignature": "asInt(int)",
+  "sourceCode": "private int asInt(int figureIndex) {\n        NumberTextFigure t = (NumberTextFigure)figureAt(figureIndex);\n        return t.getValue();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figureAt(int)"
+    ],
+    "CH.ifa.draw.figures.NumberTextFigure": [
+      "getValue()"
+    ]
+  },
+  "full_method_info": "private int asInt(int figureIndex) {\n    NumberTextFigure t = (NumberTextFigure) figureAt(figureIndex);\n    return t.getValue();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

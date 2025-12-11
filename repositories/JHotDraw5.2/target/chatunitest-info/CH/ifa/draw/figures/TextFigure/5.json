@@ -1,0 +1,18 @@
+{
+  "className": "TextFigure",
+  "methodName": "readOnly",
+  "brief": "public boolean readOnly(){}",
+  "methodSignature": "readOnly()",
+  "sourceCode": "public boolean readOnly() {\n        return fIsReadOnly;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Tests whether this figure is read only.\n */\npublic boolean readOnly() {\n    return fIsReadOnly;\n}",
+  "method_comment": "\n     * Tests whether this figure is read only.\n     ",
+  "method_annotation": ""
+}

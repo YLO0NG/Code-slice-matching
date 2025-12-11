@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setAuthor",
+  "brief": "public void setAuthor(String author){}",
+  "methodSignature": "setAuthor(String)",
+  "sourceCode": "public void setAuthor(String author) {\n\t\tthis.author = author;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param author\n * @uml.property  name=\"author\"\n */\npublic void setAuthor(String author) {\n    this.author = author;\n}",
+  "method_comment": "\n\t * @param author\n\t * @uml.property  name=\"author\"\n\t ",
+  "method_annotation": ""
+}

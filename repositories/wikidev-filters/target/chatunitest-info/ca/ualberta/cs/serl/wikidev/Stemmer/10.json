@@ -1,0 +1,25 @@
+{
+  "className": "Stemmer",
+  "methodName": "ends",
+  "brief": "private final boolean ends(String s)\r\n  {}",
+  "methodSignature": "ends(String)",
+  "sourceCode": "private final boolean ends(String s)\n   {  int l = s.length();\n      int o = k-l+1;\n      if (o < 0) return false;\n      for (int i = 0; i < l; i++) if (b[o+i] != s.charAt(i)) return false;\n      j = k-l;\n      return true;\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "length()",
+      "charAt(int)"
+    ]
+  },
+  "full_method_info": "private final boolean ends(String s) {\n    int l = s.length();\n    int o = k - l + 1;\n    if (o < 0)\n        return false;\n    for (int i = 0; i < l; i++) if (b[o + i] != s.charAt(i))\n        return false;\n    j = k - l;\n    return true;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

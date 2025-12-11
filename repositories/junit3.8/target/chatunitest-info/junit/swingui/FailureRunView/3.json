@@ -1,0 +1,25 @@
+{
+  "className": "FailureRunView",
+  "methodName": "revealFailure",
+  "brief": "public void revealFailure(Test failure){}",
+  "methodSignature": "revealFailure(Test)",
+  "sourceCode": "public void revealFailure(Test failure) {\r\n\t\tfFailureList.setSelectedIndex(0);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "javax.swing.JList": [
+      "setSelectedIndex(int)"
+    ]
+  },
+  "full_method_info": "public void revealFailure(Test failure) {\r\n    fFailureList.setSelectedIndex(0);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figureAt",
+  "brief": "public Figure figureAt(int i){}",
+  "methodSignature": "figureAt(int)",
+  "sourceCode": "public Figure figureAt(int i) {\n        return (Figure)fFigures.elementAt(i);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elementAt(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets a figure at the given index.\n */\npublic Figure figureAt(int i) {\n    return (Figure) fFigures.elementAt(i);\n}",
+  "method_comment": "\n     * Gets a figure at the given index.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "getSize",
+  "brief": "public Dimension getSize();",
+  "methodSignature": "getSize()",
+  "sourceCode": "public Dimension getSize();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the size of the drawing.\n */\npublic Dimension getSize();",
+  "method_comment": "\n     * Gets the size of the drawing.\n     ",
+  "method_annotation": ""
+}

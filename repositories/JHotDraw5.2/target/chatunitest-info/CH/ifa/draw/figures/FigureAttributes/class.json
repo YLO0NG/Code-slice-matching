@@ -1,0 +1,73 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.FigureAttributes",
+  "className": "FigureAttributes",
+  "index": 32,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[Cloneable, Serializable]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class   FigureAttributes",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import java.awt.Color;",
+    "import java.io.IOException;",
+    "import java.io.Serializable;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Hashtable fMap;",
+    "private static final long serialVersionUID = -6886355144423666716L;",
+    "private int figureAttributesSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [
+    "Cloneable",
+    "Serializable"
+  ],
+  "methodSigs": {
+    "get(String)": "0",
+    "set(String, Object)": "1",
+    "hasDefined(String)": "2",
+    "clone()": "3",
+    "read(StorableInput)": "4",
+    "write(StorableOutput)": "5",
+    "writeColor(StorableOutput, String, Color)": "6",
+    "readColor(StorableInput)": "7",
+    "FigureAttributes()": "8"
+  },
+  "methodsBrief": [
+    "public Object get(String name){}",
+    "public void set(String name, Object value){}",
+    "public boolean hasDefined(String name){}",
+    "public Object clone(){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public void write(StorableOutput dw){}",
+    "public static void writeColor(StorableOutput dw, String colorName, Color color){}",
+    "public static Color readColor(StorableInput dr) throws IOException{}",
+    "public FigureAttributes(){}"
+  ],
+  "constructorSigs": [
+    "FigureAttributes()"
+  ],
+  "constructorBrief": [
+    "public FigureAttributes(){}"
+  ],
+  "getterSetterSigs": [
+    "set(String, Object)"
+  ],
+  "getterSetterBrief": [
+    "public void set(String name, Object value){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)FigureAttributes.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.util.*;\nimport java.awt.Color;\nimport java.io.IOException;\nimport java.io.Serializable;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A container for a figure's attributes. The attributes are stored\n * as key/value pairs.\n *\n * @see Figure\n */\npublic class FigureAttributes extends Object implements Cloneable, Serializable {\n\n    private Hashtable fMap;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -6886355144423666716L;\n\n    private int figureAttributesSerializedDataVersion = 1;\n\n    public FigureAttributes() {\n        fMap = new Hashtable();\n    }\n\n    /**\n     * Gets the attribute with the given name.\n     * @returns attribute or null if the key is not defined\n     */\n    public Object get(String name) {\n        return fMap.get(name);\n    }\n\n    /**\n     * Sets the attribute with the given name and\n     * overwrites its previous value.\n     */\n    public void set(String name, Object value) {\n        if (value != null) {\n            fMap.put(name, value);\n        } else {\n            fMap.remove(name);\n        }\n    }\n\n    /**\n     * Tests if an attribute is defined.\n     */\n    public boolean hasDefined(String name) {\n        return fMap.containsKey(name);\n    }\n\n    /**\n     * Clones the attributes.\n     */\n    public Object clone() {\n        try {\n            FigureAttributes a = (FigureAttributes) super.clone();\n            a.fMap = (Hashtable) fMap.clone();\n            return a;\n        } catch (CloneNotSupportedException e) {\n            throw new InternalError();\n        }\n    }\n\n    /**\n     * Reads the attributes from a StorableInput.\n     * FigureAttributes store the following types directly:\n     * Color, Boolean, String, Int. Other attribute types\n     * have to implement the Storable interface or they\n     * have to be wrapped by an object that implements Storable.\n     * @see Storable\n     * @see #write\n     */\n    public void read(StorableInput dr) throws IOException {\n        String s = dr.readString();\n        if (!s.toLowerCase().equals(\"attributes\"))\n            throw new IOException(\"Attributes expected\");\n        fMap = new Hashtable();\n        int size = dr.readInt();\n        for (int i = 0; i < size; i++) {\n            String key = dr.readString();\n            String valtype = dr.readString();\n            Object val = null;\n            if (valtype.equals(\"Color\"))\n                val = new Color(dr.readInt(), dr.readInt(), dr.readInt());\n            else if (valtype.equals(\"Boolean\"))\n                val = new Boolean(dr.readString());\n            else if (valtype.equals(\"String\"))\n                val = dr.readString();\n            else if (valtype.equals(\"Int\"))\n                val = new Integer(dr.readInt());\n            else if (valtype.equals(\"Storable\"))\n                val = dr.readStorable();\n            else if (valtype.equals(Figure.POPUP_MENU)) {\n                // read String but don't store it\n                continue;\n            } else if (valtype.equals(\"UNKNOWN\"))\n                continue;\n            fMap.put(key, val);\n        }\n    }\n\n    /**\n     * Writes the attributes to a StorableInput.\n     * FigureAttributes store the following types directly:\n     * Color, Boolean, String, Int. Other attribute types\n     * have to implement the Storable interface or they\n     * have to be wrapped by an object that implements Storable.\n     * @see Storable\n     * @see #write\n     */\n    public void write(StorableOutput dw) {\n        dw.writeString(\"attributes\");\n        // number of attributes\n        dw.writeInt(fMap.size());\n        Enumeration k = fMap.keys();\n        while (k.hasMoreElements()) {\n            String s = (String) k.nextElement();\n            Object v = fMap.get(s);\n            dw.writeString(s);\n            if (v instanceof String) {\n                dw.writeString(\"String\");\n                dw.writeString((String) v);\n            } else if (v instanceof Color) {\n                writeColor(dw, \"Color\", (Color) v);\n            } else if (v instanceof Boolean) {\n                dw.writeString(\"Boolean\");\n                if (((Boolean) v).booleanValue())\n                    dw.writeString(\"TRUE\");\n                else\n                    dw.writeString(\"FALSE\");\n            } else if (v instanceof Integer) {\n                dw.writeString(\"Int\");\n                dw.writeInt(((Integer) v).intValue());\n            } else if (v instanceof Storable) {\n                dw.writeString(\"Storable\");\n                dw.writeStorable((Storable) v);\n            } else if (v instanceof javax.swing.JPopupMenu) {\n                dw.writeString(Figure.POPUP_MENU);\n            } else {\n                System.out.println(\"Unknown attribute: \" + v);\n                dw.writeString(\"UNKNOWN\");\n            }\n        }\n    }\n\n    public static void writeColor(StorableOutput dw, String colorName, Color color) {\n        if (color != null) {\n            dw.writeString(colorName);\n            dw.writeInt(color.getRed());\n            dw.writeInt(color.getGreen());\n            dw.writeInt(color.getBlue());\n        }\n    }\n\n    public static Color readColor(StorableInput dr) throws IOException {\n        return new Color(dr.readInt(), dr.readInt(), dr.readInt());\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A container for a figure's attributes. The attributes are stored\n * as key/value pairs.\n *\n * @see Figure\n */\npublic class FigureAttributes extends Object implements Cloneable, Serializable {\n\n    private Hashtable fMap;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -6886355144423666716L;\n\n    private int figureAttributesSerializedDataVersion = 1;\n\n    public FigureAttributes() {\n        fMap = new Hashtable();\n    }\n\n    /**\n     * Gets the attribute with the given name.\n     * @returns attribute or null if the key is not defined\n     */\n    public Object get(String name) {\n        return fMap.get(name);\n    }\n\n    /**\n     * Sets the attribute with the given name and\n     * overwrites its previous value.\n     */\n    public void set(String name, Object value) {\n        if (value != null) {\n            fMap.put(name, value);\n        } else {\n            fMap.remove(name);\n        }\n    }\n\n    /**\n     * Tests if an attribute is defined.\n     */\n    public boolean hasDefined(String name) {\n        return fMap.containsKey(name);\n    }\n\n    /**\n     * Clones the attributes.\n     */\n    public Object clone() {\n        try {\n            FigureAttributes a = (FigureAttributes) super.clone();\n            a.fMap = (Hashtable) fMap.clone();\n            return a;\n        } catch (CloneNotSupportedException e) {\n            throw new InternalError();\n        }\n    }\n\n    /**\n     * Reads the attributes from a StorableInput.\n     * FigureAttributes store the following types directly:\n     * Color, Boolean, String, Int. Other attribute types\n     * have to implement the Storable interface or they\n     * have to be wrapped by an object that implements Storable.\n     * @see Storable\n     * @see #write\n     */\n    public void read(StorableInput dr) throws IOException {\n        String s = dr.readString();\n        if (!s.toLowerCase().equals(\"attributes\"))\n            throw new IOException(\"Attributes expected\");\n        fMap = new Hashtable();\n        int size = dr.readInt();\n        for (int i = 0; i < size; i++) {\n            String key = dr.readString();\n            String valtype = dr.readString();\n            Object val = null;\n            if (valtype.equals(\"Color\"))\n                val = new Color(dr.readInt(), dr.readInt(), dr.readInt());\n            else if (valtype.equals(\"Boolean\"))\n                val = new Boolean(dr.readString());\n            else if (valtype.equals(\"String\"))\n                val = dr.readString();\n            else if (valtype.equals(\"Int\"))\n                val = new Integer(dr.readInt());\n            else if (valtype.equals(\"Storable\"))\n                val = dr.readStorable();\n            else if (valtype.equals(Figure.POPUP_MENU)) {\n                // read String but don't store it\n                continue;\n            } else if (valtype.equals(\"UNKNOWN\"))\n                continue;\n            fMap.put(key, val);\n        }\n    }\n\n    /**\n     * Writes the attributes to a StorableInput.\n     * FigureAttributes store the following types directly:\n     * Color, Boolean, String, Int. Other attribute types\n     * have to implement the Storable interface or they\n     * have to be wrapped by an object that implements Storable.\n     * @see Storable\n     * @see #write\n     */\n    public void write(StorableOutput dw) {\n        dw.writeString(\"attributes\");\n        // number of attributes\n        dw.writeInt(fMap.size());\n        Enumeration k = fMap.keys();\n        while (k.hasMoreElements()) {\n            String s = (String) k.nextElement();\n            Object v = fMap.get(s);\n            dw.writeString(s);\n            if (v instanceof String) {\n                dw.writeString(\"String\");\n                dw.writeString((String) v);\n            } else if (v instanceof Color) {\n                writeColor(dw, \"Color\", (Color) v);\n            } else if (v instanceof Boolean) {\n                dw.writeString(\"Boolean\");\n                if (((Boolean) v).booleanValue())\n                    dw.writeString(\"TRUE\");\n                else\n                    dw.writeString(\"FALSE\");\n            } else if (v instanceof Integer) {\n                dw.writeString(\"Int\");\n                dw.writeInt(((Integer) v).intValue());\n            } else if (v instanceof Storable) {\n                dw.writeString(\"Storable\");\n                dw.writeStorable((Storable) v);\n            } else if (v instanceof javax.swing.JPopupMenu) {\n                dw.writeString(Figure.POPUP_MENU);\n            } else {\n                System.out.println(\"Unknown attribute: \" + v);\n                dw.writeString(\"UNKNOWN\");\n            }\n        }\n    }\n\n    public static void writeColor(StorableOutput dw, String colorName, Color color) {\n        if (color != null) {\n            dw.writeString(colorName);\n            dw.writeInt(color.getRed());\n            dw.writeInt(color.getGreen());\n            dw.writeInt(color.getBlue());\n        }\n    }\n\n    public static Color readColor(StorableInput dr) throws IOException {\n        return new Color(dr.readInt(), dr.readInt(), dr.readInt());\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,82 @@
+{
+  "fullClassName": "junit.framework.TestResult",
+  "className": "TestResult",
+  "index": 17,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public class TestResult",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Vector;",
+    "import java.util.Enumeration;"
+  ],
+  "fields": [
+    "protected Vector fFailures;",
+    "protected Vector fErrors;",
+    "protected Vector fListeners;",
+    "protected int fRunTests;",
+    "private boolean fStop;"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "addError(Test, Throwable)": "0",
+    "addFailure(Test, AssertionFailedError)": "1",
+    "addListener(TestListener)": "2",
+    "removeListener(TestListener)": "3",
+    "cloneListeners()": "4",
+    "endTest(Test)": "5",
+    "errorCount()": "6",
+    "errors()": "7",
+    "failureCount()": "8",
+    "failures()": "9",
+    "run(TestCase)": "10",
+    "runCount()": "11",
+    "runProtected(Test, Protectable)": "12",
+    "shouldStop()": "13",
+    "startTest(Test)": "14",
+    "stop()": "15",
+    "wasSuccessful()": "16",
+    "TestResult()": "17"
+  },
+  "methodsBrief": [
+    "public synchronized void addError(Test test, Throwable t){}",
+    "public synchronized void addFailure(Test test, AssertionFailedError t){}",
+    "public synchronized void addListener(TestListener listener){}",
+    "public synchronized void removeListener(TestListener listener){}",
+    "private synchronized Vector cloneListeners(){}",
+    "public void endTest(Test test){}",
+    "public synchronized int errorCount(){}",
+    "public synchronized Enumeration errors(){}",
+    "public synchronized int failureCount(){}",
+    "public synchronized Enumeration failures(){}",
+    "protected void run(final TestCase test){}",
+    "public synchronized int runCount(){}",
+    "public void runProtected(final Test test, Protectable p){}",
+    "public synchronized boolean shouldStop(){}",
+    "public void startTest(Test test){}",
+    "public synchronized void stop(){}",
+    "public synchronized boolean wasSuccessful(){}",
+    "public TestResult(){}"
+  ],
+  "constructorSigs": [
+    "TestResult()"
+  ],
+  "constructorBrief": [
+    "public TestResult(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.framework;\r\n\r\nimport java.util.Vector;\r\nimport java.util.Enumeration;\r\n\r\n/**\r\n * A <code>TestResult</code> collects the results of executing\r\n * a test case. It is an instance of the Collecting Parameter pattern.\r\n * The test framework distinguishes between <i>failures</i> and <i>errors</i>.\r\n * A failure is anticipated and checked for with assertions. Errors are\r\n * unanticipated problems like an <code>ArrayIndexOutOfBoundsException</code>.\r\n *\r\n * @see Test\r\n */\r\npublic class TestResult extends Object {\r\n\r\n    protected Vector fFailures;\r\n\r\n    protected Vector fErrors;\r\n\r\n    protected Vector fListeners;\r\n\r\n    protected int fRunTests;\r\n\r\n    private boolean fStop;\r\n\r\n    public TestResult() {\r\n        fFailures = new Vector();\r\n        fErrors = new Vector();\r\n        fListeners = new Vector();\r\n        fRunTests = 0;\r\n        fStop = false;\r\n    }\r\n\r\n    /**\r\n     * Adds an error to the list of errors. The passed in exception\r\n     * caused the error.\r\n     */\r\n    public synchronized void addError(Test test, Throwable t) {\r\n        fErrors.addElement(new TestFailure(test, t));\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).addError(test, t);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Adds a failure to the list of failures. The passed in exception\r\n     * caused the failure.\r\n     */\r\n    public synchronized void addFailure(Test test, AssertionFailedError t) {\r\n        fFailures.addElement(new TestFailure(test, t));\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).addFailure(test, t);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Registers a TestListener\r\n     */\r\n    public synchronized void addListener(TestListener listener) {\r\n        fListeners.addElement(listener);\r\n    }\r\n\r\n    /**\r\n     * Unregisters a TestListener\r\n     */\r\n    public synchronized void removeListener(TestListener listener) {\r\n        fListeners.removeElement(listener);\r\n    }\r\n\r\n    /**\r\n     * Returns a copy of the listeners.\r\n     */\r\n    private synchronized Vector cloneListeners() {\r\n        return (Vector) fListeners.clone();\r\n    }\r\n\r\n    /**\r\n     * Informs the result that a test was completed.\r\n     */\r\n    public void endTest(Test test) {\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).endTest(test);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Gets the number of detected errors.\r\n     */\r\n    public synchronized int errorCount() {\r\n        return fErrors.size();\r\n    }\r\n\r\n    /**\r\n     * Returns an Enumeration for the errors\r\n     */\r\n    public synchronized Enumeration errors() {\r\n        return fErrors.elements();\r\n    }\r\n\r\n    /**\r\n     * Gets the number of detected failures.\r\n     */\r\n    public synchronized int failureCount() {\r\n        return fFailures.size();\r\n    }\r\n\r\n    /**\r\n     * Returns an Enumeration for the failures\r\n     */\r\n    public synchronized Enumeration failures() {\r\n        return fFailures.elements();\r\n    }\r\n\r\n    /**\r\n     * Runs a TestCase.\r\n     */\r\n    protected void run(final TestCase test) {\r\n        /*{*/\r\n        final int count = test.countTestCases();\r\n        synchronized (this) {\r\n            fRunTests += count;\r\n        }\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).startTest(test);\r\n        }\r\n        /*}*/\r\n        Protectable p = new Protectable() {\r\n\r\n            public void protect() throws Throwable {\r\n                test.runBare();\r\n            }\r\n        };\r\n        runProtected(test, p);\r\n        endTest(test);\r\n    }\r\n\r\n    /**\r\n     * Gets the number of run tests.\r\n     */\r\n    public synchronized int runCount() {\r\n        return fRunTests;\r\n    }\r\n\r\n    /**\r\n     * Runs a TestCase.\r\n     */\r\n    public void runProtected(final Test test, Protectable p) {\r\n        try {\r\n            p.protect();\r\n        } catch (AssertionFailedError e) {\r\n            /*{*/\r\n            fFailures.addElement(new TestFailure(test, e));\r\n            for (Enumeration e1 = cloneListeners().elements(); e1.hasMoreElements(); ) {\r\n                ((TestListener) e1.nextElement()).addFailure(test, e);\r\n            }\r\n            /*}*/\r\n        } catch (ThreadDeath e) {\r\n            // don't catch ThreadDeath by accident\r\n            throw e;\r\n        } catch (Throwable e) {\r\n            addError(test, e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Checks whether the test run should stop\r\n     */\r\n    public synchronized boolean shouldStop() {\r\n        return fStop;\r\n    }\r\n\r\n    /**\r\n     * Informs the result that a test will be started.\r\n     */\r\n    public void startTest(Test test) {\r\n        final int count = test.countTestCases();\r\n        synchronized (this) {\r\n            fRunTests += count;\r\n        }\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).startTest(test);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Marks that the test run should stop.\r\n     */\r\n    public synchronized void stop() {\r\n        fStop = true;\r\n    }\r\n\r\n    /**\r\n     * Returns whether the entire test was successful or not.\r\n     */\r\n    public synchronized boolean wasSuccessful() {\r\n        return failureCount() == 0 && errorCount() == 0;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A <code>TestResult</code> collects the results of executing\r\n * a test case. It is an instance of the Collecting Parameter pattern.\r\n * The test framework distinguishes between <i>failures</i> and <i>errors</i>.\r\n * A failure is anticipated and checked for with assertions. Errors are\r\n * unanticipated problems like an <code>ArrayIndexOutOfBoundsException</code>.\r\n *\r\n * @see Test\r\n */\r\npublic class TestResult extends Object {\r\n\r\n    protected Vector fFailures;\r\n\r\n    protected Vector fErrors;\r\n\r\n    protected Vector fListeners;\r\n\r\n    protected int fRunTests;\r\n\r\n    private boolean fStop;\r\n\r\n    public TestResult() {\r\n        fFailures = new Vector();\r\n        fErrors = new Vector();\r\n        fListeners = new Vector();\r\n        fRunTests = 0;\r\n        fStop = false;\r\n    }\r\n\r\n    /**\r\n     * Adds an error to the list of errors. The passed in exception\r\n     * caused the error.\r\n     */\r\n    public synchronized void addError(Test test, Throwable t) {\r\n        fErrors.addElement(new TestFailure(test, t));\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).addError(test, t);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Adds a failure to the list of failures. The passed in exception\r\n     * caused the failure.\r\n     */\r\n    public synchronized void addFailure(Test test, AssertionFailedError t) {\r\n        fFailures.addElement(new TestFailure(test, t));\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).addFailure(test, t);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Registers a TestListener\r\n     */\r\n    public synchronized void addListener(TestListener listener) {\r\n        fListeners.addElement(listener);\r\n    }\r\n\r\n    /**\r\n     * Unregisters a TestListener\r\n     */\r\n    public synchronized void removeListener(TestListener listener) {\r\n        fListeners.removeElement(listener);\r\n    }\r\n\r\n    /**\r\n     * Returns a copy of the listeners.\r\n     */\r\n    private synchronized Vector cloneListeners() {\r\n        return (Vector) fListeners.clone();\r\n    }\r\n\r\n    /**\r\n     * Informs the result that a test was completed.\r\n     */\r\n    public void endTest(Test test) {\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).endTest(test);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Gets the number of detected errors.\r\n     */\r\n    public synchronized int errorCount() {\r\n        return fErrors.size();\r\n    }\r\n\r\n    /**\r\n     * Returns an Enumeration for the errors\r\n     */\r\n    public synchronized Enumeration errors() {\r\n        return fErrors.elements();\r\n    }\r\n\r\n    /**\r\n     * Gets the number of detected failures.\r\n     */\r\n    public synchronized int failureCount() {\r\n        return fFailures.size();\r\n    }\r\n\r\n    /**\r\n     * Returns an Enumeration for the failures\r\n     */\r\n    public synchronized Enumeration failures() {\r\n        return fFailures.elements();\r\n    }\r\n\r\n    /**\r\n     * Runs a TestCase.\r\n     */\r\n    protected void run(final TestCase test) {\r\n        /*{*/\r\n        final int count = test.countTestCases();\r\n        synchronized (this) {\r\n            fRunTests += count;\r\n        }\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).startTest(test);\r\n        }\r\n        /*}*/\r\n        Protectable p = new Protectable() {\r\n\r\n            public void protect() throws Throwable {\r\n                test.runBare();\r\n            }\r\n        };\r\n        runProtected(test, p);\r\n        endTest(test);\r\n    }\r\n\r\n    /**\r\n     * Gets the number of run tests.\r\n     */\r\n    public synchronized int runCount() {\r\n        return fRunTests;\r\n    }\r\n\r\n    /**\r\n     * Runs a TestCase.\r\n     */\r\n    public void runProtected(final Test test, Protectable p) {\r\n        try {\r\n            p.protect();\r\n        } catch (AssertionFailedError e) {\r\n            /*{*/\r\n            fFailures.addElement(new TestFailure(test, e));\r\n            for (Enumeration e1 = cloneListeners().elements(); e1.hasMoreElements(); ) {\r\n                ((TestListener) e1.nextElement()).addFailure(test, e);\r\n            }\r\n            /*}*/\r\n        } catch (ThreadDeath e) {\r\n            // don't catch ThreadDeath by accident\r\n            throw e;\r\n        } catch (Throwable e) {\r\n            addError(test, e);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Checks whether the test run should stop\r\n     */\r\n    public synchronized boolean shouldStop() {\r\n        return fStop;\r\n    }\r\n\r\n    /**\r\n     * Informs the result that a test will be started.\r\n     */\r\n    public void startTest(Test test) {\r\n        final int count = test.countTestCases();\r\n        synchronized (this) {\r\n            fRunTests += count;\r\n        }\r\n        for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n            ((TestListener) e.nextElement()).startTest(test);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Marks that the test run should stop.\r\n     */\r\n    public synchronized void stop() {\r\n        fStop = true;\r\n    }\r\n\r\n    /**\r\n     * Returns whether the entire test was successful or not.\r\n     */\r\n    public synchronized boolean wasSuccessful() {\r\n        return failureCount() == 0 && errorCount() == 0;\r\n    }\r\n}",
+  "subClasses": []
+}

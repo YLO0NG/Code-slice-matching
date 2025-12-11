@@ -1,0 +1,18 @@
+{
+  "className": "FailureDetailView",
+  "methodName": "clear",
+  "brief": "public void clear();",
+  "methodSignature": "clear()",
+  "sourceCode": "public void clear();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Clears the view\r\n */\r\npublic void clear();",
+  "method_comment": "\r\n\t * Clears the view\r\n\t ",
+  "method_annotation": ""
+}

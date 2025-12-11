@@ -1,0 +1,28 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertClusterPerProject",
+  "brief": "public static String insertClusterPerProject(int clustered, String projectname, String fromdate, String todate, int total, String cluster_set_name, double threshold){}",
+  "methodSignature": "insertClusterPerProject(int, String, String, String, int, String, double)",
+  "sourceCode": "public static String insertClusterPerProject(int clustered, String projectname, String fromdate, String todate, int total, String cluster_set_name, double threshold) {\n\t\treturn \"insert into wikidev_clusters_per_project values (\\'\"+cluster_set_name+\"\\', \\'\"+fromdate+\"\\', \\'\"+todate+\"\\', \\'\"+projectname+\"\\', \\'\"+clustered+\"\\', \\'\"+total+\"\\', \\'\"+threshold+\"\\')\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "String",
+    "String",
+    "String",
+    "int",
+    "String",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String insertClusterPerProject(int clustered, String projectname, String fromdate, String todate, int total, String cluster_set_name, double threshold) {\n    return \"insert into wikidev_clusters_per_project values (\\'\" + cluster_set_name + \"\\', \\'\" + fromdate + \"\\', \\'\" + todate + \"\\', \\'\" + projectname + \"\\', \\'\" + clustered + \"\\', \\'\" + total + \"\\', \\'\" + threshold + \"\\')\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

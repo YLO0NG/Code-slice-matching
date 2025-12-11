@@ -1,0 +1,36 @@
+{
+  "fullClassName": "junit.runner.Sorter",
+  "className": "Sorter",
+  "index": 25,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public class Sorter",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import junit.runner.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "sortStrings(Vector, int, int, Swapper)": "0"
+  },
+  "methodsBrief": [
+    "public static void sortStrings(Vector values , int left, int right, Swapper swapper){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\nimport java.util.*;\r\nimport junit.runner.*;\r\n\r\n/**\r\n * A custom quick sort with support to customize the swap behaviour.\r\n * NOTICE: We can't use the the sorting support from the JDK 1.2 collection\r\n * classes because of the JDK 1.1.7 compatibility.\r\n */\r\npublic class Sorter {\r\n\r\n    public static interface Swapper {\r\n\r\n        public void swap(Vector values, int left, int right);\r\n    }\r\n\r\n    public static void sortStrings(Vector values, int left, int right, Swapper swapper) {\r\n        int oleft = left;\r\n        int oright = right;\r\n        String mid = (String) values.elementAt((left + right) / 2);\r\n        do {\r\n            while (((String) (values.elementAt(left))).compareTo(mid) < 0) left++;\r\n            while (mid.compareTo((String) (values.elementAt(right))) < 0) right--;\r\n            if (left <= right) {\r\n                swapper.swap(values, left, right);\r\n                left++;\r\n                right--;\r\n            }\r\n        } while (left <= right);\r\n        if (oleft < right)\r\n            sortStrings(values, oleft, right, swapper);\r\n        if (left < oright)\r\n            sortStrings(values, left, oright, swapper);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A custom quick sort with support to customize the swap behaviour.\r\n * NOTICE: We can't use the the sorting support from the JDK 1.2 collection\r\n * classes because of the JDK 1.1.7 compatibility.\r\n */\r\npublic class Sorter {\r\n\r\n    public static interface Swapper {\r\n\r\n        public void swap(Vector values, int left, int right);\r\n    }\r\n\r\n    public static void sortStrings(Vector values, int left, int right, Swapper swapper) {\r\n        int oleft = left;\r\n        int oright = right;\r\n        String mid = (String) values.elementAt((left + right) / 2);\r\n        do {\r\n            while (((String) (values.elementAt(left))).compareTo(mid) < 0) left++;\r\n            while (mid.compareTo((String) (values.elementAt(right))) < 0) right--;\r\n            if (left <= right) {\r\n                swapper.swap(values, left, right);\r\n                left++;\r\n                right--;\r\n            }\r\n        } while (left <= right);\r\n        if (oleft < right)\r\n            sortStrings(values, oleft, right, swapper);\r\n        if (left < oright)\r\n            sortStrings(values, left, oright, swapper);\r\n    }\r\n}",
+  "subClasses": []
+}

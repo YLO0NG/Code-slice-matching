@@ -1,0 +1,35 @@
+{
+  "className": "NodeFigure",
+  "methodName": "drawConnectors",
+  "brief": "private void drawConnectors(Graphics g){}",
+  "methodSignature": "drawConnectors(Graphics)",
+  "sourceCode": "private void drawConnectors(Graphics g) {\n        if (fConnectorsVisible) {\n            Enumeration e = connectors().elements();\n            while (e.hasMoreElements())\n                ((Connector) e.nextElement()).draw(g);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "connectors()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "draw(Graphics)"
+    ]
+  },
+  "full_method_info": "private void drawConnectors(Graphics g) {\n    if (fConnectorsVisible) {\n        Enumeration e = connectors().elements();\n        while (e.hasMoreElements()) ((Connector) e.nextElement()).draw(g);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

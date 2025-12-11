@@ -1,0 +1,26 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "source",
+  "brief": "protected Connector source(){}",
+  "methodSignature": "source()",
+  "sourceCode": "protected Connector source() {\n        if (target() == fConnection.start())\n            return fConnection.end();\n        return fConnection.start();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.ChangeConnectionHandle": [
+      "target()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "start()",
+      "end()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the side of the connection that is unaffected by\n * the change.\n */\nprotected Connector source() {\n    if (target() == fConnection.start())\n        return fConnection.end();\n    return fConnection.start();\n}",
+  "method_comment": "\n     * Gets the side of the connection that is unaffected by\n     * the change.\n     ",
+  "method_annotation": ""
+}

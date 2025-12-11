@@ -1,0 +1,18 @@
+{
+  "className": "IArtifact",
+  "methodName": "getOwner",
+  "brief": "public User getOwner(){}",
+  "methodSignature": "getOwner()",
+  "sourceCode": "public User getOwner() {\n\t\treturn owner;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/*public HashMap<IArtifact, HashMap<IArtifact, Integer>> getIndirectlyRelatedArtifacts() {\n\t\treturn indirectlyRelatedArtifacts;\n\t}*/\n/**\n * @return\n * @uml.property  name=\"relatedArtifacts\"\n */\n/*public HashMap<IArtifact, Integer> getRelatedArtifacts() {\n\t\treturn relatedArtifacts;\n\t}*/\n/**\n * @return\n * @uml.property  name=\"owner\"\n */\npublic User getOwner() {\n    return owner;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"owner\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,29 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "createFileFilter",
+  "brief": "protected FileFilter createFileFilter(){}",
+  "methodSignature": "createFileFilter()",
+  "sourceCode": "protected FileFilter createFileFilter() {\n\t\treturn new FileFilter() {\n\t\t\tpublic boolean accept(File checkFile) {\n\t\t\t\t// still display directories for navigation\n\t\t\t\tif (checkFile.isDirectory()) {\n\t\t\t\t\treturn true;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\treturn checkFile.getName().endsWith(\".\" + myFileExtension);\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tpublic String getDescription() {\n\t\t\t\treturn getFileDescription();\n\t\t\t}\n\t\t};\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.File": [
+      "isDirectory()",
+      "getName()"
+    ],
+    "java.lang.String": [
+      "endsWith(String)"
+    ],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "getFileDescription()"
+    ]
+  },
+  "full_method_info": "/**\n * Factory method to create a FileFilter that accepts file with the appropriate\n * file exention used by a javax.swing.JFileChooser. Subclasses can override this\n * method to provide their own file filters.\n *\n * @return FileFilter for this StorageFormat\n */\nprotected FileFilter createFileFilter() {\n    return new FileFilter() {\n\n        public boolean accept(File checkFile) {\n            // still display directories for navigation\n            if (checkFile.isDirectory()) {\n                return true;\n            } else {\n                return checkFile.getName().endsWith(\".\" + myFileExtension);\n            }\n        }\n\n        public String getDescription() {\n            return getFileDescription();\n        }\n    };\n}",
+  "method_comment": "\n\t * Factory method to create a FileFilter that accepts file with the appropriate\n\t * file exention used by a javax.swing.JFileChooser. Subclasses can override this\n\t * method to provide their own file filters.\n\t *\n\t * @return FileFilter for this StorageFormat\n\t ",
+  "method_annotation": ""
+}

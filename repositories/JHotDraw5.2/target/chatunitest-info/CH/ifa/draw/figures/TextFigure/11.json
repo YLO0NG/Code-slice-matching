@@ -1,0 +1,46 @@
+{
+  "className": "TextFigure",
+  "methodName": "setAttribute",
+  "brief": "public void setAttribute(String name, Object value){}",
+  "methodSignature": "setAttribute(String, Object)",
+  "sourceCode": "public void setAttribute(String name, Object value) {\n        Font font = getFont();\n        if (name.equals(\"FontSize\")) {\n            Integer s = (Integer)value;\n            willChange();\n\t\t\tfFont = new Font(font.getName(), font.getStyle(), s.intValue());\n\t\t\tmarkDirty();\n\t\t\tchanged();\n        }\n        else if (name.equals(\"FontStyle\")) {\n            Integer s = (Integer)value;\n            int style = font.getStyle();\n            if (s.intValue() == Font.PLAIN)\n                style = font.PLAIN;\n            else\n                style = style ^ s.intValue();\n            setFont(new Font(font.getName(), style, font.getSize()) );\n        }\n        else if (name.equals(\"FontName\")) {\n            String n = (String)value;\n            setFont(new Font(n, font.getStyle(), font.getSize()) );\n        }\n        else\n            super.setAttribute(name, value);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "java.lang.Object": [],
+    "CH.ifa.draw.figures.TextFigure": [
+      "getFont()",
+      "changed()",
+      "markDirty()",
+      "setFont(Font)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()"
+    ],
+    "java.awt.Font": [
+      "getName()",
+      "getStyle()",
+      "getSize()"
+    ],
+    "java.lang.Integer": [
+      "intValue()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "setAttribute(String, Object)"
+    ]
+  },
+  "full_method_info": "/**\n * A text figure understands the \"FontSize\", \"FontStyle\", and \"FontName\"\n * attributes.\n */\npublic void setAttribute(String name, Object value) {\n    Font font = getFont();\n    if (name.equals(\"FontSize\")) {\n        Integer s = (Integer) value;\n        willChange();\n        fFont = new Font(font.getName(), font.getStyle(), s.intValue());\n        markDirty();\n        changed();\n    } else if (name.equals(\"FontStyle\")) {\n        Integer s = (Integer) value;\n        int style = font.getStyle();\n        if (s.intValue() == Font.PLAIN)\n            style = font.PLAIN;\n        else\n            style = style ^ s.intValue();\n        setFont(new Font(font.getName(), style, font.getSize()));\n    } else if (name.equals(\"FontName\")) {\n        String n = (String) value;\n        setFont(new Font(n, font.getStyle(), font.getSize()));\n    } else\n        super.setAttribute(name, value);\n}",
+  "method_comment": "\n     * A text figure understands the \"FontSize\", \"FontStyle\", and \"FontName\"\n     * attributes.\n     ",
+  "method_annotation": ""
+}

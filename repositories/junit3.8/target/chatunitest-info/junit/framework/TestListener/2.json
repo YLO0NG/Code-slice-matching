@@ -1,0 +1,22 @@
+{
+  "className": "TestListener",
+  "methodName": "endTest",
+  "brief": "public void endTest(Test test);",
+  "methodSignature": "endTest(Test)",
+  "sourceCode": "public void endTest(Test test);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": []
+  },
+  "full_method_info": "/**\r\n * A test ended.\r\n */\r\npublic void endTest(Test test);",
+  "method_comment": "\r\n\t * A test ended.\r\n\t ",
+  "method_annotation": ""
+}

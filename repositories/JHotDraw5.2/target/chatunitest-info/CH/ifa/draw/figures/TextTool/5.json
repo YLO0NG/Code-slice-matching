@@ -1,0 +1,22 @@
+{
+  "className": "TextTool",
+  "methodName": "isActivated",
+  "brief": "public boolean isActivated(){}",
+  "methodSignature": "isActivated()",
+  "sourceCode": "public boolean isActivated() {\n\t\treturn getTypingTarget() != null;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.TextTool": [
+      "getTypingTarget()"
+    ]
+  },
+  "full_method_info": "/**\n * Test whether the text tool is currently activated and is displaying\n * a overlay TextFigure for accepting input.\n *\n * @return true, if the text tool has a accepting target TextFigure for its input, false otherwise\n */\npublic boolean isActivated() {\n    return getTypingTarget() != null;\n}",
+  "method_comment": "\n\t * Test whether the text tool is currently activated and is displaying\n\t * a overlay TextFigure for accepting input.\n\t *\n\t * @return true, if the text tool has a accepting target TextFigure for its input, false otherwise\n\t ",
+  "method_annotation": ""
+}

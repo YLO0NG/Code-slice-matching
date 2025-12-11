@@ -1,0 +1,18 @@
+{
+  "className": "LoginAction",
+  "methodName": "logoff",
+  "brief": "public String logoff() throws Exception{}",
+  "methodSignature": "logoff()",
+  "sourceCode": "public String logoff() throws Exception {\n\t\tlogger.info( \"Starting logoff()\" ); //f:log\n\t\tActionContext.getContext().getSession().clear();\n\t\tlogger.info( \"Finishing logoff()\" ); //f:log\n\t\treturn INPUT;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String logoff() throws Exception {\n    // f:log\n    logger.info(\"Starting logoff()\");\n    ActionContext.getContext().getSession().clear();\n    // f:log\n    logger.info(\"Finishing logoff()\");\n    return INPUT;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

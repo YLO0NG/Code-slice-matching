@@ -1,0 +1,79 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.EllipseFigure",
+  "className": "EllipseFigure",
+  "index": 31,
+  "modifier": "[public ]",
+  "extend": "[AttributeFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class EllipseFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import java.util.Vector;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private Rectangle   fDisplayBox;",
+    "private static final long serialVersionUID = -6856203289355118951L;",
+    "private int ellipseFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "AttributeFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "handles()": "0",
+    "basicDisplayBox(Point, Point)": "1",
+    "displayBox()": "2",
+    "basicMoveBy(int, int)": "3",
+    "drawBackground(Graphics)": "4",
+    "drawFrame(Graphics)": "5",
+    "connectionInsets()": "6",
+    "connectorAt(int, int)": "7",
+    "write(StorableOutput)": "8",
+    "read(StorableInput)": "9",
+    "EllipseFigure()": "10",
+    "EllipseFigure(Point, Point)": "11"
+  },
+  "methodsBrief": [
+    "public Vector handles(){}",
+    "public void basicDisplayBox(Point origin, Point corner){}",
+    "public Rectangle displayBox(){}",
+    "protected void basicMoveBy(int x, int y){}",
+    "public void drawBackground(Graphics g){}",
+    "public void drawFrame(Graphics g){}",
+    "public Insets connectionInsets(){}",
+    "public Connector connectorAt(int x, int y){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public EllipseFigure(){}",
+    "public EllipseFigure(Point origin, Point corner){}"
+  ],
+  "constructorSigs": [
+    "EllipseFigure()",
+    "EllipseFigure(Point, Point)"
+  ],
+  "constructorBrief": [
+    "public EllipseFigure(){}",
+    "public EllipseFigure(Point origin, Point corner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.figures.EllipseFigure": [
+      "basicDisplayBox(Point, Point)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)EllipseFigure.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.io.IOException;\nimport java.util.Vector;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * An ellipse figure.\n */\npublic class EllipseFigure extends AttributeFigure {\n\n    private Rectangle fDisplayBox;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -6856203289355118951L;\n\n    private int ellipseFigureSerializedDataVersion = 1;\n\n    public EllipseFigure() {\n        this(new Point(0, 0), new Point(0, 0));\n    }\n\n    public EllipseFigure(Point origin, Point corner) {\n        basicDisplayBox(origin, corner);\n    }\n\n    public Vector handles() {\n        Vector handles = new Vector();\n        BoxHandleKit.addHandles(this, handles);\n        return handles;\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n    }\n\n    public Rectangle displayBox() {\n        return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    protected void basicMoveBy(int x, int y) {\n        fDisplayBox.translate(x, y);\n    }\n\n    public void drawBackground(Graphics g) {\n        Rectangle r = displayBox();\n        g.fillOval(r.x, r.y, r.width, r.height);\n    }\n\n    public void drawFrame(Graphics g) {\n        Rectangle r = displayBox();\n        g.drawOval(r.x, r.y, r.width - 1, r.height - 1);\n    }\n\n    public Insets connectionInsets() {\n        Rectangle r = fDisplayBox;\n        int cx = r.width / 2;\n        int cy = r.height / 2;\n        return new Insets(cy, cx, cy, cx);\n    }\n\n    public Connector connectorAt(int x, int y) {\n        return new ChopEllipseConnector(this);\n    }\n\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n    }\n}\n",
+  "classDeclarationCode": "/**\n * An ellipse figure.\n */\npublic class EllipseFigure extends AttributeFigure {\n\n    private Rectangle fDisplayBox;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -6856203289355118951L;\n\n    private int ellipseFigureSerializedDataVersion = 1;\n\n    public EllipseFigure() {\n        this(new Point(0, 0), new Point(0, 0));\n    }\n\n    public EllipseFigure(Point origin, Point corner) {\n        basicDisplayBox(origin, corner);\n    }\n\n    public Vector handles() {\n        Vector handles = new Vector();\n        BoxHandleKit.addHandles(this, handles);\n        return handles;\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n    }\n\n    public Rectangle displayBox() {\n        return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    protected void basicMoveBy(int x, int y) {\n        fDisplayBox.translate(x, y);\n    }\n\n    public void drawBackground(Graphics g) {\n        Rectangle r = displayBox();\n        g.fillOval(r.x, r.y, r.width, r.height);\n    }\n\n    public void drawFrame(Graphics g) {\n        Rectangle r = displayBox();\n        g.drawOval(r.x, r.y, r.width - 1, r.height - 1);\n    }\n\n    public Insets connectionInsets() {\n        Rectangle r = fDisplayBox;\n        int cx = r.width / 2;\n        int cy = r.height / 2;\n        return new Insets(cy, cx, cy, cx);\n    }\n\n    public Connector connectorAt(int x, int y) {\n        return new ChopEllipseConnector(this);\n    }\n\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n    }\n}",
+  "subClasses": []
+}

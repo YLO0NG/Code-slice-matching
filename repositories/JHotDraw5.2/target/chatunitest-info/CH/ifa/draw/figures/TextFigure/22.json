@@ -1,0 +1,36 @@
+{
+  "className": "TextFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        markDirty();\n        fOriginX = dr.readInt();\n        fOriginY = dr.readInt();\n        fText = dr.readString();\n        fFont = new Font(dr.readString(), dr.readInt(), dr.readInt());\n        fIsReadOnly = dr.readBoolean();\n\n        fObservedFigure = (Figure)dr.readStorable();\n        if (fObservedFigure != null)\n            fObservedFigure.addFigureChangeListener(this);\n        fLocator = (OffsetLocator)dr.readStorable();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readString()",
+      "readStorable()",
+      "readBoolean()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "read(StorableInput)"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "markDirty()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "addFigureChangeListener(FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    markDirty();\n    fOriginX = dr.readInt();\n    fOriginY = dr.readInt();\n    fText = dr.readString();\n    fFont = new Font(dr.readString(), dr.readInt(), dr.readInt());\n    fIsReadOnly = dr.readBoolean();\n    fObservedFigure = (Figure) dr.readStorable();\n    if (fObservedFigure != null)\n        fObservedFigure.addFigureChangeListener(this);\n    fLocator = (OffsetLocator) dr.readStorable();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

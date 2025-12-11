@@ -1,0 +1,20 @@
+{
+  "className": "InvocationParser",
+  "methodName": "setInterval",
+  "brief": "public void setInterval(double interval){}",
+  "methodSignature": "setInterval(double)",
+  "sourceCode": "public void setInterval(double interval) {\n\t\tthis.interval = interval;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setInterval(double interval) {\n    this.interval = interval;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "readObject",
+  "brief": "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+  "methodSignature": "readObject(ObjectInputStream)",
+  "sourceCode": "private void readObject(ObjectInputStream s)\n        throws ClassNotFoundException, IOException {\n\n        s.defaultReadObject();\n\n        fSelection = new Vector(); // could use lazy initialization instead\n        if (fDrawing != null)\n            fDrawing.addDrawingChangeListener(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ObjectInputStream"
+  ],
+  "dependentMethods": {
+    "java.io.ObjectInputStream": [
+      "defaultReadObject()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "addDrawingChangeListener(DrawingChangeListener)"
+    ]
+  },
+  "full_method_info": "private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n    s.defaultReadObject();\n    // could use lazy initialization instead\n    fSelection = new Vector();\n    if (fDrawing != null)\n        fDrawing.addDrawingChangeListener(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

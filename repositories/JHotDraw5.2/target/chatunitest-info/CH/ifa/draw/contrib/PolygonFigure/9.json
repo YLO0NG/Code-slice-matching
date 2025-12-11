@@ -1,0 +1,24 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "drawBackground",
+  "brief": "public void drawBackground(Graphics g){}",
+  "methodSignature": "drawBackground(Graphics)",
+  "sourceCode": "public void drawBackground(Graphics g) {\n      g.fillPolygon(fPoly);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillPolygon(Polygon)"
+    ]
+  },
+  "full_method_info": "public void drawBackground(Graphics g) {\n    g.fillPolygon(fPoly);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

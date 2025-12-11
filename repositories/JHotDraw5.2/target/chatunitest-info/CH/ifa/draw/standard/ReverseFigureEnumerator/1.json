@@ -1,0 +1,22 @@
+{
+  "className": "ReverseFigureEnumerator",
+  "methodName": "nextElement",
+  "brief": "public Object nextElement(){}",
+  "methodSignature": "nextElement()",
+  "sourceCode": "public Object nextElement() {\n        return fEnumeration.nextElement();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.ReverseVectorEnumerator": [
+      "nextElement()"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the next element of the enumeration. Calls to this\n * method will enumerate successive elements.\n * @exception NoSuchElementException If no more elements exist.\n */\npublic Object nextElement() {\n    return fEnumeration.nextElement();\n}",
+  "method_comment": "\n     * Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     ",
+  "method_annotation": ""
+}

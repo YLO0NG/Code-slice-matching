@@ -1,0 +1,22 @@
+{
+  "className": "Geom",
+  "methodName": "east",
+  "brief": "static public Point east(Rectangle r){}",
+  "methodSignature": "east(Rectangle)",
+  "sourceCode": "static public Point east(Rectangle r) {\n        return new Point(r.x+r.width, r.y + r.height/ 2);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": []
+  },
+  "full_method_info": "static public Point east(Rectangle r) {\n    return new Point(r.x + r.width, r.y + r.height / 2);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

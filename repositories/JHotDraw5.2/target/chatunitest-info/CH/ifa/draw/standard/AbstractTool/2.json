@@ -1,0 +1,24 @@
+{
+  "className": "AbstractTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorX = x;\n        fAnchorY = y;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": []
+  },
+  "full_method_info": "/**\n * Handles mouse down events in the drawing view.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    fAnchorX = x;\n    fAnchorY = y;\n}",
+  "method_comment": "\n     * Handles mouse down events in the drawing view.\n     ",
+  "method_annotation": ""
+}

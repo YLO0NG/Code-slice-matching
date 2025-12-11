@@ -1,0 +1,32 @@
+{
+  "className": "PolygonHandle",
+  "methodName": "invokeEnd",
+  "brief": "public void invokeEnd  (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeEnd(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeEnd  (int x, int y, int anchorX, int anchorY, DrawingView view) {\n    myOwner().smoothPoints();\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "smoothPoints()"
+    ],
+    "CH.ifa.draw.contrib.PolygonHandle": [
+      "myOwner()"
+    ]
+  },
+  "full_method_info": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    myOwner().smoothPoints();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "DrawApplication",
+  "methodName": "toolDone",
+  "brief": "public void toolDone(){}",
+  "methodSignature": "toolDone()",
+  "sourceCode": "public void toolDone() {\n        if (fDefaultToolButton != null) {\n            setTool(fDefaultToolButton.tool(), fDefaultToolButton.name());\n            setSelected(fDefaultToolButton);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "setTool(Tool, String)",
+      "setSelected(ToolButton)"
+    ],
+    "CH.ifa.draw.standard.ToolButton": [
+      "name()",
+      "tool()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the default tool of the editor.\n * @see DrawingEditor\n */\npublic void toolDone() {\n    if (fDefaultToolButton != null) {\n        setTool(fDefaultToolButton.tool(), fDefaultToolButton.name());\n        setSelected(fDefaultToolButton);\n    }\n}",
+  "method_comment": "\n     * Sets the default tool of the editor.\n     * @see DrawingEditor\n     ",
+  "method_annotation": ""
+}

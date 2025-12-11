@@ -1,0 +1,29 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "setPreference",
+  "brief": "public void setPreference(String key, String value){}",
+  "methodSignature": "setPreference(String, String)",
+  "sourceCode": "public void setPreference(String key, String value) {\r\n\t\tgetPreferences().setProperty(key, value);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Properties": [
+      "setProperty(String, String)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getPreferences()"
+    ]
+  },
+  "full_method_info": "public void setPreference(String key, String value) {\r\n    getPreferences().setProperty(key, value);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "Ticket",
+  "methodName": "getAssociatedUsers",
+  "brief": "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+  "methodSignature": "getAssociatedUsers()",
+  "sourceCode": "@Override\n\tpublic Set<User> getAssociatedUsers() {\n\t\tSet<User> users = new TreeSet<User>();\n\t\tusers.add(owner);\n\t\tusers.add(reporter);\n\t\tfor(TicketChange changes : ticketChanges) {\n\t\t\tusers.add(changes.getExternalAuthor());\n\t\t}\n\t\treturn users;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Set": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.TicketChange": [
+      "getExternalAuthor()"
+    ]
+  },
+  "full_method_info": "@Override\npublic Set<User> getAssociatedUsers() {\n    Set<User> users = new TreeSet<User>();\n    users.add(owner);\n    users.add(reporter);\n    for (TicketChange changes : ticketChanges) {\n        users.add(changes.getExternalAuthor());\n    }\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "setApplicationName",
+  "brief": "public void setApplicationName(String applicationName){}",
+  "methodSignature": "setApplicationName(String)",
+  "sourceCode": "public void setApplicationName(String applicationName) {\n\t\tfApplicationName = applicationName;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Set the name of the application build from this skeleton application\n */\npublic void setApplicationName(String applicationName) {\n    fApplicationName = applicationName;\n}",
+  "method_comment": "\n\t * Set the name of the application build from this skeleton application\n\t ",
+  "method_annotation": ""
+}

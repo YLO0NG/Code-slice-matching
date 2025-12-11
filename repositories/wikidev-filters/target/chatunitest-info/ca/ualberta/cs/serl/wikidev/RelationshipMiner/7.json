@@ -1,0 +1,34 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "relateArtifacts",
+  "brief": "private void relateArtifacts(IArtifact artifact1, IArtifact artifact2, double value, String word){}",
+  "methodSignature": "relateArtifacts(IArtifact, IArtifact, double, String)",
+  "sourceCode": "private void relateArtifacts(IArtifact artifact1, IArtifact artifact2, double value, String word) {\n\t\tartifact1.addDirectlyRelatedArtifact(artifact2, value, word);\n\t\tartifactsChanged.add(artifact1);\n\t\tnotifyUsers(artifact1, artifact2);\n\t\tartifact2.addDirectlyRelatedArtifact(artifact1, value, word);\n\t\tartifactsChanged.add(artifact2);\n\t\tnotifyUsers(artifact2, artifact1);\n\t\t//calculateTransitiveRelationship(artifact1, artifact2);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "IArtifact",
+    "double",
+    "String"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "addDirectlyRelatedArtifact(IArtifact, double, String)"
+    ],
+    "java.lang.String": [],
+    "java.util.Set": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": [
+      "notifyUsers(IArtifact, IArtifact)"
+    ]
+  },
+  "full_method_info": "private void relateArtifacts(IArtifact artifact1, IArtifact artifact2, double value, String word) {\n    artifact1.addDirectlyRelatedArtifact(artifact2, value, word);\n    artifactsChanged.add(artifact1);\n    notifyUsers(artifact1, artifact2);\n    artifact2.addDirectlyRelatedArtifact(artifact1, value, word);\n    artifactsChanged.add(artifact2);\n    notifyUsers(artifact2, artifact1);\n    // calculateTransitiveRelationship(artifact1, artifact2);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

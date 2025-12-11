@@ -1,0 +1,18 @@
+{
+  "className": "Wiki",
+  "methodName": "getRevisions",
+  "brief": "public ArrayList<WikiRevision> getRevisions(){}",
+  "methodSignature": "getRevisions()",
+  "sourceCode": "public ArrayList<WikiRevision> getRevisions() {\n\t\treturn revisions;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public ArrayList<WikiRevision> getRevisions() {\n    return revisions;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

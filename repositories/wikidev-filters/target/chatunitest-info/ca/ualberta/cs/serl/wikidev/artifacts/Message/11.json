@@ -1,0 +1,20 @@
+{
+  "className": "Message",
+  "methodName": "setCommunicationID",
+  "brief": "public void setCommunicationID(int communicationID){}",
+  "methodSignature": "setCommunicationID(int)",
+  "sourceCode": "public void setCommunicationID(int communicationID) {\n\t\tthis.communicationID = communicationID;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param communicationID\n * @uml.property  name=\"communicationID\"\n */\npublic void setCommunicationID(int communicationID) {\n    this.communicationID = communicationID;\n}",
+  "method_comment": "\n\t * @param communicationID\n\t * @uml.property  name=\"communicationID\"\n\t ",
+  "method_annotation": ""
+}

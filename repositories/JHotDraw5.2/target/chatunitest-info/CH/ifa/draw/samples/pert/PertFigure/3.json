@@ -1,0 +1,24 @@
+{
+  "className": "PertFigure",
+  "methodName": "setEnd",
+  "brief": "public void setEnd(int value){}",
+  "methodSignature": "setEnd(int)",
+  "sourceCode": "public void setEnd(int value) {\n        setInt(2, value);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "setInt(int, int)"
+    ]
+  },
+  "full_method_info": "public void setEnd(int value) {\n    setInt(2, value);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

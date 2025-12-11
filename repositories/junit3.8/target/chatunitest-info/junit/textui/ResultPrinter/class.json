@@ -1,0 +1,90 @@
+{
+  "fullClassName": "junit.textui.ResultPrinter",
+  "className": "ResultPrinter",
+  "index": 54,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[TestListener]",
+  "packageName": "junit.textui",
+  "packageDeclaration": "package junit.textui;",
+  "classSignature": "public class ResultPrinter",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.PrintStream;",
+    "import java.text.NumberFormat;",
+    "import java.util.Enumeration;",
+    "import junit.framework.AssertionFailedError;",
+    "import junit.framework.Test;",
+    "import junit.framework.TestFailure;",
+    "import junit.framework.TestListener;",
+    "import junit.framework.TestResult;",
+    "import junit.runner.BaseTestRunner;"
+  ],
+  "fields": [
+    "PrintStream fWriter;",
+    "int fColumn= 0;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "TestListener"
+  ],
+  "methodSigs": {
+    "print(TestResult, long)": "0",
+    "printWaitPrompt()": "1",
+    "printHeader(long)": "2",
+    "printErrors(TestResult)": "3",
+    "printFailures(TestResult)": "4",
+    "printDefects(Enumeration, int, String)": "5",
+    "printDefect(TestFailure, int)": "6",
+    "printDefectHeader(TestFailure, int)": "7",
+    "printDefectTrace(TestFailure)": "8",
+    "printFooter(TestResult)": "9",
+    "elapsedTimeAsString(long)": "10",
+    "getWriter()": "11",
+    "addError(Test, Throwable)": "12",
+    "addFailure(Test, AssertionFailedError)": "13",
+    "endTest(Test)": "14",
+    "startTest(Test)": "15",
+    "ResultPrinter(PrintStream)": "16"
+  },
+  "methodsBrief": [
+    "synchronized void print(TestResult result, long runTime){}",
+    "void printWaitPrompt(){}",
+    "protected void printHeader(long runTime){}",
+    "protected void printErrors(TestResult result){}",
+    "protected void printFailures(TestResult result){}",
+    "protected void printDefects(Enumeration booBoos, int count, String type){}",
+    "public void printDefect(TestFailure booBoo, int count){}",
+    "protected void printDefectHeader(TestFailure booBoo, int count){}",
+    "protected void printDefectTrace(TestFailure booBoo){}",
+    "protected void printFooter(TestResult result){}",
+    "protected String elapsedTimeAsString(long runTime){}",
+    "public PrintStream getWriter(){}",
+    "public void addError(Test test, Throwable t){}",
+    "public void addFailure(Test test, AssertionFailedError t){}",
+    "public void endTest(Test test){}",
+    "public void startTest(Test test){}",
+    "public ResultPrinter(PrintStream writer){}"
+  ],
+  "constructorSigs": [
+    "ResultPrinter(PrintStream)"
+  ],
+  "constructorBrief": [
+    "public ResultPrinter(PrintStream writer){}"
+  ],
+  "getterSetterSigs": [
+    "getWriter()"
+  ],
+  "getterSetterBrief": [
+    "public PrintStream getWriter(){}"
+  ],
+  "constructorDeps": {
+    "java.io.PrintStream": []
+  },
+  "compilationUnitCode": "package junit.textui;\r\n\r\nimport java.io.PrintStream;\r\nimport java.text.NumberFormat;\r\nimport java.util.Enumeration;\r\nimport junit.framework.AssertionFailedError;\r\nimport junit.framework.Test;\r\nimport junit.framework.TestFailure;\r\nimport junit.framework.TestListener;\r\nimport junit.framework.TestResult;\r\nimport junit.runner.BaseTestRunner;\r\n\r\npublic class ResultPrinter implements TestListener {\r\n\r\n    PrintStream fWriter;\r\n\r\n    int fColumn = 0;\r\n\r\n    public ResultPrinter(PrintStream writer) {\r\n        fWriter = writer;\r\n    }\r\n\r\n    /* API for use by textui.TestRunner\r\n\t */\r\n    synchronized void print(TestResult result, long runTime) {\r\n        printHeader(runTime);\r\n        printErrors(result);\r\n        printFailures(result);\r\n        /*{*/\r\n        if (result.wasSuccessful()) {\r\n            getWriter().println();\r\n            getWriter().print(\"OK\");\r\n            getWriter().println(\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\" : \"s\") + \")\");\r\n        } else {\r\n            getWriter().println();\r\n            getWriter().println(\"FAILURES!!!\");\r\n            getWriter().println(\"Tests run: \" + result.runCount() + \",  Failures: \" + result.failureCount() + \",  Errors: \" + result.errorCount());\r\n        }\r\n        getWriter().println();\r\n        /*}*/\r\n    }\r\n\r\n    void printWaitPrompt() {\r\n        getWriter().println();\r\n        getWriter().println(\"<RETURN> to continue\");\r\n    }\r\n\r\n    /* Internal methods \r\n\t */\r\n    protected void printHeader(long runTime) {\r\n        getWriter().println();\r\n        getWriter().println(\"Time: \" + elapsedTimeAsString(runTime));\r\n    }\r\n\r\n    protected void printErrors(TestResult result) {\r\n        printDefects(result.errors(), result.errorCount(), \"error\");\r\n    }\r\n\r\n    protected void printFailures(TestResult result) {\r\n        printDefects(result.failures(), result.failureCount(), \"failure\");\r\n    }\r\n\r\n    protected void printDefects(Enumeration booBoos, int count, String type) {\r\n        if (count == 0)\r\n            return;\r\n        if (count == 1)\r\n            getWriter().println(\"There was \" + count + \" \" + type + \":\");\r\n        else\r\n            getWriter().println(\"There were \" + count + \" \" + type + \"s:\");\r\n        for (int i = 1; booBoos.hasMoreElements(); i++) {\r\n            printDefect((TestFailure) booBoos.nextElement(), i);\r\n        }\r\n    }\r\n\r\n    public void printDefect(TestFailure booBoo, int count) {\r\n        // only public for testing purposes\r\n        printDefectHeader(booBoo, count);\r\n        printDefectTrace(booBoo);\r\n    }\r\n\r\n    protected void printDefectHeader(TestFailure booBoo, int count) {\r\n        // I feel like making this a println, then adding a line giving the throwable a chance to print something\r\n        // before we get to the stack trace.\r\n        getWriter().print(count + \") \" + booBoo.failedTest());\r\n    }\r\n\r\n    protected void printDefectTrace(TestFailure booBoo) {\r\n        getWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));\r\n    }\r\n\r\n    protected void printFooter(TestResult result) {\r\n        if (result.wasSuccessful()) {\r\n            getWriter().println();\r\n            getWriter().print(\"OK\");\r\n            getWriter().println(\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\" : \"s\") + \")\");\r\n        } else {\r\n            getWriter().println();\r\n            getWriter().println(\"FAILURES!!!\");\r\n            getWriter().println(\"Tests run: \" + result.runCount() + \",  Failures: \" + result.failureCount() + \",  Errors: \" + result.errorCount());\r\n        }\r\n        getWriter().println();\r\n    }\r\n\r\n    /**\r\n     * Returns the formatted string of the elapsed time.\r\n     * Duplicated from BaseTestRunner. Fix it.\r\n     */\r\n    protected String elapsedTimeAsString(long runTime) {\r\n        return NumberFormat.getInstance().format((double) runTime / 1000);\r\n    }\r\n\r\n    public PrintStream getWriter() {\r\n        return fWriter;\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#addError(Test, Throwable)\r\n     */\r\n    public void addError(Test test, Throwable t) {\r\n        getWriter().print(\"E\");\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#addFailure(Test, AssertionFailedError)\r\n     */\r\n    public void addFailure(Test test, AssertionFailedError t) {\r\n        getWriter().print(\"F\");\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#endTest(Test)\r\n     */\r\n    public void endTest(Test test) {\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#startTest(Test)\r\n     */\r\n    public void startTest(Test test) {\r\n        getWriter().print(\".\");\r\n        if (fColumn++ >= 40) {\r\n            getWriter().println();\r\n            fColumn = 0;\r\n        }\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "public class ResultPrinter implements TestListener {\r\n\r\n    PrintStream fWriter;\r\n\r\n    int fColumn = 0;\r\n\r\n    public ResultPrinter(PrintStream writer) {\r\n        fWriter = writer;\r\n    }\r\n\r\n    /* API for use by textui.TestRunner\r\n\t */\r\n    synchronized void print(TestResult result, long runTime) {\r\n        printHeader(runTime);\r\n        printErrors(result);\r\n        printFailures(result);\r\n        /*{*/\r\n        if (result.wasSuccessful()) {\r\n            getWriter().println();\r\n            getWriter().print(\"OK\");\r\n            getWriter().println(\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\" : \"s\") + \")\");\r\n        } else {\r\n            getWriter().println();\r\n            getWriter().println(\"FAILURES!!!\");\r\n            getWriter().println(\"Tests run: \" + result.runCount() + \",  Failures: \" + result.failureCount() + \",  Errors: \" + result.errorCount());\r\n        }\r\n        getWriter().println();\r\n        /*}*/\r\n    }\r\n\r\n    void printWaitPrompt() {\r\n        getWriter().println();\r\n        getWriter().println(\"<RETURN> to continue\");\r\n    }\r\n\r\n    /* Internal methods \r\n\t */\r\n    protected void printHeader(long runTime) {\r\n        getWriter().println();\r\n        getWriter().println(\"Time: \" + elapsedTimeAsString(runTime));\r\n    }\r\n\r\n    protected void printErrors(TestResult result) {\r\n        printDefects(result.errors(), result.errorCount(), \"error\");\r\n    }\r\n\r\n    protected void printFailures(TestResult result) {\r\n        printDefects(result.failures(), result.failureCount(), \"failure\");\r\n    }\r\n\r\n    protected void printDefects(Enumeration booBoos, int count, String type) {\r\n        if (count == 0)\r\n            return;\r\n        if (count == 1)\r\n            getWriter().println(\"There was \" + count + \" \" + type + \":\");\r\n        else\r\n            getWriter().println(\"There were \" + count + \" \" + type + \"s:\");\r\n        for (int i = 1; booBoos.hasMoreElements(); i++) {\r\n            printDefect((TestFailure) booBoos.nextElement(), i);\r\n        }\r\n    }\r\n\r\n    public void printDefect(TestFailure booBoo, int count) {\r\n        // only public for testing purposes\r\n        printDefectHeader(booBoo, count);\r\n        printDefectTrace(booBoo);\r\n    }\r\n\r\n    protected void printDefectHeader(TestFailure booBoo, int count) {\r\n        // I feel like making this a println, then adding a line giving the throwable a chance to print something\r\n        // before we get to the stack trace.\r\n        getWriter().print(count + \") \" + booBoo.failedTest());\r\n    }\r\n\r\n    protected void printDefectTrace(TestFailure booBoo) {\r\n        getWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));\r\n    }\r\n\r\n    protected void printFooter(TestResult result) {\r\n        if (result.wasSuccessful()) {\r\n            getWriter().println();\r\n            getWriter().print(\"OK\");\r\n            getWriter().println(\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\" : \"s\") + \")\");\r\n        } else {\r\n            getWriter().println();\r\n            getWriter().println(\"FAILURES!!!\");\r\n            getWriter().println(\"Tests run: \" + result.runCount() + \",  Failures: \" + result.failureCount() + \",  Errors: \" + result.errorCount());\r\n        }\r\n        getWriter().println();\r\n    }\r\n\r\n    /**\r\n     * Returns the formatted string of the elapsed time.\r\n     * Duplicated from BaseTestRunner. Fix it.\r\n     */\r\n    protected String elapsedTimeAsString(long runTime) {\r\n        return NumberFormat.getInstance().format((double) runTime / 1000);\r\n    }\r\n\r\n    public PrintStream getWriter() {\r\n        return fWriter;\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#addError(Test, Throwable)\r\n     */\r\n    public void addError(Test test, Throwable t) {\r\n        getWriter().print(\"E\");\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#addFailure(Test, AssertionFailedError)\r\n     */\r\n    public void addFailure(Test test, AssertionFailedError t) {\r\n        getWriter().print(\"F\");\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#endTest(Test)\r\n     */\r\n    public void endTest(Test test) {\r\n    }\r\n\r\n    /**\r\n     * @see junit.framework.TestListener#startTest(Test)\r\n     */\r\n    public void startTest(Test test) {\r\n        getWriter().print(\".\");\r\n        if (fColumn++ >= 40) {\r\n            getWriter().println();\r\n            fColumn = 0;\r\n        }\r\n    }\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawingRequestUpdate",
+  "brief": "public void drawingRequestUpdate(DrawingChangeEvent e){}",
+  "methodSignature": "drawingRequestUpdate(DrawingChangeEvent)",
+  "sourceCode": "public void drawingRequestUpdate(DrawingChangeEvent e) {\n        repairDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingChangeEvent": [],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "repairDamage()"
+    ]
+  },
+  "full_method_info": "public void drawingRequestUpdate(DrawingChangeEvent e) {\n    repairDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

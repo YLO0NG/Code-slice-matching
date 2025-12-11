@@ -1,0 +1,47 @@
+{
+  "fullClassName": "CH.ifa.draw.util.Command",
+  "className": "Command",
+  "index": 151,
+  "modifier": "[public , abstract ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public abstract class Command",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [],
+  "fields": [
+    "private String  fName;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "isExecutable()": "1",
+    "name()": "2",
+    "Command(String)": "3"
+  },
+  "methodsBrief": [
+    "public abstract void execute();",
+    "public boolean isExecutable(){}",
+    "public String name(){}",
+    "public Command(String name){}"
+  ],
+  "constructorSigs": [
+    "Command(String)"
+  ],
+  "constructorBrief": [
+    "public Command(String name){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "/*\n * @(#)Command.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\n/**\n * Commands encapsulate an action to be executed. Commands have\n * a name and can be used in conjunction with <i>Command enabled</i>\n * ui components.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld010.htm>Command</a></b><br>\n * Command is a simple instance of the command pattern without undo\n * support.\n * <hr>\n *\n * @see CommandButton\n * @see CommandMenu\n * @see CommandChoice\n */\npublic abstract class Command {\n\n    private String fName;\n\n    public Command(String name) {\n        fName = name;\n    }\n\n    /**\n     * Executes the command.\n     */\n    public abstract void execute();\n\n    /**\n     * Tests if the command can be executed.\n     */\n    public boolean isExecutable() {\n        return true;\n    }\n\n    /**\n     * Gets the command name.\n     */\n    public String name() {\n        return fName;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Commands encapsulate an action to be executed. Commands have\n * a name and can be used in conjunction with <i>Command enabled</i>\n * ui components.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld010.htm>Command</a></b><br>\n * Command is a simple instance of the command pattern without undo\n * support.\n * <hr>\n *\n * @see CommandButton\n * @see CommandMenu\n * @see CommandChoice\n */\npublic abstract class Command {\n\n    private String fName;\n\n    public Command(String name) {\n        fName = name;\n    }\n\n    /**\n     * Executes the command.\n     */\n    public abstract void execute();\n\n    /**\n     * Tests if the command can be executed.\n     */\n    public boolean isExecutable() {\n        return true;\n    }\n\n    /**\n     * Gets the command name.\n     */\n    public String name() {\n        return fName;\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getProject_id",
+  "brief": "public int getProject_id(){}",
+  "methodSignature": "getProject_id()",
+  "sourceCode": "public int getProject_id() {\n\t\treturn project_id;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"project_id\"\n */\npublic int getProject_id() {\n    return project_id;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"project_id\"\n\t ",
+  "method_annotation": ""
+}

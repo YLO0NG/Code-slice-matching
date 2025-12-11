@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "runFailed",
+  "brief": "protected void runFailed(String message){}",
+  "methodSignature": "runFailed(String)",
+  "sourceCode": "protected void runFailed(String message) {\r\n\t\tSystem.err.println(message);\r\n\t\tSystem.exit(FAILURE_EXIT);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "protected void runFailed(String message) {\r\n    System.err.println(message);\r\n    System.exit(FAILURE_EXIT);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

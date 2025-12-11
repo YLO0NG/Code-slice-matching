@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectTicketChangesByTicketID",
+  "brief": "public static String selectTicketChangesByTicketID(int ticketID){}",
+  "methodSignature": "selectTicketChangesByTicketID(int)",
+  "sourceCode": "public static String selectTicketChangesByTicketID(int ticketID) {\n\t\treturn \"select * from wikidev_ticketchanges where ticket_id=\"+ticketID;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectTicketChangesByTicketID(int ticketID) {\n    return \"select * from wikidev_ticketchanges where ticket_id=\" + ticketID;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

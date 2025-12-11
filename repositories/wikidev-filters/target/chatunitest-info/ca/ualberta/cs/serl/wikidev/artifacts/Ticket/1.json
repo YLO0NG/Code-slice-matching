@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getDr_id",
+  "brief": "public int getDr_id(){}",
+  "methodSignature": "getDr_id()",
+  "sourceCode": "public int getDr_id() {\n\t\treturn project_ticket_id;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getDr_id() {\n    return project_ticket_id;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

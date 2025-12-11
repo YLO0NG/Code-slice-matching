@@ -1,0 +1,25 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "addInternalFrameListener",
+  "brief": "public void addInternalFrameListener(InternalFrameListener newMDIListener){}",
+  "methodSignature": "addInternalFrameListener(InternalFrameListener)",
+  "sourceCode": "public void addInternalFrameListener(InternalFrameListener newMDIListener) {\n\t\tmdiListeners.addElement(newMDIListener);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InternalFrameListener"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.InternalFrameListener": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Add a new listener to the applications internal frames. If a new internal\n * frame is created, all currently registered InternalFrameListeners are added.\n *\n * @param newMDIListener listener to be added\n */\npublic void addInternalFrameListener(InternalFrameListener newMDIListener) {\n    mdiListeners.addElement(newMDIListener);\n}",
+  "method_comment": "\n\t * Add a new listener to the applications internal frames. If a new internal\n\t * frame is created, all currently registered InternalFrameListeners are added.\n\t *\n\t * @param newMDIListener listener to be added\n\t ",
+  "method_annotation": ""
+}

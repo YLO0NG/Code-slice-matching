@@ -1,0 +1,28 @@
+{
+  "className": "TestTreeCellRenderer",
+  "methodName": "stripParenthesis",
+  "brief": "String stripParenthesis(Object o){}",
+  "methodSignature": "stripParenthesis(Object)",
+  "sourceCode": "String stripParenthesis(Object o) {\r\n\t\t\tString text= o.toString ();\r\n    \t\t\tint pos= text.indexOf('(');\r\n    \t\t\tif (pos < 1)\r\n    \t\t\t\treturn text;\r\n    \t\t\treturn text.substring (0, pos);\r\n  \t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [
+      "toString()"
+    ],
+    "java.lang.String": [
+      "substring(int, int)",
+      "indexOf(int)"
+    ]
+  },
+  "full_method_info": "String stripParenthesis(Object o) {\r\n    String text = o.toString();\r\n    int pos = text.indexOf('(');\r\n    if (pos < 1)\r\n        return text;\r\n    return text.substring(0, pos);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

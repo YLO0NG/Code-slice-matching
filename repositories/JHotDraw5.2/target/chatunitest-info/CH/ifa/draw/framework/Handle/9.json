@@ -1,0 +1,21 @@
+{
+  "className": "Handle",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y);",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Tests if a point is contained in the handle.\n */\npublic boolean containsPoint(int x, int y);",
+  "method_comment": "\n     * Tests if a point is contained in the handle.\n     ",
+  "method_annotation": ""
+}

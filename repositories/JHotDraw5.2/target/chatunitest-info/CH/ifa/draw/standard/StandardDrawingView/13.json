@@ -1,0 +1,36 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "selectionZOrdered",
+  "brief": "public Vector selectionZOrdered(){}",
+  "methodSignature": "selectionZOrdered()",
+  "sourceCode": "public Vector selectionZOrdered() {\n        Vector result = new Vector(fSelection.size());\n        FigureEnumeration figures = drawing().figures();\n\n        while (figures.hasMoreElements()) {\n            Figure f= figures.nextFigure();\n            if (fSelection.contains(f)) {\n                result.addElement(f);\n            }\n        }\n        return result;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)",
+      "contains(Object)",
+      "size()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "figures()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the currently selected figures in Z order.\n * @see #selection\n * @return a vector with the selected figures. The vector\n * is a copy of the current selection.\n */\npublic Vector selectionZOrdered() {\n    Vector result = new Vector(fSelection.size());\n    FigureEnumeration figures = drawing().figures();\n    while (figures.hasMoreElements()) {\n        Figure f = figures.nextFigure();\n        if (fSelection.contains(f)) {\n            result.addElement(f);\n        }\n    }\n    return result;\n}",
+  "method_comment": "\n     * Gets the currently selected figures in Z order.\n     * @see #selection\n     * @return a vector with the selected figures. The vector\n     * is a copy of the current selection.\n     ",
+  "method_annotation": ""
+}

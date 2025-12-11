@@ -1,0 +1,18 @@
+{
+  "className": "StorableOutput",
+  "methodName": "incrementIndent",
+  "brief": "private void incrementIndent(){}",
+  "methodSignature": "incrementIndent()",
+  "sourceCode": "private void incrementIndent() {\n        fIndent += 4;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "private void incrementIndent() {\n    fIndent += 4;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

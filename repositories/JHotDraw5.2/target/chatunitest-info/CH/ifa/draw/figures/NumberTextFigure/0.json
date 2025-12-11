@@ -1,0 +1,28 @@
+{
+  "className": "NumberTextFigure",
+  "methodName": "overlayColumns",
+  "brief": "public int overlayColumns(){}",
+  "methodSignature": "overlayColumns()",
+  "sourceCode": "public int overlayColumns() {\n        return Math.max(4, getText().length());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Math": [
+      "max(int, int)"
+    ],
+    "java.lang.String": [
+      "length()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "getText()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the number of columns to be used by the text overlay.\n * @see CH.ifa.draw.util.FloatingTextField\n */\npublic int overlayColumns() {\n    return Math.max(4, getText().length());\n}",
+  "method_comment": "\n     * Gets the number of columns to be used by the text overlay.\n     * @see CH.ifa.draw.util.FloatingTextField\n     ",
+  "method_annotation": ""
+}

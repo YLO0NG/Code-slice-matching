@@ -1,0 +1,22 @@
+{
+  "className": "AnimationDecorator",
+  "methodName": "displayBox",
+  "brief": "public synchronized Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public synchronized Rectangle displayBox() {\n        return super.displayBox();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public synchronized Rectangle displayBox() {\n    return super.displayBox();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

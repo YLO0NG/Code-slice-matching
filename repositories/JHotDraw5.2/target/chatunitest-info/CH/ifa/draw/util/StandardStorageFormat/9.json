@@ -1,0 +1,33 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "store",
+  "brief": "public String store(String fileName, Drawing saveDrawing) throws IOException{}",
+  "methodSignature": "store(String, Drawing)",
+  "sourceCode": "public String store(String fileName, Drawing saveDrawing) throws IOException {\n\t\tFileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n\t\tStorableOutput output = new StorableOutput(stream);\n\t\toutput.writeStorable(saveDrawing);\n\t\toutput.close();\n\t\tif (!hasCorrectFileExtension(fileName)) {\n\t\t\treturn fileName + \".\" + getFileExtension();\n\t\t}\n\t\telse {\n\t\t\treturn fileName;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "hasCorrectFileExtension(String)",
+      "adjustFileName(String)",
+      "getFileExtension()"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeStorable(Storable)",
+      "close()"
+    ]
+  },
+  "full_method_info": "/**\n * Store a Drawing under a given name. If the file name does not have the correct\n * file extension, then the file extension is added.\n *\n * @param fileName file name of the Drawing under which it should be stored\n * @param saveDrawing drawing to be saved\n * @return file name with correct file extension\n */\npublic String store(String fileName, Drawing saveDrawing) throws IOException {\n    FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n    StorableOutput output = new StorableOutput(stream);\n    output.writeStorable(saveDrawing);\n    output.close();\n    if (!hasCorrectFileExtension(fileName)) {\n        return fileName + \".\" + getFileExtension();\n    } else {\n        return fileName;\n    }\n}",
+  "method_comment": "\n\t * Store a Drawing under a given name. If the file name does not have the correct\n\t * file extension, then the file extension is added.\n\t *\n\t * @param fileName file name of the Drawing under which it should be stored\n\t * @param saveDrawing drawing to be saved\n\t * @return file name with correct file extension\n\t ",
+  "method_annotation": ""
+}

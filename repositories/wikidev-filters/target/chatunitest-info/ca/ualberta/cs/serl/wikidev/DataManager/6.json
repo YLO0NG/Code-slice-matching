@@ -1,0 +1,40 @@
+{
+  "className": "DataManager",
+  "methodName": "writeClusterPerProject",
+  "brief": "public static void writeClusterPerProject(int projectid, int clustered, int total, String fromdate, String todate, String cluster_set_name, double threshold) throws SQLExceptio{}",
+  "methodSignature": "writeClusterPerProject(int, int, int, String, String, String, double)",
+  "sourceCode": "public static void writeClusterPerProject(int projectid, int clustered, int total, String fromdate, String todate, String cluster_set_name, double threshold) throws SQLException{\n    \tProject project = DataManager.getProjectByID(projectid);\n    \tString sqlStmt = QueryBuilder.insertClusterPerProject(clustered, project.getProjectName(), fromdate, todate, total, cluster_set_name, threshold);\n    \tstatement.executeUpdate(sqlStmt);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "String",
+    "String",
+    "String",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectByID(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "insertClusterPerProject(int, String, String, String, int, String, double)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectName()"
+    ],
+    "java.sql.Statement": [
+      "executeUpdate(String)"
+    ]
+  },
+  "full_method_info": "public static void writeClusterPerProject(int projectid, int clustered, int total, String fromdate, String todate, String cluster_set_name, double threshold) throws SQLException {\n    Project project = DataManager.getProjectByID(projectid);\n    String sqlStmt = QueryBuilder.insertClusterPerProject(clustered, project.getProjectName(), fromdate, todate, total, cluster_set_name, threshold);\n    statement.executeUpdate(sqlStmt);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

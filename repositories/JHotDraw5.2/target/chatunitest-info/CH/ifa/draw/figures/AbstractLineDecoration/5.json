@@ -1,0 +1,18 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "getFillColor",
+  "brief": "public Color getFillColor(){}",
+  "methodSignature": "getFillColor()",
+  "sourceCode": "public Color getFillColor() {\n        return fFillColor;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns color with which arrow is filled\n */\npublic Color getFillColor() {\n    return fFillColor;\n}",
+  "method_comment": "\n\t * Returns color with which arrow is filled\n\t ",
+  "method_annotation": ""
+}

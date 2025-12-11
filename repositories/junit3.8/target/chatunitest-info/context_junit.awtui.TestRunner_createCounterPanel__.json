@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.awtui.TestRunner",
+  "targetMethod": "createCounterPanel()",
+  "dependentFields": {
+    "junit.awtui.TestRunner": "protected Frame fFrame;\nprotected Vector fExceptions;\nprotected Vector fFailedTests;\nprotected Thread fRunner;\nprotected TestResult fTestResult;\nprotected TextArea fTraceArea;\nprotected TextField fSuiteField;\nprotected Button fRun;\nprotected ProgressBar fProgressIndicator;\nprotected List fFailureList;\nprotected Logo fLogo;\nprotected Label fNumberOfErrors;\nprotected Label fNumberOfFailures;\nprotected Label fNumberOfRuns;\nprotected Button fQuitButton;\nprotected Button fRerunButton;\nprotected TextField fStatusLine;\nprotected Checkbox fUseLoadingRunner;\nprotected static Font PLAIN_FONT= new Font(\"dialog\", Font.PLAIN, 12);\nprivate static final int GAP= 4;\nprivate static final String SUITE_METHODNAME= \"suite\";"
+  },
+  "dependentMethods": {
+    "junit.awtui.TestRunner": "private void addToCounterPanel(Panel counter, Component comp,\r\r\n\t    \tint gridx, int gridy, int gridwidth, int gridheight,\r\r\n\t\t\tdouble weightx, double weighty,\r\r\n\t\t\tint anchor, int fill,\r\r\n\t\t\tInsets insets){}"
+  },
+  "dependentMethodBodies": {
+    "junit.awtui.TestRunner": "private void addToCounterPanel(Panel counter, Component comp,\r\n\t    \tint gridx, int gridy, int gridwidth, int gridheight,\r\n\t\t\tdouble weightx, double weighty,\r\n\t\t\tint anchor, int fill,\r\n\t\t\tInsets insets) {\r\n\t\t\r\n\t\tGridBagConstraints constraints= new GridBagConstraints();\r\n\t\tconstraints.gridx= gridx;\r\n\t\tconstraints.gridy= gridy;\r\n\t\tconstraints.gridwidth= gridwidth;\r\n\t\tconstraints.gridheight= gridheight;\r\n\t\tconstraints.weightx= weightx;\r\n\t\tconstraints.weighty= weighty;\r\n\t\tconstraints.anchor= anchor;\r\n\t\tconstraints.fill= fill;\r\n\t\tconstraints.insets= insets;\r\n\t\tcounter.add(comp, constraints);\r\n\t}"
+  }
+}

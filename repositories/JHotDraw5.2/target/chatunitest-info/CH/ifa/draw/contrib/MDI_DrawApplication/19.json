@@ -1,0 +1,22 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "getDrawingTitle",
+  "brief": "protected String getDrawingTitle(){}",
+  "methodSignature": "getDrawingTitle()",
+  "sourceCode": "protected String getDrawingTitle() {\n    \treturn currentFrame.getTitle();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JInternalFrame": [
+      "getTitle()"
+    ]
+  },
+  "full_method_info": "/**\n * Get the title for the drawing.\n */\nprotected String getDrawingTitle() {\n    return currentFrame.getTitle();\n}",
+  "method_comment": "\n\t * Get the title for the drawing.\n\t ",
+  "method_annotation": ""
+}

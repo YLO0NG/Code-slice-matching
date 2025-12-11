@@ -1,0 +1,33 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "findConnection",
+  "brief": "protected ConnectionFigure findConnection(int x, int y, Drawing drawing){}",
+  "methodSignature": "findConnection(int, int, Drawing)",
+  "sourceCode": "protected ConnectionFigure findConnection(int x, int y, Drawing drawing) {\n        Enumeration k = drawing.figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = (Figure) k.nextElement();\n            figure = figure.findFigureInside(x, y);\n            if (figure != null && (figure instanceof ConnectionFigure))\n                return (ConnectionFigure)figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "findFigureInside(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Finds an existing connection figure.\n */\nprotected ConnectionFigure findConnection(int x, int y, Drawing drawing) {\n    Enumeration k = drawing.figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = (Figure) k.nextElement();\n        figure = figure.findFigureInside(x, y);\n        if (figure != null && (figure instanceof ConnectionFigure))\n            return (ConnectionFigure) figure;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds an existing connection figure.\n     ",
+  "method_annotation": ""
+}

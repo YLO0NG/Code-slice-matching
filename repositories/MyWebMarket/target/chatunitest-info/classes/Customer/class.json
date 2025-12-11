@@ -1,0 +1,88 @@
+{
+  "fullClassName": "classes.Customer",
+  "className": "Customer",
+  "index": 1,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Serializable]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "@Entity(name=\"Customer\")\r\npublic class Customer",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.Serializable;",
+    "import javax.persistence.Column;",
+    "import javax.persistence.Entity;",
+    "import javax.persistence.Id;"
+  ],
+  "fields": [
+    "private Integer id;",
+    "private String name;",
+    "private String address;",
+    "private Long phone;",
+    "private String email;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Serializable"
+  ],
+  "methodSigs": {
+    "getId()": "0",
+    "setId(Integer)": "1",
+    "getName()": "2",
+    "setName(String)": "3",
+    "getAddress()": "4",
+    "setAddress(String)": "5",
+    "getPhone()": "6",
+    "setPhone(Long)": "7",
+    "getEmail()": "8",
+    "setEmail(String)": "9",
+    "toString()": "10"
+  },
+  "methodsBrief": [
+    "@Id\r\n\t@Column(name=\"ID_CUSTOMER\", nullable=false)\r\n\tpublic Integer getId(){}",
+    "public void setId( Integer id ){}",
+    "@Column(name=\"NAME\", length=60, nullable=false)\r\n\tpublic String getName(){}",
+    "public void setName( String nome ){}",
+    "@Column(name=\"ADDRESS\", length=60, nullable=false)\r\n\tpublic String getAddress(){}",
+    "public void setAddress( String address ){}",
+    "@Column(name=\"PHONE\", nullable=false)\r\n\tpublic Long getPhone(){}",
+    "public void setPhone( Long phone ){}",
+    "@Column(name=\"EMAIL\", length=60, nullable=false)\r\n\tpublic String getEmail(){}",
+    "public void setEmail( String email ){}",
+    "@Override\r\n\tpublic String toString(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getId()",
+    "setId(Integer)",
+    "getName()",
+    "setName(String)",
+    "getAddress()",
+    "setAddress(String)",
+    "getPhone()",
+    "setPhone(Long)",
+    "getEmail()",
+    "setEmail(String)"
+  ],
+  "getterSetterBrief": [
+    "@Id\r\n\t@Column(name=\"ID_CUSTOMER\", nullable=false)\r\n\tpublic Integer getId(){}",
+    "public void setId( Integer id ){}",
+    "@Column(name=\"NAME\", length=60, nullable=false)\r\n\tpublic String getName(){}",
+    "public void setName( String nome ){}",
+    "@Column(name=\"ADDRESS\", length=60, nullable=false)\r\n\tpublic String getAddress(){}",
+    "public void setAddress( String address ){}",
+    "@Column(name=\"PHONE\", nullable=false)\r\n\tpublic Long getPhone(){}",
+    "public void setPhone( Long phone ){}",
+    "@Column(name=\"EMAIL\", length=60, nullable=false)\r\n\tpublic String getEmail(){}",
+    "public void setEmail( String email ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package classes;\n\nimport java.io.Serializable;\nimport javax.persistence.Column;\nimport javax.persistence.Entity;\nimport javax.persistence.Id;\n\n@Entity(name = \"Customer\")\npublic class Customer implements Serializable {\n\n    private Integer id;\n\n    private String name;\n\n    private String address;\n\n    private Long phone;\n\n    private String email;\n\n    @Id\n    @Column(name = \"ID_CUSTOMER\", nullable = false)\n    public Integer getId() {\n        return this.id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    @Column(name = \"NAME\", length = 60, nullable = false)\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String nome) {\n        this.name = nome;\n    }\n\n    @Column(name = \"ADDRESS\", length = 60, nullable = false)\n    public String getAddress() {\n        return address;\n    }\n\n    public void setAddress(String address) {\n        this.address = address;\n    }\n\n    @Column(name = \"PHONE\", nullable = false)\n    public Long getPhone() {\n        return phone;\n    }\n\n    public void setPhone(Long phone) {\n        this.phone = phone;\n    }\n\n    @Column(name = \"EMAIL\", length = 60, nullable = false)\n    public String getEmail() {\n        return email;\n    }\n\n    public void setEmail(String email) {\n        this.email = email;\n    }\n\n    @Override\n    public String toString() {\n        return this.id + \"\\t\" + this.name + \"\\t\" + this.address + \"\\t\" + this.phone + \"\\t\" + this.email;\n    }\n}\n",
+  "classDeclarationCode": "@Entity(name = \"Customer\")\npublic class Customer implements Serializable {\n\n    private Integer id;\n\n    private String name;\n\n    private String address;\n\n    private Long phone;\n\n    private String email;\n\n    @Id\n    @Column(name = \"ID_CUSTOMER\", nullable = false)\n    public Integer getId() {\n        return this.id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    @Column(name = \"NAME\", length = 60, nullable = false)\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String nome) {\n        this.name = nome;\n    }\n\n    @Column(name = \"ADDRESS\", length = 60, nullable = false)\n    public String getAddress() {\n        return address;\n    }\n\n    public void setAddress(String address) {\n        this.address = address;\n    }\n\n    @Column(name = \"PHONE\", nullable = false)\n    public Long getPhone() {\n        return phone;\n    }\n\n    public void setPhone(Long phone) {\n        this.phone = phone;\n    }\n\n    @Column(name = \"EMAIL\", length = 60, nullable = false)\n    public String getEmail() {\n        return email;\n    }\n\n    public void setEmail(String email) {\n        this.email = email;\n    }\n\n    @Override\n    public String toString() {\n        return this.id + \"\\t\" + this.name + \"\\t\" + this.address + \"\\t\" + this.phone + \"\\t\" + this.email;\n    }\n}",
+  "subClasses": []
+}

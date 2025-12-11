@@ -1,0 +1,31 @@
+{
+  "className": "LineConnection",
+  "methodName": "endPoint",
+  "brief": "public void endPoint(int x, int y){}",
+  "methodSignature": "endPoint(int, int)",
+  "sourceCode": "public void endPoint(int x, int y) {\n        willChange();\n        if (fPoints.size() < 2)\n            fPoints.addElement(new Point(x, y));\n        else\n            fPoints.setElementAt(new Point(x, y), fPoints.size()-1);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "setElementAt(E, int)",
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the end point.\n */\npublic void endPoint(int x, int y) {\n    willChange();\n    if (fPoints.size() < 2)\n        fPoints.addElement(new Point(x, y));\n    else\n        fPoints.setElementAt(new Point(x, y), fPoints.size() - 1);\n    changed();\n}",
+  "method_comment": "\n     * Sets the end point.\n     ",
+  "method_annotation": ""
+}

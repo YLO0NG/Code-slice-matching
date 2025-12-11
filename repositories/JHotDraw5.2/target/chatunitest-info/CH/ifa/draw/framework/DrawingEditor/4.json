@@ -1,0 +1,22 @@
+{
+  "className": "DrawingEditor",
+  "methodName": "selectionChanged",
+  "brief": "void        selectionChanged(DrawingView view);",
+  "methodSignature": "selectionChanged(DrawingView)",
+  "sourceCode": "void        selectionChanged(DrawingView view);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * Informs that the current selection has changed.\n * Override this method to handle selection changes.\n */\nvoid selectionChanged(DrawingView view);",
+  "method_comment": "\n     * Informs that the current selection has changed.\n     * Override this method to handle selection changes.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "LineFigure",
+  "methodName": "setPoints",
+  "brief": "public void setPoints(Point start, Point end){}",
+  "methodSignature": "setPoints(Point, Point)",
+  "sourceCode": "public void setPoints(Point start, Point end) {\n        setPointAt(start, 0);\n        setPointAt(end, 1);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setPointAt(Point, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the start and end point.\n */\npublic void setPoints(Point start, Point end) {\n    setPointAt(start, 0);\n    setPointAt(end, 1);\n}",
+  "method_comment": "\n     * Sets the start and end point.\n     ",
+  "method_annotation": ""
+}

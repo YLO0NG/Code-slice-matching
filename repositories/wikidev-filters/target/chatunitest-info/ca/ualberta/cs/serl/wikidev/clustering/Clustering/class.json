@@ -1,0 +1,47 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.clustering.Clustering",
+  "className": "Clustering",
+  "index": 25,
+  "modifier": "[public , abstract ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.clustering",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.clustering;",
+  "classSignature": "public abstract class Clustering",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import java.util.ArrayList;",
+    "import ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;"
+  ],
+  "fields": [
+    "protected ArrayList<ArrayList<Double>> distanceList;",
+    "protected double[][] distanceMatrix;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getInstance(int, double[][], double)": "0",
+    "clustering(ArrayList)": "1",
+    "getEuclideanDistance(ArrayList, ArrayList)": "2",
+    "toArrayList(double[])": "3"
+  },
+  "methodsBrief": [
+    "public static Clustering getInstance(int type, double[][] distanceMatrix, double threshold){}",
+    "public abstract ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts);",
+    "public static double getEuclideanDistance(ArrayList<Double> p1, ArrayList<Double> p2){}",
+    "public static ArrayList<Double> toArrayList(double[] array){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.clustering;\n\nimport java.util.ArrayList;\nimport ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;\n\npublic abstract class Clustering {\n\n    /**\n     * @uml.property  name=\"distanceList\"\n     */\n    protected ArrayList<ArrayList<Double>> distanceList;\n\n    /**\n     * @uml.property  name=\"distanceMatrix\" multiplicity=\"(0 -1)\" dimension=\"2\"\n     */\n    protected double[][] distanceMatrix;\n\n    public static Clustering getInstance(int type, double[][] distanceMatrix, double threshold) {\n        return new Hierarchical(distanceMatrix, threshold);\n    }\n\n    public abstract ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts);\n\n    public static double getEuclideanDistance(ArrayList<Double> p1, ArrayList<Double> p2) {\n        double sum = 0.0;\n        for (int i = 0; i < p1.size(); i++) {\n            sum += Math.pow(p1.get(i) - p2.get(i), 2);\n        }\n        return Math.sqrt(sum);\n    }\n\n    public static ArrayList<Double> toArrayList(double[] array) {\n        ArrayList<Double> list = new ArrayList<Double>();\n        for (int i = 0; i < array.length; i++) {\n            list.add(array[i]);\n        }\n        return list;\n    }\n}\n",
+  "classDeclarationCode": "public abstract class Clustering {\n\n    /**\n     * @uml.property  name=\"distanceList\"\n     */\n    protected ArrayList<ArrayList<Double>> distanceList;\n\n    /**\n     * @uml.property  name=\"distanceMatrix\" multiplicity=\"(0 -1)\" dimension=\"2\"\n     */\n    protected double[][] distanceMatrix;\n\n    public static Clustering getInstance(int type, double[][] distanceMatrix, double threshold) {\n        return new Hierarchical(distanceMatrix, threshold);\n    }\n\n    public abstract ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts);\n\n    public static double getEuclideanDistance(ArrayList<Double> p1, ArrayList<Double> p2) {\n        double sum = 0.0;\n        for (int i = 0; i < p1.size(); i++) {\n            sum += Math.pow(p1.get(i) - p2.get(i), 2);\n        }\n        return Math.sqrt(sum);\n    }\n\n    public static ArrayList<Double> toArrayList(double[] array) {\n        ArrayList<Double> list = new ArrayList<Double>();\n        for (int i = 0; i < array.length; i++) {\n            list.add(array[i]);\n        }\n        return list;\n    }\n}",
+  "subClasses": [
+    "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical"
+  ]
+}

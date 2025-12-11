@@ -1,0 +1,32 @@
+{
+  "className": "StorableOutput",
+  "methodName": "writeRef",
+  "brief": "private void writeRef(Storable storable){}",
+  "methodSignature": "writeRef(Storable)",
+  "sourceCode": "private void writeRef(Storable storable) {\n        int ref = fMap.indexOf(storable);\n\n        fStream.print(\"REF\");\n        space();\n        fStream.print(ref);\n        space();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Storable"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Storable": [],
+    "java.util.Vector": [
+      "indexOf(Object)"
+    ],
+    "java.io.PrintWriter": [
+      "print(String)",
+      "print(int)"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "space()"
+    ]
+  },
+  "full_method_info": "private void writeRef(Storable storable) {\n    int ref = fMap.indexOf(storable);\n    fStream.print(\"REF\");\n    space();\n    fStream.print(ref);\n    space();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

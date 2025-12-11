@@ -1,0 +1,28 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "loadSuiteClass",
+  "brief": "protected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundException{}",
+  "methodSignature": "loadSuiteClass(String)",
+  "sourceCode": "protected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundException {\r\n\t\treturn getLoader().load(suiteClassName);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.runner.TestSuiteLoader": [
+      "load(String)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getLoader()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns the loaded Class for a suite name.\r\n */\r\nprotected Class loadSuiteClass(String suiteClassName) throws ClassNotFoundException {\r\n    return getLoader().load(suiteClassName);\r\n}",
+  "method_comment": "\r\n\t * Returns the loaded Class for a suite name.\r\n\t ",
+  "method_annotation": ""
+}

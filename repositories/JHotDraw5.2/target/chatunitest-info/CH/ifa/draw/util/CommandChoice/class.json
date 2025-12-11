@@ -1,0 +1,57 @@
+{
+  "fullClassName": "CH.ifa.draw.util.CommandChoice",
+  "className": "CommandChoice",
+  "index": 153,
+  "modifier": "[public ]",
+  "extend": "[JComboBox]",
+  "implement": "[ItemListener]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class CommandChoice",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;",
+    "import java.awt.event.ItemEvent;",
+    "import java.awt.event.ItemListener;",
+    "import java.util.*;"
+  ],
+  "fields": [
+    "private Vector   fCommands;"
+  ],
+  "superClasses": [
+    "JComboBox"
+  ],
+  "implementedTypes": [
+    "ItemListener"
+  ],
+  "methodSigs": {
+    "addItem(Command)": "0",
+    "itemStateChanged(ItemEvent)": "1",
+    "CommandChoice()": "2"
+  },
+  "methodsBrief": [
+    "public synchronized void addItem(Command command){}",
+    "public void itemStateChanged(ItemEvent e){}",
+    "public CommandChoice(){}"
+  ],
+  "constructorSigs": [
+    "CommandChoice()"
+  ],
+  "constructorBrief": [
+    "public CommandChoice(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "javax.swing.JComboBox": [
+      "addItemListener(ItemListener)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)CommandChoice.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.ItemEvent;\nimport java.awt.event.ItemListener;\nimport java.util.*;\n\n/**\n * A Command enabled choice. Selecting a choice executes the\n * corresponding command.\n *\n * @see Command\n */\npublic class CommandChoice extends JComboBox implements ItemListener {\n\n    private Vector fCommands;\n\n    public CommandChoice() {\n        super();\n        fCommands = new Vector(10);\n        addItemListener(this);\n    }\n\n    /**\n     * Adds a command to the menu.\n     */\n    public synchronized void addItem(Command command) {\n        addItem(command.name());\n        fCommands.addElement(command);\n    }\n\n    /**\n     * Executes the command.\n     */\n    public void itemStateChanged(ItemEvent e) {\n        if ((getSelectedIndex() >= 0) && (getSelectedIndex() < fCommands.size())) {\n            Command command = (Command) fCommands.elementAt(getSelectedIndex());\n            command.execute();\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Command enabled choice. Selecting a choice executes the\n * corresponding command.\n *\n * @see Command\n */\npublic class CommandChoice extends JComboBox implements ItemListener {\n\n    private Vector fCommands;\n\n    public CommandChoice() {\n        super();\n        fCommands = new Vector(10);\n        addItemListener(this);\n    }\n\n    /**\n     * Adds a command to the menu.\n     */\n    public synchronized void addItem(Command command) {\n        addItem(command.name());\n        fCommands.addElement(command);\n    }\n\n    /**\n     * Executes the command.\n     */\n    public void itemStateChanged(ItemEvent e) {\n        if ((getSelectedIndex() >= 0) && (getSelectedIndex() < fCommands.size())) {\n            Command command = (Command) fCommands.elementAt(getSelectedIndex());\n            command.execute();\n        }\n    }\n}",
+  "subClasses": []
+}

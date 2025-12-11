@@ -1,0 +1,27 @@
+{
+  "className": "TestRunner",
+  "methodName": "createUseLoaderCheckBox",
+  "brief": "protected JCheckBox createUseLoaderCheckBox(){}",
+  "methodSignature": "createUseLoaderCheckBox()",
+  "sourceCode": "protected JCheckBox createUseLoaderCheckBox() {\r\n\t\tboolean useLoader= useReloadingTestSuiteLoader();\r\n\t\tJCheckBox box= new JCheckBox(\"Reload classes every run\", useLoader);\r\n\t\tbox.setToolTipText(\"Use a custom class loader to reload the classes for every run\");\r\n\t\tif (inVAJava())\r\n\t\t\tbox.setVisible(false);\r\n\t\treturn box;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "useReloadingTestSuiteLoader()",
+      "inVAJava()"
+    ],
+    "javax.swing.JComponent": [
+      "setVisible(boolean)",
+      "setToolTipText(String)"
+    ]
+  },
+  "full_method_info": "protected JCheckBox createUseLoaderCheckBox() {\r\n    boolean useLoader = useReloadingTestSuiteLoader();\r\n    JCheckBox box = new JCheckBox(\"Reload classes every run\", useLoader);\r\n    box.setToolTipText(\"Use a custom class loader to reload the classes for every run\");\r\n    if (inVAJava())\r\n        box.setVisible(false);\r\n    return box;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

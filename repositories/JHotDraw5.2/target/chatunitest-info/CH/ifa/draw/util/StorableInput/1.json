@@ -1,0 +1,23 @@
+{
+  "className": "StorableInput",
+  "methodName": "readString",
+  "brief": "public String readString() throws IOException{}",
+  "methodSignature": "readString()",
+  "sourceCode": "public String readString() throws IOException {\n        int token = fTokenizer.nextToken();\n        if (token == StreamTokenizer.TT_WORD || token == '\"') {\n            return fTokenizer.sval;\n        }\n\n        String msg = \"String expected in line: \" + fTokenizer.lineno();\n        throw new IOException(msg);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.StreamTokenizer": [
+      "lineno()",
+      "nextToken()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads a string from the input stream.\n */\npublic String readString() throws IOException {\n    int token = fTokenizer.nextToken();\n    if (token == StreamTokenizer.TT_WORD || token == '\"') {\n        return fTokenizer.sval;\n    }\n    String msg = \"String expected in line: \" + fTokenizer.lineno();\n    throw new IOException(msg);\n}",
+  "method_comment": "\n     * Reads a string from the input stream.\n     ",
+  "method_annotation": ""
+}

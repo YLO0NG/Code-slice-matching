@@ -1,0 +1,24 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "matrixVectorProduct",
+  "brief": "public static double[] matrixVectorProduct(double[][] matrix, double[] vector){}",
+  "methodSignature": "matrixVectorProduct(double[][], double[])",
+  "sourceCode": "public static double[] matrixVectorProduct(double[][] matrix, double[] vector) {\n\t\t   return LinearAlgebra.times(matrix, vector);\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]",
+    "double[]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "double": []
+  },
+  "full_method_info": "public static double[] matrixVectorProduct(double[][] matrix, double[] vector) {\n    return LinearAlgebra.times(matrix, vector);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

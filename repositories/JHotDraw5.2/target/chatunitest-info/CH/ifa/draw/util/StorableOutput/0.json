@@ -1,0 +1,45 @@
+{
+  "className": "StorableOutput",
+  "methodName": "writeStorable",
+  "brief": "public void writeStorable(Storable storable){}",
+  "methodSignature": "writeStorable(Storable)",
+  "sourceCode": "public void writeStorable(Storable storable) {\n        if (storable == null) {\n            fStream.print(\"NULL\");\n            space();\n            return;\n        }\n\n        if (mapped(storable)) {\n            int ref = fMap.indexOf(storable);\n\t\t\t\n\t\t\tfStream.print(\"REF\");\n\t\t\tspace();\n\t\t\tfStream.print(ref);\n\t\t\tspace();\n            return;\n        }\n\n        incrementIndent();\n        startNewLine();\n        map(storable);\n        fStream.print(storable.getClass().getName());\n        space();\n        storable.write(this);\n        space();\n        decrementIndent();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Storable"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Storable": [
+      "write(StorableOutput)"
+    ],
+    "java.io.PrintWriter": [
+      "print(String)",
+      "print(int)"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "decrementIndent()",
+      "startNewLine()",
+      "map(Storable)",
+      "space()",
+      "incrementIndent()",
+      "mapped(Storable)"
+    ],
+    "java.util.Vector": [
+      "indexOf(Object)"
+    ],
+    "java.lang.Class": [
+      "getName()"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes a storable object to the output stream.\n */\npublic void writeStorable(Storable storable) {\n    if (storable == null) {\n        fStream.print(\"NULL\");\n        space();\n        return;\n    }\n    if (mapped(storable)) {\n        int ref = fMap.indexOf(storable);\n        fStream.print(\"REF\");\n        space();\n        fStream.print(ref);\n        space();\n        return;\n    }\n    incrementIndent();\n    startNewLine();\n    map(storable);\n    fStream.print(storable.getClass().getName());\n    space();\n    storable.write(this);\n    space();\n    decrementIndent();\n}",
+  "method_comment": "\n     * Writes a storable object to the output stream.\n     ",
+  "method_annotation": ""
+}

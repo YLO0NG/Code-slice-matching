@@ -1,0 +1,42 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.DrawingChangeListener",
+  "className": "DrawingChangeListener",
+  "index": 59,
+  "modifier": "[public ]",
+  "extend": "[EventListener]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface DrawingChangeListener",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Rectangle;",
+    "import java.util.EventListener;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "EventListener"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "drawingInvalidated(DrawingChangeEvent)": "0",
+    "drawingRequestUpdate(DrawingChangeEvent)": "1"
+  },
+  "methodsBrief": [
+    "public void drawingInvalidated(DrawingChangeEvent e);",
+    "public void drawingRequestUpdate(DrawingChangeEvent e);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)DrawingChangeListener.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.Rectangle;\nimport java.util.EventListener;\n\n/**\n * Listener interested in Drawing changes.\n */\npublic interface DrawingChangeListener extends EventListener {\n\n    /**\n     *  Sent when an area is invalid\n     */\n    public void drawingInvalidated(DrawingChangeEvent e);\n\n    /**\n     *  Sent when the drawing wants to be refreshed\n     */\n    public void drawingRequestUpdate(DrawingChangeEvent e);\n}\n",
+  "classDeclarationCode": "/**\n * Listener interested in Drawing changes.\n */\npublic interface DrawingChangeListener extends EventListener {\n\n    /**\n     *  Sent when an area is invalid\n     */\n    public void drawingInvalidated(DrawingChangeEvent e);\n\n    /**\n     *  Sent when the drawing wants to be refreshed\n     */\n    public void drawingRequestUpdate(DrawingChangeEvent e);\n}",
+  "subClasses": [
+    "CH.ifa.draw.framework.DrawingView"
+  ]
+}

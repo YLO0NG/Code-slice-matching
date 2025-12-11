@@ -1,0 +1,46 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "getTest",
+  "brief": "public Test getTest(String suiteClassName){}",
+  "methodSignature": "getTest(String)",
+  "sourceCode": "public Test getTest(String suiteClassName) {\r\n\t\tif (suiteClassName.length() <= 0) {\r\n\t\t\tclearStatus();\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tClass testClass= null;\r\n\t\ttry {\r\n\t\t\ttestClass= loadSuiteClass(suiteClassName);\r\n\t\t} catch (ClassNotFoundException e) {\r\n\t\t\tString clazz= e.getMessage();\r\n\t\t\tif (clazz == null)\r\n\t\t\t\tclazz= suiteClassName;\r\n\t\t\trunFailed(\"Class not found \\\"\"+clazz+\"\\\"\");\r\n\t\t\treturn null;\r\n\t\t} catch(Exception e) {\r\n\t\t\trunFailed(\"Error: \"+e.toString());\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tMethod suiteMethod= null;\r\n\t\ttry {\r\n\t\t\tsuiteMethod= testClass.getMethod(SUITE_METHODNAME, new Class[0]);\r\n\t \t} catch(Exception e) {\r\n\t \t\t// try to extract a test suite automatically\r\n\t\t\tclearStatus();\r\n\t\t\treturn new TestSuite(testClass);\r\n\t\t}\r\n\t\tif (! Modifier.isStatic(suiteMethod.getModifiers())) {\r\n\t\t\trunFailed(\"Suite() method must be static\");\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tTest test= null;\r\n\t\ttry {\r\n\t\t\ttest= (Test)suiteMethod.invoke(null, new Class[0]); // static method\r\n\t\t\tif (test == null)\r\n\t\t\t\treturn test;\r\n\t\t}\r\n\t\tcatch (InvocationTargetException e) {\r\n\t\t\trunFailed(\"Failed to invoke suite():\" + e.getTargetException().toString());\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tcatch (IllegalAccessException e) {\r\n\t\t\trunFailed(\"Failed to invoke suite():\" + e.toString());\r\n\t\t\treturn null;\r\n\t\t}\r\n\r\n\t\tclearStatus();\r\n\t\treturn test;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "length()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "runFailed(String)",
+      "clearStatus()",
+      "loadSuiteClass(String)"
+    ],
+    "java.lang.Throwable": [
+      "toString()",
+      "getMessage()"
+    ],
+    "java.lang.Class": [
+      "getMethod(String, Object>[])"
+    ],
+    "java.lang.reflect.Modifier": [
+      "isStatic(int)"
+    ],
+    "java.lang.reflect.Method": [
+      "getModifiers()",
+      "invoke(Object, Object[])"
+    ],
+    "java.lang.reflect.InvocationTargetException": [
+      "getTargetException()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns the Test corresponding to the given suite. This is\r\n * a template method, subclasses override runFailed(), clearStatus().\r\n */\r\npublic Test getTest(String suiteClassName) {\r\n    if (suiteClassName.length() <= 0) {\r\n        clearStatus();\r\n        return null;\r\n    }\r\n    Class testClass = null;\r\n    try {\r\n        testClass = loadSuiteClass(suiteClassName);\r\n    } catch (ClassNotFoundException e) {\r\n        String clazz = e.getMessage();\r\n        if (clazz == null)\r\n            clazz = suiteClassName;\r\n        runFailed(\"Class not found \\\"\" + clazz + \"\\\"\");\r\n        return null;\r\n    } catch (Exception e) {\r\n        runFailed(\"Error: \" + e.toString());\r\n        return null;\r\n    }\r\n    Method suiteMethod = null;\r\n    try {\r\n        suiteMethod = testClass.getMethod(SUITE_METHODNAME, new Class[0]);\r\n    } catch (Exception e) {\r\n        // try to extract a test suite automatically\r\n        clearStatus();\r\n        return new TestSuite(testClass);\r\n    }\r\n    if (!Modifier.isStatic(suiteMethod.getModifiers())) {\r\n        runFailed(\"Suite() method must be static\");\r\n        return null;\r\n    }\r\n    Test test = null;\r\n    try {\r\n        // static method\r\n        test = (Test) suiteMethod.invoke(null, new Class[0]);\r\n        if (test == null)\r\n            return test;\r\n    } catch (InvocationTargetException e) {\r\n        runFailed(\"Failed to invoke suite():\" + e.getTargetException().toString());\r\n        return null;\r\n    } catch (IllegalAccessException e) {\r\n        runFailed(\"Failed to invoke suite():\" + e.toString());\r\n        return null;\r\n    }\r\n    clearStatus();\r\n    return test;\r\n}",
+  "method_comment": "\r\n\t * Returns the Test corresponding to the given suite. This is\r\n\t * a template method, subclasses override runFailed(), clearStatus().\r\n\t ",
+  "method_annotation": ""
+}

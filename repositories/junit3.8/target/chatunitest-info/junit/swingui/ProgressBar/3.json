@@ -1,0 +1,31 @@
+{
+  "className": "ProgressBar",
+  "methodName": "step",
+  "brief": "public void step(int value, boolean successful){}",
+  "methodSignature": "step(int, boolean)",
+  "sourceCode": "public void step(int value, boolean successful) {\r\n\t\tsetValue(value);\r\n\t\tif (!fError && !successful) {\r\n\t\t\tfError= true;\r\n\t\t\tsetForeground(getStatusColor());\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "javax.swing.JProgressBar": [
+      "setValue(int)"
+    ],
+    "javax.swing.JComponent": [
+      "setForeground(Color)"
+    ],
+    "junit.swingui.ProgressBar": [
+      "getStatusColor()"
+    ]
+  },
+  "full_method_info": "public void step(int value, boolean successful) {\r\n    setValue(value);\r\n    if (!fError && !successful) {\r\n        fError = true;\r\n        setForeground(getStatusColor());\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

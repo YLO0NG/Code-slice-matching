@@ -1,0 +1,122 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.MDI_DrawApplication",
+  "className": "MDI_DrawApplication",
+  "index": 10,
+  "modifier": "[public ]",
+  "extend": "[DrawApplication]",
+  "implement": "[InternalFrameListener]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class MDI_DrawApplication",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Enumeration;",
+    "import java.util.Vector;",
+    "import javax.swing.JComponent;",
+    "import javax.swing.JDesktopPane;",
+    "import javax.swing.event.InternalFrameEvent;",
+    "import javax.swing.event.InternalFrameListener;",
+    "import CH.ifa.draw.application.DrawApplication;",
+    "import CH.ifa.draw.framework.Drawing;",
+    "import CH.ifa.draw.standard.StandardDrawingView;"
+  ],
+  "fields": [
+    "private MDI_InternalFrame currentFrame;",
+    "private StandardDrawingView backupDrawingView;",
+    "private JComponent desktop;",
+    "private Vector mdiListeners;"
+  ],
+  "superClasses": [
+    "DrawApplication"
+  ],
+  "implementedTypes": [
+    "InternalFrameListener"
+  ],
+  "methodSigs": {
+    "createApplication()": "0",
+    "createContents(StandardDrawingView)": "1",
+    "createInternalFrame()": "2",
+    "promptNew()": "3",
+    "newWindow()": "4",
+    "newView()": "5",
+    "setDesktop(JComponent)": "6",
+    "getDesktop()": "7",
+    "addInternalFrameListener(InternalFrameListener)": "8",
+    "removeInternalFrameListener(InternalFrameListener)": "9",
+    "activateFrame(MDI_InternalFrame)": "10",
+    "internalFrameActivated(InternalFrameEvent)": "11",
+    "internalFrameOpened(InternalFrameEvent)": "12",
+    "internalFrameClosing(InternalFrameEvent)": "13",
+    "internalFrameClosed(InternalFrameEvent)": "14",
+    "internalFrameIconified(InternalFrameEvent)": "15",
+    "internalFrameDeiconified(InternalFrameEvent)": "16",
+    "internalFrameDeactivated(InternalFrameEvent)": "17",
+    "setDrawingTitle(String)": "18",
+    "getDrawingTitle()": "19",
+    "hasInternalFrames()": "20",
+    "MDI_DrawApplication()": "21",
+    "MDI_DrawApplication(String)": "22"
+  },
+  "methodsBrief": [
+    "protected DrawApplication createApplication(){}",
+    "protected JComponent createContents(StandardDrawingView view){}",
+    "protected MDI_InternalFrame createInternalFrame(){}",
+    "public void promptNew(){}",
+    "public void newWindow(){}",
+    "public void newView(){}",
+    "protected void setDesktop(JComponent newDesktop){}",
+    "public JComponent getDesktop(){}",
+    "public void addInternalFrameListener(InternalFrameListener newMDIListener){}",
+    "public void removeInternalFrameListener(InternalFrameListener oldMDIListener){}",
+    "public void activateFrame(MDI_InternalFrame newFrame){}",
+    "public void internalFrameActivated(InternalFrameEvent e){}",
+    "public void internalFrameOpened(InternalFrameEvent e){}",
+    "public void internalFrameClosing(InternalFrameEvent e){}",
+    "public void internalFrameClosed(InternalFrameEvent e){}",
+    "public void internalFrameIconified(InternalFrameEvent e){}",
+    "public void internalFrameDeiconified(InternalFrameEvent e){}",
+    "public void internalFrameDeactivated(InternalFrameEvent e){}",
+    "protected void setDrawingTitle(String newDrawingTitle){}",
+    "protected String getDrawingTitle(){}",
+    "public boolean hasInternalFrames(){}",
+    "public MDI_DrawApplication(){}",
+    "public MDI_DrawApplication(String title){}"
+  ],
+  "constructorSigs": [
+    "MDI_DrawApplication()",
+    "MDI_DrawApplication(String)"
+  ],
+  "constructorBrief": [
+    "public MDI_DrawApplication(){}",
+    "public MDI_DrawApplication(String title){}"
+  ],
+  "getterSetterSigs": [
+    "setDesktop(JComponent)",
+    "getDesktop()",
+    "setDrawingTitle(String)",
+    "getDrawingTitle()"
+  ],
+  "getterSetterBrief": [
+    "protected void setDesktop(JComponent newDesktop){}",
+    "public JComponent getDesktop(){}",
+    "protected void setDrawingTitle(String newDrawingTitle){}",
+    "protected String getDrawingTitle(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "addInternalFrameListener(InternalFrameListener)",
+      "setDesktop(JComponent)",
+      "getDesktop()"
+    ],
+    "javax.swing.JComponent": [
+      "setAlignmentX(float)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)MDI_DrawApplication.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport java.util.Enumeration;\nimport java.util.Vector;\nimport javax.swing.JComponent;\nimport javax.swing.JDesktopPane;\nimport javax.swing.event.InternalFrameEvent;\nimport javax.swing.event.InternalFrameListener;\nimport CH.ifa.draw.application.DrawApplication;\nimport CH.ifa.draw.framework.Drawing;\nimport CH.ifa.draw.standard.StandardDrawingView;\n\n/**\n * Many applications have the ability to deal with multiple internal windows.\n * MDI_DrawApplications provides the basic facilities to make use of MDI in\n * JHotDraw. Its main tasks are to create a content for DrawApplications, which\n * is embedded in internal frames, to maintain a list with all internal frames\n * and to manage the switching between them.\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.08.1999\n */\npublic class MDI_DrawApplication extends DrawApplication implements InternalFrameListener {\n\n    /**\n     * Internal frame, which is currently activated. This frame receives all\n     * mouse input and displays the Drawing to be manipulated.\n     */\n    private MDI_InternalFrame currentFrame;\n\n    /**\n     * If an internal frame gets activated, the StandardDrawingView is backed\n     * up for later restorage.\n     */\n    private StandardDrawingView backupDrawingView;\n\n    /**\n     * This component acts as a desktop for the content.\n     */\n    private JComponent desktop;\n\n    /**\n     * List of listeners which adhere to the InternalFrameListener interface\n     */\n    private Vector mdiListeners;\n\n    public MDI_DrawApplication() {\n        this(\"JHotDraw\");\n    }\n\n    public MDI_DrawApplication(String title) {\n        super(title);\n        setDesktop(new JDesktopPane());\n        getDesktop().setAlignmentX(LEFT_ALIGNMENT);\n        mdiListeners = new Vector();\n        addInternalFrameListener(this);\n    }\n\n    /**\n     * Factory method which can be overriden by subclasses to\n     * create an instance of their type.\n     *\n     * @return\tnewly created application\n     */\n    protected DrawApplication createApplication() {\n        return new MDI_DrawApplication();\n    }\n\n    /**\n     * Creates the contents component of the application\n     * frame. By default the DrawingView is returned in\n     * a JScrollPane.\n     */\n    protected JComponent createContents(StandardDrawingView view) {\n        JComponent contents = super.createContents(view);\n        MDI_InternalFrame internalFrame = createInternalFrame();\n        internalFrame.setDrawingView(view);\n        internalFrame.setSize(200, 200);\n        internalFrame.getContentPane().add(contents);\n        if (currentFrame == null) {\n            currentFrame = internalFrame;\n            backupDrawingView = createDrawingView();\n        }\n        // all registered listeners to the new internal frame\n        Enumeration enumeration = mdiListeners.elements();\n        while (enumeration.hasMoreElements()) {\n            internalFrame.addInternalFrameListener((InternalFrameListener) enumeration.nextElement());\n        }\n        getDesktop().add(internalFrame);\n        try {\n            internalFrame.setSelected(true);\n        } catch (java.beans.PropertyVetoException e) {\n            // ignore\n        }\n        internalFrame.setVisible(true);\n        // return container in which the internal frame is embedded\n        return getDesktop();\n    }\n\n    /**\n     * Factory method which creates an internal frame. Subclasses may override this\n     * method to provide their own implementations of MDI_InternalFrame\n     */\n    protected MDI_InternalFrame createInternalFrame() {\n        return new MDI_InternalFrame(\"untitled\", true, true, true, true);\n    }\n\n    /**\n     * Resets the drawing to a new empty drawing. If no internal frame\n     * exists then open a new internal frame.\n     */\n    public void promptNew() {\n        if (hasInternalFrames()) {\n            super.promptNew();\n        } else {\n            newWindow();\n        }\n    }\n\n    /**\n     * Method to create a new internal frame.  Applications that want\n     * to create a new internal drawing view should call this method.\n     */\n    public void newWindow() {\n        StandardDrawingView fView = createDrawingView();\n        Drawing fDrawing = createDrawing();\n        fView.setDrawing(fDrawing);\n        createContents(fView);\n        toolDone();\n    }\n\n    public void newView() {\n        String copyTitle = getDrawingTitle();\n        StandardDrawingView fView = createDrawingView();\n        fView.setDrawing(drawing());\n        createContents(fView);\n        setDrawingTitle(copyTitle + \" (View)\");\n        toolDone();\n    }\n\n    /**\n     * Set the component, in which the content is embedded. This component\n     * acts as a desktop for the content.\n     */\n    protected void setDesktop(JComponent newDesktop) {\n        desktop = newDesktop;\n    }\n\n    /**\n     * Get the component, in which the content is embedded. This component\n     * acts as a desktop for the content.\n     */\n    public JComponent getDesktop() {\n        return desktop;\n    }\n\n    /**\n     * Add a new listener to the applications internal frames. If a new internal\n     * frame is created, all currently registered InternalFrameListeners are added.\n     *\n     * @param newMDIListener listener to be added\n     */\n    public void addInternalFrameListener(InternalFrameListener newMDIListener) {\n        mdiListeners.addElement(newMDIListener);\n    }\n\n    /**\n     * Remove a InternalFrameListeners from the application.\n     *\n     * @param oldMDIListener listener to be removed\n     */\n    public void removeInternalFrameListener(InternalFrameListener oldMDIListener) {\n        mdiListeners.removeElement(oldMDIListener);\n    }\n\n    /**\n     * Activate an internal frame upon which the selected tools operate.\n     * The currently activated DrawgingView is backed up for later restorage.\n     */\n    public void activateFrame(MDI_InternalFrame newFrame) {\n        if (currentFrame != newFrame) {\n            // check, whether drawing has been already initialised\n            if (newFrame.getDrawingView().drawing() != null) {\n                newFrame.getDrawingView().unfreezeView();\n            }\n            backupDrawingView.setDrawing(view().drawing());\n            currentFrame.replaceDrawingView(backupDrawingView);\n            currentFrame.validate();\n            currentFrame.getDrawingView().freezeView();\n            setDrawing(newFrame.getDrawingView().drawing());\n            backupDrawingView = newFrame.replaceDrawingView((StandardDrawingView) view());\n            currentFrame = newFrame;\n        }\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets selected.\n     */\n    public void internalFrameActivated(InternalFrameEvent e) {\n        activateFrame((MDI_InternalFrame) e.getSource());\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame is opend.\n     */\n    public void internalFrameOpened(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * before a internal frame is closed.\n     */\n    public void internalFrameClosing(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame is closed.\n     */\n    public void internalFrameClosed(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets iconified.\n     */\n    public void internalFrameIconified(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets deiconified.\n     */\n    public void internalFrameDeiconified(InternalFrameEvent e) {\n        activateFrame((MDI_InternalFrame) e.getSource());\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets deactivated.\n     */\n    public void internalFrameDeactivated(InternalFrameEvent e) {\n    }\n\n    /**\n     * Set the title for the drawing. The title also appears in the\n     * internal frame title bar. A name is assigned when a drawing\n     * saved or a saved drawing is loaded. The file name is the\n     * drawing title. If the drawing has not been saved before then\n     * the drawing title is \"untitled\".\n     */\n    protected void setDrawingTitle(String newDrawingTitle) {\n        currentFrame.setTitle(newDrawingTitle);\n    }\n\n    /**\n     * Get the title for the drawing.\n     */\n    protected String getDrawingTitle() {\n        return currentFrame.getTitle();\n    }\n\n    public boolean hasInternalFrames() {\n        return ((JDesktopPane) getDesktop()).getAllFrames().length > 0;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Many applications have the ability to deal with multiple internal windows.\n * MDI_DrawApplications provides the basic facilities to make use of MDI in\n * JHotDraw. Its main tasks are to create a content for DrawApplications, which\n * is embedded in internal frames, to maintain a list with all internal frames\n * and to manage the switching between them.\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.08.1999\n */\npublic class MDI_DrawApplication extends DrawApplication implements InternalFrameListener {\n\n    /**\n     * Internal frame, which is currently activated. This frame receives all\n     * mouse input and displays the Drawing to be manipulated.\n     */\n    private MDI_InternalFrame currentFrame;\n\n    /**\n     * If an internal frame gets activated, the StandardDrawingView is backed\n     * up for later restorage.\n     */\n    private StandardDrawingView backupDrawingView;\n\n    /**\n     * This component acts as a desktop for the content.\n     */\n    private JComponent desktop;\n\n    /**\n     * List of listeners which adhere to the InternalFrameListener interface\n     */\n    private Vector mdiListeners;\n\n    public MDI_DrawApplication() {\n        this(\"JHotDraw\");\n    }\n\n    public MDI_DrawApplication(String title) {\n        super(title);\n        setDesktop(new JDesktopPane());\n        getDesktop().setAlignmentX(LEFT_ALIGNMENT);\n        mdiListeners = new Vector();\n        addInternalFrameListener(this);\n    }\n\n    /**\n     * Factory method which can be overriden by subclasses to\n     * create an instance of their type.\n     *\n     * @return\tnewly created application\n     */\n    protected DrawApplication createApplication() {\n        return new MDI_DrawApplication();\n    }\n\n    /**\n     * Creates the contents component of the application\n     * frame. By default the DrawingView is returned in\n     * a JScrollPane.\n     */\n    protected JComponent createContents(StandardDrawingView view) {\n        JComponent contents = super.createContents(view);\n        MDI_InternalFrame internalFrame = createInternalFrame();\n        internalFrame.setDrawingView(view);\n        internalFrame.setSize(200, 200);\n        internalFrame.getContentPane().add(contents);\n        if (currentFrame == null) {\n            currentFrame = internalFrame;\n            backupDrawingView = createDrawingView();\n        }\n        // all registered listeners to the new internal frame\n        Enumeration enumeration = mdiListeners.elements();\n        while (enumeration.hasMoreElements()) {\n            internalFrame.addInternalFrameListener((InternalFrameListener) enumeration.nextElement());\n        }\n        getDesktop().add(internalFrame);\n        try {\n            internalFrame.setSelected(true);\n        } catch (java.beans.PropertyVetoException e) {\n            // ignore\n        }\n        internalFrame.setVisible(true);\n        // return container in which the internal frame is embedded\n        return getDesktop();\n    }\n\n    /**\n     * Factory method which creates an internal frame. Subclasses may override this\n     * method to provide their own implementations of MDI_InternalFrame\n     */\n    protected MDI_InternalFrame createInternalFrame() {\n        return new MDI_InternalFrame(\"untitled\", true, true, true, true);\n    }\n\n    /**\n     * Resets the drawing to a new empty drawing. If no internal frame\n     * exists then open a new internal frame.\n     */\n    public void promptNew() {\n        if (hasInternalFrames()) {\n            super.promptNew();\n        } else {\n            newWindow();\n        }\n    }\n\n    /**\n     * Method to create a new internal frame.  Applications that want\n     * to create a new internal drawing view should call this method.\n     */\n    public void newWindow() {\n        StandardDrawingView fView = createDrawingView();\n        Drawing fDrawing = createDrawing();\n        fView.setDrawing(fDrawing);\n        createContents(fView);\n        toolDone();\n    }\n\n    public void newView() {\n        String copyTitle = getDrawingTitle();\n        StandardDrawingView fView = createDrawingView();\n        fView.setDrawing(drawing());\n        createContents(fView);\n        setDrawingTitle(copyTitle + \" (View)\");\n        toolDone();\n    }\n\n    /**\n     * Set the component, in which the content is embedded. This component\n     * acts as a desktop for the content.\n     */\n    protected void setDesktop(JComponent newDesktop) {\n        desktop = newDesktop;\n    }\n\n    /**\n     * Get the component, in which the content is embedded. This component\n     * acts as a desktop for the content.\n     */\n    public JComponent getDesktop() {\n        return desktop;\n    }\n\n    /**\n     * Add a new listener to the applications internal frames. If a new internal\n     * frame is created, all currently registered InternalFrameListeners are added.\n     *\n     * @param newMDIListener listener to be added\n     */\n    public void addInternalFrameListener(InternalFrameListener newMDIListener) {\n        mdiListeners.addElement(newMDIListener);\n    }\n\n    /**\n     * Remove a InternalFrameListeners from the application.\n     *\n     * @param oldMDIListener listener to be removed\n     */\n    public void removeInternalFrameListener(InternalFrameListener oldMDIListener) {\n        mdiListeners.removeElement(oldMDIListener);\n    }\n\n    /**\n     * Activate an internal frame upon which the selected tools operate.\n     * The currently activated DrawgingView is backed up for later restorage.\n     */\n    public void activateFrame(MDI_InternalFrame newFrame) {\n        if (currentFrame != newFrame) {\n            // check, whether drawing has been already initialised\n            if (newFrame.getDrawingView().drawing() != null) {\n                newFrame.getDrawingView().unfreezeView();\n            }\n            backupDrawingView.setDrawing(view().drawing());\n            currentFrame.replaceDrawingView(backupDrawingView);\n            currentFrame.validate();\n            currentFrame.getDrawingView().freezeView();\n            setDrawing(newFrame.getDrawingView().drawing());\n            backupDrawingView = newFrame.replaceDrawingView((StandardDrawingView) view());\n            currentFrame = newFrame;\n        }\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets selected.\n     */\n    public void internalFrameActivated(InternalFrameEvent e) {\n        activateFrame((MDI_InternalFrame) e.getSource());\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame is opend.\n     */\n    public void internalFrameOpened(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * before a internal frame is closed.\n     */\n    public void internalFrameClosing(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame is closed.\n     */\n    public void internalFrameClosed(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets iconified.\n     */\n    public void internalFrameIconified(InternalFrameEvent e) {\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets deiconified.\n     */\n    public void internalFrameDeiconified(InternalFrameEvent e) {\n        activateFrame((MDI_InternalFrame) e.getSource());\n    }\n\n    /**\n     * Notification method from InternalFrameListener, which is called\n     * if a internal frame gets deactivated.\n     */\n    public void internalFrameDeactivated(InternalFrameEvent e) {\n    }\n\n    /**\n     * Set the title for the drawing. The title also appears in the\n     * internal frame title bar. A name is assigned when a drawing\n     * saved or a saved drawing is loaded. The file name is the\n     * drawing title. If the drawing has not been saved before then\n     * the drawing title is \"untitled\".\n     */\n    protected void setDrawingTitle(String newDrawingTitle) {\n        currentFrame.setTitle(newDrawingTitle);\n    }\n\n    /**\n     * Get the title for the drawing.\n     */\n    protected String getDrawingTitle() {\n        return currentFrame.getTitle();\n    }\n\n    public boolean hasInternalFrames() {\n        return ((JDesktopPane) getDesktop()).getAllFrames().length > 0;\n    }\n}",
+  "subClasses": []
+}

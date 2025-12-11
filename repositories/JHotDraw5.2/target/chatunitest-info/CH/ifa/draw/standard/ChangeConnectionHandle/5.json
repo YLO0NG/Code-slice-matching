@@ -1,0 +1,28 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "invokeStart",
+  "brief": "public void invokeStart(int  x, int  y, DrawingView view){}",
+  "methodSignature": "invokeStart(int, int, DrawingView)",
+  "sourceCode": "public void invokeStart(int  x, int  y, DrawingView view) {\n        fOriginalTarget = target();\n        fStart = new Point(x, y);\n        disconnect();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.standard.ChangeConnectionHandle": [
+      "disconnect()",
+      "target()"
+    ]
+  },
+  "full_method_info": "/**\n * Disconnects the connection.\n */\npublic void invokeStart(int x, int y, DrawingView view) {\n    fOriginalTarget = target();\n    fStart = new Point(x, y);\n    disconnect();\n}",
+  "method_comment": "\n     * Disconnects the connection.\n     ",
+  "method_annotation": ""
+}

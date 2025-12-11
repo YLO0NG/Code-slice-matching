@@ -1,0 +1,35 @@
+{
+  "className": "StatusLine",
+  "methodName": "StatusLine",
+  "brief": "public StatusLine(int preferredWidth){}",
+  "methodSignature": "StatusLine(int)",
+  "sourceCode": "public StatusLine(int preferredWidth) {\r\n\t\tsuper();\r\n\t\tsetFont(BOLD_FONT);\r\n\t\tsetEditable(false);\r\n\t\tsetBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));\r\n\t\tDimension d= getPreferredSize();\r\n\t\td.width= preferredWidth;\r\n\t\tsetPreferredSize(d);\r\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "javax.swing.JTextField": [
+      "getPreferredSize()",
+      "setFont(Font)"
+    ],
+    "javax.swing.text.JTextComponent": [
+      "setEditable(boolean)"
+    ],
+    "javax.swing.JComponent": [
+      "setBorder(Border)",
+      "setPreferredSize(Dimension)"
+    ],
+    "javax.swing.BorderFactory": [
+      "createBevelBorder(int)"
+    ]
+  },
+  "full_method_info": "public StatusLine(int preferredWidth) {\r\n    super();\r\n    setFont(BOLD_FONT);\r\n    setEditable(false);\r\n    setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));\r\n    Dimension d = getPreferredSize();\r\n    d.width = preferredWidth;\r\n    setPreferredSize(d);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

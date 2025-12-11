@@ -1,0 +1,21 @@
+{
+  "className": "DrawingView",
+  "methodName": "createImage",
+  "brief": "public Image createImage(int width, int height);",
+  "methodSignature": "createImage(int, int)",
+  "sourceCode": "public Image createImage(int width, int height);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Creates an image with the given dimensions\n */\npublic Image createImage(int width, int height);",
+  "method_comment": "\n     * Creates an image with the given dimensions\n     ",
+  "method_annotation": ""
+}

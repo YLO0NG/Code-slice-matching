@@ -1,0 +1,18 @@
+{
+  "className": "Project",
+  "methodName": "getClassNames",
+  "brief": "public Set<String> getClassNames(){}",
+  "methodSignature": "getClassNames()",
+  "sourceCode": "public Set<String> getClassNames() {\n\t\treturn classNames;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"classNames\"\n */\npublic Set<String> getClassNames() {\n    return classNames;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"classNames\"\n\t ",
+  "method_annotation": ""
+}

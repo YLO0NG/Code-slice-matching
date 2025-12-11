@@ -1,0 +1,59 @@
+{
+  "className": "DataManager",
+  "methodName": "getAllChangesetsForProject",
+  "brief": "public static ArrayList<ChangeSet> getAllChangesetsForProject(int system) throws SQLException{}",
+  "methodSignature": "getAllChangesetsForProject(int)",
+  "sourceCode": "public static ArrayList<ChangeSet> getAllChangesetsForProject(int system) throws SQLException {\n    \tArrayList<ChangeSet> changesets = new ArrayList<ChangeSet>();\n    \tProject project = getProjectByExternalSystem(system);\n    \tChangeSet aChangeset = null;\n    \tString sqlStmt = QueryBuilder.selectAllChangesetsForProject(system);\n    \tResultSet res = null;\n    \tres = statement.executeQuery(sqlStmt);\n    \twhile(res.next()) {\n    \t\taChangeset = new ChangeSet(res.getInt(\"id\"), res\n\t\t\t\t\t.getString(\"comment\"), res\n\t\t\t\t\t.getString(\"externalauthor\"), res\n\t\t\t\t\t.getInt(\"externalsystem_id\"), res\n\t\t\t\t\t.getTimestamp(\"timestamp\"), res.getInt(\"rev\"),\n\t\t\t\t\tres.getInt(\"project\"));\n    \t\tchangesets.add(aChangeset);\n    \t\tDataManager.changesets.add(aChangeset);\n    \t}\n    \tif(res != null) res.close();\n    \t\n    \tfor(ChangeSet changeset : changesets) {\n    \t\tchangeset.setOwner(getUserByUserName(changeset.getExternalAuthorUserName()));\n\t\t\tchangeset.setProject(project);\n\t\t\tchangeset.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeset.getRevision(), changeset.getExternalSystemID()));\n\t\t\tchangeset.setAuthorForChangeSetDetails();\n\t\t\tproject.addChangeset(changeset);\n    \t}\n    \treturn changesets;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectByExternalSystem(int)",
+      "getUserByUserName(String)",
+      "getChangeSetDetailsByRevAndProject(int, int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectAllChangesetsForProject(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "getTimestamp(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "java.util.Set": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setOwner(User)",
+      "setProject(Project)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getExternalSystemID()",
+      "getRevision()",
+      "setChangesetDetails(ChangeSetDetail>)",
+      "setAuthorForChangeSetDetails()",
+      "getExternalAuthorUserName()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "addChangeset(ChangeSet)"
+    ]
+  },
+  "full_method_info": "public static ArrayList<ChangeSet> getAllChangesetsForProject(int system) throws SQLException {\n    ArrayList<ChangeSet> changesets = new ArrayList<ChangeSet>();\n    Project project = getProjectByExternalSystem(system);\n    ChangeSet aChangeset = null;\n    String sqlStmt = QueryBuilder.selectAllChangesetsForProject(system);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        aChangeset = new ChangeSet(res.getInt(\"id\"), res.getString(\"comment\"), res.getString(\"externalauthor\"), res.getInt(\"externalsystem_id\"), res.getTimestamp(\"timestamp\"), res.getInt(\"rev\"), res.getInt(\"project\"));\n        changesets.add(aChangeset);\n        DataManager.changesets.add(aChangeset);\n    }\n    if (res != null)\n        res.close();\n    for (ChangeSet changeset : changesets) {\n        changeset.setOwner(getUserByUserName(changeset.getExternalAuthorUserName()));\n        changeset.setProject(project);\n        changeset.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeset.getRevision(), changeset.getExternalSystemID()));\n        changeset.setAuthorForChangeSetDetails();\n        project.addChangeset(changeset);\n    }\n    return changesets;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

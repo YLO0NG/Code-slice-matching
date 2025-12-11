@@ -1,0 +1,29 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getEigenValues",
+  "brief": "public static double[] getEigenValues(double[][] A){}",
+  "methodSignature": "getEigenValues(double[][])",
+  "sourceCode": "public static double[] getEigenValues(double[][] A) {\n\t\t\n\t\tEigenvalueDecomposition LEigenDec = eigen(A);\n\t\t//diagonal eigenvalue matrix\n        Matrix eigenValues = LEigenDec.getD();\n        double[] eigenValues2 = new double[eigenValues.getColumnDimension()];\n        for(int i = 0; i <eigenValues.getColumnDimension(); i++) {\n        \teigenValues2[i] = eigenValues.get(i, i);\n        }\n        return eigenValues2;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "Jama.EigenvalueDecomposition": [
+      "getD()"
+    ],
+    "Jama.Matrix": [
+      "getColumnDimension()",
+      "get(int, int)"
+    ]
+  },
+  "full_method_info": "public static double[] getEigenValues(double[][] A) {\n    EigenvalueDecomposition LEigenDec = eigen(A);\n    // diagonal eigenvalue matrix\n    Matrix eigenValues = LEigenDec.getD();\n    double[] eigenValues2 = new double[eigenValues.getColumnDimension()];\n    for (int i = 0; i < eigenValues.getColumnDimension(); i++) {\n        eigenValues2[i] = eigenValues.get(i, i);\n    }\n    return eigenValues2;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

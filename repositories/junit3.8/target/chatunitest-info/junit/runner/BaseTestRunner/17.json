@@ -1,0 +1,22 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "runFailed",
+  "brief": "protected abstract void runFailed(String message);",
+  "methodSignature": "runFailed(String)",
+  "sourceCode": "protected abstract void runFailed(String message);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\r\n * Override to define how to handle a failed loading of\r\n * a test suite.\r\n */\r\nprotected abstract void runFailed(String message);",
+  "method_comment": "\r\n\t * Override to define how to handle a failed loading of\r\n\t * a test suite.\r\n\t ",
+  "method_annotation": ""
+}

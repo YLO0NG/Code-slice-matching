@@ -1,0 +1,18 @@
+{
+  "className": "Layoutable",
+  "methodName": "getLayouter",
+  "brief": "public Layouter getLayouter();",
+  "methodSignature": "getLayouter()",
+  "sourceCode": "public Layouter getLayouter();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the Layouter for this Layoutable\n *\n * @param layouter\n */\npublic Layouter getLayouter();",
+  "method_comment": "\n\t * Return the Layouter for this Layoutable\n\t *\n\t * @param layouter\n\t ",
+  "method_annotation": ""
+}

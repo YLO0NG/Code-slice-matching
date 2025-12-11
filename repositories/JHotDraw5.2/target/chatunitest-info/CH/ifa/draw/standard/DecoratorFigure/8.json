@@ -1,0 +1,25 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        fComponent.draw(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.Figure": [
+      "draw(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards draw to its contained figure.\n */\npublic void draw(Graphics g) {\n    fComponent.draw(g);\n}",
+  "method_comment": "\n     * Forwards draw to its contained figure.\n     ",
+  "method_annotation": ""
+}

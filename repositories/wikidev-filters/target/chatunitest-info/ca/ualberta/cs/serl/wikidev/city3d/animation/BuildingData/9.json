@@ -1,0 +1,18 @@
+{
+  "className": "BuildingData",
+  "methodName": "getNeighborhoodX",
+  "brief": "public int getNeighborhoodX(){}",
+  "methodSignature": "getNeighborhoodX()",
+  "sourceCode": "public int getNeighborhoodX() {\n\t\treturn neighborhoodX;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getNeighborhoodX() {\n    return neighborhoodX;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

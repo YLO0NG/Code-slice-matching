@@ -1,0 +1,18 @@
+{
+  "className": "TestResult",
+  "methodName": "runCount",
+  "brief": "public synchronized int runCount(){}",
+  "methodSignature": "runCount()",
+  "sourceCode": "public synchronized int runCount() {\r\n\t\treturn fRunTests;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Gets the number of run tests.\r\n */\r\npublic synchronized int runCount() {\r\n    return fRunTests;\r\n}",
+  "method_comment": "\r\n\t * Gets the number of run tests.\r\n\t ",
+  "method_annotation": ""
+}

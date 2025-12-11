@@ -1,0 +1,52 @@
+{
+  "fullClassName": "CH.ifa.draw.util.ReverseVectorEnumerator",
+  "className": "ReverseVectorEnumerator",
+  "index": 163,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Enumeration]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public class ReverseVectorEnumerator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;"
+  ],
+  "fields": [
+    "Vector vector;",
+    "int count;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Enumeration"
+  ],
+  "methodSigs": {
+    "hasMoreElements()": "0",
+    "nextElement()": "1",
+    "ReverseVectorEnumerator(Vector)": "2"
+  },
+  "methodsBrief": [
+    "public boolean hasMoreElements(){}",
+    "public Object nextElement(){}",
+    "public ReverseVectorEnumerator(Vector v){}"
+  ],
+  "constructorSigs": [
+    "ReverseVectorEnumerator(Vector)"
+  ],
+  "constructorBrief": [
+    "public ReverseVectorEnumerator(Vector v){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)ReverseVectorEnumerator.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.util.*;\n\n/**\n * An Enumeration that enumerates a vector back (size-1) to front (0).\n */\npublic class ReverseVectorEnumerator implements Enumeration {\n\n    Vector vector;\n\n    int count;\n\n    public ReverseVectorEnumerator(Vector v) {\n        vector = v;\n        count = vector.size() - 1;\n    }\n\n    public boolean hasMoreElements() {\n        return count >= 0;\n    }\n\n    public Object nextElement() {\n        if (count >= 0) {\n            return vector.elementAt(count--);\n        }\n        throw new NoSuchElementException(\"ReverseVectorEnumerator\");\n    }\n}\n",
+  "classDeclarationCode": "/**\n * An Enumeration that enumerates a vector back (size-1) to front (0).\n */\npublic class ReverseVectorEnumerator implements Enumeration {\n\n    Vector vector;\n\n    int count;\n\n    public ReverseVectorEnumerator(Vector v) {\n        vector = v;\n        count = vector.size() - 1;\n    }\n\n    public boolean hasMoreElements() {\n        return count >= 0;\n    }\n\n    public Object nextElement() {\n        if (count >= 0) {\n            return vector.elementAt(count--);\n        }\n        throw new NoSuchElementException(\"ReverseVectorEnumerator\");\n    }\n}",
+  "subClasses": []
+}

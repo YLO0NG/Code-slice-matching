@@ -1,0 +1,65 @@
+{
+  "fullClassName": "CH.ifa.draw.util.PaletteIcon",
+  "className": "PaletteIcon",
+  "index": 160,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class PaletteIcon",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;"
+  ],
+  "fields": [
+    "Image       fNormal;",
+    "Image       fPressed;",
+    "Image       fSelected;",
+    "Dimension   fSize;"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "normal()": "0",
+    "pressed()": "1",
+    "selected()": "2",
+    "getWidth()": "3",
+    "getHeight()": "4",
+    "PaletteIcon(Dimension, Image, Image, Image)": "5"
+  },
+  "methodsBrief": [
+    "public Image normal(){}",
+    "public Image pressed(){}",
+    "public Image selected(){}",
+    "public int getWidth(){}",
+    "public int getHeight(){}",
+    "public PaletteIcon(Dimension size, Image normal, Image pressed, Image selected){}"
+  ],
+  "constructorSigs": [
+    "PaletteIcon(Dimension, Image, Image, Image)"
+  ],
+  "constructorBrief": [
+    "public PaletteIcon(Dimension size, Image normal, Image pressed, Image selected){}"
+  ],
+  "getterSetterSigs": [
+    "getWidth()",
+    "getHeight()"
+  ],
+  "getterSetterBrief": [
+    "public int getWidth(){}",
+    "public int getHeight(){}"
+  ],
+  "constructorDeps": {
+    "java.awt.Dimension": [],
+    "java.awt.Image": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PaletteIcon.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.awt.*;\n\n/**\n * A three state icon that can be used in Palettes.\n *\n * @see PaletteButton\n */\npublic class PaletteIcon extends Object {\n\n    Image fNormal;\n\n    Image fPressed;\n\n    Image fSelected;\n\n    Dimension fSize;\n\n    public PaletteIcon(Dimension size, Image normal, Image pressed, Image selected) {\n        fSize = size;\n        fNormal = normal;\n        fPressed = pressed;\n        fSelected = selected;\n    }\n\n    public Image normal() {\n        return fNormal;\n    }\n\n    public Image pressed() {\n        return fPressed;\n    }\n\n    public Image selected() {\n        return fSelected;\n    }\n\n    public int getWidth() {\n        return fSize.width;\n    }\n\n    public int getHeight() {\n        return fSize.height;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A three state icon that can be used in Palettes.\n *\n * @see PaletteButton\n */\npublic class PaletteIcon extends Object {\n\n    Image fNormal;\n\n    Image fPressed;\n\n    Image fSelected;\n\n    Dimension fSize;\n\n    public PaletteIcon(Dimension size, Image normal, Image pressed, Image selected) {\n        fSize = size;\n        fNormal = normal;\n        fPressed = pressed;\n        fSelected = selected;\n    }\n\n    public Image normal() {\n        return fNormal;\n    }\n\n    public Image pressed() {\n        return fPressed;\n    }\n\n    public Image selected() {\n        return fSelected;\n    }\n\n    public int getWidth() {\n        return fSize.width;\n    }\n\n    public int getHeight() {\n        return fSize.height;\n    }\n}",
+  "subClasses": []
+}

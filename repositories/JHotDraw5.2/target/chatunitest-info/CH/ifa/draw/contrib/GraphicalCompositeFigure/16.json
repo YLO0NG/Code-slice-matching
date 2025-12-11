@@ -1,0 +1,35 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "figureRequestRemove",
+  "brief": "public void figureRequestRemove(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestRemove(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestRemove(FigureChangeEvent e) {\n\t\tif (listener() != null) {\n\t\t\tif (includes(e.getFigure())) {\n\t\t\t\tlistener().figureRequestRemove(new FigureChangeEvent(e.getFigure(), e.getInvalidatedRectangle()));\n\t\t\t}\n\t\t\telse {\n\t\t\t\tsuper.figureRequestRemove(e);\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [
+      "getInvalidatedRectangle()",
+      "getFigure()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "listener()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figureRequestRemove(FigureChangeEvent)",
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestRemove(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Propagates the removeFromDrawing request up to the container.\n */\npublic void figureRequestRemove(FigureChangeEvent e) {\n    if (listener() != null) {\n        if (includes(e.getFigure())) {\n            listener().figureRequestRemove(new FigureChangeEvent(e.getFigure(), e.getInvalidatedRectangle()));\n        } else {\n            super.figureRequestRemove(e);\n        }\n    }\n}",
+  "method_comment": "\n\t * Propagates the removeFromDrawing request up to the container.\n\t ",
+  "method_annotation": ""
+}

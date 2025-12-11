@@ -1,0 +1,22 @@
+{
+  "className": "Assert",
+  "methodName": "fail",
+  "brief": "static public void fail(String message){}",
+  "methodSignature": "fail(String)",
+  "sourceCode": "static public void fail(String message) {\r\n\t\tthrow new AssertionFailedError(message);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\r\n * Fails a test with the given message.\r\n */\r\nstatic public void fail(String message) {\r\n    throw new AssertionFailedError(message);\r\n}",
+  "method_comment": "\r\n\t * Fails a test with the given message.\r\n\t ",
+  "method_annotation": ""
+}

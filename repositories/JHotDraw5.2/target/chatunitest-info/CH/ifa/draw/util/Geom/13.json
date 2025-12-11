@@ -1,0 +1,27 @@
+{
+  "className": "Geom",
+  "methodName": "ovalAngleToPoint",
+  "brief": "static public Point ovalAngleToPoint(Rectangle r, double angle){}",
+  "methodSignature": "ovalAngleToPoint(Rectangle, double)",
+  "sourceCode": "static public Point ovalAngleToPoint(Rectangle r, double angle) {\n        Point center = Geom.center(r);\n        Point p = Geom.polarToPoint(angle, r.width/2, r.height/2);\n        return new Point(center.x + p.x, center.y + p.y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "CH.ifa.draw.util.Geom": [
+      "center(Rectangle)",
+      "polarToPoint(double, double, double)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the point on an oval that corresponds to the given angle.\n */\nstatic public Point ovalAngleToPoint(Rectangle r, double angle) {\n    Point center = Geom.center(r);\n    Point p = Geom.polarToPoint(angle, r.width / 2, r.height / 2);\n    return new Point(center.x + p.x, center.y + p.y);\n}",
+  "method_comment": "\n     * Gets the point on an oval that corresponds to the given angle.\n     ",
+  "method_annotation": ""
+}

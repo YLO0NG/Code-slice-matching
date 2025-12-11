@@ -1,0 +1,58 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.ShortestDistanceConnector",
+  "className": "ShortestDistanceConnector",
+  "index": 51,
+  "modifier": "[public ]",
+  "extend": "[AbstractConnector]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class ShortestDistanceConnector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -2273446020593433887L;"
+  ],
+  "superClasses": [
+    "AbstractConnector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "findStart(ConnectionFigure)": "0",
+    "findEnd(ConnectionFigure)": "1",
+    "findPoint(ConnectionFigure, boolean)": "2",
+    "ShortestDistanceConnector()": "3",
+    "ShortestDistanceConnector(Figure)": "4"
+  },
+  "methodsBrief": [
+    "public Point findStart(ConnectionFigure connection){}",
+    "public Point findEnd(ConnectionFigure connection){}",
+    "protected Point findPoint(ConnectionFigure connection, boolean getStart){}",
+    "public ShortestDistanceConnector(){}",
+    "public ShortestDistanceConnector(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "ShortestDistanceConnector()",
+    "ShortestDistanceConnector(Figure)"
+  ],
+  "constructorBrief": [
+    "public ShortestDistanceConnector(){}",
+    "public ShortestDistanceConnector(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ShortestDistanceConnector.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * A ShortestDistance locates connection points by\n * finding the shortest distance between the start and\n * end of the connection.\n * It doesn't connect to the ares defined by Figure.connectionInsets()\n * @see Figure#connectionInsets\n * @see Connector\n */\npublic class ShortestDistanceConnector extends AbstractConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -2273446020593433887L;\n\n    public ShortestDistanceConnector() {\n        // only used for Storable implementation\n        super();\n    }\n\n    public ShortestDistanceConnector(Figure owner) {\n        super(owner);\n    }\n\n    public Point findStart(ConnectionFigure connection) {\n        return findPoint(connection, true);\n    }\n\n    public Point findEnd(ConnectionFigure connection) {\n        return findPoint(connection, false);\n    }\n\n    protected Point findPoint(ConnectionFigure connection, boolean getStart) {\n        Figure startFigure = connection.start().owner();\n        Figure endFigure = connection.end().owner();\n        Rectangle r1 = startFigure.displayBox();\n        Rectangle r2 = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        Point p1, p2;\n        Point start = null, end = null, s = null, e = null;\n        long len2 = Long.MAX_VALUE, l2;\n        // connection points\n        int x1, x2, y1, y2;\n        int xmin, xmax, ymin, ymax;\n        // X-dimension\n        // constrain width connection insets\n        int r1x, r1width, r2x, r2width, r1y, r1height, r2y, r2height;\n        r1x = r1.x + i1.left;\n        r1width = r1.width - i1.left - i1.right - 1;\n        r2x = r2.x + i2.left;\n        r2width = r2.width - i2.left - i2.right - 1;\n        // find x connection point\n        if (r1x + r1width < r2x) {\n            x1 = r1x + r1width;\n            x2 = r2x;\n        } else if (r1x > r2x + r2width) {\n            x1 = r1x;\n            x2 = r2x + r2width;\n        } else {\n            xmax = Math.max(r1x, r2x);\n            xmin = Math.min(r1x + r1width, r2x + r2width);\n            x1 = x2 = (xmax + xmin) / 2;\n        }\n        // Y-Dimension\n        // constrain with connection insets\n        r1y = r1.y + i1.top;\n        r1height = r1.height - i1.top - i1.bottom - 1;\n        r2y = r2.y + i2.top;\n        r2height = r2.height - i2.top - i2.bottom - 1;\n        // y connection point\n        if (r1y + r1height < r2y) {\n            y1 = r1y + r1height;\n            y2 = r2y;\n        } else if (r1y > r2y + r2height) {\n            y1 = r1y;\n            y2 = r2y + r2height;\n        } else {\n            ymax = Math.max(r1y, r2y);\n            ymin = Math.min(r1y + r1height, r2y + r2height);\n            y1 = y2 = (ymax + ymin) / 2;\n        }\n        // find shortest connection\n        for (int i = 0; i < 4; i++) {\n            switch(i) {\n                case 0:\n                    // EAST-WEST\n                    p1 = Geom.east(r1);\n                    p2 = Geom.west(r2);\n                    s = new Point(p1.x, y1);\n                    e = new Point(p2.x, y2);\n                    break;\n                case 1:\n                    // WEST-EAST\n                    p1 = Geom.west(r1);\n                    p2 = Geom.east(r2);\n                    s = new Point(p1.x, y1);\n                    e = new Point(p2.x, y2);\n                    break;\n                case 2:\n                    // NORTH-SOUTH\n                    p1 = Geom.north(r1);\n                    p2 = Geom.south(r2);\n                    s = new Point(x1, p1.y);\n                    e = new Point(x2, p2.y);\n                    break;\n                case 3:\n                    // SOUTH-NORTH\n                    p1 = Geom.south(r1);\n                    p2 = Geom.north(r2);\n                    s = new Point(x1, p1.y);\n                    e = new Point(x2, p2.y);\n                    break;\n            }\n            l2 = Geom.length2(s.x, s.y, e.x, e.y);\n            if (l2 < len2) {\n                start = s;\n                end = e;\n                len2 = l2;\n            }\n        }\n        if (getStart)\n            return start;\n        return end;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A ShortestDistance locates connection points by\n * finding the shortest distance between the start and\n * end of the connection.\n * It doesn't connect to the ares defined by Figure.connectionInsets()\n * @see Figure#connectionInsets\n * @see Connector\n */\npublic class ShortestDistanceConnector extends AbstractConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -2273446020593433887L;\n\n    public ShortestDistanceConnector() {\n        // only used for Storable implementation\n        super();\n    }\n\n    public ShortestDistanceConnector(Figure owner) {\n        super(owner);\n    }\n\n    public Point findStart(ConnectionFigure connection) {\n        return findPoint(connection, true);\n    }\n\n    public Point findEnd(ConnectionFigure connection) {\n        return findPoint(connection, false);\n    }\n\n    protected Point findPoint(ConnectionFigure connection, boolean getStart) {\n        Figure startFigure = connection.start().owner();\n        Figure endFigure = connection.end().owner();\n        Rectangle r1 = startFigure.displayBox();\n        Rectangle r2 = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        Point p1, p2;\n        Point start = null, end = null, s = null, e = null;\n        long len2 = Long.MAX_VALUE, l2;\n        // connection points\n        int x1, x2, y1, y2;\n        int xmin, xmax, ymin, ymax;\n        // X-dimension\n        // constrain width connection insets\n        int r1x, r1width, r2x, r2width, r1y, r1height, r2y, r2height;\n        r1x = r1.x + i1.left;\n        r1width = r1.width - i1.left - i1.right - 1;\n        r2x = r2.x + i2.left;\n        r2width = r2.width - i2.left - i2.right - 1;\n        // find x connection point\n        if (r1x + r1width < r2x) {\n            x1 = r1x + r1width;\n            x2 = r2x;\n        } else if (r1x > r2x + r2width) {\n            x1 = r1x;\n            x2 = r2x + r2width;\n        } else {\n            xmax = Math.max(r1x, r2x);\n            xmin = Math.min(r1x + r1width, r2x + r2width);\n            x1 = x2 = (xmax + xmin) / 2;\n        }\n        // Y-Dimension\n        // constrain with connection insets\n        r1y = r1.y + i1.top;\n        r1height = r1.height - i1.top - i1.bottom - 1;\n        r2y = r2.y + i2.top;\n        r2height = r2.height - i2.top - i2.bottom - 1;\n        // y connection point\n        if (r1y + r1height < r2y) {\n            y1 = r1y + r1height;\n            y2 = r2y;\n        } else if (r1y > r2y + r2height) {\n            y1 = r1y;\n            y2 = r2y + r2height;\n        } else {\n            ymax = Math.max(r1y, r2y);\n            ymin = Math.min(r1y + r1height, r2y + r2height);\n            y1 = y2 = (ymax + ymin) / 2;\n        }\n        // find shortest connection\n        for (int i = 0; i < 4; i++) {\n            switch(i) {\n                case 0:\n                    // EAST-WEST\n                    p1 = Geom.east(r1);\n                    p2 = Geom.west(r2);\n                    s = new Point(p1.x, y1);\n                    e = new Point(p2.x, y2);\n                    break;\n                case 1:\n                    // WEST-EAST\n                    p1 = Geom.west(r1);\n                    p2 = Geom.east(r2);\n                    s = new Point(p1.x, y1);\n                    e = new Point(p2.x, y2);\n                    break;\n                case 2:\n                    // NORTH-SOUTH\n                    p1 = Geom.north(r1);\n                    p2 = Geom.south(r2);\n                    s = new Point(x1, p1.y);\n                    e = new Point(x2, p2.y);\n                    break;\n                case 3:\n                    // SOUTH-NORTH\n                    p1 = Geom.south(r1);\n                    p2 = Geom.north(r2);\n                    s = new Point(x1, p1.y);\n                    e = new Point(x2, p2.y);\n                    break;\n            }\n            l2 = Geom.length2(s.x, s.y, e.x, e.y);\n            if (l2 < len2) {\n                start = s;\n                end = e;\n                len2 = l2;\n            }\n        }\n        if (getStart)\n            return start;\n        return end;\n    }\n}",
+  "subClasses": []
+}

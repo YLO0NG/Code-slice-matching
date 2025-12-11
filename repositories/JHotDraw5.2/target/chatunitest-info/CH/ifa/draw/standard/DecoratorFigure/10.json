@@ -1,0 +1,22 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        return fComponent.handles();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "handles()"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards handles to its contained figure.\n */\npublic Vector handles() {\n    return fComponent.handles();\n}",
+  "method_comment": "\n     * Forwards handles to its contained figure.\n     ",
+  "method_annotation": ""
+}

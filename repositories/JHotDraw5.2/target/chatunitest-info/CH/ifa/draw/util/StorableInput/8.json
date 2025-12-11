@@ -1,0 +1,24 @@
+{
+  "className": "StorableInput",
+  "methodName": "retrieve",
+  "brief": "private Storable retrieve(int ref){}",
+  "methodSignature": "retrieve(int)",
+  "sourceCode": "private Storable retrieve(int ref) {\n        return (Storable) fMap.elementAt(ref);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elementAt(int)"
+    ]
+  },
+  "full_method_info": "private Storable retrieve(int ref) {\n    return (Storable) fMap.elementAt(ref);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "LocatorConnector",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fLocator = (Locator)dr.readStorable();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the arrow tip from a StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    fLocator = (Locator) dr.readStorable();\n}",
+  "method_comment": "\n     * Reads the arrow tip from a StorableInput.\n     ",
+  "method_annotation": ""
+}

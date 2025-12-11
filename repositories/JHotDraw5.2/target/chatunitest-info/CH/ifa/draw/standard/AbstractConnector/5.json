@@ -1,0 +1,28 @@
+{
+  "className": "AbstractConnector",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y){}",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y) {\n        return owner().containsPoint(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "containsPoint(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "/**\n * Tests if a point is contained in the connector.\n */\npublic boolean containsPoint(int x, int y) {\n    return owner().containsPoint(x, y);\n}",
+  "method_comment": "\n     * Tests if a point is contained in the connector.\n     ",
+  "method_annotation": ""
+}

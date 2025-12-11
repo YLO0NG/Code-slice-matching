@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "addDeveloper",
+  "brief": "public void addDeveloper(User developer){}",
+  "methodSignature": "addDeveloper(User)",
+  "sourceCode": "public void addDeveloper(User developer) {\n\t\tthis.developers.add(developer);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": [],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addDeveloper(User developer) {\n    this.developers.add(developer);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

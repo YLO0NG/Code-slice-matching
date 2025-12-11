@@ -1,0 +1,50 @@
+{
+  "className": "ElbowHandle",
+  "methodName": "invokeStep",
+  "brief": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeStep(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {\n        LineConnection line = ownerConnection();\n        Point p1 = line.pointAt(fSegment);\n        Point p2 = line.pointAt(fSegment+1);\n        int ddx = x - fLastX;\n        int ddy = y - fLastY;\n\n        Point np1;\n        Point np2;\n        if (isVertical(p1, p2)) {\n            int x1 = p1.x + ddx;\n\t\t\tLineConnection line1 = ownerConnection();\n\t\t\tFigure startFigure = line1.start().owner();\n\t\t\tFigure endFigure = line1.end().owner();\n\t\t\tRectangle start = startFigure.displayBox();\n\t\t\tRectangle end = endFigure.displayBox();\n\t\t\tInsets i1 = startFigure.connectionInsets();\n\t\t\tInsets i2 = endFigure.connectionInsets();\n\t\t\t\n\t\t\tint r1x, r1width, r2x, r2width;\n\t\t\tr1x = start.x + i1.left;\n\t\t\tr1width = start.width - i1.left - i1.right-1;\n\t\t\t\n\t\t\tr2x = end.x + i2.left;\n\t\t\tr2width = end.width - i2.left - i2.right-1;\n\t\t\t\n\t\t\tif (fSegment == 0)\n\t\t\t    x1 = Geom.range(r1x, r1x + r1width, x1);\n\t\t\tif (fSegment == line1.pointCount()-2)\n\t\t\t    x1 = Geom.range(r2x, r2x + r2width, x1);\n\t\t\tint cx = x1;\n            np1 = new Point(cx, p1.y);\n            np2 = new Point(cx, p2.y);\n        } else {\n            int cy = constrainY(p1.y + ddy);\n            np1 = new Point(p1.x, cy);\n            np2 = new Point(p2.x, cy);\n        }\n        line.setPointAt(np1, fSegment);\n        line.setPointAt(np2, fSegment+1);\n        fLastX = x;\n        fLastY = y;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.figures.ElbowHandle": [
+      "ownerConnection()",
+      "isVertical(Point, Point)",
+      "constrainY(int)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointCount()",
+      "pointAt(int)"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "setPointAt(Point, int)",
+      "start()",
+      "end()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectionInsets()",
+      "displayBox()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "range(int, int, int)"
+    ]
+  },
+  "full_method_info": "public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    LineConnection line = ownerConnection();\n    Point p1 = line.pointAt(fSegment);\n    Point p2 = line.pointAt(fSegment + 1);\n    int ddx = x - fLastX;\n    int ddy = y - fLastY;\n    Point np1;\n    Point np2;\n    if (isVertical(p1, p2)) {\n        int x1 = p1.x + ddx;\n        LineConnection line1 = ownerConnection();\n        Figure startFigure = line1.start().owner();\n        Figure endFigure = line1.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n        int r1x, r1width, r2x, r2width;\n        r1x = start.x + i1.left;\n        r1width = start.width - i1.left - i1.right - 1;\n        r2x = end.x + i2.left;\n        r2width = end.width - i2.left - i2.right - 1;\n        if (fSegment == 0)\n            x1 = Geom.range(r1x, r1x + r1width, x1);\n        if (fSegment == line1.pointCount() - 2)\n            x1 = Geom.range(r2x, r2x + r2width, x1);\n        int cx = x1;\n        np1 = new Point(cx, p1.y);\n        np2 = new Point(cx, p2.y);\n    } else {\n        int cy = constrainY(p1.y + ddy);\n        np1 = new Point(p1.x, cy);\n        np2 = new Point(p2.x, cy);\n    }\n    line.setPointAt(np1, fSegment);\n    line.setPointAt(np2, fSegment + 1);\n    fLastX = x;\n    fLastY = y;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

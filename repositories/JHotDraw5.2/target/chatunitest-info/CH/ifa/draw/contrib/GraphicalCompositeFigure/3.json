@@ -1,0 +1,36 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner) {\n\t\tRectangle r = getLayouter().layout(origin, corner);\n\t\tgetPresentationFigure().basicDisplayBox(r.getLocation(), new Point(r.width, r.height));\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.contrib.Layouter": [
+      "layout(Point, Point)"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()",
+      "getLayouter()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "basicDisplayBox(Point, Point)"
+    ],
+    "java.awt.Rectangle": [
+      "getLocation()"
+    ]
+  },
+  "full_method_info": "/**\n * Standard presentation method which is delegated to the encapsulated presentation figure.\n */\npublic void basicDisplayBox(Point origin, Point corner) {\n    Rectangle r = getLayouter().layout(origin, corner);\n    getPresentationFigure().basicDisplayBox(r.getLocation(), new Point(r.width, r.height));\n}",
+  "method_comment": "\n\t * Standard presentation method which is delegated to the encapsulated presentation figure.\n\t ",
+  "method_annotation": ""
+}

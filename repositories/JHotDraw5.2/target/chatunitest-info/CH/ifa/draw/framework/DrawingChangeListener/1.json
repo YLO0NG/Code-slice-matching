@@ -1,0 +1,22 @@
+{
+  "className": "DrawingChangeListener",
+  "methodName": "drawingRequestUpdate",
+  "brief": "public void drawingRequestUpdate(DrawingChangeEvent e);",
+  "methodSignature": "drawingRequestUpdate(DrawingChangeEvent)",
+  "sourceCode": "public void drawingRequestUpdate(DrawingChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingChangeEvent": []
+  },
+  "full_method_info": "/**\n *  Sent when the drawing wants to be refreshed\n */\npublic void drawingRequestUpdate(DrawingChangeEvent e);",
+  "method_comment": "\n     *  Sent when the drawing wants to be refreshed\n     ",
+  "method_annotation": ""
+}

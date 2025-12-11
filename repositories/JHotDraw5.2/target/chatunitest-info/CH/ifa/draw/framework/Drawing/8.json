@@ -1,0 +1,24 @@
+{
+  "className": "Drawing",
+  "methodName": "findFigureInsideWithout",
+  "brief": "public Figure findFigureInsideWithout(int x, int y, Figure without);",
+  "methodSignature": "findFigureInsideWithout(int, int, Figure)",
+  "sourceCode": "public Figure findFigureInsideWithout(int x, int y, Figure without);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Finds a figure but descends into a figure's\n * children. It supresses the passed\n * in figure. Use this method to ignore a figure\n * that is temporarily inserted into the drawing.\n * @param x the x coordinate\n * @param y the y coordinate\n * @param without the figure to be ignored during\n * the find.\n */\npublic Figure findFigureInsideWithout(int x, int y, Figure without);",
+  "method_comment": "\n     * Finds a figure but descends into a figure's\n     * children. It supresses the passed\n     * in figure. Use this method to ignore a figure\n     * that is temporarily inserted into the drawing.\n     * @param x the x coordinate\n     * @param y the y coordinate\n     * @param without the figure to be ignored during\n     * the find.\n     ",
+  "method_annotation": ""
+}

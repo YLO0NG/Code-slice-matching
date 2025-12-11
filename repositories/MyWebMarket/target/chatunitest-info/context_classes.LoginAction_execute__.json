@@ -1,0 +1,16 @@
+{
+  "targetClass": "classes.LoginAction",
+  "targetMethod": "execute()",
+  "dependentFields": {
+    "classes.HibernateUtil": "private static final SessionFactory sessionFactory = buildSessionFactory();",
+    "classes.User": "private String username;\nprivate String password;"
+  },
+  "dependentMethods": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory(){}",
+    "classes.User": "@Column(name = \"PASSWORD\", length = 10, nullable = false)\r\n\tpublic String getPassword(){}\n@Id\r\n\t@Column(name = \"USERNAME\", length = 10, nullable = false)\r\n\tpublic String getUsername(){}"
+  },
+  "dependentMethodBodies": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}",
+    "classes.User": "@Column(name = \"PASSWORD\", length = 10, nullable = false)\n\tpublic String getPassword() {\n\t\treturn password;\n\t}\n@Id\n\t@Column(name = \"USERNAME\", length = 10, nullable = false)\n\tpublic String getUsername() {\n\t\treturn username;\n\t}"
+  }
+}

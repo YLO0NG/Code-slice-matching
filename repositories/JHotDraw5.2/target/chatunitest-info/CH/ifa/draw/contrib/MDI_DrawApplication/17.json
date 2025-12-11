@@ -1,0 +1,22 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "internalFrameDeactivated",
+  "brief": "public void internalFrameDeactivated(InternalFrameEvent e){}",
+  "methodSignature": "internalFrameDeactivated(InternalFrameEvent)",
+  "sourceCode": "public void internalFrameDeactivated(InternalFrameEvent e) {\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InternalFrameEvent"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.InternalFrameEvent": []
+  },
+  "full_method_info": "/**\n * Notification method from InternalFrameListener, which is called\n * if a internal frame gets deactivated.\n */\npublic void internalFrameDeactivated(InternalFrameEvent e) {\n}",
+  "method_comment": "\n\t * Notification method from InternalFrameListener, which is called\n\t * if a internal frame gets deactivated.\n\t ",
+  "method_annotation": ""
+}

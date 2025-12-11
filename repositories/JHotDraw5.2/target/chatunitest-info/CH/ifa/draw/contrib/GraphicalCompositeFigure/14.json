@@ -1,0 +1,18 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "getLayouter",
+  "brief": "public Layouter getLayouter(){}",
+  "methodSignature": "getLayouter()",
+  "sourceCode": "public Layouter getLayouter() {\n\t\treturn myLayouter;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get a Layouter object which encapsulated a layout\n * algorithm for this figure. Typically, a Layouter\n * accesses the child components of this figure and arranges\n * their graphical presentation.\n *\n * @return\tlayout strategy used by this figure\n */\npublic Layouter getLayouter() {\n    return myLayouter;\n}",
+  "method_comment": "\n\t * Get a Layouter object which encapsulated a layout\n\t * algorithm for this figure. Typically, a Layouter\n\t * accesses the child components of this figure and arranges\n\t * their graphical presentation.\n\t *\n\t * @return\tlayout strategy used by this figure\n\t ",
+  "method_annotation": ""
+}

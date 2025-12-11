@@ -1,0 +1,22 @@
+{
+  "className": "FigureChangeAdapter",
+  "methodName": "figureRemoved",
+  "brief": "public void figureRemoved(FigureChangeEvent e){}",
+  "methodSignature": "figureRemoved(FigureChangeEvent)",
+  "sourceCode": "public void figureRemoved(FigureChangeEvent e) {\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "public void figureRemoved(FigureChangeEvent e) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

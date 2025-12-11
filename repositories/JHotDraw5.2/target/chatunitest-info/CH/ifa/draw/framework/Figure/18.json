@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "listener",
+  "brief": "public FigureChangeListener listener();",
+  "methodSignature": "listener()",
+  "sourceCode": "public FigureChangeListener listener();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the Figure's listeners.\n */\npublic FigureChangeListener listener();",
+  "method_comment": "\n     * Gets the Figure's listeners.\n     ",
+  "method_annotation": ""
+}

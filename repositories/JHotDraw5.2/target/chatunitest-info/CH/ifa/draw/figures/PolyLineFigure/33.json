@@ -1,0 +1,25 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "PolyLineFigure",
+  "brief": "public PolyLineFigure(int x, int y){}",
+  "methodSignature": "PolyLineFigure(int, int)",
+  "sourceCode": "public PolyLineFigure(int x, int y) {\n\t    fPoints = new Vector();\n\t    fPoints.addElement(new Point(x, y));\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "public PolyLineFigure(int x, int y) {\n    fPoints = new Vector();\n    fPoints.addElement(new Point(x, y));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

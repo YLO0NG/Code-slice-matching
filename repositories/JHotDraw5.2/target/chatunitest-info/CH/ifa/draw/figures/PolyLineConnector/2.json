@@ -1,0 +1,22 @@
+{
+  "className": "PolyLineConnector",
+  "methodName": "PolyLineConnector",
+  "brief": "public PolyLineConnector(Figure owner){}",
+  "methodSignature": "PolyLineConnector(Figure)",
+  "sourceCode": "public PolyLineConnector(Figure owner) {\n        super(owner);\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "public PolyLineConnector(Figure owner) {\n    super(owner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

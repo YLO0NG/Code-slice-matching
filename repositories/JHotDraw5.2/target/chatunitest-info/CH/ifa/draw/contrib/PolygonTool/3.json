@@ -1,0 +1,42 @@
+{
+  "className": "PolygonTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n    // replace pts by actual event pts\n    x = e.getX();\n    y = e.getY();\n\n    if (e.getClickCount() >= 2) {\n        if (fPolygon != null) {\n            fPolygon.smoothPoints();\n            editor().toolDone();\n        }\n        fPolygon = null;\n\n    } else {\n        // use original event coordinates to avoid\n        // supress that the scribble is constrained to\n        // the grid\n        int x1 = e.getX();\n\t\tint y1 = e.getY();\n\t\tif (fPolygon == null) {\n\t\t      fPolygon = new PolygonFigure(x1, y1);\n\t\t      view().add(fPolygon);\n\t\t      fPolygon.addPoint(x1, y1);\n\t\t  } else if (fLastX != x1 || fLastY != y1)\n\t\t      fPolygon.addPoint(x1, y1);\n\t\t\n\t\t  fLastX = x1;\n\t\t  fLastY = y1;\n    }\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getClickCount()",
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "addPoint(int, int)",
+      "smoothPoints()"
+    ],
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "editor()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "public void mouseDown(MouseEvent e, int x, int y) {\n    // replace pts by actual event pts\n    x = e.getX();\n    y = e.getY();\n    if (e.getClickCount() >= 2) {\n        if (fPolygon != null) {\n            fPolygon.smoothPoints();\n            editor().toolDone();\n        }\n        fPolygon = null;\n    } else {\n        // use original event coordinates to avoid\n        // supress that the scribble is constrained to\n        // the grid\n        int x1 = e.getX();\n        int y1 = e.getY();\n        if (fPolygon == null) {\n            fPolygon = new PolygonFigure(x1, y1);\n            view().add(fPolygon);\n            fPolygon.addPoint(x1, y1);\n        } else if (fLastX != x1 || fLastY != y1)\n            fPolygon.addPoint(x1, y1);\n        fLastX = x1;\n        fLastY = y1;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

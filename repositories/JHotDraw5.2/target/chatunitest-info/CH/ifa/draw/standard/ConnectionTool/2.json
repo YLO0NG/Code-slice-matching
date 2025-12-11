@@ -1,0 +1,52 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "mouseDrag",
+  "brief": "public void mouseDrag(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDrag(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDrag(MouseEvent e, int x, int y) {\n        Point p = new Point(e.getX(), e.getY());\n        if (fConnection != null) {\n            Figure c = null;\n\t\t\t\n\t\t\tif (fStartConnector == null)\n\t\t\t    c = findSource(x, y, drawing());\n\t\t\telse\n\t\t\t    c = findTarget(x, y, drawing());\n\t\t\t\n\t\t\t// track the figure containing the mouse\n\t\t\tif (c != fTarget) {\n\t\t\t    if (fTarget != null)\n\t\t\t        fTarget.connectorVisibility(false);\n\t\t\t    fTarget = c;\n\t\t\t    if (fTarget != null)\n\t\t\t        fTarget.connectorVisibility(true);\n\t\t\t}\n\t\t\t\n\t\t\tConnector cc = null;\n\t\t\tif (c != null)\n\t\t\t    cc = findConnector(e.getX(), e.getY(), c);\n\t\t\tif (cc != fConnectorTarget)\n\t\t\t    fConnectorTarget = cc;\n\t\t\t\n\t\t\tview().checkDamage();\n            if (fConnectorTarget != null)\n                p = Geom.center(fConnectorTarget.displayBox());\n            fConnection.endPoint(p.x, p.y);\n        }\n        else if (fEditedConnection != null) {\n            Point pp = new Point(x, y);\n            fEditedConnection.setPointAt(pp, fSplitPoint);\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "findSource(int, int, Drawing)",
+      "findConnector(int, int, Figure)",
+      "findTarget(int, int, Drawing)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorVisibility(boolean)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "center(Rectangle)"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "setPointAt(Point, int)",
+      "endPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Adjust the created connection or split segment.\n */\npublic void mouseDrag(MouseEvent e, int x, int y) {\n    Point p = new Point(e.getX(), e.getY());\n    if (fConnection != null) {\n        Figure c = null;\n        if (fStartConnector == null)\n            c = findSource(x, y, drawing());\n        else\n            c = findTarget(x, y, drawing());\n        // track the figure containing the mouse\n        if (c != fTarget) {\n            if (fTarget != null)\n                fTarget.connectorVisibility(false);\n            fTarget = c;\n            if (fTarget != null)\n                fTarget.connectorVisibility(true);\n        }\n        Connector cc = null;\n        if (c != null)\n            cc = findConnector(e.getX(), e.getY(), c);\n        if (cc != fConnectorTarget)\n            fConnectorTarget = cc;\n        view().checkDamage();\n        if (fConnectorTarget != null)\n            p = Geom.center(fConnectorTarget.displayBox());\n        fConnection.endPoint(p.x, p.y);\n    } else if (fEditedConnection != null) {\n        Point pp = new Point(x, y);\n        fEditedConnection.setPointAt(pp, fSplitPoint);\n    }\n}",
+  "method_comment": "\n     * Adjust the created connection or split segment.\n     ",
+  "method_annotation": ""
+}

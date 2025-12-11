@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "wasRun",
+  "brief": "boolean wasRun(Test t){}",
+  "methodSignature": "wasRun(Test)",
+  "sourceCode": "boolean wasRun(Test t) {\r\n\t\treturn fRunTests.get(t) != null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Hashtable": [
+      "get(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns whether a test was run\r\n */\r\nboolean wasRun(Test t) {\r\n    return fRunTests.get(t) != null;\r\n}",
+  "method_comment": "\r\n\t * Returns whether a test was run\r\n\t ",
+  "method_annotation": ""
+}

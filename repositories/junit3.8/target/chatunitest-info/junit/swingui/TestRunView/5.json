@@ -1,0 +1,24 @@
+{
+  "className": "TestRunView",
+  "methodName": "runFinished",
+  "brief": "public void runFinished(Test suite, TestResult result);",
+  "methodSignature": "runFinished(Test, TestResult)",
+  "sourceCode": "public void runFinished(Test suite, TestResult result);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.TestResult": []
+  },
+  "full_method_info": "/**\r\n * Informs that the run of the test suite has finished\r\n */\r\npublic void runFinished(Test suite, TestResult result);",
+  "method_comment": "\r\n\t * Informs that the run of the test suite has finished \r\n\t ",
+  "method_annotation": ""
+}

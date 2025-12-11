@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createOpenFileChooser",
+  "brief": "protected JFileChooser createOpenFileChooser(){}",
+  "methodSignature": "createOpenFileChooser()",
+  "sourceCode": "protected JFileChooser createOpenFileChooser() {\n\t\tJFileChooser openDialog = new JFileChooser();\n\t\topenDialog.setDialogTitle(\"Open File...\");\n\t\treturn openDialog;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JFileChooser": [
+      "setDialogTitle(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Create a file chooser for the open file dialog. Subclasses may override this\n * method in order to customize the open file dialog.\n */\nprotected JFileChooser createOpenFileChooser() {\n    JFileChooser openDialog = new JFileChooser();\n    openDialog.setDialogTitle(\"Open File...\");\n    return openDialog;\n}",
+  "method_comment": "\n     * Create a file chooser for the open file dialog. Subclasses may override this\n     * method in order to customize the open file dialog.\n     ",
+  "method_annotation": ""
+}

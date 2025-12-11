@@ -1,0 +1,18 @@
+{
+  "className": "TextHolder",
+  "methodName": "overlayColumns",
+  "brief": "public int overlayColumns();",
+  "methodSignature": "overlayColumns()",
+  "sourceCode": "public int overlayColumns();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the number of columns to be overlaid when the figure is edited.\n */\npublic int overlayColumns();",
+  "method_comment": "\n     * Gets the number of columns to be overlaid when the figure is edited.\n     ",
+  "method_annotation": ""
+}

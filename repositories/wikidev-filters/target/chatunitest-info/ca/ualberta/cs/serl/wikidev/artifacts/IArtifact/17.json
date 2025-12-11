@@ -1,0 +1,28 @@
+{
+  "className": "IArtifact",
+  "methodName": "addDirectlyRelatedArtifact",
+  "brief": "public void addDirectlyRelatedArtifact(IArtifact artifact, double value, String word){}",
+  "methodSignature": "addDirectlyRelatedArtifact(IArtifact, double, String)",
+  "sourceCode": "public void addDirectlyRelatedArtifact(IArtifact artifact, double value, String word) {\n\t\tthis.directlyRelatedArtifacts.add(new RelatedArtifact(artifact, value, word));\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "double",
+    "String"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.lang.String": [],
+    "java.util.ArrayList": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "/*public void addRelatedArtifact(IArtifact artifact, int weight) {\n\t\trelatedArtifacts.put(artifact, weight);\n\t}*/\npublic void addDirectlyRelatedArtifact(IArtifact artifact, double value, String word) {\n    this.directlyRelatedArtifacts.add(new RelatedArtifact(artifact, value, word));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

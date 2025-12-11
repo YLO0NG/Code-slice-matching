@@ -1,0 +1,27 @@
+{
+  "className": "Stemmer",
+  "methodName": "step1",
+  "brief": "private final void step1()\r\n  {}",
+  "methodSignature": "step1()",
+  "sourceCode": "private final void step1()\n   {  if (b[k] == 's')\n      {  if (ends(\"sses\")) k -= 2; else\n         if (ends(\"ies\")) setto(\"i\"); else\n         if (b[k-1] != 's') k--;\n      }\n      if (ends(\"eed\")) { if (m() > 0) k--; } else\n      if ((ends(\"ed\") || ends(\"ing\")) && vowelinstem())\n      {  k = j;\n         if (ends(\"at\")) setto(\"ate\"); else\n         if (ends(\"bl\")) setto(\"ble\"); else\n         if (ends(\"iz\")) setto(\"ize\"); else\n         if (doublec(k))\n         {  k--;\n            {  int ch = b[k];\n               if (ch == 'l' || ch == 's' || ch == 'z') k++;\n            }\n         }\n         else if (m() == 1 && cvc(k)) setto(\"e\");\n     }\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "setto(String)",
+      "doublec(int)",
+      "cvc(int)",
+      "ends(String)",
+      "m()",
+      "vowelinstem()"
+    ]
+  },
+  "full_method_info": "/* step1() gets rid of plurals and -ed or -ing. e.g.\n\n          caresses  ->  caress\n          ponies    ->  poni\n          ties      ->  ti\n          caress    ->  caress\n          cats      ->  cat\n\n          feed      ->  feed\n          agreed    ->  agree\n          disabled  ->  disable\n\n          matting   ->  mat\n          mating    ->  mate\n          meeting   ->  meet\n          milling   ->  mill\n          messing   ->  mess\n\n          meetings  ->  meet\n\n   */\nprivate final void step1() {\n    if (b[k] == 's') {\n        if (ends(\"sses\"))\n            k -= 2;\n        else if (ends(\"ies\"))\n            setto(\"i\");\n        else if (b[k - 1] != 's')\n            k--;\n    }\n    if (ends(\"eed\")) {\n        if (m() > 0)\n            k--;\n    } else if ((ends(\"ed\") || ends(\"ing\")) && vowelinstem()) {\n        k = j;\n        if (ends(\"at\"))\n            setto(\"ate\");\n        else if (ends(\"bl\"))\n            setto(\"ble\");\n        else if (ends(\"iz\"))\n            setto(\"ize\");\n        else if (doublec(k)) {\n            k--;\n            {\n                int ch = b[k];\n                if (ch == 'l' || ch == 's' || ch == 'z')\n                    k++;\n            }\n        } else if (m() == 1 && cvc(k))\n            setto(\"e\");\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

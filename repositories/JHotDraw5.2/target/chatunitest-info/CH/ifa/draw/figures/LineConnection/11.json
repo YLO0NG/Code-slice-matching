@@ -1,0 +1,18 @@
+{
+  "className": "LineConnection",
+  "methodName": "start",
+  "brief": "public Connector start(){}",
+  "methodSignature": "start()",
+  "sourceCode": "public Connector start() {\n        return fStart;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the start figure of the connection.\n */\npublic Connector start() {\n    return fStart;\n}",
+  "method_comment": "\n     * Gets the start figure of the connection.\n     ",
+  "method_annotation": ""
+}

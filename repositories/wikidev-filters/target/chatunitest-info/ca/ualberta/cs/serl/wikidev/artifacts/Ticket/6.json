@@ -1,0 +1,22 @@
+{
+  "className": "Ticket",
+  "methodName": "setOwnerName",
+  "brief": "public void setOwnerName(String ownerName){}",
+  "methodSignature": "setOwnerName(String)",
+  "sourceCode": "public void setOwnerName(String ownerName) {\n\t\tthis.ownerName = ownerName;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param ownerName\n * @uml.property  name=\"ownerName\"\n */\npublic void setOwnerName(String ownerName) {\n    this.ownerName = ownerName;\n}",
+  "method_comment": "\n\t * @param ownerName\n\t * @uml.property  name=\"ownerName\"\n\t ",
+  "method_annotation": ""
+}

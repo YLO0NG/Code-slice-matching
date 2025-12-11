@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "mouseEntered",
+  "brief": "public void mouseEntered(MouseEvent e){}",
+  "methodSignature": "mouseEntered(MouseEvent)",
+  "sourceCode": "public void mouseEntered(MouseEvent e) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": []
+  },
+  "full_method_info": "// listener methods we are not interested in\npublic void mouseEntered(MouseEvent e) {\n}",
+  "method_comment": " listener methods we are not interested in",
+  "method_annotation": ""
+}

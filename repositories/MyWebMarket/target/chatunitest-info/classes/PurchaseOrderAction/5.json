@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrderAction",
+  "methodName": "setTask",
+  "brief": "public void setTask( String task ){}",
+  "methodSignature": "setTask(String)",
+  "sourceCode": "public void setTask( String task ) {\n\t\tthis.task = task;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setTask(String task) {\n    this.task = task;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

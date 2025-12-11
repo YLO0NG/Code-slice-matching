@@ -1,0 +1,30 @@
+{
+  "className": "ActionTool",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n        editor().toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "editor()"
+    ]
+  },
+  "full_method_info": "public void mouseUp(MouseEvent e, int x, int y) {\n    editor().toolDone();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

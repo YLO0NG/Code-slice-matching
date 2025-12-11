@@ -1,0 +1,37 @@
+{
+  "className": "TestRunner",
+  "methodName": "addToCounterPanel",
+  "brief": "private void addToCounterPanel(Panel counter, Component comp,\r\r\n\t    \tint gridx, int gridy, int gridwidth, int gridheight,\r\r\n\t\t\tdouble weightx, double weighty,\r\r\n\t\t\tint anchor, int fill,\r\r\n\t\t\tInsets insets){}",
+  "methodSignature": "addToCounterPanel(Panel, Component, int, int, int, int, double, double, int, int, Insets)",
+  "sourceCode": "private void addToCounterPanel(Panel counter, Component comp,\r\n\t    \tint gridx, int gridy, int gridwidth, int gridheight,\r\n\t\t\tdouble weightx, double weighty,\r\n\t\t\tint anchor, int fill,\r\n\t\t\tInsets insets) {\r\n\t\t\r\n\t\tGridBagConstraints constraints= new GridBagConstraints();\r\n\t\tconstraints.gridx= gridx;\r\n\t\tconstraints.gridy= gridy;\r\n\t\tconstraints.gridwidth= gridwidth;\r\n\t\tconstraints.gridheight= gridheight;\r\n\t\tconstraints.weightx= weightx;\r\n\t\tconstraints.weighty= weighty;\r\n\t\tconstraints.anchor= anchor;\r\n\t\tconstraints.fill= fill;\r\n\t\tconstraints.insets= insets;\r\n\t\tcounter.add(comp, constraints);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Panel",
+    "Component",
+    "int",
+    "int",
+    "int",
+    "int",
+    "double",
+    "double",
+    "int",
+    "int",
+    "Insets"
+  ],
+  "dependentMethods": {
+    "java.awt.Panel": [],
+    "java.awt.Component": [],
+    "java.awt.Insets": [],
+    "java.awt.Container": [
+      "add(Component, Object)"
+    ]
+  },
+  "full_method_info": "private void addToCounterPanel(Panel counter, Component comp, int gridx, int gridy, int gridwidth, int gridheight, double weightx, double weighty, int anchor, int fill, Insets insets) {\r\n    GridBagConstraints constraints = new GridBagConstraints();\r\n    constraints.gridx = gridx;\r\n    constraints.gridy = gridy;\r\n    constraints.gridwidth = gridwidth;\r\n    constraints.gridheight = gridheight;\r\n    constraints.weightx = weightx;\r\n    constraints.weighty = weighty;\r\n    constraints.anchor = anchor;\r\n    constraints.fill = fill;\r\n    constraints.insets = insets;\r\n    counter.add(comp, constraints);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

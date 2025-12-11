@@ -1,0 +1,25 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "center",
+  "brief": "public Point center(){}",
+  "methodSignature": "center()",
+  "sourceCode": "public Point center() {\n        return Geom.center(displayBox());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Geom": [
+      "center(Rectangle)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the center of a figure. A convenice\n * method that is rarely overridden.\n */\npublic Point center() {\n    return Geom.center(displayBox());\n}",
+  "method_comment": "\n     * Gets the center of a figure. A convenice\n     * method that is rarely overridden.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "Helper",
+  "methodName": "ManhattenDistance",
+  "brief": "public static double ManhattenDistance(double[] vec1, double[] vec2)\r\n{}",
+  "methodSignature": "ManhattenDistance(double[], double[])",
+  "sourceCode": "public static double ManhattenDistance(double[] vec1, double[] vec2)\n\t{\n\t\tdouble distance = 0;\n\n\t\tfor (int i = 0; i < vec1.length; i++)\n\t\t\tdistance += Math.abs(vec1[i] - vec2[i]);\n\n\t\treturn distance;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[]",
+    "double[]"
+  ],
+  "dependentMethods": {
+    "double": [],
+    "java.lang.Math": [
+      "abs(double)"
+    ]
+  },
+  "full_method_info": "// ---------------------------------------------------------------------\npublic static double ManhattenDistance(double[] vec1, double[] vec2) {\n    double distance = 0;\n    for (int i = 0; i < vec1.length; i++) distance += Math.abs(vec1[i] - vec2[i]);\n    return distance;\n}",
+  "method_comment": "---------------------------------------------------------------------",
+  "method_annotation": ""
+}

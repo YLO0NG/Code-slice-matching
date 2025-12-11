@@ -1,0 +1,23 @@
+{
+  "className": "ToggleGridCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        PointConstrainer grid = fView.getConstrainer();\n        if (grid != null) {\n            fView.setConstrainer(null);\n        }\n        else {\n            fView.setConstrainer(new GridConstrainer(fGrid.x, fGrid.y));\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "setConstrainer(PointConstrainer)",
+      "getConstrainer()"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    PointConstrainer grid = fView.getConstrainer();\n    if (grid != null) {\n        fView.setConstrainer(null);\n    } else {\n        fView.setConstrainer(new GridConstrainer(fGrid.x, fGrid.y));\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

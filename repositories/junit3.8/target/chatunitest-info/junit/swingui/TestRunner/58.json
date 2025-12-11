@@ -1,0 +1,22 @@
+{
+  "className": "TestRunner",
+  "methodName": "synchUI",
+  "brief": "private void synchUI(){}",
+  "methodSignature": "synchUI()",
+  "sourceCode": "private void synchUI() {\r\n\t\ttry {\r\n\t\t\tSwingUtilities.invokeAndWait(\r\n\t\t\t\tnew Runnable() {\r\n\t\t\t\t\tpublic void run() {}\r\n\t\t\t\t}\r\n\t\t\t);\r\n\t\t}\r\n\t\tcatch (Exception e) {\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.SwingUtilities": [
+      "invokeAndWait(Runnable)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Wait until all the events are processed in the event thread\r\n */\r\nprivate void synchUI() {\r\n    try {\r\n        SwingUtilities.invokeAndWait(new Runnable() {\r\n\r\n            public void run() {\r\n            }\r\n        });\r\n    } catch (Exception e) {\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Wait until all the events are processed in the event thread\r\n\t ",
+  "method_annotation": ""
+}

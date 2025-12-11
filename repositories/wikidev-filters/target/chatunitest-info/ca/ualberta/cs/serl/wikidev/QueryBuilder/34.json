@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectAllChangesetsForProject",
+  "brief": "public static String selectAllChangesetsForProject(int externalsystem){}",
+  "methodSignature": "selectAllChangesetsForProject(int)",
+  "sourceCode": "public static String selectAllChangesetsForProject(int externalsystem) {\n\t\treturn \"select * from wikidev_changesets where externalsystem_id=\\'\"+externalsystem+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectAllChangesetsForProject(int externalsystem) {\n    return \"select * from wikidev_changesets where externalsystem_id=\\'\" + externalsystem + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

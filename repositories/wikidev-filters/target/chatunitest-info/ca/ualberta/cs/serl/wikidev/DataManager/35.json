@@ -1,0 +1,45 @@
+{
+  "className": "DataManager",
+  "methodName": "getUserByUserName",
+  "brief": "public static User getUserByUserName(String userName) throws SQLException{}",
+  "methodSignature": "getUserByUserName(String)",
+  "sourceCode": "public static User getUserByUserName(String userName) throws SQLException {\n    \tUser user = null;\n    \tuserName = userName.toLowerCase();\n    \tif (!usernames.contains(userName)) {\n\t\t\tString sqlStmt = QueryBuilder.selectUserByUserName(userName);\n\t\t\tResultSet res = null;\n\t\t\tres = statement.executeQuery(sqlStmt);\n\t\t\twhile (res.next()) {\n\n\t\t\t\tuser = new User(res.getInt(\"user_id\"), res\n\t\t\t\t\t\t.getString(\"user_name\").toLowerCase(), res\n\t\t\t\t\t\t.getString(\"user_real_name\"));\n\t\t\t}\n\t\t\tif (res != null)\n\t\t\t\tres.close();\n\t\t\tif (user != null) {\n\t\t\t\tusers.add(user);\n\t\t\t\tuserIDs.add(user.getUserID());\n\t\t\t\tusernames.add(userName);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tuser = new User(userName);\n\t\t\t\tusers.add(user);\n\t\t\t\tuserIDs.add(user.getUserID());\n\t\t\t\tusernames.add(userName);\n\t\t\t}\n\t\t}\n    \telse {\n    \t\tfor(User aUser : users) {\n    \t\t\tif(aUser.getUserName().equalsIgnoreCase(userName)) {\n    \t\t\t\tuser = aUser;\n    \t\t\t\tbreak;\n    \t\t\t}\n    \t\t}\n    \t}\n\t\t\treturn user;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "toLowerCase()",
+      "equalsIgnoreCase(String)"
+    ],
+    "java.util.Set": [
+      "contains(Object)",
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectUserByUserName(String)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getUserName()",
+      "getUserID()"
+    ]
+  },
+  "full_method_info": "public static User getUserByUserName(String userName) throws SQLException {\n    User user = null;\n    userName = userName.toLowerCase();\n    if (!usernames.contains(userName)) {\n        String sqlStmt = QueryBuilder.selectUserByUserName(userName);\n        ResultSet res = null;\n        res = statement.executeQuery(sqlStmt);\n        while (res.next()) {\n            user = new User(res.getInt(\"user_id\"), res.getString(\"user_name\").toLowerCase(), res.getString(\"user_real_name\"));\n        }\n        if (res != null)\n            res.close();\n        if (user != null) {\n            users.add(user);\n            userIDs.add(user.getUserID());\n            usernames.add(userName);\n        } else {\n            user = new User(userName);\n            users.add(user);\n            userIDs.add(user.getUserID());\n            usernames.add(userName);\n        }\n    } else {\n        for (User aUser : users) {\n            if (aUser.getUserName().equalsIgnoreCase(userName)) {\n                user = aUser;\n                break;\n            }\n        }\n    }\n    return user;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

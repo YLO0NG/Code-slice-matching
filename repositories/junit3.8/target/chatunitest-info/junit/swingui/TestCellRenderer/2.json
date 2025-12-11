@@ -1,0 +1,31 @@
+{
+  "className": "TestCellRenderer",
+  "methodName": "matchesKey",
+  "brief": "public static boolean matchesKey(String s, char ch){}",
+  "methodSignature": "matchesKey(String, char)",
+  "sourceCode": "public static boolean matchesKey(String s, char ch) {\r\n    \t\t\treturn ch == Character.toUpperCase(s.charAt(typeIndex(s)));\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "char"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "charAt(int)"
+    ],
+    "java.lang.Character": [
+      "toUpperCase(char)"
+    ],
+    "junit.swingui.TestSelector.TestCellRenderer": [
+      "typeIndex(String)"
+    ]
+  },
+  "full_method_info": "public static boolean matchesKey(String s, char ch) {\r\n    return ch == Character.toUpperCase(s.charAt(typeIndex(s)));\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

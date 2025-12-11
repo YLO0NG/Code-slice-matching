@@ -1,0 +1,26 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "extractClassName",
+  "brief": "public String extractClassName(String className){}",
+  "methodSignature": "extractClassName(String)",
+  "sourceCode": "public String extractClassName(String className) {\r\n\t\tif(className.startsWith(\"Default package for\"))\r\n\t\t\treturn className.substring(className.lastIndexOf(\".\")+1);\r\n\t\treturn className;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "lastIndexOf(String)",
+      "startsWith(String)",
+      "substring(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Extract the class name from a String in VA/Java style\r\n */\r\npublic String extractClassName(String className) {\r\n    if (className.startsWith(\"Default package for\"))\r\n        return className.substring(className.lastIndexOf(\".\") + 1);\r\n    return className;\r\n}",
+  "method_comment": "\r\n\t * Extract the class name from a String in VA/Java style\r\n\t ",
+  "method_annotation": ""
+}

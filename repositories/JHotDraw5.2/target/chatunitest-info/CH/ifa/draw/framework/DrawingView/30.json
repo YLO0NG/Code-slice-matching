@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "getGraphics",
+  "brief": "public Graphics getGraphics();",
+  "methodSignature": "getGraphics()",
+  "sourceCode": "public Graphics getGraphics();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets a graphic to draw into\n */\npublic Graphics getGraphics();",
+  "method_comment": "\n     * Gets a graphic to draw into\n     ",
+  "method_annotation": ""
+}

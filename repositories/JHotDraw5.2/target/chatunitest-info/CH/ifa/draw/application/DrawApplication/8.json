@@ -1,0 +1,29 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createEditMenu",
+  "brief": "protected JMenu createEditMenu(){}",
+  "methodSignature": "createEditMenu()",
+  "sourceCode": "protected JMenu createEditMenu() {\n\t\tCommandMenu menu = new CommandMenu(\"Edit\");\n\t\tmenu.add(new CutCommand(\"Cut\", view()), new MenuShortcut('x'));\n\t\tmenu.add(new CopyCommand(\"Copy\", view()), new MenuShortcut('c'));\n\t\tmenu.add(new PasteCommand(\"Paste\", view()), new MenuShortcut('v'));\n\t\tmenu.addSeparator();\n\t\tmenu.add(new DuplicateCommand(\"Duplicate\", view()), new MenuShortcut('d'));\n\t\tmenu.add(new DeleteCommand(\"Delete\", view()));\n\t\tmenu.addSeparator();\n\t\tmenu.add(new GroupCommand(\"Group\", view()));\n\t\tmenu.add(new UngroupCommand(\"Ungroup\", view()));\n\t\tmenu.addSeparator();\n\t\tmenu.add(new SendToBackCommand(\"Send to Back\", view()));\n\t\tmenu.add(new BringToFrontCommand(\"Bring to Front\", view()));\n\t\treturn menu;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)",
+      "add(Command, MenuShortcut)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ],
+    "javax.swing.JMenu": [
+      "addSeparator()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the edit menu. Clients override this\n * method to add additional menu items.\n */\nprotected JMenu createEditMenu() {\n    CommandMenu menu = new CommandMenu(\"Edit\");\n    menu.add(new CutCommand(\"Cut\", view()), new MenuShortcut('x'));\n    menu.add(new CopyCommand(\"Copy\", view()), new MenuShortcut('c'));\n    menu.add(new PasteCommand(\"Paste\", view()), new MenuShortcut('v'));\n    menu.addSeparator();\n    menu.add(new DuplicateCommand(\"Duplicate\", view()), new MenuShortcut('d'));\n    menu.add(new DeleteCommand(\"Delete\", view()));\n    menu.addSeparator();\n    menu.add(new GroupCommand(\"Group\", view()));\n    menu.add(new UngroupCommand(\"Ungroup\", view()));\n    menu.addSeparator();\n    menu.add(new SendToBackCommand(\"Send to Back\", view()));\n    menu.add(new BringToFrontCommand(\"Bring to Front\", view()));\n    return menu;\n}",
+  "method_comment": "\n     * Creates the edit menu. Clients override this\n     * method to add additional menu items.\n     ",
+  "method_annotation": ""
+}

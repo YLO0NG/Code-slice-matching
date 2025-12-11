@@ -1,0 +1,39 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "print",
+  "brief": "synchronized void print(TestResult result, long runTime){}",
+  "methodSignature": "print(TestResult, long)",
+  "sourceCode": "synchronized void print(TestResult result, long runTime) {\r\n\t\tprintHeader(runTime);\r\n\t    printErrors(result);\r\n\t    printFailures(result);\r\n\t    /*{*/if (result.wasSuccessful()) {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().print(\"OK\");\r\n\t\t\tgetWriter().println (\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\": \"s\") + \")\");\r\n\t\t\r\n\t\t} else {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().println(\"FAILURES!!!\");\r\n\t\t\tgetWriter().println(\"Tests run: \"+result.runCount()+ \r\n\t\t\t\t         \",  Failures: \"+result.failureCount()+\r\n\t\t\t\t         \",  Errors: \"+result.errorCount());\r\n\t\t}\r\n\t\tgetWriter().println();/*}*/\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult",
+    "long"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "wasSuccessful()",
+      "runCount()",
+      "failureCount()",
+      "errorCount()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()",
+      "printErrors(TestResult)",
+      "printFailures(TestResult)",
+      "printHeader(long)"
+    ],
+    "java.io.PrintStream": [
+      "print(String)",
+      "println(String)",
+      "println()"
+    ]
+  },
+  "full_method_info": "/* API for use by textui.TestRunner\r\n\t */\r\nsynchronized void print(TestResult result, long runTime) {\r\n    printHeader(runTime);\r\n    printErrors(result);\r\n    printFailures(result);\r\n    /*{*/\r\n    if (result.wasSuccessful()) {\r\n        getWriter().println();\r\n        getWriter().print(\"OK\");\r\n        getWriter().println(\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\" : \"s\") + \")\");\r\n    } else {\r\n        getWriter().println();\r\n        getWriter().println(\"FAILURES!!!\");\r\n        getWriter().println(\"Tests run: \" + result.runCount() + \",  Failures: \" + result.failureCount() + \",  Errors: \" + result.errorCount());\r\n    }\r\n    getWriter().println();\r\n    /*}*/\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

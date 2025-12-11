@@ -1,0 +1,22 @@
+{
+  "className": "BoxHandleKit",
+  "methodName": "northWest",
+  "brief": "static public Handle northWest(Figure owner){}",
+  "methodSignature": "northWest(Figure)",
+  "sourceCode": "static public Handle northWest(Figure owner) {\n        return new NorthWestHandle(owner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "static public Handle northWest(Figure owner) {\n    return new NorthWestHandle(owner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

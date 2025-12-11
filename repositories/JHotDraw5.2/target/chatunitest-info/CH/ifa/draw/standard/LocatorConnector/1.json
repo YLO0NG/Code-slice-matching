@@ -1,0 +1,28 @@
+{
+  "className": "LocatorConnector",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y){}",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y) {\n        return displayBox().contains(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "contains(int, int)"
+    ],
+    "CH.ifa.draw.standard.LocatorConnector": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Tests if a point is contained in the connector.\n */\npublic boolean containsPoint(int x, int y) {\n    return displayBox().contains(x, y);\n}",
+  "method_comment": "\n     * Tests if a point is contained in the connector.\n     ",
+  "method_annotation": ""
+}

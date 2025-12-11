@@ -1,0 +1,25 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "changed",
+  "brief": "public void changed(){}",
+  "methodSignature": "changed()",
+  "sourceCode": "public void changed() {\n        invalidate();\n        if (fListener != null)\n            fListener.figureChanged(new FigureChangeEvent(this));\n\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "invalidate()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureChanged(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Informs that a figure changed the area of its display box.\n *\n * @see FigureChangeEvent\n * @see Figure#changed\n */\npublic void changed() {\n    invalidate();\n    if (fListener != null)\n        fListener.figureChanged(new FigureChangeEvent(this));\n}",
+  "method_comment": "\n     * Informs that a figure changed the area of its display box.\n     *\n     * @see FigureChangeEvent\n     * @see Figure#changed\n     ",
+  "method_annotation": ""
+}

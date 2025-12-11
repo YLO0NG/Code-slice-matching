@@ -1,0 +1,34 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "release",
+  "brief": "public void release(){}",
+  "methodSignature": "release()",
+  "sourceCode": "public void release() {\n        super.release();\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            figure.release();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "release()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "release()"
+    ]
+  },
+  "full_method_info": "/**\n * Releases the figure and all its children.\n */\npublic void release() {\n    super.release();\n    FigureEnumeration k = figures();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        figure.release();\n    }\n}",
+  "method_comment": "\n     * Releases the figure and all its children.\n     ",
+  "method_annotation": ""
+}

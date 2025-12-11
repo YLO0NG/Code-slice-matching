@@ -1,0 +1,64 @@
+{
+  "fullClassName": "junit.extensions.TestDecorator",
+  "className": "TestDecorator",
+  "index": 7,
+  "modifier": "[public ]",
+  "extend": "[Assert]",
+  "implement": "[Test]",
+  "packageName": "junit.extensions",
+  "packageDeclaration": "package junit.extensions;",
+  "classSignature": "public class TestDecorator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "protected Test fTest;"
+  ],
+  "superClasses": [
+    "Assert"
+  ],
+  "implementedTypes": [
+    "Test"
+  ],
+  "methodSigs": {
+    "basicRun(TestResult)": "0",
+    "countTestCases()": "1",
+    "run(TestResult)": "2",
+    "toString()": "3",
+    "getTest()": "4",
+    "TestDecorator(Test)": "5"
+  },
+  "methodsBrief": [
+    "public void basicRun(TestResult result){}",
+    "public int countTestCases(){}",
+    "public void run(TestResult result){}",
+    "public String toString(){}",
+    "public Test getTest(){}",
+    "public TestDecorator(Test test){}"
+  ],
+  "constructorSigs": [
+    "TestDecorator(Test)"
+  ],
+  "constructorBrief": [
+    "public TestDecorator(Test test){}"
+  ],
+  "getterSetterSigs": [
+    "getTest()"
+  ],
+  "getterSetterBrief": [
+    "public Test getTest(){}"
+  ],
+  "constructorDeps": {
+    "junit.framework.Test": []
+  },
+  "compilationUnitCode": "package junit.extensions;\r\n\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A Decorator for Tests. Use TestDecorator as the base class\r\n * for defining new test decorators. Test decorator subclasses\r\n * can be introduced to add behaviour before or after a test\r\n * is run.\r\n */\r\npublic class TestDecorator extends Assert implements Test {\r\n\r\n    protected Test fTest;\r\n\r\n    public TestDecorator(Test test) {\r\n        fTest = test;\r\n    }\r\n\r\n    /**\r\n     * The basic run behaviour.\r\n     */\r\n    public void basicRun(TestResult result) {\r\n        fTest.run(result);\r\n    }\r\n\r\n    public int countTestCases() {\r\n        return fTest.countTestCases();\r\n    }\r\n\r\n    public void run(TestResult result) {\r\n        basicRun(result);\r\n    }\r\n\r\n    public String toString() {\r\n        return fTest.toString();\r\n    }\r\n\r\n    public Test getTest() {\r\n        return fTest;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A Decorator for Tests. Use TestDecorator as the base class\r\n * for defining new test decorators. Test decorator subclasses\r\n * can be introduced to add behaviour before or after a test\r\n * is run.\r\n */\r\npublic class TestDecorator extends Assert implements Test {\r\n\r\n    protected Test fTest;\r\n\r\n    public TestDecorator(Test test) {\r\n        fTest = test;\r\n    }\r\n\r\n    /**\r\n     * The basic run behaviour.\r\n     */\r\n    public void basicRun(TestResult result) {\r\n        fTest.run(result);\r\n    }\r\n\r\n    public int countTestCases() {\r\n        return fTest.countTestCases();\r\n    }\r\n\r\n    public void run(TestResult result) {\r\n        basicRun(result);\r\n    }\r\n\r\n    public String toString() {\r\n        return fTest.toString();\r\n    }\r\n\r\n    public Test getTest() {\r\n        return fTest;\r\n    }\r\n}",
+  "subClasses": [
+    "junit.extensions.RepeatedTest",
+    "junit.extensions.TestSetup"
+  ]
+}

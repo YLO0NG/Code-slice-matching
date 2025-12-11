@@ -1,0 +1,36 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g, int x1, int y1, int x2, int y2){}",
+  "methodSignature": "draw(Graphics, int, int, int, int)",
+  "sourceCode": "public void draw(Graphics g, int x1, int y1, int x2, int y2) {\n        // TBD: reuse the Polygon object\n        Polygon p = outline(x1, y1, x2, y2);\n        if (getFillColor() == null) {\n            g.fillPolygon(p.xpoints, p.ypoints, p.npoints);\n        }\n        else {\n            Color drawColor = g.getColor();\n            g.setColor(getFillColor());\n            g.fillPolygon(p.xpoints, p.ypoints, p.npoints);\n            g.setColor(drawColor);\n        }\n        \n        if (getBorderColor() != getFillColor()) {\n            Color drawColor = g.getColor();\n            g.setColor(getBorderColor());\n            g.drawPolygon(p.xpoints, p.ypoints, p.npoints);\n            g.setColor(drawColor);\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillPolygon(int[], int[], int)",
+      "getColor()",
+      "drawPolygon(int[], int[], int)",
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.figures.AbstractLineDecoration": [
+      "outline(int, int, int, int)",
+      "getFillColor()",
+      "getBorderColor()"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the arrow tip in the direction specified by the given two\n * points.. (template method)\n */\npublic void draw(Graphics g, int x1, int y1, int x2, int y2) {\n    // TBD: reuse the Polygon object\n    Polygon p = outline(x1, y1, x2, y2);\n    if (getFillColor() == null) {\n        g.fillPolygon(p.xpoints, p.ypoints, p.npoints);\n    } else {\n        Color drawColor = g.getColor();\n        g.setColor(getFillColor());\n        g.fillPolygon(p.xpoints, p.ypoints, p.npoints);\n        g.setColor(drawColor);\n    }\n    if (getBorderColor() != getFillColor()) {\n        Color drawColor = g.getColor();\n        g.setColor(getBorderColor());\n        g.drawPolygon(p.xpoints, p.ypoints, p.npoints);\n        g.setColor(drawColor);\n    }\n}",
+  "method_comment": "\n    * Draws the arrow tip in the direction specified by the given two\n    * points.. (template method)\n    ",
+  "method_annotation": ""
+}

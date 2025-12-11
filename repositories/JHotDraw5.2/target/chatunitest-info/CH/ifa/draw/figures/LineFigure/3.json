@@ -1,0 +1,25 @@
+{
+  "className": "LineFigure",
+  "methodName": "endPoint",
+  "brief": "public void  endPoint(int x, int y){}",
+  "methodSignature": "endPoint(int, int)",
+  "sourceCode": "public void  endPoint(int x, int y) {\n        setPointAt(new Point(x,y), 1);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setPointAt(Point, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the end point.\n */\npublic void endPoint(int x, int y) {\n    setPointAt(new Point(x, y), 1);\n}",
+  "method_comment": "\n     * Sets the end point.\n     ",
+  "method_annotation": ""
+}

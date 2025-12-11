@@ -1,0 +1,18 @@
+{
+  "className": "PurchaseOrderItem",
+  "methodName": "getPrice",
+  "brief": "@Column(name=\"PRICE\", nullable=false)\r\n\tpublic Double getPrice(){}",
+  "methodSignature": "getPrice()",
+  "sourceCode": "@Column(name=\"PRICE\", nullable=false)\n\tpublic Double getPrice() {\n\t\treturn price;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Column(name = \"PRICE\", nullable = false)\npublic Double getPrice() {\n    return price;\n}",
+  "method_comment": "",
+  "method_annotation": "@Column(name = \"PRICE\", nullable = false)\n"
+}

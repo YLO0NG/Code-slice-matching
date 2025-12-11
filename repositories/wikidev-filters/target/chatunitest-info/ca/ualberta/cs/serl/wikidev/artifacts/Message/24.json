@@ -1,0 +1,33 @@
+{
+  "className": "Message",
+  "methodName": "Message",
+  "brief": "public Message(String address, String author, String body,\r\n\t\t\tint communicationID, int deleted,\r\n\t\t\tString mid_header, int project_id, String subject, Timestamp timestamp, String user_name, String refid_header){}",
+  "methodSignature": "Message(String, String, String, int, int, String, int, String, Timestamp, String, String)",
+  "sourceCode": "public Message(String address, String author, String body,\n\t\t\tint communicationID, int deleted,\n\t\t\tString mid_header, int project_id, String subject, Timestamp timestamp, String user_name, String refid_header) {\n\t\tthis.address = address;\n\t\tthis.author = author;\n\t\tthis.body = body;\n\t\tthis.communicationID = communicationID;\n\t\tthis.deleted = deleted;\n\t\tthis.mid_header = mid_header;\n\t\tthis.project_id = project_id;\n\t\tthis.subject = subject;\n\t\tthis.timestamp = timestamp;\n\t\tthis.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n\t\t//this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n\t\tthis.user_name = user_name;\n\t\tthis.refid_header = refid_header;\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String",
+    "String",
+    "int",
+    "int",
+    "String",
+    "int",
+    "String",
+    "Timestamp",
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public Message(String address, String author, String body, int communicationID, int deleted, String mid_header, int project_id, String subject, Timestamp timestamp, String user_name, String refid_header) {\n    this.address = address;\n    this.author = author;\n    this.body = body;\n    this.communicationID = communicationID;\n    this.deleted = deleted;\n    this.mid_header = mid_header;\n    this.project_id = project_id;\n    this.subject = subject;\n    this.timestamp = timestamp;\n    this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n    // this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n    this.user_name = user_name;\n    this.refid_header = refid_header;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

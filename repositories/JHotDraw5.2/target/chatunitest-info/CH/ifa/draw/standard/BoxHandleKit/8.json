@@ -1,0 +1,22 @@
+{
+  "className": "BoxHandleKit",
+  "methodName": "east",
+  "brief": "static public Handle east(Figure owner){}",
+  "methodSignature": "east(Figure)",
+  "sourceCode": "static public Handle east(Figure owner) {\n        return new EastHandle(owner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "static public Handle east(Figure owner) {\n    return new EastHandle(owner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

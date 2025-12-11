@@ -1,0 +1,43 @@
+{
+  "className": "ConnectionHandle",
+  "methodName": "invokeEnd",
+  "brief": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeEnd(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Connector target = findConnectionTarget(x, y, view.drawing());\n        if (target != null) {\n            fConnection.connectStart(startConnector());\n            fConnection.connectEnd(target);\n            fConnection.updateConnection();\n        } else\n            view.drawing().remove(fConnection);\n        fConnection = null;\n        if (fTarget != null) {\n            fTarget.connectorVisibility(false);\n            fTarget = null;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.ConnectionHandle": [
+      "findConnectionTarget(int, int, Drawing)",
+      "startConnector()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "connectStart(Connector)",
+      "connectEnd(Connector)",
+      "updateConnection()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorVisibility(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Connects the figures if the mouse is released over another\n * figure.\n */\npublic void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    Connector target = findConnectionTarget(x, y, view.drawing());\n    if (target != null) {\n        fConnection.connectStart(startConnector());\n        fConnection.connectEnd(target);\n        fConnection.updateConnection();\n    } else\n        view.drawing().remove(fConnection);\n    fConnection = null;\n    if (fTarget != null) {\n        fTarget.connectorVisibility(false);\n        fTarget = null;\n    }\n}",
+  "method_comment": "\n     * Connects the figures if the mouse is released over another\n     * figure.\n     ",
+  "method_annotation": ""
+}

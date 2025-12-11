@@ -1,0 +1,31 @@
+{
+  "className": "ScribbleTool",
+  "methodName": "point",
+  "brief": "private void point(int x, int y){}",
+  "methodSignature": "point(int, int)",
+  "sourceCode": "private void point(int x, int y) {\n        if (fScribble == null) {\n            fScribble = new PolyLineFigure(x, y);\n            view().add(fScribble);\n        } else if (fLastX != x || fLastY != y)\n            fScribble.addPoint(x, y);\n\n        fLastX = x;\n        fLastY = y;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "add(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "addPoint(int, int)"
+    ]
+  },
+  "full_method_info": "private void point(int x, int y) {\n    if (fScribble == null) {\n        fScribble = new PolyLineFigure(x, y);\n        view().add(fScribble);\n    } else if (fLastX != x || fLastY != y)\n        fScribble.addPoint(x, y);\n    fLastX = x;\n    fLastY = y;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

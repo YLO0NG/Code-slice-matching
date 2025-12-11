@@ -1,0 +1,48 @@
+{
+  "className": "DataManager",
+  "methodName": "getFilesBuildingHistory",
+  "brief": "public static ArrayList<FileBuildingData> getFilesBuildingHistory(String url) throws SQLExceptio{}",
+  "methodSignature": "getFilesBuildingHistory(String)",
+  "sourceCode": "public static ArrayList<FileBuildingData> getFilesBuildingHistory(String url) throws SQLException{\n    \tArrayList<FileBuildingData> buildings = new ArrayList<FileBuildingData>();\n    \tFileBuildingData building = null;\n    \tString sqlStmt = QueryBuilder.selectFilesBuildingHistory(url);\n    \tResultSet res = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile (res.next()) {\n\t\t\tbuilding = new FileBuildingData(res.getString(\"type\"), res.getTimestamp(\"week\"), res.getInt(\"height\"), \n\t\t\t\t\tres.getInt(\"neighborhoodX\"), res.getInt(\"neighborhoodY\"), res.getInt(\"cityBlock\"), res.getString(\"url\"), res.getInt(\"project_id\"), res.getInt(\"building_id\"), res.getString(\"last_editor\"), res.getTimestamp(\"created\"), res.getTimestamp(\"last_modified\"));\n\t\t\tbuildings.add(building);\n\t\t\t\n\t\t}\n\t\tif (res != null)\n\t\t\tres.close();\n\t\tfor(FileBuildingData aBuilding : buildings) {\n\t\t\tint id = getFilesBuildingID(aBuilding);\n\t\t\taBuilding.setUsers(getUsersForBuilding(id, IndustrialLayout.CITY_TYPE));\n\t\t\taBuilding.setLastEditor(DataManager.getUserByUserName(aBuilding.getLastEditorString()));\n\t\t}\n\t\treturn buildings;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectFilesBuildingHistory(String)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "getTimestamp(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getFilesBuildingID(FileBuildingData)",
+      "getUserByUserName(String)",
+      "getUsersForBuilding(int, String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.BuildingData": [
+      "setLastEditor(User)",
+      "setUsers(UserData>)",
+      "getLastEditorString()"
+    ]
+  },
+  "full_method_info": "public static ArrayList<FileBuildingData> getFilesBuildingHistory(String url) throws SQLException {\n    ArrayList<FileBuildingData> buildings = new ArrayList<FileBuildingData>();\n    FileBuildingData building = null;\n    String sqlStmt = QueryBuilder.selectFilesBuildingHistory(url);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        building = new FileBuildingData(res.getString(\"type\"), res.getTimestamp(\"week\"), res.getInt(\"height\"), res.getInt(\"neighborhoodX\"), res.getInt(\"neighborhoodY\"), res.getInt(\"cityBlock\"), res.getString(\"url\"), res.getInt(\"project_id\"), res.getInt(\"building_id\"), res.getString(\"last_editor\"), res.getTimestamp(\"created\"), res.getTimestamp(\"last_modified\"));\n        buildings.add(building);\n    }\n    if (res != null)\n        res.close();\n    for (FileBuildingData aBuilding : buildings) {\n        int id = getFilesBuildingID(aBuilding);\n        aBuilding.setUsers(getUsersForBuilding(id, IndustrialLayout.CITY_TYPE));\n        aBuilding.setLastEditor(DataManager.getUserByUserName(aBuilding.getLastEditorString()));\n    }\n    return buildings;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

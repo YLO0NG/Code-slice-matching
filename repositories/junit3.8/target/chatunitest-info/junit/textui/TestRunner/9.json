@@ -1,0 +1,38 @@
+{
+  "className": "TestRunner",
+  "methodName": "doRun",
+  "brief": "public TestResult doRun(Test suite, boolean wait){}",
+  "methodSignature": "doRun(Test, boolean)",
+  "sourceCode": "public TestResult doRun(Test suite, boolean wait) {\r\n\t\tTestResult result= createTestResult();\r\n\t\tresult.addListener(fPrinter);\r\n\t\tlong startTime= System.currentTimeMillis();\r\n\t\tsuite.run(result);\r\n\t\tlong endTime= System.currentTimeMillis();\r\n\t\tlong runTime= endTime-startTime;\r\n\t\tfPrinter.print(result, runTime);\r\n\r\n\t\tpause(wait);\r\n\t\treturn result;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [
+      "run(TestResult)"
+    ],
+    "junit.textui.TestRunner": [
+      "pause(boolean)",
+      "createTestResult()"
+    ],
+    "junit.framework.TestResult": [
+      "addListener(TestListener)"
+    ],
+    "java.lang.System": [
+      "currentTimeMillis()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "print(TestResult, long)"
+    ]
+  },
+  "full_method_info": "public TestResult doRun(Test suite, boolean wait) {\r\n    TestResult result = createTestResult();\r\n    result.addListener(fPrinter);\r\n    long startTime = System.currentTimeMillis();\r\n    suite.run(result);\r\n    long endTime = System.currentTimeMillis();\r\n    long runTime = endTime - startTime;\r\n    fPrinter.print(result, runTime);\r\n    pause(wait);\r\n    return result;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

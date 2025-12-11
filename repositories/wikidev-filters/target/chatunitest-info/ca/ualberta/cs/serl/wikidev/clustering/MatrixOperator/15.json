@@ -1,0 +1,25 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "normalizeVector",
+  "brief": "public static double[] normalizeVector(double[] vector){}",
+  "methodSignature": "normalizeVector(double[])",
+  "sourceCode": "public static double[] normalizeVector(double[] vector) {\n\t\t   double norm = getVectorNorm(vector);\n\t\t   for(int i=0;i<vector.length;i++) {\n\t\t\t   vector[i] /= norm;\n\t\t   }\n\t\t   return vector;\n\t   }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[]"
+  ],
+  "dependentMethods": {
+    "double": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "getVectorNorm(double[])"
+    ]
+  },
+  "full_method_info": "public static double[] normalizeVector(double[] vector) {\n    double norm = getVectorNorm(vector);\n    for (int i = 0; i < vector.length; i++) {\n        vector[i] /= norm;\n    }\n    return vector;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

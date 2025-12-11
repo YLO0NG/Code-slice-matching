@@ -1,0 +1,22 @@
+{
+  "className": "InvocationParser",
+  "methodName": "setDatabaseName",
+  "brief": "public void setDatabaseName(String databaseName){}",
+  "methodSignature": "setDatabaseName(String)",
+  "sourceCode": "public void setDatabaseName(String databaseName) {\n\t\tthis.databaseName = databaseName;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setDatabaseName(String databaseName) {\n    this.databaseName = databaseName;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

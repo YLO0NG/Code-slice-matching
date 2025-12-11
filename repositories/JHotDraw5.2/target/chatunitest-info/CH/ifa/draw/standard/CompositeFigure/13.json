@@ -1,0 +1,22 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figureCount",
+  "brief": "public int figureCount(){}",
+  "methodSignature": "figureCount()",
+  "sourceCode": "public int figureCount() {\n        return fFigures.size();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets number of child figures.\n */\npublic int figureCount() {\n    return fFigures.size();\n}",
+  "method_comment": "\n     * Gets number of child figures.\n     ",
+  "method_annotation": ""
+}

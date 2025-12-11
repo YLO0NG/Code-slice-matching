@@ -1,0 +1,81 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.TextTool",
+  "className": "TextTool",
+  "index": 53,
+  "modifier": "[public ]",
+  "extend": "[CreationTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class TextTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.FloatingTextField;"
+  ],
+  "fields": [
+    "private FloatingTextField   fTextField;",
+    "private TextHolder  fTypingTarget;"
+  ],
+  "superClasses": [
+    "CreationTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "mouseDrag(MouseEvent, int, int)": "1",
+    "mouseUp(MouseEvent, int, int)": "2",
+    "deactivate()": "3",
+    "activate()": "4",
+    "isActivated()": "5",
+    "beginEdit(TextHolder)": "6",
+    "endEdit()": "7",
+    "fieldBounds(TextHolder)": "8",
+    "setTypingTarget(TextHolder)": "9",
+    "getTypingTarget()": "10",
+    "TextTool(DrawingView, Figure)": "11"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y)\r\n   {}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "public void deactivate(){}",
+    "public void activate(){}",
+    "public boolean isActivated(){}",
+    "protected void beginEdit(TextHolder figure){}",
+    "protected void endEdit(){}",
+    "private Rectangle fieldBounds(TextHolder figure){}",
+    "protected void setTypingTarget(TextHolder newTypingTarget){}",
+    "protected TextHolder getTypingTarget(){}",
+    "public TextTool(DrawingView view, Figure prototype){}"
+  ],
+  "constructorSigs": [
+    "TextTool(DrawingView, Figure)"
+  ],
+  "constructorBrief": [
+    "public TextTool(DrawingView view, Figure prototype){}"
+  ],
+  "getterSetterSigs": [
+    "setTypingTarget(TextHolder)",
+    "getTypingTarget()"
+  ],
+  "getterSetterBrief": [
+    "protected void setTypingTarget(TextHolder newTypingTarget){}",
+    "protected TextHolder getTypingTarget(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)TextTool.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.awt.event.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.FloatingTextField;\n\n/**\n * Tool to create new or edit existing text figures.\n * The editing behavior is implemented by overlaying the\n * Figure providing the text with a FloatingTextField.<p>\n * A tool interaction is done once a Figure that is not\n * a TextHolder is clicked.\n *\n * @see TextHolder\n * @see FloatingTextField\n */\npublic class TextTool extends CreationTool {\n\n    private FloatingTextField fTextField;\n\n    private TextHolder fTypingTarget;\n\n    public TextTool(DrawingView view, Figure prototype) {\n        super(view, prototype);\n    }\n\n    /**\n     * If the pressed figure is a TextHolder it can be edited otherwise\n     * a new text figure is created.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        TextHolder textHolder = null;\n        Figure pressedFigure = drawing().findFigureInside(x, y);\n        if (pressedFigure instanceof TextHolder) {\n            textHolder = (TextHolder) pressedFigure;\n            if (!textHolder.acceptsTyping())\n                textHolder = null;\n        }\n        if (textHolder != null) {\n            if (fTextField == null)\n                fTextField = new FloatingTextField();\n            if (textHolder != getTypingTarget() && getTypingTarget() != null)\n                endEdit();\n            fTextField.createOverlay((Container) view(), textHolder.getFont());\n            fTextField.setBounds(fieldBounds(textHolder), textHolder.getText());\n            setTypingTarget(textHolder);\n            view().checkDamage();\n            return;\n        }\n        if (getTypingTarget() != null) {\n            editor().toolDone();\n            endEdit();\n        } else {\n            super.mouseDown(e, x, y);\n            textHolder = (TextHolder) createdFigure();\n            beginEdit(textHolder);\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n\n    /**\n     * Terminates the editing of a text figure.\n     */\n    public void deactivate() {\n        super.deactivate();\n        endEdit();\n    }\n\n    /**\n     * Sets the text cursor.\n     */\n    public void activate() {\n        super.activate();\n        view().clearSelection();\n        // JDK1.1 TEXT_CURSOR has an incorrect hot spot\n        // view().setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));\n    }\n\n    /**\n     * Test whether the text tool is currently activated and is displaying\n     * a overlay TextFigure for accepting input.\n     *\n     * @return true, if the text tool has a accepting target TextFigure for its input, false otherwise\n     */\n    public boolean isActivated() {\n        return getTypingTarget() != null;\n    }\n\n    protected void beginEdit(TextHolder figure) {\n        if (fTextField == null)\n            fTextField = new FloatingTextField();\n        if (figure != getTypingTarget() && getTypingTarget() != null)\n            if (getTypingTarget() != null) {\n                if (fTextField.getText().length() > 0)\n                    getTypingTarget().setText(fTextField.getText());\n                else {\n                    drawing().remove((Figure) getTypingTarget());\n                }\n                setTypingTarget(null);\n                fTextField.endOverlay();\n                view().checkDamage();\n            }\n        fTextField.createOverlay((Container) view(), figure.getFont());\n        fTextField.setBounds(fieldBounds(figure), figure.getText());\n        setTypingTarget(figure);\n        view().checkDamage();\n    }\n\n    protected void endEdit() {\n        if (getTypingTarget() != null) {\n            if (fTextField.getText().length() > 0)\n                getTypingTarget().setText(fTextField.getText());\n            else {\n                drawing().remove((Figure) getTypingTarget());\n            }\n            setTypingTarget(null);\n            fTextField.endOverlay();\n            view().checkDamage();\n        }\n    }\n\n    private Rectangle fieldBounds(TextHolder figure) {\n        Rectangle box = figure.textDisplayBox();\n        int nChars = figure.overlayColumns();\n        Dimension d = fTextField.getPreferredSize(nChars);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }\n\n    protected void setTypingTarget(TextHolder newTypingTarget) {\n        fTypingTarget = newTypingTarget;\n    }\n\n    protected TextHolder getTypingTarget() {\n        return fTypingTarget;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Tool to create new or edit existing text figures.\n * The editing behavior is implemented by overlaying the\n * Figure providing the text with a FloatingTextField.<p>\n * A tool interaction is done once a Figure that is not\n * a TextHolder is clicked.\n *\n * @see TextHolder\n * @see FloatingTextField\n */\npublic class TextTool extends CreationTool {\n\n    private FloatingTextField fTextField;\n\n    private TextHolder fTypingTarget;\n\n    public TextTool(DrawingView view, Figure prototype) {\n        super(view, prototype);\n    }\n\n    /**\n     * If the pressed figure is a TextHolder it can be edited otherwise\n     * a new text figure is created.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        TextHolder textHolder = null;\n        Figure pressedFigure = drawing().findFigureInside(x, y);\n        if (pressedFigure instanceof TextHolder) {\n            textHolder = (TextHolder) pressedFigure;\n            if (!textHolder.acceptsTyping())\n                textHolder = null;\n        }\n        if (textHolder != null) {\n            if (fTextField == null)\n                fTextField = new FloatingTextField();\n            if (textHolder != getTypingTarget() && getTypingTarget() != null)\n                endEdit();\n            fTextField.createOverlay((Container) view(), textHolder.getFont());\n            fTextField.setBounds(fieldBounds(textHolder), textHolder.getText());\n            setTypingTarget(textHolder);\n            view().checkDamage();\n            return;\n        }\n        if (getTypingTarget() != null) {\n            editor().toolDone();\n            endEdit();\n        } else {\n            super.mouseDown(e, x, y);\n            textHolder = (TextHolder) createdFigure();\n            beginEdit(textHolder);\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n\n    /**\n     * Terminates the editing of a text figure.\n     */\n    public void deactivate() {\n        super.deactivate();\n        endEdit();\n    }\n\n    /**\n     * Sets the text cursor.\n     */\n    public void activate() {\n        super.activate();\n        view().clearSelection();\n        // JDK1.1 TEXT_CURSOR has an incorrect hot spot\n        // view().setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));\n    }\n\n    /**\n     * Test whether the text tool is currently activated and is displaying\n     * a overlay TextFigure for accepting input.\n     *\n     * @return true, if the text tool has a accepting target TextFigure for its input, false otherwise\n     */\n    public boolean isActivated() {\n        return getTypingTarget() != null;\n    }\n\n    protected void beginEdit(TextHolder figure) {\n        if (fTextField == null)\n            fTextField = new FloatingTextField();\n        if (figure != getTypingTarget() && getTypingTarget() != null)\n            if (getTypingTarget() != null) {\n                if (fTextField.getText().length() > 0)\n                    getTypingTarget().setText(fTextField.getText());\n                else {\n                    drawing().remove((Figure) getTypingTarget());\n                }\n                setTypingTarget(null);\n                fTextField.endOverlay();\n                view().checkDamage();\n            }\n        fTextField.createOverlay((Container) view(), figure.getFont());\n        fTextField.setBounds(fieldBounds(figure), figure.getText());\n        setTypingTarget(figure);\n        view().checkDamage();\n    }\n\n    protected void endEdit() {\n        if (getTypingTarget() != null) {\n            if (fTextField.getText().length() > 0)\n                getTypingTarget().setText(fTextField.getText());\n            else {\n                drawing().remove((Figure) getTypingTarget());\n            }\n            setTypingTarget(null);\n            fTextField.endOverlay();\n            view().checkDamage();\n        }\n    }\n\n    private Rectangle fieldBounds(TextHolder figure) {\n        Rectangle box = figure.textDisplayBox();\n        int nChars = figure.overlayColumns();\n        Dimension d = fTextField.getPreferredSize(nChars);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }\n\n    protected void setTypingTarget(TextHolder newTypingTarget) {\n        fTypingTarget = newTypingTarget;\n    }\n\n    protected TextHolder getTypingTarget() {\n        return fTypingTarget;\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.figures.ConnectedTextTool"
+  ]
+}

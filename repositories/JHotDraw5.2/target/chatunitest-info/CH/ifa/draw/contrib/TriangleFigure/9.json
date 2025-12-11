@@ -1,0 +1,27 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n      super.write(dw);\n      dw.writeInt(fRotation);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)"
+    ],
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "// -- store / load ----------------------------------------------\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeInt(fRotation);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

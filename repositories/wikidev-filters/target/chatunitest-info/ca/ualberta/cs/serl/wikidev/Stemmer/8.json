@@ -1,0 +1,24 @@
+{
+  "className": "Stemmer",
+  "methodName": "doublec",
+  "brief": "private final boolean doublec(int j)\r\n  {}",
+  "methodSignature": "doublec(int)",
+  "sourceCode": "private final boolean doublec(int j)\n   {  if (j < 1) return false;\n      if (b[j] != b[j-1]) return false;\n      return cons(j);\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "cons(int)"
+    ]
+  },
+  "full_method_info": "/* doublec(j) is true <=> j,(j-1) contain a double consonant. */\nprivate final boolean doublec(int j) {\n    if (j < 1)\n        return false;\n    if (b[j] != b[j - 1])\n        return false;\n    return cons(j);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

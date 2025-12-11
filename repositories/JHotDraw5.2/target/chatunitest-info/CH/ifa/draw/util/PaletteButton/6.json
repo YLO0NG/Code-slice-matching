@@ -1,0 +1,34 @@
+{
+  "className": "PaletteButton",
+  "methodName": "mouseReleased",
+  "brief": "public void mouseReleased(MouseEvent e){}",
+  "methodSignature": "mouseReleased(MouseEvent)",
+  "sourceCode": "public void mouseReleased(MouseEvent e) {\n        fState = fOldState;\n        repaint();\n        if (contains(e.getX(),e.getY()))\n            fListener.paletteUserSelected(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "java.awt.Component": [
+      "repaint()"
+    ],
+    "javax.swing.JComponent": [
+      "contains(int, int)"
+    ],
+    "CH.ifa.draw.util.PaletteListener": [
+      "paletteUserSelected(PaletteButton)"
+    ]
+  },
+  "full_method_info": "public void mouseReleased(MouseEvent e) {\n    fState = fOldState;\n    repaint();\n    if (contains(e.getX(), e.getY()))\n        fListener.paletteUserSelected(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

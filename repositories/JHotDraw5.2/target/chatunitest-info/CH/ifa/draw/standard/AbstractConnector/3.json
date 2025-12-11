@@ -1,0 +1,28 @@
+{
+  "className": "AbstractConnector",
+  "methodName": "findPoint",
+  "brief": "protected Point findPoint(ConnectionFigure connection){}",
+  "methodSignature": "findPoint(ConnectionFigure)",
+  "sourceCode": "protected Point findPoint(ConnectionFigure connection) {\n        return Geom.center(displayBox());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [],
+    "CH.ifa.draw.util.Geom": [
+      "center(Rectangle)"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the connection point. Override when the connector\n * does not need to distinguish between the start and end\n * point of a connection.\n */\nprotected Point findPoint(ConnectionFigure connection) {\n    return Geom.center(displayBox());\n}",
+  "method_comment": "\n     * Gets the connection point. Override when the connector\n     * does not need to distinguish between the start and end\n     * point of a connection.\n     ",
+  "method_annotation": ""
+}

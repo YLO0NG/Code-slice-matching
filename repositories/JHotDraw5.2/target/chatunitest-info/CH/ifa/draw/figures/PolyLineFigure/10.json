@@ -1,0 +1,28 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "removePointAt",
+  "brief": "public void removePointAt(int i){}",
+  "methodSignature": "removePointAt(int)",
+  "sourceCode": "public void removePointAt(int i) {\n        willChange();\n        fPoints.removeElementAt(i);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "java.util.Vector": [
+      "removeElementAt(int)"
+    ]
+  },
+  "full_method_info": "public void removePointAt(int i) {\n    willChange();\n    fPoints.removeElementAt(i);\n    changed();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

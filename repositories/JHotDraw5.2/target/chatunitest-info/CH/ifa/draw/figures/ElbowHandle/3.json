@@ -1,0 +1,29 @@
+{
+  "className": "ElbowHandle",
+  "methodName": "locate",
+  "brief": "public Point locate(){}",
+  "methodSignature": "locate()",
+  "sourceCode": "public Point locate() {\n        LineConnection line = ownerConnection();\n        int segment = Math.min(fSegment, line.pointCount()-2);\n        Point p1 = line.pointAt(segment);\n        Point p2 = line.pointAt(segment+1);\n        return new Point((p1.x + p2.x)/2, (p1.y + p2.y)/2);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.ElbowHandle": [
+      "ownerConnection()"
+    ],
+    "java.lang.Math": [
+      "min(int, int)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointCount()",
+      "pointAt(int)"
+    ]
+  },
+  "full_method_info": "public Point locate() {\n    LineConnection line = ownerConnection();\n    int segment = Math.min(fSegment, line.pointCount() - 2);\n    Point p1 = line.pointAt(segment);\n    Point p2 = line.pointAt(segment + 1);\n    return new Point((p1.x + p2.x) / 2, (p1.y + p2.y) / 2);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

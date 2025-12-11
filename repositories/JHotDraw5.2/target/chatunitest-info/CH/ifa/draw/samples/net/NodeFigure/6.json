@@ -1,0 +1,24 @@
+{
+  "className": "NodeFigure",
+  "methodName": "connectorVisibility",
+  "brief": "public void connectorVisibility(boolean isVisible){}",
+  "methodSignature": "connectorVisibility(boolean)",
+  "sourceCode": "public void connectorVisibility(boolean isVisible) {\n        fConnectorsVisible = isVisible;\n        invalidate();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "invalidate()"
+    ]
+  },
+  "full_method_info": "/**\n */\npublic void connectorVisibility(boolean isVisible) {\n    fConnectorsVisible = isVisible;\n    invalidate();\n}",
+  "method_comment": "\n     ",
+  "method_annotation": ""
+}

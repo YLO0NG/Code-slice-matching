@@ -1,0 +1,22 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setProps",
+  "brief": "public void setProps(String props){}",
+  "methodSignature": "setProps(String)",
+  "sourceCode": "public void setProps(String props) {\n\t\tthis.props = props;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param props\n * @uml.property  name=\"props\"\n */\npublic void setProps(String props) {\n    this.props = props;\n}",
+  "method_comment": "\n\t * @param props\n\t * @uml.property  name=\"props\"\n\t ",
+  "method_annotation": ""
+}

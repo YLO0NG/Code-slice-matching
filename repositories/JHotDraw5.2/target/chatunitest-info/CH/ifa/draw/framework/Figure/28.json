@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "connectionInsets",
+  "brief": "public Insets connectionInsets();",
+  "methodSignature": "connectionInsets()",
+  "sourceCode": "public Insets connectionInsets();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the connection inset. This is only a hint that\n * connectors can use to determine the connection location.\n * The inset defines the area where the display box of a\n * figure should not be connected.\n */\npublic Insets connectionInsets();",
+  "method_comment": "\n     * Returns the connection inset. This is only a hint that\n     * connectors can use to determine the connection location.\n     * The inset defines the area where the display box of a\n     * figure should not be connected.\n     *\n     ",
+  "method_annotation": ""
+}

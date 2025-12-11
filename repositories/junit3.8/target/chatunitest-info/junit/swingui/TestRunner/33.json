@@ -1,0 +1,33 @@
+{
+  "className": "TestRunner",
+  "methodName": "browseTestClasses",
+  "brief": "public void browseTestClasses(){}",
+  "methodSignature": "browseTestClasses()",
+  "sourceCode": "public void browseTestClasses() {\r\n\t\tTestCollector collector= createTestCollector();\r\n\t\tTestSelector selector= new TestSelector(fFrame, collector);\r\n\t\tif (selector.isEmpty()) {\r\n\t\t\tJOptionPane.showMessageDialog(fFrame, \"No Test Cases found.\\nCheck that the configured \\'TestCollector\\' is supported on this platform.\");\r\n\t\t\treturn;\r\n\t\t}\r\n\t\tselector.show();\r\n\t\tString className= selector.getSelectedItem();\r\n\t\tif (className != null)\r\n\t\t\tsetSuite(className);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestRunner": [
+      "createTestCollector()",
+      "setSuite(String)"
+    ],
+    "junit.swingui.TestSelector": [
+      "isEmpty()",
+      "getSelectedItem()"
+    ],
+    "javax.swing.JOptionPane": [
+      "showMessageDialog(Component, Object)"
+    ],
+    "java.awt.Dialog": [
+      "show()"
+    ]
+  },
+  "full_method_info": "public void browseTestClasses() {\r\n    TestCollector collector = createTestCollector();\r\n    TestSelector selector = new TestSelector(fFrame, collector);\r\n    if (selector.isEmpty()) {\r\n        JOptionPane.showMessageDialog(fFrame, \"No Test Cases found.\\nCheck that the configured \\'TestCollector\\' is supported on this platform.\");\r\n        return;\r\n    }\r\n    selector.show();\r\n    String className = selector.getSelectedItem();\r\n    if (className != null)\r\n        setSuite(className);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "Drawing",
+  "methodName": "findFigure",
+  "brief": "public Figure findFigure(Rectangle r, Figure without);",
+  "methodSignature": "findFigure(Rectangle, Figure)",
+  "sourceCode": "public Figure findFigure(Rectangle r, Figure without);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Finds a top level Figure that intersects the given rectangle.\n * It supresses the passed\n * in figure. Use this method to ignore a figure\n * that is temporarily inserted into the drawing.\n */\npublic Figure findFigure(Rectangle r, Figure without);",
+  "method_comment": "\n     * Finds a top level Figure that intersects the given rectangle.\n     * It supresses the passed\n     * in figure. Use this method to ignore a figure\n     * that is temporarily inserted into the drawing.\n     ",
+  "method_annotation": ""
+}

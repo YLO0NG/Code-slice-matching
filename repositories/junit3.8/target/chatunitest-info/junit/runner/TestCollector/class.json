@@ -1,0 +1,35 @@
+{
+  "fullClassName": "junit.runner.TestCollector",
+  "className": "TestCollector",
+  "index": 29,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public interface TestCollector",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "collectTests()": "0"
+  },
+  "methodsBrief": [
+    "public Enumeration collectTests();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\nimport java.util.*;\r\n\r\n/**\r\n * Collects Test class names to be presented\r\n * by the TestSelector.\r\n * @see TestSelector\r\n */\r\npublic interface TestCollector {\r\n\r\n    /**\r\n     * Returns an enumeration of Strings with qualified class names\r\n     */\r\n    public Enumeration collectTests();\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * Collects Test class names to be presented\r\n * by the TestSelector.\r\n * @see TestSelector\r\n */\r\npublic interface TestCollector {\r\n\r\n    /**\r\n     * Returns an enumeration of Strings with qualified class names\r\n     */\r\n    public Enumeration collectTests();\r\n}",
+  "subClasses": []
+}

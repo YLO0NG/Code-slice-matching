@@ -1,0 +1,22 @@
+{
+  "className": "TextFigure",
+  "methodName": "figureRequestRemove",
+  "brief": "public void figureRequestRemove(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestRemove(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestRemove(FigureChangeEvent e) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "public void figureRequestRemove(FigureChangeEvent e) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

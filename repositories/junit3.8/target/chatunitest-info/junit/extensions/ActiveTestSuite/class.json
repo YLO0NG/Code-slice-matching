@@ -1,0 +1,66 @@
+{
+  "fullClassName": "junit.extensions.ActiveTestSuite",
+  "className": "ActiveTestSuite",
+  "index": 4,
+  "modifier": "[public ]",
+  "extend": "[TestSuite]",
+  "implement": "[]",
+  "packageName": "junit.extensions",
+  "packageDeclaration": "package junit.extensions;",
+  "classSignature": "public class ActiveTestSuite",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "private volatile int fActiveTestDeathCount;"
+  ],
+  "superClasses": [
+    "TestSuite"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "run(TestResult)": "0",
+    "runTest(Test, TestResult)": "1",
+    "waitUntilFinished()": "2",
+    "runFinished(Test)": "3",
+    "ActiveTestSuite()": "4",
+    "ActiveTestSuite(Class)": "5",
+    "ActiveTestSuite(String)": "6",
+    "ActiveTestSuite(Class, String)": "7"
+  },
+  "methodsBrief": [
+    "public void run(TestResult result){}",
+    "public void runTest(final Test test, final TestResult result){}",
+    "synchronized void waitUntilFinished(){}",
+    "synchronized public void runFinished(Test test){}",
+    "public ActiveTestSuite(){}",
+    "public ActiveTestSuite(Class theClass){}",
+    "public ActiveTestSuite(String name){}",
+    "public ActiveTestSuite(Class theClass, String name){}"
+  ],
+  "constructorSigs": [
+    "ActiveTestSuite()",
+    "ActiveTestSuite(Class)",
+    "ActiveTestSuite(String)",
+    "ActiveTestSuite(Class, String)"
+  ],
+  "constructorBrief": [
+    "public ActiveTestSuite(){}",
+    "public ActiveTestSuite(Class theClass){}",
+    "public ActiveTestSuite(String name){}",
+    "public ActiveTestSuite(Class theClass, String name){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.Class": [],
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package junit.extensions;\r\n\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A TestSuite for active Tests. It runs each\r\n * test in a separate thread and waits until all\r\n * threads have terminated.\r\n * -- Aarhus Radisson Scandinavian Center 11th floor\r\n */\r\npublic class ActiveTestSuite extends TestSuite {\r\n\r\n    private volatile int fActiveTestDeathCount;\r\n\r\n    public ActiveTestSuite() {\r\n    }\r\n\r\n    public ActiveTestSuite(Class theClass) {\r\n        super(theClass);\r\n    }\r\n\r\n    public ActiveTestSuite(String name) {\r\n        super(name);\r\n    }\r\n\r\n    public ActiveTestSuite(Class theClass, String name) {\r\n        super(theClass, name);\r\n    }\r\n\r\n    public void run(TestResult result) {\r\n        fActiveTestDeathCount = 0;\r\n        super.run(result);\r\n        waitUntilFinished();\r\n    }\r\n\r\n    public void runTest(final Test test, final TestResult result) {\r\n        Thread t = new Thread() {\r\n\r\n            public void run() {\r\n                try {\r\n                    // inlined due to limitation in VA/Java\r\n                    // ActiveTestSuite.super.runTest(test, result);\r\n                    test.run(result);\r\n                } finally {\r\n                    ActiveTestSuite.this.runFinished(test);\r\n                }\r\n            }\r\n        };\r\n        t.start();\r\n    }\r\n\r\n    synchronized void waitUntilFinished() {\r\n        while (fActiveTestDeathCount < testCount()) {\r\n            try {\r\n                wait();\r\n            } catch (InterruptedException e) {\r\n                // ignore\r\n                return;\r\n            }\r\n        }\r\n    }\r\n\r\n    synchronized public void runFinished(Test test) {\r\n        fActiveTestDeathCount++;\r\n        notifyAll();\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A TestSuite for active Tests. It runs each\r\n * test in a separate thread and waits until all\r\n * threads have terminated.\r\n * -- Aarhus Radisson Scandinavian Center 11th floor\r\n */\r\npublic class ActiveTestSuite extends TestSuite {\r\n\r\n    private volatile int fActiveTestDeathCount;\r\n\r\n    public ActiveTestSuite() {\r\n    }\r\n\r\n    public ActiveTestSuite(Class theClass) {\r\n        super(theClass);\r\n    }\r\n\r\n    public ActiveTestSuite(String name) {\r\n        super(name);\r\n    }\r\n\r\n    public ActiveTestSuite(Class theClass, String name) {\r\n        super(theClass, name);\r\n    }\r\n\r\n    public void run(TestResult result) {\r\n        fActiveTestDeathCount = 0;\r\n        super.run(result);\r\n        waitUntilFinished();\r\n    }\r\n\r\n    public void runTest(final Test test, final TestResult result) {\r\n        Thread t = new Thread() {\r\n\r\n            public void run() {\r\n                try {\r\n                    // inlined due to limitation in VA/Java\r\n                    // ActiveTestSuite.super.runTest(test, result);\r\n                    test.run(result);\r\n                } finally {\r\n                    ActiveTestSuite.this.runFinished(test);\r\n                }\r\n            }\r\n        };\r\n        t.start();\r\n    }\r\n\r\n    synchronized void waitUntilFinished() {\r\n        while (fActiveTestDeathCount < testCount()) {\r\n            try {\r\n                wait();\r\n            } catch (InterruptedException e) {\r\n                // ignore\r\n                return;\r\n            }\r\n        }\r\n    }\r\n\r\n    synchronized public void runFinished(Test test) {\r\n        fActiveTestDeathCount++;\r\n        notifyAll();\r\n    }\r\n}",
+  "subClasses": []
+}

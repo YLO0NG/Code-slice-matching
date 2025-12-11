@@ -1,0 +1,29 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "createOverlay",
+  "brief": "public void createOverlay(Container container, Font font){}",
+  "methodSignature": "createOverlay(Container, Font)",
+  "sourceCode": "public void createOverlay(Container container, Font font) {\n        container.add(fEditWidget, 0);\n        if (font != null)\n            fEditWidget.setFont(font);\n        fContainer = container;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Container",
+    "Font"
+  ],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "add(Component, int)"
+    ],
+    "java.awt.Font": [],
+    "java.awt.Component": [
+      "setFont(Font)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the overlay for the given Container using a\n * specific font.\n */\npublic void createOverlay(Container container, Font font) {\n    container.add(fEditWidget, 0);\n    if (font != null)\n        fEditWidget.setFont(font);\n    fContainer = container;\n}",
+  "method_comment": "\n     * Creates the overlay for the given Container using a\n     * specific font.\n     ",
+  "method_annotation": ""
+}

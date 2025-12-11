@@ -1,0 +1,18 @@
+{
+  "className": "Product",
+  "methodName": "getId",
+  "brief": "@Id\r\n\t@Column(name=\"ID_PRODUCT\", nullable=false)\r\n\tpublic Integer getId(){}",
+  "methodSignature": "getId()",
+  "sourceCode": "@Id\n\t@Column(name=\"ID_PRODUCT\", nullable=false)\n\tpublic Integer getId() {\n\t\treturn this.id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Id\n@Column(name = \"ID_PRODUCT\", nullable = false)\npublic Integer getId() {\n    return this.id;\n}",
+  "method_comment": "",
+  "method_annotation": "@Id\n@Column(name = \"ID_PRODUCT\", nullable = false)\n"
+}

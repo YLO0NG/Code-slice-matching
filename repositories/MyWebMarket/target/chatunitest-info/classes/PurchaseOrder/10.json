@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "toString",
+  "brief": "@Override\r\n\tpublic String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "@Override\n\tpublic String toString() {\n\t\treturn this.id + \"\\t\" + this.customer.getName() + \"\\t\" + this.orderDate + \"\\t\" + this.discount;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "classes.Customer": [
+      "getName()"
+    ]
+  },
+  "full_method_info": "@Override\npublic String toString() {\n    return this.id + \"\\t\" + this.customer.getName() + \"\\t\" + this.orderDate + \"\\t\" + this.discount;\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

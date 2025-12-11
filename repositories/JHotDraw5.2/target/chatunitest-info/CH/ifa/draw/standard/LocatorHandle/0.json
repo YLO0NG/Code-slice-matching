@@ -1,0 +1,25 @@
+{
+  "className": "LocatorHandle",
+  "methodName": "locate",
+  "brief": "public Point locate(){}",
+  "methodSignature": "locate()",
+  "sourceCode": "public Point locate() {\n        return fLocator.locate(owner());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Locator": [
+      "locate(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "/**\n * Locates the handle on the figure by forwarding the request\n * to its figure.\n */\npublic Point locate() {\n    return fLocator.locate(owner());\n}",
+  "method_comment": "\n     * Locates the handle on the figure by forwarding the request\n     * to its figure.\n     ",
+  "method_annotation": ""
+}

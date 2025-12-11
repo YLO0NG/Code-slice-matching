@@ -1,0 +1,34 @@
+{
+  "className": "TestRunner",
+  "methodName": "start",
+  "brief": "public void start(String[] args){}",
+  "methodSignature": "start(String[])",
+  "sourceCode": "public void start(String[] args) {\r\n\t\tString suiteName= processArguments(args);\r\n\t\tfFrame= createUI(suiteName);\r\n\t\tfFrame.pack();\r\n\t\tfFrame.setVisible(true);\r\n\r\n\t\tif (suiteName != null) {\r\n\t\t\tsetSuite(suiteName);\r\n\t\t\trunSuite();\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.runner.BaseTestRunner": [
+      "processArguments(String[])"
+    ],
+    "junit.swingui.TestRunner": [
+      "createUI(String)",
+      "setSuite(String)",
+      "runSuite()"
+    ],
+    "java.awt.Window": [
+      "setVisible(boolean)",
+      "pack()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Starts the TestRunner\r\n */\r\npublic void start(String[] args) {\r\n    String suiteName = processArguments(args);\r\n    fFrame = createUI(suiteName);\r\n    fFrame.pack();\r\n    fFrame.setVisible(true);\r\n    if (suiteName != null) {\r\n        setSuite(suiteName);\r\n        runSuite();\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Starts the TestRunner\r\n\t ",
+  "method_annotation": ""
+}

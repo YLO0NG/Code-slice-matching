@@ -1,0 +1,28 @@
+{
+  "className": "ImageFigure",
+  "methodName": "readObject",
+  "brief": "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+  "methodSignature": "readObject(ObjectInputStream)",
+  "sourceCode": "private void readObject(ObjectInputStream s)\n        throws ClassNotFoundException, IOException {\n\n        s.defaultReadObject();\n        Iconkit.instance().registerImage(fFileName);\n        fImage = null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ObjectInputStream"
+  ],
+  "dependentMethods": {
+    "java.io.ObjectInputStream": [
+      "defaultReadObject()"
+    ],
+    "CH.ifa.draw.util.Iconkit": [
+      "registerImage(String)",
+      "instance()"
+    ]
+  },
+  "full_method_info": "private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n    s.defaultReadObject();\n    Iconkit.instance().registerImage(fFileName);\n    fImage = null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

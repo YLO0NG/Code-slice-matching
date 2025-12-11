@@ -1,0 +1,32 @@
+{
+  "className": "ImageFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(\n            dr.readInt(),\n            dr.readInt(),\n            dr.readInt(),\n            dr.readInt());\n        fFileName = dr.readString();\n        Iconkit.instance().registerImage(fFileName);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readString()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "read(StorableInput)"
+    ],
+    "CH.ifa.draw.util.Iconkit": [
+      "registerImage(String)",
+      "instance()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the ImageFigure from a StorableInput. It registers the\n * referenced figure to be loaded from the Iconkit.\n * @see Iconkit#registerImage\n */\npublic void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n    fFileName = dr.readString();\n    Iconkit.instance().registerImage(fFileName);\n}",
+  "method_comment": "\n    * Reads the ImageFigure from a StorableInput. It registers the\n    * referenced figure to be loaded from the Iconkit.\n    * @see Iconkit#registerImage\n    ",
+  "method_annotation": ""
+}

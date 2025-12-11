@@ -1,0 +1,32 @@
+{
+  "className": "CustomSelectionTool",
+  "methodName": "adjustOffsets",
+  "brief": "private void adjustOffsets(Component comp, Point offsetPoint){}",
+  "methodSignature": "adjustOffsets(Component, Point)",
+  "sourceCode": "private void adjustOffsets(Component comp, Point offsetPoint) {\n\t\tif (comp != null) {\n\t\t\tPoint compLocation = comp.getLocation();\n\t\t\toffsetPoint.translate(compLocation.x, compLocation.y);\n\t\t\tadjustOffsets(comp.getParent(), offsetPoint);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Component",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": [
+      "getParent()",
+      "getLocation()"
+    ],
+    "java.awt.Point": [
+      "translate(int, int)"
+    ],
+    "CH.ifa.draw.contrib.CustomSelectionTool": [
+      "adjustOffsets(Component, Point)"
+    ]
+  },
+  "full_method_info": "/**\n * Internal MDI frames have offsets where a popup menu should be\n * shown (in JDK 1.2).\n * This method sums up iteratively all x and y offsets of all\n * parent compontents until the top parent component is reached.\n */\nprivate void adjustOffsets(Component comp, Point offsetPoint) {\n    if (comp != null) {\n        Point compLocation = comp.getLocation();\n        offsetPoint.translate(compLocation.x, compLocation.y);\n        adjustOffsets(comp.getParent(), offsetPoint);\n    }\n}",
+  "method_comment": "\n\t * Internal MDI frames have offsets where a popup menu should be\n\t * shown (in JDK 1.2).\n\t * This method sums up iteratively all x and y offsets of all\n\t * parent compontents until the top parent component is reached.\n\t ",
+  "method_annotation": ""
+}

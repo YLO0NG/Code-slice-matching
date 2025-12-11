@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "rerun",
+  "brief": "public void rerun(){}",
+  "methodSignature": "rerun()",
+  "sourceCode": "public void rerun() {\r\n\t\tint index= fFailureList.getSelectedIndex();\r\n\t\tif (index == -1)\r\n\t\t\treturn;\r\n\r\n\t\tTest test= (Test)fFailedTests.elementAt(index);\r\n\t\trerunTest(test);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.List": [
+      "getSelectedIndex()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)"
+    ],
+    "junit.awtui.TestRunner": [
+      "rerunTest(Test)"
+    ]
+  },
+  "full_method_info": "public void rerun() {\r\n    int index = fFailureList.getSelectedIndex();\r\n    if (index == -1)\r\n        return;\r\n    Test test = (Test) fFailedTests.elementAt(index);\r\n    rerunTest(test);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

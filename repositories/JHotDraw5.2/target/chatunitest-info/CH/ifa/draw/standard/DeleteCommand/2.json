@@ -1,0 +1,24 @@
+{
+  "className": "DeleteCommand",
+  "methodName": "DeleteCommand",
+  "brief": "public DeleteCommand(String name, DrawingView view){}",
+  "methodSignature": "DeleteCommand(String, DrawingView)",
+  "sourceCode": "public DeleteCommand(String name, DrawingView view) {\n        super(name, view);\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "public DeleteCommand(String name, DrawingView view) {\n    super(name, view);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

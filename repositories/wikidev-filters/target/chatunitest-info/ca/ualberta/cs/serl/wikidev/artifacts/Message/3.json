@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getAuthor",
+  "brief": "public String getAuthor(){}",
+  "methodSignature": "getAuthor()",
+  "sourceCode": "public String getAuthor() {\n\t\treturn author;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"author\"\n */\npublic String getAuthor() {\n    return author;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"author\"\n\t ",
+  "method_annotation": ""
+}

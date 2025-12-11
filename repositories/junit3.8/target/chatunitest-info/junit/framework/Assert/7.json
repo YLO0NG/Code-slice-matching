@@ -1,0 +1,26 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(Object expected, Object actual){}",
+  "methodSignature": "assertEquals(Object, Object)",
+  "sourceCode": "static public void assertEquals(Object expected, Object actual) {\r\n\t    assertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "junit.framework.Assert": [
+      "assertEquals(String, Object, Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two objects are equal. If they are not\r\n * an AssertionFailedError is thrown.\r\n */\r\nstatic public void assertEquals(Object expected, Object actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two objects are equal. If they are not\r\n\t * an AssertionFailedError is thrown.\r\n\t ",
+  "method_annotation": ""
+}

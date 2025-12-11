@@ -1,0 +1,24 @@
+{
+  "className": "ColorMap",
+  "methodName": "color",
+  "brief": "public static Color color(String name){}",
+  "methodSignature": "color(String)",
+  "sourceCode": "public static Color color(String name) {\n        for (int i = 0; i < fMap.length; i++)\n            if (fMap[i].fName.equals(name))\n                return fMap[i].fColor;\n\n\t    return Color.black;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ]
+  },
+  "full_method_info": "public static Color color(String name) {\n    for (int i = 0; i < fMap.length; i++) if (fMap[i].fName.equals(name))\n        return fMap[i].fColor;\n    return Color.black;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

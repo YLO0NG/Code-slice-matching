@@ -1,0 +1,22 @@
+{
+  "className": "SelectAreaTracker",
+  "methodName": "eraseRubberBand",
+  "brief": "private void eraseRubberBand()\r\n   {}",
+  "methodSignature": "eraseRubberBand()",
+  "sourceCode": "private void eraseRubberBand()\n    {\n        drawXORRect(fSelectGroup);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.SelectAreaTracker": [
+      "drawXORRect(Rectangle)"
+    ]
+  },
+  "full_method_info": "private void eraseRubberBand() {\n    drawXORRect(fSelectGroup);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

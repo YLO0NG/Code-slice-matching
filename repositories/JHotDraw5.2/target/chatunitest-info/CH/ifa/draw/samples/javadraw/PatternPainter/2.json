@@ -1,0 +1,22 @@
+{
+  "className": "PatternPainter",
+  "methodName": "PatternPainter",
+  "brief": "public PatternPainter(Image image){}",
+  "methodSignature": "PatternPainter(Image)",
+  "sourceCode": "public PatternPainter(Image image) {\n        fImage = image;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Image"
+  ],
+  "dependentMethods": {
+    "java.awt.Image": []
+  },
+  "full_method_info": "public PatternPainter(Image image) {\n    fImage = image;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

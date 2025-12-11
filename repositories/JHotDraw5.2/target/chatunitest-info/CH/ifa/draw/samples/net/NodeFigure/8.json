@@ -1,0 +1,22 @@
+{
+  "className": "NodeFigure",
+  "methodName": "connectors",
+  "brief": "private Vector connectors(){}",
+  "methodSignature": "connectors()",
+  "sourceCode": "private Vector connectors() {\n        if (fConnectors == null)\n            createConnectors();\n        return fConnectors;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "createConnectors()"
+    ]
+  },
+  "full_method_info": "/**\n */\nprivate Vector connectors() {\n    if (fConnectors == null)\n        createConnectors();\n    return fConnectors;\n}",
+  "method_comment": "\n     ",
+  "method_annotation": ""
+}

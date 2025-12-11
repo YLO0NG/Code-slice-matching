@@ -1,0 +1,22 @@
+{
+  "className": "DrawingChangeEvent",
+  "methodName": "getDrawing",
+  "brief": "public Drawing getDrawing(){}",
+  "methodSignature": "getDrawing()",
+  "sourceCode": "public Drawing getDrawing() {\n        return (Drawing)getSource();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.EventObject": [
+      "getSource()"
+    ]
+  },
+  "full_method_info": "/**\n *  Gets the changed drawing\n */\npublic Drawing getDrawing() {\n    return (Drawing) getSource();\n}",
+  "method_comment": "\n     *  Gets the changed drawing\n     ",
+  "method_annotation": ""
+}

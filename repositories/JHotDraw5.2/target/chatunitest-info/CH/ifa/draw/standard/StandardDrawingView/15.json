@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "addToSelection",
+  "brief": "public void addToSelection(Figure figure){}",
+  "methodSignature": "addToSelection(Figure)",
+  "sourceCode": "public void addToSelection(Figure figure) {\n        if (!fSelection.contains(figure)) {\n            fSelection.addElement(figure);\n            fSelectionHandles = null;\n            figure.invalidate();\n            selectionChanged();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "invalidate()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "contains(Object)"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionChanged()"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a figure to the current selection.\n */\npublic void addToSelection(Figure figure) {\n    if (!fSelection.contains(figure)) {\n        fSelection.addElement(figure);\n        fSelectionHandles = null;\n        figure.invalidate();\n        selectionChanged();\n    }\n}",
+  "method_comment": "\n     * Adds a figure to the current selection.\n     ",
+  "method_annotation": ""
+}

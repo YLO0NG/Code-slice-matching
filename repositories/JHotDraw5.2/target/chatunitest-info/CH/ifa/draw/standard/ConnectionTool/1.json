@@ -1,0 +1,46 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y)\r\n   {}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y)\n    {\n        int ex = e.getX();\n        int ey = e.getY();\n        fTarget = findConnectionStart(ex, ey, drawing());\n        if (fTarget != null) {\n            fStartConnector = findConnector(ex, ey, fTarget);\n            if (fStartConnector != null) {\n                Point p = new Point(ex, ey);\n                fConnection = createConnection();\n                fConnection.startPoint(p.x, p.y);\n                fConnection.endPoint(p.x, p.y);\n                view().add(fConnection);\n            }\n        }\n        else {\n            ConnectionFigure connection = findConnection(ex, ey, drawing());\n            if (connection != null) {\n                if (!connection.joinSegments(ex, ey)) {\n                    fSplitPoint = connection.splitSegment(ex, ey);\n                    fEditedConnection = connection;\n                } else {\n                    fEditedConnection = null;\n                }\n            }\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "createConnection()",
+      "findConnectionStart(int, int, Drawing)",
+      "findConnection(int, int, Drawing)",
+      "findConnector(int, int, Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "startPoint(int, int)",
+      "endPoint(int, int)",
+      "joinSegments(int, int)",
+      "splitSegment(int, int)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Manipulates connections in a context dependent way. If the\n * mouse down hits a figure start a new connection. If the mousedown\n * hits a connection split a segment or join two segments.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    int ex = e.getX();\n    int ey = e.getY();\n    fTarget = findConnectionStart(ex, ey, drawing());\n    if (fTarget != null) {\n        fStartConnector = findConnector(ex, ey, fTarget);\n        if (fStartConnector != null) {\n            Point p = new Point(ex, ey);\n            fConnection = createConnection();\n            fConnection.startPoint(p.x, p.y);\n            fConnection.endPoint(p.x, p.y);\n            view().add(fConnection);\n        }\n    } else {\n        ConnectionFigure connection = findConnection(ex, ey, drawing());\n        if (connection != null) {\n            if (!connection.joinSegments(ex, ey)) {\n                fSplitPoint = connection.splitSegment(ex, ey);\n                fEditedConnection = connection;\n            } else {\n                fEditedConnection = null;\n            }\n        }\n    }\n}",
+  "method_comment": "\n     * Manipulates connections in a context dependent way. If the\n     * mouse down hits a figure start a new connection. If the mousedown\n     * hits a connection split a segment or join two segments.\n     ",
+  "method_annotation": ""
+}

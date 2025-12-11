@@ -1,0 +1,20 @@
+{
+  "className": "PurchaseOrderAction",
+  "methodName": "setParameters",
+  "brief": "@Override\r\n\tpublic void setParameters( Map<String, String[]> parameters ){}",
+  "methodSignature": "setParameters(Map)",
+  "sourceCode": "@Override\n\tpublic void setParameters( Map<String, String[]> parameters ) {\n\t\tthis.parameters = parameters;\n\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Map<String,String[]>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "@Override\npublic void setParameters(Map<String, String[]> parameters) {\n    this.parameters = parameters;\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

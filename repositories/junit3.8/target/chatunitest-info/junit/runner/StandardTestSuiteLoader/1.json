@@ -1,0 +1,22 @@
+{
+  "className": "StandardTestSuiteLoader",
+  "methodName": "reload",
+  "brief": "public Class reload(Class aClass) throws ClassNotFoundException{}",
+  "methodSignature": "reload(Class)",
+  "sourceCode": "public Class reload(Class aClass) throws ClassNotFoundException {\r\n\t\treturn aClass;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Class"
+  ],
+  "dependentMethods": {
+    "java.lang.Class": []
+  },
+  "full_method_info": "/**\r\n * Uses the system class loader to load the test class\r\n */\r\npublic Class reload(Class aClass) throws ClassNotFoundException {\r\n    return aClass;\r\n}",
+  "method_comment": "\r\n\t * Uses the system class loader to load the test class\r\n\t ",
+  "method_annotation": ""
+}

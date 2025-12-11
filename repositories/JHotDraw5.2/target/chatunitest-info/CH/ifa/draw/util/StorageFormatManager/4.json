@@ -1,0 +1,18 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "getDefaultStorageFormat",
+  "brief": "public StorageFormat getDefaultStorageFormat(){}",
+  "methodSignature": "getDefaultStorageFormat()",
+  "sourceCode": "public StorageFormat getDefaultStorageFormat() {\n\t\treturn myDefaultStorageFormat;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the StorageFormat which is used as selected file format in a javax.swing.JFileChooser\n *\n * @return default storage format\n */\npublic StorageFormat getDefaultStorageFormat() {\n    return myDefaultStorageFormat;\n}",
+  "method_comment": "\n\t * Return the StorageFormat which is used as selected file format in a javax.swing.JFileChooser\n\t *\n\t * @return default storage format\n\t ",
+  "method_annotation": ""
+}

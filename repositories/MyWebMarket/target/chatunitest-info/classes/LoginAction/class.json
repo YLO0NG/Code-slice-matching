@@ -1,0 +1,57 @@
+{
+  "fullClassName": "classes.LoginAction",
+  "className": "LoginAction",
+  "index": 6,
+  "modifier": "[public ]",
+  "extend": "[ExampleSupport]",
+  "implement": "[]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class LoginAction",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import org.apache.log4j.Logger;",
+    "import org.hibernate.Criteria;",
+    "import org.hibernate.Session;",
+    "import org.hibernate.Transaction;",
+    "import org.hibernate.criterion.Restrictions;",
+    "import com.opensymphony.xwork2.ActionContext;"
+  ],
+  "fields": [
+    "private static Logger logger = Logger.getLogger(LoginAction.class);",
+    "private User user;"
+  ],
+  "superClasses": [
+    "ExampleSupport"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getUser()": "0",
+    "setUser(User)": "1",
+    "execute()": "2",
+    "logoff()": "3"
+  },
+  "methodsBrief": [
+    "public User getUser(){}",
+    "public void setUser( User user ){}",
+    "public String execute() throws Exception{}",
+    "public String logoff() throws Exception{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getUser()",
+    "setUser(User)"
+  ],
+  "getterSetterBrief": [
+    "public User getUser(){}",
+    "public void setUser( User user ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * $Id: Login.java 471756 2006-11-06 15:01:43Z husted $\n *\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *  http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\npackage classes;\n\nimport org.apache.log4j.Logger;\nimport org.hibernate.Criteria;\nimport org.hibernate.Session;\nimport org.hibernate.Transaction;\nimport org.hibernate.criterion.Restrictions;\nimport com.opensymphony.xwork2.ActionContext;\n\npublic class LoginAction extends ExampleSupport {\n\n    private static Logger logger = Logger.getLogger(LoginAction.class);\n\n    private User user;\n\n    public User getUser() {\n        return this.user;\n    }\n\n    public void setUser(User user) {\n        this.user = user;\n    }\n\n    public String execute() throws Exception {\n        // f:log\n        logger.info(\"Starting execute()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(User.class);\n        // f:hibernate\n        criteria.add(Restrictions.idEq(this.user.getUsername()));\n        // f:hibernate\n        criteria.add(Restrictions.eq(\"password\", this.user.getPassword()));\n        // f:hibernate\n        User user = (User) criteria.uniqueResult();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        if (user != null) {\n            ActionContext.getContext().getSession().put(SystemConstants.AUTHENTICATED_USER, user);\n            // f:log\n            logger.info(\"Finishing execute() -- Success\");\n            return SUCCESS;\n        }\n        this.addActionError(this.getText(\"login.failure\"));\n        // f:log\n        logger.info(\"Finishing execute() -- Failure\");\n        return INPUT;\n    }\n\n    public String logoff() throws Exception {\n        // f:log\n        logger.info(\"Starting logoff()\");\n        ActionContext.getContext().getSession().clear();\n        // f:log\n        logger.info(\"Finishing logoff()\");\n        return INPUT;\n    }\n}\n",
+  "classDeclarationCode": "public class LoginAction extends ExampleSupport {\n\n    private static Logger logger = Logger.getLogger(LoginAction.class);\n\n    private User user;\n\n    public User getUser() {\n        return this.user;\n    }\n\n    public void setUser(User user) {\n        this.user = user;\n    }\n\n    public String execute() throws Exception {\n        // f:log\n        logger.info(\"Starting execute()\");\n        // f:hibernate\n        Session sess = HibernateUtil.getSessionFactory().openSession();\n        // f:hibernate\n        Transaction t = sess.beginTransaction();\n        // f:hibernate\n        Criteria criteria = sess.createCriteria(User.class);\n        // f:hibernate\n        criteria.add(Restrictions.idEq(this.user.getUsername()));\n        // f:hibernate\n        criteria.add(Restrictions.eq(\"password\", this.user.getPassword()));\n        // f:hibernate\n        User user = (User) criteria.uniqueResult();\n        // f:hibernate\n        t.commit();\n        // f:hibernate\n        sess.close();\n        if (user != null) {\n            ActionContext.getContext().getSession().put(SystemConstants.AUTHENTICATED_USER, user);\n            // f:log\n            logger.info(\"Finishing execute() -- Success\");\n            return SUCCESS;\n        }\n        this.addActionError(this.getText(\"login.failure\"));\n        // f:log\n        logger.info(\"Finishing execute() -- Failure\");\n        return INPUT;\n    }\n\n    public String logoff() throws Exception {\n        // f:log\n        logger.info(\"Starting logoff()\");\n        ActionContext.getContext().getSession().clear();\n        // f:log\n        logger.info(\"Finishing logoff()\");\n        return INPUT;\n    }\n}",
+  "subClasses": []
+}

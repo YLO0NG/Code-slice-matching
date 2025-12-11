@@ -1,0 +1,32 @@
+{
+  "className": "NodeFigure",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        ConnectionFigure prototype = new LineConnection();\n        Vector handles = new Vector();\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.east(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.west(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.south(), prototype));\n        handles.addElement(new ConnectionHandle(this, RelativeLocator.north(), prototype));\n\n        handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n        return handles;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "CH.ifa.draw.standard.RelativeLocator": [
+      "north()",
+      "northEast()",
+      "south()",
+      "northWest()",
+      "west()",
+      "east()",
+      "southWest()",
+      "southEast()"
+    ]
+  },
+  "full_method_info": "public Vector handles() {\n    ConnectionFigure prototype = new LineConnection();\n    Vector handles = new Vector();\n    handles.addElement(new ConnectionHandle(this, RelativeLocator.east(), prototype));\n    handles.addElement(new ConnectionHandle(this, RelativeLocator.west(), prototype));\n    handles.addElement(new ConnectionHandle(this, RelativeLocator.south(), prototype));\n    handles.addElement(new ConnectionHandle(this, RelativeLocator.north(), prototype));\n    handles.addElement(new NullHandle(this, RelativeLocator.southEast()));\n    handles.addElement(new NullHandle(this, RelativeLocator.southWest()));\n    handles.addElement(new NullHandle(this, RelativeLocator.northEast()));\n    handles.addElement(new NullHandle(this, RelativeLocator.northWest()));\n    return handles;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "FigureChangeListener",
+  "methodName": "figureInvalidated",
+  "brief": "public void figureInvalidated(FigureChangeEvent e);",
+  "methodSignature": "figureInvalidated(FigureChangeEvent)",
+  "sourceCode": "public void figureInvalidated(FigureChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "/**\n *  Sent when an area is invalid\n */\npublic void figureInvalidated(FigureChangeEvent e);",
+  "method_comment": "\n     *  Sent when an area is invalid\n     ",
+  "method_annotation": ""
+}

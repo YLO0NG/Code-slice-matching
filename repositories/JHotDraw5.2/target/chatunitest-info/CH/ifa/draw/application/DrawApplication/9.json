@@ -1,0 +1,28 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createAlignmentMenu",
+  "brief": "protected JMenu createAlignmentMenu(){}",
+  "methodSignature": "createAlignmentMenu()",
+  "sourceCode": "protected JMenu createAlignmentMenu() {\n\t\tCommandMenu menu = new CommandMenu(\"Align\");\n\t\tmenu.add(new ToggleGridCommand(\"Toggle Snap to Grid\", view(), new Point(4,4)));\n\t\tmenu.addSeparator();\n\t\tmenu.add(new AlignCommand(\"Lefts\", view(), AlignCommand.LEFTS));\n\t\tmenu.add(new AlignCommand(\"Centers\", view(), AlignCommand.CENTERS));\n\t\tmenu.add(new AlignCommand(\"Rights\", view(), AlignCommand.RIGHTS));\n\t\tmenu.addSeparator();\n\t\tmenu.add(new AlignCommand(\"Tops\", view(), AlignCommand.TOPS));\n\t\tmenu.add(new AlignCommand(\"Middles\", view(), AlignCommand.MIDDLES));\n\t\tmenu.add(new AlignCommand(\"Bottoms\", view(), AlignCommand.BOTTOMS));\n\t\treturn menu;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ],
+    "javax.swing.JMenu": [
+      "addSeparator()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the alignment menu. Clients override this\n * method to add additional menu items.\n */\nprotected JMenu createAlignmentMenu() {\n    CommandMenu menu = new CommandMenu(\"Align\");\n    menu.add(new ToggleGridCommand(\"Toggle Snap to Grid\", view(), new Point(4, 4)));\n    menu.addSeparator();\n    menu.add(new AlignCommand(\"Lefts\", view(), AlignCommand.LEFTS));\n    menu.add(new AlignCommand(\"Centers\", view(), AlignCommand.CENTERS));\n    menu.add(new AlignCommand(\"Rights\", view(), AlignCommand.RIGHTS));\n    menu.addSeparator();\n    menu.add(new AlignCommand(\"Tops\", view(), AlignCommand.TOPS));\n    menu.add(new AlignCommand(\"Middles\", view(), AlignCommand.MIDDLES));\n    menu.add(new AlignCommand(\"Bottoms\", view(), AlignCommand.BOTTOMS));\n    return menu;\n}",
+  "method_comment": "\n     * Creates the alignment menu. Clients override this\n     * method to add additional menu items.\n     ",
+  "method_annotation": ""
+}

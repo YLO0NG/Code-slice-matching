@@ -1,0 +1,53 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.net.NetApp",
+  "className": "NetApp",
+  "index": 83,
+  "modifier": "[public ]",
+  "extend": "[DrawApplication]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.net",
+  "packageDeclaration": "package CH.ifa.draw.samples.net;",
+  "classSignature": "public  class NetApp",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.application.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "DrawApplication"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createTools(JToolBar)": "0",
+    "main(String[])": "1",
+    "NetApp()": "2"
+  },
+  "methodsBrief": [
+    "protected void createTools(JToolBar palette){}",
+    "public static void main(String[] args){}",
+    "NetApp(){}"
+  ],
+  "constructorSigs": [
+    "NetApp()"
+  ],
+  "constructorBrief": [
+    "NetApp(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)NetApp.java 5.2\n *\n */\npackage CH.ifa.draw.samples.net;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.util.*;\nimport java.io.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.application.*;\n\npublic class NetApp extends DrawApplication {\n\n    NetApp() {\n        super(\"Net\");\n    }\n\n    protected void createTools(JToolBar palette) {\n        super.createTools(palette);\n        Tool tool = new TextTool(view(), new NodeFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new CreationTool(view(), new NodeFigure());\n        palette.add(createToolButton(IMAGES + \"RECT\", \"Create Org Unit\", tool));\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n    }\n\n    // -- main -----------------------------------------------------------\n    public static void main(String[] args) {\n        DrawApplication window = new NetApp();\n        window.open();\n    }\n}\n",
+  "classDeclarationCode": "public class NetApp extends DrawApplication {\n\n    NetApp() {\n        super(\"Net\");\n    }\n\n    protected void createTools(JToolBar palette) {\n        super.createTools(palette);\n        Tool tool = new TextTool(view(), new NodeFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new CreationTool(view(), new NodeFigure());\n        palette.add(createToolButton(IMAGES + \"RECT\", \"Create Org Unit\", tool));\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n    }\n\n    // -- main -----------------------------------------------------------\n    public static void main(String[] args) {\n        DrawApplication window = new NetApp();\n        window.open();\n    }\n}",
+  "subClasses": []
+}

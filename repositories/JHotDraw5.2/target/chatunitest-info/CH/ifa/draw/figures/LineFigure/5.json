@@ -1,0 +1,26 @@
+{
+  "className": "LineFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner) {\n        setPoints(origin, corner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.figures.LineFigure": [
+      "setPoints(Point, Point)"
+    ]
+  },
+  "full_method_info": "public void basicDisplayBox(Point origin, Point corner) {\n    setPoints(origin, corner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

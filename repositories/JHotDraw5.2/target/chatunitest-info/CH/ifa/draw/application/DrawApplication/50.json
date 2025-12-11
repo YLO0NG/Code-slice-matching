@@ -1,0 +1,34 @@
+{
+  "className": "DrawApplication",
+  "methodName": "saveDrawing",
+  "brief": "protected void saveDrawing(StorageFormat storeFormat, String file){}",
+  "methodSignature": "saveDrawing(StorageFormat, String)",
+  "sourceCode": "protected void saveDrawing(StorageFormat storeFormat, String file) {\n        try {\n        \tsetDrawingTitle(storeFormat.store(file, drawing()));\n        }\n        catch (IOException e) {\n            showStatus(e.toString());\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormat",
+    "String"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormat": [
+      "store(String, Drawing)"
+    ],
+    "java.lang.String": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "showStatus(String)",
+      "drawing()",
+      "setDrawingTitle(String)"
+    ],
+    "java.lang.Throwable": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "/**\n * Save a Drawing in a file\n */\nprotected void saveDrawing(StorageFormat storeFormat, String file) {\n    try {\n        setDrawingTitle(storeFormat.store(file, drawing()));\n    } catch (IOException e) {\n        showStatus(e.toString());\n    }\n}",
+  "method_comment": "\n     * Save a Drawing in a file\n     ",
+  "method_annotation": ""
+}

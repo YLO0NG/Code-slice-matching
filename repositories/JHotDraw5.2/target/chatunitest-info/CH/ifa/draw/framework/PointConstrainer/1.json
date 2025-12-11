@@ -1,0 +1,18 @@
+{
+  "className": "PointConstrainer",
+  "methodName": "getStepX",
+  "brief": "public int getStepX();",
+  "methodSignature": "getStepX()",
+  "sourceCode": "public int getStepX();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the x offset to move an object.\n */\npublic int getStepX();",
+  "method_comment": "\n     * Gets the x offset to move an object.\n     ",
+  "method_annotation": ""
+}

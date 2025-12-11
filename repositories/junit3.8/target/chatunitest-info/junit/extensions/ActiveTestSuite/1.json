@@ -1,0 +1,32 @@
+{
+  "className": "ActiveTestSuite",
+  "methodName": "runTest",
+  "brief": "public void runTest(final Test test, final TestResult result){}",
+  "methodSignature": "runTest(Test, TestResult)",
+  "sourceCode": "public void runTest(final Test test, final TestResult result) {\r\n\t\tThread t= new Thread() {\r\n\t\t\tpublic void run() {\r\n\t\t\t\ttry {\r\n\t\t\t\t\t// inlined due to limitation in VA/Java \r\n\t\t\t\t\t//ActiveTestSuite.super.runTest(test, result);\r\n\t\t\t\t\ttest.run(result);\r\n\t\t\t\t} finally {\r\n\t\t\t\t\tActiveTestSuite.this.runFinished(test);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t};\r\n\t\tt.start();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [
+      "run(TestResult)"
+    ],
+    "junit.framework.TestResult": [],
+    "junit.extensions.ActiveTestSuite": [
+      "runFinished(Test)"
+    ],
+    "java.lang.Thread": [
+      "start()"
+    ]
+  },
+  "full_method_info": "public void runTest(final Test test, final TestResult result) {\r\n    Thread t = new Thread() {\r\n\r\n        public void run() {\r\n            try {\r\n                // inlined due to limitation in VA/Java\r\n                // ActiveTestSuite.super.runTest(test, result);\r\n                test.run(result);\r\n            } finally {\r\n                ActiveTestSuite.this.runFinished(test);\r\n            }\r\n        }\r\n    };\r\n    t.start();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,33 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "getFilteredTrace",
+  "brief": "public static String getFilteredTrace(Throwable t){}",
+  "methodSignature": "getFilteredTrace(Throwable)",
+  "sourceCode": "public static String getFilteredTrace(Throwable t) {\r\n\t\tStringWriter stringWriter= new StringWriter();\r\n\t\tPrintWriter writer= new PrintWriter(stringWriter);\r\n\t\tt.printStackTrace(writer);\r\n\t\tStringBuffer buffer= stringWriter.getBuffer();\r\n\t\tString trace= buffer.toString();\r\n\t\treturn BaseTestRunner.getFilteredTrace(trace);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "java.lang.Throwable": [
+      "printStackTrace(PrintWriter)"
+    ],
+    "java.io.StringWriter": [
+      "getBuffer()"
+    ],
+    "java.lang.StringBuffer": [
+      "toString()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getFilteredTrace(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns a filtered stack trace\r\n */\r\npublic static String getFilteredTrace(Throwable t) {\r\n    StringWriter stringWriter = new StringWriter();\r\n    PrintWriter writer = new PrintWriter(stringWriter);\r\n    t.printStackTrace(writer);\r\n    StringBuffer buffer = stringWriter.getBuffer();\r\n    String trace = buffer.toString();\r\n    return BaseTestRunner.getFilteredTrace(trace);\r\n}",
+  "method_comment": "\r\n\t * Returns a filtered stack trace\r\n\t ",
+  "method_annotation": ""
+}

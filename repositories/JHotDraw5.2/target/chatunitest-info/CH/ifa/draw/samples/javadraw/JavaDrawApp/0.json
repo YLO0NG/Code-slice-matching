@@ -1,0 +1,18 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "createApplication",
+  "brief": "protected DrawApplication createApplication(){}",
+  "methodSignature": "createApplication()",
+  "sourceCode": "protected DrawApplication createApplication() {\n\t\treturn new JavaDrawApp();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Factory method which create a new instance of this\n * application.\n *\n * @return\tnewly created application\n */\nprotected DrawApplication createApplication() {\n    return new JavaDrawApp();\n}",
+  "method_comment": "\n     * Factory method which create a new instance of this\n     * application.\n     *\n     * @return\tnewly created application\n     ",
+  "method_annotation": ""
+}

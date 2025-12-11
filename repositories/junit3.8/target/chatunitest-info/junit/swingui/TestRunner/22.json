@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "createBrowseButton",
+  "brief": "protected Component createBrowseButton(){}",
+  "methodSignature": "createBrowseButton()",
+  "sourceCode": "protected Component createBrowseButton() {\r\n\t\tJButton browse= new JButton(\"...\");\r\n\t\tbrowse.setToolTipText(\"Select a Test class\");\r\n\t\tbrowse.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\tbrowseTestClasses();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\treturn browse;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JComponent": [
+      "setToolTipText(String)"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "junit.swingui.TestRunner": [
+      "browseTestClasses()"
+    ]
+  },
+  "full_method_info": "protected Component createBrowseButton() {\r\n    JButton browse = new JButton(\"...\");\r\n    browse.setToolTipText(\"Select a Test class\");\r\n    browse.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            browseTestClasses();\r\n        }\r\n    });\r\n    return browse;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

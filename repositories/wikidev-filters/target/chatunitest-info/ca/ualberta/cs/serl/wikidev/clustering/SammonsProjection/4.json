@@ -1,0 +1,25 @@
+{
+  "className": "SammonsProjection",
+  "methodName": "Initialize",
+  "brief": "private void Initialize()\r\n{}",
+  "methodSignature": "Initialize()",
+  "sourceCode": "private void Initialize()\n\t{\n\t\t_distanceMatrix = CalculateDistanceMatrix();\n\n\t\t// Initialize random points for the projection:\n\t\tRandom rnd = new Random();\n\t\tdouble[][] projection = new double[this.Count][];\n\t\t\n\t\tfor (int i = 0; i < projection.length; i++)\n\t\t{\n\t\t\tdouble[] projectionI = new double[this.OutputDimension];\n\t\t\tprojection[i] = projectionI;\n\t\t\tfor (int j = 0; j < projectionI.length; j++)\n\t\t\t\tprojectionI[j] = rnd.nextDouble()*this.Count;\n\t\t}\n\t\tthis.Projection = projection;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.SammonsProjection": [
+      "CalculateDistanceMatrix()"
+    ],
+    "java.util.Random": [
+      "nextDouble()"
+    ]
+  },
+  "full_method_info": "private void Initialize() {\n    _distanceMatrix = CalculateDistanceMatrix();\n    // Initialize random points for the projection:\n    Random rnd = new Random();\n    double[][] projection = new double[this.Count][];\n    for (int i = 0; i < projection.length; i++) {\n        double[] projectionI = new double[this.OutputDimension];\n        projection[i] = projectionI;\n        for (int j = 0; j < projectionI.length; j++) projectionI[j] = rnd.nextDouble() * this.Count;\n    }\n    this.Projection = projection;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

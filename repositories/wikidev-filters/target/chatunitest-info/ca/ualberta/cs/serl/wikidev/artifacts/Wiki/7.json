@@ -1,0 +1,22 @@
+{
+  "className": "Wiki",
+  "methodName": "setPage_title",
+  "brief": "public void setPage_title(String page_title){}",
+  "methodSignature": "setPage_title(String)",
+  "sourceCode": "public void setPage_title(String page_title) {\n\t\tthis.page_title = page_title;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param page_title\n * @uml.property  name=\"page_title\"\n */\npublic void setPage_title(String page_title) {\n    this.page_title = page_title;\n}",
+  "method_comment": "\n\t * @param page_title\n\t * @uml.property  name=\"page_title\"\n\t ",
+  "method_annotation": ""
+}

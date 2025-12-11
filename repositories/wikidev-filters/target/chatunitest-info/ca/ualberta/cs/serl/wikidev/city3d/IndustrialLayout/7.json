@@ -1,0 +1,29 @@
+{
+  "className": "IndustrialLayout",
+  "methodName": "printDistanceMatrix",
+  "brief": "public static void printDistanceMatrix(double[][] distanceMatrix)\r\n\t\t\tthrows IOException{}",
+  "methodSignature": "printDistanceMatrix(double[][])",
+  "sourceCode": "public static void printDistanceMatrix(double[][] distanceMatrix)\n\t\t\tthrows IOException {\n\t\t// BufferedWriter out = new BufferedWriter(new\n\t\t// FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));\n\t\tBufferedWriter out = new BufferedWriter(\n\t\t\t\tnew FileWriter(\n\t\t\t\t\t\t\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\distances.txt\"));\n\t\tfor (int i = 0; i < distanceMatrix.length; i++) {\n\t\t\tfor (int j = 0; j < distanceMatrix.length; j++) {\n\t\t\t\tout.write(distanceMatrix[i][j] + \"\\t\");\n\t\t\t}\n\t\t\tout.newLine();\n\t\t}\n\t\tout.close();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "java.io.BufferedWriter": [
+      "newLine()",
+      "close()"
+    ]
+  },
+  "full_method_info": "public static void printDistanceMatrix(double[][] distanceMatrix) throws IOException {\n    // BufferedWriter out = new BufferedWriter(new\n    // FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));\n    BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\distances.txt\"));\n    for (int i = 0; i < distanceMatrix.length; i++) {\n        for (int j = 0; j < distanceMatrix.length; j++) {\n            out.write(distanceMatrix[i][j] + \"\\t\");\n        }\n        out.newLine();\n    }\n    out.close();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

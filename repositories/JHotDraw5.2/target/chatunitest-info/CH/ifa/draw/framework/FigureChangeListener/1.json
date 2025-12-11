@@ -1,0 +1,22 @@
+{
+  "className": "FigureChangeListener",
+  "methodName": "figureChanged",
+  "brief": "public void figureChanged(FigureChangeEvent e);",
+  "methodSignature": "figureChanged(FigureChangeEvent)",
+  "sourceCode": "public void figureChanged(FigureChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "/**\n * Sent when a figure changed\n */\npublic void figureChanged(FigureChangeEvent e);",
+  "method_comment": "\n     * Sent when a figure changed\n     ",
+  "method_annotation": ""
+}

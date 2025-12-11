@@ -1,0 +1,88 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.StandardLayouter",
+  "className": "StandardLayouter",
+  "index": 18,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Layouter]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class StandardLayouter",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Insets;",
+    "import java.awt.Point;",
+    "import java.awt.Rectangle;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.Figure;",
+    "import CH.ifa.draw.framework.FigureEnumeration;",
+    "import CH.ifa.draw.util.StorableInput;",
+    "import CH.ifa.draw.util.StorableOutput;"
+  ],
+  "fields": [
+    "private Layoutable myLayoutable;",
+    "private Insets myInsets;",
+    "static final long serialVersionUID = 2928651014089117493L;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Layouter"
+  ],
+  "methodSigs": {
+    "getLayoutable()": "0",
+    "setLayoutable(Layoutable)": "1",
+    "calculateLayout(Point, Point)": "2",
+    "layout(Point, Point)": "3",
+    "read(StorableInput)": "4",
+    "write(StorableOutput)": "5",
+    "setInsets(Insets)": "6",
+    "getInsets()": "7",
+    "StandardLayouter()": "8",
+    "StandardLayouter(Layoutable)": "9"
+  },
+  "methodsBrief": [
+    "public Layoutable getLayoutable(){}",
+    "public void setLayoutable(Layoutable newLayoutable){}",
+    "public Rectangle calculateLayout(Point origin, Point corner){}",
+    "public Rectangle layout(Point origin, Point corner){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public void write(StorableOutput dw){}",
+    "public void setInsets(Insets newInsets){}",
+    "public Insets getInsets(){}",
+    "public StandardLayouter(){}",
+    "public StandardLayouter(Layoutable newLayoutable){}"
+  ],
+  "constructorSigs": [
+    "StandardLayouter()",
+    "StandardLayouter(Layoutable)"
+  ],
+  "constructorBrief": [
+    "public StandardLayouter(){}",
+    "public StandardLayouter(Layoutable newLayoutable){}"
+  ],
+  "getterSetterSigs": [
+    "getLayoutable()",
+    "setLayoutable(Layoutable)",
+    "setInsets(Insets)",
+    "getInsets()"
+  ],
+  "getterSetterBrief": [
+    "public Layoutable getLayoutable(){}",
+    "public void setLayoutable(Layoutable newLayoutable){}",
+    "public void setInsets(Insets newInsets){}",
+    "public Insets getInsets(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.contrib.Layoutable": [],
+    "CH.ifa.draw.contrib.StandardLayouter": [
+      "setLayoutable(Layoutable)",
+      "setInsets(Insets)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)StandardLayouter.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Insets;\nimport java.awt.Point;\nimport java.awt.Rectangle;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.Figure;\nimport CH.ifa.draw.framework.FigureEnumeration;\nimport CH.ifa.draw.util.StorableInput;\nimport CH.ifa.draw.util.StorableOutput;\n\n/**\n * A StandardLayouter contains standard algorithm for\n * layouting a Layoutable. As a standard behaviour\n * all child components of a Layoutable are laid out\n * underneath each other starting from top to bottom while the\n * x position of all child components stays the same and the width\n * is forced to the width of the maximum width. At the end\n * the presentation figure of the Layoutable is\n * set to the maximum x and y size to encompass all contained\n * child components graphically as well.\n *\n * @author\tWolfram Kaiser\n */\npublic class StandardLayouter implements Layouter {\n\n    /**\n     * The Layoutable which should be laid out.\n     */\n    private Layoutable myLayoutable;\n\n    /**\n     * Insets to calculate a border\n     */\n    private Insets myInsets;\n\n    static final long serialVersionUID = 2928651014089117493L;\n\n    public StandardLayouter() {\n    }\n\n    public StandardLayouter(Layoutable newLayoutable) {\n        setInsets(new Insets(0, 0, 0, 0));\n        setLayoutable(newLayoutable);\n    }\n\n    /**\n     * Get the figure upon which the layout strategy operates.\n     *\n     * @return associated figure which should be laid out\n     */\n    public Layoutable getLayoutable() {\n        return myLayoutable;\n    }\n\n    /**\n     * Set the figure upon which the layout strategy operates.\n     *\n     * @param\tnewLayoutable\tLayoutable to be laid out\n     */\n    public void setLayoutable(Layoutable newLayoutable) {\n        myLayoutable = newLayoutable;\n    }\n\n    /*\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t * Insets are added for all non-top-level figures.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t */\n    public Rectangle calculateLayout(Point origin, Point corner) {\n        int maxWidth = Math.abs(corner.x - origin.x);\n        int maxHeight = 0;\n        // layout enclosed Layoutable and find maximum width\n        FigureEnumeration enumeration = getLayoutable().figures();\n        while (enumeration.hasMoreElements()) {\n            Figure currentFigure = enumeration.nextFigure();\n            Rectangle r = null;\n            if (currentFigure instanceof Layoutable) {\n                Layouter layoutStrategy = ((Layoutable) currentFigure).getLayouter();\n                r = layoutStrategy.calculateLayout(new Point(0, 0), new Point(0, 0));\n                // add insets to calculated rectangle\n                r.grow(layoutStrategy.getInsets().left + layoutStrategy.getInsets().right, layoutStrategy.getInsets().top + layoutStrategy.getInsets().bottom);\n            } else {\n                r = new Rectangle(currentFigure.displayBox().getBounds());\n            }\n            maxWidth = Math.max(maxWidth, r.width);\n            maxHeight += r.height;\n        }\n        return new Rectangle(origin.x, origin.y, maxWidth, maxHeight);\n    }\n\n    /**\n     * Method which lays out a figure. It is called by the figure\n     * if a layout task is to be performed. First, the layout dimension for\n     * the figure is calculated and then the figure is arranged newly.\n     * All child component are place beneath another. The figure and all\n     * its children are forced to the minimium width\n     *\n     * @param origin start point for the layout\n     * @param corner minimum corner point for the layout\n     */\n    public Rectangle layout(Point origin, Point corner) {\n        // calculate the layout of the figure and its sub-figures first\n        Rectangle r = calculateLayout(origin, corner);\n        int maxHeight = getInsets().top;\n        FigureEnumeration enumeration = getLayoutable().figures();\n        while (enumeration.hasMoreElements()) {\n            Figure currentFigure = enumeration.nextFigure();\n            Point partOrigin = new Point(r.x + getInsets().left, r.y + maxHeight);\n            Point partCorner = new Point(r.x + getInsets().left + r.width, r.y + currentFigure.displayBox().height);\n            currentFigure.displayBox(partOrigin, partCorner);\n            maxHeight += currentFigure.displayBox().height;\n        }\n        // the maximum width has been already calculated\n        return new Rectangle(r.x, r.y, r.x + r.width, r.y + maxHeight + getInsets().bottom);\n    }\n\n    /**\n     * Reads the contained figures from StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        setLayoutable((Layoutable) dr.readStorable());\n    }\n\n    /**\n     * Writes the contained figures to the StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        dw.writeStorable(getLayoutable());\n    }\n\n    /**\n     * Set the insets for spacing between the figure and its subfigures\n     *\n     * @param newInsets new spacing dimensions\n     */\n    public void setInsets(Insets newInsets) {\n        myInsets = newInsets;\n    }\n\n    /**\n     * Get the insets for spacing between the figure and its subfigures\n     *\n     * @return spacing dimensions\n     */\n    public Insets getInsets() {\n        return myInsets;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A StandardLayouter contains standard algorithm for\n * layouting a Layoutable. As a standard behaviour\n * all child components of a Layoutable are laid out\n * underneath each other starting from top to bottom while the\n * x position of all child components stays the same and the width\n * is forced to the width of the maximum width. At the end\n * the presentation figure of the Layoutable is\n * set to the maximum x and y size to encompass all contained\n * child components graphically as well.\n *\n * @author\tWolfram Kaiser\n */\npublic class StandardLayouter implements Layouter {\n\n    /**\n     * The Layoutable which should be laid out.\n     */\n    private Layoutable myLayoutable;\n\n    /**\n     * Insets to calculate a border\n     */\n    private Insets myInsets;\n\n    static final long serialVersionUID = 2928651014089117493L;\n\n    public StandardLayouter() {\n    }\n\n    public StandardLayouter(Layoutable newLayoutable) {\n        setInsets(new Insets(0, 0, 0, 0));\n        setLayoutable(newLayoutable);\n    }\n\n    /**\n     * Get the figure upon which the layout strategy operates.\n     *\n     * @return associated figure which should be laid out\n     */\n    public Layoutable getLayoutable() {\n        return myLayoutable;\n    }\n\n    /**\n     * Set the figure upon which the layout strategy operates.\n     *\n     * @param\tnewLayoutable\tLayoutable to be laid out\n     */\n    public void setLayoutable(Layoutable newLayoutable) {\n        myLayoutable = newLayoutable;\n    }\n\n    /*\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t * Insets are added for all non-top-level figures.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t */\n    public Rectangle calculateLayout(Point origin, Point corner) {\n        int maxWidth = Math.abs(corner.x - origin.x);\n        int maxHeight = 0;\n        // layout enclosed Layoutable and find maximum width\n        FigureEnumeration enumeration = getLayoutable().figures();\n        while (enumeration.hasMoreElements()) {\n            Figure currentFigure = enumeration.nextFigure();\n            Rectangle r = null;\n            if (currentFigure instanceof Layoutable) {\n                Layouter layoutStrategy = ((Layoutable) currentFigure).getLayouter();\n                r = layoutStrategy.calculateLayout(new Point(0, 0), new Point(0, 0));\n                // add insets to calculated rectangle\n                r.grow(layoutStrategy.getInsets().left + layoutStrategy.getInsets().right, layoutStrategy.getInsets().top + layoutStrategy.getInsets().bottom);\n            } else {\n                r = new Rectangle(currentFigure.displayBox().getBounds());\n            }\n            maxWidth = Math.max(maxWidth, r.width);\n            maxHeight += r.height;\n        }\n        return new Rectangle(origin.x, origin.y, maxWidth, maxHeight);\n    }\n\n    /**\n     * Method which lays out a figure. It is called by the figure\n     * if a layout task is to be performed. First, the layout dimension for\n     * the figure is calculated and then the figure is arranged newly.\n     * All child component are place beneath another. The figure and all\n     * its children are forced to the minimium width\n     *\n     * @param origin start point for the layout\n     * @param corner minimum corner point for the layout\n     */\n    public Rectangle layout(Point origin, Point corner) {\n        // calculate the layout of the figure and its sub-figures first\n        Rectangle r = calculateLayout(origin, corner);\n        int maxHeight = getInsets().top;\n        FigureEnumeration enumeration = getLayoutable().figures();\n        while (enumeration.hasMoreElements()) {\n            Figure currentFigure = enumeration.nextFigure();\n            Point partOrigin = new Point(r.x + getInsets().left, r.y + maxHeight);\n            Point partCorner = new Point(r.x + getInsets().left + r.width, r.y + currentFigure.displayBox().height);\n            currentFigure.displayBox(partOrigin, partCorner);\n            maxHeight += currentFigure.displayBox().height;\n        }\n        // the maximum width has been already calculated\n        return new Rectangle(r.x, r.y, r.x + r.width, r.y + maxHeight + getInsets().bottom);\n    }\n\n    /**\n     * Reads the contained figures from StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        setLayoutable((Layoutable) dr.readStorable());\n    }\n\n    /**\n     * Writes the contained figures to the StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        dw.writeStorable(getLayoutable());\n    }\n\n    /**\n     * Set the insets for spacing between the figure and its subfigures\n     *\n     * @param newInsets new spacing dimensions\n     */\n    public void setInsets(Insets newInsets) {\n        myInsets = newInsets;\n    }\n\n    /**\n     * Get the insets for spacing between the figure and its subfigures\n     *\n     * @return spacing dimensions\n     */\n    public Insets getInsets() {\n        return myInsets;\n    }\n}",
+  "subClasses": []
+}

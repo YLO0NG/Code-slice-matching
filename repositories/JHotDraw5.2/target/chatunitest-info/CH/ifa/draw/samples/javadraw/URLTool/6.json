@@ -1,0 +1,36 @@
+{
+  "className": "URLTool",
+  "methodName": "fieldBounds",
+  "brief": "private Rectangle fieldBounds(Figure figure){}",
+  "methodSignature": "fieldBounds(Figure)",
+  "sourceCode": "private Rectangle fieldBounds(Figure figure) {\n    \tRectangle box = figure.displayBox();\n        int nChars = Math.max(20, getURL(figure).length());\n        Dimension d = fTextField.getPreferredSize(nChars);\n        box.x = Math.max(0, box.x + (box.width - d.width)/2);\n        box.y = Math.max(0, box.y + (box.height - d.height)/2);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "java.lang.Math": [
+      "max(int, int)"
+    ],
+    "java.lang.String": [
+      "length()"
+    ],
+    "CH.ifa.draw.samples.javadraw.URLTool": [
+      "getURL(Figure)"
+    ],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "getPreferredSize(int)"
+    ]
+  },
+  "full_method_info": "private Rectangle fieldBounds(Figure figure) {\n    Rectangle box = figure.displayBox();\n    int nChars = Math.max(20, getURL(figure).length());\n    Dimension d = fTextField.getPreferredSize(nChars);\n    box.x = Math.max(0, box.x + (box.width - d.width) / 2);\n    box.y = Math.max(0, box.y + (box.height - d.height) / 2);\n    return new Rectangle(box.x, box.y, d.width, d.height);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

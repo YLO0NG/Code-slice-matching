@@ -1,0 +1,18 @@
+{
+  "className": "HibernateUtil",
+  "methodName": "buildSessionFactory",
+  "brief": "private static SessionFactory buildSessionFactory(){}",
+  "methodSignature": "buildSessionFactory()",
+  "sourceCode": "private static SessionFactory buildSessionFactory() {\n\t\treturn new Configuration().configure().buildSessionFactory();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "private static SessionFactory buildSessionFactory() {\n    return new Configuration().configure().buildSessionFactory();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "Assert",
+  "methodName": "assertFalse",
+  "brief": "static public void assertFalse(String message, boolean condition){}",
+  "methodSignature": "assertFalse(String, boolean)",
+  "sourceCode": "static public void assertFalse(String message, boolean condition) {\r\n\t\tassertTrue(message, !condition);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.framework.Assert": [
+      "assertTrue(String, boolean)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that a condition is false. If it isn't it throws\r\n * an AssertionFailedError with the given message.\r\n */\r\nstatic public void assertFalse(String message, boolean condition) {\r\n    assertTrue(message, !condition);\r\n}",
+  "method_comment": "\r\n\t * Asserts that a condition is false. If it isn't it throws\r\n\t * an AssertionFailedError with the given message.\r\n\t ",
+  "method_annotation": ""
+}

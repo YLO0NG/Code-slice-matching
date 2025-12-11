@@ -1,0 +1,31 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "collectFilesInRoots",
+  "brief": "Hashtable collectFilesInRoots(Vector roots){}",
+  "methodSignature": "collectFilesInRoots(Vector)",
+  "sourceCode": "Hashtable collectFilesInRoots(Vector roots) {\r\n\t\tHashtable result= new Hashtable(100);\r\n\t\tEnumeration e= roots.elements();\r\n\t\twhile (e.hasMoreElements()) \r\n\t\t\tgatherFiles(new File((String)e.nextElement()), \"\", result);\r\n\t\treturn result;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.runner.ClassPathTestCollector": [
+      "gatherFiles(File, String, Hashtable)"
+    ]
+  },
+  "full_method_info": "Hashtable collectFilesInRoots(Vector roots) {\r\n    Hashtable result = new Hashtable(100);\r\n    Enumeration e = roots.elements();\r\n    while (e.hasMoreElements()) gatherFiles(new File((String) e.nextElement()), \"\", result);\r\n    return result;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

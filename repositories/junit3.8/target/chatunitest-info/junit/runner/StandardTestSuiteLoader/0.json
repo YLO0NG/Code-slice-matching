@@ -1,0 +1,25 @@
+{
+  "className": "StandardTestSuiteLoader",
+  "methodName": "load",
+  "brief": "public Class load(String suiteClassName) throws ClassNotFoundException{}",
+  "methodSignature": "load(String)",
+  "sourceCode": "public Class load(String suiteClassName) throws ClassNotFoundException {\r\n\t\treturn Class.forName(suiteClassName);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Class": [
+      "forName(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Uses the system class loader to load the test class\r\n */\r\npublic Class load(String suiteClassName) throws ClassNotFoundException {\r\n    return Class.forName(suiteClassName);\r\n}",
+  "method_comment": "\r\n\t * Uses the system class loader to load the test class\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createSelectionTool",
+  "brief": "protected Tool createSelectionTool(){}",
+  "methodSignature": "createSelectionTool()",
+  "sourceCode": "protected Tool createSelectionTool() {\n        return new SelectionTool(view());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.applet.DrawApplet": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the selection tool used in this editor. Override to use\n * a custom selection tool.\n */\nprotected Tool createSelectionTool() {\n    return new SelectionTool(view());\n}",
+  "method_comment": "\n     * Creates the selection tool used in this editor. Override to use\n     * a custom selection tool.\n     ",
+  "method_annotation": ""
+}

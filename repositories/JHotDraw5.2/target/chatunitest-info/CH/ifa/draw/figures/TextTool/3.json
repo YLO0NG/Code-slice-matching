@@ -1,0 +1,25 @@
+{
+  "className": "TextTool",
+  "methodName": "deactivate",
+  "brief": "public void deactivate(){}",
+  "methodSignature": "deactivate()",
+  "sourceCode": "public void deactivate() {\n        super.deactivate();\n        endEdit();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractTool": [
+      "deactivate()"
+    ],
+    "CH.ifa.draw.figures.TextTool": [
+      "endEdit()"
+    ]
+  },
+  "full_method_info": "/**\n * Terminates the editing of a text figure.\n */\npublic void deactivate() {\n    super.deactivate();\n    endEdit();\n}",
+  "method_comment": "\n     * Terminates the editing of a text figure.\n     ",
+  "method_annotation": ""
+}

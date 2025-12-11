@@ -1,0 +1,23 @@
+{
+  "className": "Stemmer",
+  "methodName": "add",
+  "brief": "public void add(char[] w, int wLen)\r\n  {}",
+  "methodSignature": "add(char[], int)",
+  "sourceCode": "public void add(char[] w, int wLen)\n   {  if (i+wLen >= b.length)\n      {  char[] new_b = new char[i+wLen+INC];\n         for (int c = 0; c < i; c++) new_b[c] = b[c];\n         b = new_b;\n      }\n      for (int c = 0; c < wLen; c++) b[i++] = w[c];\n   }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "char[]",
+    "int"
+  ],
+  "dependentMethods": {
+    "char": []
+  },
+  "full_method_info": "/**\n * Adds wLen characters to the word being stemmed contained in a portion\n * of a char[] array. This is like repeated calls of add(char ch), but\n * faster.\n */\npublic void add(char[] w, int wLen) {\n    if (i + wLen >= b.length) {\n        char[] new_b = new char[i + wLen + INC];\n        for (int c = 0; c < i; c++) new_b[c] = b[c];\n        b = new_b;\n    }\n    for (int c = 0; c < wLen; c++) b[i++] = w[c];\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

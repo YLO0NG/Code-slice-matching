@@ -1,0 +1,28 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "chop",
+  "brief": "public static Point chop(Polygon poly, Point p){}",
+  "methodSignature": "chop(Polygon, Point)",
+  "sourceCode": "public static Point chop(Polygon poly, Point p) {\n    long sx = 0;\n\tlong sy = 0;\n\tint n = poly.npoints;\n\tfor (int i1 = 0; i1 < n; i1++) {\n\t  sx += poly.xpoints[i1];\n\t  sy += poly.ypoints[i1];\n\t}\n\tPoint ctr = new Point((int)(sx/n), (int)(sy/n));\n    int cx = -1;\n    int cy = -1;\n    long len = Long.MAX_VALUE;\n\n    // Try for points along edge\n\n    for (int i = 0; i < poly.npoints; ++i) {\n      int nxt = (i + 1) % poly.npoints;\n      Point chop = Geom.intersect(poly.xpoints[i],\n                             poly.ypoints[i],\n                             poly.xpoints[nxt],\n                             poly.ypoints[nxt],\n                             p.x,\n                             p.y,\n                             ctr.x,\n                             ctr.y);\n      if (chop != null) {\n        long cl = Geom.length2(chop.x, chop.y, p.x, p.y);\n        if (cl < len) {\n          len = cl;\n          cx = chop.x;\n          cy = chop.y;\n        }\n      }\n    }\n    // if none found, pick closest vertex\n    //if (len ==  Long.MAX_VALUE) {\n    { // try anyway\n      for (int i = 0; i < poly.npoints; ++i) {\n        long l = Geom.length2(poly.xpoints[i], poly.ypoints[i], p.x, p.y);\n        if (l < len) {\n          len = l;\n          cx = poly.xpoints[i];\n          cy = poly.ypoints[i];\n        }\n      }\n    }\n    return new Point(cx, cy);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Polygon",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": [],
+    "java.awt.Point": [],
+    "CH.ifa.draw.util.Geom": [
+      "length2(int, int, int, int)",
+      "intersect(int, int, int, int, int, int, int, int)"
+    ]
+  },
+  "full_method_info": "public static Point chop(Polygon poly, Point p) {\n    long sx = 0;\n    long sy = 0;\n    int n = poly.npoints;\n    for (int i1 = 0; i1 < n; i1++) {\n        sx += poly.xpoints[i1];\n        sy += poly.ypoints[i1];\n    }\n    Point ctr = new Point((int) (sx / n), (int) (sy / n));\n    int cx = -1;\n    int cy = -1;\n    long len = Long.MAX_VALUE;\n    // Try for points along edge\n    for (int i = 0; i < poly.npoints; ++i) {\n        int nxt = (i + 1) % poly.npoints;\n        Point chop = Geom.intersect(poly.xpoints[i], poly.ypoints[i], poly.xpoints[nxt], poly.ypoints[nxt], p.x, p.y, ctr.x, ctr.y);\n        if (chop != null) {\n            long cl = Geom.length2(chop.x, chop.y, p.x, p.y);\n            if (cl < len) {\n                len = cl;\n                cx = chop.x;\n                cy = chop.y;\n            }\n        }\n    }\n    // if none found, pick closest vertex\n    // if (len ==  Long.MAX_VALUE) {\n    {\n        // try anyway\n        for (int i = 0; i < poly.npoints; ++i) {\n            long l = Geom.length2(poly.xpoints[i], poly.ypoints[i], p.x, p.y);\n            if (l < len) {\n                len = l;\n                cx = poly.xpoints[i];\n                cy = poly.ypoints[i];\n            }\n        }\n    }\n    return new Point(cx, cy);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

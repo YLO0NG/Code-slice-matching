@@ -1,0 +1,32 @@
+{
+  "className": "PertFigure",
+  "methodName": "hasCycle",
+  "brief": "public boolean hasCycle(Figure start){}",
+  "methodSignature": "hasCycle(Figure)",
+  "sourceCode": "public boolean hasCycle(Figure start) {\n        if (start == this)\n            return true;\n        Enumeration i = fPreTasks.elements();\n        while (i.hasMoreElements()) {\n            if (((PertFigure) i.nextElement()).hasCycle(start))\n                return true;\n        }\n        return false;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "hasCycle(Figure)"
+    ]
+  },
+  "full_method_info": "public boolean hasCycle(Figure start) {\n    if (start == this)\n        return true;\n    Enumeration i = fPreTasks.elements();\n    while (i.hasMoreElements()) {\n        if (((PertFigure) i.nextElement()).hasCycle(start))\n            return true;\n    }\n    return false;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

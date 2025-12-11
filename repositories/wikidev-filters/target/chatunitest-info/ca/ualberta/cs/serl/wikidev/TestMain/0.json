@@ -1,0 +1,46 @@
+{
+  "className": "TestMain",
+  "methodName": "main",
+  "brief": "public static void main(String[] args){}",
+  "methodSignature": "main(String[])",
+  "sourceCode": "public static void main(String[] args) {\n\t\ttry {\n\t\t\tString[] args2 = {\"jdbc:mysql://hypatia.cs.ualberta.ca/wikidev_ucosp\", \"fokaefs\", \"filimon9786#7@gr\", \"2009-09-01 00:00:00\", \"2010-01-01 00:00:00\", \"1\", \"weekly\", \"-lb\", \"0.05\", \"-ub\", \"0.95\", \"-i\", \"0.05\"};\n\t\t\tInvocationParser ip = new InvocationParser();\n\t\t\tip.parseArgs(args2);\n\t\t\tString databaseName = ip.getDatabaseName();\n\t\t\tString username = ip.getUsername();\n\t\t\tString password = ip.getPassword();\n\t\t\tDataManager.openTheConnection(username, password, databaseName);\n\t\t\t/*ArrayList<CommunicationBuildingData> buildings = DataManager.getCommunicationsBuildingHistory(\"Message\", 99, 1);\n\t\t\tClusterData clustered = DataManager.getClusteredBuildings(buildings.get(buildings.size()-1));\n\t\t\tint countComm=0;\n\t\t\tint countFile=0;\n\t\t\tfor(BuildingData data : clustered.getBuildings().keySet()) {\n\t\t\t\t\n\t\t\t\tif (data instanceof CommunicationBuildingData) {\n\t\t\t\t\tCommunicationBuildingData commData = (CommunicationBuildingData)data;\n\t\t\t\t\tSystem.out.println(commData.getType()+commData.getArtifact_id()+\"\\t\"+clustered.getBuildings().get(data)+\"\\t\"+commData.getWeek());\n\t\t\t\t\tcountComm++;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tcountFile++;\n\t\t\t\t}\n\t\t\t}*/\n\t\t\tTimestamp start = Timestamp.valueOf(\"2009-09-01 00:00:00\");\n\t\t\tTimestamp firstWeek = new Timestamp(start.getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS);\n\t\t\tArrayList<CommunicationBuildingData> buildings = DataManager.getCommmunicationCitySnapshot(firstWeek, 1);\n\t\t\tfor(CommunicationBuildingData building : buildings) {\n\t\t\t\tSystem.out.println(building.toString());\n\t\t\t}\n\t\t\t/*System.out.println(clustered.getTerms().size());\n\t\t\tfor(String term : clustered.getTerms().keySet()) {\n\t\t\t\tSystem.out.println(term+\" \"+clustered.getTerms().get(term));\n\t\t\t}\n\t\t\tSystem.out.println(countComm);\n\t\t\tSystem.out.println(countFile);*/\n\t\t\t\n\t\t\tDataManager.closeTheConnection();\n\t\t\tSystem.out.println(\"Success!!!\");\n\t\t} catch (SQLException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t} catch (Exception e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}\n\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.InvocationParser": [
+      "getPassword()",
+      "getUsername()",
+      "parseArgs(String[])",
+      "getDatabaseName()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "closeTheConnection()",
+      "getCommmunicationCitySnapshot(Timestamp, int)",
+      "openTheConnection(String, String, String)"
+    ],
+    "java.sql.Timestamp": [
+      "valueOf(String)",
+      "getTime()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.CommunicationBuildingData": [
+      "toString()"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ]
+  },
+  "full_method_info": "/**\n * @param args\n */\npublic static void main(String[] args) {\n    try {\n        String[] args2 = { \"jdbc:mysql://hypatia.cs.ualberta.ca/wikidev_ucosp\", \"fokaefs\", \"filimon9786#7@gr\", \"2009-09-01 00:00:00\", \"2010-01-01 00:00:00\", \"1\", \"weekly\", \"-lb\", \"0.05\", \"-ub\", \"0.95\", \"-i\", \"0.05\" };\n        InvocationParser ip = new InvocationParser();\n        ip.parseArgs(args2);\n        String databaseName = ip.getDatabaseName();\n        String username = ip.getUsername();\n        String password = ip.getPassword();\n        DataManager.openTheConnection(username, password, databaseName);\n        /*ArrayList<CommunicationBuildingData> buildings = DataManager.getCommunicationsBuildingHistory(\"Message\", 99, 1);\n\t\t\tClusterData clustered = DataManager.getClusteredBuildings(buildings.get(buildings.size()-1));\n\t\t\tint countComm=0;\n\t\t\tint countFile=0;\n\t\t\tfor(BuildingData data : clustered.getBuildings().keySet()) {\n\t\t\t\t\n\t\t\t\tif (data instanceof CommunicationBuildingData) {\n\t\t\t\t\tCommunicationBuildingData commData = (CommunicationBuildingData)data;\n\t\t\t\t\tSystem.out.println(commData.getType()+commData.getArtifact_id()+\"\\t\"+clustered.getBuildings().get(data)+\"\\t\"+commData.getWeek());\n\t\t\t\t\tcountComm++;\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tcountFile++;\n\t\t\t\t}\n\t\t\t}*/\n        Timestamp start = Timestamp.valueOf(\"2009-09-01 00:00:00\");\n        Timestamp firstWeek = new Timestamp(start.getTime() + DataManager.WEEK_INTERVAL_IN_MILLIS);\n        ArrayList<CommunicationBuildingData> buildings = DataManager.getCommmunicationCitySnapshot(firstWeek, 1);\n        for (CommunicationBuildingData building : buildings) {\n            System.out.println(building.toString());\n        }\n        /*System.out.println(clustered.getTerms().size());\n\t\t\tfor(String term : clustered.getTerms().keySet()) {\n\t\t\t\tSystem.out.println(term+\" \"+clustered.getTerms().get(term));\n\t\t\t}\n\t\t\tSystem.out.println(countComm);\n\t\t\tSystem.out.println(countFile);*/\n        DataManager.closeTheConnection();\n        System.out.println(\"Success!!!\");\n    } catch (SQLException e) {\n        // TODO Auto-generated catch block\n        e.printStackTrace();\n    } catch (Exception e) {\n        // TODO Auto-generated catch block\n        e.printStackTrace();\n    }\n}",
+  "method_comment": "\n\t * @param args\n\t ",
+  "method_annotation": ""
+}

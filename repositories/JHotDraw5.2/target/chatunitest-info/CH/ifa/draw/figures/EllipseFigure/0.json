@@ -1,0 +1,22 @@
+{
+  "className": "EllipseFigure",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        Vector handles = new Vector();\n        BoxHandleKit.addHandles(this, handles);\n        return handles;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.BoxHandleKit": [
+      "addHandles(Figure, Vector)"
+    ]
+  },
+  "full_method_info": "public Vector handles() {\n    Vector handles = new Vector();\n    BoxHandleKit.addHandles(this, handles);\n    return handles;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

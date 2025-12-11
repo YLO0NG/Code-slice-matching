@@ -1,0 +1,70 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.Document",
+  "className": "Document",
+  "index": 35,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev;",
+  "classSignature": "public class Document",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Set;",
+    "import java.util.TreeMap;"
+  ],
+  "fields": [
+    "private Set<String> terms;",
+    "private TreeMap<String, Double> tfidf;",
+    "private String name;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "contains(String)": "0",
+    "getTerms()": "1",
+    "getTfidf()": "2",
+    "setTfidf(TreeMap)": "3",
+    "getName()": "4",
+    "setName(String)": "5",
+    "Document(Set, String)": "6"
+  },
+  "methodsBrief": [
+    "public boolean contains(String term){}",
+    "public Set<String> getTerms(){}",
+    "public TreeMap<String, Double> getTfidf(){}",
+    "public void setTfidf(TreeMap<String, Double> tfidf){}",
+    "public String getName(){}",
+    "public void setName(String name){}",
+    "public Document(Set<String> terms, String name){}"
+  ],
+  "constructorSigs": [
+    "Document(Set, String)"
+  ],
+  "constructorBrief": [
+    "public Document(Set<String> terms, String name){}"
+  ],
+  "getterSetterSigs": [
+    "getTerms()",
+    "getTfidf()",
+    "setTfidf(TreeMap)",
+    "getName()",
+    "setName(String)"
+  ],
+  "getterSetterBrief": [
+    "public Set<String> getTerms(){}",
+    "public TreeMap<String, Double> getTfidf(){}",
+    "public void setTfidf(TreeMap<String, Double> tfidf){}",
+    "public String getName(){}",
+    "public void setName(String name){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev;\n\nimport java.util.Set;\nimport java.util.TreeMap;\n\npublic class Document {\n\n    /**\n     * @uml.property  name=\"terms\"\n     * @uml.associationEnd  multiplicity=\"(0 -1)\" elementType=\"java.lang.String\"\n     */\n    private Set<String> terms;\n\n    /**\n     * @uml.property  name=\"tfidf\"\n     * @uml.associationEnd  qualifier=\"term:java.lang.String java.lang.Double\"\n     */\n    private TreeMap<String, Double> tfidf;\n\n    /**\n     * @uml.property  name=\"name\"\n     */\n    private String name;\n\n    public Document(Set<String> terms, String name) {\n        this.terms = terms;\n        this.name = name;\n    }\n\n    public boolean contains(String term) {\n        return terms.contains(term);\n    }\n\n    public Set<String> getTerms() {\n        return terms;\n    }\n\n    public TreeMap<String, Double> getTfidf() {\n        return tfidf;\n    }\n\n    public void setTfidf(TreeMap<String, Double> tfidf) {\n        this.tfidf = tfidf;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}\n",
+  "classDeclarationCode": "public class Document {\n\n    /**\n     * @uml.property  name=\"terms\"\n     * @uml.associationEnd  multiplicity=\"(0 -1)\" elementType=\"java.lang.String\"\n     */\n    private Set<String> terms;\n\n    /**\n     * @uml.property  name=\"tfidf\"\n     * @uml.associationEnd  qualifier=\"term:java.lang.String java.lang.Double\"\n     */\n    private TreeMap<String, Double> tfidf;\n\n    /**\n     * @uml.property  name=\"name\"\n     */\n    private String name;\n\n    public Document(Set<String> terms, String name) {\n        this.terms = terms;\n        this.name = name;\n    }\n\n    public boolean contains(String term) {\n        return terms.contains(term);\n    }\n\n    public Set<String> getTerms() {\n        return terms;\n    }\n\n    public TreeMap<String, Double> getTfidf() {\n        return tfidf;\n    }\n\n    public void setTfidf(TreeMap<String, Double> tfidf) {\n        this.tfidf = tfidf;\n    }\n\n    public String getName() {\n        return name;\n    }\n\n    public void setName(String name) {\n        this.name = name;\n    }\n}",
+  "subClasses": []
+}

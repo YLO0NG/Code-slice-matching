@@ -1,0 +1,27 @@
+{
+  "className": "StandardLayouter",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n\t\tdw.writeStorable(getLayoutable());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.contrib.StandardLayouter": [
+      "getLayoutable()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes the contained figures to the StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    dw.writeStorable(getLayoutable());\n}",
+  "method_comment": "\n\t * Writes the contained figures to the StorableOutput.\n\t ",
+  "method_annotation": ""
+}

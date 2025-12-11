@@ -1,0 +1,18 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "connectionInsets",
+  "brief": "public Insets connectionInsets(){}",
+  "methodSignature": "connectionInsets()",
+  "sourceCode": "public Insets connectionInsets() {\n        return new Insets(0, 0, 0, 0);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the connection inset. The connection inset\n * defines the area where the display box of a\n * figure can't be connected. By default the entire\n * display box can be connected.\n */\npublic Insets connectionInsets() {\n    return new Insets(0, 0, 0, 0);\n}",
+  "method_comment": "\n     * Returns the connection inset. The connection inset\n     * defines the area where the display box of a\n     * figure can't be connected. By default the entire\n     * display box can be connected.\n     *\n     ",
+  "method_annotation": ""
+}

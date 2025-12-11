@@ -1,0 +1,38 @@
+{
+  "className": "DataManager",
+  "methodName": "writeCluster",
+  "brief": "public static void writeCluster(Cluster cluster) throws SQLException{}",
+  "methodSignature": "writeCluster(Cluster)",
+  "sourceCode": "public static void writeCluster(Cluster cluster) throws SQLException {\n    \tProject project = DataManager.getProjectByID(cluster.getProject());\n        String sqlStmt = QueryBuilder.insertIntoClusters(cluster, project.getProjectName());\n        statement.executeUpdate(sqlStmt);\n        DataManager.writeArtifactInCluster(cluster);\n        DataManager.writeUserInCluster(cluster);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Cluster"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getProject()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "writeArtifactInCluster(Cluster)",
+      "writeUserInCluster(Cluster)",
+      "getProjectByID(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "insertIntoClusters(Cluster, String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectName()"
+    ],
+    "java.sql.Statement": [
+      "executeUpdate(String)"
+    ]
+  },
+  "full_method_info": "public static void writeCluster(Cluster cluster) throws SQLException {\n    Project project = DataManager.getProjectByID(cluster.getProject());\n    String sqlStmt = QueryBuilder.insertIntoClusters(cluster, project.getProjectName());\n    statement.executeUpdate(sqlStmt);\n    DataManager.writeArtifactInCluster(cluster);\n    DataManager.writeUserInCluster(cluster);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

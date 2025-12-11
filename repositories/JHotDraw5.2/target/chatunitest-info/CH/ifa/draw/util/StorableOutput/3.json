@@ -1,0 +1,27 @@
+{
+  "className": "StorableOutput",
+  "methodName": "writeDouble",
+  "brief": "public void writeDouble(double d){}",
+  "methodSignature": "writeDouble(double)",
+  "sourceCode": "public void writeDouble(double d) {\n        fStream.print(d);\n        space();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {
+    "java.io.PrintWriter": [
+      "print(double)"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "space()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes an int to the output stream.\n */\npublic void writeDouble(double d) {\n    fStream.print(d);\n    space();\n}",
+  "method_comment": "\n     * Writes an int to the output stream.\n     ",
+  "method_annotation": ""
+}

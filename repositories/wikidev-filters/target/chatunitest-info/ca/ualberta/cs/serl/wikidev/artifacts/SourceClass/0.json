@@ -1,0 +1,18 @@
+{
+  "className": "SourceClass",
+  "methodName": "getClassName",
+  "brief": "public String getClassName(){}",
+  "methodSignature": "getClassName()",
+  "sourceCode": "public String getClassName() {\n\t\treturn className;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"className\"\n */\npublic String getClassName() {\n    return className;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"className\"\n\t ",
+  "method_annotation": ""
+}

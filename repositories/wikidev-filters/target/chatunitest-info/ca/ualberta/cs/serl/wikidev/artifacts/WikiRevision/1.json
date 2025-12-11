@@ -1,0 +1,20 @@
+{
+  "className": "WikiRevision",
+  "methodName": "setRev_id",
+  "brief": "public void setRev_id(int rev_id){}",
+  "methodSignature": "setRev_id(int)",
+  "sourceCode": "public void setRev_id(int rev_id) {\n\t\tthis.rev_id = rev_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param rev_id\n * @uml.property  name=\"rev_id\"\n */\npublic void setRev_id(int rev_id) {\n    this.rev_id = rev_id;\n}",
+  "method_comment": "\n\t * @param rev_id\n\t * @uml.property  name=\"rev_id\"\n\t ",
+  "method_annotation": ""
+}

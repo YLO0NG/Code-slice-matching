@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.framework.Assert",
+  "targetMethod": "assertEquals(String, Object, Object)",
+  "dependentFields": {
+    "junit.framework.Assert": ""
+  },
+  "dependentMethods": {
+    "junit.framework.Assert": "static public void fail(String message){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.Assert": "* Fails a test with the given message.\r\n\t \nstatic public void fail(String message) {\r\n\t\tthrow new AssertionFailedError(message);\r\n\t}"
+  }
+}

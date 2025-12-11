@@ -1,0 +1,37 @@
+{
+  "className": "ActionTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n        Figure target = drawing().findFigure(x, y);\n        if (target != null) {\n            view().addToSelection(target);\n            action(target);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigure(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "addToSelection(Figure)"
+    ],
+    "CH.ifa.draw.standard.ActionTool": [
+      "action(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Add the touched figure to the selection an invoke action\n * @see #action\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    Figure target = drawing().findFigure(x, y);\n    if (target != null) {\n        view().addToSelection(target);\n        action(target);\n    }\n}",
+  "method_comment": "\n     * Add the touched figure to the selection an invoke action\n     * @see #action\n     ",
+  "method_annotation": ""
+}

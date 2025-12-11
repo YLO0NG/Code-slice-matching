@@ -1,0 +1,46 @@
+{
+  "className": "TestRunner",
+  "methodName": "terminate",
+  "brief": "public void terminate(){}",
+  "methodSignature": "terminate()",
+  "sourceCode": "public void terminate() {\r\n\t\tfFrame.dispose();\r\n\t\ttry {\r\n\t\t\t/*{*/BufferedWriter bw= new BufferedWriter(new FileWriter(getSettingsFile()));\r\n\t\t\ttry {\r\n\t\t\t\tfor (int i= 0; i < fSuiteCombo.getItemCount(); i++) {\r\n\t\t\t\t\tString testsuite= fSuiteCombo.getItemAt(i).toString();\r\n\t\t\t\t\tbw.write(testsuite, 0, testsuite.length());\r\n\t\t\t\t\tbw.newLine();\r\n\t\t\t\t}\r\n\t\t\t} finally {\r\n\t\t\t\tbw.close();\r\n\t\t\t}/*}*/\r\n\t\t} catch (IOException e) {\r\n\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t}\r\n\t\tSystem.exit(0);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Window": [
+      "dispose()"
+    ],
+    "junit.swingui.TestRunner": [
+      "getSettingsFile()"
+    ],
+    "javax.swing.JComboBox": [
+      "getItemAt(int)",
+      "getItemCount()"
+    ],
+    "java.lang.Object": [
+      "toString()"
+    ],
+    "java.io.BufferedWriter": [
+      "write(String, int, int)",
+      "newLine()",
+      "close()"
+    ],
+    "java.lang.String": [
+      "length()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Terminates the TestRunner\r\n */\r\npublic void terminate() {\r\n    fFrame.dispose();\r\n    try {\r\n        /*{*/\r\n        BufferedWriter bw = new BufferedWriter(new FileWriter(getSettingsFile()));\r\n        try {\r\n            for (int i = 0; i < fSuiteCombo.getItemCount(); i++) {\r\n                String testsuite = fSuiteCombo.getItemAt(i).toString();\r\n                bw.write(testsuite, 0, testsuite.length());\r\n                bw.newLine();\r\n            }\r\n        } finally {\r\n            bw.close();\r\n        }\r\n        /*}*/\r\n    } catch (IOException e) {\r\n        System.out.println(\"Couldn't save test run history\");\r\n    }\r\n    System.exit(0);\r\n}",
+  "method_comment": "\r\n\t * Terminates the TestRunner\r\n\t ",
+  "method_annotation": ""
+}

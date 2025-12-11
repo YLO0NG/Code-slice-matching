@@ -1,0 +1,69 @@
+{
+  "fullClassName": "junit.awtui.Logo",
+  "className": "Logo",
+  "index": 1,
+  "modifier": "[public ]",
+  "extend": "[Canvas]",
+  "implement": "[]",
+  "packageName": "junit.awtui",
+  "packageDeclaration": "package junit.awtui;",
+  "classSignature": "public class Logo",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.image.*;",
+    "import java.net.URL;",
+    "import junit.runner.BaseTestRunner;"
+  ],
+  "fields": [
+    "private Image fImage;",
+    "private int fWidth;",
+    "private int fHeight;"
+  ],
+  "superClasses": [
+    "Canvas"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "loadImage(String)": "0",
+    "paint(Graphics)": "1",
+    "paintBackground(java.awt.Graphics)": "2",
+    "Logo()": "3"
+  },
+  "methodsBrief": [
+    "public Image loadImage(String name){}",
+    "public void paint(Graphics g){}",
+    "public void paintBackground( java.awt.Graphics g){}",
+    "public Logo(){}"
+  ],
+  "constructorSigs": [
+    "Logo()"
+  ],
+  "constructorBrief": [
+    "public Logo(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "junit.awtui.Logo": [
+      "loadImage(String)"
+    ],
+    "java.awt.MediaTracker": [
+      "addImage(Image, int)",
+      "waitForAll()"
+    ],
+    "java.awt.Image": [
+      "getWidth(ImageObserver)",
+      "getHeight(ImageObserver)"
+    ],
+    "java.awt.Component": [
+      "setSize(int, int)"
+    ]
+  },
+  "compilationUnitCode": "package junit.awtui;\r\n\r\nimport java.awt.*;\r\nimport java.awt.image.*;\r\nimport java.net.URL;\r\nimport junit.runner.BaseTestRunner;\r\n\r\npublic class Logo extends Canvas {\r\n\r\n    private Image fImage;\r\n\r\n    private int fWidth;\r\n\r\n    private int fHeight;\r\n\r\n    public Logo() {\r\n        fImage = loadImage(\"logo.gif\");\r\n        MediaTracker tracker = new MediaTracker(this);\r\n        tracker.addImage(fImage, 0);\r\n        try {\r\n            tracker.waitForAll();\r\n        } catch (Exception e) {\r\n        }\r\n        if (fImage != null) {\r\n            fWidth = fImage.getWidth(this);\r\n            fHeight = fImage.getHeight(this);\r\n        } else {\r\n            fWidth = 20;\r\n            fHeight = 20;\r\n        }\r\n        setSize(fWidth, fHeight);\r\n    }\r\n\r\n    public Image loadImage(String name) {\r\n        Toolkit toolkit = Toolkit.getDefaultToolkit();\r\n        try {\r\n            URL url = BaseTestRunner.class.getResource(name);\r\n            return toolkit.createImage((ImageProducer) url.getContent());\r\n        } catch (Exception ex) {\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public void paint(Graphics g) {\r\n        paintBackground(g);\r\n        if (fImage != null)\r\n            g.drawImage(fImage, 0, 0, fWidth, fHeight, this);\r\n    }\r\n\r\n    public void paintBackground(java.awt.Graphics g) {\r\n        g.setColor(SystemColor.control);\r\n        g.fillRect(0, 0, getBounds().width, getBounds().height);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "public class Logo extends Canvas {\r\n\r\n    private Image fImage;\r\n\r\n    private int fWidth;\r\n\r\n    private int fHeight;\r\n\r\n    public Logo() {\r\n        fImage = loadImage(\"logo.gif\");\r\n        MediaTracker tracker = new MediaTracker(this);\r\n        tracker.addImage(fImage, 0);\r\n        try {\r\n            tracker.waitForAll();\r\n        } catch (Exception e) {\r\n        }\r\n        if (fImage != null) {\r\n            fWidth = fImage.getWidth(this);\r\n            fHeight = fImage.getHeight(this);\r\n        } else {\r\n            fWidth = 20;\r\n            fHeight = 20;\r\n        }\r\n        setSize(fWidth, fHeight);\r\n    }\r\n\r\n    public Image loadImage(String name) {\r\n        Toolkit toolkit = Toolkit.getDefaultToolkit();\r\n        try {\r\n            URL url = BaseTestRunner.class.getResource(name);\r\n            return toolkit.createImage((ImageProducer) url.getContent());\r\n        } catch (Exception ex) {\r\n        }\r\n        return null;\r\n    }\r\n\r\n    public void paint(Graphics g) {\r\n        paintBackground(g);\r\n        if (fImage != null)\r\n            g.drawImage(fImage, 0, 0, fWidth, fHeight, this);\r\n    }\r\n\r\n    public void paintBackground(java.awt.Graphics g) {\r\n        g.setColor(SystemColor.control);\r\n        g.fillRect(0, 0, getBounds().width, getBounds().height);\r\n    }\r\n}",
+  "subClasses": []
+}

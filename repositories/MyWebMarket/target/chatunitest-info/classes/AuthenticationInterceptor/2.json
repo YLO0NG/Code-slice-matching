@@ -1,0 +1,24 @@
+{
+  "className": "AuthenticationInterceptor",
+  "methodName": "intercept",
+  "brief": "public String intercept( ActionInvocation actionInvocation )\r\n\t\t\tthrows Exception{}",
+  "methodSignature": "intercept(ActionInvocation)",
+  "sourceCode": "public String intercept( ActionInvocation actionInvocation )\n\t\t\tthrows Exception {\n\t\tlogger.info( \"Starting verifying user\" ); //f:log\n\t\tMap session = actionInvocation.getInvocationContext().getSession();\n\n\t\tUser user = (User) session.get(SystemConstants.AUTHENTICATED_USER);\n\t\t\n\t\tboolean isAuthenticated = (null != user);\n\t\t\n\t\tif ( isAuthenticated ) {\n\t\t\tlogger.info( \"Finishing verifying user -- verified\" ); //f:log\n\t\t\treturn actionInvocation.invoke();\n\t\t}\n\t\t\n\t\tlogger.info( \"Finishing verifying user -- unverified\" ); //f:log\n\t\treturn Action.LOGIN;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ActionInvocation"
+  ],
+  "dependentMethods": {
+    "java.util.Map": [
+      "get(Object)"
+    ]
+  },
+  "full_method_info": "public String intercept(ActionInvocation actionInvocation) throws Exception {\n    // f:log\n    logger.info(\"Starting verifying user\");\n    Map session = actionInvocation.getInvocationContext().getSession();\n    User user = (User) session.get(SystemConstants.AUTHENTICATED_USER);\n    boolean isAuthenticated = (null != user);\n    if (isAuthenticated) {\n        // f:log\n        logger.info(\"Finishing verifying user -- verified\");\n        return actionInvocation.invoke();\n    }\n    // f:log\n    logger.info(\"Finishing verifying user -- unverified\");\n    return Action.LOGIN;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

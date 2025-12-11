@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "invalidate",
+  "brief": "public void invalidate();",
+  "methodSignature": "invalidate()",
+  "sourceCode": "public void invalidate();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Invalidates the figure. This method informs its listeners\n * that its current display box is invalid and should be\n * refreshed.\n */\npublic void invalidate();",
+  "method_comment": "\n     * Invalidates the figure. This method informs its listeners\n     * that its current display box is invalid and should be\n     * refreshed.\n     ",
+  "method_annotation": ""
+}

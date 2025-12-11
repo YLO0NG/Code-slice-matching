@@ -1,0 +1,20 @@
+{
+  "className": "Project",
+  "methodName": "setClassNames",
+  "brief": "public void setClassNames(Set<String> classNames){}",
+  "methodSignature": "setClassNames(Set)",
+  "sourceCode": "public void setClassNames(Set<String> classNames) {\n\t\tthis.classNames = classNames;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Set<String>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param  classNames\n * @uml.property  name=\"classNames\"\n */\npublic void setClassNames(Set<String> classNames) {\n    this.classNames = classNames;\n}",
+  "method_comment": "\n\t * @param  classNames\n\t * @uml.property  name=\"classNames\"\n\t ",
+  "method_annotation": ""
+}

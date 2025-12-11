@@ -1,0 +1,63 @@
+{
+  "fullClassName": "junit.swingui.ProgressBar",
+  "className": "ProgressBar",
+  "index": 40,
+  "modifier": "[]",
+  "extend": "[JProgressBar]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "class ProgressBar",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Color;",
+    "import javax.swing.JProgressBar;"
+  ],
+  "fields": [
+    "boolean fError= false;"
+  ],
+  "superClasses": [
+    "JProgressBar"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getStatusColor()": "0",
+    "reset()": "1",
+    "start(int)": "2",
+    "step(int, boolean)": "3",
+    "ProgressBar()": "4"
+  },
+  "methodsBrief": [
+    "private Color getStatusColor(){}",
+    "public void reset(){}",
+    "public void start(int total){}",
+    "public void step(int value, boolean successful){}",
+    "public ProgressBar(){}"
+  ],
+  "constructorSigs": [
+    "ProgressBar()"
+  ],
+  "constructorBrief": [
+    "public ProgressBar(){}"
+  ],
+  "getterSetterSigs": [
+    "getStatusColor()"
+  ],
+  "getterSetterBrief": [
+    "private Color getStatusColor(){}"
+  ],
+  "constructorDeps": {
+    "javax.swing.JComponent": [
+      "setForeground(Color)"
+    ],
+    "junit.swingui.ProgressBar": [
+      "getStatusColor()"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.Color;\r\nimport javax.swing.JProgressBar;\r\n\r\n/**\r\n * A progress bar showing the green/red status\r\n */\r\nclass ProgressBar extends JProgressBar {\r\n\r\n    boolean fError = false;\r\n\r\n    public ProgressBar() {\r\n        super();\r\n        setForeground(getStatusColor());\r\n    }\r\n\r\n    private Color getStatusColor() {\r\n        if (fError)\r\n            return Color.red;\r\n        return Color.green;\r\n    }\r\n\r\n    public void reset() {\r\n        fError = false;\r\n        setForeground(getStatusColor());\r\n        setValue(0);\r\n    }\r\n\r\n    public void start(int total) {\r\n        setMaximum(total);\r\n        reset();\r\n    }\r\n\r\n    public void step(int value, boolean successful) {\r\n        setValue(value);\r\n        if (!fError && !successful) {\r\n            fError = true;\r\n            setForeground(getStatusColor());\r\n        }\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A progress bar showing the green/red status\r\n */\r\nclass ProgressBar extends JProgressBar {\r\n\r\n    boolean fError = false;\r\n\r\n    public ProgressBar() {\r\n        super();\r\n        setForeground(getStatusColor());\r\n    }\r\n\r\n    private Color getStatusColor() {\r\n        if (fError)\r\n            return Color.red;\r\n        return Color.green;\r\n    }\r\n\r\n    public void reset() {\r\n        fError = false;\r\n        setForeground(getStatusColor());\r\n        setValue(0);\r\n    }\r\n\r\n    public void start(int total) {\r\n        setMaximum(total);\r\n        reset();\r\n    }\r\n\r\n    public void step(int value, boolean successful) {\r\n        setValue(value);\r\n        if (!fError && !successful) {\r\n            fError = true;\r\n            setForeground(getStatusColor());\r\n        }\r\n    }\r\n}",
+  "subClasses": []
+}

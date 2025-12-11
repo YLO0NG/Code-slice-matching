@@ -1,0 +1,23 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectArtifactsAfterTimestamp",
+  "brief": "public static String selectArtifactsAfterTimestamp(String entityType, String timestamp){}",
+  "methodSignature": "selectArtifactsAfterTimestamp(String, String)",
+  "sourceCode": "public static String selectArtifactsAfterTimestamp(String entityType, String timestamp) {\n\t\treturn \"select * from \"+entityType+\" where timestamp>\"+timestamp;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String selectArtifactsAfterTimestamp(String entityType, String timestamp) {\n    return \"select * from \" + entityType + \" where timestamp>\" + timestamp;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,48 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.GroupHandle",
+  "className": "GroupHandle",
+  "index": 36,
+  "modifier": "[final ]",
+  "extend": "[NullHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "final class GroupHandle",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.NullHandle;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "NullHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "draw(Graphics)": "0",
+    "GroupHandle(Figure, Locator)": "1"
+  },
+  "methodsBrief": [
+    "public void draw(Graphics g){}",
+    "public GroupHandle(Figure owner, Locator locator){}"
+  ],
+  "constructorSigs": [
+    "GroupHandle(Figure, Locator)"
+  ],
+  "constructorBrief": [
+    "public GroupHandle(Figure owner, Locator locator){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Locator": []
+  },
+  "compilationUnitCode": "/*\n * @(#)GroupHandle.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.NullHandle;\n\n/**\n * A Handle for a GroupFigure.\n */\nfinal class GroupHandle extends NullHandle {\n\n    public GroupHandle(Figure owner, Locator locator) {\n        super(owner, locator);\n    }\n\n    /**\n     * Draws the Group handle.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n        r.grow(-1, -1);\n        g.setColor(Color.white);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Handle for a GroupFigure.\n */\nfinal class GroupHandle extends NullHandle {\n\n    public GroupHandle(Figure owner, Locator locator) {\n        super(owner, locator);\n    }\n\n    /**\n     * Draws the Group handle.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n        r.grow(-1, -1);\n        g.setColor(Color.white);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n}",
+  "subClasses": []
+}

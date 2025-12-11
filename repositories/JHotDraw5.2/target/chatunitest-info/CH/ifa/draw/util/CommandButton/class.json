@@ -1,0 +1,57 @@
+{
+  "fullClassName": "CH.ifa.draw.util.CommandButton",
+  "className": "CommandButton",
+  "index": 152,
+  "modifier": "[public ]",
+  "extend": "[JButton]",
+  "implement": "[ActionListener]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class CommandButton",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.event.ActionListener;",
+    "import java.awt.event.ActionEvent;",
+    "import java.util.*;"
+  ],
+  "fields": [
+    "private Command   fCommand;"
+  ],
+  "superClasses": [
+    "JButton"
+  ],
+  "implementedTypes": [
+    "ActionListener"
+  ],
+  "methodSigs": {
+    "actionPerformed(ActionEvent)": "0",
+    "CommandButton(Command)": "1"
+  },
+  "methodsBrief": [
+    "public void actionPerformed(ActionEvent e){}",
+    "public CommandButton(Command command){}"
+  ],
+  "constructorSigs": [
+    "CommandButton(Command)"
+  ],
+  "constructorBrief": [
+    "public CommandButton(Command command){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.util.Command": [
+      "name()"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)CommandButton.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.*;\nimport java.awt.event.ActionListener;\nimport java.awt.event.ActionEvent;\nimport java.util.*;\n\n/**\n * A Command enabled button. Clicking the button executes the command.\n *\n * @see Command\n */\npublic class CommandButton extends JButton implements ActionListener {\n\n    private Command fCommand;\n\n    public CommandButton(Command command) {\n        super(command.name());\n        fCommand = command;\n        addActionListener(this);\n    }\n\n    /**\n     * Executes the command. If the command's name was changed\n     * as a result of the command the button's label is updated\n     * accordingly.\n     */\n    public void actionPerformed(ActionEvent e) {\n        fCommand.execute();\n        if (!getLabel().equals(fCommand.name())) {\n            setLabel(fCommand.name());\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Command enabled button. Clicking the button executes the command.\n *\n * @see Command\n */\npublic class CommandButton extends JButton implements ActionListener {\n\n    private Command fCommand;\n\n    public CommandButton(Command command) {\n        super(command.name());\n        fCommand = command;\n        addActionListener(this);\n    }\n\n    /**\n     * Executes the command. If the command's name was changed\n     * as a result of the command the button's label is updated\n     * accordingly.\n     */\n    public void actionPerformed(ActionEvent e) {\n        fCommand.execute();\n        if (!getLabel().equals(fCommand.name())) {\n            setLabel(fCommand.name());\n        }\n    }\n}",
+  "subClasses": []
+}

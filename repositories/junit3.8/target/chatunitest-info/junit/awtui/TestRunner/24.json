@@ -1,0 +1,35 @@
+{
+  "className": "TestRunner",
+  "methodName": "setLabelValue",
+  "brief": "private void setLabelValue(Label label, int value){}",
+  "methodSignature": "setLabelValue(Label, int)",
+  "sourceCode": "private void setLabelValue(Label label, int value) {\r\n\t\tlabel.setText(Integer.toString(value));\r\n\t\tlabel.invalidate();\r\n\t\tlabel.getParent().validate();\r\n\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Label",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Label": [
+      "setText(String)"
+    ],
+    "java.lang.Integer": [
+      "toString(int)"
+    ],
+    "java.awt.Component": [
+      "invalidate()",
+      "getParent()"
+    ],
+    "java.awt.Container": [
+      "validate()"
+    ]
+  },
+  "full_method_info": "private void setLabelValue(Label label, int value) {\r\n    label.setText(Integer.toString(value));\r\n    label.invalidate();\r\n    label.getParent().validate();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Layoutable",
+  "methodName": "layout",
+  "brief": "public void layout();",
+  "methodSignature": "layout()",
+  "sourceCode": "public void layout();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Layout the figure\n */\npublic void layout();",
+  "method_comment": "\n\t * Layout the figure\n\t ",
+  "method_annotation": ""
+}

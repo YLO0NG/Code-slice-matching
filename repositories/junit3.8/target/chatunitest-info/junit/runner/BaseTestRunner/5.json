@@ -1,0 +1,28 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "endTest",
+  "brief": "public synchronized void endTest(Test test){}",
+  "methodSignature": "endTest(Test)",
+  "sourceCode": "public synchronized void endTest(Test test) {\r\n\t\ttestEnded(test.toString());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.runner.BaseTestRunner": [
+      "testEnded(String)"
+    ],
+    "java.lang.Object": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public synchronized void endTest(Test test) {\r\n    testEnded(test.toString());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

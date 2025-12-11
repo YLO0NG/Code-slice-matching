@@ -1,0 +1,24 @@
+{
+  "className": "StackTraceListModel",
+  "methodName": "getElementAt",
+  "brief": "public Object getElementAt(int index){}",
+  "methodSignature": "getElementAt(int)",
+  "sourceCode": "public Object getElementAt(int index) {\r\n\t\t\treturn fLines.elementAt(index);\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elementAt(int)"
+    ]
+  },
+  "full_method_info": "public Object getElementAt(int index) {\r\n    return fLines.elementAt(index);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

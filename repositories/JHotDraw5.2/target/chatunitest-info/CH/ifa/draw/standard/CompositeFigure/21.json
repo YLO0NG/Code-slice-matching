@@ -1,0 +1,36 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "includes",
+  "brief": "public boolean includes(Figure figure){}",
+  "methodSignature": "includes(Figure)",
+  "sourceCode": "public boolean includes(Figure figure) {\n        if (super.includes(figure))\n            return true;\n\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            if (f.includes(figure))\n                return true;\n        }\n        return false;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Checks if the composite figure has the argument as one of\n * its children.\n */\npublic boolean includes(Figure figure) {\n    if (super.includes(figure))\n        return true;\n    FigureEnumeration k = figures();\n    while (k.hasMoreElements()) {\n        Figure f = k.nextFigure();\n        if (f.includes(figure))\n            return true;\n    }\n    return false;\n}",
+  "method_comment": "\n     * Checks if the composite figure has the argument as one of\n     * its children.\n     ",
+  "method_annotation": ""
+}

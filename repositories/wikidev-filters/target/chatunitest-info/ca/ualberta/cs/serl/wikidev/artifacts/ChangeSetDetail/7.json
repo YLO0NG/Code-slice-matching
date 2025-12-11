@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "getRev",
+  "brief": "public int getRev(){}",
+  "methodSignature": "getRev()",
+  "sourceCode": "public int getRev() {\n\t\treturn rev;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rev\"\n */\npublic int getRev() {\n    return rev;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rev\"\n\t ",
+  "method_annotation": ""
+}

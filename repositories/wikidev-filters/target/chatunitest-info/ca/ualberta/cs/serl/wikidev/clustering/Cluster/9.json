@@ -1,0 +1,22 @@
+{
+  "className": "Cluster",
+  "methodName": "setFromdate",
+  "brief": "public void setFromdate(Timestamp fromdate){}",
+  "methodSignature": "setFromdate(Timestamp)",
+  "sourceCode": "public void setFromdate(Timestamp fromdate) {\n\t\tthis.fromdate = fromdate;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "/**\n * @param fromdate\n * @uml.property  name=\"fromdate\"\n */\npublic void setFromdate(Timestamp fromdate) {\n    this.fromdate = fromdate;\n}",
+  "method_comment": "\n\t * @param fromdate\n\t * @uml.property  name=\"fromdate\"\n\t ",
+  "method_annotation": ""
+}

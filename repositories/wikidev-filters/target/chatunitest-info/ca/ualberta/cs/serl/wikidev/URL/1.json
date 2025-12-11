@@ -1,0 +1,22 @@
+{
+  "className": "URL",
+  "methodName": "setHost",
+  "brief": "public void setHost(String host){}",
+  "methodSignature": "setHost(String)",
+  "sourceCode": "public void setHost(String host) {\n\t\tthis.host = host;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param  host\n * @uml.property  name=\"host\"\n */\npublic void setHost(String host) {\n    this.host = host;\n}",
+  "method_comment": "\n\t * @param  host\n\t * @uml.property  name=\"host\"\n\t ",
+  "method_annotation": ""
+}

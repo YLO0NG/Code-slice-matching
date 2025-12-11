@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "setCustomer",
+  "brief": "public void setCustomer( Customer customer ){}",
+  "methodSignature": "setCustomer(Customer)",
+  "sourceCode": "public void setCustomer( Customer customer ) {\n\t\tthis.customer = customer;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Customer"
+  ],
+  "dependentMethods": {
+    "classes.Customer": []
+  },
+  "full_method_info": "public void setCustomer(Customer customer) {\n    this.customer = customer;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

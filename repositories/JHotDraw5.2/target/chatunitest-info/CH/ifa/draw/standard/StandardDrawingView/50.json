@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "freezeView",
+  "brief": "public void freezeView(){}",
+  "methodSignature": "freezeView()",
+  "sourceCode": "public void freezeView() {\n        drawing().lock();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "lock()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()"
+    ]
+  },
+  "full_method_info": "/**\n * Freezes the view by acquiring the drawing lock.\n * @see Drawing#lock\n */\npublic void freezeView() {\n    drawing().lock();\n}",
+  "method_comment": "\n     * Freezes the view by acquiring the drawing lock.\n     * @see Drawing#lock\n     ",
+  "method_annotation": ""
+}

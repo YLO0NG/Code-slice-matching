@@ -1,0 +1,22 @@
+{
+  "className": "PolyLineHandle",
+  "methodName": "myOwner",
+  "brief": "private PolyLineFigure myOwner(){}",
+  "methodSignature": "myOwner()",
+  "sourceCode": "private PolyLineFigure myOwner() {\n        return (PolyLineFigure)owner();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "private PolyLineFigure myOwner() {\n    return (PolyLineFigure) owner();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

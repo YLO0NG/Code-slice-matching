@@ -1,0 +1,24 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "isJar",
+  "brief": "boolean isJar(String pathEntry){}",
+  "methodSignature": "isJar(String)",
+  "sourceCode": "boolean isJar(String pathEntry) {\r\n\t\treturn pathEntry.endsWith(\".jar\") || pathEntry.endsWith(\".zip\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "endsWith(String)"
+    ]
+  },
+  "full_method_info": "boolean isJar(String pathEntry) {\r\n    return pathEntry.endsWith(\".jar\") || pathEntry.endsWith(\".zip\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

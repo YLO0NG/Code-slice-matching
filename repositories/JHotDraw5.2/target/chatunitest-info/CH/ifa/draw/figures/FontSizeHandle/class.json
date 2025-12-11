@@ -1,0 +1,55 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.FontSizeHandle",
+  "className": "FontSizeHandle",
+  "index": 33,
+  "modifier": "[public ]",
+  "extend": "[LocatorHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class FontSizeHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private Font    fFont;",
+    "private int     fSize;"
+  ],
+  "superClasses": [
+    "LocatorHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStart(int, int, DrawingView)": "0",
+    "invokeStep(int, int, int, int, DrawingView)": "1",
+    "draw(Graphics)": "2",
+    "FontSizeHandle(Figure, Locator)": "3"
+  },
+  "methodsBrief": [
+    "public void invokeStart(int  x, int  y, DrawingView view){}",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public void draw(Graphics g){}",
+    "public FontSizeHandle(Figure owner, Locator l){}"
+  ],
+  "constructorSigs": [
+    "FontSizeHandle(Figure, Locator)"
+  ],
+  "constructorBrief": [
+    "public FontSizeHandle(Figure owner, Locator l){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Locator": []
+  },
+  "compilationUnitCode": "/*\n * @(#)FontSizeHandle.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * A Handle to change the font size by direct manipulation.\n */\npublic class FontSizeHandle extends LocatorHandle {\n\n    private Font fFont;\n\n    private int fSize;\n\n    public FontSizeHandle(Figure owner, Locator l) {\n        super(owner, l);\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        TextFigure textOwner = (TextFigure) owner();\n        fFont = textOwner.getFont();\n        fSize = fFont.getSize();\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        TextFigure textOwner = (TextFigure) owner();\n        int newSize = fSize + y - anchorY;\n        textOwner.setFont(new Font(fFont.getName(), fFont.getStyle(), newSize));\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Handle to change the font size by direct manipulation.\n */\npublic class FontSizeHandle extends LocatorHandle {\n\n    private Font fFont;\n\n    private int fSize;\n\n    public FontSizeHandle(Figure owner, Locator l) {\n        super(owner, l);\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        TextFigure textOwner = (TextFigure) owner();\n        fFont = textOwner.getFont();\n        fSize = fFont.getSize();\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        TextFigure textOwner = (TextFigure) owner();\n        int newSize = fSize + y - anchorY;\n        textOwner.setFont(new Font(fFont.getName(), fFont.getStyle(), newSize));\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }\n}",
+  "subClasses": []
+}

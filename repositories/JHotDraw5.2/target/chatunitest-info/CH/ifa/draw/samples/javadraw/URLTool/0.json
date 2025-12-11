@@ -1,0 +1,42 @@
+{
+  "className": "URLTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y)\r\n   {}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y)\n    {\n\t    Figure pressedFigure;\n\n\t    pressedFigure =  drawing().findFigureInside(x, y);\n\t    if (pressedFigure != null) {\n\t        if (fTextField == null) {\n\t\t\t    fTextField = new FloatingTextField();\n\t\t\t    fTextField.addActionListener(\n\t\t\t        new ActionListener() {\n\t\t\t            public void actionPerformed(ActionEvent event) {\n\t\t\t                endAction(event);\n\t\t\t            }\n\t\t\t        }\n\t\t\t    );\n\t\t\t}\n\t\t\t\n\t\t\tif (pressedFigure != fURLTarget && fURLTarget != null)\n\t\t\t    endEdit();\n\t\t\tif (pressedFigure != fURLTarget) {\n\t\t\t    fTextField.createOverlay((Container)view());\n\t\t\t    fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));\n\t\t\t    fURLTarget = pressedFigure;\n\t\t\t}\n\t        return;\n\t    }\n\t    endEdit();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "createOverlay(Container)",
+      "addActionListener(ActionListener)",
+      "setBounds(Rectangle, String)"
+    ],
+    "CH.ifa.draw.samples.javadraw.URLTool": [
+      "getURL(Figure)",
+      "endAction(ActionEvent)",
+      "endEdit()",
+      "fieldBounds(Figure)"
+    ]
+  },
+  "full_method_info": "public void mouseDown(MouseEvent e, int x, int y) {\n    Figure pressedFigure;\n    pressedFigure = drawing().findFigureInside(x, y);\n    if (pressedFigure != null) {\n        if (fTextField == null) {\n            fTextField = new FloatingTextField();\n            fTextField.addActionListener(new ActionListener() {\n\n                public void actionPerformed(ActionEvent event) {\n                    endAction(event);\n                }\n            });\n        }\n        if (pressedFigure != fURLTarget && fURLTarget != null)\n            endEdit();\n        if (pressedFigure != fURLTarget) {\n            fTextField.createOverlay((Container) view());\n            fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));\n            fURLTarget = pressedFigure;\n        }\n        return;\n    }\n    endEdit();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

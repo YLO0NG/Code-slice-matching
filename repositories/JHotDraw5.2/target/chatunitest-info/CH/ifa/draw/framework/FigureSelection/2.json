@@ -1,0 +1,37 @@
+{
+  "className": "FigureSelection",
+  "methodName": "FigureSelection",
+  "brief": "public FigureSelection(Vector figures){}",
+  "methodSignature": "FigureSelection(Vector)",
+  "sourceCode": "public FigureSelection(Vector figures) {\n        // a FigureSelection is represented as a flattened ByteStream\n        // of figures.\n        ByteArrayOutputStream output = new ByteArrayOutputStream(200);\n        StorableOutput writer = new StorableOutput(output);\n        writer.writeInt(figures.size());\n        Enumeration selected = figures.elements();\n        while (selected.hasMoreElements()) {\n            Figure figure = (Figure) selected.nextElement();\n            writer.writeStorable(figure);\n        }\n        writer.close();\n        fData = output.toByteArray();\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)",
+      "close()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.io.ByteArrayOutputStream": [
+      "toByteArray()"
+    ]
+  },
+  "full_method_info": "public FigureSelection(Vector figures) {\n    // a FigureSelection is represented as a flattened ByteStream\n    // of figures.\n    ByteArrayOutputStream output = new ByteArrayOutputStream(200);\n    StorableOutput writer = new StorableOutput(output);\n    writer.writeInt(figures.size());\n    Enumeration selected = figures.elements();\n    while (selected.hasMoreElements()) {\n        Figure figure = (Figure) selected.nextElement();\n        writer.writeStorable(figure);\n    }\n    writer.close();\n    fData = output.toByteArray();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

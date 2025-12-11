@@ -1,0 +1,22 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "decompose",
+  "brief": "public FigureEnumeration decompose(){}",
+  "methodSignature": "decompose()",
+  "sourceCode": "public FigureEnumeration decompose() {\n        Vector figures = new Vector(1);\n        figures.addElement(this);\n        return new FigureEnumerator(figures);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Decomposes a figure into its parts. It returns a Vector\n * that contains itself.\n * @return an Enumeration for a Vector with itself as the\n * only element.\n */\npublic FigureEnumeration decompose() {\n    Vector figures = new Vector(1);\n    figures.addElement(this);\n    return new FigureEnumerator(figures);\n}",
+  "method_comment": "\n     * Decomposes a figure into its parts. It returns a Vector\n     * that contains itself.\n     * @return an Enumeration for a Vector with itself as the\n     * only element.\n     ",
+  "method_annotation": ""
+}

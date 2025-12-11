@@ -1,0 +1,35 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "keyPressed",
+  "brief": "public void keyPressed(KeyEvent e){}",
+  "methodSignature": "keyPressed(KeyEvent)",
+  "sourceCode": "public void keyPressed(KeyEvent e) {\n        int code = e.getKeyCode();\n        if ((code == KeyEvent.VK_BACK_SPACE) || (code == KeyEvent.VK_DELETE)) {\n            Command cmd = new DeleteCommand(\"Delete\", this);\n            cmd.execute();\n        } else if (code == KeyEvent.VK_DOWN || code == KeyEvent.VK_UP ||\n            code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_LEFT) {\n            handleCursorKey(code);\n        } else {\n            tool().keyDown(e, code);\n        }\n        checkDamage();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "KeyEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.KeyEvent": [
+      "getKeyCode()"
+    ],
+    "CH.ifa.draw.util.Command": [
+      "execute()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "handleCursorKey(int)",
+      "tool()",
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.framework.Tool": [
+      "keyDown(KeyEvent, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles key down events. Cursor keys are handled\n * by the view the other key events are delegated to the\n * currently active tool.\n * @return whether the event was handled.\n */\npublic void keyPressed(KeyEvent e) {\n    int code = e.getKeyCode();\n    if ((code == KeyEvent.VK_BACK_SPACE) || (code == KeyEvent.VK_DELETE)) {\n        Command cmd = new DeleteCommand(\"Delete\", this);\n        cmd.execute();\n    } else if (code == KeyEvent.VK_DOWN || code == KeyEvent.VK_UP || code == KeyEvent.VK_RIGHT || code == KeyEvent.VK_LEFT) {\n        handleCursorKey(code);\n    } else {\n        tool().keyDown(e, code);\n    }\n    checkDamage();\n}",
+  "method_comment": "\n     * Handles key down events. Cursor keys are handled\n     * by the view the other key events are delegated to the\n     * currently active tool.\n     * @return whether the event was handled.\n     ",
+  "method_annotation": ""
+}

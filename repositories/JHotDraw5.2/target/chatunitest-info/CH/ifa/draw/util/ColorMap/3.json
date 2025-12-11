@@ -1,0 +1,24 @@
+{
+  "className": "ColorMap",
+  "methodName": "name",
+  "brief": "public static String name(int index){}",
+  "methodSignature": "name(int)",
+  "sourceCode": "public static String name(int index) {\n\t    if (index < size() && index >= 0)\n\t        return fMap[index].fName;\n\n\t    throw new ArrayIndexOutOfBoundsException(\"Color index: \" + index);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.ColorMap": [
+      "size()"
+    ]
+  },
+  "full_method_info": "public static String name(int index) {\n    if (index < size() && index >= 0)\n        return fMap[index].fName;\n    throw new ArrayIndexOutOfBoundsException(\"Color index: \" + index);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

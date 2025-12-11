@@ -1,0 +1,18 @@
+{
+  "className": "PaletteIcon",
+  "methodName": "normal",
+  "brief": "public Image normal(){}",
+  "methodSignature": "normal()",
+  "sourceCode": "public Image normal() { return fNormal; }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Image normal() {\n    return fNormal;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

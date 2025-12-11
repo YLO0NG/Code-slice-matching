@@ -1,0 +1,33 @@
+{
+  "className": "PatternPainter",
+  "methodName": "drawPattern",
+  "brief": "private void drawPattern(Graphics g, Image image, DrawingView view){}",
+  "methodSignature": "drawPattern(Graphics, Image, DrawingView)",
+  "sourceCode": "private void drawPattern(Graphics g, Image image, DrawingView view) {\n        int iwidth = image.getWidth(view);\n        int iheight = image.getHeight(view);\n        Dimension d = view.getSize();\n        int x = 0; int y = 0;\n\n        while (y < d.height) {\n            while (x < d.width) {\n                g.drawImage(image, x, y, view);\n                x += iwidth;\n            }\n            y += iheight;\n            x = 0;\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "Image",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawImage(Image, int, int, ImageObserver)"
+    ],
+    "java.awt.Image": [
+      "getWidth(ImageObserver)",
+      "getHeight(ImageObserver)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "getSize()"
+    ]
+  },
+  "full_method_info": "/**\n * Draws a pattern background pattern by replicating an image.\n */\nprivate void drawPattern(Graphics g, Image image, DrawingView view) {\n    int iwidth = image.getWidth(view);\n    int iheight = image.getHeight(view);\n    Dimension d = view.getSize();\n    int x = 0;\n    int y = 0;\n    while (y < d.height) {\n        while (x < d.width) {\n            g.drawImage(image, x, y, view);\n            x += iwidth;\n        }\n        y += iheight;\n        x = 0;\n    }\n}",
+  "method_comment": "\n     * Draws a pattern background pattern by replicating an image.\n     ",
+  "method_annotation": ""
+}

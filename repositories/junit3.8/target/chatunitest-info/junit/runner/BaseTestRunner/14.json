@@ -1,0 +1,20 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "setLoading",
+  "brief": "public void setLoading(boolean enable){}",
+  "methodSignature": "setLoading(boolean)",
+  "sourceCode": "public void setLoading(boolean enable) {\r\n\t\tfLoading= enable;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Sets the loading behaviour of the test runner\r\n */\r\npublic void setLoading(boolean enable) {\r\n    fLoading = enable;\r\n}",
+  "method_comment": "\r\n\t * Sets the loading behaviour of the test runner\r\n\t ",
+  "method_annotation": ""
+}

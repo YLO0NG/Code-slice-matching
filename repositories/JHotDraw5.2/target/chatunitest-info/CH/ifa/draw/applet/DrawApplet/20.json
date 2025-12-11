@@ -1,0 +1,26 @@
+{
+  "className": "DrawApplet",
+  "methodName": "initDrawing",
+  "brief": "private void initDrawing(){}",
+  "methodSignature": "initDrawing()",
+  "sourceCode": "private void initDrawing() {\n        fDrawing = createDrawing();\n        fView.setDrawing(fDrawing);\n        toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.applet.DrawApplet": [
+      "createDrawing()",
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDrawing(Drawing)"
+    ]
+  },
+  "full_method_info": "private void initDrawing() {\n    fDrawing = createDrawing();\n    fView.setDrawing(fDrawing);\n    toolDone();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

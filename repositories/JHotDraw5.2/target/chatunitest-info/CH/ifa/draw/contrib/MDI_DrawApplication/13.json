@@ -1,0 +1,22 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "internalFrameClosing",
+  "brief": "public void internalFrameClosing(InternalFrameEvent e){}",
+  "methodSignature": "internalFrameClosing(InternalFrameEvent)",
+  "sourceCode": "public void internalFrameClosing(InternalFrameEvent e) {\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InternalFrameEvent"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.InternalFrameEvent": []
+  },
+  "full_method_info": "/**\n * Notification method from InternalFrameListener, which is called\n * before a internal frame is closed.\n */\npublic void internalFrameClosing(InternalFrameEvent e) {\n}",
+  "method_comment": "\n\t * Notification method from InternalFrameListener, which is called\n\t * before a internal frame is closed.\n\t ",
+  "method_annotation": ""
+}

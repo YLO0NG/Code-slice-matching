@@ -1,0 +1,18 @@
+{
+  "className": "Handle",
+  "methodName": "owner",
+  "brief": "public Figure owner();",
+  "methodSignature": "owner()",
+  "sourceCode": "public Figure owner();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the handle's owner.\n */\npublic Figure owner();",
+  "method_comment": "\n     * Gets the handle's owner.\n     ",
+  "method_annotation": ""
+}

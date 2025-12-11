@@ -1,0 +1,20 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "PolyLineFigure",
+  "brief": "public PolyLineFigure(int size){}",
+  "methodSignature": "PolyLineFigure(int)",
+  "sourceCode": "public PolyLineFigure(int size) {\n        fPoints = new Vector(size);\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public PolyLineFigure(int size) {\n    fPoints = new Vector(size);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

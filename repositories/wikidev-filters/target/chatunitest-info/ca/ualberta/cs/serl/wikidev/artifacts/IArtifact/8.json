@@ -1,0 +1,20 @@
+{
+  "className": "IArtifact",
+  "methodName": "setEnforced",
+  "brief": "public void setEnforced(boolean enforced){}",
+  "methodSignature": "setEnforced(boolean)",
+  "sourceCode": "public void setEnforced(boolean enforced) {\n\t\tthis.enforced = enforced;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setEnforced(boolean enforced) {\n    this.enforced = enforced;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "StorableOutput",
+  "methodName": "close",
+  "brief": "public void close(){}",
+  "methodSignature": "close()",
+  "sourceCode": "public void close() {\n        fStream.close();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.PrintWriter": [
+      "close()"
+    ]
+  },
+  "full_method_info": "/**\n * Closes a storable output stream.\n */\npublic void close() {\n    fStream.close();\n}",
+  "method_comment": "\n     * Closes a storable output stream.\n     ",
+  "method_annotation": ""
+}

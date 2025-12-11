@@ -1,0 +1,18 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "getConstrainer",
+  "brief": "public PointConstrainer getConstrainer(){}",
+  "methodSignature": "getConstrainer()",
+  "sourceCode": "public PointConstrainer getConstrainer() {\n        return fConstrainer;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the current constrainer.\n */\npublic PointConstrainer getConstrainer() {\n    return fConstrainer;\n}",
+  "method_comment": "\n     * Gets the current constrainer.\n     ",
+  "method_annotation": ""
+}

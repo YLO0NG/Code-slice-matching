@@ -1,0 +1,50 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.DeleteCommand",
+  "className": "DeleteCommand",
+  "index": 122,
+  "modifier": "[public ]",
+  "extend": "[FigureTransferCommand]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class DeleteCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.*;",
+    "import CH.ifa.draw.util.Command;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "FigureTransferCommand"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "isExecutable()": "1",
+    "DeleteCommand(String, DrawingView)": "2"
+  },
+  "methodsBrief": [
+    "public void execute(){}",
+    "public boolean isExecutable(){}",
+    "public DeleteCommand(String name, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "DeleteCommand(String, DrawingView)"
+  ],
+  "constructorBrief": [
+    "public DeleteCommand(String name, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)DeleteCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport CH.ifa.draw.util.Command;\nimport CH.ifa.draw.framework.*;\n\n/**\n * Command to delete the selection.\n */\npublic class DeleteCommand extends FigureTransferCommand {\n\n    public DeleteCommand(String name, DrawingView view) {\n        super(name, view);\n    }\n\n    public void execute() {\n        deleteSelection();\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Command to delete the selection.\n */\npublic class DeleteCommand extends FigureTransferCommand {\n\n    public DeleteCommand(String name, DrawingView view) {\n        super(name, view);\n    }\n\n    public void execute() {\n        deleteSelection();\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}",
+  "subClasses": []
+}

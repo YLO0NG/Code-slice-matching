@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.figures.InsertImageCommand",
+  "targetMethod": "execute()",
+  "dependentFields": {
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.util.Iconkit": "private Hashtable           fMap;\nprivate Vector              fRegisteredImages;\nprivate Component           fComponent;\nprivate final static int    ID = 123;\nprivate static Iconkit      fgIconkit = null;\nprivate static boolean      fgDebug = false;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": "public void clearSelection();\npublic void addToSelection(Figure figure);\npublic Point lastClick();\npublic Figure add(Figure figure);\npublic void checkDamage();",
+    "CH.ifa.draw.util.Iconkit": "public void registerImage(String fileName){}\npublic static Iconkit instance(){}\npublic Image getImage(String filename){}\npublic void loadRegisteredImages(Component component){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.DrawingView": "* Clears the current selection.\n     \npublic void clearSelection();\n\n     * Adds a figure to the current selection.\n     \npublic void addToSelection(Figure figure);\n\n     * Gets the position of the last click inside the view.\n     \npublic Point lastClick();\n\n     * Adds a figure to the drawing.\n     * @return the added figure.\n     \npublic Figure add(Figure figure);\n\n     * Checks whether the drawing has some accumulated damage\n     \npublic void checkDamage();",
+    "CH.ifa.draw.util.Iconkit": "* Registers an image that is then loaded together with\n     * the other registered images by loadRegisteredImages.\n     * @see #loadRegisteredImages\n     \npublic void registerImage(String fileName) {\n        fRegisteredImages.addElement(fileName);\n    }\n\n     * Gets the single instance\n     \npublic static Iconkit instance() {\n        return fgIconkit;\n    }\n\n     * Gets the image with the given name. If the image\n     * can't be found it tries it again after loading\n     * all the registered images.\n     \npublic Image getImage(String filename) {\n        Image image = basicGetImage(filename);\n        if (image != null)\n            return image;\n        // load registered images and try again\n        loadRegisteredImages(fComponent);\n        // try again\n        if (fMap.containsKey(filename))\n\t\t    return (Image) fMap.get(filename);\n\t\treturn null;\n    }\n\n     * Loads all registered images.\n     * @see #registerImage\n     \npublic void loadRegisteredImages(Component component) {\n        if (fRegisteredImages.size() == 0)\n            return;\n\n        MediaTracker tracker = new MediaTracker(component);\n\n        // register images with MediaTracker\n        Enumeration k = fRegisteredImages.elements();\n        while (k.hasMoreElements()) {\n            String fileName = (String) k.nextElement();\n            if (basicGetImage(fileName) == null) {\n                tracker.addImage(loadImage(fileName), ID);\n            }\n        }\n        fRegisteredImages.removeAllElements();\n\n        // block until all images are loaded\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {  }\n    }"
+  }
+}

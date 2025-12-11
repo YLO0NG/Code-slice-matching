@@ -1,0 +1,18 @@
+{
+  "className": "TestCase",
+  "methodName": "createResult",
+  "brief": "protected TestResult createResult(){}",
+  "methodSignature": "createResult()",
+  "sourceCode": "protected TestResult createResult() {\r\n\t    return new TestResult();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Creates a default TestResult object\r\n *\r\n * @see TestResult\r\n */\r\nprotected TestResult createResult() {\r\n    return new TestResult();\r\n}",
+  "method_comment": "\r\n\t * Creates a default TestResult object\r\n\t *\r\n\t * @see TestResult\r\n\t ",
+  "method_annotation": ""
+}

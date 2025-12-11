@@ -1,0 +1,28 @@
+{
+  "className": "ProgressBar",
+  "methodName": "reset",
+  "brief": "public void reset(){}",
+  "methodSignature": "reset()",
+  "sourceCode": "public void reset() {\r\n\t\tfError= false;\r\n\t\tsetForeground(getStatusColor());\r\n\t\tsetValue(0);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JComponent": [
+      "setForeground(Color)"
+    ],
+    "junit.swingui.ProgressBar": [
+      "getStatusColor()"
+    ],
+    "javax.swing.JProgressBar": [
+      "setValue(int)"
+    ]
+  },
+  "full_method_info": "public void reset() {\r\n    fError = false;\r\n    setForeground(getStatusColor());\r\n    setValue(0);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

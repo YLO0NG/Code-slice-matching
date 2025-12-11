@@ -1,0 +1,20 @@
+{
+  "className": "Wiki",
+  "methodName": "setPage_namespace_id",
+  "brief": "public void setPage_namespace_id(int page_namespace_id){}",
+  "methodSignature": "setPage_namespace_id(int)",
+  "sourceCode": "public void setPage_namespace_id(int page_namespace_id) {\n\t\tthis.page_namespace_id = page_namespace_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param page_namespace_id\n * @uml.property  name=\"page_namespace_id\"\n */\npublic void setPage_namespace_id(int page_namespace_id) {\n    this.page_namespace_id = page_namespace_id;\n}",
+  "method_comment": "\n\t * @param page_namespace_id\n\t * @uml.property  name=\"page_namespace_id\"\n\t ",
+  "method_annotation": ""
+}

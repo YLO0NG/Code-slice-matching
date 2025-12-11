@@ -1,0 +1,24 @@
+{
+  "className": "AbstractHandle",
+  "methodName": "invokeEnd",
+  "brief": "public void invokeEnd  (int dx, int dy, Drawing drawing){}",
+  "methodSignature": "invokeEnd(int, int, Drawing)",
+  "sourceCode": "public void invokeEnd  (int dx, int dy, Drawing drawing) { }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": []
+  },
+  "full_method_info": "/**\n * @deprecated As of version 4.1,\n * use invokeEnd(x, y, anchorX, anchorY, drawingView).\n *\n * Tracks the end of the interaction.\n */\npublic void invokeEnd(int dx, int dy, Drawing drawing) {\n}",
+  "method_comment": "\n     * @deprecated As of version 4.1,\n     * use invokeEnd(x, y, anchorX, anchorY, drawingView).\n     *\n     * Tracks the end of the interaction.\n     ",
+  "method_annotation": ""
+}

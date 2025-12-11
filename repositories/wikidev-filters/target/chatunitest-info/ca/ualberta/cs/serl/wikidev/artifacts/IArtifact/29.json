@@ -1,0 +1,22 @@
+{
+  "className": "IArtifact",
+  "methodName": "compareTo",
+  "brief": "@Override\r\n\tpublic int compareTo(IArtifact arg0){}",
+  "methodSignature": "compareTo(IArtifact)",
+  "sourceCode": "@Override\n\tpublic int compareTo(IArtifact arg0) {\n\t\t// TODO Auto-generated method stub\n\t\treturn 0;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": []
+  },
+  "full_method_info": "@Override\npublic int compareTo(IArtifact arg0) {\n    // TODO Auto-generated method stub\n    return 0;\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

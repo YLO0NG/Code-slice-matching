@@ -1,0 +1,45 @@
+{
+  "className": "DataManager",
+  "methodName": "getClusteredBuildings",
+  "brief": "public static ClusterData getClusteredBuildings(CommunicationBuildingData building) throws SQLException{}",
+  "methodSignature": "getClusteredBuildings(CommunicationBuildingData)",
+  "sourceCode": "public static ClusterData getClusteredBuildings(CommunicationBuildingData building) throws SQLException {\n    \tClusterData clusterData = new ClusterData(building.getWeek());\n    \tArrayList<Integer> clusterIDs = DataManager.getClusterIDsByBuilding(building);\n    \tArrayList<Cluster> clusters = new ArrayList<Cluster>();\n    \tfor(Integer id : clusterIDs) {\n    \t\tclusters.add(DataManager.getClusterByID(id));\n    \t}\n    \tfor(Cluster cluster : clusters) {\n    \t\tHashMap<IArtifact, Double> artifacts = DataManager.getArtifactsInCluster(cluster);\n    \t\tclusterData.addArtifacts(artifacts);\n    \t\tHashMap<String, Double> terms = new HashMap<String, Double>();\n    \t\tfor(String term : cluster.getWords()) {\n    \t\t\tterms.put(term, cluster.getThreshold());\n    \t\t}\n    \t\tclusterData.addTerms(terms);\n    \t}\n    \tclusterData.calculateBuildingData();\n    \treturn clusterData;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "CommunicationBuildingData"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.CommunicationBuildingData": [],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.BuildingData": [
+      "getWeek()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getClusterIDsByBuilding(CommunicationBuildingData)",
+      "getArtifactsInCluster(Cluster)",
+      "getClusterByID(int)"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.ClusterData": [
+      "addTerms(Double>)",
+      "addArtifacts(Double>)",
+      "calculateBuildingData()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getWords()",
+      "getThreshold()"
+    ],
+    "java.util.HashMap": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "public static ClusterData getClusteredBuildings(CommunicationBuildingData building) throws SQLException {\n    ClusterData clusterData = new ClusterData(building.getWeek());\n    ArrayList<Integer> clusterIDs = DataManager.getClusterIDsByBuilding(building);\n    ArrayList<Cluster> clusters = new ArrayList<Cluster>();\n    for (Integer id : clusterIDs) {\n        clusters.add(DataManager.getClusterByID(id));\n    }\n    for (Cluster cluster : clusters) {\n        HashMap<IArtifact, Double> artifacts = DataManager.getArtifactsInCluster(cluster);\n        clusterData.addArtifacts(artifacts);\n        HashMap<String, Double> terms = new HashMap<String, Double>();\n        for (String term : cluster.getWords()) {\n            terms.put(term, cluster.getThreshold());\n        }\n        clusterData.addTerms(terms);\n    }\n    clusterData.calculateBuildingData();\n    return clusterData;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

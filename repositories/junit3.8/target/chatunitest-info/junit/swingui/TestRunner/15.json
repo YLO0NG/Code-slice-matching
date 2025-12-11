@@ -1,0 +1,40 @@
+{
+  "className": "TestRunner",
+  "methodName": "createJUnitMenu",
+  "brief": "protected JMenu createJUnitMenu(){}",
+  "methodSignature": "createJUnitMenu()",
+  "sourceCode": "protected JMenu createJUnitMenu() {\r\n\t\tJMenu menu= new JMenu(\"JUnit\");\r\n\t\tmenu.setMnemonic('J');\r\n\t\tJMenuItem mi1= new JMenuItem(\"About...\");\r\n\t\tmi1.addActionListener(\r\n\t\t    new ActionListener() {\r\n\t\t        public void actionPerformed(ActionEvent event) {\r\n\t\t            about();\r\n\t\t        }\r\n\t\t    }\r\n\t\t);\r\n\t\tmi1.setMnemonic('A');\r\n\t\tmenu.add(mi1);\r\n\r\n\t\tmenu.addSeparator();\r\n\t\tJMenuItem mi2= new JMenuItem(\" Exit \");\r\n\t\tmi2.addActionListener(\r\n\t\t    new ActionListener() {\r\n\t\t        public void actionPerformed(ActionEvent event) {\r\n\t\t            /*{*/fFrame.dispose();\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tsaveHistory();\r\n\t\t\t\t\t} catch (IOException e) {\r\n\t\t\t\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tSystem.exit(0);/*}*/\r\n\t\t        }\r\n\t\t    }\r\n\t\t);\r\n\t\tmi2.setMnemonic('x');\r\n\t\tmenu.add(mi2);\r\n\r\n\t\treturn menu;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)",
+      "setMnemonic(char)"
+    ],
+    "junit.swingui.TestRunner": [
+      "saveHistory()",
+      "about()"
+    ],
+    "javax.swing.JMenu": [
+      "addSeparator()",
+      "add(JMenuItem)"
+    ],
+    "java.awt.Window": [
+      "dispose()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Creates the JUnit menu. Clients override this\r\n * method to add additional menu items.\r\n */\r\nprotected JMenu createJUnitMenu() {\r\n    JMenu menu = new JMenu(\"JUnit\");\r\n    menu.setMnemonic('J');\r\n    JMenuItem mi1 = new JMenuItem(\"About...\");\r\n    mi1.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent event) {\r\n            about();\r\n        }\r\n    });\r\n    mi1.setMnemonic('A');\r\n    menu.add(mi1);\r\n    menu.addSeparator();\r\n    JMenuItem mi2 = new JMenuItem(\" Exit \");\r\n    mi2.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent event) {\r\n            /*{*/\r\n            fFrame.dispose();\r\n            try {\r\n                saveHistory();\r\n            } catch (IOException e) {\r\n                System.out.println(\"Couldn't save test run history\");\r\n            }\r\n            System.exit(0);\r\n            /*}*/\r\n        }\r\n    });\r\n    mi2.setMnemonic('x');\r\n    menu.add(mi2);\r\n    return menu;\r\n}",
+  "method_comment": "\r\n\t * Creates the JUnit menu. Clients override this\r\n\t * method to add additional menu items.\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,34 @@
+{
+  "className": "PertFigure",
+  "methodName": "needsLayout",
+  "brief": "private boolean needsLayout(){}",
+  "methodSignature": "needsLayout()",
+  "sourceCode": "private boolean needsLayout() {\n\t    Dimension extent = new Dimension(0, 0);\n\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n\t\t    extent.width = Math.max(extent.width, f.size().width);\n        }\n        int newExtent = extent.width + 2*BORDER;\n        return newExtent != fDisplayBox.width;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.lang.Math": [
+      "max(int, int)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "size()"
+    ]
+  },
+  "full_method_info": "private boolean needsLayout() {\n    Dimension extent = new Dimension(0, 0);\n    FigureEnumeration k = figures();\n    while (k.hasMoreElements()) {\n        Figure f = k.nextFigure();\n        extent.width = Math.max(extent.width, f.size().width);\n    }\n    int newExtent = extent.width + 2 * BORDER;\n    return newExtent != fDisplayBox.width;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

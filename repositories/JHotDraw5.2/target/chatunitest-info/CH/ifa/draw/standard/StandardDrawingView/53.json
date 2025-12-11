@@ -1,0 +1,40 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "checkMinimumSize",
+  "brief": "private void checkMinimumSize(){}",
+  "methodSignature": "checkMinimumSize()",
+  "sourceCode": "private void checkMinimumSize() {\n        FigureEnumeration k = drawing().figures();\n        Dimension d = new Dimension(0, 0);\n        while (k.hasMoreElements()) {\n            Rectangle r = k.nextFigure().displayBox();\n            d.width = Math.max(d.width, r.x+r.width);\n            d.height = Math.max(d.height, r.y+r.height);\n        }\n        if (fViewSize.height < d.height || fViewSize.width < d.width) {\n            fViewSize.height = d.height+10;\n            fViewSize.width = d.width+10;\n            setSize(fViewSize);\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "figures()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.lang.Math": [
+      "max(int, int)"
+    ],
+    "java.awt.Component": [
+      "setSize(Dimension)"
+    ]
+  },
+  "full_method_info": "private void checkMinimumSize() {\n    FigureEnumeration k = drawing().figures();\n    Dimension d = new Dimension(0, 0);\n    while (k.hasMoreElements()) {\n        Rectangle r = k.nextFigure().displayBox();\n        d.width = Math.max(d.width, r.x + r.width);\n        d.height = Math.max(d.height, r.y + r.height);\n    }\n    if (fViewSize.height < d.height || fViewSize.width < d.width) {\n        fViewSize.height = d.height + 10;\n        fViewSize.width = d.width + 10;\n        setSize(fViewSize);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

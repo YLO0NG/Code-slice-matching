@@ -1,0 +1,33 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        Color fill = getFillColor();\n        if (!ColorMap.isTransparent(fill)) {\n            g.setColor(fill);\n            drawBackground(g);\n        }\n        Color frame = getFrameColor();\n        if (!ColorMap.isTransparent(frame)) {\n            g.setColor(frame);\n            drawFrame(g);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "drawFrame(Graphics)",
+      "getFrameColor()",
+      "getFillColor()",
+      "drawBackground(Graphics)"
+    ],
+    "CH.ifa.draw.util.ColorMap": [
+      "isTransparent(Color)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the figure in the given graphics. Draw is a template\n * method calling drawBackground followed by drawFrame.\n */\npublic void draw(Graphics g) {\n    Color fill = getFillColor();\n    if (!ColorMap.isTransparent(fill)) {\n        g.setColor(fill);\n        drawBackground(g);\n    }\n    Color frame = getFrameColor();\n    if (!ColorMap.isTransparent(frame)) {\n        g.setColor(frame);\n        drawFrame(g);\n    }\n}",
+  "method_comment": "\n     * Draws the figure in the given graphics. Draw is a template\n     * method calling drawBackground followed by drawFrame.\n     ",
+  "method_annotation": ""
+}

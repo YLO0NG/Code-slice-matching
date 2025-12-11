@@ -1,0 +1,22 @@
+{
+  "className": "GridConstrainer",
+  "methodName": "constrainPoint",
+  "brief": "public Point constrainPoint(Point p){}",
+  "methodSignature": "constrainPoint(Point)",
+  "sourceCode": "public Point constrainPoint(Point p) {\n        p.x = ((p.x+fGridX/2) / fGridX) * fGridX;\n        p.y = ((p.y+fGridY/2) / fGridY) * fGridY;\n        return p;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/**\n * Constrains the given point.\n * @return constrained point.\n */\npublic Point constrainPoint(Point p) {\n    p.x = ((p.x + fGridX / 2) / fGridX) * fGridX;\n    p.y = ((p.y + fGridY / 2) / fGridY) * fGridY;\n    return p;\n}",
+  "method_comment": "\n     * Constrains the given point.\n     * @return constrained point.\n     ",
+  "method_annotation": ""
+}

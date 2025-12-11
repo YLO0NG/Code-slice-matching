@@ -1,0 +1,32 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "getAttribute",
+  "brief": "public Object getAttribute(String name){}",
+  "methodSignature": "getAttribute(String)",
+  "sourceCode": "public Object getAttribute(String name) {\n        if (name.equals(\"FrameColor\")) {\n            return getFrameColor();\n        }\n        else if (name.equals(\"ArrowMode\")) {\n            int value = 0;\n            if (getStartDecoration() != null)\n                value |= ARROW_TIP_START;\n            if (getEndDecoration() != null)\n                value |= ARROW_TIP_END;\n            return new Integer(value);\n        }\n        return super.getAttribute(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "getStartDecoration()",
+      "getFrameColor()",
+      "getEndDecoration()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the attribute with the given name.\n * PolyLineFigure maps \"ArrowMode\"to a\n * line decoration.\n */\npublic Object getAttribute(String name) {\n    if (name.equals(\"FrameColor\")) {\n        return getFrameColor();\n    } else if (name.equals(\"ArrowMode\")) {\n        int value = 0;\n        if (getStartDecoration() != null)\n            value |= ARROW_TIP_START;\n        if (getEndDecoration() != null)\n            value |= ARROW_TIP_END;\n        return new Integer(value);\n    }\n    return super.getAttribute(name);\n}",
+  "method_comment": "\n     * Gets the attribute with the given name.\n     * PolyLineFigure maps \"ArrowMode\"to a\n     * line decoration.\n     ",
+  "method_annotation": ""
+}

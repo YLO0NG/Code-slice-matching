@@ -1,0 +1,22 @@
+{
+  "className": "User",
+  "methodName": "setColor",
+  "brief": "public void setColor(Color color){}",
+  "methodSignature": "setColor(Color)",
+  "sourceCode": "public void setColor(Color color) {\n\t\tthis.color = color;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": []
+  },
+  "full_method_info": "public void setColor(Color color) {\n    this.color = color;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

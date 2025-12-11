@@ -1,0 +1,28 @@
+{
+  "className": "Assert",
+  "methodName": "assertNotSame",
+  "brief": "static public void assertNotSame(String message, Object expected, Object actual){}",
+  "methodSignature": "assertNotSame(String, Object, Object)",
+  "sourceCode": "static public void assertNotSame(String message, Object expected, Object actual) {\r\n\t\tif (expected == actual)\r\n\t\t\tfailSame(message, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "junit.framework.Assert": [
+      "failSame(String, Object, Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two objects refer to the same object. If they are not\r\n * an AssertionFailedError is thrown with the given message.\r\n */\r\nstatic public void assertNotSame(String message, Object expected, Object actual) {\r\n    if (expected == actual)\r\n        failSame(message, expected, actual);\r\n}",
+  "method_comment": "\r\n \t * Asserts that two objects refer to the same object. If they are not\r\n \t * an AssertionFailedError is thrown with the given message.\r\n \t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "SelectionTool",
+  "methodName": "createHandleTracker",
+  "brief": "protected Tool createHandleTracker(DrawingView view, Handle handle){}",
+  "methodSignature": "createHandleTracker(DrawingView, Handle)",
+  "sourceCode": "protected Tool createHandleTracker(DrawingView view, Handle handle) {\n        return new HandleTracker(view, handle);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView",
+    "Handle"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Handle": []
+  },
+  "full_method_info": "/**\n * Factory method to create a Handle tracker. It is used to track a handle.\n */\nprotected Tool createHandleTracker(DrawingView view, Handle handle) {\n    return new HandleTracker(view, handle);\n}",
+  "method_comment": "\n     * Factory method to create a Handle tracker. It is used to track a handle.\n     ",
+  "method_annotation": ""
+}

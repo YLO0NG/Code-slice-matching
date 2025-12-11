@@ -1,0 +1,18 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "getDistance",
+  "brief": "public double getDistance(){}",
+  "methodSignature": "getDistance()",
+  "sourceCode": "public double getDistance() {\n\t\treturn distance;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"distance\"\n */\npublic double getDistance() {\n    return distance;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"distance\"\n\t ",
+  "method_annotation": ""
+}

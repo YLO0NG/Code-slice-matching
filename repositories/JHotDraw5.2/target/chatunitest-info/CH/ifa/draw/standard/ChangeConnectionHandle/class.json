@@ -1,0 +1,84 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ChangeConnectionHandle",
+  "className": "ChangeConnectionHandle",
+  "index": 112,
+  "modifier": "[public , abstract ]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public abstract class ChangeConnectionHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "protected Connector         fOriginalTarget;",
+    "protected Figure            fTarget;",
+    "protected ConnectionFigure  fConnection;",
+    "protected Point             fStart;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "target()": "0",
+    "disconnect()": "1",
+    "connect(Connector)": "2",
+    "setPoint(int, int)": "3",
+    "source()": "4",
+    "invokeStart(int, int, DrawingView)": "5",
+    "invokeStep(int, int, int, int, DrawingView)": "6",
+    "invokeEnd(int, int, int, int, DrawingView)": "7",
+    "findConnectionTarget(int, int, Drawing)": "8",
+    "findConnector(int, int, Figure)": "9",
+    "draw(Graphics)": "10",
+    "findConnectableFigure(int, int, Drawing)": "11",
+    "ChangeConnectionHandle(Figure)": "12"
+  },
+  "methodsBrief": [
+    "protected abstract Connector target();",
+    "protected abstract void disconnect();",
+    "protected abstract void connect(Connector c);",
+    "protected abstract void setPoint(int x, int y);",
+    "protected Connector source(){}",
+    "public void invokeStart(int  x, int  y, DrawingView view){}",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "private Connector findConnectionTarget(int x, int y, Drawing drawing){}",
+    "protected Connector findConnector(int x, int y, Figure f){}",
+    "public void draw(Graphics g){}",
+    "private Figure findConnectableFigure(int x, int y, Drawing drawing){}",
+    "protected ChangeConnectionHandle(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "ChangeConnectionHandle(Figure)"
+  ],
+  "constructorBrief": [
+    "protected ChangeConnectionHandle(Figure owner){}"
+  ],
+  "getterSetterSigs": [
+    "setPoint(int, int)"
+  ],
+  "getterSetterBrief": [
+    "protected abstract void setPoint(int x, int y);"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)ChangeConnectionHandle.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * ChangeConnectionHandle factors the common code for handles\n * that can be used to reconnect connections.\n *\n * @see ChangeConnectionEndHandle\n * @see ChangeConnectionStartHandle\n */\npublic abstract class ChangeConnectionHandle extends AbstractHandle {\n\n    protected Connector fOriginalTarget;\n\n    protected Figure fTarget;\n\n    protected ConnectionFigure fConnection;\n\n    protected Point fStart;\n\n    protected ChangeConnectionHandle(Figure owner) {\n        super(owner);\n        fConnection = (ConnectionFigure) owner();\n        fTarget = null;\n    }\n\n    /**\n     * Returns the target connector of the change.\n     */\n    protected abstract Connector target();\n\n    /**\n     * Disconnects the connection.\n     */\n    protected abstract void disconnect();\n\n    /**\n     * Connect the connection with the given figure.\n     */\n    protected abstract void connect(Connector c);\n\n    /**\n     * Sets the location of the target point.\n     */\n    protected abstract void setPoint(int x, int y);\n\n    /**\n     * Gets the side of the connection that is unaffected by\n     * the change.\n     */\n    protected Connector source() {\n        if (target() == fConnection.start())\n            return fConnection.end();\n        return fConnection.start();\n    }\n\n    /**\n     * Disconnects the connection.\n     */\n    public void invokeStart(int x, int y, DrawingView view) {\n        fOriginalTarget = target();\n        fStart = new Point(x, y);\n        disconnect();\n    }\n\n    /**\n     * Finds a new target of the connection.\n     */\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Point p = new Point(x, y);\n        Figure f = findConnectableFigure(x, y, view.drawing());\n        // track the figure containing the mouse\n        if (f != fTarget) {\n            if (fTarget != null)\n                fTarget.connectorVisibility(false);\n            fTarget = f;\n            if (fTarget != null)\n                fTarget.connectorVisibility(true);\n        }\n        Connector target = findConnectionTarget(p.x, p.y, view.drawing());\n        if (target != null)\n            p = Geom.center(target.displayBox());\n        setPoint(p.x, p.y);\n    }\n\n    /**\n     * Connects the figure to the new target. If there is no\n     * new target the connection reverts to its original one.\n     */\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Connector target = findConnectionTarget(x, y, view.drawing());\n        if (target == null)\n            target = fOriginalTarget;\n        setPoint(x, y);\n        connect(target);\n        fConnection.updateConnection();\n        if (fTarget != null) {\n            fTarget.connectorVisibility(false);\n            fTarget = null;\n        }\n    }\n\n    private Connector findConnectionTarget(int x, int y, Drawing drawing) {\n        Figure target = findConnectableFigure(x, y, drawing);\n        if ((target != null) && target.canConnect() && target != fOriginalTarget && !target.includes(owner()) && fConnection.canConnect(source().owner(), target)) {\n            return findConnector(x, y, target);\n        }\n        return null;\n    }\n\n    protected Connector findConnector(int x, int y, Figure f) {\n        return f.connectorAt(x, y);\n    }\n\n    /**\n     * Draws this handle.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.green);\n        g.fillRect(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n\n    private Figure findConnectableFigure(int x, int y, Drawing drawing) {\n        FigureEnumeration k = drawing.figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            if (!figure.includes(fConnection) && figure.canConnect()) {\n                if (figure.containsPoint(x, y))\n                    return figure;\n            }\n        }\n        return null;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * ChangeConnectionHandle factors the common code for handles\n * that can be used to reconnect connections.\n *\n * @see ChangeConnectionEndHandle\n * @see ChangeConnectionStartHandle\n */\npublic abstract class ChangeConnectionHandle extends AbstractHandle {\n\n    protected Connector fOriginalTarget;\n\n    protected Figure fTarget;\n\n    protected ConnectionFigure fConnection;\n\n    protected Point fStart;\n\n    protected ChangeConnectionHandle(Figure owner) {\n        super(owner);\n        fConnection = (ConnectionFigure) owner();\n        fTarget = null;\n    }\n\n    /**\n     * Returns the target connector of the change.\n     */\n    protected abstract Connector target();\n\n    /**\n     * Disconnects the connection.\n     */\n    protected abstract void disconnect();\n\n    /**\n     * Connect the connection with the given figure.\n     */\n    protected abstract void connect(Connector c);\n\n    /**\n     * Sets the location of the target point.\n     */\n    protected abstract void setPoint(int x, int y);\n\n    /**\n     * Gets the side of the connection that is unaffected by\n     * the change.\n     */\n    protected Connector source() {\n        if (target() == fConnection.start())\n            return fConnection.end();\n        return fConnection.start();\n    }\n\n    /**\n     * Disconnects the connection.\n     */\n    public void invokeStart(int x, int y, DrawingView view) {\n        fOriginalTarget = target();\n        fStart = new Point(x, y);\n        disconnect();\n    }\n\n    /**\n     * Finds a new target of the connection.\n     */\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Point p = new Point(x, y);\n        Figure f = findConnectableFigure(x, y, view.drawing());\n        // track the figure containing the mouse\n        if (f != fTarget) {\n            if (fTarget != null)\n                fTarget.connectorVisibility(false);\n            fTarget = f;\n            if (fTarget != null)\n                fTarget.connectorVisibility(true);\n        }\n        Connector target = findConnectionTarget(p.x, p.y, view.drawing());\n        if (target != null)\n            p = Geom.center(target.displayBox());\n        setPoint(p.x, p.y);\n    }\n\n    /**\n     * Connects the figure to the new target. If there is no\n     * new target the connection reverts to its original one.\n     */\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Connector target = findConnectionTarget(x, y, view.drawing());\n        if (target == null)\n            target = fOriginalTarget;\n        setPoint(x, y);\n        connect(target);\n        fConnection.updateConnection();\n        if (fTarget != null) {\n            fTarget.connectorVisibility(false);\n            fTarget = null;\n        }\n    }\n\n    private Connector findConnectionTarget(int x, int y, Drawing drawing) {\n        Figure target = findConnectableFigure(x, y, drawing);\n        if ((target != null) && target.canConnect() && target != fOriginalTarget && !target.includes(owner()) && fConnection.canConnect(source().owner(), target)) {\n            return findConnector(x, y, target);\n        }\n        return null;\n    }\n\n    protected Connector findConnector(int x, int y, Figure f) {\n        return f.connectorAt(x, y);\n    }\n\n    /**\n     * Draws this handle.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.green);\n        g.fillRect(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n\n    private Figure findConnectableFigure(int x, int y, Drawing drawing) {\n        FigureEnumeration k = drawing.figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            if (!figure.includes(fConnection) && figure.canConnect()) {\n                if (figure.containsPoint(x, y))\n                    return figure;\n            }\n        }\n        return null;\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.standard.ChangeConnectionEndHandle",
+    "CH.ifa.draw.standard.ChangeConnectionStartHandle"
+  ]
+}

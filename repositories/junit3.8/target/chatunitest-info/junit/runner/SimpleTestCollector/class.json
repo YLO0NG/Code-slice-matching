@@ -1,0 +1,41 @@
+{
+  "fullClassName": "junit.runner.SimpleTestCollector",
+  "className": "SimpleTestCollector",
+  "index": 24,
+  "modifier": "[public ]",
+  "extend": "[ClassPathTestCollector]",
+  "implement": "[]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public class SimpleTestCollector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [
+    "ClassPathTestCollector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "isTestClass(String)": "0",
+    "SimpleTestCollector()": "1"
+  },
+  "methodsBrief": [
+    "protected boolean isTestClass(String classFileName){}",
+    "public SimpleTestCollector(){}"
+  ],
+  "constructorSigs": [
+    "SimpleTestCollector()"
+  ],
+  "constructorBrief": [
+    "public SimpleTestCollector(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\n/**\r\n * An implementation of a TestCollector that considers\r\n * a class to be a test class when it contains the\r\n * pattern \"Test\" in its name\r\n * @see TestCollector\r\n */\r\npublic class SimpleTestCollector extends ClassPathTestCollector {\r\n\r\n    public SimpleTestCollector() {\r\n    }\r\n\r\n    protected boolean isTestClass(String classFileName) {\r\n        return classFileName.endsWith(\".class\") && classFileName.indexOf('$') < 0 && classFileName.indexOf(\"Test\") > 0;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * An implementation of a TestCollector that considers\r\n * a class to be a test class when it contains the\r\n * pattern \"Test\" in its name\r\n * @see TestCollector\r\n */\r\npublic class SimpleTestCollector extends ClassPathTestCollector {\r\n\r\n    public SimpleTestCollector() {\r\n    }\r\n\r\n    protected boolean isTestClass(String classFileName) {\r\n        return classFileName.endsWith(\".class\") && classFileName.indexOf('$') < 0 && classFileName.indexOf(\"Test\") > 0;\r\n    }\r\n}",
+  "subClasses": []
+}

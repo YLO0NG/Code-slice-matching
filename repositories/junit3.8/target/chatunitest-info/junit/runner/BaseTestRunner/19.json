@@ -1,0 +1,18 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "clearStatus",
+  "brief": "protected void clearStatus(){}",
+  "methodSignature": "clearStatus()",
+  "sourceCode": "protected void clearStatus() { // Belongs in the GUI TestRunner class\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Clears the status message.\r\n */\r\nprotected void clearStatus() {\r\n    // Belongs in the GUI TestRunner class\r\n}",
+  "method_comment": "\r\n\t * Clears the status message.\r\n\t ",
+  "method_annotation": ""
+}

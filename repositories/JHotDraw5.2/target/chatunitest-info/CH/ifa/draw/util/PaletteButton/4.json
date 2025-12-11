@@ -1,0 +1,25 @@
+{
+  "className": "PaletteButton",
+  "methodName": "mousePressed",
+  "brief": "public void mousePressed(MouseEvent e){}",
+  "methodSignature": "mousePressed(MouseEvent)",
+  "sourceCode": "public void mousePressed(MouseEvent e) {\n        fOldState = fState;\n        fState = PRESSED;\n        repaint();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "java.awt.Component": [
+      "repaint()"
+    ]
+  },
+  "full_method_info": "public void mousePressed(MouseEvent e) {\n    fOldState = fState;\n    fState = PRESSED;\n    repaint();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

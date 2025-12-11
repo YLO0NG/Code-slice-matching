@@ -1,0 +1,26 @@
+{
+  "className": "PolyLineLocator",
+  "methodName": "locate",
+  "brief": "public Point locate(Figure owner){}",
+  "methodSignature": "locate(Figure)",
+  "sourceCode": "public Point locate(Figure owner) {\n        PolyLineFigure plf = (PolyLineFigure)owner;\n        // guard against changing PolyLineFigures -> temporary hack\n        if (fIndex < plf.pointCount())\n            return ((PolyLineFigure)owner).pointAt(fIndex);\n        return new Point(0, 0);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointCount()",
+      "pointAt(int)"
+    ]
+  },
+  "full_method_info": "public Point locate(Figure owner) {\n    PolyLineFigure plf = (PolyLineFigure) owner;\n    // guard against changing PolyLineFigures -> temporary hack\n    if (fIndex < plf.pointCount())\n        return ((PolyLineFigure) owner).pointAt(fIndex);\n    return new Point(0, 0);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

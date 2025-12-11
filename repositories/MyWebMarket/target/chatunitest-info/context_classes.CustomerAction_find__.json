@@ -1,0 +1,16 @@
+{
+  "targetClass": "classes.CustomerAction",
+  "targetMethod": "find()",
+  "dependentFields": {
+    "classes.HibernateUtil": "private static final SessionFactory sessionFactory = buildSessionFactory();",
+    "classes.Customer": "private Integer id;\nprivate String name;\nprivate String address;\nprivate Long phone;\nprivate String email;"
+  },
+  "dependentMethods": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory(){}",
+    "classes.Customer": "@Id\r\n\t@Column(name=\"ID_CUSTOMER\", nullable=false)\r\n\tpublic Integer getId(){}"
+  },
+  "dependentMethodBodies": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}",
+    "classes.Customer": "@Id\n\t@Column(name=\"ID_CUSTOMER\", nullable=false)\n\tpublic Integer getId() {\n\t\treturn this.id;\n\t}"
+  }
+}

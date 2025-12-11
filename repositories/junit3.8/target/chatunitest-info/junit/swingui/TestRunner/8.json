@@ -1,0 +1,33 @@
+{
+  "className": "TestRunner",
+  "methodName": "appendFailure",
+  "brief": "private void appendFailure(String kind, Test test, Throwable t){}",
+  "methodSignature": "appendFailure(String, Test, Throwable)",
+  "sourceCode": "private void appendFailure(String kind, Test test, Throwable t) {\r\n\t\tfFailures.addElement(new TestFailure(test, t));\r\n\t\tif (fFailures.size() == 1)\r\n\t\t\trevealFailure(test);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [],
+    "javax.swing.DefaultListModel": [
+      "addElement(E)",
+      "size()"
+    ],
+    "junit.swingui.TestRunner": [
+      "revealFailure(Test)"
+    ]
+  },
+  "full_method_info": "private void appendFailure(String kind, Test test, Throwable t) {\r\n    fFailures.addElement(new TestFailure(test, t));\r\n    if (fFailures.size() == 1)\r\n        revealFailure(test);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

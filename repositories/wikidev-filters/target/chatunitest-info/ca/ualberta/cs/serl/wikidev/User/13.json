@@ -1,0 +1,20 @@
+{
+  "className": "User",
+  "methodName": "setRolePerProject",
+  "brief": "public void setRolePerProject(HashMap<Project, String> rolePerProject){}",
+  "methodSignature": "setRolePerProject(HashMap)",
+  "sourceCode": "public void setRolePerProject(HashMap<Project, String> rolePerProject) {\n\t\tthis.rolePerProject = rolePerProject;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "HashMap<Project,String>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param  rolePerProject\n * @uml.property  name=\"rolePerProject\"\n */\npublic void setRolePerProject(HashMap<Project, String> rolePerProject) {\n    this.rolePerProject = rolePerProject;\n}",
+  "method_comment": "\n\t * @param  rolePerProject\n\t * @uml.property  name=\"rolePerProject\"\n\t ",
+  "method_annotation": ""
+}

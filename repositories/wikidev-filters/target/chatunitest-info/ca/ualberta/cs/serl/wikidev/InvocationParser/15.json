@@ -1,0 +1,20 @@
+{
+  "className": "InvocationParser",
+  "methodName": "setUpperBound",
+  "brief": "public void setUpperBound(double upperBound){}",
+  "methodSignature": "setUpperBound(double)",
+  "sourceCode": "public void setUpperBound(double upperBound) {\n\t\tthis.upperBound = upperBound;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setUpperBound(double upperBound) {\n    this.upperBound = upperBound;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

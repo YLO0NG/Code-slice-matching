@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.runner.BaseTestRunner",
+  "targetMethod": "getPreferences()",
+  "dependentFields": {
+    "junit.runner.BaseTestRunner": "public static final String SUITE_METHODNAME= \"suite\";\nprivate static Properties fPreferences;\nstatic int fgMaxMessageLength= 500;\nstatic boolean fgFilterStack= true;\nboolean fLoading= true;"
+  },
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": "private static File getPreferencesFile(){}\nprotected static void setPreferences(Properties preferences){}\nprotected static Properties getPreferences(){}"
+  },
+  "dependentMethodBodies": {
+    "junit.runner.BaseTestRunner": "private static File getPreferencesFile() {\r\n\t \tString home= System.getProperty(\"user.home\");\r\n \t\treturn new File(home, \"junit.properties\");\r\n \t}\nprotected static void setPreferences(Properties preferences) {\r\n\t\tfPreferences= preferences;\r\n\t}\nprotected static Properties getPreferences() {\r\n\t\tif (fPreferences == null) {\r\n\t\t\tfPreferences= new Properties();\r\n\t \t\tfPreferences.put(\"loading\", \"true\");\r\n \t\t\tfPreferences.put(\"filterstack\", \"true\");\r\n  \t\t\t/*{*/InputStream is= null;\r\n\t\t\ttry {\r\n\t\t\t\tis= new FileInputStream(getPreferencesFile());\r\n\t\t\t\tsetPreferences(new Properties(getPreferences()));\r\n\t\t\t\tgetPreferences().load(is);\r\n\t\t\t} catch (IOException e) {\r\n\t\t\t\ttry {\r\n\t\t\t\t\tif (is != null)\r\n\t\t\t\t\t\tis.close();\r\n\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t}\r\n\t\t\t}/*}*/\r\n\t\t}\r\n\t\treturn fPreferences;\r\n\t}"
+  }
+}

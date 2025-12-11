@@ -1,0 +1,22 @@
+{
+  "className": "HJDError",
+  "methodName": "HJDError",
+  "brief": "public HJDError(String msg){}",
+  "methodSignature": "HJDError(String)",
+  "sourceCode": "public HJDError(String msg) {\n\t    super(msg);\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public HJDError(String msg) {\n    super(msg);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

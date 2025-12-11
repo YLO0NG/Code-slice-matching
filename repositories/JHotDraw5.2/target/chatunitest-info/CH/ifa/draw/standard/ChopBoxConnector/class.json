@@ -1,0 +1,57 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ChopBoxConnector",
+  "className": "ChopBoxConnector",
+  "index": 114,
+  "modifier": "[public ]",
+  "extend": "[AbstractConnector]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class ChopBoxConnector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -1461450322712345462L;"
+  ],
+  "superClasses": [
+    "AbstractConnector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "findStart(ConnectionFigure)": "0",
+    "findEnd(ConnectionFigure)": "1",
+    "chop(Figure, Point)": "2",
+    "ChopBoxConnector()": "3",
+    "ChopBoxConnector(Figure)": "4"
+  },
+  "methodsBrief": [
+    "public Point findStart(ConnectionFigure connection){}",
+    "public Point findEnd(ConnectionFigure connection){}",
+    "protected Point chop(Figure target, Point from){}",
+    "public ChopBoxConnector(){}",
+    "public ChopBoxConnector(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "ChopBoxConnector()",
+    "ChopBoxConnector(Figure)"
+  ],
+  "constructorBrief": [
+    "public ChopBoxConnector(){}",
+    "public ChopBoxConnector(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ChopBoxConnector.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * A ChopBoxConnector locates connection points by\n * choping the connection between the centers of the\n * two figures at the display box.\n * @see Connector\n */\npublic class ChopBoxConnector extends AbstractConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -1461450322712345462L;\n\n    public ChopBoxConnector() {\n        // only used for Storable implementation\n    }\n\n    public ChopBoxConnector(Figure owner) {\n        super(owner);\n    }\n\n    public Point findStart(ConnectionFigure connection) {\n        Figure startFigure = connection.start().owner();\n        Rectangle r2 = connection.end().displayBox();\n        Point r2c = null;\n        if (connection.pointCount() == 2)\n            r2c = new Point(r2.x + r2.width / 2, r2.y + r2.height / 2);\n        else\n            r2c = connection.pointAt(1);\n        return chop(startFigure, r2c);\n    }\n\n    public Point findEnd(ConnectionFigure connection) {\n        Figure endFigure = connection.end().owner();\n        Rectangle r1 = connection.start().displayBox();\n        Point r1c = null;\n        if (connection.pointCount() == 2)\n            r1c = new Point(r1.x + r1.width / 2, r1.y + r1.height / 2);\n        else\n            r1c = connection.pointAt(connection.pointCount() - 2);\n        return chop(endFigure, r1c);\n    }\n\n    protected Point chop(Figure target, Point from) {\n        Rectangle r = target.displayBox();\n        return Geom.angleToPoint(r, (Geom.pointToAngle(r, from)));\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A ChopBoxConnector locates connection points by\n * choping the connection between the centers of the\n * two figures at the display box.\n * @see Connector\n */\npublic class ChopBoxConnector extends AbstractConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -1461450322712345462L;\n\n    public ChopBoxConnector() {\n        // only used for Storable implementation\n    }\n\n    public ChopBoxConnector(Figure owner) {\n        super(owner);\n    }\n\n    public Point findStart(ConnectionFigure connection) {\n        Figure startFigure = connection.start().owner();\n        Rectangle r2 = connection.end().displayBox();\n        Point r2c = null;\n        if (connection.pointCount() == 2)\n            r2c = new Point(r2.x + r2.width / 2, r2.y + r2.height / 2);\n        else\n            r2c = connection.pointAt(1);\n        return chop(startFigure, r2c);\n    }\n\n    public Point findEnd(ConnectionFigure connection) {\n        Figure endFigure = connection.end().owner();\n        Rectangle r1 = connection.start().displayBox();\n        Point r1c = null;\n        if (connection.pointCount() == 2)\n            r1c = new Point(r1.x + r1.width / 2, r1.y + r1.height / 2);\n        else\n            r1c = connection.pointAt(connection.pointCount() - 2);\n        return chop(endFigure, r1c);\n    }\n\n    protected Point chop(Figure target, Point from) {\n        Rectangle r = target.displayBox();\n        return Geom.angleToPoint(r, (Geom.pointToAngle(r, from)));\n    }\n}",
+  "subClasses": []
+}

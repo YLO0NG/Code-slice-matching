@@ -1,0 +1,41 @@
+{
+  "className": "DataManager",
+  "methodName": "getUserByID",
+  "brief": "public static User getUserByID(int userID) throws SQLException{}",
+  "methodSignature": "getUserByID(int)",
+  "sourceCode": "public static User getUserByID(int userID) throws SQLException {\n    \tUser user = null;\n    \tif (!userIDs.contains(userID)) {\n\t\t\tString sqlStmt = QueryBuilder.selectUserByID(userID);\n\t\t\tResultSet res = null;\n\t\t\tres = statement.executeQuery(sqlStmt);\n\t\t\twhile (res.next()) {\n\t\t\t\tuser = new User(res.getInt(\"user_id\"), res\n\t\t\t\t\t\t.getString(\"user_name\"), res\n\t\t\t\t\t\t.getString(\"user_real_name\"));\n\n\t\t\t}\n\t\t\tif (res != null)\n\t\t\t\tres.close();\n\t\t\tusers.add(user);\n\t\t\tuserIDs.add(userID);\n\t\t\tusernames.add(user.getUserName());\n\t\t}\n    \telse {\n    \t\tfor(User aUser : users) {\n    \t\t\tif(aUser.getUserID() == userID) {\n    \t\t\t\tuser = aUser;\n    \t\t\t}\n    \t\t}\n    \t}\n    \treturn user;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Set": [
+      "contains(Object)",
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectUserByID(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getUserName()",
+      "getUserID()"
+    ]
+  },
+  "full_method_info": "public static User getUserByID(int userID) throws SQLException {\n    User user = null;\n    if (!userIDs.contains(userID)) {\n        String sqlStmt = QueryBuilder.selectUserByID(userID);\n        ResultSet res = null;\n        res = statement.executeQuery(sqlStmt);\n        while (res.next()) {\n            user = new User(res.getInt(\"user_id\"), res.getString(\"user_name\"), res.getString(\"user_real_name\"));\n        }\n        if (res != null)\n            res.close();\n        users.add(user);\n        userIDs.add(userID);\n        usernames.add(user.getUserName());\n    } else {\n        for (User aUser : users) {\n            if (aUser.getUserID() == userID) {\n                user = aUser;\n            }\n        }\n    }\n    return user;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

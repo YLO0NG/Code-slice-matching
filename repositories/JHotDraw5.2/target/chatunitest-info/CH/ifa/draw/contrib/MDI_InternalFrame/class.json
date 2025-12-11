@@ -1,0 +1,92 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.MDI_InternalFrame",
+  "className": "MDI_InternalFrame",
+  "index": 11,
+  "modifier": "[public ]",
+  "extend": "[JInternalFrame]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class MDI_InternalFrame",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Component;",
+    "import java.awt.Container;",
+    "import javax.swing.JInternalFrame;",
+    "import CH.ifa.draw.framework.Drawing;",
+    "import CH.ifa.draw.framework.DrawingView;",
+    "import CH.ifa.draw.standard.StandardDrawingView;"
+  ],
+  "fields": [
+    "private DrawingView internalDrawingView;"
+  ],
+  "superClasses": [
+    "JInternalFrame"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "setDrawingView(DrawingView)": "0",
+    "getDrawingView()": "1",
+    "setDrawing(Drawing)": "2",
+    "getDrawing()": "3",
+    "replaceDrawingView(StandardDrawingView)": "4",
+    "findDrawingView(StandardDrawingView, Container)": "5",
+    "MDI_InternalFrame()": "6",
+    "MDI_InternalFrame(String)": "7",
+    "MDI_InternalFrame(String, boolean)": "8",
+    "MDI_InternalFrame(String, boolean, boolean)": "9",
+    "MDI_InternalFrame(String, boolean, boolean, boolean)": "10",
+    "MDI_InternalFrame(String, boolean, boolean, boolean, boolean)": "11"
+  },
+  "methodsBrief": [
+    "public void setDrawingView(DrawingView newInternalDrawingView){}",
+    "public DrawingView getDrawingView(){}",
+    "public void setDrawing(Drawing newInternalDrawing){}",
+    "public Drawing getDrawing(){}",
+    "public StandardDrawingView replaceDrawingView(StandardDrawingView newDrawingView){}",
+    "protected StandardDrawingView findDrawingView(StandardDrawingView newDrawingView, Container container){}",
+    "public MDI_InternalFrame(){}",
+    "public MDI_InternalFrame(String title){}",
+    "public MDI_InternalFrame(String title, boolean resizable){}",
+    "public MDI_InternalFrame(String title, boolean resizable, boolean closable){}",
+    "public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable){}",
+    "public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable, boolean iconifiable){}"
+  ],
+  "constructorSigs": [
+    "MDI_InternalFrame()",
+    "MDI_InternalFrame(String)",
+    "MDI_InternalFrame(String, boolean)",
+    "MDI_InternalFrame(String, boolean, boolean)",
+    "MDI_InternalFrame(String, boolean, boolean, boolean)",
+    "MDI_InternalFrame(String, boolean, boolean, boolean, boolean)"
+  ],
+  "constructorBrief": [
+    "public MDI_InternalFrame(){}",
+    "public MDI_InternalFrame(String title){}",
+    "public MDI_InternalFrame(String title, boolean resizable){}",
+    "public MDI_InternalFrame(String title, boolean resizable, boolean closable){}",
+    "public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable){}",
+    "public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable, boolean iconifiable){}"
+  ],
+  "getterSetterSigs": [
+    "setDrawingView(DrawingView)",
+    "getDrawingView()",
+    "setDrawing(Drawing)",
+    "getDrawing()"
+  ],
+  "getterSetterBrief": [
+    "public void setDrawingView(DrawingView newInternalDrawingView){}",
+    "public DrawingView getDrawingView(){}",
+    "public void setDrawing(Drawing newInternalDrawing){}",
+    "public Drawing getDrawing(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "/*\n * @(#)MDI_InternalFrame.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Component;\nimport java.awt.Container;\nimport javax.swing.JInternalFrame;\nimport CH.ifa.draw.framework.Drawing;\nimport CH.ifa.draw.framework.DrawingView;\nimport CH.ifa.draw.standard.StandardDrawingView;\n\n/**\n * This class provides support for JHotDraw applications with multiple\n * document interfaces.\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.7.1999\n */\npublic class MDI_InternalFrame extends JInternalFrame {\n\n    private DrawingView internalDrawingView;\n\n    public MDI_InternalFrame() {\n        super();\n    }\n\n    public MDI_InternalFrame(String title) {\n        super(title);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable) {\n        super(title, resizable);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable, boolean closable) {\n        super(title, resizable, closable);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable) {\n        super(title, resizable, closable, maximizable);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable, boolean iconifiable) {\n        super(title, resizable, closable, maximizable, iconifiable);\n    }\n\n    /**\n     * Set the drawing view which represents the internal frame\n     *\n     * @param   newInternalDrawingView  drawing view for this internal frame\n     */\n    public void setDrawingView(DrawingView newInternalDrawingView) {\n        internalDrawingView = newInternalDrawingView;\n    }\n\n    /**\n     * Get the drawing view which represents the internal frame\n     *\n     * @param   newInternalDrawingView  drawing view for this internal frame\n     */\n    public DrawingView getDrawingView() {\n        return internalDrawingView;\n    }\n\n    /**\n     * Set the drawing which is represented in the internal frame\n     *\n     * @param\tnewInternalDrawing\tdrawing for the internal frame\n     */\n    public void setDrawing(Drawing newInternalDrawing) {\n        getDrawingView().setDrawing(newInternalDrawing);\n    }\n\n    /**\n     * Get the drawing which is represented in the internal frame\n     *\n     * @return\tdrawing for the internal frame\n     */\n    public Drawing getDrawing() {\n        return getDrawingView().drawing();\n    }\n\n    /**\n     * Replace an existing drawing view with a new one. A JHotDraw application can\n     * have only one DrawingView active at a time. Therefore, the currently active\n     * internal frame gets the active DrawingView after its Drawing view has\n     * been backed up for later restorage.\n     *\n     * @parame\tnewDrawingView\tDrawingView which should replace the current one\n     */\n    public StandardDrawingView replaceDrawingView(StandardDrawingView newDrawingView) {\n        StandardDrawingView oldDrawingView = findDrawingView(newDrawingView, getContentPane());\n        if (oldDrawingView != null) {\n            Container parent = ((StandardDrawingView) oldDrawingView).getParent();\n            parent.remove(oldDrawingView);\n            parent.add(newDrawingView);\n            setDrawingView(newDrawingView);\n            return oldDrawingView;\n        } else {\n            // DrawingView not found\n            return null;\n        }\n    }\n\n    /**\n     * Searches the DrawingView in the children's component hierarchy.\n     *\n     * @param\tnewDrawingView\tDrawingView to be searched\n     * @param\tcontainer\t\tContainer which is searched\n     */\n    protected StandardDrawingView findDrawingView(StandardDrawingView newDrawingView, Container container) {\n        StandardDrawingView oldDrawingView = null;\n        Component[] components = container.getComponents();\n        for (int i = 0; i < components.length; i++) {\n            if (components[i] instanceof DrawingView) {\n                return (StandardDrawingView) components[i];\n            } else if (components[i] instanceof Container) {\n                oldDrawingView = findDrawingView(newDrawingView, (Container) components[i]);\n                if (oldDrawingView != null) {\n                    return oldDrawingView;\n                }\n            }\n        }\n        return oldDrawingView;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * This class provides support for JHotDraw applications with multiple\n * document interfaces.\n *\n * @author  Wolfram Kaiser\n * @version JHotDraw 5.2    31.7.1999\n */\npublic class MDI_InternalFrame extends JInternalFrame {\n\n    private DrawingView internalDrawingView;\n\n    public MDI_InternalFrame() {\n        super();\n    }\n\n    public MDI_InternalFrame(String title) {\n        super(title);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable) {\n        super(title, resizable);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable, boolean closable) {\n        super(title, resizable, closable);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable) {\n        super(title, resizable, closable, maximizable);\n    }\n\n    public MDI_InternalFrame(String title, boolean resizable, boolean closable, boolean maximizable, boolean iconifiable) {\n        super(title, resizable, closable, maximizable, iconifiable);\n    }\n\n    /**\n     * Set the drawing view which represents the internal frame\n     *\n     * @param   newInternalDrawingView  drawing view for this internal frame\n     */\n    public void setDrawingView(DrawingView newInternalDrawingView) {\n        internalDrawingView = newInternalDrawingView;\n    }\n\n    /**\n     * Get the drawing view which represents the internal frame\n     *\n     * @param   newInternalDrawingView  drawing view for this internal frame\n     */\n    public DrawingView getDrawingView() {\n        return internalDrawingView;\n    }\n\n    /**\n     * Set the drawing which is represented in the internal frame\n     *\n     * @param\tnewInternalDrawing\tdrawing for the internal frame\n     */\n    public void setDrawing(Drawing newInternalDrawing) {\n        getDrawingView().setDrawing(newInternalDrawing);\n    }\n\n    /**\n     * Get the drawing which is represented in the internal frame\n     *\n     * @return\tdrawing for the internal frame\n     */\n    public Drawing getDrawing() {\n        return getDrawingView().drawing();\n    }\n\n    /**\n     * Replace an existing drawing view with a new one. A JHotDraw application can\n     * have only one DrawingView active at a time. Therefore, the currently active\n     * internal frame gets the active DrawingView after its Drawing view has\n     * been backed up for later restorage.\n     *\n     * @parame\tnewDrawingView\tDrawingView which should replace the current one\n     */\n    public StandardDrawingView replaceDrawingView(StandardDrawingView newDrawingView) {\n        StandardDrawingView oldDrawingView = findDrawingView(newDrawingView, getContentPane());\n        if (oldDrawingView != null) {\n            Container parent = ((StandardDrawingView) oldDrawingView).getParent();\n            parent.remove(oldDrawingView);\n            parent.add(newDrawingView);\n            setDrawingView(newDrawingView);\n            return oldDrawingView;\n        } else {\n            // DrawingView not found\n            return null;\n        }\n    }\n\n    /**\n     * Searches the DrawingView in the children's component hierarchy.\n     *\n     * @param\tnewDrawingView\tDrawingView to be searched\n     * @param\tcontainer\t\tContainer which is searched\n     */\n    protected StandardDrawingView findDrawingView(StandardDrawingView newDrawingView, Container container) {\n        StandardDrawingView oldDrawingView = null;\n        Component[] components = container.getComponents();\n        for (int i = 0; i < components.length; i++) {\n            if (components[i] instanceof DrawingView) {\n                return (StandardDrawingView) components[i];\n            } else if (components[i] instanceof Container) {\n                oldDrawingView = findDrawingView(newDrawingView, (Container) components[i]);\n                if (oldDrawingView != null) {\n                    return oldDrawingView;\n                }\n            }\n        }\n        return oldDrawingView;\n    }\n}",
+  "subClasses": []
+}

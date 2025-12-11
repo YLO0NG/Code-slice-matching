@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setLinesremoved",
+  "brief": "public void setLinesremoved(int linesremoved){}",
+  "methodSignature": "setLinesremoved(int)",
+  "sourceCode": "public void setLinesremoved(int linesremoved) {\n\t\tthis.linesremoved = linesremoved;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param linesremoved\n * @uml.property  name=\"linesremoved\"\n */\npublic void setLinesremoved(int linesremoved) {\n    this.linesremoved = linesremoved;\n}",
+  "method_comment": "\n\t * @param linesremoved\n\t * @uml.property  name=\"linesremoved\"\n\t ",
+  "method_annotation": ""
+}

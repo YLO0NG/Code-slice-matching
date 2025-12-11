@@ -1,0 +1,109 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.WikiRevision",
+  "className": "WikiRevision",
+  "index": 12,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class WikiRevision",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.Timestamp;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [
+    "private int rev_id;",
+    "private int rev_page;",
+    "private int rev_text_id;",
+    "private String rev_text;",
+    "private String rev_user_text;",
+    "private User rev_user;",
+    "private Timestamp rev_timestamp;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getRev_id()": "0",
+    "setRev_id(int)": "1",
+    "getRev_page()": "2",
+    "setRev_page(int)": "3",
+    "getRev_text_id()": "4",
+    "setRev_text_id(int)": "5",
+    "getRev_user_text()": "6",
+    "setRev_user_text(String)": "7",
+    "getRev_user()": "8",
+    "setRev_user(User)": "9",
+    "getRev_timestamp()": "10",
+    "setRev_timestamp(Timestamp)": "11",
+    "getRev_text()": "12",
+    "setRev_text(String)": "13",
+    "WikiRevision(int, int, int, String, Timestamp)": "14"
+  },
+  "methodsBrief": [
+    "public int getRev_id(){}",
+    "public void setRev_id(int rev_id){}",
+    "public int getRev_page(){}",
+    "public void setRev_page(int rev_page){}",
+    "public int getRev_text_id(){}",
+    "public void setRev_text_id(int rev_text_id){}",
+    "public String getRev_user_text(){}",
+    "public void setRev_user_text(String rev_user_text){}",
+    "public User getRev_user(){}",
+    "public void setRev_user(User rev_user){}",
+    "public Timestamp getRev_timestamp(){}",
+    "public void setRev_timestamp(Timestamp rev_timestamp){}",
+    "public String getRev_text(){}",
+    "public void setRev_text(String rev_text){}",
+    "public WikiRevision(int rev_id, int rev_page, int rev_text_id,\r\n\t\t\tString rev_user_text, Timestamp rev_timestamp){}"
+  ],
+  "constructorSigs": [
+    "WikiRevision(int, int, int, String, Timestamp)"
+  ],
+  "constructorBrief": [
+    "public WikiRevision(int rev_id, int rev_page, int rev_text_id,\r\n\t\t\tString rev_user_text, Timestamp rev_timestamp){}"
+  ],
+  "getterSetterSigs": [
+    "getRev_id()",
+    "setRev_id(int)",
+    "getRev_page()",
+    "setRev_page(int)",
+    "getRev_text_id()",
+    "setRev_text_id(int)",
+    "getRev_user_text()",
+    "setRev_user_text(String)",
+    "getRev_user()",
+    "setRev_user(User)",
+    "getRev_timestamp()",
+    "setRev_timestamp(Timestamp)",
+    "getRev_text()",
+    "setRev_text(String)"
+  ],
+  "getterSetterBrief": [
+    "public int getRev_id(){}",
+    "public void setRev_id(int rev_id){}",
+    "public int getRev_page(){}",
+    "public void setRev_page(int rev_page){}",
+    "public int getRev_text_id(){}",
+    "public void setRev_text_id(int rev_text_id){}",
+    "public String getRev_user_text(){}",
+    "public void setRev_user_text(String rev_user_text){}",
+    "public User getRev_user(){}",
+    "public void setRev_user(User rev_user){}",
+    "public Timestamp getRev_timestamp(){}",
+    "public void setRev_timestamp(Timestamp rev_timestamp){}",
+    "public String getRev_text(){}",
+    "public void setRev_text(String rev_text){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\nimport java.sql.Timestamp;\nimport ca.ualberta.cs.serl.wikidev.User;\n\npublic class WikiRevision {\n\n    /**\n     * @uml.property  name=\"rev_id\"\n     */\n    private int rev_id;\n\n    /**\n     * @uml.property  name=\"rev_page\"\n     */\n    private int rev_page;\n\n    /**\n     * @uml.property  name=\"rev_text_id\"\n     */\n    private int rev_text_id;\n\n    /**\n     * @uml.property  name=\"rev_text\"\n     */\n    private String rev_text;\n\n    /**\n     * @uml.property  name=\"rev_user_text\"\n     */\n    private String rev_user_text;\n\n    /**\n     * @uml.property  name=\"rev_user\"\n     * @uml.associationEnd\n     */\n    private User rev_user;\n\n    /**\n     * @uml.property  name=\"rev_timestamp\"\n     */\n    private Timestamp rev_timestamp;\n\n    public WikiRevision(int rev_id, int rev_page, int rev_text_id, String rev_user_text, Timestamp rev_timestamp) {\n        this.rev_id = rev_id;\n        this.rev_page = rev_page;\n        this.rev_text_id = rev_text_id;\n        this.rev_user_text = rev_user_text;\n        this.rev_timestamp = rev_timestamp;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_id\"\n     */\n    public int getRev_id() {\n        return rev_id;\n    }\n\n    /**\n     * @param rev_id\n     * @uml.property  name=\"rev_id\"\n     */\n    public void setRev_id(int rev_id) {\n        this.rev_id = rev_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_page\"\n     */\n    public int getRev_page() {\n        return rev_page;\n    }\n\n    /**\n     * @param rev_page\n     * @uml.property  name=\"rev_page\"\n     */\n    public void setRev_page(int rev_page) {\n        this.rev_page = rev_page;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_text_id\"\n     */\n    public int getRev_text_id() {\n        return rev_text_id;\n    }\n\n    /**\n     * @param rev_text_id\n     * @uml.property  name=\"rev_text_id\"\n     */\n    public void setRev_text_id(int rev_text_id) {\n        this.rev_text_id = rev_text_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_user_text\"\n     */\n    public String getRev_user_text() {\n        return rev_user_text;\n    }\n\n    /**\n     * @param rev_user_text\n     * @uml.property  name=\"rev_user_text\"\n     */\n    public void setRev_user_text(String rev_user_text) {\n        this.rev_user_text = rev_user_text;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_user\"\n     */\n    public User getRev_user() {\n        return rev_user;\n    }\n\n    /**\n     * @param rev_user\n     * @uml.property  name=\"rev_user\"\n     */\n    public void setRev_user(User rev_user) {\n        this.rev_user = rev_user;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_timestamp\"\n     */\n    public Timestamp getRev_timestamp() {\n        return rev_timestamp;\n    }\n\n    /**\n     * @param rev_timestamp\n     * @uml.property  name=\"rev_timestamp\"\n     */\n    public void setRev_timestamp(Timestamp rev_timestamp) {\n        this.rev_timestamp = rev_timestamp;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_text\"\n     */\n    public String getRev_text() {\n        return rev_text;\n    }\n\n    /**\n     * @param rev_text\n     * @uml.property  name=\"rev_text\"\n     */\n    public void setRev_text(String rev_text) {\n        this.rev_text = rev_text;\n    }\n}\n",
+  "classDeclarationCode": "public class WikiRevision {\n\n    /**\n     * @uml.property  name=\"rev_id\"\n     */\n    private int rev_id;\n\n    /**\n     * @uml.property  name=\"rev_page\"\n     */\n    private int rev_page;\n\n    /**\n     * @uml.property  name=\"rev_text_id\"\n     */\n    private int rev_text_id;\n\n    /**\n     * @uml.property  name=\"rev_text\"\n     */\n    private String rev_text;\n\n    /**\n     * @uml.property  name=\"rev_user_text\"\n     */\n    private String rev_user_text;\n\n    /**\n     * @uml.property  name=\"rev_user\"\n     * @uml.associationEnd\n     */\n    private User rev_user;\n\n    /**\n     * @uml.property  name=\"rev_timestamp\"\n     */\n    private Timestamp rev_timestamp;\n\n    public WikiRevision(int rev_id, int rev_page, int rev_text_id, String rev_user_text, Timestamp rev_timestamp) {\n        this.rev_id = rev_id;\n        this.rev_page = rev_page;\n        this.rev_text_id = rev_text_id;\n        this.rev_user_text = rev_user_text;\n        this.rev_timestamp = rev_timestamp;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_id\"\n     */\n    public int getRev_id() {\n        return rev_id;\n    }\n\n    /**\n     * @param rev_id\n     * @uml.property  name=\"rev_id\"\n     */\n    public void setRev_id(int rev_id) {\n        this.rev_id = rev_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_page\"\n     */\n    public int getRev_page() {\n        return rev_page;\n    }\n\n    /**\n     * @param rev_page\n     * @uml.property  name=\"rev_page\"\n     */\n    public void setRev_page(int rev_page) {\n        this.rev_page = rev_page;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_text_id\"\n     */\n    public int getRev_text_id() {\n        return rev_text_id;\n    }\n\n    /**\n     * @param rev_text_id\n     * @uml.property  name=\"rev_text_id\"\n     */\n    public void setRev_text_id(int rev_text_id) {\n        this.rev_text_id = rev_text_id;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_user_text\"\n     */\n    public String getRev_user_text() {\n        return rev_user_text;\n    }\n\n    /**\n     * @param rev_user_text\n     * @uml.property  name=\"rev_user_text\"\n     */\n    public void setRev_user_text(String rev_user_text) {\n        this.rev_user_text = rev_user_text;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_user\"\n     */\n    public User getRev_user() {\n        return rev_user;\n    }\n\n    /**\n     * @param rev_user\n     * @uml.property  name=\"rev_user\"\n     */\n    public void setRev_user(User rev_user) {\n        this.rev_user = rev_user;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_timestamp\"\n     */\n    public Timestamp getRev_timestamp() {\n        return rev_timestamp;\n    }\n\n    /**\n     * @param rev_timestamp\n     * @uml.property  name=\"rev_timestamp\"\n     */\n    public void setRev_timestamp(Timestamp rev_timestamp) {\n        this.rev_timestamp = rev_timestamp;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rev_text\"\n     */\n    public String getRev_text() {\n        return rev_text;\n    }\n\n    /**\n     * @param rev_text\n     * @uml.property  name=\"rev_text\"\n     */\n    public void setRev_text(String rev_text) {\n        this.rev_text = rev_text;\n    }\n}",
+  "subClasses": []
+}

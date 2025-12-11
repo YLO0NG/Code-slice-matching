@@ -1,0 +1,18 @@
+{
+  "className": "ArrowTip",
+  "methodName": "getInnerRadius",
+  "brief": "protected double getInnerRadius(){}",
+  "methodSignature": "getInnerRadius()",
+  "sourceCode": "protected double getInnerRadius() {\n    \treturn fInnerRadius;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the inner radius\n */\nprotected double getInnerRadius() {\n    return fInnerRadius;\n}",
+  "method_comment": "\n\t * Returns the inner radius\n\t ",
+  "method_annotation": ""
+}

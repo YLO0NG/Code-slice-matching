@@ -1,0 +1,18 @@
+{
+  "className": "LoginAction",
+  "methodName": "getUser",
+  "brief": "public User getUser(){}",
+  "methodSignature": "getUser()",
+  "sourceCode": "public User getUser() {\n\t\treturn this.user;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public User getUser() {\n    return this.user;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

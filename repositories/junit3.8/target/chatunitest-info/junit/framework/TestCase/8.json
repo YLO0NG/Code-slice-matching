@@ -1,0 +1,28 @@
+{
+  "className": "TestCase",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\r\n\t    return getName() + \"(\" + getClass().getName() + \")\";\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestCase": [
+      "getName()"
+    ],
+    "java.lang.Class": [
+      "getName()"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns a string representation of the test case\r\n */\r\npublic String toString() {\r\n    return getName() + \"(\" + getClass().getName() + \")\";\r\n}",
+  "method_comment": "\r\n\t * Returns a string representation of the test case\r\n\t ",
+  "method_annotation": ""
+}

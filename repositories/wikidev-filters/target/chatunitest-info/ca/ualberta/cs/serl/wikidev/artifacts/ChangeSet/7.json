@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSet",
+  "methodName": "getComment",
+  "brief": "public String getComment(){}",
+  "methodSignature": "getComment()",
+  "sourceCode": "public String getComment() {\n\t\treturn comment;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"comment\"\n */\npublic String getComment() {\n    return comment;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"comment\"\n\t ",
+  "method_annotation": ""
+}

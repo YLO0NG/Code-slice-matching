@@ -1,0 +1,54 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.HandleTracker",
+  "className": "HandleTracker",
+  "index": 130,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class HandleTracker",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Handle  fAnchorHandle;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "mouseDrag(MouseEvent, int, int)": "1",
+    "mouseUp(MouseEvent, int, int)": "2",
+    "HandleTracker(DrawingView, Handle)": "3"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "public HandleTracker(DrawingView view, Handle anchorHandle){}"
+  ],
+  "constructorSigs": [
+    "HandleTracker(DrawingView, Handle)"
+  ],
+  "constructorBrief": [
+    "public HandleTracker(DrawingView view, Handle anchorHandle){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Handle": []
+  },
+  "compilationUnitCode": "/*\n * @(#)HandleTracker.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport CH.ifa.draw.framework.*;\n\n/**\n * HandleTracker implements interactions with the handles\n * of a Figure.\n *\n * @see SelectionTool\n */\npublic class HandleTracker extends AbstractTool {\n\n    private Handle fAnchorHandle;\n\n    public HandleTracker(DrawingView view, Handle anchorHandle) {\n        super(view);\n        fAnchorHandle = anchorHandle;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        super.mouseDown(e, x, y);\n        fAnchorHandle.invokeStart(x, y, view());\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fAnchorHandle.invokeStep(x, y, fAnchorX, fAnchorY, view());\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fAnchorHandle.invokeEnd(x, y, fAnchorX, fAnchorY, view());\n    }\n}\n",
+  "classDeclarationCode": "/**\n * HandleTracker implements interactions with the handles\n * of a Figure.\n *\n * @see SelectionTool\n */\npublic class HandleTracker extends AbstractTool {\n\n    private Handle fAnchorHandle;\n\n    public HandleTracker(DrawingView view, Handle anchorHandle) {\n        super(view);\n        fAnchorHandle = anchorHandle;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        super.mouseDown(e, x, y);\n        fAnchorHandle.invokeStart(x, y, view());\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fAnchorHandle.invokeStep(x, y, fAnchorX, fAnchorY, view());\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fAnchorHandle.invokeEnd(x, y, fAnchorX, fAnchorY, view());\n    }\n}",
+  "subClasses": []
+}

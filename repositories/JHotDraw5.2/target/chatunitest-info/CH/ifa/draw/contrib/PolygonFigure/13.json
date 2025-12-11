@@ -1,0 +1,28 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "addPoint",
+  "brief": "public  void addPoint(int x, int y){}",
+  "methodSignature": "addPoint(int, int)",
+  "sourceCode": "public  void addPoint(int x, int y) {\n    fPoly.addPoint(x, y);\n    changed();\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": [
+      "addPoint(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a node to the list of points.\n */\npublic void addPoint(int x, int y) {\n    fPoly.addPoint(x, y);\n    changed();\n}",
+  "method_comment": "\n   * Adds a node to the list of points.\n   ",
+  "method_annotation": ""
+}

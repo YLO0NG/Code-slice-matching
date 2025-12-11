@@ -1,0 +1,22 @@
+{
+  "className": "TicketChange",
+  "methodName": "setOldValue",
+  "brief": "public void setOldValue(String oldValue){}",
+  "methodSignature": "setOldValue(String)",
+  "sourceCode": "public void setOldValue(String oldValue) {\n\t\tthis.oldValue = oldValue;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param oldValue\n * @uml.property  name=\"oldValue\"\n */\npublic void setOldValue(String oldValue) {\n    this.oldValue = oldValue;\n}",
+  "method_comment": "\n\t * @param oldValue\n\t * @uml.property  name=\"oldValue\"\n\t ",
+  "method_annotation": ""
+}

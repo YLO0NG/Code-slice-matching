@@ -1,0 +1,22 @@
+{
+  "className": "TextHolder",
+  "methodName": "connect",
+  "brief": "public void connect(Figure connectedFigure);",
+  "methodSignature": "connect(Figure)",
+  "sourceCode": "public void connect(Figure connectedFigure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Connects a figure to another figure.\n */\npublic void connect(Figure connectedFigure);",
+  "method_comment": "\n     * Connects a figure to another figure.\n     ",
+  "method_annotation": ""
+}

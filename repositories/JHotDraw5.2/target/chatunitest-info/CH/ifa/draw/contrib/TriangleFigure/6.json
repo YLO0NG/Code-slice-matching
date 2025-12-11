@@ -1,0 +1,25 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "center",
+  "brief": "public Point center(){}",
+  "methodSignature": "center()",
+  "sourceCode": "public Point center() {\n    return PolygonFigure.center(polygon());\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "center(Polygon)"
+    ],
+    "CH.ifa.draw.contrib.TriangleFigure": [
+      "polygon()"
+    ]
+  },
+  "full_method_info": "public Point center() {\n    return PolygonFigure.center(polygon());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

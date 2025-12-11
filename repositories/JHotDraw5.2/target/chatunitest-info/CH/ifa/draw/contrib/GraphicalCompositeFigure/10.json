@@ -1,0 +1,22 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "setPresentationFigure",
+  "brief": "public void setPresentationFigure(Figure newPresentationFigure){}",
+  "methodSignature": "setPresentationFigure(Figure)",
+  "sourceCode": "public void setPresentationFigure(Figure newPresentationFigure) {\n\t\tmyPresentationFigure = newPresentationFigure;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Set a figure which renders this CompositeFigure. The presentation\n * tasks for the CompositeFigure are delegated to this presentation\n * figure.\n *\n * @param\tnewPresentationFigure\tfigure takes over the presentation tasks\n */\npublic void setPresentationFigure(Figure newPresentationFigure) {\n    myPresentationFigure = newPresentationFigure;\n}",
+  "method_comment": "\n\t * Set a figure which renders this CompositeFigure. The presentation\n\t * tasks for the CompositeFigure are delegated to this presentation\n\t * figure.\n\t *\n\t * @param\tnewPresentationFigure\tfigure takes over the presentation tasks\n\t ",
+  "method_annotation": ""
+}

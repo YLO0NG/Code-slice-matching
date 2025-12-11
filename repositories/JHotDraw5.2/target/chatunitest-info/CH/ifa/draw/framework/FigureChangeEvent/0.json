@@ -1,0 +1,22 @@
+{
+  "className": "FigureChangeEvent",
+  "methodName": "getFigure",
+  "brief": "public Figure getFigure(){}",
+  "methodSignature": "getFigure()",
+  "sourceCode": "public Figure getFigure() {\n        return (Figure)getSource();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.EventObject": [
+      "getSource()"
+    ]
+  },
+  "full_method_info": "/**\n *  Gets the changed figure\n */\npublic Figure getFigure() {\n    return (Figure) getSource();\n}",
+  "method_comment": "\n     *  Gets the changed figure\n     ",
+  "method_annotation": ""
+}

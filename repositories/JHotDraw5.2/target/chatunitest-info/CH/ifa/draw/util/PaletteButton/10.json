@@ -1,0 +1,22 @@
+{
+  "className": "PaletteButton",
+  "methodName": "mouseEntered",
+  "brief": "public void mouseEntered(MouseEvent e){}",
+  "methodSignature": "mouseEntered(MouseEvent)",
+  "sourceCode": "public void mouseEntered(MouseEvent e) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": []
+  },
+  "full_method_info": "public void mouseEntered(MouseEvent e) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

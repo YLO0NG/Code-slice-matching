@@ -1,0 +1,63 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.JavaDrawApplet",
+  "className": "JavaDrawApplet",
+  "index": 78,
+  "modifier": "[public ]",
+  "extend": "[DrawApplet]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public  class JavaDrawApplet",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.applet.Applet;",
+    "import java.awt.event.*;",
+    "import java.util.*;",
+    "import java.io.*;",
+    "import java.net.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.applet.*;",
+    "import CH.ifa.draw.contrib.*;"
+  ],
+  "fields": [
+    "transient private JButton          fAnimationButton;",
+    "transient private Animator        fAnimator;"
+  ],
+  "superClasses": [
+    "DrawApplet"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "destroy()": "0",
+    "createTools(JPanel)": "1",
+    "createButtons(JPanel)": "2",
+    "createDrawing()": "3",
+    "startAnimation()": "4",
+    "endAnimation()": "5",
+    "toggleAnimation()": "6"
+  },
+  "methodsBrief": [
+    "public void destroy(){}",
+    "protected void createTools(JPanel palette){}",
+    "protected void createButtons(JPanel panel){}",
+    "protected Drawing createDrawing(){}",
+    "public void startAnimation(){}",
+    "public void endAnimation(){}",
+    "public void toggleAnimation(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)JavaDrawApplet.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport javax.swing.*;\nimport java.applet.Applet;\nimport java.awt.event.*;\nimport java.util.*;\nimport java.io.*;\nimport java.net.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.applet.*;\nimport CH.ifa.draw.contrib.*;\n\npublic class JavaDrawApplet extends DrawApplet {\n\n    transient private JButton fAnimationButton;\n\n    transient private Animator fAnimator;\n\n    // -- applet life cycle --------------------------------------------\n    public void destroy() {\n        super.destroy();\n        endAnimation();\n    }\n\n    // -- DrawApplet overrides -----------------------------------------\n    protected void createTools(JPanel palette) {\n        super.createTools(palette);\n        Tool tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new ConnectedTextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"ATEXT\", \"Connected Text Tool\", tool));\n        tool = new URLTool(view());\n        palette.add(createToolButton(IMAGES + \"URL\", \"URL Tool\", tool));\n        tool = new CreationTool(view(), new RectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RECT\", \"Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new RoundRectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RRECT\", \"Round Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new EllipseFigure());\n        palette.add(createToolButton(IMAGES + \"ELLIPSE\", \"Ellipse Tool\", tool));\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES + \"LINE\", \"Line Tool\", tool));\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n        tool = new ConnectionTool(view(), new ElbowConnection());\n        palette.add(createToolButton(IMAGES + \"OCONN\", \"Elbow Connection Tool\", tool));\n        tool = new ScribbleTool(view());\n        palette.add(createToolButton(IMAGES + \"SCRIBBL\", \"Scribble Tool\", tool));\n        tool = new PolygonTool(view());\n        palette.add(createToolButton(IMAGES + \"POLYGON\", \"Polygon Tool\", tool));\n        tool = new BorderTool(view());\n        palette.add(createToolButton(IMAGES + \"BORDDEC\", \"Border Tool\", tool));\n    }\n\n    protected void createButtons(JPanel panel) {\n        super.createButtons(panel);\n        fAnimationButton = new JButton(\"Start Animation\");\n        fAnimationButton.addActionListener(new ActionListener() {\n\n            public void actionPerformed(ActionEvent event) {\n                if (fAnimator != null)\n                    endAnimation();\n                else\n                    startAnimation();\n            }\n        });\n        panel.add(fAnimationButton);\n    }\n\n    protected Drawing createDrawing() {\n        return new BouncingDrawing();\n    }\n\n    // -- animation support ----------------------------------------------\n    public void startAnimation() {\n        if (drawing() instanceof Animatable && fAnimator == null) {\n            fAnimator = new Animator((Animatable) drawing(), view());\n            fAnimator.start();\n            fAnimationButton.setText(\"End Animation\");\n        }\n    }\n\n    public void endAnimation() {\n        if (fAnimator != null) {\n            fAnimator.end();\n            fAnimator = null;\n            fAnimationButton.setText(\"Start Animation\");\n        }\n    }\n\n    public void toggleAnimation() {\n        if (fAnimator != null)\n            endAnimation();\n        else\n            startAnimation();\n    }\n}\n",
+  "classDeclarationCode": "public class JavaDrawApplet extends DrawApplet {\n\n    transient private JButton fAnimationButton;\n\n    transient private Animator fAnimator;\n\n    // -- applet life cycle --------------------------------------------\n    public void destroy() {\n        super.destroy();\n        endAnimation();\n    }\n\n    // -- DrawApplet overrides -----------------------------------------\n    protected void createTools(JPanel palette) {\n        super.createTools(palette);\n        Tool tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new ConnectedTextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"ATEXT\", \"Connected Text Tool\", tool));\n        tool = new URLTool(view());\n        palette.add(createToolButton(IMAGES + \"URL\", \"URL Tool\", tool));\n        tool = new CreationTool(view(), new RectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RECT\", \"Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new RoundRectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RRECT\", \"Round Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new EllipseFigure());\n        palette.add(createToolButton(IMAGES + \"ELLIPSE\", \"Ellipse Tool\", tool));\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES + \"LINE\", \"Line Tool\", tool));\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n        tool = new ConnectionTool(view(), new ElbowConnection());\n        palette.add(createToolButton(IMAGES + \"OCONN\", \"Elbow Connection Tool\", tool));\n        tool = new ScribbleTool(view());\n        palette.add(createToolButton(IMAGES + \"SCRIBBL\", \"Scribble Tool\", tool));\n        tool = new PolygonTool(view());\n        palette.add(createToolButton(IMAGES + \"POLYGON\", \"Polygon Tool\", tool));\n        tool = new BorderTool(view());\n        palette.add(createToolButton(IMAGES + \"BORDDEC\", \"Border Tool\", tool));\n    }\n\n    protected void createButtons(JPanel panel) {\n        super.createButtons(panel);\n        fAnimationButton = new JButton(\"Start Animation\");\n        fAnimationButton.addActionListener(new ActionListener() {\n\n            public void actionPerformed(ActionEvent event) {\n                if (fAnimator != null)\n                    endAnimation();\n                else\n                    startAnimation();\n            }\n        });\n        panel.add(fAnimationButton);\n    }\n\n    protected Drawing createDrawing() {\n        return new BouncingDrawing();\n    }\n\n    // -- animation support ----------------------------------------------\n    public void startAnimation() {\n        if (drawing() instanceof Animatable && fAnimator == null) {\n            fAnimator = new Animator((Animatable) drawing(), view());\n            fAnimator.start();\n            fAnimationButton.setText(\"End Animation\");\n        }\n    }\n\n    public void endAnimation() {\n        if (fAnimator != null) {\n            fAnimator.end();\n            fAnimator = null;\n            fAnimationButton.setText(\"Start Animation\");\n        }\n    }\n\n    public void toggleAnimation() {\n        if (fAnimator != null)\n            endAnimation();\n        else\n            startAnimation();\n    }\n}",
+  "subClasses": []
+}

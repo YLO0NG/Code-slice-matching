@@ -1,0 +1,25 @@
+{
+  "className": "NumberTextFigure",
+  "methodName": "getValue",
+  "brief": "public int getValue(){}",
+  "methodSignature": "getValue()",
+  "sourceCode": "public int getValue() {\n        int value = 0;\n        try {\n            value = Integer.parseInt(getText());\n        } catch (NumberFormatException e) {\n            value = 0;\n        }\n        return value;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Integer": [
+      "parseInt(String)"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "getText()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the numerical value of the contained text.\n * return the value or 0 in the case of an illegal number format.\n */\npublic int getValue() {\n    int value = 0;\n    try {\n        value = Integer.parseInt(getText());\n    } catch (NumberFormatException e) {\n        value = 0;\n    }\n    return value;\n}",
+  "method_comment": "\n     * Gets the numerical value of the contained text.\n     * return the value or 0 in the case of an illegal number format.\n     ",
+  "method_annotation": ""
+}

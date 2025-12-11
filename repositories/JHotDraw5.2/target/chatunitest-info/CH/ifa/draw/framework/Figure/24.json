@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "changed",
+  "brief": "public void changed();",
+  "methodSignature": "changed()",
+  "sourceCode": "public void changed();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Informes that a figure has changed its display box.\n * This method also triggers an update call for its\n * registered observers.\n * @see #invalidate\n * @see #willChange\n */\npublic void changed();",
+  "method_comment": "\n     * Informes that a figure has changed its display box.\n     * This method also triggers an update call for its\n     * registered observers.\n     * @see #invalidate\n     * @see #willChange\n     *\n     ",
+  "method_annotation": ""
+}

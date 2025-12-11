@@ -1,0 +1,25 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "outermostPoint",
+  "brief": "public Point outermostPoint(){}",
+  "methodSignature": "outermostPoint()",
+  "sourceCode": "public Point outermostPoint() {\n    Point ctr = center();\n    int outer = 0;\n    long dist = 0;\n\n    for (int i = 0; i < fPoly.npoints; ++i) {\n      long d = Geom.length2(ctr.x, ctr.y, fPoly.xpoints[i], fPoly.ypoints[i]);\n      if (d > dist) {\n        dist = d;\n        outer = i;\n      }\n    }\n\n    return new Point(fPoly.xpoints[outer], fPoly.ypoints[outer]);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "center()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "length2(int, int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Return the point on the polygon that is furthest from the center\n */\npublic Point outermostPoint() {\n    Point ctr = center();\n    int outer = 0;\n    long dist = 0;\n    for (int i = 0; i < fPoly.npoints; ++i) {\n        long d = Geom.length2(ctr.x, ctr.y, fPoly.xpoints[i], fPoly.ypoints[i]);\n        if (d > dist) {\n            dist = d;\n            outer = i;\n        }\n    }\n    return new Point(fPoly.xpoints[outer], fPoly.ypoints[outer]);\n}",
+  "method_comment": "\n   * Return the point on the polygon that is furthest from the center\n   *",
+  "method_annotation": ""
+}

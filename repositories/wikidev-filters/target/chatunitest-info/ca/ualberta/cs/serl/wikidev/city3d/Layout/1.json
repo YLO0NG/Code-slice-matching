@@ -1,0 +1,38 @@
+{
+  "className": "Layout",
+  "methodName": "cityBlockInitialization",
+  "brief": "private void cityBlockInitialization(ArrayList<IArtifact> newArtifacts,\r\n\t\t\tdouble[][] coords, double minX, double minY, double range,\r\n\t\t\tdouble blocks){}",
+  "methodSignature": "cityBlockInitialization(ArrayList, double[][], double, double, double, double)",
+  "sourceCode": "private void cityBlockInitialization(ArrayList<IArtifact> newArtifacts,\n\t\t\tdouble[][] coords, double minX, double minY, double range,\n\t\t\tdouble blocks) {\n\t\tthis.cityBlocks = new ArrayList<CityBlock>();\n\t\tfor (int i = 0; i < blocks; i++) {\n\t\t\tfor (int j = 0; j < blocks; j++) {\n\t\t\t\tdouble[] center = { minX + i * (range / 16) + (range / 16) / 2,\n\t\t\t\t\t\tminY + j * (range / 16) + (range / 16) / 2 };\n\t\t\t\tCityBlock cityblock = new CityBlock(new Point(i, j));\n\t\t\t\tcityblock.setCenter(center);\n\t\t\t\tcityBlocks.add(cityblock);\n\t\t\t}\n\t\t}\n\t\tdouble r = range / blocks;\n\t\tfor (int i = 0; i < newArtifacts.size(); i++) {\n\t\t\tassignArtifactToCityBlock(newArtifacts.get(i), coords[i][0],\n\t\t\t\t\tcoords[i][1], minX, minY, blocks, r);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<IArtifact>",
+    "double[][]",
+    "double",
+    "double",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "setCenter(double[])"
+    ],
+    "java.util.ArrayList": [
+      "get(int)",
+      "add(E)",
+      "size()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "assignArtifactToCityBlock(IArtifact, double, double, double, double, double, double)"
+    ]
+  },
+  "full_method_info": "private void cityBlockInitialization(ArrayList<IArtifact> newArtifacts, double[][] coords, double minX, double minY, double range, double blocks) {\n    this.cityBlocks = new ArrayList<CityBlock>();\n    for (int i = 0; i < blocks; i++) {\n        for (int j = 0; j < blocks; j++) {\n            double[] center = { minX + i * (range / 16) + (range / 16) / 2, minY + j * (range / 16) + (range / 16) / 2 };\n            CityBlock cityblock = new CityBlock(new Point(i, j));\n            cityblock.setCenter(center);\n            cityBlocks.add(cityblock);\n        }\n    }\n    double r = range / blocks;\n    for (int i = 0; i < newArtifacts.size(); i++) {\n        assignArtifactToCityBlock(newArtifacts.get(i), coords[i][0], coords[i][1], minX, minY, blocks, r);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

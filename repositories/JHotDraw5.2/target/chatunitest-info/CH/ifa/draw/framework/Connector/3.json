@@ -1,0 +1,18 @@
+{
+  "className": "Connector",
+  "methodName": "displayBox",
+  "brief": "public abstract Rectangle displayBox();",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public abstract Rectangle displayBox();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the display box of the connector.\n */\npublic abstract Rectangle displayBox();",
+  "method_comment": "\n     * Gets the display box of the connector.\n     ",
+  "method_annotation": ""
+}

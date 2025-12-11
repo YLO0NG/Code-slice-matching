@@ -1,0 +1,37 @@
+{
+  "className": "Printer",
+  "methodName": "printEverything",
+  "brief": "public void printEverything(ArrayList<IArtifact> artifacts, double[][] distanceMatrix, int project) throws IOException{}",
+  "methodSignature": "printEverything(ArrayList, double[][], int)",
+  "sourceCode": "public void printEverything(ArrayList<IArtifact> artifacts, double[][] distanceMatrix, int project) throws IOException {\n\t\tindex=1;\n\t\tBufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\\"+project+\"\\\\wikidev.net\"));\n\t\tint size = artifacts.size();\n\t\tout.write(\"*Vertices \" + size);\n\t\tout.newLine();\n\t\tfor(IArtifact artifact : artifacts) {\n\t\t\tprintVertice(out, artifact);\n\t\t}\n\t\tout.write(\"*Edges\");\n\t\tout.newLine();\n\t\tfor(int i=1; i<distanceMatrix.length; i++) {\n\t\t\tfor(int j=0; j<distanceMatrix.length-1; j++) {\n\t\t\t\tif (distanceMatrix[i][j] < 1) {\n\t\t\t\t\tString text = (i + 1) + \" \" + (j + 1) + \" \"\n\t\t\t\t\t\t\t+ distanceMatrix[i][j];\n\t\t\t\t\tout.write(text);\n\t\t\t\t\tout.newLine();\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t}\n\t\tout.close();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<IArtifact>",
+    "double[][]",
+    "int"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "java.util.ArrayList": [
+      "size()"
+    ],
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "java.io.BufferedWriter": [
+      "newLine()",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Printer": [
+      "printVertice(BufferedWriter, IArtifact)"
+    ]
+  },
+  "full_method_info": "public void printEverything(ArrayList<IArtifact> artifacts, double[][] distanceMatrix, int project) throws IOException {\n    index = 1;\n    BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\\" + project + \"\\\\wikidev.net\"));\n    int size = artifacts.size();\n    out.write(\"*Vertices \" + size);\n    out.newLine();\n    for (IArtifact artifact : artifacts) {\n        printVertice(out, artifact);\n    }\n    out.write(\"*Edges\");\n    out.newLine();\n    for (int i = 1; i < distanceMatrix.length; i++) {\n        for (int j = 0; j < distanceMatrix.length - 1; j++) {\n            if (distanceMatrix[i][j] < 1) {\n                String text = (i + 1) + \" \" + (j + 1) + \" \" + distanceMatrix[i][j];\n                out.write(text);\n                out.newLine();\n            }\n        }\n    }\n    out.close();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

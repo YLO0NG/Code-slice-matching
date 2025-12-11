@@ -1,0 +1,22 @@
+{
+  "className": "TextFigure",
+  "methodName": "figureRequestUpdate",
+  "brief": "public void figureRequestUpdate(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestUpdate(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestUpdate(FigureChangeEvent e) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "public void figureRequestUpdate(FigureChangeEvent e) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

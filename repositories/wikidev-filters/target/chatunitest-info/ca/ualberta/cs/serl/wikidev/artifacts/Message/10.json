@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setMid_header",
+  "brief": "public void setMid_header(String mid_header){}",
+  "methodSignature": "setMid_header(String)",
+  "sourceCode": "public void setMid_header(String mid_header) {\n\t\tthis.mid_header = mid_header;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param mid_header\n * @uml.property  name=\"mid_header\"\n */\npublic void setMid_header(String mid_header) {\n    this.mid_header = mid_header;\n}",
+  "method_comment": "\n\t * @param mid_header\n\t * @uml.property  name=\"mid_header\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "PaletteLayout",
+  "methodName": "addLayoutComponent",
+  "brief": "public void addLayoutComponent(String name, Component comp){}",
+  "methodSignature": "addLayoutComponent(String, Component)",
+  "sourceCode": "public void addLayoutComponent(String name, Component comp) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Component"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.awt.Component": []
+  },
+  "full_method_info": "public void addLayoutComponent(String name, Component comp) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

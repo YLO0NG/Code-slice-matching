@@ -1,0 +1,30 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createAttributesMenu",
+  "brief": "protected JMenu createAttributesMenu(){}",
+  "methodSignature": "createAttributesMenu()",
+  "sourceCode": "protected JMenu createAttributesMenu() {\n        JMenu menu = new JMenu(\"Attributes\");\n        menu.add(createColorMenu(\"Fill Color\", \"FillColor\"));\n        menu.add(createColorMenu(\"Pen Color\", \"FrameColor\"));\n        menu.add(createArrowMenu());\n\t\tmenu.addSeparator();\n        menu.add(createFontMenu());\n        menu.add(createFontSizeMenu());\n        menu.add(createFontStyleMenu());\n        menu.add(createColorMenu(\"Text Color\", \"TextColor\"));\n        return menu;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JMenu": [
+      "addSeparator()",
+      "add(JMenuItem)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createFontMenu()",
+      "createFontStyleMenu()",
+      "createColorMenu(String, String)",
+      "createArrowMenu()",
+      "createFontSizeMenu()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the attributes menu and its submenus. Clients override this\n * method to add additional menu items.\n */\nprotected JMenu createAttributesMenu() {\n    JMenu menu = new JMenu(\"Attributes\");\n    menu.add(createColorMenu(\"Fill Color\", \"FillColor\"));\n    menu.add(createColorMenu(\"Pen Color\", \"FrameColor\"));\n    menu.add(createArrowMenu());\n    menu.addSeparator();\n    menu.add(createFontMenu());\n    menu.add(createFontSizeMenu());\n    menu.add(createFontStyleMenu());\n    menu.add(createColorMenu(\"Text Color\", \"TextColor\"));\n    return menu;\n}",
+  "method_comment": "\n     * Creates the attributes menu and its submenus. Clients override this\n     * method to add additional menu items.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,46 @@
+{
+  "fullClassName": "junit.runner.TestRunListener",
+  "className": "TestRunListener",
+  "index": 30,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public interface TestRunListener",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "public static final int STATUS_ERROR= 1;",
+    "public static final int STATUS_FAILURE= 2;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "testRunStarted(String, int)": "0",
+    "testRunEnded(long)": "1",
+    "testRunStopped(long)": "2",
+    "testStarted(String)": "3",
+    "testEnded(String)": "4",
+    "testFailed(int, String, String)": "5"
+  },
+  "methodsBrief": [
+    "public void testRunStarted(String testSuiteName, int testCount);",
+    "public void testRunEnded(long elapsedTime);",
+    "public void testRunStopped(long elapsedTime);",
+    "public void testStarted(String testName);",
+    "public void testEnded(String testName);",
+    "public void testFailed(int status, String testName, String trace);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\n/**\r\n * A listener interface for observing the\r\n * execution of a test run. Unlike TestListener,\r\n * this interface using only primitive objects,\r\n * making it suitable for remote test execution.\r\n */\r\npublic interface TestRunListener {\r\n\r\n    /* test status constants*/\r\n    public static final int STATUS_ERROR = 1;\r\n\r\n    public static final int STATUS_FAILURE = 2;\r\n\r\n    public void testRunStarted(String testSuiteName, int testCount);\r\n\r\n    public void testRunEnded(long elapsedTime);\r\n\r\n    public void testRunStopped(long elapsedTime);\r\n\r\n    public void testStarted(String testName);\r\n\r\n    public void testEnded(String testName);\r\n\r\n    public void testFailed(int status, String testName, String trace);\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A listener interface for observing the\r\n * execution of a test run. Unlike TestListener,\r\n * this interface using only primitive objects,\r\n * making it suitable for remote test execution.\r\n */\r\npublic interface TestRunListener {\r\n\r\n    /* test status constants*/\r\n    public static final int STATUS_ERROR = 1;\r\n\r\n    public static final int STATUS_FAILURE = 2;\r\n\r\n    public void testRunStarted(String testSuiteName, int testCount);\r\n\r\n    public void testRunEnded(long elapsedTime);\r\n\r\n    public void testRunStopped(long elapsedTime);\r\n\r\n    public void testStarted(String testName);\r\n\r\n    public void testEnded(String testName);\r\n\r\n    public void testFailed(int status, String testName, String trace);\r\n}",
+  "subClasses": []
+}

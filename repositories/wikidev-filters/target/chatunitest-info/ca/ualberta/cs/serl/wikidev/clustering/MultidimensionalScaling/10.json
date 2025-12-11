@@ -1,0 +1,28 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "MultidimensionalScaling",
+  "brief": "public MultidimensionalScaling(double[][] distanceMatrix){}",
+  "methodSignature": "MultidimensionalScaling(double[][])",
+  "sourceCode": "public MultidimensionalScaling(double[][] distanceMatrix) {\n\t\thMatrix = new double[distanceMatrix.length][distanceMatrix.length];\n\t\tthis.distanceMatrix = distanceMatrix;\n\t\tsquareDistanceMatrix = new double[distanceMatrix.length][distanceMatrix.length];\n\t\tfor(int i=0;i<distanceMatrix.length;i++) {\n\t\t\tfor(int j=0;j<distanceMatrix.length;j++) {\n\t\t\t\t\tsquareDistanceMatrix[i][j] = Math.pow(this.distanceMatrix[i][j],2);\n\t\t\t}\n\t\t}\n\t\tgetHMatrix();\n\t\tbetaMatrix = new double[distanceMatrix.length][distanceMatrix.length];\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "java.lang.Math": [
+      "pow(double, double)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.MultidimensionalScaling": [
+      "getHMatrix()"
+    ]
+  },
+  "full_method_info": "/*public MultidimensionalScaling(ArrayList<Entity> entities) {\n\t\talphaMatrix = new double[entities.size()][entities.size()];\n\t\tdistanceMatrix = new double[entities.size()][entities.size()];\n\t\tsquareDistanceMatrix = new double[entities.size()][entities.size()];\n\t\tfor(int i=0;i<entities.size();i++) {\n\t\t\tfor(int j=0;j<entities.size();j++) {\n\t\t\t\t\n\t\t\t\tif (i != j) {\n\t\t\t\t\tdistanceMatrix[i][j] = DistanceCalculator.getDistance(\n\t\t\t\t\t\t\tentities.get(i).getEntitySet(), entities.get(j)\n\t\t\t\t\t\t\t\t\t.getFullEntitySet());\n\t\t\t\t\tsquareDistanceMatrix[i][j] = Math.pow(DistanceCalculator\n\t\t\t\t\t\t\t.getDistance(entities.get(i).getEntitySet(),\n\t\t\t\t\t\t\t\t\tentities.get(j).getFullEntitySet()), 2);\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tdistanceMatrix[i][j] = 0.0;\n\t\t\t\t\tsquareDistanceMatrix[i][j] = 0.0;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tgetAlphaMatrix();\n\t\tbetaMatrix = new double[entities.size()][entities.size()];\n\t}*/\npublic MultidimensionalScaling(double[][] distanceMatrix) {\n    hMatrix = new double[distanceMatrix.length][distanceMatrix.length];\n    this.distanceMatrix = distanceMatrix;\n    squareDistanceMatrix = new double[distanceMatrix.length][distanceMatrix.length];\n    for (int i = 0; i < distanceMatrix.length; i++) {\n        for (int j = 0; j < distanceMatrix.length; j++) {\n            squareDistanceMatrix[i][j] = Math.pow(this.distanceMatrix[i][j], 2);\n        }\n    }\n    getHMatrix();\n    betaMatrix = new double[distanceMatrix.length][distanceMatrix.length];\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

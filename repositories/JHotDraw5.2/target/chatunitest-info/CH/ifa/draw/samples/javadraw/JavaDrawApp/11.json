@@ -1,0 +1,22 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "endAnimation",
+  "brief": "public void endAnimation(){}",
+  "methodSignature": "endAnimation()",
+  "sourceCode": "public void endAnimation() {\n        if (fAnimator != null) {\n            fAnimator.end();\n            fAnimator = null;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.javadraw.Animator": [
+      "end()"
+    ]
+  },
+  "full_method_info": "public void endAnimation() {\n    if (fAnimator != null) {\n        fAnimator.end();\n        fAnimator = null;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

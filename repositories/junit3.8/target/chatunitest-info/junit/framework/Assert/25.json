@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(int expected, int actual){}",
+  "methodSignature": "assertEquals(int, int)",
+  "sourceCode": "static public void assertEquals(int expected, int actual) {\r\n  \t\tassertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, int, int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two ints are equal.\r\n */\r\nstatic public void assertEquals(int expected, int actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n   \t * Asserts that two ints are equal.\r\n\t ",
+  "method_annotation": ""
+}

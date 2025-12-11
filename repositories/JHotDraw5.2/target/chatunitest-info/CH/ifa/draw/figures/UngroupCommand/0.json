@@ -1,0 +1,39 @@
+{
+  "className": "UngroupCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        FigureEnumeration selection = fView.selectionElements();\n        fView.clearSelection();\n\n        Vector parts = new Vector();\n        while (selection.hasMoreElements()) {\n            Figure selected = selection.nextFigure();\n            Figure group = fView.drawing().orphan(selected);\n            FigureEnumeration k = group.decompose();\n            while (k.hasMoreElements())\n                fView.addToSelection(fView.add(k.nextFigure()));\n        }\n        fView.checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "selectionElements()",
+      "drawing()",
+      "clearSelection()",
+      "addToSelection(Figure)",
+      "add(Figure)",
+      "checkDamage()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "orphan(Figure)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "decompose()"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    FigureEnumeration selection = fView.selectionElements();\n    fView.clearSelection();\n    Vector parts = new Vector();\n    while (selection.hasMoreElements()) {\n        Figure selected = selection.nextFigure();\n        Figure group = fView.drawing().orphan(selected);\n        FigureEnumeration k = group.decompose();\n        while (k.hasMoreElements()) fView.addToSelection(fView.add(k.nextFigure()));\n    }\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

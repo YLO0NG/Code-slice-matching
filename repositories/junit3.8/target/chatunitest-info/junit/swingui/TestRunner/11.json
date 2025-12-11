@@ -1,0 +1,35 @@
+{
+  "className": "TestRunner",
+  "methodName": "runFinished",
+  "brief": "protected void runFinished(final Test testSuite){}",
+  "methodSignature": "runFinished(Test)",
+  "sourceCode": "protected void runFinished(final Test testSuite) {\r\n\t\tSwingUtilities.invokeLater(\r\n\t\t\tnew Runnable() {\r\n\t\t\t\tpublic void run() {\r\n\t\t\t\t\tfor (Enumeration e= fTestRunViews.elements(); e.hasMoreElements(); ) {\r\n\t\t\t\t\t\tTestRunView v= (TestRunView) e.nextElement();\r\n\t\t\t\t\t\tv.runFinished(testSuite, fTestResult);\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "javax.swing.SwingUtilities": [
+      "invokeLater(Runnable)"
+    ],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.swingui.TestRunView": [
+      "runFinished(Test, TestResult)"
+    ]
+  },
+  "full_method_info": "protected void runFinished(final Test testSuite) {\r\n    SwingUtilities.invokeLater(new Runnable() {\r\n\r\n        public void run() {\r\n            for (Enumeration e = fTestRunViews.elements(); e.hasMoreElements(); ) {\r\n                TestRunView v = (TestRunView) e.nextElement();\r\n                v.runFinished(testSuite, fTestResult);\r\n            }\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

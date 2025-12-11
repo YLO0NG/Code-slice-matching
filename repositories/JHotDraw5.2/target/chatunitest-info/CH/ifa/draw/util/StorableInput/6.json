@@ -1,0 +1,26 @@
+{
+  "className": "StorableInput",
+  "methodName": "makeInstance",
+  "brief": "private Object makeInstance(String className) throws IOException{}",
+  "methodSignature": "makeInstance(String)",
+  "sourceCode": "private Object makeInstance(String className) throws IOException {\n        try {\n            Class cl = Class.forName(className);\n            return cl.newInstance();\n        } catch (NoSuchMethodError e) {\n            throw new IOException(\"Class \" + className\n                + \" does not seem to have a no-arg constructor\");\n        } catch (ClassNotFoundException e) {\n            throw new IOException(\"No class: \" + className);\n        } catch (InstantiationException e) {\n            throw new IOException(\"Cannot instantiate: \" + className);\n        } catch (IllegalAccessException e) {\n            throw new IOException(\"Class (\" + className + \") not accessible\");\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Class": [
+      "newInstance()",
+      "forName(String)"
+    ]
+  },
+  "full_method_info": "private Object makeInstance(String className) throws IOException {\n    try {\n        Class cl = Class.forName(className);\n        return cl.newInstance();\n    } catch (NoSuchMethodError e) {\n        throw new IOException(\"Class \" + className + \" does not seem to have a no-arg constructor\");\n    } catch (ClassNotFoundException e) {\n        throw new IOException(\"No class: \" + className);\n    } catch (InstantiationException e) {\n        throw new IOException(\"Cannot instantiate: \" + className);\n    } catch (IllegalAccessException e) {\n        throw new IOException(\"Class (\" + className + \") not accessible\");\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

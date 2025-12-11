@@ -1,0 +1,21 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectChangeSetDetailByRevAndProject",
+  "brief": "public static String selectChangeSetDetailByRevAndProject(int rev, int externalsystem_id){}",
+  "methodSignature": "selectChangeSetDetailByRevAndProject(int, int)",
+  "sourceCode": "public static String selectChangeSetDetailByRevAndProject(int rev, int externalsystem_id) {\n\t\treturn \"select * from wikidev_changesetdetails where rev=\\'\"+rev+\"\\' and externalsystem_id=\\'\"+externalsystem_id+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectChangeSetDetailByRevAndProject(int rev, int externalsystem_id) {\n    return \"select * from wikidev_changesetdetails where rev=\\'\" + rev + \"\\' and externalsystem_id=\\'\" + externalsystem_id + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

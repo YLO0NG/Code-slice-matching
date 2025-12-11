@@ -1,0 +1,40 @@
+{
+  "className": "ClusterData",
+  "methodName": "addArtifacts",
+  "brief": "public void addArtifacts(HashMap<IArtifact, Double> newArtifacts){}",
+  "methodSignature": "addArtifacts(HashMap)",
+  "sourceCode": "public void addArtifacts(HashMap<IArtifact, Double> newArtifacts) {\n\t\tif(artifacts.keySet().isEmpty()) {\n\t\t\tartifacts.putAll(newArtifacts);\n\t\t\tfor(IArtifact artifact :artifacts.keySet()) {\n\t\t\t\tartifactStrings.add(artifact.toString());\n\t\t\t}\n\t\t}\n\t\telse {\n\t\t\tfor(IArtifact artifact : newArtifacts.keySet()) {\n\t\t\t\tif(artifactStrings.contains(artifact.toString())) {\n\t\t\t\t\tif(getArtifact(artifact.toString()) > newArtifacts.get(artifact)) {\n\t\t\t\t\t\tartifacts.put(artifact, newArtifacts.get(artifact));\n\t\t\t\t\t\tartifactStrings.add(artifact.toString());\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tartifacts.put(artifact, newArtifacts.get(artifact));\n\t\t\t\t\tartifactStrings.add(artifact.toString());\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "HashMap<IArtifact,Double>"
+  ],
+  "dependentMethods": {
+    "java.util.Set": [
+      "isEmpty()"
+    ],
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()",
+      "putAll(Map<? extends K, ? extends V>)",
+      "put(K, V)"
+    ],
+    "java.util.ArrayList": [
+      "contains(Object)",
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "toString()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.ClusterData": [
+      "getArtifact(String)"
+    ]
+  },
+  "full_method_info": "public void addArtifacts(HashMap<IArtifact, Double> newArtifacts) {\n    if (artifacts.keySet().isEmpty()) {\n        artifacts.putAll(newArtifacts);\n        for (IArtifact artifact : artifacts.keySet()) {\n            artifactStrings.add(artifact.toString());\n        }\n    } else {\n        for (IArtifact artifact : newArtifacts.keySet()) {\n            if (artifactStrings.contains(artifact.toString())) {\n                if (getArtifact(artifact.toString()) > newArtifacts.get(artifact)) {\n                    artifacts.put(artifact, newArtifacts.get(artifact));\n                    artifactStrings.add(artifact.toString());\n                }\n            } else {\n                artifacts.put(artifact, newArtifacts.get(artifact));\n                artifactStrings.add(artifact.toString());\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

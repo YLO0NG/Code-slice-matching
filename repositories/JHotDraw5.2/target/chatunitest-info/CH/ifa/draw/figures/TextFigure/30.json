@@ -1,0 +1,30 @@
+{
+  "className": "TextFigure",
+  "methodName": "updateLocation",
+  "brief": "protected void updateLocation(){}",
+  "methodSignature": "updateLocation()",
+  "sourceCode": "protected void updateLocation() {\n        if (fLocator != null) {\n            Point p = fLocator.locate(fObservedFigure);\n            p.x -= size().width/2 + fOriginX;\n            p.y -= size().height/2 + fOriginY;\n\n            if (p.x != 0 || p.y != 0) {\n                willChange();\n                basicMoveBy(p.x, p.y);\n                changed();\n            }\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.OffsetLocator": [
+      "locate(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "size()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "basicMoveBy(int, int)",
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Updates the location relative to the connected figure.\n * The TextFigure is centered around the located point.\n */\nprotected void updateLocation() {\n    if (fLocator != null) {\n        Point p = fLocator.locate(fObservedFigure);\n        p.x -= size().width / 2 + fOriginX;\n        p.y -= size().height / 2 + fOriginY;\n        if (p.x != 0 || p.y != 0) {\n            willChange();\n            basicMoveBy(p.x, p.y);\n            changed();\n        }\n    }\n}",
+  "method_comment": "\n     * Updates the location relative to the connected figure.\n     * The TextFigure is centered around the located point.\n     ",
+  "method_annotation": ""
+}

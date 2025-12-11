@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "getLineschanged",
+  "brief": "public int getLineschanged(){}",
+  "methodSignature": "getLineschanged()",
+  "sourceCode": "public int getLineschanged() {\n\t\treturn lineschanged;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"lineschanged\"\n */\npublic int getLineschanged() {\n    return lineschanged;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"lineschanged\"\n\t ",
+  "method_annotation": ""
+}

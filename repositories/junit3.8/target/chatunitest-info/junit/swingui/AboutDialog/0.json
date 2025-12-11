@@ -1,0 +1,22 @@
+{
+  "className": "AboutDialog",
+  "methodName": "createLogo",
+  "brief": "protected JLabel createLogo(){}",
+  "methodSignature": "createLogo()",
+  "sourceCode": "protected JLabel createLogo() {\r\n\t\tIcon icon= TestRunner.getIconResource(BaseTestRunner.class, \"logo.gif\");\r\n\t\treturn new JLabel(icon);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestRunner": [
+      "getIconResource(Class, String)"
+    ]
+  },
+  "full_method_info": "protected JLabel createLogo() {\r\n    Icon icon = TestRunner.getIconResource(BaseTestRunner.class, \"logo.gif\");\r\n    return new JLabel(icon);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

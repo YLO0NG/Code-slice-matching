@@ -1,0 +1,32 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "clearSelection",
+  "brief": "public void clearSelection(){}",
+  "methodSignature": "clearSelection()",
+  "sourceCode": "public void clearSelection() {\n        Figure figure;\n\n        FigureEnumeration k = selectionElements();\n\n        while (k.hasMoreElements())\n            k.nextFigure().invalidate();\n        fSelection = new Vector();\n        fSelectionHandles = null;\n        selectionChanged();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionElements()",
+      "selectionChanged()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "invalidate()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Clears the current selection.\n */\npublic void clearSelection() {\n    Figure figure;\n    FigureEnumeration k = selectionElements();\n    while (k.hasMoreElements()) k.nextFigure().invalidate();\n    fSelection = new Vector();\n    fSelectionHandles = null;\n    selectionChanged();\n}",
+  "method_comment": "\n     * Clears the current selection.\n     ",
+  "method_annotation": ""
+}

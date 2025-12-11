@@ -1,0 +1,22 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "connectionInsets",
+  "brief": "public Insets connectionInsets(){}",
+  "methodSignature": "connectionInsets()",
+  "sourceCode": "public Insets connectionInsets() {\n        return fComponent.connectionInsets();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "connectionInsets()"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards the connection insets to its contained figure..\n */\npublic Insets connectionInsets() {\n    return fComponent.connectionInsets();\n}",
+  "method_comment": "\n     * Forwards the connection insets to its contained figure..\n     ",
+  "method_annotation": ""
+}

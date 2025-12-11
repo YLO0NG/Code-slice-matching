@@ -1,0 +1,18 @@
+{
+  "className": "RoundRectangleFigure",
+  "methodName": "getArc",
+  "brief": "public Point getArc(){}",
+  "methodSignature": "getArc()",
+  "sourceCode": "public Point getArc() {\n        return new Point(fArcWidth, fArcHeight);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the arc's width and height.\n */\npublic Point getArc() {\n    return new Point(fArcWidth, fArcHeight);\n}",
+  "method_comment": "\n     * Gets the arc's width and height.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "isTestSuite",
+  "brief": "TestSuite isTestSuite(Object node){}",
+  "methodSignature": "isTestSuite(Object)",
+  "sourceCode": "TestSuite isTestSuite(Object node) {\r\n\t\tif (node instanceof TestSuite) \r\n\t\t\treturn (TestSuite)node;\r\n\t\tif (node instanceof TestDecorator) { \r\n\t\t\tTest baseTest= ((TestDecorator)node).getTest(); \r\n\t\t\treturn isTestSuite(baseTest); \r\n\t\t} \r\n\t\treturn null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "junit.extensions.TestDecorator": [
+      "getTest()"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "isTestSuite(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Tests if the node is a TestSuite.\r\n */\r\nTestSuite isTestSuite(Object node) {\r\n    if (node instanceof TestSuite)\r\n        return (TestSuite) node;\r\n    if (node instanceof TestDecorator) {\r\n        Test baseTest = ((TestDecorator) node).getTest();\r\n        return isTestSuite(baseTest);\r\n    }\r\n    return null;\r\n}",
+  "method_comment": "\r\n\t * Tests if the node is a TestSuite.\r\n\t ",
+  "method_annotation": ""
+}

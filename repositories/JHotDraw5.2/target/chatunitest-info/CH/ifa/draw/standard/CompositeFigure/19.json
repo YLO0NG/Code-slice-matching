@@ -1,0 +1,34 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "findFigureInside",
+  "brief": "public Figure findFigureInside(int x, int y){}",
+  "methodSignature": "findFigureInside(int, int)",
+  "sourceCode": "public Figure findFigureInside(int x, int y) {\n        FigureEnumeration k = figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure().findFigureInside(x, y);\n            if (figure != null)\n                return figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "findFigureInside(int, int)"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a figure but descends into a figure's\n * children. Use this method to implement <i>click-through</i>\n * hit detection, that is, you want to detect the inner most\n * figure containing the given point.\n */\npublic Figure findFigureInside(int x, int y) {\n    FigureEnumeration k = figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure().findFigureInside(x, y);\n        if (figure != null)\n            return figure;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds a figure but descends into a figure's\n     * children. Use this method to implement <i>click-through</i>\n     * hit detection, that is, you want to detect the inner most\n     * figure containing the given point.\n     ",
+  "method_annotation": ""
+}

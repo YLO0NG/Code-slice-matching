@@ -1,0 +1,18 @@
+{
+  "className": "TicketChange",
+  "methodName": "getExternalAuthorUsername",
+  "brief": "public String getExternalAuthorUsername(){}",
+  "methodSignature": "getExternalAuthorUsername()",
+  "sourceCode": "public String getExternalAuthorUsername() {\n\t\treturn externalAuthorUsername;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"externalAuthorUsername\"\n */\npublic String getExternalAuthorUsername() {\n    return externalAuthorUsername;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"externalAuthorUsername\"\n\t ",
+  "method_annotation": ""
+}

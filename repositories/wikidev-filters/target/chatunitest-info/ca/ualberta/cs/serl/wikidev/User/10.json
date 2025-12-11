@@ -1,0 +1,25 @@
+{
+  "className": "User",
+  "methodName": "getAliases",
+  "brief": "public ArrayList<String> getAliases(){}",
+  "methodSignature": "getAliases()",
+  "sourceCode": "public ArrayList<String> getAliases() {\n\t\taliases = new ArrayList<String>();\n\t\taliases.add(userName);\n\t\taliases.add(userRealName);\n\t\tString[] name = userRealName.split(\" \");\n\t\tfor (int i = 0; i < name.length; i++) {\n\t\t\taliases.add(name[i]);\n\t\t}\n\t\t/*try {\n\t\t\taliases.addAll(DataManager.getUserAliases(userID));\n\t\t} catch (SQLException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}*/\n\t\treturn aliases;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "java.lang.String": [
+      "split(String)"
+    ]
+  },
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"aliases\"\n */\npublic ArrayList<String> getAliases() {\n    aliases = new ArrayList<String>();\n    aliases.add(userName);\n    aliases.add(userRealName);\n    String[] name = userRealName.split(\" \");\n    for (int i = 0; i < name.length; i++) {\n        aliases.add(name[i]);\n    }\n    /*try {\n\t\t\taliases.addAll(DataManager.getUserAliases(userID));\n\t\t} catch (SQLException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}*/\n    return aliases;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"aliases\"\n\t ",
+  "method_annotation": ""
+}

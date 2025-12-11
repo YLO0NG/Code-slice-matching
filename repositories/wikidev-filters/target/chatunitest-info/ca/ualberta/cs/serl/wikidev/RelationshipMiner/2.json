@@ -1,0 +1,18 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "getUsersChanged",
+  "brief": "public Set<User> getUsersChanged(){}",
+  "methodSignature": "getUsersChanged()",
+  "sourceCode": "public Set<User> getUsersChanged() {\n\t\treturn usersChanged;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"usersChanged\"\n */\npublic Set<User> getUsersChanged() {\n    return usersChanged;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"usersChanged\"\n\t ",
+  "method_annotation": ""
+}

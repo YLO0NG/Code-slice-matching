@@ -1,0 +1,22 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "getLoader",
+  "brief": "public TestSuiteLoader getLoader(){}",
+  "methodSignature": "getLoader()",
+  "sourceCode": "public TestSuiteLoader getLoader() {\r\n\t\tif (useReloadingTestSuiteLoader())\r\n\t\t\treturn new ReloadingTestSuiteLoader();\r\n\t\treturn new StandardTestSuiteLoader();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "useReloadingTestSuiteLoader()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns the loader to be used.\r\n */\r\npublic TestSuiteLoader getLoader() {\r\n    if (useReloadingTestSuiteLoader())\r\n        return new ReloadingTestSuiteLoader();\r\n    return new StandardTestSuiteLoader();\r\n}",
+  "method_comment": "\r\n\t * Returns the loader to be used.\r\n\t ",
+  "method_annotation": ""
+}

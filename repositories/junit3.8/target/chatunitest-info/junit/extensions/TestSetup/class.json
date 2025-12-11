@@ -1,0 +1,53 @@
+{
+  "fullClassName": "junit.extensions.TestSetup",
+  "className": "TestSetup",
+  "index": 8,
+  "modifier": "[public ]",
+  "extend": "[TestDecorator]",
+  "implement": "[]",
+  "packageName": "junit.extensions",
+  "packageDeclaration": "package junit.extensions;",
+  "classSignature": "public class TestSetup",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import junit.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "TestDecorator"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "run(TestResult)": "0",
+    "setUp()": "1",
+    "tearDown()": "2",
+    "TestSetup(Test)": "3"
+  },
+  "methodsBrief": [
+    "public void run(final TestResult result){}",
+    "protected void setUp() throws Exception{}",
+    "protected void tearDown() throws Exception{}",
+    "public TestSetup(Test test){}"
+  ],
+  "constructorSigs": [
+    "TestSetup(Test)"
+  ],
+  "constructorBrief": [
+    "public TestSetup(Test test){}"
+  ],
+  "getterSetterSigs": [
+    "setUp()"
+  ],
+  "getterSetterBrief": [
+    "protected void setUp() throws Exception{}"
+  ],
+  "constructorDeps": {
+    "junit.framework.Test": []
+  },
+  "compilationUnitCode": "package junit.extensions;\r\n\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A Decorator to set up and tear down additional fixture state.\r\n * Subclass TestSetup and insert it into your tests when you want\r\n * to set up additional state once before the tests are run.\r\n */\r\npublic class TestSetup extends TestDecorator {\r\n\r\n    public TestSetup(Test test) {\r\n        super(test);\r\n    }\r\n\r\n    public void run(final TestResult result) {\r\n        Protectable p = new Protectable() {\r\n\r\n            public void protect() throws Exception {\r\n                setUp();\r\n                basicRun(result);\r\n                tearDown();\r\n            }\r\n        };\r\n        result.runProtected(this, p);\r\n    }\r\n\r\n    /**\r\n     * Sets up the fixture. Override to set up additional fixture\r\n     * state.\r\n     */\r\n    protected void setUp() throws Exception {\r\n    }\r\n\r\n    /**\r\n     * Tears down the fixture. Override to tear down the additional\r\n     * fixture state.\r\n     */\r\n    protected void tearDown() throws Exception {\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A Decorator to set up and tear down additional fixture state.\r\n * Subclass TestSetup and insert it into your tests when you want\r\n * to set up additional state once before the tests are run.\r\n */\r\npublic class TestSetup extends TestDecorator {\r\n\r\n    public TestSetup(Test test) {\r\n        super(test);\r\n    }\r\n\r\n    public void run(final TestResult result) {\r\n        Protectable p = new Protectable() {\r\n\r\n            public void protect() throws Exception {\r\n                setUp();\r\n                basicRun(result);\r\n                tearDown();\r\n            }\r\n        };\r\n        result.runProtected(this, p);\r\n    }\r\n\r\n    /**\r\n     * Sets up the fixture. Override to set up additional fixture\r\n     * state.\r\n     */\r\n    protected void setUp() throws Exception {\r\n    }\r\n\r\n    /**\r\n     * Tears down the fixture. Override to tear down the additional\r\n     * fixture state.\r\n     */\r\n    protected void tearDown() throws Exception {\r\n    }\r\n}",
+  "subClasses": []
+}

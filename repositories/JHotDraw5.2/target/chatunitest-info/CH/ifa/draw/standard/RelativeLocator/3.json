@@ -1,0 +1,18 @@
+{
+  "className": "RelativeLocator",
+  "methodName": "east",
+  "brief": "static public Locator east(){}",
+  "methodSignature": "east()",
+  "sourceCode": "static public Locator east() {\n        return new RelativeLocator(1.0, 0.5);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "static public Locator east() {\n    return new RelativeLocator(1.0, 0.5);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

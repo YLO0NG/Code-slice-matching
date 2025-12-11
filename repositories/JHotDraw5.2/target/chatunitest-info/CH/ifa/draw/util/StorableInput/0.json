@@ -1,0 +1,32 @@
+{
+  "className": "StorableInput",
+  "methodName": "readStorable",
+  "brief": "public Storable readStorable() throws IOException{}",
+  "methodSignature": "readStorable()",
+  "sourceCode": "public Storable readStorable() throws IOException {\n        Storable storable;\n        String s = readString();\n\n        if (s.equals(\"NULL\"))\n            return null;\n\n        if (s.equals(\"REF\")) {\n            int ref = readInt();\n            return (Storable) retrieve(ref);\n        }\n\n        storable = (Storable) makeInstance(s);\n        map(storable);\n        storable.read(this);\n        return storable;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readString()",
+      "map(Storable)",
+      "retrieve(int)",
+      "makeInstance(String)"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.util.Storable": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads and resurrects a Storable object from the input stream.\n */\npublic Storable readStorable() throws IOException {\n    Storable storable;\n    String s = readString();\n    if (s.equals(\"NULL\"))\n        return null;\n    if (s.equals(\"REF\")) {\n        int ref = readInt();\n        return (Storable) retrieve(ref);\n    }\n    storable = (Storable) makeInstance(s);\n    map(storable);\n    storable.read(this);\n    return storable;\n}",
+  "method_comment": "\n     * Reads and resurrects a Storable object from the input stream.\n     ",
+  "method_annotation": ""
+}

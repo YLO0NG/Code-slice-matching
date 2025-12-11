@@ -1,0 +1,18 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "getRightComponent",
+  "brief": "public JComponent getRightComponent(){}",
+  "methodSignature": "getRightComponent()",
+  "sourceCode": "public JComponent getRightComponent() {\n    \treturn rightComponent;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get the right component of the JSplitPane.\n *\n * @return\tnewLeftComponent\tright component\n */\npublic JComponent getRightComponent() {\n    return rightComponent;\n}",
+  "method_comment": "\n\t * Get the right component of the JSplitPane.\n\t *\n\t * @return\tnewLeftComponent\tright component\n\t ",
+  "method_annotation": ""
+}

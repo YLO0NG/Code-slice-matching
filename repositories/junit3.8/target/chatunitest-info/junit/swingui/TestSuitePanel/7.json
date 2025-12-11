@@ -1,0 +1,42 @@
+{
+  "className": "TestSuitePanel",
+  "methodName": "fireTestChanged",
+  "brief": "private void fireTestChanged(final Test test, final boolean expand){}",
+  "methodSignature": "fireTestChanged(Test, boolean)",
+  "sourceCode": "private void fireTestChanged(final Test test, final boolean expand) {\r\n\t\tSwingUtilities.invokeLater(\r\n\t\t\tnew Runnable() {\r\n\t\t\t\tpublic void run() {\r\n\t\t\t\t\tVector vpath= new Vector();\r\n\t\t\t\t\tint index= fModel.findTest(test, (Test)fModel.getRoot(), vpath);\r\n\t\t\t\t\tif (index >= 0) {\r\n\t\t\t\t\t\tObject[] path= new Object[vpath.size()];\r\n\t\t\t\t\t\tvpath.copyInto(path);\r\n\t\t\t\t\t\tTreePath treePath= new TreePath(path);\r\n\t\t\t\t\t\tfModel.fireNodeChanged(treePath, index);\r\n\t\t\t\t\t\tif (expand) {\r\n\t\t\t\t\t\t\tObject[] fullPath= new Object[vpath.size()+1];\r\n\t\t\t\t\t\t\tvpath.copyInto(fullPath);\r\n\t\t\t\t\t\t\tfullPath[vpath.size()]= fModel.getChild(treePath.getLastPathComponent(), index);;\r\n\t\t\t\t\t\t\tTreePath fullTreePath= new TreePath(fullPath);\r\n\t\t\t\t\t\t\tfTree.scrollPathToVisible(fullTreePath);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "javax.swing.SwingUtilities": [
+      "invokeLater(Runnable)"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "fireNodeChanged(TreePath, int)",
+      "getRoot()",
+      "findTest(Test, Test, Vector)",
+      "getChild(Object, int)"
+    ],
+    "java.util.Vector": [
+      "copyInto(Object[])",
+      "size()"
+    ],
+    "javax.swing.tree.TreePath": [
+      "getLastPathComponent()"
+    ],
+    "javax.swing.JTree": [
+      "scrollPathToVisible(TreePath)"
+    ]
+  },
+  "full_method_info": "private void fireTestChanged(final Test test, final boolean expand) {\r\n    SwingUtilities.invokeLater(new Runnable() {\r\n\r\n        public void run() {\r\n            Vector vpath = new Vector();\r\n            int index = fModel.findTest(test, (Test) fModel.getRoot(), vpath);\r\n            if (index >= 0) {\r\n                Object[] path = new Object[vpath.size()];\r\n                vpath.copyInto(path);\r\n                TreePath treePath = new TreePath(path);\r\n                fModel.fireNodeChanged(treePath, index);\r\n                if (expand) {\r\n                    Object[] fullPath = new Object[vpath.size() + 1];\r\n                    vpath.copyInto(fullPath);\r\n                    fullPath[vpath.size()] = fModel.getChild(treePath.getLastPathComponent(), index);\r\n                    ;\r\n                    TreePath fullTreePath = new TreePath(fullPath);\r\n                    fTree.scrollPathToVisible(fullTreePath);\r\n                }\r\n            }\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

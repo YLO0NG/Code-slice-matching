@@ -1,0 +1,18 @@
+{
+  "className": "TestResult",
+  "methodName": "shouldStop",
+  "brief": "public synchronized boolean shouldStop(){}",
+  "methodSignature": "shouldStop()",
+  "sourceCode": "public synchronized boolean shouldStop() {\r\n\t\treturn fStop;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Checks whether the test run should stop\r\n */\r\npublic synchronized boolean shouldStop() {\r\n    return fStop;\r\n}",
+  "method_comment": "\r\n\t * Checks whether the test run should stop\r\n\t ",
+  "method_annotation": ""
+}

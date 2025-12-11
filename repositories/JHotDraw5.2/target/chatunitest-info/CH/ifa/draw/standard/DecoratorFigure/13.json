@@ -1,0 +1,21 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "basicMoveBy",
+  "brief": "protected void basicMoveBy(int x, int y){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "protected void basicMoveBy(int x, int y) {\n        // this will never be called\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Forwards basicMoveBy to its contained figure.\n */\nprotected void basicMoveBy(int x, int y) {\n    // this will never be called\n}",
+  "method_comment": "\n     * Forwards basicMoveBy to its contained figure.\n     ",
+  "method_annotation": ""
+}

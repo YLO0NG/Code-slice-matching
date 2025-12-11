@@ -1,0 +1,25 @@
+{
+  "className": "ElbowTextLocator",
+  "methodName": "locate",
+  "brief": "public Point locate(Figure owner){}",
+  "methodSignature": "locate(Figure)",
+  "sourceCode": "public Point locate(Figure owner) {\n        Point p = owner.center();\n        Rectangle r = owner.displayBox();\n        return new Point(p.x, p.y-10); // hack\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()",
+      "center()"
+    ]
+  },
+  "full_method_info": "public Point locate(Figure owner) {\n    Point p = owner.center();\n    Rectangle r = owner.displayBox();\n    // hack\n    return new Point(p.x, p.y - 10);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

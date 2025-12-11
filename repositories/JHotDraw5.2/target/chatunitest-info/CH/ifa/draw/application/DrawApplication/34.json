@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "drawing",
+  "brief": "public Drawing drawing(){}",
+  "methodSignature": "drawing()",
+  "sourceCode": "public Drawing drawing() {\n        return fDrawing;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the current drawing.\n * @see DrawingEditor\n */\npublic Drawing drawing() {\n    return fDrawing;\n}",
+  "method_comment": "\n     * Gets the current drawing.\n     * @see DrawingEditor\n     ",
+  "method_annotation": ""
+}

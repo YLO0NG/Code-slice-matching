@@ -1,0 +1,22 @@
+{
+  "className": "InvocationParser",
+  "methodName": "setTodate",
+  "brief": "public void setTodate(String todate){}",
+  "methodSignature": "setTodate(String)",
+  "sourceCode": "public void setTodate(String todate) {\n\t\tthis.todate = todate;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setTodate(String todate) {\n    this.todate = todate;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

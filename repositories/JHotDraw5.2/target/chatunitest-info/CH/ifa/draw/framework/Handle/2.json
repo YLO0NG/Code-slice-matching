@@ -1,0 +1,24 @@
+{
+  "className": "Handle",
+  "methodName": "invokeStart",
+  "brief": "public void invokeStart(int  x, int  y, DrawingView view);",
+  "methodSignature": "invokeStart(int, int, DrawingView)",
+  "sourceCode": "public void invokeStart(int  x, int  y, DrawingView view);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * @deprecated As of version 4.1,\n * use invokeStart(x, y, drawingView)\n * Tracks the start of the interaction. The default implementation\n * does nothing.\n * @param x the x position where the interaction started\n * @param y the y position where the interaction started\n * @param view the handles container\n */\npublic void invokeStart(int x, int y, DrawingView view);",
+  "method_comment": "\n     * @deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     * @param view the handles container\n     ",
+  "method_annotation": ""
+}

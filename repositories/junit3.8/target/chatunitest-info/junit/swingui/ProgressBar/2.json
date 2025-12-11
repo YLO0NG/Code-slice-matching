@@ -1,0 +1,27 @@
+{
+  "className": "ProgressBar",
+  "methodName": "start",
+  "brief": "public void start(int total){}",
+  "methodSignature": "start(int)",
+  "sourceCode": "public void start(int total) {\r\n\t\tsetMaximum(total);\r\n\t\treset();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "javax.swing.JProgressBar": [
+      "setMaximum(int)"
+    ],
+    "junit.swingui.ProgressBar": [
+      "reset()"
+    ]
+  },
+  "full_method_info": "public void start(int total) {\r\n    setMaximum(total);\r\n    reset();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

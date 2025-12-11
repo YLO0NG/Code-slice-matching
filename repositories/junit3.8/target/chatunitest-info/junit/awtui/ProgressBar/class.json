@@ -1,0 +1,76 @@
+{
+  "fullClassName": "junit.awtui.ProgressBar",
+  "className": "ProgressBar",
+  "index": 2,
+  "modifier": "[public ]",
+  "extend": "[Canvas]",
+  "implement": "[]",
+  "packageName": "junit.awtui",
+  "packageDeclaration": "package junit.awtui;",
+  "classSignature": "public class ProgressBar",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;"
+  ],
+  "fields": [
+    "public boolean fError= false;",
+    "public int fTotal= 0;",
+    "public int fProgress= 0;",
+    "public int fProgressX= 0;"
+  ],
+  "superClasses": [
+    "Canvas"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getStatusColor()": "0",
+    "paint(Graphics)": "1",
+    "paintBackground(Graphics)": "2",
+    "paintStatus(Graphics)": "3",
+    "paintStep(int, int)": "4",
+    "reset()": "5",
+    "scale(int)": "6",
+    "setBounds(int, int, int, int)": "7",
+    "start(int)": "8",
+    "step(boolean)": "9",
+    "ProgressBar()": "10"
+  },
+  "methodsBrief": [
+    "private Color getStatusColor(){}",
+    "public void paint(Graphics g){}",
+    "public void paintBackground(Graphics g){}",
+    "public void paintStatus(Graphics g){}",
+    "private void paintStep(int startX, int endX){}",
+    "public void reset(){}",
+    "public int scale(int value){}",
+    "public void setBounds(int x, int y, int w, int h){}",
+    "public void start(int total){}",
+    "public void step(boolean successful){}",
+    "public ProgressBar(){}"
+  ],
+  "constructorSigs": [
+    "ProgressBar()"
+  ],
+  "constructorBrief": [
+    "public ProgressBar(){}"
+  ],
+  "getterSetterSigs": [
+    "getStatusColor()",
+    "setBounds(int, int, int, int)"
+  ],
+  "getterSetterBrief": [
+    "private Color getStatusColor(){}",
+    "public void setBounds(int x, int y, int w, int h){}"
+  ],
+  "constructorDeps": {
+    "java.awt.Component": [
+      "setSize(int, int)"
+    ]
+  },
+  "compilationUnitCode": "package junit.awtui;\r\n\r\nimport java.awt.*;\r\n\r\npublic class ProgressBar extends Canvas {\r\n\r\n    public boolean fError = false;\r\n\r\n    public int fTotal = 0;\r\n\r\n    public int fProgress = 0;\r\n\r\n    public int fProgressX = 0;\r\n\r\n    public ProgressBar() {\r\n        super();\r\n        setSize(20, 30);\r\n    }\r\n\r\n    private Color getStatusColor() {\r\n        if (fError)\r\n            return Color.red;\r\n        return Color.green;\r\n    }\r\n\r\n    public void paint(Graphics g) {\r\n        paintBackground(g);\r\n        paintStatus(g);\r\n    }\r\n\r\n    public void paintBackground(Graphics g) {\r\n        g.setColor(SystemColor.control);\r\n        Rectangle r = getBounds();\r\n        g.fillRect(0, 0, r.width, r.height);\r\n        g.setColor(Color.darkGray);\r\n        g.drawLine(0, 0, r.width - 1, 0);\r\n        g.drawLine(0, 0, 0, r.height - 1);\r\n        g.setColor(Color.white);\r\n        g.drawLine(r.width - 1, 0, r.width - 1, r.height - 1);\r\n        g.drawLine(0, r.height - 1, r.width - 1, r.height - 1);\r\n    }\r\n\r\n    public void paintStatus(Graphics g) {\r\n        g.setColor(getStatusColor());\r\n        Rectangle r = new Rectangle(0, 0, fProgressX, getBounds().height);\r\n        g.fillRect(1, 1, r.width - 1, r.height - 2);\r\n    }\r\n\r\n    private void paintStep(int startX, int endX) {\r\n        repaint(startX, 1, endX - startX, getBounds().height - 2);\r\n    }\r\n\r\n    public void reset() {\r\n        fProgressX = 1;\r\n        fProgress = 0;\r\n        fError = false;\r\n        paint(getGraphics());\r\n    }\r\n\r\n    public int scale(int value) {\r\n        if (fTotal > 0)\r\n            return Math.max(1, value * (getBounds().width - 1) / fTotal);\r\n        return value;\r\n    }\r\n\r\n    public void setBounds(int x, int y, int w, int h) {\r\n        super.setBounds(x, y, w, h);\r\n        fProgressX = scale(fProgress);\r\n    }\r\n\r\n    public void start(int total) {\r\n        fTotal = total;\r\n        reset();\r\n    }\r\n\r\n    public void step(boolean successful) {\r\n        fProgress++;\r\n        int x = fProgressX;\r\n        fProgressX = scale(fProgress);\r\n        if (!fError && !successful) {\r\n            fError = true;\r\n            x = 1;\r\n        }\r\n        paintStep(x, fProgressX);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "public class ProgressBar extends Canvas {\r\n\r\n    public boolean fError = false;\r\n\r\n    public int fTotal = 0;\r\n\r\n    public int fProgress = 0;\r\n\r\n    public int fProgressX = 0;\r\n\r\n    public ProgressBar() {\r\n        super();\r\n        setSize(20, 30);\r\n    }\r\n\r\n    private Color getStatusColor() {\r\n        if (fError)\r\n            return Color.red;\r\n        return Color.green;\r\n    }\r\n\r\n    public void paint(Graphics g) {\r\n        paintBackground(g);\r\n        paintStatus(g);\r\n    }\r\n\r\n    public void paintBackground(Graphics g) {\r\n        g.setColor(SystemColor.control);\r\n        Rectangle r = getBounds();\r\n        g.fillRect(0, 0, r.width, r.height);\r\n        g.setColor(Color.darkGray);\r\n        g.drawLine(0, 0, r.width - 1, 0);\r\n        g.drawLine(0, 0, 0, r.height - 1);\r\n        g.setColor(Color.white);\r\n        g.drawLine(r.width - 1, 0, r.width - 1, r.height - 1);\r\n        g.drawLine(0, r.height - 1, r.width - 1, r.height - 1);\r\n    }\r\n\r\n    public void paintStatus(Graphics g) {\r\n        g.setColor(getStatusColor());\r\n        Rectangle r = new Rectangle(0, 0, fProgressX, getBounds().height);\r\n        g.fillRect(1, 1, r.width - 1, r.height - 2);\r\n    }\r\n\r\n    private void paintStep(int startX, int endX) {\r\n        repaint(startX, 1, endX - startX, getBounds().height - 2);\r\n    }\r\n\r\n    public void reset() {\r\n        fProgressX = 1;\r\n        fProgress = 0;\r\n        fError = false;\r\n        paint(getGraphics());\r\n    }\r\n\r\n    public int scale(int value) {\r\n        if (fTotal > 0)\r\n            return Math.max(1, value * (getBounds().width - 1) / fTotal);\r\n        return value;\r\n    }\r\n\r\n    public void setBounds(int x, int y, int w, int h) {\r\n        super.setBounds(x, y, w, h);\r\n        fProgressX = scale(fProgress);\r\n    }\r\n\r\n    public void start(int total) {\r\n        fTotal = total;\r\n        reset();\r\n    }\r\n\r\n    public void step(boolean successful) {\r\n        fProgress++;\r\n        int x = fProgressX;\r\n        fProgressX = scale(fProgress);\r\n        if (!fError && !successful) {\r\n            fError = true;\r\n            x = 1;\r\n        }\r\n        paintStep(x, fProgressX);\r\n    }\r\n}",
+  "subClasses": []
+}

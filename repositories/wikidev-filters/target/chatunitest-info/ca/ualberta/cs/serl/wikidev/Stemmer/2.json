@@ -1,0 +1,18 @@
+{
+  "className": "Stemmer",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() { return new String(b,0,i_end); }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * After a word has been stemmed, it can be retrieved by toString(),\n * or a reference to the internal buffer can be retrieved by getResultBuffer\n * and getResultLength (which is generally more efficient.)\n */\npublic String toString() {\n    return new String(b, 0, i_end);\n}",
+  "method_comment": "\n    * After a word has been stemmed, it can be retrieved by toString(),\n    * or a reference to the internal buffer can be retrieved by getResultBuffer\n    * and getResultLength (which is generally more efficient.)\n    ",
+  "method_annotation": ""
+}

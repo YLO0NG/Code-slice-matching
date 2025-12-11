@@ -1,0 +1,25 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "deactivate",
+  "brief": "public void deactivate(){}",
+  "methodSignature": "deactivate()",
+  "sourceCode": "public void deactivate() {\n        super.deactivate();\n        if (fTarget != null)\n            fTarget.connectorVisibility(false);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractTool": [
+      "deactivate()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorVisibility(boolean)"
+    ]
+  },
+  "full_method_info": "public void deactivate() {\n    super.deactivate();\n    if (fTarget != null)\n        fTarget.connectorVisibility(false);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

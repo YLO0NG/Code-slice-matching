@@ -1,0 +1,40 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.SimpleUpdateStrategy",
+  "className": "SimpleUpdateStrategy",
+  "index": 141,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Painter]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public  class SimpleUpdateStrategy",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -7539925820692134566L;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Painter"
+  ],
+  "methodSigs": {
+    "draw(Graphics, DrawingView)": "0"
+  },
+  "methodsBrief": [
+    "public void draw(Graphics g, DrawingView view){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)SimpleUpdateStrategy.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * The SimpleUpdateStrategy implements an update\n * strategy that directly redraws a DrawingView.\n * @see DrawingView\n */\npublic class SimpleUpdateStrategy implements Painter {\n\n    /*\n     * Serialization support. In JavaDraw only the Drawing is serialized.\n     * However, for beans support SimpleUpdateStrategy supports\n     * serialization\n     */\n    private static final long serialVersionUID = -7539925820692134566L;\n\n    /**\n     * Draws the view contents.\n     */\n    public void draw(Graphics g, DrawingView view) {\n        view.drawAll(g);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * The SimpleUpdateStrategy implements an update\n * strategy that directly redraws a DrawingView.\n * @see DrawingView\n */\npublic class SimpleUpdateStrategy implements Painter {\n\n    /*\n     * Serialization support. In JavaDraw only the Drawing is serialized.\n     * However, for beans support SimpleUpdateStrategy supports\n     * serialization\n     */\n    private static final long serialVersionUID = -7539925820692134566L;\n\n    /**\n     * Draws the view contents.\n     */\n    public void draw(Graphics g, DrawingView view) {\n        view.drawAll(g);\n    }\n}",
+  "subClasses": []
+}

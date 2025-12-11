@@ -1,0 +1,22 @@
+{
+  "className": "PointConstrainer",
+  "methodName": "constrainPoint",
+  "brief": "public Point constrainPoint(Point p);",
+  "methodSignature": "constrainPoint(Point)",
+  "sourceCode": "public Point constrainPoint(Point p);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/**\n * Constrains the given point.\n * @return constrained point.\n */\npublic Point constrainPoint(Point p);",
+  "method_comment": "\n     * Constrains the given point.\n     * @return constrained point.\n     ",
+  "method_annotation": ""
+}

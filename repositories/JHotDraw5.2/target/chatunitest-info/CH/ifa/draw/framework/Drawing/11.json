@@ -1,0 +1,18 @@
+{
+  "className": "Drawing",
+  "methodName": "drawingChangeListeners",
+  "brief": "public Enumeration drawingChangeListeners();",
+  "methodSignature": "drawingChangeListeners()",
+  "sourceCode": "public Enumeration drawingChangeListeners();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the listeners of a drawing.\n */\npublic Enumeration drawingChangeListeners();",
+  "method_comment": "\n     * Gets the listeners of a drawing.\n     ",
+  "method_annotation": ""
+}

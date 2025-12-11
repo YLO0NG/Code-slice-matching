@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "release",
+  "brief": "public void release();",
+  "methodSignature": "release()",
+  "sourceCode": "public void release();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Releases a figure's resources. Release is called when\n * a figure is removed from a drawing. Informs the listeners that\n * the figure is removed by calling figureRemoved.\n */\npublic void release();",
+  "method_comment": "\n     * Releases a figure's resources. Release is called when\n     * a figure is removed from a drawing. Informs the listeners that\n     * the figure is removed by calling figureRemoved.\n     ",
+  "method_annotation": ""
+}

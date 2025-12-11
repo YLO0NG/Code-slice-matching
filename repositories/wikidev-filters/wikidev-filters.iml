@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file://C:/Users/Marios/Desktop/eclipse/plugins/mysql-connector-java-5.1.7/mysql-connector-java-5.1.7-bin.jar" />
+    <libelement value="file://C:/Users/Marios/Desktop/eclipse/plugins/JMathArray_1.0.0.jar" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+</module>

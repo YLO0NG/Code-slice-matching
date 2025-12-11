@@ -1,0 +1,27 @@
+{
+  "className": "ProgressBar",
+  "methodName": "scale",
+  "brief": "public int scale(int value){}",
+  "methodSignature": "scale(int)",
+  "sourceCode": "public int scale(int value) {\r\n\t\tif (fTotal > 0)\r\n\t\t\treturn Math.max(1, value*(getBounds().width-1)/fTotal);\r\n\t\treturn value; \r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.Math": [
+      "max(int, int)"
+    ],
+    "java.awt.Component": [
+      "getBounds()"
+    ]
+  },
+  "full_method_info": "public int scale(int value) {\r\n    if (fTotal > 0)\r\n        return Math.max(1, value * (getBounds().width - 1) / fTotal);\r\n    return value;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

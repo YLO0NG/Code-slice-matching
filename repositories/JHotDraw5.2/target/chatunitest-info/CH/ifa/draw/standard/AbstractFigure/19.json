@@ -1,0 +1,22 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "release",
+  "brief": "public void release(){}",
+  "methodSignature": "release()",
+  "sourceCode": "public void release() {\n        if (fListener != null)\n            fListener.figureRemoved(new FigureChangeEvent(this));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRemoved(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * A figure is released from the drawing. You never call this\n * method directly. Release notifies its listeners.\n * @see Figure#release\n */\npublic void release() {\n    if (fListener != null)\n        fListener.figureRemoved(new FigureChangeEvent(this));\n}",
+  "method_comment": "\n     * A figure is released from the drawing. You never call this\n     * method directly. Release notifies its listeners.\n     * @see Figure#release\n     ",
+  "method_annotation": ""
+}

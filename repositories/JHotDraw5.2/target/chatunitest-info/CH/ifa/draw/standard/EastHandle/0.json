@@ -1,0 +1,36 @@
+{
+  "className": "EastHandle",
+  "methodName": "invokeStep",
+  "brief": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeStep(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(\n            new Point(r.x, r.y), new Point(Math.max(r.x, x), r.y + r.height)\n        );\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox(Point, Point)",
+      "displayBox()"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ],
+    "java.lang.Math": [
+      "max(int, int)"
+    ]
+  },
+  "full_method_info": "public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    Rectangle r = owner().displayBox();\n    owner().displayBox(new Point(r.x, r.y), new Point(Math.max(r.x, x), r.y + r.height));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

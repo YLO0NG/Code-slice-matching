@@ -1,0 +1,24 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createStorageFormatManager",
+  "brief": "public StorageFormatManager createStorageFormatManager(){}",
+  "methodSignature": "createStorageFormatManager()",
+  "sourceCode": "public StorageFormatManager createStorageFormatManager() {\n        StorageFormatManager storageFormatManager = new StorageFormatManager();\n        storageFormatManager.setDefaultStorageFormat(new StandardStorageFormat());\n        storageFormatManager.addStorageFormat(storageFormatManager.getDefaultStorageFormat());\n        storageFormatManager.addStorageFormat(new SerializationStorageFormat());\n        return storageFormatManager;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormatManager": [
+      "getDefaultStorageFormat()",
+      "setDefaultStorageFormat(StorageFormat)",
+      "addStorageFormat(StorageFormat)"
+    ]
+  },
+  "full_method_info": "/**\n * Factory method to create a StorageFormatManager for supported storage formats.\n * Different applications might want to use different storage formats and can return\n * their own format manager by overriding this method.\n */\npublic StorageFormatManager createStorageFormatManager() {\n    StorageFormatManager storageFormatManager = new StorageFormatManager();\n    storageFormatManager.setDefaultStorageFormat(new StandardStorageFormat());\n    storageFormatManager.addStorageFormat(storageFormatManager.getDefaultStorageFormat());\n    storageFormatManager.addStorageFormat(new SerializationStorageFormat());\n    return storageFormatManager;\n}",
+  "method_comment": "\n     * Factory method to create a StorageFormatManager for supported storage formats.\n     * Different applications might want to use different storage formats and can return\n     * their own format manager by overriding this method.\n     ",
+  "method_annotation": ""
+}

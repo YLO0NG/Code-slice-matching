@@ -1,0 +1,41 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.HJDError",
+  "className": "HJDError",
+  "index": 68,
+  "modifier": "[public ]",
+  "extend": "[Error]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public class HJDError",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [
+    "Error"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "HJDError(String)": "0"
+  },
+  "methodsBrief": [
+    "public HJDError(String msg){}"
+  ],
+  "constructorSigs": [
+    "HJDError(String)"
+  ],
+  "constructorBrief": [
+    "public HJDError(String msg){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "/*\n * @(#)HJDError.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\n/**\n * A HJD Error.\n */\npublic class HJDError extends Error {\n\n    public HJDError(String msg) {\n        super(msg);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A HJD Error.\n */\npublic class HJDError extends Error {\n\n    public HJDError(String msg) {\n        super(msg);\n    }\n}",
+  "subClasses": []
+}

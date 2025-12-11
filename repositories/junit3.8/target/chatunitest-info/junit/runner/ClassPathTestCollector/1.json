@@ -1,0 +1,26 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "collectFilesInPath",
+  "brief": "public Hashtable collectFilesInPath(String classPath){}",
+  "methodSignature": "collectFilesInPath(String)",
+  "sourceCode": "public Hashtable collectFilesInPath(String classPath) {\r\n\t\tHashtable result= collectFilesInRoots(splitClassPath(classPath));\r\n\t\treturn result;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.runner.ClassPathTestCollector": [
+      "splitClassPath(String)",
+      "collectFilesInRoots(Vector)"
+    ]
+  },
+  "full_method_info": "public Hashtable collectFilesInPath(String classPath) {\r\n    Hashtable result = collectFilesInRoots(splitClassPath(classPath));\r\n    return result;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

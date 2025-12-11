@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createDrawingView",
+  "brief": "protected StandardDrawingView createDrawingView(){}",
+  "methodSignature": "createDrawingView()",
+  "sourceCode": "protected StandardDrawingView createDrawingView() {\n        Dimension d = getDrawingViewSize();\n        return new StandardDrawingView(this, d.width, d.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "getDrawingViewSize()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the drawing view used in this application.\n * You need to override this method to use a DrawingView\n * subclass in your application. By default a standard\n * DrawingView is returned.\n */\nprotected StandardDrawingView createDrawingView() {\n    Dimension d = getDrawingViewSize();\n    return new StandardDrawingView(this, d.width, d.height);\n}",
+  "method_comment": "\n     * Creates the drawing view used in this application.\n     * You need to override this method to use a DrawingView\n     * subclass in your application. By default a standard\n     * DrawingView is returned.\n     ",
+  "method_annotation": ""
+}

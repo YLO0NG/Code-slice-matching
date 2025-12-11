@@ -1,0 +1,29 @@
+{
+  "className": "TextFigure",
+  "methodName": "setFont",
+  "brief": "public void setFont(Font newFont){}",
+  "methodSignature": "setFont(Font)",
+  "sourceCode": "public void setFont(Font newFont) {\n        willChange();\n        fFont = newFont;\n        markDirty();\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Font"
+  ],
+  "dependentMethods": {
+    "java.awt.Font": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "changed()",
+      "markDirty()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the font.\n */\npublic void setFont(Font newFont) {\n    willChange();\n    fFont = newFont;\n    markDirty();\n    changed();\n}",
+  "method_comment": "\n     * Sets the font.\n     ",
+  "method_annotation": ""
+}

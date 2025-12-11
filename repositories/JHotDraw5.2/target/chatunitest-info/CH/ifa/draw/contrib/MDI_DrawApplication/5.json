@@ -1,0 +1,32 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "newView",
+  "brief": "public void newView(){}",
+  "methodSignature": "newView()",
+  "sourceCode": "public void newView() {\n    \tString copyTitle = getDrawingTitle();\n        StandardDrawingView fView = createDrawingView();\n        fView.setDrawing(drawing());\n        createContents(fView);\n\t\tsetDrawingTitle(copyTitle + \" (View)\");\n        toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "createContents(StandardDrawingView)",
+      "setDrawingTitle(String)",
+      "getDrawingTitle()"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "drawing()",
+      "createDrawingView()",
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDrawing(Drawing)"
+    ]
+  },
+  "full_method_info": "public void newView() {\n    String copyTitle = getDrawingTitle();\n    StandardDrawingView fView = createDrawingView();\n    fView.setDrawing(drawing());\n    createContents(fView);\n    setDrawingTitle(copyTitle + \" (View)\");\n    toolDone();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,37 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        g.setColor(getFrameColor());\n        Point p1, p2;\n        for (int i = 0; i < fPoints.size()-1; i++) {\n            p1 = (Point) fPoints.elementAt(i);\n            p2 = (Point) fPoints.elementAt(i+1);\n\t\t\tdrawLine(g, p1.x, p1.y, p2.x, p2.y);\n        }\n        if (getStartDecoration() != null) {\n\t\t    Point p11 = (Point)fPoints.elementAt(0);\n\t\t    Point p21 = (Point)fPoints.elementAt(1);\n\t\t    getStartDecoration().draw(g, p11.x, p11.y, p21.x, p21.y);\n\t\t}\n\t\tif (getEndDecoration() != null) {\n\t\t    Point p3 = (Point)fPoints.elementAt(fPoints.size()-2);\n\t\t    Point p4 = (Point)fPoints.elementAt(fPoints.size()-1);\n\t\t    getEndDecoration().draw(g, p4.x, p4.y, p3.x, p3.y);\n\t\t}\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "getStartDecoration()",
+      "drawLine(Graphics, int, int, int, int)",
+      "getFrameColor()",
+      "getEndDecoration()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "CH.ifa.draw.figures.LineDecoration": [
+      "draw(Graphics, int, int, int, int)"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g) {\n    g.setColor(getFrameColor());\n    Point p1, p2;\n    for (int i = 0; i < fPoints.size() - 1; i++) {\n        p1 = (Point) fPoints.elementAt(i);\n        p2 = (Point) fPoints.elementAt(i + 1);\n        drawLine(g, p1.x, p1.y, p2.x, p2.y);\n    }\n    if (getStartDecoration() != null) {\n        Point p11 = (Point) fPoints.elementAt(0);\n        Point p21 = (Point) fPoints.elementAt(1);\n        getStartDecoration().draw(g, p11.x, p11.y, p21.x, p21.y);\n    }\n    if (getEndDecoration() != null) {\n        Point p3 = (Point) fPoints.elementAt(fPoints.size() - 2);\n        Point p4 = (Point) fPoints.elementAt(fPoints.size() - 1);\n        getEndDecoration().draw(g, p4.x, p4.y, p3.x, p3.y);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "ArrowTip",
+  "methodName": "getOuterRadius",
+  "brief": "protected double getOuterRadius(){}",
+  "methodSignature": "getOuterRadius()",
+  "sourceCode": "protected double getOuterRadius() {\n    \treturn fOuterRadius;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the outer radius\n */\nprotected double getOuterRadius() {\n    return fOuterRadius;\n}",
+  "method_comment": "\n\t * Returns the outer radius\n\t ",
+  "method_annotation": ""
+}

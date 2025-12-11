@@ -1,0 +1,18 @@
+{
+  "className": "TestCase",
+  "methodName": "tearDown",
+  "brief": "protected void tearDown() throws Exception{}",
+  "methodSignature": "tearDown()",
+  "sourceCode": "protected void tearDown() throws Exception {\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Tears down the fixture, for example, close a network connection.\r\n * This method is called after a test is executed.\r\n */\r\nprotected void tearDown() throws Exception {\r\n}",
+  "method_comment": "\r\n\t * Tears down the fixture, for example, close a network connection.\r\n\t * This method is called after a test is executed.\r\n\t ",
+  "method_annotation": ""
+}

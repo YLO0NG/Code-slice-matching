@@ -1,0 +1,48 @@
+{
+  "fullClassName": "junit.extensions.ExceptionTestCase",
+  "className": "ExceptionTestCase",
+  "index": 5,
+  "modifier": "[public ]",
+  "extend": "[TestCase]",
+  "implement": "[]",
+  "packageName": "junit.extensions",
+  "packageDeclaration": "package junit.extensions;",
+  "classSignature": "public class ExceptionTestCase",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "Class fExpected;"
+  ],
+  "superClasses": [
+    "TestCase"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "runTest()": "0",
+    "ExceptionTestCase(String, Class)": "1"
+  },
+  "methodsBrief": [
+    "protected void runTest() throws Throwable{}",
+    "public ExceptionTestCase(String name, Class exception){}"
+  ],
+  "constructorSigs": [
+    "ExceptionTestCase(String, Class)"
+  ],
+  "constructorBrief": [
+    "public ExceptionTestCase(String name, Class exception){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.lang.Class": []
+  },
+  "compilationUnitCode": "package junit.extensions;\r\n\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A TestCase that expects an Exception of class fExpected to be thrown.\r\n * The other way to check that an expected exception is thrown is:\r\n * <pre>\r\n * try {\r\n *   shouldThrow();\r\n * }\r\n * catch (SpecialException e) {\r\n *   return;\r\n * }\r\n * fail(\"Expected SpecialException\");\r\n * </pre>\r\n *\r\n * To use ExceptionTestCase, create a TestCase like:\r\n * <pre>\r\n * new ExceptionTestCase(\"testShouldThrow\", SpecialException.class);\r\n * </pre>\r\n */\r\npublic class ExceptionTestCase extends TestCase {\r\n\r\n    Class fExpected;\r\n\r\n    public ExceptionTestCase(String name, Class exception) {\r\n        super(name);\r\n        fExpected = exception;\r\n    }\r\n\r\n    /**\r\n     * Execute the test method expecting that an Exception of\r\n     * class fExpected or one of its subclasses will be thrown\r\n     */\r\n    protected void runTest() throws Throwable {\r\n        try {\r\n            super.runTest();\r\n        } catch (Exception e) {\r\n            if (fExpected.isAssignableFrom(e.getClass()))\r\n                return;\r\n            else\r\n                throw e;\r\n        }\r\n        fail(\"Expected exception \" + fExpected);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A TestCase that expects an Exception of class fExpected to be thrown.\r\n * The other way to check that an expected exception is thrown is:\r\n * <pre>\r\n * try {\r\n *   shouldThrow();\r\n * }\r\n * catch (SpecialException e) {\r\n *   return;\r\n * }\r\n * fail(\"Expected SpecialException\");\r\n * </pre>\r\n *\r\n * To use ExceptionTestCase, create a TestCase like:\r\n * <pre>\r\n * new ExceptionTestCase(\"testShouldThrow\", SpecialException.class);\r\n * </pre>\r\n */\r\npublic class ExceptionTestCase extends TestCase {\r\n\r\n    Class fExpected;\r\n\r\n    public ExceptionTestCase(String name, Class exception) {\r\n        super(name);\r\n        fExpected = exception;\r\n    }\r\n\r\n    /**\r\n     * Execute the test method expecting that an Exception of\r\n     * class fExpected or one of its subclasses will be thrown\r\n     */\r\n    protected void runTest() throws Throwable {\r\n        try {\r\n            super.runTest();\r\n        } catch (Exception e) {\r\n            if (fExpected.isAssignableFrom(e.getClass()))\r\n                return;\r\n            else\r\n                throw e;\r\n        }\r\n        fail(\"Expected exception \" + fExpected);\r\n    }\r\n}",
+  "subClasses": []
+}

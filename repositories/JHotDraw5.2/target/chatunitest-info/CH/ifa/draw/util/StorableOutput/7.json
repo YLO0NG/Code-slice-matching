@@ -1,0 +1,25 @@
+{
+  "className": "StorableOutput",
+  "methodName": "mapped",
+  "brief": "private boolean mapped(Storable storable){}",
+  "methodSignature": "mapped(Storable)",
+  "sourceCode": "private boolean mapped(Storable storable) {\n        return fMap.contains(storable);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Storable"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Storable": [],
+    "java.util.Vector": [
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "private boolean mapped(Storable storable) {\n    return fMap.contains(storable);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

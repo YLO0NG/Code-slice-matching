@@ -1,0 +1,33 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printDefectTrace",
+  "brief": "protected void printDefectTrace(TestFailure booBoo){}",
+  "methodSignature": "printDefectTrace(TestFailure)",
+  "sourceCode": "protected void printDefectTrace(TestFailure booBoo) {\r\n\t\tgetWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestFailure"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestFailure": [
+      "trace()"
+    ],
+    "java.io.PrintStream": [
+      "print(String)"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getFilteredTrace(String)"
+    ]
+  },
+  "full_method_info": "protected void printDefectTrace(TestFailure booBoo) {\r\n    getWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "TestSuitePanel",
+  "methodName": "getTree",
+  "brief": "public JTree getTree(){}",
+  "methodSignature": "getTree()",
+  "sourceCode": "public JTree getTree() {\r\n\t\treturn fTree;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Returns the Tree\r\n */\r\npublic JTree getTree() {\r\n    return fTree;\r\n}",
+  "method_comment": "\r\n\t * Returns the Tree\r\n\t ",
+  "method_annotation": ""
+}

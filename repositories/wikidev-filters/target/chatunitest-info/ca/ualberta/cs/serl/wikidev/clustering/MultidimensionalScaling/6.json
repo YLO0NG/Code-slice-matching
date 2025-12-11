@@ -1,0 +1,25 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "changeDistances",
+  "brief": "public void changeDistances(double[] eigenValues){}",
+  "methodSignature": "changeDistances(double[])",
+  "sourceCode": "public void changeDistances(double[] eigenValues) {\n\t\tfor(int i=0;i<alphaMatrix.length;i++) {\n\t\t\tfor(int j=0;j<alphaMatrix.length;j++) {\n\t\t\t\tif(i != j) {\n\t\t\t\t\tsquareDistanceMatrix[i][j] += getConstant(eigenValues);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[]"
+  ],
+  "dependentMethods": {
+    "double": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.MultidimensionalScaling": [
+      "getConstant(double[])"
+    ]
+  },
+  "full_method_info": "public void changeDistances(double[] eigenValues) {\n    for (int i = 0; i < alphaMatrix.length; i++) {\n        for (int j = 0; j < alphaMatrix.length; j++) {\n            if (i != j) {\n                squareDistanceMatrix[i][j] += getConstant(eigenValues);\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

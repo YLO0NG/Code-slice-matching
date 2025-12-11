@@ -1,0 +1,25 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y){}",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y) {\n    return fPoly.contains(x, y);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": [
+      "contains(int, int)"
+    ]
+  },
+  "full_method_info": "public boolean containsPoint(int x, int y) {\n    return fPoly.contains(x, y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,34 @@
+{
+  "className": "TestRunner",
+  "methodName": "createQuitButton",
+  "brief": "protected JButton createQuitButton(){}",
+  "methodSignature": "createQuitButton()",
+  "sourceCode": "protected JButton createQuitButton() {\r\n\t\t // spaces required to avoid layout flicker\r\n\t\t // Exit is shorter than Stop that shows in the same column\r\n\t\tJButton quit= new JButton(\" Exit \");\r\n\t\tquit.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\t/*{*/fFrame.dispose();\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tsaveHistory();\r\n\t\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tSystem.exit(0);/*}*/\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\treturn quit;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "java.awt.Window": [
+      "dispose()"
+    ],
+    "junit.swingui.TestRunner": [
+      "saveHistory()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "protected JButton createQuitButton() {\r\n    // spaces required to avoid layout flicker\r\n    // Exit is shorter than Stop that shows in the same column\r\n    JButton quit = new JButton(\" Exit \");\r\n    quit.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            /*{*/\r\n            fFrame.dispose();\r\n            try {\r\n                saveHistory();\r\n            } catch (IOException e1) {\r\n                System.out.println(\"Couldn't save test run history\");\r\n            }\r\n            System.exit(0);\r\n            /*}*/\r\n        }\r\n    });\r\n    return quit;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

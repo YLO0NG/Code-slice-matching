@@ -1,0 +1,24 @@
+{
+  "className": "TestRunView",
+  "methodName": "aboutToStart",
+  "brief": "public void aboutToStart(Test suite, TestResult result);",
+  "methodSignature": "aboutToStart(Test, TestResult)",
+  "sourceCode": "public void aboutToStart(Test suite, TestResult result);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.TestResult": []
+  },
+  "full_method_info": "/**\r\n * Informs that the suite is about to start\r\n */\r\npublic void aboutToStart(Test suite, TestResult result);",
+  "method_comment": "\r\n\t * Informs that the suite is about to start \r\n\t ",
+  "method_annotation": ""
+}

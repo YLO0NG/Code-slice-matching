@@ -1,0 +1,41 @@
+{
+  "className": "GroupCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        Vector selected = fView.selectionZOrdered();\n        Drawing drawing = fView.drawing();\n        if (selected.size() > 0) {\n            fView.clearSelection();\n            drawing.orphanAll(selected);\n\n            GroupFigure group = new GroupFigure();\n            Enumeration k = selected.elements();\n\t\t\twhile (k.hasMoreElements())\n\t\t\t    group.add((Figure) k.nextElement());\n            fView.addToSelection(drawing.add(group));\n        }\n        fView.checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "selectionZOrdered()",
+      "drawing()",
+      "clearSelection()",
+      "addToSelection(Figure)",
+      "checkDamage()"
+    ],
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "orphanAll(Vector)",
+      "add(Figure)"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    Vector selected = fView.selectionZOrdered();\n    Drawing drawing = fView.drawing();\n    if (selected.size() > 0) {\n        fView.clearSelection();\n        drawing.orphanAll(selected);\n        GroupFigure group = new GroupFigure();\n        Enumeration k = selected.elements();\n        while (k.hasMoreElements()) group.add((Figure) k.nextElement());\n        fView.addToSelection(drawing.add(group));\n    }\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

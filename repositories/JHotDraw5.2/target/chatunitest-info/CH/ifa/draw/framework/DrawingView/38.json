@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "freezeView",
+  "brief": "public void freezeView();",
+  "methodSignature": "freezeView()",
+  "sourceCode": "public void freezeView();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Freezes the view by acquiring the drawing lock.\n * @see Drawing#lock\n */\npublic void freezeView();",
+  "method_comment": "\n     * Freezes the view by acquiring the drawing lock.\n     * @see Drawing#lock\n     ",
+  "method_annotation": ""
+}

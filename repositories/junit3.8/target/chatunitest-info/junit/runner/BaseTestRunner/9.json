@@ -1,0 +1,22 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "testEnded",
+  "brief": "public abstract void testEnded(String testName);",
+  "methodSignature": "testEnded(String)",
+  "sourceCode": "public abstract void testEnded(String testName);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public abstract void testEnded(String testName);",
+  "method_comment": "",
+  "method_annotation": ""
+}

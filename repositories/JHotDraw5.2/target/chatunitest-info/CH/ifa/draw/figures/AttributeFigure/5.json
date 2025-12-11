@@ -1,0 +1,22 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "initializeAttributes",
+  "brief": "private static void initializeAttributes(){}",
+  "methodSignature": "initializeAttributes()",
+  "sourceCode": "private static void initializeAttributes() {\n        fgDefaultAttributes = new FigureAttributes();\n        fgDefaultAttributes.set(\"FrameColor\", Color.black);\n        fgDefaultAttributes.set(\"FillColor\",  new Color(0x70DB93));\n        fgDefaultAttributes.set(\"TextColor\",  Color.black);\n        fgDefaultAttributes.set(\"ArrowMode\",  new Integer(0));\n        fgDefaultAttributes.set(\"FontName\",  \"Helvetica\");\n        fgDefaultAttributes.set(\"FontSize\",   new Integer(12));\n        fgDefaultAttributes.set(\"FontStyle\",  new Integer(Font.PLAIN));\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "set(String, Object)"
+    ]
+  },
+  "full_method_info": "// ---- figure attributes ----------------------------------\nprivate static void initializeAttributes() {\n    fgDefaultAttributes = new FigureAttributes();\n    fgDefaultAttributes.set(\"FrameColor\", Color.black);\n    fgDefaultAttributes.set(\"FillColor\", new Color(0x70DB93));\n    fgDefaultAttributes.set(\"TextColor\", Color.black);\n    fgDefaultAttributes.set(\"ArrowMode\", new Integer(0));\n    fgDefaultAttributes.set(\"FontName\", \"Helvetica\");\n    fgDefaultAttributes.set(\"FontSize\", new Integer(12));\n    fgDefaultAttributes.set(\"FontStyle\", new Integer(Font.PLAIN));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

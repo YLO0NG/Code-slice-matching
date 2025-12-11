@@ -1,0 +1,37 @@
+{
+  "fullClassName": "junit.runner.StandardTestSuiteLoader",
+  "className": "StandardTestSuiteLoader",
+  "index": 27,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[TestSuiteLoader]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public class StandardTestSuiteLoader",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [
+    "TestSuiteLoader"
+  ],
+  "methodSigs": {
+    "load(String)": "0",
+    "reload(Class)": "1"
+  },
+  "methodsBrief": [
+    "public Class load(String suiteClassName) throws ClassNotFoundException{}",
+    "public Class reload(Class aClass) throws ClassNotFoundException{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\n/**\r\n * The standard test suite loader. It can only load the same class once.\r\n */\r\npublic class StandardTestSuiteLoader implements TestSuiteLoader {\r\n\r\n    /**\r\n     * Uses the system class loader to load the test class\r\n     */\r\n    public Class load(String suiteClassName) throws ClassNotFoundException {\r\n        return Class.forName(suiteClassName);\r\n    }\r\n\r\n    /**\r\n     * Uses the system class loader to load the test class\r\n     */\r\n    public Class reload(Class aClass) throws ClassNotFoundException {\r\n        return aClass;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * The standard test suite loader. It can only load the same class once.\r\n */\r\npublic class StandardTestSuiteLoader implements TestSuiteLoader {\r\n\r\n    /**\r\n     * Uses the system class loader to load the test class\r\n     */\r\n    public Class load(String suiteClassName) throws ClassNotFoundException {\r\n        return Class.forName(suiteClassName);\r\n    }\r\n\r\n    /**\r\n     * Uses the system class loader to load the test class\r\n     */\r\n    public Class reload(Class aClass) throws ClassNotFoundException {\r\n        return aClass;\r\n    }\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,22 @@
+{
+  "className": "BoxHandleKit",
+  "methodName": "north",
+  "brief": "static public Handle north(Figure owner){}",
+  "methodSignature": "north(Figure)",
+  "sourceCode": "static public Handle north(Figure owner) {\n        return new NorthHandle(owner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "static public Handle north(Figure owner) {\n    return new NorthHandle(owner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

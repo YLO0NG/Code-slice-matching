@@ -1,0 +1,23 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point p1, Point p2){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point p1, Point p2) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "public void basicDisplayBox(Point p1, Point p2) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

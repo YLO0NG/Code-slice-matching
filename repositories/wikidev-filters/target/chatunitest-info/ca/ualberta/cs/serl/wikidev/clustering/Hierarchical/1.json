@@ -1,0 +1,23 @@
+{
+  "className": "Hierarchical",
+  "methodName": "Hierarchical",
+  "brief": "public Hierarchical(double[][] distanceMatrix, double threshold){}",
+  "methodSignature": "Hierarchical(double[][], double)",
+  "sourceCode": "public Hierarchical(double[][] distanceMatrix, double threshold) {\n\t\tthis.distanceMatrix = distanceMatrix;\n\t\tthis.THRESHOLD = threshold;\n\t\t// TODO Auto-generated constructor stub\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]",
+    "double"
+  ],
+  "dependentMethods": {
+    "double[]": []
+  },
+  "full_method_info": "public Hierarchical(double[][] distanceMatrix, double threshold) {\n    this.distanceMatrix = distanceMatrix;\n    this.THRESHOLD = threshold;\n    // TODO Auto-generated constructor stub\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

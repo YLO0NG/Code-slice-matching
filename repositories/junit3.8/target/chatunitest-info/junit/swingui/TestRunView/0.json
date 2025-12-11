@@ -1,0 +1,18 @@
+{
+  "className": "TestRunView",
+  "methodName": "getSelectedTest",
+  "brief": "public Test getSelectedTest();",
+  "methodSignature": "getSelectedTest()",
+  "sourceCode": "public Test getSelectedTest();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Returns the currently selected Test in the View\r\n */\r\npublic Test getSelectedTest();",
+  "method_comment": "\r\n\t * Returns the currently selected Test in the View\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "Handle",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g);",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": []
+  },
+  "full_method_info": "/**\n * Draws this handle.\n */\npublic void draw(Graphics g);",
+  "method_comment": "\n     * Draws this handle.\n     ",
+  "method_annotation": ""
+}

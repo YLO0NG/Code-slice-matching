@@ -1,0 +1,23 @@
+{
+  "className": "JavaDrawApplet",
+  "methodName": "toggleAnimation",
+  "brief": "public void toggleAnimation(){}",
+  "methodSignature": "toggleAnimation()",
+  "sourceCode": "public void toggleAnimation() {\n        if (fAnimator != null)\n            endAnimation();\n        else\n            startAnimation();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.javadraw.JavaDrawApplet": [
+      "startAnimation()",
+      "endAnimation()"
+    ]
+  },
+  "full_method_info": "public void toggleAnimation() {\n    if (fAnimator != null)\n        endAnimation();\n    else\n        startAnimation();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

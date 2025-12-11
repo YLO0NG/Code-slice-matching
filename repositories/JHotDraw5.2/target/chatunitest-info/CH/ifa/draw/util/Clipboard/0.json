@@ -1,0 +1,18 @@
+{
+  "className": "Clipboard",
+  "methodName": "getClipboard",
+  "brief": "static public Clipboard getClipboard(){}",
+  "methodSignature": "getClipboard()",
+  "sourceCode": "static public Clipboard getClipboard() {\n        return fgClipboard;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the clipboard.\n */\nstatic public Clipboard getClipboard() {\n    return fgClipboard;\n}",
+  "method_comment": "\n     * Gets the clipboard.\n     ",
+  "method_annotation": ""
+}

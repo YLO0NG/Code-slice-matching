@@ -1,0 +1,28 @@
+{
+  "className": "LineConnection",
+  "methodName": "connectStart",
+  "brief": "public void connectStart(Connector start){}",
+  "methodSignature": "connectStart(Connector)",
+  "sourceCode": "public void connectStart(Connector start) {\n        fStart = start;\n        startFigure().addFigureChangeListener(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Connector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Connector": [],
+    "CH.ifa.draw.framework.Figure": [
+      "addFigureChangeListener(FigureChangeListener)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "startFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the start figure of the connection.\n */\npublic void connectStart(Connector start) {\n    fStart = start;\n    startFigure().addFigureChangeListener(this);\n}",
+  "method_comment": "\n     * Sets the start figure of the connection.\n     ",
+  "method_annotation": ""
+}

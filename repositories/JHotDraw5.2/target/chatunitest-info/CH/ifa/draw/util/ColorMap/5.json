@@ -1,0 +1,27 @@
+{
+  "className": "ColorMap",
+  "methodName": "isTransparent",
+  "brief": "public static boolean isTransparent(Color color){}",
+  "methodSignature": "isTransparent(Color)",
+  "sourceCode": "public static boolean isTransparent(Color color) {\n        return color.equals(color(\"None\"));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Color"
+  ],
+  "dependentMethods": {
+    "java.awt.Color": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.util.ColorMap": [
+      "color(String)"
+    ]
+  },
+  "full_method_info": "public static boolean isTransparent(Color color) {\n    return color.equals(color(\"None\"));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

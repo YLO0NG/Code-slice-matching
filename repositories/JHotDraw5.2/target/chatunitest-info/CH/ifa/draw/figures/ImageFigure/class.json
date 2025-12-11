@@ -1,0 +1,86 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.ImageFigure",
+  "className": "ImageFigure",
+  "index": 37,
+  "modifier": "[public ]",
+  "extend": "[AttributeFigure]",
+  "implement": "[ImageObserver]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class ImageFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.*;",
+    "import java.util.Vector;",
+    "import java.awt.image.ImageObserver;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private String   fFileName;",
+    "private transient Image fImage;",
+    "private Rectangle fDisplayBox;",
+    "private static final long serialVersionUID = 148012030121282439L;",
+    "private int imageFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "AttributeFigure"
+  ],
+  "implementedTypes": [
+    "ImageObserver"
+  ],
+  "methodSigs": {
+    "basicDisplayBox(Point, Point)": "0",
+    "handles()": "1",
+    "displayBox()": "2",
+    "basicMoveBy(int, int)": "3",
+    "draw(Graphics)": "4",
+    "drawGhost(Graphics)": "5",
+    "imageUpdate(Image, int, int, int, int, int)": "6",
+    "write(StorableOutput)": "7",
+    "read(StorableInput)": "8",
+    "readObject(ObjectInputStream)": "9",
+    "ImageFigure()": "10",
+    "ImageFigure(Image, String, Point)": "11"
+  },
+  "methodsBrief": [
+    "public void basicDisplayBox(Point origin, Point corner){}",
+    "public Vector handles(){}",
+    "public Rectangle displayBox(){}",
+    "protected void basicMoveBy(int x, int y){}",
+    "public void draw(Graphics g){}",
+    "private void drawGhost(Graphics g){}",
+    "public boolean imageUpdate(Image img, int flags, int x, int y, int w, int h){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+    "public ImageFigure(){}",
+    "public ImageFigure(Image image, String fileName, Point origin){}"
+  ],
+  "constructorSigs": [
+    "ImageFigure()",
+    "ImageFigure(Image, String, Point)"
+  ],
+  "constructorBrief": [
+    "public ImageFigure(){}",
+    "public ImageFigure(Image image, String fileName, Point origin){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.awt.Image": [
+      "getWidth(ImageObserver)",
+      "getHeight(ImageObserver)"
+    ],
+    "java.lang.String": [],
+    "java.awt.Point": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ImageFigure.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.io.*;\nimport java.util.Vector;\nimport java.awt.image.ImageObserver;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A Figure that shows an Image.\n * Images shown by an image figure are shared by using the Iconkit.\n * @see Iconkit\n */\npublic class ImageFigure extends AttributeFigure implements ImageObserver {\n\n    private String fFileName;\n\n    private transient Image fImage;\n\n    private Rectangle fDisplayBox;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 148012030121282439L;\n\n    private int imageFigureSerializedDataVersion = 1;\n\n    public ImageFigure() {\n        fFileName = null;\n        fImage = null;\n        fDisplayBox = null;\n    }\n\n    public ImageFigure(Image image, String fileName, Point origin) {\n        fFileName = fileName;\n        fImage = image;\n        fDisplayBox = new Rectangle(origin.x, origin.y, 0, 0);\n        fDisplayBox.width = fImage.getWidth(this);\n        fDisplayBox.height = fImage.getHeight(this);\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n    }\n\n    public Vector handles() {\n        Vector handles = new Vector();\n        BoxHandleKit.addHandles(this, handles);\n        return handles;\n    }\n\n    public Rectangle displayBox() {\n        return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    protected void basicMoveBy(int x, int y) {\n        fDisplayBox.translate(x, y);\n    }\n\n    public void draw(Graphics g) {\n        if (fImage == null)\n            fImage = Iconkit.instance().getImage(fFileName);\n        if (fImage != null)\n            g.drawImage(fImage, fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height, this);\n        else\n            drawGhost(g);\n    }\n\n    private void drawGhost(Graphics g) {\n        g.setColor(Color.gray);\n        g.fillRect(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    /**\n     * Handles asynchroneous image updates.\n     */\n    public boolean imageUpdate(Image img, int flags, int x, int y, int w, int h) {\n        if ((flags & (FRAMEBITS | ALLBITS)) != 0) {\n            invalidate();\n            if (listener() != null)\n                listener().figureRequestUpdate(new FigureChangeEvent(this));\n        }\n        return (flags & (ALLBITS | ABORT)) == 0;\n    }\n\n    /**\n     * Writes the ImageFigure to a StorableOutput. Only a reference to the\n     * image, that is its pathname is saved.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n        dw.writeString(fFileName);\n    }\n\n    /**\n     * Reads the ImageFigure from a StorableInput. It registers the\n     * referenced figure to be loaded from the Iconkit.\n     * @see Iconkit#registerImage\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n        fFileName = dr.readString();\n        Iconkit.instance().registerImage(fFileName);\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        Iconkit.instance().registerImage(fFileName);\n        fImage = null;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Figure that shows an Image.\n * Images shown by an image figure are shared by using the Iconkit.\n * @see Iconkit\n */\npublic class ImageFigure extends AttributeFigure implements ImageObserver {\n\n    private String fFileName;\n\n    private transient Image fImage;\n\n    private Rectangle fDisplayBox;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 148012030121282439L;\n\n    private int imageFigureSerializedDataVersion = 1;\n\n    public ImageFigure() {\n        fFileName = null;\n        fImage = null;\n        fDisplayBox = null;\n    }\n\n    public ImageFigure(Image image, String fileName, Point origin) {\n        fFileName = fileName;\n        fImage = image;\n        fDisplayBox = new Rectangle(origin.x, origin.y, 0, 0);\n        fDisplayBox.width = fImage.getWidth(this);\n        fDisplayBox.height = fImage.getHeight(this);\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n    }\n\n    public Vector handles() {\n        Vector handles = new Vector();\n        BoxHandleKit.addHandles(this, handles);\n        return handles;\n    }\n\n    public Rectangle displayBox() {\n        return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    protected void basicMoveBy(int x, int y) {\n        fDisplayBox.translate(x, y);\n    }\n\n    public void draw(Graphics g) {\n        if (fImage == null)\n            fImage = Iconkit.instance().getImage(fFileName);\n        if (fImage != null)\n            g.drawImage(fImage, fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height, this);\n        else\n            drawGhost(g);\n    }\n\n    private void drawGhost(Graphics g) {\n        g.setColor(Color.gray);\n        g.fillRect(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }\n\n    /**\n     * Handles asynchroneous image updates.\n     */\n    public boolean imageUpdate(Image img, int flags, int x, int y, int w, int h) {\n        if ((flags & (FRAMEBITS | ALLBITS)) != 0) {\n            invalidate();\n            if (listener() != null)\n                listener().figureRequestUpdate(new FigureChangeEvent(this));\n        }\n        return (flags & (ALLBITS | ABORT)) == 0;\n    }\n\n    /**\n     * Writes the ImageFigure to a StorableOutput. Only a reference to the\n     * image, that is its pathname is saved.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n        dw.writeString(fFileName);\n    }\n\n    /**\n     * Reads the ImageFigure from a StorableInput. It registers the\n     * referenced figure to be loaded from the Iconkit.\n     * @see Iconkit#registerImage\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fDisplayBox = new Rectangle(dr.readInt(), dr.readInt(), dr.readInt(), dr.readInt());\n        fFileName = dr.readString();\n        Iconkit.instance().registerImage(fFileName);\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        Iconkit.instance().registerImage(fFileName);\n        fImage = null;\n    }\n}",
+  "subClasses": []
+}

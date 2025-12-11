@@ -1,0 +1,36 @@
+{
+  "className": "CommandMenu",
+  "methodName": "actionPerformed",
+  "brief": "public void actionPerformed(ActionEvent e){}",
+  "methodSignature": "actionPerformed(ActionEvent)",
+  "sourceCode": "public void actionPerformed(ActionEvent e) {\n        int j = 0;\n        Object source = e.getSource();\n        for (int i = 0; i < getItemCount(); i++) {\n            JMenuItem item = getItem(i);\n            // ignore separators\n            // a separator has a hyphen as its label\n            if (getMenuComponent(i) instanceof JSeparator)\n                continue;\n            if (source == item) {\n                Command cmd = (Command)fCommands.elementAt(j);\n                cmd.execute();\n                break;\n            }\n            j++;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ActionEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.ActionEvent": [],
+    "java.util.EventObject": [
+      "getSource()"
+    ],
+    "javax.swing.JMenu": [
+      "getMenuComponent(int)",
+      "getItem(int)",
+      "getItemCount()"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)"
+    ],
+    "CH.ifa.draw.util.Command": [
+      "execute()"
+    ]
+  },
+  "full_method_info": "/**\n * Executes the command.\n */\npublic void actionPerformed(ActionEvent e) {\n    int j = 0;\n    Object source = e.getSource();\n    for (int i = 0; i < getItemCount(); i++) {\n        JMenuItem item = getItem(i);\n        // ignore separators\n        // a separator has a hyphen as its label\n        if (getMenuComponent(i) instanceof JSeparator)\n            continue;\n        if (source == item) {\n            Command cmd = (Command) fCommands.elementAt(j);\n            cmd.execute();\n            break;\n        }\n        j++;\n    }\n}",
+  "method_comment": "\n     * Executes the command.\n     ",
+  "method_annotation": ""
+}

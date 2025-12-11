@@ -1,0 +1,39 @@
+{
+  "className": "Layout",
+  "methodName": "redistributeBuildings",
+  "brief": "private void redistributeBuildings(){}",
+  "methodSignature": "redistributeBuildings()",
+  "sourceCode": "private void redistributeBuildings() {\n\t\tfor (CityBlock block : cityBlocks) {\n\t\t\tif (block.getArtifacts().size() > 16) {\n\t\t\t\tblock.setMarked(true);\n\t\t\t\tHashMap<IArtifact, Integer> finalArtifacts = new HashMap<IArtifact, Integer>();\n\t\t\t\tfor (IArtifact artifact : block.getArtifacts().keySet()) {\n\t\t\t\t\tif (artifact.isEnforced()) {\n\t\t\t\t\t\tfinalArtifacts.put(artifact, -1);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\twhile (finalArtifacts.size() < 16) {\n\t\t\t\t\tIArtifact artifact = getClosestArtifact(block);\n\t\t\t\t\tfinalArtifacts.put(artifact, -1);\n\t\t\t\t\tblock.getArtifacts().remove(artifact);\n\t\t\t\t}\n\t\t\t\tCollection<IArtifact> surplus = block.getArtifacts().keySet();\n\t\t\t\tblock.setArtifacts(finalArtifacts);\n\t\t\t\tfor (IArtifact artifact : surplus) {\n\t\t\t\t\tCityBlock closestBlock = getClosestBlock(artifact);\n\t\t\t\t\tartifact.setEnforced(true);\n\t\t\t\t\tclosestBlock.addArtifact(artifact, -1);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.HashMap": [
+      "remove(Object)",
+      "keySet()",
+      "put(K, V)",
+      "size()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "getArtifacts()",
+      "setArtifacts(Integer>)",
+      "setMarked(boolean)",
+      "addArtifact(IArtifact, int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setEnforced(boolean)",
+      "isEnforced()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "getClosestArtifact(CityBlock)",
+      "getClosestBlock(IArtifact)"
+    ]
+  },
+  "full_method_info": "private void redistributeBuildings() {\n    for (CityBlock block : cityBlocks) {\n        if (block.getArtifacts().size() > 16) {\n            block.setMarked(true);\n            HashMap<IArtifact, Integer> finalArtifacts = new HashMap<IArtifact, Integer>();\n            for (IArtifact artifact : block.getArtifacts().keySet()) {\n                if (artifact.isEnforced()) {\n                    finalArtifacts.put(artifact, -1);\n                }\n            }\n            while (finalArtifacts.size() < 16) {\n                IArtifact artifact = getClosestArtifact(block);\n                finalArtifacts.put(artifact, -1);\n                block.getArtifacts().remove(artifact);\n            }\n            Collection<IArtifact> surplus = block.getArtifacts().keySet();\n            block.setArtifacts(finalArtifacts);\n            for (IArtifact artifact : surplus) {\n                CityBlock closestBlock = getClosestBlock(artifact);\n                artifact.setEnforced(true);\n                closestBlock.addArtifact(artifact, -1);\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "PertDependency",
+  "methodName": "handleDisconnect",
+  "brief": "public void handleDisconnect(Figure start, Figure end){}",
+  "methodSignature": "handleDisconnect(Figure, Figure)",
+  "sourceCode": "public void handleDisconnect(Figure start, Figure end) {\n        PertFigure source = (PertFigure)start;\n        PertFigure target = (PertFigure)end;\n        if (target != null) {\n            target.removePreTask(source);\n            target.updateDurations();\n        }\n        if (source != null)\n            source.removePostTask(target);\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "removePostTask(PertFigure)",
+      "updateDurations()",
+      "removePreTask(PertFigure)"
+    ]
+  },
+  "full_method_info": "public void handleDisconnect(Figure start, Figure end) {\n    PertFigure source = (PertFigure) start;\n    PertFigure target = (PertFigure) end;\n    if (target != null) {\n        target.removePreTask(source);\n        target.updateDurations();\n    }\n    if (source != null)\n        source.removePostTask(target);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

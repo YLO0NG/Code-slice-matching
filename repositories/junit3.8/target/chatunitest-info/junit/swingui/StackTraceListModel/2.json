@@ -1,0 +1,31 @@
+{
+  "className": "StackTraceListModel",
+  "methodName": "setTrace",
+  "brief": "public void setTrace(String trace){}",
+  "methodSignature": "setTrace(String)",
+  "sourceCode": "public void setTrace(String trace) {\r\n\t\t\tscan(trace);\r\n\t\t\tfireContentsChanged(this, 0, fLines.size());\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.swingui.DefaultFailureDetailView.StackTraceListModel": [
+      "scan(String)"
+    ],
+    "javax.swing.AbstractListModel": [
+      "fireContentsChanged(Object, int, int)"
+    ],
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "full_method_info": "public void setTrace(String trace) {\r\n    scan(trace);\r\n    fireContentsChanged(this, 0, fLines.size());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

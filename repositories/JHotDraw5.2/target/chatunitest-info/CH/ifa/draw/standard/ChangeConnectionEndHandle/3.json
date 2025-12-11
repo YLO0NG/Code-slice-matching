@@ -1,0 +1,25 @@
+{
+  "className": "ChangeConnectionEndHandle",
+  "methodName": "setPoint",
+  "brief": "protected void setPoint(int x, int y){}",
+  "methodSignature": "setPoint(int, int)",
+  "sourceCode": "protected void setPoint(int x, int y) {\n        fConnection.endPoint(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "endPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the end point of the connection.\n */\nprotected void setPoint(int x, int y) {\n    fConnection.endPoint(x, y);\n}",
+  "method_comment": "\n     * Sets the end point of the connection.\n     ",
+  "method_annotation": ""
+}

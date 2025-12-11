@@ -1,0 +1,124 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.DecoratorFigure",
+  "className": "DecoratorFigure",
+  "index": 121,
+  "modifier": "[public , abstract ]",
+  "extend": "[AbstractFigure]",
+  "implement": "[FigureChangeListener]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public abstract class DecoratorFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.*;"
+  ],
+  "fields": [
+    "protected Figure fComponent;",
+    "private static final long serialVersionUID = 8993011151564573288L;",
+    "private int decoratorFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "AbstractFigure"
+  ],
+  "implementedTypes": [
+    "FigureChangeListener"
+  ],
+  "methodSigs": {
+    "initialize()": "0",
+    "connectionInsets()": "1",
+    "canConnect()": "2",
+    "containsPoint(int, int)": "3",
+    "decorate(Figure)": "4",
+    "peelDecoration()": "5",
+    "displayBox()": "6",
+    "basicDisplayBox(Point, Point)": "7",
+    "draw(Graphics)": "8",
+    "findFigureInside(int, int)": "9",
+    "handles()": "10",
+    "includes(Figure)": "11",
+    "moveBy(int, int)": "12",
+    "basicMoveBy(int, int)": "13",
+    "release()": "14",
+    "figureInvalidated(FigureChangeEvent)": "15",
+    "figureChanged(FigureChangeEvent)": "16",
+    "figureRemoved(FigureChangeEvent)": "17",
+    "figureRequestUpdate(FigureChangeEvent)": "18",
+    "figureRequestRemove(FigureChangeEvent)": "19",
+    "figures()": "20",
+    "decompose()": "21",
+    "setAttribute(String, Object)": "22",
+    "getAttribute(String)": "23",
+    "connectedTextLocator(Figure)": "24",
+    "connectorAt(int, int)": "25",
+    "connectorVisibility(boolean)": "26",
+    "write(StorableOutput)": "27",
+    "read(StorableInput)": "28",
+    "readObject(ObjectInputStream)": "29",
+    "DecoratorFigure()": "30",
+    "DecoratorFigure(Figure)": "31"
+  },
+  "methodsBrief": [
+    "protected void initialize(){}",
+    "public Insets connectionInsets(){}",
+    "public boolean canConnect(){}",
+    "public boolean containsPoint(int x, int y){}",
+    "public void decorate(Figure figure){}",
+    "public Figure peelDecoration(){}",
+    "public Rectangle displayBox(){}",
+    "public void basicDisplayBox(Point origin, Point corner){}",
+    "public void draw(Graphics g){}",
+    "public Figure findFigureInside(int x, int y){}",
+    "public Vector handles(){}",
+    "public boolean includes(Figure figure){}",
+    "public void moveBy(int x, int y){}",
+    "protected void basicMoveBy(int x, int y){}",
+    "public void release(){}",
+    "public void figureInvalidated(FigureChangeEvent e){}",
+    "public void figureChanged(FigureChangeEvent e){}",
+    "public void figureRemoved(FigureChangeEvent e){}",
+    "public  void figureRequestUpdate(FigureChangeEvent e){}",
+    "public void figureRequestRemove(FigureChangeEvent e){}",
+    "public FigureEnumeration figures(){}",
+    "public FigureEnumeration decompose(){}",
+    "public void setAttribute(String name, Object value){}",
+    "public Object getAttribute(String name){}",
+    "public Locator connectedTextLocator(Figure text){}",
+    "public Connector connectorAt(int x, int y){}",
+    "public void connectorVisibility(boolean isVisible){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+    "public DecoratorFigure(){}",
+    "public DecoratorFigure(Figure figure){}"
+  ],
+  "constructorSigs": [
+    "DecoratorFigure()",
+    "DecoratorFigure(Figure)"
+  ],
+  "constructorBrief": [
+    "public DecoratorFigure(){}",
+    "public DecoratorFigure(Figure figure){}"
+  ],
+  "getterSetterSigs": [
+    "setAttribute(String, Object)"
+  ],
+  "getterSetterBrief": [
+    "public void setAttribute(String name, Object value){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "initialize()"
+    ],
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)DecoratorFigure.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\nimport java.awt.*;\nimport java.util.*;\nimport java.io.*;\n\n/**\n * DecoratorFigure can be used to decorate other figures with\n * decorations like borders. Decorator forwards all the\n * methods to their contained figure. Subclasses can selectively\n * override these methods to extend and filter their behavior.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld014.htm>Decorator</a></b><br>\n * DecoratorFigure is a decorator.\n *\n * @see Figure\n */\npublic abstract class DecoratorFigure extends AbstractFigure implements FigureChangeListener {\n\n    /**\n     * The decorated figure.\n     */\n    protected Figure fComponent;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 8993011151564573288L;\n\n    private int decoratorFigureSerializedDataVersion = 1;\n\n    public DecoratorFigure() {\n        initialize();\n    }\n\n    public DecoratorFigure(Figure figure) {\n        initialize();\n        decorate(figure);\n    }\n\n    /**\n     * Performs additional initialization code before the figure is decorated.\n     * Subclasses may override this method.\n     */\n    protected void initialize() {\n    }\n\n    /**\n     * Forwards the connection insets to its contained figure..\n     */\n    public Insets connectionInsets() {\n        return fComponent.connectionInsets();\n    }\n\n    /**\n     * Forwards the canConnect to its contained figure..\n     */\n    public boolean canConnect() {\n        return fComponent.canConnect();\n    }\n\n    /**\n     * Forwards containsPoint to its contained figure.\n     */\n    public boolean containsPoint(int x, int y) {\n        return fComponent.containsPoint(x, y);\n    }\n\n    /**\n     * Decorates the given figure.\n     */\n    public void decorate(Figure figure) {\n        fComponent = figure;\n        fComponent.addToContainer(this);\n    }\n\n    /**\n     * Removes the decoration from the contained figure.\n     */\n    public Figure peelDecoration() {\n        // ??? set the container to the listener()?\n        fComponent.removeFromContainer(this);\n        return fComponent;\n    }\n\n    /**\n     * Forwards displayBox to its contained figure.\n     */\n    public Rectangle displayBox() {\n        return fComponent.displayBox();\n    }\n\n    /**\n     * Forwards basicDisplayBox to its contained figure.\n     */\n    public void basicDisplayBox(Point origin, Point corner) {\n        fComponent.basicDisplayBox(origin, corner);\n    }\n\n    /**\n     * Forwards draw to its contained figure.\n     */\n    public void draw(Graphics g) {\n        fComponent.draw(g);\n    }\n\n    /**\n     * Forwards findFigureInside to its contained figure.\n     */\n    public Figure findFigureInside(int x, int y) {\n        return fComponent.findFigureInside(x, y);\n    }\n\n    /**\n     * Forwards handles to its contained figure.\n     */\n    public Vector handles() {\n        return fComponent.handles();\n    }\n\n    /**\n     * Forwards includes to its contained figure.\n     */\n    public boolean includes(Figure figure) {\n        return (super.includes(figure) || fComponent.includes(figure));\n    }\n\n    /**\n     * Forwards moveBy to its contained figure.\n     */\n    public void moveBy(int x, int y) {\n        fComponent.moveBy(x, y);\n    }\n\n    /**\n     * Forwards basicMoveBy to its contained figure.\n     */\n    protected void basicMoveBy(int x, int y) {\n        // this will never be called\n    }\n\n    /**\n     * Releases itself and the contained figure.\n     */\n    public void release() {\n        super.release();\n        fComponent.removeFromContainer(this);\n        fComponent.release();\n    }\n\n    /**\n     * Propagates invalidate up the container chain.\n     * @see FigureChangeListener\n     */\n    public void figureInvalidated(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureInvalidated(e);\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n    }\n\n    /**\n     * Propagates figureRequestUpdate up the container chain.\n     * @see FigureChangeListener\n     */\n    public void figureRequestUpdate(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestUpdate(e);\n    }\n\n    /**\n     * Propagates the removeFromDrawing request up to the container.\n     * @see FigureChangeListener\n     */\n    public void figureRequestRemove(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestRemove(new FigureChangeEvent(this));\n    }\n\n    /**\n     * Forwards figures to its contained figure.\n     */\n    public FigureEnumeration figures() {\n        return fComponent.figures();\n    }\n\n    /**\n     * Forwards decompose to its contained figure.\n     */\n    public FigureEnumeration decompose() {\n        return fComponent.decompose();\n    }\n\n    /**\n     * Forwards setAttribute to its contained figure.\n     */\n    public void setAttribute(String name, Object value) {\n        fComponent.setAttribute(name, value);\n    }\n\n    /**\n     * Forwards getAttribute to its contained figure.\n     */\n    public Object getAttribute(String name) {\n        return fComponent.getAttribute(name);\n    }\n\n    /**\n     * Returns the locator used to located connected text.\n     */\n    public Locator connectedTextLocator(Figure text) {\n        return fComponent.connectedTextLocator(text);\n    }\n\n    /**\n     * Returns the Connector for the given location.\n     */\n    public Connector connectorAt(int x, int y) {\n        return fComponent.connectorAt(x, y);\n    }\n\n    /**\n     * Forwards the connector visibility request to its component.\n     */\n    public void connectorVisibility(boolean isVisible) {\n        fComponent.connectorVisibility(isVisible);\n    }\n\n    /**\n     * Writes itself and the contained figure to the StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fComponent);\n    }\n\n    /**\n     * Reads itself and the contained figure from the StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        decorate((Figure) dr.readStorable());\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        fComponent.addToContainer(this);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * DecoratorFigure can be used to decorate other figures with\n * decorations like borders. Decorator forwards all the\n * methods to their contained figure. Subclasses can selectively\n * override these methods to extend and filter their behavior.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld014.htm>Decorator</a></b><br>\n * DecoratorFigure is a decorator.\n *\n * @see Figure\n */\npublic abstract class DecoratorFigure extends AbstractFigure implements FigureChangeListener {\n\n    /**\n     * The decorated figure.\n     */\n    protected Figure fComponent;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 8993011151564573288L;\n\n    private int decoratorFigureSerializedDataVersion = 1;\n\n    public DecoratorFigure() {\n        initialize();\n    }\n\n    public DecoratorFigure(Figure figure) {\n        initialize();\n        decorate(figure);\n    }\n\n    /**\n     * Performs additional initialization code before the figure is decorated.\n     * Subclasses may override this method.\n     */\n    protected void initialize() {\n    }\n\n    /**\n     * Forwards the connection insets to its contained figure..\n     */\n    public Insets connectionInsets() {\n        return fComponent.connectionInsets();\n    }\n\n    /**\n     * Forwards the canConnect to its contained figure..\n     */\n    public boolean canConnect() {\n        return fComponent.canConnect();\n    }\n\n    /**\n     * Forwards containsPoint to its contained figure.\n     */\n    public boolean containsPoint(int x, int y) {\n        return fComponent.containsPoint(x, y);\n    }\n\n    /**\n     * Decorates the given figure.\n     */\n    public void decorate(Figure figure) {\n        fComponent = figure;\n        fComponent.addToContainer(this);\n    }\n\n    /**\n     * Removes the decoration from the contained figure.\n     */\n    public Figure peelDecoration() {\n        // ??? set the container to the listener()?\n        fComponent.removeFromContainer(this);\n        return fComponent;\n    }\n\n    /**\n     * Forwards displayBox to its contained figure.\n     */\n    public Rectangle displayBox() {\n        return fComponent.displayBox();\n    }\n\n    /**\n     * Forwards basicDisplayBox to its contained figure.\n     */\n    public void basicDisplayBox(Point origin, Point corner) {\n        fComponent.basicDisplayBox(origin, corner);\n    }\n\n    /**\n     * Forwards draw to its contained figure.\n     */\n    public void draw(Graphics g) {\n        fComponent.draw(g);\n    }\n\n    /**\n     * Forwards findFigureInside to its contained figure.\n     */\n    public Figure findFigureInside(int x, int y) {\n        return fComponent.findFigureInside(x, y);\n    }\n\n    /**\n     * Forwards handles to its contained figure.\n     */\n    public Vector handles() {\n        return fComponent.handles();\n    }\n\n    /**\n     * Forwards includes to its contained figure.\n     */\n    public boolean includes(Figure figure) {\n        return (super.includes(figure) || fComponent.includes(figure));\n    }\n\n    /**\n     * Forwards moveBy to its contained figure.\n     */\n    public void moveBy(int x, int y) {\n        fComponent.moveBy(x, y);\n    }\n\n    /**\n     * Forwards basicMoveBy to its contained figure.\n     */\n    protected void basicMoveBy(int x, int y) {\n        // this will never be called\n    }\n\n    /**\n     * Releases itself and the contained figure.\n     */\n    public void release() {\n        super.release();\n        fComponent.removeFromContainer(this);\n        fComponent.release();\n    }\n\n    /**\n     * Propagates invalidate up the container chain.\n     * @see FigureChangeListener\n     */\n    public void figureInvalidated(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureInvalidated(e);\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n    }\n\n    /**\n     * Propagates figureRequestUpdate up the container chain.\n     * @see FigureChangeListener\n     */\n    public void figureRequestUpdate(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestUpdate(e);\n    }\n\n    /**\n     * Propagates the removeFromDrawing request up to the container.\n     * @see FigureChangeListener\n     */\n    public void figureRequestRemove(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestRemove(new FigureChangeEvent(this));\n    }\n\n    /**\n     * Forwards figures to its contained figure.\n     */\n    public FigureEnumeration figures() {\n        return fComponent.figures();\n    }\n\n    /**\n     * Forwards decompose to its contained figure.\n     */\n    public FigureEnumeration decompose() {\n        return fComponent.decompose();\n    }\n\n    /**\n     * Forwards setAttribute to its contained figure.\n     */\n    public void setAttribute(String name, Object value) {\n        fComponent.setAttribute(name, value);\n    }\n\n    /**\n     * Forwards getAttribute to its contained figure.\n     */\n    public Object getAttribute(String name) {\n        return fComponent.getAttribute(name);\n    }\n\n    /**\n     * Returns the locator used to located connected text.\n     */\n    public Locator connectedTextLocator(Figure text) {\n        return fComponent.connectedTextLocator(text);\n    }\n\n    /**\n     * Returns the Connector for the given location.\n     */\n    public Connector connectorAt(int x, int y) {\n        return fComponent.connectorAt(x, y);\n    }\n\n    /**\n     * Forwards the connector visibility request to its component.\n     */\n    public void connectorVisibility(boolean isVisible) {\n        fComponent.connectorVisibility(isVisible);\n    }\n\n    /**\n     * Writes itself and the contained figure to the StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fComponent);\n    }\n\n    /**\n     * Reads itself and the contained figure from the StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        decorate((Figure) dr.readStorable());\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        fComponent.addToContainer(this);\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,28 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "getChildCount",
+  "brief": "public int getChildCount(Object parent){}",
+  "methodSignature": "getChildCount(Object)",
+  "sourceCode": "public int getChildCount(Object parent) {\r\n\t\tTestSuite suite= isTestSuite(parent);\r\n\t\tif (suite != null) \r\n\t\t\treturn suite.testCount();\r\n\t\treturn 0;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "junit.swingui.TestTreeModel": [
+      "isTestSuite(Object)"
+    ],
+    "junit.framework.TestSuite": [
+      "testCount()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Gets the number of tests.\r\n */\r\npublic int getChildCount(Object parent) {\r\n    TestSuite suite = isTestSuite(parent);\r\n    if (suite != null)\r\n        return suite.testCount();\r\n    return 0;\r\n}",
+  "method_comment": "\r\n\t * Gets the number of tests.\r\n\t ",
+  "method_annotation": ""
+}

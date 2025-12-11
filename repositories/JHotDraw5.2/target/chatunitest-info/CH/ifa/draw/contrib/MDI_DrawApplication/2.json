@@ -1,0 +1,18 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "createInternalFrame",
+  "brief": "protected MDI_InternalFrame createInternalFrame(){}",
+  "methodSignature": "createInternalFrame()",
+  "sourceCode": "protected MDI_InternalFrame createInternalFrame() {\n\t\treturn new MDI_InternalFrame(\"untitled\", true, true, true, true);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Factory method which creates an internal frame. Subclasses may override this\n * method to provide their own implementations of MDI_InternalFrame\n */\nprotected MDI_InternalFrame createInternalFrame() {\n    return new MDI_InternalFrame(\"untitled\", true, true, true, true);\n}",
+  "method_comment": "\n\t * Factory method which creates an internal frame. Subclasses may override this\n\t * method to provide their own implementations of MDI_InternalFrame\n\t ",
+  "method_annotation": ""
+}

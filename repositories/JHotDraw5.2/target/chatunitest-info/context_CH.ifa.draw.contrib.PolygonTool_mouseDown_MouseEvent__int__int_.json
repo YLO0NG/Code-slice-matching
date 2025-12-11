@@ -1,0 +1,22 @@
+{
+  "targetClass": "CH.ifa.draw.contrib.PolygonTool",
+  "targetMethod": "mouseDown(MouseEvent, int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;",
+    "CH.ifa.draw.framework.DrawingEditor": "",
+    "CH.ifa.draw.contrib.PolygonFigure": "static final int TOO_CLOSE = 2;\nprivate static final long serialVersionUID = 6254089689239215026L;\nprivate int polygonFigureSerializedDataVersion = 1;\nprotected Polygon fPoly = new Polygon();"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": "public Figure add(Figure figure);",
+    "CH.ifa.draw.standard.AbstractTool": "public DrawingView view(){}\npublic DrawingEditor editor(){}",
+    "CH.ifa.draw.framework.DrawingEditor": "void        toolDone();",
+    "CH.ifa.draw.contrib.PolygonFigure": "public  void addPoint(int x, int y){}\npublic void smoothPoints(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.DrawingView": "* Adds a figure to the drawing.\n     * @return the added figure.\n     \npublic Figure add(Figure figure);",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's view.\n     \npublic DrawingView view() {\n        return fView;\n    }\n\n     * Gets the tool's editor.\n     \npublic DrawingEditor editor() {\n        return view().editor();\n    }",
+    "CH.ifa.draw.framework.DrawingEditor": "* Informs the editor that a tool has done its interaction.\n     * This method can be used to switch back to the default tool.\n     \nvoid        toolDone();",
+    "CH.ifa.draw.contrib.PolygonFigure": "* Adds a node to the list of points.\n   \npublic  void addPoint(int x, int y) {\n    fPoly.addPoint(x, y);\n    changed();\n  }\n\n   * Remove points that are nearly colinear with others\n   *\npublic void smoothPoints() {\n    willChange();\n    boolean removed = false;\n    int n = fPoly.npoints;\n    do {\n      removed = false;\n      int i = 0;\n      while (i < n && n >= 3) {\n        int nxt = (i + 1) % n;\n        int prv = (i - 1 + n) % n;\n\n        if ((distanceFromLine(fPoly.xpoints[prv], fPoly.ypoints[prv],\n                              fPoly.xpoints[nxt], fPoly.ypoints[nxt],\n                              fPoly.xpoints[i], fPoly.ypoints[i]) < TOO_CLOSE)) {\n          removed = true;\n          --n;\n          for (int j = i; j < n; ++j) {\n            fPoly.xpoints[j] = fPoly.xpoints[j+1];\n            fPoly.ypoints[j] = fPoly.ypoints[j+1];\n          }\n        }\n        else\n          ++i;\n      }\n    } while(removed);\n    if (n != fPoly.npoints)\n      fPoly =  new Polygon(fPoly.xpoints, fPoly.ypoints, n);\n    changed();\n  }"
+  }
+}

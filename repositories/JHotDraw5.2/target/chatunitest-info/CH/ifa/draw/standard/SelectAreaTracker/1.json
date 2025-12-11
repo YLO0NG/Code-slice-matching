@@ -1,0 +1,31 @@
+{
+  "className": "SelectAreaTracker",
+  "methodName": "mouseDrag",
+  "brief": "public void mouseDrag(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDrag(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        eraseRubberBand();\n        rubberBand(fAnchorX, fAnchorY, x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "mouseDrag(MouseEvent, int, int)"
+    ],
+    "CH.ifa.draw.standard.SelectAreaTracker": [
+      "rubberBand(int, int, int, int)",
+      "eraseRubberBand()"
+    ]
+  },
+  "full_method_info": "public void mouseDrag(MouseEvent e, int x, int y) {\n    super.mouseDrag(e, x, y);\n    eraseRubberBand();\n    rubberBand(fAnchorX, fAnchorY, x, y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,20 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "setPurchaseOrderItems",
+  "brief": "public void setPurchaseOrderItems(\r\n\t\t\tCollection<PurchaseOrderItem> purchaseOrderItems ){}",
+  "methodSignature": "setPurchaseOrderItems(Collection)",
+  "sourceCode": "public void setPurchaseOrderItems(\n\t\t\tCollection<PurchaseOrderItem> purchaseOrderItems ) {\n\t\tthis.purchaseOrderItems = purchaseOrderItems;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Collection<PurchaseOrderItem>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setPurchaseOrderItems(Collection<PurchaseOrderItem> purchaseOrderItems) {\n    this.purchaseOrderItems = purchaseOrderItems;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

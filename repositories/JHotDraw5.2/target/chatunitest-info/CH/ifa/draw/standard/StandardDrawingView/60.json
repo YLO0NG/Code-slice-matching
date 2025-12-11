@@ -1,0 +1,35 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "StandardDrawingView",
+  "brief": "public StandardDrawingView(DrawingEditor editor, int width, int height){}",
+  "methodSignature": "StandardDrawingView(DrawingEditor, int, int)",
+  "sourceCode": "public StandardDrawingView(DrawingEditor editor, int width, int height) {\n        fEditor = editor;\n        fViewSize = new Dimension(width,height);\n        fLastClick = new Point(0, 0);\n        fConstrainer = null;\n        fSelection = new Vector();\n        // changed from BufferedUpdateStrategy() to SimpleUpdateStrategy() as\n        // JFC/Swing uses double buffering automatically as default\n        setDisplayUpdate(new SimpleUpdateStrategy());\n        setBackground(Color.lightGray);\n\n        addMouseListener(this);\n        addMouseMotionListener(this);\n        addKeyListener(this);\n    }",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingEditor",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingEditor": [],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDisplayUpdate(Painter)"
+    ],
+    "javax.swing.JComponent": [
+      "setBackground(Color)"
+    ],
+    "java.awt.Component": [
+      "addKeyListener(KeyListener)",
+      "addMouseListener(MouseListener)",
+      "addMouseMotionListener(MouseMotionListener)"
+    ]
+  },
+  "full_method_info": "public StandardDrawingView(DrawingEditor editor, int width, int height) {\n    fEditor = editor;\n    fViewSize = new Dimension(width, height);\n    fLastClick = new Point(0, 0);\n    fConstrainer = null;\n    fSelection = new Vector();\n    // changed from BufferedUpdateStrategy() to SimpleUpdateStrategy() as\n    // JFC/Swing uses double buffering automatically as default\n    setDisplayUpdate(new SimpleUpdateStrategy());\n    setBackground(Color.lightGray);\n    addMouseListener(this);\n    addMouseMotionListener(this);\n    addKeyListener(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

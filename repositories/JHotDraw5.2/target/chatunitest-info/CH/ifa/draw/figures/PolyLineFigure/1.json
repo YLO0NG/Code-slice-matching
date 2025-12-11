@@ -1,0 +1,22 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "isEmpty",
+  "brief": "public boolean isEmpty(){}",
+  "methodSignature": "isEmpty()",
+  "sourceCode": "public boolean isEmpty() {\n        return (size().width < 3) && (size().height < 3);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "size()"
+    ]
+  },
+  "full_method_info": "public boolean isEmpty() {\n    return (size().width < 3) && (size().height < 3);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

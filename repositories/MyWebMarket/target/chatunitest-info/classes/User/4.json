@@ -1,0 +1,18 @@
+{
+  "className": "User",
+  "methodName": "User",
+  "brief": "public User(){}",
+  "methodSignature": "User()",
+  "sourceCode": "public User() {\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public User() {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

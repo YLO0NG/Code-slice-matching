@@ -1,0 +1,27 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "equals",
+  "brief": "public boolean equals(Object o){}",
+  "methodSignature": "equals(Object)",
+  "sourceCode": "public boolean equals(Object o) {\n\t\tRelatedArtifact art = (RelatedArtifact)o;\n\t\treturn art.getArtifact().equals(this.getArtifact());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.RelatedArtifact": [
+      "getArtifact()"
+    ]
+  },
+  "full_method_info": "public boolean equals(Object o) {\n    RelatedArtifact art = (RelatedArtifact) o;\n    return art.getArtifact().equals(this.getArtifact());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

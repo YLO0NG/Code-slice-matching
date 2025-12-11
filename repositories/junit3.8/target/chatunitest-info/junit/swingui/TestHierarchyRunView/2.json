@@ -1,0 +1,22 @@
+{
+  "className": "TestHierarchyRunView",
+  "methodName": "activate",
+  "brief": "public void activate(){}",
+  "methodSignature": "activate()",
+  "sourceCode": "public void activate() {\r\n\t\ttestSelected();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestHierarchyRunView": [
+      "testSelected()"
+    ]
+  },
+  "full_method_info": "public void activate() {\r\n    testSelected();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

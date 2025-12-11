@@ -1,0 +1,29 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "loadFileData",
+  "brief": "private byte[] loadFileData(String path, String fileName){}",
+  "methodSignature": "loadFileData(String, String)",
+  "sourceCode": "private byte[] loadFileData(String path, String fileName) {\r\n\t\tFile file= new File(path, fileName);\r\n\t\tif (file.exists()) { \r\n\t\t\treturn getClassData(file);\r\n\t\t}\r\n\t\treturn null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.io.File": [
+      "exists()"
+    ],
+    "junit.runner.TestCaseClassLoader": [
+      "getClassData(File)"
+    ]
+  },
+  "full_method_info": "private byte[] loadFileData(String path, String fileName) {\r\n    File file = new File(path, fileName);\r\n    if (file.exists()) {\r\n        return getClassData(file);\r\n    }\r\n    return null;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,21 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "endPoint",
+  "brief": "public void endPoint(int x, int y);",
+  "methodSignature": "endPoint(int, int)",
+  "sourceCode": "public void endPoint(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the end point.\n */\npublic void endPoint(int x, int y);",
+  "method_comment": "\n     * Sets the end point.\n     ",
+  "method_annotation": ""
+}

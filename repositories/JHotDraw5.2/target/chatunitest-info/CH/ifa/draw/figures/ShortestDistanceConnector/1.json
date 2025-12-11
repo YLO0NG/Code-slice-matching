@@ -1,0 +1,25 @@
+{
+  "className": "ShortestDistanceConnector",
+  "methodName": "findEnd",
+  "brief": "public Point findEnd(ConnectionFigure connection){}",
+  "methodSignature": "findEnd(ConnectionFigure)",
+  "sourceCode": "public Point findEnd(ConnectionFigure connection) {\n        return findPoint(connection, false);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [],
+    "CH.ifa.draw.figures.ShortestDistanceConnector": [
+      "findPoint(ConnectionFigure, boolean)"
+    ]
+  },
+  "full_method_info": "public Point findEnd(ConnectionFigure connection) {\n    return findPoint(connection, false);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

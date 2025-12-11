@@ -1,0 +1,22 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setChangetype",
+  "brief": "public void setChangetype(String changetype){}",
+  "methodSignature": "setChangetype(String)",
+  "sourceCode": "public void setChangetype(String changetype) {\n\t\tthis.changetype = changetype;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param changetype\n * @uml.property  name=\"changetype\"\n */\npublic void setChangetype(String changetype) {\n    this.changetype = changetype;\n}",
+  "method_comment": "\n\t * @param changetype\n\t * @uml.property  name=\"changetype\"\n\t ",
+  "method_annotation": ""
+}

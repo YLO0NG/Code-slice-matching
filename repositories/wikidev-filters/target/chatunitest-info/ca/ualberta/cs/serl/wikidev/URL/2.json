@@ -1,0 +1,18 @@
+{
+  "className": "URL",
+  "methodName": "getUrl",
+  "brief": "public String getUrl(){}",
+  "methodSignature": "getUrl()",
+  "sourceCode": "public String getUrl() {\n\t\treturn url;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"url\"\n */\npublic String getUrl() {\n    return url;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"url\"\n\t ",
+  "method_annotation": ""
+}

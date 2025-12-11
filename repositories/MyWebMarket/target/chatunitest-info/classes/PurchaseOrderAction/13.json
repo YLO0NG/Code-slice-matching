@@ -1,0 +1,38 @@
+{
+  "className": "PurchaseOrderAction",
+  "methodName": "validate",
+  "brief": "@Override\r\n\tpublic void validate(){}",
+  "methodSignature": "validate()",
+  "sourceCode": "@Override\n\tpublic void validate() {\n\t\tlogger.info( \"Starting validate()\" ); //f:log\n\t\tsuper.validate();\n\n\t\tint i = 0;\n\t\tfor ( Iterator<PurchaseOrderItem> it = this.purchaseOrder.getPurchaseOrderItems().iterator(); it.hasNext(); i++ ) {\n\t\t\tPurchaseOrderItem item = it.next();\n\n\t\t\tif ( item.getProduct().getId() != null || item.getPrice() != null \n\t\t\t\t\t|| item.getQuantity() != null || i == 0 ) {\n\t\t\t\tif ( item.getProduct().getId() == null ) {\n\t\t\t\t\tthis.addFieldError( \"item\" + i + \"_product\", getText( \"requiredspecific\", new String[] { \"Product\" } ) );\n\t\t\t\t}\n\t\t\t\tif ( item.getPrice() == null ) {\n\t\t\t\t\tthis.addFieldError( \"item\" + i + \"_price\", getText( \"requiredspecific\", new String[] { \"Price\" } ) );\n\t\t\t\t}\n\t\t\t\tif ( item.getQuantity() == null ) {\n\t\t\t\t\tthis.addFieldError( \"item\" + i + \"_quantity\", getText( \"requiredspecific\", new String[] { \"Quantity\" } ) );\n\t\t\t\t}\n\t\t\t} else {\n\t\t\t\tit.remove();\n\t\t\t}\n\t\t}\n\t\tlogger.info( \"Finishing validate()\" ); //f:log\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Collection": [
+      "iterator()"
+    ],
+    "classes.PurchaseOrder": [
+      "getPurchaseOrderItems()"
+    ],
+    "java.util.Iterator": [
+      "hasNext()",
+      "next()",
+      "remove()"
+    ],
+    "classes.Product": [
+      "getId()"
+    ],
+    "classes.PurchaseOrderItem": [
+      "getQuantity()",
+      "getProduct()",
+      "getPrice()"
+    ]
+  },
+  "full_method_info": "@Override\npublic void validate() {\n    // f:log\n    logger.info(\"Starting validate()\");\n    super.validate();\n    int i = 0;\n    for (Iterator<PurchaseOrderItem> it = this.purchaseOrder.getPurchaseOrderItems().iterator(); it.hasNext(); i++) {\n        PurchaseOrderItem item = it.next();\n        if (item.getProduct().getId() != null || item.getPrice() != null || item.getQuantity() != null || i == 0) {\n            if (item.getProduct().getId() == null) {\n                this.addFieldError(\"item\" + i + \"_product\", getText(\"requiredspecific\", new String[] { \"Product\" }));\n            }\n            if (item.getPrice() == null) {\n                this.addFieldError(\"item\" + i + \"_price\", getText(\"requiredspecific\", new String[] { \"Price\" }));\n            }\n            if (item.getQuantity() == null) {\n                this.addFieldError(\"item\" + i + \"_quantity\", getText(\"requiredspecific\", new String[] { \"Quantity\" }));\n            }\n        } else {\n            it.remove();\n        }\n    }\n    // f:log\n    logger.info(\"Finishing validate()\");\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

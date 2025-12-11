@@ -1,0 +1,27 @@
+{
+  "className": "StorableOutput",
+  "methodName": "writeInt",
+  "brief": "public void writeInt(int i){}",
+  "methodSignature": "writeInt(int)",
+  "sourceCode": "public void writeInt(int i) {\n        fStream.print(i);\n        space();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.io.PrintWriter": [
+      "print(int)"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "space()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes an int to the output stream.\n */\npublic void writeInt(int i) {\n    fStream.print(i);\n    space();\n}",
+  "method_comment": "\n     * Writes an int to the output stream.\n     ",
+  "method_annotation": ""
+}

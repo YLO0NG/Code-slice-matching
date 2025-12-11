@@ -1,0 +1,22 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "endTest",
+  "brief": "public void endTest(Test test){}",
+  "methodSignature": "endTest(Test)",
+  "sourceCode": "public void endTest(Test test) {\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": []
+  },
+  "full_method_info": "/**\r\n * @see junit.framework.TestListener#endTest(Test)\r\n */\r\npublic void endTest(Test test) {\r\n}",
+  "method_comment": "\r\n\t * @see junit.framework.TestListener#endTest(Test)\r\n\t ",
+  "method_annotation": ""
+}

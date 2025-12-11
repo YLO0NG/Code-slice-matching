@@ -1,0 +1,31 @@
+{
+  "className": "StorableOutput",
+  "methodName": "writeString",
+  "brief": "public void writeString(String s){}",
+  "methodSignature": "writeString(String)",
+  "sourceCode": "public void writeString(String s) {\n        fStream.print('\"');\n        for(int i = 0; i < s.length(); i++) {\n            char c = s.charAt(i);\n            switch(c) {\n                case '\\n': fStream.print('\\\\'); fStream.print('n'); break;\n                case '\"' : fStream.print('\\\\'); fStream.print('\"'); break;\n                case '\\\\': fStream.print('\\\\'); fStream.print('\\\\'); break;\n                case '\\t': fStream.print('\\\\'); fStream.print('\\t'); break;\n                default: fStream.print(c);\n            }\n\n        }\n        fStream.print('\"');\n        space();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "length()",
+      "charAt(int)"
+    ],
+    "java.io.PrintWriter": [
+      "print(char)"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "space()"
+    ]
+  },
+  "full_method_info": "/**\n * Writes a string to the output stream. Special characters\n * are quoted.\n */\npublic void writeString(String s) {\n    fStream.print('\"');\n    for (int i = 0; i < s.length(); i++) {\n        char c = s.charAt(i);\n        switch(c) {\n            case '\\n':\n                fStream.print('\\\\');\n                fStream.print('n');\n                break;\n            case '\"':\n                fStream.print('\\\\');\n                fStream.print('\"');\n                break;\n            case '\\\\':\n                fStream.print('\\\\');\n                fStream.print('\\\\');\n                break;\n            case '\\t':\n                fStream.print('\\\\');\n                fStream.print('\\t');\n                break;\n            default:\n                fStream.print(c);\n        }\n    }\n    fStream.print('\"');\n    space();\n}",
+  "method_comment": "\n     * Writes a string to the output stream. Special characters\n     * are quoted.\n     ",
+  "method_annotation": ""
+}

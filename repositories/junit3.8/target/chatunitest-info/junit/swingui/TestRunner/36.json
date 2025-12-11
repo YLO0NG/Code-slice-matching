@@ -1,0 +1,32 @@
+{
+  "className": "TestRunner",
+  "methodName": "loadHistory",
+  "brief": "private void loadHistory(JComboBox combo) throws IOException{}",
+  "methodSignature": "loadHistory(JComboBox)",
+  "sourceCode": "private void loadHistory(JComboBox combo) throws IOException {\r\n\t\tBufferedReader br= new BufferedReader(new FileReader(getSettingsFile()));\r\n\t\tint itemCount= 0;\r\n\t\ttry {\r\n\t\t\tString line;\r\n\t\t\twhile ((line= br.readLine()) != null) {\r\n\t\t\t\tcombo.addItem(line);\r\n\t\t\t\titemCount++;\r\n\t\t\t}\r\n\t\t\tif (itemCount > 0)\r\n\t\t\t\tcombo.setSelectedIndex(0);\r\n\r\n\t\t} finally {\r\n\t\t\tbr.close();\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JComboBox"
+  ],
+  "dependentMethods": {
+    "javax.swing.JComboBox": [
+      "setSelectedIndex(int)",
+      "addItem(E)"
+    ],
+    "junit.swingui.TestRunner": [
+      "getSettingsFile()"
+    ],
+    "java.io.BufferedReader": [
+      "readLine()",
+      "close()"
+    ]
+  },
+  "full_method_info": "private void loadHistory(JComboBox combo) throws IOException {\r\n    BufferedReader br = new BufferedReader(new FileReader(getSettingsFile()));\r\n    int itemCount = 0;\r\n    try {\r\n        String line;\r\n        while ((line = br.readLine()) != null) {\r\n            combo.addItem(line);\r\n            itemCount++;\r\n        }\r\n        if (itemCount > 0)\r\n            combo.setSelectedIndex(0);\r\n    } finally {\r\n        br.close();\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

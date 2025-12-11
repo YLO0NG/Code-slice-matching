@@ -1,0 +1,18 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "getMinimumSize",
+  "brief": "public Dimension getMinimumSize(){}",
+  "methodSignature": "getMinimumSize()",
+  "sourceCode": "public Dimension getMinimumSize() {\n        return fViewSize;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the minimum dimension of the drawing.\n */\npublic Dimension getMinimumSize() {\n    return fViewSize;\n}",
+  "method_comment": "\n     * Gets the minimum dimension of the drawing.\n     ",
+  "method_annotation": ""
+}

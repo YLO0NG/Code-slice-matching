@@ -1,0 +1,22 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "canConnect",
+  "brief": "public boolean canConnect(){}",
+  "methodSignature": "canConnect()",
+  "sourceCode": "public boolean canConnect() {\n        return fComponent.canConnect();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "canConnect()"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards the canConnect to its contained figure..\n */\npublic boolean canConnect() {\n    return fComponent.canConnect();\n}",
+  "method_comment": "\n     * Forwards the canConnect to its contained figure..\n     ",
+  "method_annotation": ""
+}

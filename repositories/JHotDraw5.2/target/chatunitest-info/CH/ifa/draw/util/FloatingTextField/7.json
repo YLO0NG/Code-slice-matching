@@ -1,0 +1,28 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "endOverlay",
+  "brief": "public void endOverlay(){}",
+  "methodSignature": "endOverlay()",
+  "sourceCode": "public void endOverlay() {\n\t    fContainer.requestFocus();\n\t    if (fEditWidget == null)\n\t        return;\n\t    fEditWidget.setVisible(false);\n\t    fContainer.remove(fEditWidget);\n\n\t    Rectangle bounds = fEditWidget.getBounds();\n\t    fContainer.repaint(bounds.x, bounds.y, bounds.width, bounds.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Component": [
+      "setVisible(boolean)",
+      "requestFocus()",
+      "getBounds()",
+      "repaint(int, int, int, int)"
+    ],
+    "java.awt.Container": [
+      "remove(Component)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes the overlay.\n */\npublic void endOverlay() {\n    fContainer.requestFocus();\n    if (fEditWidget == null)\n        return;\n    fEditWidget.setVisible(false);\n    fContainer.remove(fEditWidget);\n    Rectangle bounds = fEditWidget.getBounds();\n    fContainer.repaint(bounds.x, bounds.y, bounds.width, bounds.height);\n}",
+  "method_comment": "\n     * Removes the overlay.\n     ",
+  "method_annotation": ""
+}

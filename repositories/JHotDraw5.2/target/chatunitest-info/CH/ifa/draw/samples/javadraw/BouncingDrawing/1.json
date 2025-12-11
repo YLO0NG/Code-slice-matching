@@ -1,0 +1,28 @@
+{
+  "className": "BouncingDrawing",
+  "methodName": "remove",
+  "brief": "public synchronized Figure remove(Figure figure){}",
+  "methodSignature": "remove(Figure)",
+  "sourceCode": "public synchronized Figure remove(Figure figure) {\n        Figure f = super.remove(figure);\n        if (f instanceof AnimationDecorator)\n            return ((AnimationDecorator) f).peelDecoration();\n        return f;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.standard.StandardDrawing": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "peelDecoration()"
+    ]
+  },
+  "full_method_info": "public synchronized Figure remove(Figure figure) {\n    Figure f = super.remove(figure);\n    if (f instanceof AnimationDecorator)\n        return ((AnimationDecorator) f).peelDecoration();\n    return f;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,41 @@
+{
+  "className": "CustomSelectionTool",
+  "methodName": "showPopupMenu",
+  "brief": "protected void showPopupMenu(Figure figure, int x, int y, Component comp){}",
+  "methodSignature": "showPopupMenu(Figure, int, int, Component)",
+  "sourceCode": "protected void showPopupMenu(Figure figure, int x, int y, Component comp) {\n        Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n        if ((attribute != null) && (attribute instanceof JPopupMenu)) {\n    \t    JPopupMenu popup = (JPopupMenu)attribute;\n    \t    if (popup instanceof PopupMenuFigureSelection) {\n    \t        ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);\n    \t    }\n    \t    // calculate offsets for internal MDI frames\n    \t    Point newLocation = new Point(x, y);\n    \t    adjustOffsets(comp.getParent(), newLocation);\n    \t\tpopup.setLocation(newLocation);\n    \t\tpopup.setInvoker(comp);\n    \t\tpopup.setVisible(true);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "int",
+    "int",
+    "Component"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "java.awt.Component": [
+      "getParent()",
+      "setLocation(Point)"
+    ],
+    "CH.ifa.draw.contrib.PopupMenuFigureSelection": [
+      "setSelectedFigure(Figure)"
+    ],
+    "CH.ifa.draw.contrib.CustomSelectionTool": [
+      "adjustOffsets(Component, Point)"
+    ],
+    "javax.swing.JPopupMenu": [
+      "setInvoker(Component)",
+      "setVisible(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * This method displays a popup menu, if there is one registered with the\n * Figure (the Figure's attributes are queried for Figure.POPUP_MENU which\n * is used to indicate an association of a popup menu with the Figure).\n *\n * @param   figure      Figure for which a popup menu should be displayed\n * @param   x           x coordinate where the popup menu should be displayed\n * @param   y           y coordinate where the popup menu should be displayed\n * @param   component   Component which invoked the popup menu\n */\nprotected void showPopupMenu(Figure figure, int x, int y, Component comp) {\n    Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n    if ((attribute != null) && (attribute instanceof JPopupMenu)) {\n        JPopupMenu popup = (JPopupMenu) attribute;\n        if (popup instanceof PopupMenuFigureSelection) {\n            ((PopupMenuFigureSelection) popup).setSelectedFigure(figure);\n        }\n        // calculate offsets for internal MDI frames\n        Point newLocation = new Point(x, y);\n        adjustOffsets(comp.getParent(), newLocation);\n        popup.setLocation(newLocation);\n        popup.setInvoker(comp);\n        popup.setVisible(true);\n    }\n}",
+  "method_comment": "\n\t * This method displays a popup menu, if there is one registered with the\n\t * Figure (the Figure's attributes are queried for Figure.POPUP_MENU which\n\t * is used to indicate an association of a popup menu with the Figure).\n\t *\n\t * @param   figure      Figure for which a popup menu should be displayed\n\t * @param   x           x coordinate where the popup menu should be displayed\n\t * @param   y           y coordinate where the popup menu should be displayed\n\t * @param   component   Component which invoked the popup menu\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(char expected, char actual){}",
+  "methodSignature": "assertEquals(char, char)",
+  "sourceCode": "static public void assertEquals(char expected, char actual) {\r\n\t\tassertEquals(null, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "char",
+    "char"
+  ],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "assertEquals(String, char, char)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two chars are equal.\r\n */\r\nstatic public void assertEquals(char expected, char actual) {\r\n    assertEquals(null, expected, actual);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two chars are equal.\r\n\t ",
+  "method_annotation": ""
+}

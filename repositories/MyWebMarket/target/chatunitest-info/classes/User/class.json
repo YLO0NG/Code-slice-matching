@@ -1,0 +1,71 @@
+{
+  "fullClassName": "classes.User",
+  "className": "User",
+  "index": 17,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Serializable]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "@Entity(name = \"User\")\r\n@org.hibernate.annotations.Entity(mutable=false)\r\npublic class User",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.Serializable;",
+    "import javax.persistence.Column;",
+    "import javax.persistence.Entity;",
+    "import javax.persistence.Id;"
+  ],
+  "fields": [
+    "private String username;",
+    "private String password;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Serializable"
+  ],
+  "methodSigs": {
+    "getUsername()": "0",
+    "setUsername(String)": "1",
+    "getPassword()": "2",
+    "setPassword(String)": "3",
+    "User()": "4",
+    "User(String, String)": "5"
+  },
+  "methodsBrief": [
+    "@Id\r\n\t@Column(name = \"USERNAME\", length = 10, nullable = false)\r\n\tpublic String getUsername(){}",
+    "public void setUsername( String username ){}",
+    "@Column(name = \"PASSWORD\", length = 10, nullable = false)\r\n\tpublic String getPassword(){}",
+    "public void setPassword( String password ){}",
+    "public User(){}",
+    "public User(String username, String password){}"
+  ],
+  "constructorSigs": [
+    "User()",
+    "User(String, String)"
+  ],
+  "constructorBrief": [
+    "public User(){}",
+    "public User(String username, String password){}"
+  ],
+  "getterSetterSigs": [
+    "getUsername()",
+    "setUsername(String)",
+    "getPassword()",
+    "setPassword(String)"
+  ],
+  "getterSetterBrief": [
+    "@Id\r\n\t@Column(name = \"USERNAME\", length = 10, nullable = false)\r\n\tpublic String getUsername(){}",
+    "public void setUsername( String username ){}",
+    "@Column(name = \"PASSWORD\", length = 10, nullable = false)\r\n\tpublic String getPassword(){}",
+    "public void setPassword( String password ){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package classes;\n\nimport java.io.Serializable;\nimport javax.persistence.Column;\nimport javax.persistence.Entity;\nimport javax.persistence.Id;\n\n@Entity(name = \"User\")\n@org.hibernate.annotations.Entity(mutable = false)\npublic class User implements Serializable {\n\n    private String username;\n\n    private String password;\n\n    public User() {\n    }\n\n    public User(String username, String password) {\n        super();\n        this.username = username;\n        this.password = password;\n    }\n\n    @Id\n    @Column(name = \"USERNAME\", length = 10, nullable = false)\n    public String getUsername() {\n        return username;\n    }\n\n    public void setUsername(String username) {\n        this.username = username;\n    }\n\n    @Column(name = \"PASSWORD\", length = 10, nullable = false)\n    public String getPassword() {\n        return password;\n    }\n\n    public void setPassword(String password) {\n        this.password = password;\n    }\n}\n",
+  "classDeclarationCode": "@Entity(name = \"User\")\n@org.hibernate.annotations.Entity(mutable = false)\npublic class User implements Serializable {\n\n    private String username;\n\n    private String password;\n\n    public User() {\n    }\n\n    public User(String username, String password) {\n        super();\n        this.username = username;\n        this.password = password;\n    }\n\n    @Id\n    @Column(name = \"USERNAME\", length = 10, nullable = false)\n    public String getUsername() {\n        return username;\n    }\n\n    public void setUsername(String username) {\n        this.username = username;\n    }\n\n    @Column(name = \"PASSWORD\", length = 10, nullable = false)\n    public String getPassword() {\n        return password;\n    }\n\n    public void setPassword(String password) {\n        this.password = password;\n    }\n}",
+  "subClasses": []
+}

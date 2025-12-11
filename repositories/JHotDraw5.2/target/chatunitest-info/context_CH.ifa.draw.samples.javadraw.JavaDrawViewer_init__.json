@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.samples.javadraw.JavaDrawViewer",
+  "targetMethod": "init()",
+  "dependentFields": {
+    "CH.ifa.draw.standard.StandardDrawingView": "transient private DrawingEditor   fEditor;\nprivate Drawing         fDrawing;\nprivate transient Rectangle fDamage = null;\ntransient private Vector fSelection;\ntransient private Vector fSelectionHandles;\nprivate Dimension fViewSize;\nprivate Point fLastClick;\nprivate Vector fBackgrounds = null;\nprivate Vector fForegrounds = null;\nprivate Painter fUpdateStrategy;\nprivate PointConstrainer fConstrainer;\nprivate static final long serialVersionUID = -3878153366174603336L;\nprivate int drawingViewSerializedDataVersion = 1;",
+    "CH.ifa.draw.samples.javadraw.JavaDrawViewer": "private Drawing         fDrawing;\nprivate Tool            fTool;\nprivate StandardDrawingView fView;\nprivate Iconkit         fIconkit;",
+    "CH.ifa.draw.util.StorableInput": "private StreamTokenizer fTokenizer;\nprivate Vector          fMap;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": "public void setDrawing(Drawing d){}",
+    "CH.ifa.draw.samples.javadraw.JavaDrawViewer": "public DrawingView view(){}",
+    "CH.ifa.draw.util.StorableInput": "public Storable readStorable() throws IOException{}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.StandardDrawingView": "* Sets and installs another drawing in the view.\n     \npublic void setDrawing(Drawing d) {\n        if (fDrawing != null) {\n            clearSelection();\n            fDrawing.removeDrawingChangeListener(this);\n        }\n\n        fDrawing = d;\n        if (fDrawing != null)\n            fDrawing.addDrawingChangeListener(this);\n\n        FigureEnumeration k = drawing().figures();\n\t\tDimension d1 = new Dimension(0, 0);\n\t\twhile (k.hasMoreElements()) {\n\t\t    Rectangle r = k.nextFigure().displayBox();\n\t\t    d1.width = Math.max(d1.width, r.x+r.width);\n\t\t    d1.height = Math.max(d1.height, r.y+r.height);\n\t\t}\n\t\tif (fViewSize.height < d1.height || fViewSize.width < d1.width) {\n\t\t    fViewSize.height = d1.height+10;\n\t\t    fViewSize.width = d1.width+10;\n\t\t    setSize(fViewSize);\n\t\t}\n        repaint();\n    }",
+    "CH.ifa.draw.samples.javadraw.JavaDrawViewer": "* Gets the editor's drawing view.\n     \npublic DrawingView view() {\n        return fView;\n    }",
+    "CH.ifa.draw.util.StorableInput": "* Reads and resurrects a Storable object from the input stream.\n     \npublic Storable readStorable() throws IOException {\n        Storable storable;\n        String s = readString();\n\n        if (s.equals(\"NULL\"))\n            return null;\n\n        if (s.equals(\"REF\")) {\n            int ref = readInt();\n            return (Storable) retrieve(ref);\n        }\n\n        storable = (Storable) makeInstance(s);\n        map(storable);\n        storable.read(this);\n        return storable;\n    }"
+  }
+}

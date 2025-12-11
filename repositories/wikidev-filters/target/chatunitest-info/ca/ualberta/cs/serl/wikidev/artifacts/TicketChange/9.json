@@ -1,0 +1,22 @@
+{
+  "className": "TicketChange",
+  "methodName": "setTimestamp",
+  "brief": "public void setTimestamp(Timestamp timestamp){}",
+  "methodSignature": "setTimestamp(Timestamp)",
+  "sourceCode": "public void setTimestamp(Timestamp timestamp) {\n\t\tthis.timestamp = timestamp;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "/**\n * @param timestamp\n * @uml.property  name=\"timestamp\"\n */\npublic void setTimestamp(Timestamp timestamp) {\n    this.timestamp = timestamp;\n}",
+  "method_comment": "\n\t * @param timestamp\n\t * @uml.property  name=\"timestamp\"\n\t ",
+  "method_annotation": ""
+}

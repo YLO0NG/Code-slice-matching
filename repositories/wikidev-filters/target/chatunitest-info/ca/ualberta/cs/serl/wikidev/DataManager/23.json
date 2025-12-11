@@ -1,0 +1,40 @@
+{
+  "className": "DataManager",
+  "methodName": "getUsersForBuilding",
+  "brief": "private static ArrayList<UserData> getUsersForBuilding(int id, String cityType) throws SQLExceptio{}",
+  "methodSignature": "getUsersForBuilding(int, String)",
+  "sourceCode": "private static ArrayList<UserData> getUsersForBuilding(int id, String cityType) throws SQLException{\n\t\tArrayList<UserData> users = new ArrayList<UserData>();\n\t\tUserData user = null;\n\t\tString sqlStmt = QueryBuilder.selectUsersForBuilding(id, cityType);\n    \tResultSet res = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile (res.next()) {\n\t\t\tuser = new UserData(res.getString(\"username\"), res.getInt(\"R\"), res.getInt(\"G\"), res.getInt(\"B\"), res.getDouble(\"contribution\"), res.getTimestamp(\"week\"), res.getString(\"city_type\"));\n\t\t\tusers.add(user);\n\t\t\t\n\t\t}\n\t\tif (res != null)\n\t\t\tres.close();\n\t\treturn users;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectUsersForBuilding(int, String)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "getTimestamp(String)",
+      "getDouble(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "private static ArrayList<UserData> getUsersForBuilding(int id, String cityType) throws SQLException {\n    ArrayList<UserData> users = new ArrayList<UserData>();\n    UserData user = null;\n    String sqlStmt = QueryBuilder.selectUsersForBuilding(id, cityType);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        user = new UserData(res.getString(\"username\"), res.getInt(\"R\"), res.getInt(\"G\"), res.getInt(\"B\"), res.getDouble(\"contribution\"), res.getTimestamp(\"week\"), res.getString(\"city_type\"));\n        users.add(user);\n    }\n    if (res != null)\n        res.close();\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

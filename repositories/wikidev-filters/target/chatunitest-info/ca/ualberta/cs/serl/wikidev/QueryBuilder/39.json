@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectProjectNamespaceByID",
+  "brief": "public static String selectProjectNamespaceByID(int projectid){}",
+  "methodSignature": "selectProjectNamespaceByID(int)",
+  "sourceCode": "public static String selectProjectNamespaceByID(int projectid) {\n\t\treturn \"select * from wikidev_projects where projectid=\\'\"+projectid+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectProjectNamespaceByID(int projectid) {\n    return \"select * from wikidev_projects where projectid=\\'\" + projectid + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

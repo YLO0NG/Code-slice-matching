@@ -1,0 +1,28 @@
+{
+  "className": "LoadingTestCollector",
+  "methodName": "isTestClass",
+  "brief": "protected boolean isTestClass(String classFileName){}",
+  "methodSignature": "isTestClass(String)",
+  "sourceCode": "protected boolean isTestClass(String classFileName) {\t\r\n\t\ttry {\r\n\t\t\tif (classFileName.endsWith(\".class\")) {\r\n\t\t\t\tClass testClass= classFromFile(classFileName);\r\n\t\t\t\treturn (testClass != null) && isTestClass(testClass);\r\n\t\t\t}\r\n\t\t} \r\n\t\tcatch (ClassNotFoundException expected) {\r\n\t\t}\r\n\t\tcatch (NoClassDefFoundError notFatal) {\r\n\t\t} \r\n\t\treturn false;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "endsWith(String)"
+    ],
+    "junit.runner.LoadingTestCollector": [
+      "classFromFile(String)",
+      "isTestClass(Class)"
+    ]
+  },
+  "full_method_info": "protected boolean isTestClass(String classFileName) {\r\n    try {\r\n        if (classFileName.endsWith(\".class\")) {\r\n            Class testClass = classFromFile(classFileName);\r\n            return (testClass != null) && isTestClass(testClass);\r\n        }\r\n    } catch (ClassNotFoundException expected) {\r\n    } catch (NoClassDefFoundError notFatal) {\r\n    }\r\n    return false;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

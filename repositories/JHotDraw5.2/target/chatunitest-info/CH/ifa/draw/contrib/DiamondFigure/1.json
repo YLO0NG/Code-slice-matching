@@ -1,0 +1,36 @@
+{
+  "className": "DiamondFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n    Rectangle r = displayBox();\n\tPolygon p1 = new Polygon();\n\tp1.addPoint(r.x, r.y+r.height/2);\n\tp1.addPoint(r.x+r.width/2, r.y);\n\tp1.addPoint(r.x+r.width, r.y+r.height/2);\n\tp1.addPoint(r.x+r.width/2, r.y+r.height);\n\tPolygon p = p1;\n    g.setColor(getFillColor());\n    g.fillPolygon(p);\n    g.setColor(getFrameColor());\n    g.drawPolygon(p);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillPolygon(Polygon)",
+      "drawPolygon(Polygon)",
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "displayBox()"
+    ],
+    "java.awt.Polygon": [
+      "addPoint(int, int)"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getFrameColor()",
+      "getFillColor()"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g) {\n    Rectangle r = displayBox();\n    Polygon p1 = new Polygon();\n    p1.addPoint(r.x, r.y + r.height / 2);\n    p1.addPoint(r.x + r.width / 2, r.y);\n    p1.addPoint(r.x + r.width, r.y + r.height / 2);\n    p1.addPoint(r.x + r.width / 2, r.y + r.height);\n    Polygon p = p1;\n    g.setColor(getFillColor());\n    g.fillPolygon(p);\n    g.setColor(getFrameColor());\n    g.drawPolygon(p);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

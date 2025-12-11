@@ -1,0 +1,20 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "connectorVisibility",
+  "brief": "public void connectorVisibility(boolean isVisible){}",
+  "methodSignature": "connectorVisibility(boolean)",
+  "sourceCode": "public void connectorVisibility(boolean isVisible) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets whether the connectors should be visible.\n * By default they are not visible and\n */\npublic void connectorVisibility(boolean isVisible) {\n}",
+  "method_comment": "\n     * Sets whether the connectors should be visible.\n     * By default they are not visible and\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "showStackRaw",
+  "brief": "protected static boolean showStackRaw(){}",
+  "methodSignature": "showStackRaw()",
+  "sourceCode": "protected static boolean showStackRaw() {\r\n\t\treturn !getPreference(\"filterstack\").equals(\"true\") || fgFilterStack == false;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getPreference(String)"
+    ]
+  },
+  "full_method_info": "protected static boolean showStackRaw() {\r\n    return !getPreference(\"filterstack\").equals(\"true\") || fgFilterStack == false;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

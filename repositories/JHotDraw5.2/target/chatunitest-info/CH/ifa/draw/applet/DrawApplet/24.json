@@ -1,0 +1,46 @@
+{
+  "className": "DrawApplet",
+  "methodName": "readDrawing",
+  "brief": "private void readDrawing(String filename){}",
+  "methodSignature": "readDrawing(String)",
+  "sourceCode": "private void readDrawing(String filename) {\n        toolDone();\n        String type = guessType(filename);\n        if (type.equals(\"storable\"))\n            readFromStorableInput(filename);\n        else if (type.equals(\"serialized\"))\n        \ttry {\n\t\t\t    URL url = new URL(getCodeBase(), filename);\n\t\t\t    InputStream stream = url.openStream();\n\t\t\t    ObjectInput input = new ObjectInputStream(stream);\n\t\t\t    fDrawing.release();\n\t\t\t    fDrawing = (Drawing)input.readObject();\n\t\t\t    fView.setDrawing(fDrawing);\n\t\t\t} catch (IOException e) {\n\t\t\t    initDrawing();\n\t\t\t    showStatus(\"Error: \" + e);\n\t\t\t} catch (ClassNotFoundException e) {\n\t\t\t    initDrawing();\n\t\t\t    showStatus(\"Class not found: \" + e);\n\t\t\t}\n\t\telse\n            showStatus(\"Unknown file type\");\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "guessType(String)",
+      "readFromStorableInput(String)",
+      "toolDone()",
+      "initDrawing()"
+    ],
+    "java.applet.Applet": [
+      "showStatus(String)",
+      "getCodeBase()"
+    ],
+    "java.net.URL": [
+      "openStream()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "release()"
+    ],
+    "java.io.ObjectInput": [
+      "readObject()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDrawing(Drawing)"
+    ]
+  },
+  "full_method_info": "private void readDrawing(String filename) {\n    toolDone();\n    String type = guessType(filename);\n    if (type.equals(\"storable\"))\n        readFromStorableInput(filename);\n    else if (type.equals(\"serialized\"))\n        try {\n            URL url = new URL(getCodeBase(), filename);\n            InputStream stream = url.openStream();\n            ObjectInput input = new ObjectInputStream(stream);\n            fDrawing.release();\n            fDrawing = (Drawing) input.readObject();\n            fView.setDrawing(fDrawing);\n        } catch (IOException e) {\n            initDrawing();\n            showStatus(\"Error: \" + e);\n        } catch (ClassNotFoundException e) {\n            initDrawing();\n            showStatus(\"Class not found: \" + e);\n        }\n    else\n        showStatus(\"Unknown file type\");\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

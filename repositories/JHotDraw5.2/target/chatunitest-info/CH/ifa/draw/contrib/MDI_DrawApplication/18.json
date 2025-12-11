@@ -1,0 +1,25 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "setDrawingTitle",
+  "brief": "protected void setDrawingTitle(String newDrawingTitle){}",
+  "methodSignature": "setDrawingTitle(String)",
+  "sourceCode": "protected void setDrawingTitle(String newDrawingTitle) {\n    \tcurrentFrame.setTitle(newDrawingTitle);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "javax.swing.JInternalFrame": [
+      "setTitle(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Set the title for the drawing. The title also appears in the\n * internal frame title bar. A name is assigned when a drawing\n * saved or a saved drawing is loaded. The file name is the\n * drawing title. If the drawing has not been saved before then\n * the drawing title is \"untitled\".\n */\nprotected void setDrawingTitle(String newDrawingTitle) {\n    currentFrame.setTitle(newDrawingTitle);\n}",
+  "method_comment": "\n\t * Set the title for the drawing. The title also appears in the\n\t * internal frame title bar. A name is assigned when a drawing\n\t * saved or a saved drawing is loaded. The file name is the\n\t * drawing title. If the drawing has not been saved before then\n\t * the drawing title is \"untitled\".\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,61 @@
+{
+  "className": "DataManager",
+  "methodName": "getTicketByDrID",
+  "brief": "public static Ticket getTicketByDrID(int project, int ticketid) throws SQLException{}",
+  "methodSignature": "getTicketByDrID(int, int)",
+  "sourceCode": "public static Ticket getTicketByDrID(int project, int ticketid) throws SQLException {\n    \tTicket ticket = null;\n    \tif (!ticketids.containsKey(ticketid) || ticketids.get(ticketid) != null) {\n\t\t\tString sqlStmt = QueryBuilder.selectTicketByDrID(ticketid, project);\n\t\t\tResultSet res = null;\n\t\t\tres = statement.executeQuery(sqlStmt);\n\t\t\twhile (res.next()) {\n\t\t\t\tticket = new Ticket(res.getTimestamp(\"created\"), res\n\t\t\t\t\t\t.getString(\"description\"), res\n\t\t\t\t\t\t.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"), res.getString(\"summary\"),\n\t\t\t\t\t\tres.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));\n\n\t\t\t}\n\t\t\tif (res != null)\n\t\t\t\tres.close();\n\t\t\tticket.setOwner(getUserByUserName(ticket.getOwnerName()));\n\t\t\tticket.setReporter(getUserByUserName(ticket.getReporterName()));\n\t\t\tticket.setTicketChanges(getTicketChangesByTicketID(ticket\n\t\t\t\t\t.getTicketID()));\n\t\t\tticket.setProject(getProjectByID(ticket.getProjectID()));\n\t\t\tticketids.put(ticket.getDr_id(), ticket.getProjectID());\n\t\t\tallArtifacts.add(ticket);\n\t\t}\n    \telse {\n    \t\tfor(Ticket aTicket : tickets) {\n    \t\t\tif(aTicket.getDr_id() == ticketid && aTicket.getProjectID() == project) {\n    \t\t\t\tticket = aTicket;\n    \t\t\t}\n    \t\t}\n    \t}\n    \treturn ticket;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.HashMap": [
+      "get(Object)",
+      "put(K, V)",
+      "containsKey(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectTicketByDrID(int, int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "getTimestamp(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setOwner(User)",
+      "setProject(Project)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getUserByUserName(String)",
+      "getTicketChangesByTicketID(int)",
+      "getProjectByID(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "getProjectID()",
+      "getOwnerName()",
+      "getReporterName()",
+      "setReporter(User)",
+      "getDr_id()",
+      "getTicketID()",
+      "setTicketChanges(TicketChange>)"
+    ],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public static Ticket getTicketByDrID(int project, int ticketid) throws SQLException {\n    Ticket ticket = null;\n    if (!ticketids.containsKey(ticketid) || ticketids.get(ticketid) != null) {\n        String sqlStmt = QueryBuilder.selectTicketByDrID(ticketid, project);\n        ResultSet res = null;\n        res = statement.executeQuery(sqlStmt);\n        while (res.next()) {\n            ticket = new Ticket(res.getTimestamp(\"created\"), res.getString(\"description\"), res.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"), res.getString(\"summary\"), res.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));\n        }\n        if (res != null)\n            res.close();\n        ticket.setOwner(getUserByUserName(ticket.getOwnerName()));\n        ticket.setReporter(getUserByUserName(ticket.getReporterName()));\n        ticket.setTicketChanges(getTicketChangesByTicketID(ticket.getTicketID()));\n        ticket.setProject(getProjectByID(ticket.getProjectID()));\n        ticketids.put(ticket.getDr_id(), ticket.getProjectID());\n        allArtifacts.add(ticket);\n    } else {\n        for (Ticket aTicket : tickets) {\n            if (aTicket.getDr_id() == ticketid && aTicket.getProjectID() == project) {\n                ticket = aTicket;\n            }\n        }\n    }\n    return ticket;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

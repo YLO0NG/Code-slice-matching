@@ -1,0 +1,20 @@
+{
+  "className": "TextParser",
+  "methodName": "setKeywords",
+  "brief": "public void setKeywords(ArrayList<String> keywords){}",
+  "methodSignature": "setKeywords(ArrayList)",
+  "sourceCode": "public void setKeywords(ArrayList<String> keywords) {\n\t\tthis.keywords = keywords;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<String>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setKeywords(ArrayList<String> keywords) {\n    this.keywords = keywords;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

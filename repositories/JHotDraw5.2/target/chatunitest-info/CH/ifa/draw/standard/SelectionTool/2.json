@@ -1,0 +1,33 @@
+{
+  "className": "SelectionTool",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n        view().unfreezeView();\n        if (fChild != null) // JDK1.1 doesn't guarantee mouseDown, mouseDrag, mouseUp\n            fChild.mouseUp(e, x, y);\n        fChild = null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.DrawingView": [
+      "unfreezeView()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ],
+    "CH.ifa.draw.framework.Tool": [
+      "mouseUp(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse up events. The events are forwarded to the\n * current tracker.\n */\npublic void mouseUp(MouseEvent e, int x, int y) {\n    view().unfreezeView();\n    if (// JDK1.1 doesn't guarantee mouseDown, mouseDrag, mouseUp\n    fChild != null)\n        fChild.mouseUp(e, x, y);\n    fChild = null;\n}",
+  "method_comment": "\n     * Handles mouse up events. The events are forwarded to the\n     * current tracker.\n     ",
+  "method_annotation": ""
+}

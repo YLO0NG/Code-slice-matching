@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createStatusLine",
+  "brief": "protected JTextField createStatusLine(){}",
+  "methodSignature": "createStatusLine()",
+  "sourceCode": "protected JTextField createStatusLine() {\n        JTextField field = new JTextField(\"No Tool\", 40);\n        field.setBackground(Color.white);\n        field.setEditable(false);\n        return field;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JComponent": [
+      "setBackground(Color)"
+    ],
+    "javax.swing.text.JTextComponent": [
+      "setEditable(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the status line.\n */\nprotected JTextField createStatusLine() {\n    JTextField field = new JTextField(\"No Tool\", 40);\n    field.setBackground(Color.white);\n    field.setEditable(false);\n    return field;\n}",
+  "method_comment": "\n     * Creates the status line.\n     ",
+  "method_annotation": ""
+}

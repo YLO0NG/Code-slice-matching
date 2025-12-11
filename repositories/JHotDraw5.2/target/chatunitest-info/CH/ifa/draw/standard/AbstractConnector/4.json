@@ -1,0 +1,25 @@
+{
+  "className": "AbstractConnector",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        return owner().displayBox();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the display box of the connector.\n */\npublic Rectangle displayBox() {\n    return owner().displayBox();\n}",
+  "method_comment": "\n     * Gets the display box of the connector.\n     ",
+  "method_annotation": ""
+}

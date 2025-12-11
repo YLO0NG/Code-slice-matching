@@ -1,0 +1,26 @@
+{
+  "className": "StorableInput",
+  "methodName": "map",
+  "brief": "private void map(Storable storable){}",
+  "methodSignature": "map(Storable)",
+  "sourceCode": "private void map(Storable storable) {\n        if (!fMap.contains(storable))\n            fMap.addElement(storable);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Storable"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Storable": [],
+    "java.util.Vector": [
+      "addElement(E)",
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "private void map(Storable storable) {\n    if (!fMap.contains(storable))\n        fMap.addElement(storable);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

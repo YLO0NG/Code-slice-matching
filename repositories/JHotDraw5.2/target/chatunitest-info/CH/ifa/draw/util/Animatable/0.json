@@ -1,0 +1,18 @@
+{
+  "className": "Animatable",
+  "methodName": "animationStep",
+  "brief": "void animationStep();",
+  "methodSignature": "animationStep()",
+  "sourceCode": "void animationStep();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Perform a step of the animation.\n */\nvoid animationStep();",
+  "method_comment": "\n     * Perform a step of the animation.\n     ",
+  "method_annotation": ""
+}

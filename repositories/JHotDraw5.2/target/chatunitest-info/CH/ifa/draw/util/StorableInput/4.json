@@ -1,0 +1,23 @@
+{
+  "className": "StorableInput",
+  "methodName": "readDouble",
+  "brief": "public double readDouble() throws IOException{}",
+  "methodSignature": "readDouble()",
+  "sourceCode": "public double readDouble() throws IOException {\n        int token = fTokenizer.nextToken();\n        if (token == StreamTokenizer.TT_NUMBER)\n            return fTokenizer.nval;\n\n        String msg = \"Double expected in line: \" + fTokenizer.lineno();\n        throw new IOException(msg);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.StreamTokenizer": [
+      "lineno()",
+      "nextToken()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads a double from the input stream.\n */\npublic double readDouble() throws IOException {\n    int token = fTokenizer.nextToken();\n    if (token == StreamTokenizer.TT_NUMBER)\n        return fTokenizer.nval;\n    String msg = \"Double expected in line: \" + fTokenizer.lineno();\n    throw new IOException(msg);\n}",
+  "method_comment": "\n     * Reads a double from the input stream.\n     ",
+  "method_annotation": ""
+}

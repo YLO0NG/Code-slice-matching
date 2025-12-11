@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "addToSelectionAll",
+  "brief": "public void addToSelectionAll(Vector figures){}",
+  "methodSignature": "addToSelectionAll(Vector)",
+  "sourceCode": "public void addToSelectionAll(Vector figures) {\n        FigureEnumeration k = new FigureEnumerator(figures);\n        while (k.hasMoreElements())\n            addToSelection(k.nextFigure());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "addToSelection(Figure)"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a vector of figures to the current selection.\n */\npublic void addToSelectionAll(Vector figures) {\n    FigureEnumeration k = new FigureEnumerator(figures);\n    while (k.hasMoreElements()) addToSelection(k.nextFigure());\n}",
+  "method_comment": "\n     * Adds a vector of figures to the current selection.\n     ",
+  "method_annotation": ""
+}

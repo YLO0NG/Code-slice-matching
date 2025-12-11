@@ -1,0 +1,24 @@
+{
+  "className": "TestCellRenderer",
+  "methodName": "typeIndex",
+  "brief": "private static int typeIndex(String s){}",
+  "methodSignature": "typeIndex(String)",
+  "sourceCode": "private static int typeIndex(String s) {\r\n\t\t\tint typeIndex= s.lastIndexOf('.');\r\n\t\t\tint i= 0;\r\n    \t\t\tif (typeIndex > 0) \r\n    \t\t\t\ti= typeIndex+1;\r\n    \t\t\treturn i;\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "lastIndexOf(int)"
+    ]
+  },
+  "full_method_info": "private static int typeIndex(String s) {\r\n    int typeIndex = s.lastIndexOf('.');\r\n    int i = 0;\r\n    if (typeIndex > 0)\r\n        i = typeIndex + 1;\r\n    return i;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "getRoot",
+  "brief": "public Object getRoot(){}",
+  "methodSignature": "getRoot()",
+  "sourceCode": "public Object getRoot() {\r\n\t\treturn fRoot;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Returns the root of the tree\r\n */\r\npublic Object getRoot() {\r\n    return fRoot;\r\n}",
+  "method_comment": "\r\n\t * Returns the root of the tree\r\n\t ",
+  "method_annotation": ""
+}

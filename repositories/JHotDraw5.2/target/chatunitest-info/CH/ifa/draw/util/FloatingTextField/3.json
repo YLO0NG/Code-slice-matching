@@ -1,0 +1,25 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "removeActionListener",
+  "brief": "public void removeActionListener(ActionListener listener){}",
+  "methodSignature": "removeActionListener(ActionListener)",
+  "sourceCode": "public void removeActionListener(ActionListener listener) {\n\t    fEditWidget.removeActionListener(listener);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ActionListener"
+  ],
+  "dependentMethods": {
+    "java.awt.event.ActionListener": [],
+    "java.awt.TextField": [
+      "removeActionListener(ActionListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Remove an action listener\n */\npublic void removeActionListener(ActionListener listener) {\n    fEditWidget.removeActionListener(listener);\n}",
+  "method_comment": "\n     * Remove an action listener\n     ",
+  "method_annotation": ""
+}

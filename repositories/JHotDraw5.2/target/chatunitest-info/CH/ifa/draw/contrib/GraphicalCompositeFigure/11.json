@@ -1,0 +1,18 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "getPresentationFigure",
+  "brief": "public Figure getPresentationFigure(){}",
+  "methodSignature": "getPresentationFigure()",
+  "sourceCode": "public Figure getPresentationFigure() {\n\t\treturn myPresentationFigure;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get a figure which renders this CompositeFigure. The presentation\n * tasks for the CompositeFigure are delegated to this presentation\n * figure.\n *\n * @return\tfigure takes over the presentation tasks\n */\npublic Figure getPresentationFigure() {\n    return myPresentationFigure;\n}",
+  "method_comment": "\n\t * Get a figure which renders this CompositeFigure. The presentation\n\t * tasks for the CompositeFigure are delegated to this presentation\n\t * figure.\n\t *\n\t * @return\tfigure takes over the presentation tasks\n\t ",
+  "method_annotation": ""
+}

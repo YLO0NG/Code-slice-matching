@@ -1,0 +1,18 @@
+{
+  "className": "WikiRevision",
+  "methodName": "getRev_text_id",
+  "brief": "public int getRev_text_id(){}",
+  "methodSignature": "getRev_text_id()",
+  "sourceCode": "public int getRev_text_id() {\n\t\treturn rev_text_id;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rev_text_id\"\n */\npublic int getRev_text_id() {\n    return rev_text_id;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rev_text_id\"\n\t ",
+  "method_annotation": ""
+}

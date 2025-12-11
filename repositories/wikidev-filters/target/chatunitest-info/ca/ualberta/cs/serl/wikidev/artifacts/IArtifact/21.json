@@ -1,0 +1,22 @@
+{
+  "className": "IArtifact",
+  "methodName": "setProject",
+  "brief": "public void setProject(Project project){}",
+  "methodSignature": "setProject(Project)",
+  "sourceCode": "public void setProject(Project project) {\n\t\tthis.project = project;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Project"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Project": []
+  },
+  "full_method_info": "/**\n * @param  project\n * @uml.property  name=\"project\"\n */\npublic void setProject(Project project) {\n    this.project = project;\n}",
+  "method_comment": "\n\t * @param  project\n\t * @uml.property  name=\"project\"\n\t ",
+  "method_annotation": ""
+}

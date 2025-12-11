@@ -1,0 +1,36 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "getGenericRelationships",
+  "brief": "private void getGenericRelationships(IArtifact artifact){}",
+  "methodSignature": "getGenericRelationships(IArtifact)",
+  "sourceCode": "private void getGenericRelationships(IArtifact artifact) {\n\t\tfor(User user : artifact.getAssociatedUsers()) {\n\t\t\tif (user != null) {\n\t\t\t\tif (!containsArtifact(user, artifact)) {\n\t\t\t\t\tuser.addRelatedArtifacts(artifact, 0);\n\t\t\t\t\tusersChanged.add(user);\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tproject.addRelatedArtifact(artifact);\n\t\tprojectsChanged.add(project);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getAssociatedUsers()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": [
+      "containsArtifact(User, IArtifact)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "addRelatedArtifacts(IArtifact, int)"
+    ],
+    "java.util.Set": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "addRelatedArtifact(IArtifact)"
+    ]
+  },
+  "full_method_info": "private void getGenericRelationships(IArtifact artifact) {\n    for (User user : artifact.getAssociatedUsers()) {\n        if (user != null) {\n            if (!containsArtifact(user, artifact)) {\n                user.addRelatedArtifacts(artifact, 0);\n                usersChanged.add(user);\n            }\n        }\n    }\n    project.addRelatedArtifact(artifact);\n    projectsChanged.add(project);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "getFilename",
+  "brief": "public String getFilename(){}",
+  "methodSignature": "getFilename()",
+  "sourceCode": "public String getFilename() {\n\t\treturn filename;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"filename\"\n */\npublic String getFilename() {\n    return filename;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"filename\"\n\t ",
+  "method_annotation": ""
+}

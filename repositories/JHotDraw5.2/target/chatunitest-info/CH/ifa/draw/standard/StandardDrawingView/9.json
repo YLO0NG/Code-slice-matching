@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "getPreferredSize",
+  "brief": "public Dimension getPreferredSize(){}",
+  "methodSignature": "getPreferredSize()",
+  "sourceCode": "public Dimension getPreferredSize() {\n        return getMinimumSize();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "getMinimumSize()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the preferred dimension of the drawing..\n */\npublic Dimension getPreferredSize() {\n    return getMinimumSize();\n}",
+  "method_comment": "\n     * Gets the preferred dimension of the drawing..\n     ",
+  "method_annotation": ""
+}

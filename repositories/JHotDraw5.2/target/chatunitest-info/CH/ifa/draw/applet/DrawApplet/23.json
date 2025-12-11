@@ -1,0 +1,38 @@
+{
+  "className": "DrawApplet",
+  "methodName": "loadDrawing",
+  "brief": "protected void loadDrawing(String param){}",
+  "methodSignature": "loadDrawing(String)",
+  "sourceCode": "protected void loadDrawing(String param) {\n        if (param == fgUntitled) {\n            fDrawing.release();\n            initDrawing();\n            return;\n        }\n\n        String filename = getParameter(param);\n        if (filename != null) {\n        \ttoolDone();\n\t\t\tString type = guessType(filename);\n\t\t\tif (type.equals(\"storable\"))\n\t\t\t    readFromStorableInput(filename);\n\t\t\telse if (type.equals(\"serialized\"))\n\t\t\t    readFromObjectInput(filename);\n\t\t\telse\n\t\t\t    showStatus(\"Unknown file type\");\n\t\t}\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "release()"
+    ],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "guessType(String)",
+      "readFromStorableInput(String)",
+      "readFromObjectInput(String)",
+      "toolDone()",
+      "initDrawing()"
+    ],
+    "java.applet.Applet": [
+      "showStatus(String)",
+      "getParameter(String)"
+    ]
+  },
+  "full_method_info": "protected void loadDrawing(String param) {\n    if (param == fgUntitled) {\n        fDrawing.release();\n        initDrawing();\n        return;\n    }\n    String filename = getParameter(param);\n    if (filename != null) {\n        toolDone();\n        String type = guessType(filename);\n        if (type.equals(\"storable\"))\n            readFromStorableInput(filename);\n        else if (type.equals(\"serialized\"))\n            readFromObjectInput(filename);\n        else\n            showStatus(\"Unknown file type\");\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

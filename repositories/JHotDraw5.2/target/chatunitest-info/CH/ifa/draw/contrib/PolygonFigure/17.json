@@ -1,0 +1,37 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "scaleRotate",
+  "brief": "public  void scaleRotate(Point anchor, Polygon originalPolygon, Point p){}",
+  "methodSignature": "scaleRotate(Point, Polygon, Point)",
+  "sourceCode": "public  void scaleRotate(Point anchor, Polygon originalPolygon, Point p) {\n    willChange();\n    long sx = 0;\n\tlong sy = 0;\n\tint n1 = originalPolygon.npoints;\n\tfor (int i1 = 0; i1 < n1; i1++) {\n\t  sx += originalPolygon.xpoints[i1];\n\t  sy += originalPolygon.ypoints[i1];\n\t}\n\n    // use center to determine relative angles and lengths\n    Point ctr = new Point((int)(sx/n1), (int)(sy/n1));\n    double anchorLen = Geom.length(ctr.x, ctr.y, anchor.x, anchor.y);\n\n    if (anchorLen > 0.0) {\n      double newLen = Geom.length(ctr.x, ctr.y, p.x, p.y);\n      double ratio = newLen / anchorLen;\n\n      double anchorAngle = Math.atan2(anchor.y - ctr.y, anchor.x - ctr.x);\n      double newAngle = Math.atan2(p.y - ctr.y, p.x - ctr.x);\n      double rotation = newAngle - anchorAngle;\n\n      int n = originalPolygon.npoints;\n      int[] xs = new int[n];\n      int[] ys = new int[n];\n\n      for (int i = 0; i < n; ++i) {\n        int x = originalPolygon.xpoints[i];\n        int y = originalPolygon.ypoints[i];\n        double l = Geom.length(ctr.x, ctr.y, x, y) * ratio;\n        double a = Math.atan2(y - ctr.y, x - ctr.x) + rotation;\n        xs[i] = (int)(ctr.x + l * Math.cos(a) + 0.5);\n        ys[i] = (int)(ctr.y + l * Math.sin(a) + 0.5);\n      }\n      fPoly =  new Polygon(xs, ys, n);\n    }\n    changed();\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Polygon",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "java.awt.Polygon": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "length(int, int, int, int)"
+    ],
+    "java.lang.Math": [
+      "sin(double)",
+      "atan2(double, double)",
+      "cos(double)"
+    ]
+  },
+  "full_method_info": "/**\n * Scale and rotate relative to anchor\n */\npublic void scaleRotate(Point anchor, Polygon originalPolygon, Point p) {\n    willChange();\n    long sx = 0;\n    long sy = 0;\n    int n1 = originalPolygon.npoints;\n    for (int i1 = 0; i1 < n1; i1++) {\n        sx += originalPolygon.xpoints[i1];\n        sy += originalPolygon.ypoints[i1];\n    }\n    // use center to determine relative angles and lengths\n    Point ctr = new Point((int) (sx / n1), (int) (sy / n1));\n    double anchorLen = Geom.length(ctr.x, ctr.y, anchor.x, anchor.y);\n    if (anchorLen > 0.0) {\n        double newLen = Geom.length(ctr.x, ctr.y, p.x, p.y);\n        double ratio = newLen / anchorLen;\n        double anchorAngle = Math.atan2(anchor.y - ctr.y, anchor.x - ctr.x);\n        double newAngle = Math.atan2(p.y - ctr.y, p.x - ctr.x);\n        double rotation = newAngle - anchorAngle;\n        int n = originalPolygon.npoints;\n        int[] xs = new int[n];\n        int[] ys = new int[n];\n        for (int i = 0; i < n; ++i) {\n            int x = originalPolygon.xpoints[i];\n            int y = originalPolygon.ypoints[i];\n            double l = Geom.length(ctr.x, ctr.y, x, y) * ratio;\n            double a = Math.atan2(y - ctr.y, x - ctr.x) + rotation;\n            xs[i] = (int) (ctr.x + l * Math.cos(a) + 0.5);\n            ys[i] = (int) (ctr.y + l * Math.sin(a) + 0.5);\n        }\n        fPoly = new Polygon(xs, ys, n);\n    }\n    changed();\n}",
+  "method_comment": "\n   * Scale and rotate relative to anchor\n   *",
+  "method_annotation": ""
+}

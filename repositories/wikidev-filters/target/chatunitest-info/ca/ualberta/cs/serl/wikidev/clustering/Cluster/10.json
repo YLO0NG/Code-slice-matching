@@ -1,0 +1,22 @@
+{
+  "className": "Cluster",
+  "methodName": "setTodate",
+  "brief": "public void setTodate(Timestamp todate){}",
+  "methodSignature": "setTodate(Timestamp)",
+  "sourceCode": "public void setTodate(Timestamp todate) {\n\t\tthis.todate = todate;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "/**\n * @param todate\n * @uml.property  name=\"todate\"\n */\npublic void setTodate(Timestamp todate) {\n    this.todate = todate;\n}",
+  "method_comment": "\n\t * @param todate\n\t * @uml.property  name=\"todate\"\n\t ",
+  "method_annotation": ""
+}

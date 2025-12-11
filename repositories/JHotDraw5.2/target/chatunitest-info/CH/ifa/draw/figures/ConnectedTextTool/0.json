@@ -1,0 +1,37 @@
+{
+  "className": "ConnectedTextTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n        super.mouseDown(e, x, y);\n\n\t    Figure pressedFigure =  drawing().findFigureInside(x, y);\n\t    TextHolder textHolder = getTypingTarget();\n        if (!fConnected && pressedFigure != null &&\n                     textHolder != null && pressedFigure != textHolder) {\n            textHolder.connect(pressedFigure);\n            fConnected = true;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.figures.TextTool": [
+      "mouseDown(MouseEvent, int, int)",
+      "getTypingTarget()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.TextHolder": [
+      "connect(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * If the pressed figure is a TextHolder it can be edited otherwise\n * a new text figure is created.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    super.mouseDown(e, x, y);\n    Figure pressedFigure = drawing().findFigureInside(x, y);\n    TextHolder textHolder = getTypingTarget();\n    if (!fConnected && pressedFigure != null && textHolder != null && pressedFigure != textHolder) {\n        textHolder.connect(pressedFigure);\n        fConnected = true;\n    }\n}",
+  "method_comment": "\n     * If the pressed figure is a TextHolder it can be edited otherwise\n     * a new text figure is created.\n     ",
+  "method_annotation": ""
+}

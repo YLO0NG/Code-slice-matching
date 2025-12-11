@@ -1,0 +1,24 @@
+{
+  "className": "AbstractHandle",
+  "methodName": "invokeStep",
+  "brief": "public void invokeStep (int dx, int dy, Drawing drawing){}",
+  "methodSignature": "invokeStep(int, int, Drawing)",
+  "sourceCode": "public void invokeStep (int dx, int dy, Drawing drawing) { }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": []
+  },
+  "full_method_info": "/**\n * @ deprecated As of version 4.1,\n * use invokeStep(x, y, anchorX, anchorY, drawingView)\n *\n * Tracks a step of the interaction.\n * @param dx x delta of this step\n * @param dy y delta of this step\n */\npublic void invokeStep(int dx, int dy, Drawing drawing) {\n}",
+  "method_comment": "\n     * @ deprecated As of version 4.1,\n     * use invokeStep(x, y, anchorX, anchorY, drawingView)\n     *\n     * Tracks a step of the interaction.\n     * @param dx x delta of this step\n     * @param dy y delta of this step\n     ",
+  "method_annotation": ""
+}

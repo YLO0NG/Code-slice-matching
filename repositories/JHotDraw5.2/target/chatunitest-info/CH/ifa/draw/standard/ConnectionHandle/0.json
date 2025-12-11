@@ -1,0 +1,39 @@
+{
+  "className": "ConnectionHandle",
+  "methodName": "invokeStart",
+  "brief": "public void invokeStart(int  x, int  y, DrawingView view){}",
+  "methodSignature": "invokeStart(int, int, DrawingView)",
+  "sourceCode": "public void invokeStart(int  x, int  y, DrawingView view) {\n        fConnection = createConnection();\n        Point p = locate();\n        fConnection.startPoint(p.x, p.y);\n        fConnection.endPoint(p.x, p.y);\n        view.drawing().add(fConnection);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.ConnectionHandle": [
+      "createConnection()"
+    ],
+    "CH.ifa.draw.standard.LocatorHandle": [
+      "locate()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "startPoint(int, int)",
+      "endPoint(int, int)"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the connection\n */\npublic void invokeStart(int x, int y, DrawingView view) {\n    fConnection = createConnection();\n    Point p = locate();\n    fConnection.startPoint(p.x, p.y);\n    fConnection.endPoint(p.x, p.y);\n    view.drawing().add(fConnection);\n}",
+  "method_comment": "\n     * Creates the connection\n     ",
+  "method_annotation": ""
+}

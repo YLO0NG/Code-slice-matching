@@ -1,0 +1,18 @@
+{
+  "className": "TestRunView",
+  "methodName": "activate",
+  "brief": "public void activate();",
+  "methodSignature": "activate()",
+  "sourceCode": "public void activate();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Activates the TestRunView\r\n */\r\npublic void activate();",
+  "method_comment": "\r\n\t * Activates the TestRunView\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,29 @@
+{
+  "className": "ProgressBar",
+  "methodName": "paintBackground",
+  "brief": "public void paintBackground(Graphics g){}",
+  "methodSignature": "paintBackground(Graphics)",
+  "sourceCode": "public void paintBackground(Graphics g) {\r\n\t\tg.setColor(SystemColor.control);\r\n\t\tRectangle r= getBounds();\r\n\t\tg.fillRect(0, 0, r.width, r.height);\r\n\t\tg.setColor(Color.darkGray);\r\n\t\tg.drawLine(0, 0, r.width-1, 0);\r\n\t\tg.drawLine(0, 0, 0, r.height-1);\r\n\t\tg.setColor(Color.white);\r\n\t\tg.drawLine(r.width-1, 0, r.width-1, r.height-1);\r\n\t\tg.drawLine(0, r.height-1, r.width-1, r.height-1);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawLine(int, int, int, int)",
+      "fillRect(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "java.awt.Component": [
+      "getBounds()"
+    ]
+  },
+  "full_method_info": "public void paintBackground(Graphics g) {\r\n    g.setColor(SystemColor.control);\r\n    Rectangle r = getBounds();\r\n    g.fillRect(0, 0, r.width, r.height);\r\n    g.setColor(Color.darkGray);\r\n    g.drawLine(0, 0, r.width - 1, 0);\r\n    g.drawLine(0, 0, 0, r.height - 1);\r\n    g.setColor(Color.white);\r\n    g.drawLine(r.width - 1, 0, r.width - 1, r.height - 1);\r\n    g.drawLine(0, r.height - 1, r.width - 1, r.height - 1);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

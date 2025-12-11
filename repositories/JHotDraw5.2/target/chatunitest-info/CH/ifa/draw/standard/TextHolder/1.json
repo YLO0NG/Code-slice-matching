@@ -1,0 +1,18 @@
+{
+  "className": "TextHolder",
+  "methodName": "getText",
+  "brief": "public String getText();",
+  "methodSignature": "getText()",
+  "sourceCode": "public String getText();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the text shown by the text figure.\n */\npublic String getText();",
+  "method_comment": "\n     * Gets the text shown by the text figure.\n     ",
+  "method_annotation": ""
+}

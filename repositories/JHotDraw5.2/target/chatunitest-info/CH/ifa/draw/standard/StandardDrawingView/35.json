@@ -1,0 +1,32 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "checkDamage",
+  "brief": "public synchronized void checkDamage(){}",
+  "methodSignature": "checkDamage()",
+  "sourceCode": "public synchronized void checkDamage() {\n        Enumeration each = drawing().drawingChangeListeners();\n        while (each.hasMoreElements()) {\n            Object l = each.nextElement();\n            if (l instanceof DrawingView) {\n                ((DrawingView)l).repairDamage();\n            }\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "drawingChangeListeners()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "repairDamage()"
+    ]
+  },
+  "full_method_info": "/**\n * Refreshes the drawing if there is some accumulated damage\n */\npublic synchronized void checkDamage() {\n    Enumeration each = drawing().drawingChangeListeners();\n    while (each.hasMoreElements()) {\n        Object l = each.nextElement();\n        if (l instanceof DrawingView) {\n            ((DrawingView) l).repairDamage();\n        }\n    }\n}",
+  "method_comment": "\n     * Refreshes the drawing if there is some accumulated damage\n     ",
+  "method_annotation": ""
+}

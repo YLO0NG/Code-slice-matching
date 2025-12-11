@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "testStarted",
+  "brief": "public void testStarted(String testName){}",
+  "methodSignature": "testStarted(String)",
+  "sourceCode": "public void testStarted(String testName) {\r\n\t\tpostInfo(\"Running: \"+testName);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.swingui.TestRunner": [
+      "postInfo(String)"
+    ]
+  },
+  "full_method_info": "public void testStarted(String testName) {\r\n    postInfo(\"Running: \" + testName);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

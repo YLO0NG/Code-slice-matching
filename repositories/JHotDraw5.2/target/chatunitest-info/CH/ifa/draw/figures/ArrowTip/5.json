@@ -1,0 +1,20 @@
+{
+  "className": "ArrowTip",
+  "methodName": "setAngle",
+  "brief": "protected void setAngle(double newAngle){}",
+  "methodSignature": "setAngle(double)",
+  "sourceCode": "protected void setAngle(double newAngle) {\n        fAngle = newAngle;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets point angle of arrow. A smaller angle leads to a pointier arrow.\n * The angle is measured between the arrow line and one of the points\n * at the side of the arrow. Thus, the total angle at the arrow tip\n * is the double of the angle specified.\n */\nprotected void setAngle(double newAngle) {\n    fAngle = newAngle;\n}",
+  "method_comment": "\n\t * Sets point angle of arrow. A smaller angle leads to a pointier arrow.\n\t * The angle is measured between the arrow line and one of the points\n\t * at the side of the arrow. Thus, the total angle at the arrow tip\n\t * is the double of the angle specified.\n \t ",
+  "method_annotation": ""
+}

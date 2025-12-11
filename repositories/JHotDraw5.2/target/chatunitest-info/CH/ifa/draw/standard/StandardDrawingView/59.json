@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "keyReleased",
+  "brief": "public void keyReleased(KeyEvent e){}",
+  "methodSignature": "keyReleased(KeyEvent)",
+  "sourceCode": "public void keyReleased(KeyEvent e) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "KeyEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.KeyEvent": []
+  },
+  "full_method_info": "public void keyReleased(KeyEvent e) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

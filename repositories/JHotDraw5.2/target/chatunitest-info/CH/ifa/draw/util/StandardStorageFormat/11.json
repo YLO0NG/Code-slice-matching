@@ -1,0 +1,28 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "equals",
+  "brief": "public boolean equals(Object compareObject){}",
+  "methodSignature": "equals(Object)",
+  "sourceCode": "public boolean equals(Object compareObject) {\n\t\tif (compareObject instanceof StandardStorageFormat) {\n\t\t\treturn getFileExtension().equals(((StandardStorageFormat)compareObject).getFileExtension());\n\t\t}\n\t\telse {\n\t\t\treturn false;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "getFileExtension()"
+    ]
+  },
+  "full_method_info": "/**\n * Test, whether two StorageFormats are the same. They are the same if they both support the\n * same file extension.\n *\n * @return true, if both StorageFormats have the same file extension, false otherwise\n */\npublic boolean equals(Object compareObject) {\n    if (compareObject instanceof StandardStorageFormat) {\n        return getFileExtension().equals(((StandardStorageFormat) compareObject).getFileExtension());\n    } else {\n        return false;\n    }\n}",
+  "method_comment": "\n\t * Test, whether two StorageFormats are the same. They are the same if they both support the\n\t * same file extension.\n\t *\n\t * @return true, if both StorageFormats have the same file extension, false otherwise\n\t ",
+  "method_annotation": ""
+}

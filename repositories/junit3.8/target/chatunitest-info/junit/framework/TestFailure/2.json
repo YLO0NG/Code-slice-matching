@@ -1,0 +1,26 @@
+{
+  "className": "TestFailure",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\r\n\t    StringBuffer buffer= new StringBuffer();\r\n\t    buffer.append(fFailedTest+\": \"+fThrownException.getMessage());\r\n\t    return buffer.toString();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.StringBuffer": [
+      "toString()",
+      "append(String)"
+    ],
+    "java.lang.Throwable": [
+      "getMessage()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns a short description of the failure.\r\n */\r\npublic String toString() {\r\n    StringBuffer buffer = new StringBuffer();\r\n    buffer.append(fFailedTest + \": \" + fThrownException.getMessage());\r\n    return buffer.toString();\r\n}",
+  "method_comment": "\r\n\t * Returns a short description of the failure.\r\n\t ",
+  "method_annotation": ""
+}

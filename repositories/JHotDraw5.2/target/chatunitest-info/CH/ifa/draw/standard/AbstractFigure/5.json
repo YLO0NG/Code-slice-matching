@@ -1,0 +1,18 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "handles",
+  "brief": "public abstract Vector handles();",
+  "methodSignature": "handles()",
+  "sourceCode": "public abstract Vector handles();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the handles of a Figure that can be used\n * to manipulate some of its attributes.\n * @return a Vector of handles\n * @see Handle\n */\npublic abstract Vector handles();",
+  "method_comment": "\n     * Returns the handles of a Figure that can be used\n     * to manipulate some of its attributes.\n     * @return a Vector of handles\n     * @see Handle\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "restore",
+  "brief": "public Drawing restore(String fileName) throws IOException{}",
+  "methodSignature": "restore(String)",
+  "sourceCode": "public Drawing restore(String fileName) throws IOException {\n\t\tif (!hasCorrectFileExtension(fileName)) {\n\t\t\treturn null;\n\t\t}\n\t\telse {\n\t\t\tFileInputStream stream = new FileInputStream(fileName);\n\t\t\tStorableInput input = new StorableInput(stream);\n\t\t\treturn (Drawing)input.readStorable();\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "hasCorrectFileExtension(String)"
+    ],
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ]
+  },
+  "full_method_info": "/**\n * Restore a Drawing from a file with a given name.\n *\n * @param name of the file in which the Drawing has been saved\n * @return restored Drawing\n */\npublic Drawing restore(String fileName) throws IOException {\n    if (!hasCorrectFileExtension(fileName)) {\n        return null;\n    } else {\n        FileInputStream stream = new FileInputStream(fileName);\n        StorableInput input = new StorableInput(stream);\n        return (Drawing) input.readStorable();\n    }\n}",
+  "method_comment": "\n\t * Restore a Drawing from a file with a given name.\n\t *\n\t * @param name of the file in which the Drawing has been saved\n\t * @return restored Drawing\n\t ",
+  "method_annotation": ""
+}

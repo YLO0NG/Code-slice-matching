@@ -1,0 +1,18 @@
+{
+  "className": "InvocationParser",
+  "methodName": "getFromdate",
+  "brief": "public String getFromdate(){}",
+  "methodSignature": "getFromdate()",
+  "sourceCode": "public String getFromdate() {\n\t\treturn fromdate;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String getFromdate() {\n    return fromdate;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

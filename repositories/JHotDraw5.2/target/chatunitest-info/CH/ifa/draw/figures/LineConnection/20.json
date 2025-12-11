@@ -1,0 +1,29 @@
+{
+  "className": "LineConnection",
+  "methodName": "insertPointAt",
+  "brief": "public void insertPointAt(Point p, int i){}",
+  "methodSignature": "insertPointAt(Point, int)",
+  "sourceCode": "public void insertPointAt(Point p, int i) {\n        super.insertPointAt(p, i);\n        layoutConnection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "insertPointAt(Point, int)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "layoutConnection()"
+    ]
+  },
+  "full_method_info": "/**\n * Inserts the point and updates the connection.\n */\npublic void insertPointAt(Point p, int i) {\n    super.insertPointAt(p, i);\n    layoutConnection();\n}",
+  "method_comment": "\n     * Inserts the point and updates the connection.\n     ",
+  "method_annotation": ""
+}

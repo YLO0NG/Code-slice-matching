@@ -1,0 +1,21 @@
+{
+  "className": "OffsetLocator",
+  "methodName": "moveBy",
+  "brief": "public void moveBy(int dx, int dy){}",
+  "methodSignature": "moveBy(int, int)",
+  "sourceCode": "public void moveBy(int dx, int dy) {\n        fOffsetX += dx;\n        fOffsetY += dy;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void moveBy(int dx, int dy) {\n    fOffsetX += dx;\n    fOffsetY += dy;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

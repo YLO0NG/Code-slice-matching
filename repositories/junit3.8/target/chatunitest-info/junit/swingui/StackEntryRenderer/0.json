@@ -1,0 +1,38 @@
+{
+  "className": "StackEntryRenderer",
+  "methodName": "getListCellRendererComponent",
+  "brief": "public Component getListCellRendererComponent(\r\r\n\t\t\t\tJList list, Object value, int modelIndex, \r\r\n\t\t\t\tboolean isSelected, boolean cellHasFocus){}",
+  "methodSignature": "getListCellRendererComponent(JList, Object, int, boolean, boolean)",
+  "sourceCode": "public Component getListCellRendererComponent(\r\n\t\t\t\tJList list, Object value, int modelIndex, \r\n\t\t\t\tboolean isSelected, boolean cellHasFocus) {\r\n\t\t\tString text= ((String)value).replace('\\t', ' ');\r\n\t\t    Component c= super.getListCellRendererComponent(list, text, modelIndex, isSelected, cellHasFocus);\r\n\t\t\tsetText(text);\r\n\t\t\tsetToolTipText(text);\r\n\t\t\treturn c;\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JList",
+    "Object",
+    "int",
+    "boolean",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "java.lang.String": [
+      "replace(char, char)"
+    ],
+    "javax.swing.ListCellRenderer": [
+      "getListCellRendererComponent(JList<? extends E>, E, int, boolean, boolean)"
+    ],
+    "javax.swing.JLabel": [
+      "setText(String)"
+    ],
+    "javax.swing.JComponent": [
+      "setToolTipText(String)"
+    ]
+  },
+  "full_method_info": "public Component getListCellRendererComponent(JList list, Object value, int modelIndex, boolean isSelected, boolean cellHasFocus) {\r\n    String text = ((String) value).replace('\\t', ' ');\r\n    Component c = super.getListCellRendererComponent(list, text, modelIndex, isSelected, cellHasFocus);\r\n    setText(text);\r\n    setToolTipText(text);\r\n    return c;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

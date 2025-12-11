@@ -1,0 +1,26 @@
+{
+  "className": "FigureTransferCommand",
+  "methodName": "copySelection",
+  "brief": "protected void copySelection(){}",
+  "methodSignature": "copySelection()",
+  "sourceCode": "protected void copySelection() {\n        FigureSelection selection = fView.getFigureSelection();\n        Clipboard.getClipboard().setContents(selection);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "getFigureSelection()"
+    ],
+    "CH.ifa.draw.util.Clipboard": [
+      "getClipboard()",
+      "setContents(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Copies the selection to the clipboard.\n */\nprotected void copySelection() {\n    FigureSelection selection = fView.getFigureSelection();\n    Clipboard.getClipboard().setContents(selection);\n}",
+  "method_comment": "\n    * Copies the selection to the clipboard.\n    ",
+  "method_annotation": ""
+}

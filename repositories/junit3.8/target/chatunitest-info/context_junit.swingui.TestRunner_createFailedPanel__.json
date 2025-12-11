@@ -1,0 +1,16 @@
+{
+  "targetClass": "junit.swingui.TestRunner",
+  "targetMethod": "createFailedPanel()",
+  "dependentFields": {
+    "junit.swingui.TestRunner": "private static Font PLAIN_FONT= StatusLine.PLAIN_FONT;\nprivate static Font BOLD_FONT= StatusLine.BOLD_FONT;\nprivate static final int GAP= 4;\nprivate static final int HISTORY_LENGTH= 5;\nprotected JFrame fFrame;\nprivate Thread fRunner;\nprivate TestResult fTestResult;\nprivate JComboBox fSuiteCombo;\nprivate ProgressBar fProgressIndicator;\nprivate DefaultListModel fFailures;\nprivate JLabel fLogo;\nprivate CounterPanel fCounterPanel;\nprivate JButton fRun;\nprivate JButton fQuitButton;\nprivate JButton fRerunButton;\nprivate StatusLine fStatusLine;\nprivate FailureDetailView fFailureView;\nprivate JTabbedPane fTestViewTab;\nprivate JCheckBox fUseLoadingRunner;\nprivate Vector fTestRunViews= new Vector();\nprivate static final String TESTCOLLECTOR_KEY= \"TestCollectorClass\";\nprivate static final String FAILUREDETAILVIEW_KEY= \"FailureViewClass\";",
+    "junit.swingui.TestRunView": ""
+  },
+  "dependentMethods": {
+    "junit.swingui.TestRunner": "private void rerunTest(Test test){}",
+    "junit.swingui.TestRunView": "public Test getSelectedTest();"
+  },
+  "dependentMethodBodies": {
+    "junit.swingui.TestRunner": "private void rerunTest(Test test) {\r\n\t\tif (!(test instanceof TestCase)) {\r\n\t\t\tshowInfo(\"Could not reload \"+ test.toString());\r\n\t\t\treturn;\r\n\t\t}\r\n\t\tTest reloadedTest= null;\r\n\t\tTestCase rerunTest= (TestCase)test;\r\n\r\n\t\ttry {\r\n\t\t\tClass reloadedTestClass= getLoader().reload(test.getClass()); \r\n\t\t\treloadedTest= TestSuite.createTest(reloadedTestClass, rerunTest.getName());\r\n\t\t} catch(Exception e) {\r\n\t\t\tshowInfo(\"Could not reload \"+ test.toString());\r\n\t\t\treturn;\r\n\t\t}\r\n\t\tTestResult result= new TestResult();\r\n\t\treloadedTest.run(result);\r\n\r\n\t\tString message= reloadedTest.toString();\r\n\t\tif(result.wasSuccessful())\r\n\t\t\tshowInfo(message+\" was successful\");\r\n\t\telse if (result.errorCount() == 1)\r\n\t\t\tshowStatus(message+\" had an error\");\r\n\t\telse\r\n\t\t\tshowStatus(message+\" had a failure\");\r\n\t}",
+    "junit.swingui.TestRunView": "* Returns the currently selected Test in the View\r\n\t \npublic Test getSelectedTest();"
+  }
+}

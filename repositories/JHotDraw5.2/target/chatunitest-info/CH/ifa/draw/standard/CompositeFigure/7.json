@@ -1,0 +1,30 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "replace",
+  "brief": "public synchronized void replace(Figure figure, Figure replacement){}",
+  "methodSignature": "replace(Figure, Figure)",
+  "sourceCode": "public synchronized void replace(Figure figure, Figure replacement) {\n        int index = fFigures.indexOf(figure);\n        if (index != -1) {\n            replacement.addToContainer(this);   // will invalidate figure\n            figure.changed();\n            fFigures.setElementAt(replacement, index);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "changed()",
+      "addToContainer(FigureChangeListener)"
+    ],
+    "java.util.Vector": [
+      "indexOf(Object)",
+      "setElementAt(E, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Replaces a figure in the drawing without\n * removing it from the drawing.\n */\npublic synchronized void replace(Figure figure, Figure replacement) {\n    int index = fFigures.indexOf(figure);\n    if (index != -1) {\n        // will invalidate figure\n        replacement.addToContainer(this);\n        figure.changed();\n        fFigures.setElementAt(replacement, index);\n    }\n}",
+  "method_comment": "\n     * Replaces a figure in the drawing without\n     * removing it from the drawing.\n     ",
+  "method_annotation": ""
+}

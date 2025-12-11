@@ -1,0 +1,22 @@
+{
+  "className": "TicketChange",
+  "methodName": "setExternalAuthor",
+  "brief": "public void setExternalAuthor(User externalAuthor){}",
+  "methodSignature": "setExternalAuthor(User)",
+  "sourceCode": "public void setExternalAuthor(User externalAuthor) {\n\t\tthis.externalAuthor = externalAuthor;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": []
+  },
+  "full_method_info": "/**\n * @param  externalAuthor\n * @uml.property  name=\"externalAuthor\"\n */\npublic void setExternalAuthor(User externalAuthor) {\n    this.externalAuthor = externalAuthor;\n}",
+  "method_comment": "\n\t * @param  externalAuthor\n\t * @uml.property  name=\"externalAuthor\"\n\t ",
+  "method_annotation": ""
+}

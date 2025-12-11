@@ -1,0 +1,24 @@
+{
+  "className": "TriangleRotationHandle",
+  "methodName": "invokeEnd",
+  "brief": "public void invokeEnd  (int dx, int dy, Drawing drawing){}",
+  "methodSignature": "invokeEnd(int, int, Drawing)",
+  "sourceCode": "public void invokeEnd  (int dx, int dy, Drawing drawing) {\n    fOrigin = null;\n    fCenter = null;\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": []
+  },
+  "full_method_info": "public void invokeEnd(int dx, int dy, Drawing drawing) {\n    fOrigin = null;\n    fCenter = null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

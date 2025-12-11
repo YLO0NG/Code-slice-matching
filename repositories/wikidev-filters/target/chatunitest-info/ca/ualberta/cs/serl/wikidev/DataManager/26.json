@@ -1,0 +1,32 @@
+{
+  "className": "DataManager",
+  "methodName": "getCommunicationsCitySize",
+  "brief": "public static int getCommunicationsCitySize(int projectid) throws SQLException{}",
+  "methodSignature": "getCommunicationsCitySize(int)",
+  "sourceCode": "public static int getCommunicationsCitySize(int projectid) throws SQLException {\n    \tint size = 3;\n    \tString sqlStmt = QueryBuilder.selectCommunicationsCitySize(projectid);\n    \tResultSet res = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile (res.next()) {\n\t\t\tsize += res.getInt(\"size\");\n\t\t\t\n\t\t}\n\t\tif (res != null)\n\t\t\tres.close();\n\t\treturn size;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectCommunicationsCitySize(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "next()",
+      "getInt(String)",
+      "close()"
+    ]
+  },
+  "full_method_info": "public static int getCommunicationsCitySize(int projectid) throws SQLException {\n    int size = 3;\n    String sqlStmt = QueryBuilder.selectCommunicationsCitySize(projectid);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        size += res.getInt(\"size\");\n    }\n    if (res != null)\n        res.close();\n    return size;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

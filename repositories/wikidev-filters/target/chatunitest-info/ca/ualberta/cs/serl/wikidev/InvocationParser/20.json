@@ -1,0 +1,39 @@
+{
+  "className": "InvocationParser",
+  "methodName": "parseArgs",
+  "brief": "public void parseArgs(String[] args){}",
+  "methodSignature": "parseArgs(String[])",
+  "sourceCode": "public void parseArgs(String[] args) {\n\t\tif(args.length < 7) {\n\t\t\tSystem.out.println(\"Please specify all required arguments (database, username, password, from date, to date, project and time window type\");\n\t\t\tSystem.exit(1);\n\t\t}\n\t\tthis.databaseName = args[0];\n\t\tthis.username = args[1];\n\t\tthis.password = args[2];\n\t\ttry {\n\t\t\tTimestamp.valueOf(args[3]);\n\t\t\tTimestamp.valueOf(args[4]);\n\t\t}\n\t\tcatch(IllegalArgumentException e) {\n\t\t\tSystem.out.println(\"Please specify the date in the format yyyy-mm-dd hh:mm:ss\");\n\t\t\tSystem.exit(1);\n\t\t}\n\t\tthis.fromdate = args[3];\n\t\tthis.todate = args[4];\n\t\ttry {\n\t\t\tthis.project = Integer.parseInt(args[5]);\n\t\t}\n\t\tcatch(NumberFormatException e) {\n\t\t\tSystem.out.println(\"Please specify the project id.\");\n\t\t\tSystem.exit(1);\n\t\t}\n\t\tthis.window = args[6];\n\t\tint i=7;\n\t\twhile(i<args.length) {\n\t\t\tif(args[i].equals(\"-lb\")) {\n\t\t\t\ti++;\n\t\t\t\tif(Double.parseDouble(args[i]) >=0.0) {\n\t\t\t\t\tthis.lowerBound = Double.parseDouble(args[i]);\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tSystem.out.println(\"The lower bound cannot be less than 0.0\");\n\t\t\t\t\tSystem.exit(1);\n\t\t\t\t}\n\t\t\t\ti++;\n\t\t\t}\n\t\t\telse if(args[i].equals(\"-ub\")) {\n\t\t\t\ti++;\n\t\t\t\tif(Double.parseDouble(args[i]) <= 1.0) {\n\t\t\t\t\tthis.upperBound = Double.parseDouble(args[i]);\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tSystem.out.println(\"The upper bound cannot be more than 1.0\");\n\t\t\t\t\tSystem.exit(1);\n\t\t\t\t}\n\t\t\t\ti++;\n\t\t\t}\n\t\t\telse if(args[i].equals(\"-i\")) {\n\t\t\t\ti++;\n\t\t\t\tif(Double.parseDouble(args[i]) >=0.01) {\n\t\t\t\t\tthis.interval = Double.parseDouble(args[i]);\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tSystem.out.println(\"The interval cannot be less than 0.01\");\n\t\t\t\t\tSystem.exit(1);\n\t\t\t\t}\n\t\t\t\ti++;\n\t\t\t}\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ],
+    "java.sql.Timestamp": [
+      "valueOf(String)"
+    ],
+    "java.lang.Integer": [
+      "parseInt(String)"
+    ],
+    "java.lang.Double": [
+      "parseDouble(String)"
+    ]
+  },
+  "full_method_info": "public void parseArgs(String[] args) {\n    if (args.length < 7) {\n        System.out.println(\"Please specify all required arguments (database, username, password, from date, to date, project and time window type\");\n        System.exit(1);\n    }\n    this.databaseName = args[0];\n    this.username = args[1];\n    this.password = args[2];\n    try {\n        Timestamp.valueOf(args[3]);\n        Timestamp.valueOf(args[4]);\n    } catch (IllegalArgumentException e) {\n        System.out.println(\"Please specify the date in the format yyyy-mm-dd hh:mm:ss\");\n        System.exit(1);\n    }\n    this.fromdate = args[3];\n    this.todate = args[4];\n    try {\n        this.project = Integer.parseInt(args[5]);\n    } catch (NumberFormatException e) {\n        System.out.println(\"Please specify the project id.\");\n        System.exit(1);\n    }\n    this.window = args[6];\n    int i = 7;\n    while (i < args.length) {\n        if (args[i].equals(\"-lb\")) {\n            i++;\n            if (Double.parseDouble(args[i]) >= 0.0) {\n                this.lowerBound = Double.parseDouble(args[i]);\n            } else {\n                System.out.println(\"The lower bound cannot be less than 0.0\");\n                System.exit(1);\n            }\n            i++;\n        } else if (args[i].equals(\"-ub\")) {\n            i++;\n            if (Double.parseDouble(args[i]) <= 1.0) {\n                this.upperBound = Double.parseDouble(args[i]);\n            } else {\n                System.out.println(\"The upper bound cannot be more than 1.0\");\n                System.exit(1);\n            }\n            i++;\n        } else if (args[i].equals(\"-i\")) {\n            i++;\n            if (Double.parseDouble(args[i]) >= 0.01) {\n                this.interval = Double.parseDouble(args[i]);\n            } else {\n                System.out.println(\"The interval cannot be less than 0.01\");\n                System.exit(1);\n            }\n            i++;\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

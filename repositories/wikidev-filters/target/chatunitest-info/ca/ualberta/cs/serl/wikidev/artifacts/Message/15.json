@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setUser_name",
+  "brief": "public void setUser_name(String user_name){}",
+  "methodSignature": "setUser_name(String)",
+  "sourceCode": "public void setUser_name(String user_name) {\n\t\tthis.user_name = user_name;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param user_name\n * @uml.property  name=\"user_name\"\n */\npublic void setUser_name(String user_name) {\n    this.user_name = user_name;\n}",
+  "method_comment": "\n\t * @param user_name\n\t * @uml.property  name=\"user_name\"\n\t ",
+  "method_annotation": ""
+}

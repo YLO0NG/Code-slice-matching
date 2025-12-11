@@ -1,0 +1,33 @@
+{
+  "className": "FontSizeHandle",
+  "methodName": "invokeStart",
+  "brief": "public void invokeStart(int  x, int  y, DrawingView view){}",
+  "methodSignature": "invokeStart(int, int, DrawingView)",
+  "sourceCode": "public void invokeStart(int  x, int  y, DrawingView view) {\n        TextFigure textOwner = (TextFigure) owner();\n        fFont = textOwner.getFont();\n        fSize = fFont.getSize();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "getFont()"
+    ],
+    "java.awt.Font": [
+      "getSize()"
+    ]
+  },
+  "full_method_info": "public void invokeStart(int x, int y, DrawingView view) {\n    TextFigure textOwner = (TextFigure) owner();\n    fFont = textOwner.getFont();\n    fSize = fFont.getSize();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

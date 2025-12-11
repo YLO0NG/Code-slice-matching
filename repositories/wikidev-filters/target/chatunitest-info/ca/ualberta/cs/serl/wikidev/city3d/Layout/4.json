@@ -1,0 +1,34 @@
+{
+  "className": "Layout",
+  "methodName": "assignArtifactToCityBlock",
+  "brief": "private void assignArtifactToCityBlock(IArtifact artifact, double x,\r\n\t\t\tdouble y, double minX, double minY, double blocks, double r){}",
+  "methodSignature": "assignArtifactToCityBlock(IArtifact, double, double, double, double, double, double)",
+  "sourceCode": "private void assignArtifactToCityBlock(IArtifact artifact, double x,\n\t\t\tdouble y, double minX, double minY, double blocks, double r) {\n\t\tint blockX = 0;\n\t\tint blockY = 0;\n\t\tfor (int i = 1; i < blocks; i++) {\n\t\t\tif (x > minX + (i - 1) * r && x <= minX + i * r) {\n\t\t\t\tblockX = i - 1;\n\t\t\t}\n\t\t\tif (y > minY + (i - 1) * r && y <= minY + i * r) {\n\t\t\t\tblockY = i - 1;\n\t\t\t}\n\t\t}\n\t\tCityBlock block = getCityBlock(new Point(blockX, blockY));\n\t\tblock.addArtifact(artifact, -1);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact",
+    "double",
+    "double",
+    "double",
+    "double",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "getCityBlock(Point)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "addArtifact(IArtifact, int)"
+    ]
+  },
+  "full_method_info": "private void assignArtifactToCityBlock(IArtifact artifact, double x, double y, double minX, double minY, double blocks, double r) {\n    int blockX = 0;\n    int blockY = 0;\n    for (int i = 1; i < blocks; i++) {\n        if (x > minX + (i - 1) * r && x <= minX + i * r) {\n            blockX = i - 1;\n        }\n        if (y > minY + (i - 1) * r && y <= minY + i * r) {\n            blockY = i - 1;\n        }\n    }\n    CityBlock block = getCityBlock(new Point(blockX, blockY));\n    block.addArtifact(artifact, -1);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "unlock",
+  "brief": "public synchronized void unlock(){}",
+  "methodSignature": "unlock()",
+  "sourceCode": "public synchronized void unlock() {\n        if (fDrawingLockHolder != null) {\n            fDrawingLockHolder = null;\n            notifyAll();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Object": [
+      "notifyAll()"
+    ]
+  },
+  "full_method_info": "/**\n * Releases the drawing lock.\n */\npublic synchronized void unlock() {\n    if (fDrawingLockHolder != null) {\n        fDrawingLockHolder = null;\n        notifyAll();\n    }\n}",
+  "method_comment": "\n     * Releases the drawing lock.\n     ",
+  "method_annotation": ""
+}

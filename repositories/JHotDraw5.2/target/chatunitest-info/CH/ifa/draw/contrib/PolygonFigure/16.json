@@ -1,0 +1,25 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "removePointAt",
+  "brief": "public  void removePointAt(int i){}",
+  "methodSignature": "removePointAt(int)",
+  "sourceCode": "public  void removePointAt(int i) {\n    willChange();\n    int n = fPoly.npoints - 1;\n    int[] xs = new int[n];\n    int[] ys = new int[n];\n    for (int j = 0; j < i; ++j) {\n      xs[j] = fPoly.xpoints[j];\n      ys[j] = fPoly.ypoints[j];\n    }\n    for (int j = i; j < n; ++j) {\n      xs[j] = fPoly.xpoints[j+1];\n      ys[j] = fPoly.ypoints[j+1];\n    }\n    fPoly = new Polygon(xs, ys, n);\n    changed();\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ]
+  },
+  "full_method_info": "public void removePointAt(int i) {\n    willChange();\n    int n = fPoly.npoints - 1;\n    int[] xs = new int[n];\n    int[] ys = new int[n];\n    for (int j = 0; j < i; ++j) {\n        xs[j] = fPoly.xpoints[j];\n        ys[j] = fPoly.ypoints[j];\n    }\n    for (int j = i; j < n; ++j) {\n        xs[j] = fPoly.xpoints[j + 1];\n        ys[j] = fPoly.ypoints[j + 1];\n    }\n    fPoly = new Polygon(xs, ys, n);\n    changed();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

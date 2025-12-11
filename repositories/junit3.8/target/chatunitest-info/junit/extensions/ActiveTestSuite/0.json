@@ -1,0 +1,28 @@
+{
+  "className": "ActiveTestSuite",
+  "methodName": "run",
+  "brief": "public void run(TestResult result){}",
+  "methodSignature": "run(TestResult)",
+  "sourceCode": "public void run(TestResult result) {\r\n\t\tfActiveTestDeathCount= 0;\r\n\t\tsuper.run(result);\r\n\t\twaitUntilFinished();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [],
+    "junit.framework.TestSuite": [
+      "run(TestResult)"
+    ],
+    "junit.extensions.ActiveTestSuite": [
+      "waitUntilFinished()"
+    ]
+  },
+  "full_method_info": "public void run(TestResult result) {\r\n    fActiveTestDeathCount = 0;\r\n    super.run(result);\r\n    waitUntilFinished();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

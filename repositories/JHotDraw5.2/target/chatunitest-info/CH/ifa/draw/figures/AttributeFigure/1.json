@@ -1,0 +1,22 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "drawBackground",
+  "brief": "protected void drawBackground(Graphics g){}",
+  "methodSignature": "drawBackground(Graphics)",
+  "sourceCode": "protected void drawBackground(Graphics g) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": []
+  },
+  "full_method_info": "/**\n * Draws the background of the figure.\n * @see #draw\n */\nprotected void drawBackground(Graphics g) {\n}",
+  "method_comment": "\n     * Draws the background of the figure.\n     * @see #draw\n     ",
+  "method_annotation": ""
+}

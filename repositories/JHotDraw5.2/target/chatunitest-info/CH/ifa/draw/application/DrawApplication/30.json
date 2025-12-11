@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "defaultSize",
+  "brief": "protected Dimension defaultSize(){}",
+  "methodSignature": "defaultSize()",
+  "sourceCode": "protected Dimension defaultSize() {\n        return new Dimension(600,450);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the default size of the window.\n */\nprotected Dimension defaultSize() {\n    return new Dimension(600, 450);\n}",
+  "method_comment": "\n     * Gets the default size of the window.\n     ",
+  "method_annotation": ""
+}

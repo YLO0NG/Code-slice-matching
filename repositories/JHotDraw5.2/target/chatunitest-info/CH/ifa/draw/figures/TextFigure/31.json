@@ -1,0 +1,25 @@
+{
+  "className": "TextFigure",
+  "methodName": "release",
+  "brief": "public void release(){}",
+  "methodSignature": "release()",
+  "sourceCode": "public void release() {\n        super.release();\n        if (fObservedFigure != null)\n            fObservedFigure.removeFigureChangeListener(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "release()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "removeFigureChangeListener(FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "public void release() {\n    super.release();\n    if (fObservedFigure != null)\n        fObservedFigure.removeFigureChangeListener(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "addTicket",
+  "brief": "public void addTicket(Ticket ticket){}",
+  "methodSignature": "addTicket(Ticket)",
+  "sourceCode": "public void addTicket(Ticket ticket) {\n\t\tthis.tickets.add(ticket);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Ticket"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addTicket(Ticket ticket) {\n    this.tickets.add(ticket);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

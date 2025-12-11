@@ -1,0 +1,56 @@
+{
+  "className": "IndustrialLayout",
+  "methodName": "printCityBlocks",
+  "brief": "public static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<SVNFile, Integer> fileCount)\r\n\t\t\tthrows IOException{}",
+  "methodSignature": "printCityBlocks(ArrayList, HashMap)",
+  "sourceCode": "public static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<SVNFile, Integer> fileCount)\n\t\t\tthrows IOException {\n\t\t// BufferedWriter out = new BufferedWriter(new\n\t\t// FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));\n\t\tBufferedWriter out = new BufferedWriter(\n\t\t\t\tnew FileWriter(\n\t\t\t\t\t\t\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\industrialBlocks.txt\"));\n\t\tint index = 1;\n\t\tout.write(\"\"+Math.sqrt(blocks.size()));\n\t\tout.newLine();\n\t\tfor (CityBlock block : blocks) {\n\t\t\tfor (IArtifact artifact : block.getArtifacts().keySet()) {\n\t\t\t\tString type = \"\"+index+\"\\t\";\n\t\t\t\tint height = 0;\n\t\t\t\tString line = \"\";\n\t\t\t\tif (artifact instanceof SVNFile) {\n\t\t\t\t\tSVNFile file = (SVNFile)artifact;\n\t\t\t\t\ttype += file.getType();\n\t\t\t\t\theight = fileCount.get(file);\n\t\t\t\t\tline += type + \"\\t\" + block.getIndex().x + \"\\t\"\n\t\t\t\t\t+ block.getIndex().y + \"\\t\"\n\t\t\t\t\t+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";\n\t\t\t\t\tfor(User user : file.getUsers()) {\n\t\t\t\t\t\tline += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tout.write(line);\n\t\t\t\tout.newLine();\n\t\t\t\tindex++;\n\t\t\t}\n\t\t}\n\t\tout.close();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<CityBlock>",
+    "HashMap<SVNFile,Integer>"
+  ],
+  "dependentMethods": {
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "java.lang.Math": [
+      "sqrt(double)"
+    ],
+    "java.util.ArrayList": [
+      "size()"
+    ],
+    "java.io.BufferedWriter": [
+      "newLine()",
+      "close()"
+    ],
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "getArtifacts()",
+      "getIndex()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.SVNFile": [
+      "getType()",
+      "getUsers()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getColor()",
+      "getUserName()"
+    ],
+    "java.awt.Color": [
+      "getGreen()",
+      "getBlue()",
+      "getRed()"
+    ]
+  },
+  "full_method_info": "public static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<SVNFile, Integer> fileCount) throws IOException {\n    // BufferedWriter out = new BufferedWriter(new\n    // FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));\n    BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\industrialBlocks.txt\"));\n    int index = 1;\n    out.write(\"\" + Math.sqrt(blocks.size()));\n    out.newLine();\n    for (CityBlock block : blocks) {\n        for (IArtifact artifact : block.getArtifacts().keySet()) {\n            String type = \"\" + index + \"\\t\";\n            int height = 0;\n            String line = \"\";\n            if (artifact instanceof SVNFile) {\n                SVNFile file = (SVNFile) artifact;\n                type += file.getType();\n                height = fileCount.get(file);\n                line += type + \"\\t\" + block.getIndex().x + \"\\t\" + block.getIndex().y + \"\\t\" + block.getArtifacts().get(artifact) + \"\\t\" + height + \"\\t\";\n                for (User user : file.getUsers()) {\n                    line += \"<\" + user.getUserName() + \", \" + user.getColor().getRed() + \", \" + user.getColor().getGreen() + \", \" + user.getColor().getBlue() + \"> \\t\";\n                }\n            }\n            out.write(line);\n            out.newLine();\n            index++;\n        }\n    }\n    out.close();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

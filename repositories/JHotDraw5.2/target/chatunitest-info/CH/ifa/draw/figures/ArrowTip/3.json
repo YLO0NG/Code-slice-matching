@@ -1,0 +1,32 @@
+{
+  "className": "ArrowTip",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        dw.writeDouble(getAngle());\n        dw.writeDouble(getOuterRadius());\n        dw.writeDouble(getInnerRadius());\n        super.write(dw);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeDouble(double)"
+    ],
+    "CH.ifa.draw.figures.ArrowTip": [
+      "getAngle()",
+      "getInnerRadius()",
+      "getOuterRadius()"
+    ],
+    "CH.ifa.draw.figures.AbstractLineDecoration": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "/**\n * Stores the arrow tip to a StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    dw.writeDouble(getAngle());\n    dw.writeDouble(getOuterRadius());\n    dw.writeDouble(getInnerRadius());\n    super.write(dw);\n}",
+  "method_comment": "\n     * Stores the arrow tip to a StorableOutput.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,74 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.clustering.SammonsProjection",
+  "className": "SammonsProjection",
+  "index": 31,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.clustering",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.clustering;",
+  "classSignature": "public class SammonsProjection",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Random;"
+  ],
+  "fields": [
+    "private int maxIteration;",
+    "private double lambda = 1;",
+    "private double[][] InputData;",
+    "private int[] indicesI;",
+    "private int[] indicesJ;",
+    "private int OutputDimension;",
+    "protected double[][] _distanceMatrix;",
+    "private int Count;",
+    "private double[][] Projection;",
+    "private int Iteration;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getProjection()": "0",
+    "createIndexArray(int)": "1",
+    "CreateMapping()": "2",
+    "Iterate()": "3",
+    "Initialize()": "4",
+    "CalculateDistanceMatrix()": "5",
+    "ReduceLambda()": "6",
+    "SammonsProjection(double[][], int, int)": "7"
+  },
+  "methodsBrief": [
+    "public double[][] getProjection(){}",
+    "private int[] createIndexArray(int count){}",
+    "public void CreateMapping()\r\n{}",
+    "public void Iterate()\r\n{}",
+    "private void Initialize()\r\n{}",
+    "private double[][] CalculateDistanceMatrix()\r\n{}",
+    "private void ReduceLambda()\r\n{}",
+    "public SammonsProjection(\r\n\t\t\tdouble[][] inputData,\r\n\t\t\tint outputDimension,\r\n\t\t\tint maxIteration)\r\n\t{}"
+  ],
+  "constructorSigs": [
+    "SammonsProjection(double[][], int, int)"
+  ],
+  "constructorBrief": [
+    "public SammonsProjection(\r\n\t\t\tdouble[][] inputData,\r\n\t\t\tint outputDimension,\r\n\t\t\tint maxIteration)\r\n\t{}"
+  ],
+  "getterSetterSigs": [
+    "getProjection()"
+  ],
+  "getterSetterBrief": [
+    "public double[][] getProjection(){}"
+  ],
+  "constructorDeps": {
+    "double[]": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.SammonsProjection": [
+      "Initialize()",
+      "createIndexArray(int)"
+    ]
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.clustering;\n\nimport java.util.Random;\n\npublic class SammonsProjection {\n\n    private int maxIteration;\n\n    private double lambda = 1;\n\n    private double[][] InputData;\n\n    private int[] indicesI;\n\n    private int[] indicesJ;\n\n    private int OutputDimension;\n\n    protected double[][] _distanceMatrix;\n\n    private int Count;\n\n    private double[][] Projection;\n\n    private int Iteration;\n\n    public SammonsProjection(double[][] inputData, int outputDimension, int maxIteration) {\n        if (inputData == null || inputData.length == 0)\n            throw new IllegalArgumentException(\"inputData\");\n        // -----------------------------------------------------------------\n        this.InputData = inputData;\n        this.Count = this.InputData.length;\n        this.OutputDimension = outputDimension;\n        this.maxIteration = maxIteration;\n        // Initialize the projection:\n        Initialize();\n        // Create the indices-arrays:\n        indicesI = createIndexArray(this.Count);\n        indicesJ = createIndexArray(this.Count);\n    }\n\n    public double[][] getProjection() {\n        return Projection;\n    }\n\n    private int[] createIndexArray(int count) {\n        int[] indices = new int[count];\n        for (int i = 0; i < count; i++) {\n            indices[i] = i;\n        }\n        return indices;\n    }\n\n    public void CreateMapping() {\n        for (int i = maxIteration; i >= 0; i--) this.Iterate();\n    }\n\n    public void Iterate() {\n        int[] indicesI = this.indicesI;\n        int[] indicesJ = this.indicesJ;\n        double[][] distanceMatrix = _distanceMatrix;\n        double[][] projection = this.Projection;\n        // Shuffle the indices-array for random pick of the points:\n        Helper.FisherYatesShuffle(indicesI);\n        Helper.FisherYatesShuffle(indicesJ);\n        for (int i = 0; i < indicesI.length; i++) {\n            double[] distancesI = distanceMatrix[indicesI[i]];\n            double[] projectionI = projection[indicesI[i]];\n            for (int j = 0; j < indicesJ.length; j++) {\n                if (indicesI[i] == indicesJ[j])\n                    continue;\n                double[] projectionJ = projection[indicesJ[j]];\n                double dij = distancesI[indicesJ[j]];\n                double Dij = Helper.ManhattenDistance(projectionI, projectionJ);\n                // Avoid division by zero:\n                if (Dij == 0)\n                    Dij = 1e-10;\n                double delta = lambda * (dij - Dij) / Dij;\n                for (int k = 0; k < projectionJ.length; k++) {\n                    double correction = delta * (projectionI[k] - projectionJ[k]);\n                    projectionI[k] += correction;\n                    projectionJ[k] -= correction;\n                }\n            }\n        }\n        // Reduce lambda monotonically:\n        ReduceLambda();\n    }\n\n    private void Initialize() {\n        _distanceMatrix = CalculateDistanceMatrix();\n        // Initialize random points for the projection:\n        Random rnd = new Random();\n        double[][] projection = new double[this.Count][];\n        for (int i = 0; i < projection.length; i++) {\n            double[] projectionI = new double[this.OutputDimension];\n            projection[i] = projectionI;\n            for (int j = 0; j < projectionI.length; j++) projectionI[j] = rnd.nextDouble() * this.Count;\n        }\n        this.Projection = projection;\n    }\n\n    private double[][] CalculateDistanceMatrix() {\n        double[][] distanceMatrix = new double[this.Count][];\n        double[][] inputData = this.InputData;\n        for (int i = 0; i < distanceMatrix.length; i++) {\n            double[] distances = new double[this.Count];\n            double[] inputI = inputData[i];\n            for (int j = 0; j < distances.length; j++) {\n                if (j == i) {\n                    distances[j] = 0;\n                    continue;\n                }\n                distances[j] = Helper.ManhattenDistance(inputI, inputData[j]);\n            }\n            distanceMatrix[i] = distances;\n        }\n        return distanceMatrix;\n    }\n\n    private void ReduceLambda() {\n        this.Iteration++;\n        double ratio = (double) this.Iteration / maxIteration;\n        lambda = Math.pow(0.01, ratio);\n    }\n}\n",
+  "classDeclarationCode": "public class SammonsProjection {\n\n    private int maxIteration;\n\n    private double lambda = 1;\n\n    private double[][] InputData;\n\n    private int[] indicesI;\n\n    private int[] indicesJ;\n\n    private int OutputDimension;\n\n    protected double[][] _distanceMatrix;\n\n    private int Count;\n\n    private double[][] Projection;\n\n    private int Iteration;\n\n    public SammonsProjection(double[][] inputData, int outputDimension, int maxIteration) {\n        if (inputData == null || inputData.length == 0)\n            throw new IllegalArgumentException(\"inputData\");\n        // -----------------------------------------------------------------\n        this.InputData = inputData;\n        this.Count = this.InputData.length;\n        this.OutputDimension = outputDimension;\n        this.maxIteration = maxIteration;\n        // Initialize the projection:\n        Initialize();\n        // Create the indices-arrays:\n        indicesI = createIndexArray(this.Count);\n        indicesJ = createIndexArray(this.Count);\n    }\n\n    public double[][] getProjection() {\n        return Projection;\n    }\n\n    private int[] createIndexArray(int count) {\n        int[] indices = new int[count];\n        for (int i = 0; i < count; i++) {\n            indices[i] = i;\n        }\n        return indices;\n    }\n\n    public void CreateMapping() {\n        for (int i = maxIteration; i >= 0; i--) this.Iterate();\n    }\n\n    public void Iterate() {\n        int[] indicesI = this.indicesI;\n        int[] indicesJ = this.indicesJ;\n        double[][] distanceMatrix = _distanceMatrix;\n        double[][] projection = this.Projection;\n        // Shuffle the indices-array for random pick of the points:\n        Helper.FisherYatesShuffle(indicesI);\n        Helper.FisherYatesShuffle(indicesJ);\n        for (int i = 0; i < indicesI.length; i++) {\n            double[] distancesI = distanceMatrix[indicesI[i]];\n            double[] projectionI = projection[indicesI[i]];\n            for (int j = 0; j < indicesJ.length; j++) {\n                if (indicesI[i] == indicesJ[j])\n                    continue;\n                double[] projectionJ = projection[indicesJ[j]];\n                double dij = distancesI[indicesJ[j]];\n                double Dij = Helper.ManhattenDistance(projectionI, projectionJ);\n                // Avoid division by zero:\n                if (Dij == 0)\n                    Dij = 1e-10;\n                double delta = lambda * (dij - Dij) / Dij;\n                for (int k = 0; k < projectionJ.length; k++) {\n                    double correction = delta * (projectionI[k] - projectionJ[k]);\n                    projectionI[k] += correction;\n                    projectionJ[k] -= correction;\n                }\n            }\n        }\n        // Reduce lambda monotonically:\n        ReduceLambda();\n    }\n\n    private void Initialize() {\n        _distanceMatrix = CalculateDistanceMatrix();\n        // Initialize random points for the projection:\n        Random rnd = new Random();\n        double[][] projection = new double[this.Count][];\n        for (int i = 0; i < projection.length; i++) {\n            double[] projectionI = new double[this.OutputDimension];\n            projection[i] = projectionI;\n            for (int j = 0; j < projectionI.length; j++) projectionI[j] = rnd.nextDouble() * this.Count;\n        }\n        this.Projection = projection;\n    }\n\n    private double[][] CalculateDistanceMatrix() {\n        double[][] distanceMatrix = new double[this.Count][];\n        double[][] inputData = this.InputData;\n        for (int i = 0; i < distanceMatrix.length; i++) {\n            double[] distances = new double[this.Count];\n            double[] inputI = inputData[i];\n            for (int j = 0; j < distances.length; j++) {\n                if (j == i) {\n                    distances[j] = 0;\n                    continue;\n                }\n                distances[j] = Helper.ManhattenDistance(inputI, inputData[j]);\n            }\n            distanceMatrix[i] = distances;\n        }\n        return distanceMatrix;\n    }\n\n    private void ReduceLambda() {\n        this.Iteration++;\n        double ratio = (double) this.Iteration / maxIteration;\n        lambda = Math.pow(0.01, ratio);\n    }\n}",
+  "subClasses": []
+}

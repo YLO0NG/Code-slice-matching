@@ -1,0 +1,20 @@
+{
+  "className": "TextFigure",
+  "methodName": "setCurrentFontStyle",
+  "brief": "static public void setCurrentFontStyle(int style){}",
+  "methodSignature": "setCurrentFontStyle(int)",
+  "sourceCode": "static public void setCurrentFontStyle(int style) {\n        fgCurrentFontStyle = style;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the current font style.\n */\nstatic public void setCurrentFontStyle(int style) {\n    fgCurrentFontStyle = style;\n}",
+  "method_comment": "\n     * Sets the current font style.\n     ",
+  "method_annotation": ""
+}

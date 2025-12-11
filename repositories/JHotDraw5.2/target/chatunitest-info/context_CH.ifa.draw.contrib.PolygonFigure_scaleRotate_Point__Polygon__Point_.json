@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.contrib.PolygonFigure",
+  "targetMethod": "scaleRotate(Point, Polygon, Point)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.AbstractFigure": "private transient FigureChangeListener fListener;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int abstractFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.Geom": "static public final int NORTH = 1;\nstatic public final int SOUTH = 2;\nstatic public final int WEST = 3;\nstatic public final int EAST = 4;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": "public void willChange(){}\npublic void changed(){}",
+    "CH.ifa.draw.util.Geom": "static public long length(int x1, int y1, int x2, int y2){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.AbstractFigure": "* Informes that a figure is about to change something that\n     * affects the contents of its display box.\n     *\n     * @see Figure#willChange\n     \npublic void willChange() {\n        invalidate();\n    }\n\n     * Informs that a figure changed the area of its display box.\n     *\n     * @see FigureChangeEvent\n     * @see Figure#changed\n     \npublic void changed() {\n        invalidate();\n        if (fListener != null)\n            fListener.figureChanged(new FigureChangeEvent(this));\n\n    }",
+    "CH.ifa.draw.util.Geom": "* Gets the distance between to points\n     \nstatic public long length(int x1, int y1, int x2, int y2) {\n        return (long)Math.sqrt(length2(x1, y1, x2, y2));\n    }"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.applet.DrawApplet",
+  "targetMethod": "createAttributeChoices(JPanel)",
+  "dependentFields": {
+    "CH.ifa.draw.applet.DrawApplet": "transient private Drawing         fDrawing;\ntransient private Tool            fTool;\ntransient private StandardDrawingView fView;\ntransient private ToolButton      fDefaultToolButton;\ntransient private ToolButton      fSelectedToolButton;\ntransient private boolean         fSimpleUpdate;\ntransient private JButton          fUpdateButton;\ntransient private JComboBox          fFrameColor;\ntransient private JComboBox          fFillColor;\ntransient private JComboBox          fTextColor;\ntransient private JComboBox          fArrowChoice;\ntransient private JComboBox          fFontChoice;\ntransient private Thread          fSleeper;\nprivate Iconkit                   fIconkit;\nstatic String                     fgUntitled = \"untitled\";\nprivate static final String       fgDrawPath = \"/CH/ifa/draw/\";\npublic static final String        IMAGES = fgDrawPath+\"images/\";",
+    "CH.ifa.draw.util.CommandChoice": "private Vector   fCommands;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.applet.DrawApplet": "protected JComboBox createColorChoice(String attribute){}",
+    "CH.ifa.draw.util.CommandChoice": "public synchronized void addItem(Command command){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.applet.DrawApplet": "* Creates the color choice for the given attribute.\n     \nprotected JComboBox createColorChoice(String attribute) {\n        CommandChoice choice = new CommandChoice();\n        for (int i=0; i<ColorMap.size(); i++)\n            choice.addItem(\n                new ChangeAttributeCommand(\n                    ColorMap.name(i),\n                    attribute,\n                    ColorMap.color(i),\n                    fView\n                )\n            );\n        return choice;\n    }",
+    "CH.ifa.draw.util.CommandChoice": "* Adds a command to the menu.\n     \npublic synchronized void addItem(Command command) {\n        addItem(command.name());\n        fCommands.addElement(command);\n    }"
+  }
+}

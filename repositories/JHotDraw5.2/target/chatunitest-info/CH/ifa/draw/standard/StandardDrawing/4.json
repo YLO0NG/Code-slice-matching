@@ -1,0 +1,35 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "figureRequestRemove",
+  "brief": "public void figureRequestRemove(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestRemove(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestRemove(FigureChangeEvent e) {\n        Figure figure = e.getFigure();\n        if (fFigures.contains(figure)) {\n            fFigures.removeElement(figure);\n            figure.removeFromContainer(this);   // will invalidate figure\n            figure.release();\n        } else\n            System.out.println(\"Attempt to remove non-existing figure\");\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [
+      "getFigure()"
+    ],
+    "java.util.Vector": [
+      "removeElement(Object)",
+      "contains(Object)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "removeFromContainer(FigureChangeListener)",
+      "release()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles a removeFromDrawing request that\n * is passed up the figure container hierarchy.\n * @see FigureChangeListener\n */\npublic void figureRequestRemove(FigureChangeEvent e) {\n    Figure figure = e.getFigure();\n    if (fFigures.contains(figure)) {\n        fFigures.removeElement(figure);\n        // will invalidate figure\n        figure.removeFromContainer(this);\n        figure.release();\n    } else\n        System.out.println(\"Attempt to remove non-existing figure\");\n}",
+  "method_comment": "\n     * Handles a removeFromDrawing request that\n     * is passed up the figure container hierarchy.\n     * @see FigureChangeListener\n     ",
+  "method_annotation": ""
+}

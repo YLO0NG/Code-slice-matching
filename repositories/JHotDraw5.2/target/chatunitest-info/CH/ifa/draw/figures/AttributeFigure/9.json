@@ -1,0 +1,30 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        if (fAttributes == null)\n            dw.writeString(\"no_attributes\");\n        else {\n            dw.writeString(\"attributes\");\n            fAttributes.write(dw);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeString(String)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "write(StorableOutput)"
+    ],
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "/**\n * Stores the Figure to a StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    if (fAttributes == null)\n        dw.writeString(\"no_attributes\");\n    else {\n        dw.writeString(\"attributes\");\n        fAttributes.write(dw);\n    }\n}",
+  "method_comment": "\n     * Stores the Figure to a StorableOutput.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,55 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.PolyLineHandle",
+  "className": "PolyLineHandle",
+  "index": 45,
+  "modifier": "[public ]",
+  "extend": "[LocatorHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class PolyLineHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.LocatorHandle;"
+  ],
+  "fields": [
+    "private int fIndex;",
+    "private Point fAnchor;"
+  ],
+  "superClasses": [
+    "LocatorHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStart(int, int, DrawingView)": "0",
+    "invokeStep(int, int, int, int, DrawingView)": "1",
+    "myOwner()": "2",
+    "PolyLineHandle(PolyLineFigure, Locator, int)": "3"
+  },
+  "methodsBrief": [
+    "public void invokeStart(int  x, int  y, DrawingView view){}",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "private PolyLineFigure myOwner(){}",
+    "public PolyLineHandle(PolyLineFigure owner, Locator l, int index){}"
+  ],
+  "constructorSigs": [
+    "PolyLineHandle(PolyLineFigure, Locator, int)"
+  ],
+  "constructorBrief": [
+    "public PolyLineHandle(PolyLineFigure owner, Locator l, int index){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.figures.PolyLineFigure": [],
+    "CH.ifa.draw.framework.Locator": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PolyLineHandle.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.LocatorHandle;\n\n/**\n * A handle for a node on the polyline.\n */\npublic class PolyLineHandle extends LocatorHandle {\n\n    private int fIndex;\n\n    private Point fAnchor;\n\n    public PolyLineHandle(PolyLineFigure owner, Locator l, int index) {\n        super(owner, l);\n        fIndex = index;\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        fAnchor = new Point(x, y);\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        myOwner().setPointAt(new Point(x, y), fIndex);\n    }\n\n    private PolyLineFigure myOwner() {\n        return (PolyLineFigure) owner();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A handle for a node on the polyline.\n */\npublic class PolyLineHandle extends LocatorHandle {\n\n    private int fIndex;\n\n    private Point fAnchor;\n\n    public PolyLineHandle(PolyLineFigure owner, Locator l, int index) {\n        super(owner, l);\n        fIndex = index;\n    }\n\n    public void invokeStart(int x, int y, DrawingView view) {\n        fAnchor = new Point(x, y);\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        myOwner().setPointAt(new Point(x, y), fIndex);\n    }\n\n    private PolyLineFigure myOwner() {\n        return (PolyLineFigure) owner();\n    }\n}",
+  "subClasses": []
+}

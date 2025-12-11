@@ -1,0 +1,27 @@
+{
+  "className": "CreationTool",
+  "methodName": "mouseDrag",
+  "brief": "public void mouseDrag(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDrag(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDrag(MouseEvent e, int x, int y) {\n        fCreatedFigure.displayBox(fAnchorPoint, new Point(x,y));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox(Point, Point)"
+    ]
+  },
+  "full_method_info": "/**\n * Adjusts the extent of the created figure\n */\npublic void mouseDrag(MouseEvent e, int x, int y) {\n    fCreatedFigure.displayBox(fAnchorPoint, new Point(x, y));\n}",
+  "method_comment": "\n     * Adjusts the extent of the created figure\n     ",
+  "method_annotation": ""
+}

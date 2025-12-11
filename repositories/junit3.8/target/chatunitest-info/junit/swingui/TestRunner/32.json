@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "insertUpdate",
+  "brief": "public void insertUpdate(DocumentEvent event){}",
+  "methodSignature": "insertUpdate(DocumentEvent)",
+  "sourceCode": "public void insertUpdate(DocumentEvent event) {\r\n\t\ttextChanged();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DocumentEvent"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.DocumentEvent": [],
+    "junit.swingui.TestRunner": [
+      "textChanged()"
+    ]
+  },
+  "full_method_info": "public void insertUpdate(DocumentEvent event) {\r\n    textChanged();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

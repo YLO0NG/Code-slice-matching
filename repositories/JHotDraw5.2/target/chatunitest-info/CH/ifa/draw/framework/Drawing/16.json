@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "orphanAll",
+  "brief": "public void orphanAll(Vector newFigures);",
+  "methodSignature": "orphanAll(Vector)",
+  "sourceCode": "public void orphanAll(Vector newFigures);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": []
+  },
+  "full_method_info": "/**\n * Removes a vector of figures from the figure's list\n * without releasing the figures.\n * @see #orphan\n */\npublic void orphanAll(Vector newFigures);",
+  "method_comment": "\n     * Removes a vector of figures from the figure's list\n     * without releasing the figures.\n     * @see #orphan\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,170 @@
+[
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "find()",
+        "line_start": 88,
+        "line_end": 101,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Customer.class ); //f:hibernate\n\n\t\tcriteria.add( Example.create( this.customer ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) ); //f:hibernate\n\t\tif ( this.customer.getId() != null ) { //f:hibernate\n\t\t\tcriteria.add( Restrictions.idEq( this.customer.getId() ) ); //f:hibernate\n\t\t} //f:hibernate\n\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Customer> l = (List<Customer>) criteria.list(); //f:hibernate\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "save()",
+        "line_start": 111,
+        "line_end": 117,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\t\n\t\tsess.save( this.customer ); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "update()",
+        "line_start": 128,
+        "line_end": 134,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\t\n\t\tsess.update( this.customer ); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "delete()",
+        "line_start": 145,
+        "line_end": 151,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\t\n\t\tsess.delete( this.customer ); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.CustomerAction",
+        "function_name": "edit()",
+        "line_start": 164,
+        "line_end": 169,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCustomer c = (Customer) sess.get( Customer.class, id ); //f:hibernate\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.LoginAction",
+        "function_name": "execute()",
+        "line_start": 46,
+        "line_end": 57,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( User.class ); //f:hibernate\n\n\t\tcriteria.add( Restrictions.idEq( this.user.getUsername() ) ); //f:hibernate\n\t\tcriteria.add( Restrictions.eq( \"password\", this.user.getPassword() ) ); //f:hibernate\n\n\t\tUser user = (User) criteria.uniqueResult(); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "find()",
+        "line_start": 90,
+        "line_end": 103,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate\n\n\t\tcriteria.add( Example.create( this.product ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) ); //f:hibernate\n\t\tif ( this.product.getId() != null ) { //f:hibernate\n\t\t\tcriteria.add( Restrictions.idEq( this.product.getId() ) ); //f:hibernate\n\t\t} //f:hibernate\n\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Product> l = (List<Product>) criteria.list(); //f:hibernate\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "save()",
+        "line_start": 113,
+        "line_end": 119,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\t\n\t\tsess.save( this.product ); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "update()",
+        "line_start": 130,
+        "line_end": 136,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\t\n\t\tsess.update( this.product ); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "delete()",
+        "line_start": 147,
+        "line_end": 153,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\t\n\t\tsess.delete( this.product ); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ProductAction",
+        "function_name": "edit()",
+        "line_start": 166,
+        "line_end": 172,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tProduct p = (Product) sess.get( Product.class, id ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "input()",
+        "line_start": 88,
+        "line_end": 101,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Customer.class ); //f:hibernate\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Customer> lc = (List<Customer>) criteria.list(); //f:hibernate\n\t\tActionContext.getContext().getSession().put( \"listCustomer\", lc );\n\n\t\tcriteria = sess.createCriteria( Product.class ); //f:hibernate\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Product> lp = (List<Product>) criteria.list(); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "find()",
+        "line_start": 111,
+        "line_end": 129,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( PurchaseOrder.class ); //f:hibernate\n\n\t\tcriteria.add( Example.create( this.purchaseOrder ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) ); //f:hibernate\n\t\tif ( this.purchaseOrder.getId() != null ) { //f:hibernate\n\t\t\tcriteria.add( Restrictions.idEq( this.purchaseOrder.getId() ) ); //f:hibernate\n\t\t} //f:hibernate\n\n\t\tif ( this.purchaseOrder.getCustomer().getId() != null ) { //f:hibernate\n\t\t\tcriteria.add( Restrictions.eq( \"customer\", this.purchaseOrder.getCustomer() ) ); //f:hibernate\n\t\t} //f:hibernate\n\n\t\tcriteria.setResultTransformer( Criteria.DISTINCT_ROOT_ENTITY ); //f:hibernate\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<PurchaseOrder> l = (List<PurchaseOrder>) criteria.list(); //f:hibernate\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "save()",
+        "line_start": 139,
+        "line_end": 145,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tsess.save( this.purchaseOrder ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "update()",
+        "line_start": 162,
+        "line_end": 167,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\t\tsess.update( this.purchaseOrder ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "delete()",
+        "line_start": 182,
+        "line_end": 188,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tsess.delete( this.purchaseOrder ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAction",
+        "function_name": "edit()",
+        "line_start": 200,
+        "line_end": 206,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tPurchaseOrder po = (PurchaseOrder) sess.get( PurchaseOrder.class, id ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.PurchaseOrderAjax",
+        "function_name": "getProductPrice(Integer)",
+        "line_start": 15,
+        "line_end": 28,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate\n\t\t\n\t\t\n\t\tcriteria.setProjection( Projections.property( \"price\" ) ); //f:hibernate\n\t\t\n\t\tcriteria.add( Restrictions.eq( \"id\", idProduct ) ); //f:hibernate\n\n\t\tDouble price = (Double) criteria.uniqueResult(); //f:hibernate\n\t\t\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ReportAction",
+        "function_name": "productReport()",
+        "line_start": 77,
+        "line_end": 89,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate\n\n\t\tcriteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"price\" ) ) ); //f:hibernate\n\n\t\t\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Object[]> l = (List<Object[]>) criteria.list(); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.ReportAction",
+        "function_name": "customerReport()",
+        "line_start": 116,
+        "line_end": 128,
+        "code_snippet": "Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Customer.class ); //f:hibernate\n\n\t\tcriteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"phone\" ) ) ); //f:hibernate\n\n\t\t\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Object[]> l = (List<Object[]>) criteria.list(); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.SchedulerAction",
+        "function_name": "input()",
+        "line_start": 56,
+        "line_end": 63,
+        "code_snippet": "SchedulerFactory sf = new StdSchedulerFactory(); //f:quartz\n\t\tScheduler sc = sf.getScheduler(); //f:quartz\n\n\t\tJobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz\n\n\t\tif ( job != null ) { //f:quartz\n\t\t\tthis.timeInterval = job.getJobDataMap().getIntValue( \"timeInterval\" ); //f:quartz\n\t\t}"
+    },
+    {
+        "class_name": "classes.SchedulerAction",
+        "function_name": "schedule()",
+        "line_start": 72,
+        "line_end": 87,
+        "code_snippet": "SchedulerFactory sf = new StdSchedulerFactory(); //f:quartz\n\t\tScheduler sc = sf.getScheduler(); //f:quartz\n\n\t\tJobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz\n\n\t\tif ( job != null ) { //f:quartz\n\t\t\tsc.deleteJob( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz\n\t\t} //f:quartz\n\n\t\tjob = newJob( SupplyMailJob.class ).withIdentity( \"supplyMailJob\", \"group\" ).build(); //f:quartz\n\t\tjob.getJobDataMap().put( \"timeInterval\", this.timeInterval ); //f:quartz\n\n\t\tTrigger trigger = newTrigger().withIdentity( \"supplyMailTrigger\", \"group\" ).startNow().withSchedule( CronScheduleBuilder.cronSchedule( \"0 0/\"\n\t\t\t\t+ (this.timeInterval * 60) + \" * * * ?\" ) ).build(); //f:quartz\n\n\t\tsc.scheduleJob( job, trigger );"
+    },
+    {
+        "class_name": "classes.SupplyMailJob",
+        "function_name": "execute(JobExecutionContext)",
+        "line_start": 33,
+        "line_end": 42,
+        "code_snippet": "org.hibernate.Session sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tCriteria criteria = sess.createCriteria( Product.class ); //f:hibernate\n\t\tcriteria.add( Restrictions.lt( \"supply\", 5 ) ); //f:hibernate\n\n\t\t@SuppressWarnings(\"unchecked\")\n\t\tList<Product> l = (List<Product>) criteria.list(); //f:hibernate\n\t\tt.commit(); //f:hibernate\n\t\tsess.close();"
+    },
+    {
+        "class_name": "classes.SupplyMailJob",
+        "function_name": "execute(JobExecutionContext)",
+        "line_start": 48,
+        "line_end": 70,
+        "code_snippet": "Properties props = new Properties(); //f:mail\n\t\t\tprops.setProperty( \"mail.smtp.submitter\", \"terra\" ); //f:mail\n\t\t\tprops.setProperty( \"mail.smtp.auth\", \"false\" ); //f:mail\n\t\t\tprops.setProperty( \"mail.smtp.host\", this.host ); //f:mail\n\t\t\tprops.setProperty( \"mail.smtp.port\", \"25\" ); //f:mail\n\n\t\t\tjavax.mail.Session session = javax.mail.Session.getInstance( props ); //f:mail\n\n\t\t\ttry { //f:mail\n\t\t\t\tMessage msg = new MimeMessage( session ); //f:mail\n\n\t\t\t\tmsg.setFrom( new InternetAddress( this.from ) ); //f:mail\n\t\t\t\tInternetAddress[] address = { new InternetAddress( this.to ) }; //f:mail\n\t\t\t\tmsg.setRecipients( Message.RecipientType.TO, address ); //f:mail\n\t\t\t\tmsg.setSubject( \"Low Supply of Products\" ); //f:mail\n\t\t\t\tmsg.setSentDate( new Date() ); //f:mail\n\n\t\t\t\tmsg.setText( str.toString() ); //f:mail\n\n\t\t\t\tTransport.send( msg ); //f:mail\n\t\t\t} catch (MessagingException mex) {\n\t\t\t\tmex.printStackTrace();\n\t\t\t}"
+    }
+]

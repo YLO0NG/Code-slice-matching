@@ -1,0 +1,27 @@
+{
+  "className": "Geom",
+  "methodName": "pointToAngle",
+  "brief": "static public double pointToAngle(Rectangle r, Point p){}",
+  "methodSignature": "pointToAngle(Rectangle, Point)",
+  "sourceCode": "static public double pointToAngle(Rectangle r, Point p) {\n        int px = p.x - (r.x+r.width/2);\n        int py = p.y - (r.y+r.height/2);\n        return Math.atan2(py*r.width, px*r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "java.awt.Point": [],
+    "java.lang.Math": [
+      "atan2(double, double)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the angle of a point relative to a rectangle.\n */\nstatic public double pointToAngle(Rectangle r, Point p) {\n    int px = p.x - (r.x + r.width / 2);\n    int py = p.y - (r.y + r.height / 2);\n    return Math.atan2(py * r.width, px * r.height);\n}",
+  "method_comment": "\n     * Gets the angle of a point relative to a rectangle.\n     ",
+  "method_annotation": ""
+}

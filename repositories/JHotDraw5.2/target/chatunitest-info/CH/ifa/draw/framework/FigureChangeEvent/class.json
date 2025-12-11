@@ -1,0 +1,62 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.FigureChangeEvent",
+  "className": "FigureChangeEvent",
+  "index": 63,
+  "modifier": "[public ]",
+  "extend": "[EventObject]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public class FigureChangeEvent",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Rectangle;",
+    "import java.util.EventObject;"
+  ],
+  "fields": [
+    "private Rectangle fRectangle;",
+    "private static final Rectangle  fgEmptyRectangle = new Rectangle(0, 0, 0, 0);"
+  ],
+  "superClasses": [
+    "EventObject"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getFigure()": "0",
+    "getInvalidatedRectangle()": "1",
+    "FigureChangeEvent(Figure, Rectangle)": "2",
+    "FigureChangeEvent(Figure)": "3"
+  },
+  "methodsBrief": [
+    "public Figure getFigure(){}",
+    "public Rectangle getInvalidatedRectangle(){}",
+    "public FigureChangeEvent(Figure source, Rectangle r){}",
+    "public FigureChangeEvent(Figure source){}"
+  ],
+  "constructorSigs": [
+    "FigureChangeEvent(Figure, Rectangle)",
+    "FigureChangeEvent(Figure)"
+  ],
+  "constructorBrief": [
+    "public FigureChangeEvent(Figure source, Rectangle r){}",
+    "public FigureChangeEvent(Figure source){}"
+  ],
+  "getterSetterSigs": [
+    "getFigure()",
+    "getInvalidatedRectangle()"
+  ],
+  "getterSetterBrief": [
+    "public Figure getFigure(){}",
+    "public Rectangle getInvalidatedRectangle(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "java.awt.Rectangle": []
+  },
+  "compilationUnitCode": "/*\n * @(#)FigureChangeEvent.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.Rectangle;\nimport java.util.EventObject;\n\n/**\n * FigureChange event passed to FigureChangeListeners.\n */\npublic class FigureChangeEvent extends EventObject {\n\n    private Rectangle fRectangle;\n\n    private static final Rectangle fgEmptyRectangle = new Rectangle(0, 0, 0, 0);\n\n    public FigureChangeEvent(Figure source, Rectangle r) {\n        super(source);\n        fRectangle = r;\n    }\n\n    public FigureChangeEvent(Figure source) {\n        super(source);\n        fRectangle = fgEmptyRectangle;\n    }\n\n    /**\n     *  Gets the changed figure\n     */\n    public Figure getFigure() {\n        return (Figure) getSource();\n    }\n\n    /**\n     *  Gets the changed rectangle\n     */\n    public Rectangle getInvalidatedRectangle() {\n        return fRectangle;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * FigureChange event passed to FigureChangeListeners.\n */\npublic class FigureChangeEvent extends EventObject {\n\n    private Rectangle fRectangle;\n\n    private static final Rectangle fgEmptyRectangle = new Rectangle(0, 0, 0, 0);\n\n    public FigureChangeEvent(Figure source, Rectangle r) {\n        super(source);\n        fRectangle = r;\n    }\n\n    public FigureChangeEvent(Figure source) {\n        super(source);\n        fRectangle = fgEmptyRectangle;\n    }\n\n    /**\n     *  Gets the changed figure\n     */\n    public Figure getFigure() {\n        return (Figure) getSource();\n    }\n\n    /**\n     *  Gets the changed rectangle\n     */\n    public Rectangle getInvalidatedRectangle() {\n        return fRectangle;\n    }\n}",
+  "subClasses": []
+}

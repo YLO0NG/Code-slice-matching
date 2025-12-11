@@ -1,0 +1,22 @@
+{
+  "className": "SVNFile",
+  "methodName": "setType",
+  "brief": "public void setType(){}",
+  "methodSignature": "setType()",
+  "sourceCode": "public void setType() {\n\t\tif(name.endsWith(\"txt\") || name.endsWith(\"doc\") || name.endsWith(\"docx\") || name.endsWith(\"rtf\") || name.endsWith(\"pdf\")) {\n\t\t\ttype = \"Text\";\n\t\t}\n\t\telse if(name.endsWith(\"jpeg\") || name.endsWith(\"png\") || name.endsWith(\"mpeg\") || name.endsWith(\"avi\") || name.endsWith(\"ppt\")) {\n\t\t\ttype = \"Media\";\n\t\t}\n\t\telse if(name.endsWith(\".java\") || name.endsWith(\".php\") || name.endsWith(\".py\") || name.endsWith(\".c\") || name.endsWith(\".cpp\") || name.endsWith(\".as\") || name.endsWith(\".rb\") || name.endsWith(\".vb\") || name.endsWith(\".cgi\") || name.endsWith(\".js\")) {\n\t\t\ttype = \"Source\";\n\t\t}\n\t\telse if(name.endsWith(\"html\")) {\n\t\t\ttype = \"Html\";\n\t\t}\n\t\telse {\n\t\t\ttype = \"Misc\";\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.String": [
+      "endsWith(String)"
+    ]
+  },
+  "full_method_info": "public void setType() {\n    if (name.endsWith(\"txt\") || name.endsWith(\"doc\") || name.endsWith(\"docx\") || name.endsWith(\"rtf\") || name.endsWith(\"pdf\")) {\n        type = \"Text\";\n    } else if (name.endsWith(\"jpeg\") || name.endsWith(\"png\") || name.endsWith(\"mpeg\") || name.endsWith(\"avi\") || name.endsWith(\"ppt\")) {\n        type = \"Media\";\n    } else if (name.endsWith(\".java\") || name.endsWith(\".php\") || name.endsWith(\".py\") || name.endsWith(\".c\") || name.endsWith(\".cpp\") || name.endsWith(\".as\") || name.endsWith(\".rb\") || name.endsWith(\".vb\") || name.endsWith(\".cgi\") || name.endsWith(\".js\")) {\n        type = \"Source\";\n    } else if (name.endsWith(\"html\")) {\n        type = \"Html\";\n    } else {\n        type = \"Misc\";\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

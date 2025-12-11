@@ -1,0 +1,22 @@
+{
+  "className": "Storable",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw);",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": []
+  },
+  "full_method_info": "/**\n * Writes the object to the StorableOutput.\n */\npublic void write(StorableOutput dw);",
+  "method_comment": "\n     * Writes the object to the StorableOutput.\n     ",
+  "method_annotation": ""
+}

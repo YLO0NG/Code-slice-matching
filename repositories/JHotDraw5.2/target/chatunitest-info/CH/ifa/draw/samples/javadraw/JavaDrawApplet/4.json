@@ -1,0 +1,29 @@
+{
+  "className": "JavaDrawApplet",
+  "methodName": "startAnimation",
+  "brief": "public void startAnimation(){}",
+  "methodSignature": "startAnimation()",
+  "sourceCode": "public void startAnimation() {\n        if (drawing() instanceof Animatable && fAnimator == null) {\n            fAnimator = new Animator((Animatable)drawing(), view());\n            fAnimator.start();\n            fAnimationButton.setText(\"End Animation\");\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.applet.DrawApplet": [
+      "view()",
+      "drawing()"
+    ],
+    "CH.ifa.draw.samples.javadraw.Animator": [
+      "start()"
+    ],
+    "javax.swing.AbstractButton": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "// -- animation support ----------------------------------------------\npublic void startAnimation() {\n    if (drawing() instanceof Animatable && fAnimator == null) {\n        fAnimator = new Animator((Animatable) drawing(), view());\n        fAnimator.start();\n        fAnimationButton.setText(\"End Animation\");\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

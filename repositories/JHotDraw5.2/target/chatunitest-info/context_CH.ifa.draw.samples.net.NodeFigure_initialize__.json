@@ -1,0 +1,17 @@
+{
+  "targetClass": "CH.ifa.draw.samples.net.NodeFigure",
+  "targetMethod": "initialize()",
+  "dependentFields": {
+    "CH.ifa.draw.standard.RelativeLocator": "private static final long serialVersionUID = 2619148876087898602L;\nprivate int relativeLocatorSerializedDataVersion = 1;\ndouble  fRelativeX;\ndouble  fRelativeY;",
+    "CH.ifa.draw.figures.TextFigure": "private int               fOriginX;\nprivate int               fOriginY;\ntransient private boolean fSizeIsDirty = true;\ntransient private int     fWidth;\ntransient private int     fHeight;\nprivate String  fText;\nprivate Font    fFont;\nprivate boolean fIsReadOnly;\nprivate Figure  fObservedFigure = null;\nprivate OffsetLocator fLocator = null;\nprivate static String fgCurrentFontName  = \"Helvetica\";\nprivate static int    fgCurrentFontSize  = 12;\nprivate static int    fgCurrentFontStyle = Font.PLAIN;\nprivate static final long serialVersionUID = 4599820785949456124L;\nprivate int textFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.samples.net.NodeFigure": "private static final int BORDER = 6;\nprivate Vector      fConnectors;\nprivate boolean     fConnectorsVisible;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.RelativeLocator": "static public Locator north(){}\nstatic public Locator south(){}\nstatic public Locator west(){}\nstatic public Locator east(){}",
+    "CH.ifa.draw.figures.TextFigure": "public void setFont(Font newFont){}\npublic void setText(String newText){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.RelativeLocator": "* North.\n     \nstatic public Locator north() {\n        return new RelativeLocator(0.5, 0.0);\n    }\n\n     * South.\n     \nstatic public Locator south() {\n        return new RelativeLocator(0.5, 1.0);\n    }\n\n     * West.\n     \nstatic public Locator west() {\n        return new RelativeLocator(0.0, 0.5);\n    }\nstatic public Locator east() {\n        return new RelativeLocator(1.0, 0.5);\n    }",
+    "CH.ifa.draw.figures.TextFigure": "* Sets the font.\n     \npublic void setFont(Font newFont) {\n        willChange();\n        fFont = newFont;\n        markDirty();\n        changed();\n    }\n\n     * Sets the text shown by the text figure.\n     \npublic void setText(String newText) {\n        if (!newText.equals(fText)) {\n            willChange();\n            fText = new String(newText);\n            markDirty();\n            changed();\n        }\n    }"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "className": "Stemmer",
+  "methodName": "step5",
+  "brief": "private final void step5()\r\n  {}",
+  "methodSignature": "step5()",
+  "sourceCode": "private final void step5()\n   {   if (k == 0) return; /* for Bug 1 */ switch (b[k-1])\n       {  case 'a': if (ends(\"al\")) break; return;\n          case 'c': if (ends(\"ance\")) break;\n                    if (ends(\"ence\")) break; return;\n          case 'e': if (ends(\"er\")) break; return;\n          case 'i': if (ends(\"ic\")) break; return;\n          case 'l': if (ends(\"able\")) break;\n                    if (ends(\"ible\")) break; return;\n          case 'n': if (ends(\"ant\")) break;\n                    if (ends(\"ement\")) break;\n                    if (ends(\"ment\")) break;\n                    /* element etc. not stripped before the m */\n                    if (ends(\"ent\")) break; return;\n          case 'o': if (ends(\"ion\") && j >= 0 && (b[j] == 's' || b[j] == 't')) break;\n                                    /* j >= 0 fixes Bug 2 */\n                    if (ends(\"ou\")) break; return;\n                    /* takes care of -ous */\n          case 's': if (ends(\"ism\")) break; return;\n          case 't': if (ends(\"ate\")) break;\n                    if (ends(\"iti\")) break; return;\n          case 'u': if (ends(\"ous\")) break; return;\n          case 'v': if (ends(\"ive\")) break; return;\n          case 'z': if (ends(\"ize\")) break; return;\n          default: return;\n       }\n       if (m() > 1) k = j;\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "ends(String)",
+      "m()"
+    ]
+  },
+  "full_method_info": "/* step5() takes off -ant, -ence etc., in context <c>vcvc<v>. */\nprivate final void step5() {\n    if (k == 0)\n        return;\n    /* for Bug 1 */\n    switch(b[k - 1]) {\n        case 'a':\n            if (ends(\"al\"))\n                break;\n            return;\n        case 'c':\n            if (ends(\"ance\"))\n                break;\n            if (ends(\"ence\"))\n                break;\n            return;\n        case 'e':\n            if (ends(\"er\"))\n                break;\n            return;\n        case 'i':\n            if (ends(\"ic\"))\n                break;\n            return;\n        case 'l':\n            if (ends(\"able\"))\n                break;\n            if (ends(\"ible\"))\n                break;\n            return;\n        case 'n':\n            if (ends(\"ant\"))\n                break;\n            if (ends(\"ement\"))\n                break;\n            if (ends(\"ment\"))\n                break;\n            /* element etc. not stripped before the m */\n            if (ends(\"ent\"))\n                break;\n            return;\n        case 'o':\n            if (ends(\"ion\") && j >= 0 && (b[j] == 's' || b[j] == 't'))\n                break;\n            /* j >= 0 fixes Bug 2 */\n            if (ends(\"ou\"))\n                break;\n            return;\n        /* takes care of -ous */\n        case 's':\n            if (ends(\"ism\"))\n                break;\n            return;\n        case 't':\n            if (ends(\"ate\"))\n                break;\n            if (ends(\"iti\"))\n                break;\n            return;\n        case 'u':\n            if (ends(\"ous\"))\n                break;\n            return;\n        case 'v':\n            if (ends(\"ive\"))\n                break;\n            return;\n        case 'z':\n            if (ends(\"ize\"))\n                break;\n            return;\n        default:\n            return;\n    }\n    if (m() > 1)\n        k = j;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

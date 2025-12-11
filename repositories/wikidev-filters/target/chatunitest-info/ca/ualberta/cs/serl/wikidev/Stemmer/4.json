@@ -1,0 +1,18 @@
+{
+  "className": "Stemmer",
+  "methodName": "getResultBuffer",
+  "brief": "public char[] getResultBuffer(){}",
+  "methodSignature": "getResultBuffer()",
+  "sourceCode": "public char[] getResultBuffer() { return b; }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns a reference to a character buffer containing the results of\n * the stemming process.  You also need to consult getResultLength()\n * to determine the length of the result.\n */\npublic char[] getResultBuffer() {\n    return b;\n}",
+  "method_comment": "\n    * Returns a reference to a character buffer containing the results of\n    * the stemming process.  You also need to consult getResultLength()\n    * to determine the length of the result.\n    ",
+  "method_annotation": ""
+}

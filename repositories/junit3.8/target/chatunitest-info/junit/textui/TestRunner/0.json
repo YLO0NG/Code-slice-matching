@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "run",
+  "brief": "static public void run(Class testClass){}",
+  "methodSignature": "run(Class)",
+  "sourceCode": "static public void run(Class testClass) {\r\n\t\trun(new TestSuite(testClass));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Class"
+  ],
+  "dependentMethods": {
+    "java.lang.Class": [],
+    "junit.textui.TestRunner": [
+      "run(Test)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Runs a suite extracted from a TestCase subclass.\r\n */\r\nstatic public void run(Class testClass) {\r\n    run(new TestSuite(testClass));\r\n}",
+  "method_comment": "\r\n\t * Runs a suite extracted from a TestCase subclass.\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "ProgressBar",
+  "methodName": "setBounds",
+  "brief": "public void setBounds(int x, int y, int w, int h){}",
+  "methodSignature": "setBounds(int, int, int, int)",
+  "sourceCode": "public void setBounds(int x, int y, int w, int h) {\r\n\t\tsuper.setBounds(x, y, w, h);\r\n\t\tfProgressX= scale(fProgress);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": [
+      "setBounds(int, int, int, int)"
+    ],
+    "junit.awtui.ProgressBar": [
+      "scale(int)"
+    ]
+  },
+  "full_method_info": "public void setBounds(int x, int y, int w, int h) {\r\n    super.setBounds(x, y, w, h);\r\n    fProgressX = scale(fProgress);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

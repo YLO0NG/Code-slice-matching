@@ -1,0 +1,23 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getRowSum",
+  "brief": "public static double getRowSum(double[][] m, int i){}",
+  "methodSignature": "getRowSum(double[][], int)",
+  "sourceCode": "public static double getRowSum(double[][] m, int i) {\n\t\t   return DoubleArray.sum(DoubleArray.getRowCopy(m, i));\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]",
+    "int"
+  ],
+  "dependentMethods": {
+    "double[]": []
+  },
+  "full_method_info": "public static double getRowSum(double[][] m, int i) {\n    return DoubleArray.sum(DoubleArray.getRowCopy(m, i));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

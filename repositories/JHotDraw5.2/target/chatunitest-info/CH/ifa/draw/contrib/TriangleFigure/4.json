@@ -1,0 +1,22 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "connectionInsets",
+  "brief": "public Insets connectionInsets(){}",
+  "methodSignature": "connectionInsets()",
+  "sourceCode": "public Insets connectionInsets() {\n    Rectangle r = displayBox();\n    switch(fRotation) {\n    case 0:\n      return new Insets(r.height, r.width/2, 0, r.width/2);\n    case 1:\n      return new Insets(0, r.width, r.height, 0);\n    case 2:\n      return new Insets(r.height/2, 0, r.height/2, r.width);\n    case 3:\n      return new Insets(r.height, r.width, 0, 0);\n    case 4:\n      return new Insets(0, r.width/2, r.height, r.width/2);\n    case 5:\n      return new Insets(r.height, 0, 0, r.width);\n    case 6:\n      return new Insets(r.height/2, r.width, r.height/2, 0);\n    case 7:\n      return new Insets(0, 0, r.height, r.width);\n    default:\n      return null;\n    }\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public Insets connectionInsets() {\n    Rectangle r = displayBox();\n    switch(fRotation) {\n        case 0:\n            return new Insets(r.height, r.width / 2, 0, r.width / 2);\n        case 1:\n            return new Insets(0, r.width, r.height, 0);\n        case 2:\n            return new Insets(r.height / 2, 0, r.height / 2, r.width);\n        case 3:\n            return new Insets(r.height, r.width, 0, 0);\n        case 4:\n            return new Insets(0, r.width / 2, r.height, r.width / 2);\n        case 5:\n            return new Insets(r.height, 0, 0, r.width);\n        case 6:\n            return new Insets(r.height / 2, r.width, r.height / 2, 0);\n        case 7:\n            return new Insets(0, 0, r.height, r.width);\n        default:\n            return null;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

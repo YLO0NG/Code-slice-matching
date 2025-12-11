@@ -1,0 +1,24 @@
+{
+  "className": "Stemmer",
+  "methodName": "cvc",
+  "brief": "private final boolean cvc(int i)\r\n  {}",
+  "methodSignature": "cvc(int)",
+  "sourceCode": "private final boolean cvc(int i)\n   {  if (i < 2 || !cons(i) || cons(i-1) || !cons(i-2)) return false;\n      {  int ch = b[i];\n         if (ch == 'w' || ch == 'x' || ch == 'y') return false;\n      }\n      return true;\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "cons(int)"
+    ]
+  },
+  "full_method_info": "/* cvc(i) is true <=> i-2,i-1,i has the form consonant - vowel - consonant\n      and also if the second c is not w,x or y. this is used when trying to\n      restore an e at the end of a short word. e.g.\n\n         cav(e), lov(e), hop(e), crim(e), but\n         snow, box, tray.\n\n   */\nprivate final boolean cvc(int i) {\n    if (i < 2 || !cons(i) || cons(i - 1) || !cons(i - 2))\n        return false;\n    {\n        int ch = b[i];\n        if (ch == 'w' || ch == 'x' || ch == 'y')\n            return false;\n    }\n    return true;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,103 @@
+{
+  "fullClassName": "CH.ifa.draw.util.StandardStorageFormat",
+  "className": "StandardStorageFormat",
+  "index": 165,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[StorageFormat]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public class StandardStorageFormat",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.filechooser.FileFilter;",
+    "import java.io.IOException;",
+    "import java.io.FileInputStream;",
+    "import java.io.FileOutputStream;",
+    "import java.io.File;",
+    "import CH.ifa.draw.framework.Drawing;"
+  ],
+  "fields": [
+    "private FileFilter myFileFilter;",
+    "private String myFileExtension;",
+    "private String myFileDescription;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "StorageFormat"
+  ],
+  "methodSigs": {
+    "createFileExtension()": "0",
+    "setFileExtension(String)": "1",
+    "getFileExtension()": "2",
+    "createFileDescription()": "3",
+    "setFileDescription(String)": "4",
+    "getFileDescription()": "5",
+    "createFileFilter()": "6",
+    "setFileFilter(FileFilter)": "7",
+    "getFileFilter()": "8",
+    "store(String, Drawing)": "9",
+    "restore(String)": "10",
+    "equals(Object)": "11",
+    "adjustFileName(String)": "12",
+    "hasCorrectFileExtension(String)": "13",
+    "StandardStorageFormat()": "14"
+  },
+  "methodsBrief": [
+    "protected String createFileExtension(){}",
+    "public void setFileExtension(String newFileExtension){}",
+    "public String getFileExtension(){}",
+    "public String createFileDescription(){}",
+    "public void setFileDescription(String newFileDescription){}",
+    "public String getFileDescription(){}",
+    "protected FileFilter createFileFilter(){}",
+    "public void setFileFilter(FileFilter newFileFilter){}",
+    "public FileFilter getFileFilter(){}",
+    "public String store(String fileName, Drawing saveDrawing) throws IOException{}",
+    "public Drawing restore(String fileName) throws IOException{}",
+    "public boolean equals(Object compareObject){}",
+    "protected String adjustFileName(String testFileName){}",
+    "protected boolean hasCorrectFileExtension(String testFileName){}",
+    "public StandardStorageFormat(){}"
+  ],
+  "constructorSigs": [
+    "StandardStorageFormat()"
+  ],
+  "constructorBrief": [
+    "public StandardStorageFormat(){}"
+  ],
+  "getterSetterSigs": [
+    "setFileExtension(String)",
+    "getFileExtension()",
+    "setFileDescription(String)",
+    "getFileDescription()",
+    "setFileFilter(FileFilter)",
+    "getFileFilter()"
+  ],
+  "getterSetterBrief": [
+    "public void setFileExtension(String newFileExtension){}",
+    "public String getFileExtension(){}",
+    "public void setFileDescription(String newFileDescription){}",
+    "public String getFileDescription(){}",
+    "public void setFileFilter(FileFilter newFileFilter){}",
+    "public FileFilter getFileFilter(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "setFileDescription(String)",
+      "createFileDescription()",
+      "createFileExtension()",
+      "setFileExtension(String)",
+      "createFileFilter()",
+      "setFileFilter(FileFilter)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)StandardStorageFormat.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.filechooser.FileFilter;\nimport java.io.IOException;\nimport java.io.FileInputStream;\nimport java.io.FileOutputStream;\nimport java.io.File;\nimport CH.ifa.draw.framework.Drawing;\n\n/**\n * A StandardStorageFormat is an internal file format to store and restore\n * Drawings. It uses its own descriptive syntax ands write classes and attributes\n * as plain text in a text file. The StandardStorageFormat has the file extension\n * \"draw\" (e.g. my_picasso.draw).\n *\n * @author Wolfram Kaiser\n */\npublic class StandardStorageFormat implements StorageFormat {\n\n    /**\n     * FileFilter for a javax.swing.JFileChooser which recognizes files with the\n     * extension \"draw\"\n     */\n    private FileFilter myFileFilter;\n\n    /**\n     * File extension\n     */\n    private String myFileExtension;\n\n    /**\n     * Description of the file type when displaying the FileFilter\n     */\n    private String myFileDescription;\n\n    public StandardStorageFormat() {\n        setFileExtension(createFileExtension());\n        setFileDescription(createFileDescription());\n        setFileFilter(createFileFilter());\n    }\n\n    /**\n     * Factory method to create the file extension recognized by the FileFilter for this\n     * StandardStorageFormat. The StandardStorageFormat has the file extension \"draw\"\n     * (e.g. my_picasso.draw).\n     *\n     * @return new file extension\n     */\n    protected String createFileExtension() {\n        return myFileExtension = \"draw\";\n    }\n\n    /**\n     * Set the file extension for the storage format\n     *\n     * @param file extension\n     */\n    public void setFileExtension(String newFileExtension) {\n        myFileExtension = newFileExtension;\n    }\n\n    /**\n     * Return the file extension for the storage format\n     *\n     * @return file extension\n     */\n    public String getFileExtension() {\n        return myFileExtension;\n    }\n\n    /**\n     * Factory method to create a file description for the file type when displaying the\n     * associated FileFilter.\n     *\n     * @return new file description\n     */\n    public String createFileDescription() {\n        return \"Internal Format (\" + getFileExtension() + \")\";\n    }\n\n    /**\n     * Set the file description for the file type of the storage format\n     *\n     * @param newFileDescription description of the file type\n     */\n    public void setFileDescription(String newFileDescription) {\n        myFileDescription = newFileDescription;\n    }\n\n    /**\n     * Return the file description for the file type of the storage format\n     *\n     * @return description of the file type\n     */\n    public String getFileDescription() {\n        return myFileDescription;\n    }\n\n    /**\n     * Factory method to create a FileFilter that accepts file with the appropriate\n     * file exention used by a javax.swing.JFileChooser. Subclasses can override this\n     * method to provide their own file filters.\n     *\n     * @return FileFilter for this StorageFormat\n     */\n    protected FileFilter createFileFilter() {\n        return new FileFilter() {\n\n            public boolean accept(File checkFile) {\n                // still display directories for navigation\n                if (checkFile.isDirectory()) {\n                    return true;\n                } else {\n                    return checkFile.getName().endsWith(\".\" + myFileExtension);\n                }\n            }\n\n            public String getDescription() {\n                return getFileDescription();\n            }\n        };\n    }\n\n    /**\n     * Set the FileFilter used to identify Drawing files with the correct file\n     * extension for this StorageFormat.\n     *\n     * @param newFileFilter FileFilter for this StorageFormat\n     */\n    public void setFileFilter(FileFilter newFileFilter) {\n        myFileFilter = newFileFilter;\n    }\n\n    /**\n     * Return the FileFilter used to identify Drawing files with the correct file\n     * extension for this StorageFormat.\n     *\n     * @return FileFilter for this StorageFormat\n     */\n    public FileFilter getFileFilter() {\n        return myFileFilter;\n    }\n\n    /**\n     * Store a Drawing under a given name. If the file name does not have the correct\n     * file extension, then the file extension is added.\n     *\n     * @param fileName file name of the Drawing under which it should be stored\n     * @param saveDrawing drawing to be saved\n     * @return file name with correct file extension\n     */\n    public String store(String fileName, Drawing saveDrawing) throws IOException {\n        FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n        StorableOutput output = new StorableOutput(stream);\n        output.writeStorable(saveDrawing);\n        output.close();\n        if (!hasCorrectFileExtension(fileName)) {\n            return fileName + \".\" + getFileExtension();\n        } else {\n            return fileName;\n        }\n    }\n\n    /**\n     * Restore a Drawing from a file with a given name.\n     *\n     * @param name of the file in which the Drawing has been saved\n     * @return restored Drawing\n     */\n    public Drawing restore(String fileName) throws IOException {\n        if (!hasCorrectFileExtension(fileName)) {\n            return null;\n        } else {\n            FileInputStream stream = new FileInputStream(fileName);\n            StorableInput input = new StorableInput(stream);\n            return (Drawing) input.readStorable();\n        }\n    }\n\n    /**\n     * Test, whether two StorageFormats are the same. They are the same if they both support the\n     * same file extension.\n     *\n     * @return true, if both StorageFormats have the same file extension, false otherwise\n     */\n    public boolean equals(Object compareObject) {\n        if (compareObject instanceof StandardStorageFormat) {\n            return getFileExtension().equals(((StandardStorageFormat) compareObject).getFileExtension());\n        } else {\n            return false;\n        }\n    }\n\n    /**\n     * Adjust a file name to have the correct file extension.\n     *\n     * @param testFileName file name to be tested for a correct file extension\n     * @return testFileName + file extension if necessary\n     */\n    protected String adjustFileName(String testFileName) {\n        if (!hasCorrectFileExtension(testFileName)) {\n            return testFileName + \".\" + getFileExtension();\n        } else {\n            return testFileName;\n        }\n    }\n\n    /**\n     * Test whether the file name has the correct file extension\n     *\n     * @return true, if the file has the correct extension, false otherwise\n     */\n    protected boolean hasCorrectFileExtension(String testFileName) {\n        return testFileName.endsWith(\".\" + getFileExtension());\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A StandardStorageFormat is an internal file format to store and restore\n * Drawings. It uses its own descriptive syntax ands write classes and attributes\n * as plain text in a text file. The StandardStorageFormat has the file extension\n * \"draw\" (e.g. my_picasso.draw).\n *\n * @author Wolfram Kaiser\n */\npublic class StandardStorageFormat implements StorageFormat {\n\n    /**\n     * FileFilter for a javax.swing.JFileChooser which recognizes files with the\n     * extension \"draw\"\n     */\n    private FileFilter myFileFilter;\n\n    /**\n     * File extension\n     */\n    private String myFileExtension;\n\n    /**\n     * Description of the file type when displaying the FileFilter\n     */\n    private String myFileDescription;\n\n    public StandardStorageFormat() {\n        setFileExtension(createFileExtension());\n        setFileDescription(createFileDescription());\n        setFileFilter(createFileFilter());\n    }\n\n    /**\n     * Factory method to create the file extension recognized by the FileFilter for this\n     * StandardStorageFormat. The StandardStorageFormat has the file extension \"draw\"\n     * (e.g. my_picasso.draw).\n     *\n     * @return new file extension\n     */\n    protected String createFileExtension() {\n        return myFileExtension = \"draw\";\n    }\n\n    /**\n     * Set the file extension for the storage format\n     *\n     * @param file extension\n     */\n    public void setFileExtension(String newFileExtension) {\n        myFileExtension = newFileExtension;\n    }\n\n    /**\n     * Return the file extension for the storage format\n     *\n     * @return file extension\n     */\n    public String getFileExtension() {\n        return myFileExtension;\n    }\n\n    /**\n     * Factory method to create a file description for the file type when displaying the\n     * associated FileFilter.\n     *\n     * @return new file description\n     */\n    public String createFileDescription() {\n        return \"Internal Format (\" + getFileExtension() + \")\";\n    }\n\n    /**\n     * Set the file description for the file type of the storage format\n     *\n     * @param newFileDescription description of the file type\n     */\n    public void setFileDescription(String newFileDescription) {\n        myFileDescription = newFileDescription;\n    }\n\n    /**\n     * Return the file description for the file type of the storage format\n     *\n     * @return description of the file type\n     */\n    public String getFileDescription() {\n        return myFileDescription;\n    }\n\n    /**\n     * Factory method to create a FileFilter that accepts file with the appropriate\n     * file exention used by a javax.swing.JFileChooser. Subclasses can override this\n     * method to provide their own file filters.\n     *\n     * @return FileFilter for this StorageFormat\n     */\n    protected FileFilter createFileFilter() {\n        return new FileFilter() {\n\n            public boolean accept(File checkFile) {\n                // still display directories for navigation\n                if (checkFile.isDirectory()) {\n                    return true;\n                } else {\n                    return checkFile.getName().endsWith(\".\" + myFileExtension);\n                }\n            }\n\n            public String getDescription() {\n                return getFileDescription();\n            }\n        };\n    }\n\n    /**\n     * Set the FileFilter used to identify Drawing files with the correct file\n     * extension for this StorageFormat.\n     *\n     * @param newFileFilter FileFilter for this StorageFormat\n     */\n    public void setFileFilter(FileFilter newFileFilter) {\n        myFileFilter = newFileFilter;\n    }\n\n    /**\n     * Return the FileFilter used to identify Drawing files with the correct file\n     * extension for this StorageFormat.\n     *\n     * @return FileFilter for this StorageFormat\n     */\n    public FileFilter getFileFilter() {\n        return myFileFilter;\n    }\n\n    /**\n     * Store a Drawing under a given name. If the file name does not have the correct\n     * file extension, then the file extension is added.\n     *\n     * @param fileName file name of the Drawing under which it should be stored\n     * @param saveDrawing drawing to be saved\n     * @return file name with correct file extension\n     */\n    public String store(String fileName, Drawing saveDrawing) throws IOException {\n        FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n        StorableOutput output = new StorableOutput(stream);\n        output.writeStorable(saveDrawing);\n        output.close();\n        if (!hasCorrectFileExtension(fileName)) {\n            return fileName + \".\" + getFileExtension();\n        } else {\n            return fileName;\n        }\n    }\n\n    /**\n     * Restore a Drawing from a file with a given name.\n     *\n     * @param name of the file in which the Drawing has been saved\n     * @return restored Drawing\n     */\n    public Drawing restore(String fileName) throws IOException {\n        if (!hasCorrectFileExtension(fileName)) {\n            return null;\n        } else {\n            FileInputStream stream = new FileInputStream(fileName);\n            StorableInput input = new StorableInput(stream);\n            return (Drawing) input.readStorable();\n        }\n    }\n\n    /**\n     * Test, whether two StorageFormats are the same. They are the same if they both support the\n     * same file extension.\n     *\n     * @return true, if both StorageFormats have the same file extension, false otherwise\n     */\n    public boolean equals(Object compareObject) {\n        if (compareObject instanceof StandardStorageFormat) {\n            return getFileExtension().equals(((StandardStorageFormat) compareObject).getFileExtension());\n        } else {\n            return false;\n        }\n    }\n\n    /**\n     * Adjust a file name to have the correct file extension.\n     *\n     * @param testFileName file name to be tested for a correct file extension\n     * @return testFileName + file extension if necessary\n     */\n    protected String adjustFileName(String testFileName) {\n        if (!hasCorrectFileExtension(testFileName)) {\n            return testFileName + \".\" + getFileExtension();\n        } else {\n            return testFileName;\n        }\n    }\n\n    /**\n     * Test whether the file name has the correct file extension\n     *\n     * @return true, if the file has the correct extension, false otherwise\n     */\n    protected boolean hasCorrectFileExtension(String testFileName) {\n        return testFileName.endsWith(\".\" + getFileExtension());\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.util.SerializationStorageFormat"
+  ]
+}

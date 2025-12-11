@@ -1,0 +1,54 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "createContents",
+  "brief": "protected JComponent createContents(StandardDrawingView view){}",
+  "methodSignature": "createContents(StandardDrawingView)",
+  "sourceCode": "protected JComponent createContents(StandardDrawingView view) {\n\t\tJComponent contents = super.createContents(view);\n\t\tMDI_InternalFrame internalFrame = createInternalFrame();\n\t\tinternalFrame.setDrawingView(view);\n\t\tinternalFrame.setSize(200, 200);\n\t\tinternalFrame.getContentPane().add(contents);\n\t\tif (currentFrame == null) {\n\t\t\tcurrentFrame = internalFrame;\n\t\t\tbackupDrawingView = createDrawingView();\n\t\t}\n\n\t\t// all registered listeners to the new internal frame\n\t\tEnumeration enumeration = mdiListeners.elements();\n\t\twhile (enumeration.hasMoreElements()) {\n\t\t\tinternalFrame.addInternalFrameListener((InternalFrameListener)enumeration.nextElement());\n\t\t}\n\n\t\tgetDesktop().add(internalFrame);\n\t\ttry {\n\t\t\tinternalFrame.setSelected(true);\n\t\t}\n\t\tcatch (java.beans.PropertyVetoException e) {\n\t\t\t// ignore\n\t\t}\n\t\tinternalFrame.setVisible(true);\n\t\t// return container in which the internal frame is embedded\n\t\treturn getDesktop();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createContents(StandardDrawingView)",
+      "createDrawingView()"
+    ],
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "createInternalFrame()",
+      "getDesktop()"
+    ],
+    "CH.ifa.draw.contrib.MDI_InternalFrame": [
+      "setDrawingView(DrawingView)"
+    ],
+    "java.awt.Component": [
+      "setSize(int, int)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ],
+    "javax.swing.JInternalFrame": [
+      "setSelected(boolean)",
+      "addInternalFrameListener(InternalFrameListener)",
+      "getContentPane()"
+    ],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "javax.swing.JComponent": [
+      "setVisible(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the contents component of the application\n * frame. By default the DrawingView is returned in\n * a JScrollPane.\n */\nprotected JComponent createContents(StandardDrawingView view) {\n    JComponent contents = super.createContents(view);\n    MDI_InternalFrame internalFrame = createInternalFrame();\n    internalFrame.setDrawingView(view);\n    internalFrame.setSize(200, 200);\n    internalFrame.getContentPane().add(contents);\n    if (currentFrame == null) {\n        currentFrame = internalFrame;\n        backupDrawingView = createDrawingView();\n    }\n    // all registered listeners to the new internal frame\n    Enumeration enumeration = mdiListeners.elements();\n    while (enumeration.hasMoreElements()) {\n        internalFrame.addInternalFrameListener((InternalFrameListener) enumeration.nextElement());\n    }\n    getDesktop().add(internalFrame);\n    try {\n        internalFrame.setSelected(true);\n    } catch (java.beans.PropertyVetoException e) {\n        // ignore\n    }\n    internalFrame.setVisible(true);\n    // return container in which the internal frame is embedded\n    return getDesktop();\n}",
+  "method_comment": "\n\t* Creates the contents component of the application\n\t* frame. By default the DrawingView is returned in\n\t* a JScrollPane.\n\t",
+  "method_annotation": ""
+}

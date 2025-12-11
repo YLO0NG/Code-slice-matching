@@ -1,0 +1,30 @@
+{
+  "className": "SelectAreaTracker",
+  "methodName": "rubberBand",
+  "brief": "private void rubberBand(int x1, int y1, int x2, int y2)\r\n   {}",
+  "methodSignature": "rubberBand(int, int, int, int)",
+  "sourceCode": "private void rubberBand(int x1, int y1, int x2, int y2)\n    {\n        fSelectGroup = new Rectangle(new Point(x1, y1));\n        fSelectGroup.add(new Point(x2, y2));\n        drawXORRect(fSelectGroup);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "add(Point)"
+    ],
+    "CH.ifa.draw.standard.SelectAreaTracker": [
+      "drawXORRect(Rectangle)"
+    ]
+  },
+  "full_method_info": "private void rubberBand(int x1, int y1, int x2, int y2) {\n    fSelectGroup = new Rectangle(new Point(x1, y1));\n    fSelectGroup.add(new Point(x2, y2));\n    drawXORRect(fSelectGroup);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

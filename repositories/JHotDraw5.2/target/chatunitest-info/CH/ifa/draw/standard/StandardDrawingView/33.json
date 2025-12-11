@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "handleCursorKey",
+  "brief": "protected void handleCursorKey(int key){}",
+  "methodSignature": "handleCursorKey(int)",
+  "sourceCode": "protected void handleCursorKey(int key) {\n        int dx = 0, dy = 0;\n        int stepX = 1, stepY = 1;\n        // should consider Null Object.\n        if (fConstrainer != null) {\n            stepX = fConstrainer.getStepX();\n            stepY = fConstrainer.getStepY();\n        }\n\n        switch (key) {\n        case KeyEvent.VK_DOWN:\n            dy = stepY;\n            break;\n        case KeyEvent.VK_UP:\n            dy = -stepY;\n            break;\n        case KeyEvent.VK_RIGHT:\n            dx = stepX;\n            break;\n        case KeyEvent.VK_LEFT:\n            dx = -stepX;\n            break;\n        }\n        moveSelection(dx, dy);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.PointConstrainer": [
+      "getStepY()",
+      "getStepX()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "moveSelection(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles cursor keys by moving all the selected figures\n * one grid point in the cursor direction.\n */\nprotected void handleCursorKey(int key) {\n    int dx = 0, dy = 0;\n    int stepX = 1, stepY = 1;\n    // should consider Null Object.\n    if (fConstrainer != null) {\n        stepX = fConstrainer.getStepX();\n        stepY = fConstrainer.getStepY();\n    }\n    switch(key) {\n        case KeyEvent.VK_DOWN:\n            dy = stepY;\n            break;\n        case KeyEvent.VK_UP:\n            dy = -stepY;\n            break;\n        case KeyEvent.VK_RIGHT:\n            dx = stepX;\n            break;\n        case KeyEvent.VK_LEFT:\n            dx = -stepX;\n            break;\n    }\n    moveSelection(dx, dy);\n}",
+  "method_comment": "\n     * Handles cursor keys by moving all the selected figures\n     * one grid point in the cursor direction.\n     ",
+  "method_annotation": ""
+}

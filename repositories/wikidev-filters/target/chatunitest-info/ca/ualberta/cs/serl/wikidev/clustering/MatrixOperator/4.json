@@ -1,0 +1,27 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getAuthorityVector",
+  "brief": "public static double[] getAuthorityVector(double[][] adjacency){}",
+  "methodSignature": "getAuthorityVector(double[][])",
+  "sourceCode": "public static double[] getAuthorityVector(double[][] adjacency) {\n\t\tdouble[][] transpose = transpose(adjacency);\n\t\tdouble[][] product = multiplyMatrixes(transpose, adjacency);\n\t\treturn getPrincipalEigenVector(product);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "transpose(double[][])",
+      "getPrincipalEigenVector(double[][])",
+      "multiplyMatrixes(double[][], double[][])"
+    ]
+  },
+  "full_method_info": "public static double[] getAuthorityVector(double[][] adjacency) {\n    double[][] transpose = transpose(adjacency);\n    double[][] product = multiplyMatrixes(transpose, adjacency);\n    return getPrincipalEigenVector(product);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

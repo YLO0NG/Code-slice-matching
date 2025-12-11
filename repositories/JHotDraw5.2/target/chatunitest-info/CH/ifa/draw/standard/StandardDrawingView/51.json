@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "unfreezeView",
+  "brief": "public void unfreezeView(){}",
+  "methodSignature": "unfreezeView()",
+  "sourceCode": "public void unfreezeView() {\n        drawing().unlock();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "unlock()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()"
+    ]
+  },
+  "full_method_info": "/**\n * Unfreezes the view by releasing the drawing lock.\n * @see Drawing#unlock\n */\npublic void unfreezeView() {\n    drawing().unlock();\n}",
+  "method_comment": "\n     * Unfreezes the view by releasing the drawing lock.\n     * @see Drawing#unlock\n     ",
+  "method_annotation": ""
+}

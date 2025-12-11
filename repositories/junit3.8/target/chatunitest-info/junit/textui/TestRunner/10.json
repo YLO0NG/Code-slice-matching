@@ -1,0 +1,27 @@
+{
+  "className": "TestRunner",
+  "methodName": "pause",
+  "brief": "protected void pause(boolean wait){}",
+  "methodSignature": "pause(boolean)",
+  "sourceCode": "protected void pause(boolean wait) {\r\n\t\tif (!wait) return;\r\n\t\tfPrinter.printWaitPrompt();\r\n\t\ttry {\r\n\t\t\tSystem.in.read();\r\n\t\t}\r\n\t\tcatch(Exception e) {\r\n\t\t}\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {
+    "junit.textui.ResultPrinter": [
+      "printWaitPrompt()"
+    ],
+    "java.io.InputStream": [
+      "read()"
+    ]
+  },
+  "full_method_info": "protected void pause(boolean wait) {\r\n    if (!wait)\r\n        return;\r\n    fPrinter.printWaitPrompt();\r\n    try {\r\n        System.in.read();\r\n    } catch (Exception e) {\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

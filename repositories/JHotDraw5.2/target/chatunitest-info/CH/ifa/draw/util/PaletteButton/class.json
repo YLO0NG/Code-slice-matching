@@ -1,0 +1,81 @@
+{
+  "fullClassName": "CH.ifa.draw.util.PaletteButton",
+  "className": "PaletteButton",
+  "index": 159,
+  "modifier": "[public , abstract ]",
+  "extend": "[JButton]",
+  "implement": "[MouseListener, MouseMotionListener]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public abstract class PaletteButton",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;",
+    "import java.awt.event.*;"
+  ],
+  "fields": [
+    "static final int NORMAL = 1;",
+    "static final int PRESSED = 2;",
+    "static final int SELECTED = 3;",
+    "private PaletteListener  fListener;",
+    "private int             fState;",
+    "private int             fOldState;"
+  ],
+  "superClasses": [
+    "JButton"
+  ],
+  "implementedTypes": [
+    "MouseListener",
+    "MouseMotionListener"
+  ],
+  "methodSigs": {
+    "value()": "0",
+    "name()": "1",
+    "reset()": "2",
+    "select()": "3",
+    "mousePressed(MouseEvent)": "4",
+    "mouseDragged(MouseEvent)": "5",
+    "mouseReleased(MouseEvent)": "6",
+    "mouseMoved(MouseEvent)": "7",
+    "mouseExited(MouseEvent)": "8",
+    "mouseClicked(MouseEvent)": "9",
+    "mouseEntered(MouseEvent)": "10",
+    "PaletteButton(PaletteListener)": "11"
+  },
+  "methodsBrief": [
+    "public Object value(){}",
+    "public String name(){}",
+    "public void reset(){}",
+    "public void select(){}",
+    "public void mousePressed(MouseEvent e){}",
+    "public void mouseDragged(MouseEvent e){}",
+    "public void mouseReleased(MouseEvent e){}",
+    "public void mouseMoved(MouseEvent e){}",
+    "public void mouseExited(MouseEvent e){}",
+    "public void mouseClicked(MouseEvent e){}",
+    "public void mouseEntered(MouseEvent e){}",
+    "public PaletteButton(PaletteListener listener){}"
+  ],
+  "constructorSigs": [
+    "PaletteButton(PaletteListener)"
+  ],
+  "constructorBrief": [
+    "public PaletteButton(PaletteListener listener){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.util.PaletteListener": [],
+    "java.awt.Component": [
+      "addMouseListener(MouseListener)",
+      "addMouseMotionListener(MouseMotionListener)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)PaletteButton.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.*;\n\n/**\n * A palette button is a three state button. The states are normal\n * pressed and selected. It uses to the palette listener interface\n * to notify about state changes.\n *\n * @see PaletteListener\n * @see PaletteLayout\n */\npublic abstract class PaletteButton extends JButton implements MouseListener, MouseMotionListener {\n\n    static final int NORMAL = 1;\n\n    static final int PRESSED = 2;\n\n    static final int SELECTED = 3;\n\n    private PaletteListener fListener;\n\n    private int fState;\n\n    private int fOldState;\n\n    public PaletteButton(PaletteListener listener) {\n        fListener = listener;\n        fState = fOldState = NORMAL;\n        addMouseListener(this);\n        addMouseMotionListener(this);\n    }\n\n    public Object value() {\n        return null;\n    }\n\n    public String name() {\n        return \"\";\n    }\n\n    public void reset() {\n        fState = NORMAL;\n        setSelected(false);\n        repaint();\n    }\n\n    public void select() {\n        fState = SELECTED;\n        setSelected(true);\n        repaint();\n    }\n\n    public void mousePressed(MouseEvent e) {\n        fOldState = fState;\n        fState = PRESSED;\n        repaint();\n    }\n\n    public void mouseDragged(MouseEvent e) {\n        if (contains(e.getX(), e.getY()))\n            fState = PRESSED;\n        else\n            fState = fOldState;\n        repaint();\n    }\n\n    public void mouseReleased(MouseEvent e) {\n        fState = fOldState;\n        repaint();\n        if (contains(e.getX(), e.getY()))\n            fListener.paletteUserSelected(this);\n    }\n\n    public void mouseMoved(MouseEvent e) {\n        fListener.paletteUserOver(this, true);\n    }\n\n    public void mouseExited(MouseEvent e) {\n        if (// JDK1.1 on MS-Windows sometimes looses mouse released\n        fState == PRESSED)\n            mouseDragged(e);\n        fListener.paletteUserOver(this, false);\n    }\n\n    public void mouseClicked(MouseEvent e) {\n    }\n\n    public void mouseEntered(MouseEvent e) {\n    }\n    // Not necessary anymore in JFC due to the support of Icons in JButton\n    /*\n    public abstract void paintBackground(Graphics g);\n    public abstract void paintNormal(Graphics g);\n    public abstract void paintPressed(Graphics g);\n    public abstract void paintSelected(Graphics g);\n\n    public void update(Graphics g) {\n        paint(g);\n    }\n    \n    public void paint(Graphics g) {\n        paintBackground(g);\n\n        switch (fState) {\n        case PRESSED:\n            paintPressed(g);\n            break;\n        case SELECTED:\n            paintSelected(g);\n            break;\n        case NORMAL:\n        default:\n            paintNormal(g);\n            break;\n        }\n    }\n*/\n}\n",
+  "classDeclarationCode": "/**\n * A palette button is a three state button. The states are normal\n * pressed and selected. It uses to the palette listener interface\n * to notify about state changes.\n *\n * @see PaletteListener\n * @see PaletteLayout\n */\npublic abstract class PaletteButton extends JButton implements MouseListener, MouseMotionListener {\n\n    static final int NORMAL = 1;\n\n    static final int PRESSED = 2;\n\n    static final int SELECTED = 3;\n\n    private PaletteListener fListener;\n\n    private int fState;\n\n    private int fOldState;\n\n    public PaletteButton(PaletteListener listener) {\n        fListener = listener;\n        fState = fOldState = NORMAL;\n        addMouseListener(this);\n        addMouseMotionListener(this);\n    }\n\n    public Object value() {\n        return null;\n    }\n\n    public String name() {\n        return \"\";\n    }\n\n    public void reset() {\n        fState = NORMAL;\n        setSelected(false);\n        repaint();\n    }\n\n    public void select() {\n        fState = SELECTED;\n        setSelected(true);\n        repaint();\n    }\n\n    public void mousePressed(MouseEvent e) {\n        fOldState = fState;\n        fState = PRESSED;\n        repaint();\n    }\n\n    public void mouseDragged(MouseEvent e) {\n        if (contains(e.getX(), e.getY()))\n            fState = PRESSED;\n        else\n            fState = fOldState;\n        repaint();\n    }\n\n    public void mouseReleased(MouseEvent e) {\n        fState = fOldState;\n        repaint();\n        if (contains(e.getX(), e.getY()))\n            fListener.paletteUserSelected(this);\n    }\n\n    public void mouseMoved(MouseEvent e) {\n        fListener.paletteUserOver(this, true);\n    }\n\n    public void mouseExited(MouseEvent e) {\n        if (// JDK1.1 on MS-Windows sometimes looses mouse released\n        fState == PRESSED)\n            mouseDragged(e);\n        fListener.paletteUserOver(this, false);\n    }\n\n    public void mouseClicked(MouseEvent e) {\n    }\n\n    public void mouseEntered(MouseEvent e) {\n    }\n    // Not necessary anymore in JFC due to the support of Icons in JButton\n    /*\n    public abstract void paintBackground(Graphics g);\n    public abstract void paintNormal(Graphics g);\n    public abstract void paintPressed(Graphics g);\n    public abstract void paintSelected(Graphics g);\n\n    public void update(Graphics g) {\n        paint(g);\n    }\n    \n    public void paint(Graphics g) {\n        paintBackground(g);\n\n        switch (fState) {\n        case PRESSED:\n            paintPressed(g);\n            break;\n        case SELECTED:\n            paintSelected(g);\n            break;\n        case NORMAL:\n        default:\n            paintNormal(g);\n            break;\n        }\n    }\n*/\n}",
+  "subClasses": []
+}

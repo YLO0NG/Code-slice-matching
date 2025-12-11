@@ -1,0 +1,22 @@
+{
+  "className": "ActionTool",
+  "methodName": "action",
+  "brief": "public abstract void action(Figure figure);",
+  "methodSignature": "action(Figure)",
+  "sourceCode": "public abstract void action(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Performs an action with the touched figure.\n */\npublic abstract void action(Figure figure);",
+  "method_comment": "\n     * Performs an action with the touched figure.\n     ",
+  "method_annotation": ""
+}

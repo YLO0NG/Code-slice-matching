@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.util.StandardStorageFormat",
+  "targetMethod": "store(String, Drawing)",
+  "dependentFields": {
+    "CH.ifa.draw.util.StorableOutput": "private PrintWriter     fStream;\nprivate Vector          fMap;\nprivate int             fIndent;",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.util.StandardStorageFormat": "private FileFilter myFileFilter;\nprivate String myFileExtension;\nprivate String myFileDescription;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": "public void writeStorable(Storable storable){}\npublic void close(){}",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.util.StandardStorageFormat": "protected boolean hasCorrectFileExtension(String testFileName){}\nprotected String adjustFileName(String testFileName){}\npublic String getFileExtension(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.util.StorableOutput": "* Writes a storable object to the output stream.\n     \npublic void writeStorable(Storable storable) {\n        if (storable == null) {\n            fStream.print(\"NULL\");\n            space();\n            return;\n        }\n\n        if (mapped(storable)) {\n            int ref = fMap.indexOf(storable);\n\t\t\t\n\t\t\tfStream.print(\"REF\");\n\t\t\tspace();\n\t\t\tfStream.print(ref);\n\t\t\tspace();\n            return;\n        }\n\n        incrementIndent();\n        startNewLine();\n        map(storable);\n        fStream.print(storable.getClass().getName());\n        space();\n        storable.write(this);\n        space();\n        decrementIndent();\n    }\n\n     * Closes a storable output stream.\n     \npublic void close() {\n        fStream.close();\n    }",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.util.StandardStorageFormat": "* Test whether the file name has the correct file extension\n\t *\n\t * @return true, if the file has the correct extension, false otherwise\n\t \nprotected boolean hasCorrectFileExtension(String testFileName) {\n\t\treturn testFileName.endsWith(\".\" + getFileExtension());\n\t}\n\n\t * Adjust a file name to have the correct file extension.\n\t *\n\t * @param testFileName file name to be tested for a correct file extension\n\t * @return testFileName + file extension if necessary\n\t \nprotected String adjustFileName(String testFileName) {\n\t\tif (!hasCorrectFileExtension(testFileName)) {\n\t\t\treturn testFileName + \".\" + getFileExtension();\n\t\t}\n\t\telse {\n\t\t\treturn testFileName;\n\t\t}\n\t}\n\n\t * Return the file extension for the storage format\n\t *\n\t * @return file extension\n\t \npublic String getFileExtension() {\n\t\treturn myFileExtension;\n\t}"
+  }
+}

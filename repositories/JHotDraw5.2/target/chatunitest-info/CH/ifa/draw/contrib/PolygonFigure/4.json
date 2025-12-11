@@ -1,0 +1,18 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "getPolygon",
+  "brief": "public Polygon getPolygon(){}",
+  "methodSignature": "getPolygon()",
+  "sourceCode": "public Polygon getPolygon() {\n    return new Polygon(fPoly.xpoints, fPoly.ypoints, fPoly.npoints);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * return a copy of the raw polygon\n */\npublic Polygon getPolygon() {\n    return new Polygon(fPoly.xpoints, fPoly.ypoints, fPoly.npoints);\n}",
+  "method_comment": "\n   * return a copy of the raw polygon\n   *",
+  "method_annotation": ""
+}

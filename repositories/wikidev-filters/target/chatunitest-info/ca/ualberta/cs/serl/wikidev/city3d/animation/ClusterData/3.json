@@ -1,0 +1,31 @@
+{
+  "className": "ClusterData",
+  "methodName": "addTerms",
+  "brief": "public void addTerms(HashMap<String, Double> newTerms){}",
+  "methodSignature": "addTerms(HashMap)",
+  "sourceCode": "public void addTerms(HashMap<String, Double> newTerms) {\n\t\tif(terms.keySet().isEmpty()) {\n\t\t\tterms.putAll(newTerms);\n\t\t}\n\t\telse {\n\t\t\tfor(String term : newTerms.keySet()) {\n\t\t\t\tif(terms.containsKey(term)) {\n\t\t\t\t\tif(terms.get(term) > newTerms.get(term)) {\n\t\t\t\t\t\tterms.put(term, newTerms.get(term));\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse {\n\t\t\t\t\tterms.put(term, newTerms.get(term));\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "HashMap<String,Double>"
+  ],
+  "dependentMethods": {
+    "java.util.Set": [
+      "isEmpty()"
+    ],
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()",
+      "putAll(Map<? extends K, ? extends V>)",
+      "put(K, V)",
+      "containsKey(Object)"
+    ]
+  },
+  "full_method_info": "public void addTerms(HashMap<String, Double> newTerms) {\n    if (terms.keySet().isEmpty()) {\n        terms.putAll(newTerms);\n    } else {\n        for (String term : newTerms.keySet()) {\n            if (terms.containsKey(term)) {\n                if (terms.get(term) > newTerms.get(term)) {\n                    terms.put(term, newTerms.get(term));\n                }\n            } else {\n                terms.put(term, newTerms.get(term));\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

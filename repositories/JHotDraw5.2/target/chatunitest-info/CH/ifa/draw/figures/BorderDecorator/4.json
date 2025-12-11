@@ -1,0 +1,28 @@
+{
+  "className": "BorderDecorator",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        Rectangle r = fComponent.displayBox();\n        r.grow(getBorderOffset().x, getBorderOffset().y);\n        return r;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "java.awt.Rectangle": [
+      "grow(int, int)"
+    ],
+    "CH.ifa.draw.figures.BorderDecorator": [
+      "getBorderOffset()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the displaybox including the border.\n */\npublic Rectangle displayBox() {\n    Rectangle r = fComponent.displayBox();\n    r.grow(getBorderOffset().x, getBorderOffset().y);\n    return r;\n}",
+  "method_comment": "\n     * Gets the displaybox including the border.\n     ",
+  "method_annotation": ""
+}

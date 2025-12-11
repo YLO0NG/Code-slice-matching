@@ -1,0 +1,27 @@
+{
+  "className": "TextParser",
+  "methodName": "removeEveryPunctuation",
+  "brief": "private void removeEveryPunctuation(){}",
+  "methodSignature": "removeEveryPunctuation()",
+  "sourceCode": "private void removeEveryPunctuation() {\n\t\tArrayList<String> newWords = new ArrayList<String>();\n\t\tString newWord = \"\";\n\t\tfor(String word : words) {\n\t\t\tnewWord = word;\n\t\t\tnewWord = removePunctuation(newWord);\n\t\t\twhile(punctuation) {\n\t\t\t\tnewWord = removePunctuation(newWord);\n\t\t\t}\n\t\t\tnewWords.add(newWord);\n\t\t}\n\t\twords.clear();\n\t\twords.addAll(newWords);\n\t\t/*for(int i=0; i<urls.size(); i++) {\n\t\t\tURL newUrl = urls.get(i);\n\t\t\tnewUrl.setUrl(removePunctuation(urls.get(i).getUrl()));\n\t\t\turls.set(i, newUrl);\n\t\t}*/\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.TextParser": [
+      "removePunctuation(String)"
+    ],
+    "java.util.ArrayList": [
+      "addAll(Collection<? extends E>)",
+      "add(E)",
+      "clear()"
+    ]
+  },
+  "full_method_info": "private void removeEveryPunctuation() {\n    ArrayList<String> newWords = new ArrayList<String>();\n    String newWord = \"\";\n    for (String word : words) {\n        newWord = word;\n        newWord = removePunctuation(newWord);\n        while (punctuation) {\n            newWord = removePunctuation(newWord);\n        }\n        newWords.add(newWord);\n    }\n    words.clear();\n    words.addAll(newWords);\n    /*for(int i=0; i<urls.size(); i++) {\n\t\t\tURL newUrl = urls.get(i);\n\t\t\tnewUrl.setUrl(removePunctuation(urls.get(i).getUrl()));\n\t\t\turls.set(i, newUrl);\n\t\t}*/\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

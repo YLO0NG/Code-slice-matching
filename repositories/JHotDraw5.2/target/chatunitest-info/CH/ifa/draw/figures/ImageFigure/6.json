@@ -1,0 +1,34 @@
+{
+  "className": "ImageFigure",
+  "methodName": "imageUpdate",
+  "brief": "public boolean imageUpdate(Image img, int flags, int x, int y, int w, int h){}",
+  "methodSignature": "imageUpdate(Image, int, int, int, int, int)",
+  "sourceCode": "public boolean imageUpdate(Image img, int flags, int x, int y, int w, int h) {\n\t    if ((flags & (FRAMEBITS|ALLBITS)) != 0) {\n\t        invalidate();\n\t        if (listener() != null)\n\t            listener().figureRequestUpdate(new FigureChangeEvent(this));\n\t    }\n\t    return (flags & (ALLBITS|ABORT)) == 0;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Image",
+    "int",
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Image": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "invalidate()",
+      "listener()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestUpdate(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles asynchroneous image updates.\n */\npublic boolean imageUpdate(Image img, int flags, int x, int y, int w, int h) {\n    if ((flags & (FRAMEBITS | ALLBITS)) != 0) {\n        invalidate();\n        if (listener() != null)\n            listener().figureRequestUpdate(new FigureChangeEvent(this));\n    }\n    return (flags & (ALLBITS | ABORT)) == 0;\n}",
+  "method_comment": "\n    * Handles asynchroneous image updates.\n    ",
+  "method_annotation": ""
+}

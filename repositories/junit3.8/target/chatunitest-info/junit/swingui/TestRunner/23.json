@@ -1,0 +1,18 @@
+{
+  "className": "TestRunner",
+  "methodName": "createStatusLine",
+  "brief": "protected StatusLine createStatusLine(){}",
+  "methodSignature": "createStatusLine()",
+  "sourceCode": "protected StatusLine createStatusLine() {\r\n\t\treturn new StatusLine(380);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "protected StatusLine createStatusLine() {\r\n    return new StatusLine(380);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

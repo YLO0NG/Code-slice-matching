@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSet",
+  "methodName": "setChangesetDetails",
+  "brief": "public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails){}",
+  "methodSignature": "setChangesetDetails(ArrayList)",
+  "sourceCode": "public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails) {\n\t\tthis.changesetDetails = changesetDetails;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<ChangeSetDetail>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setChangesetDetails(ArrayList<ChangeSetDetail> changesetDetails) {\n    this.changesetDetails = changesetDetails;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

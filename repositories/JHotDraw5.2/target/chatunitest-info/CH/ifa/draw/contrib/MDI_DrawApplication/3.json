@@ -1,0 +1,26 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "promptNew",
+  "brief": "public void promptNew(){}",
+  "methodSignature": "promptNew()",
+  "sourceCode": "public void promptNew() {\n\t\tif (hasInternalFrames()) {\n\t    \tsuper.promptNew();\n    \t}\n    \telse {\n    \t\tnewWindow();\n    \t}\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "hasInternalFrames()",
+      "newWindow()"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "promptNew()"
+    ]
+  },
+  "full_method_info": "/**\n * Resets the drawing to a new empty drawing. If no internal frame\n * exists then open a new internal frame.\n */\npublic void promptNew() {\n    if (hasInternalFrames()) {\n        super.promptNew();\n    } else {\n        newWindow();\n    }\n}",
+  "method_comment": "\n     * Resets the drawing to a new empty drawing. If no internal frame\n     * exists then open a new internal frame.\n     ",
+  "method_annotation": ""
+}

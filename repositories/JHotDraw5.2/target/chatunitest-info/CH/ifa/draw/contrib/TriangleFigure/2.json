@@ -1,0 +1,25 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "polygon",
+  "brief": "public Polygon polygon(){}",
+  "methodSignature": "polygon()",
+  "sourceCode": "public Polygon polygon() {\n    Rectangle r = displayBox();\n    Polygon p = new Polygon();\n    switch (fRotation) {\n    case 0:\n      p.addPoint(r.x+r.width/2, r.y);\n      p.addPoint(r.x+r.width, r.y+r.height);\n      p.addPoint(r.x, r.y+r.height);\n      break;\n    case 1:\n      p.addPoint(r.x + r.width, r.y);\n      p.addPoint(r.x+r.width, r.y+r.height);\n      p.addPoint(r.x, r.y);\n      break;\n    case 2:\n      p.addPoint(r.x + r.width, r.y+r.height/2);\n      p.addPoint(r.x, r.y+r.height);\n      p.addPoint(r.x, r.y);\n      break;\n    case 3:\n      p.addPoint(r.x+r.width, r.y+r.height);\n      p.addPoint(r.x, r.y+r.height);\n      p.addPoint(r.x + r.width, r.y);\n      break;\n    case 4:\n      p.addPoint(r.x+r.width/2, r.y+r.height);\n      p.addPoint(r.x, r.y);\n      p.addPoint(r.x + r.width, r.y);\n      break;\n    case 5:\n      p.addPoint(r.x, r.y+r.height);\n      p.addPoint(r.x, r.y);\n      p.addPoint(r.x+r.width, r.y+r.height);\n      break;\n    case 6:\n      p.addPoint(r.x, r.y+r.height/2);\n      p.addPoint(r.x + r.width, r.y);\n      p.addPoint(r.x+r.width, r.y+r.height);\n      break;\n    case 7:\n      p.addPoint(r.x, r.y);\n      p.addPoint(r.x + r.width, r.y);\n      p.addPoint(r.x, r.y+r.height);\n      break;\n    }\n    return p;\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "displayBox()"
+    ],
+    "java.awt.Polygon": [
+      "addPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Return the polygon describing the triangle *\n */\npublic Polygon polygon() {\n    Rectangle r = displayBox();\n    Polygon p = new Polygon();\n    switch(fRotation) {\n        case 0:\n            p.addPoint(r.x + r.width / 2, r.y);\n            p.addPoint(r.x + r.width, r.y + r.height);\n            p.addPoint(r.x, r.y + r.height);\n            break;\n        case 1:\n            p.addPoint(r.x + r.width, r.y);\n            p.addPoint(r.x + r.width, r.y + r.height);\n            p.addPoint(r.x, r.y);\n            break;\n        case 2:\n            p.addPoint(r.x + r.width, r.y + r.height / 2);\n            p.addPoint(r.x, r.y + r.height);\n            p.addPoint(r.x, r.y);\n            break;\n        case 3:\n            p.addPoint(r.x + r.width, r.y + r.height);\n            p.addPoint(r.x, r.y + r.height);\n            p.addPoint(r.x + r.width, r.y);\n            break;\n        case 4:\n            p.addPoint(r.x + r.width / 2, r.y + r.height);\n            p.addPoint(r.x, r.y);\n            p.addPoint(r.x + r.width, r.y);\n            break;\n        case 5:\n            p.addPoint(r.x, r.y + r.height);\n            p.addPoint(r.x, r.y);\n            p.addPoint(r.x + r.width, r.y + r.height);\n            break;\n        case 6:\n            p.addPoint(r.x, r.y + r.height / 2);\n            p.addPoint(r.x + r.width, r.y);\n            p.addPoint(r.x + r.width, r.y + r.height);\n            break;\n        case 7:\n            p.addPoint(r.x, r.y);\n            p.addPoint(r.x + r.width, r.y);\n            p.addPoint(r.x, r.y + r.height);\n            break;\n    }\n    return p;\n}",
+  "method_comment": " Return the polygon describing the triangle *",
+  "method_annotation": ""
+}

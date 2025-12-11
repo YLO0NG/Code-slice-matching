@@ -1,0 +1,34 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        String s = dr.readString();\n        if (s.toLowerCase().equals(\"attributes\")) {\n            fAttributes = new FigureAttributes();\n            fAttributes.read(dr);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readString()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "read(StorableInput)"
+    ],
+    "java.lang.String": [
+      "equals(Object)",
+      "toLowerCase()"
+    ],
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the Figure from a StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    String s = dr.readString();\n    if (s.toLowerCase().equals(\"attributes\")) {\n        fAttributes = new FigureAttributes();\n        fAttributes.read(dr);\n    }\n}",
+  "method_comment": "\n     * Reads the Figure from a StorableInput.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "rotate",
+  "brief": "public void rotate(double angle){}",
+  "methodSignature": "rotate(double)",
+  "sourceCode": "public void rotate(double angle) {\n    willChange();\n    //System.out.println(\"a:\"+angle);\n    double dist = Double.MAX_VALUE;\n    int best = 0;\n    for (int i = 0; i < rotations.length; ++i) {\n      double d = Math.abs(angle - rotations[i]);\n      if (d < dist) {\n        dist = d;\n        best = i;\n      }\n    }\n    fRotation = best;\n    changed();\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "java.lang.Math": [
+      "abs(double)"
+    ]
+  },
+  "full_method_info": "public void rotate(double angle) {\n    willChange();\n    // System.out.println(\"a:\"+angle);\n    double dist = Double.MAX_VALUE;\n    int best = 0;\n    for (int i = 0; i < rotations.length; ++i) {\n        double d = Math.abs(angle - rotations[i]);\n        if (d < dist) {\n            dist = d;\n            best = i;\n        }\n    }\n    fRotation = best;\n    changed();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

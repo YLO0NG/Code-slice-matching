@@ -1,0 +1,22 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "internalFrameIconified",
+  "brief": "public void internalFrameIconified(InternalFrameEvent e){}",
+  "methodSignature": "internalFrameIconified(InternalFrameEvent)",
+  "sourceCode": "public void internalFrameIconified(InternalFrameEvent e) {\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InternalFrameEvent"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.InternalFrameEvent": []
+  },
+  "full_method_info": "/**\n * Notification method from InternalFrameListener, which is called\n * if a internal frame gets iconified.\n */\npublic void internalFrameIconified(InternalFrameEvent e) {\n}",
+  "method_comment": "\n\t * Notification method from InternalFrameListener, which is called\n\t * if a internal frame gets iconified.\n\t ",
+  "method_annotation": ""
+}

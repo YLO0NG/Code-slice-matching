@@ -1,0 +1,18 @@
+{
+  "className": "Project",
+  "methodName": "getTickets",
+  "brief": "public Set<Ticket> getTickets(){}",
+  "methodSignature": "getTickets()",
+  "sourceCode": "public Set<Ticket> getTickets() {\n\t\treturn tickets;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Set<Ticket> getTickets() {\n    return tickets;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

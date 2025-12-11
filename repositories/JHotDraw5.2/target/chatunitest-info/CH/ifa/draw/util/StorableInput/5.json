@@ -1,0 +1,23 @@
+{
+  "className": "StorableInput",
+  "methodName": "readBoolean",
+  "brief": "public boolean readBoolean() throws IOException{}",
+  "methodSignature": "readBoolean()",
+  "sourceCode": "public boolean readBoolean() throws IOException {\n        int token = fTokenizer.nextToken();\n        if (token == StreamTokenizer.TT_NUMBER)\n            return ((int) fTokenizer.nval) == 1;\n\n        String msg = \"Integer expected in line: \" + fTokenizer.lineno();\n        throw new IOException(msg);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.StreamTokenizer": [
+      "lineno()",
+      "nextToken()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads a boolean from the input stream.\n */\npublic boolean readBoolean() throws IOException {\n    int token = fTokenizer.nextToken();\n    if (token == StreamTokenizer.TT_NUMBER)\n        return ((int) fTokenizer.nval) == 1;\n    String msg = \"Integer expected in line: \" + fTokenizer.lineno();\n    throw new IOException(msg);\n}",
+  "method_comment": "\n     * Reads a boolean from the input stream.\n     ",
+  "method_annotation": ""
+}

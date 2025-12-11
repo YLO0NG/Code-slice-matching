@@ -1,0 +1,77 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.AbstractTool",
+  "className": "AbstractTool",
+  "index": 96,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Tool]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class AbstractTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import java.awt.event.KeyEvent;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "protected DrawingView  fView;",
+    "protected int     fAnchorX, fAnchorY;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Tool"
+  ],
+  "methodSigs": {
+    "activate()": "0",
+    "deactivate()": "1",
+    "mouseDown(MouseEvent, int, int)": "2",
+    "mouseDrag(MouseEvent, int, int)": "3",
+    "mouseUp(MouseEvent, int, int)": "4",
+    "mouseMove(MouseEvent, int, int)": "5",
+    "keyDown(KeyEvent, int)": "6",
+    "drawing()": "7",
+    "editor()": "8",
+    "view()": "9",
+    "AbstractTool(DrawingView)": "10"
+  },
+  "methodsBrief": [
+    "public void activate(){}",
+    "public void deactivate(){}",
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "public void mouseMove(MouseEvent evt, int x, int y){}",
+    "public void keyDown(KeyEvent evt, int key){}",
+    "public Drawing drawing(){}",
+    "public DrawingEditor editor(){}",
+    "public DrawingView view(){}",
+    "public AbstractTool(DrawingView itsView){}"
+  ],
+  "constructorSigs": [
+    "AbstractTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public AbstractTool(DrawingView itsView){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)AbstractTool.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport java.awt.event.KeyEvent;\nimport CH.ifa.draw.framework.*;\n\n/**\n * Default implementation support for Tools.\n *\n * @see DrawingView\n * @see Tool\n */\npublic class AbstractTool implements Tool {\n\n    protected DrawingView fView;\n\n    /**\n     * The position of the initial mouse down.\n     */\n    protected int fAnchorX, fAnchorY;\n\n    public AbstractTool(DrawingView itsView) {\n        fView = itsView;\n    }\n\n    /**\n     * Activates the tool for the given view. This method is called\n     * whenever the user switches to this tool. Use this method to\n     * reinitialize a tool.\n     */\n    public void activate() {\n        view().clearSelection();\n    }\n\n    /**\n     * Deactivates the tool. This method is called whenever the user\n     * switches to another tool. Use this method to do some clean-up\n     * when the tool is switched. Subclassers should always call\n     * super.deactivate.\n     */\n    public void deactivate() {\n        view().setCursor(Cursor.getDefaultCursor());\n    }\n\n    /**\n     * Handles mouse down events in the drawing view.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorX = x;\n        fAnchorY = y;\n    }\n\n    /**\n     * Handles mouse drag events in the drawing view.\n     */\n    public void mouseDrag(MouseEvent e, int x, int y) {\n    }\n\n    /**\n     * Handles mouse up in the drawing view.\n     */\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n\n    /**\n     * Handles mouse moves (if the mouse button is up).\n     */\n    public void mouseMove(MouseEvent evt, int x, int y) {\n    }\n\n    /**\n     * Handles key down events in the drawing view.\n     */\n    public void keyDown(KeyEvent evt, int key) {\n    }\n\n    /**\n     * Gets the tool's drawing.\n     */\n    public Drawing drawing() {\n        return view().drawing();\n    }\n\n    /**\n     * Gets the tool's editor.\n     */\n    public DrawingEditor editor() {\n        return view().editor();\n    }\n\n    /**\n     * Gets the tool's view.\n     */\n    public DrawingView view() {\n        return fView;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Default implementation support for Tools.\n *\n * @see DrawingView\n * @see Tool\n */\npublic class AbstractTool implements Tool {\n\n    protected DrawingView fView;\n\n    /**\n     * The position of the initial mouse down.\n     */\n    protected int fAnchorX, fAnchorY;\n\n    public AbstractTool(DrawingView itsView) {\n        fView = itsView;\n    }\n\n    /**\n     * Activates the tool for the given view. This method is called\n     * whenever the user switches to this tool. Use this method to\n     * reinitialize a tool.\n     */\n    public void activate() {\n        view().clearSelection();\n    }\n\n    /**\n     * Deactivates the tool. This method is called whenever the user\n     * switches to another tool. Use this method to do some clean-up\n     * when the tool is switched. Subclassers should always call\n     * super.deactivate.\n     */\n    public void deactivate() {\n        view().setCursor(Cursor.getDefaultCursor());\n    }\n\n    /**\n     * Handles mouse down events in the drawing view.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorX = x;\n        fAnchorY = y;\n    }\n\n    /**\n     * Handles mouse drag events in the drawing view.\n     */\n    public void mouseDrag(MouseEvent e, int x, int y) {\n    }\n\n    /**\n     * Handles mouse up in the drawing view.\n     */\n    public void mouseUp(MouseEvent e, int x, int y) {\n    }\n\n    /**\n     * Handles mouse moves (if the mouse button is up).\n     */\n    public void mouseMove(MouseEvent evt, int x, int y) {\n    }\n\n    /**\n     * Handles key down events in the drawing view.\n     */\n    public void keyDown(KeyEvent evt, int key) {\n    }\n\n    /**\n     * Gets the tool's drawing.\n     */\n    public Drawing drawing() {\n        return view().drawing();\n    }\n\n    /**\n     * Gets the tool's editor.\n     */\n    public DrawingEditor editor() {\n        return view().editor();\n    }\n\n    /**\n     * Gets the tool's view.\n     */\n    public DrawingView view() {\n        return fView;\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.standard.ActionTool",
+    "CH.ifa.draw.standard.ConnectionTool",
+    "CH.ifa.draw.standard.CreationTool",
+    "CH.ifa.draw.standard.DragTracker",
+    "CH.ifa.draw.standard.HandleTracker",
+    "CH.ifa.draw.standard.SelectAreaTracker",
+    "CH.ifa.draw.standard.SelectionTool"
+  ]
+}

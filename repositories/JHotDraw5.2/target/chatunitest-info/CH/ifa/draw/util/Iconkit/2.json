@@ -1,0 +1,25 @@
+{
+  "className": "Iconkit",
+  "methodName": "registerImage",
+  "brief": "public void registerImage(String fileName){}",
+  "methodSignature": "registerImage(String)",
+  "sourceCode": "public void registerImage(String fileName) {\n        fRegisteredImages.addElement(fileName);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Registers an image that is then loaded together with\n * the other registered images by loadRegisteredImages.\n * @see #loadRegisteredImages\n */\npublic void registerImage(String fileName) {\n    fRegisteredImages.addElement(fileName);\n}",
+  "method_comment": "\n     * Registers an image that is then loaded together with\n     * the other registered images by loadRegisteredImages.\n     * @see #loadRegisteredImages\n     ",
+  "method_annotation": ""
+}

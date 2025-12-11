@@ -1,0 +1,18 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "target",
+  "brief": "protected abstract Connector target();",
+  "methodSignature": "target()",
+  "sourceCode": "protected abstract Connector target();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the target connector of the change.\n */\nprotected abstract Connector target();",
+  "method_comment": "\n     * Returns the target connector of the change.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,55 @@
+{
+  "className": "TestRunner",
+  "methodName": "runSuite",
+  "brief": "synchronized public void runSuite(){}",
+  "methodSignature": "runSuite()",
+  "sourceCode": "synchronized public void runSuite() {\r\n\t\tif (fRunner != null && fTestResult != null) {\r\n\t\t\tfTestResult.stop();\r\n\t\t} else {\r\n\t\t\tsetLoading(shouldReload());\r\n\t\t\tfRun.setLabel(\"Stop\");\r\n\t\t\tshowInfo(\"Initializing...\");\r\n\t\t\treset();\r\n\r\n\t\t\tshowInfo(\"Load Test Case...\");\r\n\r\n\t\t\tfinal Test testSuite= getTest(fSuiteField.getText());\r\n\t\t\tif (testSuite != null) {\r\n\t\t\t\tfRunner= new Thread() {\r\n\t\t\t\t\tpublic void run() {\r\n\t\t\t\t\t\tfTestResult= createTestResult();\r\n\t\t\t\t\t\tfTestResult.addListener(TestRunner.this);\r\n\t\t\t\t\t\tfProgressIndicator.start(testSuite.countTestCases());\r\n\t\t\t\t\t\tshowInfo(\"Running...\");\r\n\r\n\t\t\t\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\t\t\t\ttestSuite.run(fTestResult);\r\n\r\n\t\t\t\t\t\tif (fTestResult.shouldStop()) {\r\n\t\t\t\t\t\t\tshowStatus(\"Stopped\");\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\t\t\t\t\tlong runTime= endTime-startTime;\r\n\t\t\t\t\t\t\tshowInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t\tfTestResult= null;\r\n\t\t\t\t\t\tfRun.setLabel(\"Run\");\r\n\t\t\t\t\t\tfRunner= null;\r\n\t\t\t\t\t\tSystem.gc();\r\n\t\t\t\t\t}\r\n\t\t\t\t};\r\n\t\t\t\tfRunner.start();\r\n\t\t\t}\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "stop()",
+      "shouldStop()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getTest(String)",
+      "setLoading(boolean)",
+      "elapsedTimeAsString(long)"
+    ],
+    "junit.awtui.TestRunner": [
+      "showStatus(String)",
+      "reset()",
+      "shouldReload()",
+      "createTestResult()",
+      "showInfo(String)"
+    ],
+    "java.awt.Button": [
+      "setLabel(String)"
+    ],
+    "java.awt.TextComponent": [
+      "getText()"
+    ],
+    "junit.awtui.ProgressBar": [
+      "start(int)"
+    ],
+    "junit.framework.Test": [
+      "run(TestResult)",
+      "countTestCases()"
+    ],
+    "java.lang.System": [
+      "currentTimeMillis()",
+      "gc()"
+    ],
+    "java.lang.Thread": [
+      "start()"
+    ]
+  },
+  "full_method_info": "synchronized public void runSuite() {\r\n    if (fRunner != null && fTestResult != null) {\r\n        fTestResult.stop();\r\n    } else {\r\n        setLoading(shouldReload());\r\n        fRun.setLabel(\"Stop\");\r\n        showInfo(\"Initializing...\");\r\n        reset();\r\n        showInfo(\"Load Test Case...\");\r\n        final Test testSuite = getTest(fSuiteField.getText());\r\n        if (testSuite != null) {\r\n            fRunner = new Thread() {\r\n\r\n                public void run() {\r\n                    fTestResult = createTestResult();\r\n                    fTestResult.addListener(TestRunner.this);\r\n                    fProgressIndicator.start(testSuite.countTestCases());\r\n                    showInfo(\"Running...\");\r\n                    long startTime = System.currentTimeMillis();\r\n                    testSuite.run(fTestResult);\r\n                    if (fTestResult.shouldStop()) {\r\n                        showStatus(\"Stopped\");\r\n                    } else {\r\n                        long endTime = System.currentTimeMillis();\r\n                        long runTime = endTime - startTime;\r\n                        showInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n                    }\r\n                    fTestResult = null;\r\n                    fRun.setLabel(\"Run\");\r\n                    fRunner = null;\r\n                    System.gc();\r\n                }\r\n            };\r\n            fRunner.start();\r\n        }\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

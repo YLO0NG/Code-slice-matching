@@ -1,0 +1,25 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "removeInternalFrameListener",
+  "brief": "public void removeInternalFrameListener(InternalFrameListener oldMDIListener){}",
+  "methodSignature": "removeInternalFrameListener(InternalFrameListener)",
+  "sourceCode": "public void removeInternalFrameListener(InternalFrameListener oldMDIListener) {\n\t\tmdiListeners.removeElement(oldMDIListener);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InternalFrameListener"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.InternalFrameListener": [],
+    "java.util.Vector": [
+      "removeElement(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Remove a InternalFrameListeners from the application.\n *\n * @param oldMDIListener listener to be removed\n */\npublic void removeInternalFrameListener(InternalFrameListener oldMDIListener) {\n    mdiListeners.removeElement(oldMDIListener);\n}",
+  "method_comment": "\n\t * Remove a InternalFrameListeners from the application.\n\t *\n\t * @param oldMDIListener listener to be removed\n\t ",
+  "method_annotation": ""
+}

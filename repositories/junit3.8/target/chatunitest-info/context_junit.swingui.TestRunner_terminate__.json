@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.swingui.TestRunner",
+  "targetMethod": "terminate()",
+  "dependentFields": {
+    "junit.swingui.TestRunner": "private static Font PLAIN_FONT= StatusLine.PLAIN_FONT;\nprivate static Font BOLD_FONT= StatusLine.BOLD_FONT;\nprivate static final int GAP= 4;\nprivate static final int HISTORY_LENGTH= 5;\nprotected JFrame fFrame;\nprivate Thread fRunner;\nprivate TestResult fTestResult;\nprivate JComboBox fSuiteCombo;\nprivate ProgressBar fProgressIndicator;\nprivate DefaultListModel fFailures;\nprivate JLabel fLogo;\nprivate CounterPanel fCounterPanel;\nprivate JButton fRun;\nprivate JButton fQuitButton;\nprivate JButton fRerunButton;\nprivate StatusLine fStatusLine;\nprivate FailureDetailView fFailureView;\nprivate JTabbedPane fTestViewTab;\nprivate JCheckBox fUseLoadingRunner;\nprivate Vector fTestRunViews= new Vector();\nprivate static final String TESTCOLLECTOR_KEY= \"TestCollectorClass\";\nprivate static final String FAILUREDETAILVIEW_KEY= \"FailureViewClass\";"
+  },
+  "dependentMethods": {
+    "junit.swingui.TestRunner": "private File getSettingsFile(){}"
+  },
+  "dependentMethodBodies": {
+    "junit.swingui.TestRunner": "private File getSettingsFile() {\r\n\t \tString home= System.getProperty(\"user.home\");\r\n \t\treturn new File(home,\".junitsession\");\r\n \t}"
+  }
+}

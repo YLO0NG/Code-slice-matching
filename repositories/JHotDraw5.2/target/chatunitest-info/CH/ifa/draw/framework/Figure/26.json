@@ -1,0 +1,21 @@
+{
+  "className": "Figure",
+  "methodName": "connectorAt",
+  "brief": "public Connector connectorAt(int x, int y);",
+  "methodSignature": "connectorAt(int, int)",
+  "sourceCode": "public Connector connectorAt(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets a connector for this figure at the given location.\n * A figure can have different connectors at different locations.\n */\npublic Connector connectorAt(int x, int y);",
+  "method_comment": "\n     * Gets a connector for this figure at the given location.\n     * A figure can have different connectors at different locations.\n     ",
+  "method_annotation": ""
+}

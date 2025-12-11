@@ -1,0 +1,30 @@
+{
+  "className": "PertFigure",
+  "methodName": "initialize",
+  "brief": "private void initialize(){}",
+  "methodSignature": "initialize()",
+  "sourceCode": "private void initialize() {\n        fPostTasks = new Vector();\n        fPreTasks = new Vector();\n        fDisplayBox = new Rectangle(0, 0, 0, 0);\n\n        Font f = new Font(\"Helvetica\", Font.PLAIN, 12);\n        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);\n\n        TextFigure name = new TextFigure();\n        name.setFont(fb);\n        name.setText(\"Task\");\n        //name.setAttribute(\"TextColor\",Color.white);\n        add(name);\n\n        NumberTextFigure duration = new NumberTextFigure();\n        duration.setValue(0);\n        duration.setFont(fb);\n        add(duration);\n\n        NumberTextFigure end = new NumberTextFigure();\n        end.setValue(0);\n        end.setFont(f);\n        end.setReadOnly(true);\n        add(end);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.TextFigure": [
+      "setFont(Font)",
+      "setText(String)",
+      "setReadOnly(boolean)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "add(Figure)"
+    ],
+    "CH.ifa.draw.figures.NumberTextFigure": [
+      "setValue(int)"
+    ]
+  },
+  "full_method_info": "private void initialize() {\n    fPostTasks = new Vector();\n    fPreTasks = new Vector();\n    fDisplayBox = new Rectangle(0, 0, 0, 0);\n    Font f = new Font(\"Helvetica\", Font.PLAIN, 12);\n    Font fb = new Font(\"Helvetica\", Font.BOLD, 12);\n    TextFigure name = new TextFigure();\n    name.setFont(fb);\n    name.setText(\"Task\");\n    // name.setAttribute(\"TextColor\",Color.white);\n    add(name);\n    NumberTextFigure duration = new NumberTextFigure();\n    duration.setValue(0);\n    duration.setFont(fb);\n    add(duration);\n    NumberTextFigure end = new NumberTextFigure();\n    end.setValue(0);\n    end.setFont(f);\n    end.setReadOnly(true);\n    add(end);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

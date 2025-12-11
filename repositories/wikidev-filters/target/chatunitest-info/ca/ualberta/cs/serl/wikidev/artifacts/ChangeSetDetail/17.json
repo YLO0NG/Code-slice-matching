@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "getLinesremoved",
+  "brief": "public int getLinesremoved(){}",
+  "methodSignature": "getLinesremoved()",
+  "sourceCode": "public int getLinesremoved() {\n\t\treturn linesremoved;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"linesremoved\"\n */\npublic int getLinesremoved() {\n    return linesremoved;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"linesremoved\"\n\t ",
+  "method_annotation": ""
+}

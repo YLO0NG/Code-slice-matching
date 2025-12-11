@@ -1,0 +1,30 @@
+{
+  "className": "DuplicateCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        FigureSelection selection = fView.getFigureSelection();\n\n        fView.clearSelection();\n\n        Vector figures = (Vector)selection.getData(FigureSelection.TYPE);\n        insertFigures(figures, 10, 10);\n        fView.checkDamage();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "getFigureSelection()",
+      "clearSelection()",
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.framework.FigureSelection": [
+      "getData(String)"
+    ],
+    "CH.ifa.draw.standard.FigureTransferCommand": [
+      "insertFigures(Vector, int, int)"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    FigureSelection selection = fView.getFigureSelection();\n    fView.clearSelection();\n    Vector figures = (Vector) selection.getData(FigureSelection.TYPE);\n    insertFigures(figures, 10, 10);\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,33 @@
+{
+  "className": "PolygonScaleHandle",
+  "methodName": "invokeStart",
+  "brief": "public void invokeStart(int  x, int  y, Drawing drawing){}",
+  "methodSignature": "invokeStart(int, int, Drawing)",
+  "sourceCode": "public void invokeStart(int  x, int  y, Drawing drawing) {\n    fOrigPoly = ((PolygonFigure)(owner())).getPolygon();\n    fOrigin = getOrigin();\n    fCurrent = new Point(fOrigin.x, fOrigin.y);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "getPolygon()"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ],
+    "CH.ifa.draw.contrib.PolygonScaleHandle": [
+      "getOrigin()"
+    ]
+  },
+  "full_method_info": "public void invokeStart(int x, int y, Drawing drawing) {\n    fOrigPoly = ((PolygonFigure) (owner())).getPolygon();\n    fOrigin = getOrigin();\n    fCurrent = new Point(fOrigin.x, fOrigin.y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

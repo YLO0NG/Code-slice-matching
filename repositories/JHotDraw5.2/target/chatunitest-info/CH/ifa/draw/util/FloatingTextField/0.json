@@ -1,0 +1,25 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "createOverlay",
+  "brief": "public void createOverlay(Container container){}",
+  "methodSignature": "createOverlay(Container)",
+  "sourceCode": "public void createOverlay(Container container) {\n        createOverlay(container, null);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Container"
+  ],
+  "dependentMethods": {
+    "java.awt.Container": [],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "createOverlay(Container, Font)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the overlay for the given Component.\n */\npublic void createOverlay(Container container) {\n    createOverlay(container, null);\n}",
+  "method_comment": "\n     * Creates the overlay for the given Component.\n     ",
+  "method_annotation": ""
+}

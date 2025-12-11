@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "tool",
+  "brief": "public Tool tool(){}",
+  "methodSignature": "tool()",
+  "sourceCode": "public Tool tool() {\n        return fEditor.tool();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "tool()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the current tool.\n */\npublic Tool tool() {\n    return fEditor.tool();\n}",
+  "method_comment": "\n     * Gets the current tool.\n     ",
+  "method_annotation": ""
+}

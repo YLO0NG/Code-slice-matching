@@ -1,0 +1,27 @@
+{
+  "className": "PatternPainter",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g, DrawingView view){}",
+  "methodSignature": "draw(Graphics, DrawingView)",
+  "sourceCode": "public void draw(Graphics g, DrawingView view) {\n        drawPattern(g, fImage, view);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.samples.javadraw.PatternPainter": [
+      "drawPattern(Graphics, Image, DrawingView)"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g, DrawingView view) {\n    drawPattern(g, fImage, view);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

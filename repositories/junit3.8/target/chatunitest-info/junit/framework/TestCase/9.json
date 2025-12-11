@@ -1,0 +1,18 @@
+{
+  "className": "TestCase",
+  "methodName": "getName",
+  "brief": "public String getName(){}",
+  "methodSignature": "getName()",
+  "sourceCode": "public String getName() {\r\n\t\treturn fName;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Gets the name of a TestCase\r\n * @return returns a String\r\n */\r\npublic String getName() {\r\n    return fName;\r\n}",
+  "method_comment": "\r\n\t * Gets the name of a TestCase\r\n\t * @return returns a String\r\n\t ",
+  "method_annotation": ""
+}

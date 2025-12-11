@@ -1,0 +1,25 @@
+{
+  "className": "DefaultFailureDetailView",
+  "methodName": "clear",
+  "brief": "public void clear(){}",
+  "methodSignature": "clear()",
+  "sourceCode": "public void clear() {\r\n\t\tgetModel().clear();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.DefaultFailureDetailView.StackTraceListModel": [
+      "clear()"
+    ],
+    "junit.swingui.DefaultFailureDetailView": [
+      "getModel()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Clears the output.\r\n */\r\npublic void clear() {\r\n    getModel().clear();\r\n}",
+  "method_comment": "\r\n\t * Clears the output.\r\n\t ",
+  "method_annotation": ""
+}

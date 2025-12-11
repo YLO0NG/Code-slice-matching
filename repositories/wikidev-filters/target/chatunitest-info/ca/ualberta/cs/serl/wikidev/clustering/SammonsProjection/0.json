@@ -1,0 +1,18 @@
+{
+  "className": "SammonsProjection",
+  "methodName": "getProjection",
+  "brief": "public double[][] getProjection(){}",
+  "methodSignature": "getProjection()",
+  "sourceCode": "public double[][] getProjection() {\n\t\treturn Projection;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public double[][] getProjection() {\n    return Projection;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

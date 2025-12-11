@@ -1,0 +1,18 @@
+{
+  "className": "Test",
+  "methodName": "countTestCases",
+  "brief": "public abstract int countTestCases();",
+  "methodSignature": "countTestCases()",
+  "sourceCode": "public abstract int countTestCases();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Counts the number of test cases that will be run by this test.\r\n */\r\npublic abstract int countTestCases();",
+  "method_comment": "\r\n\t * Counts the number of test cases that will be run by this test.\r\n\t ",
+  "method_annotation": ""
+}

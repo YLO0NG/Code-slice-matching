@@ -1,0 +1,22 @@
+{
+  "className": "TicketChange",
+  "methodName": "setNewValue",
+  "brief": "public void setNewValue(String newValue){}",
+  "methodSignature": "setNewValue(String)",
+  "sourceCode": "public void setNewValue(String newValue) {\n\t\tthis.newValue = newValue;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param newValue\n * @uml.property  name=\"newValue\"\n */\npublic void setNewValue(String newValue) {\n    this.newValue = newValue;\n}",
+  "method_comment": "\n\t * @param newValue\n\t * @uml.property  name=\"newValue\"\n\t ",
+  "method_annotation": ""
+}

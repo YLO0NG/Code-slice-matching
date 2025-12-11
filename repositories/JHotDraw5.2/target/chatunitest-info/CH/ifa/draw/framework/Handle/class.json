@@ -1,0 +1,57 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.Handle",
+  "className": "Handle",
+  "index": 67,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface Handle",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;"
+  ],
+  "fields": [
+    "public static final int HANDLESIZE = 8;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "locate()": "0",
+    "invokeStart(int, int, Drawing)": "1",
+    "invokeStart(int, int, DrawingView)": "2",
+    "invokeStep(int, int, Drawing)": "3",
+    "invokeStep(int, int, int, int, DrawingView)": "4",
+    "invokeEnd(int, int, int, int, DrawingView)": "5",
+    "invokeEnd(int, int, Drawing)": "6",
+    "owner()": "7",
+    "displayBox()": "8",
+    "containsPoint(int, int)": "9",
+    "draw(Graphics)": "10"
+  },
+  "methodsBrief": [
+    "public abstract Point locate();",
+    "public void invokeStart(int  x, int  y, Drawing drawing);",
+    "public void invokeStart(int  x, int  y, DrawingView view);",
+    "public void invokeStep (int dx, int dy, Drawing drawing);",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view);",
+    "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view);",
+    "public void invokeEnd  (int dx, int dy, Drawing drawing);",
+    "public Figure owner();",
+    "public Rectangle displayBox();",
+    "public boolean containsPoint(int x, int y);",
+    "public void draw(Graphics g);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Handle.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.*;\n\n/**\n * Handles are used to change a figure by direct manipulation.\n * Handles know their owning figure and they provide methods to\n * locate the handle on the figure and to track changes.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld004.htm>Adapter</a></b><br>\n * Handles adapt the operations to manipulate a figure to a common interface.\n *\n * @see Figure\n */\npublic interface Handle {\n\n    public static final int HANDLESIZE = 8;\n\n    /**\n     * Locates the handle on the figure. The handle is drawn\n     * centered around the returned point.\n     */\n    public abstract Point locate();\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     */\n    public void invokeStart(int x, int y, Drawing drawing);\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     * @param view the handles container\n     */\n    public void invokeStart(int x, int y, DrawingView view);\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeStep(x, y, anchorX, anchorY, drawingView)\n     *\n     * Tracks a step of the interaction.\n     * @param dx x delta of this step\n     * @param dy y delta of this step\n     */\n    public void invokeStep(int dx, int dy, Drawing drawing);\n\n    /**\n     * Tracks a step of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view);\n\n    /**\n     * Tracks the end of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view);\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeEnd(x, y, anchorX, anchorY, drawingView).\n     *\n     * Tracks the end of the interaction.\n     */\n    public void invokeEnd(int dx, int dy, Drawing drawing);\n\n    /**\n     * Gets the handle's owner.\n     */\n    public Figure owner();\n\n    /**\n     * Gets the display box of the handle.\n     */\n    public Rectangle displayBox();\n\n    /**\n     * Tests if a point is contained in the handle.\n     */\n    public boolean containsPoint(int x, int y);\n\n    /**\n     * Draws this handle.\n     */\n    public void draw(Graphics g);\n}\n",
+  "classDeclarationCode": "/**\n * Handles are used to change a figure by direct manipulation.\n * Handles know their owning figure and they provide methods to\n * locate the handle on the figure and to track changes.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld004.htm>Adapter</a></b><br>\n * Handles adapt the operations to manipulate a figure to a common interface.\n *\n * @see Figure\n */\npublic interface Handle {\n\n    public static final int HANDLESIZE = 8;\n\n    /**\n     * Locates the handle on the figure. The handle is drawn\n     * centered around the returned point.\n     */\n    public abstract Point locate();\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     */\n    public void invokeStart(int x, int y, Drawing drawing);\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     * @param view the handles container\n     */\n    public void invokeStart(int x, int y, DrawingView view);\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeStep(x, y, anchorX, anchorY, drawingView)\n     *\n     * Tracks a step of the interaction.\n     * @param dx x delta of this step\n     * @param dy y delta of this step\n     */\n    public void invokeStep(int dx, int dy, Drawing drawing);\n\n    /**\n     * Tracks a step of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view);\n\n    /**\n     * Tracks the end of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view);\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeEnd(x, y, anchorX, anchorY, drawingView).\n     *\n     * Tracks the end of the interaction.\n     */\n    public void invokeEnd(int dx, int dy, Drawing drawing);\n\n    /**\n     * Gets the handle's owner.\n     */\n    public Figure owner();\n\n    /**\n     * Gets the display box of the handle.\n     */\n    public Rectangle displayBox();\n\n    /**\n     * Tests if a point is contained in the handle.\n     */\n    public boolean containsPoint(int x, int y);\n\n    /**\n     * Draws this handle.\n     */\n    public void draw(Graphics g);\n}",
+  "subClasses": []
+}

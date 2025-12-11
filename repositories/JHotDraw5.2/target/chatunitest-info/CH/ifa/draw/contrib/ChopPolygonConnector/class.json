@@ -1,0 +1,53 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.ChopPolygonConnector",
+  "className": "ChopPolygonConnector",
+  "index": 3,
+  "modifier": "[public ]",
+  "extend": "[ChopBoxConnector]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public class ChopPolygonConnector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import CH.ifa.draw.framework.Figure;",
+    "import CH.ifa.draw.standard.ChopBoxConnector;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -156024908227796826L;"
+  ],
+  "superClasses": [
+    "ChopBoxConnector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "chop(Figure, Point)": "0",
+    "ChopPolygonConnector()": "1",
+    "ChopPolygonConnector(Figure)": "2"
+  },
+  "methodsBrief": [
+    "protected Point chop(Figure target, Point from){}",
+    "public ChopPolygonConnector(){}",
+    "public ChopPolygonConnector(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "ChopPolygonConnector()",
+    "ChopPolygonConnector(Figure)"
+  ],
+  "constructorBrief": [
+    "public ChopPolygonConnector(){}",
+    "public ChopPolygonConnector(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * Copyright (c) 1996, 1997 Erich Gamma\n * All Rights Reserved\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Point;\nimport CH.ifa.draw.framework.Figure;\nimport CH.ifa.draw.standard.ChopBoxConnector;\n\n/**\n * A ChopPolygonConnector locates a connection point by\n * chopping the connection at the polygon boundary.\n */\npublic class ChopPolygonConnector extends ChopBoxConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -156024908227796826L;\n\n    public ChopPolygonConnector() {\n    }\n\n    public ChopPolygonConnector(Figure owner) {\n        super(owner);\n    }\n\n    protected Point chop(Figure target, Point from) {\n        return ((PolygonFigure) target).chop(from);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A ChopPolygonConnector locates a connection point by\n * chopping the connection at the polygon boundary.\n */\npublic class ChopPolygonConnector extends ChopBoxConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -156024908227796826L;\n\n    public ChopPolygonConnector() {\n    }\n\n    public ChopPolygonConnector(Figure owner) {\n        super(owner);\n    }\n\n    protected Point chop(Figure target, Point from) {\n        return ((PolygonFigure) target).chop(from);\n    }\n}",
+  "subClasses": []
+}

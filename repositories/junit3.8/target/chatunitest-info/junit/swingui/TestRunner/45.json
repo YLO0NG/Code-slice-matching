@@ -1,0 +1,48 @@
+{
+  "className": "TestRunner",
+  "methodName": "runSuite",
+  "brief": "synchronized public void runSuite(){}",
+  "methodSignature": "runSuite()",
+  "sourceCode": "synchronized public void runSuite() {\r\n\t\tif (fRunner != null) {\r\n\t\t\tfTestResult.stop();\r\n\t\t} else {\r\n\t\t\tsetLoading(shouldReload());\r\n\t\t\t/*{*/fCounterPanel.reset();\r\n\t\t\tfProgressIndicator.reset();\r\n\t\t\tfRerunButton.setEnabled(false);\r\n\t\t\tfFailureView.clear();\r\n\t\t\tfFailures.clear();/*}*/\r\n\t\t\tshowInfo(\"Load Test Case...\");\r\n\t\t\tfinal String suiteName= getSuiteText();\r\n\t\t\tfinal Test testSuite= getTest(suiteName);\r\n\t\t\tif (testSuite != null) {\r\n\t\t\t\taddToHistory(suiteName);\r\n\t\t\t\tdoRunTest(testSuite);\r\n\t\t\t}\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "stop()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getTest(String)",
+      "setLoading(boolean)"
+    ],
+    "junit.swingui.TestRunner": [
+      "doRunTest(Test)",
+      "getSuiteText()",
+      "shouldReload()",
+      "showInfo(String)",
+      "addToHistory(String)"
+    ],
+    "junit.swingui.CounterPanel": [
+      "reset()"
+    ],
+    "junit.swingui.ProgressBar": [
+      "reset()"
+    ],
+    "javax.swing.AbstractButton": [
+      "setEnabled(boolean)"
+    ],
+    "junit.runner.FailureDetailView": [
+      "clear()"
+    ],
+    "javax.swing.DefaultListModel": [
+      "clear()"
+    ]
+  },
+  "full_method_info": "synchronized public void runSuite() {\r\n    if (fRunner != null) {\r\n        fTestResult.stop();\r\n    } else {\r\n        setLoading(shouldReload());\r\n        /*{*/\r\n        fCounterPanel.reset();\r\n        fProgressIndicator.reset();\r\n        fRerunButton.setEnabled(false);\r\n        fFailureView.clear();\r\n        fFailures.clear();\r\n        /*}*/\r\n        showInfo(\"Load Test Case...\");\r\n        final String suiteName = getSuiteText();\r\n        final Test testSuite = getTest(suiteName);\r\n        if (testSuite != null) {\r\n            addToHistory(suiteName);\r\n            doRunTest(testSuite);\r\n        }\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "getFromdate",
+  "brief": "public Timestamp getFromdate(){}",
+  "methodSignature": "getFromdate()",
+  "sourceCode": "public Timestamp getFromdate() {\n\t\treturn fromdate;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"fromdate\"\n */\npublic Timestamp getFromdate() {\n    return fromdate;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"fromdate\"\n\t ",
+  "method_annotation": ""
+}

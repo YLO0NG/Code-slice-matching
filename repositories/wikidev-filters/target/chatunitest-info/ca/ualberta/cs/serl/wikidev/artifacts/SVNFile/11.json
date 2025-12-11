@@ -1,0 +1,18 @@
+{
+  "className": "SVNFile",
+  "methodName": "getAssociatedUsers",
+  "brief": "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+  "methodSignature": "getAssociatedUsers()",
+  "sourceCode": "@Override\n\tpublic Set<User> getAssociatedUsers() {\n\t\t// TODO Auto-generated method stub\n\t\treturn null;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Override\npublic Set<User> getAssociatedUsers() {\n    // TODO Auto-generated method stub\n    return null;\n}",
+  "method_comment": "",
+  "method_annotation": "@Override\n"
+}

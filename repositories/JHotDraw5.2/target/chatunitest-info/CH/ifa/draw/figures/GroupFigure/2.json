@@ -1,0 +1,23 @@
+{
+  "className": "GroupFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner) {\n        // do nothing\n        // we could transform all components proportionally\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "public void basicDisplayBox(Point origin, Point corner) {\n    // do nothing\n    // we could transform all components proportionally\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

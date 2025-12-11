@@ -1,0 +1,25 @@
+{
+  "className": "TextFigure",
+  "methodName": "changed",
+  "brief": "public void changed(){}",
+  "methodSignature": "changed()",
+  "sourceCode": "public void changed() {\n        super.changed();\n        updateLocation();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "changed()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "updateLocation()"
+    ]
+  },
+  "full_method_info": "/**\n * Updates the location whenever the figure changes itself.\n */\npublic void changed() {\n    super.changed();\n    updateLocation();\n}",
+  "method_comment": "\n     * Updates the location whenever the figure changes itself.\n     ",
+  "method_annotation": ""
+}

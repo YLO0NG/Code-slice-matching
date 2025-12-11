@@ -1,0 +1,20 @@
+{
+  "className": "BuildingData",
+  "methodName": "setCityBlock",
+  "brief": "public void setCityBlock(int cityBlock){}",
+  "methodSignature": "setCityBlock(int)",
+  "sourceCode": "public void setCityBlock(int cityBlock) {\n\t\tthis.cityBlock = cityBlock;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setCityBlock(int cityBlock) {\n    this.cityBlock = cityBlock;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

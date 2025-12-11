@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createSaveFileChooser",
+  "brief": "protected JFileChooser createSaveFileChooser(){}",
+  "methodSignature": "createSaveFileChooser()",
+  "sourceCode": "protected JFileChooser createSaveFileChooser() {\n        JFileChooser saveDialog = new JFileChooser();\n        saveDialog.setDialogTitle(\"Save File...\");\n        return saveDialog;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JFileChooser": [
+      "setDialogTitle(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Create a file chooser for the save file dialog. Subclasses may override this\n * method in order to customize the save file dialog.\n */\nprotected JFileChooser createSaveFileChooser() {\n    JFileChooser saveDialog = new JFileChooser();\n    saveDialog.setDialogTitle(\"Save File...\");\n    return saveDialog;\n}",
+  "method_comment": "\n     * Create a file chooser for the save file dialog. Subclasses may override this\n     * method in order to customize the save file dialog.\n     ",
+  "method_annotation": ""
+}

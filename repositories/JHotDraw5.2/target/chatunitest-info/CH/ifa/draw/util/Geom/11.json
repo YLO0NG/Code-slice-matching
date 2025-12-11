@@ -1,0 +1,31 @@
+{
+  "className": "Geom",
+  "methodName": "angleToPoint",
+  "brief": "static public Point angleToPoint(Rectangle r, double angle){}",
+  "methodSignature": "angleToPoint(Rectangle, double)",
+  "sourceCode": "static public Point angleToPoint(Rectangle r, double angle) {\n        double si = Math.sin(angle);\n        double co = Math.cos(angle);\n        double e = 0.0001;\n\n    \tint x= 0, y= 0;\n\t    if (Math.abs(si) > e) {\n\t\t    x= (int) ((1.0 + co/Math.abs(si))/2.0 * r.width);\n\t\t    int max = r.width;\n\t\t\tint value = x;\n\t\t\tif (value < 0)\n\t\t\t    value = 0;\n\t\t\tif (value > max)\n\t\t\t    value = max;\n\t\t    x= value;\n\t    } else if (co >= 0.0)\n\t\t    x= r.width;\n\t    if (Math.abs(co) > e) {\n\t\t    y= (int) ((1.0 + si/Math.abs(co))/2.0 * r.height);\n\t\t    y= range(0, r.height, y);\n\t    } else if (si >= 0.0)\n\t\t    y= r.height;\n\t    return new Point(r.x + x, r.y + y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "java.lang.Math": [
+      "sin(double)",
+      "cos(double)",
+      "abs(double)"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "range(int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the point on a rectangle that corresponds to the given angle.\n */\nstatic public Point angleToPoint(Rectangle r, double angle) {\n    double si = Math.sin(angle);\n    double co = Math.cos(angle);\n    double e = 0.0001;\n    int x = 0, y = 0;\n    if (Math.abs(si) > e) {\n        x = (int) ((1.0 + co / Math.abs(si)) / 2.0 * r.width);\n        int max = r.width;\n        int value = x;\n        if (value < 0)\n            value = 0;\n        if (value > max)\n            value = max;\n        x = value;\n    } else if (co >= 0.0)\n        x = r.width;\n    if (Math.abs(co) > e) {\n        y = (int) ((1.0 + si / Math.abs(co)) / 2.0 * r.height);\n        y = range(0, r.height, y);\n    } else if (si >= 0.0)\n        y = r.height;\n    return new Point(r.x + x, r.y + y);\n}",
+  "method_comment": "\n     * Gets the point on a rectangle that corresponds to the given angle.\n     ",
+  "method_annotation": ""
+}

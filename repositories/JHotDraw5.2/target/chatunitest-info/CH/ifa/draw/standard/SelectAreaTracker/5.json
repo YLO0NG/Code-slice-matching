@@ -1,0 +1,34 @@
+{
+  "className": "SelectAreaTracker",
+  "methodName": "drawXORRect",
+  "brief": "private void drawXORRect(Rectangle r)\r\n   {}",
+  "methodSignature": "drawXORRect(Rectangle)",
+  "sourceCode": "private void drawXORRect(Rectangle r)\n    {\n        Graphics g = view().getGraphics();\n        g.setXORMode(view().getBackground());\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "CH.ifa.draw.framework.DrawingView": [
+      "getGraphics()",
+      "getBackground()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ],
+    "java.awt.Graphics": [
+      "setXORMode(Color)",
+      "drawRect(int, int, int, int)",
+      "setColor(Color)"
+    ]
+  },
+  "full_method_info": "private void drawXORRect(Rectangle r) {\n    Graphics g = view().getGraphics();\n    g.setXORMode(view().getBackground());\n    g.setColor(Color.black);\n    g.drawRect(r.x, r.y, r.width, r.height);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

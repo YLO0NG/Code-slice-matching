@@ -1,0 +1,31 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "basicMoveBy",
+  "brief": "protected void basicMoveBy(int dx, int dy){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "protected void basicMoveBy(int dx, int dy) {\n\t\tsuper.basicMoveBy(dx, dy);\n\t\tgetPresentationFigure().moveBy(dx, dy);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "basicMoveBy(int, int)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "moveBy(int, int)"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "getPresentationFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Standard presentation method which is delegated to the encapsulated presentation figure.\n * The presentation figure is moved as well as all contained figures.\n */\nprotected void basicMoveBy(int dx, int dy) {\n    super.basicMoveBy(dx, dy);\n    getPresentationFigure().moveBy(dx, dy);\n}",
+  "method_comment": "\n\t * Standard presentation method which is delegated to the encapsulated presentation figure.\n\t * The presentation figure is moved as well as all contained figures.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createFontSizeMenu",
+  "brief": "protected JMenu createFontSizeMenu(){}",
+  "methodSignature": "createFontSizeMenu()",
+  "sourceCode": "protected JMenu createFontSizeMenu() {\n        CommandMenu menu = new CommandMenu(\"Font Size\");\n        int sizes[] = { 9, 10, 12, 14, 18, 24, 36, 48, 72 };\n        for (int i = 0; i < sizes.length; i++) {\n            menu.add(\n                new ChangeAttributeCommand(\n                    Integer.toString(sizes[i]),\n                    \"FontSize\",\n                    new Integer(sizes[i]),  view())\n                );\n        }\n        return menu;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)"
+    ],
+    "java.lang.Integer": [
+      "toString(int)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the font size menu.\n */\nprotected JMenu createFontSizeMenu() {\n    CommandMenu menu = new CommandMenu(\"Font Size\");\n    int[] sizes = { 9, 10, 12, 14, 18, 24, 36, 48, 72 };\n    for (int i = 0; i < sizes.length; i++) {\n        menu.add(new ChangeAttributeCommand(Integer.toString(sizes[i]), \"FontSize\", new Integer(sizes[i]), view()));\n    }\n    return menu;\n}",
+  "method_comment": "\n     * Creates the font size menu.\n     ",
+  "method_annotation": ""
+}

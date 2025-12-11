@@ -1,0 +1,46 @@
+{
+  "className": "DrawApplication",
+  "methodName": "promptOpen",
+  "brief": "public void promptOpen(){}",
+  "methodSignature": "promptOpen()",
+  "sourceCode": "public void promptOpen() {\n    \ttoolDone();\n        JFileChooser openDialog = createOpenFileChooser();\n        getStorageFormatManager().registerFileFilters(openDialog);\n        if (openDialog.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {\n            StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(openDialog.getFileFilter());\n            if (foundFormat != null) {\n                String file = openDialog.getSelectedFile().getAbsolutePath();\n\t\t\t\ttry {\n\t\t\t\t    Drawing restoredDrawing = foundFormat.restore(file);\n\t\t\t\t    if (restoredDrawing != null) {\n\t\t\t\t        newWindow();\n\t\t\t\t        setDrawing(restoredDrawing);\n\t\t\t\t        setDrawingTitle(file);\n\t\t\t\t    }\n\t\t\t\t    else {\n\t\t\t\t       showStatus(\"Unknown file type: could not open file '\" + file + \"'\");\n\t\t\t\t    }\n\t\t\t\t} catch (IOException e) {\n\t\t\t\t    showStatus(\"Error: \" + e);\n\t\t\t\t}\n            }\n            else {\n                showStatus(\"Not a valid file format: \" + openDialog.getFileFilter().getDescription());\n            }\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "getStorageFormatManager()",
+      "showStatus(String)",
+      "createOpenFileChooser()",
+      "setDrawing(Drawing)",
+      "toolDone()",
+      "newWindow()",
+      "setDrawingTitle(String)"
+    ],
+    "CH.ifa.draw.util.StorageFormatManager": [
+      "registerFileFilters(JFileChooser)",
+      "findStorageFormat(FileFilter)"
+    ],
+    "javax.swing.JFileChooser": [
+      "showOpenDialog(Component)",
+      "getFileFilter()",
+      "getSelectedFile()"
+    ],
+    "java.io.File": [
+      "getAbsolutePath()"
+    ],
+    "CH.ifa.draw.util.StorageFormat": [
+      "restore(String)"
+    ],
+    "javax.swing.filechooser.FileFilter": [
+      "getDescription()"
+    ]
+  },
+  "full_method_info": "/**\n * Shows a file dialog and opens a drawing.\n */\npublic void promptOpen() {\n    toolDone();\n    JFileChooser openDialog = createOpenFileChooser();\n    getStorageFormatManager().registerFileFilters(openDialog);\n    if (openDialog.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {\n        StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(openDialog.getFileFilter());\n        if (foundFormat != null) {\n            String file = openDialog.getSelectedFile().getAbsolutePath();\n            try {\n                Drawing restoredDrawing = foundFormat.restore(file);\n                if (restoredDrawing != null) {\n                    newWindow();\n                    setDrawing(restoredDrawing);\n                    setDrawingTitle(file);\n                } else {\n                    showStatus(\"Unknown file type: could not open file '\" + file + \"'\");\n                }\n            } catch (IOException e) {\n                showStatus(\"Error: \" + e);\n            }\n        } else {\n            showStatus(\"Not a valid file format: \" + openDialog.getFileFilter().getDescription());\n        }\n    }\n}",
+  "method_comment": "\n     * Shows a file dialog and opens a drawing.\n     ",
+  "method_annotation": ""
+}

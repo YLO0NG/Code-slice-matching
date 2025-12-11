@@ -1,0 +1,22 @@
+{
+  "className": "CreationTool",
+  "methodName": "createFigure",
+  "brief": "protected Figure createFigure(){}",
+  "methodSignature": "createFigure()",
+  "sourceCode": "protected Figure createFigure() {\n        if (fPrototype == null)\n\t\t    throw new HJDError(\"No protoype defined\");\n        return (Figure) fPrototype.clone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "clone()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates a new figure by cloning the prototype.\n */\nprotected Figure createFigure() {\n    if (fPrototype == null)\n        throw new HJDError(\"No protoype defined\");\n    return (Figure) fPrototype.clone();\n}",
+  "method_comment": "\n     * Creates a new figure by cloning the prototype.\n     ",
+  "method_annotation": ""
+}

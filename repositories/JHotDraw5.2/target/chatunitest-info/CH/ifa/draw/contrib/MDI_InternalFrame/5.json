@@ -1,0 +1,29 @@
+{
+  "className": "MDI_InternalFrame",
+  "methodName": "findDrawingView",
+  "brief": "protected StandardDrawingView findDrawingView(StandardDrawingView newDrawingView, Container container){}",
+  "methodSignature": "findDrawingView(StandardDrawingView, Container)",
+  "sourceCode": "protected StandardDrawingView findDrawingView(StandardDrawingView newDrawingView, Container container) {\n\t\tStandardDrawingView oldDrawingView = null;\n\t\tComponent[] components = container.getComponents();\n\t\tfor (int i = 0; i < components.length; i++) {\n\t\t\tif (components[i] instanceof DrawingView) {\n\t\t\t\treturn (StandardDrawingView)components[i];\n\t\t\t}\n\t\t\telse if (components[i] instanceof Container) {\n\t\t\t\toldDrawingView = findDrawingView(newDrawingView, (Container)components[i]);\n\t\t\t\tif (oldDrawingView != null) {\n\t\t\t\t\treturn oldDrawingView;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\treturn oldDrawingView;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView",
+    "Container"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "java.awt.Container": [
+      "getComponents()"
+    ],
+    "CH.ifa.draw.contrib.MDI_InternalFrame": [
+      "findDrawingView(StandardDrawingView, Container)"
+    ]
+  },
+  "full_method_info": "/**\n * Searches the DrawingView in the children's component hierarchy.\n *\n * @param\tnewDrawingView\tDrawingView to be searched\n * @param\tcontainer\t\tContainer which is searched\n */\nprotected StandardDrawingView findDrawingView(StandardDrawingView newDrawingView, Container container) {\n    StandardDrawingView oldDrawingView = null;\n    Component[] components = container.getComponents();\n    for (int i = 0; i < components.length; i++) {\n        if (components[i] instanceof DrawingView) {\n            return (StandardDrawingView) components[i];\n        } else if (components[i] instanceof Container) {\n            oldDrawingView = findDrawingView(newDrawingView, (Container) components[i]);\n            if (oldDrawingView != null) {\n                return oldDrawingView;\n            }\n        }\n    }\n    return oldDrawingView;\n}",
+  "method_comment": "\n     * Searches the DrawingView in the children's component hierarchy.\n     *\n     * @param\tnewDrawingView\tDrawingView to be searched\n     * @param\tcontainer\t\tContainer which is searched\n     ",
+  "method_annotation": ""
+}

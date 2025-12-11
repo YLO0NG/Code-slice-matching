@@ -1,0 +1,18 @@
+{
+  "className": "PopupMenuFigureSelection",
+  "methodName": "getSelectedFigure",
+  "brief": "public Figure getSelectedFigure();",
+  "methodSignature": "getSelectedFigure()",
+  "sourceCode": "public Figure getSelectedFigure();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get the figure which was selected when the popup menu was invoked.\n *\n * @return  figure which is selected (typically be a SelectionTool)\n */\npublic Figure getSelectedFigure();",
+  "method_comment": "\n\t * Get the figure which was selected when the popup menu was invoked.\n\t *\n\t * @return  figure which is selected (typically be a SelectionTool)\n\t ",
+  "method_annotation": ""
+}

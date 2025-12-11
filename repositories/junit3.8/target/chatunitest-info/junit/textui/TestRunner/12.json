@@ -1,0 +1,50 @@
+{
+  "className": "TestRunner",
+  "methodName": "start",
+  "brief": "protected TestResult start(String args[]) throws Exception{}",
+  "methodSignature": "start(String[])",
+  "sourceCode": "protected TestResult start(String args[]) throws Exception {\r\n\t\tString testCase= \"\";\r\n\t\tboolean wait= false;\r\n\t\t\r\n\t\tfor (int i= 0; i < args.length; i++) {\r\n\t\t\tif (args[i].equals(\"-wait\"))\r\n\t\t\t\twait= true;\r\n\t\t\telse if (args[i].equals(\"-c\")) \r\n\t\t\t\ttestCase= extractClassName(args[++i]);\r\n\t\t\telse if (args[i].equals(\"-v\"))\r\n\t\t\t\tSystem.err.println(\"JUnit \"+Version.id()+\" by Kent Beck and Erich Gamma\");\r\n\t\t\telse\r\n\t\t\t\ttestCase= args[i];\r\n\t\t}\r\n\t\t\r\n\t\tif (testCase.equals(\"\")) \r\n\t\t\tthrow new Exception(\"Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class\");\r\n\r\n\t\ttry {\r\n\t\t\tTest suite= getTest(testCase);\r\n\t\t\t/*{*/TestResult result= createTestResult();\r\n\t\t\tresult.addListener(fPrinter);\r\n\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\tsuite.run(result);\r\n\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\tlong runTime= endTime-startTime;\r\n\t\t\tfPrinter.print(result, runTime);\r\n\t\t\t\r\n\t\t\tpause(wait);\r\n\t\t\treturn result;/*}*/\r\n\t\t}\r\n\t\tcatch(Exception e) {\r\n\t\t\tthrow new Exception(\"Could not create and run test suite: \"+e);\r\n\t\t}\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getTest(String)",
+      "extractClassName(String)"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "junit.runner.Version": [
+      "id()"
+    ],
+    "junit.textui.TestRunner": [
+      "pause(boolean)",
+      "createTestResult()"
+    ],
+    "junit.framework.TestResult": [
+      "addListener(TestListener)"
+    ],
+    "java.lang.System": [
+      "currentTimeMillis()"
+    ],
+    "junit.framework.Test": [
+      "run(TestResult)"
+    ],
+    "junit.textui.ResultPrinter": [
+      "print(TestResult, long)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Starts a test run. Analyzes the command line arguments\r\n * and runs the given test suite.\r\n */\r\nprotected TestResult start(String[] args) throws Exception {\r\n    String testCase = \"\";\r\n    boolean wait = false;\r\n    for (int i = 0; i < args.length; i++) {\r\n        if (args[i].equals(\"-wait\"))\r\n            wait = true;\r\n        else if (args[i].equals(\"-c\"))\r\n            testCase = extractClassName(args[++i]);\r\n        else if (args[i].equals(\"-v\"))\r\n            System.err.println(\"JUnit \" + Version.id() + \" by Kent Beck and Erich Gamma\");\r\n        else\r\n            testCase = args[i];\r\n    }\r\n    if (testCase.equals(\"\"))\r\n        throw new Exception(\"Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class\");\r\n    try {\r\n        Test suite = getTest(testCase);\r\n        /*{*/\r\n        TestResult result = createTestResult();\r\n        result.addListener(fPrinter);\r\n        long startTime = System.currentTimeMillis();\r\n        suite.run(result);\r\n        long endTime = System.currentTimeMillis();\r\n        long runTime = endTime - startTime;\r\n        fPrinter.print(result, runTime);\r\n        pause(wait);\r\n        return result;\r\n        /*}*/\r\n    } catch (Exception e) {\r\n        throw new Exception(\"Could not create and run test suite: \" + e);\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Starts a test run. Analyzes the command line arguments\r\n\t * and runs the given test suite.\r\n\t ",
+  "method_annotation": ""
+}

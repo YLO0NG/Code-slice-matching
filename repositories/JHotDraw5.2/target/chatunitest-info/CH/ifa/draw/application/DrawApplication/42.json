@@ -1,0 +1,29 @@
+{
+  "className": "DrawApplication",
+  "methodName": "exit",
+  "brief": "public void exit(){}",
+  "methodSignature": "exit()",
+  "sourceCode": "public void exit() {\n        destroy();\n        setVisible(false);      // hide the JFrame\n        dispose();   // tell windowing system to free resources\n\t\tSystem.exit(0);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "destroy()"
+    ],
+    "java.awt.Window": [
+      "setVisible(boolean)",
+      "dispose()"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Exits the application. You should never override this method\n */\npublic void exit() {\n    destroy();\n    // hide the JFrame\n    setVisible(false);\n    // tell windowing system to free resources\n    dispose();\n    System.exit(0);\n}",
+  "method_comment": "\n     * Exits the application. You should never override this method\n     ",
+  "method_annotation": ""
+}

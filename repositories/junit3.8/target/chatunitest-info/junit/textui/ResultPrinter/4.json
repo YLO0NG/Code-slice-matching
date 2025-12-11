@@ -1,0 +1,28 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printFailures",
+  "brief": "protected void printFailures(TestResult result){}",
+  "methodSignature": "printFailures(TestResult)",
+  "sourceCode": "protected void printFailures(TestResult result) {\r\n\t\tprintDefects(result.failures(), result.failureCount(), \"failure\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "failures()",
+      "failureCount()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "printDefects(Enumeration, int, String)"
+    ]
+  },
+  "full_method_info": "protected void printFailures(TestResult result) {\r\n    printDefects(result.failures(), result.failureCount(), \"failure\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

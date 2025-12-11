@@ -1,0 +1,122 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.User",
+  "className": "User",
+  "index": 45,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Comparable<User>]",
+  "packageName": "ca.ualberta.cs.serl.wikidev",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev;",
+  "classSignature": "public class User",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Color;",
+    "import java.util.ArrayList;",
+    "import java.util.HashMap;",
+    "import ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;"
+  ],
+  "fields": [
+    "public static final String ROLE_DEVELOPER = \"Developer\";",
+    "public static final String ROLE_MANAGER = \"Manager\";",
+    "private int userID;",
+    "private String userName;",
+    "private String userRealName;",
+    "private ArrayList<Project> projects;",
+    "private HashMap<IArtifact, Integer> relatedArtifacts;",
+    "private HashMap<Project, String> rolePerProject;",
+    "private ArrayList<String> aliases;",
+    "private int index;",
+    "private Color color;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Comparable"
+  ],
+  "methodSigs": {
+    "getColor()": "0",
+    "setColor(Color)": "1",
+    "getIndex()": "2",
+    "getProjects()": "3",
+    "setProjects(ArrayList)": "4",
+    "setIndex(int)": "5",
+    "getUserID()": "6",
+    "getUserName()": "7",
+    "addRelatedArtifacts(IArtifact, int)": "8",
+    "getRelatedArtifacts()": "9",
+    "getAliases()": "10",
+    "setUserRealName(String)": "11",
+    "getRolePerProject()": "12",
+    "setRolePerProject(HashMap)": "13",
+    "toString()": "14",
+    "compareTo(User)": "15",
+    "User(int, String, String)": "16",
+    "User(String)": "17"
+  },
+  "methodsBrief": [
+    "public Color getColor(){}",
+    "public void setColor(Color color){}",
+    "public int getIndex(){}",
+    "public ArrayList<Project> getProjects(){}",
+    "public void setProjects(ArrayList<Project> projects){}",
+    "public void setIndex(int index){}",
+    "public int getUserID(){}",
+    "public String getUserName(){}",
+    "public void addRelatedArtifacts(IArtifact artifact, int weight){}",
+    "public HashMap<IArtifact, Integer> getRelatedArtifacts(){}",
+    "public ArrayList<String> getAliases(){}",
+    "public void setUserRealName(String userRealName){}",
+    "public HashMap<Project, String> getRolePerProject(){}",
+    "public void setRolePerProject(HashMap<Project, String> rolePerProject){}",
+    "public String toString(){}",
+    "public int compareTo(User arg0){}",
+    "public User(int userID, String userName, String userRealName){}",
+    "public User(String userName){}"
+  ],
+  "constructorSigs": [
+    "User(int, String, String)",
+    "User(String)"
+  ],
+  "constructorBrief": [
+    "public User(int userID, String userName, String userRealName){}",
+    "public User(String userName){}"
+  ],
+  "getterSetterSigs": [
+    "getColor()",
+    "setColor(Color)",
+    "getIndex()",
+    "getProjects()",
+    "setProjects(ArrayList)",
+    "setIndex(int)",
+    "getUserID()",
+    "getUserName()",
+    "getRelatedArtifacts()",
+    "getAliases()",
+    "setUserRealName(String)",
+    "getRolePerProject()",
+    "setRolePerProject(HashMap)"
+  ],
+  "getterSetterBrief": [
+    "public Color getColor(){}",
+    "public void setColor(Color color){}",
+    "public int getIndex(){}",
+    "public ArrayList<Project> getProjects(){}",
+    "public void setProjects(ArrayList<Project> projects){}",
+    "public void setIndex(int index){}",
+    "public int getUserID(){}",
+    "public String getUserName(){}",
+    "public HashMap<IArtifact, Integer> getRelatedArtifacts(){}",
+    "public ArrayList<String> getAliases(){}",
+    "public void setUserRealName(String userRealName){}",
+    "public HashMap<Project, String> getRolePerProject(){}",
+    "public void setRolePerProject(HashMap<Project, String> rolePerProject){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev;\n\nimport java.awt.Color;\nimport java.util.ArrayList;\nimport java.util.HashMap;\nimport ca.ualberta.cs.serl.wikidev.artifacts.IArtifact;\n\n/**\n * @author   User\n */\npublic class User implements Comparable<User> {\n\n    public static final String ROLE_DEVELOPER = \"Developer\";\n\n    public static final String ROLE_MANAGER = \"Manager\";\n\n    /**\n     * @uml.property  name=\"userID\"\n     */\n    private int userID;\n\n    /**\n     * @uml.property  name=\"userName\"\n     */\n    private String userName;\n\n    /**\n     * @uml.property  name=\"userRealName\"\n     */\n    private String userRealName;\n\n    /**\n     * @uml.property  name=\"projects\"\n     */\n    private ArrayList<Project> projects;\n\n    /**\n     * @uml.property  name=\"relatedArtifacts\"\n     * @uml.associationEnd  qualifier=\"artifact:ca.ualberta.cs.serl.wikidev.artifacts.IArtifact java.lang.Integer\"\n     */\n    private HashMap<IArtifact, Integer> relatedArtifacts;\n\n    /**\n     * @uml.property  name=\"rolePerProject\"\n     */\n    private HashMap<Project, String> rolePerProject;\n\n    /**\n     * @uml.property  name=\"aliases\"\n     */\n    private ArrayList<String> aliases;\n\n    /**\n     * @uml.property  name=\"index\"\n     */\n    private int index;\n\n    private Color color;\n\n    public User(int userID, String userName, String userRealName) {\n        this.userID = userID;\n        this.userName = userName;\n        this.userRealName = userRealName;\n        this.relatedArtifacts = new HashMap<IArtifact, Integer>();\n    }\n\n    public User(String userName) {\n        this.userID = 0;\n        this.userName = userName;\n        this.userRealName = \"\";\n        this.relatedArtifacts = new HashMap<IArtifact, Integer>();\n    }\n\n    public Color getColor() {\n        return color;\n    }\n\n    public void setColor(Color color) {\n        this.color = color;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"index\"\n     */\n    public int getIndex() {\n        return index;\n    }\n\n    public ArrayList<Project> getProjects() {\n        return projects;\n    }\n\n    public void setProjects(ArrayList<Project> projects) {\n        this.projects = projects;\n    }\n\n    /**\n     * @param index\n     * @uml.property  name=\"index\"\n     */\n    public void setIndex(int index) {\n        this.index = index;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"userID\"\n     */\n    public int getUserID() {\n        return userID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"userName\"\n     */\n    public String getUserName() {\n        return userName;\n    }\n\n    public void addRelatedArtifacts(IArtifact artifact, int weight) {\n        relatedArtifacts.put(artifact, weight);\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"relatedArtifacts\"\n     */\n    public HashMap<IArtifact, Integer> getRelatedArtifacts() {\n        return relatedArtifacts;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"aliases\"\n     */\n    public ArrayList<String> getAliases() {\n        aliases = new ArrayList<String>();\n        aliases.add(userName);\n        aliases.add(userRealName);\n        String[] name = userRealName.split(\" \");\n        for (int i = 0; i < name.length; i++) {\n            aliases.add(name[i]);\n        }\n        /*try {\n\t\t\taliases.addAll(DataManager.getUserAliases(userID));\n\t\t} catch (SQLException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}*/\n        return aliases;\n    }\n\n    /**\n     * @param userRealName\n     * @uml.property  name=\"userRealName\"\n     */\n    public void setUserRealName(String userRealName) {\n        this.userRealName = userRealName;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rolePerProject\"\n     */\n    public HashMap<Project, String> getRolePerProject() {\n        return rolePerProject;\n    }\n\n    /**\n     * @param  rolePerProject\n     * @uml.property  name=\"rolePerProject\"\n     */\n    public void setRolePerProject(HashMap<Project, String> rolePerProject) {\n        this.rolePerProject = rolePerProject;\n    }\n\n    public String toString() {\n        return userName;\n    }\n\n    public int compareTo(User arg0) {\n        if (this.equals(arg0)) {\n            return 0;\n        } else {\n            return 1;\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * @author   User\n */\npublic class User implements Comparable<User> {\n\n    public static final String ROLE_DEVELOPER = \"Developer\";\n\n    public static final String ROLE_MANAGER = \"Manager\";\n\n    /**\n     * @uml.property  name=\"userID\"\n     */\n    private int userID;\n\n    /**\n     * @uml.property  name=\"userName\"\n     */\n    private String userName;\n\n    /**\n     * @uml.property  name=\"userRealName\"\n     */\n    private String userRealName;\n\n    /**\n     * @uml.property  name=\"projects\"\n     */\n    private ArrayList<Project> projects;\n\n    /**\n     * @uml.property  name=\"relatedArtifacts\"\n     * @uml.associationEnd  qualifier=\"artifact:ca.ualberta.cs.serl.wikidev.artifacts.IArtifact java.lang.Integer\"\n     */\n    private HashMap<IArtifact, Integer> relatedArtifacts;\n\n    /**\n     * @uml.property  name=\"rolePerProject\"\n     */\n    private HashMap<Project, String> rolePerProject;\n\n    /**\n     * @uml.property  name=\"aliases\"\n     */\n    private ArrayList<String> aliases;\n\n    /**\n     * @uml.property  name=\"index\"\n     */\n    private int index;\n\n    private Color color;\n\n    public User(int userID, String userName, String userRealName) {\n        this.userID = userID;\n        this.userName = userName;\n        this.userRealName = userRealName;\n        this.relatedArtifacts = new HashMap<IArtifact, Integer>();\n    }\n\n    public User(String userName) {\n        this.userID = 0;\n        this.userName = userName;\n        this.userRealName = \"\";\n        this.relatedArtifacts = new HashMap<IArtifact, Integer>();\n    }\n\n    public Color getColor() {\n        return color;\n    }\n\n    public void setColor(Color color) {\n        this.color = color;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"index\"\n     */\n    public int getIndex() {\n        return index;\n    }\n\n    public ArrayList<Project> getProjects() {\n        return projects;\n    }\n\n    public void setProjects(ArrayList<Project> projects) {\n        this.projects = projects;\n    }\n\n    /**\n     * @param index\n     * @uml.property  name=\"index\"\n     */\n    public void setIndex(int index) {\n        this.index = index;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"userID\"\n     */\n    public int getUserID() {\n        return userID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"userName\"\n     */\n    public String getUserName() {\n        return userName;\n    }\n\n    public void addRelatedArtifacts(IArtifact artifact, int weight) {\n        relatedArtifacts.put(artifact, weight);\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"relatedArtifacts\"\n     */\n    public HashMap<IArtifact, Integer> getRelatedArtifacts() {\n        return relatedArtifacts;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"aliases\"\n     */\n    public ArrayList<String> getAliases() {\n        aliases = new ArrayList<String>();\n        aliases.add(userName);\n        aliases.add(userRealName);\n        String[] name = userRealName.split(\" \");\n        for (int i = 0; i < name.length; i++) {\n            aliases.add(name[i]);\n        }\n        /*try {\n\t\t\taliases.addAll(DataManager.getUserAliases(userID));\n\t\t} catch (SQLException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}*/\n        return aliases;\n    }\n\n    /**\n     * @param userRealName\n     * @uml.property  name=\"userRealName\"\n     */\n    public void setUserRealName(String userRealName) {\n        this.userRealName = userRealName;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"rolePerProject\"\n     */\n    public HashMap<Project, String> getRolePerProject() {\n        return rolePerProject;\n    }\n\n    /**\n     * @param  rolePerProject\n     * @uml.property  name=\"rolePerProject\"\n     */\n    public void setRolePerProject(HashMap<Project, String> rolePerProject) {\n        this.rolePerProject = rolePerProject;\n    }\n\n    public String toString() {\n        return userName;\n    }\n\n    public int compareTo(User arg0) {\n        if (this.equals(arg0)) {\n            return 0;\n        } else {\n            return 1;\n        }\n    }\n}",
+  "subClasses": []
+}

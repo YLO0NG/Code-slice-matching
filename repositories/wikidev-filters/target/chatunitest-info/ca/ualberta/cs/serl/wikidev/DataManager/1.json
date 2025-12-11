@@ -1,0 +1,43 @@
+{
+  "className": "DataManager",
+  "methodName": "openTheConnection",
+  "brief": "public static void openTheConnection(String username, String password, String databaseName) throws Exceptio{}",
+  "methodSignature": "openTheConnection(String, String, String)",
+  "sourceCode": "public static void openTheConnection(String username, String password, String databaseName) throws Exception{\n    \tClass.forName(databaseDriver).newInstance();\n    \ttry {\n        conn=DriverManager.getConnection(databaseName, username, password);\n    \t}\n    \tcatch(SQLException e) {\n    \t\tSystem.out.println(e.getMessage());\n    \t\tSystem.exit(1);\n    \t}\n        statement=conn.createStatement();\n        userIDs = new HashSet<Integer>();\n        users = new HashSet<User>();\n        projectIDs = new HashSet<Integer>();\n        projects = new HashSet<Project>();\n        artifactURLs = new HashSet<String>();\n        allArtifacts = new HashSet<IArtifact>();\n        classNames = new HashSet<String>();\n        classes = new HashSet<SourceClass>();\n        ticketids = new HashMap<Integer, Integer>();\n        tickets = new HashSet<Ticket>();\n        usernames = new HashSet<String>();\n        systems = new HashSet<Integer>();\n        changesets = new HashSet<ChangeSet>();\n        commBuildingIDs = new HashSet<Integer>();\n        commBuildings = new HashSet<CommunicationBuildingData>();\n        fileBuildingIDs = new HashSet<Integer>();\n        fileBuildings = new HashSet<FileBuildingData>();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Class": [
+      "newInstance()",
+      "forName(String)"
+    ],
+    "java.sql.DriverManager": [
+      "getConnection(String, String, String)"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.Throwable": [
+      "getMessage()"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ],
+    "java.sql.Connection": [
+      "createStatement()"
+    ]
+  },
+  "full_method_info": "public static void openTheConnection(String username, String password, String databaseName) throws Exception {\n    Class.forName(databaseDriver).newInstance();\n    try {\n        conn = DriverManager.getConnection(databaseName, username, password);\n    } catch (SQLException e) {\n        System.out.println(e.getMessage());\n        System.exit(1);\n    }\n    statement = conn.createStatement();\n    userIDs = new HashSet<Integer>();\n    users = new HashSet<User>();\n    projectIDs = new HashSet<Integer>();\n    projects = new HashSet<Project>();\n    artifactURLs = new HashSet<String>();\n    allArtifacts = new HashSet<IArtifact>();\n    classNames = new HashSet<String>();\n    classes = new HashSet<SourceClass>();\n    ticketids = new HashMap<Integer, Integer>();\n    tickets = new HashSet<Ticket>();\n    usernames = new HashSet<String>();\n    systems = new HashSet<Integer>();\n    changesets = new HashSet<ChangeSet>();\n    commBuildingIDs = new HashSet<Integer>();\n    commBuildings = new HashSet<CommunicationBuildingData>();\n    fileBuildingIDs = new HashSet<Integer>();\n    fileBuildings = new HashSet<FileBuildingData>();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

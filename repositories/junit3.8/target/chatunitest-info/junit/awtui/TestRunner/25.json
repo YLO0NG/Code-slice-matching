@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "setSuiteName",
+  "brief": "public void setSuiteName(String suite){}",
+  "methodSignature": "setSuiteName(String)",
+  "sourceCode": "public void setSuiteName(String suite) {\r\n\t\tfSuiteField.setText(suite);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.awt.TextField": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "public void setSuiteName(String suite) {\r\n    fSuiteField.setText(suite);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

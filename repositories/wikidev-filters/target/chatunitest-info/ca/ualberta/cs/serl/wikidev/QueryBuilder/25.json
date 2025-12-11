@@ -1,0 +1,22 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectSourceClassByName",
+  "brief": "public static String selectSourceClassByName(String className){}",
+  "methodSignature": "selectSourceClassByName(String)",
+  "sourceCode": "public static String selectSourceClassByName(String className) {\n\t\treturn \"select * from wikidev_sourceclasses where name=\\'\"+className+\"\\'\";\n \t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String selectSourceClassByName(String className) {\n    return \"select * from wikidev_sourceclasses where name=\\'\" + className + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

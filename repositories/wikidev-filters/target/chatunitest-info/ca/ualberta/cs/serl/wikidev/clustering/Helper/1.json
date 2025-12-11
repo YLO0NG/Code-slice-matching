@@ -1,0 +1,25 @@
+{
+  "className": "Helper",
+  "methodName": "FisherYatesShuffle",
+  "brief": "public static void FisherYatesShuffle(int[] array)\r\n{}",
+  "methodSignature": "FisherYatesShuffle(int[])",
+  "sourceCode": "public static void FisherYatesShuffle(int[] array)\n\t{\n\t\tfor (int i = array.length - 1; i > 0; i--)\n\t\t{\n\t\t\t// Pick random positoin:\n\t\t\tint pos = _rnd.nextInt(i + 1);\n\n\t\t\t// Swap:\n\t\t\tint tmp = array[i];\n\t\t\tarray[i] = array[pos];\n\t\t\tarray[pos] = tmp;\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int[]"
+  ],
+  "dependentMethods": {
+    "int": [],
+    "java.util.Random": [
+      "nextInt(int)"
+    ]
+  },
+  "full_method_info": "// ---------------------------------------------------------------------\npublic static void FisherYatesShuffle(int[] array) {\n    for (int i = array.length - 1; i > 0; i--) {\n        // Pick random positoin:\n        int pos = _rnd.nextInt(i + 1);\n        // Swap:\n        int tmp = array[i];\n        array[i] = array[pos];\n        array[pos] = tmp;\n    }\n}",
+  "method_comment": "---------------------------------------------------------------------",
+  "method_annotation": ""
+}

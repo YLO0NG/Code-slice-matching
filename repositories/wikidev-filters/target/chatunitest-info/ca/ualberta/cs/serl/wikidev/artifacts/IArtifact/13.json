@@ -1,0 +1,18 @@
+{
+  "className": "IArtifact",
+  "methodName": "getDocument",
+  "brief": "public Document getDocument(){}",
+  "methodSignature": "getDocument()",
+  "sourceCode": "public Document getDocument() {\n\t\treturn document;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"document\"\n */\npublic Document getDocument() {\n    return document;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"document\"\n\t ",
+  "method_annotation": ""
+}

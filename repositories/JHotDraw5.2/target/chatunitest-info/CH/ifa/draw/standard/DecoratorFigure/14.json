@@ -1,0 +1,26 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "release",
+  "brief": "public void release(){}",
+  "methodSignature": "release()",
+  "sourceCode": "public void release() {\n        super.release();\n        fComponent.removeFromContainer(this);\n        fComponent.release();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "release()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "removeFromContainer(FigureChangeListener)",
+      "release()"
+    ]
+  },
+  "full_method_info": "/**\n * Releases itself and the contained figure.\n */\npublic void release() {\n    super.release();\n    fComponent.removeFromContainer(this);\n    fComponent.release();\n}",
+  "method_comment": "\n     * Releases itself and the contained figure.\n     ",
+  "method_annotation": ""
+}

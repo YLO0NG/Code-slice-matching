@@ -1,0 +1,25 @@
+{
+  "className": "PaletteLayout",
+  "methodName": "preferredLayoutSize",
+  "brief": "public Dimension preferredLayoutSize(Container target){}",
+  "methodSignature": "preferredLayoutSize(Container)",
+  "sourceCode": "public Dimension preferredLayoutSize(Container target) {\n        return minimumLayoutSize(target);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Container"
+  ],
+  "dependentMethods": {
+    "java.awt.Container": [],
+    "CH.ifa.draw.util.PaletteLayout": [
+      "minimumLayoutSize(Container)"
+    ]
+  },
+  "full_method_info": "public Dimension preferredLayoutSize(Container target) {\n    return minimumLayoutSize(target);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

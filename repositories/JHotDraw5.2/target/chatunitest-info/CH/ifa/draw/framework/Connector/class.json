@@ -1,0 +1,50 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.Connector",
+  "className": "Connector",
+  "index": 56,
+  "modifier": "[public ]",
+  "extend": "[Serializable, Storable]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface Connector",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.Serializable;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "Serializable",
+    "Storable"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "findStart(ConnectionFigure)": "0",
+    "findEnd(ConnectionFigure)": "1",
+    "owner()": "2",
+    "displayBox()": "3",
+    "containsPoint(int, int)": "4",
+    "draw(Graphics)": "5"
+  },
+  "methodsBrief": [
+    "public abstract Point findStart(ConnectionFigure connection);",
+    "public abstract Point findEnd(ConnectionFigure connection);",
+    "public abstract Figure owner();",
+    "public abstract Rectangle displayBox();",
+    "public abstract boolean containsPoint(int x, int y);",
+    "public abstract void draw(Graphics g);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Connector.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.*;\nimport java.io.Serializable;\nimport CH.ifa.draw.util.*;\n\n/**\n * Connectors know how to locate a connection point on a figure.\n * A Connector knows its owning figure and can determine either\n * the start or the endpoint of a given connection figure. A connector\n * has a display box that describes the area of a figure it is\n * responsible for. A connector can be visible but it doesn't have\n * to be.<br>\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld004.htm>Strategy</a></b><br>\n * Connector implements the strategy to determine the connections points.<br>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld016.htm>Factory Method</a></b><br>\n * Connectors are created by the Figure's factory method connectorAt.\n * <hr>\n *\n * @see Figure#connectorAt\n * @see ConnectionFigure\n */\npublic interface Connector extends Serializable, Storable {\n\n    /**\n     * Finds the start point for the connection.\n     */\n    public abstract Point findStart(ConnectionFigure connection);\n\n    /**\n     * Finds the end point for the connection.\n     */\n    public abstract Point findEnd(ConnectionFigure connection);\n\n    /**\n     * Gets the connector's owner.\n     */\n    public abstract Figure owner();\n\n    /**\n     * Gets the display box of the connector.\n     */\n    public abstract Rectangle displayBox();\n\n    /**\n     * Tests if a point is contained in the connector.\n     */\n    public abstract boolean containsPoint(int x, int y);\n\n    /**\n     * Draws this connector. Connectors don't have to be visible\n     * and it is OK leave this method empty.\n     */\n    public abstract void draw(Graphics g);\n}\n",
+  "classDeclarationCode": "/**\n * Connectors know how to locate a connection point on a figure.\n * A Connector knows its owning figure and can determine either\n * the start or the endpoint of a given connection figure. A connector\n * has a display box that describes the area of a figure it is\n * responsible for. A connector can be visible but it doesn't have\n * to be.<br>\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld004.htm>Strategy</a></b><br>\n * Connector implements the strategy to determine the connections points.<br>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld016.htm>Factory Method</a></b><br>\n * Connectors are created by the Figure's factory method connectorAt.\n * <hr>\n *\n * @see Figure#connectorAt\n * @see ConnectionFigure\n */\npublic interface Connector extends Serializable, Storable {\n\n    /**\n     * Finds the start point for the connection.\n     */\n    public abstract Point findStart(ConnectionFigure connection);\n\n    /**\n     * Finds the end point for the connection.\n     */\n    public abstract Point findEnd(ConnectionFigure connection);\n\n    /**\n     * Gets the connector's owner.\n     */\n    public abstract Figure owner();\n\n    /**\n     * Gets the display box of the connector.\n     */\n    public abstract Rectangle displayBox();\n\n    /**\n     * Tests if a point is contained in the connector.\n     */\n    public abstract boolean containsPoint(int x, int y);\n\n    /**\n     * Draws this connector. Connectors don't have to be visible\n     * and it is OK leave this method empty.\n     */\n    public abstract void draw(Graphics g);\n}",
+  "subClasses": []
+}

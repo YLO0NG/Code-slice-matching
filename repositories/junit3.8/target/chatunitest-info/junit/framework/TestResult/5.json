@@ -1,0 +1,35 @@
+{
+  "className": "TestResult",
+  "methodName": "endTest",
+  "brief": "public void endTest(Test test){}",
+  "methodSignature": "endTest(Test)",
+  "sourceCode": "public void endTest(Test test) {\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).endTest(test);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "junit.framework.TestResult": [
+      "cloneListeners()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.framework.TestListener": [
+      "endTest(Test)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Informs the result that a test was completed.\r\n */\r\npublic void endTest(Test test) {\r\n    for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n        ((TestListener) e.nextElement()).endTest(test);\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Informs the result that a test was completed.\r\n\t ",
+  "method_annotation": ""
+}

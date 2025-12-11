@@ -1,0 +1,32 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "createMenus",
+  "brief": "protected void createMenus(JMenuBar mb){}",
+  "methodSignature": "createMenus(JMenuBar)",
+  "sourceCode": "protected void createMenus(JMenuBar mb) {\n\t\tsuper.createMenus(mb);\n\t\tmb.add(createAnimationMenu());\n\t\tmb.add(createImagesMenu());\n\t\tmb.add(createWindowMenu());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JMenuBar"
+  ],
+  "dependentMethods": {
+    "javax.swing.JMenuBar": [
+      "add(JMenu)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createMenus(JMenuBar)"
+    ],
+    "CH.ifa.draw.samples.javadraw.JavaDrawApp": [
+      "createAnimationMenu()",
+      "createImagesMenu()",
+      "createWindowMenu()"
+    ]
+  },
+  "full_method_info": "protected void createMenus(JMenuBar mb) {\n    super.createMenus(mb);\n    mb.add(createAnimationMenu());\n    mb.add(createImagesMenu());\n    mb.add(createWindowMenu());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "ReverseVectorEnumerator",
+  "methodName": "hasMoreElements",
+  "brief": "public boolean hasMoreElements(){}",
+  "methodSignature": "hasMoreElements()",
+  "sourceCode": "public boolean hasMoreElements() {\n\t    return count >= 0;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public boolean hasMoreElements() {\n    return count >= 0;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

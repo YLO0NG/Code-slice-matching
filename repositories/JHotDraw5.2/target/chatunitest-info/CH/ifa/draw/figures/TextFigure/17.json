@@ -1,0 +1,27 @@
+{
+  "className": "TextFigure",
+  "methodName": "textExtent",
+  "brief": "private Dimension textExtent(){}",
+  "methodSignature": "textExtent()",
+  "sourceCode": "private Dimension textExtent() {\n        if (!fSizeIsDirty)\n            return new Dimension(fWidth, fHeight);\n        FontMetrics metrics = Toolkit.getDefaultToolkit().getFontMetrics(fFont);\n        fWidth = metrics.stringWidth(fText);\n        fHeight = metrics.getHeight();\n        fSizeIsDirty = false;\n        return new Dimension(metrics.stringWidth(fText), metrics.getHeight());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Toolkit": [
+      "getFontMetrics(Font)",
+      "getDefaultToolkit()"
+    ],
+    "java.awt.FontMetrics": [
+      "stringWidth(String)",
+      "getHeight()"
+    ]
+  },
+  "full_method_info": "private Dimension textExtent() {\n    if (!fSizeIsDirty)\n        return new Dimension(fWidth, fHeight);\n    FontMetrics metrics = Toolkit.getDefaultToolkit().getFontMetrics(fFont);\n    fWidth = metrics.stringWidth(fText);\n    fHeight = metrics.getHeight();\n    fSizeIsDirty = false;\n    return new Dimension(metrics.stringWidth(fText), metrics.getHeight());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

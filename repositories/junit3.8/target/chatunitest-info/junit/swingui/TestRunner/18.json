@@ -1,0 +1,27 @@
+{
+  "className": "TestRunner",
+  "methodName": "createMenus",
+  "brief": "protected void createMenus(JMenuBar mb){}",
+  "methodSignature": "createMenus(JMenuBar)",
+  "sourceCode": "protected void createMenus(JMenuBar mb) {\r\n\t\tmb.add(createJUnitMenu());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JMenuBar"
+  ],
+  "dependentMethods": {
+    "javax.swing.JMenuBar": [
+      "add(JMenu)"
+    ],
+    "junit.swingui.TestRunner": [
+      "createJUnitMenu()"
+    ]
+  },
+  "full_method_info": "protected void createMenus(JMenuBar mb) {\r\n    mb.add(createJUnitMenu());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

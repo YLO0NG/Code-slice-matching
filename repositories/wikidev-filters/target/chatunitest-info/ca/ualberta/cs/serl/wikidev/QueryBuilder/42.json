@@ -1,0 +1,23 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectFileCitySnapshot",
+  "brief": "public static String selectFileCitySnapshot(Timestamp timestamp,\r\n\t\t\tint projectid){}",
+  "methodSignature": "selectFileCitySnapshot(Timestamp, int)",
+  "sourceCode": "public static String selectFileCitySnapshot(Timestamp timestamp,\n\t\t\tint projectid) {\n\t\treturn \"select * from wikidev_wikidev3d_files_city where week=\\'\"+timestamp+\"\\' and project_id=\\'\"+projectid+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public static String selectFileCitySnapshot(Timestamp timestamp, int projectid) {\n    return \"select * from wikidev_wikidev3d_files_city where week=\\'\" + timestamp + \"\\' and project_id=\\'\" + projectid + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

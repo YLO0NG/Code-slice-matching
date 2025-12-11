@@ -1,0 +1,49 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.PolyLineLocator",
+  "className": "PolyLineLocator",
+  "index": 46,
+  "modifier": "[]",
+  "extend": "[AbstractLocator]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "class PolyLineLocator",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "int fIndex;"
+  ],
+  "superClasses": [
+    "AbstractLocator"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "locate(Figure)": "0",
+    "PolyLineLocator(int)": "1"
+  },
+  "methodsBrief": [
+    "public Point locate(Figure owner){}",
+    "public PolyLineLocator(int index){}"
+  ],
+  "constructorSigs": [
+    "PolyLineLocator(int)"
+  ],
+  "constructorBrief": [
+    "public PolyLineLocator(int index){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)PolyLineLocator.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A poly line figure consists of a list of points.\n * It has an optional line decoration at the start and end.\n *\n * @see LineDecoration\n */\nclass PolyLineLocator extends AbstractLocator {\n\n    int fIndex;\n\n    public PolyLineLocator(int index) {\n        fIndex = index;\n    }\n\n    public Point locate(Figure owner) {\n        PolyLineFigure plf = (PolyLineFigure) owner;\n        // guard against changing PolyLineFigures -> temporary hack\n        if (fIndex < plf.pointCount())\n            return ((PolyLineFigure) owner).pointAt(fIndex);\n        return new Point(0, 0);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A poly line figure consists of a list of points.\n * It has an optional line decoration at the start and end.\n *\n * @see LineDecoration\n */\nclass PolyLineLocator extends AbstractLocator {\n\n    int fIndex;\n\n    public PolyLineLocator(int index) {\n        fIndex = index;\n    }\n\n    public Point locate(Figure owner) {\n        PolyLineFigure plf = (PolyLineFigure) owner;\n        // guard against changing PolyLineFigures -> temporary hack\n        if (fIndex < plf.pointCount())\n            return ((PolyLineFigure) owner).pointAt(fIndex);\n        return new Point(0, 0);\n    }\n}",
+  "subClasses": []
+}

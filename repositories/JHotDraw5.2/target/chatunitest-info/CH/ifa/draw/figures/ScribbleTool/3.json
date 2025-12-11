@@ -1,0 +1,41 @@
+{
+  "className": "ScribbleTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n        if (e.getClickCount() >= 2) {\n            fScribble = null;\n            editor().toolDone();\n        }\n        else {\n            // use original event coordinates to avoid\n            // supress that the scribble is constrained to\n            // the grid\n            int x1 = e.getX();\n\t\t\tint y1 = e.getY();\n\t\t\tif (fScribble == null) {\n\t\t\t    fScribble = new PolyLineFigure(x1, y1);\n\t\t\t    view().add(fScribble);\n\t\t\t} else if (fLastX != x1 || fLastY != y1)\n\t\t\t    fScribble.addPoint(x1, y1);\n\t\t\t\n\t\t\tfLastX = x1;\n\t\t\tfLastY = y1;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getClickCount()",
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "editor()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "add(Figure)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "addPoint(int, int)"
+    ]
+  },
+  "full_method_info": "public void mouseDown(MouseEvent e, int x, int y) {\n    if (e.getClickCount() >= 2) {\n        fScribble = null;\n        editor().toolDone();\n    } else {\n        // use original event coordinates to avoid\n        // supress that the scribble is constrained to\n        // the grid\n        int x1 = e.getX();\n        int y1 = e.getY();\n        if (fScribble == null) {\n            fScribble = new PolyLineFigure(x1, y1);\n            view().add(fScribble);\n        } else if (fLastX != x1 || fLastY != y1)\n            fScribble.addPoint(x1, y1);\n        fLastX = x1;\n        fLastY = y1;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

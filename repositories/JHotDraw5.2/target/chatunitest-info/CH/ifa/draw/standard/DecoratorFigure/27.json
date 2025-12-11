@@ -1,0 +1,27 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fComponent);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "write(StorableOutput)"
+    ]
+  },
+  "full_method_info": "/**\n * Writes itself and the contained figure to the StorableOutput.\n */\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeStorable(fComponent);\n}",
+  "method_comment": "\n     * Writes itself and the contained figure to the StorableOutput.\n     ",
+  "method_annotation": ""
+}

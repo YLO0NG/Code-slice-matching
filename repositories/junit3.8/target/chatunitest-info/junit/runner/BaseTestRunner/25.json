@@ -1,0 +1,29 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "getPreference",
+  "brief": "public static int getPreference(String key, int dflt){}",
+  "methodSignature": "getPreference(String, int)",
+  "sourceCode": "public static int getPreference(String key, int dflt) {\r\n \t\tString value= getPreference(key);\r\n \t\tint intValue= dflt;\r\n \t\tif (value == null)\r\n \t\t\treturn intValue;\r\n \t\ttry {\r\n \t\t\tintValue= Integer.parseInt(value);\r\n \t \t} catch (NumberFormatException ne) {\r\n \t\t}\r\n \t\treturn intValue;\r\n \t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.runner.BaseTestRunner": [
+      "getPreference(String)"
+    ],
+    "java.lang.Integer": [
+      "parseInt(String)"
+    ]
+  },
+  "full_method_info": "public static int getPreference(String key, int dflt) {\r\n    String value = getPreference(key);\r\n    int intValue = dflt;\r\n    if (value == null)\r\n        return intValue;\r\n    try {\r\n        intValue = Integer.parseInt(value);\r\n    } catch (NumberFormatException ne) {\r\n    }\r\n    return intValue;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

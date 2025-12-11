@@ -1,0 +1,32 @@
+{
+  "className": "LineConnection",
+  "methodName": "basicMoveBy",
+  "brief": "protected void basicMoveBy(int dx, int dy){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "protected void basicMoveBy(int dx, int dy) {\n        // don't move the start and end point since they are connected\n        for (int i = 1; i < fPoints.size()-1; i++)\n            ((Point) fPoints.elementAt(i)).translate(dx, dy);\n\n        updateConnection(); // make sure that we are still connected\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "java.awt.Point": [
+      "translate(int, int)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "updateConnection()"
+    ]
+  },
+  "full_method_info": "/**\n * Ensures that a connection is updated if the connection\n * was moved.\n */\nprotected void basicMoveBy(int dx, int dy) {\n    // don't move the start and end point since they are connected\n    for (int i = 1; i < fPoints.size() - 1; i++) ((Point) fPoints.elementAt(i)).translate(dx, dy);\n    // make sure that we are still connected\n    updateConnection();\n}",
+  "method_comment": "\n     * Ensures that a connection is updated if the connection\n     * was moved.\n     ",
+  "method_annotation": ""
+}

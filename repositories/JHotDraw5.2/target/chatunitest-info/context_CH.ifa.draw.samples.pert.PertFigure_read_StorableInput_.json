@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.samples.pert.PertFigure",
+  "targetMethod": "read(StorableInput)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.CompositeFigure": "protected Vector fFigures;\nprivate static final long serialVersionUID = 7408153435700021866L;\nprivate int compositeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.samples.pert.PertFigure": "private static final int BORDER = 3;\nprivate Rectangle fDisplayBox;\nprivate Vector fPreTasks;\nprivate Vector fPostTasks;\nprivate static final long serialVersionUID = -7877776240236946511L;\nprivate int pertFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.StorableInput": "private StreamTokenizer fTokenizer;\nprivate Vector          fMap;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": "public void read(StorableInput dr) throws IOException{}",
+    "CH.ifa.draw.util.StorableInput": "public int readInt() throws IOException{}\npublic Storable readStorable() throws IOException{}",
+    "CH.ifa.draw.samples.pert.PertFigure": "private void layout(){}\npublic Vector readTasks(StorableInput dr) throws IOException{}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.CompositeFigure": "* Reads the contained figures from StorableInput.\n     \npublic void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        int size = dr.readInt();\n        fFigures = new Vector(size);\n        for (int i=0; i<size; i++)\n            add((Figure)dr.readStorable());\n    }",
+    "CH.ifa.draw.util.StorableInput": "* Reads an int from the input stream.\n     \npublic int readInt() throws IOException {\n        int token = fTokenizer.nextToken();\n        if (token == StreamTokenizer.TT_NUMBER)\n            return (int) fTokenizer.nval;\n\n        String msg = \"Integer expected in line: \" + fTokenizer.lineno();\n        IOException exception =  new IOException(msg);\n        exception.printStackTrace();\n        throw new IOException(msg);\n    }\n\n     * Reads and resurrects a Storable object from the input stream.\n     \npublic Storable readStorable() throws IOException {\n        Storable storable;\n        String s = readString();\n\n        if (s.equals(\"NULL\"))\n            return null;\n\n        if (s.equals(\"REF\")) {\n            int ref = readInt();\n            return (Storable) retrieve(ref);\n        }\n\n        storable = (Storable) makeInstance(s);\n        map(storable);\n        storable.read(this);\n        return storable;\n    }",
+    "CH.ifa.draw.samples.pert.PertFigure": "private void layout() {\n\t    Point partOrigin = new Point(fDisplayBox.x, fDisplayBox.y);\n\t    partOrigin.translate(BORDER, BORDER);\n\t    Dimension extent = new Dimension(0, 0);\n\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n\n\t\t    Dimension partExtent = f.size();\n\t\t    Point corner = new Point(\n\t\t                        partOrigin.x+partExtent.width,\n\t\t                        partOrigin.y+partExtent.height);\n    \t\tf.basicDisplayBox(partOrigin, corner);\n\n\t\t    extent.width = Math.max(extent.width, partExtent.width);\n\t\t    extent.height += partExtent.height;\n\t\t    partOrigin.y += partExtent.height;\n        }\n\t    fDisplayBox.width = extent.width + 2*BORDER;\n\t    fDisplayBox.height = extent.height + 2*BORDER;\n    }\npublic Vector readTasks(StorableInput dr) throws IOException {\n        int size = dr.readInt();\n        Vector v = new Vector(size);\n        for (int i=0; i<size; i++)\n            v.addElement((Figure)dr.readStorable());\n        return v;\n    }"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getMid_header",
+  "brief": "public String getMid_header(){}",
+  "methodSignature": "getMid_header()",
+  "sourceCode": "public String getMid_header() {\n\t\treturn mid_header;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"mid_header\"\n */\npublic String getMid_header() {\n    return mid_header;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"mid_header\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "SerializationStorageFormat",
+  "methodName": "createFileExtension",
+  "brief": "protected String createFileExtension(){}",
+  "methodSignature": "createFileExtension()",
+  "sourceCode": "protected String createFileExtension() {\n\t\treturn \"ser\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Factory method to create the file extension recognized by the FileFilter for this\n * SerializationStorageFormat. The SerializationStorageFormat has the file extension \"ser\"\n * (e.g. my_picasso.ser).\n *\n * @return new file extension\n */\nprotected String createFileExtension() {\n    return \"ser\";\n}",
+  "method_comment": "\n\t * Factory method to create the file extension recognized by the FileFilter for this\n\t * SerializationStorageFormat. The SerializationStorageFormat has the file extension \"ser\"\n\t * (e.g. my_picasso.ser).\n\t *\n\t * @return new file extension\n\t ",
+  "method_annotation": ""
+}

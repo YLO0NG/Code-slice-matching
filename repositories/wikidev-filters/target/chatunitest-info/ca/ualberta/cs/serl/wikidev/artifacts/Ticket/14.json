@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getRelatedUsers",
+  "brief": "public ArrayList<User> getRelatedUsers(){}",
+  "methodSignature": "getRelatedUsers()",
+  "sourceCode": "public ArrayList<User> getRelatedUsers() {\n\t\treturn relatedUsers;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"relatedUsers\"\n */\npublic ArrayList<User> getRelatedUsers() {\n    return relatedUsers;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"relatedUsers\"\n\t ",
+  "method_annotation": ""
+}

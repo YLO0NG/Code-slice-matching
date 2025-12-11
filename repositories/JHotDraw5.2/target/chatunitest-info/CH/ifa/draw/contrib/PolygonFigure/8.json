@@ -1,0 +1,25 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "basicMoveBy",
+  "brief": "public void basicMoveBy(int dx, int dy){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "public void basicMoveBy(int dx, int dy) {\n    fPoly.translate(dx, dy);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": [
+      "translate(int, int)"
+    ]
+  },
+  "full_method_info": "public void basicMoveBy(int dx, int dy) {\n    fPoly.translate(dx, dy);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

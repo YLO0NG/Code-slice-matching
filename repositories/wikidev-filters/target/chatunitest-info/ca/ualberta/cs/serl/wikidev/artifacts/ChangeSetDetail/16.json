@@ -1,0 +1,20 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setLinesadded",
+  "brief": "public void setLinesadded(int linesadded){}",
+  "methodSignature": "setLinesadded(int)",
+  "sourceCode": "public void setLinesadded(int linesadded) {\n\t\tthis.linesadded = linesadded;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param linesadded\n * @uml.property  name=\"linesadded\"\n */\npublic void setLinesadded(int linesadded) {\n    this.linesadded = linesadded;\n}",
+  "method_comment": "\n\t * @param linesadded\n\t * @uml.property  name=\"linesadded\"\n\t ",
+  "method_annotation": ""
+}

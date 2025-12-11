@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "handleTestSelected",
+  "brief": "public void handleTestSelected(Test test){}",
+  "methodSignature": "handleTestSelected(Test)",
+  "sourceCode": "public void handleTestSelected(Test test) {\r\n\t\tfRerunButton.setEnabled(test != null && (test instanceof TestCase));\r\n\t\tshowFailureDetail(test);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "javax.swing.AbstractButton": [
+      "setEnabled(boolean)"
+    ],
+    "junit.swingui.TestRunner": [
+      "showFailureDetail(Test)"
+    ]
+  },
+  "full_method_info": "public void handleTestSelected(Test test) {\r\n    fRerunButton.setEnabled(test != null && (test instanceof TestCase));\r\n    showFailureDetail(test);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

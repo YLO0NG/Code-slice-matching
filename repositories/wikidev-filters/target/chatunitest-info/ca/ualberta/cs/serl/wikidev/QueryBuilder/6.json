@@ -1,0 +1,30 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertArtifactInCluster",
+  "brief": "public static String insertArtifactInCluster(String type, int clusterid, String projectname, int id, ClusterPoint point){}",
+  "methodSignature": "insertArtifactInCluster(String, int, String, int, ClusterPoint)",
+  "sourceCode": "public static String insertArtifactInCluster(String type, int clusterid, String projectname, int id, ClusterPoint point) {\n\t\treturn \"insert into wikidev_artifacts_in_clusters values (\\'\"+type+\"\\', \"+clusterid+\", \\'\"+projectname+\"\\', \"+id+\", \"+point.getX()+\", \"+point.getY()+\")\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int",
+    "String",
+    "int",
+    "ClusterPoint"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.ClusterPoint": [
+      "getX()",
+      "getY()"
+    ]
+  },
+  "full_method_info": "public static String insertArtifactInCluster(String type, int clusterid, String projectname, int id, ClusterPoint point) {\n    return \"insert into wikidev_artifacts_in_clusters values (\\'\" + type + \"\\', \" + clusterid + \", \\'\" + projectname + \"\\', \" + id + \", \" + point.getX() + \", \" + point.getY() + \")\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,21 @@
+{
+  "className": "Connector",
+  "methodName": "containsPoint",
+  "brief": "public abstract boolean containsPoint(int x, int y);",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public abstract boolean containsPoint(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Tests if a point is contained in the connector.\n */\npublic abstract boolean containsPoint(int x, int y);",
+  "method_comment": "\n     * Tests if a point is contained in the connector.\n     ",
+  "method_annotation": ""
+}

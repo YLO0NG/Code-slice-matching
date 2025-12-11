@@ -1,0 +1,24 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "connectedTextLocator",
+  "brief": "public Locator connectedTextLocator(Figure text){}",
+  "methodSignature": "connectedTextLocator(Figure)",
+  "sourceCode": "public Locator connectedTextLocator(Figure text) {\n        return fComponent.connectedTextLocator(text);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "connectedTextLocator(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the locator used to located connected text.\n */\npublic Locator connectedTextLocator(Figure text) {\n    return fComponent.connectedTextLocator(text);\n}",
+  "method_comment": "\n     * Returns the locator used to located connected text.\n     ",
+  "method_annotation": ""
+}

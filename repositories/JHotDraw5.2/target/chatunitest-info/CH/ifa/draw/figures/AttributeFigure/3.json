@@ -1,0 +1,22 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "getFillColor",
+  "brief": "public Color getFillColor(){}",
+  "methodSignature": "getFillColor()",
+  "sourceCode": "public Color getFillColor() {\n        return (Color) getAttribute(\"FillColor\");\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the fill color of a figure. This is a convenience\n * method.\n * @see #getAttribute\n */\npublic Color getFillColor() {\n    return (Color) getAttribute(\"FillColor\");\n}",
+  "method_comment": "\n     * Gets the fill color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "Cluster",
+  "methodName": "equals",
+  "brief": "public boolean equals(Object o){}",
+  "methodSignature": "equals(Object)",
+  "sourceCode": "public boolean equals(Object o) {\n\t\tCluster c = (Cluster)o;\n\t\tif(this.artifacts.size() == c.artifacts.size()) {\n\t\t\tint counter = 0;\n\t\t\tfor(IArtifact artifact : c.artifacts) {\n\t\t\t\tif(this.artifacts.contains(artifact)) {\n\t\t\t\t\tcounter++;\n\t\t\t\t}\n\t\t\t}\n\t\t\tif(counter == this.artifacts.size()) {\n\t\t\t\treturn true;\n\t\t\t}\n\t\t\telse {\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t\telse{\n\t\t\treturn false;\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "java.util.ArrayList": [
+      "contains(Object)",
+      "size()"
+    ]
+  },
+  "full_method_info": "public boolean equals(Object o) {\n    Cluster c = (Cluster) o;\n    if (this.artifacts.size() == c.artifacts.size()) {\n        int counter = 0;\n        for (IArtifact artifact : c.artifacts) {\n            if (this.artifacts.contains(artifact)) {\n                counter++;\n            }\n        }\n        if (counter == this.artifacts.size()) {\n            return true;\n        } else {\n            return false;\n        }\n    } else {\n        return false;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "className": "Figure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner);",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/**\n * Changes the display box of a figure. This method is\n * always implemented in figure subclasses.\n * It only changes\n * the displaybox and does not announce any changes. It\n * is usually not called by the client. Clients typically call\n * displayBox to change the display box.\n * @param origin the new origin\n * @param corner the new corner\n * @see #displayBox\n */\npublic void basicDisplayBox(Point origin, Point corner);",
+  "method_comment": "\n     * Changes the display box of a figure. This method is\n     * always implemented in figure subclasses.\n     * It only changes\n     * the displaybox and does not announce any changes. It\n     * is usually not called by the client. Clients typically call\n     * displayBox to change the display box.\n     * @param origin the new origin\n     * @param corner the new corner\n     * @see #displayBox\n     ",
+  "method_annotation": ""
+}

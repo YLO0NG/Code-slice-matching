@@ -1,0 +1,38 @@
+{
+  "className": "TestRunner",
+  "methodName": "createFailedPanel",
+  "brief": "protected JPanel createFailedPanel(){}",
+  "methodSignature": "createFailedPanel()",
+  "sourceCode": "protected JPanel createFailedPanel() {\r\n\t\tJPanel failedPanel= new JPanel(new GridLayout(0, 1, 0, 2));\r\n\t\tfRerunButton= new JButton(\"Run\");\r\n\t\tfRerunButton.setEnabled(false);\r\n\t\tfRerunButton.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\t/*{*/TestRunView view= (TestRunView)fTestRunViews.elementAt(fTestViewTab.getSelectedIndex());\r\n\t\t\t\t\tTest rerunTest= view.getSelectedTest();\r\n\t\t\t\t\tif (rerunTest != null)\r\n\t\t\t\t\t\trerunTest(rerunTest);/*}*/\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\tfailedPanel.add(fRerunButton);\r\n\t\treturn failedPanel;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "setEnabled(boolean)",
+      "addActionListener(ActionListener)"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)"
+    ],
+    "javax.swing.JTabbedPane": [
+      "getSelectedIndex()"
+    ],
+    "junit.swingui.TestRunView": [
+      "getSelectedTest()"
+    ],
+    "junit.swingui.TestRunner": [
+      "rerunTest(Test)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "protected JPanel createFailedPanel() {\r\n    JPanel failedPanel = new JPanel(new GridLayout(0, 1, 0, 2));\r\n    fRerunButton = new JButton(\"Run\");\r\n    fRerunButton.setEnabled(false);\r\n    fRerunButton.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            /*{*/\r\n            TestRunView view = (TestRunView) fTestRunViews.elementAt(fTestViewTab.getSelectedIndex());\r\n            Test rerunTest = view.getSelectedTest();\r\n            if (rerunTest != null)\r\n                rerunTest(rerunTest);\r\n            /*}*/\r\n        }\r\n    });\r\n    failedPanel.add(fRerunButton);\r\n    return failedPanel;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

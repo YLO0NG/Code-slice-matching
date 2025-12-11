@@ -1,0 +1,76 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.BorderDecorator",
+  "className": "BorderDecorator",
+  "index": 24,
+  "modifier": "[public ]",
+  "extend": "[DecoratorFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class BorderDecorator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = 1205601808259084917L;",
+    "private int borderDecoratorSerializedDataVersion = 1;",
+    "private Point myBorderOffset;",
+    "private Color myBorderColor;",
+    "private Color myShadowColor;"
+  ],
+  "superClasses": [
+    "DecoratorFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "initialize()": "0",
+    "setBorderOffset(Point)": "1",
+    "getBorderOffset()": "2",
+    "draw(Graphics)": "3",
+    "displayBox()": "4",
+    "figureInvalidated(FigureChangeEvent)": "5",
+    "connectionInsets()": "6",
+    "BorderDecorator()": "7",
+    "BorderDecorator(Figure)": "8"
+  },
+  "methodsBrief": [
+    "protected void initialize(){}",
+    "public void setBorderOffset(Point newBorderOffset){}",
+    "public Point getBorderOffset(){}",
+    "public void draw(Graphics g){}",
+    "public Rectangle displayBox(){}",
+    "public void figureInvalidated(FigureChangeEvent e){}",
+    "public Insets connectionInsets(){}",
+    "public BorderDecorator(){}",
+    "public BorderDecorator(Figure figure){}"
+  ],
+  "constructorSigs": [
+    "BorderDecorator()",
+    "BorderDecorator(Figure)"
+  ],
+  "constructorBrief": [
+    "public BorderDecorator(){}",
+    "public BorderDecorator(Figure figure){}"
+  ],
+  "getterSetterSigs": [
+    "setBorderOffset(Point)",
+    "getBorderOffset()"
+  ],
+  "getterSetterBrief": [
+    "public void setBorderOffset(Point newBorderOffset){}",
+    "public Point getBorderOffset(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)BorderDecorator.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * BorderDecorator decorates an arbitrary Figure with\n * a border.\n */\npublic class BorderDecorator extends DecoratorFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 1205601808259084917L;\n\n    private int borderDecoratorSerializedDataVersion = 1;\n\n    private Point myBorderOffset;\n\n    private Color myBorderColor;\n\n    private Color myShadowColor;\n\n    public BorderDecorator() {\n    }\n\n    public BorderDecorator(Figure figure) {\n        super(figure);\n    }\n\n    /**\n     * Performs additional initialization code before the figure is decorated\n     * Subclasses may override this method.\n     */\n    protected void initialize() {\n        setBorderOffset(new Point(3, 3));\n    }\n\n    public void setBorderOffset(Point newBorderOffset) {\n        myBorderOffset = newBorderOffset;\n    }\n\n    public Point getBorderOffset() {\n        if (myBorderOffset == null) {\n            return new Point(0, 0);\n        } else {\n            return myBorderOffset;\n        }\n    }\n\n    /**\n     * Draws a the figure and decorates it with a border.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        super.draw(g);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y, r.x, r.y + r.height);\n        g.drawLine(r.x, r.y, r.x + r.width, r.y);\n        g.setColor(Color.gray);\n        g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n        g.drawLine(r.x, r.y + r.height, r.x + r.width, r.y + r.height);\n    }\n\n    /**\n     * Gets the displaybox including the border.\n     */\n    public Rectangle displayBox() {\n        Rectangle r = fComponent.displayBox();\n        r.grow(getBorderOffset().x, getBorderOffset().y);\n        return r;\n    }\n\n    /**\n     * Invalidates the figure extended by its border.\n     */\n    public void figureInvalidated(FigureChangeEvent e) {\n        Rectangle rect = e.getInvalidatedRectangle();\n        rect.grow(getBorderOffset().x, getBorderOffset().y);\n        super.figureInvalidated(new FigureChangeEvent(e.getFigure(), rect));\n    }\n\n    public Insets connectionInsets() {\n        Insets i = super.connectionInsets();\n        i.top -= getBorderOffset().y;\n        i.bottom -= getBorderOffset().y;\n        i.left -= getBorderOffset().x;\n        i.right -= getBorderOffset().x;\n        return i;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * BorderDecorator decorates an arbitrary Figure with\n * a border.\n */\npublic class BorderDecorator extends DecoratorFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 1205601808259084917L;\n\n    private int borderDecoratorSerializedDataVersion = 1;\n\n    private Point myBorderOffset;\n\n    private Color myBorderColor;\n\n    private Color myShadowColor;\n\n    public BorderDecorator() {\n    }\n\n    public BorderDecorator(Figure figure) {\n        super(figure);\n    }\n\n    /**\n     * Performs additional initialization code before the figure is decorated\n     * Subclasses may override this method.\n     */\n    protected void initialize() {\n        setBorderOffset(new Point(3, 3));\n    }\n\n    public void setBorderOffset(Point newBorderOffset) {\n        myBorderOffset = newBorderOffset;\n    }\n\n    public Point getBorderOffset() {\n        if (myBorderOffset == null) {\n            return new Point(0, 0);\n        } else {\n            return myBorderOffset;\n        }\n    }\n\n    /**\n     * Draws a the figure and decorates it with a border.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        super.draw(g);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y, r.x, r.y + r.height);\n        g.drawLine(r.x, r.y, r.x + r.width, r.y);\n        g.setColor(Color.gray);\n        g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n        g.drawLine(r.x, r.y + r.height, r.x + r.width, r.y + r.height);\n    }\n\n    /**\n     * Gets the displaybox including the border.\n     */\n    public Rectangle displayBox() {\n        Rectangle r = fComponent.displayBox();\n        r.grow(getBorderOffset().x, getBorderOffset().y);\n        return r;\n    }\n\n    /**\n     * Invalidates the figure extended by its border.\n     */\n    public void figureInvalidated(FigureChangeEvent e) {\n        Rectangle rect = e.getInvalidatedRectangle();\n        rect.grow(getBorderOffset().x, getBorderOffset().y);\n        super.figureInvalidated(new FigureChangeEvent(e.getFigure(), rect));\n    }\n\n    public Insets connectionInsets() {\n        Insets i = super.connectionInsets();\n        i.top -= getBorderOffset().y;\n        i.bottom -= getBorderOffset().y;\n        i.left -= getBorderOffset().x;\n        i.right -= getBorderOffset().x;\n        return i;\n    }\n}",
+  "subClasses": []
+}

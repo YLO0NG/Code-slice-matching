@@ -1,0 +1,36 @@
+{
+  "className": "Sorter",
+  "methodName": "sortStrings",
+  "brief": "public static void sortStrings(Vector values , int left, int right, Swapper swapper){}",
+  "methodSignature": "sortStrings(Vector, int, int, Swapper)",
+  "sourceCode": "public static void sortStrings(Vector values , int left, int right, Swapper swapper) { \r\n\t\tint oleft= left;\r\n\t\tint oright= right;\r\n\t\tString mid= (String)values.elementAt((left + right) / 2); \r\n\t\tdo { \r\n\t\t\twhile (((String)(values.elementAt(left))).compareTo(mid) < 0)  \r\n\t\t\t\tleft++; \r\n\t\t\twhile (mid.compareTo((String)(values.elementAt(right))) < 0)  \r\n\t\t\t\tright--; \r\n\t\t\tif (left <= right) {\r\n\t\t\t\tswapper.swap(values, left, right); \r\n\t\t\t\tleft++; \r\n\t\t\t\tright--; \r\n\t\t\t} \r\n\t\t} while (left <= right);\r\n\t\t\r\n\t\tif (oleft < right) \r\n\t\t\tsortStrings(values, oleft, right, swapper); \r\n\t\tif (left < oright) \r\n\t\t\t sortStrings(values, left, oright, swapper); \r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector",
+    "int",
+    "int",
+    "Swapper"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elementAt(int)"
+    ],
+    "junit.runner.Sorter.Swapper": [
+      "swap(Vector, int, int)"
+    ],
+    "java.lang.String": [
+      "compareTo(String)"
+    ],
+    "junit.runner.Sorter": [
+      "sortStrings(Vector, int, int, Swapper)"
+    ]
+  },
+  "full_method_info": "public static void sortStrings(Vector values, int left, int right, Swapper swapper) {\r\n    int oleft = left;\r\n    int oright = right;\r\n    String mid = (String) values.elementAt((left + right) / 2);\r\n    do {\r\n        while (((String) (values.elementAt(left))).compareTo(mid) < 0) left++;\r\n        while (mid.compareTo((String) (values.elementAt(right))) < 0) right--;\r\n        if (left <= right) {\r\n            swapper.swap(values, left, right);\r\n            left++;\r\n            right--;\r\n        }\r\n    } while (left <= right);\r\n    if (oleft < right)\r\n        sortStrings(values, oleft, right, swapper);\r\n    if (left < oright)\r\n        sortStrings(values, left, oright, swapper);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

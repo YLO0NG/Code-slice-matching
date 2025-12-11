@@ -1,0 +1,27 @@
+{
+  "className": "RadiusHandle",
+  "methodName": "invokeStart",
+  "brief": "public void invokeStart(int  x, int  y, DrawingView view){}",
+  "methodSignature": "invokeStart(int, int, DrawingView)",
+  "sourceCode": "public void invokeStart(int  x, int  y, DrawingView view) {\n        fRadius = fOwner.getArc();\n        fRadius.x = fRadius.x/2;\n        fRadius.y = fRadius.y/2;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.figures.RoundRectangleFigure": [
+      "getArc()"
+    ]
+  },
+  "full_method_info": "public void invokeStart(int x, int y, DrawingView view) {\n    fRadius = fOwner.getArc();\n    fRadius.x = fRadius.x / 2;\n    fRadius.y = fRadius.y / 2;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

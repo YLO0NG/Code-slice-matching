@@ -1,0 +1,18 @@
+{
+  "className": "Project",
+  "methodName": "getChangesets",
+  "brief": "public Set<ChangeSet> getChangesets(){}",
+  "methodSignature": "getChangesets()",
+  "sourceCode": "public Set<ChangeSet> getChangesets() {\n\t\treturn changesets;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Set<ChangeSet> getChangesets() {\n    return changesets;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

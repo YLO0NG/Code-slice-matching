@@ -1,0 +1,30 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "setPointAt",
+  "brief": "public void setPointAt(Point p, int i){}",
+  "methodSignature": "setPointAt(Point, int)",
+  "sourceCode": "public void setPointAt(Point p, int i) {\n        willChange();\n        fPoints.setElementAt(p, i);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "java.util.Vector": [
+      "setElementAt(E, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Changes the position of a node.\n */\npublic void setPointAt(Point p, int i) {\n    willChange();\n    fPoints.setElementAt(p, i);\n    changed();\n}",
+  "method_comment": "\n     * Changes the position of a node.\n     ",
+  "method_annotation": ""
+}

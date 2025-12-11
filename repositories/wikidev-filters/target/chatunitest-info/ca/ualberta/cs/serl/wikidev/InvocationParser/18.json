@@ -1,0 +1,18 @@
+{
+  "className": "InvocationParser",
+  "methodName": "getWindow",
+  "brief": "public String getWindow(){}",
+  "methodSignature": "getWindow()",
+  "sourceCode": "public String getWindow() {\n\t\treturn window;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String getWindow() {\n    return window;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

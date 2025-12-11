@@ -1,0 +1,30 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(String message, Object expected, Object actual){}",
+  "methodSignature": "assertEquals(String, Object, Object)",
+  "sourceCode": "static public void assertEquals(String message, Object expected, Object actual) {\r\n\t\tif (expected == null && actual == null)\r\n\t\t\treturn;\r\n\t\tif (expected != null && expected.equals(actual))\r\n\t\t\treturn;\r\n\t\t/*{*/String formatted= \"\";\r\n\t\tif (message != null)\r\n\t\t\tformatted= message+\" \";\r\n\t\tfail(formatted+\"expected:<\"+expected+\"> but was:<\"+actual+\">\");/*}*/\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "junit.framework.Assert": [
+      "fail(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two objects are equal. If they are not\r\n * an AssertionFailedError is thrown with the given message.\r\n */\r\nstatic public void assertEquals(String message, Object expected, Object actual) {\r\n    if (expected == null && actual == null)\r\n        return;\r\n    if (expected != null && expected.equals(actual))\r\n        return;\r\n    /*{*/\r\n    String formatted = \"\";\r\n    if (message != null)\r\n        formatted = message + \" \";\r\n    fail(formatted + \"expected:<\" + expected + \"> but was:<\" + actual + \">\");\r\n    /*}*/\r\n}",
+  "method_comment": "\r\n\t * Asserts that two objects are equal. If they are not\r\n\t * an AssertionFailedError is thrown with the given message.\r\n\t ",
+  "method_annotation": ""
+}

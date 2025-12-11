@@ -1,0 +1,32 @@
+{
+  "className": "DataManager",
+  "methodName": "getRevisionTextByRevisionID",
+  "brief": "private static String getRevisionTextByRevisionID(int rev_id) throws SQLException{}",
+  "methodSignature": "getRevisionTextByRevisionID(int)",
+  "sourceCode": "private static String getRevisionTextByRevisionID(int rev_id) throws SQLException {\n\t\tString text = \"\";\n\t\tString sqlStmt = QueryBuilder.selectRevisionTextByRevisionID(rev_id);\n\t\tResultSet res = null;\n\t\tres = statement.executeQuery(sqlStmt);\n\t\twhile (res.next()) {\n\t\t\ttext = res.getString(1);\n\t\t}\n\t\tif(res != null) res.close();\n\t\treturn text;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectRevisionTextByRevisionID(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "next()",
+      "getString(int)",
+      "close()"
+    ]
+  },
+  "full_method_info": "private static String getRevisionTextByRevisionID(int rev_id) throws SQLException {\n    String text = \"\";\n    String sqlStmt = QueryBuilder.selectRevisionTextByRevisionID(rev_id);\n    ResultSet res = null;\n    res = statement.executeQuery(sqlStmt);\n    while (res.next()) {\n        text = res.getString(1);\n    }\n    if (res != null)\n        res.close();\n    return text;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

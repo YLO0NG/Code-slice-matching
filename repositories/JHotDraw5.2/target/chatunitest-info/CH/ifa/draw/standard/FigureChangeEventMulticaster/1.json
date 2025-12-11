@@ -1,0 +1,25 @@
+{
+  "className": "FigureChangeEventMulticaster",
+  "methodName": "figureRequestRemove",
+  "brief": "public void figureRequestRemove(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestRemove(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestRemove(FigureChangeEvent e) {\n        ((FigureChangeListener)a).figureRequestRemove(e);\n        ((FigureChangeListener)b).figureRequestRemove(e);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestRemove(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "public void figureRequestRemove(FigureChangeEvent e) {\n    ((FigureChangeListener) a).figureRequestRemove(e);\n    ((FigureChangeListener) b).figureRequestRemove(e);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

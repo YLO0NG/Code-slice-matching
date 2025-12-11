@@ -1,0 +1,18 @@
+{
+  "className": "ConnectedTextTool",
+  "methodName": "activate",
+  "brief": "public void activate(){}",
+  "methodSignature": "activate()",
+  "sourceCode": "public void activate() {\n        fConnected = false;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * If the pressed figure is a TextHolder it can be edited otherwise\n * a new text figure is created.\n */\npublic void activate() {\n    fConnected = false;\n}",
+  "method_comment": "\n     * If the pressed figure is a TextHolder it can be edited otherwise\n     * a new text figure is created.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "FailureDetailView",
+  "methodName": "getComponent",
+  "brief": "public Component getComponent();",
+  "methodSignature": "getComponent()",
+  "sourceCode": "public Component getComponent();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Returns the component used to present the TraceView\r\n */\r\npublic Component getComponent();",
+  "method_comment": "\r\n\t * Returns the component used to present the TraceView\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,34 @@
+{
+  "className": "SelectAreaTracker",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n        super.mouseUp(e, x, y);\n        eraseRubberBand();\n        selectGroup(e.isShiftDown());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "mouseUp(MouseEvent, int, int)"
+    ],
+    "CH.ifa.draw.standard.SelectAreaTracker": [
+      "selectGroup(boolean)",
+      "eraseRubberBand()"
+    ],
+    "java.awt.event.InputEvent": [
+      "isShiftDown()"
+    ]
+  },
+  "full_method_info": "public void mouseUp(MouseEvent e, int x, int y) {\n    super.mouseUp(e, x, y);\n    eraseRubberBand();\n    selectGroup(e.isShiftDown());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

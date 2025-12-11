@@ -1,0 +1,48 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.UMLDiagram",
+  "className": "UMLDiagram",
+  "index": 10,
+  "modifier": "[public ]",
+  "extend": "[IArtifact]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class UMLDiagram",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.ArrayList;",
+    "import java.util.Set;",
+    "import java.util.TreeSet;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "IArtifact"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getAssociatedUsers()": "0",
+    "toString()": "1",
+    "compareTo(IArtifact)": "2"
+  },
+  "methodsBrief": [
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "@Override\r\n\tpublic String toString(){}",
+    "public int compareTo(IArtifact o){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getAssociatedUsers()"
+  ],
+  "getterSetterBrief": [
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\nimport java.util.ArrayList;\nimport java.util.Set;\nimport java.util.TreeSet;\nimport ca.ualberta.cs.serl.wikidev.User;\n\npublic class UMLDiagram extends IArtifact {\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        users.add(owner);\n        return users;\n    }\n\n    @Override\n    public String toString() {\n        // TODO Auto-generated method stub\n        return null;\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof UMLDiagram) {\n            if (this.equals((UMLDiagram) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n}\n",
+  "classDeclarationCode": "public class UMLDiagram extends IArtifact {\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        users.add(owner);\n        return users;\n    }\n\n    @Override\n    public String toString() {\n        // TODO Auto-generated method stub\n        return null;\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof UMLDiagram) {\n            if (this.equals((UMLDiagram) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,25 @@
+{
+  "className": "BorderDecorator",
+  "methodName": "connectionInsets",
+  "brief": "public Insets connectionInsets(){}",
+  "methodSignature": "connectionInsets()",
+  "sourceCode": "public Insets connectionInsets() {\n        Insets i = super.connectionInsets();\n        i.top -= getBorderOffset().y;\n        i.bottom -= getBorderOffset().y;\n        i.left -= getBorderOffset().x;\n        i.right -= getBorderOffset().x;\n\n        return i;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "connectionInsets()"
+    ],
+    "CH.ifa.draw.figures.BorderDecorator": [
+      "getBorderOffset()"
+    ]
+  },
+  "full_method_info": "public Insets connectionInsets() {\n    Insets i = super.connectionInsets();\n    i.top -= getBorderOffset().y;\n    i.bottom -= getBorderOffset().y;\n    i.left -= getBorderOffset().x;\n    i.right -= getBorderOffset().x;\n    return i;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

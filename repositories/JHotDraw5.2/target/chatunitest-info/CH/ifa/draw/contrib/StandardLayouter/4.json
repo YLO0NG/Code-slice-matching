@@ -1,0 +1,27 @@
+{
+  "className": "StandardLayouter",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n\t\tsetLayoutable((Layoutable)dr.readStorable());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ],
+    "CH.ifa.draw.contrib.StandardLayouter": [
+      "setLayoutable(Layoutable)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the contained figures from StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    setLayoutable((Layoutable) dr.readStorable());\n}",
+  "method_comment": "\n\t * Reads the contained figures from StorableInput.\n\t ",
+  "method_annotation": ""
+}

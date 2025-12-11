@@ -1,0 +1,23 @@
+{
+  "className": "LineConnection",
+  "methodName": "handleConnect",
+  "brief": "protected void handleConnect(Figure start, Figure end){}",
+  "methodSignature": "handleConnect(Figure, Figure)",
+  "sourceCode": "protected void handleConnect(Figure start, Figure end) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Handles the connection of a connection.\n * Override this method to handle this event.\n */\nprotected void handleConnect(Figure start, Figure end) {\n}",
+  "method_comment": "\n     * Handles the connection of a connection.\n     * Override this method to handle this event.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getEigenVectors",
+  "brief": "public static double[][] getEigenVectors(double[][] A){}",
+  "methodSignature": "getEigenVectors(double[][])",
+  "sourceCode": "public static double[][] getEigenVectors(double[][] A) {\n\t\tEigenvalueDecomposition LEigenDec = eigen(A);\n\t\t//eigenvector matrix\n        Matrix eigenVectors = LEigenDec.getV();\n        double[][] eigenVectors2 = new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];\n        for(int i=0;i<eigenVectors.getRowDimension();i++) {\n        \tfor(int j=0;j<eigenVectors.getColumnDimension();j++) {\n        \t\teigenVectors2[i][j] = eigenVectors.get(i,j);\n        \t}\n        }\n        return eigenVectors2;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "Jama.EigenvalueDecomposition": [
+      "getV()"
+    ],
+    "Jama.Matrix": [
+      "getColumnDimension()",
+      "get(int, int)",
+      "getRowDimension()"
+    ]
+  },
+  "full_method_info": "public static double[][] getEigenVectors(double[][] A) {\n    EigenvalueDecomposition LEigenDec = eigen(A);\n    // eigenvector matrix\n    Matrix eigenVectors = LEigenDec.getV();\n    double[][] eigenVectors2 = new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];\n    for (int i = 0; i < eigenVectors.getRowDimension(); i++) {\n        for (int j = 0; j < eigenVectors.getColumnDimension(); j++) {\n            eigenVectors2[i][j] = eigenVectors.get(i, j);\n        }\n    }\n    return eigenVectors2;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

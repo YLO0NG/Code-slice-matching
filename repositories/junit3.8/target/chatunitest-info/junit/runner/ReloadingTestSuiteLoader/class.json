@@ -1,0 +1,39 @@
+{
+  "fullClassName": "junit.runner.ReloadingTestSuiteLoader",
+  "className": "ReloadingTestSuiteLoader",
+  "index": 23,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[TestSuiteLoader]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public class ReloadingTestSuiteLoader",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [
+    "TestSuiteLoader"
+  ],
+  "methodSigs": {
+    "load(String)": "0",
+    "reload(Class)": "1",
+    "createLoader()": "2"
+  },
+  "methodsBrief": [
+    "public Class load(String suiteClassName) throws ClassNotFoundException{}",
+    "public Class reload(Class aClass) throws ClassNotFoundException{}",
+    "protected TestCaseClassLoader createLoader(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\n/**\r\n * A TestSuite loader that can reload classes.\r\n */\r\npublic class ReloadingTestSuiteLoader implements TestSuiteLoader {\r\n\r\n    public Class load(String suiteClassName) throws ClassNotFoundException {\r\n        return createLoader().loadClass(suiteClassName, true);\r\n    }\r\n\r\n    public Class reload(Class aClass) throws ClassNotFoundException {\r\n        return createLoader().loadClass(aClass.getName(), true);\r\n    }\r\n\r\n    protected TestCaseClassLoader createLoader() {\r\n        TestCaseClassLoader loader = new TestCaseClassLoader();\r\n        Thread.currentThread().setContextClassLoader(loader);\r\n        return loader;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A TestSuite loader that can reload classes.\r\n */\r\npublic class ReloadingTestSuiteLoader implements TestSuiteLoader {\r\n\r\n    public Class load(String suiteClassName) throws ClassNotFoundException {\r\n        return createLoader().loadClass(suiteClassName, true);\r\n    }\r\n\r\n    public Class reload(Class aClass) throws ClassNotFoundException {\r\n        return createLoader().loadClass(aClass.getName(), true);\r\n    }\r\n\r\n    protected TestCaseClassLoader createLoader() {\r\n        TestCaseClassLoader loader = new TestCaseClassLoader();\r\n        Thread.currentThread().setContextClassLoader(loader);\r\n        return loader;\r\n    }\r\n}",
+  "subClasses": []
+}

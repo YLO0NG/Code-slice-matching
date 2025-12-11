@@ -1,0 +1,29 @@
+{
+  "className": "Iconkit",
+  "methodName": "registerAndLoadImage",
+  "brief": "public Image registerAndLoadImage(Component component, String fileName){}",
+  "methodSignature": "registerAndLoadImage(Component, String)",
+  "sourceCode": "public Image registerAndLoadImage(Component component, String fileName) {\n        registerImage(fileName);\n        loadRegisteredImages(component);\n        return getImage(fileName);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Component",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": [],
+    "java.lang.String": [],
+    "CH.ifa.draw.util.Iconkit": [
+      "registerImage(String)",
+      "getImage(String)",
+      "loadRegisteredImages(Component)"
+    ]
+  },
+  "full_method_info": "/**\n * Registers and loads an image.\n */\npublic Image registerAndLoadImage(Component component, String fileName) {\n    registerImage(fileName);\n    loadRegisteredImages(component);\n    return getImage(fileName);\n}",
+  "method_comment": "\n     * Registers and loads an image.\n     ",
+  "method_annotation": ""
+}

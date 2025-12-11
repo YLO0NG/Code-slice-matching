@@ -1,0 +1,31 @@
+{
+  "className": "HandleTracker",
+  "methodName": "mouseDrag",
+  "brief": "public void mouseDrag(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDrag(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fAnchorHandle.invokeStep(x, y, fAnchorX, fAnchorY, view());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "mouseDrag(MouseEvent, int, int)",
+      "view()"
+    ],
+    "CH.ifa.draw.framework.Handle": [
+      "invokeStep(int, int, int, int, DrawingView)"
+    ]
+  },
+  "full_method_info": "public void mouseDrag(MouseEvent e, int x, int y) {\n    super.mouseDrag(e, x, y);\n    fAnchorHandle.invokeStep(x, y, fAnchorX, fAnchorY, view());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "vectorPower",
+  "brief": "public static double[] vectorPower(double[] v, double n){}",
+  "methodSignature": "vectorPower(double[], double)",
+  "sourceCode": "public static double[] vectorPower(double[] v, double n) {\n\t\t   return LinearAlgebra.raise(v, n);\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[]",
+    "double"
+  ],
+  "dependentMethods": {
+    "double": [],
+    "org.math.array.LinearAlgebra": [
+      "raise(double[], double)"
+    ]
+  },
+  "full_method_info": "public static double[] vectorPower(double[] v, double n) {\n    return LinearAlgebra.raise(v, n);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

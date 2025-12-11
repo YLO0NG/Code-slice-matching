@@ -1,0 +1,39 @@
+{
+  "className": "GroupFigure",
+  "methodName": "setAttribute",
+  "brief": "public void setAttribute(String name, Object value){}",
+  "methodSignature": "setAttribute(String, Object)",
+  "sourceCode": "public void setAttribute(String name, Object value) {\n        super.setAttribute(name, value);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements())\n            k.nextFigure().setAttribute(name, value);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "setAttribute(String, Object)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "setAttribute(String, Object)"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the attribute of all the contained figures.\n */\npublic void setAttribute(String name, Object value) {\n    super.setAttribute(name, value);\n    FigureEnumeration k = figures();\n    while (k.hasMoreElements()) k.nextFigure().setAttribute(name, value);\n}",
+  "method_comment": "\n    * Sets the attribute of all the contained figures.\n    ",
+  "method_annotation": ""
+}

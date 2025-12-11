@@ -1,0 +1,28 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "chop",
+  "brief": "public Point chop(Point p){}",
+  "methodSignature": "chop(Point)",
+  "sourceCode": "public Point chop(Point p) {\n    return PolygonFigure.chop(polygon(), p);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "chop(Polygon, Point)"
+    ],
+    "CH.ifa.draw.contrib.TriangleFigure": [
+      "polygon()"
+    ]
+  },
+  "full_method_info": "public Point chop(Point p) {\n    return PolygonFigure.chop(polygon(), p);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

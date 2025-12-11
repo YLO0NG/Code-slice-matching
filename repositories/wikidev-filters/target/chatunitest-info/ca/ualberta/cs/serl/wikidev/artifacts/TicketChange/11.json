@@ -1,0 +1,22 @@
+{
+  "className": "TicketChange",
+  "methodName": "setFieldChanged",
+  "brief": "public void setFieldChanged(String fieldChanged){}",
+  "methodSignature": "setFieldChanged(String)",
+  "sourceCode": "public void setFieldChanged(String fieldChanged) {\n\t\tthis.fieldChanged = fieldChanged;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param fieldChanged\n * @uml.property  name=\"fieldChanged\"\n */\npublic void setFieldChanged(String fieldChanged) {\n    this.fieldChanged = fieldChanged;\n}",
+  "method_comment": "\n\t * @param fieldChanged\n\t * @uml.property  name=\"fieldChanged\"\n\t ",
+  "method_annotation": ""
+}

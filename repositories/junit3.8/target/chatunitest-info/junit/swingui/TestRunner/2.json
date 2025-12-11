@@ -1,0 +1,44 @@
+{
+  "className": "TestRunner",
+  "methodName": "testFailed",
+  "brief": "public void testFailed(final int status, final Test test, final Throwable t){}",
+  "methodSignature": "testFailed(int, Test, Throwable)",
+  "sourceCode": "public void testFailed(final int status, final Test test, final Throwable t) {\r\n\t\tSwingUtilities.invokeLater(\r\n\t\t\tnew Runnable() {\r\n\t\t\t\tpublic void run() {\r\n\t\t\t\t\tswitch (status) {\r\n\t\t\t\t\t\tcase TestRunListener.STATUS_ERROR:\r\n\t\t\t\t\t\t\tfCounterPanel.setErrorValue(fTestResult.errorCount());\r\n\t\t\t\t\t\t\t/*{*/fFailures.addElement(new TestFailure(test, t));\r\n\t\t\t\t\t\t\tif (fFailures.size() == 1)\r\n\t\t\t\t\t\t\t\trevealFailure(test);/*}*/\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t\tcase TestRunListener.STATUS_FAILURE:\r\n\t\t\t\t\t\t\tfCounterPanel.setFailureValue(fTestResult.failureCount());\r\n\t\t\t\t\t\t\tappendFailure(\"Failure\", test, t);\r\n\t\t\t\t\t\t\tbreak;\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [],
+    "javax.swing.SwingUtilities": [
+      "invokeLater(Runnable)"
+    ],
+    "junit.swingui.CounterPanel": [
+      "setErrorValue(int)",
+      "setFailureValue(int)"
+    ],
+    "junit.framework.TestResult": [
+      "failureCount()",
+      "errorCount()"
+    ],
+    "javax.swing.DefaultListModel": [
+      "addElement(E)",
+      "size()"
+    ],
+    "junit.swingui.TestRunner": [
+      "revealFailure(Test)",
+      "appendFailure(String, Test, Throwable)"
+    ]
+  },
+  "full_method_info": "public void testFailed(final int status, final Test test, final Throwable t) {\r\n    SwingUtilities.invokeLater(new Runnable() {\r\n\r\n        public void run() {\r\n            switch(status) {\r\n                case TestRunListener.STATUS_ERROR:\r\n                    fCounterPanel.setErrorValue(fTestResult.errorCount());\r\n                    /*{*/\r\n                    fFailures.addElement(new TestFailure(test, t));\r\n                    if (fFailures.size() == 1)\r\n                        revealFailure(test);\r\n                    /*}*/\r\n                    break;\r\n                case TestRunListener.STATUS_FAILURE:\r\n                    fCounterPanel.setFailureValue(fTestResult.failureCount());\r\n                    appendFailure(\"Failure\", test, t);\r\n                    break;\r\n            }\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

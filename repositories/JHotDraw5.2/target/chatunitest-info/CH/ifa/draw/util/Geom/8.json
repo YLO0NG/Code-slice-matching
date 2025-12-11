@@ -1,0 +1,23 @@
+{
+  "className": "Geom",
+  "methodName": "length2",
+  "brief": "static public long length2(int x1, int y1, int x2, int y2){}",
+  "methodSignature": "length2(int, int, int, int)",
+  "sourceCode": "static public long length2(int x1, int y1, int x2, int y2) {\n        return (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the square distance between two points.\n */\nstatic public long length2(int x1, int y1, int x2, int y2) {\n    return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);\n}",
+  "method_comment": "\n     * Gets the square distance between two points.\n     ",
+  "method_annotation": ""
+}

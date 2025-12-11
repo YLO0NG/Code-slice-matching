@@ -1,0 +1,22 @@
+{
+  "className": "TestRunner",
+  "methodName": "clearStatus",
+  "brief": "protected void clearStatus(){}",
+  "methodSignature": "clearStatus()",
+  "sourceCode": "protected void clearStatus() {\r\n\t\tshowStatus(\"\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.awtui.TestRunner": [
+      "showStatus(String)"
+    ]
+  },
+  "full_method_info": "protected void clearStatus() {\r\n    showStatus(\"\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

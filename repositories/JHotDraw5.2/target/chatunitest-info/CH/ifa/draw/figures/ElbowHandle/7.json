@@ -1,0 +1,22 @@
+{
+  "className": "ElbowHandle",
+  "methodName": "ownerConnection",
+  "brief": "private LineConnection ownerConnection(){}",
+  "methodSignature": "ownerConnection()",
+  "sourceCode": "private LineConnection ownerConnection() {\n        return (LineConnection)owner();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "private LineConnection ownerConnection() {\n    return (LineConnection) owner();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "DrawingEditor",
+  "methodName": "showStatus",
+  "brief": "void        showStatus(String string);",
+  "methodSignature": "showStatus(String)",
+  "sourceCode": "void        showStatus(String string);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Shows a status message in the editor's user interface\n */\nvoid showStatus(String string);",
+  "method_comment": "\n     * Shows a status message in the editor's user interface\n     ",
+  "method_annotation": ""
+}

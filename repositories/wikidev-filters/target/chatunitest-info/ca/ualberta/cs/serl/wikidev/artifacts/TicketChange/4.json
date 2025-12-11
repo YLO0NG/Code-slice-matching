@@ -1,0 +1,18 @@
+{
+  "className": "TicketChange",
+  "methodName": "getTicket_id",
+  "brief": "public int getTicket_id(){}",
+  "methodSignature": "getTicket_id()",
+  "sourceCode": "public int getTicket_id() {\n\t\treturn ticket_id;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"ticket_id\"\n */\npublic int getTicket_id() {\n    return ticket_id;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"ticket_id\"\n\t ",
+  "method_annotation": ""
+}

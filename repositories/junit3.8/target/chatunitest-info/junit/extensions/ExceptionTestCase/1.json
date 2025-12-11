@@ -1,0 +1,24 @@
+{
+  "className": "ExceptionTestCase",
+  "methodName": "ExceptionTestCase",
+  "brief": "public ExceptionTestCase(String name, Class exception){}",
+  "methodSignature": "ExceptionTestCase(String, Class)",
+  "sourceCode": "public ExceptionTestCase(String name, Class exception) {\r\n\t\tsuper(name);\r\n\t\tfExpected= exception;\r\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Class"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Class": []
+  },
+  "full_method_info": "public ExceptionTestCase(String name, Class exception) {\r\n    super(name);\r\n    fExpected = exception;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

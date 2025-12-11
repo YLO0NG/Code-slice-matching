@@ -1,0 +1,29 @@
+{
+  "className": "CustomSelectionTool",
+  "methodName": "mouseDrag",
+  "brief": "public void mouseDrag(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDrag(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDrag(MouseEvent e, int x, int y) {\n\t\tif (!e.isPopupTrigger()) {\n\t\t\tsuper.mouseDrag(e, x, y);\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "isPopupTrigger()"
+    ],
+    "CH.ifa.draw.standard.SelectionTool": [
+      "mouseDrag(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * MouseListener method for mouseDrag events. Usually, mouse drags are\n * ignored for popup menus or double clicks.\n *\n * @param   e   MouseEvent which should be interpreted\n * @param   x   x coordinate of the MouseEvent\n * @param   y   y coordinate of the MouseEvent\n */\npublic void mouseDrag(MouseEvent e, int x, int y) {\n    if (!e.isPopupTrigger()) {\n        super.mouseDrag(e, x, y);\n    }\n}",
+  "method_comment": "\n\t * MouseListener method for mouseDrag events. Usually, mouse drags are\n\t * ignored for popup menus or double clicks.\n\t *\n\t * @param   e   MouseEvent which should be interpreted\n\t * @param   x   x coordinate of the MouseEvent\n\t * @param   y   y coordinate of the MouseEvent\n\t ",
+  "method_annotation": ""
+}

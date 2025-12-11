@@ -1,0 +1,18 @@
+{
+  "targetClass": "CH.ifa.draw.standard.StandardDrawingView",
+  "targetMethod": "constrainPoint(Point)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.StandardDrawingView": "transient private DrawingEditor   fEditor;\nprivate Drawing         fDrawing;\nprivate transient Rectangle fDamage = null;\ntransient private Vector fSelection;\ntransient private Vector fSelectionHandles;\nprivate Dimension fViewSize;\nprivate Point fLastClick;\nprivate Vector fBackgrounds = null;\nprivate Vector fForegrounds = null;\nprivate Painter fUpdateStrategy;\nprivate PointConstrainer fConstrainer;\nprivate static final long serialVersionUID = -3878153366174603336L;\nprivate int drawingViewSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.PointConstrainer": "",
+    "CH.ifa.draw.framework.DrawingEditor": "",
+    "CH.ifa.draw.util.Geom": "static public final int NORTH = 1;\nstatic public final int SOUTH = 2;\nstatic public final int WEST = 3;\nstatic public final int EAST = 4;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.PointConstrainer": "public Point constrainPoint(Point p);",
+    "CH.ifa.draw.util.Geom": "static public int range(int min, int max, int value){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.PointConstrainer": "* Constrains the given point.\n     * @return constrained point.\n     \npublic Point constrainPoint(Point p);",
+    "CH.ifa.draw.util.Geom": "* Constains a value to the given range.\n     * @return the constrained value\n     \nstatic public int range(int min, int max, int value) {\n        if (value < min)\n            value = min;\n        if (value > max)\n            value = max;\n        return value;\n    }"
+  }
+}

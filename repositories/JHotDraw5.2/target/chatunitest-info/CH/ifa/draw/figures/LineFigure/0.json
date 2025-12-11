@@ -1,0 +1,22 @@
+{
+  "className": "LineFigure",
+  "methodName": "startPoint",
+  "brief": "public Point startPoint(){}",
+  "methodSignature": "startPoint()",
+  "sourceCode": "public Point startPoint() {\n        return pointAt(0);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointAt(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets a copy of the start point.\n */\npublic Point startPoint() {\n    return pointAt(0);\n}",
+  "method_comment": "\n     * Gets a copy of the start point.\n     ",
+  "method_annotation": ""
+}

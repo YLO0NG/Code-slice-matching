@@ -1,0 +1,31 @@
+{
+  "className": "ImageFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        if (fImage == null)\n            fImage = Iconkit.instance().getImage(fFileName);\n        if (fImage != null)\n            g.drawImage(fImage, fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height, this);\n        else\n            drawGhost(g);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawImage(Image, int, int, int, int, ImageObserver)"
+    ],
+    "CH.ifa.draw.util.Iconkit": [
+      "instance()",
+      "getImage(String)"
+    ],
+    "CH.ifa.draw.figures.ImageFigure": [
+      "drawGhost(Graphics)"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g) {\n    if (fImage == null)\n        fImage = Iconkit.instance().getImage(fFileName);\n    if (fImage != null)\n        g.drawImage(fImage, fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height, this);\n    else\n        drawGhost(g);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

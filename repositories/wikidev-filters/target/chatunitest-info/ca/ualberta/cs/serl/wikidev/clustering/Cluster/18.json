@@ -1,0 +1,27 @@
+{
+  "className": "Cluster",
+  "methodName": "addArtifacts",
+  "brief": "public void addArtifacts(ArrayList<IArtifact> entities){}",
+  "methodSignature": "addArtifacts(ArrayList)",
+  "sourceCode": "public void addArtifacts(ArrayList<IArtifact> entities) {\n\t\tif (!this.artifacts.containsAll(entities)) {\n\t\t\tthis.artifacts.addAll(entities);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<IArtifact>"
+  ],
+  "dependentMethods": {
+    "java.util.AbstractCollection": [
+      "containsAll(Object>)"
+    ],
+    "java.util.ArrayList": [
+      "addAll(Collection<? extends E>)"
+    ]
+  },
+  "full_method_info": "public void addArtifacts(ArrayList<IArtifact> entities) {\n    if (!this.artifacts.containsAll(entities)) {\n        this.artifacts.addAll(entities);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "ShortestDistanceConnector",
+  "methodName": "findStart",
+  "brief": "public Point findStart(ConnectionFigure connection){}",
+  "methodSignature": "findStart(ConnectionFigure)",
+  "sourceCode": "public Point findStart(ConnectionFigure connection) {\n        return findPoint(connection, true);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [],
+    "CH.ifa.draw.figures.ShortestDistanceConnector": [
+      "findPoint(ConnectionFigure, boolean)"
+    ]
+  },
+  "full_method_info": "public Point findStart(ConnectionFigure connection) {\n    return findPoint(connection, true);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

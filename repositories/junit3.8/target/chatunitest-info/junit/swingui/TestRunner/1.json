@@ -1,0 +1,27 @@
+{
+  "className": "TestRunner",
+  "methodName": "run",
+  "brief": "public static void run(Class test){}",
+  "methodSignature": "run(Class)",
+  "sourceCode": "public static void run(Class test) {\r\n\t\tString args[]= { test.getName() };\r\n\t\tmain(args);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Class"
+  ],
+  "dependentMethods": {
+    "java.lang.Class": [
+      "getName()"
+    ],
+    "junit.swingui.TestRunner": [
+      "main(String[])"
+    ]
+  },
+  "full_method_info": "public static void run(Class test) {\r\n    String[] args = { test.getName() };\r\n    main(args);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

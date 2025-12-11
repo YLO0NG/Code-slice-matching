@@ -1,0 +1,22 @@
+{
+  "className": "User",
+  "methodName": "setUserRealName",
+  "brief": "public void setUserRealName(String userRealName){}",
+  "methodSignature": "setUserRealName(String)",
+  "sourceCode": "public void setUserRealName(String userRealName) {\n\t\tthis.userRealName = userRealName;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param userRealName\n * @uml.property  name=\"userRealName\"\n */\npublic void setUserRealName(String userRealName) {\n    this.userRealName = userRealName;\n}",
+  "method_comment": "\n\t * @param userRealName\n\t * @uml.property  name=\"userRealName\"\n\t ",
+  "method_annotation": ""
+}

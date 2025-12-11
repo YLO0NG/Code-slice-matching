@@ -1,0 +1,38 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "fireNodeChanged",
+  "brief": "public void fireNodeChanged(TreePath path, int index){}",
+  "methodSignature": "fireNodeChanged(TreePath, int)",
+  "sourceCode": "public void fireNodeChanged(TreePath path, int index) {\r\n\t\tint[] indices= {index};\r\n\t\tObject[] changedChildren= {getChild(path.getLastPathComponent(), index)};\r\n\t\tTreeModelEvent event= new TreeModelEvent(this, path, indices, changedChildren);\r\n\t\t\r\n\t\tEnumeration e= fModelListeners.elements();\r\n\t\twhile (e.hasMoreElements()) { \r\n\t\t\tTreeModelListener l= (TreeModelListener) e.nextElement();\r\n\t\t\tl.treeNodesChanged(event);\r\n\t\t}\t\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TreePath",
+    "int"
+  ],
+  "dependentMethods": {
+    "javax.swing.tree.TreePath": [
+      "getLastPathComponent()"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "getChild(Object, int)"
+    ],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "javax.swing.event.TreeModelListener": [
+      "treeNodesChanged(TreeModelEvent)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Fires a node changed event\r\n */\r\npublic void fireNodeChanged(TreePath path, int index) {\r\n    int[] indices = { index };\r\n    Object[] changedChildren = { getChild(path.getLastPathComponent(), index) };\r\n    TreeModelEvent event = new TreeModelEvent(this, path, indices, changedChildren);\r\n    Enumeration e = fModelListeners.elements();\r\n    while (e.hasMoreElements()) {\r\n        TreeModelListener l = (TreeModelListener) e.nextElement();\r\n        l.treeNodesChanged(event);\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Fires a node changed event\r\n\t ",
+  "method_annotation": ""
+}

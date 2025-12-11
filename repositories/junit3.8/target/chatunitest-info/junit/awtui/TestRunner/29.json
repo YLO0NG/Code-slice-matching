@@ -1,0 +1,29 @@
+{
+  "className": "TestRunner",
+  "methodName": "showStatus",
+  "brief": "private void showStatus(String status){}",
+  "methodSignature": "showStatus(String)",
+  "sourceCode": "private void showStatus(String status) {\r\n\t\tfStatusLine.setFont(PLAIN_FONT);\r\n\t\tfStatusLine.setForeground(Color.red);\r\n\t\tfStatusLine.setText(status);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.awt.Component": [
+      "setFont(Font)",
+      "setForeground(Color)"
+    ],
+    "java.awt.TextField": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "private void showStatus(String status) {\r\n    fStatusLine.setFont(PLAIN_FONT);\r\n    fStatusLine.setForeground(Color.red);\r\n    fStatusLine.setText(status);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

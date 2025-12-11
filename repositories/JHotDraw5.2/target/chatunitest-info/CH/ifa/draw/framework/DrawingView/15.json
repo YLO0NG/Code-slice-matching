@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "selectionCount",
+  "brief": "public int selectionCount();",
+  "methodSignature": "selectionCount()",
+  "sourceCode": "public int selectionCount();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the number of selected figures.\n */\npublic int selectionCount();",
+  "method_comment": "\n     * Gets the number of selected figures.\n     ",
+  "method_annotation": ""
+}

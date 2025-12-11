@@ -1,0 +1,26 @@
+{
+  "className": "URLTool",
+  "methodName": "endEdit",
+  "brief": "private void endEdit(){}",
+  "methodSignature": "endEdit()",
+  "sourceCode": "private void endEdit() {\n\t    if (fURLTarget != null) {\n\t\t    setURL(fURLTarget, fTextField.getText());\n\t        fURLTarget = null;\n\t        fTextField.endOverlay();\n\t    }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.javadraw.URLTool": [
+      "setURL(Figure, String)"
+    ],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "getText()",
+      "endOverlay()"
+    ]
+  },
+  "full_method_info": "private void endEdit() {\n    if (fURLTarget != null) {\n        setURL(fURLTarget, fTextField.getText());\n        fURLTarget = null;\n        fTextField.endOverlay();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

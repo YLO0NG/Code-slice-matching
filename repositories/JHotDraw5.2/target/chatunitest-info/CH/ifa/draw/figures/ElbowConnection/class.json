@@ -1,0 +1,59 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.ElbowConnection",
+  "className": "ElbowConnection",
+  "index": 28,
+  "modifier": "[public ]",
+  "extend": "[LineConnection]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class ElbowConnection",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = 2193968743082078559L;",
+    "private int elbowConnectionSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "LineConnection"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "updateConnection()": "0",
+    "layoutConnection()": "1",
+    "handles()": "2",
+    "connectedTextLocator(Figure)": "3",
+    "updatePoints()": "4",
+    "ElbowConnection()": "5"
+  },
+  "methodsBrief": [
+    "public void updateConnection(){}",
+    "public void layoutConnection(){}",
+    "public Vector handles(){}",
+    "public Locator connectedTextLocator(Figure f){}",
+    "protected void updatePoints(){}",
+    "public ElbowConnection(){}"
+  ],
+  "constructorSigs": [
+    "ElbowConnection()"
+  ],
+  "constructorBrief": [
+    "public ElbowConnection(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)ElbowConnection.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A LineConnection that constrains a connection to\n * orthogonal lines.\n */\npublic class ElbowConnection extends LineConnection {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 2193968743082078559L;\n\n    private int elbowConnectionSerializedDataVersion = 1;\n\n    public ElbowConnection() {\n        super();\n    }\n\n    public void updateConnection() {\n        super.updateConnection();\n        updatePoints();\n    }\n\n    public void layoutConnection() {\n    }\n\n    /**\n     * Gets the handles of the figure.\n     */\n    public Vector handles() {\n        Vector handles = new Vector(fPoints.size() * 2);\n        handles.addElement(new ChangeConnectionStartHandle(this));\n        for (int i = 1; i < fPoints.size() - 1; i++) handles.addElement(new NullHandle(this, locator(i)));\n        handles.addElement(new ChangeConnectionEndHandle(this));\n        for (int i = 0; i < fPoints.size() - 1; i++) handles.addElement(new ElbowHandle(this, i));\n        return handles;\n    }\n\n    public Locator connectedTextLocator(Figure f) {\n        return new ElbowTextLocator();\n    }\n\n    protected void updatePoints() {\n        willChange();\n        Point start = startPoint();\n        Point end = endPoint();\n        fPoints.removeAllElements();\n        fPoints.addElement(start);\n        if (start.x == end.x || start.y == end.y) {\n            fPoints.addElement(end);\n        } else {\n            Rectangle r1 = start().owner().displayBox();\n            Rectangle r2 = end().owner().displayBox();\n            int x1, y1, x2, y2;\n            int direction = 0;\n            int vx = r2.x + r2.width / 2 - (r1.x + r1.width / 2);\n            int vy = r2.y + r2.height / 2 - (r1.y + r1.height / 2);\n            if (vy < vx && vx > -vy)\n                direction = Geom.EAST;\n            else if (vy > vx && vy > -vx)\n                direction = Geom.NORTH;\n            else if (vx < vy && vx < -vy)\n                direction = Geom.WEST;\n            else\n                direction = Geom.SOUTH;\n            int dir = direction;\n            if (dir == Geom.NORTH || dir == Geom.SOUTH) {\n                fPoints.addElement(new Point(start.x, (start.y + end.y) / 2));\n                fPoints.addElement(new Point(end.x, (start.y + end.y) / 2));\n            } else {\n                fPoints.addElement(new Point((start.x + end.x) / 2, start.y));\n                fPoints.addElement(new Point((start.x + end.x) / 2, end.y));\n            }\n            fPoints.addElement(end);\n        }\n        changed();\n    }\n}\n\nclass ElbowTextLocator extends AbstractLocator {\n\n    public Point locate(Figure owner) {\n        Point p = owner.center();\n        Rectangle r = owner.displayBox();\n        // hack\n        return new Point(p.x, p.y - 10);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A LineConnection that constrains a connection to\n * orthogonal lines.\n */\npublic class ElbowConnection extends LineConnection {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 2193968743082078559L;\n\n    private int elbowConnectionSerializedDataVersion = 1;\n\n    public ElbowConnection() {\n        super();\n    }\n\n    public void updateConnection() {\n        super.updateConnection();\n        updatePoints();\n    }\n\n    public void layoutConnection() {\n    }\n\n    /**\n     * Gets the handles of the figure.\n     */\n    public Vector handles() {\n        Vector handles = new Vector(fPoints.size() * 2);\n        handles.addElement(new ChangeConnectionStartHandle(this));\n        for (int i = 1; i < fPoints.size() - 1; i++) handles.addElement(new NullHandle(this, locator(i)));\n        handles.addElement(new ChangeConnectionEndHandle(this));\n        for (int i = 0; i < fPoints.size() - 1; i++) handles.addElement(new ElbowHandle(this, i));\n        return handles;\n    }\n\n    public Locator connectedTextLocator(Figure f) {\n        return new ElbowTextLocator();\n    }\n\n    protected void updatePoints() {\n        willChange();\n        Point start = startPoint();\n        Point end = endPoint();\n        fPoints.removeAllElements();\n        fPoints.addElement(start);\n        if (start.x == end.x || start.y == end.y) {\n            fPoints.addElement(end);\n        } else {\n            Rectangle r1 = start().owner().displayBox();\n            Rectangle r2 = end().owner().displayBox();\n            int x1, y1, x2, y2;\n            int direction = 0;\n            int vx = r2.x + r2.width / 2 - (r1.x + r1.width / 2);\n            int vy = r2.y + r2.height / 2 - (r1.y + r1.height / 2);\n            if (vy < vx && vx > -vy)\n                direction = Geom.EAST;\n            else if (vy > vx && vy > -vx)\n                direction = Geom.NORTH;\n            else if (vx < vy && vx < -vy)\n                direction = Geom.WEST;\n            else\n                direction = Geom.SOUTH;\n            int dir = direction;\n            if (dir == Geom.NORTH || dir == Geom.SOUTH) {\n                fPoints.addElement(new Point(start.x, (start.y + end.y) / 2));\n                fPoints.addElement(new Point(end.x, (start.y + end.y) / 2));\n            } else {\n                fPoints.addElement(new Point((start.x + end.x) / 2, start.y));\n                fPoints.addElement(new Point((start.x + end.x) / 2, end.y));\n            }\n            fPoints.addElement(end);\n        }\n        changed();\n    }\n}",
+  "subClasses": []
+}

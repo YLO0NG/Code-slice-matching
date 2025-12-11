@@ -1,0 +1,24 @@
+{
+  "className": "Swapper",
+  "methodName": "swap",
+  "brief": "public void swap(Vector values, int left, int right);",
+  "methodSignature": "swap(Vector, int, int)",
+  "sourceCode": "public void swap(Vector values, int left, int right);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": []
+  },
+  "full_method_info": "public void swap(Vector values, int left, int right);",
+  "method_comment": "",
+  "method_annotation": ""
+}

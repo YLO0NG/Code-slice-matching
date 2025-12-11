@@ -1,0 +1,30 @@
+{
+  "className": "DrawApplication",
+  "methodName": "setDrawingTitle",
+  "brief": "protected void setDrawingTitle(String drawingTitle){}",
+  "methodSignature": "setDrawingTitle(String)",
+  "sourceCode": "protected void setDrawingTitle(String drawingTitle) {\n\t    fDrawingFilename = drawingTitle;\n\t    if (fgUntitled.equals(drawingTitle)) {\n\t    \tsetTitle(getApplicationName());\n\t    }\n\t    else {\n\t    \tsetTitle(getApplicationName() + \" - \" + drawingTitle);\n\t    }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "java.awt.Frame": [
+      "setTitle(String)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "getApplicationName()"
+    ]
+  },
+  "full_method_info": "/**\n * Set the title of the currently selected drawing\n */\nprotected void setDrawingTitle(String drawingTitle) {\n    fDrawingFilename = drawingTitle;\n    if (fgUntitled.equals(drawingTitle)) {\n        setTitle(getApplicationName());\n    } else {\n        setTitle(getApplicationName() + \" - \" + drawingTitle);\n    }\n}",
+  "method_comment": "\n     * Set the title of the currently selected drawing\n     ",
+  "method_annotation": ""
+}

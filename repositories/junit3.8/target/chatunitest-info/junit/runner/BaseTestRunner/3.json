@@ -1,0 +1,29 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "savePreferences",
+  "brief": "public static void savePreferences() throws IOException{}",
+  "methodSignature": "savePreferences()",
+  "sourceCode": "public static void savePreferences() throws IOException {\r\n\t\tFileOutputStream fos= new FileOutputStream(getPreferencesFile());\r\n\t\ttry {\r\n\t\t\tgetPreferences().store(fos, \"\");\r\n\t\t} finally {\r\n\t\t\tfos.close();\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "getPreferencesFile()",
+      "getPreferences()"
+    ],
+    "java.util.Properties": [
+      "store(OutputStream, String)"
+    ],
+    "java.io.FileOutputStream": [
+      "close()"
+    ]
+  },
+  "full_method_info": "public static void savePreferences() throws IOException {\r\n    FileOutputStream fos = new FileOutputStream(getPreferencesFile());\r\n    try {\r\n        getPreferences().store(fos, \"\");\r\n    } finally {\r\n        fos.close();\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

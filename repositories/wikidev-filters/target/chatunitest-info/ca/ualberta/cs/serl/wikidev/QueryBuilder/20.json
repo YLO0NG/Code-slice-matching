@@ -1,0 +1,23 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectArtifactsForProject",
+  "brief": "public static String selectArtifactsForProject(String entityType, int projectid){}",
+  "methodSignature": "selectArtifactsForProject(String, int)",
+  "sourceCode": "public static String selectArtifactsForProject(String entityType, int projectid) {\n\t\t\treturn \"select * from \"+entityType+\" where project_id=\\'\"+projectid+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String selectArtifactsForProject(String entityType, int projectid) {\n    return \"select * from \" + entityType + \" where project_id=\\'\" + projectid + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

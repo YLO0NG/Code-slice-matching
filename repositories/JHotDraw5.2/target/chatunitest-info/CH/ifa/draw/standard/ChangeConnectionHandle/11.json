@@ -1,0 +1,37 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "findConnectableFigure",
+  "brief": "private Figure findConnectableFigure(int x, int y, Drawing drawing){}",
+  "methodSignature": "findConnectableFigure(int, int, Drawing)",
+  "sourceCode": "private Figure findConnectableFigure(int x, int y, Drawing drawing) {\n        FigureEnumeration k = drawing.figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            if (!figure.includes(fConnection) && figure.canConnect()) {\n                if (figure.containsPoint(x, y))\n                    return figure;\n            }\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "canConnect()",
+      "includes(Figure)",
+      "containsPoint(int, int)"
+    ]
+  },
+  "full_method_info": "private Figure findConnectableFigure(int x, int y, Drawing drawing) {\n    FigureEnumeration k = drawing.figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        if (!figure.includes(fConnection) && figure.canConnect()) {\n            if (figure.containsPoint(x, y))\n                return figure;\n        }\n    }\n    return null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

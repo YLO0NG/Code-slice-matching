@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "pointCount",
+  "brief": "public int pointCount();",
+  "methodSignature": "pointCount()",
+  "sourceCode": "public int pointCount();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the number of points or nodes of the connection\n */\npublic int pointCount();",
+  "method_comment": "\n     * Gets the number of points or nodes of the connection\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,95 @@
+{
+  "fullClassName": "junit.textui.TestRunner",
+  "className": "TestRunner",
+  "index": 55,
+  "modifier": "[public ]",
+  "extend": "[BaseTestRunner]",
+  "implement": "[]",
+  "packageName": "junit.textui",
+  "packageDeclaration": "package junit.textui;",
+  "classSignature": "public class TestRunner",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.PrintStream;",
+    "import junit.framework.*;",
+    "import junit.runner.*;"
+  ],
+  "fields": [
+    "private ResultPrinter fPrinter;",
+    "public static final int SUCCESS_EXIT= 0;",
+    "public static final int FAILURE_EXIT= 1;",
+    "public static final int EXCEPTION_EXIT= 2;"
+  ],
+  "superClasses": [
+    "BaseTestRunner"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "run(Class)": "0",
+    "run(Test)": "1",
+    "runAndWait(Test)": "2",
+    "getLoader()": "3",
+    "testFailed(int, Test, Throwable)": "4",
+    "testStarted(String)": "5",
+    "testEnded(String)": "6",
+    "createTestResult()": "7",
+    "doRun(Test)": "8",
+    "doRun(Test, boolean)": "9",
+    "pause(boolean)": "10",
+    "main(String[])": "11",
+    "start(String[])": "12",
+    "runFailed(String)": "13",
+    "setPrinter(ResultPrinter)": "14",
+    "TestRunner()": "15",
+    "TestRunner(PrintStream)": "16",
+    "TestRunner(ResultPrinter)": "17"
+  },
+  "methodsBrief": [
+    "static public void run(Class testClass){}",
+    "static public TestResult run(Test test){}",
+    "static public void runAndWait(Test suite){}",
+    "public TestSuiteLoader getLoader(){}",
+    "public void testFailed(int status, Test test, Throwable t){}",
+    "public void testStarted(String testName){}",
+    "public void testEnded(String testName){}",
+    "protected TestResult createTestResult(){}",
+    "public TestResult doRun(Test test){}",
+    "public TestResult doRun(Test suite, boolean wait){}",
+    "protected void pause(boolean wait){}",
+    "public static void main(String args[]){}",
+    "protected TestResult start(String args[]) throws Exception{}",
+    "protected void runFailed(String message){}",
+    "public void setPrinter(ResultPrinter printer){}",
+    "public TestRunner(){}",
+    "public TestRunner(PrintStream writer){}",
+    "public TestRunner(ResultPrinter printer){}"
+  ],
+  "constructorSigs": [
+    "TestRunner()",
+    "TestRunner(PrintStream)",
+    "TestRunner(ResultPrinter)"
+  ],
+  "constructorBrief": [
+    "public TestRunner(){}",
+    "public TestRunner(PrintStream writer){}",
+    "public TestRunner(ResultPrinter printer){}"
+  ],
+  "getterSetterSigs": [
+    "getLoader()",
+    "setPrinter(ResultPrinter)"
+  ],
+  "getterSetterBrief": [
+    "public TestSuiteLoader getLoader(){}",
+    "public void setPrinter(ResultPrinter printer){}"
+  ],
+  "constructorDeps": {
+    "java.io.PrintStream": [],
+    "junit.textui.ResultPrinter": []
+  },
+  "compilationUnitCode": "package junit.textui;\r\n\r\nimport java.io.PrintStream;\r\nimport junit.framework.*;\r\nimport junit.runner.*;\r\n\r\n/**\r\n * A command line based tool to run tests.\r\n * <pre>\r\n * java junit.textui.TestRunner [-wait] TestCaseClass\r\n * </pre>\r\n * TestRunner expects the name of a TestCase class as argument.\r\n * If this class defines a static <code>suite</code> method it\r\n * will be invoked and the returned test is run. Otherwise all\r\n * the methods starting with \"test\" having no arguments are run.\r\n * <p>\r\n * When the wait command line argument is given TestRunner\r\n * waits until the users types RETURN.\r\n * <p>\r\n * TestRunner prints a trace as the tests are executed followed by a\r\n * summary at the end.\r\n */\r\npublic class TestRunner extends BaseTestRunner {\r\n\r\n    private ResultPrinter fPrinter;\r\n\r\n    public static final int SUCCESS_EXIT = 0;\r\n\r\n    public static final int FAILURE_EXIT = 1;\r\n\r\n    public static final int EXCEPTION_EXIT = 2;\r\n\r\n    public TestRunner() {\r\n        this(System.out);\r\n    }\r\n\r\n    public TestRunner(PrintStream writer) {\r\n        this(new ResultPrinter(writer));\r\n    }\r\n\r\n    public TestRunner(ResultPrinter printer) {\r\n        fPrinter = printer;\r\n    }\r\n\r\n    /**\r\n     * Runs a suite extracted from a TestCase subclass.\r\n     */\r\n    static public void run(Class testClass) {\r\n        run(new TestSuite(testClass));\r\n    }\r\n\r\n    /**\r\n     * Runs a single test and collects its results.\r\n     * This method can be used to start a test run\r\n     * from your program.\r\n     * <pre>\r\n     * public static void main (String[] args) {\r\n     *     test.textui.TestRunner.run(suite());\r\n     * }\r\n     * </pre>\r\n     */\r\n    static public TestResult run(Test test) {\r\n        TestRunner runner = new TestRunner();\r\n        return runner.doRun(test);\r\n    }\r\n\r\n    /**\r\n     * Runs a single test and waits until the user\r\n     * types RETURN.\r\n     */\r\n    static public void runAndWait(Test suite) {\r\n        TestRunner aTestRunner = new TestRunner();\r\n        aTestRunner.doRun(suite, true);\r\n    }\r\n\r\n    /**\r\n     * Always use the StandardTestSuiteLoader. Overridden from\r\n     * BaseTestRunner.\r\n     */\r\n    public TestSuiteLoader getLoader() {\r\n        return new StandardTestSuiteLoader();\r\n    }\r\n\r\n    public void testFailed(int status, Test test, Throwable t) {\r\n    }\r\n\r\n    public void testStarted(String testName) {\r\n    }\r\n\r\n    public void testEnded(String testName) {\r\n    }\r\n\r\n    /**\r\n     * Creates the TestResult to be used for the test run.\r\n     */\r\n    protected TestResult createTestResult() {\r\n        return new TestResult();\r\n    }\r\n\r\n    public TestResult doRun(Test test) {\r\n        return doRun(test, false);\r\n    }\r\n\r\n    public TestResult doRun(Test suite, boolean wait) {\r\n        TestResult result = createTestResult();\r\n        result.addListener(fPrinter);\r\n        long startTime = System.currentTimeMillis();\r\n        suite.run(result);\r\n        long endTime = System.currentTimeMillis();\r\n        long runTime = endTime - startTime;\r\n        fPrinter.print(result, runTime);\r\n        pause(wait);\r\n        return result;\r\n    }\r\n\r\n    protected void pause(boolean wait) {\r\n        if (!wait)\r\n            return;\r\n        fPrinter.printWaitPrompt();\r\n        try {\r\n            System.in.read();\r\n        } catch (Exception e) {\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        TestRunner aTestRunner = new TestRunner();\r\n        try {\r\n            TestResult r = aTestRunner.start(args);\r\n            if (!r.wasSuccessful())\r\n                System.exit(FAILURE_EXIT);\r\n            System.exit(SUCCESS_EXIT);\r\n        } catch (Exception e) {\r\n            System.err.println(e.getMessage());\r\n            System.exit(EXCEPTION_EXIT);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Starts a test run. Analyzes the command line arguments\r\n     * and runs the given test suite.\r\n     */\r\n    protected TestResult start(String[] args) throws Exception {\r\n        String testCase = \"\";\r\n        boolean wait = false;\r\n        for (int i = 0; i < args.length; i++) {\r\n            if (args[i].equals(\"-wait\"))\r\n                wait = true;\r\n            else if (args[i].equals(\"-c\"))\r\n                testCase = extractClassName(args[++i]);\r\n            else if (args[i].equals(\"-v\"))\r\n                System.err.println(\"JUnit \" + Version.id() + \" by Kent Beck and Erich Gamma\");\r\n            else\r\n                testCase = args[i];\r\n        }\r\n        if (testCase.equals(\"\"))\r\n            throw new Exception(\"Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class\");\r\n        try {\r\n            Test suite = getTest(testCase);\r\n            /*{*/\r\n            TestResult result = createTestResult();\r\n            result.addListener(fPrinter);\r\n            long startTime = System.currentTimeMillis();\r\n            suite.run(result);\r\n            long endTime = System.currentTimeMillis();\r\n            long runTime = endTime - startTime;\r\n            fPrinter.print(result, runTime);\r\n            pause(wait);\r\n            return result;\r\n            /*}*/\r\n        } catch (Exception e) {\r\n            throw new Exception(\"Could not create and run test suite: \" + e);\r\n        }\r\n    }\r\n\r\n    protected void runFailed(String message) {\r\n        System.err.println(message);\r\n        System.exit(FAILURE_EXIT);\r\n    }\r\n\r\n    public void setPrinter(ResultPrinter printer) {\r\n        fPrinter = printer;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A command line based tool to run tests.\r\n * <pre>\r\n * java junit.textui.TestRunner [-wait] TestCaseClass\r\n * </pre>\r\n * TestRunner expects the name of a TestCase class as argument.\r\n * If this class defines a static <code>suite</code> method it\r\n * will be invoked and the returned test is run. Otherwise all\r\n * the methods starting with \"test\" having no arguments are run.\r\n * <p>\r\n * When the wait command line argument is given TestRunner\r\n * waits until the users types RETURN.\r\n * <p>\r\n * TestRunner prints a trace as the tests are executed followed by a\r\n * summary at the end.\r\n */\r\npublic class TestRunner extends BaseTestRunner {\r\n\r\n    private ResultPrinter fPrinter;\r\n\r\n    public static final int SUCCESS_EXIT = 0;\r\n\r\n    public static final int FAILURE_EXIT = 1;\r\n\r\n    public static final int EXCEPTION_EXIT = 2;\r\n\r\n    public TestRunner() {\r\n        this(System.out);\r\n    }\r\n\r\n    public TestRunner(PrintStream writer) {\r\n        this(new ResultPrinter(writer));\r\n    }\r\n\r\n    public TestRunner(ResultPrinter printer) {\r\n        fPrinter = printer;\r\n    }\r\n\r\n    /**\r\n     * Runs a suite extracted from a TestCase subclass.\r\n     */\r\n    static public void run(Class testClass) {\r\n        run(new TestSuite(testClass));\r\n    }\r\n\r\n    /**\r\n     * Runs a single test and collects its results.\r\n     * This method can be used to start a test run\r\n     * from your program.\r\n     * <pre>\r\n     * public static void main (String[] args) {\r\n     *     test.textui.TestRunner.run(suite());\r\n     * }\r\n     * </pre>\r\n     */\r\n    static public TestResult run(Test test) {\r\n        TestRunner runner = new TestRunner();\r\n        return runner.doRun(test);\r\n    }\r\n\r\n    /**\r\n     * Runs a single test and waits until the user\r\n     * types RETURN.\r\n     */\r\n    static public void runAndWait(Test suite) {\r\n        TestRunner aTestRunner = new TestRunner();\r\n        aTestRunner.doRun(suite, true);\r\n    }\r\n\r\n    /**\r\n     * Always use the StandardTestSuiteLoader. Overridden from\r\n     * BaseTestRunner.\r\n     */\r\n    public TestSuiteLoader getLoader() {\r\n        return new StandardTestSuiteLoader();\r\n    }\r\n\r\n    public void testFailed(int status, Test test, Throwable t) {\r\n    }\r\n\r\n    public void testStarted(String testName) {\r\n    }\r\n\r\n    public void testEnded(String testName) {\r\n    }\r\n\r\n    /**\r\n     * Creates the TestResult to be used for the test run.\r\n     */\r\n    protected TestResult createTestResult() {\r\n        return new TestResult();\r\n    }\r\n\r\n    public TestResult doRun(Test test) {\r\n        return doRun(test, false);\r\n    }\r\n\r\n    public TestResult doRun(Test suite, boolean wait) {\r\n        TestResult result = createTestResult();\r\n        result.addListener(fPrinter);\r\n        long startTime = System.currentTimeMillis();\r\n        suite.run(result);\r\n        long endTime = System.currentTimeMillis();\r\n        long runTime = endTime - startTime;\r\n        fPrinter.print(result, runTime);\r\n        pause(wait);\r\n        return result;\r\n    }\r\n\r\n    protected void pause(boolean wait) {\r\n        if (!wait)\r\n            return;\r\n        fPrinter.printWaitPrompt();\r\n        try {\r\n            System.in.read();\r\n        } catch (Exception e) {\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        TestRunner aTestRunner = new TestRunner();\r\n        try {\r\n            TestResult r = aTestRunner.start(args);\r\n            if (!r.wasSuccessful())\r\n                System.exit(FAILURE_EXIT);\r\n            System.exit(SUCCESS_EXIT);\r\n        } catch (Exception e) {\r\n            System.err.println(e.getMessage());\r\n            System.exit(EXCEPTION_EXIT);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * Starts a test run. Analyzes the command line arguments\r\n     * and runs the given test suite.\r\n     */\r\n    protected TestResult start(String[] args) throws Exception {\r\n        String testCase = \"\";\r\n        boolean wait = false;\r\n        for (int i = 0; i < args.length; i++) {\r\n            if (args[i].equals(\"-wait\"))\r\n                wait = true;\r\n            else if (args[i].equals(\"-c\"))\r\n                testCase = extractClassName(args[++i]);\r\n            else if (args[i].equals(\"-v\"))\r\n                System.err.println(\"JUnit \" + Version.id() + \" by Kent Beck and Erich Gamma\");\r\n            else\r\n                testCase = args[i];\r\n        }\r\n        if (testCase.equals(\"\"))\r\n            throw new Exception(\"Usage: TestRunner [-wait] testCaseName, where name is the name of the TestCase class\");\r\n        try {\r\n            Test suite = getTest(testCase);\r\n            /*{*/\r\n            TestResult result = createTestResult();\r\n            result.addListener(fPrinter);\r\n            long startTime = System.currentTimeMillis();\r\n            suite.run(result);\r\n            long endTime = System.currentTimeMillis();\r\n            long runTime = endTime - startTime;\r\n            fPrinter.print(result, runTime);\r\n            pause(wait);\r\n            return result;\r\n            /*}*/\r\n        } catch (Exception e) {\r\n            throw new Exception(\"Could not create and run test suite: \" + e);\r\n        }\r\n    }\r\n\r\n    protected void runFailed(String message) {\r\n        System.err.println(message);\r\n        System.exit(FAILURE_EXIT);\r\n    }\r\n\r\n    public void setPrinter(ResultPrinter printer) {\r\n        fPrinter = printer;\r\n    }\r\n}",
+  "subClasses": []
+}

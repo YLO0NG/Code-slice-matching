@@ -1,0 +1,20 @@
+{
+  "className": "Message",
+  "methodName": "setProject_id",
+  "brief": "public void setProject_id(int project_id){}",
+  "methodSignature": "setProject_id(int)",
+  "sourceCode": "public void setProject_id(int project_id) {\n\t\tthis.project_id = project_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param project_id\n * @uml.property  name=\"project_id\"\n */\npublic void setProject_id(int project_id) {\n    this.project_id = project_id;\n}",
+  "method_comment": "\n\t * @param project_id\n\t * @uml.property  name=\"project_id\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "PaletteLayout",
+  "methodName": "removeLayoutComponent",
+  "brief": "public void removeLayoutComponent(Component comp){}",
+  "methodSignature": "removeLayoutComponent(Component)",
+  "sourceCode": "public void removeLayoutComponent(Component comp) {\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Component"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": []
+  },
+  "full_method_info": "public void removeLayoutComponent(Component comp) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

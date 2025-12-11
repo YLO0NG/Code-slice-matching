@@ -1,0 +1,31 @@
+{
+  "className": "TestSetup",
+  "methodName": "run",
+  "brief": "public void run(final TestResult result){}",
+  "methodSignature": "run(TestResult)",
+  "sourceCode": "public void run(final TestResult result) {\r\n\t\tProtectable p= new Protectable() {\r\n\t\t\tpublic void protect() throws Exception {\r\n\t\t\t\tsetUp();\r\n\t\t\t\tbasicRun(result);\r\n\t\t\t\ttearDown();\r\n\t\t\t}\r\n\t\t};\r\n\t\tresult.runProtected(this, p);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "runProtected(Test, Protectable)"
+    ],
+    "junit.extensions.TestSetup": [
+      "tearDown()",
+      "setUp()"
+    ],
+    "junit.extensions.TestDecorator": [
+      "basicRun(TestResult)"
+    ]
+  },
+  "full_method_info": "public void run(final TestResult result) {\r\n    Protectable p = new Protectable() {\r\n\r\n        public void protect() throws Exception {\r\n            setUp();\r\n            basicRun(result);\r\n            tearDown();\r\n        }\r\n    };\r\n    result.runProtected(this, p);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

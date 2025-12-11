@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "setDisplayUpdate",
+  "brief": "public void setDisplayUpdate(Painter updateStrategy);",
+  "methodSignature": "setDisplayUpdate(Painter)",
+  "sourceCode": "public void setDisplayUpdate(Painter updateStrategy);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Painter"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Painter": []
+  },
+  "full_method_info": "/**\n * Sets the current display update strategy.\n * @see Painter\n */\npublic void setDisplayUpdate(Painter updateStrategy);",
+  "method_comment": "\n     * Sets the current display update strategy.\n     * @see Painter\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.figures.RadiusHandle",
+  "targetMethod": "invokeStep(int, int, int, int, DrawingView)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.figures.RoundRectangleFigure": "private Rectangle   fDisplayBox;\nprivate int         fArcWidth;\nprivate int         fArcHeight;\nprivate static final int DEFAULT_ARC = 8;\nprivate static final long serialVersionUID = 7907900248924036885L;\nprivate int roundRectangleSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.Geom": "static public final int NORTH = 1;\nstatic public final int SOUTH = 2;\nstatic public final int WEST = 3;\nstatic public final int EAST = 4;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.figures.RoundRectangleFigure": "public void setArc(int width, int height){}\npublic Rectangle displayBox(){}",
+    "CH.ifa.draw.util.Geom": "static public int range(int min, int max, int value){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.figures.RoundRectangleFigure": "* Sets the arc's witdh and height.\n     \npublic void setArc(int width, int height) {\n        willChange();\n        fArcWidth = width;\n        fArcHeight = height;\n        changed();\n    }\npublic Rectangle displayBox() {\n        return new Rectangle(\n            fDisplayBox.x,\n            fDisplayBox.y,\n            fDisplayBox.width,\n            fDisplayBox.height);\n    }",
+    "CH.ifa.draw.util.Geom": "* Constains a value to the given range.\n     * @return the constrained value\n     \nstatic public int range(int min, int max, int value) {\n        if (value < min)\n            value = min;\n        if (value > max)\n            value = max;\n        return value;\n    }"
+  }
+}

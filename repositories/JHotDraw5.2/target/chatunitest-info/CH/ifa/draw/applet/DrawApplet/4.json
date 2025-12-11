@@ -1,0 +1,26 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createFontChoice",
+  "brief": "protected JComboBox createFontChoice(){}",
+  "methodSignature": "createFontChoice()",
+  "sourceCode": "protected JComboBox createFontChoice() {\n        CommandChoice choice = new CommandChoice();\n        String fonts[] = Toolkit.getDefaultToolkit().getFontList();\n        for (int i = 0; i < fonts.length; i++)\n            choice.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i],  fView));\n        return choice;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Toolkit": [
+      "getDefaultToolkit()",
+      "getFontList()"
+    ],
+    "CH.ifa.draw.util.CommandChoice": [
+      "addItem(Command)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the font choice. The choice is filled with\n * all the fonts supported by the toolkit.\n */\nprotected JComboBox createFontChoice() {\n    CommandChoice choice = new CommandChoice();\n    String[] fonts = Toolkit.getDefaultToolkit().getFontList();\n    for (int i = 0; i < fonts.length; i++) choice.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i], fView));\n    return choice;\n}",
+  "method_comment": "\n     * Creates the font choice. The choice is filled with\n     * all the fonts supported by the toolkit.\n     ",
+  "method_annotation": ""
+}

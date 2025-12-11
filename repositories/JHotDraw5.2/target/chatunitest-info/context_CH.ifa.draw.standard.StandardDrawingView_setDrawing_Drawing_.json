@@ -1,0 +1,23 @@
+{
+  "targetClass": "CH.ifa.draw.standard.StandardDrawingView",
+  "targetMethod": "setDrawing(Drawing)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.StandardDrawingView": "transient private DrawingEditor   fEditor;\nprivate Drawing         fDrawing;\nprivate transient Rectangle fDamage = null;\ntransient private Vector fSelection;\ntransient private Vector fSelectionHandles;\nprivate Dimension fViewSize;\nprivate Point fLastClick;\nprivate Vector fBackgrounds = null;\nprivate Vector fForegrounds = null;\nprivate Painter fUpdateStrategy;\nprivate PointConstrainer fConstrainer;\nprivate static final long serialVersionUID = -3878153366174603336L;\nprivate int drawingViewSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.framework.FigureEnumeration": "",
+    "CH.ifa.draw.framework.DrawingEditor": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": "public Drawing drawing(){}\npublic void clearSelection(){}",
+    "CH.ifa.draw.framework.Figure": "public Rectangle displayBox();",
+    "CH.ifa.draw.framework.Drawing": "public void addDrawingChangeListener(DrawingChangeListener listener);\npublic void removeDrawingChangeListener(DrawingChangeListener listener);\npublic FigureEnumeration figures();",
+    "CH.ifa.draw.framework.FigureEnumeration": "public Figure nextFigure();"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.StandardDrawingView": "* Gets the drawing.\n     \npublic Drawing drawing() {\n        return fDrawing;\n    }\n\n     * Clears the current selection.\n     \npublic void clearSelection() {\n        Figure figure;\n\n        FigureEnumeration k = selectionElements();\n\n        while (k.hasMoreElements())\n            k.nextFigure().invalidate();\n        fSelection = new Vector();\n        fSelectionHandles = null;\n        selectionChanged();\n    }",
+    "CH.ifa.draw.framework.Figure": "* Gets the display box of a figure\n     * @see #basicDisplayBox\n     \npublic Rectangle displayBox();",
+    "CH.ifa.draw.framework.Drawing": "* Adds a listener for this drawing.\n     \npublic void addDrawingChangeListener(DrawingChangeListener listener);\n\n     * Removes a listener from this drawing.\n     \npublic void removeDrawingChangeListener(DrawingChangeListener listener);\n\n     * Returns an enumeration to iterate in\n     * Z-order back to front over the figures.\n     \npublic FigureEnumeration figures();",
+    "CH.ifa.draw.framework.FigureEnumeration": "* Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     \npublic Figure nextFigure();"
+  }
+}

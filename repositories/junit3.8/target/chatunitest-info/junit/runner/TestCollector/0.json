@@ -1,0 +1,18 @@
+{
+  "className": "TestCollector",
+  "methodName": "collectTests",
+  "brief": "public Enumeration collectTests();",
+  "methodSignature": "collectTests()",
+  "sourceCode": "public Enumeration collectTests();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Returns an enumeration of Strings with qualified class names\r\n */\r\npublic Enumeration collectTests();",
+  "method_comment": "\r\n\t * Returns an enumeration of Strings with qualified class names\r\n\t ",
+  "method_annotation": ""
+}

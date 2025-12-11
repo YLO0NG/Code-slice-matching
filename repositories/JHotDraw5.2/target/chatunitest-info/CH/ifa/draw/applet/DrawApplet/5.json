@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createButtonPanel",
+  "brief": "protected JPanel createButtonPanel(){}",
+  "methodSignature": "createButtonPanel()",
+  "sourceCode": "protected JPanel createButtonPanel() {\n        JPanel panel = new JPanel();\n        panel.setLayout(new PaletteLayout(2, new Point(2,2), false));\n        return panel;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "setLayout(LayoutManager)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the buttons panel.\n */\nprotected JPanel createButtonPanel() {\n    JPanel panel = new JPanel();\n    panel.setLayout(new PaletteLayout(2, new Point(2, 2), false));\n    return panel;\n}",
+  "method_comment": "\n     * Creates the buttons panel.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "resetResults",
+  "brief": "void resetResults(){}",
+  "methodSignature": "resetResults()",
+  "sourceCode": "void resetResults() {\r\n\t\tfFailures= new Hashtable();\r\n\t\tfRunTests= new Hashtable();\r\n\t\tfErrors= new Hashtable();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Resets the test results\r\n */\r\nvoid resetResults() {\r\n    fFailures = new Hashtable();\r\n    fRunTests = new Hashtable();\r\n    fErrors = new Hashtable();\r\n}",
+  "method_comment": "\r\n\t * Resets the test results\r\n\t ",
+  "method_annotation": ""
+}

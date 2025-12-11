@@ -1,0 +1,35 @@
+{
+  "fullClassName": "CH.ifa.draw.util.PaletteListener",
+  "className": "PaletteListener",
+  "index": 162,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public interface PaletteListener",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "paletteUserSelected(PaletteButton)": "0",
+    "paletteUserOver(PaletteButton, boolean)": "1"
+  },
+  "methodsBrief": [
+    "void paletteUserSelected(PaletteButton button);",
+    "void paletteUserOver(PaletteButton button, boolean inside);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)PaletteListener.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\n/**\n * Interface for handling palette events.\n *\n * @see PaletteButton\n */\npublic interface PaletteListener {\n\n    /**\n     * The user selected a palette entry. The selected button is\n     * passed as an argument.\n     */\n    void paletteUserSelected(PaletteButton button);\n\n    /**\n     * The user moved the mouse over the palette entry.\n     */\n    void paletteUserOver(PaletteButton button, boolean inside);\n}\n",
+  "classDeclarationCode": "/**\n * Interface for handling palette events.\n *\n * @see PaletteButton\n */\npublic interface PaletteListener {\n\n    /**\n     * The user selected a palette entry. The selected button is\n     * passed as an argument.\n     */\n    void paletteUserSelected(PaletteButton button);\n\n    /**\n     * The user moved the mouse over the palette entry.\n     */\n    void paletteUserOver(PaletteButton button, boolean inside);\n}",
+  "subClasses": []
+}

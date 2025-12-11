@@ -1,0 +1,63 @@
+{
+  "fullClassName": "classes.SchedulerAction",
+  "className": "SchedulerAction",
+  "index": 14,
+  "modifier": "[public ]",
+  "extend": "[ExampleSupport]",
+  "implement": "[]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class SchedulerAction",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import static org.quartz.JobBuilder.newJob;",
+    "import static org.quartz.TriggerBuilder.newTrigger;",
+    "import org.apache.log4j.Logger;",
+    "import org.quartz.CronScheduleBuilder;",
+    "import org.quartz.JobDetail;",
+    "import org.quartz.JobKey;",
+    "import org.quartz.Scheduler;",
+    "import org.quartz.SchedulerFactory;",
+    "import org.quartz.Trigger;",
+    "import org.quartz.impl.StdSchedulerFactory;"
+  ],
+  "fields": [
+    "private static Logger logger = Logger.getLogger( SchedulerAction.class );",
+    "private Integer timeInterval;"
+  ],
+  "superClasses": [
+    "ExampleSupport"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getTimeInterval()": "0",
+    "setTimeInterval(Integer)": "1",
+    "execute()": "2",
+    "input()": "3",
+    "schedule()": "4"
+  },
+  "methodsBrief": [
+    "public Integer getTimeInterval(){}",
+    "public void setTimeInterval( Integer timeInterval ){}",
+    "@Override\r\n\tpublic String execute() throws Exception{}",
+    "@Override\r\n\tpublic String input() throws Exception{}",
+    "public String schedule() throws Exception{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getTimeInterval()",
+    "setTimeInterval(Integer)"
+  ],
+  "getterSetterBrief": [
+    "public Integer getTimeInterval(){}",
+    "public void setTimeInterval( Integer timeInterval ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * $Id: Login.java 471756 2006-11-06 15:01:43Z husted $\n *\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *  http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\npackage classes;\n\nimport static org.quartz.JobBuilder.newJob;\nimport static org.quartz.TriggerBuilder.newTrigger;\nimport org.apache.log4j.Logger;\nimport org.quartz.CronScheduleBuilder;\nimport org.quartz.JobDetail;\nimport org.quartz.JobKey;\nimport org.quartz.Scheduler;\nimport org.quartz.SchedulerFactory;\nimport org.quartz.Trigger;\nimport org.quartz.impl.StdSchedulerFactory;\n\npublic class SchedulerAction extends ExampleSupport {\n\n    // f:log\n    private static Logger logger = Logger.getLogger(SchedulerAction.class);\n\n    private Integer timeInterval;\n\n    public Integer getTimeInterval() {\n        return this.timeInterval;\n    }\n\n    public void setTimeInterval(Integer timeInterval) {\n        this.timeInterval = timeInterval;\n    }\n\n    @Override\n    public String execute() throws Exception {\n        return this.input();\n    }\n\n    @Override\n    public String input() throws Exception {\n        // f:log\n        logger.info(\"Starting input()\");\n        // f:quartz\n        SchedulerFactory sf = new StdSchedulerFactory();\n        // f:quartz\n        Scheduler sc = sf.getScheduler();\n        // f:quartz\n        JobDetail job = sc.getJobDetail(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n        if (job != null) {\n            // f:quartz\n            // f:quartz\n            this.timeInterval = job.getJobDataMap().getIntValue(\"timeInterval\");\n        }\n        // f:quartz\n        // f:log\n        logger.info(\"Finishing input()\");\n        return super.input();\n    }\n\n    public String schedule() throws Exception {\n        // f:log\n        logger.info(\"Starting schedule()\");\n        // f:quartz\n        SchedulerFactory sf = new StdSchedulerFactory();\n        // f:quartz\n        Scheduler sc = sf.getScheduler();\n        // f:quartz\n        JobDetail job = sc.getJobDetail(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n        if (job != null) {\n            // f:quartz\n            // f:quartz\n            sc.deleteJob(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n        }\n        // f:quartz\n        // f:quartz\n        job = newJob(SupplyMailJob.class).withIdentity(\"supplyMailJob\", \"group\").build();\n        // f:quartz\n        job.getJobDataMap().put(\"timeInterval\", this.timeInterval);\n        Trigger trigger = newTrigger().withIdentity(\"supplyMailTrigger\", \"group\").startNow().withSchedule(CronScheduleBuilder.cronSchedule(\"0 0/\" + (this.timeInterval * 60) + \" * * * ?\")).// f:quartz\n        build();\n        // f:quartz\n        sc.scheduleJob(job, trigger);\n        // f:log\n        logger.info(\"Finishing schedule()\");\n        return INPUT;\n    }\n}\n",
+  "classDeclarationCode": "public class SchedulerAction extends ExampleSupport {\n\n    // f:log\n    private static Logger logger = Logger.getLogger(SchedulerAction.class);\n\n    private Integer timeInterval;\n\n    public Integer getTimeInterval() {\n        return this.timeInterval;\n    }\n\n    public void setTimeInterval(Integer timeInterval) {\n        this.timeInterval = timeInterval;\n    }\n\n    @Override\n    public String execute() throws Exception {\n        return this.input();\n    }\n\n    @Override\n    public String input() throws Exception {\n        // f:log\n        logger.info(\"Starting input()\");\n        // f:quartz\n        SchedulerFactory sf = new StdSchedulerFactory();\n        // f:quartz\n        Scheduler sc = sf.getScheduler();\n        // f:quartz\n        JobDetail job = sc.getJobDetail(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n        if (job != null) {\n            // f:quartz\n            // f:quartz\n            this.timeInterval = job.getJobDataMap().getIntValue(\"timeInterval\");\n        }\n        // f:quartz\n        // f:log\n        logger.info(\"Finishing input()\");\n        return super.input();\n    }\n\n    public String schedule() throws Exception {\n        // f:log\n        logger.info(\"Starting schedule()\");\n        // f:quartz\n        SchedulerFactory sf = new StdSchedulerFactory();\n        // f:quartz\n        Scheduler sc = sf.getScheduler();\n        // f:quartz\n        JobDetail job = sc.getJobDetail(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n        if (job != null) {\n            // f:quartz\n            // f:quartz\n            sc.deleteJob(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n        }\n        // f:quartz\n        // f:quartz\n        job = newJob(SupplyMailJob.class).withIdentity(\"supplyMailJob\", \"group\").build();\n        // f:quartz\n        job.getJobDataMap().put(\"timeInterval\", this.timeInterval);\n        Trigger trigger = newTrigger().withIdentity(\"supplyMailTrigger\", \"group\").startNow().withSchedule(CronScheduleBuilder.cronSchedule(\"0 0/\" + (this.timeInterval * 60) + \" * * * ?\")).// f:quartz\n        build();\n        // f:quartz\n        sc.scheduleJob(job, trigger);\n        // f:log\n        logger.info(\"Finishing schedule()\");\n        return INPUT;\n    }\n}",
+  "subClasses": []
+}

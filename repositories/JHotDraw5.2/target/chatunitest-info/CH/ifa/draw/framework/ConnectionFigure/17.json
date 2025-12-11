@@ -1,0 +1,21 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "joinSegments",
+  "brief": "public boolean joinSegments(int x, int y);",
+  "methodSignature": "joinSegments(int, int)",
+  "sourceCode": "public boolean joinSegments(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Joins the hit segments.\n * @param x, y the position where the figure should be joined.\n * @return whether the segment was joined\n */\npublic boolean joinSegments(int x, int y);",
+  "method_comment": "\n     * Joins the hit segments.\n     * @param x, y the position where the figure should be joined.\n     * @return whether the segment was joined\n     ",
+  "method_annotation": ""
+}

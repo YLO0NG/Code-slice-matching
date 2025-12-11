@@ -1,0 +1,20 @@
+{
+  "className": "ArrowTip",
+  "methodName": "setInnerRadius",
+  "brief": "protected void setInnerRadius(double newInnerRadius){}",
+  "methodSignature": "setInnerRadius(double)",
+  "sourceCode": "protected void setInnerRadius(double newInnerRadius) {\n        fInnerRadius = newInnerRadius;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the inner radius\n */\nprotected void setInnerRadius(double newInnerRadius) {\n    fInnerRadius = newInnerRadius;\n}",
+  "method_comment": "\n\t * Sets the inner radius\n\t ",
+  "method_annotation": ""
+}

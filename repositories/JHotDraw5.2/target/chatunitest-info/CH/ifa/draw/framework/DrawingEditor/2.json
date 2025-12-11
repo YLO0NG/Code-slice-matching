@@ -1,0 +1,18 @@
+{
+  "className": "DrawingEditor",
+  "methodName": "tool",
+  "brief": "Tool        tool();",
+  "methodSignature": "tool()",
+  "sourceCode": "Tool        tool();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the editor's current tool.\n */\nTool tool();",
+  "method_comment": "\n     * Gets the editor's current tool.\n     ",
+  "method_annotation": ""
+}

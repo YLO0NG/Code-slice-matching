@@ -1,0 +1,22 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "setEndDecoration",
+  "brief": "public void setEndDecoration(LineDecoration l){}",
+  "methodSignature": "setEndDecoration(LineDecoration)",
+  "sourceCode": "public void setEndDecoration(LineDecoration l) {\n        fEndDecoration = l;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "LineDecoration"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineDecoration": []
+  },
+  "full_method_info": "/**\n * Sets the end decoration.\n */\npublic void setEndDecoration(LineDecoration l) {\n    fEndDecoration = l;\n}",
+  "method_comment": "\n     * Sets the end decoration.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,16 @@
+{
+  "targetClass": "junit.awtui.TestRunner",
+  "targetMethod": "reset()",
+  "dependentFields": {
+    "junit.awtui.TestRunner": "protected Frame fFrame;\nprotected Vector fExceptions;\nprotected Vector fFailedTests;\nprotected Thread fRunner;\nprotected TestResult fTestResult;\nprotected TextArea fTraceArea;\nprotected TextField fSuiteField;\nprotected Button fRun;\nprotected ProgressBar fProgressIndicator;\nprotected List fFailureList;\nprotected Logo fLogo;\nprotected Label fNumberOfErrors;\nprotected Label fNumberOfFailures;\nprotected Label fNumberOfRuns;\nprotected Button fQuitButton;\nprotected Button fRerunButton;\nprotected TextField fStatusLine;\nprotected Checkbox fUseLoadingRunner;\nprotected static Font PLAIN_FONT= new Font(\"dialog\", Font.PLAIN, 12);\nprivate static final int GAP= 4;\nprivate static final String SUITE_METHODNAME= \"suite\";",
+    "junit.awtui.ProgressBar": "public boolean fError= false;\npublic int fTotal= 0;\npublic int fProgress= 0;\npublic int fProgressX= 0;"
+  },
+  "dependentMethods": {
+    "junit.awtui.TestRunner": "private void setLabelValue(Label label, int value){}",
+    "junit.awtui.ProgressBar": "public void paint(Graphics g){}"
+  },
+  "dependentMethodBodies": {
+    "junit.awtui.TestRunner": "private void setLabelValue(Label label, int value) {\r\n\t\tlabel.setText(Integer.toString(value));\r\n\t\tlabel.invalidate();\r\n\t\tlabel.getParent().validate();\r\n\r\n\t}",
+    "junit.awtui.ProgressBar": "public void paint(Graphics g) {\r\n\t\tpaintBackground(g);\r\n\t\tpaintStatus(g);\r\n\t}"
+  }
+}

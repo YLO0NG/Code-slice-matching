@@ -1,0 +1,36 @@
+{
+  "className": "DataManager",
+  "methodName": "writeUserInCluster",
+  "brief": "public static void writeUserInCluster(Cluster cluster) throws SQLException{}",
+  "methodSignature": "writeUserInCluster(Cluster)",
+  "sourceCode": "public static void writeUserInCluster(Cluster cluster) throws SQLException {\n    \tint clusterid = DataManager.getClusterID(cluster);\n    \tfor(User user : cluster.getUsers()) {\n    \t\tString sqlStmt = QueryBuilder.insertUserInCluster(user.getUserName(), clusterid);\n    \t\t//System.out.println(sqlStmt);\n    \t\tstatement.executeUpdate(sqlStmt);\n    \t}\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Cluster"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getUsers()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getClusterID(Cluster)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "insertUserInCluster(String, int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getUserName()"
+    ],
+    "java.sql.Statement": [
+      "executeUpdate(String)"
+    ]
+  },
+  "full_method_info": "public static void writeUserInCluster(Cluster cluster) throws SQLException {\n    int clusterid = DataManager.getClusterID(cluster);\n    for (User user : cluster.getUsers()) {\n        String sqlStmt = QueryBuilder.insertUserInCluster(user.getUserName(), clusterid);\n        // System.out.println(sqlStmt);\n        statement.executeUpdate(sqlStmt);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

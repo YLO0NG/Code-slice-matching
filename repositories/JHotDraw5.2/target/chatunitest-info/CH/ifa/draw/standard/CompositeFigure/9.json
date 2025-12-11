@@ -1,0 +1,29 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "bringToFront",
+  "brief": "public synchronized void bringToFront(Figure figure){}",
+  "methodSignature": "bringToFront(Figure)",
+  "sourceCode": "public synchronized void bringToFront(Figure figure) {\n        if (fFigures.contains(figure)) {\n            fFigures.removeElement(figure);\n            fFigures.addElement(figure);\n            figure.changed();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "changed()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "removeElement(Object)",
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Brings a figure to the front.\n */\npublic synchronized void bringToFront(Figure figure) {\n    if (fFigures.contains(figure)) {\n        fFigures.removeElement(figure);\n        fFigures.addElement(figure);\n        figure.changed();\n    }\n}",
+  "method_comment": "\n     * Brings a figure to the front.\n     ",
+  "method_annotation": ""
+}

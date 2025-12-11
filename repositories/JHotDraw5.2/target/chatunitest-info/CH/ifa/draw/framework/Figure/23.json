@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "willChange",
+  "brief": "public void willChange();",
+  "methodSignature": "willChange()",
+  "sourceCode": "public void willChange();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Informes that a figure is about to change such that its\n * display box is affected.\n * Here is an example of how it is used together with changed()\n * <pre>\n * public void move(int x, int y) {\n *      willChange();\n *      // change the figure's location\n *      changed();\n *  }\n * </pre>\n * @see #invalidate\n * @see #changed\n */\npublic void willChange();",
+  "method_comment": "\n     * Informes that a figure is about to change such that its\n     * display box is affected.\n     * Here is an example of how it is used together with changed()\n     * <pre>\n     * public void move(int x, int y) {\n     *      willChange();\n     *      // change the figure's location\n     *      changed();\n     *  }\n     * </pre>\n     * @see #invalidate\n     * @see #changed\n     ",
+  "method_annotation": ""
+}

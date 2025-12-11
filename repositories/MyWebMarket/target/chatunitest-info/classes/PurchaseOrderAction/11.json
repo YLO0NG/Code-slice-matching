@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrderAction",
+  "methodName": "delete",
+  "brief": "public String delete() throws Exception{}",
+  "methodSignature": "delete()",
+  "sourceCode": "public String delete() throws Exception {\n\t\tlogger.info( \"Starting delete()\" ); //f:log\n\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate\n\t\tTransaction t = sess.beginTransaction(); //f:hibernate\n\n\t\tsess.delete( this.purchaseOrder ); //f:hibernate\n\n\t\tt.commit(); //f:hibernate\n\t\tsess.close(); //f:hibernate\n\n\t\tthis.task = SystemConstants.CR_MODE;\n\t\tthis.addActionMessage( this.getText( \"deleteSuccessful\", new String[] { \"order\" } ) );\n\t\tlogger.info( \"Finishing delete()\" ); //f:log\n\t\treturn this.input();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "classes.HibernateUtil": [
+      "getSessionFactory()"
+    ]
+  },
+  "full_method_info": "public String delete() throws Exception {\n    // f:log\n    logger.info(\"Starting delete()\");\n    // f:hibernate\n    Session sess = HibernateUtil.getSessionFactory().openSession();\n    // f:hibernate\n    Transaction t = sess.beginTransaction();\n    // f:hibernate\n    sess.delete(this.purchaseOrder);\n    // f:hibernate\n    t.commit();\n    // f:hibernate\n    sess.close();\n    this.task = SystemConstants.CR_MODE;\n    this.addActionMessage(this.getText(\"deleteSuccessful\", new String[] { \"order\" }));\n    // f:log\n    logger.info(\"Finishing delete()\");\n    return this.input();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

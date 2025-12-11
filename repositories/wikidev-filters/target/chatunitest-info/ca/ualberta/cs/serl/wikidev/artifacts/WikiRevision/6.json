@@ -1,0 +1,18 @@
+{
+  "className": "WikiRevision",
+  "methodName": "getRev_user_text",
+  "brief": "public String getRev_user_text(){}",
+  "methodSignature": "getRev_user_text()",
+  "sourceCode": "public String getRev_user_text() {\n\t\treturn rev_user_text;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rev_user_text\"\n */\npublic String getRev_user_text() {\n    return rev_user_text;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rev_user_text\"\n\t ",
+  "method_annotation": ""
+}

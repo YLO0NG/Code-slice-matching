@@ -1,0 +1,177 @@
+[
+    {
+        "class_name": "junit.textui.TestRunner",
+        "function_name": "start(String[])",
+        "line_start": 172,
+        "line_end": 181,
+        "code_snippet": "TestResult result= createTestResult();\r\n\t\t\tresult.addListener(fPrinter);\r\n\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\tsuite.run(result);\r\n\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\tlong runTime= endTime-startTime;\r\n\t\t\tfPrinter.print(result, runTime);\r\n\t\t\t\r\n\t\t\tpause(wait);\r\n\t\t\treturn result;"
+    },
+    {
+        "class_name": "junit.textui.ResultPrinter",
+        "function_name": "print(TestResult, long)",
+        "line_start": 30,
+        "line_end": 42,
+        "code_snippet": "if (result.wasSuccessful()) {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().print(\"OK\");\r\n\t\t\tgetWriter().println (\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\": \"s\") + \")\");\r\n\t\t\r\n\t\t} else {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().println(\"FAILURES!!!\");\r\n\t\t\tgetWriter().println(\"Tests run: \"+result.runCount()+ \r\n\t\t\t\t         \",  Failures: \"+result.failureCount()+\r\n\t\t\t\t         \",  Errors: \"+result.errorCount());\r\n\t\t}\r\n\t\tgetWriter().println();"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "testFailed(int, Test, Throwable)",
+        "line_start": 70,
+        "line_end": 72,
+        "code_snippet": "fFailures.addElement(new TestFailure(test, t));\r\n\t\t\t\t\t\t\tif (fFailures.size() == 1)\r\n\t\t\t\t\t\t\t\trevealFailure(test);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "addToHistory(String)",
+        "line_start": 117,
+        "line_end": 121,
+        "code_snippet": "int historyLength= getPreference(\"maxhistory\", HISTORY_LENGTH);\r\n\t\tif (historyLength < 1)\r\n\t\t\thistoryLength= 1;\r\n\t\tfor (int i= fSuiteCombo.getItemCount()-1; i > historyLength-1; i--)\r\n\t\t\tfSuiteCombo.removeItemAt(i);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createFailedPanel()",
+        "line_start": 176,
+        "line_end": 179,
+        "code_snippet": "TestRunView view= (TestRunView)fTestRunViews.elementAt(fTestViewTab.getSelectedIndex());\r\n\t\t\t\t\tTest rerunTest= view.getSelectedTest();\r\n\t\t\t\t\tif (rerunTest != null)\r\n\t\t\t\t\t\trerunTest(rerunTest);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createJUnitMenu()",
+        "line_start": 224,
+        "line_end": 230,
+        "code_snippet": "fFrame.dispose();\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tsaveHistory();\r\n\t\t\t\t\t} catch (IOException e) {\r\n\t\t\t\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tSystem.exit(0);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createFrame(String)",
+        "line_start": 250,
+        "line_end": 256,
+        "code_snippet": "fFrame.dispose();\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tsaveHistory();\r\n\t\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tSystem.exit(0);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createQuitButton()",
+        "line_start": 294,
+        "line_end": 300,
+        "code_snippet": "fFrame.dispose();\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tsaveHistory();\r\n\t\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tSystem.exit(0);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createRunButton()",
+        "line_start": 313,
+        "line_end": 325,
+        "code_snippet": "if (fRunner != null) {\r\n\t\t\t\t\t\tfTestResult.stop();\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\tsetLoading(shouldReload());\r\n\t\t\t\t\t\treset();\r\n\t\t\t\t\t\tshowInfo(\"Load Test Case...\");\r\n\t\t\t\t\t\tfinal String suiteName= getSuiteText();\r\n\t\t\t\t\t\tfinal Test testSuite= getTest(suiteName);\r\n\t\t\t\t\t\tif (testSuite != null) {\r\n\t\t\t\t\t\t\taddToHistory(suiteName);\r\n\t\t\t\t\t\t\tdoRunTest(testSuite);\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createSuiteCombo()",
+        "line_start": 359,
+        "line_end": 371,
+        "code_snippet": "if (fRunner != null) {\r\n\t\t\t\t\t\t\tfTestResult.stop();\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\tsetLoading(shouldReload());\r\n\t\t\t\t\t\t\treset();\r\n\t\t\t\t\t\t\tshowInfo(\"Load Test Case...\");\r\n\t\t\t\t\t\t\tfinal String suiteName= getSuiteText();\r\n\t\t\t\t\t\t\tfinal Test testSuite= getTest(suiteName);\r\n\t\t\t\t\t\t\tif (testSuite != null) {\r\n\t\t\t\t\t\t\t\taddToHistory(suiteName);\r\n\t\t\t\t\t\t\t\tdoRunTest(testSuite);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "createUI(String)",
+        "line_start": 451,
+        "line_end": 462,
+        "code_snippet": "int fill = GridBagConstraints.HORIZONTAL;\r\n\r\n\t\tGridBagConstraints c= new GridBagConstraints();\r\n\t\tc.gridx= 0; c.gridy= 0;\r\n\t\tc.gridwidth= 2;\r\n\t\tc.anchor= GridBagConstraints.WEST;\r\n\t\tc.weightx= 1.0;\r\n\t\tc.fill= fill;\r\n\t\tif (fill == GridBagConstraints.BOTH || fill == GridBagConstraints.VERTICAL)\r\n\t\t\tc.weighty= 1.0;\r\n\t\tc.insets= new Insets(0 == 0 ? 10 : 0, 0 == 0 ? 10 : GAP, GAP, GAP); \r\n\t\tpanel.add(suiteLabel, c);"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "runSuite()",
+        "line_start": 652,
+        "line_end": 656,
+        "code_snippet": "fCounterPanel.reset();\r\n\t\t\tfProgressIndicator.reset();\r\n\t\t\tfRerunButton.setEnabled(false);\r\n\t\t\tfFailureView.clear();\r\n\t\t\tfFailures.clear();"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "runTest(Test)",
+        "line_start": 676,
+        "line_end": 680,
+        "code_snippet": "fCounterPanel.reset();\r\n\t\t\tfProgressIndicator.reset();\r\n\t\t\tfRerunButton.setEnabled(false);\r\n\t\t\tfFailureView.clear();\r\n\t\t\tfFailures.clear();"
+    },
+    {
+        "class_name": "junit.swingui.TestRunner",
+        "function_name": "terminate()",
+        "line_start": 827,
+        "line_end": 836,
+        "code_snippet": "BufferedWriter bw= new BufferedWriter(new FileWriter(getSettingsFile()));\r\n\t\t\ttry {\r\n\t\t\t\tfor (int i= 0; i < fSuiteCombo.getItemCount(); i++) {\r\n\t\t\t\t\tString testsuite= fSuiteCombo.getItemAt(i).toString();\r\n\t\t\t\t\tbw.write(testsuite, 0, testsuite.length());\r\n\t\t\t\t\tbw.newLine();\r\n\t\t\t\t}\r\n\t\t\t} finally {\r\n\t\t\t\tbw.close();\r\n\t\t\t}"
+    },
+    {
+        "class_name": "junit.runner.BaseTestRunner",
+        "function_name": "getPreferences()",
+        "line_start": 38,
+        "line_end": 49,
+        "code_snippet": "InputStream is= null;\r\n\t\t\ttry {\r\n\t\t\t\tis= new FileInputStream(getPreferencesFile());\r\n\t\t\t\tsetPreferences(new Properties(getPreferences()));\r\n\t\t\t\tgetPreferences().load(is);\r\n\t\t\t} catch (IOException e) {\r\n\t\t\t\ttry {\r\n\t\t\t\t\tif (is != null)\r\n\t\t\t\t\t\tis.close();\r\n\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t}\r\n\t\t\t}"
+    },
+    {
+        "class_name": "junit.framework.TestResult",
+        "function_name": "run(TestCase)",
+        "line_start": 103,
+        "line_end": 109,
+        "code_snippet": "final int count= test.countTestCases();\r\n\t\tsynchronized(this) {\r\n\t\t\tfRunTests+= count;\r\n\t\t}\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).startTest(test);\r\n\t\t}"
+    },
+    {
+        "class_name": "junit.framework.TestResult",
+        "function_name": "runProtected(Test, Protectable)",
+        "line_start": 133,
+        "line_end": 136,
+        "code_snippet": "fFailures.addElement(new TestFailure(test, e));\r\n\t\t\tfor (Enumeration e1= cloneListeners().elements(); e1.hasMoreElements(); ) {\r\n\t\t\t\t((TestListener)e1.nextElement()).addFailure(test, e);\r\n\t\t\t}"
+    },
+    {
+        "class_name": "junit.framework.Assert",
+        "function_name": "assertEquals(String, Object, Object)",
+        "line_start": 64,
+        "line_end": 67,
+        "code_snippet": "String formatted= \"\";\r\n\t\tif (message != null)\r\n\t\t\tformatted= message+\" \";\r\n\t\tfail(formatted+\"expected:<\"+expected+\"> but was:<\"+actual+\">\");"
+    },
+    {
+        "class_name": "junit.framework.Assert",
+        "function_name": "assertEquals(String, Object, Object)",
+        "line_start": 102,
+        "line_end": 105,
+        "code_snippet": "String formatted= \"\";\r\n\t\t\t\tif (message != null)\r\n\t\t\t\t\tformatted= message+\" \";\r\n\t\t\t\tfail(formatted+\"expected:<\"+new Double(expected)+\"> but was:<\"+new Double(actual)+\">\");"
+    },
+    {
+        "class_name": "junit.framework.Assert",
+        "function_name": "assertEquals(String, Object, Object)",
+        "line_start": 127,
+        "line_end": 130,
+        "code_snippet": "String formatted= \"\";\r\n\t\t\t\tif (message != null)\r\n\t\t\t\t\tformatted= message+\" \";\r\n\t\t\t\tfail(formatted+\"expected:<\"+new Float(expected)+\"> but was:<\"+new Float(actual)+\">\");"
+    },
+    {
+        "class_name": "junit.awtui.TestRunner",
+        "function_name": "testFailed(int, Test, Throwable)",
+        "line_start": 70,
+        "line_end": 82,
+        "code_snippet": "String kind = \"Error\";\r\n\t\t\tkind+= \": \" + test;\r\n\t\t\tString msg= t.getMessage();\r\n\t\t\tif (msg != null) {\r\n\t\t\t\tkind+= \":\" + truncate(msg);\r\n\t\t\t}\r\n\t\t\tfFailureList.add(kind);\r\n\t\t\tfExceptions.addElement(t);\r\n\t\t\tfFailedTests.addElement(test);\r\n\t\t\tif (fFailureList.getItemCount() == 1) {\r\n\t\t\t\tfFailureList.select(0);\r\n\t\t\t\tfailureSelected();\r\n\t\t\t}"
+    },
+    {
+        "class_name": "junit.awtui.TestRunner",
+        "function_name": "createJUnitMenu()",
+        "line_start": 128,
+        "line_end": 131,
+        "code_snippet": "AboutDialog about= new AboutDialog(fFrame);\r\n\t\t\t\t\tabout.setModal(true);\r\n\t\t\t\t\tabout.setLocation(300, 300);\r\n\t\t\t\t\tabout.setVisible(true);"
+    },
+    {
+        "class_name": "junit.awtui.TestRunner",
+        "function_name": "createUI(String)",
+        "line_start": 191,
+        "line_end": 228,
+        "code_snippet": "if (fRunner != null && fTestResult != null) {\r\n\t\t\t\t\t\tfTestResult.stop();\r\n\t\t\t\t\t} else {\r\n\t\t\t\t\t\tsetLoading(shouldReload());\r\n\t\t\t\t\t\tfRun.setLabel(\"Stop\");\r\n\t\t\t\t\t\tshowInfo(\"Initializing...\");\r\n\t\t\t\t\t\treset();\r\n\t\t\t\t\t\r\n\t\t\t\t\t\tshowInfo(\"Load Test Case...\");\r\n\t\t\t\t\t\r\n\t\t\t\t\t\tfinal Test testSuite= getTest(fSuiteField.getText());\r\n\t\t\t\t\t\tif (testSuite != null) {\r\n\t\t\t\t\t\t\tfRunner= new Thread() {\r\n\t\t\t\t\t\t\t\tpublic void run() {\r\n\t\t\t\t\t\t\t\t\tfTestResult= createTestResult();\r\n\t\t\t\t\t\t\t\t\tfTestResult.addListener(TestRunner.this);\r\n\t\t\t\t\t\t\t\t\tfProgressIndicator.start(testSuite.countTestCases());\r\n\t\t\t\t\t\t\t\t\tshowInfo(\"Running...\");\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\t\t\t\t\t\t\ttestSuite.run(fTestResult);\r\n\t\t\t\t\t\r\n\t\t\t\t\t\t\t\t\tif (fTestResult.shouldStop()) {\r\n\t\t\t\t\t\t\t\t\t\tshowStatus(\"Stopped\");\r\n\t\t\t\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\t\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\t\t\t\t\t\t\t\tlong runTime= endTime-startTime;\r\n\t\t\t\t\t\t\t\t\t\tshowInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n\t\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t\t\tfTestResult= null;\r\n\t\t\t\t\t\t\t\t\tfRun.setLabel(\"Run\");\r\n\t\t\t\t\t\t\t\t\tfRunner= null;\r\n\t\t\t\t\t\t\t\t\tSystem.gc();\r\n\t\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t\t};\r\n\t\t\t\t\t\t\tfRunner.start();\r\n\t\t\t\t\t\t}\r\n\t\t\t\t\t}"
+    },
+    {
+        "class_name": "junit.awtui.TestRunner",
+        "function_name": "createCounterPanel()",
+        "line_start": 346,
+        "line_end": 356,
+        "code_snippet": "GridBagConstraints constraints= new GridBagConstraints();\r\n\t\tconstraints.gridx= 0;\r\n\t\tconstraints.gridy= 0;\r\n\t\tconstraints.gridwidth= 1;\r\n\t\tconstraints.gridheight= 1;\r\n\t\tconstraints.weightx= 0.0;\r\n\t\tconstraints.weighty= 0.0;\r\n\t\tconstraints.anchor= GridBagConstraints.CENTER;\r\n\t\tconstraints.fill= GridBagConstraints.NONE;\r\n\t\tconstraints.insets= new Insets(0, 0, 0, 0);\r\n\t\tnumbersPanel.add(new Label(\"Runs:\"), constraints);"
+    },
+    {
+        "class_name": "junit.awtui.TestRunner",
+        "function_name": "reset()",
+        "line_start": 486,
+        "line_end": 489,
+        "code_snippet": "fProgressIndicator.fProgressX= 1;\r\n\t\tfProgressIndicator.fProgress= 0;\r\n\t\tfProgressIndicator.fError= false;\r\n\t\tfProgressIndicator.paint(fProgressIndicator.getGraphics());"
+    }
+]

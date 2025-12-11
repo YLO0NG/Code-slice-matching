@@ -1,0 +1,22 @@
+{
+  "className": "RepeatedTest",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\r\n\t\treturn super.toString()+\"(repeated)\";\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.extensions.TestDecorator": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public String toString() {\r\n    return super.toString() + \"(repeated)\";\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

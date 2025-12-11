@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "setConstrainer",
+  "brief": "public void setConstrainer(PointConstrainer p);",
+  "methodSignature": "setConstrainer(PointConstrainer)",
+  "sourceCode": "public void setConstrainer(PointConstrainer p);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PointConstrainer"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.PointConstrainer": []
+  },
+  "full_method_info": "/**\n * Sets the current point constrainer.\n */\npublic void setConstrainer(PointConstrainer p);",
+  "method_comment": "\n     * Sets the current point constrainer.\n     ",
+  "method_annotation": ""
+}

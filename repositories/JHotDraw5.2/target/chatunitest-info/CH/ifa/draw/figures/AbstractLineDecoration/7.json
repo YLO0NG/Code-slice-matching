@@ -1,0 +1,18 @@
+{
+  "className": "AbstractLineDecoration",
+  "methodName": "getBorderColor",
+  "brief": "public Color getBorderColor(){}",
+  "methodSignature": "getBorderColor()",
+  "sourceCode": "public Color getBorderColor() {\n        return fBorderColor;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns color of arrow's border\n */\npublic Color getBorderColor() {\n    return fBorderColor;\n}",
+  "method_comment": "\n\t * Returns color of arrow's border\n\t ",
+  "method_annotation": ""
+}

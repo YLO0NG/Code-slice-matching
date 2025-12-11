@@ -1,0 +1,18 @@
+{
+  "className": "GridConstrainer",
+  "methodName": "getStepY",
+  "brief": "public int getStepY(){}",
+  "methodSignature": "getStepY()",
+  "sourceCode": "public int getStepY() {\n        return fGridY;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the y offset to move an object.\n */\npublic int getStepY() {\n    return fGridY;\n}",
+  "method_comment": "\n     * Gets the y offset to move an object.\n     ",
+  "method_annotation": ""
+}

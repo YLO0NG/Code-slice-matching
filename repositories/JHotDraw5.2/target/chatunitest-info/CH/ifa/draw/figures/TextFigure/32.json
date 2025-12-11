@@ -1,0 +1,22 @@
+{
+  "className": "TextFigure",
+  "methodName": "disconnect",
+  "brief": "public void disconnect(){}",
+  "methodSignature": "disconnect()",
+  "sourceCode": "public void disconnect() {\n        fObservedFigure.removeFigureChangeListener(this);\n        fObservedFigure = null;\n        fLocator = null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "removeFigureChangeListener(FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Disconnects the text figure.\n */\npublic void disconnect() {\n    fObservedFigure.removeFigureChangeListener(this);\n    fObservedFigure = null;\n    fLocator = null;\n}",
+  "method_comment": "\n     * Disconnects the text figure.\n     ",
+  "method_annotation": ""
+}

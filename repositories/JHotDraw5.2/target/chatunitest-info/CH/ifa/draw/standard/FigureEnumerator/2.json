@@ -1,0 +1,22 @@
+{
+  "className": "FigureEnumerator",
+  "methodName": "nextFigure",
+  "brief": "public Figure nextFigure(){}",
+  "methodSignature": "nextFigure()",
+  "sourceCode": "public Figure nextFigure() {\n        return (Figure)fEnumeration.nextElement();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Enumeration": [
+      "nextElement()"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the next element of the enumeration. Calls to this\n * method will enumerate successive elements.\n * @exception NoSuchElementException If no more elements exist.\n */\npublic Figure nextFigure() {\n    return (Figure) fEnumeration.nextElement();\n}",
+  "method_comment": "\n     * Returns the next element of the enumeration. Calls to this\n     * method will enumerate successive elements.\n     * @exception NoSuchElementException If no more elements exist.\n     ",
+  "method_annotation": ""
+}

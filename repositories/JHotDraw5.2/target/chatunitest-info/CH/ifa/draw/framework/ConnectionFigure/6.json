@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "end",
+  "brief": "public Connector end();",
+  "methodSignature": "end()",
+  "sourceCode": "public Connector end();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the end Connector.\n */\npublic Connector end();",
+  "method_comment": "\n     * Gets the end Connector.\n     ",
+  "method_annotation": ""
+}

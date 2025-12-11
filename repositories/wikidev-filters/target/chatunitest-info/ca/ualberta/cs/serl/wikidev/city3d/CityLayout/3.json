@@ -1,0 +1,104 @@
+{
+  "className": "CityLayout",
+  "methodName": "prepareToWriteCitySnapshots",
+  "brief": "public void prepareToWriteCitySnapshots(Timestamp start, Timestamp end){}",
+  "methodSignature": "prepareToWriteCitySnapshots(Timestamp, Timestamp)",
+  "sourceCode": "public void prepareToWriteCitySnapshots(Timestamp start, Timestamp end) {\n\t\tTimestamp firstWeek = new Timestamp(start.getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS);\n\t\tfor(long l=firstWeek.getTime(); l<end.getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS; l+=DataManager.WEEK_INTERVAL_IN_MILLIS) {\n\t\t\tif(l>end.getTime()) {\n\t\t\t\tl = end.getTime();\n\t\t\t}\n\t\t\tTimestamp nextWeek = new Timestamp(l);\n\t\t\tfor(CityBlock block : cityBlocks) {\n\t\t\t\tfor(IArtifact artifact : block.getArtifacts().keySet()) {\n\t\t\t\t\tSystem.out.println(\"Writing \"+artifact.toString());\n\t\t\t\t\tString type = \"\";\n\t\t\t\t\tint height = 0;\n\t\t\t\t\tHashMap<User, Double> userContribution = null;\n\t\t\t\t\tint id=0;\n\t\t\t\t\tString url = \"\";\n\t\t\t\t\tUser lastEditor = null;\n\t\t\t\t\tTimestamp created = null;\n\t\t\t\t\tTimestamp lastModified = null; \n\t\t\t\t\tif(artifact instanceof Ticket) {\n\t\t\t\t\t\tTicket ticket = (Ticket)artifact;\n\t\t\t\t\t\ttype = \"Ticket\";\n\t\t\t\t\t\theight = 6-Integer.parseInt(\"\"+ticket.getLastPriorityBeforeDate(nextWeek).charAt(1));\n\t\t\t\t\t\tuserContribution = ticket.getUserContributionBeforeDate(nextWeek, this.getUsers(projectid));\n\t\t\t\t\t\tid = ticket.getTicketID();\n\t\t\t\t\t\turl = \"http://hypatia.cs.ualberta.ca/ucosp/index.php/UCOSP_Index:Ticket_Index\";\n\t\t\t\t\t\tticket.setCreated(ticket.getDateOpened());\n\t\t\t\t\t\tticket.setLastEditorAndTimeLastModifiedBeforeDate(nextWeek);\n\t\t\t\t\t\t\n\t\t\t\t\t\tlastEditor = ticket.getLastEditor();\n\t\t\t\t\t\tcreated = ticket.getCreated();\n\t\t\t\t\t\tlastModified = ticket.getLastModified();\n\t\t\t\t\t}\n\t\t\t\t\telse if(artifact instanceof Message) {\n\t\t\t\t\t\ttype = \"Message\";\n\t\t\t\t\t\tMessage message = (Message)artifact;\n\t\t\t\t\t\theight = this.getMessageCountBeforeDate(messages, nextWeek).get(message);\n\t\t\t\t\t\tuserContribution = getMessageUserContributionBeforeDate(nextWeek, getUsers(projectid), message, messages);\n\t\t\t\t\t\tid = message.getCommunicationID();\n\t\t\t\t\t\ttry {\n\t\t\t\t\t\t\turl = Layout.URLprefix+DataManager.getProjectByID(projectid).getProjectName()+\"_Mail:\"+message.getSubject().replace(' ', '_');\n\t\t\t\t\t\t} catch (SQLException e) {\n\t\t\t\t\t\t\t// TODO Auto-generated catch block\n\t\t\t\t\t\t\te.printStackTrace();\n\t\t\t\t\t\t}\n\t\t\t\t\t\tmessage.setLastEditorAndTimeLastModifiedBeforeDate(nextWeek);\n\t\t\t\t\t\tmessage.setCreated(message.getTimestamp());\n\t\t\t\t\t\tlastEditor = message.getLastEditor();\n\t\t\t\t\t\tcreated = message.getCreated();\n\t\t\t\t\t\tlastModified = message.getLastModified();\n\t\t\t\t\t}\n\t\t\t\t\telse if(artifact instanceof Wiki) {\n\t\t\t\t\t\ttype = \"Wiki\";\n\t\t\t\t\t\tWiki wiki = (Wiki)artifact;\n\t\t\t\t\t\theight = wiki.getNumberOfRevisionsBeforeDate(nextWeek);\n\t\t\t\t\t\tuserContribution = wiki.getUserContributionBeforeDate(nextWeek, getUsers(projectid));\n\t\t\t\t\t\tid = wiki.getPage_id();\n\t\t\t\t\t\ttry {\n\t\t\t\t\t\t\turl = Layout.URLprefix+DataManager.getProjectByID(projectid).getProjectName()+wiki.getPage_title();\n\t\t\t\t\t\t} catch (SQLException e) {\n\t\t\t\t\t\t\t// TODO Auto-generated catch block\n\t\t\t\t\t\t\te.printStackTrace();\n\t\t\t\t\t\t}\n\t\t\t\t\t\twiki.setCreated(wiki.getRevisions().get(0).getRev_timestamp());\n\t\t\t\t\t\twiki.setLastEditorAndTimeLastModifiedBeforeDate(nextWeek);\n\t\t\t\t\t\t\n\t\t\t\t\t\tlastEditor = wiki.getLastEditor();\n\t\t\t\t\t\tcreated = wiki.getCreated();\n\t\t\t\t\t\tlastModified = wiki.getLastModified();\n\t\t\t\t\t}\n\t\t\t\t\tArrayList<UserData> userData = new ArrayList<UserData>();\n\t\t\t\t\tfor(User user : userContribution.keySet()) {\n\t\t\t\t\t\tuserData.add(new UserData(user.getUserName(), user.getColor().getRed(), user.getColor().getGreen(), user.getColor().getBlue(), userContribution.get(user), nextWeek, CityLayout.CITY_TYPE));\n\t\t\t\t\t}\n\t\t\t\t\tCommunicationBuildingData building = new CommunicationBuildingData(type, id, nextWeek, height, block.getIndex().x, block.getIndex().y, block.getArtifacts().get(artifact), url, projectid, userData, lastEditor, created, lastModified);\n\t\t\t\t\t\n\t\t\t\t\ttry {\n\t\t\t\t\t\tDataManager.writeCommunicationsBuildingData(building);\n\t\t\t\t\t} catch (SQLException e) {\n\t\t\t\t\t\t// TODO Auto-generated catch block\n\t\t\t\t\t\te.printStackTrace();\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": [
+      "getTime()"
+    ],
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "getArtifacts()",
+      "getIndex()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setCreated(Timestamp)",
+      "getCreated()",
+      "toString()",
+      "getTimestamp()",
+      "getLastEditor()",
+      "getLastModified()"
+    ],
+    "java.lang.Integer": [
+      "parseInt(String)"
+    ],
+    "java.lang.String": [
+      "replace(char, char)",
+      "charAt(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "getUserContributionBeforeDate(Timestamp, User>)",
+      "getLastPriorityBeforeDate(Timestamp)",
+      "getTicketID()",
+      "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)",
+      "getDateOpened()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "getUsers(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityLayout": [
+      "getMessageCountBeforeDate(Message>, Timestamp)",
+      "getMessageUserContributionBeforeDate(Timestamp, User>, Message, Message>)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [
+      "getSubject()",
+      "getCommunicationID()",
+      "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectName()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectByID(int)",
+      "writeCommunicationsBuildingData(CommunicationBuildingData)"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": [
+      "getPage_id()",
+      "getNumberOfRevisionsBeforeDate(Timestamp)",
+      "getUserContributionBeforeDate(Timestamp, User>)",
+      "getRevisions()",
+      "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)",
+      "getPage_title()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.WikiRevision": [
+      "getRev_timestamp()"
+    ],
+    "java.util.ArrayList": [
+      "get(int)",
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getColor()",
+      "getUserName()"
+    ],
+    "java.awt.Color": [
+      "getGreen()",
+      "getBlue()",
+      "getRed()"
+    ]
+  },
+  "full_method_info": "public void prepareToWriteCitySnapshots(Timestamp start, Timestamp end) {\n    Timestamp firstWeek = new Timestamp(start.getTime() + DataManager.WEEK_INTERVAL_IN_MILLIS);\n    for (long l = firstWeek.getTime(); l < end.getTime() + DataManager.WEEK_INTERVAL_IN_MILLIS; l += DataManager.WEEK_INTERVAL_IN_MILLIS) {\n        if (l > end.getTime()) {\n            l = end.getTime();\n        }\n        Timestamp nextWeek = new Timestamp(l);\n        for (CityBlock block : cityBlocks) {\n            for (IArtifact artifact : block.getArtifacts().keySet()) {\n                System.out.println(\"Writing \" + artifact.toString());\n                String type = \"\";\n                int height = 0;\n                HashMap<User, Double> userContribution = null;\n                int id = 0;\n                String url = \"\";\n                User lastEditor = null;\n                Timestamp created = null;\n                Timestamp lastModified = null;\n                if (artifact instanceof Ticket) {\n                    Ticket ticket = (Ticket) artifact;\n                    type = \"Ticket\";\n                    height = 6 - Integer.parseInt(\"\" + ticket.getLastPriorityBeforeDate(nextWeek).charAt(1));\n                    userContribution = ticket.getUserContributionBeforeDate(nextWeek, this.getUsers(projectid));\n                    id = ticket.getTicketID();\n                    url = \"http://hypatia.cs.ualberta.ca/ucosp/index.php/UCOSP_Index:Ticket_Index\";\n                    ticket.setCreated(ticket.getDateOpened());\n                    ticket.setLastEditorAndTimeLastModifiedBeforeDate(nextWeek);\n                    lastEditor = ticket.getLastEditor();\n                    created = ticket.getCreated();\n                    lastModified = ticket.getLastModified();\n                } else if (artifact instanceof Message) {\n                    type = \"Message\";\n                    Message message = (Message) artifact;\n                    height = this.getMessageCountBeforeDate(messages, nextWeek).get(message);\n                    userContribution = getMessageUserContributionBeforeDate(nextWeek, getUsers(projectid), message, messages);\n                    id = message.getCommunicationID();\n                    try {\n                        url = Layout.URLprefix + DataManager.getProjectByID(projectid).getProjectName() + \"_Mail:\" + message.getSubject().replace(' ', '_');\n                    } catch (SQLException e) {\n                        // TODO Auto-generated catch block\n                        e.printStackTrace();\n                    }\n                    message.setLastEditorAndTimeLastModifiedBeforeDate(nextWeek);\n                    message.setCreated(message.getTimestamp());\n                    lastEditor = message.getLastEditor();\n                    created = message.getCreated();\n                    lastModified = message.getLastModified();\n                } else if (artifact instanceof Wiki) {\n                    type = \"Wiki\";\n                    Wiki wiki = (Wiki) artifact;\n                    height = wiki.getNumberOfRevisionsBeforeDate(nextWeek);\n                    userContribution = wiki.getUserContributionBeforeDate(nextWeek, getUsers(projectid));\n                    id = wiki.getPage_id();\n                    try {\n                        url = Layout.URLprefix + DataManager.getProjectByID(projectid).getProjectName() + wiki.getPage_title();\n                    } catch (SQLException e) {\n                        // TODO Auto-generated catch block\n                        e.printStackTrace();\n                    }\n                    wiki.setCreated(wiki.getRevisions().get(0).getRev_timestamp());\n                    wiki.setLastEditorAndTimeLastModifiedBeforeDate(nextWeek);\n                    lastEditor = wiki.getLastEditor();\n                    created = wiki.getCreated();\n                    lastModified = wiki.getLastModified();\n                }\n                ArrayList<UserData> userData = new ArrayList<UserData>();\n                for (User user : userContribution.keySet()) {\n                    userData.add(new UserData(user.getUserName(), user.getColor().getRed(), user.getColor().getGreen(), user.getColor().getBlue(), userContribution.get(user), nextWeek, CityLayout.CITY_TYPE));\n                }\n                CommunicationBuildingData building = new CommunicationBuildingData(type, id, nextWeek, height, block.getIndex().x, block.getIndex().y, block.getArtifacts().get(artifact), url, projectid, userData, lastEditor, created, lastModified);\n                try {\n                    DataManager.writeCommunicationsBuildingData(building);\n                } catch (SQLException e) {\n                    // TODO Auto-generated catch block\n                    e.printStackTrace();\n                }\n            }\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

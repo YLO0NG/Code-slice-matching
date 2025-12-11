@@ -1,0 +1,29 @@
+{
+  "className": "TestHierarchyRunView",
+  "methodName": "aboutToStart",
+  "brief": "public void aboutToStart(Test suite, TestResult result){}",
+  "methodSignature": "aboutToStart(Test, TestResult)",
+  "sourceCode": "public void aboutToStart(Test suite, TestResult result) {\r\n\t\tfTreeBrowser.showTestTree(suite);\r\n\t\tresult.addListener(fTreeBrowser);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.TestResult": [
+      "addListener(TestListener)"
+    ],
+    "junit.swingui.TestSuitePanel": [
+      "showTestTree(Test)"
+    ]
+  },
+  "full_method_info": "public void aboutToStart(Test suite, TestResult result) {\r\n    fTreeBrowser.showTestTree(suite);\r\n    result.addListener(fTreeBrowser);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

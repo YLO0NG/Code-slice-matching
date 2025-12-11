@@ -1,0 +1,16 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+  "targetMethod": "cityBlockInitialization(ArrayList, double[][], double, double, double, double)",
+  "dependentFields": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "private Point index;\nprivate HashMap<IArtifact, Integer> artifacts;\nprivate double[] center;\nprivate boolean marked;",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "protected ArrayList<CityBlock> cityBlocks;\npublic static final String URLprefix = \"http://hypatia.cs.ualberta.ca/ucosp/index.php/\";"
+  },
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public void setCenter(double[] center){}",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "private void assignArtifactToCityBlock(IArtifact artifact, double x,\r\n\t\t\tdouble y, double minX, double minY, double blocks, double r){}"
+  },
+  "dependentMethodBodies": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public void setCenter(double[] center) {\n\t\tthis.center = center;\n\t}",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "private void assignArtifactToCityBlock(IArtifact artifact, double x,\n\t\t\tdouble y, double minX, double minY, double blocks, double r) {\n\t\tint blockX = 0;\n\t\tint blockY = 0;\n\t\tfor (int i = 1; i < blocks; i++) {\n\t\t\tif (x > minX + (i - 1) * r && x <= minX + i * r) {\n\t\t\t\tblockX = i - 1;\n\t\t\t}\n\t\t\tif (y > minY + (i - 1) * r && y <= minY + i * r) {\n\t\t\t\tblockY = i - 1;\n\t\t\t}\n\t\t}\n\t\tCityBlock block = getCityBlock(new Point(blockX, blockY));\n\t\tblock.addArtifact(artifact, -1);\n\t}"
+  }
+}

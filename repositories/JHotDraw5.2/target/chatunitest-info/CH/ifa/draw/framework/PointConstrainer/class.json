@@ -1,0 +1,45 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.PointConstrainer",
+  "className": "PointConstrainer",
+  "index": 71,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface PointConstrainer",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "constrainPoint(Point)": "0",
+    "getStepX()": "1",
+    "getStepY()": "2"
+  },
+  "methodsBrief": [
+    "public Point constrainPoint(Point p);",
+    "public int getStepX();",
+    "public int getStepY();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getStepX()",
+    "getStepY()"
+  ],
+  "getterSetterBrief": [
+    "public int getStepX();",
+    "public int getStepY();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)PointConstrainer.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.*;\n\n/**\n * Interface to constrain a Point. This can be used to implement\n * different kinds of grids.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld034.htm>Strategy</a></b><br>\n * DrawingView is the StrategyContext.<br>\n *\n * @see DrawingView\n */\npublic interface PointConstrainer {\n\n    /**\n     * Constrains the given point.\n     * @return constrained point.\n     */\n    public Point constrainPoint(Point p);\n\n    /**\n     * Gets the x offset to move an object.\n     */\n    public int getStepX();\n\n    /**\n     * Gets the y offset to move an object.\n     */\n    public int getStepY();\n}\n",
+  "classDeclarationCode": "/**\n * Interface to constrain a Point. This can be used to implement\n * different kinds of grids.\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld034.htm>Strategy</a></b><br>\n * DrawingView is the StrategyContext.<br>\n *\n * @see DrawingView\n */\npublic interface PointConstrainer {\n\n    /**\n     * Constrains the given point.\n     * @return constrained point.\n     */\n    public Point constrainPoint(Point p);\n\n    /**\n     * Gets the x offset to move an object.\n     */\n    public int getStepX();\n\n    /**\n     * Gets the y offset to move an object.\n     */\n    public int getStepY();\n}",
+  "subClasses": []
+}

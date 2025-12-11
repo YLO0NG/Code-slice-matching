@@ -1,0 +1,22 @@
+{
+  "className": "ElbowConnection",
+  "methodName": "connectedTextLocator",
+  "brief": "public Locator connectedTextLocator(Figure f){}",
+  "methodSignature": "connectedTextLocator(Figure)",
+  "sourceCode": "public Locator connectedTextLocator(Figure f) {\n        return new ElbowTextLocator();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "public Locator connectedTextLocator(Figure f) {\n    return new ElbowTextLocator();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "oneVector",
+  "brief": "public static double[] oneVector(int m){}",
+  "methodSignature": "oneVector(int)",
+  "sourceCode": "public static double[] oneVector(int m) {\n\t\t   return DoubleArray.fill(m, 1.0);\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "org.math.array.DoubleArray": [
+      "fill(int, double)"
+    ]
+  },
+  "full_method_info": "public static double[] oneVector(int m) {\n    return DoubleArray.fill(m, 1.0);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

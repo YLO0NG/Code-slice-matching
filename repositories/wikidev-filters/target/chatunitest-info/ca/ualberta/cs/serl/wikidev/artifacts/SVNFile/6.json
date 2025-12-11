@@ -1,0 +1,18 @@
+{
+  "className": "SVNFile",
+  "methodName": "getChanges",
+  "brief": "public int getChanges(){}",
+  "methodSignature": "getChanges()",
+  "sourceCode": "public int getChanges() {\n\t\treturn changes;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getChanges() {\n    return changes;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,38 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "loadJarData",
+  "brief": "private byte[] loadJarData(String path, String fileName){}",
+  "methodSignature": "loadJarData(String, String)",
+  "sourceCode": "private byte[] loadJarData(String path, String fileName) {\r\n\t\tZipFile zipFile= null;\r\n\t\tInputStream stream= null;\r\n\t\tFile archive= new File(path);\r\n\t\tif (!archive.exists())\r\n\t\t\treturn null;\r\n\t\ttry {\r\n\t\t\tzipFile= new ZipFile(archive);\r\n\t\t} catch(IOException io) {\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\tZipEntry entry= zipFile.getEntry(fileName);\r\n\t\tif (entry == null)\r\n\t\t\treturn null;\r\n\t\tint size= (int) entry.getSize();\r\n\t\ttry {\r\n\t\t\tstream= zipFile.getInputStream(entry);\r\n\t\t\tbyte[] data= new byte[size];\r\n\t\t\tint pos= 0;\r\n\t\t\twhile (pos < size) {\r\n\t\t\t\tint n= stream.read(data, pos, data.length - pos);\r\n\t\t\t\tpos += n;\r\n\t\t\t}\r\n\t\t\tzipFile.close();\r\n\t\t\treturn data;\r\n\t\t} catch (IOException e) {\r\n\t\t} finally {\r\n\t\t\ttry {\r\n\t\t\t\tif (stream != null)\r\n\t\t\t\t\tstream.close();\r\n\t\t\t} catch (IOException e) {\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn null;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.io.File": [
+      "exists()"
+    ],
+    "java.util.zip.ZipFile": [
+      "getInputStream(ZipEntry)",
+      "getEntry(String)",
+      "close()"
+    ],
+    "java.util.zip.ZipEntry": [
+      "getSize()"
+    ],
+    "java.io.InputStream": [
+      "read(byte[], int, int)",
+      "close()"
+    ]
+  },
+  "full_method_info": "private byte[] loadJarData(String path, String fileName) {\r\n    ZipFile zipFile = null;\r\n    InputStream stream = null;\r\n    File archive = new File(path);\r\n    if (!archive.exists())\r\n        return null;\r\n    try {\r\n        zipFile = new ZipFile(archive);\r\n    } catch (IOException io) {\r\n        return null;\r\n    }\r\n    ZipEntry entry = zipFile.getEntry(fileName);\r\n    if (entry == null)\r\n        return null;\r\n    int size = (int) entry.getSize();\r\n    try {\r\n        stream = zipFile.getInputStream(entry);\r\n        byte[] data = new byte[size];\r\n        int pos = 0;\r\n        while (pos < size) {\r\n            int n = stream.read(data, pos, data.length - pos);\r\n            pos += n;\r\n        }\r\n        zipFile.close();\r\n        return data;\r\n    } catch (IOException e) {\r\n    } finally {\r\n        try {\r\n            if (stream != null)\r\n                stream.close();\r\n        } catch (IOException e) {\r\n        }\r\n    }\r\n    return null;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

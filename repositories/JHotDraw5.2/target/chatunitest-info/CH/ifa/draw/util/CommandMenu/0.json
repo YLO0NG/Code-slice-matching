@@ -1,0 +1,33 @@
+{
+  "className": "CommandMenu",
+  "methodName": "add",
+  "brief": "public synchronized void add(Command command){}",
+  "methodSignature": "add(Command)",
+  "sourceCode": "public synchronized void add(Command command) {\n        JMenuItem m = new JMenuItem(command.name());\n        m.addActionListener(this);\n        add(m);\n        fCommands.addElement(command);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Command"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Command": [
+      "name()"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "javax.swing.JMenu": [
+      "add(JMenuItem)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a command to the menu. The item's label is\n * the command's name.\n */\npublic synchronized void add(Command command) {\n    JMenuItem m = new JMenuItem(command.name());\n    m.addActionListener(this);\n    add(m);\n    fCommands.addElement(command);\n}",
+  "method_comment": "\n     * Adds a command to the menu. The item's label is\n     * the command's name.\n     ",
+  "method_annotation": ""
+}

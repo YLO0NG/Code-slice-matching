@@ -1,0 +1,29 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "figureRequestUpdate",
+  "brief": "public void figureRequestUpdate(FigureChangeEvent e){}",
+  "methodSignature": "figureRequestUpdate(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestUpdate(FigureChangeEvent e) {\n        if (fListeners != null) {\n            for (int i = 0; i < fListeners.size(); i++) {\n                DrawingChangeListener l = (DrawingChangeListener)fListeners.elementAt(i);\n                l.drawingRequestUpdate(new DrawingChangeEvent(this, null));\n            }\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [],
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "CH.ifa.draw.framework.DrawingChangeListener": [
+      "drawingRequestUpdate(DrawingChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Forces an update\n */\npublic void figureRequestUpdate(FigureChangeEvent e) {\n    if (fListeners != null) {\n        for (int i = 0; i < fListeners.size(); i++) {\n            DrawingChangeListener l = (DrawingChangeListener) fListeners.elementAt(i);\n            l.drawingRequestUpdate(new DrawingChangeEvent(this, null));\n        }\n    }\n}",
+  "method_comment": "\n     * Forces an update\n     ",
+  "method_annotation": ""
+}

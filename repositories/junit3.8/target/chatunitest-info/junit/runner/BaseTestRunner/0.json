@@ -1,0 +1,28 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "startTest",
+  "brief": "public synchronized void startTest(Test test){}",
+  "methodSignature": "startTest(Test)",
+  "sourceCode": "public synchronized void startTest(Test test) {\r\n\t\ttestStarted(test.toString());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.runner.BaseTestRunner": [
+      "testStarted(String)"
+    ],
+    "java.lang.Object": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "/*\r\n    * Implementation of TestListener\r\n    */\r\npublic synchronized void startTest(Test test) {\r\n    testStarted(test.toString());\r\n}",
+  "method_comment": "\r\n    * Implementation of TestListener\r\n    ",
+  "method_annotation": ""
+}

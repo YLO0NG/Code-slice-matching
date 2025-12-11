@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "remove",
+  "brief": "public Figure remove(Figure figure);",
+  "methodSignature": "remove(Figure)",
+  "sourceCode": "public Figure remove(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Removes the figure from the drawing and releases it.\n */\npublic Figure remove(Figure figure);",
+  "method_comment": "\n     * Removes the figure from the drawing and releases it.\n     ",
+  "method_annotation": ""
+}

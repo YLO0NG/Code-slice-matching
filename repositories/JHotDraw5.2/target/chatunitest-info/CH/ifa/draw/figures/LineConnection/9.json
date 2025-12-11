@@ -1,0 +1,25 @@
+{
+  "className": "LineConnection",
+  "methodName": "startFigure",
+  "brief": "public Figure startFigure(){}",
+  "methodSignature": "startFigure()",
+  "sourceCode": "public Figure startFigure() {\n        if (start() != null)\n            return start().owner();\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineConnection": [
+      "start()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the start figure of the connection.\n */\npublic Figure startFigure() {\n    if (start() != null)\n        return start().owner();\n    return null;\n}",
+  "method_comment": "\n     * Gets the start figure of the connection.\n     ",
+  "method_annotation": ""
+}

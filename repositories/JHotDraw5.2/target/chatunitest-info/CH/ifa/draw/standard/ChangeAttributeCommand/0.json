@@ -1,0 +1,32 @@
+{
+  "className": "ChangeAttributeCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        FigureEnumeration k = fView.selectionElements();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            f.setAttribute(fAttribute, fValue);\n        }\n        fView.checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "selectionElements()",
+      "checkDamage()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "setAttribute(String, Object)"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    FigureEnumeration k = fView.selectionElements();\n    while (k.hasMoreElements()) {\n        Figure f = k.nextFigure();\n        f.setAttribute(fAttribute, fValue);\n    }\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

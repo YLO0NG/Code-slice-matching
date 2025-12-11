@@ -1,0 +1,18 @@
+{
+  "className": "TestRunner",
+  "methodName": "getRunner",
+  "brief": "public Thread getRunner(){}",
+  "methodSignature": "getRunner()",
+  "sourceCode": "public Thread getRunner() {\r\n\t\treturn fRunner;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Thread getRunner() {\r\n    return fRunner;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

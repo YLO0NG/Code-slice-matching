@@ -1,0 +1,27 @@
+{
+  "className": "DefaultFailureDetailView",
+  "methodName": "getComponent",
+  "brief": "public Component getComponent(){}",
+  "methodSignature": "getComponent()",
+  "sourceCode": "public Component getComponent() {\r\n\t\tif (fList == null) {\r\n\t\t\tfList= new JList(new StackTraceListModel());\r\n\t\t\tfList.setFont(new Font(\"Dialog\", Font.PLAIN, 12));\r\n\t\t\tfList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n\t\t\tfList.setVisibleRowCount(5);\r\n\t\t\tfList.setCellRenderer(new StackEntryRenderer());\r\n\t\t}\r\n\t\treturn fList;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JComponent": [
+      "setFont(Font)"
+    ],
+    "javax.swing.JList": [
+      "setSelectionMode(int)",
+      "setVisibleRowCount(int)",
+      "setCellRenderer(ListCellRenderer<? super E>)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns the component used to present the trace\r\n */\r\npublic Component getComponent() {\r\n    if (fList == null) {\r\n        fList = new JList(new StackTraceListModel());\r\n        fList.setFont(new Font(\"Dialog\", Font.PLAIN, 12));\r\n        fList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n        fList.setVisibleRowCount(5);\r\n        fList.setCellRenderer(new StackEntryRenderer());\r\n    }\r\n    return fList;\r\n}",
+  "method_comment": "\r\n\t * Returns the component used to present the trace\r\n\t ",
+  "method_annotation": ""
+}

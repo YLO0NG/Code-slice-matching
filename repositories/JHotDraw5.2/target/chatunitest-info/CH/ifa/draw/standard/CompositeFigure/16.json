@@ -1,0 +1,36 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "findFigure",
+  "brief": "public Figure findFigure(Rectangle r){}",
+  "methodSignature": "findFigure(Rectangle)",
+  "sourceCode": "public Figure findFigure(Rectangle r) {\n        FigureEnumeration k = figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            Rectangle fr = figure.displayBox();\n            if (r.intersects(fr))\n                return figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "intersects(Rectangle)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a top level Figure that intersects the given rectangle.\n */\npublic Figure findFigure(Rectangle r) {\n    FigureEnumeration k = figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        Rectangle fr = figure.displayBox();\n        if (r.intersects(fr))\n            return figure;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds a top level Figure that intersects the given rectangle.\n     ",
+  "method_annotation": ""
+}

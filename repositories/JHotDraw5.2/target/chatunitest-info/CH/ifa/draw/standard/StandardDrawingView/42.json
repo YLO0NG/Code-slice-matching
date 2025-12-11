@@ -1,0 +1,32 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawHandles",
+  "brief": "public void drawHandles(Graphics g){}",
+  "methodSignature": "drawHandles(Graphics)",
+  "sourceCode": "public void drawHandles(Graphics g) {\n        Enumeration k = selectionHandles();\n        while (k.hasMoreElements())\n            ((Handle) k.nextElement()).draw(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionHandles()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Handle": [
+      "draw(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the currently active handles.\n */\npublic void drawHandles(Graphics g) {\n    Enumeration k = selectionHandles();\n    while (k.hasMoreElements()) ((Handle) k.nextElement()).draw(g);\n}",
+  "method_comment": "\n     * Draws the currently active handles.\n     ",
+  "method_annotation": ""
+}

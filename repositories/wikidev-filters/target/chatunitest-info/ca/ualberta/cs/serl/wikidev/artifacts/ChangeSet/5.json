@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSet",
+  "methodName": "getChangeSetID",
+  "brief": "public int getChangeSetID(){}",
+  "methodSignature": "getChangeSetID()",
+  "sourceCode": "public int getChangeSetID() {\n\t\treturn changeSetID;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"changeSetID\"\n */\npublic int getChangeSetID() {\n    return changeSetID;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"changeSetID\"\n\t ",
+  "method_annotation": ""
+}

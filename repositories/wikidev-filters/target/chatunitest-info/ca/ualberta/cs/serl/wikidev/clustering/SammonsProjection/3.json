@@ -1,0 +1,26 @@
+{
+  "className": "SammonsProjection",
+  "methodName": "Iterate",
+  "brief": "public void Iterate()\r\n{}",
+  "methodSignature": "Iterate()",
+  "sourceCode": "public void Iterate()\n\t{\n\t\tint[] indicesI = this.indicesI;\n\t\tint[] indicesJ = this.indicesJ;\n\t\tdouble[][] distanceMatrix = _distanceMatrix;\n\t\tdouble[][] projection = this.Projection;\n\n\t\t// Shuffle the indices-array for random pick of the points:\n\t\tHelper.FisherYatesShuffle(indicesI);\n\t\tHelper.FisherYatesShuffle(indicesJ);\n\n\t\tfor (int i = 0; i < indicesI.length; i++)\n\t\t{\n\t\t\tdouble[] distancesI = distanceMatrix[indicesI[i]];\n\t\t\tdouble[] projectionI = projection[indicesI[i]];\n\n\t\t\tfor (int j = 0; j < indicesJ.length; j++)\n\t\t\t{\n\t\t\t\tif (indicesI[i] == indicesJ[j])\n\t\t\t\t\tcontinue;\n\n\t\t\t\tdouble[] projectionJ = projection[indicesJ[j]];\n\n\t\t\t\tdouble dij = distancesI[indicesJ[j]];\n\t\t\t\tdouble Dij = Helper.ManhattenDistance(\n\t\t\t\t\t\tprojectionI,\n\t\t\t\t\t\tprojectionJ);\n\n\t\t\t\t// Avoid division by zero:\n\t\t\t\tif (Dij == 0)\n\t\t\t\t\tDij = 1e-10;\n\n\t\t\t\tdouble delta = lambda * (dij - Dij) / Dij;\n\n\t\t\t\tfor (int k = 0; k < projectionJ.length; k++)\n\t\t\t\t{\n\t\t\t\t\tdouble correction =\n\t\t\t\t\t\tdelta * (projectionI[k] - projectionJ[k]);\n\n\t\t\t\t\tprojectionI[k] += correction;\n\t\t\t\t\tprojectionJ[k] -= correction;\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t// Reduce lambda monotonically:\n\t\tReduceLambda();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Helper": [
+      "FisherYatesShuffle(int[])",
+      "ManhattenDistance(double[], double[])"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.SammonsProjection": [
+      "ReduceLambda()"
+    ]
+  },
+  "full_method_info": "public void Iterate() {\n    int[] indicesI = this.indicesI;\n    int[] indicesJ = this.indicesJ;\n    double[][] distanceMatrix = _distanceMatrix;\n    double[][] projection = this.Projection;\n    // Shuffle the indices-array for random pick of the points:\n    Helper.FisherYatesShuffle(indicesI);\n    Helper.FisherYatesShuffle(indicesJ);\n    for (int i = 0; i < indicesI.length; i++) {\n        double[] distancesI = distanceMatrix[indicesI[i]];\n        double[] projectionI = projection[indicesI[i]];\n        for (int j = 0; j < indicesJ.length; j++) {\n            if (indicesI[i] == indicesJ[j])\n                continue;\n            double[] projectionJ = projection[indicesJ[j]];\n            double dij = distancesI[indicesJ[j]];\n            double Dij = Helper.ManhattenDistance(projectionI, projectionJ);\n            // Avoid division by zero:\n            if (Dij == 0)\n                Dij = 1e-10;\n            double delta = lambda * (dij - Dij) / Dij;\n            for (int k = 0; k < projectionJ.length; k++) {\n                double correction = delta * (projectionI[k] - projectionJ[k]);\n                projectionI[k] += correction;\n                projectionJ[k] -= correction;\n            }\n        }\n    }\n    // Reduce lambda monotonically:\n    ReduceLambda();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

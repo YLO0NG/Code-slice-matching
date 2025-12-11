@@ -1,0 +1,23 @@
+{
+  "targetClass": "CH.ifa.draw.figures.TextFigure",
+  "targetMethod": "connect(Figure)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.standard.AbstractFigure": "private transient FigureChangeListener fListener;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int abstractFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.ColorMap": "static ColorEntry fMap[] = {\n                new ColorEntry(\"Black\",         Color.black),\n                new ColorEntry(\"Blue\",          Color.blue),\n                new ColorEntry(\"Green\",         Color.green),\n                new ColorEntry(\"Red\",           Color.red),\n                new ColorEntry(\"Pink\",          Color.pink),\n                new ColorEntry(\"Magenta\",       Color.magenta),\n                new ColorEntry(\"Orange\",        Color.orange),\n                new ColorEntry(\"Yellow\",        Color.yellow),\n                new ColorEntry(\"New Tan\",       new Color(0xEBC79E)),\n                new ColorEntry(\"Aquamarine\",    new Color(0x70DB93)),\n                new ColorEntry(\"Sea Green\",     new Color(0x238E68)),\n                new ColorEntry(\"Dark Gray\",     Color.darkGray),\n                new ColorEntry(\"Light Gray\",    Color.lightGray),\n                new ColorEntry(\"White\",         Color.white),\n                // there is no support for alpha values so we use a special value\n                // to represent a transparent color\n                new ColorEntry(\"None\",          new Color(0xFFC79E))\n    };",
+    "CH.ifa.draw.figures.TextFigure": "private int               fOriginX;\nprivate int               fOriginY;\ntransient private boolean fSizeIsDirty = true;\ntransient private int     fWidth;\ntransient private int     fHeight;\nprivate String  fText;\nprivate Font    fFont;\nprivate boolean fIsReadOnly;\nprivate Figure  fObservedFigure = null;\nprivate OffsetLocator fLocator = null;\nprivate static String fgCurrentFontName  = \"Helvetica\";\nprivate static int    fgCurrentFontSize  = 12;\nprivate static int    fgCurrentFontStyle = Font.PLAIN;\nprivate static final long serialVersionUID = 4599820785949456124L;\nprivate int textFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.standard.OffsetLocator": "private static final long serialVersionUID = 2679950024611847621L;\nprivate int offsetLocatorSerializedDataVersion = 1;\nprivate Locator fBase;\nprivate int     fOffsetX;\nprivate int     fOffsetY;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public void addFigureChangeListener(FigureChangeListener l);\npublic void removeFigureChangeListener(FigureChangeListener l);\npublic Locator connectedTextLocator(Figure text);",
+    "CH.ifa.draw.standard.AbstractFigure": "public void willChange(){}\npublic Dimension size(){}",
+    "CH.ifa.draw.figures.TextFigure": "protected void basicMoveBy(int x, int y){}\npublic void changed(){}",
+    "CH.ifa.draw.standard.OffsetLocator": "public Point locate(Figure owner){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Adds a listener for this figure.\n     \npublic void addFigureChangeListener(FigureChangeListener l);\n\n     * Removes a listener for this figure.\n     \npublic void removeFigureChangeListener(FigureChangeListener l);\n\n     * Returns the locator used to located connected text.\n     \npublic Locator connectedTextLocator(Figure text);",
+    "CH.ifa.draw.standard.AbstractFigure": "* Informes that a figure is about to change something that\n     * affects the contents of its display box.\n     *\n     * @see Figure#willChange\n     \npublic void willChange() {\n        invalidate();\n    }\n\n     * Gets the size of the figure. A convenience method.\n     \npublic Dimension size() {\n        return new Dimension(displayBox().width, displayBox().height);\n    }",
+    "CH.ifa.draw.figures.TextFigure": "protected void basicMoveBy(int x, int y) {\n        fOriginX += x;\n        fOriginY += y;\n    }\n\n     * Updates the location whenever the figure changes itself.\n     \npublic void changed() {\n        super.changed();\n        updateLocation();\n    }",
+    "CH.ifa.draw.standard.OffsetLocator": "public Point locate(Figure owner) {\n        Point p = fBase.locate(owner);\n        p.x += fOffsetX;\n        p.y += fOffsetY;\n        return p;\n    }"
+  }
+}

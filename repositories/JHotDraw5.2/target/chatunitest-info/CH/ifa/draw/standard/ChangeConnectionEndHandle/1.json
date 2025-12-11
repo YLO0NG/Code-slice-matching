@@ -1,0 +1,22 @@
+{
+  "className": "ChangeConnectionEndHandle",
+  "methodName": "disconnect",
+  "brief": "protected void disconnect(){}",
+  "methodSignature": "disconnect()",
+  "sourceCode": "protected void disconnect() {\n        fConnection.disconnectEnd();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "disconnectEnd()"
+    ]
+  },
+  "full_method_info": "/**\n * Disconnects the end figure.\n */\nprotected void disconnect() {\n    fConnection.disconnectEnd();\n}",
+  "method_comment": "\n     * Disconnects the end figure.\n     ",
+  "method_annotation": ""
+}

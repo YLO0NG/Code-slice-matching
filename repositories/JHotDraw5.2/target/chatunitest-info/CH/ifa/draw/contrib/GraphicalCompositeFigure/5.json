@@ -1,0 +1,27 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "update",
+  "brief": "public void update(){}",
+  "methodSignature": "update()",
+  "sourceCode": "public void update() {\n\t\twillChange();\n\t\tlayout();\n\t\tchange();\n\t\tchanged();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "change()",
+      "layout()"
+    ]
+  },
+  "full_method_info": "/**\n * Expicit update: an updated involves a layout for all contained figures.\n */\npublic void update() {\n    willChange();\n    layout();\n    change();\n    changed();\n}",
+  "method_comment": "\n\t * Expicit update: an updated involves a layout for all contained figures.\n\t ",
+  "method_annotation": ""
+}

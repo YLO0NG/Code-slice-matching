@@ -1,0 +1,23 @@
+{
+  "className": "Geom",
+  "methodName": "direction",
+  "brief": "static public int direction(int x1, int y1, int x2, int y2){}",
+  "methodSignature": "direction(int, int, int, int)",
+  "sourceCode": "static public int direction(int x1, int y1, int x2, int y2) {\n        int direction = 0;\n        int vx = x2 - x1;\n        int vy = y2 - y1;\n\n        if (vy < vx && vx > -vy)\n            direction = EAST;\n        else if (vy > vx && vy > -vx)\n            direction = NORTH;\n        else if (vx < vy && vx < -vy)\n            direction = WEST;\n        else\n            direction = SOUTH;\n        return direction;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the direction NORTH, SOUTH, WEST, EAST from\n * one point to another one.\n */\nstatic public int direction(int x1, int y1, int x2, int y2) {\n    int direction = 0;\n    int vx = x2 - x1;\n    int vy = y2 - y1;\n    if (vy < vx && vx > -vy)\n        direction = EAST;\n    else if (vy > vx && vy > -vx)\n        direction = NORTH;\n    else if (vx < vy && vx < -vy)\n        direction = WEST;\n    else\n        direction = SOUTH;\n    return direction;\n}",
+  "method_comment": "\n     * Returns the direction NORTH, SOUTH, WEST, EAST from\n     * one point to another one.\n     ",
+  "method_annotation": ""
+}

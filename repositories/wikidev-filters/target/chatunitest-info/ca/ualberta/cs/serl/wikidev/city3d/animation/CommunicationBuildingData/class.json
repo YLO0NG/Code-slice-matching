@@ -1,0 +1,61 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.city3d.animation.CommunicationBuildingData",
+  "className": "CommunicationBuildingData",
+  "index": 16,
+  "modifier": "[public ]",
+  "extend": "[BuildingData]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.city3d.animation",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.city3d.animation;",
+  "classSignature": "public class CommunicationBuildingData",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.Timestamp;",
+    "import java.util.ArrayList;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [
+    "private int artifact_id;"
+  ],
+  "superClasses": [
+    "BuildingData"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getArtifact_id()": "0",
+    "toString()": "1",
+    "CommunicationBuildingData(String, int, Timestamp, int, int, int, int, String, int, ArrayList, User, Timestamp, Timestamp)": "2",
+    "CommunicationBuildingData(String, int, Timestamp, int, int, int, int, String, int, int, String, Timestamp, Timestamp)": "3"
+  },
+  "methodsBrief": [
+    "public int getArtifact_id(){}",
+    "public String toString(){}",
+    "public CommunicationBuildingData(String type, int artifactId,\r\n\t\t\tTimestamp week, int height, int neighborhoodX, int neighborhoodY,\r\n\t\t\tint cityBlock, String url, int projectid, ArrayList<UserData> users, User lastEditor, Timestamp created, Timestamp lastModified){}",
+    "public CommunicationBuildingData(String type, int artifactId,\r\n\t\t\tTimestamp week, int height, int neighborhoodX, int neighborhoodY,\r\n\t\t\tint cityBlock, String url, int projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified){}"
+  ],
+  "constructorSigs": [
+    "CommunicationBuildingData(String, int, Timestamp, int, int, int, int, String, int, ArrayList, User, Timestamp, Timestamp)",
+    "CommunicationBuildingData(String, int, Timestamp, int, int, int, int, String, int, int, String, Timestamp, Timestamp)"
+  ],
+  "constructorBrief": [
+    "public CommunicationBuildingData(String type, int artifactId,\r\n\t\t\tTimestamp week, int height, int neighborhoodX, int neighborhoodY,\r\n\t\t\tint cityBlock, String url, int projectid, ArrayList<UserData> users, User lastEditor, Timestamp created, Timestamp lastModified){}",
+    "public CommunicationBuildingData(String type, int artifactId,\r\n\t\t\tTimestamp week, int height, int neighborhoodX, int neighborhoodY,\r\n\t\t\tint cityBlock, String url, int projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified){}"
+  ],
+  "getterSetterSigs": [
+    "getArtifact_id()"
+  ],
+  "getterSetterBrief": [
+    "public int getArtifact_id(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": [],
+    "ca.ualberta.cs.serl.wikidev.User": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.city3d.animation;\n\nimport java.sql.Timestamp;\nimport java.util.ArrayList;\nimport ca.ualberta.cs.serl.wikidev.User;\n\npublic class CommunicationBuildingData extends BuildingData {\n\n    private int artifact_id;\n\n    public CommunicationBuildingData(String type, int artifactId, Timestamp week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, ArrayList<UserData> users, User lastEditor, Timestamp created, Timestamp lastModified) {\n        super(type, week, height, neighborhoodX, neighborhoodY, cityBlock, url, projectid, users, lastEditor, created, lastModified);\n        artifact_id = artifactId;\n    }\n\n    public CommunicationBuildingData(String type, int artifactId, Timestamp week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified) {\n        super(type, week, height, neighborhoodX, neighborhoodY, cityBlock, url, projectid, buildingID, lastEditorString, created, lastModified);\n        artifact_id = artifactId;\n    }\n\n    public int getArtifact_id() {\n        return artifact_id;\n    }\n\n    public String toString() {\n        return type + artifact_id + \"\\t\" + week;\n    }\n}\n",
+  "classDeclarationCode": "public class CommunicationBuildingData extends BuildingData {\n\n    private int artifact_id;\n\n    public CommunicationBuildingData(String type, int artifactId, Timestamp week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, ArrayList<UserData> users, User lastEditor, Timestamp created, Timestamp lastModified) {\n        super(type, week, height, neighborhoodX, neighborhoodY, cityBlock, url, projectid, users, lastEditor, created, lastModified);\n        artifact_id = artifactId;\n    }\n\n    public CommunicationBuildingData(String type, int artifactId, Timestamp week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, int buildingID, String lastEditorString, Timestamp created, Timestamp lastModified) {\n        super(type, week, height, neighborhoodX, neighborhoodY, cityBlock, url, projectid, buildingID, lastEditorString, created, lastModified);\n        artifact_id = artifactId;\n    }\n\n    public int getArtifact_id() {\n        return artifact_id;\n    }\n\n    public String toString() {\n        return type + artifact_id + \"\\t\" + week;\n    }\n}",
+  "subClasses": []
+}

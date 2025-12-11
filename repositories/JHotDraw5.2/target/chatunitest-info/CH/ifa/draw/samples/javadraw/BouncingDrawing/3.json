@@ -1,0 +1,29 @@
+{
+  "className": "BouncingDrawing",
+  "methodName": "animationStep",
+  "brief": "public void animationStep(){}",
+  "methodSignature": "animationStep()",
+  "sourceCode": "public void animationStep() {\n        Enumeration k = figures();\n        while (k.hasMoreElements())\n            ((AnimationDecorator) k.nextElement()).animationStep();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.samples.javadraw.AnimationDecorator": [
+      "animationStep()"
+    ]
+  },
+  "full_method_info": "public void animationStep() {\n    Enumeration k = figures();\n    while (k.hasMoreElements()) ((AnimationDecorator) k.nextElement()).animationStep();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

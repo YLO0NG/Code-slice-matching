@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "addDrawingChangeListener",
+  "brief": "public void addDrawingChangeListener(DrawingChangeListener listener){}",
+  "methodSignature": "addDrawingChangeListener(DrawingChangeListener)",
+  "sourceCode": "public void addDrawingChangeListener(DrawingChangeListener listener) {\n    \tif (fListeners == null) {\n    \t\tfListeners = new Vector(2);\n    \t}\n        fListeners.addElement(listener);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingChangeListener": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a listener for this drawing.\n */\npublic void addDrawingChangeListener(DrawingChangeListener listener) {\n    if (fListeners == null) {\n        fListeners = new Vector(2);\n    }\n    fListeners.addElement(listener);\n}",
+  "method_comment": "\n     * Adds a listener for this drawing.\n     ",
+  "method_annotation": ""
+}

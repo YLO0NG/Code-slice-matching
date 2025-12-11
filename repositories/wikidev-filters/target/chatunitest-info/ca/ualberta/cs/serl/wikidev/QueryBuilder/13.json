@@ -1,0 +1,29 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertUserData",
+  "brief": "public static String insertUserData(int buildingid, String username, int R, int G, int B, double contribution, String week, String cityType){}",
+  "methodSignature": "insertUserData(int, String, int, int, int, double, String, String)",
+  "sourceCode": "public static String insertUserData(int buildingid, String username, int R, int G, int B, double contribution, String week, String cityType) {\n\t\treturn \"insert into wikidev_wikidev3d_users (building_id, username, R, G, B, contribution, week, city_type) values (\\'\"+buildingid+\"\\', \\'\"+username+\"\\', \\'\"+R+\"\\', \\'\"+G+\"\\', \\'\"+B+\"\\', \\'\"+contribution+\"\\', \\'\"+week+\"\\', \\'\"+cityType+\"\\')\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "String",
+    "int",
+    "int",
+    "int",
+    "double",
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String insertUserData(int buildingid, String username, int R, int G, int B, double contribution, String week, String cityType) {\n    return \"insert into wikidev_wikidev3d_users (building_id, username, R, G, B, contribution, week, city_type) values (\\'\" + buildingid + \"\\', \\'\" + username + \"\\', \\'\" + R + \"\\', \\'\" + G + \"\\', \\'\" + B + \"\\', \\'\" + contribution + \"\\', \\'\" + week + \"\\', \\'\" + cityType + \"\\')\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

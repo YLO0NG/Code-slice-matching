@@ -1,0 +1,53 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.Dictionary",
+  "className": "Dictionary",
+  "index": 34,
+  "modifier": "[public , abstract ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev;",
+  "classSignature": "public abstract class Dictionary",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import java.util.ArrayList;",
+    "import java.util.Collection;"
+  ],
+  "fields": [
+    "public static final String GLOBAL_CLASS = \"classes|class\";",
+    "public static final String GLOBAL_SVN = \"svn|browser\";",
+    "public static final String GLOBAL_TICKET = \"ticket\";",
+    "public static final String GLOBAL_MAIL = \"mail\";",
+    "public static final String GLOBAL_WIKI = \"wiki\";",
+    "public static final String GLOBAL_SRC = \"src\";"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getDataBaseTable(String)": "0",
+    "getUnionPatternOfStrings(ArrayList)": "1",
+    "getMatchedString(Collection, String)": "2",
+    "matchesWord(String, String)": "3",
+    "matchesPattern(String, String)": "4",
+    "concatStrings(Collection)": "5"
+  },
+  "methodsBrief": [
+    "public static String getDataBaseTable(String entityType){}",
+    "public static String getUnionPatternOfStrings(ArrayList<String> strings){}",
+    "public static String getMatchedString(Collection<String> words, String keyword){}",
+    "public static boolean matchesWord(String word, String keyword){}",
+    "public static boolean matchesPattern(String word, String pattern){}",
+    "public static String concatStrings(Collection<String> terms){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev;\n\nimport java.util.ArrayList;\nimport java.util.Collection;\n\n/**\n * @author  Marios Fokaefs\n */\npublic abstract class Dictionary {\n\n    public static final String GLOBAL_CLASS = \"classes|class\";\n\n    public static final String GLOBAL_SVN = \"svn|browser\";\n\n    public static final String GLOBAL_TICKET = \"ticket\";\n\n    public static final String GLOBAL_MAIL = \"mail\";\n\n    public static final String GLOBAL_WIKI = \"wiki\";\n\n    public static final String GLOBAL_SRC = \"src\";\n\n    public static String getDataBaseTable(String entityType) {\n        if (entityType.matches(GLOBAL_SVN)) {\n            return \"wikidev_changesets\";\n        } else if (entityType.matches(GLOBAL_TICKET)) {\n            return \"wikidev_tickets\";\n        } else if (entityType.matches(GLOBAL_WIKI)) {\n            return \"wikidev_wikis\";\n        } else if (entityType.matches(GLOBAL_MAIL)) {\n            return \"wikidev_communications\";\n        } else if (entityType.matches(GLOBAL_SRC)) {\n            return \"wikidev_sourceclasses\";\n        } else {\n            return \"\";\n        }\n    }\n\n    public static String getUnionPatternOfStrings(ArrayList<String> strings) {\n        String pattern = strings.get(0);\n        for (int i = 1; i < strings.size(); i++) {\n            pattern += \"|\" + strings.get(i);\n        }\n        return pattern;\n    }\n\n    public static String getMatchedString(Collection<String> words, String keyword) {\n        keyword = keyword.toLowerCase();\n        for (String word : words) {\n            String wordLowerCase = word.toLowerCase();\n            if (wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n                return word;\n            }\n        }\n        return null;\n    }\n\n    public static boolean matchesWord(String word, String keyword) {\n        keyword = keyword.toLowerCase();\n        String wordLowerCase = word.toLowerCase();\n        if (wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    public static boolean matchesPattern(String word, String pattern) {\n        return word.matches(pattern);\n    }\n\n    public static String concatStrings(Collection<String> terms) {\n        String res = \"\";\n        for (String term : terms) {\n            res += term + \"\\t\";\n        }\n        return res;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * @author  Marios Fokaefs\n */\npublic abstract class Dictionary {\n\n    public static final String GLOBAL_CLASS = \"classes|class\";\n\n    public static final String GLOBAL_SVN = \"svn|browser\";\n\n    public static final String GLOBAL_TICKET = \"ticket\";\n\n    public static final String GLOBAL_MAIL = \"mail\";\n\n    public static final String GLOBAL_WIKI = \"wiki\";\n\n    public static final String GLOBAL_SRC = \"src\";\n\n    public static String getDataBaseTable(String entityType) {\n        if (entityType.matches(GLOBAL_SVN)) {\n            return \"wikidev_changesets\";\n        } else if (entityType.matches(GLOBAL_TICKET)) {\n            return \"wikidev_tickets\";\n        } else if (entityType.matches(GLOBAL_WIKI)) {\n            return \"wikidev_wikis\";\n        } else if (entityType.matches(GLOBAL_MAIL)) {\n            return \"wikidev_communications\";\n        } else if (entityType.matches(GLOBAL_SRC)) {\n            return \"wikidev_sourceclasses\";\n        } else {\n            return \"\";\n        }\n    }\n\n    public static String getUnionPatternOfStrings(ArrayList<String> strings) {\n        String pattern = strings.get(0);\n        for (int i = 1; i < strings.size(); i++) {\n            pattern += \"|\" + strings.get(i);\n        }\n        return pattern;\n    }\n\n    public static String getMatchedString(Collection<String> words, String keyword) {\n        keyword = keyword.toLowerCase();\n        for (String word : words) {\n            String wordLowerCase = word.toLowerCase();\n            if (wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n                return word;\n            }\n        }\n        return null;\n    }\n\n    public static boolean matchesWord(String word, String keyword) {\n        keyword = keyword.toLowerCase();\n        String wordLowerCase = word.toLowerCase();\n        if (wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n            return true;\n        } else {\n            return false;\n        }\n    }\n\n    public static boolean matchesPattern(String word, String pattern) {\n        return word.matches(pattern);\n    }\n\n    public static String concatStrings(Collection<String> terms) {\n        String res = \"\";\n        for (String term : terms) {\n            res += term + \"\\t\";\n        }\n        return res;\n    }\n}",
+  "subClasses": []
+}

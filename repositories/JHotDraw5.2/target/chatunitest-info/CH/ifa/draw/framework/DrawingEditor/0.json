@@ -1,0 +1,18 @@
+{
+  "className": "DrawingEditor",
+  "methodName": "view",
+  "brief": "DrawingView view();",
+  "methodSignature": "view()",
+  "sourceCode": "DrawingView view();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the editor's drawing view.\n */\nDrawingView view();",
+  "method_comment": "\n     * Gets the editor's drawing view.\n     ",
+  "method_annotation": ""
+}

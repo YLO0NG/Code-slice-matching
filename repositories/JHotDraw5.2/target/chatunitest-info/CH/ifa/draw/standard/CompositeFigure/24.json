@@ -1,0 +1,28 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "figureInvalidated",
+  "brief": "public void figureInvalidated(FigureChangeEvent e){}",
+  "methodSignature": "figureInvalidated(FigureChangeEvent)",
+  "sourceCode": "public void figureInvalidated(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureInvalidated(e);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "listener()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureInvalidated(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Propagates the figureInvalidated event to my listener.\n * @see FigureChangeListener\n */\npublic void figureInvalidated(FigureChangeEvent e) {\n    if (listener() != null)\n        listener().figureInvalidated(e);\n}",
+  "method_comment": "\n     * Propagates the figureInvalidated event to my listener.\n     * @see FigureChangeListener\n     ",
+  "method_annotation": ""
+}

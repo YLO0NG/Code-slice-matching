@@ -1,0 +1,18 @@
+{
+  "className": "StorageFormat",
+  "methodName": "getFileFilter",
+  "brief": "public FileFilter getFileFilter();",
+  "methodSignature": "getFileFilter()",
+  "sourceCode": "public FileFilter getFileFilter();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return a FileFilter that can be used to identify files which can be stored and restored\n * with this Storage Format. Typically, each storage format has its own recognizable file\n * extension.\n *\n * @return FileFilter to be used with a javax.swing.JFileChooser\n */\npublic FileFilter getFileFilter();",
+  "method_comment": "\n\t * Return a FileFilter that can be used to identify files which can be stored and restored\n\t * with this Storage Format. Typically, each storage format has its own recognizable file\n\t * extension.\n\t *\n\t * @return FileFilter to be used with a javax.swing.JFileChooser\n\t ",
+  "method_annotation": ""
+}

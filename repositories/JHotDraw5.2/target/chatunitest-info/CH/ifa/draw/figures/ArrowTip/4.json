@@ -1,0 +1,32 @@
+{
+  "className": "ArrowTip",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        setAngle(dr.readDouble());\n        setOuterRadius(dr.readDouble());\n        setInnerRadius(dr.readDouble());\n\t\tsuper.read(dr);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readDouble()"
+    ],
+    "CH.ifa.draw.figures.ArrowTip": [
+      "setAngle(double)",
+      "setOuterRadius(double)",
+      "setInnerRadius(double)"
+    ],
+    "CH.ifa.draw.figures.AbstractLineDecoration": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the arrow tip from a StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    setAngle(dr.readDouble());\n    setOuterRadius(dr.readDouble());\n    setInnerRadius(dr.readDouble());\n    super.read(dr);\n}",
+  "method_comment": "\n     * Reads the arrow tip from a StorableInput.\n     ",
+  "method_annotation": ""
+}

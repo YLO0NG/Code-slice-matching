@@ -1,0 +1,41 @@
+{
+  "className": "TestSelector",
+  "methodName": "keySelectTestClass",
+  "brief": "public void keySelectTestClass(char ch){}",
+  "methodSignature": "keySelectTestClass(char)",
+  "sourceCode": "public void keySelectTestClass(char ch) {\r\n\t\tListModel model= fList.getModel();\r\n\t\tif (!Character.isJavaIdentifierStart(ch))\r\n\t\t\treturn;\r\n\t\tfor (int i= 0; i < model.getSize(); i++) {\r\n\t\t\tString s= (String)model.getElementAt(i);\r\n\t\t\tif (TestCellRenderer.matchesKey(s, Character.toUpperCase(ch))) {\r\n\t\t\t\tfList.setSelectedIndex(i);\r\n\t\t\t\tfList.ensureIndexIsVisible(i);\r\n\t\t\t\treturn;\r\n\t\t\t}\r\n\t\t}\r\n\t\tToolkit.getDefaultToolkit().beep();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "char"
+  ],
+  "dependentMethods": {
+    "javax.swing.JList": [
+      "setSelectedIndex(int)",
+      "ensureIndexIsVisible(int)",
+      "getModel()"
+    ],
+    "java.lang.Character": [
+      "toUpperCase(char)",
+      "isJavaIdentifierStart(char)"
+    ],
+    "javax.swing.ListModel": [
+      "getElementAt(int)",
+      "getSize()"
+    ],
+    "junit.swingui.TestSelector.TestCellRenderer": [
+      "matchesKey(String, char)"
+    ],
+    "java.awt.Toolkit": [
+      "getDefaultToolkit()",
+      "beep()"
+    ]
+  },
+  "full_method_info": "public void keySelectTestClass(char ch) {\r\n    ListModel model = fList.getModel();\r\n    if (!Character.isJavaIdentifierStart(ch))\r\n        return;\r\n    for (int i = 0; i < model.getSize(); i++) {\r\n        String s = (String) model.getElementAt(i);\r\n        if (TestCellRenderer.matchesKey(s, Character.toUpperCase(ch))) {\r\n            fList.setSelectedIndex(i);\r\n            fList.ensureIndexIsVisible(i);\r\n            return;\r\n        }\r\n    }\r\n    Toolkit.getDefaultToolkit().beep();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

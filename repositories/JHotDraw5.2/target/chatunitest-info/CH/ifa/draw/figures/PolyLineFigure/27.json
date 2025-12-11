@@ -1,0 +1,36 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        int size = dr.readInt();\n        fPoints = new Vector(size);\n        for (int i=0; i<size; i++) {\n            int x = dr.readInt();\n            int y = dr.readInt();\n            fPoints.addElement(new Point(x,y));\n        }\n        setStartDecoration((LineDecoration)dr.readStorable());\n        setEndDecoration((LineDecoration)dr.readStorable());\n        fFrameColor = dr.readColor();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readStorable()",
+      "readColor()"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "read(StorableInput)"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setStartDecoration(LineDecoration)",
+      "setEndDecoration(LineDecoration)"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    int size = dr.readInt();\n    fPoints = new Vector(size);\n    for (int i = 0; i < size; i++) {\n        int x = dr.readInt();\n        int y = dr.readInt();\n        fPoints.addElement(new Point(x, y));\n    }\n    setStartDecoration((LineDecoration) dr.readStorable());\n    setEndDecoration((LineDecoration) dr.readStorable());\n    fFrameColor = dr.readColor();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,38 @@
+{
+  "className": "TestResult",
+  "methodName": "addFailure",
+  "brief": "public synchronized void addFailure(Test test, AssertionFailedError t){}",
+  "methodSignature": "addFailure(Test, AssertionFailedError)",
+  "sourceCode": "public synchronized void addFailure(Test test, AssertionFailedError t) {\r\n\t\tfFailures.addElement(new TestFailure(test, t));\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).addFailure(test, t);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "AssertionFailedError"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.AssertionFailedError": [],
+    "java.util.Vector": [
+      "addElement(E)",
+      "elements()"
+    ],
+    "junit.framework.TestResult": [
+      "cloneListeners()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.framework.TestListener": [
+      "addFailure(Test, AssertionFailedError)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Adds a failure to the list of failures. The passed in exception\r\n * caused the failure.\r\n */\r\npublic synchronized void addFailure(Test test, AssertionFailedError t) {\r\n    fFailures.addElement(new TestFailure(test, t));\r\n    for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n        ((TestListener) e.nextElement()).addFailure(test, t);\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Adds a failure to the list of failures. The passed in exception\r\n\t * caused the failure.\r\n\t ",
+  "method_annotation": ""
+}

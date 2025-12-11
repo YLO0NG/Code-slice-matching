@@ -1,0 +1,22 @@
+{
+  "className": "WikiRevision",
+  "methodName": "setRev_timestamp",
+  "brief": "public void setRev_timestamp(Timestamp rev_timestamp){}",
+  "methodSignature": "setRev_timestamp(Timestamp)",
+  "sourceCode": "public void setRev_timestamp(Timestamp rev_timestamp) {\n\t\tthis.rev_timestamp = rev_timestamp;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "/**\n * @param rev_timestamp\n * @uml.property  name=\"rev_timestamp\"\n */\npublic void setRev_timestamp(Timestamp rev_timestamp) {\n    this.rev_timestamp = rev_timestamp;\n}",
+  "method_comment": "\n\t * @param rev_timestamp\n\t * @uml.property  name=\"rev_timestamp\"\n\t ",
+  "method_annotation": ""
+}

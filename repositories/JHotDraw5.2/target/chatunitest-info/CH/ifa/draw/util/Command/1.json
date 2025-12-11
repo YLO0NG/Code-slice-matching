@@ -1,0 +1,18 @@
+{
+  "className": "Command",
+  "methodName": "isExecutable",
+  "brief": "public boolean isExecutable(){}",
+  "methodSignature": "isExecutable()",
+  "sourceCode": "public boolean isExecutable() {\n        return true;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": true,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Tests if the command can be executed.\n */\npublic boolean isExecutable() {\n    return true;\n}",
+  "method_comment": "\n     * Tests if the command can be executed.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,42 @@
+{
+  "className": "TestCase",
+  "methodName": "runTest",
+  "brief": "protected void runTest() throws Throwable{}",
+  "methodSignature": "runTest()",
+  "sourceCode": "protected void runTest() throws Throwable {\r\n\t\tassertNotNull(fName);\r\n\t\tMethod runMethod= null;\r\n\t\ttry {\r\n\t\t\t// use getMethod to get all public inherited\r\n\t\t\t// methods. getDeclaredMethods returns all\r\n\t\t\t// methods of this class but excludes the\r\n\t\t\t// inherited ones.\r\n\t\t\trunMethod= getClass().getMethod(fName, null);\r\n\t\t} catch (NoSuchMethodException e) {\r\n\t\t\tfail(\"Method \\\"\"+fName+\"\\\" not found\");\r\n\t\t}\r\n\t\tif (!Modifier.isPublic(runMethod.getModifiers())) {\r\n\t\t\tfail(\"Method \\\"\"+fName+\"\\\" should be public\");\r\n\t\t}\r\n\r\n\t\ttry {\r\n\t\t\trunMethod.invoke(this, new Class[0]);\r\n\t\t}\r\n\t\tcatch (InvocationTargetException e) {\r\n\t\t\te.fillInStackTrace();\r\n\t\t\tthrow e.getTargetException();\r\n\t\t}\r\n\t\tcatch (IllegalAccessException e) {\r\n\t\t\te.fillInStackTrace();\r\n\t\t\tthrow e;\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.Assert": [
+      "fail(String)",
+      "assertNotNull(Object)"
+    ],
+    "java.lang.Class": [
+      "getMethod(String, Object>[])"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ],
+    "java.lang.reflect.Modifier": [
+      "isPublic(int)"
+    ],
+    "java.lang.reflect.Method": [
+      "getModifiers()",
+      "invoke(Object, Object[])"
+    ],
+    "java.lang.Throwable": [
+      "fillInStackTrace()"
+    ],
+    "java.lang.reflect.InvocationTargetException": [
+      "getTargetException()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Override to run the test and assert its state.\r\n * @exception Throwable if any exception is thrown\r\n */\r\nprotected void runTest() throws Throwable {\r\n    assertNotNull(fName);\r\n    Method runMethod = null;\r\n    try {\r\n        // use getMethod to get all public inherited\r\n        // methods. getDeclaredMethods returns all\r\n        // methods of this class but excludes the\r\n        // inherited ones.\r\n        runMethod = getClass().getMethod(fName, null);\r\n    } catch (NoSuchMethodException e) {\r\n        fail(\"Method \\\"\" + fName + \"\\\" not found\");\r\n    }\r\n    if (!Modifier.isPublic(runMethod.getModifiers())) {\r\n        fail(\"Method \\\"\" + fName + \"\\\" should be public\");\r\n    }\r\n    try {\r\n        runMethod.invoke(this, new Class[0]);\r\n    } catch (InvocationTargetException e) {\r\n        e.fillInStackTrace();\r\n        throw e.getTargetException();\r\n    } catch (IllegalAccessException e) {\r\n        e.fillInStackTrace();\r\n        throw e;\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Override to run the test and assert its state.\r\n\t * @exception Throwable if any exception is thrown\r\n\t ",
+  "method_annotation": ""
+}

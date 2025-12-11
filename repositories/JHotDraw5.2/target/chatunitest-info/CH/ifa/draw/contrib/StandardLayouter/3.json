@@ -1,0 +1,39 @@
+{
+  "className": "StandardLayouter",
+  "methodName": "layout",
+  "brief": "public Rectangle layout(Point origin, Point corner){}",
+  "methodSignature": "layout(Point, Point)",
+  "sourceCode": "public Rectangle layout(Point origin, Point corner) {\n\t\t// calculate the layout of the figure and its sub-figures first\n\t\tRectangle r = calculateLayout(origin, corner);\n\n\t\tint maxHeight = getInsets().top;\n\t\tFigureEnumeration enumeration = getLayoutable().figures();\n\t\twhile (enumeration.hasMoreElements()) {\n\t\t\tFigure currentFigure = enumeration.nextFigure();\n\n\t\t\tPoint partOrigin = new Point(r.x + getInsets().left, r.y + maxHeight);\n\t\t\tPoint partCorner = new Point(r.x + getInsets().left + r.width, r.y + currentFigure.displayBox().height);\n\t\t\tcurrentFigure.displayBox(partOrigin, partCorner);\n\n\t\t\tmaxHeight += currentFigure.displayBox().height;\n\t\t}\n\t\t\n\t\t// the maximum width has been already calculated\n\t\treturn new Rectangle(r.x, r.y, r.x + r.width, r.y + maxHeight + getInsets().bottom);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.contrib.StandardLayouter": [
+      "calculateLayout(Point, Point)",
+      "getLayoutable()",
+      "getInsets()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox(Point, Point)",
+      "displayBox()",
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Method which lays out a figure. It is called by the figure\n * if a layout task is to be performed. First, the layout dimension for\n * the figure is calculated and then the figure is arranged newly.\n * All child component are place beneath another. The figure and all\n * its children are forced to the minimium width\n *\n * @param origin start point for the layout\n * @param corner minimum corner point for the layout\n */\npublic Rectangle layout(Point origin, Point corner) {\n    // calculate the layout of the figure and its sub-figures first\n    Rectangle r = calculateLayout(origin, corner);\n    int maxHeight = getInsets().top;\n    FigureEnumeration enumeration = getLayoutable().figures();\n    while (enumeration.hasMoreElements()) {\n        Figure currentFigure = enumeration.nextFigure();\n        Point partOrigin = new Point(r.x + getInsets().left, r.y + maxHeight);\n        Point partCorner = new Point(r.x + getInsets().left + r.width, r.y + currentFigure.displayBox().height);\n        currentFigure.displayBox(partOrigin, partCorner);\n        maxHeight += currentFigure.displayBox().height;\n    }\n    // the maximum width has been already calculated\n    return new Rectangle(r.x, r.y, r.x + r.width, r.y + maxHeight + getInsets().bottom);\n}",
+  "method_comment": "\n\t * Method which lays out a figure. It is called by the figure\n\t * if a layout task is to be performed. First, the layout dimension for\n\t * the figure is calculated and then the figure is arranged newly.\n\t * All child component are place beneath another. The figure and all\n\t * its children are forced to the minimium width\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t ",
+  "method_annotation": ""
+}

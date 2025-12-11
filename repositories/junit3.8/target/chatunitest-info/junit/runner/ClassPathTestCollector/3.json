@@ -1,0 +1,36 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "gatherFiles",
+  "brief": "void gatherFiles(File classRoot, String classFileName, Hashtable result){}",
+  "methodSignature": "gatherFiles(File, String, Hashtable)",
+  "sourceCode": "void gatherFiles(File classRoot, String classFileName, Hashtable result) {\r\n\t\tFile thisRoot= new File(classRoot, classFileName);\r\n\t\tif (thisRoot.isFile()) {\r\n\t\t\tif (isTestClass(classFileName)) {\r\n\t\t\t\tString className= classNameFromFile(classFileName);\r\n\t\t\t\tresult.put(className, className);\r\n\t\t\t}\r\n\t\t\treturn;\r\n\t\t}\t\t\r\n\t\tString[] contents= thisRoot.list();\r\n\t\tif (contents != null) { \r\n\t\t\tfor (int i= 0; i < contents.length; i++) \r\n\t\t\t\tgatherFiles(classRoot, classFileName+File.separatorChar+contents[i], result);\t\t\r\n\t\t}\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "File",
+    "String",
+    "Hashtable"
+  ],
+  "dependentMethods": {
+    "java.io.File": [
+      "isFile()",
+      "list()"
+    ],
+    "java.lang.String": [],
+    "java.util.Hashtable": [
+      "put(K, V)"
+    ],
+    "junit.runner.ClassPathTestCollector": [
+      "gatherFiles(File, String, Hashtable)",
+      "classNameFromFile(String)",
+      "isTestClass(String)"
+    ]
+  },
+  "full_method_info": "void gatherFiles(File classRoot, String classFileName, Hashtable result) {\r\n    File thisRoot = new File(classRoot, classFileName);\r\n    if (thisRoot.isFile()) {\r\n        if (isTestClass(classFileName)) {\r\n            String className = classNameFromFile(classFileName);\r\n            result.put(className, className);\r\n        }\r\n        return;\r\n    }\r\n    String[] contents = thisRoot.list();\r\n    if (contents != null) {\r\n        for (int i = 0; i < contents.length; i++) gatherFiles(classRoot, classFileName + File.separatorChar + contents[i], result);\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

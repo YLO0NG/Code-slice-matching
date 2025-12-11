@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "doRun",
+  "brief": "public TestResult doRun(Test test){}",
+  "methodSignature": "doRun(Test)",
+  "sourceCode": "public TestResult doRun(Test test) {\r\n\t\treturn doRun(test, false);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.textui.TestRunner": [
+      "doRun(Test, boolean)"
+    ]
+  },
+  "full_method_info": "public TestResult doRun(Test test) {\r\n    return doRun(test, false);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

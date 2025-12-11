@@ -1,0 +1,22 @@
+{
+  "className": "SourceClass",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\n\t\treturn \"SourceClass \"+classID+\" \"+super.toString();//+\": \"+className;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public String toString() {\n    // +\": \"+className;\n    return \"SourceClass \" + classID + \" \" + super.toString();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

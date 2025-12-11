@@ -1,0 +1,18 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "getAlphaMatrix",
+  "brief": "public double[][] getAlphaMatrix(){}",
+  "methodSignature": "getAlphaMatrix()",
+  "sourceCode": "public double[][] getAlphaMatrix() {\n\t\tfor(int i=0;i<distanceMatrix.length;i++) {\n\t\t\tfor(int j=0;j<distanceMatrix.length;j++) {\n\t\t\t\talphaMatrix[i][j] = -(1.0/2.0)*squareDistanceMatrix[i][j];\n\t\t\t}\n\t\t}\n\t\treturn alphaMatrix;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public double[][] getAlphaMatrix() {\n    for (int i = 0; i < distanceMatrix.length; i++) {\n        for (int j = 0; j < distanceMatrix.length; j++) {\n            alphaMatrix[i][j] = -(1.0 / 2.0) * squareDistanceMatrix[i][j];\n        }\n    }\n    return alphaMatrix;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

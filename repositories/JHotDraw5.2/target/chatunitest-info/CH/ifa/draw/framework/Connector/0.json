@@ -1,0 +1,22 @@
+{
+  "className": "Connector",
+  "methodName": "findStart",
+  "brief": "public abstract Point findStart(ConnectionFigure connection);",
+  "methodSignature": "findStart(ConnectionFigure)",
+  "sourceCode": "public abstract Point findStart(ConnectionFigure connection);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": []
+  },
+  "full_method_info": "/**\n * Finds the start point for the connection.\n */\npublic abstract Point findStart(ConnectionFigure connection);",
+  "method_comment": "\n     * Finds the start point for the connection.\n     ",
+  "method_annotation": ""
+}

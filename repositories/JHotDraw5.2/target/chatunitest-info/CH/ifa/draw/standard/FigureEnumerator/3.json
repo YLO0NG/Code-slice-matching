@@ -1,0 +1,24 @@
+{
+  "className": "FigureEnumerator",
+  "methodName": "FigureEnumerator",
+  "brief": "public FigureEnumerator(Vector v){}",
+  "methodSignature": "FigureEnumerator(Vector)",
+  "sourceCode": "public FigureEnumerator(Vector v) {\n\t    fEnumeration = v.elements();\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elements()"
+    ]
+  },
+  "full_method_info": "public FigureEnumerator(Vector v) {\n    fEnumeration = v.elements();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

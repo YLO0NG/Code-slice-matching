@@ -1,0 +1,38 @@
+{
+  "className": "URLTool",
+  "methodName": "beginEdit",
+  "brief": "private void beginEdit(Figure figure){}",
+  "methodSignature": "beginEdit(Figure)",
+  "sourceCode": "private void beginEdit(Figure figure) {\n        if (fTextField == null) {\n            fTextField = new FloatingTextField();\n\t\t    fTextField.addActionListener(\n\t\t        new ActionListener() {\n\t\t            public void actionPerformed(ActionEvent event) {\n\t\t                endAction(event);\n\t\t            }\n\t\t        }\n\t\t    );\n        }\n\n\t    if (figure != fURLTarget && fURLTarget != null)\n\t    \tif (fURLTarget != null) {\n\t\t\t    setURL(fURLTarget, fTextField.getText());\n\t\t\t    fURLTarget = null;\n\t\t\t    fTextField.endOverlay();\n\t\t\t}\n        if (figure != fURLTarget) {\n            fTextField.createOverlay((Container)view());\n\t        fTextField.setBounds(fieldBounds(figure), getURL(figure));\n\t        fURLTarget = figure;\n\t    }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "createOverlay(Container)",
+      "addActionListener(ActionListener)",
+      "getText()",
+      "setBounds(Rectangle, String)",
+      "endOverlay()"
+    ],
+    "CH.ifa.draw.samples.javadraw.URLTool": [
+      "getURL(Figure)",
+      "endAction(ActionEvent)",
+      "setURL(Figure, String)",
+      "fieldBounds(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ]
+  },
+  "full_method_info": "private void beginEdit(Figure figure) {\n    if (fTextField == null) {\n        fTextField = new FloatingTextField();\n        fTextField.addActionListener(new ActionListener() {\n\n            public void actionPerformed(ActionEvent event) {\n                endAction(event);\n            }\n        });\n    }\n    if (figure != fURLTarget && fURLTarget != null)\n        if (fURLTarget != null) {\n            setURL(fURLTarget, fTextField.getText());\n            fURLTarget = null;\n            fTextField.endOverlay();\n        }\n    if (figure != fURLTarget) {\n        fTextField.createOverlay((Container) view());\n        fTextField.setBounds(fieldBounds(figure), getURL(figure));\n        fURLTarget = figure;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

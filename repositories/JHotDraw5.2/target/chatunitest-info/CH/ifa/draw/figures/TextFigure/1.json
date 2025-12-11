@@ -1,0 +1,21 @@
+{
+  "className": "TextFigure",
+  "methodName": "basicMoveBy",
+  "brief": "protected void basicMoveBy(int x, int y){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "protected void basicMoveBy(int x, int y) {\n        fOriginX += x;\n        fOriginY += y;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "protected void basicMoveBy(int x, int y) {\n    fOriginX += x;\n    fOriginY += y;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

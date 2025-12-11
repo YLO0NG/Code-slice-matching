@@ -1,0 +1,41 @@
+{
+  "className": "ElbowHandle",
+  "methodName": "constrainX",
+  "brief": "private int constrainX(int x){}",
+  "methodSignature": "constrainX(int)",
+  "sourceCode": "private int constrainX(int x) {\n        LineConnection line = ownerConnection();\n        Figure startFigure = line.start().owner();\n        Figure endFigure = line.end().owner();\n        Rectangle start = startFigure.displayBox();\n        Rectangle end = endFigure.displayBox();\n        Insets i1 = startFigure.connectionInsets();\n        Insets i2 = endFigure.connectionInsets();\n\n        int r1x, r1width, r2x, r2width;\n        r1x = start.x + i1.left;\n        r1width = start.width - i1.left - i1.right-1;\n\n        r2x = end.x + i2.left;\n        r2width = end.width - i2.left - i2.right-1;\n\n        if (fSegment == 0) {\n        \tint max = r1x + r1width;\n\t\t\tint value = x;\n\t\t\tif (value < r1x)\n\t\t\t    value = r1x;\n\t\t\tif (value > max)\n\t\t\t    value = max;\n\t\t\tx = value;\n\t\t}\n        if (fSegment == line.pointCount()-2)\n            x = Geom.range(r2x, r2x + r2width, x);\n        return x;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.ElbowHandle": [
+      "ownerConnection()"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "start()",
+      "end()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectionInsets()",
+      "displayBox()"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "pointCount()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "range(int, int, int)"
+    ]
+  },
+  "full_method_info": "private int constrainX(int x) {\n    LineConnection line = ownerConnection();\n    Figure startFigure = line.start().owner();\n    Figure endFigure = line.end().owner();\n    Rectangle start = startFigure.displayBox();\n    Rectangle end = endFigure.displayBox();\n    Insets i1 = startFigure.connectionInsets();\n    Insets i2 = endFigure.connectionInsets();\n    int r1x, r1width, r2x, r2width;\n    r1x = start.x + i1.left;\n    r1width = start.width - i1.left - i1.right - 1;\n    r2x = end.x + i2.left;\n    r2width = end.width - i2.left - i2.right - 1;\n    if (fSegment == 0) {\n        int max = r1x + r1width;\n        int value = x;\n        if (value < r1x)\n            value = r1x;\n        if (value > max)\n            value = max;\n        x = value;\n    }\n    if (fSegment == line.pointCount() - 2)\n        x = Geom.range(r2x, r2x + r2width, x);\n    return x;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

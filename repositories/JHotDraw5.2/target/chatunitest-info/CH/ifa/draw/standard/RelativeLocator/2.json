@@ -1,0 +1,27 @@
+{
+  "className": "RelativeLocator",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fRelativeX = dr.readDouble();\n        fRelativeY = dr.readDouble();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readDouble()"
+    ],
+    "CH.ifa.draw.standard.AbstractLocator": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    fRelativeX = dr.readDouble();\n    fRelativeY = dr.readDouble();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

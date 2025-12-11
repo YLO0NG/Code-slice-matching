@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setBody",
+  "brief": "public void setBody(String body){}",
+  "methodSignature": "setBody(String)",
+  "sourceCode": "public void setBody(String body) {\n\t\tthis.body = body;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param body\n * @uml.property  name=\"body\"\n */\npublic void setBody(String body) {\n    this.body = body;\n}",
+  "method_comment": "\n\t * @param body\n\t * @uml.property  name=\"body\"\n\t ",
+  "method_annotation": ""
+}

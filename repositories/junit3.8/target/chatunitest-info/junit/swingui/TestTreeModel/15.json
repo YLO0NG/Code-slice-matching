@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "isError",
+  "brief": "boolean isError(Test t){}",
+  "methodSignature": "isError(Test)",
+  "sourceCode": "boolean isError(Test t) {\r\n\t\treturn (fErrors != null) && fErrors.get(t) != null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Hashtable": [
+      "get(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Tests whether a test was an error\r\n */\r\nboolean isError(Test t) {\r\n    return (fErrors != null) && fErrors.get(t) != null;\r\n}",
+  "method_comment": "\r\n\t * Tests whether a test was an error\r\n\t ",
+  "method_annotation": ""
+}

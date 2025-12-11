@@ -1,0 +1,26 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "addTreeModelListener",
+  "brief": "public void addTreeModelListener(TreeModelListener l){}",
+  "methodSignature": "addTreeModelListener(TreeModelListener)",
+  "sourceCode": "public void addTreeModelListener(TreeModelListener l) {\r\n\t\tif (!fModelListeners.contains(l))\r\n\t\t\tfModelListeners.addElement(l);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TreeModelListener"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.TreeModelListener": [],
+    "java.util.Vector": [
+      "addElement(E)",
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * adds a TreeModelListener\r\n */\r\npublic void addTreeModelListener(TreeModelListener l) {\r\n    if (!fModelListeners.contains(l))\r\n        fModelListeners.addElement(l);\r\n}",
+  "method_comment": "\r\n\t * adds a TreeModelListener\r\n\t ",
+  "method_annotation": ""
+}

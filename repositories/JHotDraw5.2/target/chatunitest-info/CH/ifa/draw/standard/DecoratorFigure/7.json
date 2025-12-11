@@ -1,0 +1,26 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner) {\n        fComponent.basicDisplayBox(origin, corner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.framework.Figure": [
+      "basicDisplayBox(Point, Point)"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards basicDisplayBox to its contained figure.\n */\npublic void basicDisplayBox(Point origin, Point corner) {\n    fComponent.basicDisplayBox(origin, corner);\n}",
+  "method_comment": "\n     * Forwards basicDisplayBox to its contained figure.\n     ",
+  "method_annotation": ""
+}

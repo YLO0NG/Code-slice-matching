@@ -1,0 +1,22 @@
+{
+  "targetClass": "junit.awtui.TestRunner",
+  "targetMethod": "testFailed(int, Test, Throwable)",
+  "dependentFields": {
+    "junit.framework.Test": "",
+    "junit.framework.TestResult": "protected Vector fFailures;\nprotected Vector fErrors;\nprotected Vector fListeners;\nprotected int fRunTests;\nprivate boolean fStop;",
+    "junit.runner.BaseTestRunner": "public static final String SUITE_METHODNAME= \"suite\";\nprivate static Properties fPreferences;\nstatic int fgMaxMessageLength= 500;\nstatic boolean fgFilterStack= true;\nboolean fLoading= true;",
+    "junit.awtui.TestRunner": "protected Frame fFrame;\nprotected Vector fExceptions;\nprotected Vector fFailedTests;\nprotected Thread fRunner;\nprotected TestResult fTestResult;\nprotected TextArea fTraceArea;\nprotected TextField fSuiteField;\nprotected Button fRun;\nprotected ProgressBar fProgressIndicator;\nprotected List fFailureList;\nprotected Logo fLogo;\nprotected Label fNumberOfErrors;\nprotected Label fNumberOfFailures;\nprotected Label fNumberOfRuns;\nprotected Button fQuitButton;\nprotected Button fRerunButton;\nprotected TextField fStatusLine;\nprotected Checkbox fUseLoadingRunner;\nprotected static Font PLAIN_FONT= new Font(\"dialog\", Font.PLAIN, 12);\nprivate static final int GAP= 4;\nprivate static final String SUITE_METHODNAME= \"suite\";"
+  },
+  "dependentMethods": {
+    "junit.framework.Test": "",
+    "junit.framework.TestResult": "public synchronized int failureCount(){}\npublic synchronized int errorCount(){}",
+    "junit.runner.BaseTestRunner": "public static String truncate(String s){}",
+    "junit.awtui.TestRunner": "public void failureSelected(){}\nprivate void appendFailure(String kind, Test test, Throwable t){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.Test": "",
+    "junit.framework.TestResult": "* Gets the number of detected failures.\r\n\t \npublic synchronized int failureCount() {\r\n\t\treturn fFailures.size();\r\n\t}\n\r\n\t * Gets the number of detected errors.\r\n\t \npublic synchronized int errorCount() {\r\n\t\treturn fErrors.size();\r\n\t}",
+    "junit.runner.BaseTestRunner": "* Truncates a String to the maximum length.\r\n\t \npublic static String truncate(String s) {\r\n\t\tif (fgMaxMessageLength != -1 && s.length() > fgMaxMessageLength)\r\n\t\t\ts= s.substring(0, fgMaxMessageLength)+\"...\";\r\n\t\treturn s;\r\n\t}",
+    "junit.awtui.TestRunner": "public void failureSelected() {\r\n\t\tfRerunButton.setEnabled(isErrorSelected());\r\n\t\tshowErrorTrace();\r\n\t}\nprivate void appendFailure(String kind, Test test, Throwable t) {\r\n\t\tkind+= \": \" + test;\r\n\t\tString msg= t.getMessage();\r\n\t\tif (msg != null) {\r\n\t\t\tkind+= \":\" + truncate(msg);\r\n\t\t}\r\n\t\tfFailureList.add(kind);\r\n\t\tfExceptions.addElement(t);\r\n\t\tfFailedTests.addElement(test);\r\n\t\tif (fFailureList.getItemCount() == 1) {\r\n\t\t\tfFailureList.select(0);\r\n\t\t\tfailureSelected();\r\n\t\t}\r\n\t}"
+  }
+}

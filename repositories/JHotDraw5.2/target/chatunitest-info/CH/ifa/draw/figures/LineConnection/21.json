@@ -1,0 +1,27 @@
+{
+  "className": "LineConnection",
+  "methodName": "removePointAt",
+  "brief": "public void removePointAt(int i){}",
+  "methodSignature": "removePointAt(int)",
+  "sourceCode": "public void removePointAt(int i) {\n        super.removePointAt(i);\n        layoutConnection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "removePointAt(int)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "layoutConnection()"
+    ]
+  },
+  "full_method_info": "/**\n * Removes the point and updates the connection.\n */\npublic void removePointAt(int i) {\n    super.removePointAt(i);\n    layoutConnection();\n}",
+  "method_comment": "\n     * Removes the point and updates the connection.\n     ",
+  "method_annotation": ""
+}

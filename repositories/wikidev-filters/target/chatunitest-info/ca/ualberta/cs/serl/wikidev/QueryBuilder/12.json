@@ -1,0 +1,35 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertFilesBuildingData",
+  "brief": "public static String insertFilesBuildingData(String type, String week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, String lastEditor, Timestamp created, Timestamp lastModified){}",
+  "methodSignature": "insertFilesBuildingData(String, String, int, int, int, int, String, int, String, Timestamp, Timestamp)",
+  "sourceCode": "public static String insertFilesBuildingData(String type, String week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, String lastEditor, Timestamp created, Timestamp lastModified) {\n\t\treturn \"insert into wikidev_wikidev3d_files_city (type, week, height, neighborhoodX, neighborhoodY, cityBlock, url, project_id, last_editor, created, last_modified) values (\\'\"+type+\"\\', \\'\"+week+\"\\', \\'\"+height+\"\\', \\'\"+neighborhoodX+\"\\', \\'\"+neighborhoodY+\"\\', \\'\"+cityBlock+\"\\', \\'\"+url+\"\\', \\'\"+projectid+\"\\', \\'\"+lastEditor+\"\\', \\'\"+created.toString()+\"\\', \\'\"+lastModified.toString()+\"\\')\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String",
+    "int",
+    "int",
+    "int",
+    "int",
+    "String",
+    "int",
+    "String",
+    "Timestamp",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public static String insertFilesBuildingData(String type, String week, int height, int neighborhoodX, int neighborhoodY, int cityBlock, String url, int projectid, String lastEditor, Timestamp created, Timestamp lastModified) {\n    return \"insert into wikidev_wikidev3d_files_city (type, week, height, neighborhoodX, neighborhoodY, cityBlock, url, project_id, last_editor, created, last_modified) values (\\'\" + type + \"\\', \\'\" + week + \"\\', \\'\" + height + \"\\', \\'\" + neighborhoodX + \"\\', \\'\" + neighborhoodY + \"\\', \\'\" + cityBlock + \"\\', \\'\" + url + \"\\', \\'\" + projectid + \"\\', \\'\" + lastEditor + \"\\', \\'\" + created.toString() + \"\\', \\'\" + lastModified.toString() + \"\\')\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

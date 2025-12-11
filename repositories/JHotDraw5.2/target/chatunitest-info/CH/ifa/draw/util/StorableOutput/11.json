@@ -1,0 +1,18 @@
+{
+  "className": "StorableOutput",
+  "methodName": "decrementIndent",
+  "brief": "private void decrementIndent(){}",
+  "methodSignature": "decrementIndent()",
+  "sourceCode": "private void decrementIndent() {\n        fIndent -= 4;\n        if (fIndent < 0) fIndent = 0;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "private void decrementIndent() {\n    fIndent -= 4;\n    if (fIndent < 0)\n        fIndent = 0;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

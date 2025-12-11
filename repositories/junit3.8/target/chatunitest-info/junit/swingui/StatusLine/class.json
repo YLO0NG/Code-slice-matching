@@ -1,0 +1,67 @@
+{
+  "fullClassName": "junit.swingui.StatusLine",
+  "className": "StatusLine",
+  "index": 41,
+  "modifier": "[public ]",
+  "extend": "[JTextField]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "public class StatusLine",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import javax.swing.*;",
+    "import javax.swing.border.BevelBorder;"
+  ],
+  "fields": [
+    "public static final Font PLAIN_FONT= new Font(\"dialog\", Font.PLAIN, 12);",
+    "public static final Font BOLD_FONT= new Font(\"dialog\", Font.BOLD, 12);"
+  ],
+  "superClasses": [
+    "JTextField"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "showInfo(String)": "0",
+    "showError(String)": "1",
+    "clear()": "2",
+    "StatusLine(int)": "3"
+  },
+  "methodsBrief": [
+    "public void showInfo(String message){}",
+    "public void showError(String status){}",
+    "public void clear(){}",
+    "public StatusLine(int preferredWidth){}"
+  ],
+  "constructorSigs": [
+    "StatusLine(int)"
+  ],
+  "constructorBrief": [
+    "public StatusLine(int preferredWidth){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "javax.swing.JTextField": [
+      "getPreferredSize()",
+      "setFont(Font)"
+    ],
+    "javax.swing.text.JTextComponent": [
+      "setEditable(boolean)"
+    ],
+    "javax.swing.JComponent": [
+      "setBorder(Border)",
+      "setPreferredSize(Dimension)"
+    ],
+    "javax.swing.BorderFactory": [
+      "createBevelBorder(int)"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.*;\r\nimport javax.swing.*;\r\nimport javax.swing.border.BevelBorder;\r\n\r\n/**\r\n * A status line component.\r\n */\r\npublic class StatusLine extends JTextField {\r\n\r\n    public static final Font PLAIN_FONT = new Font(\"dialog\", Font.PLAIN, 12);\r\n\r\n    public static final Font BOLD_FONT = new Font(\"dialog\", Font.BOLD, 12);\r\n\r\n    public StatusLine(int preferredWidth) {\r\n        super();\r\n        setFont(BOLD_FONT);\r\n        setEditable(false);\r\n        setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));\r\n        Dimension d = getPreferredSize();\r\n        d.width = preferredWidth;\r\n        setPreferredSize(d);\r\n    }\r\n\r\n    public void showInfo(String message) {\r\n        setFont(PLAIN_FONT);\r\n        setForeground(Color.black);\r\n        setText(message);\r\n    }\r\n\r\n    public void showError(String status) {\r\n        setFont(BOLD_FONT);\r\n        setForeground(Color.red);\r\n        setText(status);\r\n        setToolTipText(status);\r\n    }\r\n\r\n    public void clear() {\r\n        setText(\"\");\r\n        setToolTipText(null);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A status line component.\r\n */\r\npublic class StatusLine extends JTextField {\r\n\r\n    public static final Font PLAIN_FONT = new Font(\"dialog\", Font.PLAIN, 12);\r\n\r\n    public static final Font BOLD_FONT = new Font(\"dialog\", Font.BOLD, 12);\r\n\r\n    public StatusLine(int preferredWidth) {\r\n        super();\r\n        setFont(BOLD_FONT);\r\n        setEditable(false);\r\n        setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));\r\n        Dimension d = getPreferredSize();\r\n        d.width = preferredWidth;\r\n        setPreferredSize(d);\r\n    }\r\n\r\n    public void showInfo(String message) {\r\n        setFont(PLAIN_FONT);\r\n        setForeground(Color.black);\r\n        setText(message);\r\n    }\r\n\r\n    public void showError(String status) {\r\n        setFont(BOLD_FONT);\r\n        setForeground(Color.red);\r\n        setText(status);\r\n        setToolTipText(status);\r\n    }\r\n\r\n    public void clear() {\r\n        setText(\"\");\r\n        setToolTipText(null);\r\n    }\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "createCounterPanel",
+  "brief": "protected Panel createCounterPanel(){}",
+  "methodSignature": "createCounterPanel()",
+  "sourceCode": "protected Panel createCounterPanel() {\r\n\t\tPanel numbersPanel= new Panel(new GridBagLayout());\r\n\t\t/*{*/GridBagConstraints constraints= new GridBagConstraints();\r\n\t\tconstraints.gridx= 0;\r\n\t\tconstraints.gridy= 0;\r\n\t\tconstraints.gridwidth= 1;\r\n\t\tconstraints.gridheight= 1;\r\n\t\tconstraints.weightx= 0.0;\r\n\t\tconstraints.weighty= 0.0;\r\n\t\tconstraints.anchor= GridBagConstraints.CENTER;\r\n\t\tconstraints.fill= GridBagConstraints.NONE;\r\n\t\tconstraints.insets= new Insets(0, 0, 0, 0);\r\n\t\tnumbersPanel.add(new Label(\"Runs:\"), constraints);/*}*/\t\r\n\t\taddToCounterPanel(\r\n\t\t\tnumbersPanel,\r\n\t\t\tfNumberOfRuns, \r\n          \t1, 0, 1, 1, 0.33, 0.0,\r\n          \tGridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,\r\n          \tnew Insets(0, 8, 0, 40)\r\n\t\t);\r\n\t\taddToCounterPanel(\r\n\t\t\tnumbersPanel,\r\n\t\t\tnew Label(\"Errors:\"),\r\n          \t2, 0, 1, 1, 0.0, 0.0,\r\n          \tGridBagConstraints.CENTER, GridBagConstraints.NONE,\r\n          \tnew Insets(0, 8, 0, 0)\r\n\t\t);\r\n\t\taddToCounterPanel(\r\n\t\t\tnumbersPanel,\r\n\t\t\tfNumberOfErrors,\r\n          \t3, 0, 1, 1, 0.33, 0.0,\r\n          \tGridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,\r\n          \tnew Insets(0, 8, 0, 40)\r\n\t\t);\r\n\t\taddToCounterPanel(\r\n\t\t\tnumbersPanel,\r\n\t\t\tnew Label(\"Failures:\"),\r\n          \t4, 0, 1, 1, 0.0, 0.0,\r\n          \tGridBagConstraints.CENTER, GridBagConstraints.NONE,\r\n          \tnew Insets(0, 8, 0, 0)\r\n\t\t);\t\r\n\t\taddToCounterPanel(\r\n\t\t\tnumbersPanel,\r\n\t\t\tfNumberOfFailures,\r\n          \t5, 0, 1, 1, 0.33, 0.0,\r\n          \tGridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,\r\n          \tnew Insets(0, 8, 0, 0) \r\n\t\t);\r\n\t\treturn numbersPanel;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "add(Component, Object)"
+    ],
+    "junit.awtui.TestRunner": [
+      "addToCounterPanel(Panel, Component, int, int, int, int, double, double, int, int, Insets)"
+    ]
+  },
+  "full_method_info": "protected Panel createCounterPanel() {\r\n    Panel numbersPanel = new Panel(new GridBagLayout());\r\n    /*{*/\r\n    GridBagConstraints constraints = new GridBagConstraints();\r\n    constraints.gridx = 0;\r\n    constraints.gridy = 0;\r\n    constraints.gridwidth = 1;\r\n    constraints.gridheight = 1;\r\n    constraints.weightx = 0.0;\r\n    constraints.weighty = 0.0;\r\n    constraints.anchor = GridBagConstraints.CENTER;\r\n    constraints.fill = GridBagConstraints.NONE;\r\n    constraints.insets = new Insets(0, 0, 0, 0);\r\n    numbersPanel.add(new Label(\"Runs:\"), constraints);\r\n    /*}*/\r\n    addToCounterPanel(numbersPanel, fNumberOfRuns, 1, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 40));\r\n    addToCounterPanel(numbersPanel, new Label(\"Errors:\"), 2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 8, 0, 0));\r\n    addToCounterPanel(numbersPanel, fNumberOfErrors, 3, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 40));\r\n    addToCounterPanel(numbersPanel, new Label(\"Failures:\"), 4, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 8, 0, 0));\r\n    addToCounterPanel(numbersPanel, fNumberOfFailures, 5, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n    return numbersPanel;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

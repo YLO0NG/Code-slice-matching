@@ -1,0 +1,18 @@
+{
+  "className": "TestResult",
+  "methodName": "stop",
+  "brief": "public synchronized void stop(){}",
+  "methodSignature": "stop()",
+  "sourceCode": "public synchronized void stop() {\r\n\t\tfStop= true;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Marks that the test run should stop.\r\n */\r\npublic synchronized void stop() {\r\n    fStop = true;\r\n}",
+  "method_comment": "\r\n\t * Marks that the test run should stop.\r\n\t ",
+  "method_annotation": ""
+}

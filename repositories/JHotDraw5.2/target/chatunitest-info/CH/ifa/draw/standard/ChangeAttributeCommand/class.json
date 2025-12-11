@@ -1,0 +1,55 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ChangeAttributeCommand",
+  "className": "ChangeAttributeCommand",
+  "index": 110,
+  "modifier": "[public ]",
+  "extend": "[Command]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public  class ChangeAttributeCommand",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Color;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private DrawingView fView;",
+    "private String      fAttribute;",
+    "private Object      fValue;"
+  ],
+  "superClasses": [
+    "Command"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "execute()": "0",
+    "isExecutable()": "1",
+    "ChangeAttributeCommand(String, String, Object, DrawingView)": "2"
+  },
+  "methodsBrief": [
+    "public void execute(){}",
+    "public boolean isExecutable(){}",
+    "public ChangeAttributeCommand(String name, String attributeName,\r\n                           Object value, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "ChangeAttributeCommand(String, String, Object, DrawingView)"
+  ],
+  "constructorBrief": [
+    "public ChangeAttributeCommand(String name, String attributeName,\r\n                           Object value, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ChangeAttributeCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.Color;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * Command to change a named figure attribute.\n */\npublic class ChangeAttributeCommand extends Command {\n\n    private DrawingView fView;\n\n    private String fAttribute;\n\n    private Object fValue;\n\n    public ChangeAttributeCommand(String name, String attributeName, Object value, DrawingView view) {\n        super(name);\n        fAttribute = attributeName;\n        fValue = value;\n        fView = view;\n    }\n\n    public void execute() {\n        FigureEnumeration k = fView.selectionElements();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            f.setAttribute(fAttribute, fValue);\n        }\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Command to change a named figure attribute.\n */\npublic class ChangeAttributeCommand extends Command {\n\n    private DrawingView fView;\n\n    private String fAttribute;\n\n    private Object fValue;\n\n    public ChangeAttributeCommand(String name, String attributeName, Object value, DrawingView view) {\n        super(name);\n        fAttribute = attributeName;\n        fValue = value;\n        fView = view;\n    }\n\n    public void execute() {\n        FigureEnumeration k = fView.selectionElements();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n            f.setAttribute(fAttribute, fValue);\n        }\n        fView.checkDamage();\n    }\n\n    public boolean isExecutable() {\n        return fView.selectionCount() > 0;\n    }\n}",
+  "subClasses": []
+}

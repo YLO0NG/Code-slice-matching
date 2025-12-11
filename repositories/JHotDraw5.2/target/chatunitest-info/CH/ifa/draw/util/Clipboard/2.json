@@ -1,0 +1,18 @@
+{
+  "className": "Clipboard",
+  "methodName": "getContents",
+  "brief": "public Object getContents(){}",
+  "methodSignature": "getContents()",
+  "sourceCode": "public Object getContents() {\n        return fContents;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the contents of the clipboard.\n */\npublic Object getContents() {\n    return fContents;\n}",
+  "method_comment": "\n     * Gets the contents of the clipboard.\n     ",
+  "method_annotation": ""
+}

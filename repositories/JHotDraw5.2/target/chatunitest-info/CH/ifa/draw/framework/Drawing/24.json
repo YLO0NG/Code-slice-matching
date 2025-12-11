@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "figureRequestRemove",
+  "brief": "public void figureRequestRemove(FigureChangeEvent e);",
+  "methodSignature": "figureRequestRemove(FigureChangeEvent)",
+  "sourceCode": "public void figureRequestRemove(FigureChangeEvent e);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "/**\n * Handles a removeFrfigureRequestRemove request that\n * is passed up the figure container hierarchy.\n * @see FigureChangeListener\n */\npublic void figureRequestRemove(FigureChangeEvent e);",
+  "method_comment": "\n     * Handles a removeFrfigureRequestRemove request that\n     * is passed up the figure container hierarchy.\n     * @see FigureChangeListener\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "targetClass": "junit.swingui.TestRunner",
+  "targetMethod": "runTest(Test)",
+  "dependentFields": {
+    "junit.framework.Test": "",
+    "junit.swingui.CounterPanel": "private JTextField fNumberOfErrors;\nprivate JTextField fNumberOfFailures;\nprivate JTextField fNumberOfRuns;\nprivate Icon fFailureIcon= TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\nprivate Icon fErrorIcon= TestRunner.getIconResource(getClass(), \"icons/error.gif\");\nprivate int fTotal;",
+    "junit.runner.FailureDetailView": "",
+    "junit.framework.TestResult": "protected Vector fFailures;\nprotected Vector fErrors;\nprotected Vector fListeners;\nprotected int fRunTests;\nprivate boolean fStop;",
+    "junit.swingui.TestRunner": "private static Font PLAIN_FONT= StatusLine.PLAIN_FONT;\nprivate static Font BOLD_FONT= StatusLine.BOLD_FONT;\nprivate static final int GAP= 4;\nprivate static final int HISTORY_LENGTH= 5;\nprotected JFrame fFrame;\nprivate Thread fRunner;\nprivate TestResult fTestResult;\nprivate JComboBox fSuiteCombo;\nprivate ProgressBar fProgressIndicator;\nprivate DefaultListModel fFailures;\nprivate JLabel fLogo;\nprivate CounterPanel fCounterPanel;\nprivate JButton fRun;\nprivate JButton fQuitButton;\nprivate JButton fRerunButton;\nprivate StatusLine fStatusLine;\nprivate FailureDetailView fFailureView;\nprivate JTabbedPane fTestViewTab;\nprivate JCheckBox fUseLoadingRunner;\nprivate Vector fTestRunViews= new Vector();\nprivate static final String TESTCOLLECTOR_KEY= \"TestCollectorClass\";\nprivate static final String FAILUREDETAILVIEW_KEY= \"FailureViewClass\";",
+    "junit.swingui.ProgressBar": "boolean fError= false;"
+  },
+  "dependentMethods": {
+    "junit.framework.Test": "",
+    "junit.swingui.CounterPanel": "public void reset(){}",
+    "junit.runner.FailureDetailView": "public void clear();",
+    "junit.framework.TestResult": "public synchronized void stop(){}",
+    "junit.swingui.TestRunner": "private void doRunTest(final Test testSuite){}",
+    "junit.swingui.ProgressBar": "public void reset(){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.Test": "",
+    "junit.swingui.CounterPanel": "public void reset() {\r\n\t\tsetLabelValue(fNumberOfErrors, 0);\r\n\t\tsetLabelValue(fNumberOfFailures, 0);\r\n\t\tsetLabelValue(fNumberOfRuns, 0);\r\n\t\tfTotal= 0;\r\n\t}",
+    "junit.runner.FailureDetailView": "* Clears the view\r\n\t \npublic void clear();",
+    "junit.framework.TestResult": "* Marks that the test run should stop.\r\n\t \npublic synchronized void stop() {\r\n\t\tfStop= true;\r\n\t}",
+    "junit.swingui.TestRunner": "private void doRunTest(final Test testSuite) {\r\n\t\tsetButtonLabel(fRun, \"Stop\");\r\n\t\tfRunner= new Thread(\"TestRunner-Thread\") {\r\n\t\t\tpublic void run() {\r\n\t\t\t\tTestRunner.this.start(testSuite);\r\n\t\t\t\tpostInfo(\"Running...\");\r\n\r\n\t\t\t\tlong startTime= System.currentTimeMillis();\r\n\t\t\t\ttestSuite.run(fTestResult);\r\n\r\n\t\t\t\tif (fTestResult.shouldStop()) {\r\n\t\t\t\t\tpostStatus(\"Stopped\");\r\n\t\t\t\t} else {\r\n\t\t\t\t\tlong endTime= System.currentTimeMillis();\r\n\t\t\t\t\tlong runTime= endTime-startTime;\r\n\t\t\t\t\tpostInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");\r\n\t\t\t\t}\r\n\t\t\t\trunFinished(testSuite);\r\n\t\t\t\tsetButtonLabel(fRun, \"Run\");\r\n\t\t\t\tfRunner= null;\r\n\t\t\t\tSystem.gc();\r\n\t\t\t}\r\n\t\t};\r\n\t\t// make sure that the test result is created before we start the\r\n\t\t// test runner thread so that listeners can register for it.\r\n\t\tfTestResult= createTestResult();\r\n\t\tfTestResult.addListener(TestRunner.this);\r\n\t\taboutToStart(testSuite);\r\n\r\n\t\tfRunner.start();\r\n\t}",
+    "junit.swingui.ProgressBar": "public void reset() {\r\n\t\tfError= false;\r\n\t\tsetForeground(getStatusColor());\r\n\t\tsetValue(0);\r\n\t}"
+  }
+}

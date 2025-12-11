@@ -1,0 +1,40 @@
+{
+  "className": "Layout",
+  "methodName": "redistributeArtifactsInBlock",
+  "brief": "private void redistributeArtifactsInBlock(CityBlock block,\r\n\t\t\tdouble[][] subblocks){}",
+  "methodSignature": "redistributeArtifactsInBlock(CityBlock, double[][])",
+  "sourceCode": "private void redistributeArtifactsInBlock(CityBlock block,\n\t\t\tdouble[][] subblocks) {\n\t\tCollection<IArtifact> artifacts = new ArrayList<IArtifact>();\n\t\tartifacts.addAll(block.getArtifacts().keySet());\n\t\tblock.getArtifacts().clear();\n\t\tfor (IArtifact artifact : artifacts) {\n\t\t\tdouble minDist = Double.MAX_VALUE;\n\t\t\tint minSubblock = -1;\n\t\t\tfor (int i = 0; i < subblocks.length; i++) {\n\t\t\t\tif (subblocks[i][2] != 1) {\n\t\t\t\t\tdouble[] subcenter = new double[2];\n\t\t\t\t\tsubcenter[0] = subblocks[i][0];\n\t\t\t\t\tsubcenter[1] = subblocks[i][1];\n\t\t\t\t\tif (getEuclideanDistance(artifact.getCoords(), subcenter) < minDist) {\n\t\t\t\t\t\tminDist = getEuclideanDistance(artifact.getCoords(),\n\t\t\t\t\t\t\t\tsubcenter);\n\t\t\t\t\t\tminSubblock = i;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\tsubblocks[minSubblock][2] = 1;\n\t\t\tblock.addArtifact(artifact, minSubblock);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "CityBlock",
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": [
+      "getArtifacts()",
+      "addArtifact(IArtifact, int)"
+    ],
+    "double[]": [],
+    "java.util.Collection": [
+      "addAll(Collection<? extends E>)"
+    ],
+    "java.util.HashMap": [
+      "keySet()",
+      "clear()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "getEuclideanDistance(double[], double[])"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getCoords()"
+    ]
+  },
+  "full_method_info": "private void redistributeArtifactsInBlock(CityBlock block, double[][] subblocks) {\n    Collection<IArtifact> artifacts = new ArrayList<IArtifact>();\n    artifacts.addAll(block.getArtifacts().keySet());\n    block.getArtifacts().clear();\n    for (IArtifact artifact : artifacts) {\n        double minDist = Double.MAX_VALUE;\n        int minSubblock = -1;\n        for (int i = 0; i < subblocks.length; i++) {\n            if (subblocks[i][2] != 1) {\n                double[] subcenter = new double[2];\n                subcenter[0] = subblocks[i][0];\n                subcenter[1] = subblocks[i][1];\n                if (getEuclideanDistance(artifact.getCoords(), subcenter) < minDist) {\n                    minDist = getEuclideanDistance(artifact.getCoords(), subcenter);\n                    minSubblock = i;\n                }\n            }\n        }\n        subblocks[minSubblock][2] = 1;\n        block.addArtifact(artifact, minSubblock);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

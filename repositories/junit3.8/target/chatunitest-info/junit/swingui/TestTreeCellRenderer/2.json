@@ -1,0 +1,50 @@
+{
+  "className": "TestTreeCellRenderer",
+  "methodName": "getTreeCellRendererComponent",
+  "brief": "public Component getTreeCellRendererComponent(JTree tree, Object value,\r\r\n\t\t\t\tboolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus){}",
+  "methodSignature": "getTreeCellRendererComponent(JTree, Object, boolean, boolean, boolean, int, boolean)",
+  "sourceCode": "public Component getTreeCellRendererComponent(JTree tree, Object value,\r\n\t\t\t\tboolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {\r\n\t\t\t\r\n\t\t\tComponent c= super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);\r\n\t  \t\tTreeModel model= tree.getModel();\r\n\t  \t\tif (model instanceof TestTreeModel) {\t\r\n\t\t\t\tTestTreeModel testModel= (TestTreeModel)model;\r\n\t\t\t\tTest t= (Test)value;\r\n\t\t\t\tString s= \"\";\r\n\t    \t\tif (testModel.isFailure(t)) {\r\n\t    \t\t\tif (fFailureIcon != null)\r\n\t    \t\t\t\tsetIcon(fFailureIcon);\r\n\t    \t\t\ts= \" - Failed\";\r\n\t    \t\t}\r\n\t    \t\telse if (testModel.isError(t)) {\r\n\t    \t\t\tif (fErrorIcon != null)\r\n\t    \t\t\t\tsetIcon(fErrorIcon);\r\n\t    \t\t\ts= \" - Error\";\r\n\t    \t\t}\r\n\t    \t\telse if (testModel.wasRun(t)) {\r\n\t    \t\t\tif (fOkIcon != null)\r\n\t    \t\t\t\tsetIcon(fOkIcon);\r\n\t    \t\t\ts= \" - Passed\";\r\n\t    \t\t}\r\n\t    \t\tif (c instanceof JComponent)\r\n\t    \t\t\t((JComponent)c).setToolTipText(getText()+s);\r\n\t  \t\t}\r\n\t  \t\tsetText(stripParenthesis(value));\r\n\t\t\treturn c;\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JTree",
+    "Object",
+    "boolean",
+    "boolean",
+    "boolean",
+    "int",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "javax.swing.JTree": [
+      "getModel()"
+    ],
+    "java.lang.Object": [],
+    "javax.swing.tree.DefaultTreeCellRenderer": [
+      "getTreeCellRendererComponent(JTree, Object, boolean, boolean, boolean, int, boolean)"
+    ],
+    "junit.swingui.TestTreeModel": [
+      "isFailure(Test)",
+      "isError(Test)",
+      "wasRun(Test)"
+    ],
+    "javax.swing.JLabel": [
+      "setIcon(Icon)",
+      "getText()",
+      "setText(String)"
+    ],
+    "javax.swing.JComponent": [
+      "setToolTipText(String)"
+    ],
+    "junit.swingui.TestSuitePanel.TestTreeCellRenderer": [
+      "stripParenthesis(Object)"
+    ]
+  },
+  "full_method_info": "public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {\r\n    Component c = super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);\r\n    TreeModel model = tree.getModel();\r\n    if (model instanceof TestTreeModel) {\r\n        TestTreeModel testModel = (TestTreeModel) model;\r\n        Test t = (Test) value;\r\n        String s = \"\";\r\n        if (testModel.isFailure(t)) {\r\n            if (fFailureIcon != null)\r\n                setIcon(fFailureIcon);\r\n            s = \" - Failed\";\r\n        } else if (testModel.isError(t)) {\r\n            if (fErrorIcon != null)\r\n                setIcon(fErrorIcon);\r\n            s = \" - Error\";\r\n        } else if (testModel.wasRun(t)) {\r\n            if (fOkIcon != null)\r\n                setIcon(fOkIcon);\r\n            s = \" - Passed\";\r\n        }\r\n        if (c instanceof JComponent)\r\n            ((JComponent) c).setToolTipText(getText() + s);\r\n    }\r\n    setText(stripParenthesis(value));\r\n    return c;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

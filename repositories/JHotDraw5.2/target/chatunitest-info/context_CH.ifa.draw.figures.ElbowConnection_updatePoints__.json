@@ -1,0 +1,22 @@
+{
+  "targetClass": "CH.ifa.draw.figures.ElbowConnection",
+  "targetMethod": "updatePoints()",
+  "dependentFields": {
+    "CH.ifa.draw.standard.AbstractFigure": "private transient FigureChangeListener fListener;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int abstractFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.figures.LineConnection": "protected Connector    fStart = null;\nprotected Connector    fEnd = null;\nprivate static final long serialVersionUID = 6883731614578414801L;\nprivate int lineConnectionSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.Connector": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": "public void willChange(){}\npublic void changed(){}",
+    "CH.ifa.draw.framework.Figure": "public Rectangle displayBox();",
+    "CH.ifa.draw.figures.LineConnection": "public Point startPoint(){}\npublic Point endPoint(){}\npublic Connector start(){}\npublic Connector end(){}",
+    "CH.ifa.draw.framework.Connector": "public abstract Figure owner();"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.AbstractFigure": "* Informes that a figure is about to change something that\n     * affects the contents of its display box.\n     *\n     * @see Figure#willChange\n     \npublic void willChange() {\n        invalidate();\n    }\n\n     * Informs that a figure changed the area of its display box.\n     *\n     * @see FigureChangeEvent\n     * @see Figure#changed\n     \npublic void changed() {\n        invalidate();\n        if (fListener != null)\n            fListener.figureChanged(new FigureChangeEvent(this));\n\n    }",
+    "CH.ifa.draw.framework.Figure": "* Gets the display box of a figure\n     * @see #basicDisplayBox\n     \npublic Rectangle displayBox();",
+    "CH.ifa.draw.figures.LineConnection": "* Gets the start point.\n     \npublic Point startPoint(){\n        Point p = (Point)fPoints.firstElement();\n        return new Point(p.x, p.y);\n    }\n\n     * Gets the end point.\n     \npublic Point endPoint() {\n        Point p = (Point)fPoints.lastElement();\n        return new Point(p.x, p.y);\n    }\n\n     * Gets the start figure of the connection.\n     \npublic Connector start() {\n        return fStart;\n    }\n\n     * Gets the end figure of the connection.\n     \npublic Connector end() {\n        return fEnd;\n    }",
+    "CH.ifa.draw.framework.Connector": "* Gets the connector's owner.\n     \npublic abstract Figure owner();"
+  }
+}

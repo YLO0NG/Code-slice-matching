@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "removeTreeModelListener",
+  "brief": "public void removeTreeModelListener(TreeModelListener l){}",
+  "methodSignature": "removeTreeModelListener(TreeModelListener)",
+  "sourceCode": "public void removeTreeModelListener(TreeModelListener l) {\r\n\t\tfModelListeners.removeElement(l);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TreeModelListener"
+  ],
+  "dependentMethods": {
+    "javax.swing.event.TreeModelListener": [],
+    "java.util.Vector": [
+      "removeElement(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Removes a TestModelListener\r\n */\r\npublic void removeTreeModelListener(TreeModelListener l) {\r\n    fModelListeners.removeElement(l);\r\n}",
+  "method_comment": "\r\n\t * Removes a TestModelListener\r\n\t ",
+  "method_annotation": ""
+}

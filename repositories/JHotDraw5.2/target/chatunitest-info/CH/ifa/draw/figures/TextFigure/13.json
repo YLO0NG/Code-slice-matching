@@ -1,0 +1,31 @@
+{
+  "className": "TextFigure",
+  "methodName": "setText",
+  "brief": "public void setText(String newText){}",
+  "methodSignature": "setText(String)",
+  "sourceCode": "public void setText(String newText) {\n        if (!newText.equals(fText)) {\n            willChange();\n            fText = new String(newText);\n            markDirty();\n            changed();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "changed()",
+      "markDirty()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the text shown by the text figure.\n */\npublic void setText(String newText) {\n    if (!newText.equals(fText)) {\n        willChange();\n        fText = new String(newText);\n        markDirty();\n        changed();\n    }\n}",
+  "method_comment": "\n     * Sets the text shown by the text figure.\n     ",
+  "method_annotation": ""
+}

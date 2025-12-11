@@ -1,0 +1,44 @@
+{
+  "className": "FollowURLTool",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n\t    Figure figure = drawing().findFigureInside(x, y);\n\t    if (figure == null)\n\t        return;\n\t    String urlstring = (String) figure.getAttribute(\"URL\");\n\t    if (urlstring == null)\n\t        return;\n\n\t    try {\n    \t    URL url = new URL(fApplet.getDocumentBase(), urlstring);\n\t\t\tfApplet.getAppletContext().showDocument(url);\n\t\t} catch (MalformedURLException exception) {\n\t\t\tfApplet.showStatus(exception.toString());\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "java.applet.Applet": [
+      "showStatus(String)",
+      "getAppletContext()",
+      "getDocumentBase()"
+    ],
+    "java.applet.AppletContext": [
+      "showDocument(URL)"
+    ],
+    "java.lang.Throwable": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse up in the drawing view.\n */\npublic void mouseUp(MouseEvent e, int x, int y) {\n    Figure figure = drawing().findFigureInside(x, y);\n    if (figure == null)\n        return;\n    String urlstring = (String) figure.getAttribute(\"URL\");\n    if (urlstring == null)\n        return;\n    try {\n        URL url = new URL(fApplet.getDocumentBase(), urlstring);\n        fApplet.getAppletContext().showDocument(url);\n    } catch (MalformedURLException exception) {\n        fApplet.showStatus(exception.toString());\n    }\n}",
+  "method_comment": "\n     * Handles mouse up in the drawing view.\n     ",
+  "method_annotation": ""
+}

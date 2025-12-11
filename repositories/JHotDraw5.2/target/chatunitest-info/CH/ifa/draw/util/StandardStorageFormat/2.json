@@ -1,0 +1,18 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "getFileExtension",
+  "brief": "public String getFileExtension(){}",
+  "methodSignature": "getFileExtension()",
+  "sourceCode": "public String getFileExtension() {\n\t\treturn myFileExtension;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the file extension for the storage format\n *\n * @return file extension\n */\npublic String getFileExtension() {\n    return myFileExtension;\n}",
+  "method_comment": "\n\t * Return the file extension for the storage format\n\t *\n\t * @return file extension\n\t ",
+  "method_annotation": ""
+}

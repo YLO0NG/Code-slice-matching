@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setSubject",
+  "brief": "public void setSubject(String subject){}",
+  "methodSignature": "setSubject(String)",
+  "sourceCode": "public void setSubject(String subject) {\n\t\tthis.subject = subject;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param subject\n * @uml.property  name=\"subject\"\n */\npublic void setSubject(String subject) {\n    this.subject = subject;\n}",
+  "method_comment": "\n\t * @param subject\n\t * @uml.property  name=\"subject\"\n\t ",
+  "method_annotation": ""
+}

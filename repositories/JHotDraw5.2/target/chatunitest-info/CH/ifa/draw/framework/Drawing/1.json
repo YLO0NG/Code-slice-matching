@@ -1,0 +1,18 @@
+{
+  "className": "Drawing",
+  "methodName": "figures",
+  "brief": "public FigureEnumeration figures();",
+  "methodSignature": "figures()",
+  "sourceCode": "public FigureEnumeration figures();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns an enumeration to iterate in\n * Z-order back to front over the figures.\n */\npublic FigureEnumeration figures();",
+  "method_comment": "\n     * Returns an enumeration to iterate in\n     * Z-order back to front over the figures.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Message",
+  "methodName": "getCommunicationID",
+  "brief": "public int getCommunicationID(){}",
+  "methodSignature": "getCommunicationID()",
+  "sourceCode": "public int getCommunicationID() {\n\t\treturn communicationID;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"communicationID\"\n */\npublic int getCommunicationID() {\n    return communicationID;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"communicationID\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.swingui.TestRunner",
+  "targetMethod": "createQuitButton()",
+  "dependentFields": {
+    "junit.swingui.TestRunner": "private static Font PLAIN_FONT= StatusLine.PLAIN_FONT;\nprivate static Font BOLD_FONT= StatusLine.BOLD_FONT;\nprivate static final int GAP= 4;\nprivate static final int HISTORY_LENGTH= 5;\nprotected JFrame fFrame;\nprivate Thread fRunner;\nprivate TestResult fTestResult;\nprivate JComboBox fSuiteCombo;\nprivate ProgressBar fProgressIndicator;\nprivate DefaultListModel fFailures;\nprivate JLabel fLogo;\nprivate CounterPanel fCounterPanel;\nprivate JButton fRun;\nprivate JButton fQuitButton;\nprivate JButton fRerunButton;\nprivate StatusLine fStatusLine;\nprivate FailureDetailView fFailureView;\nprivate JTabbedPane fTestViewTab;\nprivate JCheckBox fUseLoadingRunner;\nprivate Vector fTestRunViews= new Vector();\nprivate static final String TESTCOLLECTOR_KEY= \"TestCollectorClass\";\nprivate static final String FAILUREDETAILVIEW_KEY= \"FailureViewClass\";"
+  },
+  "dependentMethods": {
+    "junit.swingui.TestRunner": "private void saveHistory() throws IOException{}"
+  },
+  "dependentMethodBodies": {
+    "junit.swingui.TestRunner": "private void saveHistory() throws IOException {\r\n\t\tBufferedWriter bw= new BufferedWriter(new FileWriter(getSettingsFile()));\r\n\t\ttry {\r\n\t\t\tfor (int i= 0; i < fSuiteCombo.getItemCount(); i++) {\r\n\t\t\t\tString testsuite= fSuiteCombo.getItemAt(i).toString();\r\n\t\t\t\tbw.write(testsuite, 0, testsuite.length());\r\n\t\t\t\tbw.newLine();\r\n\t\t\t}\r\n\t\t} finally {\r\n\t\t\tbw.close();\r\n\t\t}\r\n\t}"
+  }
+}

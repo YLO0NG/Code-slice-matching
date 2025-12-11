@@ -1,0 +1,32 @@
+{
+  "className": "BoxHandleKit",
+  "methodName": "addCornerHandles",
+  "brief": "static public void addCornerHandles(Figure f, Vector handles){}",
+  "methodSignature": "addCornerHandles(Figure, Vector)",
+  "sourceCode": "static public void addCornerHandles(Figure f, Vector handles) {\n        handles.addElement(southEast(f));\n        handles.addElement(southWest(f));\n        handles.addElement(northEast(f));\n        handles.addElement(northWest(f));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Vector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "CH.ifa.draw.standard.BoxHandleKit": [
+      "southWest(Figure)",
+      "northEast(Figure)",
+      "northWest(Figure)",
+      "southEast(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Fills the given Vector with handles at each corner of a\n * figure.\n */\nstatic public void addCornerHandles(Figure f, Vector handles) {\n    handles.addElement(southEast(f));\n    handles.addElement(southWest(f));\n    handles.addElement(northEast(f));\n    handles.addElement(northWest(f));\n}",
+  "method_comment": "\n     * Fills the given Vector with handles at each corner of a\n     * figure.\n     ",
+  "method_annotation": ""
+}

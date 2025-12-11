@@ -1,0 +1,20 @@
+{
+  "className": "Ticket",
+  "methodName": "setProject_name",
+  "brief": "public void setProject_name(int project){}",
+  "methodSignature": "setProject_name(int)",
+  "sourceCode": "public void setProject_name(int project) {\n\t\tthis.project = project;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setProject_name(int project) {\n    this.project = project;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

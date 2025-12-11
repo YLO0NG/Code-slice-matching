@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "getUsers",
+  "brief": "public HashSet<User> getUsers(){}",
+  "methodSignature": "getUsers()",
+  "sourceCode": "public HashSet<User> getUsers() {\n\t\treturn users;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public HashSet<User> getUsers() {\n    return users;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

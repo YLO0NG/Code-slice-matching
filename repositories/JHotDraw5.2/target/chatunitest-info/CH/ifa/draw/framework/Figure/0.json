@@ -1,0 +1,21 @@
+{
+  "className": "Figure",
+  "methodName": "moveBy",
+  "brief": "public void moveBy(int dx, int dy);",
+  "methodSignature": "moveBy(int, int)",
+  "sourceCode": "public void moveBy(int dx, int dy);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Moves the Figure to a new location.\n * @param x the x delta\n * @param y the y delta\n */\npublic void moveBy(int dx, int dy);",
+  "method_comment": "\n     * Moves the Figure to a new location.\n     * @param x the x delta\n     * @param y the y delta\n     ",
+  "method_annotation": ""
+}

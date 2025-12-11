@@ -1,0 +1,24 @@
+{
+  "className": "CounterPanel",
+  "methodName": "asString",
+  "brief": "private String asString(int value){}",
+  "methodSignature": "asString(int)",
+  "sourceCode": "private String asString(int value) {\r\n\t\treturn Integer.toString(value);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.Integer": [
+      "toString(int)"
+    ]
+  },
+  "full_method_info": "private String asString(int value) {\r\n    return Integer.toString(value);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

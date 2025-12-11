@@ -1,0 +1,23 @@
+{
+  "className": "Layouter",
+  "methodName": "layout",
+  "brief": "public Rectangle layout(Point origin, Point corner);",
+  "methodSignature": "layout(Point, Point)",
+  "sourceCode": "public Rectangle layout(Point origin, Point corner);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/**\n * Method which lays out a figure. It is called by the figure\n * if a layout task is to be performed. Implementing classes\n * specify a certain layout algorithm in this method.\n *\n * @param origin start point for the layout\n * @param corner minimum corner point for the layout\n */\npublic Rectangle layout(Point origin, Point corner);",
+  "method_comment": "\n\t * Method which lays out a figure. It is called by the figure\n\t * if a layout task is to be performed. Implementing classes\n\t * specify a certain layout algorithm in this method.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t ",
+  "method_annotation": ""
+}

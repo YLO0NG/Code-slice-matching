@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "getLinesadded",
+  "brief": "public int getLinesadded(){}",
+  "methodSignature": "getLinesadded()",
+  "sourceCode": "public int getLinesadded() {\n\t\treturn linesadded;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"linesadded\"\n */\npublic int getLinesadded() {\n    return linesadded;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"linesadded\"\n\t ",
+  "method_annotation": ""
+}

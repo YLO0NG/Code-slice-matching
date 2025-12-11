@@ -1,0 +1,18 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "getArtifactsChanged",
+  "brief": "public Set<IArtifact> getArtifactsChanged(){}",
+  "methodSignature": "getArtifactsChanged()",
+  "sourceCode": "public Set<IArtifact> getArtifactsChanged() {\n\t\treturn artifactsChanged;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"artifactsChanged\"\n */\npublic Set<IArtifact> getArtifactsChanged() {\n    return artifactsChanged;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"artifactsChanged\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,47 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.Layoutable",
+  "className": "Layoutable",
+  "index": 8,
+  "modifier": "[public ]",
+  "extend": "[Figure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public interface Layoutable",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.framework.Figure;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "Figure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "layout()": "0",
+    "setLayouter(Layouter)": "1",
+    "getLayouter()": "2"
+  },
+  "methodsBrief": [
+    "public void layout();",
+    "public void setLayouter(Layouter newLayouter);",
+    "public Layouter getLayouter();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "setLayouter(Layouter)",
+    "getLayouter()"
+  ],
+  "getterSetterBrief": [
+    "public void setLayouter(Layouter newLayouter);",
+    "public Layouter getLayouter();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Layouter.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport CH.ifa.draw.framework.Figure;\n\n/**\n * A Layoutable is a target for a Layouter who lays out the Layoutable\n * according to its layout algorithm\n *\n * @author Wolfram Kaiser\n */\npublic interface Layoutable extends Figure {\n\n    /**\n     * Layout the figure\n     */\n    public void layout();\n\n    /**\n     * Set the Layouter for this Layoutable\n     *\n     * @param newLayouter layouter\n     */\n    public void setLayouter(Layouter newLayouter);\n\n    /**\n     * Return the Layouter for this Layoutable\n     *\n     * @param layouter\n     */\n    public Layouter getLayouter();\n}\n",
+  "classDeclarationCode": "/**\n * A Layoutable is a target for a Layouter who lays out the Layoutable\n * according to its layout algorithm\n *\n * @author Wolfram Kaiser\n */\npublic interface Layoutable extends Figure {\n\n    /**\n     * Layout the figure\n     */\n    public void layout();\n\n    /**\n     * Set the Layouter for this Layoutable\n     *\n     * @param newLayouter layouter\n     */\n    public void setLayouter(Layouter newLayouter);\n\n    /**\n     * Return the Layouter for this Layoutable\n     *\n     * @param layouter\n     */\n    public Layouter getLayouter();\n}",
+  "subClasses": []
+}

@@ -1,0 +1,60 @@
+{
+  "fullClassName": "junit.framework.TestFailure",
+  "className": "TestFailure",
+  "index": 15,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public class TestFailure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.PrintWriter;",
+    "import java.io.StringWriter;"
+  ],
+  "fields": [
+    "protected Test fFailedTest;",
+    "protected Throwable fThrownException;"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "failedTest()": "0",
+    "thrownException()": "1",
+    "toString()": "2",
+    "trace()": "3",
+    "exceptionMessage()": "4",
+    "isFailure()": "5",
+    "TestFailure(Test, Throwable)": "6"
+  },
+  "methodsBrief": [
+    "public Test failedTest(){}",
+    "public Throwable thrownException(){}",
+    "public String toString(){}",
+    "public String trace(){}",
+    "public String exceptionMessage(){}",
+    "public boolean isFailure(){}",
+    "public TestFailure(Test failedTest, Throwable thrownException){}"
+  ],
+  "constructorSigs": [
+    "TestFailure(Test, Throwable)"
+  ],
+  "constructorBrief": [
+    "public TestFailure(Test failedTest, Throwable thrownException){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": []
+  },
+  "compilationUnitCode": "package junit.framework;\r\n\r\nimport java.io.PrintWriter;\r\nimport java.io.StringWriter;\r\n\r\n/**\r\n * A <code>TestFailure</code> collects a failed test together with\r\n * the caught exception.\r\n * @see TestResult\r\n */\r\npublic class TestFailure extends Object {\r\n\r\n    protected Test fFailedTest;\r\n\r\n    protected Throwable fThrownException;\r\n\r\n    public TestFailure(Test failedTest, Throwable thrownException) {\r\n        fFailedTest = failedTest;\r\n        fThrownException = thrownException;\r\n    }\r\n\r\n    /**\r\n     * Gets the failed test.\r\n     */\r\n    public Test failedTest() {\r\n        return fFailedTest;\r\n    }\r\n\r\n    /**\r\n     * Gets the thrown exception.\r\n     */\r\n    public Throwable thrownException() {\r\n        return fThrownException;\r\n    }\r\n\r\n    /**\r\n     * Returns a short description of the failure.\r\n     */\r\n    public String toString() {\r\n        StringBuffer buffer = new StringBuffer();\r\n        buffer.append(fFailedTest + \": \" + fThrownException.getMessage());\r\n        return buffer.toString();\r\n    }\r\n\r\n    public String trace() {\r\n        StringWriter stringWriter = new StringWriter();\r\n        PrintWriter writer = new PrintWriter(stringWriter);\r\n        thrownException().printStackTrace(writer);\r\n        StringBuffer buffer = stringWriter.getBuffer();\r\n        return buffer.toString();\r\n    }\r\n\r\n    public String exceptionMessage() {\r\n        return thrownException().getMessage();\r\n    }\r\n\r\n    public boolean isFailure() {\r\n        return thrownException() instanceof AssertionFailedError;\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A <code>TestFailure</code> collects a failed test together with\r\n * the caught exception.\r\n * @see TestResult\r\n */\r\npublic class TestFailure extends Object {\r\n\r\n    protected Test fFailedTest;\r\n\r\n    protected Throwable fThrownException;\r\n\r\n    public TestFailure(Test failedTest, Throwable thrownException) {\r\n        fFailedTest = failedTest;\r\n        fThrownException = thrownException;\r\n    }\r\n\r\n    /**\r\n     * Gets the failed test.\r\n     */\r\n    public Test failedTest() {\r\n        return fFailedTest;\r\n    }\r\n\r\n    /**\r\n     * Gets the thrown exception.\r\n     */\r\n    public Throwable thrownException() {\r\n        return fThrownException;\r\n    }\r\n\r\n    /**\r\n     * Returns a short description of the failure.\r\n     */\r\n    public String toString() {\r\n        StringBuffer buffer = new StringBuffer();\r\n        buffer.append(fFailedTest + \": \" + fThrownException.getMessage());\r\n        return buffer.toString();\r\n    }\r\n\r\n    public String trace() {\r\n        StringWriter stringWriter = new StringWriter();\r\n        PrintWriter writer = new PrintWriter(stringWriter);\r\n        thrownException().printStackTrace(writer);\r\n        StringBuffer buffer = stringWriter.getBuffer();\r\n        return buffer.toString();\r\n    }\r\n\r\n    public String exceptionMessage() {\r\n        return thrownException().getMessage();\r\n    }\r\n\r\n    public boolean isFailure() {\r\n        return thrownException() instanceof AssertionFailedError;\r\n    }\r\n}",
+  "subClasses": []
+}

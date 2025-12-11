@@ -1,0 +1,22 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "getFrameColor",
+  "brief": "public Color getFrameColor(){}",
+  "methodSignature": "getFrameColor()",
+  "sourceCode": "public Color getFrameColor() {\n        return (Color) getAttribute(\"FrameColor\");\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the frame color of a figure. This is a convenience\n * method.\n * @see #getAttribute\n */\npublic Color getFrameColor() {\n    return (Color) getAttribute(\"FrameColor\");\n}",
+  "method_comment": "\n     * Gets the frame color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     ",
+  "method_annotation": ""
+}

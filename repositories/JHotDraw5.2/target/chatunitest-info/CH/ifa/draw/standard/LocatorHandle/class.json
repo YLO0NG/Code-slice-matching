@@ -1,0 +1,60 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.LocatorHandle",
+  "className": "LocatorHandle",
+  "index": 132,
+  "modifier": "[public ]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class LocatorHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Locator       fLocator;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "locate()": "0",
+    "LocatorHandle(Figure, Locator)": "1"
+  },
+  "methodsBrief": [
+    "public Point locate(){}",
+    "public LocatorHandle(Figure owner, Locator l){}"
+  ],
+  "constructorSigs": [
+    "LocatorHandle(Figure, Locator)"
+  ],
+  "constructorBrief": [
+    "public LocatorHandle(Figure owner, Locator l){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Locator": []
+  },
+  "compilationUnitCode": "/*\n * @(#)LocatorHandle.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.Point;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A LocatorHandle implements a Handle by delegating the location requests to\n * a Locator object.\n *\n * @see Locator\n */\npublic class LocatorHandle extends AbstractHandle {\n\n    private Locator fLocator;\n\n    public LocatorHandle(Figure owner, Locator l) {\n        super(owner);\n        fLocator = l;\n    }\n\n    /**\n     * Locates the handle on the figure by forwarding the request\n     * to its figure.\n     */\n    public Point locate() {\n        return fLocator.locate(owner());\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A LocatorHandle implements a Handle by delegating the location requests to\n * a Locator object.\n *\n * @see Locator\n */\npublic class LocatorHandle extends AbstractHandle {\n\n    private Locator fLocator;\n\n    public LocatorHandle(Figure owner, Locator l) {\n        super(owner);\n        fLocator = l;\n    }\n\n    /**\n     * Locates the handle on the figure by forwarding the request\n     * to its figure.\n     */\n    public Point locate() {\n        return fLocator.locate(owner());\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.standard.NorthEastHandle",
+    "CH.ifa.draw.standard.EastHandle",
+    "CH.ifa.draw.standard.NorthHandle",
+    "CH.ifa.draw.standard.NorthWestHandle",
+    "CH.ifa.draw.standard.SouthEastHandle",
+    "CH.ifa.draw.standard.SouthHandle",
+    "CH.ifa.draw.standard.SouthWestHandle",
+    "CH.ifa.draw.standard.WestHandle",
+    "CH.ifa.draw.standard.ConnectionHandle",
+    "CH.ifa.draw.standard.NullHandle"
+  ]
+}

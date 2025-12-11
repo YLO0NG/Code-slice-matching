@@ -1,0 +1,21 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "connectorAt",
+  "brief": "public Connector connectorAt(int x, int y){}",
+  "methodSignature": "connectorAt(int, int)",
+  "sourceCode": "public Connector connectorAt(int x, int y) {\n        return new ChopBoxConnector(this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the Figures connector for the specified location.\n * By default a ChopBoxConnector is returned.\n * @see ChopBoxConnector\n */\npublic Connector connectorAt(int x, int y) {\n    return new ChopBoxConnector(this);\n}",
+  "method_comment": "\n     * Returns the Figures connector for the specified location.\n     * By default a ChopBoxConnector is returned.\n     * @see ChopBoxConnector\n     ",
+  "method_annotation": ""
+}

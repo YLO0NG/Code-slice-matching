@@ -1,0 +1,20 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "pointAt",
+  "brief": "public Point pointAt(int i){}",
+  "methodSignature": "pointAt(int)",
+  "sourceCode": "public Point pointAt(int i) {\n    return new Point(fPoly.xpoints[i], fPoly.ypoints[i]);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public Point pointAt(int i) {\n    return new Point(fPoly.xpoints[i], fPoly.ypoints[i]);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

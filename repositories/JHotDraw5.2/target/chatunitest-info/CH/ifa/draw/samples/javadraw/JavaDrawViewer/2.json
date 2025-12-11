@@ -1,0 +1,18 @@
+{
+  "className": "JavaDrawViewer",
+  "methodName": "view",
+  "brief": "public DrawingView view(){}",
+  "methodSignature": "view()",
+  "sourceCode": "public DrawingView view() {\n        return fView;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the editor's drawing view.\n */\npublic DrawingView view() {\n    return fView;\n}",
+  "method_comment": "\n     * Gets the editor's drawing view.\n     ",
+  "method_annotation": ""
+}

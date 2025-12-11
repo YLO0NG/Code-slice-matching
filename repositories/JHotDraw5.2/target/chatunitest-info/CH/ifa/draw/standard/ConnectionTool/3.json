@@ -1,0 +1,47 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "mouseUp",
+  "brief": "public void mouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseUp(MouseEvent, int, int)",
+  "sourceCode": "public void mouseUp(MouseEvent e, int x, int y) {\n        Figure c = null;\n        if (fStartConnector != null)\n            c = findTarget(e.getX(), e.getY(), drawing());\n\n        if (c != null) {\n            fEndConnector = findConnector(e.getX(), e.getY(), c);\n            if (fEndConnector != null) {\n                fConnection.connectStart(fStartConnector);\n                fConnection.connectEnd(fEndConnector);\n                fConnection.updateConnection();\n            }\n        } else if (fConnection != null)\n            view().remove(fConnection);\n\n        fConnection = null;\n        fStartConnector = fEndConnector = null;\n        editor().toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "findConnector(int, int, Figure)",
+      "findTarget(int, int, Drawing)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()",
+      "editor()"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "connectStart(Connector)",
+      "connectEnd(Connector)",
+      "updateConnection()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "toolDone()"
+    ]
+  },
+  "full_method_info": "/**\n * Connects the figures if the mouse is released over another\n * figure.\n */\npublic void mouseUp(MouseEvent e, int x, int y) {\n    Figure c = null;\n    if (fStartConnector != null)\n        c = findTarget(e.getX(), e.getY(), drawing());\n    if (c != null) {\n        fEndConnector = findConnector(e.getX(), e.getY(), c);\n        if (fEndConnector != null) {\n            fConnection.connectStart(fStartConnector);\n            fConnection.connectEnd(fEndConnector);\n            fConnection.updateConnection();\n        }\n    } else if (fConnection != null)\n        view().remove(fConnection);\n    fConnection = null;\n    fStartConnector = fEndConnector = null;\n    editor().toolDone();\n}",
+  "method_comment": "\n     * Connects the figures if the mouse is released over another\n     * figure.\n     ",
+  "method_annotation": ""
+}

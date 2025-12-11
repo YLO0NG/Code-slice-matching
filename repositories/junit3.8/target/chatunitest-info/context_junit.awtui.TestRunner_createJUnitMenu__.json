@@ -1,0 +1,7 @@
+{
+  "targetClass": "junit.awtui.TestRunner",
+  "targetMethod": "createJUnitMenu()",
+  "dependentFields": {},
+  "dependentMethods": {},
+  "dependentMethodBodies": {}
+}

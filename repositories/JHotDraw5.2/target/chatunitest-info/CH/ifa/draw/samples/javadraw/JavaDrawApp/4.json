@@ -1,0 +1,22 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "createSelectionTool",
+  "brief": "protected Tool createSelectionTool(){}",
+  "methodSignature": "createSelectionTool()",
+  "sourceCode": "protected Tool createSelectionTool() {\n        return new MySelectionTool(view());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "protected Tool createSelectionTool() {\n    return new MySelectionTool(view());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

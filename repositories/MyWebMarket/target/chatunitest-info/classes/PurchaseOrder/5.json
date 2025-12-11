@@ -1,0 +1,22 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "setOrderDate",
+  "brief": "public void setOrderDate( Date orderDate ){}",
+  "methodSignature": "setOrderDate(Date)",
+  "sourceCode": "public void setOrderDate( Date orderDate ) {\n\t\tthis.orderDate = orderDate;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Date"
+  ],
+  "dependentMethods": {
+    "java.util.Date": []
+  },
+  "full_method_info": "public void setOrderDate(Date orderDate) {\n    this.orderDate = orderDate;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

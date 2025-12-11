@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "getSuiteText",
+  "brief": "protected String getSuiteText(){}",
+  "methodSignature": "getSuiteText()",
+  "sourceCode": "protected String getSuiteText() {\r\n\t\tif (fSuiteCombo == null)\r\n\t\t\treturn \"\";\r\n\t\treturn (String)fSuiteCombo.getEditor().getItem();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.ComboBoxEditor": [
+      "getItem()"
+    ],
+    "javax.swing.JComboBox": [
+      "getEditor()"
+    ]
+  },
+  "full_method_info": "protected String getSuiteText() {\r\n    if (fSuiteCombo == null)\r\n        return \"\";\r\n    return (String) fSuiteCombo.getEditor().getItem();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

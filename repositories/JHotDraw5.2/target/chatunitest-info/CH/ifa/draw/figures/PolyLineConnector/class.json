@@ -1,0 +1,55 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.PolyLineConnector",
+  "className": "PolyLineConnector",
+  "index": 43,
+  "modifier": "[public ]",
+  "extend": "[ChopBoxConnector]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public class PolyLineConnector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = 6018435940519102865L;"
+  ],
+  "superClasses": [
+    "ChopBoxConnector"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "chop(Figure, Point)": "0",
+    "PolyLineConnector()": "1",
+    "PolyLineConnector(Figure)": "2"
+  },
+  "methodsBrief": [
+    "protected Point chop(Figure target, Point from){}",
+    "public PolyLineConnector(){}",
+    "public PolyLineConnector(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "PolyLineConnector()",
+    "PolyLineConnector(Figure)"
+  ],
+  "constructorBrief": [
+    "public PolyLineConnector(){}",
+    "public PolyLineConnector(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PolyLineConnector.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * PolyLineConnector finds connection points on a\n * PolyLineFigure.\n *\n * @see PolyLineFigure\n */\npublic class PolyLineConnector extends ChopBoxConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 6018435940519102865L;\n\n    public PolyLineConnector() {\n        super();\n    }\n\n    public PolyLineConnector(Figure owner) {\n        super(owner);\n    }\n\n    protected Point chop(Figure target, Point from) {\n        PolyLineFigure p = (PolyLineFigure) owner();\n        // *** based on PolygonFigure's heuristic\n        Point ctr = p.center();\n        int cx = -1;\n        int cy = -1;\n        long len = Long.MAX_VALUE;\n        // Try for points along edge\n        for (int i = 0; i < p.pointCount() - 1; i++) {\n            Point p1 = p.pointAt(i);\n            Point p2 = p.pointAt(i + 1);\n            Point chop = Geom.intersect(p1.x, p1.y, p2.x, p2.y, from.x, from.y, ctr.x, ctr.y);\n            if (chop != null) {\n                long cl = Geom.length2(chop.x, chop.y, from.x, from.y);\n                if (cl < len) {\n                    len = cl;\n                    cx = chop.x;\n                    cy = chop.y;\n                }\n            }\n        }\n        // if none found, pick closest vertex\n        // if (len ==  Long.MAX_VALUE) {\n        {\n            // try anyway\n            for (int i = 0; i < p.pointCount(); i++) {\n                Point pp = p.pointAt(i);\n                long l = Geom.length2(pp.x, pp.y, from.x, from.y);\n                if (l < len) {\n                    len = l;\n                    cx = pp.x;\n                    cy = pp.y;\n                }\n            }\n        }\n        return new Point(cx, cy);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * PolyLineConnector finds connection points on a\n * PolyLineFigure.\n *\n * @see PolyLineFigure\n */\npublic class PolyLineConnector extends ChopBoxConnector {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 6018435940519102865L;\n\n    public PolyLineConnector() {\n        super();\n    }\n\n    public PolyLineConnector(Figure owner) {\n        super(owner);\n    }\n\n    protected Point chop(Figure target, Point from) {\n        PolyLineFigure p = (PolyLineFigure) owner();\n        // *** based on PolygonFigure's heuristic\n        Point ctr = p.center();\n        int cx = -1;\n        int cy = -1;\n        long len = Long.MAX_VALUE;\n        // Try for points along edge\n        for (int i = 0; i < p.pointCount() - 1; i++) {\n            Point p1 = p.pointAt(i);\n            Point p2 = p.pointAt(i + 1);\n            Point chop = Geom.intersect(p1.x, p1.y, p2.x, p2.y, from.x, from.y, ctr.x, ctr.y);\n            if (chop != null) {\n                long cl = Geom.length2(chop.x, chop.y, from.x, from.y);\n                if (cl < len) {\n                    len = cl;\n                    cx = chop.x;\n                    cy = chop.y;\n                }\n            }\n        }\n        // if none found, pick closest vertex\n        // if (len ==  Long.MAX_VALUE) {\n        {\n            // try anyway\n            for (int i = 0; i < p.pointCount(); i++) {\n                Point pp = p.pointAt(i);\n                long l = Geom.length2(pp.x, pp.y, from.x, from.y);\n                if (l < len) {\n                    len = l;\n                    cx = pp.x;\n                    cy = pp.y;\n                }\n            }\n        }\n        return new Point(cx, cy);\n    }\n}",
+  "subClasses": []
+}

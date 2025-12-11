@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "addWiki",
+  "brief": "public void addWiki(Wiki wiki){}",
+  "methodSignature": "addWiki(Wiki)",
+  "sourceCode": "public void addWiki(Wiki wiki) {\n\t\tthis.wikis.add(wiki);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Wiki"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": [],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addWiki(Wiki wiki) {\n    this.wikis.add(wiki);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

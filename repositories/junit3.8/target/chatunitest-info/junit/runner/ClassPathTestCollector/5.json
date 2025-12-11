@@ -1,0 +1,26 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "isTestClass",
+  "brief": "protected boolean isTestClass(String classFileName){}",
+  "methodSignature": "isTestClass(String)",
+  "sourceCode": "protected boolean isTestClass(String classFileName) {\r\n\t\treturn \r\n\t\t\tclassFileName.endsWith(\".class\") && \r\n\t\t\tclassFileName.indexOf('$') < 0 &&\r\n\t\t\tclassFileName.indexOf(\"Test\") > 0;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "indexOf(int)",
+      "indexOf(String)",
+      "endsWith(String)"
+    ]
+  },
+  "full_method_info": "protected boolean isTestClass(String classFileName) {\r\n    return classFileName.endsWith(\".class\") && classFileName.indexOf('$') < 0 && classFileName.indexOf(\"Test\") > 0;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "Dictionary",
+  "methodName": "getMatchedString",
+  "brief": "public static String getMatchedString(Collection<String> words, String keyword){}",
+  "methodSignature": "getMatchedString(Collection, String)",
+  "sourceCode": "public static String getMatchedString(Collection<String> words, String keyword) {\n\t\tkeyword = keyword.toLowerCase();\n\t\tfor(String word : words) {\n\t\t\tString wordLowerCase = word.toLowerCase();\n\t\t\tif(wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n\t\t\t\treturn word;\n\t\t\t}\n\t\t}\n\t\treturn null;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Collection<String>",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "toLowerCase()",
+      "contains(CharSequence)"
+    ]
+  },
+  "full_method_info": "public static String getMatchedString(Collection<String> words, String keyword) {\n    keyword = keyword.toLowerCase();\n    for (String word : words) {\n        String wordLowerCase = word.toLowerCase();\n        if (wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n            return word;\n        }\n    }\n    return null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,45 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.DrawingEditor",
+  "className": "DrawingEditor",
+  "index": 60,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface DrawingEditor",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "view()": "0",
+    "drawing()": "1",
+    "tool()": "2",
+    "toolDone()": "3",
+    "selectionChanged(DrawingView)": "4",
+    "showStatus(String)": "5"
+  },
+  "methodsBrief": [
+    "DrawingView view();",
+    "Drawing     drawing();",
+    "Tool        tool();",
+    "void        toolDone();",
+    "void        selectionChanged(DrawingView view);",
+    "void        showStatus(String string);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)DrawingEditor.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.*;\n\n/**\n * DrawingEditor defines the interface for coordinating\n * the different objects that participate in a drawing editor.\n *\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld022.htm>Mediator</a></b><br>\n * DrawingEditor is the mediator. It decouples the participants\n * of a drawing editor.\n *\n * @see Tool\n * @see DrawingView\n * @see Drawing\n */\npublic interface DrawingEditor {\n\n    /**\n     * Gets the editor's drawing view.\n     */\n    DrawingView view();\n\n    /**\n     * Gets the editor's drawing.\n     */\n    Drawing drawing();\n\n    /**\n     * Gets the editor's current tool.\n     */\n    Tool tool();\n\n    /**\n     * Informs the editor that a tool has done its interaction.\n     * This method can be used to switch back to the default tool.\n     */\n    void toolDone();\n\n    /**\n     * Informs that the current selection has changed.\n     * Override this method to handle selection changes.\n     */\n    void selectionChanged(DrawingView view);\n\n    /**\n     * Shows a status message in the editor's user interface\n     */\n    void showStatus(String string);\n}\n",
+  "classDeclarationCode": "/**\n * DrawingEditor defines the interface for coordinating\n * the different objects that participate in a drawing editor.\n *\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld022.htm>Mediator</a></b><br>\n * DrawingEditor is the mediator. It decouples the participants\n * of a drawing editor.\n *\n * @see Tool\n * @see DrawingView\n * @see Drawing\n */\npublic interface DrawingEditor {\n\n    /**\n     * Gets the editor's drawing view.\n     */\n    DrawingView view();\n\n    /**\n     * Gets the editor's drawing.\n     */\n    Drawing drawing();\n\n    /**\n     * Gets the editor's current tool.\n     */\n    Tool tool();\n\n    /**\n     * Informs the editor that a tool has done its interaction.\n     * This method can be used to switch back to the default tool.\n     */\n    void toolDone();\n\n    /**\n     * Informs that the current selection has changed.\n     * Override this method to handle selection changes.\n     */\n    void selectionChanged(DrawingView view);\n\n    /**\n     * Shows a status message in the editor's user interface\n     */\n    void showStatus(String string);\n}",
+  "subClasses": []
+}

@@ -1,0 +1,18 @@
+{
+  "className": "PaletteIcon",
+  "methodName": "pressed",
+  "brief": "public Image pressed(){}",
+  "methodSignature": "pressed()",
+  "sourceCode": "public Image pressed() { return fPressed; }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Image pressed() {\n    return fPressed;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

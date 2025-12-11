@@ -1,0 +1,23 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "matrixProduct",
+  "brief": "public static double[][] matrixProduct(double[][] A, double[][] B){}",
+  "methodSignature": "matrixProduct(double[][], double[][])",
+  "sourceCode": "public static double[][] matrixProduct(double[][] A, double[][] B) {\n\t\t   return LinearAlgebra.times(A, B);\n\t   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]",
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": []
+  },
+  "full_method_info": "public static double[][] matrixProduct(double[][] A, double[][] B) {\n    return LinearAlgebra.times(A, B);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

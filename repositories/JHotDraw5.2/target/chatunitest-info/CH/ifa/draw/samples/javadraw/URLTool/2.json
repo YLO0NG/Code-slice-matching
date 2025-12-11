@@ -1,0 +1,28 @@
+{
+  "className": "URLTool",
+  "methodName": "deactivate",
+  "brief": "public void deactivate(DrawingView view){}",
+  "methodSignature": "deactivate(DrawingView)",
+  "sourceCode": "public void deactivate(DrawingView view) {\n        super.deactivate();\n        endEdit();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "deactivate()"
+    ],
+    "CH.ifa.draw.samples.javadraw.URLTool": [
+      "endEdit()"
+    ]
+  },
+  "full_method_info": "public void deactivate(DrawingView view) {\n    super.deactivate();\n    endEdit();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

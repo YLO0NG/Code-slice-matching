@@ -1,0 +1,25 @@
+{
+  "className": "FigureAttributes",
+  "methodName": "hasDefined",
+  "brief": "public boolean hasDefined(String name){}",
+  "methodSignature": "hasDefined(String)",
+  "sourceCode": "public boolean hasDefined(String name) {\n        return fMap.containsKey(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Hashtable": [
+      "containsKey(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Tests if an attribute is defined.\n */\npublic boolean hasDefined(String name) {\n    return fMap.containsKey(name);\n}",
+  "method_comment": "\n     * Tests if an attribute is defined.\n     ",
+  "method_annotation": ""
+}

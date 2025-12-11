@@ -1,0 +1,18 @@
+{
+  "className": "TextFigure",
+  "methodName": "createCurrentFont",
+  "brief": "static public Font createCurrentFont(){}",
+  "methodSignature": "createCurrentFont()",
+  "sourceCode": "static public Font createCurrentFont() {\n        return new Font(fgCurrentFontName, fgCurrentFontStyle, fgCurrentFontSize);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Creates the current font to be used for new text figures.\n */\nstatic public Font createCurrentFont() {\n    return new Font(fgCurrentFontName, fgCurrentFontStyle, fgCurrentFontSize);\n}",
+  "method_comment": "\n     * Creates the current font to be used for new text figures.\n     ",
+  "method_annotation": ""
+}

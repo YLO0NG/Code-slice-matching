@@ -1,0 +1,27 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "addError",
+  "brief": "public synchronized void addError(final Test test, final Throwable t){}",
+  "methodSignature": "addError(Test, Throwable)",
+  "sourceCode": "public synchronized void addError(final Test test, final Throwable t) {\r\n\t\ttestFailed(TestRunListener.STATUS_ERROR, test, t);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [],
+    "junit.runner.BaseTestRunner": [
+      "testFailed(int, Test, Throwable)"
+    ]
+  },
+  "full_method_info": "public synchronized void addError(final Test test, final Throwable t) {\r\n    testFailed(TestRunListener.STATUS_ERROR, test, t);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

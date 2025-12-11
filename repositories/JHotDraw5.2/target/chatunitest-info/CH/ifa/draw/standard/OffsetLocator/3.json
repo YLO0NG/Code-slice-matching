@@ -1,0 +1,28 @@
+{
+  "className": "OffsetLocator",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        fOffsetX = dr.readInt();\n        fOffsetY = dr.readInt();\n        fBase = (Locator)dr.readStorable();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readStorable()"
+    ],
+    "CH.ifa.draw.standard.AbstractLocator": [
+      "read(StorableInput)"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    fOffsetX = dr.readInt();\n    fOffsetY = dr.readInt();\n    fBase = (Locator) dr.readStorable();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

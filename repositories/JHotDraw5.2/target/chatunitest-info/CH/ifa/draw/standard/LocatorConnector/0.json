@@ -1,0 +1,28 @@
+{
+  "className": "LocatorConnector",
+  "methodName": "locate",
+  "brief": "protected Point locate(ConnectionFigure connection){}",
+  "methodSignature": "locate(ConnectionFigure)",
+  "sourceCode": "protected Point locate(ConnectionFigure connection) {\n        return fLocator.locate(owner());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [],
+    "CH.ifa.draw.framework.Locator": [
+      "locate(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "protected Point locate(ConnectionFigure connection) {\n    return fLocator.locate(owner());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

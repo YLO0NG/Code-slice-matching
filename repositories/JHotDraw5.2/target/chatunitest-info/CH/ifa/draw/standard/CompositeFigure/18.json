@@ -1,0 +1,38 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "findFigure",
+  "brief": "public Figure findFigure(Rectangle r, Figure without){}",
+  "methodSignature": "findFigure(Rectangle, Figure)",
+  "sourceCode": "public Figure findFigure(Rectangle r, Figure without) {\n        if (without == null) {\n        \tFigureEnumeration k1 = figuresReverse();\n\t\t\twhile (k1.hasMoreElements()) {\n\t\t\t    Figure figure1 = k1.nextFigure();\n\t\t\t    Rectangle fr1 = figure1.displayBox();\n\t\t\t    if (r.intersects(fr1))\n\t\t\t        return figure1;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n        FigureEnumeration k = figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            Rectangle fr = figure.displayBox();\n            if (r.intersects(fr) && !figure.includes(without))\n                return figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "intersects(Rectangle)"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()",
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a top level Figure that intersects the given rectangle.\n * It supresses the passed\n * in figure. Use this method to ignore a figure\n * that is temporarily inserted into the drawing.\n */\npublic Figure findFigure(Rectangle r, Figure without) {\n    if (without == null) {\n        FigureEnumeration k1 = figuresReverse();\n        while (k1.hasMoreElements()) {\n            Figure figure1 = k1.nextFigure();\n            Rectangle fr1 = figure1.displayBox();\n            if (r.intersects(fr1))\n                return figure1;\n        }\n        return null;\n    }\n    FigureEnumeration k = figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        Rectangle fr = figure.displayBox();\n        if (r.intersects(fr) && !figure.includes(without))\n            return figure;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds a top level Figure that intersects the given rectangle.\n     * It supresses the passed\n     * in figure. Use this method to ignore a figure\n     * that is temporarily inserted into the drawing.\n     ",
+  "method_annotation": ""
+}

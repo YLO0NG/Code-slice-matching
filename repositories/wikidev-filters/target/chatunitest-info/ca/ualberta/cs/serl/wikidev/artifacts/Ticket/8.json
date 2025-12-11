@@ -1,0 +1,22 @@
+{
+  "className": "Ticket",
+  "methodName": "setReporterName",
+  "brief": "public void setReporterName(String reporterName){}",
+  "methodSignature": "setReporterName(String)",
+  "sourceCode": "public void setReporterName(String reporterName) {\n\t\tthis.reporterName = reporterName;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param reporterName\n * @uml.property  name=\"reporterName\"\n */\npublic void setReporterName(String reporterName) {\n    this.reporterName = reporterName;\n}",
+  "method_comment": "\n\t * @param reporterName\n\t * @uml.property  name=\"reporterName\"\n\t ",
+  "method_annotation": ""
+}

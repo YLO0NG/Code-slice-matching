@@ -1,0 +1,20 @@
+{
+  "className": "Project",
+  "methodName": "setMessages",
+  "brief": "public void setMessages(Set<Message> messages){}",
+  "methodSignature": "setMessages(Set)",
+  "sourceCode": "public void setMessages(Set<Message> messages) {\n\t\tthis.messages = messages;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Set<Message>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setMessages(Set<Message> messages) {\n    this.messages = messages;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

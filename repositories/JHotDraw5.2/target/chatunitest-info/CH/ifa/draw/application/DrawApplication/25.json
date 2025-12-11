@@ -1,0 +1,26 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createContents",
+  "brief": "protected JComponent createContents(StandardDrawingView view){}",
+  "methodSignature": "createContents(StandardDrawingView)",
+  "sourceCode": "protected JComponent createContents(StandardDrawingView view) {\n        JScrollPane sp = new JScrollPane(view);\n        sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);\n        sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\n\n        return sp;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "javax.swing.JScrollPane": [
+      "setHorizontalScrollBarPolicy(int)",
+      "setVerticalScrollBarPolicy(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the contents component of the application\n * frame. By default the DrawingView is returned in\n * a JScrollPane.\n */\nprotected JComponent createContents(StandardDrawingView view) {\n    JScrollPane sp = new JScrollPane(view);\n    sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);\n    sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\n    return sp;\n}",
+  "method_comment": "\n     * Creates the contents component of the application\n     * frame. By default the DrawingView is returned in\n     * a JScrollPane.\n     ",
+  "method_annotation": ""
+}

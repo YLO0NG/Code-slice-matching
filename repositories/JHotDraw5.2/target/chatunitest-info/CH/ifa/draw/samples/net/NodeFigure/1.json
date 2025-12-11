@@ -1,0 +1,32 @@
+{
+  "className": "NodeFigure",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y){}",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y) {\n        // add slop for connectors\n        if (fConnectorsVisible) {\n            Rectangle r = displayBox();\n            int d = LocatorConnector.SIZE/2;\n            r.grow(d, d);\n            return r.contains(x, y);\n        }\n        return super.containsPoint(x, y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "displayBox()"
+    ],
+    "java.awt.Rectangle": [
+      "contains(int, int)",
+      "grow(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "containsPoint(int, int)"
+    ]
+  },
+  "full_method_info": "public boolean containsPoint(int x, int y) {\n    // add slop for connectors\n    if (fConnectorsVisible) {\n        Rectangle r = displayBox();\n        int d = LocatorConnector.SIZE / 2;\n        r.grow(d, d);\n        return r.contains(x, y);\n    }\n    return super.containsPoint(x, y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

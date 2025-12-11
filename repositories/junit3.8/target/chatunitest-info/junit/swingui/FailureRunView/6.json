@@ -1,0 +1,25 @@
+{
+  "className": "FailureRunView",
+  "methodName": "testSelected",
+  "brief": "protected void testSelected(){}",
+  "methodSignature": "testSelected()",
+  "sourceCode": "protected void testSelected() {\r\n\t\tfRunContext.handleTestSelected(getSelectedTest());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestRunContext": [
+      "handleTestSelected(Test)"
+    ],
+    "junit.swingui.FailureRunView": [
+      "getSelectedTest()"
+    ]
+  },
+  "full_method_info": "protected void testSelected() {\r\n    fRunContext.handleTestSelected(getSelectedTest());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

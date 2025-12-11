@@ -1,0 +1,18 @@
+{
+  "className": "Cluster",
+  "methodName": "getIndex",
+  "brief": "public int getIndex(){}",
+  "methodSignature": "getIndex()",
+  "sourceCode": "public int getIndex() {\n\t\treturn index;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"index\"\n */\npublic int getIndex() {\n    return index;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"index\"\n\t ",
+  "method_annotation": ""
+}

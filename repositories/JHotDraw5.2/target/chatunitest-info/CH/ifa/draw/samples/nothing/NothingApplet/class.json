@@ -1,0 +1,47 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.nothing.NothingApplet",
+  "className": "NothingApplet",
+  "index": 86,
+  "modifier": "[public ]",
+  "extend": "[DrawApplet]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.nothing",
+  "packageDeclaration": "package CH.ifa.draw.samples.nothing;",
+  "classSignature": "public class NothingApplet",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.applet.Applet;",
+    "// import java.awt.*;\r\nimport java.util.*;",
+    "import java.io.*;",
+    "import java.net.*;",
+    "import CH.ifa.draw.util.Iconkit;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.figures.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.applet.*;",
+    "import CH.ifa.draw.contrib.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "DrawApplet"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createTools(JPanel)": "0"
+  },
+  "methodsBrief": [
+    "protected void createTools(JPanel palette){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)NothingApplet.java 5.2\n *\n */\npackage CH.ifa.draw.samples.nothing;\n\nimport javax.swing.*;\nimport java.applet.Applet;\n// import java.awt.*;\nimport java.util.*;\nimport java.io.*;\nimport java.net.*;\nimport CH.ifa.draw.util.Iconkit;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.figures.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.applet.*;\nimport CH.ifa.draw.contrib.*;\n\npublic class NothingApplet extends DrawApplet {\n\n    // -- DrawApplet overrides -----------------------------------------\n    protected void createTools(JPanel palette) {\n        super.createTools(palette);\n        Tool tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new CreationTool(view(), new RectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RECT\", \"Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new RoundRectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RRECT\", \"Round Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new EllipseFigure());\n        palette.add(createToolButton(IMAGES + \"ELLIPSE\", \"Ellipse Tool\", tool));\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES + \"LINE\", \"Line Tool\", tool));\n        tool = new PolygonTool(view());\n        palette.add(createToolButton(IMAGES + \"POLYGON\", \"Polygon Tool\", tool));\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n        tool = new ConnectionTool(view(), new ElbowConnection());\n        palette.add(createToolButton(IMAGES + \"OCONN\", \"Elbow Connection Tool\", tool));\n    }\n}\n",
+  "classDeclarationCode": "public class NothingApplet extends DrawApplet {\n\n    // -- DrawApplet overrides -----------------------------------------\n    protected void createTools(JPanel palette) {\n        super.createTools(palette);\n        Tool tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n        tool = new CreationTool(view(), new RectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RECT\", \"Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new RoundRectangleFigure());\n        palette.add(createToolButton(IMAGES + \"RRECT\", \"Round Rectangle Tool\", tool));\n        tool = new CreationTool(view(), new EllipseFigure());\n        palette.add(createToolButton(IMAGES + \"ELLIPSE\", \"Ellipse Tool\", tool));\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES + \"LINE\", \"Line Tool\", tool));\n        tool = new PolygonTool(view());\n        palette.add(createToolButton(IMAGES + \"POLYGON\", \"Polygon Tool\", tool));\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n        tool = new ConnectionTool(view(), new ElbowConnection());\n        palette.add(createToolButton(IMAGES + \"OCONN\", \"Elbow Connection Tool\", tool));\n    }\n}",
+  "subClasses": []
+}

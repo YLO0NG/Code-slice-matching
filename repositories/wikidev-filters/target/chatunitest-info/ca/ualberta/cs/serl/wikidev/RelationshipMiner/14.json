@@ -1,0 +1,33 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "printResults",
+  "brief": "public void printResults(int project){}",
+  "methodSignature": "printResults(int)",
+  "sourceCode": "public void printResults(int project) {\n\t\tdouble[][] distanceMatrix = getSimilarityMatrix();\n\t\ttry {\n\t\t\tBufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\results.txt\"));\n\t\t\tout.write(\"x=c(\");\n\t\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\t\tfor(int j=0; j<distanceMatrix.length; j++) {\n\t\t\t\t\tout.write(distanceMatrix[i][j]+\", \");\n\t\t\t\t}\n\t\t\t}\n\t\t\tout.write(\")\");\n\t\t\tout.close();\n\t\t} catch (IOException e) {\n\t\t\t// TODO Auto-generated catch block\n\t\t\te.printStackTrace();\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": [
+      "getSimilarityMatrix()"
+    ],
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "java.io.BufferedWriter": [
+      "close()"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ]
+  },
+  "full_method_info": "public void printResults(int project) {\n    double[][] distanceMatrix = getSimilarityMatrix();\n    try {\n        BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\results.txt\"));\n        out.write(\"x=c(\");\n        for (int i = 0; i < distanceMatrix.length; i++) {\n            for (int j = 0; j < distanceMatrix.length; j++) {\n                out.write(distanceMatrix[i][j] + \", \");\n            }\n        }\n        out.write(\")\");\n        out.close();\n    } catch (IOException e) {\n        // TODO Auto-generated catch block\n        e.printStackTrace();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

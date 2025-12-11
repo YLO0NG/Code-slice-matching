@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createArrowMenu",
+  "brief": "protected JMenu createArrowMenu(){}",
+  "methodSignature": "createArrowMenu()",
+  "sourceCode": "protected JMenu createArrowMenu() {\n        CommandMenu menu = new CommandMenu(\"Arrow\");\n        menu.add(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  view()));\n        menu.add(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), view()));\n        menu.add(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   view()));\n        menu.add(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  view()));\n        return menu;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the arrows menu.\n */\nprotected JMenu createArrowMenu() {\n    CommandMenu menu = new CommandMenu(\"Arrow\");\n    menu.add(new ChangeAttributeCommand(\"none\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE), view()));\n    menu.add(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), view()));\n    menu.add(new ChangeAttributeCommand(\"at End\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END), view()));\n    menu.add(new ChangeAttributeCommand(\"at Both\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH), view()));\n    return menu;\n}",
+  "method_comment": "\n     * Creates the arrows menu.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "ComparisonFailure",
+  "methodName": "getMessage",
+  "brief": "public String getMessage(){}",
+  "methodSignature": "getMessage()",
+  "sourceCode": "public String getMessage() {\r\n\t\tString formatted= \"\";\r\n\t\tString message= super.getMessage();\r\n\t\t\r\n\t\tint end= Math.min(fExpected.length(), fActual.length());\r\n\t\t\r\n\t\tint i= 0;\r\n\t\tfor(; i < end; i++) {\r\n\t\t\tif (fExpected.charAt(i) != fActual.charAt(i))\r\n\t\t\t\tbreak;\r\n\t\t}\r\n\t\tint j= fExpected.length()-1;\r\n\t\tint k= fActual.length()-1;\r\n\t\tfor (; k >= i && j >= i; k--,j--) {\r\n\t\t\tif (fExpected.charAt(j) != fActual.charAt(k))\r\n\t\t\t\tbreak;\r\n\t\t}\r\n\t\tString actual, expected;\r\n\t\t\r\n\t\t// equal strings\r\n\t\tif (j < i && k < i) {\r\n\t\t\texpected= fExpected;\r\n\t\t\tactual= fActual;\r\n\t\t} else {\r\n\t\t\texpected= fExpected.substring(i, j+1);\r\n\t\t\tactual= fActual.substring(i, k+1);\r\n\t\t\tif (i <= end && i > 0) {\r\n\t\t\t\texpected= \"...\"+expected;\r\n\t\t\t\tactual= \"...\"+actual;\r\n\t\t\t}\r\n\t\t\t\r\n\t\t\tif (j < fExpected.length()-1)\r\n\t\t\t\texpected= expected+\"...\";\r\n\t\t\tif (k < fActual.length()-1)\r\n\t\t\t\tactual= actual+\"...\";\r\n\t\t}\t\r\n\t\tif (message != null)\r\n\t\t\tformatted= message+\": \";\t\r\n\t\treturn formatted+\"expected:<\"+expected+\"> but was:<\"+actual+\">\";\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Throwable": [
+      "getMessage()"
+    ],
+    "java.lang.Math": [
+      "min(int, int)"
+    ],
+    "java.lang.String": [
+      "substring(int, int)",
+      "length()",
+      "charAt(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns \"...\" in place of common prefix and \"...\" in\r\n * place of common suffix between expected and actual.\r\n *\r\n * @see java.lang.Throwable#getMessage()\r\n */\r\npublic String getMessage() {\r\n    String formatted = \"\";\r\n    String message = super.getMessage();\r\n    int end = Math.min(fExpected.length(), fActual.length());\r\n    int i = 0;\r\n    for (; i < end; i++) {\r\n        if (fExpected.charAt(i) != fActual.charAt(i))\r\n            break;\r\n    }\r\n    int j = fExpected.length() - 1;\r\n    int k = fActual.length() - 1;\r\n    for (; k >= i && j >= i; k--, j--) {\r\n        if (fExpected.charAt(j) != fActual.charAt(k))\r\n            break;\r\n    }\r\n    String actual, expected;\r\n    // equal strings\r\n    if (j < i && k < i) {\r\n        expected = fExpected;\r\n        actual = fActual;\r\n    } else {\r\n        expected = fExpected.substring(i, j + 1);\r\n        actual = fActual.substring(i, k + 1);\r\n        if (i <= end && i > 0) {\r\n            expected = \"...\" + expected;\r\n            actual = \"...\" + actual;\r\n        }\r\n        if (j < fExpected.length() - 1)\r\n            expected = expected + \"...\";\r\n        if (k < fActual.length() - 1)\r\n            actual = actual + \"...\";\r\n    }\r\n    if (message != null)\r\n        formatted = message + \": \";\r\n    return formatted + \"expected:<\" + expected + \"> but was:<\" + actual + \">\";\r\n}",
+  "method_comment": "\r\n\t * Returns \"...\" in place of common prefix and \"...\" in\r\n\t * place of common suffix between expected and actual.\r\n\t * \r\n\t * @see java.lang.Throwable#getMessage()\r\n\t ",
+  "method_annotation": ""
+}

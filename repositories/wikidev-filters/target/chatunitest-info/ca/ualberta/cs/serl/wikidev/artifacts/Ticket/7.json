@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getReporterName",
+  "brief": "public String getReporterName(){}",
+  "methodSignature": "getReporterName()",
+  "sourceCode": "public String getReporterName() {\n\t\treturn reporterName;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"reporterName\"\n */\npublic String getReporterName() {\n    return reporterName;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"reporterName\"\n\t ",
+  "method_annotation": ""
+}

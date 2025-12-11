@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "shouldReload",
+  "brief": "private boolean shouldReload(){}",
+  "methodSignature": "shouldReload()",
+  "sourceCode": "private boolean shouldReload() {\r\n\t\treturn !inVAJava() && fUseLoadingRunner.getState();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "inVAJava()"
+    ],
+    "java.awt.Checkbox": [
+      "getState()"
+    ]
+  },
+  "full_method_info": "private boolean shouldReload() {\r\n    return !inVAJava() && fUseLoadingRunner.getState();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "getPurchaseOrderItems",
+  "brief": "@OneToMany(mappedBy=\"purchaseOrder\",fetch=FetchType.EAGER,cascade=CascadeType.ALL)\r\n\tpublic Collection<PurchaseOrderItem> getPurchaseOrderItems(){}",
+  "methodSignature": "getPurchaseOrderItems()",
+  "sourceCode": "@OneToMany(mappedBy=\"purchaseOrder\",fetch=FetchType.EAGER,cascade=CascadeType.ALL)\n\tpublic Collection<PurchaseOrderItem> getPurchaseOrderItems() {\n\t\treturn purchaseOrderItems;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@OneToMany(mappedBy = \"purchaseOrder\", fetch = FetchType.EAGER, cascade = CascadeType.ALL)\npublic Collection<PurchaseOrderItem> getPurchaseOrderItems() {\n    return purchaseOrderItems;\n}",
+  "method_comment": "",
+  "method_annotation": "@OneToMany(mappedBy = \"purchaseOrder\", fetch = FetchType.EAGER, cascade = CascadeType.ALL)\n"
+}

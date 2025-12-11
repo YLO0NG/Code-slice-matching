@@ -1,0 +1,22 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "bounds",
+  "brief": "public static Rectangle bounds(Polygon p){}",
+  "methodSignature": "bounds(Polygon)",
+  "sourceCode": "public static Rectangle bounds(Polygon p) {\n\tint minx = Integer.MAX_VALUE;\n\tint miny = Integer.MAX_VALUE;\n\tint maxx = Integer.MIN_VALUE;\n\tint maxy = Integer.MIN_VALUE;\n\tint n = p.npoints;\n\tfor (int i = 0; i < n; i++) {\n      int x = p.xpoints[i];\n      int y = p.ypoints[i];\n      if (x > maxx) maxx = x;\n      if (x < minx) minx = x;\n      if (y > maxy) maxy = y;\n      if (y < miny) miny = y;\n    }\n\n\treturn new Rectangle(minx, miny, maxx-minx, maxy-miny);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Polygon"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": []
+  },
+  "full_method_info": "/**\n * replacement for builtin Polygon.getBounds that doesn't always update?\n */\npublic static Rectangle bounds(Polygon p) {\n    int minx = Integer.MAX_VALUE;\n    int miny = Integer.MAX_VALUE;\n    int maxx = Integer.MIN_VALUE;\n    int maxy = Integer.MIN_VALUE;\n    int n = p.npoints;\n    for (int i = 0; i < n; i++) {\n        int x = p.xpoints[i];\n        int y = p.ypoints[i];\n        if (x > maxx)\n            maxx = x;\n        if (x < minx)\n            minx = x;\n        if (y > maxy)\n            maxy = y;\n        if (y < miny)\n            miny = y;\n    }\n    return new Rectangle(minx, miny, maxx - minx, maxy - miny);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

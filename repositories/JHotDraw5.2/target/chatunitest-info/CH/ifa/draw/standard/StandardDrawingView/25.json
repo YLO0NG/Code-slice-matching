@@ -1,0 +1,22 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "setConstrainer",
+  "brief": "public void setConstrainer(PointConstrainer c){}",
+  "methodSignature": "setConstrainer(PointConstrainer)",
+  "sourceCode": "public void setConstrainer(PointConstrainer c) {\n        fConstrainer = c;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PointConstrainer"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.PointConstrainer": []
+  },
+  "full_method_info": "/**\n * Sets the grid spacing that is used to constrain points.\n */\npublic void setConstrainer(PointConstrainer c) {\n    fConstrainer = c;\n}",
+  "method_comment": "\n     * Sets the grid spacing that is used to constrain points.\n     ",
+  "method_annotation": ""
+}

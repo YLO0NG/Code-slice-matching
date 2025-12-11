@@ -1,0 +1,26 @@
+{
+  "className": "AnimationDecorator",
+  "methodName": "basicDisplayBox",
+  "brief": "public synchronized void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public synchronized void basicDisplayBox(Point origin, Point corner) {\n        super.basicDisplayBox(origin, corner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "basicDisplayBox(Point, Point)"
+    ]
+  },
+  "full_method_info": "public synchronized void basicDisplayBox(Point origin, Point corner) {\n    super.basicDisplayBox(origin, corner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

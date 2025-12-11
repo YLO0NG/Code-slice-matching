@@ -1,0 +1,25 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "addActionListener",
+  "brief": "public void addActionListener(ActionListener listener){}",
+  "methodSignature": "addActionListener(ActionListener)",
+  "sourceCode": "public void addActionListener(ActionListener listener) {\n\t    fEditWidget.addActionListener(listener);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ActionListener"
+  ],
+  "dependentMethods": {
+    "java.awt.event.ActionListener": [],
+    "java.awt.TextField": [
+      "addActionListener(ActionListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds an action listener\n */\npublic void addActionListener(ActionListener listener) {\n    fEditWidget.addActionListener(listener);\n}",
+  "method_comment": "\n     * Adds an action listener\n     ",
+  "method_annotation": ""
+}

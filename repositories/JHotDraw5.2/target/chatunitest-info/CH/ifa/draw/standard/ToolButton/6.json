@@ -1,0 +1,27 @@
+{
+  "className": "ToolButton",
+  "methodName": "paintSelected",
+  "brief": "public void paintSelected(Graphics g){}",
+  "methodSignature": "paintSelected(Graphics)",
+  "sourceCode": "public void paintSelected(Graphics g) {\n        if (fIcon.selected() != null)\n            g.drawImage(fIcon.selected(), 0, 0, this);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawImage(Image, int, int, ImageObserver)"
+    ],
+    "CH.ifa.draw.util.PaletteIcon": [
+      "selected()"
+    ]
+  },
+  "full_method_info": "// Not necessary anymore in JFC due to the support of Icons in JButton\n/*\n    public void paintBackground(Graphics g) { }\n\n    public void paintNormal(Graphics g) {\n        if (fIcon.normal() != null)\n            g.drawImage(fIcon.normal(), 0, 0, this);\n    }\n\n    public void paintPressed(Graphics g) {\n        if (fIcon.pressed() != null)\n            g.drawImage(fIcon.pressed(), 0, 0, this);\n    }\n*/\npublic void paintSelected(Graphics g) {\n    if (fIcon.selected() != null)\n        g.drawImage(fIcon.selected(), 0, 0, this);\n}",
+  "method_comment": "\n    public void paintBackground(Graphics g) { }\n\n    public void paintNormal(Graphics g) {\n        if (fIcon.normal() != null)\n            g.drawImage(fIcon.normal(), 0, 0, this);\n    }\n\n    public void paintPressed(Graphics g) {\n        if (fIcon.pressed() != null)\n            g.drawImage(fIcon.pressed(), 0, 0, this);\n    }\n",
+  "method_annotation": ""
+}

@@ -1,0 +1,50 @@
+{
+  "className": "DataManager",
+  "methodName": "writeFilesBuildingData",
+  "brief": "public static void writeFilesBuildingData(FileBuildingData building) throws SQLException{}",
+  "methodSignature": "writeFilesBuildingData(FileBuildingData)",
+  "sourceCode": "public static void writeFilesBuildingData(FileBuildingData building) throws SQLException {\n    \tString lastEditor = \"\";\n    \tif (building.getLastEditor() != null) {\n\t\t\tlastEditor += building.getLastEditor().getUserName();\n\t\t}\n\t\tString sqlStmt = QueryBuilder.insertFilesBuildingData(building.getType(), building.getWeek().toString(), building.getHeight(), building.getNeighborhoodX(), building.getNeighborhoodY(), building.getCityBlock(), building.getUrl(), building.getProjectid(), lastEditor, building.getCreated(), building.getLastModified());\n        statement.executeUpdate(sqlStmt);\n        DataManager.writeFilesUserData(building);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FileBuildingData"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.FileBuildingData": [],
+    "ca.ualberta.cs.serl.wikidev.city3d.animation.BuildingData": [
+      "getNeighborhoodY()",
+      "getNeighborhoodX()",
+      "getCreated()",
+      "getCityBlock()",
+      "getProjectid()",
+      "getType()",
+      "getUrl()",
+      "getLastEditor()",
+      "getWeek()",
+      "getHeight()",
+      "getLastModified()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.User": [
+      "getUserName()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "insertFilesBuildingData(String, String, int, int, int, int, String, int, String, Timestamp, Timestamp)"
+    ],
+    "java.sql.Timestamp": [
+      "toString()"
+    ],
+    "java.sql.Statement": [
+      "executeUpdate(String)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "writeFilesUserData(FileBuildingData)"
+    ]
+  },
+  "full_method_info": "public static void writeFilesBuildingData(FileBuildingData building) throws SQLException {\n    String lastEditor = \"\";\n    if (building.getLastEditor() != null) {\n        lastEditor += building.getLastEditor().getUserName();\n    }\n    String sqlStmt = QueryBuilder.insertFilesBuildingData(building.getType(), building.getWeek().toString(), building.getHeight(), building.getNeighborhoodX(), building.getNeighborhoodY(), building.getCityBlock(), building.getUrl(), building.getProjectid(), lastEditor, building.getCreated(), building.getLastModified());\n    statement.executeUpdate(sqlStmt);\n    DataManager.writeFilesUserData(building);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

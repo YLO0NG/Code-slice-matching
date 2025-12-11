@@ -1,0 +1,18 @@
+{
+  "className": "BuildingData",
+  "methodName": "getCityBlock",
+  "brief": "public int getCityBlock(){}",
+  "methodSignature": "getCityBlock()",
+  "sourceCode": "public int getCityBlock() {\n\t\treturn cityBlock;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public int getCityBlock() {\n    return cityBlock;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

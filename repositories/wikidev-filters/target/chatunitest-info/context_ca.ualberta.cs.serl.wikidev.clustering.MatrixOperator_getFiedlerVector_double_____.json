@@ -1,0 +1,7 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+  "targetMethod": "getFiedlerVector(double[][])",
+  "dependentFields": {},
+  "dependentMethods": {},
+  "dependentMethodBodies": {}
+}

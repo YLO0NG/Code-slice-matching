@@ -1,0 +1,22 @@
+{
+  "className": "BoxHandleKit",
+  "methodName": "west",
+  "brief": "static public Handle west(Figure owner){}",
+  "methodSignature": "west(Figure)",
+  "sourceCode": "static public Handle west(Figure owner) {\n        return new WestHandle(owner);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "static public Handle west(Figure owner) {\n    return new WestHandle(owner);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

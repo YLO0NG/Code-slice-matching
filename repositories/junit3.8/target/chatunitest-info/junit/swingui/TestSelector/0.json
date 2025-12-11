@@ -1,0 +1,37 @@
+{
+  "className": "TestSelector",
+  "methodName": "addListeners",
+  "brief": "private void addListeners(){}",
+  "methodSignature": "addListeners()",
+  "sourceCode": "private void addListeners() {\r\n\t\tfCancel.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\tdispose();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\t\r\n\t\tfOk.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\tokSelected();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\r\n\t\tfList.addMouseListener(new DoubleClickListener());\r\n\t\tfList.addKeyListener(new KeySelectListener());\r\n\t\tfList.addListSelectionListener(\r\n\t\t\tnew ListSelectionListener() {\r\n\t\t\t\tpublic void valueChanged(ListSelectionEvent e) {\r\n\t\t\t\t\tcheckEnableOK(e);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\r\n\t\taddWindowListener(\r\n\t\t\tnew WindowAdapter() {\r\n\t\t\t\tpublic void windowClosing(WindowEvent e) {\r\n\t\t\t\t\tdispose();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "java.awt.Window": [
+      "dispose()",
+      "addWindowListener(WindowListener)"
+    ],
+    "junit.swingui.TestSelector": [
+      "checkEnableOK(ListSelectionEvent)",
+      "okSelected()"
+    ],
+    "java.awt.Component": [
+      "addKeyListener(KeyListener)",
+      "addMouseListener(MouseListener)"
+    ],
+    "javax.swing.JList": [
+      "addListSelectionListener(ListSelectionListener)"
+    ]
+  },
+  "full_method_info": "private void addListeners() {\r\n    fCancel.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            dispose();\r\n        }\r\n    });\r\n    fOk.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            okSelected();\r\n        }\r\n    });\r\n    fList.addMouseListener(new DoubleClickListener());\r\n    fList.addKeyListener(new KeySelectListener());\r\n    fList.addListSelectionListener(new ListSelectionListener() {\r\n\r\n        public void valueChanged(ListSelectionEvent e) {\r\n            checkEnableOK(e);\r\n        }\r\n    });\r\n    addWindowListener(new WindowAdapter() {\r\n\r\n        public void windowClosing(WindowEvent e) {\r\n            dispose();\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

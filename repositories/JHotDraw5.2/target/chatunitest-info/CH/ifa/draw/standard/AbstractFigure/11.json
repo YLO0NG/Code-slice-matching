@@ -1,0 +1,25 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "displayBox",
+  "brief": "public void displayBox(Rectangle r){}",
+  "methodSignature": "displayBox(Rectangle)",
+  "sourceCode": "public void displayBox(Rectangle r) {\n        displayBox(new Point(r.x, r.y), new Point(r.x+r.width, r.y+r.height));\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "displayBox(Point, Point)"
+    ]
+  },
+  "full_method_info": "/**\n * Changes the display box of a figure. This is a\n * convenience method. Implementors should only\n * have to override basicDisplayBox\n * @see #displayBox\n */\npublic void displayBox(Rectangle r) {\n    displayBox(new Point(r.x, r.y), new Point(r.x + r.width, r.y + r.height));\n}",
+  "method_comment": "\n     * Changes the display box of a figure. This is a\n     * convenience method. Implementors should only\n     * have to override basicDisplayBox\n     * @see #displayBox\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,38 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "setAttribute",
+  "brief": "public void setAttribute(String name, Object value){}",
+  "methodSignature": "setAttribute(String, Object)",
+  "sourceCode": "public void setAttribute(String name, Object value) {\n        if (name.equals(\"FrameColor\")) {\n            setFrameColor((Color)value);\n            changed();\n        }\n        else if (name.equals(\"ArrowMode\")) {\n            Integer intObj = (Integer) value;\n            if (intObj != null) {\n                int decoration = intObj.intValue();\n                if ((decoration & ARROW_TIP_START) != 0)\n                    setStartDecoration(new ArrowTip());\n                else\n                    setStartDecoration(null);\n                if ((decoration & ARROW_TIP_END) != 0)\n                    setEndDecoration(new ArrowTip());\n                else\n                    setEndDecoration(null);\n            }\n            changed();\n        }\n        else\n            super.setAttribute(name, value);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "java.lang.Object": [],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setFrameColor(Color)",
+      "setStartDecoration(LineDecoration)",
+      "setEndDecoration(LineDecoration)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "setAttribute(String, Object)",
+      "changed()"
+    ],
+    "java.lang.Integer": [
+      "intValue()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the attribute with the given name.\n * PolyLineFigure interprets \"ArrowMode\"to set\n * the line decoration.\n */\npublic void setAttribute(String name, Object value) {\n    if (name.equals(\"FrameColor\")) {\n        setFrameColor((Color) value);\n        changed();\n    } else if (name.equals(\"ArrowMode\")) {\n        Integer intObj = (Integer) value;\n        if (intObj != null) {\n            int decoration = intObj.intValue();\n            if ((decoration & ARROW_TIP_START) != 0)\n                setStartDecoration(new ArrowTip());\n            else\n                setStartDecoration(null);\n            if ((decoration & ARROW_TIP_END) != 0)\n                setEndDecoration(new ArrowTip());\n            else\n                setEndDecoration(null);\n        }\n        changed();\n    } else\n        super.setAttribute(name, value);\n}",
+  "method_comment": "\n     * Sets the attribute with the given name.\n     * PolyLineFigure interprets \"ArrowMode\"to set\n     * the line decoration.\n     ",
+  "method_annotation": ""
+}

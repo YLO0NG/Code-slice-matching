@@ -1,0 +1,55 @@
+{
+  "className": "TestSelector",
+  "methodName": "TestSelector",
+  "brief": "public TestSelector(Frame parent, TestCollector testCollector){}",
+  "methodSignature": "TestSelector(Frame, TestCollector)",
+  "sourceCode": "public TestSelector(Frame parent, TestCollector testCollector) {\r\n\t\tsuper(parent, true);\r\n\t\tsetSize(350, 300);\r\n\t\tsetResizable(false);\r\n\t\tsetLocationRelativeTo(parent);\r\n\t\tsetTitle(\"Test Selector\");\r\n\t\t\r\n\t\tVector list= null;\r\n\t\ttry {\r\n\t\t\tparent.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));\r\n\t\t\tlist= createTestList(testCollector);\r\n\t\t} finally {\r\n\t\t\tparent.setCursor(Cursor.getDefaultCursor());\r\n\t\t}\r\n\t\tfList= new JList(list);\r\n\t\tfList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n\t\tfList.setCellRenderer(new TestCellRenderer());\r\n\t\tfScrolledList= new JScrollPane(fList);\r\n\r\n\t\tfCancel= new JButton(\"Cancel\");\r\n\t\tfDescription= new JLabel(\"Select the Test class:\");\r\n\t\tfOk= new JButton(\"OK\");\r\n\t\tfOk.setEnabled(false);\r\n\t\tgetRootPane().setDefaultButton(fOk);\r\n\t\t\r\n\t\tdefineLayout();\r\n\t\taddListeners();\r\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Frame",
+    "TestCollector"
+  ],
+  "dependentMethods": {
+    "java.awt.Frame": [],
+    "junit.runner.TestCollector": [],
+    "java.awt.Window": [
+      "setSize(int, int)",
+      "setCursor(Cursor)",
+      "setLocationRelativeTo(Component)"
+    ],
+    "java.awt.Dialog": [
+      "setResizable(boolean)",
+      "setTitle(String)"
+    ],
+    "java.awt.Cursor": [
+      "getDefaultCursor()",
+      "getPredefinedCursor(int)"
+    ],
+    "junit.swingui.TestSelector": [
+      "createTestList(TestCollector)",
+      "addListeners()",
+      "defineLayout()"
+    ],
+    "javax.swing.JList": [
+      "setSelectionMode(int)",
+      "setCellRenderer(ListCellRenderer<? super E>)"
+    ],
+    "javax.swing.AbstractButton": [
+      "setEnabled(boolean)"
+    ],
+    "javax.swing.JRootPane": [
+      "setDefaultButton(JButton)"
+    ],
+    "javax.swing.JDialog": [
+      "getRootPane()"
+    ]
+  },
+  "full_method_info": "public TestSelector(Frame parent, TestCollector testCollector) {\r\n    super(parent, true);\r\n    setSize(350, 300);\r\n    setResizable(false);\r\n    setLocationRelativeTo(parent);\r\n    setTitle(\"Test Selector\");\r\n    Vector list = null;\r\n    try {\r\n        parent.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));\r\n        list = createTestList(testCollector);\r\n    } finally {\r\n        parent.setCursor(Cursor.getDefaultCursor());\r\n    }\r\n    fList = new JList(list);\r\n    fList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n    fList.setCellRenderer(new TestCellRenderer());\r\n    fScrolledList = new JScrollPane(fList);\r\n    fCancel = new JButton(\"Cancel\");\r\n    fDescription = new JLabel(\"Select the Test class:\");\r\n    fOk = new JButton(\"OK\");\r\n    fOk.setEnabled(false);\r\n    getRootPane().setDefaultButton(fOk);\r\n    defineLayout();\r\n    addListeners();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

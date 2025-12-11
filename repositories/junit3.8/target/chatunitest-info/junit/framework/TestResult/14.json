@@ -1,0 +1,37 @@
+{
+  "className": "TestResult",
+  "methodName": "startTest",
+  "brief": "public void startTest(Test test){}",
+  "methodSignature": "startTest(Test)",
+  "sourceCode": "public void startTest(Test test) {\r\n\t\tfinal int count= test.countTestCases();\r\n\t\tsynchronized(this) {\r\n\t\t\tfRunTests+= count;\r\n\t\t}\r\n\t\tfor (Enumeration e= cloneListeners().elements(); e.hasMoreElements(); ) {\r\n\t\t\t((TestListener)e.nextElement()).startTest(test);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [
+      "countTestCases()"
+    ],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "junit.framework.TestResult": [
+      "cloneListeners()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.framework.TestListener": [
+      "startTest(Test)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Informs the result that a test will be started.\r\n */\r\npublic void startTest(Test test) {\r\n    final int count = test.countTestCases();\r\n    synchronized (this) {\r\n        fRunTests += count;\r\n    }\r\n    for (Enumeration e = cloneListeners().elements(); e.hasMoreElements(); ) {\r\n        ((TestListener) e.nextElement()).startTest(test);\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Informs the result that a test will be started.\r\n\t ",
+  "method_annotation": ""
+}

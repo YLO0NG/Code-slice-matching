@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "editor",
+  "brief": "public DrawingEditor editor();",
+  "methodSignature": "editor()",
+  "sourceCode": "public DrawingEditor editor();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the editor.\n */\npublic DrawingEditor editor();",
+  "method_comment": "\n     * Gets the editor.\n     ",
+  "method_annotation": ""
+}

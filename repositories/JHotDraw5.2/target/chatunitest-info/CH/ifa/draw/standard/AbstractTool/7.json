@@ -1,0 +1,25 @@
+{
+  "className": "AbstractTool",
+  "methodName": "drawing",
+  "brief": "public Drawing drawing(){}",
+  "methodSignature": "drawing()",
+  "sourceCode": "public Drawing drawing() {\n        return view().drawing();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the tool's drawing.\n */\npublic Drawing drawing() {\n    return view().drawing();\n}",
+  "method_comment": "\n     * Gets the tool's drawing.\n     ",
+  "method_annotation": ""
+}

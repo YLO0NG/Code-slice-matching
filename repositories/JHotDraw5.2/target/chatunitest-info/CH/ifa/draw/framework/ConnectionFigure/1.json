@@ -1,0 +1,22 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "connectEnd",
+  "brief": "public void connectEnd(Connector end);",
+  "methodSignature": "connectEnd(Connector)",
+  "sourceCode": "public void connectEnd(Connector end);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Connector"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Connector": []
+  },
+  "full_method_info": "/**\n * Sets the end Connector of the connection.\n * @param figure the end figure of the connection\n */\npublic void connectEnd(Connector end);",
+  "method_comment": "\n     * Sets the end Connector of the connection.\n     * @param figure the end figure of the connection\n     ",
+  "method_annotation": ""
+}

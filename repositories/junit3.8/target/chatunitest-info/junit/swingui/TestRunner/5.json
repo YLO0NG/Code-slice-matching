@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "setSuite",
+  "brief": "public void setSuite(String suiteName){}",
+  "methodSignature": "setSuite(String)",
+  "sourceCode": "public void setSuite(String suiteName) {\r\n\t\tfSuiteCombo.getEditor().setItem(suiteName);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "javax.swing.ComboBoxEditor": [
+      "setItem(Object)"
+    ],
+    "javax.swing.JComboBox": [
+      "getEditor()"
+    ]
+  },
+  "full_method_info": "public void setSuite(String suiteName) {\r\n    fSuiteCombo.getEditor().setItem(suiteName);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

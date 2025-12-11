@@ -1,0 +1,39 @@
+{
+  "className": "TestCellRenderer",
+  "methodName": "getListCellRendererComponent",
+  "brief": "public Component getListCellRendererComponent(\r\r\n\t\t\t\tJList list, Object value, int modelIndex, \r\r\n\t\t\t\tboolean isSelected, boolean cellHasFocus){}",
+  "methodSignature": "getListCellRendererComponent(JList, Object, int, boolean, boolean)",
+  "sourceCode": "public Component getListCellRendererComponent(\r\n\t\t\t\tJList list, Object value, int modelIndex, \r\n\t\t\t\tboolean isSelected, boolean cellHasFocus) {\r\n\t\t\tComponent c= super.getListCellRendererComponent(list, value, modelIndex, isSelected, cellHasFocus);\r\n\t\t\tString displayString= displayString((String)value);\r\n\t\t\t\r\n\t\t\tif (displayString.startsWith(\"AllTests\"))\r\n\t\t\t\tsetIcon(fSuiteIcon);\r\n\t\t\telse\r\n\t\t\t\tsetIcon(fLeafIcon);\r\n\t\t\t\t\r\n\t\t\tsetText(displayString);\r\n\t\t    \treturn c;\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JList",
+    "Object",
+    "int",
+    "boolean",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "javax.swing.ListCellRenderer": [
+      "getListCellRendererComponent(JList<? extends E>, E, int, boolean, boolean)"
+    ],
+    "junit.swingui.TestSelector.TestCellRenderer": [
+      "displayString(String)"
+    ],
+    "java.lang.String": [
+      "startsWith(String)"
+    ],
+    "javax.swing.JLabel": [
+      "setIcon(Icon)",
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "public Component getListCellRendererComponent(JList list, Object value, int modelIndex, boolean isSelected, boolean cellHasFocus) {\r\n    Component c = super.getListCellRendererComponent(list, value, modelIndex, isSelected, cellHasFocus);\r\n    String displayString = displayString((String) value);\r\n    if (displayString.startsWith(\"AllTests\"))\r\n        setIcon(fSuiteIcon);\r\n    else\r\n        setIcon(fLeafIcon);\r\n    setText(displayString);\r\n    return c;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

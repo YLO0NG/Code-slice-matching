@@ -1,0 +1,32 @@
+{
+  "className": "LineConnection",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        Connector start = (Connector)dr.readStorable();\n        if (start != null)\n            connectStart(start);\n        Connector end = (Connector)dr.readStorable();\n        if (end != null)\n            connectEnd(end);\n        if (start != null && end != null)\n            updateConnection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "read(StorableInput)"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "connectStart(Connector)",
+      "connectEnd(Connector)",
+      "updateConnection()"
+    ]
+  },
+  "full_method_info": "public void read(StorableInput dr) throws IOException {\n    super.read(dr);\n    Connector start = (Connector) dr.readStorable();\n    if (start != null)\n        connectStart(start);\n    Connector end = (Connector) dr.readStorable();\n    if (end != null)\n        connectEnd(end);\n    if (start != null && end != null)\n        updateConnection();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

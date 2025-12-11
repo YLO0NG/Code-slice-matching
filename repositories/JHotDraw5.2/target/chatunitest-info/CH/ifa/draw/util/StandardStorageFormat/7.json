@@ -1,0 +1,22 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "setFileFilter",
+  "brief": "public void setFileFilter(FileFilter newFileFilter){}",
+  "methodSignature": "setFileFilter(FileFilter)",
+  "sourceCode": "public void setFileFilter(FileFilter newFileFilter) {\n\t\tmyFileFilter = newFileFilter;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FileFilter"
+  ],
+  "dependentMethods": {
+    "javax.swing.filechooser.FileFilter": []
+  },
+  "full_method_info": "/**\n * Set the FileFilter used to identify Drawing files with the correct file\n * extension for this StorageFormat.\n *\n * @param newFileFilter FileFilter for this StorageFormat\n */\npublic void setFileFilter(FileFilter newFileFilter) {\n    myFileFilter = newFileFilter;\n}",
+  "method_comment": "\n\t * Set the FileFilter used to identify Drawing files with the correct file\n\t * extension for this StorageFormat.\n\t *\n\t * @param newFileFilter FileFilter for this StorageFormat\n\t ",
+  "method_annotation": ""
+}

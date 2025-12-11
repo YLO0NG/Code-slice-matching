@@ -1,0 +1,46 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "setDrawing",
+  "brief": "public void setDrawing(Drawing d){}",
+  "methodSignature": "setDrawing(Drawing)",
+  "sourceCode": "public void setDrawing(Drawing d) {\n        if (fDrawing != null) {\n            clearSelection();\n            fDrawing.removeDrawingChangeListener(this);\n        }\n\n        fDrawing = d;\n        if (fDrawing != null)\n            fDrawing.addDrawingChangeListener(this);\n\n        FigureEnumeration k = drawing().figures();\n\t\tDimension d1 = new Dimension(0, 0);\n\t\twhile (k.hasMoreElements()) {\n\t\t    Rectangle r = k.nextFigure().displayBox();\n\t\t    d1.width = Math.max(d1.width, r.x+r.width);\n\t\t    d1.height = Math.max(d1.height, r.y+r.height);\n\t\t}\n\t\tif (fViewSize.height < d1.height || fViewSize.width < d1.width) {\n\t\t    fViewSize.height = d1.height+10;\n\t\t    fViewSize.width = d1.width+10;\n\t\t    setSize(fViewSize);\n\t\t}\n        repaint();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "addDrawingChangeListener(DrawingChangeListener)",
+      "removeDrawingChangeListener(DrawingChangeListener)",
+      "figures()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()",
+      "clearSelection()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.lang.Math": [
+      "max(int, int)"
+    ],
+    "java.awt.Component": [
+      "setSize(Dimension)",
+      "repaint()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets and installs another drawing in the view.\n */\npublic void setDrawing(Drawing d) {\n    if (fDrawing != null) {\n        clearSelection();\n        fDrawing.removeDrawingChangeListener(this);\n    }\n    fDrawing = d;\n    if (fDrawing != null)\n        fDrawing.addDrawingChangeListener(this);\n    FigureEnumeration k = drawing().figures();\n    Dimension d1 = new Dimension(0, 0);\n    while (k.hasMoreElements()) {\n        Rectangle r = k.nextFigure().displayBox();\n        d1.width = Math.max(d1.width, r.x + r.width);\n        d1.height = Math.max(d1.height, r.y + r.height);\n    }\n    if (fViewSize.height < d1.height || fViewSize.width < d1.width) {\n        fViewSize.height = d1.height + 10;\n        fViewSize.width = d1.width + 10;\n        setSize(fViewSize);\n    }\n    repaint();\n}",
+  "method_comment": "\n     * Sets and installs another drawing in the view.\n     ",
+  "method_annotation": ""
+}

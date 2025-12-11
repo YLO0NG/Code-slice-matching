@@ -1,0 +1,18 @@
+{
+  "className": "RelativeLocator",
+  "methodName": "west",
+  "brief": "static public Locator west(){}",
+  "methodSignature": "west()",
+  "sourceCode": "static public Locator west() {\n        return new RelativeLocator(0.0, 0.5);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * West.\n */\nstatic public Locator west() {\n    return new RelativeLocator(0.0, 0.5);\n}",
+  "method_comment": "\n     * West.\n     ",
+  "method_annotation": ""
+}

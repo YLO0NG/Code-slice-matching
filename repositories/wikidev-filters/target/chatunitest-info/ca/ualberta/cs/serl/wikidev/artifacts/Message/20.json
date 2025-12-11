@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "setLastEditorAndTimeLastModifiedBeforeDate",
+  "brief": "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp){}",
+  "methodSignature": "setLastEditorAndTimeLastModifiedBeforeDate(Timestamp)",
+  "sourceCode": "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp) {\n\t\tlastModified = this.timestamp;\n\t\tlastEditor = this.owner;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public void setLastEditorAndTimeLastModifiedBeforeDate(Timestamp timestamp) {\n    lastModified = this.timestamp;\n    lastEditor = this.owner;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "ReverseFigureEnumerator",
+  "methodName": "hasMoreElements",
+  "brief": "public boolean hasMoreElements(){}",
+  "methodSignature": "hasMoreElements()",
+  "sourceCode": "public boolean hasMoreElements() {\n\t    return fEnumeration.hasMoreElements();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.ReverseVectorEnumerator": [
+      "hasMoreElements()"
+    ]
+  },
+  "full_method_info": "/**\n * Returns true if the enumeration contains more elements; false\n * if its empty.\n */\npublic boolean hasMoreElements() {\n    return fEnumeration.hasMoreElements();\n}",
+  "method_comment": "\n     * Returns true if the enumeration contains more elements; false\n     * if its empty.\n     ",
+  "method_annotation": ""
+}

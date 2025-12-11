@@ -1,0 +1,50 @@
+{
+  "className": "Layout",
+  "methodName": "getLayout",
+  "brief": "protected void getLayout(ArrayList<IArtifact> newArtifacts, double[][] distanceMatrix) throws IOException{}",
+  "methodSignature": "getLayout(ArrayList, double[][])",
+  "sourceCode": "protected void getLayout(ArrayList<IArtifact> newArtifacts, double[][] distanceMatrix) throws IOException {\n\t\tdouble[][] coords = null;\n\t\tif (distanceMatrix.length > 0) {\n\t\t\tMultidimensionalScaling mds = new MultidimensionalScaling(\n\t\t\t\t\tdistanceMatrix);\n\t\t\tdouble[][] mdsCoords = mds.cMDS();\n\t\t\tSammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);\n\t\t\tsammon.CreateMapping();\n\t\t\tcoords = sammon.getProjection();\n\t\t}\n\t\tfor (int i = 0; i < newArtifacts.size(); i++) {\n\t\t\tnewArtifacts.get(i).setCoords(coords[i]);\n\t\t}\n\t\tSystem.out.print(\"x<-c(\");\n\t\tdouble maxX = 0;\n\t\tdouble minX = Double.MAX_VALUE;\n\t\tdouble maxY = 0;\n\t\tdouble minY = Double.MAX_VALUE;\n\t\tfor (int i = 0; i < coords.length; i++) {\n\t\t\tfor (int j = 0; j < coords[0].length; j++) {\n\t\t\t\tif (j == 0) {\n\t\t\t\t\tif (coords[i][j] > maxX) {\n\t\t\t\t\t\tmaxX = coords[i][j];\n\t\t\t\t\t}\n\t\t\t\t\tif (coords[i][j] < minX) {\n\t\t\t\t\t\tminX = coords[i][j];\n\t\t\t\t\t}\n\t\t\t\t} else {\n\t\t\t\t\tif (coords[i][j] > maxY) {\n\t\t\t\t\t\tmaxY = coords[i][j];\n\t\t\t\t\t}\n\t\t\t\t\tif (coords[i][j] < minY) {\n\t\t\t\t\t\tminY = coords[i][j];\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tSystem.out.print((float) coords[i][j] + \", \");\n\t\t\t}\n\t\t}\n\t\tSystem.out.println(\")\");\n\n\t\tdouble rangeX = Math.ceil(maxX - minX);\n\t\tdouble rangeY = Math.ceil(maxY - minY);\n\t\tdouble range = 0;\n\t\tif (rangeX > rangeY) {\n\t\t\trange = rangeX;\n\t\t} else {\n\t\t\trange = rangeY;\n\t\t}\n\t\tdouble blocks = Math.ceil(Math\n\t\t\t\t.sqrt(Math.ceil(newArtifacts.size() / 16))) + 2;\n\n\t\tcityBlockInitialization(newArtifacts, coords, minX, minY, range, blocks);\n\n\t\tredistributeBuildings();\n\n\t\tpushBuildings(minX, minY, range);\n\n\t\t//printCityBlocks(cityBlocks);\n\t\tSystem.out.println(\"Blocks done\");\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<IArtifact>",
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.MultidimensionalScaling": [
+      "cMDS()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.SammonsProjection": [
+      "CreateMapping()",
+      "getProjection()"
+    ],
+    "java.util.ArrayList": [
+      "get(int)",
+      "size()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "setCoords(double[])"
+    ],
+    "java.io.PrintStream": [
+      "print(String)",
+      "println(String)"
+    ],
+    "java.lang.Math": [
+      "ceil(double)",
+      "sqrt(double)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "pushBuildings(double, double, double)",
+      "redistributeBuildings()",
+      "cityBlockInitialization(IArtifact>, double[][], double, double, double, double)"
+    ]
+  },
+  "full_method_info": "protected void getLayout(ArrayList<IArtifact> newArtifacts, double[][] distanceMatrix) throws IOException {\n    double[][] coords = null;\n    if (distanceMatrix.length > 0) {\n        MultidimensionalScaling mds = new MultidimensionalScaling(distanceMatrix);\n        double[][] mdsCoords = mds.cMDS();\n        SammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);\n        sammon.CreateMapping();\n        coords = sammon.getProjection();\n    }\n    for (int i = 0; i < newArtifacts.size(); i++) {\n        newArtifacts.get(i).setCoords(coords[i]);\n    }\n    System.out.print(\"x<-c(\");\n    double maxX = 0;\n    double minX = Double.MAX_VALUE;\n    double maxY = 0;\n    double minY = Double.MAX_VALUE;\n    for (int i = 0; i < coords.length; i++) {\n        for (int j = 0; j < coords[0].length; j++) {\n            if (j == 0) {\n                if (coords[i][j] > maxX) {\n                    maxX = coords[i][j];\n                }\n                if (coords[i][j] < minX) {\n                    minX = coords[i][j];\n                }\n            } else {\n                if (coords[i][j] > maxY) {\n                    maxY = coords[i][j];\n                }\n                if (coords[i][j] < minY) {\n                    minY = coords[i][j];\n                }\n            }\n            System.out.print((float) coords[i][j] + \", \");\n        }\n    }\n    System.out.println(\")\");\n    double rangeX = Math.ceil(maxX - minX);\n    double rangeY = Math.ceil(maxY - minY);\n    double range = 0;\n    if (rangeX > rangeY) {\n        range = rangeX;\n    } else {\n        range = rangeY;\n    }\n    double blocks = Math.ceil(Math.sqrt(Math.ceil(newArtifacts.size() / 16))) + 2;\n    cityBlockInitialization(newArtifacts, coords, minX, minY, range, blocks);\n    redistributeBuildings();\n    pushBuildings(minX, minY, range);\n    // printCityBlocks(cityBlocks);\n    System.out.println(\"Blocks done\");\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

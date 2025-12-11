@@ -1,0 +1,54 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.Layouter",
+  "className": "Layouter",
+  "index": 9,
+  "modifier": "[public ]",
+  "extend": "[Serializable, Storable]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public interface Layouter",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Insets;",
+    "import java.awt.Point;",
+    "import java.awt.Rectangle;",
+    "import java.io.Serializable;",
+    "import CH.ifa.draw.util.Storable;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "Serializable",
+    "Storable"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "calculateLayout(Point, Point)": "0",
+    "layout(Point, Point)": "1",
+    "setInsets(Insets)": "2",
+    "getInsets()": "3"
+  },
+  "methodsBrief": [
+    "public Rectangle calculateLayout(Point origin, Point corner);",
+    "public Rectangle layout(Point origin, Point corner);",
+    "public void setInsets(Insets newInsets);",
+    "public Insets getInsets();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "setInsets(Insets)",
+    "getInsets()"
+  ],
+  "getterSetterBrief": [
+    "public void setInsets(Insets newInsets);",
+    "public Insets getInsets();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Layouter.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Insets;\nimport java.awt.Point;\nimport java.awt.Rectangle;\nimport java.io.Serializable;\nimport CH.ifa.draw.util.Storable;\n\n/**\n * A Layouter encapsulates a algorithm to layout\n * a figure. It is passed on to a figure which delegates the\n * layout task to the Layouter's layout method.\n * The Layouter might need access to some information\n * specific to a certain figure in order to layout it out properly.\n *\n * Note: Currently, only the GraphicalCompositeFigure uses\n *       such a Layouter to layout its child components.\n *\n * @see\t\tGraphicalCompositeFigure\n * @author\tWolfram Kaiser\n */\npublic interface Layouter extends Serializable, Storable {\n\n    /*\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t */\n    public Rectangle calculateLayout(Point origin, Point corner);\n\n    /**\n     * Method which lays out a figure. It is called by the figure\n     * if a layout task is to be performed. Implementing classes\n     * specify a certain layout algorithm in this method.\n     *\n     * @param origin start point for the layout\n     * @param corner minimum corner point for the layout\n     */\n    public Rectangle layout(Point origin, Point corner);\n\n    /**\n     * Set the insets for spacing between the figure and its subfigures\n     *\n     * @param newInsets new spacing dimensions\n     */\n    public void setInsets(Insets newInsets);\n\n    /**\n     * Get the insets for spacing between the figure and its subfigures\n     *\n     * @return spacing dimensions\n     */\n    public Insets getInsets();\n}\n",
+  "classDeclarationCode": "/**\n * A Layouter encapsulates a algorithm to layout\n * a figure. It is passed on to a figure which delegates the\n * layout task to the Layouter's layout method.\n * The Layouter might need access to some information\n * specific to a certain figure in order to layout it out properly.\n *\n * Note: Currently, only the GraphicalCompositeFigure uses\n *       such a Layouter to layout its child components.\n *\n * @see\t\tGraphicalCompositeFigure\n * @author\tWolfram Kaiser\n */\npublic interface Layouter extends Serializable, Storable {\n\n    /*\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t */\n    public Rectangle calculateLayout(Point origin, Point corner);\n\n    /**\n     * Method which lays out a figure. It is called by the figure\n     * if a layout task is to be performed. Implementing classes\n     * specify a certain layout algorithm in this method.\n     *\n     * @param origin start point for the layout\n     * @param corner minimum corner point for the layout\n     */\n    public Rectangle layout(Point origin, Point corner);\n\n    /**\n     * Set the insets for spacing between the figure and its subfigures\n     *\n     * @param newInsets new spacing dimensions\n     */\n    public void setInsets(Insets newInsets);\n\n    /**\n     * Get the insets for spacing between the figure and its subfigures\n     *\n     * @return spacing dimensions\n     */\n    public Insets getInsets();\n}",
+  "subClasses": []
+}

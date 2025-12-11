@@ -1,0 +1,31 @@
+{
+  "className": "PasteCommand",
+  "methodName": "bounds",
+  "brief": "Rectangle bounds(Enumeration k){}",
+  "methodSignature": "bounds(Enumeration)",
+  "sourceCode": "Rectangle bounds(Enumeration k) {\n        Rectangle r = ((Figure) k.nextElement()).displayBox();\n        while (k.hasMoreElements())\n            r.add(((Figure) k.nextElement()).displayBox());\n        return r;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Enumeration"
+  ],
+  "dependentMethods": {
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "java.awt.Rectangle": [
+      "add(Rectangle)"
+    ]
+  },
+  "full_method_info": "Rectangle bounds(Enumeration k) {\n    Rectangle r = ((Figure) k.nextElement()).displayBox();\n    while (k.hasMoreElements()) r.add(((Figure) k.nextElement()).displayBox());\n    return r;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

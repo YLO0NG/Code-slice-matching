@@ -1,0 +1,31 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "orphanAll",
+  "brief": "public void orphanAll(Vector newFigures){}",
+  "methodSignature": "orphanAll(Vector)",
+  "sourceCode": "public void orphanAll(Vector newFigures) {\n        Enumeration k = newFigures.elements();\n        while (k.hasMoreElements())\n            orphan((Figure) k.nextElement());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "orphan(Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a vector of figures from the figure's list\n * without releasing the figures.\n * @see #orphan\n */\npublic void orphanAll(Vector newFigures) {\n    Enumeration k = newFigures.elements();\n    while (k.hasMoreElements()) orphan((Figure) k.nextElement());\n}",
+  "method_comment": "\n     * Removes a vector of figures from the figure's list\n     * without releasing the figures.\n     * @see #orphan\n     ",
+  "method_annotation": ""
+}

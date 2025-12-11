@@ -1,0 +1,24 @@
+{
+  "className": "PaletteLayout",
+  "methodName": "PaletteLayout",
+  "brief": "public PaletteLayout(int gap, Point border, boolean vertical){}",
+  "methodSignature": "PaletteLayout(int, Point, boolean)",
+  "sourceCode": "public PaletteLayout(int gap, Point border, boolean vertical) {\n        fGap = gap;\n        fBorder = border;\n        fVerticalLayout = vertical;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "Point",
+    "boolean"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "public PaletteLayout(int gap, Point border, boolean vertical) {\n    fGap = gap;\n    fBorder = border;\n    fVerticalLayout = vertical;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

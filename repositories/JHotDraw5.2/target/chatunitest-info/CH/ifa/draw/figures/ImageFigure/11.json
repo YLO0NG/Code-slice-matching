@@ -1,0 +1,29 @@
+{
+  "className": "ImageFigure",
+  "methodName": "ImageFigure",
+  "brief": "public ImageFigure(Image image, String fileName, Point origin){}",
+  "methodSignature": "ImageFigure(Image, String, Point)",
+  "sourceCode": "public ImageFigure(Image image, String fileName, Point origin) {\n        fFileName = fileName;\n        fImage = image;\n        fDisplayBox = new Rectangle(origin.x, origin.y, 0, 0);\n        fDisplayBox.width = fImage.getWidth(this);\n        fDisplayBox.height = fImage.getHeight(this);\n    }",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Image",
+    "String",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Image": [
+      "getWidth(ImageObserver)",
+      "getHeight(ImageObserver)"
+    ],
+    "java.lang.String": [],
+    "java.awt.Point": []
+  },
+  "full_method_info": "public ImageFigure(Image image, String fileName, Point origin) {\n    fFileName = fileName;\n    fImage = image;\n    fDisplayBox = new Rectangle(origin.x, origin.y, 0, 0);\n    fDisplayBox.width = fImage.getWidth(this);\n    fDisplayBox.height = fImage.getHeight(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "PertFigureCreationTool",
+  "methodName": "createFigure",
+  "brief": "protected Figure createFigure(){}",
+  "methodSignature": "createFigure()",
+  "sourceCode": "protected Figure createFigure() {\n        return new PertFigure();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Creates a new PertFigure.\n */\nprotected Figure createFigure() {\n    return new PertFigure();\n}",
+  "method_comment": "\n     * Creates a new PertFigure.\n     ",
+  "method_annotation": ""
+}

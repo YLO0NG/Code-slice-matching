@@ -1,0 +1,29 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "startTest",
+  "brief": "public void startTest(Test test){}",
+  "methodSignature": "startTest(Test)",
+  "sourceCode": "public void startTest(Test test) {\r\n\t\tgetWriter().print(\".\");\r\n\t\tif (fColumn++ >= 40) {\r\n\t\t\tgetWriter().println();\r\n\t\t\tfColumn= 0;\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.io.PrintStream": [
+      "print(String)",
+      "println()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ]
+  },
+  "full_method_info": "/**\r\n * @see junit.framework.TestListener#startTest(Test)\r\n */\r\npublic void startTest(Test test) {\r\n    getWriter().print(\".\");\r\n    if (fColumn++ >= 40) {\r\n        getWriter().println();\r\n        fColumn = 0;\r\n    }\r\n}",
+  "method_comment": "\r\n\t * @see junit.framework.TestListener#startTest(Test)\r\n\t ",
+  "method_annotation": ""
+}

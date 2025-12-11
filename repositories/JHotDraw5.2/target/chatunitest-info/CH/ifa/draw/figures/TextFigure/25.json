@@ -1,0 +1,25 @@
+{
+  "className": "TextFigure",
+  "methodName": "figureChanged",
+  "brief": "public void figureChanged(FigureChangeEvent e){}",
+  "methodSignature": "figureChanged(FigureChangeEvent)",
+  "sourceCode": "public void figureChanged(FigureChangeEvent e) {\n        updateLocation();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [],
+    "CH.ifa.draw.figures.TextFigure": [
+      "updateLocation()"
+    ]
+  },
+  "full_method_info": "public void figureChanged(FigureChangeEvent e) {\n    updateLocation();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

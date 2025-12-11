@@ -1,0 +1,32 @@
+{
+  "className": "DrawApplication",
+  "methodName": "loadDrawing",
+  "brief": "protected void loadDrawing(StorageFormat restoreFormat, String file){}",
+  "methodSignature": "loadDrawing(StorageFormat, String)",
+  "sourceCode": "protected void loadDrawing(StorageFormat restoreFormat, String file) {\n        try {\n            Drawing restoredDrawing = restoreFormat.restore(file);\n            if (restoredDrawing != null) {\n                newWindow();\n                setDrawing(restoredDrawing);\n                setDrawingTitle(file);\n            }\n            else {\n               showStatus(\"Unknown file type: could not open file '\" + file + \"'\");\n            }\n        } catch (IOException e) {\n            showStatus(\"Error: \" + e);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormat",
+    "String"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormat": [
+      "restore(String)"
+    ],
+    "java.lang.String": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "showStatus(String)",
+      "setDrawing(Drawing)",
+      "newWindow()",
+      "setDrawingTitle(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Load a Drawing from a file\n */\nprotected void loadDrawing(StorageFormat restoreFormat, String file) {\n    try {\n        Drawing restoredDrawing = restoreFormat.restore(file);\n        if (restoredDrawing != null) {\n            newWindow();\n            setDrawing(restoredDrawing);\n            setDrawingTitle(file);\n        } else {\n            showStatus(\"Unknown file type: could not open file '\" + file + \"'\");\n        }\n    } catch (IOException e) {\n        showStatus(\"Error: \" + e);\n    }\n}",
+  "method_comment": "\n     * Load a Drawing from a file \n     ",
+  "method_annotation": ""
+}

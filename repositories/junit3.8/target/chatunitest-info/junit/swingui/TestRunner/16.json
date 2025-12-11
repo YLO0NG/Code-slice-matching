@@ -1,0 +1,43 @@
+{
+  "className": "TestRunner",
+  "methodName": "createFrame",
+  "brief": "protected JFrame createFrame(String title){}",
+  "methodSignature": "createFrame(String)",
+  "sourceCode": "protected JFrame createFrame(String title) {\r\n\t\tJFrame frame= new JFrame(\"JUnit\");\r\n\t\tImage icon= loadFrameIcon();\r\n\t\tif (icon != null)\r\n\t\t\tframe.setIconImage(icon);\r\n\t\tframe.getContentPane().setLayout(new BorderLayout(0, 0));\r\n\r\n\t\tframe.addWindowListener(\r\n\t\t\tnew WindowAdapter() {\r\n\t\t\t\tpublic void windowClosing(WindowEvent e) {\r\n\t\t\t\t\t/*{*/fFrame.dispose();\r\n\t\t\t\t\ttry {\r\n\t\t\t\t\t\tsaveHistory();\r\n\t\t\t\t\t} catch (IOException e1) {\r\n\t\t\t\t\t\tSystem.out.println(\"Couldn't save test run history\");\r\n\t\t\t\t\t}\r\n\t\t\t\t\tSystem.exit(0);/*}*/\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\treturn frame;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.swingui.TestRunner": [
+      "saveHistory()",
+      "loadFrameIcon()"
+    ],
+    "javax.swing.JFrame": [
+      "setIconImage(Image)",
+      "getContentPane()"
+    ],
+    "java.awt.Container": [
+      "setLayout(LayoutManager)"
+    ],
+    "java.awt.Window": [
+      "dispose()",
+      "addWindowListener(WindowListener)"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.lang.System": [
+      "exit(int)"
+    ]
+  },
+  "full_method_info": "protected JFrame createFrame(String title) {\r\n    JFrame frame = new JFrame(\"JUnit\");\r\n    Image icon = loadFrameIcon();\r\n    if (icon != null)\r\n        frame.setIconImage(icon);\r\n    frame.getContentPane().setLayout(new BorderLayout(0, 0));\r\n    frame.addWindowListener(new WindowAdapter() {\r\n\r\n        public void windowClosing(WindowEvent e) {\r\n            /*{*/\r\n            fFrame.dispose();\r\n            try {\r\n                saveHistory();\r\n            } catch (IOException e1) {\r\n                System.out.println(\"Couldn't save test run history\");\r\n            }\r\n            System.exit(0);\r\n            /*}*/\r\n        }\r\n    });\r\n    return frame;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

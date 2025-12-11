@@ -1,0 +1,35 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(String message, double expected, double actual, double delta){}",
+  "methodSignature": "assertEquals(String, double, double, double)",
+  "sourceCode": "static public void assertEquals(String message, double expected, double actual, double delta) {\r\n\t\t// handle infinity specially since subtracting to infinite values gives NaN and the\r\n\t\t// the following test fails\r\n\t\tif (Double.isInfinite(expected)) {\r\n\t\t\tif (!(expected == actual)) {\r\n\t\t\t\t/*{*/String formatted= \"\";\r\n\t\t\t\tif (message != null)\r\n\t\t\t\t\tformatted= message+\" \";\r\n\t\t\t\tfail(formatted+\"expected:<\"+new Double(expected)+\"> but was:<\"+new Double(actual)+\">\");/*}*/\r\n\t\t\t}\r\n\t\t} else if (!(Math.abs(expected-actual) <= delta)) // Because comparison with NaN always returns false\r\n\t\t\tfailNotEquals(message, new Double(expected), new Double(actual));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "double",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Double": [
+      "isInfinite(double)"
+    ],
+    "junit.framework.Assert": [
+      "fail(String)",
+      "failNotEquals(String, Object, Object)"
+    ],
+    "java.lang.Math": [
+      "abs(double)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two doubles are equal concerning a delta.  If they are not\r\n * an AssertionFailedError is thrown with the given message.  If the expected\r\n * value is infinity then the delta value is ignored.\r\n */\r\nstatic public void assertEquals(String message, double expected, double actual, double delta) {\r\n    // handle infinity specially since subtracting to infinite values gives NaN and the\r\n    // the following test fails\r\n    if (Double.isInfinite(expected)) {\r\n        if (!(expected == actual)) {\r\n            /*{*/\r\n            String formatted = \"\";\r\n            if (message != null)\r\n                formatted = message + \" \";\r\n            fail(formatted + \"expected:<\" + new Double(expected) + \"> but was:<\" + new Double(actual) + \">\");\r\n            /*}*/\r\n        }\r\n    } else if (// Because comparison with NaN always returns false\r\n    !(Math.abs(expected - actual) <= delta))\r\n        failNotEquals(message, new Double(expected), new Double(actual));\r\n}",
+  "method_comment": "\r\n\t * Asserts that two doubles are equal concerning a delta.  If they are not\r\n\t * an AssertionFailedError is thrown with the given message.  If the expected\r\n\t * value is infinity then the delta value is ignored.\r\n\t ",
+  "method_annotation": ""
+}

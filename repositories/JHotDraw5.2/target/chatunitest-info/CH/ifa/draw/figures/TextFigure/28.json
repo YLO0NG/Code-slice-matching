@@ -1,0 +1,22 @@
+{
+  "className": "TextFigure",
+  "methodName": "figureInvalidated",
+  "brief": "public void figureInvalidated(FigureChangeEvent e){}",
+  "methodSignature": "figureInvalidated(FigureChangeEvent)",
+  "sourceCode": "public void figureInvalidated(FigureChangeEvent e) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": []
+  },
+  "full_method_info": "public void figureInvalidated(FigureChangeEvent e) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

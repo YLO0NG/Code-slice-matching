@@ -1,0 +1,50 @@
+{
+  "fullClassName": "junit.swingui.TestRunView",
+  "className": "TestRunView",
+  "index": 45,
+  "modifier": "[]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "interface TestRunView",
+  "hasConstructor": false,
+  "isPublic": false,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.JTabbedPane;",
+    "import junit.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getSelectedTest()": "0",
+    "activate()": "1",
+    "revealFailure(Test)": "2",
+    "addTab(JTabbedPane)": "3",
+    "aboutToStart(Test, TestResult)": "4",
+    "runFinished(Test, TestResult)": "5"
+  },
+  "methodsBrief": [
+    "public Test getSelectedTest();",
+    "public void activate();",
+    "public void revealFailure(Test failure);",
+    "public void addTab(JTabbedPane pane);",
+    "public void aboutToStart(Test suite, TestResult result);",
+    "public void runFinished(Test suite, TestResult result);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getSelectedTest()"
+  ],
+  "getterSetterBrief": [
+    "public Test getSelectedTest();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport javax.swing.JTabbedPane;\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A TestRunView is shown as a page in a tabbed folder.\r\n * It contributes the page contents and can return\r\n * the currently selected tests. A TestRunView is\r\n * notified about the start and finish of a run.\r\n */\r\ninterface TestRunView {\r\n\r\n    /**\r\n     * Returns the currently selected Test in the View\r\n     */\r\n    public Test getSelectedTest();\r\n\r\n    /**\r\n     * Activates the TestRunView\r\n     */\r\n    public void activate();\r\n\r\n    /**\r\n     * Reveals the given failure\r\n     */\r\n    public void revealFailure(Test failure);\r\n\r\n    /**\r\n     * Adds the TestRunView to the test run views tab\r\n     */\r\n    public void addTab(JTabbedPane pane);\r\n\r\n    /**\r\n     * Informs that the suite is about to start\r\n     */\r\n    public void aboutToStart(Test suite, TestResult result);\r\n\r\n    /**\r\n     * Informs that the run of the test suite has finished\r\n     */\r\n    public void runFinished(Test suite, TestResult result);\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A TestRunView is shown as a page in a tabbed folder.\r\n * It contributes the page contents and can return\r\n * the currently selected tests. A TestRunView is\r\n * notified about the start and finish of a run.\r\n */\r\ninterface TestRunView {\r\n\r\n    /**\r\n     * Returns the currently selected Test in the View\r\n     */\r\n    public Test getSelectedTest();\r\n\r\n    /**\r\n     * Activates the TestRunView\r\n     */\r\n    public void activate();\r\n\r\n    /**\r\n     * Reveals the given failure\r\n     */\r\n    public void revealFailure(Test failure);\r\n\r\n    /**\r\n     * Adds the TestRunView to the test run views tab\r\n     */\r\n    public void addTab(JTabbedPane pane);\r\n\r\n    /**\r\n     * Informs that the suite is about to start\r\n     */\r\n    public void aboutToStart(Test suite, TestResult result);\r\n\r\n    /**\r\n     * Informs that the run of the test suite has finished\r\n     */\r\n    public void runFinished(Test suite, TestResult result);\r\n}",
+  "subClasses": []
+}

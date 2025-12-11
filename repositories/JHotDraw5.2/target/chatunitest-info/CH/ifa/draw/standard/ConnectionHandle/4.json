@@ -1,0 +1,22 @@
+{
+  "className": "ConnectionHandle",
+  "methodName": "createConnection",
+  "brief": "protected ConnectionFigure createConnection(){}",
+  "methodSignature": "createConnection()",
+  "sourceCode": "protected ConnectionFigure createConnection() {\n        return (ConnectionFigure)fPrototype.clone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "clone()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the ConnectionFigure. By default the figure prototype is\n * cloned.\n */\nprotected ConnectionFigure createConnection() {\n    return (ConnectionFigure) fPrototype.clone();\n}",
+  "method_comment": "\n     * Creates the ConnectionFigure. By default the figure prototype is\n     * cloned.\n     ",
+  "method_annotation": ""
+}

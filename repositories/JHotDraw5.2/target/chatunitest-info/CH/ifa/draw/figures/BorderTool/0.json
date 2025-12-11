@@ -1,0 +1,28 @@
+{
+  "className": "BorderTool",
+  "methodName": "action",
+  "brief": "public void action(Figure figure){}",
+  "methodSignature": "action(Figure)",
+  "sourceCode": "public void action(Figure figure) {\n        drawing().replace(figure, new BorderDecorator(figure));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "replace(Figure, Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ]
+  },
+  "full_method_info": "/**\n * Decorates the clicked figure with a border.\n */\npublic void action(Figure figure) {\n    drawing().replace(figure, new BorderDecorator(figure));\n}",
+  "method_comment": "\n    * Decorates the clicked figure with a border.\n    ",
+  "method_annotation": ""
+}

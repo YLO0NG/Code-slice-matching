@@ -1,0 +1,26 @@
+{
+  "className": "Cluster",
+  "methodName": "addArtifact",
+  "brief": "public void addArtifact(IArtifact entity){}",
+  "methodSignature": "addArtifact(IArtifact)",
+  "sourceCode": "public void addArtifact(IArtifact entity) {\n\t\tif (!artifacts.contains(entity)) {\n\t\t\tartifacts.add(entity);\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "IArtifact"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.util.ArrayList": [
+      "contains(Object)",
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addArtifact(IArtifact entity) {\n    if (!artifacts.contains(entity)) {\n        artifacts.add(entity);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

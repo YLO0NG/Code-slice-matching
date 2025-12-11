@@ -1,0 +1,22 @@
+{
+  "className": "SchedulerAction",
+  "methodName": "setTimeInterval",
+  "brief": "public void setTimeInterval( Integer timeInterval ){}",
+  "methodSignature": "setTimeInterval(Integer)",
+  "sourceCode": "public void setTimeInterval( Integer timeInterval ) {\n\t\tthis.timeInterval = timeInterval;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Integer"
+  ],
+  "dependentMethods": {
+    "java.lang.Integer": []
+  },
+  "full_method_info": "public void setTimeInterval(Integer timeInterval) {\n    this.timeInterval = timeInterval;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

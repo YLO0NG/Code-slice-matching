@@ -1,0 +1,18 @@
+{
+  "className": "TestFailure",
+  "methodName": "failedTest",
+  "brief": "public Test failedTest(){}",
+  "methodSignature": "failedTest()",
+  "sourceCode": "public Test failedTest() {\r\n\t    return fFailedTest;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Gets the failed test.\r\n */\r\npublic Test failedTest() {\r\n    return fFailedTest;\r\n}",
+  "method_comment": "\r\n\t * Gets the failed test.\r\n\t ",
+  "method_annotation": ""
+}

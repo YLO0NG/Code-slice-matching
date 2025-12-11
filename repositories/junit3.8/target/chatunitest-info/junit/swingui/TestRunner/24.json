@@ -1,0 +1,54 @@
+{
+  "className": "TestRunner",
+  "methodName": "createSuiteCombo",
+  "brief": "protected JComboBox createSuiteCombo(){}",
+  "methodSignature": "createSuiteCombo()",
+  "sourceCode": "protected JComboBox createSuiteCombo() {\r\n\t\tJComboBox combo= new JComboBox();\r\n\t\tcombo.setEditable(true);\r\n\t\tcombo.setLightWeightPopupEnabled(false);\r\n\r\n\t\tcombo.getEditor().getEditorComponent().addKeyListener(\r\n\t\t\tnew KeyAdapter() {\r\n\t\t\t\tpublic void keyTyped(KeyEvent e) {\r\n\t\t\t\t\ttextChanged();\r\n\t\t\t\t\tif (e.getKeyChar() == KeyEvent.VK_ENTER)\r\n\t\t\t\t\t\t/*{*/if (fRunner != null) {\r\n\t\t\t\t\t\t\tfTestResult.stop();\r\n\t\t\t\t\t\t} else {\r\n\t\t\t\t\t\t\tsetLoading(shouldReload());\r\n\t\t\t\t\t\t\treset();\r\n\t\t\t\t\t\t\tshowInfo(\"Load Test Case...\");\r\n\t\t\t\t\t\t\tfinal String suiteName= getSuiteText();\r\n\t\t\t\t\t\t\tfinal Test testSuite= getTest(suiteName);\r\n\t\t\t\t\t\t\tif (testSuite != null) {\r\n\t\t\t\t\t\t\t\taddToHistory(suiteName);\r\n\t\t\t\t\t\t\t\tdoRunTest(testSuite);\r\n\t\t\t\t\t\t\t}\r\n\t\t\t\t\t\t}/*}*/\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\ttry {\r\n\t\t\tloadHistory(combo);\r\n\t\t} catch (IOException e) {\r\n\t\t\t// fails the first time\r\n\t\t}\r\n\t\tcombo.addItemListener(\r\n\t\t\tnew ItemListener() {\r\n\t\t\t\tpublic void itemStateChanged(ItemEvent event) {\r\n\t\t\t\t\tif (event.getStateChange() == ItemEvent.SELECTED) {\r\n\t\t\t\t\t\ttextChanged();\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\treturn combo;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JComboBox": [
+      "setEditable(boolean)",
+      "setLightWeightPopupEnabled(boolean)",
+      "addItemListener(ItemListener)",
+      "getEditor()"
+    ],
+    "java.awt.Component": [
+      "addKeyListener(KeyListener)"
+    ],
+    "javax.swing.ComboBoxEditor": [
+      "getEditorComponent()"
+    ],
+    "junit.swingui.TestRunner": [
+      "doRunTest(Test)",
+      "getSuiteText()",
+      "loadHistory(JComboBox)",
+      "reset()",
+      "textChanged()",
+      "shouldReload()",
+      "showInfo(String)",
+      "addToHistory(String)"
+    ],
+    "java.awt.event.KeyEvent": [
+      "getKeyChar()"
+    ],
+    "junit.framework.TestResult": [
+      "stop()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getTest(String)",
+      "setLoading(boolean)"
+    ],
+    "java.awt.event.ItemEvent": [
+      "getStateChange()"
+    ]
+  },
+  "full_method_info": "protected JComboBox createSuiteCombo() {\r\n    JComboBox combo = new JComboBox();\r\n    combo.setEditable(true);\r\n    combo.setLightWeightPopupEnabled(false);\r\n    combo.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {\r\n\r\n        public void keyTyped(KeyEvent e) {\r\n            textChanged();\r\n            if (e.getKeyChar() == KeyEvent.VK_ENTER)\r\n                /*{*/\r\n                if (fRunner != null) {\r\n                    fTestResult.stop();\r\n                } else {\r\n                    setLoading(shouldReload());\r\n                    reset();\r\n                    showInfo(\"Load Test Case...\");\r\n                    final String suiteName = getSuiteText();\r\n                    final Test testSuite = getTest(suiteName);\r\n                    if (testSuite != null) {\r\n                        addToHistory(suiteName);\r\n                        doRunTest(testSuite);\r\n                    }\r\n                }\r\n            /*}*/\r\n        }\r\n    });\r\n    try {\r\n        loadHistory(combo);\r\n    } catch (IOException e) {\r\n        // fails the first time\r\n    }\r\n    combo.addItemListener(new ItemListener() {\r\n\r\n        public void itemStateChanged(ItemEvent event) {\r\n            if (event.getStateChange() == ItemEvent.SELECTED) {\r\n                textChanged();\r\n            }\r\n        }\r\n    });\r\n    return combo;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

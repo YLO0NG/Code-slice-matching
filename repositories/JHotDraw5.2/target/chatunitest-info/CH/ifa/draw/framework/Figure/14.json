@@ -1,0 +1,22 @@
+{
+  "className": "Figure",
+  "methodName": "includes",
+  "brief": "public boolean includes(Figure figure);",
+  "methodSignature": "includes(Figure)",
+  "sourceCode": "public boolean includes(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Checks whether the given figure is contained in this figure.\n */\npublic boolean includes(Figure figure);",
+  "method_comment": "\n     * Checks whether the given figure is contained in this figure.\n     ",
+  "method_annotation": ""
+}

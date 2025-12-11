@@ -1,0 +1,70 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.PolygonScaleHandle",
+  "className": "PolygonScaleHandle",
+  "index": 14,
+  "modifier": "[]",
+  "extend": "[AbstractHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "class PolygonScaleHandle",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Color;",
+    "import java.awt.Graphics;",
+    "import java.awt.Point;",
+    "import java.awt.Polygon;",
+    "import java.awt.Rectangle;",
+    "import CH.ifa.draw.framework.Drawing;",
+    "import CH.ifa.draw.standard.AbstractHandle;",
+    "import CH.ifa.draw.util.Geom;"
+  ],
+  "fields": [
+    "private Point fOrigin = null;",
+    "private Point fCurrent = null;",
+    "private Polygon fOrigPoly = null;"
+  ],
+  "superClasses": [
+    "AbstractHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStart(int, int, Drawing)": "0",
+    "invokeStep(int, int, Drawing)": "1",
+    "invokeEnd(int, int, Drawing)": "2",
+    "locate()": "3",
+    "getOrigin()": "4",
+    "draw(Graphics)": "5",
+    "PolygonScaleHandle(PolygonFigure)": "6"
+  },
+  "methodsBrief": [
+    "public void invokeStart(int  x, int  y, Drawing drawing){}",
+    "public void invokeStep (int dx, int dy, Drawing drawing){}",
+    "public void invokeEnd  (int dx, int dy, Drawing drawing){}",
+    "public Point locate(){}",
+    "Point getOrigin(){}",
+    "public void draw(Graphics g){}",
+    "public PolygonScaleHandle(PolygonFigure owner){}"
+  ],
+  "constructorSigs": [
+    "PolygonScaleHandle(PolygonFigure)"
+  ],
+  "constructorBrief": [
+    "public PolygonScaleHandle(PolygonFigure owner){}"
+  ],
+  "getterSetterSigs": [
+    "getOrigin()"
+  ],
+  "getterSetterBrief": [
+    "Point getOrigin(){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.contrib.PolygonFigure": []
+  },
+  "compilationUnitCode": "/*\n * Sat Mar  1 09:06:09 1997  Doug Lea  (dl at gee)\n * Based on RadiusHandle\n */\npackage CH.ifa.draw.contrib;\n\nimport java.awt.Color;\nimport java.awt.Graphics;\nimport java.awt.Point;\nimport java.awt.Polygon;\nimport java.awt.Rectangle;\nimport CH.ifa.draw.framework.Drawing;\nimport CH.ifa.draw.standard.AbstractHandle;\nimport CH.ifa.draw.util.Geom;\n\n/**\n * A Handle to scale and rotate a PolygonFigure\n */\nclass PolygonScaleHandle extends AbstractHandle {\n\n    private Point fOrigin = null;\n\n    private Point fCurrent = null;\n\n    private Polygon fOrigPoly = null;\n\n    public PolygonScaleHandle(PolygonFigure owner) {\n        super(owner);\n    }\n\n    public void invokeStart(int x, int y, Drawing drawing) {\n        fOrigPoly = ((PolygonFigure) (owner())).getPolygon();\n        fOrigin = getOrigin();\n        fCurrent = new Point(fOrigin.x, fOrigin.y);\n    }\n\n    public void invokeStep(int dx, int dy, Drawing drawing) {\n        fCurrent = new Point(fOrigin.x + dx, fOrigin.y + dy);\n        ((PolygonFigure) (owner())).scaleRotate(fOrigin, fOrigPoly, fCurrent);\n    }\n\n    public void invokeEnd(int dx, int dy, Drawing drawing) {\n        fOrigPoly = null;\n        fOrigin = null;\n        fCurrent = null;\n    }\n\n    public Point locate() {\n        if (fCurrent != null)\n            return fCurrent;\n        else\n            return getOrigin();\n    }\n\n    Point getOrigin() {\n        // find a nice place to put handle\n        // Need to pick a place that will not overlap with point handle\n        // and is internal to polygon\n        // Try for one HANDLESIZE step away from outermost toward center\n        Point outer = ((PolygonFigure) (owner())).outermostPoint();\n        Point ctr = ((PolygonFigure) (owner())).center();\n        double len = Geom.length(outer.x, outer.y, ctr.x, ctr.y);\n        if (// best we can do?\n        len == 0)\n            return new Point(outer.x - HANDLESIZE / 2, outer.y + HANDLESIZE / 2);\n        double u = HANDLESIZE / len;\n        if (// best we can do?\n        u > 1.0)\n            return new Point((outer.x * 3 + ctr.x) / 4, (outer.y * 3 + ctr.y) / 4);\n        else\n            return new Point((int) (outer.x * (1.0 - u) + ctr.x * u), (int) (outer.y * (1.0 - u) + ctr.y * u));\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n        /*\n     * for debugging ...\n    Point ctr = ((PolygonFigure)(owner())).center();\n    g.setColor(Color.blue);\n    g.fillOval(ctr.x, ctr.y, r.width, r.height);\n\n    g.setColor(Color.black);\n    g.drawOval(ctr.x, ctr.y, r.width, r.height);\n\n    */\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Handle to scale and rotate a PolygonFigure\n */\nclass PolygonScaleHandle extends AbstractHandle {\n\n    private Point fOrigin = null;\n\n    private Point fCurrent = null;\n\n    private Polygon fOrigPoly = null;\n\n    public PolygonScaleHandle(PolygonFigure owner) {\n        super(owner);\n    }\n\n    public void invokeStart(int x, int y, Drawing drawing) {\n        fOrigPoly = ((PolygonFigure) (owner())).getPolygon();\n        fOrigin = getOrigin();\n        fCurrent = new Point(fOrigin.x, fOrigin.y);\n    }\n\n    public void invokeStep(int dx, int dy, Drawing drawing) {\n        fCurrent = new Point(fOrigin.x + dx, fOrigin.y + dy);\n        ((PolygonFigure) (owner())).scaleRotate(fOrigin, fOrigPoly, fCurrent);\n    }\n\n    public void invokeEnd(int dx, int dy, Drawing drawing) {\n        fOrigPoly = null;\n        fOrigin = null;\n        fCurrent = null;\n    }\n\n    public Point locate() {\n        if (fCurrent != null)\n            return fCurrent;\n        else\n            return getOrigin();\n    }\n\n    Point getOrigin() {\n        // find a nice place to put handle\n        // Need to pick a place that will not overlap with point handle\n        // and is internal to polygon\n        // Try for one HANDLESIZE step away from outermost toward center\n        Point outer = ((PolygonFigure) (owner())).outermostPoint();\n        Point ctr = ((PolygonFigure) (owner())).center();\n        double len = Geom.length(outer.x, outer.y, ctr.x, ctr.y);\n        if (// best we can do?\n        len == 0)\n            return new Point(outer.x - HANDLESIZE / 2, outer.y + HANDLESIZE / 2);\n        double u = HANDLESIZE / len;\n        if (// best we can do?\n        u > 1.0)\n            return new Point((outer.x * 3 + ctr.x) / 4, (outer.y * 3 + ctr.y) / 4);\n        else\n            return new Point((int) (outer.x * (1.0 - u) + ctr.x * u), (int) (outer.y * (1.0 - u) + ctr.y * u));\n    }\n\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n        /*\n     * for debugging ...\n    Point ctr = ((PolygonFigure)(owner())).center();\n    g.setColor(Color.blue);\n    g.fillOval(ctr.x, ctr.y, r.width, r.height);\n\n    g.setColor(Color.black);\n    g.drawOval(ctr.x, ctr.y, r.width, r.height);\n\n    */\n    }\n}",
+  "subClasses": []
+}

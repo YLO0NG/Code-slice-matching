@@ -1,0 +1,27 @@
+{
+  "className": "RepeatedTest",
+  "methodName": "run",
+  "brief": "public void run(TestResult result){}",
+  "methodSignature": "run(TestResult)",
+  "sourceCode": "public void run(TestResult result) {\r\n\t\tfor (int i= 0; i < fTimesRepeat; i++) {\r\n\t\t\tif (result.shouldStop())\r\n\t\t\t\tbreak;\r\n\t\t\tsuper.run(result);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "shouldStop()"
+    ],
+    "junit.extensions.TestDecorator": [
+      "run(TestResult)"
+    ]
+  },
+  "full_method_info": "public void run(TestResult result) {\r\n    for (int i = 0; i < fTimesRepeat; i++) {\r\n        if (result.shouldStop())\r\n            break;\r\n        super.run(result);\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

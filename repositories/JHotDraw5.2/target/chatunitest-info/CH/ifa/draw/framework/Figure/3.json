@@ -1,0 +1,18 @@
+{
+  "className": "Figure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox();",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the display box of a figure\n * @see #basicDisplayBox\n */\npublic Rectangle displayBox();",
+  "method_comment": "\n     * Gets the display box of a figure\n     * @see #basicDisplayBox\n     ",
+  "method_annotation": ""
+}

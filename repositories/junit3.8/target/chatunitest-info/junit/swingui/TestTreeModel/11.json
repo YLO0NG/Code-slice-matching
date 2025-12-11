@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "addFailure",
+  "brief": "void addFailure(Test t){}",
+  "methodSignature": "addFailure(Test)",
+  "sourceCode": "void addFailure(Test t) {\r\n\t\tfFailures.put(t, t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Hashtable": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Remembers a test failure\r\n */\r\nvoid addFailure(Test t) {\r\n    fFailures.put(t, t);\r\n}",
+  "method_comment": "\r\n\t * Remembers a test failure\r\n\t ",
+  "method_annotation": ""
+}

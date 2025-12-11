@@ -1,0 +1,24 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "getPreferredSize",
+  "brief": "public Dimension getPreferredSize(int cols){}",
+  "methodSignature": "getPreferredSize(int)",
+  "sourceCode": "public Dimension getPreferredSize(int cols) {\n        return fEditWidget.getPreferredSize();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.TextField": [
+      "getPreferredSize()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the preferred size of the overlay.\n */\npublic Dimension getPreferredSize(int cols) {\n    return fEditWidget.getPreferredSize();\n}",
+  "method_comment": "\n     * Gets the preferred size of the overlay.\n     ",
+  "method_annotation": ""
+}

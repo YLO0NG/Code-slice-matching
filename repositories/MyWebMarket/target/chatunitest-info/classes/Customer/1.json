@@ -1,0 +1,22 @@
+{
+  "className": "Customer",
+  "methodName": "setId",
+  "brief": "public void setId( Integer id ){}",
+  "methodSignature": "setId(Integer)",
+  "sourceCode": "public void setId( Integer id ) {\n\t\tthis.id = id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Integer"
+  ],
+  "dependentMethods": {
+    "java.lang.Integer": []
+  },
+  "full_method_info": "public void setId(Integer id) {\n    this.id = id;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

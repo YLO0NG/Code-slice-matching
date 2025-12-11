@@ -1,0 +1,24 @@
+{
+  "className": "DrawApplet",
+  "methodName": "guessType",
+  "brief": "private String guessType(String file){}",
+  "methodSignature": "guessType(String)",
+  "sourceCode": "private String guessType(String file) {\n        if (file.endsWith(\".draw\"))\n            return \"storable\";\n        if (file.endsWith(\".ser\"))\n            return \"serialized\";\n        return \"unknown\";\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "endsWith(String)"
+    ]
+  },
+  "full_method_info": "private String guessType(String file) {\n    if (file.endsWith(\".draw\"))\n        return \"storable\";\n    if (file.endsWith(\".ser\"))\n        return \"serialized\";\n    return \"unknown\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "targetClass": "CH.ifa.draw.figures.ElbowHandle",
+  "targetMethod": "constrainX(int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.figures.ElbowHandle": "private int fSegment;\nprivate int fLastX, fLastY;",
+    "CH.ifa.draw.figures.LineConnection": "protected Connector    fStart = null;\nprotected Connector    fEnd = null;\nprivate static final long serialVersionUID = 6883731614578414801L;\nprivate int lineConnectionSerializedDataVersion = 1;",
+    "CH.ifa.draw.framework.Connector": "",
+    "CH.ifa.draw.figures.PolyLineFigure": "public final static int ARROW_TIP_NONE  = 0;\npublic final static int ARROW_TIP_START = 1;\npublic final static int ARROW_TIP_END   = 2;\npublic final static int ARROW_TIP_BOTH  = 3;\nprotected Vector              fPoints;\nprotected LineDecoration      fStartDecoration = null;\nprotected LineDecoration      fEndDecoration = null;\nprotected Color               fFrameColor = Color.black;\nprivate static final long serialVersionUID = -7951352179906577773L;\nprivate int polyLineFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.Geom": "static public final int NORTH = 1;\nstatic public final int SOUTH = 2;\nstatic public final int WEST = 3;\nstatic public final int EAST = 4;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public Insets connectionInsets();\npublic Rectangle displayBox();",
+    "CH.ifa.draw.figures.ElbowHandle": "private LineConnection ownerConnection(){}",
+    "CH.ifa.draw.framework.Connector": "public abstract Figure owner();",
+    "CH.ifa.draw.figures.LineConnection": "public Connector start(){}\npublic Connector end(){}",
+    "CH.ifa.draw.figures.PolyLineFigure": "public int pointCount(){}",
+    "CH.ifa.draw.util.Geom": "static public int range(int min, int max, int value){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Returns the connection inset. This is only a hint that\n     * connectors can use to determine the connection location.\n     * The inset defines the area where the display box of a\n     * figure should not be connected.\n     *\n     \npublic Insets connectionInsets();\n\n     * Gets the display box of a figure\n     * @see #basicDisplayBox\n     \npublic Rectangle displayBox();",
+    "CH.ifa.draw.figures.ElbowHandle": "private LineConnection ownerConnection() {\n        return (LineConnection)owner();\n    }",
+    "CH.ifa.draw.framework.Connector": "* Gets the connector's owner.\n     \npublic abstract Figure owner();",
+    "CH.ifa.draw.figures.LineConnection": "* Gets the start figure of the connection.\n     \npublic Connector start() {\n        return fStart;\n    }\n\n     * Gets the end figure of the connection.\n     \npublic Connector end() {\n        return fEnd;\n    }",
+    "CH.ifa.draw.figures.PolyLineFigure": "public int pointCount() {\n        return fPoints.size();\n    }",
+    "CH.ifa.draw.util.Geom": "* Constains a value to the given range.\n     * @return the constrained value\n     \nstatic public int range(int min, int max, int value) {\n        if (value < min)\n            value = min;\n        if (value > max)\n            value = max;\n        return value;\n    }"
+  }
+}

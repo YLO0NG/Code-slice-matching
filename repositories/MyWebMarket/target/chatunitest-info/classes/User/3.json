@@ -1,0 +1,22 @@
+{
+  "className": "User",
+  "methodName": "setPassword",
+  "brief": "public void setPassword( String password ){}",
+  "methodSignature": "setPassword(String)",
+  "sourceCode": "public void setPassword( String password ) {\n\t\tthis.password = password;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setPassword(String password) {\n    this.password = password;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

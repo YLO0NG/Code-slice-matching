@@ -1,0 +1,30 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "addError",
+  "brief": "public void addError(Test test, Throwable t){}",
+  "methodSignature": "addError(Test, Throwable)",
+  "sourceCode": "public void addError(Test test, Throwable t) {\r\n\t\tgetWriter().print(\"E\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": [],
+    "java.io.PrintStream": [
+      "print(String)"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ]
+  },
+  "full_method_info": "/**\r\n * @see junit.framework.TestListener#addError(Test, Throwable)\r\n */\r\npublic void addError(Test test, Throwable t) {\r\n    getWriter().print(\"E\");\r\n}",
+  "method_comment": "\r\n\t * @see junit.framework.TestListener#addError(Test, Throwable)\r\n\t ",
+  "method_annotation": ""
+}

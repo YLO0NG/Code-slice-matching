@@ -1,0 +1,68 @@
+{
+  "fullClassName": "CH.ifa.draw.util.FloatingTextField",
+  "className": "FloatingTextField",
+  "index": 156,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class FloatingTextField",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.awt.*;",
+    "import java.awt.event.*;"
+  ],
+  "fields": [
+    "private TextField   fEditWidget;",
+    "private Container   fContainer;"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createOverlay(Container)": "0",
+    "createOverlay(Container, Font)": "1",
+    "addActionListener(ActionListener)": "2",
+    "removeActionListener(ActionListener)": "3",
+    "setBounds(Rectangle, String)": "4",
+    "getText()": "5",
+    "getPreferredSize(int)": "6",
+    "endOverlay()": "7",
+    "FloatingTextField()": "8"
+  },
+  "methodsBrief": [
+    "public void createOverlay(Container container){}",
+    "public void createOverlay(Container container, Font font){}",
+    "public void addActionListener(ActionListener listener){}",
+    "public void removeActionListener(ActionListener listener){}",
+    "public void setBounds(Rectangle r, String text){}",
+    "public String getText(){}",
+    "public Dimension getPreferredSize(int cols){}",
+    "public void endOverlay(){}",
+    "public FloatingTextField(){}"
+  ],
+  "constructorSigs": [
+    "FloatingTextField()"
+  ],
+  "constructorBrief": [
+    "public FloatingTextField(){}"
+  ],
+  "getterSetterSigs": [
+    "setBounds(Rectangle, String)",
+    "getText()"
+  ],
+  "getterSetterBrief": [
+    "public void setBounds(Rectangle r, String text){}",
+    "public String getText(){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)FloatingTextField.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.*;\nimport java.awt.*;\nimport java.awt.event.*;\n\n/**\n * A text field overlay that is used to edit a TextFigure.\n * A FloatingTextField requires a two step initialization:\n * In a first step the overlay is created and in a\n * second step it can be positioned.\n *\n * @see CH.ifa.draw.figures.TextFigure\n */\npublic class FloatingTextField extends Object {\n\n    private TextField fEditWidget;\n\n    private Container fContainer;\n\n    public FloatingTextField() {\n        fEditWidget = new TextField(20);\n    }\n\n    /**\n     * Creates the overlay for the given Component.\n     */\n    public void createOverlay(Container container) {\n        createOverlay(container, null);\n    }\n\n    /**\n     * Creates the overlay for the given Container using a\n     * specific font.\n     */\n    public void createOverlay(Container container, Font font) {\n        container.add(fEditWidget, 0);\n        if (font != null)\n            fEditWidget.setFont(font);\n        fContainer = container;\n    }\n\n    /**\n     * Adds an action listener\n     */\n    public void addActionListener(ActionListener listener) {\n        fEditWidget.addActionListener(listener);\n    }\n\n    /**\n     * Remove an action listener\n     */\n    public void removeActionListener(ActionListener listener) {\n        fEditWidget.removeActionListener(listener);\n    }\n\n    /**\n     * Positions the overlay.\n     */\n    public void setBounds(Rectangle r, String text) {\n        fEditWidget.setText(text);\n        fEditWidget.setBounds(r.x, r.y, r.width, r.height);\n        fEditWidget.setVisible(true);\n        fEditWidget.selectAll();\n        fEditWidget.requestFocus();\n    }\n\n    /**\n     * Gets the text contents of the overlay.\n     */\n    public String getText() {\n        return fEditWidget.getText();\n    }\n\n    /**\n     * Gets the preferred size of the overlay.\n     */\n    public Dimension getPreferredSize(int cols) {\n        return fEditWidget.getPreferredSize();\n    }\n\n    /**\n     * Removes the overlay.\n     */\n    public void endOverlay() {\n        fContainer.requestFocus();\n        if (fEditWidget == null)\n            return;\n        fEditWidget.setVisible(false);\n        fContainer.remove(fEditWidget);\n        Rectangle bounds = fEditWidget.getBounds();\n        fContainer.repaint(bounds.x, bounds.y, bounds.width, bounds.height);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A text field overlay that is used to edit a TextFigure.\n * A FloatingTextField requires a two step initialization:\n * In a first step the overlay is created and in a\n * second step it can be positioned.\n *\n * @see CH.ifa.draw.figures.TextFigure\n */\npublic class FloatingTextField extends Object {\n\n    private TextField fEditWidget;\n\n    private Container fContainer;\n\n    public FloatingTextField() {\n        fEditWidget = new TextField(20);\n    }\n\n    /**\n     * Creates the overlay for the given Component.\n     */\n    public void createOverlay(Container container) {\n        createOverlay(container, null);\n    }\n\n    /**\n     * Creates the overlay for the given Container using a\n     * specific font.\n     */\n    public void createOverlay(Container container, Font font) {\n        container.add(fEditWidget, 0);\n        if (font != null)\n            fEditWidget.setFont(font);\n        fContainer = container;\n    }\n\n    /**\n     * Adds an action listener\n     */\n    public void addActionListener(ActionListener listener) {\n        fEditWidget.addActionListener(listener);\n    }\n\n    /**\n     * Remove an action listener\n     */\n    public void removeActionListener(ActionListener listener) {\n        fEditWidget.removeActionListener(listener);\n    }\n\n    /**\n     * Positions the overlay.\n     */\n    public void setBounds(Rectangle r, String text) {\n        fEditWidget.setText(text);\n        fEditWidget.setBounds(r.x, r.y, r.width, r.height);\n        fEditWidget.setVisible(true);\n        fEditWidget.selectAll();\n        fEditWidget.requestFocus();\n    }\n\n    /**\n     * Gets the text contents of the overlay.\n     */\n    public String getText() {\n        return fEditWidget.getText();\n    }\n\n    /**\n     * Gets the preferred size of the overlay.\n     */\n    public Dimension getPreferredSize(int cols) {\n        return fEditWidget.getPreferredSize();\n    }\n\n    /**\n     * Removes the overlay.\n     */\n    public void endOverlay() {\n        fContainer.requestFocus();\n        if (fEditWidget == null)\n            return;\n        fEditWidget.setVisible(false);\n        fContainer.remove(fEditWidget);\n        Rectangle bounds = fEditWidget.getBounds();\n        fContainer.repaint(bounds.x, bounds.y, bounds.width, bounds.height);\n    }\n}",
+  "subClasses": []
+}

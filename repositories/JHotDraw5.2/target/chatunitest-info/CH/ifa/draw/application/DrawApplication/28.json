@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "getStorageFormatManager",
+  "brief": "public StorageFormatManager getStorageFormatManager(){}",
+  "methodSignature": "getStorageFormatManager()",
+  "sourceCode": "public StorageFormatManager getStorageFormatManager() {\n        return fStorageFormatManager;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the StorageFormatManager for this application.The StorageFormatManager is\n * used when storing and restoring Drawing from the file system.\n */\npublic StorageFormatManager getStorageFormatManager() {\n    return fStorageFormatManager;\n}",
+  "method_comment": "\n\t * Return the StorageFormatManager for this application.The StorageFormatManager is\n\t * used when storing and restoring Drawing from the file system.\n\t ",
+  "method_annotation": ""
+}

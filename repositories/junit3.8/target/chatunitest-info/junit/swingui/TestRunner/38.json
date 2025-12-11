@@ -1,0 +1,28 @@
+{
+  "className": "TestRunner",
+  "methodName": "postInfo",
+  "brief": "private void postInfo(final String message){}",
+  "methodSignature": "postInfo(String)",
+  "sourceCode": "private void postInfo(final String message) {\r\n\t\tSwingUtilities.invokeLater(\r\n\t\t\tnew Runnable() {\r\n\t\t\t\tpublic void run() {\r\n\t\t\t\t\tshowInfo(message);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "javax.swing.SwingUtilities": [
+      "invokeLater(Runnable)"
+    ],
+    "junit.swingui.TestRunner": [
+      "showInfo(String)"
+    ]
+  },
+  "full_method_info": "private void postInfo(final String message) {\r\n    SwingUtilities.invokeLater(new Runnable() {\r\n\r\n        public void run() {\r\n            showInfo(message);\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

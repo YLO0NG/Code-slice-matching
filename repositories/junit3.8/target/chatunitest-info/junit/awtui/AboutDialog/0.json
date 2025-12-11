@@ -1,0 +1,44 @@
+{
+  "className": "AboutDialog",
+  "methodName": "AboutDialog",
+  "brief": "public AboutDialog(Frame parent){}",
+  "methodSignature": "AboutDialog(Frame)",
+  "sourceCode": "public AboutDialog(Frame parent) {\r\n\t\tsuper(parent);\r\n\t\t\r\n\t\tsetResizable(false);\r\n\t\tsetLayout(new GridBagLayout());\r\n\t\tsetSize(330, 138);\r\n\t\tsetTitle(\"About\");\r\n\t\t\r\n\t\tButton button= new Button(\"Close\");\r\n\t\tbutton.addActionListener(\r\n\t\t\tnew ActionListener() {\r\n\t\t\t\tpublic void actionPerformed(ActionEvent e) {\r\n\t\t\t\t\tdispose();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t\t\r\n\t\tLabel label1= new Label(\"JUnit\");\r\n\t\tlabel1.setFont(new Font(\"dialog\", Font.PLAIN, 36));\r\n\t\t\r\n\t\tLabel label2= new Label(\"JUnit \"+Version.id()+ \" by Kent Beck and Erich Gamma\");\r\n\t\tlabel2.setFont(new Font(\"dialog\", Font.PLAIN, 14));\r\n\t\t\r\n\t\tLogo logo= new Logo();\r\n\r\n\t\tGridBagConstraints constraintsLabel1= new GridBagConstraints();\r\n\t\tconstraintsLabel1.gridx = 3; constraintsLabel1.gridy = 0;\r\n\t\tconstraintsLabel1.gridwidth = 1; constraintsLabel1.gridheight = 1;\r\n\t\tconstraintsLabel1.anchor = GridBagConstraints.CENTER;\r\n\t\tadd(label1, constraintsLabel1);\r\n\r\n\t\tGridBagConstraints constraintsLabel2= new GridBagConstraints();\r\n\t\tconstraintsLabel2.gridx = 2; constraintsLabel2.gridy = 1;\r\n\t\tconstraintsLabel2.gridwidth = 2; constraintsLabel2.gridheight = 1;\r\n\t\tconstraintsLabel2.anchor = GridBagConstraints.CENTER;\r\n\t\tadd(label2, constraintsLabel2);\r\n\r\n\t\tGridBagConstraints constraintsButton1= new GridBagConstraints();\r\n\t\tconstraintsButton1.gridx = 2; constraintsButton1.gridy = 2;\r\n\t\tconstraintsButton1.gridwidth = 2; constraintsButton1.gridheight = 1;\r\n\t\tconstraintsButton1.anchor = GridBagConstraints.CENTER;\r\n\t\tconstraintsButton1.insets= new Insets(8, 0, 8, 0);\r\n\t\tadd(button, constraintsButton1);\r\n\r\n\t\tGridBagConstraints constraintsLogo1= new GridBagConstraints();\r\n\t\tconstraintsLogo1.gridx = 2; constraintsLogo1.gridy = 0;\r\n\t\tconstraintsLogo1.gridwidth = 1; constraintsLogo1.gridheight = 1;\r\n\t\tconstraintsLogo1.anchor = GridBagConstraints.CENTER;\r\n\t\tadd(logo, constraintsLogo1);\r\n\r\n\t\taddWindowListener(\r\n\t\t\tnew WindowAdapter() {\r\n\t\t\t\tpublic void windowClosing(WindowEvent e) {\r\n\t\t\t\t\tdispose();\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Frame"
+  ],
+  "dependentMethods": {
+    "java.awt.Frame": [],
+    "java.awt.Dialog": [
+      "setResizable(boolean)",
+      "setTitle(String)"
+    ],
+    "java.awt.Container": [
+      "add(Component, Object)",
+      "setLayout(LayoutManager)"
+    ],
+    "java.awt.Window": [
+      "setSize(int, int)",
+      "dispose()",
+      "addWindowListener(WindowListener)"
+    ],
+    "java.awt.Button": [
+      "addActionListener(ActionListener)"
+    ],
+    "java.awt.Component": [
+      "setFont(Font)"
+    ],
+    "junit.runner.Version": [
+      "id()"
+    ]
+  },
+  "full_method_info": "public AboutDialog(Frame parent) {\r\n    super(parent);\r\n    setResizable(false);\r\n    setLayout(new GridBagLayout());\r\n    setSize(330, 138);\r\n    setTitle(\"About\");\r\n    Button button = new Button(\"Close\");\r\n    button.addActionListener(new ActionListener() {\r\n\r\n        public void actionPerformed(ActionEvent e) {\r\n            dispose();\r\n        }\r\n    });\r\n    Label label1 = new Label(\"JUnit\");\r\n    label1.setFont(new Font(\"dialog\", Font.PLAIN, 36));\r\n    Label label2 = new Label(\"JUnit \" + Version.id() + \" by Kent Beck and Erich Gamma\");\r\n    label2.setFont(new Font(\"dialog\", Font.PLAIN, 14));\r\n    Logo logo = new Logo();\r\n    GridBagConstraints constraintsLabel1 = new GridBagConstraints();\r\n    constraintsLabel1.gridx = 3;\r\n    constraintsLabel1.gridy = 0;\r\n    constraintsLabel1.gridwidth = 1;\r\n    constraintsLabel1.gridheight = 1;\r\n    constraintsLabel1.anchor = GridBagConstraints.CENTER;\r\n    add(label1, constraintsLabel1);\r\n    GridBagConstraints constraintsLabel2 = new GridBagConstraints();\r\n    constraintsLabel2.gridx = 2;\r\n    constraintsLabel2.gridy = 1;\r\n    constraintsLabel2.gridwidth = 2;\r\n    constraintsLabel2.gridheight = 1;\r\n    constraintsLabel2.anchor = GridBagConstraints.CENTER;\r\n    add(label2, constraintsLabel2);\r\n    GridBagConstraints constraintsButton1 = new GridBagConstraints();\r\n    constraintsButton1.gridx = 2;\r\n    constraintsButton1.gridy = 2;\r\n    constraintsButton1.gridwidth = 2;\r\n    constraintsButton1.gridheight = 1;\r\n    constraintsButton1.anchor = GridBagConstraints.CENTER;\r\n    constraintsButton1.insets = new Insets(8, 0, 8, 0);\r\n    add(button, constraintsButton1);\r\n    GridBagConstraints constraintsLogo1 = new GridBagConstraints();\r\n    constraintsLogo1.gridx = 2;\r\n    constraintsLogo1.gridy = 0;\r\n    constraintsLogo1.gridwidth = 1;\r\n    constraintsLogo1.gridheight = 1;\r\n    constraintsLogo1.anchor = GridBagConstraints.CENTER;\r\n    add(logo, constraintsLogo1);\r\n    addWindowListener(new WindowAdapter() {\r\n\r\n        public void windowClosing(WindowEvent e) {\r\n            dispose();\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

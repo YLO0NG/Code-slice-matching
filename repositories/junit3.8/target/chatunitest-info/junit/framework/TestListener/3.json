@@ -1,0 +1,22 @@
+{
+  "className": "TestListener",
+  "methodName": "startTest",
+  "brief": "public void startTest(Test test);",
+  "methodSignature": "startTest(Test)",
+  "sourceCode": "public void startTest(Test test);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": []
+  },
+  "full_method_info": "/**\r\n * A test started.\r\n */\r\npublic void startTest(Test test);",
+  "method_comment": "\r\n\t * A test started.\r\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,58 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ChangeConnectionStartHandle",
+  "className": "ChangeConnectionStartHandle",
+  "index": 113,
+  "modifier": "[public ]",
+  "extend": "[ChangeConnectionHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class ChangeConnectionStartHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Point;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "ChangeConnectionHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "target()": "0",
+    "disconnect()": "1",
+    "connect(Connector)": "2",
+    "setPoint(int, int)": "3",
+    "locate()": "4",
+    "ChangeConnectionStartHandle(Figure)": "5"
+  },
+  "methodsBrief": [
+    "protected Connector target(){}",
+    "protected void disconnect(){}",
+    "protected void connect(Connector c){}",
+    "protected void setPoint(int x, int y){}",
+    "public Point locate(){}",
+    "public ChangeConnectionStartHandle(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "ChangeConnectionStartHandle(Figure)"
+  ],
+  "constructorBrief": [
+    "public ChangeConnectionStartHandle(Figure owner){}"
+  ],
+  "getterSetterSigs": [
+    "setPoint(int, int)"
+  ],
+  "getterSetterBrief": [
+    "protected void setPoint(int x, int y){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ChangeConnectionStartHandle.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.Point;\nimport CH.ifa.draw.framework.*;\n\n/**\n * Handle to reconnect the\n * start of a connection to another figure.\n */\npublic class ChangeConnectionStartHandle extends ChangeConnectionHandle {\n\n    public ChangeConnectionStartHandle(Figure owner) {\n        super(owner);\n    }\n\n    /**\n     * Gets the start figure of a connection.\n     */\n    protected Connector target() {\n        return fConnection.start();\n    }\n\n    /**\n     * Disconnects the start figure.\n     */\n    protected void disconnect() {\n        fConnection.disconnectStart();\n    }\n\n    /**\n     * Sets the start of the connection.\n     */\n    protected void connect(Connector c) {\n        fConnection.connectStart(c);\n    }\n\n    /**\n     * Sets the start point of the connection.\n     */\n    protected void setPoint(int x, int y) {\n        fConnection.startPoint(x, y);\n    }\n\n    /**\n     * Returns the start point of the connection.\n     */\n    public Point locate() {\n        return fConnection.startPoint();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Handle to reconnect the\n * start of a connection to another figure.\n */\npublic class ChangeConnectionStartHandle extends ChangeConnectionHandle {\n\n    public ChangeConnectionStartHandle(Figure owner) {\n        super(owner);\n    }\n\n    /**\n     * Gets the start figure of a connection.\n     */\n    protected Connector target() {\n        return fConnection.start();\n    }\n\n    /**\n     * Disconnects the start figure.\n     */\n    protected void disconnect() {\n        fConnection.disconnectStart();\n    }\n\n    /**\n     * Sets the start of the connection.\n     */\n    protected void connect(Connector c) {\n        fConnection.connectStart(c);\n    }\n\n    /**\n     * Sets the start point of the connection.\n     */\n    protected void setPoint(int x, int y) {\n        fConnection.startPoint(x, y);\n    }\n\n    /**\n     * Returns the start point of the connection.\n     */\n    public Point locate() {\n        return fConnection.startPoint();\n    }\n}",
+  "subClasses": []
+}

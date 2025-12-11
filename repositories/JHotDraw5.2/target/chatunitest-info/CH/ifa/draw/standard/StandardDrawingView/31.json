@@ -1,0 +1,33 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "mouseReleased",
+  "brief": "public void mouseReleased(MouseEvent e){}",
+  "methodSignature": "mouseReleased(MouseEvent)",
+  "sourceCode": "public void mouseReleased(MouseEvent e) {\n        Point p = constrainPoint(new Point(e.getX(), e.getY()));\n        tool().mouseUp(e, p.x, p.y);\n        checkDamage();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "constrainPoint(Point)",
+      "tool()",
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.framework.Tool": [
+      "mouseUp(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse up events. The event is delegated to the\n * currently active tool.\n * @return whether the event was handled.\n */\npublic void mouseReleased(MouseEvent e) {\n    Point p = constrainPoint(new Point(e.getX(), e.getY()));\n    tool().mouseUp(e, p.x, p.y);\n    checkDamage();\n}",
+  "method_comment": "\n     * Handles mouse up events. The event is delegated to the\n     * currently active tool.\n     * @return whether the event was handled.\n     ",
+  "method_annotation": ""
+}

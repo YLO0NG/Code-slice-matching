@@ -1,0 +1,42 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "findHandle",
+  "brief": "public Handle findHandle(int x, int y){}",
+  "methodSignature": "findHandle(int, int)",
+  "sourceCode": "public Handle findHandle(int x, int y) {\n        Handle handle;\n        if (fSelectionHandles == null) {\n\t\t    fSelectionHandles = new Vector();\n\t\t    FigureEnumeration k1 = selectionElements();\n\t\t    while (k1.hasMoreElements()) {\n\t\t        Figure figure = k1.nextFigure();\n\t\t        Enumeration kk = figure.handles().elements();\n\t\t        while (kk.hasMoreElements())\n\t\t            fSelectionHandles.addElement(kk.nextElement());\n\t\t    }\n\t\t}\n\n        Enumeration k = fSelectionHandles.elements();\n        while (k.hasMoreElements()) {\n            handle = (Handle) k.nextElement();\n            if (handle.containsPoint(x, y))\n                return handle;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionElements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "elements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "handles()"
+    ],
+    "CH.ifa.draw.framework.Handle": [
+      "containsPoint(int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a handle at the given coordinates.\n * @return the hit handle, null if no handle is found.\n */\npublic Handle findHandle(int x, int y) {\n    Handle handle;\n    if (fSelectionHandles == null) {\n        fSelectionHandles = new Vector();\n        FigureEnumeration k1 = selectionElements();\n        while (k1.hasMoreElements()) {\n            Figure figure = k1.nextFigure();\n            Enumeration kk = figure.handles().elements();\n            while (kk.hasMoreElements()) fSelectionHandles.addElement(kk.nextElement());\n        }\n    }\n    Enumeration k = fSelectionHandles.elements();\n    while (k.hasMoreElements()) {\n        handle = (Handle) k.nextElement();\n        if (handle.containsPoint(x, y))\n            return handle;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds a handle at the given coordinates.\n     * @return the hit handle, null if no handle is found.\n     ",
+  "method_annotation": ""
+}

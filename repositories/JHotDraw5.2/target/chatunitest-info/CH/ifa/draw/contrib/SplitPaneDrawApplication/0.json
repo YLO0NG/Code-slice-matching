@@ -1,0 +1,37 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "createContents",
+  "brief": "protected JComponent createContents(StandardDrawingView view){}",
+  "methodSignature": "createContents(StandardDrawingView)",
+  "sourceCode": "protected JComponent createContents(StandardDrawingView view) {\n\t\tcreateLeftComponent(view);\n\t\tcreateRightComponent(view);\n\n\t\tif ((getLeftComponent() == null) && (getRightComponent() == null)) {\n\t\t\treturn super.createContents(view);\n\t\t}\n\t\telse if (getLeftComponent() == null) {\n\t\t\treturn getRightComponent();\n\t\t}\n\t\telse if (getRightComponent() == null) {\n\t\t\treturn getLeftComponent();\n\t\t}\n\t\telse {\n\t\t\tJSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n\t\t\tdividedContents.setAlignmentX(LEFT_ALIGNMENT);\n\t\t\tdividedContents.setOneTouchExpandable(true);\n\t\t\treturn dividedContents;\n\t\t}\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": [
+      "createLeftComponent(StandardDrawingView)",
+      "createRightComponent(StandardDrawingView)",
+      "getLeftComponent()",
+      "getRightComponent()"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createContents(StandardDrawingView)"
+    ],
+    "javax.swing.JComponent": [
+      "setAlignmentX(float)"
+    ],
+    "javax.swing.JSplitPane": [
+      "setOneTouchExpandable(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Opens the window and initializes its contents.\n * Clients usually only call but don't override it.\n */\nprotected JComponent createContents(StandardDrawingView view) {\n    createLeftComponent(view);\n    createRightComponent(view);\n    if ((getLeftComponent() == null) && (getRightComponent() == null)) {\n        return super.createContents(view);\n    } else if (getLeftComponent() == null) {\n        return getRightComponent();\n    } else if (getRightComponent() == null) {\n        return getLeftComponent();\n    } else {\n        JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());\n        dividedContents.setAlignmentX(LEFT_ALIGNMENT);\n        dividedContents.setOneTouchExpandable(true);\n        return dividedContents;\n    }\n}",
+  "method_comment": "\n     * Opens the window and initializes its contents.\n     * Clients usually only call but don't override it.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,45 @@
+{
+  "className": "CityLayout",
+  "methodName": "getMessageUserContributionBeforeDate",
+  "brief": "public HashMap<User, Double> getMessageUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users, Message message, ArrayList<Message> messages){}",
+  "methodSignature": "getMessageUserContributionBeforeDate(Timestamp, ArrayList, Message, ArrayList)",
+  "sourceCode": "public HashMap<User, Double> getMessageUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users, Message message, ArrayList<Message> messages) {\n\t\tHashMap<User, Double> userChanges = new HashMap<User, Double>();\n\t\tfor(User user : users) {\n\t\t\tif(message.getOwner().equals(user)) {\n\t\t\t\tuserChanges.put(user, 1.0);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tuserChanges.put(user, 0.0);\n\t\t\t}\n\t\t}\n\t\tint count=1;\n\t\tfor(Message message2 : messages) {\n\t\t\tif(message.getTimestamp().before(timestamp) && message2.getTimestamp().before(timestamp) && message.getRefid_header().equals(message2.getRefid_header())) {\n\t\t\t\tcount++;\n\t\t\t\tfor(User user : users) {\n\t\t\t\t\tif(message2.getOwner().equals(user)) {\n\t\t\t\t\t\tuserChanges.put(user, userChanges.get(user)+1);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t\tfor(User user : userChanges.keySet()) {\n\t\t\tuserChanges.put(user, userChanges.get(user)/(double)count);\n\t\t}\n\t\treturn userChanges;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp",
+    "ArrayList<User>",
+    "Message",
+    "ArrayList<Message>"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": [
+      "before(Timestamp)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [
+      "getRefid_header()"
+    ],
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "getOwner()",
+      "getTimestamp()"
+    ],
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()",
+      "put(K, V)"
+    ],
+    "java.lang.String": [
+      "equals(Object)"
+    ]
+  },
+  "full_method_info": "public HashMap<User, Double> getMessageUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users, Message message, ArrayList<Message> messages) {\n    HashMap<User, Double> userChanges = new HashMap<User, Double>();\n    for (User user : users) {\n        if (message.getOwner().equals(user)) {\n            userChanges.put(user, 1.0);\n        } else {\n            userChanges.put(user, 0.0);\n        }\n    }\n    int count = 1;\n    for (Message message2 : messages) {\n        if (message.getTimestamp().before(timestamp) && message2.getTimestamp().before(timestamp) && message.getRefid_header().equals(message2.getRefid_header())) {\n            count++;\n            for (User user : users) {\n                if (message2.getOwner().equals(user)) {\n                    userChanges.put(user, userChanges.get(user) + 1);\n                }\n            }\n        }\n    }\n    for (User user : userChanges.keySet()) {\n        userChanges.put(user, userChanges.get(user) / (double) count);\n    }\n    return userChanges;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

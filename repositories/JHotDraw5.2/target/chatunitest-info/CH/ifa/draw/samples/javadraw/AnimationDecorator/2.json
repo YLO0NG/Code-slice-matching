@@ -1,0 +1,26 @@
+{
+  "className": "AnimationDecorator",
+  "methodName": "animationStep",
+  "brief": "public void animationStep(){}",
+  "methodSignature": "animationStep()",
+  "sourceCode": "public void animationStep() {\n\t    int xSpeed = fXVelocity;\n\t    int ySpeed = fYVelocity;\n\t    Rectangle box = displayBox();\n\n\t    if ((box.x + box.width > 300) && (xSpeed > 0))\n    \t\txSpeed = -xSpeed;\n\n\t    if ((box.y + box.height > 300) && (ySpeed > 0))\n    \t\tySpeed = -ySpeed;\n\n        if ((box.x < 0) && (xSpeed < 0))\n            xSpeed = -xSpeed;\n\n        if ((box.y < 0) && (ySpeed < 0))\n            ySpeed = -ySpeed;\n\n\t    velocity(xSpeed, ySpeed);\n\t    moveBy(xSpeed, ySpeed);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.samples.javadraw.AnimationDecorator": [
+      "velocity(int, int)",
+      "displayBox()"
+    ],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "moveBy(int, int)"
+    ]
+  },
+  "full_method_info": "public void animationStep() {\n    int xSpeed = fXVelocity;\n    int ySpeed = fYVelocity;\n    Rectangle box = displayBox();\n    if ((box.x + box.width > 300) && (xSpeed > 0))\n        xSpeed = -xSpeed;\n    if ((box.y + box.height > 300) && (ySpeed > 0))\n        ySpeed = -ySpeed;\n    if ((box.x < 0) && (xSpeed < 0))\n        xSpeed = -xSpeed;\n    if ((box.y < 0) && (ySpeed < 0))\n        ySpeed = -ySpeed;\n    velocity(xSpeed, ySpeed);\n    moveBy(xSpeed, ySpeed);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

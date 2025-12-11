@@ -1,0 +1,22 @@
+{
+  "className": "TestCase",
+  "methodName": "setName",
+  "brief": "public void setName(String name){}",
+  "methodSignature": "setName(String)",
+  "sourceCode": "public void setName(String name) {\r\n\t\tfName= name;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\r\n * Sets the name of a TestCase\r\n * @param name The name to set\r\n */\r\npublic void setName(String name) {\r\n    fName = name;\r\n}",
+  "method_comment": "\r\n\t * Sets the name of a TestCase\r\n\t * @param name The name to set\r\n\t ",
+  "method_annotation": ""
+}

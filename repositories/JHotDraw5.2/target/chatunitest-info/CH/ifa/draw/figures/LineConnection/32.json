@@ -1,0 +1,28 @@
+{
+  "className": "LineConnection",
+  "methodName": "readObject",
+  "brief": "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+  "methodSignature": "readObject(ObjectInputStream)",
+  "sourceCode": "private void readObject(ObjectInputStream s)\n        throws ClassNotFoundException, IOException {\n\n        s.defaultReadObject();\n\n        if (fStart != null)\n            connectStart(fStart);\n        if (fEnd != null)\n            connectEnd(fEnd);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ObjectInputStream"
+  ],
+  "dependentMethods": {
+    "java.io.ObjectInputStream": [
+      "defaultReadObject()"
+    ],
+    "CH.ifa.draw.figures.LineConnection": [
+      "connectStart(Connector)",
+      "connectEnd(Connector)"
+    ]
+  },
+  "full_method_info": "private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n    s.defaultReadObject();\n    if (fStart != null)\n        connectStart(fStart);\n    if (fEnd != null)\n        connectEnd(fEnd);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

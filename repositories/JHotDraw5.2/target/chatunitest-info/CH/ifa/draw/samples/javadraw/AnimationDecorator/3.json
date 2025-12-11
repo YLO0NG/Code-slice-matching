@@ -1,0 +1,25 @@
+{
+  "className": "AnimationDecorator",
+  "methodName": "basicMoveBy",
+  "brief": "public synchronized void basicMoveBy(int x, int y){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "public synchronized void basicMoveBy(int x, int y) {\n\t    super.basicMoveBy(x, y);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "basicMoveBy(int, int)"
+    ]
+  },
+  "full_method_info": "// guard concurrent access to display box\npublic synchronized void basicMoveBy(int x, int y) {\n    super.basicMoveBy(x, y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

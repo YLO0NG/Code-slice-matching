@@ -1,0 +1,22 @@
+{
+  "className": "TestResult",
+  "methodName": "failureCount",
+  "brief": "public synchronized int failureCount(){}",
+  "methodSignature": "failureCount()",
+  "sourceCode": "public synchronized int failureCount() {\r\n\t\treturn fFailures.size();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Gets the number of detected failures.\r\n */\r\npublic synchronized int failureCount() {\r\n    return fFailures.size();\r\n}",
+  "method_comment": "\r\n\t * Gets the number of detected failures.\r\n\t ",
+  "method_annotation": ""
+}

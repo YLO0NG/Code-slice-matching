@@ -1,0 +1,27 @@
+{
+  "className": "Stemmer",
+  "methodName": "stem",
+  "brief": "public void stem()\r\n  {}",
+  "methodSignature": "stem()",
+  "sourceCode": "public void stem()\n   {  k = i - 1;\n      if (k > 1) { step1(); step2(); step3(); step4(); step5(); step6(); }\n      i_end = k+1; i = 0;\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "step2()",
+      "step1()",
+      "step4()",
+      "step3()",
+      "step6()",
+      "step5()"
+    ]
+  },
+  "full_method_info": "/**\n * Stem the word placed into the Stemmer buffer through calls to add().\n * Returns true if the stemming process resulted in a word different\n * from the input.  You can retrieve the result with\n * getResultLength()/getResultBuffer() or toString().\n */\npublic void stem() {\n    k = i - 1;\n    if (k > 1) {\n        step1();\n        step2();\n        step3();\n        step4();\n        step5();\n        step6();\n    }\n    i_end = k + 1;\n    i = 0;\n}",
+  "method_comment": " Stem the word placed into the Stemmer buffer through calls to add().\n    * Returns true if the stemming process resulted in a word different\n    * from the input.  You can retrieve the result with\n    * getResultLength()/getResultBuffer() or toString().\n    ",
+  "method_annotation": ""
+}

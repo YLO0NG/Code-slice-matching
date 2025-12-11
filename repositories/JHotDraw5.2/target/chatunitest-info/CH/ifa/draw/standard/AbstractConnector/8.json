@@ -1,0 +1,24 @@
+{
+  "className": "AbstractConnector",
+  "methodName": "read",
+  "brief": "public void read(StorableInput dr) throws IOException{}",
+  "methodSignature": "read(StorableInput)",
+  "sourceCode": "public void read(StorableInput dr) throws IOException {\n        fOwner = (Figure)dr.readStorable();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads the connector and its owner from a StorableInput.\n */\npublic void read(StorableInput dr) throws IOException {\n    fOwner = (Figure) dr.readStorable();\n}",
+  "method_comment": "\n     * Reads the connector and its owner from a StorableInput.\n     ",
+  "method_annotation": ""
+}

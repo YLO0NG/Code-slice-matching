@@ -1,0 +1,32 @@
+{
+  "className": "Cluster",
+  "methodName": "Cluster",
+  "brief": "public Cluster(Timestamp todate, String project, double threshold, String terms, int clusterid){}",
+  "methodSignature": "Cluster(Timestamp, String, double, String, int)",
+  "sourceCode": "public Cluster(Timestamp todate, String project, double threshold, String terms, int clusterid) {\n\t\tthis.todate = todate;\n\t\tthis.projectname = project;\n\t\tthis.words = new HashSet<String>();\n\t\tString[] words = terms.split(\"\\t\");\n\t\tfor(int i=0; i<words.length; i++) {\n\t\t\tthis.words.add(words[i]);\n\t\t}\n\t\tartifacts = new ArrayList<IArtifact>();\n\t\tthis.clusterid = clusterid;\n\t\tthis.threshold = threshold;\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp",
+    "String",
+    "double",
+    "String",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": [],
+    "java.lang.String": [
+      "split(String)"
+    ],
+    "java.util.HashSet": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public Cluster(Timestamp todate, String project, double threshold, String terms, int clusterid) {\n    this.todate = todate;\n    this.projectname = project;\n    this.words = new HashSet<String>();\n    String[] words = terms.split(\"\\t\");\n    for (int i = 0; i < words.length; i++) {\n        this.words.add(words[i]);\n    }\n    artifacts = new ArrayList<IArtifact>();\n    this.clusterid = clusterid;\n    this.threshold = threshold;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

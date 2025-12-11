@@ -1,0 +1,27 @@
+{
+  "className": "Logo",
+  "methodName": "paint",
+  "brief": "public void paint(Graphics g){}",
+  "methodSignature": "paint(Graphics)",
+  "sourceCode": "public void paint(Graphics g) {\r\n\t\tpaintBackground(g);\r\n\t\tif (fImage != null)\r\n\t\t\tg.drawImage(fImage, 0, 0, fWidth, fHeight, this);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawImage(Image, int, int, int, int, ImageObserver)"
+    ],
+    "junit.awtui.Logo": [
+      "paintBackground(Graphics)"
+    ]
+  },
+  "full_method_info": "public void paint(Graphics g) {\r\n    paintBackground(g);\r\n    if (fImage != null)\r\n        g.drawImage(fImage, 0, 0, fWidth, fHeight, this);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

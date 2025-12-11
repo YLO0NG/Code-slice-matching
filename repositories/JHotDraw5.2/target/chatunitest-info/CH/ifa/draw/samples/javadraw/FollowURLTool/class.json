@@ -1,0 +1,56 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.FollowURLTool",
+  "className": "FollowURLTool",
+  "index": 76,
+  "modifier": "[]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "class FollowURLTool",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "// import java.awt.*;\r\nimport java.applet.*;",
+    "import java.awt.event.*;",
+    "import java.net.*;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.AbstractTool;"
+  ],
+  "fields": [
+    "private JApplet         fApplet;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseMove(MouseEvent, int, int)": "0",
+    "mouseUp(MouseEvent, int, int)": "1",
+    "FollowURLTool(DrawingView, JApplet)": "2"
+  },
+  "methodsBrief": [
+    "public void mouseMove(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "FollowURLTool(DrawingView view, JApplet applet){}"
+  ],
+  "constructorSigs": [
+    "FollowURLTool(DrawingView, JApplet)"
+  ],
+  "constructorBrief": [
+    "FollowURLTool(DrawingView view, JApplet applet){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "javax.swing.JApplet": []
+  },
+  "compilationUnitCode": "/*\n * @(#)FollowURLTool.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport javax.swing.*;\n// import java.awt.*;\nimport java.applet.*;\nimport java.awt.event.*;\nimport java.net.*;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.AbstractTool;\n\nclass FollowURLTool extends AbstractTool {\n\n    private JApplet fApplet;\n\n    FollowURLTool(DrawingView view, JApplet applet) {\n        super(view);\n        fApplet = applet;\n    }\n\n    /**\n     * Handles mouse move events in the drawing view.\n     */\n    public void mouseMove(MouseEvent e, int x, int y) {\n        String urlstring = null;\n        Figure figure = drawing().findFigureInside(x, y);\n        if (figure != null)\n            urlstring = (String) figure.getAttribute(\"URL\");\n        if (urlstring != null)\n            fApplet.showStatus(urlstring);\n        else\n            fApplet.showStatus(\"\");\n    }\n\n    /**\n     * Handles mouse up in the drawing view.\n     */\n    public void mouseUp(MouseEvent e, int x, int y) {\n        Figure figure = drawing().findFigureInside(x, y);\n        if (figure == null)\n            return;\n        String urlstring = (String) figure.getAttribute(\"URL\");\n        if (urlstring == null)\n            return;\n        try {\n            URL url = new URL(fApplet.getDocumentBase(), urlstring);\n            fApplet.getAppletContext().showDocument(url);\n        } catch (MalformedURLException exception) {\n            fApplet.showStatus(exception.toString());\n        }\n    }\n}\n",
+  "classDeclarationCode": "class FollowURLTool extends AbstractTool {\n\n    private JApplet fApplet;\n\n    FollowURLTool(DrawingView view, JApplet applet) {\n        super(view);\n        fApplet = applet;\n    }\n\n    /**\n     * Handles mouse move events in the drawing view.\n     */\n    public void mouseMove(MouseEvent e, int x, int y) {\n        String urlstring = null;\n        Figure figure = drawing().findFigureInside(x, y);\n        if (figure != null)\n            urlstring = (String) figure.getAttribute(\"URL\");\n        if (urlstring != null)\n            fApplet.showStatus(urlstring);\n        else\n            fApplet.showStatus(\"\");\n    }\n\n    /**\n     * Handles mouse up in the drawing view.\n     */\n    public void mouseUp(MouseEvent e, int x, int y) {\n        Figure figure = drawing().findFigureInside(x, y);\n        if (figure == null)\n            return;\n        String urlstring = (String) figure.getAttribute(\"URL\");\n        if (urlstring == null)\n            return;\n        try {\n            URL url = new URL(fApplet.getDocumentBase(), urlstring);\n            fApplet.getAppletContext().showDocument(url);\n        } catch (MalformedURLException exception) {\n            fApplet.showStatus(exception.toString());\n        }\n    }\n}",
+  "subClasses": []
+}

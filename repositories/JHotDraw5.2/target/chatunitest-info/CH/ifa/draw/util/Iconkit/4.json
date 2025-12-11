@@ -1,0 +1,30 @@
+{
+  "className": "Iconkit",
+  "methodName": "loadImage",
+  "brief": "public Image loadImage(String filename){}",
+  "methodSignature": "loadImage(String)",
+  "sourceCode": "public Image loadImage(String filename) {\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        Image image = loadImageResource(filename);\n        if (image != null)\n            fMap.put(filename, image);\n        return image;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Hashtable": [
+      "get(Object)",
+      "put(K, V)",
+      "containsKey(Object)"
+    ],
+    "CH.ifa.draw.util.Iconkit": [
+      "loadImageResource(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Loads an image with the given name.\n */\npublic Image loadImage(String filename) {\n    if (fMap.containsKey(filename))\n        return (Image) fMap.get(filename);\n    Image image = loadImageResource(filename);\n    if (image != null)\n        fMap.put(filename, image);\n    return image;\n}",
+  "method_comment": "\n     * Loads an image with the given name.\n     ",
+  "method_annotation": ""
+}

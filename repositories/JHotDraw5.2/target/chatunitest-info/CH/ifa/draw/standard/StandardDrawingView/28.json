@@ -1,0 +1,36 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "mousePressed",
+  "brief": "public void mousePressed(MouseEvent e){}",
+  "methodSignature": "mousePressed(MouseEvent)",
+  "sourceCode": "public void mousePressed(MouseEvent e) {\n        requestFocus(); // JDK1.1\n        Point p = constrainPoint(new Point(e.getX(), e.getY()));\n        fLastClick = new Point(e.getX(), e.getY());\n        tool().mouseDown(e, p.x, p.y);\n        checkDamage();\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "javax.swing.JComponent": [
+      "requestFocus()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "constrainPoint(Point)",
+      "tool()",
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.framework.Tool": [
+      "mouseDown(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse down events. The event is delegated to the\n * currently active tool.\n * @return whether the event was handled.\n */\npublic void mousePressed(MouseEvent e) {\n    // JDK1.1\n    requestFocus();\n    Point p = constrainPoint(new Point(e.getX(), e.getY()));\n    fLastClick = new Point(e.getX(), e.getY());\n    tool().mouseDown(e, p.x, p.y);\n    checkDamage();\n}",
+  "method_comment": "\n     * Handles mouse down events. The event is delegated to the\n     * currently active tool.\n     * @return whether the event was handled.\n     ",
+  "method_annotation": ""
+}

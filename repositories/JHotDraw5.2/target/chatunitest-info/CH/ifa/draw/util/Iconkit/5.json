@@ -1,0 +1,38 @@
+{
+  "className": "Iconkit",
+  "methodName": "loadImageResource",
+  "brief": "public Image loadImageResource(String resourcename){}",
+  "methodSignature": "loadImageResource(String)",
+  "sourceCode": "public Image loadImageResource(String resourcename) {\n        Toolkit toolkit = Toolkit.getDefaultToolkit();\n        try {\n            java.net.URL url = getClass().getResource(resourcename);\n            if (fgDebug)\n                System.out.println(resourcename);\n            return toolkit.createImage((ImageProducer) url.getContent());\n        } catch (Exception ex) {\n            return null;\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.awt.Toolkit": [
+      "getDefaultToolkit()",
+      "createImage(ImageProducer)"
+    ],
+    "java.lang.Class": [
+      "getResource(String)"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "java.net.URL": [
+      "getContent()"
+    ]
+  },
+  "full_method_info": "public Image loadImageResource(String resourcename) {\n    Toolkit toolkit = Toolkit.getDefaultToolkit();\n    try {\n        java.net.URL url = getClass().getResource(resourcename);\n        if (fgDebug)\n            System.out.println(resourcename);\n        return toolkit.createImage((ImageProducer) url.getContent());\n    } catch (Exception ex) {\n        return null;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

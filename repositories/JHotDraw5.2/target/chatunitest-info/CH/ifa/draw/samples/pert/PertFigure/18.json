@@ -1,0 +1,38 @@
+{
+  "className": "PertFigure",
+  "methodName": "layout",
+  "brief": "private void layout(){}",
+  "methodSignature": "layout()",
+  "sourceCode": "private void layout() {\n\t    Point partOrigin = new Point(fDisplayBox.x, fDisplayBox.y);\n\t    partOrigin.translate(BORDER, BORDER);\n\t    Dimension extent = new Dimension(0, 0);\n\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) {\n            Figure f = k.nextFigure();\n\n\t\t    Dimension partExtent = f.size();\n\t\t    Point corner = new Point(\n\t\t                        partOrigin.x+partExtent.width,\n\t\t                        partOrigin.y+partExtent.height);\n    \t\tf.basicDisplayBox(partOrigin, corner);\n\n\t\t    extent.width = Math.max(extent.width, partExtent.width);\n\t\t    extent.height += partExtent.height;\n\t\t    partOrigin.y += partExtent.height;\n        }\n\t    fDisplayBox.width = extent.width + 2*BORDER;\n\t    fDisplayBox.height = extent.height + 2*BORDER;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Point": [
+      "translate(int, int)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figures()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "basicDisplayBox(Point, Point)",
+      "size()"
+    ],
+    "java.lang.Math": [
+      "max(int, int)"
+    ]
+  },
+  "full_method_info": "private void layout() {\n    Point partOrigin = new Point(fDisplayBox.x, fDisplayBox.y);\n    partOrigin.translate(BORDER, BORDER);\n    Dimension extent = new Dimension(0, 0);\n    FigureEnumeration k = figures();\n    while (k.hasMoreElements()) {\n        Figure f = k.nextFigure();\n        Dimension partExtent = f.size();\n        Point corner = new Point(partOrigin.x + partExtent.width, partOrigin.y + partExtent.height);\n        f.basicDisplayBox(partOrigin, corner);\n        extent.width = Math.max(extent.width, partExtent.width);\n        extent.height += partExtent.height;\n        partOrigin.y += partExtent.height;\n    }\n    fDisplayBox.width = extent.width + 2 * BORDER;\n    fDisplayBox.height = extent.height + 2 * BORDER;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

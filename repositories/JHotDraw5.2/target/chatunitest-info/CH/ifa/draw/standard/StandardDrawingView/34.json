@@ -1,0 +1,35 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "moveSelection",
+  "brief": "private void moveSelection(int dx, int dy){}",
+  "methodSignature": "moveSelection(int, int)",
+  "sourceCode": "private void moveSelection(int dx, int dy) {\n        FigureEnumeration figures = selectionElements();\n        while (figures.hasMoreElements())\n            figures.nextFigure().moveBy(dx, dy);\n        checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionElements()",
+      "checkDamage()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "moveBy(int, int)"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "private void moveSelection(int dx, int dy) {\n    FigureEnumeration figures = selectionElements();\n    while (figures.hasMoreElements()) figures.nextFigure().moveBy(dx, dy);\n    checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

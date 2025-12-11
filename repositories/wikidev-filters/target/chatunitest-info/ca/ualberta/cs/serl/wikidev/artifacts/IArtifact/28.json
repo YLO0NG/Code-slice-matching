@@ -1,0 +1,22 @@
+{
+  "className": "IArtifact",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\n\t\treturn project.getProjectName();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectName()"
+    ]
+  },
+  "full_method_info": "public String toString() {\n    return project.getProjectName();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,39 @@
+{
+  "className": "PertFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fDisplayBox.x);\n        dw.writeInt(fDisplayBox.y);\n        dw.writeInt(fDisplayBox.width);\n        dw.writeInt(fDisplayBox.height);\n\n        dw.writeInt(fPreTasks.size());\n\t\tEnumeration i = fPreTasks.elements();\n\t\twhile (i.hasMoreElements())\n\t\t    dw.writeStorable((Storable) i.nextElement());\n        writeTasks(dw, fPostTasks);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "write(StorableOutput)"
+    ],
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "writeTasks(StorableOutput, Vector)"
+    ]
+  },
+  "full_method_info": "// -- store / load ----------------------------------------------\npublic void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeInt(fDisplayBox.x);\n    dw.writeInt(fDisplayBox.y);\n    dw.writeInt(fDisplayBox.width);\n    dw.writeInt(fDisplayBox.height);\n    dw.writeInt(fPreTasks.size());\n    Enumeration i = fPreTasks.elements();\n    while (i.hasMoreElements()) dw.writeStorable((Storable) i.nextElement());\n    writeTasks(dw, fPostTasks);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

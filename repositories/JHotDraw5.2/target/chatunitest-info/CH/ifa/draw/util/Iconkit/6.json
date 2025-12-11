@@ -1,0 +1,30 @@
+{
+  "className": "Iconkit",
+  "methodName": "getImage",
+  "brief": "public Image getImage(String filename){}",
+  "methodSignature": "getImage(String)",
+  "sourceCode": "public Image getImage(String filename) {\n        Image image = basicGetImage(filename);\n        if (image != null)\n            return image;\n        // load registered images and try again\n        loadRegisteredImages(fComponent);\n        // try again\n        if (fMap.containsKey(filename))\n\t\t    return (Image) fMap.get(filename);\n\t\treturn null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.util.Iconkit": [
+      "loadRegisteredImages(Component)",
+      "basicGetImage(String)"
+    ],
+    "java.util.Hashtable": [
+      "get(Object)",
+      "containsKey(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the image with the given name. If the image\n * can't be found it tries it again after loading\n * all the registered images.\n */\npublic Image getImage(String filename) {\n    Image image = basicGetImage(filename);\n    if (image != null)\n        return image;\n    // load registered images and try again\n    loadRegisteredImages(fComponent);\n    // try again\n    if (fMap.containsKey(filename))\n        return (Image) fMap.get(filename);\n    return null;\n}",
+  "method_comment": "\n     * Gets the image with the given name. If the image\n     * can't be found it tries it again after loading\n     * all the registered images.\n     ",
+  "method_annotation": ""
+}

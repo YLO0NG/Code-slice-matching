@@ -1,0 +1,25 @@
+{
+  "className": "Assert",
+  "methodName": "assertNotNull",
+  "brief": "static public void assertNotNull(Object object){}",
+  "methodSignature": "assertNotNull(Object)",
+  "sourceCode": "static public void assertNotNull(Object object) {\r\n\t\tassertNotNull(null, object);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "junit.framework.Assert": [
+      "assertNotNull(String, Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that an object isn't null.\r\n */\r\nstatic public void assertNotNull(Object object) {\r\n    assertNotNull(null, object);\r\n}",
+  "method_comment": "\r\n\t * Asserts that an object isn't null.\r\n\t ",
+  "method_annotation": ""
+}

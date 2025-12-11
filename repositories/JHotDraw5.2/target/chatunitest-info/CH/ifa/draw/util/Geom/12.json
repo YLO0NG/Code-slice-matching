@@ -1,0 +1,27 @@
+{
+  "className": "Geom",
+  "methodName": "polarToPoint",
+  "brief": "static public Point polarToPoint(double angle, double fx, double fy){}",
+  "methodSignature": "polarToPoint(double, double, double)",
+  "sourceCode": "static public Point polarToPoint(double angle, double fx, double fy) {\n        double si = Math.sin(angle);\n        double co = Math.cos(angle);\n\t    return new Point((int)(fx*co+0.5), (int)(fy*si+0.5));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.lang.Math": [
+      "sin(double)",
+      "cos(double)"
+    ]
+  },
+  "full_method_info": "/**\n * Converts a polar to a point\n */\nstatic public Point polarToPoint(double angle, double fx, double fy) {\n    double si = Math.sin(angle);\n    double co = Math.cos(angle);\n    return new Point((int) (fx * co + 0.5), (int) (fy * si + 0.5));\n}",
+  "method_comment": "\n     * Converts a polar to a point\n     ",
+  "method_annotation": ""
+}

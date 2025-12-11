@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplication",
+  "methodName": "getDrawingTitle",
+  "brief": "protected String getDrawingTitle(){}",
+  "methodSignature": "getDrawingTitle()",
+  "sourceCode": "protected String getDrawingTitle() {\n    \treturn fDrawingFilename;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the title of the currently selected drawing\n */\nprotected String getDrawingTitle() {\n    return fDrawingFilename;\n}",
+  "method_comment": "\n     * Return the title of the currently selected drawing\n     ",
+  "method_annotation": ""
+}

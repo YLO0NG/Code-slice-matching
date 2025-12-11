@@ -1,0 +1,79 @@
+{
+  "fullClassName": "classes.Product",
+  "className": "Product",
+  "index": 7,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Serializable]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "@Entity(name=\"Product\")\r\npublic class Product",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.Serializable;",
+    "import javax.persistence.Column;",
+    "import javax.persistence.Entity;",
+    "import javax.persistence.Id;"
+  ],
+  "fields": [
+    "private Integer id;",
+    "private String name;",
+    "private Double price;",
+    "private Integer supply;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Serializable"
+  ],
+  "methodSigs": {
+    "getId()": "0",
+    "setId(Integer)": "1",
+    "getName()": "2",
+    "setName(String)": "3",
+    "getPrice()": "4",
+    "setPrice(Double)": "5",
+    "getSupply()": "6",
+    "setSupply(Integer)": "7",
+    "toString()": "8"
+  },
+  "methodsBrief": [
+    "@Id\r\n\t@Column(name=\"ID_PRODUCT\", nullable=false)\r\n\tpublic Integer getId(){}",
+    "public void setId( Integer id ){}",
+    "@Column(name=\"NAME\", length=60, nullable=false)\r\n\tpublic String getName(){}",
+    "public void setName( String nome ){}",
+    "@Column(name=\"PRICE\", nullable=false)\r\n\tpublic Double getPrice(){}",
+    "public void setPrice( Double preco ){}",
+    "@Column(name=\"SUPPLY\", nullable=false)\r\n\tpublic Integer getSupply(){}",
+    "public void setSupply( Integer estoque ){}",
+    "@Override\r\n\tpublic String toString(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getId()",
+    "setId(Integer)",
+    "getName()",
+    "setName(String)",
+    "getPrice()",
+    "setPrice(Double)",
+    "getSupply()",
+    "setSupply(Integer)"
+  ],
+  "getterSetterBrief": [
+    "@Id\r\n\t@Column(name=\"ID_PRODUCT\", nullable=false)\r\n\tpublic Integer getId(){}",
+    "public void setId( Integer id ){}",
+    "@Column(name=\"NAME\", length=60, nullable=false)\r\n\tpublic String getName(){}",
+    "public void setName( String nome ){}",
+    "@Column(name=\"PRICE\", nullable=false)\r\n\tpublic Double getPrice(){}",
+    "public void setPrice( Double preco ){}",
+    "@Column(name=\"SUPPLY\", nullable=false)\r\n\tpublic Integer getSupply(){}",
+    "public void setSupply( Integer estoque ){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package classes;\n\nimport java.io.Serializable;\nimport javax.persistence.Column;\nimport javax.persistence.Entity;\nimport javax.persistence.Id;\n\n@Entity(name = \"Product\")\npublic class Product implements Serializable {\n\n    private Integer id;\n\n    private String name;\n\n    private Double price;\n\n    private Integer supply;\n\n    @Id\n    @Column(name = \"ID_PRODUCT\", nullable = false)\n    public Integer getId() {\n        return this.id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    @Column(name = \"NAME\", length = 60, nullable = false)\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String nome) {\n        this.name = nome;\n    }\n\n    @Column(name = \"PRICE\", nullable = false)\n    public Double getPrice() {\n        return this.price;\n    }\n\n    public void setPrice(Double preco) {\n        this.price = preco;\n    }\n\n    @Column(name = \"SUPPLY\", nullable = false)\n    public Integer getSupply() {\n        return this.supply;\n    }\n\n    public void setSupply(Integer estoque) {\n        this.supply = estoque;\n    }\n\n    @Override\n    public String toString() {\n        return this.id + \"\\t\" + this.name + \"\\t\" + this.price + \"\\t\" + this.supply;\n    }\n}\n",
+  "classDeclarationCode": "@Entity(name = \"Product\")\npublic class Product implements Serializable {\n\n    private Integer id;\n\n    private String name;\n\n    private Double price;\n\n    private Integer supply;\n\n    @Id\n    @Column(name = \"ID_PRODUCT\", nullable = false)\n    public Integer getId() {\n        return this.id;\n    }\n\n    public void setId(Integer id) {\n        this.id = id;\n    }\n\n    @Column(name = \"NAME\", length = 60, nullable = false)\n    public String getName() {\n        return this.name;\n    }\n\n    public void setName(String nome) {\n        this.name = nome;\n    }\n\n    @Column(name = \"PRICE\", nullable = false)\n    public Double getPrice() {\n        return this.price;\n    }\n\n    public void setPrice(Double preco) {\n        this.price = preco;\n    }\n\n    @Column(name = \"SUPPLY\", nullable = false)\n    public Integer getSupply() {\n        return this.supply;\n    }\n\n    public void setSupply(Integer estoque) {\n        this.supply = estoque;\n    }\n\n    @Override\n    public String toString() {\n        return this.id + \"\\t\" + this.name + \"\\t\" + this.price + \"\\t\" + this.supply;\n    }\n}",
+  "subClasses": []
+}

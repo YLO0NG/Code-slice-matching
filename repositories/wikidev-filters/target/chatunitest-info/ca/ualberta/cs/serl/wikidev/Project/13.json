@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "addMessage",
+  "brief": "public void addMessage(Message message){}",
+  "methodSignature": "addMessage(Message)",
+  "sourceCode": "public void addMessage(Message message) {\n\t\tthis.messages.add(message);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Message"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addMessage(Message message) {\n    this.messages.add(message);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

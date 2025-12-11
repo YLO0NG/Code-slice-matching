@@ -1,0 +1,33 @@
+{
+  "className": "DefaultFailureDetailView",
+  "methodName": "showFailure",
+  "brief": "public void showFailure(TestFailure failure){}",
+  "methodSignature": "showFailure(TestFailure)",
+  "sourceCode": "public void showFailure(TestFailure failure) {\r\n\t\tgetModel().setTrace(BaseTestRunner.getFilteredTrace(failure.trace()));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestFailure"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestFailure": [
+      "trace()"
+    ],
+    "junit.swingui.DefaultFailureDetailView.StackTraceListModel": [
+      "setTrace(String)"
+    ],
+    "junit.swingui.DefaultFailureDetailView": [
+      "getModel()"
+    ],
+    "junit.runner.BaseTestRunner": [
+      "getFilteredTrace(String)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Shows a TestFailure\r\n */\r\npublic void showFailure(TestFailure failure) {\r\n    getModel().setTrace(BaseTestRunner.getFilteredTrace(failure.trace()));\r\n}",
+  "method_comment": "\r\n\t * Shows a TestFailure\r\n\t ",
+  "method_annotation": ""
+}

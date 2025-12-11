@@ -1,0 +1,18 @@
+{
+  "className": "GroupFigure",
+  "methodName": "decompose",
+  "brief": "public FigureEnumeration decompose(){}",
+  "methodSignature": "decompose()",
+  "sourceCode": "public FigureEnumeration decompose() {\n        return new FigureEnumerator(fFigures);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public FigureEnumeration decompose() {\n    return new FigureEnumerator(fFigures);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,32 @@
+{
+  "className": "TestRunner",
+  "methodName": "aboutToStart",
+  "brief": "protected void aboutToStart(final Test testSuite){}",
+  "methodSignature": "aboutToStart(Test)",
+  "sourceCode": "protected void aboutToStart(final Test testSuite) {\r\n\t\tfor (Enumeration e= fTestRunViews.elements(); e.hasMoreElements(); ) {\r\n\t\t\tTestRunView v= (TestRunView) e.nextElement();\r\n\t\t\tv.aboutToStart(testSuite, fTestResult);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.swingui.TestRunView": [
+      "aboutToStart(Test, TestResult)"
+    ]
+  },
+  "full_method_info": "protected void aboutToStart(final Test testSuite) {\r\n    for (Enumeration e = fTestRunViews.elements(); e.hasMoreElements(); ) {\r\n        TestRunView v = (TestRunView) e.nextElement();\r\n        v.aboutToStart(testSuite, fTestResult);\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

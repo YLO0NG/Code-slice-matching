@@ -1,0 +1,75 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.AbstractConnector",
+  "className": "AbstractConnector",
+  "index": 92,
+  "modifier": "[public , abstract ]",
+  "extend": "[]",
+  "implement": "[Connector]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public abstract class AbstractConnector",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import java.awt.*;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private Figure      fOwner;",
+    "private static final long serialVersionUID = -5170007865562687545L;",
+    "private int abstractConnectorSerializedDataVersion = 1;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Connector"
+  ],
+  "methodSigs": {
+    "owner()": "0",
+    "findStart(ConnectionFigure)": "1",
+    "findEnd(ConnectionFigure)": "2",
+    "findPoint(ConnectionFigure)": "3",
+    "displayBox()": "4",
+    "containsPoint(int, int)": "5",
+    "draw(Graphics)": "6",
+    "write(StorableOutput)": "7",
+    "read(StorableInput)": "8",
+    "AbstractConnector()": "9",
+    "AbstractConnector(Figure)": "10"
+  },
+  "methodsBrief": [
+    "public Figure owner(){}",
+    "public Point findStart(ConnectionFigure connection){}",
+    "public Point findEnd(ConnectionFigure connection){}",
+    "protected Point findPoint(ConnectionFigure connection){}",
+    "public Rectangle displayBox(){}",
+    "public boolean containsPoint(int x, int y){}",
+    "public void draw(Graphics g){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "public AbstractConnector(){}",
+    "public AbstractConnector(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "AbstractConnector()",
+    "AbstractConnector(Figure)"
+  ],
+  "constructorBrief": [
+    "public AbstractConnector(){}",
+    "public AbstractConnector(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)AbstractConnector.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * AbstractConnector provides default implementation for\n * the Connector interface.\n * @see Connector\n */\npublic abstract class AbstractConnector implements Connector {\n\n    /**\n     * the owner of the connector\n     */\n    private Figure fOwner;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -5170007865562687545L;\n\n    private int abstractConnectorSerializedDataVersion = 1;\n\n    public AbstractConnector() {\n        fOwner = null;\n    }\n\n    public AbstractConnector(Figure owner) {\n        fOwner = owner;\n    }\n\n    /**\n     * Gets the connector's owner.\n     */\n    public Figure owner() {\n        return fOwner;\n    }\n\n    public Point findStart(ConnectionFigure connection) {\n        return findPoint(connection);\n    }\n\n    public Point findEnd(ConnectionFigure connection) {\n        return findPoint(connection);\n    }\n\n    /**\n     * Gets the connection point. Override when the connector\n     * does not need to distinguish between the start and end\n     * point of a connection.\n     */\n    protected Point findPoint(ConnectionFigure connection) {\n        return Geom.center(displayBox());\n    }\n\n    /**\n     * Gets the display box of the connector.\n     */\n    public Rectangle displayBox() {\n        return owner().displayBox();\n    }\n\n    /**\n     * Tests if a point is contained in the connector.\n     */\n    public boolean containsPoint(int x, int y) {\n        return owner().containsPoint(x, y);\n    }\n\n    /**\n     * Draws this connector. By default connectors are invisible.\n     */\n    public void draw(Graphics g) {\n        // invisible by default\n    }\n\n    /**\n     * Stores the connector and its owner to a StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        dw.writeStorable(fOwner);\n    }\n\n    /**\n     * Reads the connector and its owner from a StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        fOwner = (Figure) dr.readStorable();\n    }\n}\n",
+  "classDeclarationCode": "/**\n * AbstractConnector provides default implementation for\n * the Connector interface.\n * @see Connector\n */\npublic abstract class AbstractConnector implements Connector {\n\n    /**\n     * the owner of the connector\n     */\n    private Figure fOwner;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -5170007865562687545L;\n\n    private int abstractConnectorSerializedDataVersion = 1;\n\n    public AbstractConnector() {\n        fOwner = null;\n    }\n\n    public AbstractConnector(Figure owner) {\n        fOwner = owner;\n    }\n\n    /**\n     * Gets the connector's owner.\n     */\n    public Figure owner() {\n        return fOwner;\n    }\n\n    public Point findStart(ConnectionFigure connection) {\n        return findPoint(connection);\n    }\n\n    public Point findEnd(ConnectionFigure connection) {\n        return findPoint(connection);\n    }\n\n    /**\n     * Gets the connection point. Override when the connector\n     * does not need to distinguish between the start and end\n     * point of a connection.\n     */\n    protected Point findPoint(ConnectionFigure connection) {\n        return Geom.center(displayBox());\n    }\n\n    /**\n     * Gets the display box of the connector.\n     */\n    public Rectangle displayBox() {\n        return owner().displayBox();\n    }\n\n    /**\n     * Tests if a point is contained in the connector.\n     */\n    public boolean containsPoint(int x, int y) {\n        return owner().containsPoint(x, y);\n    }\n\n    /**\n     * Draws this connector. By default connectors are invisible.\n     */\n    public void draw(Graphics g) {\n        // invisible by default\n    }\n\n    /**\n     * Stores the connector and its owner to a StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        dw.writeStorable(fOwner);\n    }\n\n    /**\n     * Reads the connector and its owner from a StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        fOwner = (Figure) dr.readStorable();\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.standard.ChopBoxConnector",
+    "CH.ifa.draw.standard.LocatorConnector"
+  ]
+}

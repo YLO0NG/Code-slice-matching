@@ -1,0 +1,22 @@
+{
+  "className": "StorableInput",
+  "methodName": "readColor",
+  "brief": "public Color readColor() throws IOException{}",
+  "methodSignature": "readColor()",
+  "sourceCode": "public Color readColor() throws IOException {\n        return new Color(readInt(), readInt(), readInt());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()"
+    ]
+  },
+  "full_method_info": "/**\n * Reads a color from the input stream.\n */\npublic Color readColor() throws IOException {\n    return new Color(readInt(), readInt(), readInt());\n}",
+  "method_comment": "\n     * Reads a color from the input stream.\n     ",
+  "method_annotation": ""
+}

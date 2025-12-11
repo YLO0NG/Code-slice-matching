@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.figures.PolyLineFigure",
+  "targetMethod": "draw(Graphics)",
+  "dependentFields": {
+    "CH.ifa.draw.figures.LineDecoration": "",
+    "CH.ifa.draw.figures.PolyLineFigure": "public final static int ARROW_TIP_NONE  = 0;\npublic final static int ARROW_TIP_START = 1;\npublic final static int ARROW_TIP_END   = 2;\npublic final static int ARROW_TIP_BOTH  = 3;\nprotected Vector              fPoints;\nprotected LineDecoration      fStartDecoration = null;\nprotected LineDecoration      fEndDecoration = null;\nprotected Color               fFrameColor = Color.black;\nprivate static final long serialVersionUID = -7951352179906577773L;\nprivate int polyLineFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineDecoration": "public abstract void draw(Graphics g, int x1, int y1, int x2, int y2);",
+    "CH.ifa.draw.figures.PolyLineFigure": "public LineDecoration getStartDecoration(){}\nprotected void drawLine(Graphics g, int x1, int y1, int x2, int y2){}\nprotected Color getFrameColor(){}\npublic LineDecoration getEndDecoration(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.figures.LineDecoration": "* Draws the decoration in the direction specified by the two points.\n     \npublic abstract void draw(Graphics g, int x1, int y1, int x2, int y2);",
+    "CH.ifa.draw.figures.PolyLineFigure": "* Returns the start decoration.\n\t \npublic LineDecoration getStartDecoration() {\n\t\treturn fStartDecoration;\n\t}\n \n\t * Can be overriden in subclasses to draw different types of lines\n\t * (e.g. dotted lines)\n\t \nprotected void drawLine(Graphics g, int x1, int y1, int x2, int y2) {\n        g.drawLine(x1, y1, x2, y2);\n    }\nprotected Color getFrameColor() {\n        return fFrameColor;\n    }\n\n\t * Returns the end decoration.\n\t \npublic LineDecoration getEndDecoration() {\n\t\treturn fEndDecoration;\n\t}"
+  }
+}

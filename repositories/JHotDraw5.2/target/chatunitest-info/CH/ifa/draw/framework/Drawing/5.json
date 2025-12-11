@@ -1,0 +1,24 @@
+{
+  "className": "Drawing",
+  "methodName": "findFigureWithout",
+  "brief": "public Figure findFigureWithout(int x, int y, Figure without);",
+  "methodSignature": "findFigureWithout(int, int, Figure)",
+  "sourceCode": "public Figure findFigureWithout(int x, int y, Figure without);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Finds a top level Figure, but supresses the passed\n * in figure. Use this method to ignore a figure\n * that is temporarily inserted into the drawing.\n * @param x the x coordinate\n * @param y the y coordinate\n * @param without the figure to be ignored during\n * the find.\n */\npublic Figure findFigureWithout(int x, int y, Figure without);",
+  "method_comment": "\n     * Finds a top level Figure, but supresses the passed\n     * in figure. Use this method to ignore a figure\n     * that is temporarily inserted into the drawing.\n     * @param x the x coordinate\n     * @param y the y coordinate\n     * @param without the figure to be ignored during\n     * the find.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,39 @@
+{
+  "className": "Stemmer",
+  "methodName": "main",
+  "brief": "public static void main(String[] args)\r\n  {}",
+  "methodSignature": "main(String[])",
+  "sourceCode": "public static void main(String[] args)\n   {\n      char[] w = new char[501];\n      Stemmer s = new Stemmer();\n      for (int i = 0; i < args.length; i++)\n      try\n      {\n         FileInputStream in = new FileInputStream(args[i]);\n\n         try\n         { while(true)\n\n           {  int ch = in.read();\n              if (Character.isLetter((char) ch))\n              {\n                 int j = 0;\n                 while(true)\n                 {  ch = Character.toLowerCase((char) ch);\n                    w[j] = (char) ch;\n                    if (j < 500) j++;\n                    ch = in.read();\n                    if (!Character.isLetter((char) ch))\n                    {\n                       /* to test add(char ch) */\n                       for (int c = 0; c < j; c++) s.add(w[c]);\n\n                       /* or, to test add(char[] w, int j) */\n                       /* s.add(w, j); */\n\n                       s.stem();\n                       {  String u;\n\n                          /* and now, to test toString() : */\n                          u = s.toString();\n\n                          /* to test getResultBuffer(), getResultLength() : */\n                          /* u = new String(s.getResultBuffer(), 0, s.getResultLength()); */\n\n                          System.out.print(u);\n                       }\n                       break;\n                    }\n                 }\n              }\n              if (ch < 0) break;\n              System.out.print((char)ch);\n           }\n         }\n         catch (IOException e)\n         {  System.out.println(\"error reading \" + args[i]);\n            break;\n         }\n      }\n      catch (FileNotFoundException e)\n      {  System.out.println(\"file \" + args[i] + \" not found\");\n         break;\n      }\n   }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String[]"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.io.FileInputStream": [
+      "read()"
+    ],
+    "java.lang.Character": [
+      "toLowerCase(char)",
+      "isLetter(char)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "add(char)",
+      "stem()",
+      "toString()"
+    ],
+    "java.io.PrintStream": [
+      "print(char)",
+      "print(String)",
+      "println(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Test program for demonstrating the Stemmer.  It reads text from a\n * a list of files, stems each word, and writes the result to standard\n * output. Note that the word stemmed is expected to be in lower case:\n * forcing lower case must be done outside the Stemmer class.\n * Usage: Stemmer file-name file-name ...\n */\npublic static void main(String[] args) {\n    char[] w = new char[501];\n    Stemmer s = new Stemmer();\n    for (int i = 0; i < args.length; i++) try {\n        FileInputStream in = new FileInputStream(args[i]);\n        try {\n            while (true) {\n                int ch = in.read();\n                if (Character.isLetter((char) ch)) {\n                    int j = 0;\n                    while (true) {\n                        ch = Character.toLowerCase((char) ch);\n                        w[j] = (char) ch;\n                        if (j < 500)\n                            j++;\n                        ch = in.read();\n                        if (!Character.isLetter((char) ch)) {\n                            /* to test add(char ch) */\n                            for (int c = 0; c < j; c++) s.add(w[c]);\n                            /* or, to test add(char[] w, int j) */\n                            /* s.add(w, j); */\n                            s.stem();\n                            {\n                                String u;\n                                /* and now, to test toString() : */\n                                u = s.toString();\n                                /* to test getResultBuffer(), getResultLength() : */\n                                /* u = new String(s.getResultBuffer(), 0, s.getResultLength()); */\n                                System.out.print(u);\n                            }\n                            break;\n                        }\n                    }\n                }\n                if (ch < 0)\n                    break;\n                System.out.print((char) ch);\n            }\n        } catch (IOException e) {\n            System.out.println(\"error reading \" + args[i]);\n            break;\n        }\n    } catch (FileNotFoundException e) {\n        System.out.println(\"file \" + args[i] + \" not found\");\n        break;\n    }\n}",
+  "method_comment": " Test program for demonstrating the Stemmer.  It reads text from a\n    * a list of files, stems each word, and writes the result to standard\n    * output. Note that the word stemmed is expected to be in lower case:\n    * forcing lower case must be done outside the Stemmer class.\n    * Usage: Stemmer file-name file-name ...\n    ",
+  "method_annotation": ""
+}

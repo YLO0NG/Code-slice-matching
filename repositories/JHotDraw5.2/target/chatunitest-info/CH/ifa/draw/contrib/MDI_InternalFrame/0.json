@@ -1,0 +1,22 @@
+{
+  "className": "MDI_InternalFrame",
+  "methodName": "setDrawingView",
+  "brief": "public void setDrawingView(DrawingView newInternalDrawingView){}",
+  "methodSignature": "setDrawingView(DrawingView)",
+  "sourceCode": "public void setDrawingView(DrawingView newInternalDrawingView) {\n\t\tinternalDrawingView = newInternalDrawingView;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * Set the drawing view which represents the internal frame\n *\n * @param   newInternalDrawingView  drawing view for this internal frame\n */\npublic void setDrawingView(DrawingView newInternalDrawingView) {\n    internalDrawingView = newInternalDrawingView;\n}",
+  "method_comment": "\n\t * Set the drawing view which represents the internal frame\n\t *\n\t * @param   newInternalDrawingView  drawing view for this internal frame\n\t ",
+  "method_annotation": ""
+}

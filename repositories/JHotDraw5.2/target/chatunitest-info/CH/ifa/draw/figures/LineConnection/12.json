@@ -1,0 +1,18 @@
+{
+  "className": "LineConnection",
+  "methodName": "end",
+  "brief": "public Connector end(){}",
+  "methodSignature": "end()",
+  "sourceCode": "public Connector end() {\n        return fEnd;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the end figure of the connection.\n */\npublic Connector end() {\n    return fEnd;\n}",
+  "method_comment": "\n     * Gets the end figure of the connection.\n     ",
+  "method_annotation": ""
+}

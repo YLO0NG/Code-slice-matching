@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "removeAll",
+  "brief": "public void removeAll(Vector figures);",
+  "methodSignature": "removeAll(Vector)",
+  "sourceCode": "public void removeAll(Vector figures);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": []
+  },
+  "full_method_info": "/**\n * Removes a vector of figures .\n * @see #remove\n */\npublic void removeAll(Vector figures);",
+  "method_comment": "\n     * Removes a vector of figures .\n     * @see #remove\n     ",
+  "method_annotation": ""
+}

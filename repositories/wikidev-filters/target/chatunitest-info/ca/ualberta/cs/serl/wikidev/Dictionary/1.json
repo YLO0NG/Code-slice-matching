@@ -1,0 +1,25 @@
+{
+  "className": "Dictionary",
+  "methodName": "getUnionPatternOfStrings",
+  "brief": "public static String getUnionPatternOfStrings(ArrayList<String> strings){}",
+  "methodSignature": "getUnionPatternOfStrings(ArrayList)",
+  "sourceCode": "public static String getUnionPatternOfStrings(ArrayList<String> strings) {\n\t\tString pattern = strings.get(0);\n\t\tfor(int i=1; i<strings.size(); i++) {\n\t\t\tpattern +=\"|\"+strings.get(i);\n\t\t}\n\t\treturn pattern;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<String>"
+  ],
+  "dependentMethods": {
+    "java.util.ArrayList": [
+      "get(int)",
+      "size()"
+    ]
+  },
+  "full_method_info": "public static String getUnionPatternOfStrings(ArrayList<String> strings) {\n    String pattern = strings.get(0);\n    for (int i = 1; i < strings.size(); i++) {\n        pattern += \"|\" + strings.get(i);\n    }\n    return pattern;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

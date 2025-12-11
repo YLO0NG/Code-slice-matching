@@ -1,0 +1,18 @@
+{
+  "className": "DrawingEditor",
+  "methodName": "toolDone",
+  "brief": "void        toolDone();",
+  "methodSignature": "toolDone()",
+  "sourceCode": "void        toolDone();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Informs the editor that a tool has done its interaction.\n * This method can be used to switch back to the default tool.\n */\nvoid toolDone();",
+  "method_comment": "\n     * Informs the editor that a tool has done its interaction.\n     * This method can be used to switch back to the default tool.\n     ",
+  "method_annotation": ""
+}

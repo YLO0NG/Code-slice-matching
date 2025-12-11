@@ -1,0 +1,41 @@
+{
+  "className": "DrawApplication",
+  "methodName": "promptSaveAs",
+  "brief": "public void promptSaveAs(){}",
+  "methodSignature": "promptSaveAs()",
+  "sourceCode": "public void promptSaveAs() {\n        toolDone();\n        JFileChooser saveDialog1 = new JFileChooser();\n\t\tsaveDialog1.setDialogTitle(\"Save File...\");\n        JFileChooser saveDialog = saveDialog1;\n        getStorageFormatManager().registerFileFilters(saveDialog);\n\n        if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {\n            StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());\n            if (foundFormat != null) {\n                saveDrawing(foundFormat, saveDialog.getSelectedFile().getAbsolutePath());\n            }\n            else {\n                showStatus(\"Not a valid file format: \" + saveDialog.getFileFilter().getDescription());\n            }\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "getStorageFormatManager()",
+      "showStatus(String)",
+      "saveDrawing(StorageFormat, String)",
+      "toolDone()"
+    ],
+    "javax.swing.JFileChooser": [
+      "showSaveDialog(Component)",
+      "setDialogTitle(String)",
+      "getFileFilter()",
+      "getSelectedFile()"
+    ],
+    "CH.ifa.draw.util.StorageFormatManager": [
+      "registerFileFilters(JFileChooser)",
+      "findStorageFormat(FileFilter)"
+    ],
+    "java.io.File": [
+      "getAbsolutePath()"
+    ],
+    "javax.swing.filechooser.FileFilter": [
+      "getDescription()"
+    ]
+  },
+  "full_method_info": "/**\n * Shows a file dialog and saves drawing.\n */\npublic void promptSaveAs() {\n    toolDone();\n    JFileChooser saveDialog1 = new JFileChooser();\n    saveDialog1.setDialogTitle(\"Save File...\");\n    JFileChooser saveDialog = saveDialog1;\n    getStorageFormatManager().registerFileFilters(saveDialog);\n    if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {\n        StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());\n        if (foundFormat != null) {\n            saveDrawing(foundFormat, saveDialog.getSelectedFile().getAbsolutePath());\n        } else {\n            showStatus(\"Not a valid file format: \" + saveDialog.getFileFilter().getDescription());\n        }\n    }\n}",
+  "method_comment": "\n     * Shows a file dialog and saves drawing.\n     ",
+  "method_annotation": ""
+}

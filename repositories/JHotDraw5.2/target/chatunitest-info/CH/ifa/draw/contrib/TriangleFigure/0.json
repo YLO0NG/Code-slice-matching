@@ -1,0 +1,25 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n    Vector h = super.handles();\n    h.addElement(new TriangleRotationHandle(this));\n    return h;\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "handles()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "public Vector handles() {\n    Vector h = super.handles();\n    h.addElement(new TriangleRotationHandle(this));\n    return h;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

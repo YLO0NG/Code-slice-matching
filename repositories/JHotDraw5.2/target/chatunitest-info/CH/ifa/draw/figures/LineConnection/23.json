@@ -1,0 +1,22 @@
+{
+  "className": "LineConnection",
+  "methodName": "layoutConnection",
+  "brief": "public void layoutConnection(){}",
+  "methodSignature": "layoutConnection()",
+  "sourceCode": "public void layoutConnection() {\n        updateConnection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineConnection": [
+      "updateConnection()"
+    ]
+  },
+  "full_method_info": "/**\n * Lays out the connection. This is called when the connection\n * itself changes. By default the connection is recalculated\n */\npublic void layoutConnection() {\n    updateConnection();\n}",
+  "method_comment": "\n     * Lays out the connection. This is called when the connection\n     * itself changes. By default the connection is recalculated\n     ",
+  "method_annotation": ""
+}

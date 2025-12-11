@@ -1,0 +1,22 @@
+{
+  "className": "JavaDrawViewer",
+  "methodName": "selectionChanged",
+  "brief": "public void selectionChanged(DrawingView view){}",
+  "methodSignature": "selectionChanged(DrawingView)",
+  "sourceCode": "public void selectionChanged(DrawingView view) {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * Ignore selection changes, we don't show any selection\n */\npublic void selectionChanged(DrawingView view) {\n}",
+  "method_comment": "\n     * Ignore selection changes, we don't show any selection\n     ",
+  "method_annotation": ""
+}

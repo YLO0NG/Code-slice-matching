@@ -1,0 +1,32 @@
+{
+  "className": "ArrowTip",
+  "methodName": "addPointRelative",
+  "brief": "private void addPointRelative(Polygon shape, int x, int y, double radius, double angle){}",
+  "methodSignature": "addPointRelative(Polygon, int, int, double, double)",
+  "sourceCode": "private void addPointRelative(Polygon shape, int x, int y, double radius, double angle) {\n        shape.addPoint(\n            x + (int) (radius * Math.cos(angle)),\n            y + (int) (radius * Math.sin(angle)));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Polygon",
+    "int",
+    "int",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.awt.Polygon": [
+      "addPoint(int, int)"
+    ],
+    "java.lang.Math": [
+      "sin(double)",
+      "cos(double)"
+    ]
+  },
+  "full_method_info": "private void addPointRelative(Polygon shape, int x, int y, double radius, double angle) {\n    shape.addPoint(x + (int) (radius * Math.cos(angle)), y + (int) (radius * Math.sin(angle)));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

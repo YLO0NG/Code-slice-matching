@@ -1,0 +1,26 @@
+{
+  "className": "SimpleUpdateStrategy",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g, DrawingView view){}",
+  "methodSignature": "draw(Graphics, DrawingView)",
+  "sourceCode": "public void draw(Graphics g, DrawingView view) {\n        view.drawAll(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawAll(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the view contents.\n */\npublic void draw(Graphics g, DrawingView view) {\n    view.drawAll(g);\n}",
+  "method_comment": "\n    * Draws the view contents.\n    ",
+  "method_annotation": ""
+}

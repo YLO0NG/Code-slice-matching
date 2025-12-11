@@ -1,0 +1,20 @@
+{
+  "className": "Ticket",
+  "methodName": "setTicketChanges",
+  "brief": "public void setTicketChanges(ArrayList<TicketChange> ticketChanges){}",
+  "methodSignature": "setTicketChanges(ArrayList)",
+  "sourceCode": "public void setTicketChanges(ArrayList<TicketChange> ticketChanges) {\n\t\tthis.ticketChanges = ticketChanges;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<TicketChange>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param  ticketChanges\n * @uml.property  name=\"ticketChanges\"\n */\npublic void setTicketChanges(ArrayList<TicketChange> ticketChanges) {\n    this.ticketChanges = ticketChanges;\n}",
+  "method_comment": "\n\t * @param  ticketChanges\n\t * @uml.property  name=\"ticketChanges\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "WikiRevision",
+  "methodName": "getRev_page",
+  "brief": "public int getRev_page(){}",
+  "methodSignature": "getRev_page()",
+  "sourceCode": "public int getRev_page() {\n\t\treturn rev_page;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rev_page\"\n */\npublic int getRev_page() {\n    return rev_page;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rev_page\"\n\t ",
+  "method_annotation": ""
+}

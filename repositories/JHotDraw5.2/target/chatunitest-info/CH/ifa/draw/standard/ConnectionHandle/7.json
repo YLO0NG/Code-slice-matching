@@ -1,0 +1,26 @@
+{
+  "className": "ConnectionHandle",
+  "methodName": "findConnector",
+  "brief": "protected Connector findConnector(int x, int y, Figure f){}",
+  "methodSignature": "findConnector(int, int, Figure)",
+  "sourceCode": "protected Connector findConnector(int x, int y, Figure f) {\n        return f.connectorAt(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "connectorAt(int, int)"
+    ]
+  },
+  "full_method_info": "protected Connector findConnector(int x, int y, Figure f) {\n    return f.connectorAt(x, y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,50 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.PatternPainter",
+  "className": "PatternPainter",
+  "index": 81,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Painter]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public  class PatternPainter",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Image   fImage;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Painter"
+  ],
+  "methodSigs": {
+    "draw(Graphics, DrawingView)": "0",
+    "drawPattern(Graphics, Image, DrawingView)": "1",
+    "PatternPainter(Image)": "2"
+  },
+  "methodsBrief": [
+    "public void draw(Graphics g, DrawingView view){}",
+    "private void drawPattern(Graphics g, Image image, DrawingView view){}",
+    "public PatternPainter(Image image){}"
+  ],
+  "constructorSigs": [
+    "PatternPainter(Image)"
+  ],
+  "constructorBrief": [
+    "public PatternPainter(Image image){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.awt.Image": []
+  },
+  "compilationUnitCode": "/*\n * @(#)PatternPainter.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport java.awt.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * PatternDrawer a background that can be added to a\n * drawing.\n * @see DrawingView\n * @see Painter\n */\npublic class PatternPainter implements Painter {\n\n    private Image fImage;\n\n    public PatternPainter(Image image) {\n        fImage = image;\n    }\n\n    public void draw(Graphics g, DrawingView view) {\n        drawPattern(g, fImage, view);\n    }\n\n    /**\n     * Draws a pattern background pattern by replicating an image.\n     */\n    private void drawPattern(Graphics g, Image image, DrawingView view) {\n        int iwidth = image.getWidth(view);\n        int iheight = image.getHeight(view);\n        Dimension d = view.getSize();\n        int x = 0;\n        int y = 0;\n        while (y < d.height) {\n            while (x < d.width) {\n                g.drawImage(image, x, y, view);\n                x += iwidth;\n            }\n            y += iheight;\n            x = 0;\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * PatternDrawer a background that can be added to a\n * drawing.\n * @see DrawingView\n * @see Painter\n */\npublic class PatternPainter implements Painter {\n\n    private Image fImage;\n\n    public PatternPainter(Image image) {\n        fImage = image;\n    }\n\n    public void draw(Graphics g, DrawingView view) {\n        drawPattern(g, fImage, view);\n    }\n\n    /**\n     * Draws a pattern background pattern by replicating an image.\n     */\n    private void drawPattern(Graphics g, Image image, DrawingView view) {\n        int iwidth = image.getWidth(view);\n        int iheight = image.getHeight(view);\n        Dimension d = view.getSize();\n        int x = 0;\n        int y = 0;\n        while (y < d.height) {\n            while (x < d.width) {\n                g.drawImage(image, x, y, view);\n                x += iwidth;\n            }\n            y += iheight;\n            x = 0;\n        }\n    }\n}",
+  "subClasses": []
+}

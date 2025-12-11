@@ -1,0 +1,52 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.BouncingDrawing",
+  "className": "BouncingDrawing",
+  "index": 75,
+  "modifier": "[public ]",
+  "extend": "[StandardDrawing]",
+  "implement": "[Animatable]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public class BouncingDrawing",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.Animatable;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = -8566272817418441758L;",
+    "private int bouncingDrawingSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "StandardDrawing"
+  ],
+  "implementedTypes": [
+    "Animatable"
+  ],
+  "methodSigs": {
+    "add(Figure)": "0",
+    "remove(Figure)": "1",
+    "replace(Figure, Figure)": "2",
+    "animationStep()": "3"
+  },
+  "methodsBrief": [
+    "public synchronized Figure add(Figure figure){}",
+    "public synchronized Figure remove(Figure figure){}",
+    "public synchronized void replace(Figure figure, Figure replacement){}",
+    "public void animationStep(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)BouncingDrawing.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport java.awt.*;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.Animatable;\n\npublic class BouncingDrawing extends StandardDrawing implements Animatable {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -8566272817418441758L;\n\n    private int bouncingDrawingSerializedDataVersion = 1;\n\n    public synchronized Figure add(Figure figure) {\n        if (!(figure instanceof AnimationDecorator))\n            figure = new AnimationDecorator(figure);\n        return super.add(figure);\n    }\n\n    public synchronized Figure remove(Figure figure) {\n        Figure f = super.remove(figure);\n        if (f instanceof AnimationDecorator)\n            return ((AnimationDecorator) f).peelDecoration();\n        return f;\n    }\n\n    public synchronized void replace(Figure figure, Figure replacement) {\n        if (!(replacement instanceof AnimationDecorator))\n            replacement = new AnimationDecorator(replacement);\n        super.replace(figure, replacement);\n    }\n\n    public void animationStep() {\n        Enumeration k = figures();\n        while (k.hasMoreElements()) ((AnimationDecorator) k.nextElement()).animationStep();\n    }\n}\n",
+  "classDeclarationCode": "public class BouncingDrawing extends StandardDrawing implements Animatable {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -8566272817418441758L;\n\n    private int bouncingDrawingSerializedDataVersion = 1;\n\n    public synchronized Figure add(Figure figure) {\n        if (!(figure instanceof AnimationDecorator))\n            figure = new AnimationDecorator(figure);\n        return super.add(figure);\n    }\n\n    public synchronized Figure remove(Figure figure) {\n        Figure f = super.remove(figure);\n        if (f instanceof AnimationDecorator)\n            return ((AnimationDecorator) f).peelDecoration();\n        return f;\n    }\n\n    public synchronized void replace(Figure figure, Figure replacement) {\n        if (!(replacement instanceof AnimationDecorator))\n            replacement = new AnimationDecorator(replacement);\n        super.replace(figure, replacement);\n    }\n\n    public void animationStep() {\n        Enumeration k = figures();\n        while (k.hasMoreElements()) ((AnimationDecorator) k.nextElement()).animationStep();\n    }\n}",
+  "subClasses": []
+}

@@ -1,0 +1,30 @@
+{
+  "className": "NothingApp",
+  "methodName": "createTools",
+  "brief": "protected void createTools(JToolBar palette){}",
+  "methodSignature": "createTools(JToolBar)",
+  "sourceCode": "protected void createTools(JToolBar palette) {\n        super.createTools(palette);\n\n        Tool tool = new TextTool(view(), new TextFigure());\n        palette.add(createToolButton(IMAGES+\"TEXT\", \"Text Tool\", tool));\n\n        tool = new CreationTool(view(), new RectangleFigure());\n        palette.add(createToolButton(IMAGES+\"RECT\", \"Rectangle Tool\", tool));\n\n        tool = new CreationTool(view(), new RoundRectangleFigure());\n        palette.add(createToolButton(IMAGES+\"RRECT\", \"Round Rectangle Tool\", tool));\n\n        tool = new CreationTool(view(), new EllipseFigure());\n        palette.add(createToolButton(IMAGES+\"ELLIPSE\", \"Ellipse Tool\", tool));\n\n        tool = new CreationTool(view(), new LineFigure());\n        palette.add(createToolButton(IMAGES+\"LINE\", \"Line Tool\", tool));\n\n        tool = new PolygonTool(view());\n        palette.add(createToolButton(IMAGES+\"POLYGON\", \"Polygon Tool\", tool));\n\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES+\"CONN\", \"Connection Tool\", tool));\n\n        tool = new ConnectionTool(view(), new ElbowConnection());\n        palette.add(createToolButton(IMAGES+\"OCONN\", \"Elbow Connection Tool\", tool));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JToolBar"
+  ],
+  "dependentMethods": {
+    "javax.swing.JToolBar": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()",
+      "createTools(JToolBar)",
+      "createToolButton(String, String, Tool)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "protected void createTools(JToolBar palette) {\n    super.createTools(palette);\n    Tool tool = new TextTool(view(), new TextFigure());\n    palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n    tool = new CreationTool(view(), new RectangleFigure());\n    palette.add(createToolButton(IMAGES + \"RECT\", \"Rectangle Tool\", tool));\n    tool = new CreationTool(view(), new RoundRectangleFigure());\n    palette.add(createToolButton(IMAGES + \"RRECT\", \"Round Rectangle Tool\", tool));\n    tool = new CreationTool(view(), new EllipseFigure());\n    palette.add(createToolButton(IMAGES + \"ELLIPSE\", \"Ellipse Tool\", tool));\n    tool = new CreationTool(view(), new LineFigure());\n    palette.add(createToolButton(IMAGES + \"LINE\", \"Line Tool\", tool));\n    tool = new PolygonTool(view());\n    palette.add(createToolButton(IMAGES + \"POLYGON\", \"Polygon Tool\", tool));\n    tool = new ConnectionTool(view(), new LineConnection());\n    palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n    tool = new ConnectionTool(view(), new ElbowConnection());\n    palette.add(createToolButton(IMAGES + \"OCONN\", \"Elbow Connection Tool\", tool));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "className": "FigureChangeEventMulticaster",
+  "methodName": "addInternal",
+  "brief": "protected static EventListener addInternal(FigureChangeListener a, FigureChangeListener b){}",
+  "methodSignature": "addInternal(FigureChangeListener, FigureChangeListener)",
+  "sourceCode": "protected static EventListener addInternal(FigureChangeListener a, FigureChangeListener b) {\n\t    if (a == null)  return b;\n\t    if (b == null)  return a;\n\t    return new FigureChangeEventMulticaster(a, b);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeListener",
+    "FigureChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": []
+  },
+  "full_method_info": "protected static EventListener addInternal(FigureChangeListener a, FigureChangeListener b) {\n    if (a == null)\n        return b;\n    if (b == null)\n        return a;\n    return new FigureChangeEventMulticaster(a, b);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,56 @@
+{
+  "fullClassName": "junit.swingui.FailureListCellRenderer",
+  "className": "FailureListCellRenderer",
+  "index": 39,
+  "modifier": "[static ]",
+  "extend": "[DefaultListCellRenderer]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "static class FailureListCellRenderer",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import javax.swing.*;",
+    "import javax.swing.event.*;",
+    "import junit.framework.*;",
+    "import junit.runner.BaseTestRunner;"
+  ],
+  "fields": [
+    "private Icon fFailureIcon;",
+    "private Icon fErrorIcon;"
+  ],
+  "superClasses": [
+    "DefaultListCellRenderer"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "loadIcons()": "0",
+    "getListCellRendererComponent(JList, Object, int, boolean, boolean)": "1",
+    "FailureListCellRenderer()": "2"
+  },
+  "methodsBrief": [
+    "void loadIcons(){}",
+    "public Component getListCellRendererComponent(\r\r\n\t\t\tJList list, Object value, int modelIndex, \r\r\n\t\t\tboolean isSelected, boolean cellHasFocus){}",
+    "FailureListCellRenderer(){}"
+  ],
+  "constructorSigs": [
+    "FailureListCellRenderer()"
+  ],
+  "constructorBrief": [
+    "FailureListCellRenderer(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "junit.swingui.FailureRunView.FailureListCellRenderer": [
+      "loadIcons()"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.*;\r\nimport javax.swing.*;\r\nimport javax.swing.event.*;\r\nimport junit.framework.*;\r\nimport junit.runner.BaseTestRunner;\r\n\r\n/**\r\n * A view presenting the test failures as a list.\r\n */\r\npublic class FailureRunView implements TestRunView {\r\n\r\n    JList fFailureList;\r\n\r\n    TestRunContext fRunContext;\r\n\r\n    /**\r\n     * Renders TestFailures in a JList\r\n     */\r\n    static class FailureListCellRenderer extends DefaultListCellRenderer {\r\n\r\n        private Icon fFailureIcon;\r\n\r\n        private Icon fErrorIcon;\r\n\r\n        FailureListCellRenderer() {\r\n            super();\r\n            loadIcons();\r\n        }\r\n\r\n        void loadIcons() {\r\n            fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n            fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n        }\r\n\r\n        public Component getListCellRendererComponent(JList list, Object value, int modelIndex, boolean isSelected, boolean cellHasFocus) {\r\n            Component c = super.getListCellRendererComponent(list, value, modelIndex, isSelected, cellHasFocus);\r\n            TestFailure failure = (TestFailure) value;\r\n            String text = failure.failedTest().toString();\r\n            String msg = failure.exceptionMessage();\r\n            if (msg != null)\r\n                text += \":\" + BaseTestRunner.truncate(msg);\r\n            if (failure.isFailure()) {\r\n                if (fFailureIcon != null)\r\n                    setIcon(fFailureIcon);\r\n            } else {\r\n                if (fErrorIcon != null)\r\n                    setIcon(fErrorIcon);\r\n            }\r\n            setText(text);\r\n            setToolTipText(text);\r\n            return c;\r\n        }\r\n    }\r\n\r\n    public FailureRunView(TestRunContext context) {\r\n        fRunContext = context;\r\n        fFailureList = new JList(fRunContext.getFailures());\r\n        fFailureList.setFont(new Font(\"Dialog\", Font.PLAIN, 12));\r\n        fFailureList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);\r\n        fFailureList.setCellRenderer(new FailureListCellRenderer());\r\n        fFailureList.setVisibleRowCount(5);\r\n        fFailureList.addListSelectionListener(new ListSelectionListener() {\r\n\r\n            public void valueChanged(ListSelectionEvent e) {\r\n                testSelected();\r\n            }\r\n        });\r\n    }\r\n\r\n    public Test getSelectedTest() {\r\n        int index = fFailureList.getSelectedIndex();\r\n        if (index == -1)\r\n            return null;\r\n        ListModel model = fFailureList.getModel();\r\n        TestFailure failure = (TestFailure) model.getElementAt(index);\r\n        return failure.failedTest();\r\n    }\r\n\r\n    public void activate() {\r\n        testSelected();\r\n    }\r\n\r\n    public void addTab(JTabbedPane pane) {\r\n        JScrollPane scrollPane = new JScrollPane(fFailureList, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\r\n        Icon errorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n        pane.addTab(\"Failures\", errorIcon, scrollPane, \"The list of failed tests\");\r\n    }\r\n\r\n    public void revealFailure(Test failure) {\r\n        fFailureList.setSelectedIndex(0);\r\n    }\r\n\r\n    public void aboutToStart(Test suite, TestResult result) {\r\n    }\r\n\r\n    public void runFinished(Test suite, TestResult result) {\r\n    }\r\n\r\n    protected void testSelected() {\r\n        fRunContext.handleTestSelected(getSelectedTest());\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * Renders TestFailures in a JList\r\n */\r\nstatic class FailureListCellRenderer extends DefaultListCellRenderer {\r\n\r\n    private Icon fFailureIcon;\r\n\r\n    private Icon fErrorIcon;\r\n\r\n    FailureListCellRenderer() {\r\n        super();\r\n        loadIcons();\r\n    }\r\n\r\n    void loadIcons() {\r\n        fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n        fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n    }\r\n\r\n    public Component getListCellRendererComponent(JList list, Object value, int modelIndex, boolean isSelected, boolean cellHasFocus) {\r\n        Component c = super.getListCellRendererComponent(list, value, modelIndex, isSelected, cellHasFocus);\r\n        TestFailure failure = (TestFailure) value;\r\n        String text = failure.failedTest().toString();\r\n        String msg = failure.exceptionMessage();\r\n        if (msg != null)\r\n            text += \":\" + BaseTestRunner.truncate(msg);\r\n        if (failure.isFailure()) {\r\n            if (fFailureIcon != null)\r\n                setIcon(fFailureIcon);\r\n        } else {\r\n            if (fErrorIcon != null)\r\n                setIcon(fErrorIcon);\r\n        }\r\n        setText(text);\r\n        setToolTipText(text);\r\n        return c;\r\n    }\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createFontStyleMenu",
+  "brief": "protected JMenu createFontStyleMenu(){}",
+  "methodSignature": "createFontStyleMenu()",
+  "sourceCode": "protected JMenu createFontStyleMenu() {\n        CommandMenu menu = new CommandMenu(\"Font Style\");\n        menu.add(new ChangeAttributeCommand(\"Plain\", \"FontStyle\", new Integer(Font.PLAIN), view()));\n        menu.add(new ChangeAttributeCommand(\"Italic\",\"FontStyle\", new Integer(Font.ITALIC),view()));\n        menu.add(new ChangeAttributeCommand(\"Bold\",  \"FontStyle\", new Integer(Font.BOLD),  view()));\n        return menu;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the font style menu with entries (Plain, Italic, Bold).\n */\nprotected JMenu createFontStyleMenu() {\n    CommandMenu menu = new CommandMenu(\"Font Style\");\n    menu.add(new ChangeAttributeCommand(\"Plain\", \"FontStyle\", new Integer(Font.PLAIN), view()));\n    menu.add(new ChangeAttributeCommand(\"Italic\", \"FontStyle\", new Integer(Font.ITALIC), view()));\n    menu.add(new ChangeAttributeCommand(\"Bold\", \"FontStyle\", new Integer(Font.BOLD), view()));\n    return menu;\n}",
+  "method_comment": "\n     * Creates the font style menu with entries (Plain, Italic, Bold).\n     ",
+  "method_annotation": ""
+}

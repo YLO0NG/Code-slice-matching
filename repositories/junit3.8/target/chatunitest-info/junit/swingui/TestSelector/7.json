@@ -1,0 +1,38 @@
+{
+  "className": "TestSelector",
+  "methodName": "createTestList",
+  "brief": "private Vector createTestList(TestCollector collector){}",
+  "methodSignature": "createTestList(TestCollector)",
+  "sourceCode": "private Vector createTestList(TestCollector collector) {\r\n    \t\tEnumeration each= collector.collectTests();\r\n    \t\tVector v= new Vector(200);\r\n    \t\tVector displayVector= new Vector(v.size());\r\n    \t\twhile(each.hasMoreElements()) {\r\n    \t\t\tString s= (String)each.nextElement();\r\n    \t\t\tv.addElement(s);\r\n    \t\t\tdisplayVector.addElement(TestCellRenderer.displayString(s));\r\n    \t\t}\r\n    \t\tif (v.size() > 0)\r\n    \t\t\tSorter.sortStrings(displayVector, 0, displayVector.size()-1, new ParallelSwapper(v));\r\n    \t\treturn v;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestCollector"
+  ],
+  "dependentMethods": {
+    "junit.runner.TestCollector": [
+      "collectTests()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)",
+      "size()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "junit.swingui.TestSelector.TestCellRenderer": [
+      "displayString(String)"
+    ],
+    "junit.runner.Sorter": [
+      "sortStrings(Vector, int, int, Swapper)"
+    ]
+  },
+  "full_method_info": "private Vector createTestList(TestCollector collector) {\r\n    Enumeration each = collector.collectTests();\r\n    Vector v = new Vector(200);\r\n    Vector displayVector = new Vector(v.size());\r\n    while (each.hasMoreElements()) {\r\n        String s = (String) each.nextElement();\r\n        v.addElement(s);\r\n        displayVector.addElement(TestCellRenderer.displayString(s));\r\n    }\r\n    if (v.size() > 0)\r\n        Sorter.sortStrings(displayVector, 0, displayVector.size() - 1, new ParallelSwapper(v));\r\n    return v;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "Product",
+  "methodName": "setSupply",
+  "brief": "public void setSupply( Integer estoque ){}",
+  "methodSignature": "setSupply(Integer)",
+  "sourceCode": "public void setSupply( Integer estoque ) {\n\t\tthis.supply = estoque;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Integer"
+  ],
+  "dependentMethods": {
+    "java.lang.Integer": []
+  },
+  "full_method_info": "public void setSupply(Integer estoque) {\n    this.supply = estoque;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

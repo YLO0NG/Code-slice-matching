@@ -1,0 +1,22 @@
+{
+  "className": "TestResult",
+  "methodName": "errorCount",
+  "brief": "public synchronized int errorCount(){}",
+  "methodSignature": "errorCount()",
+  "sourceCode": "public synchronized int errorCount() {\r\n\t\treturn fErrors.size();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "size()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Gets the number of detected errors.\r\n */\r\npublic synchronized int errorCount() {\r\n    return fErrors.size();\r\n}",
+  "method_comment": "\r\n\t * Gets the number of detected errors.\r\n\t ",
+  "method_annotation": ""
+}

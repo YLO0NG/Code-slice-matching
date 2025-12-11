@@ -1,0 +1,41 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "write",
+  "brief": "public void write(StorableOutput dw){}",
+  "methodSignature": "write(StorableOutput)",
+  "sourceCode": "public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeInt(fPoints.size());\n        Enumeration k = fPoints.elements();\n        while (k.hasMoreElements()) {\n            Point p = (Point) k.nextElement();\n            dw.writeInt(p.x);\n            dw.writeInt(p.y);\n        }\n        dw.writeStorable(fStartDecoration);\n        dw.writeStorable(fEndDecoration);\n        dw.writeInt(fFrameColor.getRed());\n\t\tdw.writeInt(fFrameColor.getGreen());\n\t\tdw.writeInt(fFrameColor.getBlue());\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableOutput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": [
+      "writeInt(int)",
+      "writeStorable(Storable)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "write(StorableOutput)"
+    ],
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.awt.Color": [
+      "getGreen()",
+      "getBlue()",
+      "getRed()"
+    ]
+  },
+  "full_method_info": "public void write(StorableOutput dw) {\n    super.write(dw);\n    dw.writeInt(fPoints.size());\n    Enumeration k = fPoints.elements();\n    while (k.hasMoreElements()) {\n        Point p = (Point) k.nextElement();\n        dw.writeInt(p.x);\n        dw.writeInt(p.y);\n    }\n    dw.writeStorable(fStartDecoration);\n    dw.writeStorable(fEndDecoration);\n    dw.writeInt(fFrameColor.getRed());\n    dw.writeInt(fFrameColor.getGreen());\n    dw.writeInt(fFrameColor.getBlue());\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

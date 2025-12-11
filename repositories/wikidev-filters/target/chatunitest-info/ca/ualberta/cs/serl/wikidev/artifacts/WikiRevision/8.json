@@ -1,0 +1,18 @@
+{
+  "className": "WikiRevision",
+  "methodName": "getRev_user",
+  "brief": "public User getRev_user(){}",
+  "methodSignature": "getRev_user()",
+  "sourceCode": "public User getRev_user() {\n\t\treturn rev_user;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"rev_user\"\n */\npublic User getRev_user() {\n    return rev_user;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"rev_user\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "setWord",
+  "brief": "public void setWord(String word){}",
+  "methodSignature": "setWord(String)",
+  "sourceCode": "public void setWord(String word) {\n\t\tthis.word = word;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param word\n * @uml.property  name=\"word\"\n */\npublic void setWord(String word) {\n    this.word = word;\n}",
+  "method_comment": "\n\t * @param word\n\t * @uml.property  name=\"word\"\n\t ",
+  "method_annotation": ""
+}

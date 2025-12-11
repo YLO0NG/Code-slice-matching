@@ -1,0 +1,25 @@
+{
+  "className": "AbstractTool",
+  "methodName": "activate",
+  "brief": "public void activate(){}",
+  "methodSignature": "activate()",
+  "sourceCode": "public void activate() {\n        view().clearSelection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "clearSelection()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Activates the tool for the given view. This method is called\n * whenever the user switches to this tool. Use this method to\n * reinitialize a tool.\n */\npublic void activate() {\n    view().clearSelection();\n}",
+  "method_comment": "\n     * Activates the tool for the given view. This method is called\n     * whenever the user switches to this tool. Use this method to\n     * reinitialize a tool.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "CommandMenu",
+  "methodName": "remove",
+  "brief": "public synchronized void remove(Command command){}",
+  "methodSignature": "remove(Command)",
+  "sourceCode": "public synchronized void remove(Command command) {\n        System.out.println(\"not implemented\");\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Command"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Command": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "public synchronized void remove(Command command) {\n    System.out.println(\"not implemented\");\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

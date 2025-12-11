@@ -1,0 +1,26 @@
+{
+  "className": "TestHierarchyRunView",
+  "methodName": "runFinished",
+  "brief": "public void runFinished(Test suite, TestResult result){}",
+  "methodSignature": "runFinished(Test, TestResult)",
+  "sourceCode": "public void runFinished(Test suite, TestResult result) {\r\n\t\tresult.removeListener(fTreeBrowser);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.TestResult": [
+      "removeListener(TestListener)"
+    ]
+  },
+  "full_method_info": "public void runFinished(Test suite, TestResult result) {\r\n    result.removeListener(fTreeBrowser);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

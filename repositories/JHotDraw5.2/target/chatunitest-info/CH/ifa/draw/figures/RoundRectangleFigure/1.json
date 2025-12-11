@@ -1,0 +1,26 @@
+{
+  "className": "RoundRectangleFigure",
+  "methodName": "setArc",
+  "brief": "public void setArc(int width, int height){}",
+  "methodSignature": "setArc(int, int)",
+  "sourceCode": "public void setArc(int width, int height) {\n        willChange();\n        fArcWidth = width;\n        fArcHeight = height;\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the arc's witdh and height.\n */\npublic void setArc(int width, int height) {\n    willChange();\n    fArcWidth = width;\n    fArcHeight = height;\n    changed();\n}",
+  "method_comment": "\n     * Sets the arc's witdh and height.\n     ",
+  "method_annotation": ""
+}

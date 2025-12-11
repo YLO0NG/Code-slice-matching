@@ -1,0 +1,20 @@
+{
+  "className": "TicketChange",
+  "methodName": "setTicket_id",
+  "brief": "public void setTicket_id(int ticket_id){}",
+  "methodSignature": "setTicket_id(int)",
+  "sourceCode": "public void setTicket_id(int ticket_id) {\n\t\tthis.ticket_id = ticket_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param ticket_id\n * @uml.property  name=\"ticket_id\"\n */\npublic void setTicket_id(int ticket_id) {\n    this.ticket_id = ticket_id;\n}",
+  "method_comment": "\n\t * @param ticket_id\n\t * @uml.property  name=\"ticket_id\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "TicketChange",
+  "methodName": "setExternalAuthorUsername",
+  "brief": "public void setExternalAuthorUsername(String externalAuthorUsername){}",
+  "methodSignature": "setExternalAuthorUsername(String)",
+  "sourceCode": "public void setExternalAuthorUsername(String externalAuthorUsername) {\n\t\tthis.externalAuthorUsername = externalAuthorUsername;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param externalAuthorUsername\n * @uml.property  name=\"externalAuthorUsername\"\n */\npublic void setExternalAuthorUsername(String externalAuthorUsername) {\n    this.externalAuthorUsername = externalAuthorUsername;\n}",
+  "method_comment": "\n\t * @param externalAuthorUsername\n\t * @uml.property  name=\"externalAuthorUsername\"\n\t ",
+  "method_annotation": ""
+}

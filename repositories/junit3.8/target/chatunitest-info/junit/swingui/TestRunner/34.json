@@ -1,0 +1,29 @@
+{
+  "className": "TestRunner",
+  "methodName": "createTestCollector",
+  "brief": "TestCollector createTestCollector(){}",
+  "methodSignature": "createTestCollector()",
+  "sourceCode": "TestCollector createTestCollector() {\r\n\t\tString className= BaseTestRunner.getPreference(TESTCOLLECTOR_KEY);\r\n\t\tif (className != null) {\r\n\t\t\tClass collectorClass= null;\r\n\t\t\ttry {\r\n\t\t\t\tcollectorClass= Class.forName(className);\r\n\t\t\t\treturn (TestCollector)collectorClass.newInstance();\r\n\t\t\t} catch(Exception e) {\r\n\t\t\t\tJOptionPane.showMessageDialog(fFrame, \"Could not create TestCollector - using default collector\");\r\n\t\t\t}\r\n\t\t}\r\n\t\treturn new SimpleTestCollector();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": [
+      "getPreference(String)"
+    ],
+    "java.lang.Class": [
+      "newInstance()",
+      "forName(String)"
+    ],
+    "javax.swing.JOptionPane": [
+      "showMessageDialog(Component, Object)"
+    ]
+  },
+  "full_method_info": "TestCollector createTestCollector() {\r\n    String className = BaseTestRunner.getPreference(TESTCOLLECTOR_KEY);\r\n    if (className != null) {\r\n        Class collectorClass = null;\r\n        try {\r\n            collectorClass = Class.forName(className);\r\n            return (TestCollector) collectorClass.newInstance();\r\n        } catch (Exception e) {\r\n            JOptionPane.showMessageDialog(fFrame, \"Could not create TestCollector - using default collector\");\r\n        }\r\n    }\r\n    return new SimpleTestCollector();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

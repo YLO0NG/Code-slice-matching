@@ -1,0 +1,13 @@
+{
+  "targetClass": "CH.ifa.draw.util.Iconkit",
+  "targetMethod": "getImage(String)",
+  "dependentFields": {
+    "CH.ifa.draw.util.Iconkit": "private Hashtable           fMap;\nprivate Vector              fRegisteredImages;\nprivate Component           fComponent;\nprivate final static int    ID = 123;\nprivate static Iconkit      fgIconkit = null;\nprivate static boolean      fgDebug = false;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.util.Iconkit": "public void loadRegisteredImages(Component component){}\nprivate Image basicGetImage(String filename){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.util.Iconkit": "* Loads all registered images.\n     * @see #registerImage\n     \npublic void loadRegisteredImages(Component component) {\n        if (fRegisteredImages.size() == 0)\n            return;\n\n        MediaTracker tracker = new MediaTracker(component);\n\n        // register images with MediaTracker\n        Enumeration k = fRegisteredImages.elements();\n        while (k.hasMoreElements()) {\n            String fileName = (String) k.nextElement();\n            if (basicGetImage(fileName) == null) {\n                tracker.addImage(loadImage(fileName), ID);\n            }\n        }\n        fRegisteredImages.removeAllElements();\n\n        // block until all images are loaded\n        try {\n            tracker.waitForAll();\n        } catch (Exception e) {  }\n    }\nprivate Image basicGetImage(String filename) {\n        if (fMap.containsKey(filename))\n            return (Image) fMap.get(filename);\n        return null;\n    }"
+  }
+}

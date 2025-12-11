@@ -1,0 +1,81 @@
+{
+  "fullClassName": "junit.swingui.AboutDialog",
+  "className": "AboutDialog",
+  "index": 33,
+  "modifier": "[]",
+  "extend": "[JDialog]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "class AboutDialog",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.*;",
+    "import javax.swing.*;",
+    "import junit.runner.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "JDialog"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createLogo()": "0",
+    "AboutDialog(JFrame)": "1"
+  },
+  "methodsBrief": [
+    "protected JLabel createLogo(){}",
+    "public AboutDialog(JFrame parent){}"
+  ],
+  "constructorSigs": [
+    "AboutDialog(JFrame)"
+  ],
+  "constructorBrief": [
+    "public AboutDialog(JFrame parent){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "javax.swing.JFrame": [],
+    "java.awt.Dialog": [
+      "setResizable(boolean)",
+      "setTitle(String)"
+    ],
+    "java.awt.Container": [
+      "add(Component, Object)",
+      "setLayout(LayoutManager)"
+    ],
+    "javax.swing.JDialog": [
+      "getRootPane()",
+      "getContentPane()"
+    ],
+    "java.awt.Window": [
+      "setSize(int, int)",
+      "setLocationRelativeTo(Component)",
+      "dispose()",
+      "addWindowListener(WindowListener)"
+    ],
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "javax.swing.JRootPane": [
+      "setDefaultButton(JButton)"
+    ],
+    "javax.swing.JComponent": [
+      "setFont(Font)"
+    ],
+    "junit.runner.Version": [
+      "id()"
+    ],
+    "junit.swingui.AboutDialog": [
+      "createLogo()"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.*;\r\nimport java.awt.event.*;\r\nimport javax.swing.*;\r\nimport junit.runner.*;\r\n\r\n/**\r\n * The AboutDialog.\r\n */\r\nclass AboutDialog extends JDialog {\r\n\r\n    public AboutDialog(JFrame parent) {\r\n        super(parent, true);\r\n        setResizable(false);\r\n        getContentPane().setLayout(new GridBagLayout());\r\n        setSize(330, 138);\r\n        setTitle(\"About\");\r\n        setLocationRelativeTo(parent);\r\n        JButton close = new JButton(\"Close\");\r\n        close.addActionListener(new ActionListener() {\r\n\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n            }\r\n        });\r\n        getRootPane().setDefaultButton(close);\r\n        JLabel label1 = new JLabel(\"JUnit\");\r\n        label1.setFont(new Font(\"dialog\", Font.PLAIN, 36));\r\n        JLabel label2 = new JLabel(\"JUnit \" + Version.id() + \" by Erich Gamma and Kent Beck\");\r\n        label2.setFont(new Font(\"dialog\", Font.PLAIN, 14));\r\n        JLabel logo = createLogo();\r\n        GridBagConstraints constraintsLabel1 = new GridBagConstraints();\r\n        constraintsLabel1.gridx = 3;\r\n        constraintsLabel1.gridy = 0;\r\n        constraintsLabel1.gridwidth = 1;\r\n        constraintsLabel1.gridheight = 1;\r\n        constraintsLabel1.anchor = GridBagConstraints.CENTER;\r\n        getContentPane().add(label1, constraintsLabel1);\r\n        GridBagConstraints constraintsLabel2 = new GridBagConstraints();\r\n        constraintsLabel2.gridx = 2;\r\n        constraintsLabel2.gridy = 1;\r\n        constraintsLabel2.gridwidth = 2;\r\n        constraintsLabel2.gridheight = 1;\r\n        constraintsLabel2.anchor = GridBagConstraints.CENTER;\r\n        getContentPane().add(label2, constraintsLabel2);\r\n        GridBagConstraints constraintsButton1 = new GridBagConstraints();\r\n        constraintsButton1.gridx = 2;\r\n        constraintsButton1.gridy = 2;\r\n        constraintsButton1.gridwidth = 2;\r\n        constraintsButton1.gridheight = 1;\r\n        constraintsButton1.anchor = GridBagConstraints.CENTER;\r\n        constraintsButton1.insets = new Insets(8, 0, 8, 0);\r\n        getContentPane().add(close, constraintsButton1);\r\n        GridBagConstraints constraintsLogo1 = new GridBagConstraints();\r\n        constraintsLogo1.gridx = 2;\r\n        constraintsLogo1.gridy = 0;\r\n        constraintsLogo1.gridwidth = 1;\r\n        constraintsLogo1.gridheight = 1;\r\n        constraintsLogo1.anchor = GridBagConstraints.CENTER;\r\n        getContentPane().add(logo, constraintsLogo1);\r\n        addWindowListener(new WindowAdapter() {\r\n\r\n            public void windowClosing(WindowEvent e) {\r\n                dispose();\r\n            }\r\n        });\r\n    }\r\n\r\n    protected JLabel createLogo() {\r\n        Icon icon = TestRunner.getIconResource(BaseTestRunner.class, \"logo.gif\");\r\n        return new JLabel(icon);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * The AboutDialog.\r\n */\r\nclass AboutDialog extends JDialog {\r\n\r\n    public AboutDialog(JFrame parent) {\r\n        super(parent, true);\r\n        setResizable(false);\r\n        getContentPane().setLayout(new GridBagLayout());\r\n        setSize(330, 138);\r\n        setTitle(\"About\");\r\n        setLocationRelativeTo(parent);\r\n        JButton close = new JButton(\"Close\");\r\n        close.addActionListener(new ActionListener() {\r\n\r\n            public void actionPerformed(ActionEvent e) {\r\n                dispose();\r\n            }\r\n        });\r\n        getRootPane().setDefaultButton(close);\r\n        JLabel label1 = new JLabel(\"JUnit\");\r\n        label1.setFont(new Font(\"dialog\", Font.PLAIN, 36));\r\n        JLabel label2 = new JLabel(\"JUnit \" + Version.id() + \" by Erich Gamma and Kent Beck\");\r\n        label2.setFont(new Font(\"dialog\", Font.PLAIN, 14));\r\n        JLabel logo = createLogo();\r\n        GridBagConstraints constraintsLabel1 = new GridBagConstraints();\r\n        constraintsLabel1.gridx = 3;\r\n        constraintsLabel1.gridy = 0;\r\n        constraintsLabel1.gridwidth = 1;\r\n        constraintsLabel1.gridheight = 1;\r\n        constraintsLabel1.anchor = GridBagConstraints.CENTER;\r\n        getContentPane().add(label1, constraintsLabel1);\r\n        GridBagConstraints constraintsLabel2 = new GridBagConstraints();\r\n        constraintsLabel2.gridx = 2;\r\n        constraintsLabel2.gridy = 1;\r\n        constraintsLabel2.gridwidth = 2;\r\n        constraintsLabel2.gridheight = 1;\r\n        constraintsLabel2.anchor = GridBagConstraints.CENTER;\r\n        getContentPane().add(label2, constraintsLabel2);\r\n        GridBagConstraints constraintsButton1 = new GridBagConstraints();\r\n        constraintsButton1.gridx = 2;\r\n        constraintsButton1.gridy = 2;\r\n        constraintsButton1.gridwidth = 2;\r\n        constraintsButton1.gridheight = 1;\r\n        constraintsButton1.anchor = GridBagConstraints.CENTER;\r\n        constraintsButton1.insets = new Insets(8, 0, 8, 0);\r\n        getContentPane().add(close, constraintsButton1);\r\n        GridBagConstraints constraintsLogo1 = new GridBagConstraints();\r\n        constraintsLogo1.gridx = 2;\r\n        constraintsLogo1.gridy = 0;\r\n        constraintsLogo1.gridwidth = 1;\r\n        constraintsLogo1.gridheight = 1;\r\n        constraintsLogo1.anchor = GridBagConstraints.CENTER;\r\n        getContentPane().add(logo, constraintsLogo1);\r\n        addWindowListener(new WindowAdapter() {\r\n\r\n            public void windowClosing(WindowEvent e) {\r\n                dispose();\r\n            }\r\n        });\r\n    }\r\n\r\n    protected JLabel createLogo() {\r\n        Icon icon = TestRunner.getIconResource(BaseTestRunner.class, \"logo.gif\");\r\n        return new JLabel(icon);\r\n    }\r\n}",
+  "subClasses": []
+}

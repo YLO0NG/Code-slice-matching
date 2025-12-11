@@ -1,0 +1,20 @@
+{
+  "className": "Project",
+  "methodName": "setUsers",
+  "brief": "public void setUsers(Set<User> users){}",
+  "methodSignature": "setUsers(Set)",
+  "sourceCode": "public void setUsers(Set<User> users) {\n\t\tthis.users = users;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Set<User>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param  users\n * @uml.property  name=\"users\"\n */\npublic void setUsers(Set<User> users) {\n    this.users = users;\n}",
+  "method_comment": "\n\t * @param  users\n\t * @uml.property  name=\"users\"\n\t ",
+  "method_annotation": ""
+}

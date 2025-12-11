@@ -1,0 +1,31 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createMenus",
+  "brief": "protected void createMenus(JMenuBar mb){}",
+  "methodSignature": "createMenus(JMenuBar)",
+  "sourceCode": "protected void createMenus(JMenuBar mb) {\n\t\tmb.add(createFileMenu());\n\t\tmb.add(createEditMenu());\n\t\tmb.add(createAlignmentMenu());\n\t\tmb.add(createAttributesMenu());\n\t\tmb.add(createDebugMenu());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JMenuBar"
+  ],
+  "dependentMethods": {
+    "javax.swing.JMenuBar": [
+      "add(JMenu)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createAttributesMenu()",
+      "createDebugMenu()",
+      "createAlignmentMenu()",
+      "createFileMenu()",
+      "createEditMenu()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the standard menus. Clients override this\n * method to add additional menus.\n */\nprotected void createMenus(JMenuBar mb) {\n    mb.add(createFileMenu());\n    mb.add(createEditMenu());\n    mb.add(createAlignmentMenu());\n    mb.add(createAttributesMenu());\n    mb.add(createDebugMenu());\n}",
+  "method_comment": "\n     * Creates the standard menus. Clients override this\n     * method to add additional menus.\n     ",
+  "method_annotation": ""
+}

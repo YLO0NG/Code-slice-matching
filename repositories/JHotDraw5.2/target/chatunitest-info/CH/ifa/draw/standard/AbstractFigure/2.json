@@ -1,0 +1,28 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "displayBox",
+  "brief": "public void displayBox(Point origin, Point corner){}",
+  "methodSignature": "displayBox(Point, Point)",
+  "sourceCode": "public void displayBox(Point origin, Point corner) {\n        willChange();\n        basicDisplayBox(origin, corner);\n        changed();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "basicDisplayBox(Point, Point)",
+      "willChange()",
+      "changed()"
+    ]
+  },
+  "full_method_info": "/**\n * Changes the display box of a figure. Clients usually\n * call this method. It changes the display box\n * and announces the corresponding change.\n * @param origin the new origin\n * @param corner the new corner\n * @see #displayBox\n */\npublic void displayBox(Point origin, Point corner) {\n    willChange();\n    basicDisplayBox(origin, corner);\n    changed();\n}",
+  "method_comment": "\n     * Changes the display box of a figure. Clients usually\n     * call this method. It changes the display box\n     * and announces the corresponding change.\n     * @param origin the new origin\n     * @param corner the new corner\n     * @see #displayBox\n     ",
+  "method_annotation": ""
+}

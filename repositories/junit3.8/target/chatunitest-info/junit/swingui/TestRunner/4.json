@@ -1,0 +1,38 @@
+{
+  "className": "TestRunner",
+  "methodName": "testEnded",
+  "brief": "public void testEnded(String stringName){}",
+  "methodSignature": "testEnded(String)",
+  "sourceCode": "public void testEnded(String stringName) {\r\n\t\tsynchUI();\r\n\t\tSwingUtilities.invokeLater(\r\n\t\t\tnew Runnable() {\r\n\t\t\t\tpublic void run() {\r\n\t\t\t\t\tif (fTestResult != null) {\r\n\t\t\t\t\t\tfCounterPanel.setRunValue(fTestResult.runCount());\r\n\t\t\t\t\t\tfProgressIndicator.step(fTestResult.runCount(), fTestResult.wasSuccessful());\r\n\t\t\t\t\t}\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "junit.swingui.TestRunner": [
+      "synchUI()"
+    ],
+    "javax.swing.SwingUtilities": [
+      "invokeLater(Runnable)"
+    ],
+    "junit.swingui.CounterPanel": [
+      "setRunValue(int)"
+    ],
+    "junit.framework.TestResult": [
+      "wasSuccessful()",
+      "runCount()"
+    ],
+    "junit.swingui.ProgressBar": [
+      "step(int, boolean)"
+    ]
+  },
+  "full_method_info": "public void testEnded(String stringName) {\r\n    synchUI();\r\n    SwingUtilities.invokeLater(new Runnable() {\r\n\r\n        public void run() {\r\n            if (fTestResult != null) {\r\n                fCounterPanel.setRunValue(fTestResult.runCount());\r\n                fProgressIndicator.step(fTestResult.runCount(), fTestResult.wasSuccessful());\r\n            }\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "PurchaseOrder",
+  "methodName": "getCustomer",
+  "brief": "@ManyToOne(fetch=FetchType.EAGER)\r\n\t@JoinColumn(name=\"ID_CUSTOMER\",nullable=false)\r\n\tpublic Customer getCustomer(){}",
+  "methodSignature": "getCustomer()",
+  "sourceCode": "@ManyToOne(fetch=FetchType.EAGER)\n\t@JoinColumn(name=\"ID_CUSTOMER\",nullable=false)\n\tpublic Customer getCustomer() {\n\t\treturn customer;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@ManyToOne(fetch = FetchType.EAGER)\n@JoinColumn(name = \"ID_CUSTOMER\", nullable = false)\npublic Customer getCustomer() {\n    return customer;\n}",
+  "method_comment": "",
+  "method_annotation": "@ManyToOne(fetch = FetchType.EAGER)\n@JoinColumn(name = \"ID_CUSTOMER\", nullable = false)\n"
+}

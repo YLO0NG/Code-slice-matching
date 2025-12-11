@@ -1,0 +1,28 @@
+{
+  "className": "Assert",
+  "methodName": "failNotSame",
+  "brief": "static private void failNotSame(String message, Object expected, Object actual){}",
+  "methodSignature": "failNotSame(String, Object, Object)",
+  "sourceCode": "static private void failNotSame(String message, Object expected, Object actual) {\r\n\t\tString formatted= \"\";\r\n\t\tif (message != null)\r\n\t\t\tformatted= message+\" \";\r\n\t\tfail(formatted+\"expected same:<\"+expected+\"> was not:<\"+actual+\">\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "junit.framework.Assert": [
+      "fail(String)"
+    ]
+  },
+  "full_method_info": "static private void failNotSame(String message, Object expected, Object actual) {\r\n    String formatted = \"\";\r\n    if (message != null)\r\n        formatted = message + \" \";\r\n    fail(formatted + \"expected same:<\" + expected + \"> was not:<\" + actual + \">\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

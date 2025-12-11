@@ -1,0 +1,18 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "getFileDescription",
+  "brief": "public String getFileDescription(){}",
+  "methodSignature": "getFileDescription()",
+  "sourceCode": "public String getFileDescription() {\n\t\treturn myFileDescription;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Return the file description for the file type of the storage format\n *\n * @return description of the file type\n */\npublic String getFileDescription() {\n    return myFileDescription;\n}",
+  "method_comment": "\n\t * Return the file description for the file type of the storage format\n\t *\n\t * @return description of the file type\n\t ",
+  "method_annotation": ""
+}

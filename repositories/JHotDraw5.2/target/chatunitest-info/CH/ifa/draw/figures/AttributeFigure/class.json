@@ -1,0 +1,89 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.AttributeFigure",
+  "className": "AttributeFigure",
+  "index": 23,
+  "modifier": "[public , abstract ]",
+  "extend": "[AbstractFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public abstract class AttributeFigure",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.*;"
+  ],
+  "fields": [
+    "private FigureAttributes        fAttributes;",
+    "private static FigureAttributes fgDefaultAttributes = null;",
+    "private static final long serialVersionUID = -10857585979273442L;",
+    "private int attributeFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "AbstractFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "draw(Graphics)": "0",
+    "drawBackground(Graphics)": "1",
+    "drawFrame(Graphics)": "2",
+    "getFillColor()": "3",
+    "getFrameColor()": "4",
+    "initializeAttributes()": "5",
+    "getDefaultAttribute(String)": "6",
+    "getAttribute(String)": "7",
+    "setAttribute(String, Object)": "8",
+    "write(StorableOutput)": "9",
+    "read(StorableInput)": "10",
+    "writeObject(ObjectOutputStream)": "11",
+    "AttributeFigure()": "12"
+  },
+  "methodsBrief": [
+    "public void draw(Graphics g){}",
+    "protected void drawBackground(Graphics g){}",
+    "protected void drawFrame(Graphics g){}",
+    "public Color getFillColor(){}",
+    "public Color getFrameColor(){}",
+    "private static void initializeAttributes(){}",
+    "public static Object getDefaultAttribute(String name){}",
+    "public Object getAttribute(String name){}",
+    "public void setAttribute(String name, Object value){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "private void writeObject(ObjectOutputStream o) throws IOException{}",
+    "protected AttributeFigure(){}"
+  ],
+  "constructorSigs": [
+    "AttributeFigure()"
+  ],
+  "constructorBrief": [
+    "protected AttributeFigure(){}"
+  ],
+  "getterSetterSigs": [
+    "getFillColor()",
+    "getFrameColor()",
+    "setAttribute(String, Object)"
+  ],
+  "getterSetterBrief": [
+    "public Color getFillColor(){}",
+    "public Color getFrameColor(){}",
+    "public void setAttribute(String name, Object value){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)AttributeFigure.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport java.awt.*;\nimport java.util.*;\nimport java.io.*;\n\n/**\n * A figure that can keep track of an open ended set of attributes.\n * The attributes are stored in a dictionary implemented by\n * FigureAttributes.\n *\n * @see Figure\n * @see Handle\n * @see FigureAttributes\n */\npublic abstract class AttributeFigure extends AbstractFigure {\n\n    /**\n     * The attributes of a figure. Each figure can have\n     * an open ended set of attributes. Attributes are\n     * identified by name.\n     * @see #getAttribute\n     * @see #setAttribute\n     */\n    private FigureAttributes fAttributes;\n\n    /**\n     * The default attributes associated with a figure.\n     * If a figure doesn't have an attribute set, a default\n     * value from this shared attribute set is returned.\n     * @see #getAttribute\n     * @see #setAttribute\n     */\n    private static FigureAttributes fgDefaultAttributes = null;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -10857585979273442L;\n\n    private int attributeFigureSerializedDataVersion = 1;\n\n    protected AttributeFigure() {\n    }\n\n    /**\n     * Draws the figure in the given graphics. Draw is a template\n     * method calling drawBackground followed by drawFrame.\n     */\n    public void draw(Graphics g) {\n        Color fill = getFillColor();\n        if (!ColorMap.isTransparent(fill)) {\n            g.setColor(fill);\n            drawBackground(g);\n        }\n        Color frame = getFrameColor();\n        if (!ColorMap.isTransparent(frame)) {\n            g.setColor(frame);\n            drawFrame(g);\n        }\n    }\n\n    /**\n     * Draws the background of the figure.\n     * @see #draw\n     */\n    protected void drawBackground(Graphics g) {\n    }\n\n    /**\n     * Draws the frame of the figure.\n     * @see #draw\n     */\n    protected void drawFrame(Graphics g) {\n    }\n\n    /**\n     * Gets the fill color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     */\n    public Color getFillColor() {\n        return (Color) getAttribute(\"FillColor\");\n    }\n\n    /**\n     * Gets the frame color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     */\n    public Color getFrameColor() {\n        return (Color) getAttribute(\"FrameColor\");\n    }\n\n    // ---- figure attributes ----------------------------------\n    private static void initializeAttributes() {\n        fgDefaultAttributes = new FigureAttributes();\n        fgDefaultAttributes.set(\"FrameColor\", Color.black);\n        fgDefaultAttributes.set(\"FillColor\", new Color(0x70DB93));\n        fgDefaultAttributes.set(\"TextColor\", Color.black);\n        fgDefaultAttributes.set(\"ArrowMode\", new Integer(0));\n        fgDefaultAttributes.set(\"FontName\", \"Helvetica\");\n        fgDefaultAttributes.set(\"FontSize\", new Integer(12));\n        fgDefaultAttributes.set(\"FontStyle\", new Integer(Font.PLAIN));\n    }\n\n    /**\n     * Gets a the default value for a named attribute\n     * @see #getAttribute\n     */\n    public static Object getDefaultAttribute(String name) {\n        if (fgDefaultAttributes == null)\n            initializeAttributes();\n        return fgDefaultAttributes.get(name);\n    }\n\n    /**\n     * Returns the named attribute or null if a\n     * a figure doesn't have an attribute.\n     * All figures support the attribute names\n     * FillColor and FrameColor\n     */\n    public Object getAttribute(String name) {\n        if (fAttributes != null) {\n            if (fAttributes.hasDefined(name))\n                return fAttributes.get(name);\n        }\n        if (fgDefaultAttributes == null)\n            initializeAttributes();\n        return fgDefaultAttributes.get(name);\n    }\n\n    /**\n     * Sets the named attribute to the new value\n     */\n    public void setAttribute(String name, Object value) {\n        if (fAttributes == null)\n            fAttributes = new FigureAttributes();\n        fAttributes.set(name, value);\n        changed();\n    }\n\n    /**\n     * Stores the Figure to a StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        if (fAttributes == null)\n            dw.writeString(\"no_attributes\");\n        else {\n            dw.writeString(\"attributes\");\n            fAttributes.write(dw);\n        }\n    }\n\n    /**\n     * Reads the Figure from a StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        String s = dr.readString();\n        if (s.toLowerCase().equals(\"attributes\")) {\n            fAttributes = new FigureAttributes();\n            fAttributes.read(dr);\n        }\n    }\n\n    private void writeObject(ObjectOutputStream o) throws IOException {\n        // Filter out Popup menu: cannot serialize any associated action-Listeners\n        // Work-around for Java-Bug: 4240860\n        Object associatedMenu = getAttribute(Figure.POPUP_MENU);\n        if (associatedMenu != null) {\n            setAttribute(Figure.POPUP_MENU, null);\n        }\n        o.defaultWriteObject();\n        if (associatedMenu != null) {\n            setAttribute(Figure.POPUP_MENU, associatedMenu);\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A figure that can keep track of an open ended set of attributes.\n * The attributes are stored in a dictionary implemented by\n * FigureAttributes.\n *\n * @see Figure\n * @see Handle\n * @see FigureAttributes\n */\npublic abstract class AttributeFigure extends AbstractFigure {\n\n    /**\n     * The attributes of a figure. Each figure can have\n     * an open ended set of attributes. Attributes are\n     * identified by name.\n     * @see #getAttribute\n     * @see #setAttribute\n     */\n    private FigureAttributes fAttributes;\n\n    /**\n     * The default attributes associated with a figure.\n     * If a figure doesn't have an attribute set, a default\n     * value from this shared attribute set is returned.\n     * @see #getAttribute\n     * @see #setAttribute\n     */\n    private static FigureAttributes fgDefaultAttributes = null;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = -10857585979273442L;\n\n    private int attributeFigureSerializedDataVersion = 1;\n\n    protected AttributeFigure() {\n    }\n\n    /**\n     * Draws the figure in the given graphics. Draw is a template\n     * method calling drawBackground followed by drawFrame.\n     */\n    public void draw(Graphics g) {\n        Color fill = getFillColor();\n        if (!ColorMap.isTransparent(fill)) {\n            g.setColor(fill);\n            drawBackground(g);\n        }\n        Color frame = getFrameColor();\n        if (!ColorMap.isTransparent(frame)) {\n            g.setColor(frame);\n            drawFrame(g);\n        }\n    }\n\n    /**\n     * Draws the background of the figure.\n     * @see #draw\n     */\n    protected void drawBackground(Graphics g) {\n    }\n\n    /**\n     * Draws the frame of the figure.\n     * @see #draw\n     */\n    protected void drawFrame(Graphics g) {\n    }\n\n    /**\n     * Gets the fill color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     */\n    public Color getFillColor() {\n        return (Color) getAttribute(\"FillColor\");\n    }\n\n    /**\n     * Gets the frame color of a figure. This is a convenience\n     * method.\n     * @see #getAttribute\n     */\n    public Color getFrameColor() {\n        return (Color) getAttribute(\"FrameColor\");\n    }\n\n    // ---- figure attributes ----------------------------------\n    private static void initializeAttributes() {\n        fgDefaultAttributes = new FigureAttributes();\n        fgDefaultAttributes.set(\"FrameColor\", Color.black);\n        fgDefaultAttributes.set(\"FillColor\", new Color(0x70DB93));\n        fgDefaultAttributes.set(\"TextColor\", Color.black);\n        fgDefaultAttributes.set(\"ArrowMode\", new Integer(0));\n        fgDefaultAttributes.set(\"FontName\", \"Helvetica\");\n        fgDefaultAttributes.set(\"FontSize\", new Integer(12));\n        fgDefaultAttributes.set(\"FontStyle\", new Integer(Font.PLAIN));\n    }\n\n    /**\n     * Gets a the default value for a named attribute\n     * @see #getAttribute\n     */\n    public static Object getDefaultAttribute(String name) {\n        if (fgDefaultAttributes == null)\n            initializeAttributes();\n        return fgDefaultAttributes.get(name);\n    }\n\n    /**\n     * Returns the named attribute or null if a\n     * a figure doesn't have an attribute.\n     * All figures support the attribute names\n     * FillColor and FrameColor\n     */\n    public Object getAttribute(String name) {\n        if (fAttributes != null) {\n            if (fAttributes.hasDefined(name))\n                return fAttributes.get(name);\n        }\n        if (fgDefaultAttributes == null)\n            initializeAttributes();\n        return fgDefaultAttributes.get(name);\n    }\n\n    /**\n     * Sets the named attribute to the new value\n     */\n    public void setAttribute(String name, Object value) {\n        if (fAttributes == null)\n            fAttributes = new FigureAttributes();\n        fAttributes.set(name, value);\n        changed();\n    }\n\n    /**\n     * Stores the Figure to a StorableOutput.\n     */\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        if (fAttributes == null)\n            dw.writeString(\"no_attributes\");\n        else {\n            dw.writeString(\"attributes\");\n            fAttributes.write(dw);\n        }\n    }\n\n    /**\n     * Reads the Figure from a StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        String s = dr.readString();\n        if (s.toLowerCase().equals(\"attributes\")) {\n            fAttributes = new FigureAttributes();\n            fAttributes.read(dr);\n        }\n    }\n\n    private void writeObject(ObjectOutputStream o) throws IOException {\n        // Filter out Popup menu: cannot serialize any associated action-Listeners\n        // Work-around for Java-Bug: 4240860\n        Object associatedMenu = getAttribute(Figure.POPUP_MENU);\n        if (associatedMenu != null) {\n            setAttribute(Figure.POPUP_MENU, null);\n        }\n        o.defaultWriteObject();\n        if (associatedMenu != null) {\n            setAttribute(Figure.POPUP_MENU, associatedMenu);\n        }\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.figures.EllipseFigure",
+    "CH.ifa.draw.figures.ImageFigure",
+    "CH.ifa.draw.figures.RectangleFigure",
+    "CH.ifa.draw.figures.RoundRectangleFigure",
+    "CH.ifa.draw.figures.TextFigure"
+  ]
+}

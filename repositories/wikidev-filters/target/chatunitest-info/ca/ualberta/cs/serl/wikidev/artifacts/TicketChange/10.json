@@ -1,0 +1,18 @@
+{
+  "className": "TicketChange",
+  "methodName": "getFieldChanged",
+  "brief": "public String getFieldChanged(){}",
+  "methodSignature": "getFieldChanged()",
+  "sourceCode": "public String getFieldChanged() {\n\t\treturn fieldChanged;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"fieldChanged\"\n */\npublic String getFieldChanged() {\n    return fieldChanged;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"fieldChanged\"\n\t ",
+  "method_annotation": ""
+}

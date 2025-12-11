@@ -1,0 +1,26 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "smoothPoints",
+  "brief": "public void smoothPoints(){}",
+  "methodSignature": "smoothPoints()",
+  "sourceCode": "public void smoothPoints() {\n    willChange();\n    boolean removed = false;\n    int n = fPoly.npoints;\n    do {\n      removed = false;\n      int i = 0;\n      while (i < n && n >= 3) {\n        int nxt = (i + 1) % n;\n        int prv = (i - 1 + n) % n;\n\n        if ((distanceFromLine(fPoly.xpoints[prv], fPoly.ypoints[prv],\n                              fPoly.xpoints[nxt], fPoly.ypoints[nxt],\n                              fPoly.xpoints[i], fPoly.ypoints[i]) < TOO_CLOSE)) {\n          removed = true;\n          --n;\n          for (int j = i; j < n; ++j) {\n            fPoly.xpoints[j] = fPoly.xpoints[j+1];\n            fPoly.ypoints[j] = fPoly.ypoints[j+1];\n          }\n        }\n        else\n          ++i;\n      }\n    } while(removed);\n    if (n != fPoly.npoints)\n      fPoly =  new Polygon(fPoly.xpoints, fPoly.ypoints, n);\n    changed();\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "willChange()",
+      "changed()"
+    ],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "distanceFromLine(int, int, int, int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Remove points that are nearly colinear with others\n */\npublic void smoothPoints() {\n    willChange();\n    boolean removed = false;\n    int n = fPoly.npoints;\n    do {\n        removed = false;\n        int i = 0;\n        while (i < n && n >= 3) {\n            int nxt = (i + 1) % n;\n            int prv = (i - 1 + n) % n;\n            if ((distanceFromLine(fPoly.xpoints[prv], fPoly.ypoints[prv], fPoly.xpoints[nxt], fPoly.ypoints[nxt], fPoly.xpoints[i], fPoly.ypoints[i]) < TOO_CLOSE)) {\n                removed = true;\n                --n;\n                for (int j = i; j < n; ++j) {\n                    fPoly.xpoints[j] = fPoly.xpoints[j + 1];\n                    fPoly.ypoints[j] = fPoly.ypoints[j + 1];\n                }\n            } else\n                ++i;\n        }\n    } while (removed);\n    if (n != fPoly.npoints)\n        fPoly = new Polygon(fPoly.xpoints, fPoly.ypoints, n);\n    changed();\n}",
+  "method_comment": "\n   * Remove points that are nearly colinear with others\n   *",
+  "method_annotation": ""
+}

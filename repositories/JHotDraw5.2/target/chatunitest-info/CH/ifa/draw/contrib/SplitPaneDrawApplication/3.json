@@ -1,0 +1,22 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "setLeftComponent",
+  "brief": "protected final void setLeftComponent(JComponent newLeftComponent){}",
+  "methodSignature": "setLeftComponent(JComponent)",
+  "sourceCode": "protected final void setLeftComponent(JComponent newLeftComponent) {\n    \tleftComponent = newLeftComponent;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JComponent"
+  ],
+  "dependentMethods": {
+    "javax.swing.JComponent": []
+  },
+  "full_method_info": "/**\n * Set the left component of the JSplitPane.\n *\n * @param\tnewLeftComponent\tleft component\n */\nprotected final void setLeftComponent(JComponent newLeftComponent) {\n    leftComponent = newLeftComponent;\n}",
+  "method_comment": "\n\t * Set the left component of the JSplitPane.\n\t *\n\t * @param\tnewLeftComponent\tleft component\n\t ",
+  "method_annotation": ""
+}

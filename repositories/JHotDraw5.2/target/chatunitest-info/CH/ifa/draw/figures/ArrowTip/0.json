@@ -1,0 +1,30 @@
+{
+  "className": "ArrowTip",
+  "methodName": "outline",
+  "brief": "public Polygon outline(int x1, int y1, int x2, int y2){}",
+  "methodSignature": "outline(int, int, int, int)",
+  "sourceCode": "public Polygon outline(int x1, int y1, int x2, int y2) {\n        double dir = Math.PI/2 - Math.atan2(x2-x1, y2-y1);\n        return outline(x1, y1, dir);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.Math": [
+      "atan2(double, double)"
+    ],
+    "CH.ifa.draw.figures.ArrowTip": [
+      "outline(int, int, double)"
+    ]
+  },
+  "full_method_info": "/**\n * Calculates the outline of an arrow tip.\n */\npublic Polygon outline(int x1, int y1, int x2, int y2) {\n    double dir = Math.PI / 2 - Math.atan2(x2 - x1, y2 - y1);\n    return outline(x1, y1, dir);\n}",
+  "method_comment": "\n    * Calculates the outline of an arrow tip.\n    ",
+  "method_annotation": ""
+}

@@ -1,0 +1,13 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical",
+  "targetMethod": "clustering(ArrayList)",
+  "dependentFields": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": "private ArrayList<IArtifact> artifacts;\nprivate HashMap<IArtifact, ClusterPoint> coordinates;\nprivate HashSet<User> users;\nprivate HashSet<String> words;\nprivate Timestamp fromdate;\nprivate Timestamp todate;\nprivate int project;\nprivate int index;\nprivate String cluster_set_name;\nprivate double threshold;\nprivate int clusterid;\nprivate String projectname;"
+  },
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": "public void addArtifact(IArtifact entity){}\npublic ArrayList<IArtifact> getArtifacts(){}"
+  },
+  "dependentMethodBodies": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": "public void addArtifact(IArtifact entity) {\n\t\tif (!artifacts.contains(entity)) {\n\t\t\tartifacts.add(entity);\n\t\t}\n\t}\npublic ArrayList<IArtifact> getArtifacts() {\n\t\treturn artifacts;\n\t}"
+  }
+}

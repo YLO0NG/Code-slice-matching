@@ -1,0 +1,27 @@
+{
+  "className": "WikiRevision",
+  "methodName": "WikiRevision",
+  "brief": "public WikiRevision(int rev_id, int rev_page, int rev_text_id,\r\n\t\t\tString rev_user_text, Timestamp rev_timestamp){}",
+  "methodSignature": "WikiRevision(int, int, int, String, Timestamp)",
+  "sourceCode": "public WikiRevision(int rev_id, int rev_page, int rev_text_id,\n\t\t\tString rev_user_text, Timestamp rev_timestamp) {\n\t\tthis.rev_id = rev_id;\n\t\tthis.rev_page = rev_page;\n\t\tthis.rev_text_id = rev_text_id;\n\t\tthis.rev_user_text = rev_user_text;\n\t\tthis.rev_timestamp = rev_timestamp;\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "String",
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public WikiRevision(int rev_id, int rev_page, int rev_text_id, String rev_user_text, Timestamp rev_timestamp) {\n    this.rev_id = rev_id;\n    this.rev_page = rev_page;\n    this.rev_text_id = rev_text_id;\n    this.rev_user_text = rev_user_text;\n    this.rev_timestamp = rev_timestamp;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

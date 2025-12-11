@@ -1,0 +1,28 @@
+{
+  "targetClass": "ca.ualberta.cs.serl.wikidev.city3d.CityLayout",
+  "targetMethod": "printCityBlocks(ArrayList, HashMap)",
+  "dependentFields": {
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": "private Set<Project> projectsChanged;\nprivate Set<IArtifact> artifactsChanged;\nprivate Set<User> usersChanged;\nprivate IArtifact sourceArtifact;\nprivate Project project;\nprivate ArrayList<Document> documents;\nprivate ArrayList<IArtifact> artifacts;",
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "private Point index;\nprivate HashMap<IArtifact, Integer> artifacts;\nprivate double[] center;\nprivate boolean marked;",
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": "private int page_id;\nprivate int page_namespace_id;\nprivate int project;\nprivate String page_title;\nprivate ArrayList<WikiRevision> revisions;",
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": "public static final String TICKET_TYPE_TASK = \"task\";\npublic static final String TICKET_TYPE_ENHANCEMENT = \"enhancement\";\npublic static final String TICKET_TYPE_DEFECT = \"defect\";\npublic static final String TICKET_PRIORITY_LOW = \"low\";\npublic static final String TICKET_PRIORITY_MEDIUM = \"medium\";\npublic static final String TICKET_PRIOhRITY_HIGH = \"high\";\npublic static final String TICKET_STATUS_REJECTED = \"rejected\";\npublic static final String TICKET_STATUS_OPEN = \"open\";\npublic static final String TICKET_STATUS_COMPLETED = \"completed\";\nprivate int ticketID;\nprivate User reporter;\nprivate String summary;\nprivate String desription;\nprivate ArrayList<TicketChange> ticketChanges;\nprivate ArrayList<User> relatedUsers;\nprivate Timestamp dateOpened;\nprivate String ownerName;\nprivate String reporterName;\nprivate int project;\nprivate int project_ticket_id;\nprivate String priority;",
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": "protected ArrayList<RelatedArtifact> directlyRelatedArtifacts;\nprotected User owner;\nprotected Timestamp timestamp;\nprotected Project project;\nprotected Document document;\nprotected int index;\nprotected int uid;\nprotected double[] coords;\nprotected boolean enforced;\nprivate String type;\nprivate int id;\nprotected User lastEditor;\nprotected Timestamp lastModified;\nprotected Timestamp created;",
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": "protected ArrayList<CityBlock> cityBlocks;\npublic static final String URLprefix = \"http://hypatia.cs.ualberta.ca/ucosp/index.php/\";",
+    "ca.ualberta.cs.serl.wikidev.city3d.CityLayout": "public static final String CITY_TYPE = \"communications\";\nprivate ArrayList<Message> messages;\nprivate int projectid;",
+    "ca.ualberta.cs.serl.wikidev.User": "public static final String ROLE_DEVELOPER = \"Developer\";\npublic static final String ROLE_MANAGER = \"Manager\";\nprivate int userID;\nprivate String userName;\nprivate String userRealName;\nprivate ArrayList<Project> projects;\nprivate HashMap<IArtifact, Integer> relatedArtifacts;\nprivate HashMap<Project, String> rolePerProject;\nprivate ArrayList<String> aliases;\nprivate int index;\nprivate Color color;"
+  },
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public HashMap<IArtifact, Integer> getArtifacts(){}\npublic Point getIndex(){}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": "public ArrayList<WikiRevision> getRevisions(){}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": "public int getPriority(){}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": "public Set<User> getAssociatedUsers(){}",
+    "ca.ualberta.cs.serl.wikidev.User": "public Color getColor(){}\npublic String getUserName(){}"
+  },
+  "dependentMethodBodies": {
+    "ca.ualberta.cs.serl.wikidev.city3d.CityBlock": "public HashMap<IArtifact, Integer> getArtifacts() {\n\t\treturn artifacts;\n\t}\npublic Point getIndex() {\n\t\treturn index;\n\t}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": "public ArrayList<WikiRevision> getRevisions() {\n\t\treturn revisions;\n\t}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": "public int getPriority() {\n\t\treturn Integer.parseInt(\"\"+priority.charAt(1));\n\t}",
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": "public Set<User> getAssociatedUsers(){return null;}",
+    "ca.ualberta.cs.serl.wikidev.User": "public Color getColor() {\n\t\treturn color;\n\t}\n\n\t * @return\n\t * @uml.property  name=\"userName\"\n\t \npublic String getUserName() {\n\t\treturn userName;\n\t}"
+  }
+}

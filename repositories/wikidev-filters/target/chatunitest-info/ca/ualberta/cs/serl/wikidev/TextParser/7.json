@@ -1,0 +1,22 @@
+{
+  "className": "TextParser",
+  "methodName": "getWords",
+  "brief": "public Set<String> getWords(){}",
+  "methodSignature": "getWords()",
+  "sourceCode": "public Set<String> getWords() {\n\t\treturn frequencies.keySet();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.HashMap": [
+      "keySet()"
+    ]
+  },
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"words\"\n */\npublic Set<String> getWords() {\n    return frequencies.keySet();\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"words\"\n\t ",
+  "method_annotation": ""
+}

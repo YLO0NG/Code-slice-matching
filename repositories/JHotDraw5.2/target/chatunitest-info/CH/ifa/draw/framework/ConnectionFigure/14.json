@@ -1,0 +1,20 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "pointAt",
+  "brief": "public Point pointAt(int index);",
+  "methodSignature": "pointAt(int)",
+  "sourceCode": "public Point pointAt(int index);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the Point at the given position\n */\npublic Point pointAt(int index);",
+  "method_comment": "\n     * Gets the Point at the given position\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,31 @@
+{
+  "className": "TestFailure",
+  "methodName": "trace",
+  "brief": "public String trace(){}",
+  "methodSignature": "trace()",
+  "sourceCode": "public String trace() {\r\n\t\tStringWriter stringWriter= new StringWriter();\r\n\t\tPrintWriter writer= new PrintWriter(stringWriter);\r\n\t\tthrownException().printStackTrace(writer);\r\n\t\tStringBuffer buffer= stringWriter.getBuffer();\r\n\t\treturn buffer.toString();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Throwable": [
+      "printStackTrace(PrintWriter)"
+    ],
+    "junit.framework.TestFailure": [
+      "thrownException()"
+    ],
+    "java.io.StringWriter": [
+      "getBuffer()"
+    ],
+    "java.lang.StringBuffer": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public String trace() {\r\n    StringWriter stringWriter = new StringWriter();\r\n    PrintWriter writer = new PrintWriter(stringWriter);\r\n    thrownException().printStackTrace(writer);\r\n    StringBuffer buffer = stringWriter.getBuffer();\r\n    return buffer.toString();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

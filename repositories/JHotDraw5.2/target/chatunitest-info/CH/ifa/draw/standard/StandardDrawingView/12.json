@@ -1,0 +1,18 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "selectionElements",
+  "brief": "public FigureEnumeration selectionElements(){}",
+  "methodSignature": "selectionElements()",
+  "sourceCode": "public FigureEnumeration selectionElements() {\n        return new FigureEnumerator(fSelection);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets an enumeration over the currently selected figures.\n */\npublic FigureEnumeration selectionElements() {\n    return new FigureEnumerator(fSelection);\n}",
+  "method_comment": "\n     * Gets an enumeration over the currently selected figures.\n     ",
+  "method_annotation": ""
+}

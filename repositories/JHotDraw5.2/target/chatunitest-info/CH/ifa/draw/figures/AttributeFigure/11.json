@@ -1,0 +1,28 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "writeObject",
+  "brief": "private void writeObject(ObjectOutputStream o) throws IOException{}",
+  "methodSignature": "writeObject(ObjectOutputStream)",
+  "sourceCode": "private void writeObject(ObjectOutputStream o) throws IOException {\n\t\t// Filter out Popup menu: cannot serialize any associated action-Listeners\n\t\t// Work-around for Java-Bug: 4240860\n\t\tObject associatedMenu = getAttribute(Figure.POPUP_MENU);\n\t\tif (associatedMenu != null) {\n\t\t\tsetAttribute(Figure.POPUP_MENU, null);\n\t\t}\n\t\t\n\t\to.defaultWriteObject();\n\t\t\n\t\tif (associatedMenu != null) {\n\t\t\tsetAttribute(Figure.POPUP_MENU, associatedMenu);\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ObjectOutputStream"
+  ],
+  "dependentMethods": {
+    "java.io.ObjectOutputStream": [
+      "defaultWriteObject()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getAttribute(String)",
+      "setAttribute(String, Object)"
+    ]
+  },
+  "full_method_info": "private void writeObject(ObjectOutputStream o) throws IOException {\n    // Filter out Popup menu: cannot serialize any associated action-Listeners\n    // Work-around for Java-Bug: 4240860\n    Object associatedMenu = getAttribute(Figure.POPUP_MENU);\n    if (associatedMenu != null) {\n        setAttribute(Figure.POPUP_MENU, null);\n    }\n    o.defaultWriteObject();\n    if (associatedMenu != null) {\n        setAttribute(Figure.POPUP_MENU, associatedMenu);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

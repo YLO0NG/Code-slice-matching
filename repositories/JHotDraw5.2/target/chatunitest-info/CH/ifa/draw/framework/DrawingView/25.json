@@ -1,0 +1,18 @@
+{
+  "className": "DrawingView",
+  "methodName": "getConstrainer",
+  "brief": "public PointConstrainer getConstrainer();",
+  "methodSignature": "getConstrainer()",
+  "sourceCode": "public PointConstrainer getConstrainer();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the current grid setting.\n */\npublic PointConstrainer getConstrainer();",
+  "method_comment": "\n     * Gets the current grid setting.\n     ",
+  "method_annotation": ""
+}

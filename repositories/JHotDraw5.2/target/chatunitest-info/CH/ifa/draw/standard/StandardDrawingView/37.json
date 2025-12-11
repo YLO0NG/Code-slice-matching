@@ -1,0 +1,27 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawingInvalidated",
+  "brief": "public void drawingInvalidated(DrawingChangeEvent e){}",
+  "methodSignature": "drawingInvalidated(DrawingChangeEvent)",
+  "sourceCode": "public void drawingInvalidated(DrawingChangeEvent e) {\n        Rectangle r = e.getInvalidatedRectangle();\n        if (fDamage == null)\n            fDamage = r;\n        else\n            fDamage.add(r);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingChangeEvent": [
+      "getInvalidatedRectangle()"
+    ],
+    "java.awt.Rectangle": [
+      "add(Rectangle)"
+    ]
+  },
+  "full_method_info": "public void drawingInvalidated(DrawingChangeEvent e) {\n    Rectangle r = e.getInvalidatedRectangle();\n    if (fDamage == null)\n        fDamage = r;\n    else\n        fDamage.add(r);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

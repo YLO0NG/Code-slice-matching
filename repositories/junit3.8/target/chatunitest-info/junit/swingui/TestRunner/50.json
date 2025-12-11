@@ -1,0 +1,30 @@
+{
+  "className": "TestRunner",
+  "methodName": "setButtonLabel",
+  "brief": "private void setButtonLabel(final JButton button, final String label){}",
+  "methodSignature": "setButtonLabel(JButton, String)",
+  "sourceCode": "private void setButtonLabel(final JButton button, final String label) {\r\n\t\tSwingUtilities.invokeLater(\r\n\t\t\tnew Runnable() {\r\n\t\t\t\tpublic void run() {\r\n\t\t\t\t\tbutton.setText(label);\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JButton",
+    "String"
+  ],
+  "dependentMethods": {
+    "javax.swing.JButton": [],
+    "java.lang.String": [],
+    "javax.swing.SwingUtilities": [
+      "invokeLater(Runnable)"
+    ],
+    "javax.swing.AbstractButton": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "private void setButtonLabel(final JButton button, final String label) {\r\n    SwingUtilities.invokeLater(new Runnable() {\r\n\r\n        public void run() {\r\n            button.setText(label);\r\n        }\r\n    });\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

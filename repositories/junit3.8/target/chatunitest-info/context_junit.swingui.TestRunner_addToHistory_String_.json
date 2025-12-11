@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.swingui.TestRunner",
+  "targetMethod": "addToHistory(String)",
+  "dependentFields": {
+    "junit.runner.BaseTestRunner": "public static final String SUITE_METHODNAME= \"suite\";\nprivate static Properties fPreferences;\nstatic int fgMaxMessageLength= 500;\nstatic boolean fgFilterStack= true;\nboolean fLoading= true;"
+  },
+  "dependentMethods": {
+    "junit.runner.BaseTestRunner": "public static int getPreference(String key, int dflt){}"
+  },
+  "dependentMethodBodies": {
+    "junit.runner.BaseTestRunner": "public static int getPreference(String key, int dflt) {\r\n \t\tString value= getPreference(key);\r\n \t\tint intValue= dflt;\r\n \t\tif (value == null)\r\n \t\t\treturn intValue;\r\n \t\ttry {\r\n \t\t\tintValue= Integer.parseInt(value);\r\n \t \t} catch (NumberFormatException ne) {\r\n \t\t}\r\n \t\treturn intValue;\r\n \t}"
+  }
+}

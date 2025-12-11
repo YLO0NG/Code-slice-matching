@@ -1,0 +1,29 @@
+{
+  "className": "RadiusHandle",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        Rectangle r = displayBox();\n\n        g.setColor(Color.yellow);\n        g.fillOval(r.x, r.y, r.width, r.height);\n\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawOval(int, int, int, int)",
+      "setColor(Color)",
+      "fillOval(int, int, int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g) {\n    Rectangle r = displayBox();\n    g.setColor(Color.yellow);\n    g.fillOval(r.x, r.y, r.width, r.height);\n    g.setColor(Color.black);\n    g.drawOval(r.x, r.y, r.width, r.height);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

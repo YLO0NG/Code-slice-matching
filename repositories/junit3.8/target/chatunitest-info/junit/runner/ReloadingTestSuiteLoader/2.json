@@ -1,0 +1,23 @@
+{
+  "className": "ReloadingTestSuiteLoader",
+  "methodName": "createLoader",
+  "brief": "protected TestCaseClassLoader createLoader(){}",
+  "methodSignature": "createLoader()",
+  "sourceCode": "protected TestCaseClassLoader createLoader() {\r\n\t\tTestCaseClassLoader loader= new TestCaseClassLoader();\r\n\t\tThread.currentThread().setContextClassLoader(loader);\r\n\t\treturn loader;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.lang.Thread": [
+      "currentThread()",
+      "setContextClassLoader(ClassLoader)"
+    ]
+  },
+  "full_method_info": "protected TestCaseClassLoader createLoader() {\r\n    TestCaseClassLoader loader = new TestCaseClassLoader();\r\n    Thread.currentThread().setContextClassLoader(loader);\r\n    return loader;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

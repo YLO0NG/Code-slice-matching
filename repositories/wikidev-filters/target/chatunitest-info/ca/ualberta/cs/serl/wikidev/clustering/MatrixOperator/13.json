@@ -1,0 +1,27 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "dfs",
+  "brief": "private static void dfs(int[] component, int v, int cn){}",
+  "methodSignature": "dfs(int[], int, int)",
+  "sourceCode": "private static void dfs(int[] component, int v, int cn) {\n\t       component[v] = cn;\n\t       for(int w=0; w<adjacencyMatrix[v].length; w++) {\n\t           if(adjacencyMatrix[v][w] != 0)\n\t               if(component[w] == 0)\n\t                   dfs(component,w,cn);\n\t       }\n\t   }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int[]",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "int": [],
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "dfs(int[], int, int)"
+    ]
+  },
+  "full_method_info": "private static void dfs(int[] component, int v, int cn) {\n    component[v] = cn;\n    for (int w = 0; w < adjacencyMatrix[v].length; w++) {\n        if (adjacencyMatrix[v][w] != 0)\n            if (component[w] == 0)\n                dfs(component, w, cn);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

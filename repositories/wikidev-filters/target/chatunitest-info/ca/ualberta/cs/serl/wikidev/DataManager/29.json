@@ -1,0 +1,47 @@
+{
+  "className": "DataManager",
+  "methodName": "getProjectByID",
+  "brief": "public static Project getProjectByID(int projectID) throws SQLException{}",
+  "methodSignature": "getProjectByID(int)",
+  "sourceCode": "public static Project getProjectByID(int projectID) throws SQLException {\n    \tProject aProject = null;\n    \tif (!projectIDs.contains(projectID)) {\n\t\t\tString sqlStmt = QueryBuilder.selectProjectByID(projectID);\n\t\t\tResultSet res = null;\n\t\t\tres = statement.executeQuery(sqlStmt);\n\t\t\twhile (res.next()) {\n\t\t\t\taProject = new Project(res.getInt(\"projectid\"), res\n\t\t\t\t\t\t.getString(\"projectname\"));\n\t\t\t}\n\t\t\tif (res != null)\n\t\t\t\tres.close();\n\t\t\taProject.setUsers(getProjectUsers(projectID));\n\t\t\taProject.setSystem(getExternalSystemByProjectID(projectID));\n\t    \tprojects.add(aProject);\n\t\t\tprojectIDs.add(aProject.getProjectID());\n\t\t\tsystems.add(aProject.getSystem());\n\t\t}\n    \telse {\n    \t\tfor(Project project : projects) {\n    \t\t\tif(project.getProjectID() == projectID) {\n    \t\t\t\taProject = project;\n    \t\t\t}\n    \t\t}\n    \t}\n    \treturn aProject;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Set": [
+      "contains(Object)",
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "selectProjectByID(int)"
+    ],
+    "java.sql.Statement": [
+      "executeQuery(String)"
+    ],
+    "java.sql.ResultSet": [
+      "getString(String)",
+      "next()",
+      "getInt(String)",
+      "close()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "setUsers(User>)",
+      "getProjectID()",
+      "getSystem()",
+      "setSystem(int)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getProjectUsers(int)",
+      "getExternalSystemByProjectID(int)"
+    ]
+  },
+  "full_method_info": "public static Project getProjectByID(int projectID) throws SQLException {\n    Project aProject = null;\n    if (!projectIDs.contains(projectID)) {\n        String sqlStmt = QueryBuilder.selectProjectByID(projectID);\n        ResultSet res = null;\n        res = statement.executeQuery(sqlStmt);\n        while (res.next()) {\n            aProject = new Project(res.getInt(\"projectid\"), res.getString(\"projectname\"));\n        }\n        if (res != null)\n            res.close();\n        aProject.setUsers(getProjectUsers(projectID));\n        aProject.setSystem(getExternalSystemByProjectID(projectID));\n        projects.add(aProject);\n        projectIDs.add(aProject.getProjectID());\n        systems.add(aProject.getSystem());\n    } else {\n        for (Project project : projects) {\n            if (project.getProjectID() == projectID) {\n                aProject = project;\n            }\n        }\n    }\n    return aProject;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,27 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "remove",
+  "brief": "public synchronized Figure remove(Figure figure){}",
+  "methodSignature": "remove(Figure)",
+  "sourceCode": "public synchronized Figure remove(Figure figure) {\n        // ensure that we remove the top level figure in a drawing\n        if (figure.listener() != null) {\n            figure.listener().figureRequestRemove(new FigureChangeEvent(figure, null));\n            return figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "listener()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestRemove(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes the figure from the drawing and releases it.\n */\npublic synchronized Figure remove(Figure figure) {\n    // ensure that we remove the top level figure in a drawing\n    if (figure.listener() != null) {\n        figure.listener().figureRequestRemove(new FigureChangeEvent(figure, null));\n        return figure;\n    }\n    return null;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

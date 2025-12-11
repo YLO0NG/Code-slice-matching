@@ -1,0 +1,49 @@
+{
+  "fullClassName": "CH.ifa.draw.util.ColorMap",
+  "className": "ColorMap",
+  "index": 150,
+  "modifier": "[public ]",
+  "extend": "[Object]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public  class ColorMap",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Color;"
+  ],
+  "fields": [
+    "static ColorEntry fMap[] = {\n                new ColorEntry(\"Black\",         Color.black),\n                new ColorEntry(\"Blue\",          Color.blue),\n                new ColorEntry(\"Green\",         Color.green),\n                new ColorEntry(\"Red\",           Color.red),\n                new ColorEntry(\"Pink\",          Color.pink),\n                new ColorEntry(\"Magenta\",       Color.magenta),\n                new ColorEntry(\"Orange\",        Color.orange),\n                new ColorEntry(\"Yellow\",        Color.yellow),\n                new ColorEntry(\"New Tan\",       new Color(0xEBC79E)),\n                new ColorEntry(\"Aquamarine\",    new Color(0x70DB93)),\n                new ColorEntry(\"Sea Green\",     new Color(0x238E68)),\n                new ColorEntry(\"Dark Gray\",     Color.darkGray),\n                new ColorEntry(\"Light Gray\",    Color.lightGray),\n                new ColorEntry(\"White\",         Color.white),\n                // there is no support for alpha values so we use a special value\n                // to represent a transparent color\n                new ColorEntry(\"None\",          new Color(0xFFC79E))\n    };"
+  ],
+  "superClasses": [
+    "Object"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "size()": "0",
+    "color(int)": "1",
+    "color(String)": "2",
+    "name(int)": "3",
+    "colorIndex(Color)": "4",
+    "isTransparent(Color)": "5"
+  },
+  "methodsBrief": [
+    "public static int size(){}",
+    "public static Color color(int index){}",
+    "public static Color color(String name){}",
+    "public static String name(int index){}",
+    "public static int colorIndex(Color color){}",
+    "public static boolean isTransparent(Color color){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)ColorMap.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.awt.Color;\n\nclass ColorEntry {\n\n    public String fName;\n\n    public Color fColor;\n\n    ColorEntry(String name, Color color) {\n        fColor = color;\n        fName = name;\n    }\n}\n\n/**\n * A map that is filled with some standard colors. The colors\n * can be looked up by name or index.\n */\npublic class ColorMap extends Object {\n\n    static ColorEntry[] fMap = { new ColorEntry(\"Black\", Color.black), new ColorEntry(\"Blue\", Color.blue), new ColorEntry(\"Green\", Color.green), new ColorEntry(\"Red\", Color.red), new ColorEntry(\"Pink\", Color.pink), new ColorEntry(\"Magenta\", Color.magenta), new ColorEntry(\"Orange\", Color.orange), new ColorEntry(\"Yellow\", Color.yellow), new ColorEntry(\"New Tan\", new Color(0xEBC79E)), new ColorEntry(\"Aquamarine\", new Color(0x70DB93)), new ColorEntry(\"Sea Green\", new Color(0x238E68)), new ColorEntry(\"Dark Gray\", Color.darkGray), new ColorEntry(\"Light Gray\", Color.lightGray), new ColorEntry(\"White\", Color.white), // there is no support for alpha values so we use a special value\n    // to represent a transparent color\n    new ColorEntry(\"None\", new Color(0xFFC79E)) };\n\n    public static int size() {\n        return fMap.length;\n    }\n\n    public static Color color(int index) {\n        if (index < size() && index >= 0)\n            return fMap[index].fColor;\n        throw new ArrayIndexOutOfBoundsException(\"Color index: \" + index);\n    }\n\n    public static Color color(String name) {\n        for (int i = 0; i < fMap.length; i++) if (fMap[i].fName.equals(name))\n            return fMap[i].fColor;\n        return Color.black;\n    }\n\n    public static String name(int index) {\n        if (index < size() && index >= 0)\n            return fMap[index].fName;\n        throw new ArrayIndexOutOfBoundsException(\"Color index: \" + index);\n    }\n\n    public static int colorIndex(Color color) {\n        for (int i = 0; i < fMap.length; i++) if (fMap[i].fColor.equals(color))\n            return i;\n        return 0;\n    }\n\n    public static boolean isTransparent(Color color) {\n        return color.equals(color(\"None\"));\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A map that is filled with some standard colors. The colors\n * can be looked up by name or index.\n */\npublic class ColorMap extends Object {\n\n    static ColorEntry[] fMap = { new ColorEntry(\"Black\", Color.black), new ColorEntry(\"Blue\", Color.blue), new ColorEntry(\"Green\", Color.green), new ColorEntry(\"Red\", Color.red), new ColorEntry(\"Pink\", Color.pink), new ColorEntry(\"Magenta\", Color.magenta), new ColorEntry(\"Orange\", Color.orange), new ColorEntry(\"Yellow\", Color.yellow), new ColorEntry(\"New Tan\", new Color(0xEBC79E)), new ColorEntry(\"Aquamarine\", new Color(0x70DB93)), new ColorEntry(\"Sea Green\", new Color(0x238E68)), new ColorEntry(\"Dark Gray\", Color.darkGray), new ColorEntry(\"Light Gray\", Color.lightGray), new ColorEntry(\"White\", Color.white), // there is no support for alpha values so we use a special value\n    // to represent a transparent color\n    new ColorEntry(\"None\", new Color(0xFFC79E)) };\n\n    public static int size() {\n        return fMap.length;\n    }\n\n    public static Color color(int index) {\n        if (index < size() && index >= 0)\n            return fMap[index].fColor;\n        throw new ArrayIndexOutOfBoundsException(\"Color index: \" + index);\n    }\n\n    public static Color color(String name) {\n        for (int i = 0; i < fMap.length; i++) if (fMap[i].fName.equals(name))\n            return fMap[i].fColor;\n        return Color.black;\n    }\n\n    public static String name(int index) {\n        if (index < size() && index >= 0)\n            return fMap[index].fName;\n        throw new ArrayIndexOutOfBoundsException(\"Color index: \" + index);\n    }\n\n    public static int colorIndex(Color color) {\n        for (int i = 0; i < fMap.length; i++) if (fMap[i].fColor.equals(color))\n            return i;\n        return 0;\n    }\n\n    public static boolean isTransparent(Color color) {\n        return color.equals(color(\"None\"));\n    }\n}",
+  "subClasses": []
+}

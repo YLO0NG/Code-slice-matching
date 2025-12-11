@@ -1,0 +1,27 @@
+{
+  "className": "DrawApplication",
+  "methodName": "newView",
+  "brief": "public void newView(){}",
+  "methodSignature": "newView()",
+  "sourceCode": "public void newView() {\n\t\tDrawApplication window = createApplication();\n\t\twindow.open();\n\t\twindow.setDrawing(drawing());\n\t\twindow.setDrawingTitle(getDrawingTitle() + \" (View)\");\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "createApplication()",
+      "drawing()",
+      "setDrawing(Drawing)",
+      "open()",
+      "setDrawingTitle(String)",
+      "getDrawingTitle()"
+    ]
+  },
+  "full_method_info": "/**\n * Open a new view for this application containing a\n * view of the drawing of the currently activated window.\n */\npublic void newView() {\n    DrawApplication window = createApplication();\n    window.open();\n    window.setDrawing(drawing());\n    window.setDrawingTitle(getDrawingTitle() + \" (View)\");\n}",
+  "method_comment": "\n     * Open a new view for this application containing a\n     * view of the drawing of the currently activated window.\n     ",
+  "method_annotation": ""
+}

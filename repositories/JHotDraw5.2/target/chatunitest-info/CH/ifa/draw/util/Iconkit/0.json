@@ -1,0 +1,18 @@
+{
+  "className": "Iconkit",
+  "methodName": "instance",
+  "brief": "public static Iconkit instance(){}",
+  "methodSignature": "instance()",
+  "sourceCode": "public static Iconkit instance() {\n        return fgIconkit;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the single instance\n */\npublic static Iconkit instance() {\n    return fgIconkit;\n}",
+  "method_comment": "\n     * Gets the single instance\n     ",
+  "method_annotation": ""
+}

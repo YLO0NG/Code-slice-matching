@@ -1,0 +1,27 @@
+{
+  "className": "EllipseFigure",
+  "methodName": "drawFrame",
+  "brief": "public void drawFrame(Graphics g){}",
+  "methodSignature": "drawFrame(Graphics)",
+  "sourceCode": "public void drawFrame(Graphics g) {\n        Rectangle r = displayBox();\n        g.drawOval(r.x, r.y, r.width-1, r.height-1);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawOval(int, int, int, int)"
+    ],
+    "CH.ifa.draw.figures.EllipseFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public void drawFrame(Graphics g) {\n    Rectangle r = displayBox();\n    g.drawOval(r.x, r.y, r.width - 1, r.height - 1);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,44 @@
+{
+  "fullClassName": "classes.HibernateUtil",
+  "className": "HibernateUtil",
+  "index": 5,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class HibernateUtil",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import org.hibernate.SessionFactory;",
+    "import org.hibernate.cfg.Configuration;"
+  ],
+  "fields": [
+    "private static final SessionFactory sessionFactory = buildSessionFactory();"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "buildSessionFactory()": "0",
+    "getSessionFactory()": "1"
+  },
+  "methodsBrief": [
+    "private static SessionFactory buildSessionFactory(){}",
+    "public static SessionFactory getSessionFactory(){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getSessionFactory()"
+  ],
+  "getterSetterBrief": [
+    "public static SessionFactory getSessionFactory(){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package classes;\n\nimport org.hibernate.SessionFactory;\nimport org.hibernate.cfg.Configuration;\n\npublic class HibernateUtil {\n\n    private static final SessionFactory sessionFactory = buildSessionFactory();\n\n    private static SessionFactory buildSessionFactory() {\n        return new Configuration().configure().buildSessionFactory();\n    }\n\n    public static SessionFactory getSessionFactory() {\n        return sessionFactory;\n    }\n}\n",
+  "classDeclarationCode": "public class HibernateUtil {\n\n    private static final SessionFactory sessionFactory = buildSessionFactory();\n\n    private static SessionFactory buildSessionFactory() {\n        return new Configuration().configure().buildSessionFactory();\n    }\n\n    public static SessionFactory getSessionFactory() {\n        return sessionFactory;\n    }\n}",
+  "subClasses": []
+}

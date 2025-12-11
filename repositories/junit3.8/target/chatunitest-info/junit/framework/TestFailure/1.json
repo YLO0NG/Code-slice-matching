@@ -1,0 +1,18 @@
+{
+  "className": "TestFailure",
+  "methodName": "thrownException",
+  "brief": "public Throwable thrownException(){}",
+  "methodSignature": "thrownException()",
+  "sourceCode": "public Throwable thrownException() {\r\n\t    return fThrownException;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Gets the thrown exception.\r\n */\r\npublic Throwable thrownException() {\r\n    return fThrownException;\r\n}",
+  "method_comment": "\r\n\t * Gets the thrown exception.\r\n\t ",
+  "method_annotation": ""
+}

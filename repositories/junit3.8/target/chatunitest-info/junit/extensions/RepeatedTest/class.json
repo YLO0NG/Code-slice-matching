@@ -1,0 +1,51 @@
+{
+  "fullClassName": "junit.extensions.RepeatedTest",
+  "className": "RepeatedTest",
+  "index": 6,
+  "modifier": "[public ]",
+  "extend": "[TestDecorator]",
+  "implement": "[]",
+  "packageName": "junit.extensions",
+  "packageDeclaration": "package junit.extensions;",
+  "classSignature": "public class RepeatedTest",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "private int fTimesRepeat;"
+  ],
+  "superClasses": [
+    "TestDecorator"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "countTestCases()": "0",
+    "run(TestResult)": "1",
+    "toString()": "2",
+    "RepeatedTest(Test, int)": "3"
+  },
+  "methodsBrief": [
+    "public int countTestCases(){}",
+    "public void run(TestResult result){}",
+    "public String toString(){}",
+    "public RepeatedTest(Test test, int repeat){}"
+  ],
+  "constructorSigs": [
+    "RepeatedTest(Test, int)"
+  ],
+  "constructorBrief": [
+    "public RepeatedTest(Test test, int repeat){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "junit.framework.Test": []
+  },
+  "compilationUnitCode": "package junit.extensions;\r\n\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A Decorator that runs a test repeatedly.\r\n */\r\npublic class RepeatedTest extends TestDecorator {\r\n\r\n    private int fTimesRepeat;\r\n\r\n    public RepeatedTest(Test test, int repeat) {\r\n        super(test);\r\n        if (repeat < 0)\r\n            throw new IllegalArgumentException(\"Repetition count must be > 0\");\r\n        fTimesRepeat = repeat;\r\n    }\r\n\r\n    public int countTestCases() {\r\n        return super.countTestCases() * fTimesRepeat;\r\n    }\r\n\r\n    public void run(TestResult result) {\r\n        for (int i = 0; i < fTimesRepeat; i++) {\r\n            if (result.shouldStop())\r\n                break;\r\n            super.run(result);\r\n        }\r\n    }\r\n\r\n    public String toString() {\r\n        return super.toString() + \"(repeated)\";\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A Decorator that runs a test repeatedly.\r\n */\r\npublic class RepeatedTest extends TestDecorator {\r\n\r\n    private int fTimesRepeat;\r\n\r\n    public RepeatedTest(Test test, int repeat) {\r\n        super(test);\r\n        if (repeat < 0)\r\n            throw new IllegalArgumentException(\"Repetition count must be > 0\");\r\n        fTimesRepeat = repeat;\r\n    }\r\n\r\n    public int countTestCases() {\r\n        return super.countTestCases() * fTimesRepeat;\r\n    }\r\n\r\n    public void run(TestResult result) {\r\n        for (int i = 0; i < fTimesRepeat; i++) {\r\n            if (result.shouldStop())\r\n                break;\r\n            super.run(result);\r\n        }\r\n    }\r\n\r\n    public String toString() {\r\n        return super.toString() + \"(repeated)\";\r\n    }\r\n}",
+  "subClasses": []
+}

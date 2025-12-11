@@ -1,0 +1,36 @@
+{
+  "className": "TestRunner",
+  "methodName": "showFailureDetail",
+  "brief": "private void showFailureDetail(Test test){}",
+  "methodSignature": "showFailureDetail(Test)",
+  "sourceCode": "private void showFailureDetail(Test test) {\r\n\t\tif (test != null) {\r\n\t\t\tListModel failures= getFailures();\r\n\t\t\tfor (int i= 0; i < failures.getSize(); i++) {\r\n\t\t\t\tTestFailure failure= (TestFailure)failures.getElementAt(i);\r\n\t\t\t\tif (failure.failedTest() == test) {\r\n\t\t\t\t\tfFailureView.showFailure(failure);\r\n\t\t\t\t\treturn;\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t}\r\n\t\tfFailureView.clear();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.swingui.TestRunner": [
+      "getFailures()"
+    ],
+    "javax.swing.ListModel": [
+      "getElementAt(int)",
+      "getSize()"
+    ],
+    "junit.framework.TestFailure": [
+      "failedTest()"
+    ],
+    "junit.runner.FailureDetailView": [
+      "showFailure(TestFailure)",
+      "clear()"
+    ]
+  },
+  "full_method_info": "private void showFailureDetail(Test test) {\r\n    if (test != null) {\r\n        ListModel failures = getFailures();\r\n        for (int i = 0; i < failures.getSize(); i++) {\r\n            TestFailure failure = (TestFailure) failures.getElementAt(i);\r\n            if (failure.failedTest() == test) {\r\n                fFailureView.showFailure(failure);\r\n                return;\r\n            }\r\n        }\r\n    }\r\n    fFailureView.clear();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,30 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "newWindow",
+  "brief": "public void newWindow(){}",
+  "methodSignature": "newWindow()",
+  "sourceCode": "public void newWindow() {\n        StandardDrawingView fView = createDrawingView();\n        Drawing fDrawing = createDrawing();\n        fView.setDrawing(fDrawing);\n        createContents(fView);\n        toolDone();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "createDrawing()",
+      "createDrawingView()",
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDrawing(Drawing)"
+    ],
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "createContents(StandardDrawingView)"
+    ]
+  },
+  "full_method_info": "/**\n * Method to create a new internal frame.  Applications that want\n * to create a new internal drawing view should call this method.\n */\npublic void newWindow() {\n    StandardDrawingView fView = createDrawingView();\n    Drawing fDrawing = createDrawing();\n    fView.setDrawing(fDrawing);\n    createContents(fView);\n    toolDone();\n}",
+  "method_comment": "\n\t * Method to create a new internal frame.  Applications that want\n\t * to create a new internal drawing view should call this method.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Protectable",
+  "methodName": "protect",
+  "brief": "public abstract void protect() throws Throwable;",
+  "methodSignature": "protect()",
+  "sourceCode": "public abstract void protect() throws Throwable;",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\r\n * Run the the following method protected.\r\n */\r\npublic abstract void protect() throws Throwable;",
+  "method_comment": "\r\n\t * Run the the following method protected.\r\n\t ",
+  "method_annotation": ""
+}

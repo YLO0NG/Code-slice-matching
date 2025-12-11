@@ -1,0 +1,27 @@
+{
+  "className": "FigureTransferCommand",
+  "methodName": "deleteSelection",
+  "brief": "protected void deleteSelection(){}",
+  "methodSignature": "deleteSelection()",
+  "sourceCode": "protected void deleteSelection() {\n       fView.drawing().removeAll(fView.selection());\n       fView.clearSelection();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "removeAll(Vector)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()",
+      "clearSelection()",
+      "selection()"
+    ]
+  },
+  "full_method_info": "/**\n * Deletes the selection from the drawing.\n */\nprotected void deleteSelection() {\n    fView.drawing().removeAll(fView.selection());\n    fView.clearSelection();\n}",
+  "method_comment": "\n    * Deletes the selection from the drawing.\n    ",
+  "method_annotation": ""
+}

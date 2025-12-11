@@ -1,0 +1,29 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printHeader",
+  "brief": "protected void printHeader(long runTime){}",
+  "methodSignature": "printHeader(long)",
+  "sourceCode": "protected void printHeader(long runTime) {\r\n\t\tgetWriter().println();\r\n\t\tgetWriter().println(\"Time: \"+elapsedTimeAsString(runTime));\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "long"
+  ],
+  "dependentMethods": {
+    "java.io.PrintStream": [
+      "println(String)",
+      "println()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()",
+      "elapsedTimeAsString(long)"
+    ]
+  },
+  "full_method_info": "/* Internal methods \r\n\t */\r\nprotected void printHeader(long runTime) {\r\n    getWriter().println();\r\n    getWriter().println(\"Time: \" + elapsedTimeAsString(runTime));\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

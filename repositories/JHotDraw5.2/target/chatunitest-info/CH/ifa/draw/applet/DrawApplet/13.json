@@ -1,0 +1,30 @@
+{
+  "className": "DrawApplet",
+  "methodName": "paletteUserSelected",
+  "brief": "public void paletteUserSelected(PaletteButton button){}",
+  "methodSignature": "paletteUserSelected(PaletteButton)",
+  "sourceCode": "public void paletteUserSelected(PaletteButton button) {\n        ToolButton toolButton = (ToolButton) button;\n        setTool(toolButton.tool(), toolButton.name());\n        setSelected(toolButton);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "PaletteButton"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.PaletteButton": [],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "setTool(Tool, String)",
+      "setSelected(ToolButton)"
+    ],
+    "CH.ifa.draw.standard.ToolButton": [
+      "name()",
+      "tool()"
+    ]
+  },
+  "full_method_info": "/**\n * Handles a user selection in the palette.\n * @see PaletteListener\n */\npublic void paletteUserSelected(PaletteButton button) {\n    ToolButton toolButton = (ToolButton) button;\n    setTool(toolButton.tool(), toolButton.name());\n    setSelected(toolButton);\n}",
+  "method_comment": "\n     * Handles a user selection in the palette.\n     * @see PaletteListener\n     ",
+  "method_annotation": ""
+}

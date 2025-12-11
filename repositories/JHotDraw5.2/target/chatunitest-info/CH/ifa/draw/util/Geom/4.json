@@ -1,0 +1,22 @@
+{
+  "className": "Geom",
+  "methodName": "west",
+  "brief": "static public Point west(Rectangle r){}",
+  "methodSignature": "west(Rectangle)",
+  "sourceCode": "static public Point west(Rectangle r) {\n        return new Point(r.x, r.y + r.height/ 2);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Rectangle"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": []
+  },
+  "full_method_info": "static public Point west(Rectangle r) {\n    return new Point(r.x, r.y + r.height / 2);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

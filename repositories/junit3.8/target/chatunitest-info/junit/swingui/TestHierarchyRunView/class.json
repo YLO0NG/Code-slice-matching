@@ -1,0 +1,77 @@
+{
+  "fullClassName": "junit.swingui.TestHierarchyRunView",
+  "className": "TestHierarchyRunView",
+  "index": 42,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[TestRunView]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "public class TestHierarchyRunView",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Vector;",
+    "import javax.swing.*;",
+    "import javax.swing.event.*;",
+    "import javax.swing.tree.TreePath;",
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "TestSuitePanel fTreeBrowser;",
+    "TestRunContext fTestContext;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "TestRunView"
+  ],
+  "methodSigs": {
+    "addTab(JTabbedPane)": "0",
+    "getSelectedTest()": "1",
+    "activate()": "2",
+    "revealFailure(Test)": "3",
+    "aboutToStart(Test, TestResult)": "4",
+    "runFinished(Test, TestResult)": "5",
+    "testSelected()": "6",
+    "TestHierarchyRunView(TestRunContext)": "7"
+  },
+  "methodsBrief": [
+    "public void addTab(JTabbedPane pane){}",
+    "public Test getSelectedTest(){}",
+    "public void activate(){}",
+    "public void revealFailure(Test failure){}",
+    "public void aboutToStart(Test suite, TestResult result){}",
+    "public void runFinished(Test suite, TestResult result){}",
+    "protected void testSelected(){}",
+    "public TestHierarchyRunView(TestRunContext context){}"
+  ],
+  "constructorSigs": [
+    "TestHierarchyRunView(TestRunContext)"
+  ],
+  "constructorBrief": [
+    "public TestHierarchyRunView(TestRunContext context){}"
+  ],
+  "getterSetterSigs": [
+    "getSelectedTest()"
+  ],
+  "getterSetterBrief": [
+    "public Test getSelectedTest(){}"
+  ],
+  "constructorDeps": {
+    "junit.swingui.TestRunContext": [],
+    "javax.swing.JTree": [
+      "addTreeSelectionListener(TreeSelectionListener)"
+    ],
+    "junit.swingui.TestSuitePanel": [
+      "getTree()"
+    ],
+    "junit.swingui.TestHierarchyRunView": [
+      "testSelected()"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.util.Vector;\r\nimport javax.swing.*;\r\nimport javax.swing.event.*;\r\nimport javax.swing.tree.TreePath;\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A hierarchical view of a test run.\r\n * The contents of a test suite is shown\r\n * as a tree.\r\n */\r\npublic class TestHierarchyRunView implements TestRunView {\r\n\r\n    TestSuitePanel fTreeBrowser;\r\n\r\n    TestRunContext fTestContext;\r\n\r\n    public TestHierarchyRunView(TestRunContext context) {\r\n        fTestContext = context;\r\n        fTreeBrowser = new TestSuitePanel();\r\n        fTreeBrowser.getTree().addTreeSelectionListener(new TreeSelectionListener() {\r\n\r\n            public void valueChanged(TreeSelectionEvent e) {\r\n                testSelected();\r\n            }\r\n        });\r\n    }\r\n\r\n    public void addTab(JTabbedPane pane) {\r\n        Icon treeIcon = TestRunner.getIconResource(getClass(), \"icons/hierarchy.gif\");\r\n        pane.addTab(\"Test Hierarchy\", treeIcon, fTreeBrowser, \"The test hierarchy\");\r\n    }\r\n\r\n    public Test getSelectedTest() {\r\n        return fTreeBrowser.getSelectedTest();\r\n    }\r\n\r\n    public void activate() {\r\n        testSelected();\r\n    }\r\n\r\n    public void revealFailure(Test failure) {\r\n        JTree tree = fTreeBrowser.getTree();\r\n        TestTreeModel model = (TestTreeModel) tree.getModel();\r\n        Vector vpath = new Vector();\r\n        int index = model.findTest(failure, (Test) model.getRoot(), vpath);\r\n        if (index >= 0) {\r\n            Object[] path = new Object[vpath.size() + 1];\r\n            vpath.copyInto(path);\r\n            Object last = path[vpath.size() - 1];\r\n            path[vpath.size()] = model.getChild(last, index);\r\n            TreePath selectionPath = new TreePath(path);\r\n            tree.setSelectionPath(selectionPath);\r\n            tree.makeVisible(selectionPath);\r\n        }\r\n    }\r\n\r\n    public void aboutToStart(Test suite, TestResult result) {\r\n        fTreeBrowser.showTestTree(suite);\r\n        result.addListener(fTreeBrowser);\r\n    }\r\n\r\n    public void runFinished(Test suite, TestResult result) {\r\n        result.removeListener(fTreeBrowser);\r\n    }\r\n\r\n    protected void testSelected() {\r\n        fTestContext.handleTestSelected(getSelectedTest());\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A hierarchical view of a test run.\r\n * The contents of a test suite is shown\r\n * as a tree.\r\n */\r\npublic class TestHierarchyRunView implements TestRunView {\r\n\r\n    TestSuitePanel fTreeBrowser;\r\n\r\n    TestRunContext fTestContext;\r\n\r\n    public TestHierarchyRunView(TestRunContext context) {\r\n        fTestContext = context;\r\n        fTreeBrowser = new TestSuitePanel();\r\n        fTreeBrowser.getTree().addTreeSelectionListener(new TreeSelectionListener() {\r\n\r\n            public void valueChanged(TreeSelectionEvent e) {\r\n                testSelected();\r\n            }\r\n        });\r\n    }\r\n\r\n    public void addTab(JTabbedPane pane) {\r\n        Icon treeIcon = TestRunner.getIconResource(getClass(), \"icons/hierarchy.gif\");\r\n        pane.addTab(\"Test Hierarchy\", treeIcon, fTreeBrowser, \"The test hierarchy\");\r\n    }\r\n\r\n    public Test getSelectedTest() {\r\n        return fTreeBrowser.getSelectedTest();\r\n    }\r\n\r\n    public void activate() {\r\n        testSelected();\r\n    }\r\n\r\n    public void revealFailure(Test failure) {\r\n        JTree tree = fTreeBrowser.getTree();\r\n        TestTreeModel model = (TestTreeModel) tree.getModel();\r\n        Vector vpath = new Vector();\r\n        int index = model.findTest(failure, (Test) model.getRoot(), vpath);\r\n        if (index >= 0) {\r\n            Object[] path = new Object[vpath.size() + 1];\r\n            vpath.copyInto(path);\r\n            Object last = path[vpath.size() - 1];\r\n            path[vpath.size()] = model.getChild(last, index);\r\n            TreePath selectionPath = new TreePath(path);\r\n            tree.setSelectionPath(selectionPath);\r\n            tree.makeVisible(selectionPath);\r\n        }\r\n    }\r\n\r\n    public void aboutToStart(Test suite, TestResult result) {\r\n        fTreeBrowser.showTestTree(suite);\r\n        result.addListener(fTreeBrowser);\r\n    }\r\n\r\n    public void runFinished(Test suite, TestResult result) {\r\n        result.removeListener(fTreeBrowser);\r\n    }\r\n\r\n    protected void testSelected() {\r\n        fTestContext.handleTestSelected(getSelectedTest());\r\n    }\r\n}",
+  "subClasses": []
+}

@@ -1,0 +1,35 @@
+{
+  "className": "TextFigure",
+  "methodName": "getAttribute",
+  "brief": "public Object getAttribute(String name){}",
+  "methodSignature": "getAttribute(String)",
+  "sourceCode": "public Object getAttribute(String name) {\n        Font font = getFont();\n        if (name.equals(\"FontSize\"))\n            return new Integer(font.getSize());\n        if (name.equals(\"FontStyle\"))\n            return new Integer(font.getStyle());\n        if (name.equals(\"FontName\"))\n            return font.getName();\n        return super.getAttribute(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ],
+    "CH.ifa.draw.figures.TextFigure": [
+      "getFont()"
+    ],
+    "java.awt.Font": [
+      "getName()",
+      "getStyle()",
+      "getSize()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "/**\n * A text figure understands the \"FontSize\", \"FontStyle\", and \"FontName\"\n * attributes.\n */\npublic Object getAttribute(String name) {\n    Font font = getFont();\n    if (name.equals(\"FontSize\"))\n        return new Integer(font.getSize());\n    if (name.equals(\"FontStyle\"))\n        return new Integer(font.getStyle());\n    if (name.equals(\"FontName\"))\n        return font.getName();\n    return super.getAttribute(name);\n}",
+  "method_comment": "\n     * A text figure understands the \"FontSize\", \"FontStyle\", and \"FontName\"\n     * attributes.\n     ",
+  "method_annotation": ""
+}

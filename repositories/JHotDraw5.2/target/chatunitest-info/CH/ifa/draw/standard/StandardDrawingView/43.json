@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawDrawing",
+  "brief": "public void drawDrawing(Graphics g){}",
+  "methodSignature": "drawDrawing(Graphics)",
+  "sourceCode": "public void drawDrawing(Graphics g) {\n        fDrawing.draw(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "draw(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the drawing.\n */\npublic void drawDrawing(Graphics g) {\n    fDrawing.draw(g);\n}",
+  "method_comment": "\n     * Draws the drawing.\n     ",
+  "method_annotation": ""
+}

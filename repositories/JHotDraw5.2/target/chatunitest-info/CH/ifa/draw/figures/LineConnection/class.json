@@ -1,0 +1,130 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.LineConnection",
+  "className": "LineConnection",
+  "index": 39,
+  "modifier": "[public ]",
+  "extend": "[PolyLineFigure]",
+  "implement": "[ConnectionFigure]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class LineConnection",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import java.io.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "protected Connector    fStart = null;",
+    "protected Connector    fEnd = null;",
+    "private static final long serialVersionUID = 6883731614578414801L;",
+    "private int lineConnectionSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "PolyLineFigure"
+  ],
+  "implementedTypes": [
+    "ConnectionFigure"
+  ],
+  "methodSigs": {
+    "canConnect()": "0",
+    "basicMoveBy(int, int)": "1",
+    "connectStart(Connector)": "2",
+    "connectEnd(Connector)": "3",
+    "disconnectStart()": "4",
+    "disconnectEnd()": "5",
+    "connectsSame(ConnectionFigure)": "6",
+    "handleDisconnect(Figure, Figure)": "7",
+    "handleConnect(Figure, Figure)": "8",
+    "startFigure()": "9",
+    "endFigure()": "10",
+    "start()": "11",
+    "end()": "12",
+    "canConnect(Figure, Figure)": "13",
+    "startPoint(int, int)": "14",
+    "endPoint(int, int)": "15",
+    "startPoint()": "16",
+    "endPoint()": "17",
+    "handles()": "18",
+    "setPointAt(Point, int)": "19",
+    "insertPointAt(Point, int)": "20",
+    "removePointAt(int)": "21",
+    "updateConnection()": "22",
+    "layoutConnection()": "23",
+    "figureChanged(FigureChangeEvent)": "24",
+    "figureRemoved(FigureChangeEvent)": "25",
+    "figureRequestRemove(FigureChangeEvent)": "26",
+    "figureInvalidated(FigureChangeEvent)": "27",
+    "figureRequestUpdate(FigureChangeEvent)": "28",
+    "release()": "29",
+    "write(StorableOutput)": "30",
+    "read(StorableInput)": "31",
+    "readObject(ObjectInputStream)": "32",
+    "LineConnection()": "33"
+  },
+  "methodsBrief": [
+    "public boolean canConnect(){}",
+    "protected void basicMoveBy(int dx, int dy){}",
+    "public void connectStart(Connector start){}",
+    "public void connectEnd(Connector end){}",
+    "public void disconnectStart(){}",
+    "public void disconnectEnd(){}",
+    "public boolean connectsSame(ConnectionFigure other){}",
+    "protected void handleDisconnect(Figure start, Figure end){}",
+    "protected void handleConnect(Figure start, Figure end){}",
+    "public Figure startFigure(){}",
+    "public Figure endFigure(){}",
+    "public Connector start(){}",
+    "public Connector end(){}",
+    "public boolean canConnect(Figure start, Figure end){}",
+    "public void startPoint(int x, int y){}",
+    "public void endPoint(int x, int y){}",
+    "public Point startPoint(){}",
+    "public Point endPoint(){}",
+    "public Vector handles(){}",
+    "public void setPointAt(Point p, int i){}",
+    "public void insertPointAt(Point p, int i){}",
+    "public void removePointAt(int i){}",
+    "public void updateConnection(){}",
+    "public void layoutConnection(){}",
+    "public void figureChanged(FigureChangeEvent e){}",
+    "public void figureRemoved(FigureChangeEvent e){}",
+    "public void figureRequestRemove(FigureChangeEvent e){}",
+    "public void figureInvalidated(FigureChangeEvent e){}",
+    "public void figureRequestUpdate(FigureChangeEvent e){}",
+    "public void release(){}",
+    "public void write(StorableOutput dw){}",
+    "public void read(StorableInput dr) throws IOException{}",
+    "private void readObject(ObjectInputStream s)\r\n        throws ClassNotFoundException, IOException{}",
+    "public LineConnection(){}"
+  ],
+  "constructorSigs": [
+    "LineConnection()"
+  ],
+  "constructorBrief": [
+    "public LineConnection(){}"
+  ],
+  "getterSetterSigs": [
+    "setPointAt(Point, int)"
+  ],
+  "getterSetterBrief": [
+    "public void setPointAt(Point p, int i){}"
+  ],
+  "constructorDeps": {
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "setStartDecoration(LineDecoration)",
+      "setEndDecoration(LineDecoration)"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)LineConnection.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.util.*;\nimport java.io.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\n/**\n * A LineConnection is a standard implementation of the\n * ConnectionFigure interface. The interface is implemented with PolyLineFigure.\n * @see ConnectionFigure\n */\npublic class LineConnection extends PolyLineFigure implements ConnectionFigure {\n\n    protected Connector fStart = null;\n\n    protected Connector fEnd = null;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 6883731614578414801L;\n\n    private int lineConnectionSerializedDataVersion = 1;\n\n    public LineConnection() {\n        super(4);\n        setStartDecoration(new ArrowTip());\n        setEndDecoration(new ArrowTip());\n    }\n\n    /**\n     * Tests whether a figure can be a connection target.\n     * ConnectionFigures cannot be connected and return false.\n     */\n    public boolean canConnect() {\n        return false;\n    }\n\n    /**\n     * Ensures that a connection is updated if the connection\n     * was moved.\n     */\n    protected void basicMoveBy(int dx, int dy) {\n        // don't move the start and end point since they are connected\n        for (int i = 1; i < fPoints.size() - 1; i++) ((Point) fPoints.elementAt(i)).translate(dx, dy);\n        // make sure that we are still connected\n        updateConnection();\n    }\n\n    /**\n     * Sets the start figure of the connection.\n     */\n    public void connectStart(Connector start) {\n        fStart = start;\n        startFigure().addFigureChangeListener(this);\n    }\n\n    /**\n     * Sets the end figure of the connection.\n     */\n    public void connectEnd(Connector end) {\n        fEnd = end;\n        endFigure().addFigureChangeListener(this);\n        handleConnect(startFigure(), endFigure());\n    }\n\n    /**\n     * Disconnects the start figure.\n     */\n    public void disconnectStart() {\n        startFigure().removeFigureChangeListener(this);\n        fStart = null;\n    }\n\n    /**\n     * Disconnects the end figure.\n     */\n    public void disconnectEnd() {\n        handleDisconnect(startFigure(), endFigure());\n        endFigure().removeFigureChangeListener(this);\n        fEnd = null;\n    }\n\n    /**\n     * Tests whether a connection connects the same figures\n     * as another ConnectionFigure.\n     */\n    public boolean connectsSame(ConnectionFigure other) {\n        return other.start() == start() && other.end() == end();\n    }\n\n    /**\n     * Handles the disconnection of a connection.\n     * Override this method to handle this event.\n     */\n    protected void handleDisconnect(Figure start, Figure end) {\n    }\n\n    /**\n     * Handles the connection of a connection.\n     * Override this method to handle this event.\n     */\n    protected void handleConnect(Figure start, Figure end) {\n    }\n\n    /**\n     * Gets the start figure of the connection.\n     */\n    public Figure startFigure() {\n        if (start() != null)\n            return start().owner();\n        return null;\n    }\n\n    /**\n     * Gets the end figure of the connection.\n     */\n    public Figure endFigure() {\n        if (end() != null)\n            return end().owner();\n        return null;\n    }\n\n    /**\n     * Gets the start figure of the connection.\n     */\n    public Connector start() {\n        return fStart;\n    }\n\n    /**\n     * Gets the end figure of the connection.\n     */\n    public Connector end() {\n        return fEnd;\n    }\n\n    /**\n     * Tests whether two figures can be connected.\n     */\n    public boolean canConnect(Figure start, Figure end) {\n        return true;\n    }\n\n    /**\n     * Sets the start point.\n     */\n    public void startPoint(int x, int y) {\n        willChange();\n        if (fPoints.size() == 0)\n            fPoints.addElement(new Point(x, y));\n        else\n            fPoints.setElementAt(new Point(x, y), 0);\n        changed();\n    }\n\n    /**\n     * Sets the end point.\n     */\n    public void endPoint(int x, int y) {\n        willChange();\n        if (fPoints.size() < 2)\n            fPoints.addElement(new Point(x, y));\n        else\n            fPoints.setElementAt(new Point(x, y), fPoints.size() - 1);\n        changed();\n    }\n\n    /**\n     * Gets the start point.\n     */\n    public Point startPoint() {\n        Point p = (Point) fPoints.firstElement();\n        return new Point(p.x, p.y);\n    }\n\n    /**\n     * Gets the end point.\n     */\n    public Point endPoint() {\n        Point p = (Point) fPoints.lastElement();\n        return new Point(p.x, p.y);\n    }\n\n    /**\n     * Gets the handles of the figure. It returns the normal\n     * PolyLineHandles but adds ChangeConnectionHandles at the\n     * start and end.\n     */\n    public Vector handles() {\n        Vector handles = new Vector(fPoints.size());\n        handles.addElement(new ChangeConnectionStartHandle(this));\n        for (int i = 1; i < fPoints.size() - 1; i++) handles.addElement(new PolyLineHandle(this, locator(i), i));\n        handles.addElement(new ChangeConnectionEndHandle(this));\n        return handles;\n    }\n\n    /**\n     * Sets the point and updates the connection.\n     */\n    public void setPointAt(Point p, int i) {\n        super.setPointAt(p, i);\n        layoutConnection();\n    }\n\n    /**\n     * Inserts the point and updates the connection.\n     */\n    public void insertPointAt(Point p, int i) {\n        super.insertPointAt(p, i);\n        layoutConnection();\n    }\n\n    /**\n     * Removes the point and updates the connection.\n     */\n    public void removePointAt(int i) {\n        super.removePointAt(i);\n        layoutConnection();\n    }\n\n    /**\n     * Updates the connection.\n     */\n    public void updateConnection() {\n        if (fStart != null) {\n            Point start = fStart.findStart(this);\n            startPoint(start.x, start.y);\n        }\n        if (fEnd != null) {\n            Point end = fEnd.findEnd(this);\n            endPoint(end.x, end.y);\n        }\n    }\n\n    /**\n     * Lays out the connection. This is called when the connection\n     * itself changes. By default the connection is recalculated\n     */\n    public void layoutConnection() {\n        updateConnection();\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n        updateConnection();\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestRemove(new FigureChangeEvent(this));\n    }\n\n    public void figureRequestRemove(FigureChangeEvent e) {\n    }\n\n    public void figureInvalidated(FigureChangeEvent e) {\n    }\n\n    public void figureRequestUpdate(FigureChangeEvent e) {\n    }\n\n    public void release() {\n        super.release();\n        handleDisconnect(startFigure(), endFigure());\n        if (fStart != null)\n            startFigure().removeFigureChangeListener(this);\n        if (fEnd != null)\n            endFigure().removeFigureChangeListener(this);\n    }\n\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fStart);\n        dw.writeStorable(fEnd);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        Connector start = (Connector) dr.readStorable();\n        if (start != null)\n            connectStart(start);\n        Connector end = (Connector) dr.readStorable();\n        if (end != null)\n            connectEnd(end);\n        if (start != null && end != null)\n            updateConnection();\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        if (fStart != null)\n            connectStart(fStart);\n        if (fEnd != null)\n            connectEnd(fEnd);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A LineConnection is a standard implementation of the\n * ConnectionFigure interface. The interface is implemented with PolyLineFigure.\n * @see ConnectionFigure\n */\npublic class LineConnection extends PolyLineFigure implements ConnectionFigure {\n\n    protected Connector fStart = null;\n\n    protected Connector fEnd = null;\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 6883731614578414801L;\n\n    private int lineConnectionSerializedDataVersion = 1;\n\n    public LineConnection() {\n        super(4);\n        setStartDecoration(new ArrowTip());\n        setEndDecoration(new ArrowTip());\n    }\n\n    /**\n     * Tests whether a figure can be a connection target.\n     * ConnectionFigures cannot be connected and return false.\n     */\n    public boolean canConnect() {\n        return false;\n    }\n\n    /**\n     * Ensures that a connection is updated if the connection\n     * was moved.\n     */\n    protected void basicMoveBy(int dx, int dy) {\n        // don't move the start and end point since they are connected\n        for (int i = 1; i < fPoints.size() - 1; i++) ((Point) fPoints.elementAt(i)).translate(dx, dy);\n        // make sure that we are still connected\n        updateConnection();\n    }\n\n    /**\n     * Sets the start figure of the connection.\n     */\n    public void connectStart(Connector start) {\n        fStart = start;\n        startFigure().addFigureChangeListener(this);\n    }\n\n    /**\n     * Sets the end figure of the connection.\n     */\n    public void connectEnd(Connector end) {\n        fEnd = end;\n        endFigure().addFigureChangeListener(this);\n        handleConnect(startFigure(), endFigure());\n    }\n\n    /**\n     * Disconnects the start figure.\n     */\n    public void disconnectStart() {\n        startFigure().removeFigureChangeListener(this);\n        fStart = null;\n    }\n\n    /**\n     * Disconnects the end figure.\n     */\n    public void disconnectEnd() {\n        handleDisconnect(startFigure(), endFigure());\n        endFigure().removeFigureChangeListener(this);\n        fEnd = null;\n    }\n\n    /**\n     * Tests whether a connection connects the same figures\n     * as another ConnectionFigure.\n     */\n    public boolean connectsSame(ConnectionFigure other) {\n        return other.start() == start() && other.end() == end();\n    }\n\n    /**\n     * Handles the disconnection of a connection.\n     * Override this method to handle this event.\n     */\n    protected void handleDisconnect(Figure start, Figure end) {\n    }\n\n    /**\n     * Handles the connection of a connection.\n     * Override this method to handle this event.\n     */\n    protected void handleConnect(Figure start, Figure end) {\n    }\n\n    /**\n     * Gets the start figure of the connection.\n     */\n    public Figure startFigure() {\n        if (start() != null)\n            return start().owner();\n        return null;\n    }\n\n    /**\n     * Gets the end figure of the connection.\n     */\n    public Figure endFigure() {\n        if (end() != null)\n            return end().owner();\n        return null;\n    }\n\n    /**\n     * Gets the start figure of the connection.\n     */\n    public Connector start() {\n        return fStart;\n    }\n\n    /**\n     * Gets the end figure of the connection.\n     */\n    public Connector end() {\n        return fEnd;\n    }\n\n    /**\n     * Tests whether two figures can be connected.\n     */\n    public boolean canConnect(Figure start, Figure end) {\n        return true;\n    }\n\n    /**\n     * Sets the start point.\n     */\n    public void startPoint(int x, int y) {\n        willChange();\n        if (fPoints.size() == 0)\n            fPoints.addElement(new Point(x, y));\n        else\n            fPoints.setElementAt(new Point(x, y), 0);\n        changed();\n    }\n\n    /**\n     * Sets the end point.\n     */\n    public void endPoint(int x, int y) {\n        willChange();\n        if (fPoints.size() < 2)\n            fPoints.addElement(new Point(x, y));\n        else\n            fPoints.setElementAt(new Point(x, y), fPoints.size() - 1);\n        changed();\n    }\n\n    /**\n     * Gets the start point.\n     */\n    public Point startPoint() {\n        Point p = (Point) fPoints.firstElement();\n        return new Point(p.x, p.y);\n    }\n\n    /**\n     * Gets the end point.\n     */\n    public Point endPoint() {\n        Point p = (Point) fPoints.lastElement();\n        return new Point(p.x, p.y);\n    }\n\n    /**\n     * Gets the handles of the figure. It returns the normal\n     * PolyLineHandles but adds ChangeConnectionHandles at the\n     * start and end.\n     */\n    public Vector handles() {\n        Vector handles = new Vector(fPoints.size());\n        handles.addElement(new ChangeConnectionStartHandle(this));\n        for (int i = 1; i < fPoints.size() - 1; i++) handles.addElement(new PolyLineHandle(this, locator(i), i));\n        handles.addElement(new ChangeConnectionEndHandle(this));\n        return handles;\n    }\n\n    /**\n     * Sets the point and updates the connection.\n     */\n    public void setPointAt(Point p, int i) {\n        super.setPointAt(p, i);\n        layoutConnection();\n    }\n\n    /**\n     * Inserts the point and updates the connection.\n     */\n    public void insertPointAt(Point p, int i) {\n        super.insertPointAt(p, i);\n        layoutConnection();\n    }\n\n    /**\n     * Removes the point and updates the connection.\n     */\n    public void removePointAt(int i) {\n        super.removePointAt(i);\n        layoutConnection();\n    }\n\n    /**\n     * Updates the connection.\n     */\n    public void updateConnection() {\n        if (fStart != null) {\n            Point start = fStart.findStart(this);\n            startPoint(start.x, start.y);\n        }\n        if (fEnd != null) {\n            Point end = fEnd.findEnd(this);\n            endPoint(end.x, end.y);\n        }\n    }\n\n    /**\n     * Lays out the connection. This is called when the connection\n     * itself changes. By default the connection is recalculated\n     */\n    public void layoutConnection() {\n        updateConnection();\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n        updateConnection();\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n        if (listener() != null)\n            listener().figureRequestRemove(new FigureChangeEvent(this));\n    }\n\n    public void figureRequestRemove(FigureChangeEvent e) {\n    }\n\n    public void figureInvalidated(FigureChangeEvent e) {\n    }\n\n    public void figureRequestUpdate(FigureChangeEvent e) {\n    }\n\n    public void release() {\n        super.release();\n        handleDisconnect(startFigure(), endFigure());\n        if (fStart != null)\n            startFigure().removeFigureChangeListener(this);\n        if (fEnd != null)\n            endFigure().removeFigureChangeListener(this);\n    }\n\n    public void write(StorableOutput dw) {\n        super.write(dw);\n        dw.writeStorable(fStart);\n        dw.writeStorable(fEnd);\n    }\n\n    public void read(StorableInput dr) throws IOException {\n        super.read(dr);\n        Connector start = (Connector) dr.readStorable();\n        if (start != null)\n            connectStart(start);\n        Connector end = (Connector) dr.readStorable();\n        if (end != null)\n            connectEnd(end);\n        if (start != null && end != null)\n            updateConnection();\n    }\n\n    private void readObject(ObjectInputStream s) throws ClassNotFoundException, IOException {\n        s.defaultReadObject();\n        if (fStart != null)\n            connectStart(fStart);\n        if (fEnd != null)\n            connectEnd(fEnd);\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.figures.ElbowConnection"
+  ]
+}

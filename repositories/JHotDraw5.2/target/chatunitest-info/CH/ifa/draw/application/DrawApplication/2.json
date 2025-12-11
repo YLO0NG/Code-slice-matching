@@ -1,0 +1,23 @@
+{
+  "className": "DrawApplication",
+  "methodName": "newWindow",
+  "brief": "public void newWindow(){}",
+  "methodSignature": "newWindow()",
+  "sourceCode": "public void newWindow() {\n\t\tDrawApplication window = createApplication();\n\t\twindow.open();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "createApplication()",
+      "open()"
+    ]
+  },
+  "full_method_info": "/**\n * Open a new window for this application containing\n * an new (empty) drawing.\n */\npublic void newWindow() {\n    DrawApplication window = createApplication();\n    window.open();\n}",
+  "method_comment": "\n     * Open a new window for this application containing\n     * an new (empty) drawing.\n     ",
+  "method_annotation": ""
+}

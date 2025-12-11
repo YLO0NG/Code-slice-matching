@@ -1,0 +1,38 @@
+{
+  "className": "StorageFormatManager",
+  "methodName": "registerFileFilters",
+  "brief": "public void registerFileFilters(JFileChooser fileChooser){}",
+  "methodSignature": "registerFileFilters(JFileChooser)",
+  "sourceCode": "public void registerFileFilters(JFileChooser fileChooser) {\n\t\tIterator formatsIterator = myStorageFormats.iterator();\n\t\twhile (formatsIterator.hasNext()) {\n\t\t\tfileChooser.addChoosableFileFilter(((StorageFormat)formatsIterator.next()).getFileFilter());\n\t\t}\n\n\t\t// set a current activated file filter if a default storage Format has been defined\n\t\tif (getDefaultStorageFormat() != null) {\n\t\t\tfileChooser.setFileFilter(getDefaultStorageFormat().getFileFilter());\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JFileChooser"
+  ],
+  "dependentMethods": {
+    "javax.swing.JFileChooser": [
+      "addChoosableFileFilter(FileFilter)",
+      "setFileFilter(FileFilter)"
+    ],
+    "java.util.Vector": [
+      "iterator()"
+    ],
+    "java.util.Iterator": [
+      "hasNext()",
+      "next()"
+    ],
+    "CH.ifa.draw.util.StorageFormat": [
+      "getFileFilter()"
+    ],
+    "CH.ifa.draw.util.StorageFormatManager": [
+      "getDefaultStorageFormat()"
+    ]
+  },
+  "full_method_info": "/**\n * Register all FileFilters supported by StorageFormats\n *\n * @param fileChooser javax.swing.JFileChooser to which FileFilters are added\n */\npublic void registerFileFilters(JFileChooser fileChooser) {\n    Iterator formatsIterator = myStorageFormats.iterator();\n    while (formatsIterator.hasNext()) {\n        fileChooser.addChoosableFileFilter(((StorageFormat) formatsIterator.next()).getFileFilter());\n    }\n    // set a current activated file filter if a default storage Format has been defined\n    if (getDefaultStorageFormat() != null) {\n        fileChooser.setFileFilter(getDefaultStorageFormat().getFileFilter());\n    }\n}",
+  "method_comment": "\n\t * Register all FileFilters supported by StorageFormats\n\t *\n\t * @param fileChooser javax.swing.JFileChooser to which FileFilters are added\n\t ",
+  "method_annotation": ""
+}

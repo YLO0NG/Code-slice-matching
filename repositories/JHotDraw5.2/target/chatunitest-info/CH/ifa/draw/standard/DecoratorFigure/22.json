@@ -1,0 +1,27 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "setAttribute",
+  "brief": "public void setAttribute(String name, Object value){}",
+  "methodSignature": "setAttribute(String, Object)",
+  "sourceCode": "public void setAttribute(String name, Object value) {\n        fComponent.setAttribute(name, value);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.lang.Object": [],
+    "CH.ifa.draw.framework.Figure": [
+      "setAttribute(String, Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards setAttribute to its contained figure.\n */\npublic void setAttribute(String name, Object value) {\n    fComponent.setAttribute(name, value);\n}",
+  "method_comment": "\n     * Forwards setAttribute to its contained figure.\n     ",
+  "method_annotation": ""
+}

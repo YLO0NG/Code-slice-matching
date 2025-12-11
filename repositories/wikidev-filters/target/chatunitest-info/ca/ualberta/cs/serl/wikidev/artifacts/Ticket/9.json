@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getTicketID",
+  "brief": "public int getTicketID(){}",
+  "methodSignature": "getTicketID()",
+  "sourceCode": "public int getTicketID() {\n\t\treturn ticketID;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"ticketID\"\n */\npublic int getTicketID() {\n    return ticketID;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"ticketID\"\n\t ",
+  "method_annotation": ""
+}

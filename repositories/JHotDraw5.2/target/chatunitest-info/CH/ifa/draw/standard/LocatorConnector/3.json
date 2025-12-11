@@ -1,0 +1,29 @@
+{
+  "className": "LocatorConnector",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        Rectangle r = displayBox();\n\n        g.setColor(Color.blue);\n        g.fillOval(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawOval(r.x, r.y, r.width, r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawOval(int, int, int, int)",
+      "setColor(Color)",
+      "fillOval(int, int, int, int)"
+    ],
+    "CH.ifa.draw.standard.LocatorConnector": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Draws this connector.\n */\npublic void draw(Graphics g) {\n    Rectangle r = displayBox();\n    g.setColor(Color.blue);\n    g.fillOval(r.x, r.y, r.width, r.height);\n    g.setColor(Color.black);\n    g.drawOval(r.x, r.y, r.width, r.height);\n}",
+  "method_comment": "\n     * Draws this connector.\n     ",
+  "method_annotation": ""
+}

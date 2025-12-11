@@ -1,0 +1,39 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "saveResults",
+  "brief": "public static void saveResults(String project, double[] authority, double[] hub, double[] meanVector, double mean, double sd){}",
+  "methodSignature": "saveResults(String, double[], double[], double[], double, double)",
+  "sourceCode": "public static void saveResults(String project, double[] authority, double[] hub, double[] meanVector, double mean, double sd) {\n\t\ttry {\n\t\t\tBufferedWriter out = new BufferedWriter(new FileWriter(\"C://results\"+\"(\"+project+\")\"+\".txt\"));\n\t\t\tout.write(project);\n\t\t\tout.newLine();\n\t\t\tout.write('[');\n\t\t\tfor(int i=0; i<authority.length; i++) {\n\t\t\t\t\tout.write(authority[i]+\", \");\n\t\t\t}\t\n\t\t\tout.newLine();\n\t\t\tfor(int i=0; i<hub.length; i++) {\n\t\t\t\tout.write(hub[i]+\", \");\n\t\t\t}\t\n\t\t\tout.newLine();\n\t\t\tfor(int i=0; i<meanVector.length; i++) {\n\t\t\t\tout.write(meanVector[i]+\", \");\n\t\t\t}\t\n\t\t\tout.newLine();\n\t\t\tout.write(\"\"+mean);\n\t\t\tout.newLine();\n\t\t\tout.write(\"\"+sd);\n\t\t\tout.newLine();\n\t\t\tout.close();\n\t\t} catch (IOException e) {\n\t\t\te.printStackTrace();\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "double[]",
+    "double[]",
+    "double[]",
+    "double",
+    "double"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "double": [],
+    "java.io.Writer": [
+      "write(String)"
+    ],
+    "java.io.BufferedWriter": [
+      "newLine()",
+      "write(int)",
+      "close()"
+    ],
+    "java.lang.Throwable": [
+      "printStackTrace()"
+    ]
+  },
+  "full_method_info": "public static void saveResults(String project, double[] authority, double[] hub, double[] meanVector, double mean, double sd) {\n    try {\n        BufferedWriter out = new BufferedWriter(new FileWriter(\"C://results\" + \"(\" + project + \")\" + \".txt\"));\n        out.write(project);\n        out.newLine();\n        out.write('[');\n        for (int i = 0; i < authority.length; i++) {\n            out.write(authority[i] + \", \");\n        }\n        out.newLine();\n        for (int i = 0; i < hub.length; i++) {\n            out.write(hub[i] + \", \");\n        }\n        out.newLine();\n        for (int i = 0; i < meanVector.length; i++) {\n            out.write(meanVector[i] + \", \");\n        }\n        out.newLine();\n        out.write(\"\" + mean);\n        out.newLine();\n        out.write(\"\" + sd);\n        out.newLine();\n        out.close();\n    } catch (IOException e) {\n        e.printStackTrace();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

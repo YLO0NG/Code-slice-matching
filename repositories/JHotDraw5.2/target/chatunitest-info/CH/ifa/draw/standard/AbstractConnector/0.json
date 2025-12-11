@@ -1,0 +1,18 @@
+{
+  "className": "AbstractConnector",
+  "methodName": "owner",
+  "brief": "public Figure owner(){}",
+  "methodSignature": "owner()",
+  "sourceCode": "public Figure owner() {\n        return fOwner;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the connector's owner.\n */\npublic Figure owner() {\n    return fOwner;\n}",
+  "method_comment": "\n     * Gets the connector's owner.\n     ",
+  "method_annotation": ""
+}

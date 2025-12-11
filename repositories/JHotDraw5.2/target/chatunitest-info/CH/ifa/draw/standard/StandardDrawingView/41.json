@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawAll",
+  "brief": "public void drawAll(Graphics g){}",
+  "methodSignature": "drawAll(Graphics)",
+  "sourceCode": "public void drawAll(Graphics g) {\n        boolean isPrinting = g instanceof PrintGraphics;\n        drawBackground(g);\n        if (fBackgrounds != null && !isPrinting)\n            drawPainters(g, fBackgrounds);\n        drawDrawing(g);\n        if (fForegrounds != null && !isPrinting)\n            drawPainters(g, fForegrounds);\n        if (!isPrinting)\n            drawHandles(g);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawDrawing(Graphics)",
+      "drawPainters(Graphics, Vector)",
+      "drawHandles(Graphics)",
+      "drawBackground(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the contents of the drawing view.\n * The view has three layers: background, drawing, handles.\n * The layers are drawn in back to front order.\n */\npublic void drawAll(Graphics g) {\n    boolean isPrinting = g instanceof PrintGraphics;\n    drawBackground(g);\n    if (fBackgrounds != null && !isPrinting)\n        drawPainters(g, fBackgrounds);\n    drawDrawing(g);\n    if (fForegrounds != null && !isPrinting)\n        drawPainters(g, fForegrounds);\n    if (!isPrinting)\n        drawHandles(g);\n}",
+  "method_comment": "\n     * Draws the contents of the drawing view.\n     * The view has three layers: background, drawing, handles.\n     * The layers are drawn in back to front order.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,20 @@
+{
+  "className": "IArtifact",
+  "methodName": "setUid",
+  "brief": "public void setUid(int uid){}",
+  "methodSignature": "setUid(int)",
+  "sourceCode": "public void setUid(int uid) {\n\t\tthis.uid = uid;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param uid\n * @uml.property  name=\"uid\"\n */\npublic void setUid(int uid) {\n    this.uid = uid;\n}",
+  "method_comment": "\n\t * @param uid\n\t * @uml.property  name=\"uid\"\n\t ",
+  "method_annotation": ""
+}

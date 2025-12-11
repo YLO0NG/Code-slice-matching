@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "setDrawing",
+  "brief": "public void setDrawing(Drawing d);",
+  "methodSignature": "setDrawing(Drawing)",
+  "sourceCode": "public void setDrawing(Drawing d);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": []
+  },
+  "full_method_info": "/**\n * Sets and installs another drawing in the view.\n */\npublic void setDrawing(Drawing d);",
+  "method_comment": "\n     * Sets and installs another drawing in the view.\n     ",
+  "method_annotation": ""
+}

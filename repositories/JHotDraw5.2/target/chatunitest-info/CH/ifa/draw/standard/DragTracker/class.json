@@ -1,0 +1,55 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.DragTracker",
+  "className": "DragTracker",
+  "index": 123,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class DragTracker",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Figure  fAnchorFigure;",
+    "private int     fLastX, fLastY;",
+    "private boolean fMoved = false;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "mouseDrag(MouseEvent, int, int)": "1",
+    "DragTracker(DrawingView, Figure)": "2"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public DragTracker(DrawingView view, Figure anchor){}"
+  ],
+  "constructorSigs": [
+    "DragTracker(DrawingView, Figure)"
+  ],
+  "constructorBrief": [
+    "public DragTracker(DrawingView view, Figure anchor){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)DragTracker.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * DragTracker implements the dragging of the clicked\n * figure.\n *\n * @see SelectionTool\n */\npublic class DragTracker extends AbstractTool {\n\n    private Figure fAnchorFigure;\n\n    // previous mouse position\n    private int fLastX, fLastY;\n\n    private boolean fMoved = false;\n\n    public DragTracker(DrawingView view, Figure anchor) {\n        super(view);\n        fAnchorFigure = anchor;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        super.mouseDown(e, x, y);\n        fLastX = x;\n        fLastY = y;\n        if (e.isShiftDown()) {\n            view().toggleSelection(fAnchorFigure);\n            fAnchorFigure = null;\n        } else if (!view().selection().contains(fAnchorFigure)) {\n            view().clearSelection();\n            view().addToSelection(fAnchorFigure);\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fMoved = (Math.abs(x - fAnchorX) > 4) || (Math.abs(y - fAnchorY) > 4);\n        if (fMoved) {\n            FigureEnumeration figures = view().selectionElements();\n            while (figures.hasMoreElements()) figures.nextFigure().moveBy(x - fLastX, y - fLastY);\n        }\n        fLastX = x;\n        fLastY = y;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * DragTracker implements the dragging of the clicked\n * figure.\n *\n * @see SelectionTool\n */\npublic class DragTracker extends AbstractTool {\n\n    private Figure fAnchorFigure;\n\n    // previous mouse position\n    private int fLastX, fLastY;\n\n    private boolean fMoved = false;\n\n    public DragTracker(DrawingView view, Figure anchor) {\n        super(view);\n        fAnchorFigure = anchor;\n    }\n\n    public void mouseDown(MouseEvent e, int x, int y) {\n        super.mouseDown(e, x, y);\n        fLastX = x;\n        fLastY = y;\n        if (e.isShiftDown()) {\n            view().toggleSelection(fAnchorFigure);\n            fAnchorFigure = null;\n        } else if (!view().selection().contains(fAnchorFigure)) {\n            view().clearSelection();\n            view().addToSelection(fAnchorFigure);\n        }\n    }\n\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        super.mouseDrag(e, x, y);\n        fMoved = (Math.abs(x - fAnchorX) > 4) || (Math.abs(y - fAnchorY) > 4);\n        if (fMoved) {\n            FigureEnumeration figures = view().selectionElements();\n            while (figures.hasMoreElements()) figures.nextFigure().moveBy(x - fLastX, y - fLastY);\n        }\n        fLastX = x;\n        fLastY = y;\n    }\n}",
+  "subClasses": []
+}

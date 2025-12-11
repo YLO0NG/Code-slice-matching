@@ -1,0 +1,18 @@
+{
+  "className": "User",
+  "methodName": "getPassword",
+  "brief": "@Column(name = \"PASSWORD\", length = 10, nullable = false)\r\n\tpublic String getPassword(){}",
+  "methodSignature": "getPassword()",
+  "sourceCode": "@Column(name = \"PASSWORD\", length = 10, nullable = false)\n\tpublic String getPassword() {\n\t\treturn password;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "@Column(name = \"PASSWORD\", length = 10, nullable = false)\npublic String getPassword() {\n    return password;\n}",
+  "method_comment": "",
+  "method_annotation": "@Column(name = \"PASSWORD\", length = 10, nullable = false)\n"
+}

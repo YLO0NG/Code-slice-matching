@@ -1,0 +1,22 @@
+{
+  "className": "TestRunView",
+  "methodName": "addTab",
+  "brief": "public void addTab(JTabbedPane pane);",
+  "methodSignature": "addTab(JTabbedPane)",
+  "sourceCode": "public void addTab(JTabbedPane pane);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JTabbedPane"
+  ],
+  "dependentMethods": {
+    "javax.swing.JTabbedPane": []
+  },
+  "full_method_info": "/**\r\n * Adds the TestRunView to the test run views tab\r\n */\r\npublic void addTab(JTabbedPane pane);",
+  "method_comment": "\r\n\t * Adds the TestRunView to the test run views tab\r\n\t ",
+  "method_annotation": ""
+}

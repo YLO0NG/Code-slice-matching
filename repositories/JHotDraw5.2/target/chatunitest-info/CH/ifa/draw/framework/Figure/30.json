@@ -1,0 +1,22 @@
+{
+  "className": "Figure",
+  "methodName": "getAttribute",
+  "brief": "public Object getAttribute(String name);",
+  "methodSignature": "getAttribute(String)",
+  "sourceCode": "public Object getAttribute(String name);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * Returns the named attribute or null if a\n * a figure doesn't have an attribute.\n * All figures support the attribute names\n * FillColor and FrameColor\n */\npublic Object getAttribute(String name);",
+  "method_comment": "\n     * Returns the named attribute or null if a\n     * a figure doesn't have an attribute.\n     * All figures support the attribute names\n     * FillColor and FrameColor\n     ",
+  "method_annotation": ""
+}

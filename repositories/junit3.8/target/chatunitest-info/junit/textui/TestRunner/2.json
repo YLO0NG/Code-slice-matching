@@ -1,0 +1,25 @@
+{
+  "className": "TestRunner",
+  "methodName": "runAndWait",
+  "brief": "static public void runAndWait(Test suite){}",
+  "methodSignature": "runAndWait(Test)",
+  "sourceCode": "static public void runAndWait(Test suite) {\r\n\t\tTestRunner aTestRunner= new TestRunner();\r\n\t\taTestRunner.doRun(suite, true);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.textui.TestRunner": [
+      "doRun(Test, boolean)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Runs a single test and waits until the user\r\n * types RETURN.\r\n */\r\nstatic public void runAndWait(Test suite) {\r\n    TestRunner aTestRunner = new TestRunner();\r\n    aTestRunner.doRun(suite, true);\r\n}",
+  "method_comment": "\r\n\t * Runs a single test and waits until the user\r\n\t * types RETURN.\r\n\t ",
+  "method_annotation": ""
+}

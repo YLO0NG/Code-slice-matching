@@ -1,0 +1,22 @@
+{
+  "className": "User",
+  "methodName": "setUsername",
+  "brief": "public void setUsername( String username ){}",
+  "methodSignature": "setUsername(String)",
+  "sourceCode": "public void setUsername( String username ) {\n\t\tthis.username = username;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void setUsername(String username) {\n    this.username = username;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

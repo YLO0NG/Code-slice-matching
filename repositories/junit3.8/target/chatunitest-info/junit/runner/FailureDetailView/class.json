@@ -1,0 +1,44 @@
+{
+  "fullClassName": "junit.runner.FailureDetailView",
+  "className": "FailureDetailView",
+  "index": 21,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.runner",
+  "packageDeclaration": "package junit.runner;",
+  "classSignature": "public interface FailureDetailView",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Component;",
+    "import junit.framework.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getComponent()": "0",
+    "showFailure(TestFailure)": "1",
+    "clear()": "2"
+  },
+  "methodsBrief": [
+    "public Component getComponent();",
+    "public void showFailure(TestFailure failure);",
+    "public void clear();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getComponent()"
+  ],
+  "getterSetterBrief": [
+    "public Component getComponent();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.runner;\r\n\r\nimport java.awt.Component;\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A view to show a details about a failure\r\n */\r\npublic interface FailureDetailView {\r\n\r\n    /**\r\n     * Returns the component used to present the TraceView\r\n     */\r\n    public Component getComponent();\r\n\r\n    /**\r\n     * Shows details of a TestFailure\r\n     */\r\n    public void showFailure(TestFailure failure);\r\n\r\n    /**\r\n     * Clears the view\r\n     */\r\n    public void clear();\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A view to show a details about a failure\r\n */\r\npublic interface FailureDetailView {\r\n\r\n    /**\r\n     * Returns the component used to present the TraceView\r\n     */\r\n    public Component getComponent();\r\n\r\n    /**\r\n     * Shows details of a TestFailure\r\n     */\r\n    public void showFailure(TestFailure failure);\r\n\r\n    /**\r\n     * Clears the view\r\n     */\r\n    public void clear();\r\n}",
+  "subClasses": []
+}

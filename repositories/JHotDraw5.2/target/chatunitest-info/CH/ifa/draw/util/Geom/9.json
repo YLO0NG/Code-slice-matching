@@ -1,0 +1,30 @@
+{
+  "className": "Geom",
+  "methodName": "length",
+  "brief": "static public long length(int x1, int y1, int x2, int y2){}",
+  "methodSignature": "length(int, int, int, int)",
+  "sourceCode": "static public long length(int x1, int y1, int x2, int y2) {\n        return (long)Math.sqrt(length2(x1, y1, x2, y2));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.Math": [
+      "sqrt(double)"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "length2(int, int, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the distance between to points\n */\nstatic public long length(int x1, int y1, int x2, int y2) {\n    return (long) Math.sqrt(length2(x1, y1, x2, y2));\n}",
+  "method_comment": "\n     * Gets the distance between to points\n     ",
+  "method_annotation": ""
+}

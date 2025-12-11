@@ -1,0 +1,25 @@
+{
+  "className": "ImageFigure",
+  "methodName": "drawGhost",
+  "brief": "private void drawGhost(Graphics g){}",
+  "methodSignature": "drawGhost(Graphics)",
+  "sourceCode": "private void drawGhost(Graphics g) {\n        g.setColor(Color.gray);\n        g.fillRect(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillRect(int, int, int, int)",
+      "setColor(Color)"
+    ]
+  },
+  "full_method_info": "private void drawGhost(Graphics g) {\n    g.setColor(Color.gray);\n    g.fillRect(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "StandardDrawing",
+  "methodName": "removeDrawingChangeListener",
+  "brief": "public void removeDrawingChangeListener(DrawingChangeListener listener){}",
+  "methodSignature": "removeDrawingChangeListener(DrawingChangeListener)",
+  "sourceCode": "public void removeDrawingChangeListener(DrawingChangeListener listener) {\n        fListeners.removeElement(listener);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "DrawingChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingChangeListener": [],
+    "java.util.Vector": [
+      "removeElement(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a listener from this drawing.\n */\npublic void removeDrawingChangeListener(DrawingChangeListener listener) {\n    fListeners.removeElement(listener);\n}",
+  "method_comment": "\n     * Removes a listener from this drawing.\n     ",
+  "method_annotation": ""
+}

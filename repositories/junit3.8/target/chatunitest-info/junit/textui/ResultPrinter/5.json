@@ -1,0 +1,35 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printDefects",
+  "brief": "protected void printDefects(Enumeration booBoos, int count, String type){}",
+  "methodSignature": "printDefects(Enumeration, int, String)",
+  "sourceCode": "protected void printDefects(Enumeration booBoos, int count, String type) {\r\n\t\tif (count == 0) return;\r\n\t\tif (count == 1)\r\n\t\t\tgetWriter().println(\"There was \" + count + \" \" + type + \":\");\r\n\t\telse\r\n\t\t\tgetWriter().println(\"There were \" + count + \" \" + type + \"s:\");\r\n\t\tfor (int i= 1; booBoos.hasMoreElements(); i++) {\r\n\t\t\tprintDefect((TestFailure) booBoos.nextElement(), i);\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Enumeration",
+    "int",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.lang.String": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()",
+      "printDefect(TestFailure, int)"
+    ]
+  },
+  "full_method_info": "protected void printDefects(Enumeration booBoos, int count, String type) {\r\n    if (count == 0)\r\n        return;\r\n    if (count == 1)\r\n        getWriter().println(\"There was \" + count + \" \" + type + \":\");\r\n    else\r\n        getWriter().println(\"There were \" + count + \" \" + type + \"s:\");\r\n    for (int i = 1; booBoos.hasMoreElements(); i++) {\r\n        printDefect((TestFailure) booBoos.nextElement(), i);\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

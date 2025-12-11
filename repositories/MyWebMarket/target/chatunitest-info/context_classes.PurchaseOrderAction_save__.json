@@ -1,0 +1,19 @@
+{
+  "targetClass": "classes.PurchaseOrderAction",
+  "targetMethod": "save()",
+  "dependentFields": {
+    "classes.HibernateUtil": "private static final SessionFactory sessionFactory = buildSessionFactory();",
+    "classes.PurchaseOrder": "private Integer id;\nprivate Customer customer;\nprivate Date orderDate;\nprivate Double discount;\nprivate Collection<PurchaseOrderItem> purchaseOrderItems;",
+    "classes.PurchaseOrderItem": "private PurchaseOrder purchaseOrder;\nprivate Integer id;\nprivate Product product;\nprivate Double price;\nprivate Integer quantity;"
+  },
+  "dependentMethods": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory(){}",
+    "classes.PurchaseOrder": "@OneToMany(mappedBy=\"purchaseOrder\",fetch=FetchType.EAGER,cascade=CascadeType.ALL)\r\n\tpublic Collection<PurchaseOrderItem> getPurchaseOrderItems(){}\npublic void setOrderDate( Date orderDate ){}",
+    "classes.PurchaseOrderItem": "public void setPurchaseOrder( PurchaseOrder purchaseOrder ){}"
+  },
+  "dependentMethodBodies": {
+    "classes.HibernateUtil": "public static SessionFactory getSessionFactory() {\n\t\treturn sessionFactory;\n\t}",
+    "classes.PurchaseOrder": "@OneToMany(mappedBy=\"purchaseOrder\",fetch=FetchType.EAGER,cascade=CascadeType.ALL)\n\tpublic Collection<PurchaseOrderItem> getPurchaseOrderItems() {\n\t\treturn purchaseOrderItems;\n\t}\npublic void setOrderDate( Date orderDate ) {\n\t\tthis.orderDate = orderDate;\n\t}",
+    "classes.PurchaseOrderItem": "public void setPurchaseOrder( PurchaseOrder purchaseOrder ) {\n\t\tthis.purchaseOrder = purchaseOrder;\n\t}"
+  }
+}

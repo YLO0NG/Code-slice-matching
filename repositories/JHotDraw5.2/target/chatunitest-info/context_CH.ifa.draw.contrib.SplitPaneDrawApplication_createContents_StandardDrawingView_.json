@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.contrib.SplitPaneDrawApplication",
+  "targetMethod": "createContents(StandardDrawingView)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.StandardDrawingView": "transient private DrawingEditor   fEditor;\nprivate Drawing         fDrawing;\nprivate transient Rectangle fDamage = null;\ntransient private Vector fSelection;\ntransient private Vector fSelectionHandles;\nprivate Dimension fViewSize;\nprivate Point fLastClick;\nprivate Vector fBackgrounds = null;\nprivate Vector fForegrounds = null;\nprivate Painter fUpdateStrategy;\nprivate PointConstrainer fConstrainer;\nprivate static final long serialVersionUID = -3878153366174603336L;\nprivate int drawingViewSerializedDataVersion = 1;",
+    "CH.ifa.draw.application.DrawApplication": "private Drawing              fDrawing;\nprivate Tool                 fTool;\nprivate Iconkit              fIconkit;\nprivate JTextField           fStatusLine;\nprivate StandardDrawingView  fView;\nprivate ToolButton           fDefaultToolButton;\nprivate ToolButton           fSelectedToolButton;\nprivate String               fApplicationName;\nprivate String               fDrawingFilename;\nprivate StorageFormatManager fStorageFormatManager;\nstatic String                fgUntitled = \"untitled\";\nprivate static final String fgDrawPath = \"/CH/ifa/draw/\";\npublic static final String IMAGES = fgDrawPath + \"images/\";\npublic static final int    FILE_MENU = 0;\npublic static final int    EDIT_MENU = 1;\npublic static final int    ALIGNMENT_MENU = 2;\npublic static final int    ATTRIBUTES_MENU = 3;",
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": "private JComponent leftComponent;\nprivate JComponent rightComponent;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": "",
+    "CH.ifa.draw.application.DrawApplication": "protected JComponent createContents(StandardDrawingView view){}",
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": "protected void createLeftComponent(StandardDrawingView view){}\nprotected void createRightComponent(StandardDrawingView view){}\npublic JComponent getLeftComponent(){}\npublic JComponent getRightComponent(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.StandardDrawingView": "",
+    "CH.ifa.draw.application.DrawApplication": "* Creates the contents component of the application\n     * frame. By default the DrawingView is returned in\n     * a JScrollPane.\n     \nprotected JComponent createContents(StandardDrawingView view) {\n        JScrollPane sp = new JScrollPane(view);\n        sp.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);\n        sp.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);\n\n        return sp;\n    }",
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": "* Method which creates the left component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     \nprotected void createLeftComponent(StandardDrawingView view) {\n    \tsetLeftComponent(new JScrollPane(new JList()));\n    }\n\n     * Method which creates the right component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     \nprotected void createRightComponent(StandardDrawingView view) {\n        setRightComponent(super.createContents(view));\n    }\n\n\t * Get the left component of the JSplitPane.\n\t *\n\t * @return\tnewLeftComponent\tleft component\n\t \npublic JComponent getLeftComponent() {\n    \treturn leftComponent;\n    }\n\n\t * Get the right component of the JSplitPane.\n\t *\n\t * @return\tnewLeftComponent\tright component\n\t \npublic JComponent getRightComponent() {\n    \treturn rightComponent;\n    }"
+  }
+}

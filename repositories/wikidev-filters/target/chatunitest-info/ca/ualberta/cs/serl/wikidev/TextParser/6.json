@@ -1,0 +1,18 @@
+{
+  "className": "TextParser",
+  "methodName": "getUrls",
+  "brief": "public ArrayList<URL> getUrls(){}",
+  "methodSignature": "getUrls()",
+  "sourceCode": "public ArrayList<URL> getUrls() {\n\t\treturn urls;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"urls\"\n */\npublic ArrayList<URL> getUrls() {\n    return urls;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"urls\"\n\t ",
+  "method_annotation": ""
+}

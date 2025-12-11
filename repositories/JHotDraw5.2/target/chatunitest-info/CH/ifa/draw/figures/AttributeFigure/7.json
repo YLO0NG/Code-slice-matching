@@ -1,0 +1,29 @@
+{
+  "className": "AttributeFigure",
+  "methodName": "getAttribute",
+  "brief": "public Object getAttribute(String name){}",
+  "methodSignature": "getAttribute(String)",
+  "sourceCode": "public Object getAttribute(String name) {\n        if (fAttributes != null) {\n            if (fAttributes.hasDefined(name))\n                return fAttributes.get(name);\n        }\n        if (fgDefaultAttributes == null)\n\t\t    initializeAttributes();\n\t\treturn fgDefaultAttributes.get(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.figures.FigureAttributes": [
+      "hasDefined(String)",
+      "get(String)"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "initializeAttributes()"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the named attribute or null if a\n * a figure doesn't have an attribute.\n * All figures support the attribute names\n * FillColor and FrameColor\n */\npublic Object getAttribute(String name) {\n    if (fAttributes != null) {\n        if (fAttributes.hasDefined(name))\n            return fAttributes.get(name);\n    }\n    if (fgDefaultAttributes == null)\n        initializeAttributes();\n    return fgDefaultAttributes.get(name);\n}",
+  "method_comment": "\n     * Returns the named attribute or null if a\n     * a figure doesn't have an attribute.\n     * All figures support the attribute names\n     * FillColor and FrameColor\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "MySelectionTool",
+  "methodName": "inspectFigure",
+  "brief": "protected void inspectFigure(Figure f){}",
+  "methodSignature": "inspectFigure(Figure)",
+  "sourceCode": "protected void inspectFigure(Figure f) {\n        System.out.println(\"inspect figure\"+f);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "protected void inspectFigure(Figure f) {\n    System.out.println(\"inspect figure\" + f);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

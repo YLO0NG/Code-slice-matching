@@ -1,0 +1,22 @@
+{
+  "className": "LineConnection",
+  "methodName": "startPoint",
+  "brief": "public Point startPoint(){}",
+  "methodSignature": "startPoint()",
+  "sourceCode": "public Point startPoint(){\n        Point p = (Point)fPoints.firstElement();\n        return new Point(p.x, p.y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "firstElement()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the start point.\n */\npublic Point startPoint() {\n    Point p = (Point) fPoints.firstElement();\n    return new Point(p.x, p.y);\n}",
+  "method_comment": "\n     * Gets the start point.\n     ",
+  "method_annotation": ""
+}

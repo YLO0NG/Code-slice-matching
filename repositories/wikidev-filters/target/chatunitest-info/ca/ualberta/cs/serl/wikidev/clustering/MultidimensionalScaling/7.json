@@ -1,0 +1,26 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "mds",
+  "brief": "public float[][] mds(){}",
+  "methodSignature": "mds()",
+  "sourceCode": "public float[][] mds() {\n\t\tdimensions = 2;\n\t\tfloat[][] coordinates = new float[distanceMatrix.length][dimensions];\n\t\twhile(true) {\n\t\t\tgetAlphaMatrix();\n\t\t\tdouble[][] B = getBetaMatrix();\n\t\t\t//double[] eigenValues = MatrixOperator.getEigenValues(B);\n\t\t\t//if(findNegativeEigenValue(eigenValues)) {\n\t\t\t//\tchangeDistances(eigenValues);\n\t\t\t//}\n\t\t\t//else {\n\t\t\t\tdouble[][] eigenVectors = MatrixOperator.getEigenVectors(B);\n\t\t\t\tfor(int i=0;i<distanceMatrix.length;i++) {\n\t\t\t\t\tfor(int j=0;j<dimensions;j++) {\n\t\t\t\t\t\tif(eigenVectors[j][i] >= 0.0) {\n\t\t\t\t\t\t\tcoordinates[i][j] = (float)eigenVectors[j][i];\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse {\n\t\t\t\t\t\t\tcoordinates[i][j] = (float)-eigenVectors[j][i];\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\treturn coordinates;\n\t\t\t//}\n\t\t\t\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MultidimensionalScaling": [
+      "getAlphaMatrix()",
+      "getBetaMatrix()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "getEigenVectors(double[][])"
+    ]
+  },
+  "full_method_info": "public float[][] mds() {\n    dimensions = 2;\n    float[][] coordinates = new float[distanceMatrix.length][dimensions];\n    while (true) {\n        getAlphaMatrix();\n        double[][] B = getBetaMatrix();\n        // double[] eigenValues = MatrixOperator.getEigenValues(B);\n        // if(findNegativeEigenValue(eigenValues)) {\n        // changeDistances(eigenValues);\n        // }\n        // else {\n        double[][] eigenVectors = MatrixOperator.getEigenVectors(B);\n        for (int i = 0; i < distanceMatrix.length; i++) {\n            for (int j = 0; j < dimensions; j++) {\n                if (eigenVectors[j][i] >= 0.0) {\n                    coordinates[i][j] = (float) eigenVectors[j][i];\n                } else {\n                    coordinates[i][j] = (float) -eigenVectors[j][i];\n                }\n            }\n        }\n        return coordinates;\n        // }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

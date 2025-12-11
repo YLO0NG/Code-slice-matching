@@ -1,0 +1,21 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "startPoint",
+  "brief": "public void startPoint(int x, int y);",
+  "methodSignature": "startPoint(int, int)",
+  "sourceCode": "public void startPoint(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the start point.\n */\npublic void startPoint(int x, int y);",
+  "method_comment": "\n     * Sets the start point.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,39 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "invokeEnd",
+  "brief": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeEnd(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Connector target = findConnectionTarget(x, y, view.drawing());\n        if (target == null)\n            target = fOriginalTarget;\n\n        setPoint(x, y);\n        connect(target);\n        fConnection.updateConnection();\n        if (fTarget != null) {\n            fTarget.connectorVisibility(false);\n            fTarget = null;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.standard.ChangeConnectionHandle": [
+      "findConnectionTarget(int, int, Drawing)",
+      "setPoint(int, int)",
+      "connect(Connector)"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "updateConnection()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorVisibility(boolean)"
+    ]
+  },
+  "full_method_info": "/**\n * Connects the figure to the new target. If there is no\n * new target the connection reverts to its original one.\n */\npublic void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    Connector target = findConnectionTarget(x, y, view.drawing());\n    if (target == null)\n        target = fOriginalTarget;\n    setPoint(x, y);\n    connect(target);\n    fConnection.updateConnection();\n    if (fTarget != null) {\n        fTarget.connectorVisibility(false);\n        fTarget = null;\n    }\n}",
+  "method_comment": "\n     * Connects the figure to the new target. If there is no\n     * new target the connection reverts to its original one.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,51 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.ActionTool",
+  "className": "ActionTool",
+  "index": 97,
+  "modifier": "[public , abstract ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public abstract class ActionTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import CH.ifa.draw.framework.*;",
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "mouseDown(MouseEvent, int, int)": "0",
+    "mouseUp(MouseEvent, int, int)": "1",
+    "action(Figure)": "2",
+    "ActionTool(DrawingView)": "3"
+  },
+  "methodsBrief": [
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "public abstract void action(Figure figure);",
+    "public ActionTool(DrawingView itsView){}"
+  ],
+  "constructorSigs": [
+    "ActionTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public ActionTool(DrawingView itsView){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)ActionTool.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport CH.ifa.draw.framework.*;\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\n\n/**\n * A tool that performs an action when it is active and\n * the mouse is clicked.\n */\npublic abstract class ActionTool extends AbstractTool {\n\n    public ActionTool(DrawingView itsView) {\n        super(itsView);\n    }\n\n    /**\n     * Add the touched figure to the selection an invoke action\n     * @see #action\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        Figure target = drawing().findFigure(x, y);\n        if (target != null) {\n            view().addToSelection(target);\n            action(target);\n        }\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n        editor().toolDone();\n    }\n\n    /**\n     * Performs an action with the touched figure.\n     */\n    public abstract void action(Figure figure);\n}\n",
+  "classDeclarationCode": "/**\n * A tool that performs an action when it is active and\n * the mouse is clicked.\n */\npublic abstract class ActionTool extends AbstractTool {\n\n    public ActionTool(DrawingView itsView) {\n        super(itsView);\n    }\n\n    /**\n     * Add the touched figure to the selection an invoke action\n     * @see #action\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        Figure target = drawing().findFigure(x, y);\n        if (target != null) {\n            view().addToSelection(target);\n            action(target);\n        }\n    }\n\n    public void mouseUp(MouseEvent e, int x, int y) {\n        editor().toolDone();\n    }\n\n    /**\n     * Performs an action with the touched figure.\n     */\n    public abstract void action(Figure figure);\n}",
+  "subClasses": []
+}

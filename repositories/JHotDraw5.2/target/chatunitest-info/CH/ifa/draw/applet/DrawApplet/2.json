@@ -1,0 +1,35 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createAttributeChoices",
+  "brief": "protected void createAttributeChoices(JPanel panel){}",
+  "methodSignature": "createAttributeChoices(JPanel)",
+  "sourceCode": "protected void createAttributeChoices(JPanel panel) {\n        panel.add(new JLabel(\"Fill\"));\n        fFillColor = createColorChoice(\"FillColor\");\n        panel.add(fFillColor);\n\n        panel.add(new JLabel(\"Text\"));\n        fTextColor = createColorChoice(\"TextColor\");\n        panel.add(fTextColor);\n\n        panel.add(new JLabel(\"Pen\"));\n        fFrameColor = createColorChoice(\"FrameColor\");\n        panel.add(fFrameColor);\n\n        panel.add(new JLabel(\"Arrow\"));\n        CommandChoice choice = new CommandChoice();\n        fArrowChoice = choice;\n        choice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));\n        choice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));\n        choice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));\n        choice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));\n        panel.add(fArrowChoice);\n\n        panel.add(new JLabel(\"Font\"));\n        CommandChoice choice1 = new CommandChoice();\n\t\tString fonts[] = Toolkit.getDefaultToolkit().getFontList();\n\t\tfor (int i = 0; i < fonts.length; i++)\n\t\t    choice1.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i],  fView));\n        fFontChoice = choice1;\n        panel.add(fFontChoice);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JPanel"
+  ],
+  "dependentMethods": {
+    "javax.swing.JPanel": [],
+    "java.awt.Container": [
+      "add(Component)"
+    ],
+    "CH.ifa.draw.applet.DrawApplet": [
+      "createColorChoice(String)"
+    ],
+    "CH.ifa.draw.util.CommandChoice": [
+      "addItem(Command)"
+    ],
+    "java.awt.Toolkit": [
+      "getDefaultToolkit()",
+      "getFontList()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the attribute choices. Override to add additional\n * choices.\n */\nprotected void createAttributeChoices(JPanel panel) {\n    panel.add(new JLabel(\"Fill\"));\n    fFillColor = createColorChoice(\"FillColor\");\n    panel.add(fFillColor);\n    panel.add(new JLabel(\"Text\"));\n    fTextColor = createColorChoice(\"TextColor\");\n    panel.add(fTextColor);\n    panel.add(new JLabel(\"Pen\"));\n    fFrameColor = createColorChoice(\"FrameColor\");\n    panel.add(fFrameColor);\n    panel.add(new JLabel(\"Arrow\"));\n    CommandChoice choice = new CommandChoice();\n    fArrowChoice = choice;\n    choice.addItem(new ChangeAttributeCommand(\"none\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE), fView));\n    choice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));\n    choice.addItem(new ChangeAttributeCommand(\"at End\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END), fView));\n    choice.addItem(new ChangeAttributeCommand(\"at Both\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH), fView));\n    panel.add(fArrowChoice);\n    panel.add(new JLabel(\"Font\"));\n    CommandChoice choice1 = new CommandChoice();\n    String[] fonts = Toolkit.getDefaultToolkit().getFontList();\n    for (int i = 0; i < fonts.length; i++) choice1.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i], fView));\n    fFontChoice = choice1;\n    panel.add(fFontChoice);\n}",
+  "method_comment": "\n     * Creates the attribute choices. Override to add additional\n     * choices.\n     ",
+  "method_annotation": ""
+}

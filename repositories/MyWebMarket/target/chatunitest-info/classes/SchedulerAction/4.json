@@ -1,0 +1,18 @@
+{
+  "className": "SchedulerAction",
+  "methodName": "schedule",
+  "brief": "public String schedule() throws Exception{}",
+  "methodSignature": "schedule()",
+  "sourceCode": "public String schedule() throws Exception {\n\t\tlogger.info( \"Starting schedule()\" ); //f:log\n\n\t\tSchedulerFactory sf = new StdSchedulerFactory(); //f:quartz\n\t\tScheduler sc = sf.getScheduler(); //f:quartz\n\n\t\tJobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz\n\n\t\tif ( job != null ) { //f:quartz\n\t\t\tsc.deleteJob( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz\n\t\t} //f:quartz\n\n\t\tjob = newJob( SupplyMailJob.class ).withIdentity( \"supplyMailJob\", \"group\" ).build(); //f:quartz\n\t\tjob.getJobDataMap().put( \"timeInterval\", this.timeInterval ); //f:quartz\n\n\t\tTrigger trigger = newTrigger().withIdentity( \"supplyMailTrigger\", \"group\" ).startNow().withSchedule( CronScheduleBuilder.cronSchedule( \"0 0/\"\n\t\t\t\t+ (this.timeInterval * 60) + \" * * * ?\" ) ).build(); //f:quartz\n\n\t\tsc.scheduleJob( job, trigger ); //f:quartz\n\n\t\tlogger.info( \"Finishing schedule()\" ); //f:log\n\t\treturn INPUT;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public String schedule() throws Exception {\n    // f:log\n    logger.info(\"Starting schedule()\");\n    // f:quartz\n    SchedulerFactory sf = new StdSchedulerFactory();\n    // f:quartz\n    Scheduler sc = sf.getScheduler();\n    // f:quartz\n    JobDetail job = sc.getJobDetail(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n    if (job != null) {\n        // f:quartz\n        // f:quartz\n        sc.deleteJob(JobKey.jobKey(\"supplyMailJob\", \"group\"));\n    }\n    // f:quartz\n    // f:quartz\n    job = newJob(SupplyMailJob.class).withIdentity(\"supplyMailJob\", \"group\").build();\n    // f:quartz\n    job.getJobDataMap().put(\"timeInterval\", this.timeInterval);\n    Trigger trigger = newTrigger().withIdentity(\"supplyMailTrigger\", \"group\").startNow().withSchedule(CronScheduleBuilder.cronSchedule(\"0 0/\" + (this.timeInterval * 60) + \" * * * ?\")).// f:quartz\n    build();\n    // f:quartz\n    sc.scheduleJob(job, trigger);\n    // f:log\n    logger.info(\"Finishing schedule()\");\n    return INPUT;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "BouncingDrawing",
+  "methodName": "add",
+  "brief": "public synchronized Figure add(Figure figure){}",
+  "methodSignature": "add(Figure)",
+  "sourceCode": "public synchronized Figure add(Figure figure) {\n        if (!(figure instanceof AnimationDecorator))\n            figure = new AnimationDecorator(figure);\n        return super.add(figure);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "add(Figure)"
+    ]
+  },
+  "full_method_info": "public synchronized Figure add(Figure figure) {\n    if (!(figure instanceof AnimationDecorator))\n        figure = new AnimationDecorator(figure);\n    return super.add(figure);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

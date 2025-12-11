@@ -1,0 +1,25 @@
+{
+  "className": "Document",
+  "methodName": "contains",
+  "brief": "public boolean contains(String term){}",
+  "methodSignature": "contains(String)",
+  "sourceCode": "public boolean contains(String term) {\n\t\treturn terms.contains(term);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Set": [
+      "contains(Object)"
+    ]
+  },
+  "full_method_info": "public boolean contains(String term) {\n    return terms.contains(term);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

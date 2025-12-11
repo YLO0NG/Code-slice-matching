@@ -1,0 +1,26 @@
+{
+  "className": "FigureChangeEventMulticaster",
+  "methodName": "remove",
+  "brief": "public static FigureChangeListener remove(FigureChangeListener l, FigureChangeListener oldl){}",
+  "methodSignature": "remove(FigureChangeListener, FigureChangeListener)",
+  "sourceCode": "public static FigureChangeListener remove(FigureChangeListener l, FigureChangeListener oldl) {\n\t    return (FigureChangeListener) removeInternal(l, oldl);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeListener",
+    "FigureChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": [],
+    "CH.ifa.draw.standard.FigureChangeEventMulticaster": [
+      "removeInternal(EventListener, EventListener)"
+    ]
+  },
+  "full_method_info": "public static FigureChangeListener remove(FigureChangeListener l, FigureChangeListener oldl) {\n    return (FigureChangeListener) removeInternal(l, oldl);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

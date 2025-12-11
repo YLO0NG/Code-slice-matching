@@ -1,0 +1,27 @@
+{
+  "className": "NumberTextFigure",
+  "methodName": "setValue",
+  "brief": "public void setValue(int value){}",
+  "methodSignature": "setValue(int)",
+  "sourceCode": "public void setValue(int value) {\n        setText(Integer.toString(value));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.TextFigure": [
+      "setText(String)"
+    ],
+    "java.lang.Integer": [
+      "toString(int)"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the numberical value of the contained text.\n */\npublic void setValue(int value) {\n    setText(Integer.toString(value));\n}",
+  "method_comment": "\n     * Sets the numberical value of the contained text.\n     ",
+  "method_annotation": ""
+}

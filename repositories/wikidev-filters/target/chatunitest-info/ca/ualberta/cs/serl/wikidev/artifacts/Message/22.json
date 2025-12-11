@@ -1,0 +1,22 @@
+{
+  "className": "Message",
+  "methodName": "toString",
+  "brief": "public String toString(){}",
+  "methodSignature": "toString()",
+  "sourceCode": "public String toString() {\n\t\t/*String s = communicationType+\" \"+communicationID+\" between \";\n\t\tfor(int i=0; i<participants.size()-1; i++) {\n\t\t\ts += participants.get(i).toString()+\", \";\n\t\t}\n\t\ts += participants.get(participants.size()-1).toString()+\" Subject: \"+subject;\n\t\treturn s;*/\n\t\treturn \"Message\"+this.communicationID+\" \"+super.toString();\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public String toString() {\n    /*String s = communicationType+\" \"+communicationID+\" between \";\n\t\tfor(int i=0; i<participants.size()-1; i++) {\n\t\t\ts += participants.get(i).toString()+\", \";\n\t\t}\n\t\ts += participants.get(participants.size()-1).toString()+\" Subject: \"+subject;\n\t\treturn s;*/\n    return \"Message\" + this.communicationID + \" \" + super.toString();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

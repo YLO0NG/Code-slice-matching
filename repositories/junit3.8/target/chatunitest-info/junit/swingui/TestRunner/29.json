@@ -1,0 +1,33 @@
+{
+  "className": "TestRunner",
+  "methodName": "addGrid",
+  "brief": "private void addGrid(JPanel p, Component co, int x, int y, int w, int fill, double wx, int anchor){}",
+  "methodSignature": "addGrid(JPanel, Component, int, int, int, int, double, int)",
+  "sourceCode": "private void addGrid(JPanel p, Component co, int x, int y, int w, int fill, double wx, int anchor) {\r\n\t\tGridBagConstraints c= new GridBagConstraints();\r\n\t\tc.gridx= x; c.gridy= y;\r\n\t\tc.gridwidth= w;\r\n\t\tc.anchor= anchor;\r\n\t\tc.weightx= wx;\r\n\t\tc.fill= fill;\r\n\t\tif (fill == GridBagConstraints.BOTH || fill == GridBagConstraints.VERTICAL)\r\n\t\t\tc.weighty= 1.0;\r\n\t\tc.insets= new Insets(y == 0 ? 10 : 0, x == 0 ? 10 : GAP, GAP, GAP); \r\n\t\tp.add(co, c);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JPanel",
+    "Component",
+    "int",
+    "int",
+    "int",
+    "int",
+    "double",
+    "int"
+  ],
+  "dependentMethods": {
+    "javax.swing.JPanel": [],
+    "java.awt.Component": [],
+    "java.awt.Container": [
+      "add(Component, Object)"
+    ]
+  },
+  "full_method_info": "private void addGrid(JPanel p, Component co, int x, int y, int w, int fill, double wx, int anchor) {\r\n    GridBagConstraints c = new GridBagConstraints();\r\n    c.gridx = x;\r\n    c.gridy = y;\r\n    c.gridwidth = w;\r\n    c.anchor = anchor;\r\n    c.weightx = wx;\r\n    c.fill = fill;\r\n    if (fill == GridBagConstraints.BOTH || fill == GridBagConstraints.VERTICAL)\r\n        c.weighty = 1.0;\r\n    c.insets = new Insets(y == 0 ? 10 : 0, x == 0 ? 10 : GAP, GAP, GAP);\r\n    p.add(co, c);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,49 @@
+{
+  "fullClassName": "CH.ifa.draw.framework.FigureChangeListener",
+  "className": "FigureChangeListener",
+  "index": 64,
+  "modifier": "[public ]",
+  "extend": "[EventListener]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.framework",
+  "packageDeclaration": "package CH.ifa.draw.framework;",
+  "classSignature": "public interface FigureChangeListener",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.Rectangle;",
+    "import java.util.EventListener;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "EventListener"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "figureInvalidated(FigureChangeEvent)": "0",
+    "figureChanged(FigureChangeEvent)": "1",
+    "figureRemoved(FigureChangeEvent)": "2",
+    "figureRequestRemove(FigureChangeEvent)": "3",
+    "figureRequestUpdate(FigureChangeEvent)": "4"
+  },
+  "methodsBrief": [
+    "public void figureInvalidated(FigureChangeEvent e);",
+    "public void figureChanged(FigureChangeEvent e);",
+    "public void figureRemoved(FigureChangeEvent e);",
+    "public void figureRequestRemove(FigureChangeEvent e);",
+    "public void figureRequestUpdate(FigureChangeEvent e);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)FigureChangeListener.java 5.2\n *\n */\npackage CH.ifa.draw.framework;\n\nimport java.awt.Rectangle;\nimport java.util.EventListener;\n\n/**\n * Listener interested in Figure changes.\n */\npublic interface FigureChangeListener extends EventListener {\n\n    /**\n     *  Sent when an area is invalid\n     */\n    public void figureInvalidated(FigureChangeEvent e);\n\n    /**\n     * Sent when a figure changed\n     */\n    public void figureChanged(FigureChangeEvent e);\n\n    /**\n     * Sent when a figure was removed\n     */\n    public void figureRemoved(FigureChangeEvent e);\n\n    /**\n     * Sent when requesting to remove a figure.\n     */\n    public void figureRequestRemove(FigureChangeEvent e);\n\n    /**\n     * Sent when an update should happen.\n     */\n    public void figureRequestUpdate(FigureChangeEvent e);\n}\n",
+  "classDeclarationCode": "/**\n * Listener interested in Figure changes.\n */\npublic interface FigureChangeListener extends EventListener {\n\n    /**\n     *  Sent when an area is invalid\n     */\n    public void figureInvalidated(FigureChangeEvent e);\n\n    /**\n     * Sent when a figure changed\n     */\n    public void figureChanged(FigureChangeEvent e);\n\n    /**\n     * Sent when a figure was removed\n     */\n    public void figureRemoved(FigureChangeEvent e);\n\n    /**\n     * Sent when requesting to remove a figure.\n     */\n    public void figureRequestRemove(FigureChangeEvent e);\n\n    /**\n     * Sent when an update should happen.\n     */\n    public void figureRequestUpdate(FigureChangeEvent e);\n}",
+  "subClasses": [
+    "CH.ifa.draw.framework.ConnectionFigure",
+    "CH.ifa.draw.framework.Drawing"
+  ]
+}

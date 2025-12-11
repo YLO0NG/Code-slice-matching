@@ -1,0 +1,18 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "getLeftComponent",
+  "brief": "public JComponent getLeftComponent(){}",
+  "methodSignature": "getLeftComponent()",
+  "sourceCode": "public JComponent getLeftComponent() {\n    \treturn leftComponent;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get the left component of the JSplitPane.\n *\n * @return\tnewLeftComponent\tleft component\n */\npublic JComponent getLeftComponent() {\n    return leftComponent;\n}",
+  "method_comment": "\n\t * Get the left component of the JSplitPane.\n\t *\n\t * @return\tnewLeftComponent\tleft component\n\t ",
+  "method_annotation": ""
+}

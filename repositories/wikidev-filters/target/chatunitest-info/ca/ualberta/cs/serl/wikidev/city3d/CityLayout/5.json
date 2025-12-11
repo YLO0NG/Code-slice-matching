@@ -1,0 +1,39 @@
+{
+  "className": "CityLayout",
+  "methodName": "CityLayout",
+  "brief": "public CityLayout(ArrayList<IArtifact> newArtifacts, RelationshipMiner rm, int projectid)\r\n\t\t\tthrows IOException{}",
+  "methodSignature": "CityLayout(ArrayList, RelationshipMiner, int)",
+  "sourceCode": "public CityLayout(ArrayList<IArtifact> newArtifacts, RelationshipMiner rm, int projectid)\n\t\t\tthrows IOException {\n\t\tthis.projectid = projectid;\n\t\tSystem.out.print(\"pch<-c(\");\n\t\tmessages = new ArrayList<Message>();\n\t\tfor (IArtifact artifact : newArtifacts) {\n\t\t\tif (artifact instanceof Ticket) {\n\t\t\t\tSystem.out.print(\"\\'*\\', \");\n\t\t\t} else if (artifact instanceof Wiki) {\n\t\t\t\tSystem.out.print(\"\\'o\\', \");\n\t\t\t} else if (artifact instanceof Message) {\n\t\t\t\tSystem.out.print(\"\\'+\\', \");\n\t\t\t\tMessage message = (Message)artifact;\n\t\t\t\tmessages.add(message);\n\t\t\t} else if (artifact instanceof ChangeSet) {\n\t\t\t\tSystem.out.print(\"\\'$\\', \");\n\t\t\t}\n\t\t}\n\t\tSystem.out.println(\")\");\n\n\t\tSystem.out.println(\"MDS start\");\n\t\tdouble[][] distanceMatrix = rm.getDistanceMatrix();\n\t\tthis.getLayout(newArtifacts, distanceMatrix);\n\t\tHashMap<Message, Integer> messageCount = getMessageCount(messages);\n\t\t//printCityBlocks(cityBlocks, messageCount);\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<IArtifact>",
+    "RelationshipMiner",
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.RelationshipMiner": [
+      "getDistanceMatrix()"
+    ],
+    "java.io.PrintStream": [
+      "print(String)",
+      "println(String)"
+    ],
+    "java.util.ArrayList": [
+      "add(E)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.Layout": [
+      "getLayout(IArtifact>, double[][])"
+    ],
+    "ca.ualberta.cs.serl.wikidev.city3d.CityLayout": [
+      "getMessageCount(Message>)"
+    ]
+  },
+  "full_method_info": "public CityLayout(ArrayList<IArtifact> newArtifacts, RelationshipMiner rm, int projectid) throws IOException {\n    this.projectid = projectid;\n    System.out.print(\"pch<-c(\");\n    messages = new ArrayList<Message>();\n    for (IArtifact artifact : newArtifacts) {\n        if (artifact instanceof Ticket) {\n            System.out.print(\"\\'*\\', \");\n        } else if (artifact instanceof Wiki) {\n            System.out.print(\"\\'o\\', \");\n        } else if (artifact instanceof Message) {\n            System.out.print(\"\\'+\\', \");\n            Message message = (Message) artifact;\n            messages.add(message);\n        } else if (artifact instanceof ChangeSet) {\n            System.out.print(\"\\'$\\', \");\n        }\n    }\n    System.out.println(\")\");\n    System.out.println(\"MDS start\");\n    double[][] distanceMatrix = rm.getDistanceMatrix();\n    this.getLayout(newArtifacts, distanceMatrix);\n    HashMap<Message, Integer> messageCount = getMessageCount(messages);\n    // printCityBlocks(cityBlocks, messageCount);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

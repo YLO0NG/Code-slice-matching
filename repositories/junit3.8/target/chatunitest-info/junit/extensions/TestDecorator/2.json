@@ -1,0 +1,25 @@
+{
+  "className": "TestDecorator",
+  "methodName": "run",
+  "brief": "public void run(TestResult result){}",
+  "methodSignature": "run(TestResult)",
+  "sourceCode": "public void run(TestResult result) {\r\n\t\tbasicRun(result);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [],
+    "junit.extensions.TestDecorator": [
+      "basicRun(TestResult)"
+    ]
+  },
+  "full_method_info": "public void run(TestResult result) {\r\n    basicRun(result);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

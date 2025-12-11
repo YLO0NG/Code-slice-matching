@@ -1,0 +1,26 @@
+{
+  "className": "Assert",
+  "methodName": "assertEquals",
+  "brief": "static public void assertEquals(String message, String expected, String actual){}",
+  "methodSignature": "assertEquals(String, String, String)",
+  "sourceCode": "static public void assertEquals(String message, String expected, String actual) {\r\n\t\tif (expected == null && actual == null)\r\n\t\t\treturn;\r\n\t\tif (expected != null && expected.equals(actual))\r\n\t\t\treturn;\r\n\t\tthrow new ComparisonFailure(message, expected, actual);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "equals(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Asserts that two Strings are equal.\r\n */\r\nstatic public void assertEquals(String message, String expected, String actual) {\r\n    if (expected == null && actual == null)\r\n        return;\r\n    if (expected != null && expected.equals(actual))\r\n        return;\r\n    throw new ComparisonFailure(message, expected, actual);\r\n}",
+  "method_comment": "\r\n\t * Asserts that two Strings are equal. \r\n\t ",
+  "method_annotation": ""
+}

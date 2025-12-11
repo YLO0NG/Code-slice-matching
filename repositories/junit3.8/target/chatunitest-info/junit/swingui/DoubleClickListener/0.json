@@ -1,0 +1,27 @@
+{
+  "className": "DoubleClickListener",
+  "methodName": "mouseClicked",
+  "brief": "public void mouseClicked(MouseEvent e){}",
+  "methodSignature": "mouseClicked(MouseEvent)",
+  "sourceCode": "public void mouseClicked(MouseEvent e) {\r\n\t    \t\tif (e.getClickCount() == 2) {\r\n\t    \t\t\tokSelected();\r\n\t    \t\t}\r\n\t      }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getClickCount()"
+    ],
+    "junit.swingui.TestSelector": [
+      "okSelected()"
+    ]
+  },
+  "full_method_info": "public void mouseClicked(MouseEvent e) {\r\n    if (e.getClickCount() == 2) {\r\n        okSelected();\r\n    }\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

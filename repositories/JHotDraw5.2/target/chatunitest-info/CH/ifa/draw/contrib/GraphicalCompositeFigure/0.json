@@ -1,0 +1,22 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "initialize",
+  "brief": "protected void initialize(){}",
+  "methodSignature": "initialize()",
+  "sourceCode": "protected void initialize() {\n\t\tsetLayouter(new StandardLayouter(this));\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.GraphicalCompositeFigure": [
+      "setLayouter(Layouter)"
+    ]
+  },
+  "full_method_info": "/**\n * This method performs additional initialization operations,\n * in this case setting the Layouter.\n * It is called from the constructors and the clone() method.\n * A StandardLayouter is set.\n */\nprotected void initialize() {\n    setLayouter(new StandardLayouter(this));\n}",
+  "method_comment": "\n\t * This method performs additional initialization operations,\n\t * in this case setting the Layouter.\n\t * It is called from the constructors and the clone() method.\n\t * A StandardLayouter is set.\n\t ",
+  "method_annotation": ""
+}

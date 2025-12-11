@@ -1,0 +1,25 @@
+{
+  "className": "FailureListCellRenderer",
+  "methodName": "loadIcons",
+  "brief": "void loadIcons(){}",
+  "methodSignature": "loadIcons()",
+  "sourceCode": "void loadIcons() {\r\n\t\t\tfFailureIcon= TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n\t\t\tfErrorIcon= TestRunner.getIconResource(getClass(), \"icons/error.gif\");\t\t\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestRunner": [
+      "getIconResource(Class, String)"
+    ],
+    "java.lang.Object": [
+      "getClass()"
+    ]
+  },
+  "full_method_info": "void loadIcons() {\r\n    fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n    fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

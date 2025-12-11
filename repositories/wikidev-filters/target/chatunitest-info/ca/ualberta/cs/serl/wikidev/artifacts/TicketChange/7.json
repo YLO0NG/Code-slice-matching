@@ -1,0 +1,20 @@
+{
+  "className": "TicketChange",
+  "methodName": "setProject_ticket_id",
+  "brief": "public void setProject_ticket_id(int ticket_dr_id){}",
+  "methodSignature": "setProject_ticket_id(int)",
+  "sourceCode": "public void setProject_ticket_id(int ticket_dr_id) {\n\t\tthis.project_ticket_id = ticket_dr_id;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param ticket_dr_id\n * @uml.property  name=\"project_ticket_id\"\n */\npublic void setProject_ticket_id(int ticket_dr_id) {\n    this.project_ticket_id = ticket_dr_id;\n}",
+  "method_comment": "\n\t * @param ticket_dr_id\n\t * @uml.property  name=\"project_ticket_id\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "MDI_InternalFrame",
+  "methodName": "setDrawing",
+  "brief": "public void setDrawing(Drawing newInternalDrawing){}",
+  "methodSignature": "setDrawing(Drawing)",
+  "sourceCode": "public void setDrawing(Drawing newInternalDrawing) {\n\t\tgetDrawingView().setDrawing(newInternalDrawing);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.framework.DrawingView": [
+      "setDrawing(Drawing)"
+    ],
+    "CH.ifa.draw.contrib.MDI_InternalFrame": [
+      "getDrawingView()"
+    ]
+  },
+  "full_method_info": "/**\n * Set the drawing which is represented in the internal frame\n *\n * @param\tnewInternalDrawing\tdrawing for the internal frame\n */\npublic void setDrawing(Drawing newInternalDrawing) {\n    getDrawingView().setDrawing(newInternalDrawing);\n}",
+  "method_comment": "\n\t * Set the drawing which is represented in the internal frame\n\t *\n\t * @param\tnewInternalDrawing\tdrawing for the internal frame\n\t ",
+  "method_annotation": ""
+}

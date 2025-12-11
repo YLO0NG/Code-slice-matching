@@ -1,0 +1,25 @@
+{
+  "className": "TestSuitePanel",
+  "methodName": "getSelectedTest",
+  "brief": "public Test getSelectedTest(){}",
+  "methodSignature": "getSelectedTest()",
+  "sourceCode": "public Test getSelectedTest() {\r\n\t\tTreePath[] paths= fTree.getSelectionPaths();\r\n\t\tif (paths != null && paths.length == 1)\r\n\t\t\treturn (Test)paths[0].getLastPathComponent();\r\n\t\treturn null;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.JTree": [
+      "getSelectionPaths()"
+    ],
+    "javax.swing.tree.TreePath": [
+      "getLastPathComponent()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Returns the selected test or null if multiple or none is selected\r\n */\r\npublic Test getSelectedTest() {\r\n    TreePath[] paths = fTree.getSelectionPaths();\r\n    if (paths != null && paths.length == 1)\r\n        return (Test) paths[0].getLastPathComponent();\r\n    return null;\r\n}",
+  "method_comment": "\r\n\t * Returns the selected test or null if multiple or none is selected\r\n\t ",
+  "method_annotation": ""
+}

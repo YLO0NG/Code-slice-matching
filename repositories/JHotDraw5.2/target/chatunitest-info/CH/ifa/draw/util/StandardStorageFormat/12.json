@@ -1,0 +1,26 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "adjustFileName",
+  "brief": "protected String adjustFileName(String testFileName){}",
+  "methodSignature": "adjustFileName(String)",
+  "sourceCode": "protected String adjustFileName(String testFileName) {\n\t\tif (!hasCorrectFileExtension(testFileName)) {\n\t\t\treturn testFileName + \".\" + getFileExtension();\n\t\t}\n\t\telse {\n\t\t\treturn testFileName;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "hasCorrectFileExtension(String)",
+      "getFileExtension()"
+    ]
+  },
+  "full_method_info": "/**\n * Adjust a file name to have the correct file extension.\n *\n * @param testFileName file name to be tested for a correct file extension\n * @return testFileName + file extension if necessary\n */\nprotected String adjustFileName(String testFileName) {\n    if (!hasCorrectFileExtension(testFileName)) {\n        return testFileName + \".\" + getFileExtension();\n    } else {\n        return testFileName;\n    }\n}",
+  "method_comment": "\n\t * Adjust a file name to have the correct file extension.\n\t *\n\t * @param testFileName file name to be tested for a correct file extension\n\t * @return testFileName + file extension if necessary\n\t ",
+  "method_annotation": ""
+}

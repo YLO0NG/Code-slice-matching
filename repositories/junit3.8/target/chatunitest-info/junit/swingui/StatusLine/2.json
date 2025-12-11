@@ -1,0 +1,25 @@
+{
+  "className": "StatusLine",
+  "methodName": "clear",
+  "brief": "public void clear(){}",
+  "methodSignature": "clear()",
+  "sourceCode": "public void clear() {\r\n\t\tsetText(\"\");\r\n\t\tsetToolTipText(null);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.text.JTextComponent": [
+      "setText(String)"
+    ],
+    "javax.swing.JComponent": [
+      "setToolTipText(String)"
+    ]
+  },
+  "full_method_info": "public void clear() {\r\n    setText(\"\");\r\n    setToolTipText(null);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

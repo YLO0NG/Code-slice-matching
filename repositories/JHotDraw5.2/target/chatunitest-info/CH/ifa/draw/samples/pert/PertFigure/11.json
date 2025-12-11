@@ -1,0 +1,28 @@
+{
+  "className": "PertFigure",
+  "methodName": "basicMoveBy",
+  "brief": "protected void basicMoveBy(int x, int y){}",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "protected void basicMoveBy(int x, int y) {\n\t    fDisplayBox.translate(x, y);\n\t    super.basicMoveBy(x, y);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "translate(int, int)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "basicMoveBy(int, int)"
+    ]
+  },
+  "full_method_info": "protected void basicMoveBy(int x, int y) {\n    fDisplayBox.translate(x, y);\n    super.basicMoveBy(x, y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

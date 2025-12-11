@@ -1,0 +1,58 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.Animator",
+  "className": "Animator",
+  "index": 74,
+  "modifier": "[public ]",
+  "extend": "[Thread]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public  class Animator",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.util.Animatable;"
+  ],
+  "fields": [
+    "private DrawingView     fView;",
+    "private Animatable      fAnimatable;",
+    "private boolean             fIsRunning;",
+    "private static final int    DELAY = 1000 / 16;"
+  ],
+  "superClasses": [
+    "Thread"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "start()": "0",
+    "end()": "1",
+    "run()": "2",
+    "Animator(Animatable, DrawingView)": "3"
+  },
+  "methodsBrief": [
+    "public void start(){}",
+    "public void end(){}",
+    "public void run(){}",
+    "public Animator(Animatable animatable, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "Animator(Animatable, DrawingView)"
+  ],
+  "constructorBrief": [
+    "public Animator(Animatable animatable, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.util.Animatable": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)Animator.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport java.awt.*;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.util.Animatable;\n\npublic class Animator extends Thread {\n\n    private DrawingView fView;\n\n    private Animatable fAnimatable;\n\n    private boolean fIsRunning;\n\n    private static final int DELAY = 1000 / 16;\n\n    public Animator(Animatable animatable, DrawingView view) {\n        super(\"Animator\");\n        fView = view;\n        fAnimatable = animatable;\n    }\n\n    public void start() {\n        super.start();\n        fIsRunning = true;\n    }\n\n    public void end() {\n        fIsRunning = false;\n    }\n\n    public void run() {\n        while (fIsRunning) {\n            long tm = System.currentTimeMillis();\n            fView.freezeView();\n            fAnimatable.animationStep();\n            fView.checkDamage();\n            fView.unfreezeView();\n            // Delay for a while\n            try {\n                tm += DELAY;\n                Thread.sleep(Math.max(0, tm - System.currentTimeMillis()));\n            } catch (InterruptedException e) {\n                break;\n            }\n        }\n    }\n}\n",
+  "classDeclarationCode": "public class Animator extends Thread {\n\n    private DrawingView fView;\n\n    private Animatable fAnimatable;\n\n    private boolean fIsRunning;\n\n    private static final int DELAY = 1000 / 16;\n\n    public Animator(Animatable animatable, DrawingView view) {\n        super(\"Animator\");\n        fView = view;\n        fAnimatable = animatable;\n    }\n\n    public void start() {\n        super.start();\n        fIsRunning = true;\n    }\n\n    public void end() {\n        fIsRunning = false;\n    }\n\n    public void run() {\n        while (fIsRunning) {\n            long tm = System.currentTimeMillis();\n            fView.freezeView();\n            fAnimatable.animationStep();\n            fView.checkDamage();\n            fView.unfreezeView();\n            // Delay for a while\n            try {\n                tm += DELAY;\n                Thread.sleep(Math.max(0, tm - System.currentTimeMillis()));\n            } catch (InterruptedException e) {\n                break;\n            }\n        }\n    }\n}",
+  "subClasses": []
+}

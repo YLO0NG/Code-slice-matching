@@ -1,0 +1,45 @@
+{
+  "fullClassName": "CH.ifa.draw.util.StorageFormat",
+  "className": "StorageFormat",
+  "index": 169,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public interface StorageFormat",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.filechooser.FileFilter;",
+    "import java.io.IOException;",
+    "import CH.ifa.draw.framework.Drawing;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getFileFilter()": "0",
+    "store(String, Drawing)": "1",
+    "restore(String)": "2"
+  },
+  "methodsBrief": [
+    "public FileFilter getFileFilter();",
+    "public String store(String fileName, Drawing saveDrawing) throws IOException;",
+    "public Drawing restore(String fileName) throws IOException;"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getFileFilter()"
+  ],
+  "getterSetterBrief": [
+    "public FileFilter getFileFilter();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)StorageFormat.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.filechooser.FileFilter;\nimport java.io.IOException;\nimport CH.ifa.draw.framework.Drawing;\n\n/**\n * Interface to define a storage format. A StorageFormat is a strategy that knows how to store\n * and restore a Drawing according to a specific encoding. Typically it can be recognized by\n * a file extension. To identify a valid file format for a Drawing an appropriate FileFilter\n * for a javax.swing.JFileChooser component can be requested.\n *\n * @see Drawing\n * @see StorageFormatManager\n * @author Wolfram Kaiser\n */\npublic interface StorageFormat {\n\n    /**\n     * Return a FileFilter that can be used to identify files which can be stored and restored\n     * with this Storage Format. Typically, each storage format has its own recognizable file\n     * extension.\n     *\n     * @return FileFilter to be used with a javax.swing.JFileChooser\n     */\n    public FileFilter getFileFilter();\n\n    /**\n     * Store a Drawing under a given name.\n     *\n     * @param fileName file name of the Drawing under which it should be stored\n     * @param saveDrawing drawing to be saved\n     * @return file name with correct file extension\n     */\n    public String store(String fileName, Drawing saveDrawing) throws IOException;\n\n    /**\n     * Restore a Drawing from a file with a given name.\n     *\n     * @param name of the file in which the Drawing has been saved\n     * @return restored Drawing\n     */\n    public Drawing restore(String fileName) throws IOException;\n}\n",
+  "classDeclarationCode": "/**\n * Interface to define a storage format. A StorageFormat is a strategy that knows how to store\n * and restore a Drawing according to a specific encoding. Typically it can be recognized by\n * a file extension. To identify a valid file format for a Drawing an appropriate FileFilter\n * for a javax.swing.JFileChooser component can be requested.\n *\n * @see Drawing\n * @see StorageFormatManager\n * @author Wolfram Kaiser\n */\npublic interface StorageFormat {\n\n    /**\n     * Return a FileFilter that can be used to identify files which can be stored and restored\n     * with this Storage Format. Typically, each storage format has its own recognizable file\n     * extension.\n     *\n     * @return FileFilter to be used with a javax.swing.JFileChooser\n     */\n    public FileFilter getFileFilter();\n\n    /**\n     * Store a Drawing under a given name.\n     *\n     * @param fileName file name of the Drawing under which it should be stored\n     * @param saveDrawing drawing to be saved\n     * @return file name with correct file extension\n     */\n    public String store(String fileName, Drawing saveDrawing) throws IOException;\n\n    /**\n     * Restore a Drawing from a file with a given name.\n     *\n     * @param name of the file in which the Drawing has been saved\n     * @return restored Drawing\n     */\n    public Drawing restore(String fileName) throws IOException;\n}",
+  "subClasses": []
+}

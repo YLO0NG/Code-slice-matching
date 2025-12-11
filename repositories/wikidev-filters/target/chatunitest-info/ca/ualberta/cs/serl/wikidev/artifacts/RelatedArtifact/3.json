@@ -1,0 +1,20 @@
+{
+  "className": "RelatedArtifact",
+  "methodName": "setDistance",
+  "brief": "public void setDistance(double distance){}",
+  "methodSignature": "setDistance(double)",
+  "sourceCode": "public void setDistance(double distance) {\n\t\tthis.distance = distance;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param distance\n * @uml.property  name=\"distance\"\n */\npublic void setDistance(double distance) {\n    this.distance = distance;\n}",
+  "method_comment": "\n\t * @param distance\n\t * @uml.property  name=\"distance\"\n\t ",
+  "method_annotation": ""
+}

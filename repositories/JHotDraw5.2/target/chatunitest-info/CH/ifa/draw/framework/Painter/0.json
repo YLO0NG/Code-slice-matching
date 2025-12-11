@@ -1,0 +1,24 @@
+{
+  "className": "Painter",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g, DrawingView view);",
+  "methodSignature": "draw(Graphics, DrawingView)",
+  "sourceCode": "public void draw(Graphics g, DrawingView view);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "full_method_info": "/**\n * Draws into the given DrawingView.\n */\npublic void draw(Graphics g, DrawingView view);",
+  "method_comment": "\n     * Draws into the given DrawingView.\n     ",
+  "method_annotation": ""
+}

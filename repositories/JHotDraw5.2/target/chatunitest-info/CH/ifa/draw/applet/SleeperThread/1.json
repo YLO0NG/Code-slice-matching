@@ -1,0 +1,22 @@
+{
+  "className": "SleeperThread",
+  "methodName": "SleeperThread",
+  "brief": "SleeperThread(JApplet applet){}",
+  "methodSignature": "SleeperThread(JApplet)",
+  "sourceCode": "SleeperThread(JApplet applet) {\n        fApplet = applet;\n    }",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JApplet"
+  ],
+  "dependentMethods": {
+    "javax.swing.JApplet": []
+  },
+  "full_method_info": "SleeperThread(JApplet applet) {\n    fApplet = applet;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,28 @@
+{
+  "className": "PertFigure",
+  "methodName": "readTasks",
+  "brief": "public Vector readTasks(StorableInput dr) throws IOException{}",
+  "methodSignature": "readTasks(StorableInput)",
+  "sourceCode": "public Vector readTasks(StorableInput dr) throws IOException {\n        int size = dr.readInt();\n        Vector v = new Vector(size);\n        for (int i=0; i<size; i++)\n            v.addElement((Figure)dr.readStorable());\n        return v;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorableInput"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableInput": [
+      "readInt()",
+      "readStorable()"
+    ],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "public Vector readTasks(StorableInput dr) throws IOException {\n    int size = dr.readInt();\n    Vector v = new Vector(size);\n    for (int i = 0; i < size; i++) v.addElement((Figure) dr.readStorable());\n    return v;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

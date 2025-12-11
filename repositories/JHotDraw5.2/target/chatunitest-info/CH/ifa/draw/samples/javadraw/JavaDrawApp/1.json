@@ -1,0 +1,22 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "open",
+  "brief": "public void open(){}",
+  "methodSignature": "open()",
+  "sourceCode": "public void open() {\n        super.open();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.application.DrawApplication": [
+      "open()"
+    ]
+  },
+  "full_method_info": "public void open() {\n    super.open();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

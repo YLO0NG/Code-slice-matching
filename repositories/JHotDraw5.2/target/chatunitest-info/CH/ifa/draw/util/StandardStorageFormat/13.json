@@ -1,0 +1,27 @@
+{
+  "className": "StandardStorageFormat",
+  "methodName": "hasCorrectFileExtension",
+  "brief": "protected boolean hasCorrectFileExtension(String testFileName){}",
+  "methodSignature": "hasCorrectFileExtension(String)",
+  "sourceCode": "protected boolean hasCorrectFileExtension(String testFileName) {\n\t\treturn testFileName.endsWith(\".\" + getFileExtension());\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "endsWith(String)"
+    ],
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "getFileExtension()"
+    ]
+  },
+  "full_method_info": "/**\n * Test whether the file name has the correct file extension\n *\n * @return true, if the file has the correct extension, false otherwise\n */\nprotected boolean hasCorrectFileExtension(String testFileName) {\n    return testFileName.endsWith(\".\" + getFileExtension());\n}",
+  "method_comment": "\n\t * Test whether the file name has the correct file extension\n\t *\n\t * @return true, if the file has the correct extension, false otherwise\n\t ",
+  "method_annotation": ""
+}

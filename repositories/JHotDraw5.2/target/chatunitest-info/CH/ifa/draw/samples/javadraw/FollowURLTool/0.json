@@ -1,0 +1,36 @@
+{
+  "className": "FollowURLTool",
+  "methodName": "mouseMove",
+  "brief": "public void mouseMove(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseMove(MouseEvent, int, int)",
+  "sourceCode": "public void mouseMove(MouseEvent e, int x, int y) {\n\t\tString urlstring = null;\n\t    Figure figure = drawing().findFigureInside(x,y);\n\t    if (figure != null)\n\t\t    urlstring = (String) figure.getAttribute(\"URL\");\n\t    if (urlstring != null)\n\t        fApplet.showStatus(urlstring);\n\t    else\n\t        fApplet.showStatus(\"\");\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ],
+    "java.applet.Applet": [
+      "showStatus(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse move events in the drawing view.\n */\npublic void mouseMove(MouseEvent e, int x, int y) {\n    String urlstring = null;\n    Figure figure = drawing().findFigureInside(x, y);\n    if (figure != null)\n        urlstring = (String) figure.getAttribute(\"URL\");\n    if (urlstring != null)\n        fApplet.showStatus(urlstring);\n    else\n        fApplet.showStatus(\"\");\n}",
+  "method_comment": "\n     * Handles mouse move events in the drawing view.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "Ticket",
+  "methodName": "getDateOpened",
+  "brief": "public Timestamp getDateOpened(){}",
+  "methodSignature": "getDateOpened()",
+  "sourceCode": "public Timestamp getDateOpened() {\n\t\treturn dateOpened;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"dateOpened\"\n */\npublic Timestamp getDateOpened() {\n    return dateOpened;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"dateOpened\"\n\t ",
+  "method_annotation": ""
+}

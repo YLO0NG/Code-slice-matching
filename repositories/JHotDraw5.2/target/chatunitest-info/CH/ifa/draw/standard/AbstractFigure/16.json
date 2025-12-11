@@ -1,0 +1,25 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "addFigureChangeListener",
+  "brief": "public void addFigureChangeListener(FigureChangeListener l){}",
+  "methodSignature": "addFigureChangeListener(FigureChangeListener)",
+  "sourceCode": "public void addFigureChangeListener(FigureChangeListener l) {\n        fListener = FigureChangeEventMulticaster.add(fListener, l);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": [],
+    "CH.ifa.draw.standard.FigureChangeEventMulticaster": [
+      "add(FigureChangeListener, FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a listener for this figure.\n */\npublic void addFigureChangeListener(FigureChangeListener l) {\n    fListener = FigureChangeEventMulticaster.add(fListener, l);\n}",
+  "method_comment": "\n     * Adds a listener for this figure.\n     ",
+  "method_annotation": ""
+}

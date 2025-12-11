@@ -1,0 +1,37 @@
+{
+  "fullClassName": "CH.ifa.draw.util.Storable",
+  "className": "Storable",
+  "index": 166,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public interface Storable",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import java.io.*;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "write(StorableOutput)": "0",
+    "read(StorableInput)": "1"
+  },
+  "methodsBrief": [
+    "public void write(StorableOutput dw);",
+    "public void read(StorableInput dr) throws IOException;"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)Storable.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport java.io.*;\n\n/**\n * Interface that is used by StorableInput and StorableOutput\n * to flatten and resurrect objects. Objects that implement\n * this interface and that are resurrected by StorableInput\n * have to provide a default constructor with no arguments.\n *\n * @see StorableInput\n * @see StorableOutput\n */\npublic interface Storable {\n\n    /**\n     * Writes the object to the StorableOutput.\n     */\n    public void write(StorableOutput dw);\n\n    /**\n     * Reads the object from the StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException;\n}\n",
+  "classDeclarationCode": "/**\n * Interface that is used by StorableInput and StorableOutput\n * to flatten and resurrect objects. Objects that implement\n * this interface and that are resurrected by StorableInput\n * have to provide a default constructor with no arguments.\n *\n * @see StorableInput\n * @see StorableOutput\n */\npublic interface Storable {\n\n    /**\n     * Writes the object to the StorableOutput.\n     */\n    public void write(StorableOutput dw);\n\n    /**\n     * Reads the object from the StorableInput.\n     */\n    public void read(StorableInput dr) throws IOException;\n}",
+  "subClasses": []
+}

@@ -1,0 +1,33 @@
+{
+  "fullClassName": "junit.framework.Protectable",
+  "className": "Protectable",
+  "index": 12,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public interface Protectable",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "protect()": "0"
+  },
+  "methodsBrief": [
+    "public abstract void protect() throws Throwable;"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.framework;\r\n\r\n/**\r\n * A <em>Protectable</em> can be run and can throw a Throwable.\r\n *\r\n * @see TestResult\r\n */\r\npublic interface Protectable {\r\n\r\n    /**\r\n     * Run the the following method protected.\r\n     */\r\n    public abstract void protect() throws Throwable;\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A <em>Protectable</em> can be run and can throw a Throwable.\r\n *\r\n * @see TestResult\r\n */\r\npublic interface Protectable {\r\n\r\n    /**\r\n     * Run the the following method protected.\r\n     */\r\n    public abstract void protect() throws Throwable;\r\n}",
+  "subClasses": []
+}

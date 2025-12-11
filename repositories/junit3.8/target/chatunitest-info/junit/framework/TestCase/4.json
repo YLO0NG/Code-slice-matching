@@ -1,0 +1,24 @@
+{
+  "className": "TestCase",
+  "methodName": "runBare",
+  "brief": "public void runBare() throws Throwable{}",
+  "methodSignature": "runBare()",
+  "sourceCode": "public void runBare() throws Throwable {\r\n\t\tsetUp();\r\n\t\ttry {\r\n\t\t\trunTest();\r\n\t\t}\r\n\t\tfinally {\r\n\t\t\ttearDown();\r\n\t\t}\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.framework.TestCase": [
+      "runTest()",
+      "tearDown()",
+      "setUp()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Runs the bare test sequence.\r\n * @exception Throwable if any exception is thrown\r\n */\r\npublic void runBare() throws Throwable {\r\n    setUp();\r\n    try {\r\n        runTest();\r\n    } finally {\r\n        tearDown();\r\n    }\r\n}",
+  "method_comment": "\r\n\t * Runs the bare test sequence.\r\n\t * @exception Throwable if any exception is thrown\r\n\t ",
+  "method_annotation": ""
+}

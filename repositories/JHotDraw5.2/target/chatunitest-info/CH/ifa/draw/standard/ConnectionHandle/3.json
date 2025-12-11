@@ -1,0 +1,28 @@
+{
+  "className": "ConnectionHandle",
+  "methodName": "startConnector",
+  "brief": "private Connector startConnector(){}",
+  "methodSignature": "startConnector()",
+  "sourceCode": "private Connector startConnector() {\n        Point p = locate();\n        return owner().connectorAt(p.x, p.y);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.LocatorHandle": [
+      "locate()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "connectorAt(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractHandle": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "private Connector startConnector() {\n    Point p = locate();\n    return owner().connectorAt(p.x, p.y);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

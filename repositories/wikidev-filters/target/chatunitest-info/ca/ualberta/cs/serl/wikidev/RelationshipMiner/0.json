@@ -1,0 +1,18 @@
+{
+  "className": "RelationshipMiner",
+  "methodName": "getProjectsChanged",
+  "brief": "public Set<Project> getProjectsChanged(){}",
+  "methodSignature": "getProjectsChanged()",
+  "sourceCode": "public Set<Project> getProjectsChanged() {\n\t\treturn projectsChanged;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"projectsChanged\"\n */\npublic Set<Project> getProjectsChanged() {\n    return projectsChanged;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"projectsChanged\"\n\t ",
+  "method_annotation": ""
+}

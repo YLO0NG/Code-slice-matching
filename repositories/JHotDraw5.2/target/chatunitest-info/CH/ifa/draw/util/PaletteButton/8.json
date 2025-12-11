@@ -1,0 +1,28 @@
+{
+  "className": "PaletteButton",
+  "methodName": "mouseExited",
+  "brief": "public void mouseExited(MouseEvent e){}",
+  "methodSignature": "mouseExited(MouseEvent)",
+  "sourceCode": "public void mouseExited(MouseEvent e) {\n        if (fState == PRESSED) // JDK1.1 on MS-Windows sometimes looses mouse released\n            mouseDragged(e);\n        fListener.paletteUserOver(this, false);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.util.PaletteButton": [
+      "mouseDragged(MouseEvent)"
+    ],
+    "CH.ifa.draw.util.PaletteListener": [
+      "paletteUserOver(PaletteButton, boolean)"
+    ]
+  },
+  "full_method_info": "public void mouseExited(MouseEvent e) {\n    if (// JDK1.1 on MS-Windows sometimes looses mouse released\n    fState == PRESSED)\n        mouseDragged(e);\n    fListener.paletteUserOver(this, false);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "DeleteCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        deleteSelection();\n        fView.checkDamage();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.FigureTransferCommand": [
+      "deleteSelection()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "checkDamage()"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    deleteSelection();\n    fView.checkDamage();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

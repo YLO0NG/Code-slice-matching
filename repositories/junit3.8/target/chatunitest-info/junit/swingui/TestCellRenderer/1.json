@@ -1,0 +1,26 @@
+{
+  "className": "TestCellRenderer",
+  "methodName": "displayString",
+  "brief": "public static String displayString(String className){}",
+  "methodSignature": "displayString(String)",
+  "sourceCode": "public static String displayString(String className) {\r\n\t\t\tint typeIndex= className.lastIndexOf('.');\r\n    \t\t\tif (typeIndex < 0) \r\n    \t\t\t\treturn className;\r\n    \t\t\treturn className.substring(typeIndex+1) + \" - \" + className.substring(0, typeIndex);\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "substring(int)",
+      "substring(int, int)",
+      "lastIndexOf(int)"
+    ]
+  },
+  "full_method_info": "public static String displayString(String className) {\r\n    int typeIndex = className.lastIndexOf('.');\r\n    if (typeIndex < 0)\r\n        return className;\r\n    return className.substring(typeIndex + 1) + \" - \" + className.substring(0, typeIndex);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

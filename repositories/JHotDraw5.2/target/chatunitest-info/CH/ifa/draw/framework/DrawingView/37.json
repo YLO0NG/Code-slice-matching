@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "setCursor",
+  "brief": "public void setCursor(Cursor c);",
+  "methodSignature": "setCursor(Cursor)",
+  "sourceCode": "public void setCursor(Cursor c);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Cursor"
+  ],
+  "dependentMethods": {
+    "java.awt.Cursor": []
+  },
+  "full_method_info": "/**\n * Sets the cursor of the DrawingView\n */\npublic void setCursor(Cursor c);",
+  "method_comment": "\n     * Sets the cursor of the DrawingView\n     ",
+  "method_annotation": ""
+}

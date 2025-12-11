@@ -1,0 +1,31 @@
+{
+  "className": "CustomToolBar",
+  "methodName": "activateTools",
+  "brief": "public void activateTools(){}",
+  "methodSignature": "activateTools()",
+  "sourceCode": "public void activateTools() {\n        if (!needsUpdate) {\n            return;\n        }\n        else {\n            removeAll();\n\n            JComponent currentTool = null;\n            Enumeration enumeration = currentTools.elements();\n            while (enumeration.hasMoreElements()) {\n                currentTool = (JComponent)enumeration.nextElement();\n                super.add(currentTool);\n            }\n            validate();\n            needsUpdate = false;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Container": [
+      "validate()",
+      "removeAll()",
+      "add(Component)"
+    ],
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ]
+  },
+  "full_method_info": "/**\n * Activate a palette of the ToolBar by setting all Tools\n */\npublic void activateTools() {\n    if (!needsUpdate) {\n        return;\n    } else {\n        removeAll();\n        JComponent currentTool = null;\n        Enumeration enumeration = currentTools.elements();\n        while (enumeration.hasMoreElements()) {\n            currentTool = (JComponent) enumeration.nextElement();\n            super.add(currentTool);\n        }\n        validate();\n        needsUpdate = false;\n    }\n}",
+  "method_comment": "\n     * Activate a palette of the ToolBar by setting all Tools\n     ",
+  "method_annotation": ""
+}

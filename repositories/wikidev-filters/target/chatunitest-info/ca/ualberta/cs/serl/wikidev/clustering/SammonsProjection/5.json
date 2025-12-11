@@ -1,0 +1,22 @@
+{
+  "className": "SammonsProjection",
+  "methodName": "CalculateDistanceMatrix",
+  "brief": "private double[][] CalculateDistanceMatrix()\r\n{}",
+  "methodSignature": "CalculateDistanceMatrix()",
+  "sourceCode": "private double[][] CalculateDistanceMatrix()\n\t{\n\t\tdouble[][] distanceMatrix = new double[this.Count][];\n\t\tdouble[][] inputData = this.InputData;\n\n\t\tfor (int i=0;i<distanceMatrix.length;i++)\n\t\t{\n\t\t\tdouble[] distances = new double[this.Count];\n\t\t\t\n\n\t\t\tdouble[] inputI = inputData[i];\n\n\t\t\tfor (int j = 0; j < distances.length; j++)\n\t\t\t{\n\t\t\t\tif (j == i)\n\t\t\t\t{\n\t\t\t\t\tdistances[j] = 0;\n\t\t\t\t\tcontinue;\n\t\t\t\t}\n\n\t\t\t\tdistances[j] = Helper.ManhattenDistance(\n\t\t\t\t\tinputI,\n\t\t\t\t\tinputData[j]);\n\t\t\t}\n\t\t\tdistanceMatrix[i] = distances;\n\t\t}\n\n\t\treturn distanceMatrix;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Helper": [
+      "ManhattenDistance(double[], double[])"
+    ]
+  },
+  "full_method_info": "private double[][] CalculateDistanceMatrix() {\n    double[][] distanceMatrix = new double[this.Count][];\n    double[][] inputData = this.InputData;\n    for (int i = 0; i < distanceMatrix.length; i++) {\n        double[] distances = new double[this.Count];\n        double[] inputI = inputData[i];\n        for (int j = 0; j < distances.length; j++) {\n            if (j == i) {\n                distances[j] = 0;\n                continue;\n            }\n            distances[j] = Helper.ManhattenDistance(inputI, inputData[j]);\n        }\n        distanceMatrix[i] = distances;\n    }\n    return distanceMatrix;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

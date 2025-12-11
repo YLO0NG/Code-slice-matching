@@ -1,0 +1,35 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printFooter",
+  "brief": "protected void printFooter(TestResult result){}",
+  "methodSignature": "printFooter(TestResult)",
+  "sourceCode": "protected void printFooter(TestResult result) {\r\n\t\tif (result.wasSuccessful()) {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().print(\"OK\");\r\n\t\t\tgetWriter().println (\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\": \"s\") + \")\");\r\n\r\n\t\t} else {\r\n\t\t\tgetWriter().println();\r\n\t\t\tgetWriter().println(\"FAILURES!!!\");\r\n\t\t\tgetWriter().println(\"Tests run: \"+result.runCount()+ \r\n\t\t\t\t         \",  Failures: \"+result.failureCount()+\r\n\t\t\t\t         \",  Errors: \"+result.errorCount());\r\n\t\t}\r\n\t    getWriter().println();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "wasSuccessful()",
+      "runCount()",
+      "failureCount()",
+      "errorCount()"
+    ],
+    "java.io.PrintStream": [
+      "print(String)",
+      "println(String)",
+      "println()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ]
+  },
+  "full_method_info": "protected void printFooter(TestResult result) {\r\n    if (result.wasSuccessful()) {\r\n        getWriter().println();\r\n        getWriter().print(\"OK\");\r\n        getWriter().println(\" (\" + result.runCount() + \" test\" + (result.runCount() == 1 ? \"\" : \"s\") + \")\");\r\n    } else {\r\n        getWriter().println();\r\n        getWriter().println(\"FAILURES!!!\");\r\n        getWriter().println(\"Tests run: \" + result.runCount() + \",  Failures: \" + result.failureCount() + \",  Errors: \" + result.errorCount());\r\n    }\r\n    getWriter().println();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

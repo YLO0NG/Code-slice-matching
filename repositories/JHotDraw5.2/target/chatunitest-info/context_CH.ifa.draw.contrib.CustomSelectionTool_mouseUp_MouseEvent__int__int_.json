@@ -1,0 +1,26 @@
+{
+  "targetClass": "CH.ifa.draw.contrib.CustomSelectionTool",
+  "targetMethod": "mouseUp(MouseEvent, int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;",
+    "CH.ifa.draw.standard.SelectionTool": "private Tool fChild = null;",
+    "CH.ifa.draw.contrib.CustomSelectionTool": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public Object getAttribute(String name);",
+    "CH.ifa.draw.framework.Drawing": "public Figure findFigureInside(int x, int y);\npublic Figure findFigure(int x, int y);",
+    "CH.ifa.draw.standard.AbstractTool": "public Drawing drawing(){}",
+    "CH.ifa.draw.standard.SelectionTool": "public void mouseUp(MouseEvent e, int x, int y){}",
+    "CH.ifa.draw.contrib.CustomSelectionTool": "protected void showPopupMenu(Figure figure, int x, int y, Component comp){}\nprotected void handleMouseClick(MouseEvent e, int x, int y){}\nprotected void handleMouseUp(MouseEvent e, int x, int y){}\nprotected void handleMouseDoubleClick(MouseEvent e, int x, int y){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Returns the named attribute or null if a\n     * a figure doesn't have an attribute.\n     * All figures support the attribute names\n     * FillColor and FrameColor\n     \npublic Object getAttribute(String name);",
+    "CH.ifa.draw.framework.Drawing": "* Finds a figure but descends into a figure's\n     * children. Use this method to implement <i>click-through</i>\n     * hit detection, that is, you want to detect the inner most\n     * figure containing the given point.\n     \npublic Figure findFigureInside(int x, int y);\n\n     * Finds a top level Figure. Use this call for hit detection that\n     * should not descend into the figure's children.\n     \npublic Figure findFigure(int x, int y);",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's drawing.\n     \npublic Drawing drawing() {\n        return view().drawing();\n    }",
+    "CH.ifa.draw.standard.SelectionTool": "* Handles mouse up events. The events are forwarded to the\n     * current tracker.\n     \npublic void mouseUp(MouseEvent e, int x, int y) {\n        view().unfreezeView();\n        if (fChild != null) // JDK1.1 doesn't guarantee mouseDown, mouseDrag, mouseUp\n            fChild.mouseUp(e, x, y);\n        fChild = null;\n    }",
+    "CH.ifa.draw.contrib.CustomSelectionTool": "* This method displays a popup menu, if there is one registered with the\n\t * Figure (the Figure's attributes are queried for Figure.POPUP_MENU which\n\t * is used to indicate an association of a popup menu with the Figure).\n\t *\n\t * @param   figure      Figure for which a popup menu should be displayed\n\t * @param   x           x coordinate where the popup menu should be displayed\n\t * @param   y           y coordinate where the popup menu should be displayed\n\t * @param   component   Component which invoked the popup menu\n\t \nprotected void showPopupMenu(Figure figure, int x, int y, Component comp) {\n        Object attribute = figure.getAttribute(Figure.POPUP_MENU);\n        if ((attribute != null) && (attribute instanceof JPopupMenu)) {\n    \t    JPopupMenu popup = (JPopupMenu)attribute;\n    \t    if (popup instanceof PopupMenuFigureSelection) {\n    \t        ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);\n    \t    }\n    \t    // calculate offsets for internal MDI frames\n    \t    Point newLocation = new Point(x, y);\n    \t    adjustOffsets(comp.getParent(), newLocation);\n    \t\tpopup.setLocation(newLocation);\n    \t\tpopup.setInvoker(comp);\n    \t\tpopup.setVisible(true);\n\t\t}\n\t}\n\n\t * Hook method which can be overriden by subclasses to provide\n\t * specialised behaviour in the event of a mouse click.\n\t \nprotected void handleMouseClick(MouseEvent e, int x, int y) {\n\t}\n\n\t * Hook method which can be overriden by subclasses to provide\n\t * specialised behaviour in the event of a mouse up.\n\t \nprotected void handleMouseUp(MouseEvent e, int x, int y) {\n\t}\n\n\t * Hook method which can be overriden by subclasses to provide\n\t * specialised behaviour in the event of a mouse double click.\n\t \nprotected void handleMouseDoubleClick(MouseEvent e, int x, int y) {\n\t}"
+  }
+}

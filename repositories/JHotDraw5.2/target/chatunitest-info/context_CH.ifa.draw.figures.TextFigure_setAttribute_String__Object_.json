@@ -1,0 +1,20 @@
+{
+  "targetClass": "CH.ifa.draw.figures.TextFigure",
+  "targetMethod": "setAttribute(String, Object)",
+  "dependentFields": {
+    "CH.ifa.draw.standard.AbstractFigure": "private transient FigureChangeListener fListener;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int abstractFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.util.ColorMap": "static ColorEntry fMap[] = {\n                new ColorEntry(\"Black\",         Color.black),\n                new ColorEntry(\"Blue\",          Color.blue),\n                new ColorEntry(\"Green\",         Color.green),\n                new ColorEntry(\"Red\",           Color.red),\n                new ColorEntry(\"Pink\",          Color.pink),\n                new ColorEntry(\"Magenta\",       Color.magenta),\n                new ColorEntry(\"Orange\",        Color.orange),\n                new ColorEntry(\"Yellow\",        Color.yellow),\n                new ColorEntry(\"New Tan\",       new Color(0xEBC79E)),\n                new ColorEntry(\"Aquamarine\",    new Color(0x70DB93)),\n                new ColorEntry(\"Sea Green\",     new Color(0x238E68)),\n                new ColorEntry(\"Dark Gray\",     Color.darkGray),\n                new ColorEntry(\"Light Gray\",    Color.lightGray),\n                new ColorEntry(\"White\",         Color.white),\n                // there is no support for alpha values so we use a special value\n                // to represent a transparent color\n                new ColorEntry(\"None\",          new Color(0xFFC79E))\n    };",
+    "CH.ifa.draw.figures.AttributeFigure": "private FigureAttributes        fAttributes;\nprivate static FigureAttributes fgDefaultAttributes = null;\nprivate static final long serialVersionUID = -10857585979273442L;\nprivate int attributeFigureSerializedDataVersion = 1;",
+    "CH.ifa.draw.figures.TextFigure": "private int               fOriginX;\nprivate int               fOriginY;\ntransient private boolean fSizeIsDirty = true;\ntransient private int     fWidth;\ntransient private int     fHeight;\nprivate String  fText;\nprivate Font    fFont;\nprivate boolean fIsReadOnly;\nprivate Figure  fObservedFigure = null;\nprivate OffsetLocator fLocator = null;\nprivate static String fgCurrentFontName  = \"Helvetica\";\nprivate static int    fgCurrentFontSize  = 12;\nprivate static int    fgCurrentFontStyle = Font.PLAIN;\nprivate static final long serialVersionUID = 4599820785949456124L;\nprivate int textFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": "public void willChange(){}",
+    "CH.ifa.draw.figures.AttributeFigure": "public void setAttribute(String name, Object value){}",
+    "CH.ifa.draw.figures.TextFigure": "public Font getFont(){}\npublic void changed(){}\nprivate void markDirty(){}\npublic void setFont(Font newFont){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.standard.AbstractFigure": "* Informes that a figure is about to change something that\n     * affects the contents of its display box.\n     *\n     * @see Figure#willChange\n     \npublic void willChange() {\n        invalidate();\n    }",
+    "CH.ifa.draw.figures.AttributeFigure": "* Sets the named attribute to the new value\n     \npublic void setAttribute(String name, Object value) {\n        if (fAttributes == null)\n            fAttributes = new FigureAttributes();\n        fAttributes.set(name, value);\n        changed();\n    }",
+    "CH.ifa.draw.figures.TextFigure": "* Gets the font.\n     \npublic Font getFont() {\n        return fFont;\n    }\n\n     * Updates the location whenever the figure changes itself.\n     \npublic void changed() {\n        super.changed();\n        updateLocation();\n    }\nprivate void markDirty() {\n        fSizeIsDirty = true;\n    }\n\n     * Sets the font.\n     \npublic void setFont(Font newFont) {\n        willChange();\n        fFont = newFont;\n        markDirty();\n        changed();\n    }"
+  }
+}

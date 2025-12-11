@@ -1,0 +1,18 @@
+{
+  "className": "PolyLineFigure",
+  "methodName": "getEndDecoration",
+  "brief": "public LineDecoration getEndDecoration(){}",
+  "methodSignature": "getEndDecoration()",
+  "sourceCode": "public LineDecoration getEndDecoration() {\n\t\treturn fEndDecoration;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns the end decoration.\n */\npublic LineDecoration getEndDecoration() {\n    return fEndDecoration;\n}",
+  "method_comment": "\n\t * Returns the end decoration.\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,66 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.CreationTool",
+  "className": "CreationTool",
+  "index": 119,
+  "modifier": "[public ]",
+  "extend": "[AbstractTool]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class CreationTool",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "private Point   fAnchorPoint;",
+    "private Figure  fCreatedFigure;",
+    "private Figure  fPrototype;"
+  ],
+  "superClasses": [
+    "AbstractTool"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "activate()": "0",
+    "mouseDown(MouseEvent, int, int)": "1",
+    "createFigure()": "2",
+    "mouseDrag(MouseEvent, int, int)": "3",
+    "mouseUp(MouseEvent, int, int)": "4",
+    "createdFigure()": "5",
+    "CreationTool(DrawingView, Figure)": "6",
+    "CreationTool(DrawingView)": "7"
+  },
+  "methodsBrief": [
+    "public void activate(){}",
+    "public void mouseDown(MouseEvent e, int x, int y){}",
+    "protected Figure createFigure(){}",
+    "public void mouseDrag(MouseEvent e, int x, int y){}",
+    "public void mouseUp(MouseEvent e, int x, int y){}",
+    "protected Figure createdFigure(){}",
+    "public CreationTool(DrawingView view, Figure prototype){}",
+    "protected CreationTool(DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "CreationTool(DrawingView, Figure)",
+    "CreationTool(DrawingView)"
+  ],
+  "constructorBrief": [
+    "public CreationTool(DrawingView view, Figure prototype){}",
+    "protected CreationTool(DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)CreationTool.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport CH.ifa.draw.framework.*;\n\n/**\n * A tool to create new figures. The figure to be\n * created is specified by a prototype.\n *\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld029.htm>Prototype</a></b><br>\n * CreationTool creates new figures by cloning a prototype.\n * <hr>\n * @see Figure\n * @see Object#clone\n */\npublic class CreationTool extends AbstractTool {\n\n    /**\n     * the anchor point of the interaction\n     */\n    private Point fAnchorPoint;\n\n    /**\n     * the currently created figure\n     */\n    private Figure fCreatedFigure;\n\n    /**\n     * the prototypical figure that is used to create new figures.\n     */\n    private Figure fPrototype;\n\n    public CreationTool(DrawingView view, Figure prototype) {\n        super(view);\n        fPrototype = prototype;\n    }\n\n    protected CreationTool(DrawingView view) {\n        super(view);\n        fPrototype = null;\n    }\n\n    /**\n     * Sets the cross hair cursor.\n     */\n    public void activate() {\n        view().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));\n    }\n\n    /**\n     * Creates a new figure by cloning the prototype.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorPoint = new Point(x, y);\n        fCreatedFigure = createFigure();\n        fCreatedFigure.displayBox(fAnchorPoint, fAnchorPoint);\n        view().add(fCreatedFigure);\n    }\n\n    /**\n     * Creates a new figure by cloning the prototype.\n     */\n    protected Figure createFigure() {\n        if (fPrototype == null)\n            throw new HJDError(\"No protoype defined\");\n        return (Figure) fPrototype.clone();\n    }\n\n    /**\n     * Adjusts the extent of the created figure\n     */\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        fCreatedFigure.displayBox(fAnchorPoint, new Point(x, y));\n    }\n\n    /**\n     * Checks if the created figure is empty. If it is, the figure\n     * is removed from the drawing.\n     * @see Figure#isEmpty\n     */\n    public void mouseUp(MouseEvent e, int x, int y) {\n        if (fCreatedFigure.isEmpty())\n            drawing().remove(fCreatedFigure);\n        fCreatedFigure = null;\n        editor().toolDone();\n    }\n\n    /**\n     * Gets the currently created figure\n     */\n    protected Figure createdFigure() {\n        return fCreatedFigure;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A tool to create new figures. The figure to be\n * created is specified by a prototype.\n *\n * <hr>\n * <b>Design Patterns</b><P>\n * <img src=\"images/red-ball-small.gif\" width=6 height=6 alt=\" o \">\n * <b><a href=../pattlets/sld029.htm>Prototype</a></b><br>\n * CreationTool creates new figures by cloning a prototype.\n * <hr>\n * @see Figure\n * @see Object#clone\n */\npublic class CreationTool extends AbstractTool {\n\n    /**\n     * the anchor point of the interaction\n     */\n    private Point fAnchorPoint;\n\n    /**\n     * the currently created figure\n     */\n    private Figure fCreatedFigure;\n\n    /**\n     * the prototypical figure that is used to create new figures.\n     */\n    private Figure fPrototype;\n\n    public CreationTool(DrawingView view, Figure prototype) {\n        super(view);\n        fPrototype = prototype;\n    }\n\n    protected CreationTool(DrawingView view) {\n        super(view);\n        fPrototype = null;\n    }\n\n    /**\n     * Sets the cross hair cursor.\n     */\n    public void activate() {\n        view().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));\n    }\n\n    /**\n     * Creates a new figure by cloning the prototype.\n     */\n    public void mouseDown(MouseEvent e, int x, int y) {\n        fAnchorPoint = new Point(x, y);\n        fCreatedFigure = createFigure();\n        fCreatedFigure.displayBox(fAnchorPoint, fAnchorPoint);\n        view().add(fCreatedFigure);\n    }\n\n    /**\n     * Creates a new figure by cloning the prototype.\n     */\n    protected Figure createFigure() {\n        if (fPrototype == null)\n            throw new HJDError(\"No protoype defined\");\n        return (Figure) fPrototype.clone();\n    }\n\n    /**\n     * Adjusts the extent of the created figure\n     */\n    public void mouseDrag(MouseEvent e, int x, int y) {\n        fCreatedFigure.displayBox(fAnchorPoint, new Point(x, y));\n    }\n\n    /**\n     * Checks if the created figure is empty. If it is, the figure\n     * is removed from the drawing.\n     * @see Figure#isEmpty\n     */\n    public void mouseUp(MouseEvent e, int x, int y) {\n        if (fCreatedFigure.isEmpty())\n            drawing().remove(fCreatedFigure);\n        fCreatedFigure = null;\n        editor().toolDone();\n    }\n\n    /**\n     * Gets the currently created figure\n     */\n    protected Figure createdFigure() {\n        return fCreatedFigure;\n    }\n}",
+  "subClasses": []
+}

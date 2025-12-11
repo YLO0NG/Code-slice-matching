@@ -1,0 +1,18 @@
+{
+  "className": "JavaDrawViewer",
+  "methodName": "toolDone",
+  "brief": "public void toolDone(){}",
+  "methodSignature": "toolDone()",
+  "sourceCode": "public void toolDone() {}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the editor's default tool. Do nothing since we only have one tool.\n */\npublic void toolDone() {\n}",
+  "method_comment": "\n     * Sets the editor's default tool. Do nothing since we only have one tool.\n     ",
+  "method_annotation": ""
+}

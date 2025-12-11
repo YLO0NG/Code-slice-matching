@@ -1,0 +1,20 @@
+{
+  "className": "TestRunListener",
+  "methodName": "testRunStopped",
+  "brief": "public void testRunStopped(long elapsedTime);",
+  "methodSignature": "testRunStopped(long)",
+  "sourceCode": "public void testRunStopped(long elapsedTime);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "long"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void testRunStopped(long elapsedTime);",
+  "method_comment": "",
+  "method_annotation": ""
+}

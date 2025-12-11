@@ -1,0 +1,89 @@
+{
+  "fullClassName": "junit.swingui.TestSuitePanel",
+  "className": "TestSuitePanel",
+  "index": 51,
+  "modifier": "[]",
+  "extend": "[JPanel]",
+  "implement": "[TestListener]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "class TestSuitePanel",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.Vector;",
+    "import javax.swing.*;",
+    "import javax.swing.tree.*;",
+    "import junit.framework.*;"
+  ],
+  "fields": [
+    "private JTree fTree;",
+    "private JScrollPane fScrollTree;",
+    "private TestTreeModel fModel;"
+  ],
+  "superClasses": [
+    "JPanel"
+  ],
+  "implementedTypes": [
+    "TestListener"
+  ],
+  "methodSigs": {
+    "addError(Test, Throwable)": "0",
+    "addFailure(Test, AssertionFailedError)": "1",
+    "endTest(Test)": "2",
+    "startTest(Test)": "3",
+    "getSelectedTest()": "4",
+    "getTree()": "5",
+    "showTestTree(Test)": "6",
+    "fireTestChanged(Test, boolean)": "7",
+    "TestSuitePanel()": "8"
+  },
+  "methodsBrief": [
+    "public void addError(final Test test, final Throwable t){}",
+    "public void addFailure(final Test test, final AssertionFailedError t){}",
+    "public void endTest(Test test){}",
+    "public void startTest(Test test){}",
+    "public Test getSelectedTest(){}",
+    "public JTree getTree(){}",
+    "public void showTestTree(Test root){}",
+    "private void fireTestChanged(final Test test, final boolean expand){}",
+    "public TestSuitePanel(){}"
+  ],
+  "constructorSigs": [
+    "TestSuitePanel()"
+  ],
+  "constructorBrief": [
+    "public TestSuitePanel(){}"
+  ],
+  "getterSetterSigs": [
+    "getSelectedTest()",
+    "getTree()"
+  ],
+  "getterSetterBrief": [
+    "public Test getSelectedTest(){}",
+    "public JTree getTree(){}"
+  ],
+  "constructorDeps": {
+    "javax.swing.JComponent": [
+      "putClientProperty(Object, Object)",
+      "setPreferredSize(Dimension)"
+    ],
+    "javax.swing.JTree": [
+      "setRowHeight(int)",
+      "setModel(TreeModel)"
+    ],
+    "javax.swing.ToolTipManager": [
+      "registerComponent(JComponent)",
+      "sharedInstance()"
+    ],
+    "java.awt.Container": [
+      "add(Component, Object)"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.*;\r\nimport java.util.Vector;\r\nimport javax.swing.*;\r\nimport javax.swing.tree.*;\r\nimport junit.framework.*;\r\n\r\n/**\r\n * A Panel showing a test suite as a tree.\r\n */\r\nclass TestSuitePanel extends JPanel implements TestListener {\r\n\r\n    private JTree fTree;\r\n\r\n    private JScrollPane fScrollTree;\r\n\r\n    private TestTreeModel fModel;\r\n\r\n    static class TestTreeCellRenderer extends DefaultTreeCellRenderer {\r\n\r\n        private Icon fErrorIcon;\r\n\r\n        private Icon fOkIcon;\r\n\r\n        private Icon fFailureIcon;\r\n\r\n        TestTreeCellRenderer() {\r\n            super();\r\n            loadIcons();\r\n        }\r\n\r\n        void loadIcons() {\r\n            fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n            fOkIcon = TestRunner.getIconResource(getClass(), \"icons/ok.gif\");\r\n            fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n        }\r\n\r\n        String stripParenthesis(Object o) {\r\n            String text = o.toString();\r\n            int pos = text.indexOf('(');\r\n            if (pos < 1)\r\n                return text;\r\n            return text.substring(0, pos);\r\n        }\r\n\r\n        public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {\r\n            Component c = super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);\r\n            TreeModel model = tree.getModel();\r\n            if (model instanceof TestTreeModel) {\r\n                TestTreeModel testModel = (TestTreeModel) model;\r\n                Test t = (Test) value;\r\n                String s = \"\";\r\n                if (testModel.isFailure(t)) {\r\n                    if (fFailureIcon != null)\r\n                        setIcon(fFailureIcon);\r\n                    s = \" - Failed\";\r\n                } else if (testModel.isError(t)) {\r\n                    if (fErrorIcon != null)\r\n                        setIcon(fErrorIcon);\r\n                    s = \" - Error\";\r\n                } else if (testModel.wasRun(t)) {\r\n                    if (fOkIcon != null)\r\n                        setIcon(fOkIcon);\r\n                    s = \" - Passed\";\r\n                }\r\n                if (c instanceof JComponent)\r\n                    ((JComponent) c).setToolTipText(getText() + s);\r\n            }\r\n            setText(stripParenthesis(value));\r\n            return c;\r\n        }\r\n    }\r\n\r\n    public TestSuitePanel() {\r\n        super(new BorderLayout());\r\n        setPreferredSize(new Dimension(300, 100));\r\n        fTree = new JTree();\r\n        fTree.setModel(null);\r\n        fTree.setRowHeight(20);\r\n        ToolTipManager.sharedInstance().registerComponent(fTree);\r\n        fTree.putClientProperty(\"JTree.lineStyle\", \"Angled\");\r\n        fScrollTree = new JScrollPane(fTree);\r\n        add(fScrollTree, BorderLayout.CENTER);\r\n    }\r\n\r\n    public void addError(final Test test, final Throwable t) {\r\n        fModel.addError(test);\r\n        fireTestChanged(test, true);\r\n    }\r\n\r\n    public void addFailure(final Test test, final AssertionFailedError t) {\r\n        fModel.addFailure(test);\r\n        fireTestChanged(test, true);\r\n    }\r\n\r\n    /**\r\n     * A test ended.\r\n     */\r\n    public void endTest(Test test) {\r\n        fModel.addRunTest(test);\r\n        fireTestChanged(test, false);\r\n    }\r\n\r\n    /**\r\n     * A test started.\r\n     */\r\n    public void startTest(Test test) {\r\n    }\r\n\r\n    /**\r\n     * Returns the selected test or null if multiple or none is selected\r\n     */\r\n    public Test getSelectedTest() {\r\n        TreePath[] paths = fTree.getSelectionPaths();\r\n        if (paths != null && paths.length == 1)\r\n            return (Test) paths[0].getLastPathComponent();\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Returns the Tree\r\n     */\r\n    public JTree getTree() {\r\n        return fTree;\r\n    }\r\n\r\n    /**\r\n     * Shows the test hierarchy starting at the given test\r\n     */\r\n    public void showTestTree(Test root) {\r\n        fModel = new TestTreeModel(root);\r\n        fTree.setModel(fModel);\r\n        fTree.setCellRenderer(new TestTreeCellRenderer());\r\n    }\r\n\r\n    private void fireTestChanged(final Test test, final boolean expand) {\r\n        SwingUtilities.invokeLater(new Runnable() {\r\n\r\n            public void run() {\r\n                Vector vpath = new Vector();\r\n                int index = fModel.findTest(test, (Test) fModel.getRoot(), vpath);\r\n                if (index >= 0) {\r\n                    Object[] path = new Object[vpath.size()];\r\n                    vpath.copyInto(path);\r\n                    TreePath treePath = new TreePath(path);\r\n                    fModel.fireNodeChanged(treePath, index);\r\n                    if (expand) {\r\n                        Object[] fullPath = new Object[vpath.size() + 1];\r\n                        vpath.copyInto(fullPath);\r\n                        fullPath[vpath.size()] = fModel.getChild(treePath.getLastPathComponent(), index);\r\n                        ;\r\n                        TreePath fullTreePath = new TreePath(fullPath);\r\n                        fTree.scrollPathToVisible(fullTreePath);\r\n                    }\r\n                }\r\n            }\r\n        });\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A Panel showing a test suite as a tree.\r\n */\r\nclass TestSuitePanel extends JPanel implements TestListener {\r\n\r\n    private JTree fTree;\r\n\r\n    private JScrollPane fScrollTree;\r\n\r\n    private TestTreeModel fModel;\r\n\r\n    static class TestTreeCellRenderer extends DefaultTreeCellRenderer {\r\n\r\n        private Icon fErrorIcon;\r\n\r\n        private Icon fOkIcon;\r\n\r\n        private Icon fFailureIcon;\r\n\r\n        TestTreeCellRenderer() {\r\n            super();\r\n            loadIcons();\r\n        }\r\n\r\n        void loadIcons() {\r\n            fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n            fOkIcon = TestRunner.getIconResource(getClass(), \"icons/ok.gif\");\r\n            fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n        }\r\n\r\n        String stripParenthesis(Object o) {\r\n            String text = o.toString();\r\n            int pos = text.indexOf('(');\r\n            if (pos < 1)\r\n                return text;\r\n            return text.substring(0, pos);\r\n        }\r\n\r\n        public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {\r\n            Component c = super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);\r\n            TreeModel model = tree.getModel();\r\n            if (model instanceof TestTreeModel) {\r\n                TestTreeModel testModel = (TestTreeModel) model;\r\n                Test t = (Test) value;\r\n                String s = \"\";\r\n                if (testModel.isFailure(t)) {\r\n                    if (fFailureIcon != null)\r\n                        setIcon(fFailureIcon);\r\n                    s = \" - Failed\";\r\n                } else if (testModel.isError(t)) {\r\n                    if (fErrorIcon != null)\r\n                        setIcon(fErrorIcon);\r\n                    s = \" - Error\";\r\n                } else if (testModel.wasRun(t)) {\r\n                    if (fOkIcon != null)\r\n                        setIcon(fOkIcon);\r\n                    s = \" - Passed\";\r\n                }\r\n                if (c instanceof JComponent)\r\n                    ((JComponent) c).setToolTipText(getText() + s);\r\n            }\r\n            setText(stripParenthesis(value));\r\n            return c;\r\n        }\r\n    }\r\n\r\n    public TestSuitePanel() {\r\n        super(new BorderLayout());\r\n        setPreferredSize(new Dimension(300, 100));\r\n        fTree = new JTree();\r\n        fTree.setModel(null);\r\n        fTree.setRowHeight(20);\r\n        ToolTipManager.sharedInstance().registerComponent(fTree);\r\n        fTree.putClientProperty(\"JTree.lineStyle\", \"Angled\");\r\n        fScrollTree = new JScrollPane(fTree);\r\n        add(fScrollTree, BorderLayout.CENTER);\r\n    }\r\n\r\n    public void addError(final Test test, final Throwable t) {\r\n        fModel.addError(test);\r\n        fireTestChanged(test, true);\r\n    }\r\n\r\n    public void addFailure(final Test test, final AssertionFailedError t) {\r\n        fModel.addFailure(test);\r\n        fireTestChanged(test, true);\r\n    }\r\n\r\n    /**\r\n     * A test ended.\r\n     */\r\n    public void endTest(Test test) {\r\n        fModel.addRunTest(test);\r\n        fireTestChanged(test, false);\r\n    }\r\n\r\n    /**\r\n     * A test started.\r\n     */\r\n    public void startTest(Test test) {\r\n    }\r\n\r\n    /**\r\n     * Returns the selected test or null if multiple or none is selected\r\n     */\r\n    public Test getSelectedTest() {\r\n        TreePath[] paths = fTree.getSelectionPaths();\r\n        if (paths != null && paths.length == 1)\r\n            return (Test) paths[0].getLastPathComponent();\r\n        return null;\r\n    }\r\n\r\n    /**\r\n     * Returns the Tree\r\n     */\r\n    public JTree getTree() {\r\n        return fTree;\r\n    }\r\n\r\n    /**\r\n     * Shows the test hierarchy starting at the given test\r\n     */\r\n    public void showTestTree(Test root) {\r\n        fModel = new TestTreeModel(root);\r\n        fTree.setModel(fModel);\r\n        fTree.setCellRenderer(new TestTreeCellRenderer());\r\n    }\r\n\r\n    private void fireTestChanged(final Test test, final boolean expand) {\r\n        SwingUtilities.invokeLater(new Runnable() {\r\n\r\n            public void run() {\r\n                Vector vpath = new Vector();\r\n                int index = fModel.findTest(test, (Test) fModel.getRoot(), vpath);\r\n                if (index >= 0) {\r\n                    Object[] path = new Object[vpath.size()];\r\n                    vpath.copyInto(path);\r\n                    TreePath treePath = new TreePath(path);\r\n                    fModel.fireNodeChanged(treePath, index);\r\n                    if (expand) {\r\n                        Object[] fullPath = new Object[vpath.size() + 1];\r\n                        vpath.copyInto(fullPath);\r\n                        fullPath[vpath.size()] = fModel.getChild(treePath.getLastPathComponent(), index);\r\n                        ;\r\n                        TreePath fullTreePath = new TreePath(fullPath);\r\n                        fTree.scrollPathToVisible(fullTreePath);\r\n                    }\r\n                }\r\n            }\r\n        });\r\n    }\r\n}",
+  "subClasses": []
+}

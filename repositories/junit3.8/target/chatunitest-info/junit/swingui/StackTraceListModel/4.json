@@ -1,0 +1,30 @@
+{
+  "className": "StackTraceListModel",
+  "methodName": "scan",
+  "brief": "private void scan(String trace){}",
+  "methodSignature": "scan(String)",
+  "sourceCode": "private void scan(String trace) {\r\n\t\t\tfLines.removeAllElements();\r\n     \t\tStringTokenizer st= new StringTokenizer(trace, \"\\n\\r\", false);\r\n\t    \twhile (st.hasMoreTokens()) \r\n \t\t\t\tfLines.add(st.nextToken());\r\n\t\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.util.Vector": [
+      "removeAllElements()",
+      "add(E)"
+    ],
+    "java.util.StringTokenizer": [
+      "nextToken()",
+      "hasMoreTokens()"
+    ]
+  },
+  "full_method_info": "private void scan(String trace) {\r\n    fLines.removeAllElements();\r\n    StringTokenizer st = new StringTokenizer(trace, \"\\n\\r\", false);\r\n    while (st.hasMoreTokens()) fLines.add(st.nextToken());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

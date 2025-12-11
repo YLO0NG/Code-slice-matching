@@ -1,0 +1,23 @@
+{
+  "className": "Stemmer",
+  "methodName": "step4",
+  "brief": "private final void step4(){}",
+  "methodSignature": "step4()",
+  "sourceCode": "private final void step4() { switch (b[k])\n   {\n       case 'e': if (ends(\"icate\")) { r(\"ic\"); break; }\n                 if (ends(\"ative\")) { r(\"\"); break; }\n                 if (ends(\"alize\")) { r(\"al\"); break; }\n                 break;\n       case 'i': if (ends(\"iciti\")) { r(\"ic\"); break; }\n                 break;\n       case 'l': if (ends(\"ical\")) { r(\"ic\"); break; }\n                 if (ends(\"ful\")) { r(\"\"); break; }\n                 break;\n       case 's': if (ends(\"ness\")) { r(\"\"); break; }\n                 break;\n   } }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "r(String)",
+      "ends(String)"
+    ]
+  },
+  "full_method_info": "/* step4() deals with -ic-, -full, -ness etc. similar strategy to step3. */\nprivate final void step4() {\n    switch(b[k]) {\n        case 'e':\n            if (ends(\"icate\")) {\n                r(\"ic\");\n                break;\n            }\n            if (ends(\"ative\")) {\n                r(\"\");\n                break;\n            }\n            if (ends(\"alize\")) {\n                r(\"al\");\n                break;\n            }\n            break;\n        case 'i':\n            if (ends(\"iciti\")) {\n                r(\"ic\");\n                break;\n            }\n            break;\n        case 'l':\n            if (ends(\"ical\")) {\n                r(\"ic\");\n                break;\n            }\n            if (ends(\"ful\")) {\n                r(\"\");\n                break;\n            }\n            break;\n        case 's':\n            if (ends(\"ness\")) {\n                r(\"\");\n                break;\n            }\n            break;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

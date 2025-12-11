@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.standard.BoxHandleKit",
+  "targetMethod": "addHandles(Figure, Vector)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.standard.BoxHandleKit": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "",
+    "CH.ifa.draw.standard.BoxHandleKit": "static public Handle southWest(Figure owner){}\nstatic public Handle north(Figure owner){}\nstatic public Handle south(Figure owner){}\nstatic public Handle northEast(Figure owner){}\nstatic public Handle northWest(Figure owner){}\nstatic public Handle east(Figure owner){}\nstatic public Handle southEast(Figure owner){}\nstatic public Handle west(Figure owner){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "",
+    "CH.ifa.draw.standard.BoxHandleKit": "static public Handle southWest(Figure owner) {\n        return new SouthWestHandle(owner);\n    }\nstatic public Handle north(Figure owner) {\n        return new NorthHandle(owner);\n    }\nstatic public Handle south(Figure owner) {\n        return new SouthHandle(owner);\n    }\nstatic public Handle northEast(Figure owner) {\n        return new NorthEastHandle(owner);\n    }\nstatic public Handle northWest(Figure owner) {\n        return new NorthWestHandle(owner);\n    }\nstatic public Handle east(Figure owner) {\n        return new EastHandle(owner);\n    }\nstatic public Handle southEast(Figure owner) {\n        return new SouthEastHandle(owner);\n    }\nstatic public Handle west(Figure owner) {\n        return new WestHandle(owner);\n    }"
+  }
+}

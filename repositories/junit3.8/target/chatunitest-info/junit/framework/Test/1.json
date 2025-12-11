@@ -1,0 +1,22 @@
+{
+  "className": "Test",
+  "methodName": "run",
+  "brief": "public abstract void run(TestResult result);",
+  "methodSignature": "run(TestResult)",
+  "sourceCode": "public abstract void run(TestResult result);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": []
+  },
+  "full_method_info": "/**\r\n * Runs a test and collects its result in a TestResult instance.\r\n */\r\npublic abstract void run(TestResult result);",
+  "method_comment": "\r\n\t * Runs a test and collects its result in a TestResult instance.\r\n\t ",
+  "method_annotation": ""
+}

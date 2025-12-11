@@ -1,0 +1,57 @@
+{
+  "fullClassName": "CH.ifa.draw.figures.GroupFigure",
+  "className": "GroupFigure",
+  "index": 35,
+  "modifier": "[public ]",
+  "extend": "[CompositeFigure]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.figures",
+  "packageDeclaration": "package CH.ifa.draw.figures;",
+  "classSignature": "public  class GroupFigure",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import java.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;"
+  ],
+  "fields": [
+    "private static final long serialVersionUID = 8311226373023297933L;",
+    "private int groupFigureSerializedDataVersion = 1;"
+  ],
+  "superClasses": [
+    "CompositeFigure"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "canConnect()": "0",
+    "displayBox()": "1",
+    "basicDisplayBox(Point, Point)": "2",
+    "decompose()": "3",
+    "handles()": "4",
+    "setAttribute(String, Object)": "5"
+  },
+  "methodsBrief": [
+    "public boolean canConnect(){}",
+    "public Rectangle displayBox(){}",
+    "public void basicDisplayBox(Point origin, Point corner){}",
+    "public FigureEnumeration decompose(){}",
+    "public Vector handles(){}",
+    "public void setAttribute(String name, Object value){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "setAttribute(String, Object)"
+  ],
+  "getterSetterBrief": [
+    "public void setAttribute(String name, Object value){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)GroupFigure.java 5.2\n *\n */\npackage CH.ifa.draw.figures;\n\nimport java.awt.*;\nimport java.util.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\n\n/**\n * A Figure that groups a collection of figures.\n */\npublic class GroupFigure extends CompositeFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 8311226373023297933L;\n\n    private int groupFigureSerializedDataVersion = 1;\n\n    /**\n     * GroupFigures cannot be connected\n     */\n    public boolean canConnect() {\n        return false;\n    }\n\n    /**\n     * Gets the display box. The display box is defined as the union\n     * of the contained figures.\n     */\n    public Rectangle displayBox() {\n        FigureEnumeration k = figures();\n        Rectangle r = k.nextFigure().displayBox();\n        while (k.hasMoreElements()) r.add(k.nextFigure().displayBox());\n        return r;\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        // do nothing\n        // we could transform all components proportionally\n    }\n\n    public FigureEnumeration decompose() {\n        return new FigureEnumerator(fFigures);\n    }\n\n    /**\n     * Gets the handles for the GroupFigure.\n     */\n    public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new GroupHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new GroupHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new GroupHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new GroupHandle(this, RelativeLocator.southEast()));\n        return handles;\n    }\n\n    /**\n     * Sets the attribute of all the contained figures.\n     */\n    public void setAttribute(String name, Object value) {\n        super.setAttribute(name, value);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) k.nextFigure().setAttribute(name, value);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A Figure that groups a collection of figures.\n */\npublic class GroupFigure extends CompositeFigure {\n\n    /*\n     * Serialization support.\n     */\n    private static final long serialVersionUID = 8311226373023297933L;\n\n    private int groupFigureSerializedDataVersion = 1;\n\n    /**\n     * GroupFigures cannot be connected\n     */\n    public boolean canConnect() {\n        return false;\n    }\n\n    /**\n     * Gets the display box. The display box is defined as the union\n     * of the contained figures.\n     */\n    public Rectangle displayBox() {\n        FigureEnumeration k = figures();\n        Rectangle r = k.nextFigure().displayBox();\n        while (k.hasMoreElements()) r.add(k.nextFigure().displayBox());\n        return r;\n    }\n\n    public void basicDisplayBox(Point origin, Point corner) {\n        // do nothing\n        // we could transform all components proportionally\n    }\n\n    public FigureEnumeration decompose() {\n        return new FigureEnumerator(fFigures);\n    }\n\n    /**\n     * Gets the handles for the GroupFigure.\n     */\n    public Vector handles() {\n        Vector handles = new Vector();\n        handles.addElement(new GroupHandle(this, RelativeLocator.northWest()));\n        handles.addElement(new GroupHandle(this, RelativeLocator.northEast()));\n        handles.addElement(new GroupHandle(this, RelativeLocator.southWest()));\n        handles.addElement(new GroupHandle(this, RelativeLocator.southEast()));\n        return handles;\n    }\n\n    /**\n     * Sets the attribute of all the contained figures.\n     */\n    public void setAttribute(String name, Object value) {\n        super.setAttribute(name, value);\n        FigureEnumeration k = figures();\n        while (k.hasMoreElements()) k.nextFigure().setAttribute(name, value);\n    }\n}",
+  "subClasses": []
+}

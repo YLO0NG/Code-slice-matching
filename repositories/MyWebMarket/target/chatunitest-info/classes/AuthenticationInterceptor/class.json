@@ -1,0 +1,47 @@
+{
+  "fullClassName": "classes.AuthenticationInterceptor",
+  "className": "AuthenticationInterceptor",
+  "index": 0,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[Interceptor]",
+  "packageName": "classes",
+  "packageDeclaration": "package classes;",
+  "classSignature": "public class AuthenticationInterceptor",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.util.Map;",
+    "import org.apache.log4j.Logger;",
+    "import com.opensymphony.xwork2.Action;",
+    "import com.opensymphony.xwork2.ActionInvocation;",
+    "import com.opensymphony.xwork2.interceptor.Interceptor;"
+  ],
+  "fields": [
+    "private static Logger logger = Logger.getLogger(AuthenticationInterceptor.class);"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Interceptor"
+  ],
+  "methodSigs": {
+    "destroy()": "0",
+    "init()": "1",
+    "intercept(ActionInvocation)": "2"
+  },
+  "methodsBrief": [
+    "public void destroy(){}",
+    "public void init(){}",
+    "public String intercept( ActionInvocation actionInvocation )\r\n\t\t\tthrows Exception{}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * $Id: AuthenticationInterceptor.java 563238 2007-08-06 19:53:57Z apetrelli $\n *\n * Licensed to the Apache Software Foundation (ASF) under one\n * or more contributor license agreements.  See the NOTICE file\n * distributed with this work for additional information\n * regarding copyright ownership.  The ASF licenses this file\n * to you under the Apache License, Version 2.0 (the\n * \"License\"); you may not use this file except in compliance\n * with the License.  You may obtain a copy of the License at\n *\n *  http://www.apache.org/licenses/LICENSE-2.0\n *\n * Unless required by applicable law or agreed to in writing,\n * software distributed under the License is distributed on an\n * \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY\n * KIND, either express or implied.  See the License for the\n * specific language governing permissions and limitations\n * under the License.\n */\npackage classes;\n\nimport java.util.Map;\nimport org.apache.log4j.Logger;\nimport com.opensymphony.xwork2.Action;\nimport com.opensymphony.xwork2.ActionInvocation;\nimport com.opensymphony.xwork2.interceptor.Interceptor;\n\npublic class AuthenticationInterceptor implements Interceptor {\n\n    // f:log\n    private static Logger logger = Logger.getLogger(AuthenticationInterceptor.class);\n\n    public void destroy() {\n    }\n\n    public void init() {\n    }\n\n    public String intercept(ActionInvocation actionInvocation) throws Exception {\n        // f:log\n        logger.info(\"Starting verifying user\");\n        Map session = actionInvocation.getInvocationContext().getSession();\n        User user = (User) session.get(SystemConstants.AUTHENTICATED_USER);\n        boolean isAuthenticated = (null != user);\n        if (isAuthenticated) {\n            // f:log\n            logger.info(\"Finishing verifying user -- verified\");\n            return actionInvocation.invoke();\n        }\n        // f:log\n        logger.info(\"Finishing verifying user -- unverified\");\n        return Action.LOGIN;\n    }\n}\n",
+  "classDeclarationCode": "public class AuthenticationInterceptor implements Interceptor {\n\n    // f:log\n    private static Logger logger = Logger.getLogger(AuthenticationInterceptor.class);\n\n    public void destroy() {\n    }\n\n    public void init() {\n    }\n\n    public String intercept(ActionInvocation actionInvocation) throws Exception {\n        // f:log\n        logger.info(\"Starting verifying user\");\n        Map session = actionInvocation.getInvocationContext().getSession();\n        User user = (User) session.get(SystemConstants.AUTHENTICATED_USER);\n        boolean isAuthenticated = (null != user);\n        if (isAuthenticated) {\n            // f:log\n            logger.info(\"Finishing verifying user -- verified\");\n            return actionInvocation.invoke();\n        }\n        // f:log\n        logger.info(\"Finishing verifying user -- unverified\");\n        return Action.LOGIN;\n    }\n}",
+  "subClasses": []
+}

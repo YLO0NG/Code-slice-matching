@@ -1,0 +1,48 @@
+{
+  "className": "PasteCommand",
+  "methodName": "execute",
+  "brief": "public void execute(){}",
+  "methodSignature": "execute()",
+  "sourceCode": "public void execute() {\n        Point lastClick = fView.lastClick();\n        FigureSelection selection = (FigureSelection)Clipboard.getClipboard().getContents();\n        if (selection != null) {\n            Vector figures = (Vector)selection.getData(FigureSelection.TYPE);\n            if (figures.size() == 0)\n                return;\n            Enumeration k = figures.elements();\n\t\t\tRectangle r1 = ((Figure) k.nextElement()).displayBox();\n\t\t\twhile (k.hasMoreElements())\n\t\t\t    r1.add(((Figure) k.nextElement()).displayBox());\n\n            Rectangle r = r1;\n            fView.clearSelection();\n\n            insertFigures(figures, lastClick.x-r.x, lastClick.y-r.y);\n            fView.checkDamage();\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [
+      "clearSelection()",
+      "lastClick()",
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.util.Clipboard": [
+      "getClipboard()",
+      "getContents()"
+    ],
+    "CH.ifa.draw.framework.FigureSelection": [
+      "getData(String)"
+    ],
+    "java.util.Vector": [
+      "elements()",
+      "size()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "java.awt.Rectangle": [
+      "add(Rectangle)"
+    ],
+    "CH.ifa.draw.standard.FigureTransferCommand": [
+      "insertFigures(Vector, int, int)"
+    ]
+  },
+  "full_method_info": "public void execute() {\n    Point lastClick = fView.lastClick();\n    FigureSelection selection = (FigureSelection) Clipboard.getClipboard().getContents();\n    if (selection != null) {\n        Vector figures = (Vector) selection.getData(FigureSelection.TYPE);\n        if (figures.size() == 0)\n            return;\n        Enumeration k = figures.elements();\n        Rectangle r1 = ((Figure) k.nextElement()).displayBox();\n        while (k.hasMoreElements()) r1.add(((Figure) k.nextElement()).displayBox());\n        Rectangle r = r1;\n        fView.clearSelection();\n        insertFigures(figures, lastClick.x - r.x, lastClick.y - r.y);\n        fView.checkDamage();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

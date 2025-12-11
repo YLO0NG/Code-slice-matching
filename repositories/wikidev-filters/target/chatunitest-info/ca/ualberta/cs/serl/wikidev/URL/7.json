@@ -1,0 +1,22 @@
+{
+  "className": "URL",
+  "methodName": "setProjectName",
+  "brief": "public void setProjectName(String projectName){}",
+  "methodSignature": "setProjectName(String)",
+  "sourceCode": "public void setProjectName(String projectName) {\n\t\tthis.projectName = projectName;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param  projectName\n * @uml.property  name=\"projectName\"\n */\npublic void setProjectName(String projectName) {\n    this.projectName = projectName;\n}",
+  "method_comment": "\n\t * @param  projectName\n\t * @uml.property  name=\"projectName\"\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "ChangeConnectionEndHandle",
+  "methodName": "locate",
+  "brief": "public Point locate(){}",
+  "methodSignature": "locate()",
+  "sourceCode": "public Point locate() {\n        return fConnection.endPoint();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "endPoint()"
+    ]
+  },
+  "full_method_info": "/**\n * Returns the end point of the connection.\n */\npublic Point locate() {\n    return fConnection.endPoint();\n}",
+  "method_comment": "\n     * Returns the end point of the connection.\n     ",
+  "method_annotation": ""
+}

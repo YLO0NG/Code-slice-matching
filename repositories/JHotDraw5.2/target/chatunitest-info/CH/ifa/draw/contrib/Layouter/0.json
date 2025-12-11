@@ -1,0 +1,23 @@
+{
+  "className": "Layouter",
+  "methodName": "calculateLayout",
+  "brief": "public Rectangle calculateLayout(Point origin, Point corner);",
+  "methodSignature": "calculateLayout(Point, Point)",
+  "sourceCode": "public Rectangle calculateLayout(Point origin, Point corner);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/*\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t */\npublic Rectangle calculateLayout(Point origin, Point corner);",
+  "method_comment": "\n\t * Calculate the layout for the figure and all its subelements. The\n\t * layout is not actually performed but just its dimensions are calculated.\n\t *\n\t * @param origin start point for the layout\n\t * @param corner minimum corner point for the layout\n\t ",
+  "method_annotation": ""
+}

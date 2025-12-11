@@ -1,0 +1,28 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "containsPoint",
+  "brief": "public boolean containsPoint(int x, int y){}",
+  "methodSignature": "containsPoint(int, int)",
+  "sourceCode": "public boolean containsPoint(int x, int y) {\n        return displayBox().contains(x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Rectangle": [
+      "contains(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Checks if a point is inside the figure.\n */\npublic boolean containsPoint(int x, int y) {\n    return displayBox().contains(x, y);\n}",
+  "method_comment": "\n     * Checks if a point is inside the figure.\n     ",
+  "method_annotation": ""
+}

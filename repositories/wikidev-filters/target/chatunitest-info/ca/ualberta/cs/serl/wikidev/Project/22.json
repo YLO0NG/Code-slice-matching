@@ -1,0 +1,25 @@
+{
+  "className": "Project",
+  "methodName": "addManager",
+  "brief": "public void addManager(User manager){}",
+  "methodSignature": "addManager(User)",
+  "sourceCode": "public void addManager(User manager) {\n\t\tthis.managers.add(manager);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": [],
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addManager(User manager) {\n    this.managers.add(manager);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

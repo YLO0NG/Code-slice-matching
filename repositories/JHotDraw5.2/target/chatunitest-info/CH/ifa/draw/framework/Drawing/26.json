@@ -1,0 +1,18 @@
+{
+  "className": "Drawing",
+  "methodName": "unlock",
+  "brief": "public void unlock();",
+  "methodSignature": "unlock()",
+  "sourceCode": "public void unlock();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Releases the drawing lock.\n */\npublic void unlock();",
+  "method_comment": "\n     * Releases the drawing lock.\n     ",
+  "method_annotation": ""
+}

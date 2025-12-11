@@ -1,0 +1,20 @@
+{
+  "className": "TextFigure",
+  "methodName": "setReadOnly",
+  "brief": "public void setReadOnly(boolean isReadOnly){}",
+  "methodSignature": "setReadOnly(boolean)",
+  "sourceCode": "public void setReadOnly(boolean isReadOnly) {\n        fIsReadOnly = isReadOnly;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the read only status of the text figure.\n */\npublic void setReadOnly(boolean isReadOnly) {\n    fIsReadOnly = isReadOnly;\n}",
+  "method_comment": "\n     * Sets the read only status of the text figure.\n     ",
+  "method_annotation": ""
+}

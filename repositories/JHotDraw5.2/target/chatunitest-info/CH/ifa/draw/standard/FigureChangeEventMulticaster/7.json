@@ -1,0 +1,25 @@
+{
+  "className": "FigureChangeEventMulticaster",
+  "methodName": "remove",
+  "brief": "protected EventListener remove(EventListener oldl)\r\n   {}",
+  "methodSignature": "remove(EventListener)",
+  "sourceCode": "protected EventListener remove(EventListener oldl)\n    {\n        if (oldl == a)\n            return b;\n        if (oldl == b)\n            return a;\n        EventListener a2 = removeInternal((FigureChangeListener)a, oldl);\n        EventListener b2 = removeInternal((FigureChangeListener)b, oldl);\n        if (a2 == a && b2 == b)\n            return this;\n\t\telse {\n\t\t\tFigureChangeListener a1 = (FigureChangeListener)a2;\n\t\t\tFigureChangeListener b1 = (FigureChangeListener)b2;\n\t\t\tif (a1 == null)  return b1;\n\t\t\tif (b1 == null)  return a1;\n\t\t\treturn new FigureChangeEventMulticaster(a1, b1);\n\t\t}\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "EventListener"
+  ],
+  "dependentMethods": {
+    "java.util.EventListener": [],
+    "CH.ifa.draw.standard.FigureChangeEventMulticaster": [
+      "removeInternal(EventListener, EventListener)"
+    ]
+  },
+  "full_method_info": "protected EventListener remove(EventListener oldl) {\n    if (oldl == a)\n        return b;\n    if (oldl == b)\n        return a;\n    EventListener a2 = removeInternal((FigureChangeListener) a, oldl);\n    EventListener b2 = removeInternal((FigureChangeListener) b, oldl);\n    if (a2 == a && b2 == b)\n        return this;\n    else {\n        FigureChangeListener a1 = (FigureChangeListener) a2;\n        FigureChangeListener b1 = (FigureChangeListener) b2;\n        if (a1 == null)\n            return b1;\n        if (b1 == null)\n            return a1;\n        return new FigureChangeEventMulticaster(a1, b1);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

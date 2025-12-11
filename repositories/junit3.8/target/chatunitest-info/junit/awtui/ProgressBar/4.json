@@ -1,0 +1,26 @@
+{
+  "className": "ProgressBar",
+  "methodName": "paintStep",
+  "brief": "private void paintStep(int startX, int endX){}",
+  "methodSignature": "paintStep(int, int)",
+  "sourceCode": "private void paintStep(int startX, int endX) {\r\n\t\trepaint(startX, 1, endX-startX, getBounds().height-2);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.Component": [
+      "getBounds()",
+      "repaint(int, int, int, int)"
+    ]
+  },
+  "full_method_info": "private void paintStep(int startX, int endX) {\r\n    repaint(startX, 1, endX - startX, getBounds().height - 2);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

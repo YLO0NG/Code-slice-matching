@@ -1,0 +1,22 @@
+{
+  "className": "DiamondFigure",
+  "methodName": "connectionInsets",
+  "brief": "public Insets connectionInsets(){}",
+  "methodSignature": "connectionInsets()",
+  "sourceCode": "public Insets connectionInsets() {\n    Rectangle r = displayBox();\n    return new Insets(r.height/2, r.width/2, r.height/2, r.width/2);\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.RectangleFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public Insets connectionInsets() {\n    Rectangle r = displayBox();\n    return new Insets(r.height / 2, r.width / 2, r.height / 2, r.width / 2);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

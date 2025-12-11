@@ -1,0 +1,29 @@
+{
+  "className": "TestRunner",
+  "methodName": "getIconResource",
+  "brief": "public static Icon getIconResource(Class clazz, String name){}",
+  "methodSignature": "getIconResource(Class, String)",
+  "sourceCode": "public static Icon getIconResource(Class clazz, String name) {\r\n\t\tURL url= clazz.getResource(name);\r\n\t\tif (url == null) {\r\n\t\t\tSystem.err.println(\"Warning: could not load \\\"\"+name+\"\\\" icon\");\r\n\t\t\treturn null;\r\n\t\t}\r\n\t\treturn new ImageIcon(url);\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Class",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.Class": [
+      "getResource(String)"
+    ],
+    "java.lang.String": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "public static Icon getIconResource(Class clazz, String name) {\r\n    URL url = clazz.getResource(name);\r\n    if (url == null) {\r\n        System.err.println(\"Warning: could not load \\\"\" + name + \"\\\" icon\");\r\n        return null;\r\n    }\r\n    return new ImageIcon(url);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

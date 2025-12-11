@@ -1,0 +1,40 @@
+{
+  "className": "MySelectionTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y) {\n        if (e.getClickCount() == 2) {\n            Figure figure = drawing().findFigure(e.getX(), e.getY());\n            if (figure != null) {\n                inspectFigure(figure);\n                return;\n            }\n        }\n        super.mouseDown(e, x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getClickCount()",
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigure(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "drawing()"
+    ],
+    "CH.ifa.draw.samples.javadraw.MySelectionTool": [
+      "inspectFigure(Figure)"
+    ],
+    "CH.ifa.draw.standard.SelectionTool": [
+      "mouseDown(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse down events and starts the corresponding tracker.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    if (e.getClickCount() == 2) {\n        Figure figure = drawing().findFigure(e.getX(), e.getY());\n        if (figure != null) {\n            inspectFigure(figure);\n            return;\n        }\n    }\n    super.mouseDown(e, x, y);\n}",
+  "method_comment": "\n     * Handles mouse down events and starts the corresponding tracker.\n     ",
+  "method_annotation": ""
+}

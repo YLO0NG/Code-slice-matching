@@ -1,0 +1,25 @@
+{
+  "className": "TestResult",
+  "methodName": "removeListener",
+  "brief": "public synchronized void removeListener(TestListener listener){}",
+  "methodSignature": "removeListener(TestListener)",
+  "sourceCode": "public synchronized void removeListener(TestListener listener) {\r\n\t\tfListeners.removeElement(listener);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestListener"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestListener": [],
+    "java.util.Vector": [
+      "removeElement(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Unregisters a TestListener\r\n */\r\npublic synchronized void removeListener(TestListener listener) {\r\n    fListeners.removeElement(listener);\r\n}",
+  "method_comment": "\r\n\t * Unregisters a TestListener\r\n\t ",
+  "method_annotation": ""
+}

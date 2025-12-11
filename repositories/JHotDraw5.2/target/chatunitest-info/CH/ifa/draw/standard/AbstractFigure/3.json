@@ -1,0 +1,23 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public abstract void basicDisplayBox(Point origin, Point corner);",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public abstract void basicDisplayBox(Point origin, Point corner);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": []
+  },
+  "full_method_info": "/**\n * Sets the display box of a figure. This is the\n * method that subclassers override. Clients usually\n * call displayBox.\n * @see #displayBox\n */\npublic abstract void basicDisplayBox(Point origin, Point corner);",
+  "method_comment": "\n     * Sets the display box of a figure. This is the\n     * method that subclassers override. Clients usually\n     * call displayBox.\n     * @see #displayBox\n     ",
+  "method_annotation": ""
+}

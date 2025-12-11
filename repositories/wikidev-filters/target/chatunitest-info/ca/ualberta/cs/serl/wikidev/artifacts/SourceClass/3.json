@@ -1,0 +1,20 @@
+{
+  "className": "SourceClass",
+  "methodName": "setEditors",
+  "brief": "public void setEditors(ArrayList<User> editors){}",
+  "methodSignature": "setEditors(ArrayList)",
+  "sourceCode": "public void setEditors(ArrayList<User> editors) {\n\t\tthis.editors = editors;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<User>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param  editors\n * @uml.property  name=\"editors\"\n */\npublic void setEditors(ArrayList<User> editors) {\n    this.editors = editors;\n}",
+  "method_comment": "\n\t * @param  editors\n\t * @uml.property  name=\"editors\"\n\t ",
+  "method_annotation": ""
+}

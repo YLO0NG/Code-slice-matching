@@ -1,0 +1,28 @@
+{
+  "className": "TextTool",
+  "methodName": "activate",
+  "brief": "public void activate(){}",
+  "methodSignature": "activate()",
+  "sourceCode": "public void activate() {\n        super.activate();\n        view().clearSelection();\n        // JDK1.1 TEXT_CURSOR has an incorrect hot spot\n        //view().setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.CreationTool": [
+      "activate()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "clearSelection()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Sets the text cursor.\n */\npublic void activate() {\n    super.activate();\n    view().clearSelection();\n    // JDK1.1 TEXT_CURSOR has an incorrect hot spot\n    // view().setCursor(Cursor.getPredefinedCursor(Cursor.TEXT_CURSOR));\n}",
+  "method_comment": "\n     * Sets the text cursor.\n     ",
+  "method_annotation": ""
+}

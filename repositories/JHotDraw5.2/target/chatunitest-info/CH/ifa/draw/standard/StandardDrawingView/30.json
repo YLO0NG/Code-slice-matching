@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "mouseMoved",
+  "brief": "public void mouseMoved(MouseEvent e){}",
+  "methodSignature": "mouseMoved(MouseEvent)",
+  "sourceCode": "public void mouseMoved(MouseEvent e) {\n        tool().mouseMove(e, e.getX(), e.getY());\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [
+      "getX()",
+      "getY()"
+    ],
+    "CH.ifa.draw.framework.Tool": [
+      "mouseMove(MouseEvent, int, int)"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "tool()"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse move events. The event is delegated to the\n * currently active tool.\n * @return whether the event was handled.\n */\npublic void mouseMoved(MouseEvent e) {\n    tool().mouseMove(e, e.getX(), e.getY());\n}",
+  "method_comment": "\n     * Handles mouse move events. The event is delegated to the\n     * currently active tool.\n     * @return whether the event was handled.\n     ",
+  "method_annotation": ""
+}

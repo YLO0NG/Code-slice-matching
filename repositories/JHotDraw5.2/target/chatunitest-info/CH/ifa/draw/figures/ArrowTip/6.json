@@ -1,0 +1,18 @@
+{
+  "className": "ArrowTip",
+  "methodName": "getAngle",
+  "brief": "protected double getAngle(){}",
+  "methodSignature": "getAngle()",
+  "sourceCode": "protected double getAngle() {\n    \treturn fAngle;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Returns point angle of arrow. A smaller angle leads to a pointier arrow.\n * The angle is measured between the arrow line and one of the points\n * at the side of the arrow. Thus, the total angle at the arrow tip\n * is the double of the angle specified.\n */\nprotected double getAngle() {\n    return fAngle;\n}",
+  "method_comment": "\n\t * Returns point angle of arrow. A smaller angle leads to a pointier arrow.\n\t * The angle is measured between the arrow line and one of the points\n\t * at the side of the arrow. Thus, the total angle at the arrow tip\n\t * is the double of the angle specified.\n \t ",
+  "method_annotation": ""
+}

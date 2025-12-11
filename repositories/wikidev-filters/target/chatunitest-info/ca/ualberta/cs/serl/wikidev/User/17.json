@@ -1,0 +1,22 @@
+{
+  "className": "User",
+  "methodName": "User",
+  "brief": "public User(String userName){}",
+  "methodSignature": "User(String)",
+  "sourceCode": "public User(String userName) {\n\t\tthis.userID = 0;\n\t\tthis.userName = userName;\n\t\tthis.userRealName = \"\";\n\t\tthis.relatedArtifacts = new HashMap<IArtifact, Integer>();\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public User(String userName) {\n    this.userID = 0;\n    this.userName = userName;\n    this.userRealName = \"\";\n    this.relatedArtifacts = new HashMap<IArtifact, Integer>();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

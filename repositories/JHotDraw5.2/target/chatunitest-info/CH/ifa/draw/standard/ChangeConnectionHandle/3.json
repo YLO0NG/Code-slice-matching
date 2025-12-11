@@ -1,0 +1,21 @@
+{
+  "className": "ChangeConnectionHandle",
+  "methodName": "setPoint",
+  "brief": "protected abstract void setPoint(int x, int y);",
+  "methodSignature": "setPoint(int, int)",
+  "sourceCode": "protected abstract void setPoint(int x, int y);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the location of the target point.\n */\nprotected abstract void setPoint(int x, int y);",
+  "method_comment": "\n     * Sets the location of the target point.\n     ",
+  "method_annotation": ""
+}

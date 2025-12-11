@@ -1,0 +1,19 @@
+{
+  "targetClass": "CH.ifa.draw.figures.GroupCommand",
+  "targetMethod": "execute()",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.CompositeFigure": "protected Vector fFigures;\nprivate static final long serialVersionUID = 7408153435700021866L;\nprivate int compositeFigureSerializedDataVersion = 1;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": "public void orphanAll(Vector newFigures);\npublic Figure add(Figure figure);",
+    "CH.ifa.draw.framework.DrawingView": "public Vector selectionZOrdered();\npublic Drawing drawing();\npublic void clearSelection();\npublic void addToSelection(Figure figure);\npublic void checkDamage();",
+    "CH.ifa.draw.standard.CompositeFigure": "public Figure add(Figure figure){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Drawing": "* Removes a vector of figures from the figure's list\n     * without releasing the figures.\n     * @see #orphan\n     \npublic void orphanAll(Vector newFigures);\n\n     * Adds a figure and sets its container to refer\n     * to this drawing.\n     * @return the figure that was inserted.\n     \npublic Figure add(Figure figure);",
+    "CH.ifa.draw.framework.DrawingView": "* Gets the currently selected figures in Z order.\n     * @see #selection\n     * @return a vector with the selected figures. The vector\n     * is a copy of the current selection.\n     \npublic Vector selectionZOrdered();\n\n     * Gets the drawing.\n     \npublic Drawing drawing();\n\n     * Clears the current selection.\n     \npublic void clearSelection();\n\n     * Adds a figure to the current selection.\n     \npublic void addToSelection(Figure figure);\n\n     * Checks whether the drawing has some accumulated damage\n     \npublic void checkDamage();",
+    "CH.ifa.draw.standard.CompositeFigure": "* Adds a figure to the list of figures. Initializes the\n     * the figure's container.\n     \npublic Figure add(Figure figure) {\n        if (!fFigures.contains(figure)) {\n            fFigures.addElement(figure);\n            figure.addToContainer(this);\n        }\n        return figure;\n    }"
+  }
+}

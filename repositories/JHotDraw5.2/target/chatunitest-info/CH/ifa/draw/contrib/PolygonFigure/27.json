@@ -1,0 +1,32 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "distanceFromLine",
+  "brief": "public static double distanceFromLine(int xa, int ya,\r\n                                        int xb, int yb,\r\n                                        int xc, int yc){}",
+  "methodSignature": "distanceFromLine(int, int, int, int, int, int)",
+  "sourceCode": "public static double distanceFromLine(int xa, int ya,\n                                        int xb, int yb,\n                                        int xc, int yc) {\n\n\n    // source:http://vision.dai.ed.ac.uk/andrewfg/c-g-a-faq.html#q7\n    //Let the point be C (XC,YC) and the line be AB (XA,YA) to (XB,YB).\n    //The length of the\n    //      line segment AB is L:\n    //\n    //                    ___________________\n    //                   |        2         2\n    //              L = \\| (XB-XA) + (YB-YA)\n    //and\n    //\n    //                  (YA-YC)(YA-YB)-(XA-XC)(XB-XA)\n    //              r = -----------------------------\n    //                              L**2\n    //\n    //                  (YA-YC)(XB-XA)-(XA-XC)(YB-YA)\n    //              s = -----------------------------\n    //                              L**2\n    //\n    //      Let I be the point of perpendicular projection of C onto AB, the\n    //\n    //              XI=XA+r(XB-XA)\n    //              YI=YA+r(YB-YA)\n    //\n    //      Distance from A to I = r*L\n    //      Distance from C to I = s*L\n    //\n    //      If r < 0 I is on backward extension of AB\n    //      If r>1 I is on ahead extension of AB\n    //      If 0<=r<=1 I is on AB\n    //\n    //      If s < 0 C is left of AB (you can just check the numerator)\n    //      If s>0 C is right of AB\n    //      If s=0 C is on AB\n\n    int xdiff = xb - xa;\n    int ydiff = yb - ya;\n    long l2 = xdiff*xdiff + ydiff*ydiff;\n\n    if (l2 == 0) return Geom.length(xa, ya, xc, yc);\n\n    double rnum =  (ya-yc) * (ya-yb) - (xa-xc) * (xb-xa);\n    double r = rnum / l2;\n\n    if (r < 0.0 || r > 1.0) return Double.MAX_VALUE;\n\n    double xi = xa + r * xdiff;\n    double yi = ya + r * ydiff;\n    double xd = xc - xi;\n    double yd = yc - yi;\n    return Math.sqrt(xd * xd + yd * yd);\n\n    /*\n      for directional version, instead use\n      double snum =  (ya-yc) * (xb-xa) - (xa-xc) * (yb-ya);\n      double s = snum / l2;\n\n      double l = Math.sqrt((double)l2);\n      return = s * l;\n      */\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.Geom": [
+      "length(int, int, int, int)"
+    ],
+    "java.lang.Math": [
+      "sqrt(double)"
+    ]
+  },
+  "full_method_info": "/**\n * compute distance of point from line segment, or\n * Double.MAX_VALUE if perpendicular projection is outside segment; or\n * If pts on line are same, return distance from point\n */\npublic static double distanceFromLine(int xa, int ya, int xb, int yb, int xc, int yc) {\n    // source:http://vision.dai.ed.ac.uk/andrewfg/c-g-a-faq.html#q7\n    // Let the point be C (XC,YC) and the line be AB (XA,YA) to (XB,YB).\n    // The length of the\n    // line segment AB is L:\n    // \n    // ___________________\n    // |        2         2\n    // L = \\| (XB-XA) + (YB-YA)\n    // and\n    // \n    // (YA-YC)(YA-YB)-(XA-XC)(XB-XA)\n    // r = -----------------------------\n    // L**2\n    // \n    // (YA-YC)(XB-XA)-(XA-XC)(YB-YA)\n    // s = -----------------------------\n    // L**2\n    // \n    // Let I be the point of perpendicular projection of C onto AB, the\n    // \n    // XI=XA+r(XB-XA)\n    // YI=YA+r(YB-YA)\n    // \n    // Distance from A to I = r*L\n    // Distance from C to I = s*L\n    // \n    // If r < 0 I is on backward extension of AB\n    // If r>1 I is on ahead extension of AB\n    // If 0<=r<=1 I is on AB\n    // \n    // If s < 0 C is left of AB (you can just check the numerator)\n    // If s>0 C is right of AB\n    // If s=0 C is on AB\n    int xdiff = xb - xa;\n    int ydiff = yb - ya;\n    long l2 = xdiff * xdiff + ydiff * ydiff;\n    if (l2 == 0)\n        return Geom.length(xa, ya, xc, yc);\n    double rnum = (ya - yc) * (ya - yb) - (xa - xc) * (xb - xa);\n    double r = rnum / l2;\n    if (r < 0.0 || r > 1.0)\n        return Double.MAX_VALUE;\n    double xi = xa + r * xdiff;\n    double yi = ya + r * ydiff;\n    double xd = xc - xi;\n    double yd = yc - yi;\n    return Math.sqrt(xd * xd + yd * yd);\n    /*\n      for directional version, instead use\n      double snum =  (ya-yc) * (xb-xa) - (xa-xc) * (yb-ya);\n      double s = snum / l2;\n\n      double l = Math.sqrt((double)l2);\n      return = s * l;\n      */\n}",
+  "method_comment": "\n   * compute distance of point from line segment, or\n   * Double.MAX_VALUE if perpendicular projection is outside segment; or\n   * If pts on line are same, return distance from point\n   *",
+  "method_annotation": ""
+}

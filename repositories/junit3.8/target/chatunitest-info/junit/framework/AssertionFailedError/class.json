@@ -1,0 +1,47 @@
+{
+  "fullClassName": "junit.framework.AssertionFailedError",
+  "className": "AssertionFailedError",
+  "index": 10,
+  "modifier": "[public ]",
+  "extend": "[Error]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public class AssertionFailedError",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [
+    "Error"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "AssertionFailedError()": "0",
+    "AssertionFailedError(String)": "1"
+  },
+  "methodsBrief": [
+    "public AssertionFailedError (){}",
+    "public AssertionFailedError (String message){}"
+  ],
+  "constructorSigs": [
+    "AssertionFailedError()",
+    "AssertionFailedError(String)"
+  ],
+  "constructorBrief": [
+    "public AssertionFailedError (){}",
+    "public AssertionFailedError (String message){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package junit.framework;\r\n\r\n/**\r\n * Thrown when an assertion failed.\r\n */\r\npublic class AssertionFailedError extends Error {\r\n\r\n    public AssertionFailedError() {\r\n    }\r\n\r\n    public AssertionFailedError(String message) {\r\n        super(message);\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * Thrown when an assertion failed.\r\n */\r\npublic class AssertionFailedError extends Error {\r\n\r\n    public AssertionFailedError() {\r\n    }\r\n\r\n    public AssertionFailedError(String message) {\r\n        super(message);\r\n    }\r\n}",
+  "subClasses": [
+    "junit.framework.ComparisonFailure"
+  ]
+}

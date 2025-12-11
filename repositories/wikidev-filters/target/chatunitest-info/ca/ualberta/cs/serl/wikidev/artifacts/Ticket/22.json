@@ -1,0 +1,40 @@
+{
+  "className": "Ticket",
+  "methodName": "getUserContributionBeforeDate",
+  "brief": "public HashMap<User, Double> getUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users){}",
+  "methodSignature": "getUserContributionBeforeDate(Timestamp, ArrayList)",
+  "sourceCode": "public HashMap<User, Double> getUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users) {\n\t\tHashMap<User, Double> userChanges = new HashMap<User, Double>();\n\t\tfor(User user : users) {\n\t\t\tif(user.equals(owner) || user.equals(reporter)) {\n\t\t\t\tuserChanges.put(user, 1.0);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tuserChanges.put(user, 0.0);\n\t\t\t}\n\t\t}\n\t\tfor(TicketChange change : ticketChanges) {\n\t\t\tif(change.getTimestamp().before(timestamp)) {\n\t\t\t\tuserChanges.put(change.getExternalAuthor(), userChanges.get(change.getExternalAuthor())+1.0);\n\t\t\t}\n\t\t}\n\t\tif (getNumberOfChangesBeforeDate(timestamp) != 0) {\n\t\t\tfor (User user : userChanges.keySet()) {\n\t\t\t\tuserChanges.put(user, userChanges.get(user)\n\t\t\t\t\t\t/ ((double) getNumberOfChangesBeforeDate(timestamp)+1.0));\n\t\t\t}\n\t\t}\n\t\treturn userChanges;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp",
+    "ArrayList<User>"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": [
+      "before(Timestamp)"
+    ],
+    "java.lang.Object": [
+      "equals(Object)"
+    ],
+    "java.util.HashMap": [
+      "get(Object)",
+      "keySet()",
+      "put(K, V)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.TicketChange": [
+      "getExternalAuthor()",
+      "getTimestamp()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "getNumberOfChangesBeforeDate(Timestamp)"
+    ]
+  },
+  "full_method_info": "public HashMap<User, Double> getUserContributionBeforeDate(Timestamp timestamp, ArrayList<User> users) {\n    HashMap<User, Double> userChanges = new HashMap<User, Double>();\n    for (User user : users) {\n        if (user.equals(owner) || user.equals(reporter)) {\n            userChanges.put(user, 1.0);\n        } else {\n            userChanges.put(user, 0.0);\n        }\n    }\n    for (TicketChange change : ticketChanges) {\n        if (change.getTimestamp().before(timestamp)) {\n            userChanges.put(change.getExternalAuthor(), userChanges.get(change.getExternalAuthor()) + 1.0);\n        }\n    }\n    if (getNumberOfChangesBeforeDate(timestamp) != 0) {\n        for (User user : userChanges.keySet()) {\n            userChanges.put(user, userChanges.get(user) / ((double) getNumberOfChangesBeforeDate(timestamp) + 1.0));\n        }\n    }\n    return userChanges;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "createApplication",
+  "brief": "protected DrawApplication createApplication(){}",
+  "methodSignature": "createApplication()",
+  "sourceCode": "protected DrawApplication createApplication() {\n\t\treturn new MDI_DrawApplication();\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Factory method which can be overriden by subclasses to\n * create an instance of their type.\n *\n * @return\tnewly created application\n */\nprotected DrawApplication createApplication() {\n    return new MDI_DrawApplication();\n}",
+  "method_comment": "\n     * Factory method which can be overriden by subclasses to\n     * create an instance of their type.\n     *\n     * @return\tnewly created application\n     ",
+  "method_annotation": ""
+}

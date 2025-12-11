@@ -1,0 +1,29 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "getChild",
+  "brief": "public Object getChild(Object parent, int index){}",
+  "methodSignature": "getChild(Object, int)",
+  "sourceCode": "public Object getChild(Object parent, int index) {\r\n\t\tTestSuite suite= isTestSuite(parent);\r\n\t\tif (suite != null) \r\n\t\t\treturn suite.testAt(index);\r\n\t\treturn null; \r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": [],
+    "junit.swingui.TestTreeModel": [
+      "isTestSuite(Object)"
+    ],
+    "junit.framework.TestSuite": [
+      "testAt(int)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Gets the test at the given index\r\n */\r\npublic Object getChild(Object parent, int index) {\r\n    TestSuite suite = isTestSuite(parent);\r\n    if (suite != null)\r\n        return suite.testAt(index);\r\n    return null;\r\n}",
+  "method_comment": "\r\n\t * Gets the test at the given index\r\n\t ",
+  "method_annotation": ""
+}

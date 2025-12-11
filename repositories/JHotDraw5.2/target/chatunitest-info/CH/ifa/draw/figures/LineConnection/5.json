@@ -1,0 +1,27 @@
+{
+  "className": "LineConnection",
+  "methodName": "disconnectEnd",
+  "brief": "public void disconnectEnd(){}",
+  "methodSignature": "disconnectEnd()",
+  "sourceCode": "public void disconnectEnd() {\n        handleDisconnect(startFigure(), endFigure());\n        endFigure().removeFigureChangeListener(this);\n        fEnd = null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineConnection": [
+      "startFigure()",
+      "handleDisconnect(Figure, Figure)",
+      "endFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "removeFigureChangeListener(FigureChangeListener)"
+    ]
+  },
+  "full_method_info": "/**\n * Disconnects the end figure.\n */\npublic void disconnectEnd() {\n    handleDisconnect(startFigure(), endFigure());\n    endFigure().removeFigureChangeListener(this);\n    fEnd = null;\n}",
+  "method_comment": "\n     * Disconnects the end figure.\n     ",
+  "method_annotation": ""
+}

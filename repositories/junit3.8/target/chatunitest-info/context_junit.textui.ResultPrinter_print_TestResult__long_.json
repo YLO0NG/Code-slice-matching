@@ -1,0 +1,16 @@
+{
+  "targetClass": "junit.textui.ResultPrinter",
+  "targetMethod": "print(TestResult, long)",
+  "dependentFields": {
+    "junit.framework.TestResult": "protected Vector fFailures;\nprotected Vector fErrors;\nprotected Vector fListeners;\nprotected int fRunTests;\nprivate boolean fStop;",
+    "junit.textui.ResultPrinter": "PrintStream fWriter;\nint fColumn= 0;"
+  },
+  "dependentMethods": {
+    "junit.framework.TestResult": "public synchronized boolean wasSuccessful(){}\npublic synchronized int runCount(){}\npublic synchronized int failureCount(){}\npublic synchronized int errorCount(){}",
+    "junit.textui.ResultPrinter": "public PrintStream getWriter(){}\nprotected void printErrors(TestResult result){}\nprotected void printFailures(TestResult result){}\nprotected void printHeader(long runTime){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.TestResult": "* Returns whether the entire test was successful or not.\r\n\t \npublic synchronized boolean wasSuccessful() {\r\n\t\treturn failureCount() == 0 && errorCount() == 0;\r\n\t}\n\r\n\t * Gets the number of run tests.\r\n\t \npublic synchronized int runCount() {\r\n\t\treturn fRunTests;\r\n\t}\n\r\n\t * Gets the number of detected failures.\r\n\t \npublic synchronized int failureCount() {\r\n\t\treturn fFailures.size();\r\n\t}\n\r\n\t * Gets the number of detected errors.\r\n\t \npublic synchronized int errorCount() {\r\n\t\treturn fErrors.size();\r\n\t}",
+    "junit.textui.ResultPrinter": "public PrintStream getWriter() {\r\n\t\treturn fWriter;\r\n\t}\nprotected void printErrors(TestResult result) {\r\n\t\tprintDefects(result.errors(), result.errorCount(), \"error\");\r\n\t}\nprotected void printFailures(TestResult result) {\r\n\t\tprintDefects(result.failures(), result.failureCount(), \"failure\");\r\n\t}\nprotected void printHeader(long runTime) {\r\n\t\tgetWriter().println();\r\n\t\tgetWriter().println(\"Time: \"+elapsedTimeAsString(runTime));\r\n\t}"
+  }
+}

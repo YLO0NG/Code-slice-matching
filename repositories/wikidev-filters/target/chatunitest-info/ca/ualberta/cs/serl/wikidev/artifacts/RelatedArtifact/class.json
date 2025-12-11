@@ -1,0 +1,72 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.RelatedArtifact",
+  "className": "RelatedArtifact",
+  "index": 5,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class RelatedArtifact",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "private IArtifact artifact;",
+    "private double distance;",
+    "private String word;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getArtifact()": "0",
+    "setArtifact(IArtifact)": "1",
+    "getDistance()": "2",
+    "setDistance(double)": "3",
+    "getWord()": "4",
+    "setWord(String)": "5",
+    "equals(Object)": "6",
+    "RelatedArtifact(IArtifact, double, String)": "7"
+  },
+  "methodsBrief": [
+    "public IArtifact getArtifact(){}",
+    "public void setArtifact(IArtifact artifact){}",
+    "public double getDistance(){}",
+    "public void setDistance(double distance){}",
+    "public String getWord(){}",
+    "public void setWord(String word){}",
+    "public boolean equals(Object o){}",
+    "public RelatedArtifact(IArtifact artifact, double distance, String word){}"
+  ],
+  "constructorSigs": [
+    "RelatedArtifact(IArtifact, double, String)"
+  ],
+  "constructorBrief": [
+    "public RelatedArtifact(IArtifact artifact, double distance, String word){}"
+  ],
+  "getterSetterSigs": [
+    "getArtifact()",
+    "setArtifact(IArtifact)",
+    "getDistance()",
+    "setDistance(double)",
+    "getWord()",
+    "setWord(String)"
+  ],
+  "getterSetterBrief": [
+    "public IArtifact getArtifact(){}",
+    "public void setArtifact(IArtifact artifact){}",
+    "public double getDistance(){}",
+    "public void setDistance(double distance){}",
+    "public String getWord(){}",
+    "public void setWord(String word){}"
+  ],
+  "constructorDeps": {
+    "ca.ualberta.cs.serl.wikidev.artifacts.IArtifact": [],
+    "java.lang.String": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\npublic class RelatedArtifact {\n\n    /**\n     * @uml.property  name=\"artifact\"\n     * @uml.associationEnd  multiplicity=\"(1 1)\" inverse=\"directlyRelatedArtifacts:ca.ualberta.cs.serl.wikidev.artifacts.IArtifact\"\n     */\n    private IArtifact artifact;\n\n    /**\n     * @uml.property  name=\"distance\"\n     */\n    private double distance;\n\n    /**\n     * @uml.property  name=\"word\"\n     */\n    private String word;\n\n    public RelatedArtifact(IArtifact artifact, double distance, String word) {\n        this.artifact = artifact;\n        this.distance = distance;\n        this.word = word;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"artifact\"\n     */\n    public IArtifact getArtifact() {\n        return artifact;\n    }\n\n    /**\n     * @param artifact\n     * @uml.property  name=\"artifact\"\n     */\n    public void setArtifact(IArtifact artifact) {\n        this.artifact = artifact;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"distance\"\n     */\n    public double getDistance() {\n        return distance;\n    }\n\n    /**\n     * @param distance\n     * @uml.property  name=\"distance\"\n     */\n    public void setDistance(double distance) {\n        this.distance = distance;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"word\"\n     */\n    public String getWord() {\n        return word;\n    }\n\n    /**\n     * @param word\n     * @uml.property  name=\"word\"\n     */\n    public void setWord(String word) {\n        this.word = word;\n    }\n\n    public boolean equals(Object o) {\n        RelatedArtifact art = (RelatedArtifact) o;\n        return art.getArtifact().equals(this.getArtifact());\n    }\n}\n",
+  "classDeclarationCode": "public class RelatedArtifact {\n\n    /**\n     * @uml.property  name=\"artifact\"\n     * @uml.associationEnd  multiplicity=\"(1 1)\" inverse=\"directlyRelatedArtifacts:ca.ualberta.cs.serl.wikidev.artifacts.IArtifact\"\n     */\n    private IArtifact artifact;\n\n    /**\n     * @uml.property  name=\"distance\"\n     */\n    private double distance;\n\n    /**\n     * @uml.property  name=\"word\"\n     */\n    private String word;\n\n    public RelatedArtifact(IArtifact artifact, double distance, String word) {\n        this.artifact = artifact;\n        this.distance = distance;\n        this.word = word;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"artifact\"\n     */\n    public IArtifact getArtifact() {\n        return artifact;\n    }\n\n    /**\n     * @param artifact\n     * @uml.property  name=\"artifact\"\n     */\n    public void setArtifact(IArtifact artifact) {\n        this.artifact = artifact;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"distance\"\n     */\n    public double getDistance() {\n        return distance;\n    }\n\n    /**\n     * @param distance\n     * @uml.property  name=\"distance\"\n     */\n    public void setDistance(double distance) {\n        this.distance = distance;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"word\"\n     */\n    public String getWord() {\n        return word;\n    }\n\n    /**\n     * @param word\n     * @uml.property  name=\"word\"\n     */\n    public void setWord(String word) {\n        this.word = word;\n    }\n\n    public boolean equals(Object o) {\n        RelatedArtifact art = (RelatedArtifact) o;\n        return art.getArtifact().equals(this.getArtifact());\n    }\n}",
+  "subClasses": []
+}

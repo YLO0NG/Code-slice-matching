@@ -1,0 +1,18 @@
+{
+  "className": "TextFigure",
+  "methodName": "getFont",
+  "brief": "public Font getFont(){}",
+  "methodSignature": "getFont()",
+  "sourceCode": "public Font getFont() {\n        return fFont;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Gets the font.\n */\npublic Font getFont() {\n    return fFont;\n}",
+  "method_comment": "\n     * Gets the font.\n     ",
+  "method_annotation": ""
+}

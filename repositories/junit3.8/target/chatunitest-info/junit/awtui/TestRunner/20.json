@@ -1,0 +1,35 @@
+{
+  "className": "TestRunner",
+  "methodName": "reset",
+  "brief": "protected void reset(){}",
+  "methodSignature": "reset()",
+  "sourceCode": "protected void reset() {\r\n\t\tsetLabelValue(fNumberOfErrors, 0);\r\n\t\tsetLabelValue(fNumberOfFailures, 0);\r\n\t\tsetLabelValue(fNumberOfRuns, 0);\r\n\t\t/*{*/fProgressIndicator.fProgressX= 1;\r\n\t\tfProgressIndicator.fProgress= 0;\r\n\t\tfProgressIndicator.fError= false;\r\n\t\tfProgressIndicator.paint(fProgressIndicator.getGraphics());/*}*/\r\n\t\tfRerunButton.setEnabled(false);\r\n\t\tfFailureList.removeAll();\r\n\t\tfExceptions= new Vector(10);\r\n\t\tfFailedTests= new Vector(10);\r\n\t\tfTraceArea.setText(\"\");\r\n\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.awtui.TestRunner": [
+      "setLabelValue(Label, int)"
+    ],
+    "junit.awtui.ProgressBar": [
+      "paint(Graphics)"
+    ],
+    "java.awt.Component": [
+      "setEnabled(boolean)",
+      "getGraphics()"
+    ],
+    "java.awt.List": [
+      "removeAll()"
+    ],
+    "java.awt.TextComponent": [
+      "setText(String)"
+    ]
+  },
+  "full_method_info": "protected void reset() {\r\n    setLabelValue(fNumberOfErrors, 0);\r\n    setLabelValue(fNumberOfFailures, 0);\r\n    setLabelValue(fNumberOfRuns, 0);\r\n    /*{*/\r\n    fProgressIndicator.fProgressX = 1;\r\n    fProgressIndicator.fProgress = 0;\r\n    fProgressIndicator.fError = false;\r\n    fProgressIndicator.paint(fProgressIndicator.getGraphics());\r\n    /*}*/\r\n    fRerunButton.setEnabled(false);\r\n    fFailureList.removeAll();\r\n    fExceptions = new Vector(10);\r\n    fFailedTests = new Vector(10);\r\n    fTraceArea.setText(\"\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

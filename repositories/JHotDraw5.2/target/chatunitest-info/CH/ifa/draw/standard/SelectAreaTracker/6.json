@@ -1,0 +1,44 @@
+{
+  "className": "SelectAreaTracker",
+  "methodName": "selectGroup",
+  "brief": "private void selectGroup(boolean toggle)\r\n   {}",
+  "methodSignature": "selectGroup(boolean)",
+  "sourceCode": "private void selectGroup(boolean toggle)\n    {\n        FigureEnumeration k = drawing().figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            Rectangle r2 = figure.displayBox();\n            if (fSelectGroup.contains(r2.x, r2.y) && fSelectGroup.contains(r2.x+r2.width, r2.y+r2.height)) {\n                if (toggle)\n                    view().toggleSelection(figure);\n                else\n                    view().addToSelection(figure);\n            }\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "boolean"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [
+      "figuresReverse()"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ],
+    "java.awt.Rectangle": [
+      "contains(int, int)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "toggleSelection(Figure)",
+      "addToSelection(Figure)"
+    ]
+  },
+  "full_method_info": "private void selectGroup(boolean toggle) {\n    FigureEnumeration k = drawing().figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        Rectangle r2 = figure.displayBox();\n        if (fSelectGroup.contains(r2.x, r2.y) && fSelectGroup.contains(r2.x + r2.width, r2.y + r2.height)) {\n            if (toggle)\n                view().toggleSelection(figure);\n            else\n                view().addToSelection(figure);\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

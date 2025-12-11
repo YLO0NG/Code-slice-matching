@@ -1,0 +1,25 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "getAttribute",
+  "brief": "public Object getAttribute(String name){}",
+  "methodSignature": "getAttribute(String)",
+  "sourceCode": "public Object getAttribute(String name) {\n        return fComponent.getAttribute(name);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.Figure": [
+      "getAttribute(String)"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards getAttribute to its contained figure.\n */\npublic Object getAttribute(String name) {\n    return fComponent.getAttribute(name);\n}",
+  "method_comment": "\n     * Forwards getAttribute to its contained figure.\n     ",
+  "method_annotation": ""
+}

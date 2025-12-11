@@ -1,0 +1,25 @@
+{
+  "className": "LocatorConnector",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        Point p = fLocator.locate(owner());\n        return new Rectangle(\n                p.x - SIZE / 2,\n                p.y - SIZE / 2,\n                SIZE,\n                SIZE);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Locator": [
+      "locate(Figure)"
+    ],
+    "CH.ifa.draw.standard.AbstractConnector": [
+      "owner()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the display box of the connector.\n */\npublic Rectangle displayBox() {\n    Point p = fLocator.locate(owner());\n    return new Rectangle(p.x - SIZE / 2, p.y - SIZE / 2, SIZE, SIZE);\n}",
+  "method_comment": "\n     * Gets the display box of the connector.\n     ",
+  "method_annotation": ""
+}

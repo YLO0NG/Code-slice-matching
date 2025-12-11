@@ -1,0 +1,35 @@
+{
+  "className": "JavaDrawViewer",
+  "methodName": "loadDrawing",
+  "brief": "private void loadDrawing(String filename){}",
+  "methodSignature": "loadDrawing(String)",
+  "sourceCode": "private void loadDrawing(String filename) {\n        try {\n            URL url = new URL(getCodeBase(), filename);\n            InputStream stream = url.openStream();\n            StorableInput reader = new StorableInput(stream);\n            fDrawing = (Drawing)reader.readStorable();\n        } catch (IOException e) {\n            fDrawing = new StandardDrawing();\n            System.out.println(\"Error when Loading: \" + e);\n            showStatus(\"Error when Loading: \" + e);\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.applet.Applet": [
+      "showStatus(String)",
+      "getCodeBase()"
+    ],
+    "java.net.URL": [
+      "openStream()"
+    ],
+    "CH.ifa.draw.util.StorableInput": [
+      "readStorable()"
+    ],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "private void loadDrawing(String filename) {\n    try {\n        URL url = new URL(getCodeBase(), filename);\n        InputStream stream = url.openStream();\n        StorableInput reader = new StorableInput(stream);\n        fDrawing = (Drawing) reader.readStorable();\n    } catch (IOException e) {\n        fDrawing = new StandardDrawing();\n        System.out.println(\"Error when Loading: \" + e);\n        showStatus(\"Error when Loading: \" + e);\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

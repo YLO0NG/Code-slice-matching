@@ -1,0 +1,43 @@
+{
+  "className": "MatrixOperator",
+  "methodName": "getFiedlerVector",
+  "brief": "public static double[] getFiedlerVector(double[][] A){}",
+  "methodSignature": "getFiedlerVector(double[][])",
+  "sourceCode": "public static double[] getFiedlerVector(double[][] A) {\n        //D - degree matrix\n        double[][] D = new double[A.length][A[0].length];\n        //L - Laplacian matrix\n        double[][] L = new double[A.length][A[0].length];\n\n        //sumRow is row matrix, each column i in sumRow contains\n        //the sum value of column i in the adjacency matrix\n        double[] sumRow = sum(A);\n        //fill the degree matrix with the degrees of each node.\n        for(int i = 0; i < D[0].length;i++) {\n            D[i][i] = sumRow[i];\n        }\n        //L = D - A\n        L = minus(D,A);\n\n        EigenvalueDecomposition LEigenDec = eigen(L);\n\n        //diagonal eigenvalue matrix\n        Matrix eigenValues = LEigenDec.getD();\n        //eigenvector matrix\n        Matrix eigenVectors = LEigenDec.getV();\n\n        //keys are the Eigen values sorted in ascending order \n        //values are the corresponding positions in eigenValues matrix\n        TreeMap<Double,Integer> sortedEigenValues = new TreeMap<Double,Integer>();\n\n        for(int i = 0; i <eigenValues.getColumnDimension(); i++) {\n            //\\E1\\EB\\EB\\DC\\E6\\EF\\F5\\EC\\E5 \\F0\\F1\\FC\\F3\\E7\\EC\\EF \\F3\\F4\\E9\\F2 \\E1\\F1\\ED\\E7\\F4\\E9\\EA\\DD\\F2 \\F4\\E9\\EC\\DD\\F2\n            double value;\n            if(eigenValues.get(i,i) < 0.0)\n                value = -eigenValues.get(i,i);\n            else\n                value = eigenValues.get(i,i);\n\n            sortedEigenValues.put(value,i);\n        }\n\n        Set<Double> keySet = sortedEigenValues.keySet();\n        Iterator<Double> keyIt = keySet.iterator();\n        int minIndex = 0;\n        double threshold = 0.00001;\n        while(keyIt.hasNext()) {\n            Double key = keyIt.next();\n            if(key> threshold) {\n                minIndex = sortedEigenValues.get(key);\n                break;\n            }\n        }\n        double[][] eigenVectors2=new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];\n        for(int i=0;i<eigenVectors.getRowDimension();i++) {\n        \tfor(int j=0;j<eigenVectors.getColumnDimension();j++) {\n        \t\teigenVectors2[i][j] = eigenVectors.get(i,j);\n        \t}\n        }\n        return DoubleArray.getColumnCopy(eigenVectors2,minIndex);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double[][]"
+  ],
+  "dependentMethods": {
+    "double[]": [],
+    "Jama.EigenvalueDecomposition": [
+      "getD()",
+      "getV()"
+    ],
+    "Jama.Matrix": [
+      "getColumnDimension()",
+      "get(int, int)",
+      "getRowDimension()"
+    ],
+    "java.util.TreeMap": [
+      "get(Object)",
+      "keySet()",
+      "put(K, V)"
+    ],
+    "java.util.Set": [
+      "iterator()"
+    ],
+    "java.util.Iterator": [
+      "hasNext()",
+      "next()"
+    ]
+  },
+  "full_method_info": "public static double[] getFiedlerVector(double[][] A) {\n    // D - degree matrix\n    double[][] D = new double[A.length][A[0].length];\n    // L - Laplacian matrix\n    double[][] L = new double[A.length][A[0].length];\n    // sumRow is row matrix, each column i in sumRow contains\n    // the sum value of column i in the adjacency matrix\n    double[] sumRow = sum(A);\n    // fill the degree matrix with the degrees of each node.\n    for (int i = 0; i < D[0].length; i++) {\n        D[i][i] = sumRow[i];\n    }\n    // L = D - A\n    L = minus(D, A);\n    EigenvalueDecomposition LEigenDec = eigen(L);\n    // diagonal eigenvalue matrix\n    Matrix eigenValues = LEigenDec.getD();\n    // eigenvector matrix\n    Matrix eigenVectors = LEigenDec.getV();\n    // keys are the Eigen values sorted in ascending order\n    // values are the corresponding positions in eigenValues matrix\n    TreeMap<Double, Integer> sortedEigenValues = new TreeMap<Double, Integer>();\n    for (int i = 0; i < eigenValues.getColumnDimension(); i++) {\n        // \\E1\\EB\\EB\\DC\\E6\\EF\\F5\\EC\\E5 \\F0\\F1\\FC\\F3\\E7\\EC\\EF \\F3\\F4\\E9\\F2 \\E1\\F1\\ED\\E7\\F4\\E9\\EA\\DD\\F2 \\F4\\E9\\EC\\DD\\F2\n        double value;\n        if (eigenValues.get(i, i) < 0.0)\n            value = -eigenValues.get(i, i);\n        else\n            value = eigenValues.get(i, i);\n        sortedEigenValues.put(value, i);\n    }\n    Set<Double> keySet = sortedEigenValues.keySet();\n    Iterator<Double> keyIt = keySet.iterator();\n    int minIndex = 0;\n    double threshold = 0.00001;\n    while (keyIt.hasNext()) {\n        Double key = keyIt.next();\n        if (key > threshold) {\n            minIndex = sortedEigenValues.get(key);\n            break;\n        }\n    }\n    double[][] eigenVectors2 = new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];\n    for (int i = 0; i < eigenVectors.getRowDimension(); i++) {\n        for (int j = 0; j < eigenVectors.getColumnDimension(); j++) {\n            eigenVectors2[i][j] = eigenVectors.get(i, j);\n        }\n    }\n    return DoubleArray.getColumnCopy(eigenVectors2, minIndex);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

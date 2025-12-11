@@ -1,0 +1,26 @@
+{
+  "targetClass": "CH.ifa.draw.contrib.CustomSelectionTool",
+  "targetMethod": "handlePopupMenu(MouseEvent, int, int)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.framework.Drawing": "",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;",
+    "CH.ifa.draw.contrib.PopupMenuFigureSelection": "",
+    "CH.ifa.draw.contrib.CustomSelectionTool": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public Object getAttribute(String name);",
+    "CH.ifa.draw.framework.Drawing": "public Figure findFigureInside(int x, int y);\npublic Figure findFigure(int x, int y);",
+    "CH.ifa.draw.standard.AbstractTool": "public Drawing drawing(){}",
+    "CH.ifa.draw.contrib.PopupMenuFigureSelection": "public void setSelectedFigure(Figure newSelectedFigure);",
+    "CH.ifa.draw.contrib.CustomSelectionTool": "private void adjustOffsets(Component comp, Point offsetPoint){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Returns the named attribute or null if a\n     * a figure doesn't have an attribute.\n     * All figures support the attribute names\n     * FillColor and FrameColor\n     \npublic Object getAttribute(String name);",
+    "CH.ifa.draw.framework.Drawing": "* Finds a figure but descends into a figure's\n     * children. Use this method to implement <i>click-through</i>\n     * hit detection, that is, you want to detect the inner most\n     * figure containing the given point.\n     \npublic Figure findFigureInside(int x, int y);\n\n     * Finds a top level Figure. Use this call for hit detection that\n     * should not descend into the figure's children.\n     \npublic Figure findFigure(int x, int y);",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's drawing.\n     \npublic Drawing drawing() {\n        return view().drawing();\n    }",
+    "CH.ifa.draw.contrib.PopupMenuFigureSelection": "* Set the figure which was selected when the popup menu was invoked.\n\t *\n\t * @param   newSelectedFigure   figure which is selected (typically be a SelectionTool)\n\t \npublic void setSelectedFigure(Figure newSelectedFigure);",
+    "CH.ifa.draw.contrib.CustomSelectionTool": "* Internal MDI frames have offsets where a popup menu should be\n\t * shown (in JDK 1.2).\n\t * This method sums up iteratively all x and y offsets of all\n\t * parent compontents until the top parent component is reached.\n\t \nprivate void adjustOffsets(Component comp, Point offsetPoint) {\n\t\tif (comp != null) {\n\t\t\tPoint compLocation = comp.getLocation();\n\t\t\toffsetPoint.translate(compLocation.x, compLocation.y);\n\t\t\tadjustOffsets(comp.getParent(), offsetPoint);\n\t\t}\n\t}"
+  }
+}

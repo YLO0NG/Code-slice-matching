@@ -1,0 +1,23 @@
+{
+  "targetClass": "CH.ifa.draw.samples.javadraw.URLTool",
+  "targetMethod": "beginEdit(Figure)",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.samples.javadraw.URLTool": "private FloatingTextField   fTextField;\nprivate Figure              fURLTarget;",
+    "CH.ifa.draw.util.FloatingTextField": "private TextField   fEditWidget;\nprivate Container   fContainer;",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.AbstractTool": "protected DrawingView  fView;\nprotected int     fAnchorX, fAnchorY;"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "",
+    "CH.ifa.draw.samples.javadraw.URLTool": "private String getURL(Figure figure){}\npublic void endAction(ActionEvent e){}\nprivate void setURL(Figure figure, String url){}\nprivate Rectangle fieldBounds(Figure figure){}",
+    "CH.ifa.draw.util.FloatingTextField": "public void createOverlay(Container container){}\npublic void addActionListener(ActionListener listener){}\npublic String getText(){}\npublic void setBounds(Rectangle r, String text){}\npublic void endOverlay(){}",
+    "CH.ifa.draw.standard.AbstractTool": "public DrawingView view(){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "",
+    "CH.ifa.draw.samples.javadraw.URLTool": "private String getURL(Figure figure) {\n        String url = (String) figure.getAttribute(\"URL\");\n        if (url == null)\n            url = \"\";\n        return url;\n    }\npublic void endAction(ActionEvent e) {\n        endEdit();\n    }\nprivate void setURL(Figure figure, String url) {\n        figure.setAttribute(\"URL\", url);\n    }\nprivate Rectangle fieldBounds(Figure figure) {\n    \tRectangle box = figure.displayBox();\n        int nChars = Math.max(20, getURL(figure).length());\n        Dimension d = fTextField.getPreferredSize(nChars);\n        box.x = Math.max(0, box.x + (box.width - d.width)/2);\n        box.y = Math.max(0, box.y + (box.height - d.height)/2);\n        return new Rectangle(box.x, box.y, d.width, d.height);\n    }",
+    "CH.ifa.draw.util.FloatingTextField": "* Creates the overlay for the given Component.\n     \npublic void createOverlay(Container container) {\n        createOverlay(container, null);\n    }\n\n     * Adds an action listener\n     \npublic void addActionListener(ActionListener listener) {\n\t    fEditWidget.addActionListener(listener);\n\t}\n\n     * Gets the text contents of the overlay.\n     \npublic String getText() {\n        return fEditWidget.getText();\n    }\n\n     * Positions the overlay.\n     \npublic void setBounds(Rectangle r, String text) {\n\t    fEditWidget.setText(text);\n        fEditWidget.setBounds(r.x, r.y, r.width, r.height);\n        fEditWidget.setVisible(true);\n\t    fEditWidget.selectAll();\n\t    fEditWidget.requestFocus();\n    }\n\n     * Removes the overlay.\n     \npublic void endOverlay() {\n\t    fContainer.requestFocus();\n\t    if (fEditWidget == null)\n\t        return;\n\t    fEditWidget.setVisible(false);\n\t    fContainer.remove(fEditWidget);\n\n\t    Rectangle bounds = fEditWidget.getBounds();\n\t    fContainer.repaint(bounds.x, bounds.y, bounds.width, bounds.height);\n    }",
+    "CH.ifa.draw.standard.AbstractTool": "* Gets the tool's view.\n     \npublic DrawingView view() {\n        return fView;\n    }"
+  }
+}

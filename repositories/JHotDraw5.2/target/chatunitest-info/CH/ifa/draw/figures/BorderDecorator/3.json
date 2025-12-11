@@ -1,0 +1,31 @@
+{
+  "className": "BorderDecorator",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        super.draw(g);\n        g.setColor(Color.white);\n        g.drawLine(r.x, r.y, r.x, r.y + r.height);\n        g.drawLine(r.x, r.y, r.x + r.width, r.y);\n        g.setColor(Color.gray);\n        g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n        g.drawLine(r.x , r.y + r.height, r.x + r.width, r.y + r.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "drawLine(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.figures.BorderDecorator": [
+      "displayBox()"
+    ],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "draw(Graphics)"
+    ]
+  },
+  "full_method_info": "/**\n * Draws a the figure and decorates it with a border.\n */\npublic void draw(Graphics g) {\n    Rectangle r = displayBox();\n    super.draw(g);\n    g.setColor(Color.white);\n    g.drawLine(r.x, r.y, r.x, r.y + r.height);\n    g.drawLine(r.x, r.y, r.x + r.width, r.y);\n    g.setColor(Color.gray);\n    g.drawLine(r.x + r.width, r.y, r.x + r.width, r.y + r.height);\n    g.drawLine(r.x, r.y + r.height, r.x + r.width, r.y + r.height);\n}",
+  "method_comment": "\n     * Draws a the figure and decorates it with a border.\n     ",
+  "method_annotation": ""
+}

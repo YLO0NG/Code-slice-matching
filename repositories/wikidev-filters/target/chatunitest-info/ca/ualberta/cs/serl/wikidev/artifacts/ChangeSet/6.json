@@ -1,0 +1,18 @@
+{
+  "className": "ChangeSet",
+  "methodName": "getExternalSystemID",
+  "brief": "public int getExternalSystemID(){}",
+  "methodSignature": "getExternalSystemID()",
+  "sourceCode": "public int getExternalSystemID() {\n\t\treturn externalSystemID;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"externalSystemID\"\n */\npublic int getExternalSystemID() {\n    return externalSystemID;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"externalSystemID\"\n\t ",
+  "method_annotation": ""
+}

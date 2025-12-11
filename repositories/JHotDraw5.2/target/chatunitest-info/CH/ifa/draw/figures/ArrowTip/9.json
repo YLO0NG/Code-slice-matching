@@ -1,0 +1,20 @@
+{
+  "className": "ArrowTip",
+  "methodName": "setOuterRadius",
+  "brief": "protected void setOuterRadius(double newOuterRadius){}",
+  "methodSignature": "setOuterRadius(double)",
+  "sourceCode": "protected void setOuterRadius(double newOuterRadius) {\n        fOuterRadius = newOuterRadius;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "double"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the outer radius\n */\nprotected void setOuterRadius(double newOuterRadius) {\n    fOuterRadius = newOuterRadius;\n}",
+  "method_comment": "\n\t * Sets the outer radius\n\t ",
+  "method_annotation": ""
+}

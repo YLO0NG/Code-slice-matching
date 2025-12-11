@@ -1,0 +1,25 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "testFailed",
+  "brief": "public abstract void testFailed(int status, Test test, Throwable t);",
+  "methodSignature": "testFailed(int, Test, Throwable)",
+  "sourceCode": "public abstract void testFailed(int status, Test test, Throwable t);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "int",
+    "Test",
+    "Throwable"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.lang.Throwable": []
+  },
+  "full_method_info": "public abstract void testFailed(int status, Test test, Throwable t);",
+  "method_comment": "",
+  "method_annotation": ""
+}

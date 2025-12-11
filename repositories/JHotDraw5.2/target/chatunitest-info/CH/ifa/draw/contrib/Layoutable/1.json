@@ -1,0 +1,22 @@
+{
+  "className": "Layoutable",
+  "methodName": "setLayouter",
+  "brief": "public void setLayouter(Layouter newLayouter);",
+  "methodSignature": "setLayouter(Layouter)",
+  "sourceCode": "public void setLayouter(Layouter newLayouter);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Layouter"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.Layouter": []
+  },
+  "full_method_info": "/**\n * Set the Layouter for this Layoutable\n *\n * @param newLayouter layouter\n */\npublic void setLayouter(Layouter newLayouter);",
+  "method_comment": "\n\t * Set the Layouter for this Layoutable\n\t *\n\t * @param newLayouter layouter\n\t ",
+  "method_annotation": ""
+}

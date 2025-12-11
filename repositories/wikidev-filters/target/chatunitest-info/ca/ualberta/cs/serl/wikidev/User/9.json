@@ -1,0 +1,18 @@
+{
+  "className": "User",
+  "methodName": "getRelatedArtifacts",
+  "brief": "public HashMap<IArtifact, Integer> getRelatedArtifacts(){}",
+  "methodSignature": "getRelatedArtifacts()",
+  "sourceCode": "public HashMap<IArtifact, Integer> getRelatedArtifacts() {\n\t\treturn relatedArtifacts;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"relatedArtifacts\"\n */\npublic HashMap<IArtifact, Integer> getRelatedArtifacts() {\n    return relatedArtifacts;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"relatedArtifacts\"\n\t ",
+  "method_annotation": ""
+}

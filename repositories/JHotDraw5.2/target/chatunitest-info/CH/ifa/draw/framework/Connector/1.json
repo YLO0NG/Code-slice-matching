@@ -1,0 +1,22 @@
+{
+  "className": "Connector",
+  "methodName": "findEnd",
+  "brief": "public abstract Point findEnd(ConnectionFigure connection);",
+  "methodSignature": "findEnd(ConnectionFigure)",
+  "sourceCode": "public abstract Point findEnd(ConnectionFigure connection);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": []
+  },
+  "full_method_info": "/**\n * Finds the end point for the connection.\n */\npublic abstract Point findEnd(ConnectionFigure connection);",
+  "method_comment": "\n     * Finds the end point for the connection.\n     ",
+  "method_annotation": ""
+}

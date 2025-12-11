@@ -1,0 +1,22 @@
+{
+  "className": "DrawApplication",
+  "methodName": "setStorageFormatManager",
+  "brief": "private void setStorageFormatManager(StorageFormatManager storageFormatManager){}",
+  "methodSignature": "setStorageFormatManager(StorageFormatManager)",
+  "sourceCode": "private void setStorageFormatManager(StorageFormatManager storageFormatManager) {\n        fStorageFormatManager = storageFormatManager;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StorageFormatManager"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorageFormatManager": []
+  },
+  "full_method_info": "/**\n * Set the StorageFormatManager. The StorageFormatManager is used when storing and\n * restoring Drawing from the file system.\n */\nprivate void setStorageFormatManager(StorageFormatManager storageFormatManager) {\n    fStorageFormatManager = storageFormatManager;\n}",
+  "method_comment": "\n\t * Set the StorageFormatManager. The StorageFormatManager is used when storing and\n\t * restoring Drawing from the file system.\n\t ",
+  "method_annotation": ""
+}

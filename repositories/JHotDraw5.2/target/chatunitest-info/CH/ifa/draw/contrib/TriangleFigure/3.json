@@ -1,0 +1,33 @@
+{
+  "className": "TriangleFigure",
+  "methodName": "draw",
+  "brief": "public void draw(Graphics g){}",
+  "methodSignature": "draw(Graphics)",
+  "sourceCode": "public void draw(Graphics g) {\n    Polygon p = polygon();\n    g.setColor(getFillColor());\n    g.fillPolygon(p);\n    g.setColor(getFrameColor());\n    g.drawPolygon(p);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillPolygon(Polygon)",
+      "drawPolygon(Polygon)",
+      "setColor(Color)"
+    ],
+    "CH.ifa.draw.contrib.TriangleFigure": [
+      "polygon()"
+    ],
+    "CH.ifa.draw.figures.AttributeFigure": [
+      "getFrameColor()",
+      "getFillColor()"
+    ]
+  },
+  "full_method_info": "public void draw(Graphics g) {\n    Polygon p = polygon();\n    g.setColor(getFillColor());\n    g.fillPolygon(p);\n    g.setColor(getFrameColor());\n    g.drawPolygon(p);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "GraphicalCompositeFigure",
+  "methodName": "change",
+  "brief": "protected void change(){}",
+  "methodSignature": "change()",
+  "sourceCode": "protected void change() {\n\t\tif (listener() != null) {\n        \tlistener().figureRequestUpdate(new FigureChangeEvent(this));\n        }\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "listener()"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureRequestUpdate(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Notify the registered change listener if an exlicit change\n * to the component (or one of its child components has occurred).\n */\nprotected void change() {\n    if (listener() != null) {\n        listener().figureRequestUpdate(new FigureChangeEvent(this));\n    }\n}",
+  "method_comment": "\n\t * Notify the registered change listener if an exlicit change\n\t * to the component (or one of its child components has occurred).\n\t ",
+  "method_annotation": ""
+}

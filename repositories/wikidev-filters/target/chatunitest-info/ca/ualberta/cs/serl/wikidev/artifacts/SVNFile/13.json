@@ -1,0 +1,22 @@
+{
+  "className": "SVNFile",
+  "methodName": "setLastModified",
+  "brief": "public void setLastModified(Timestamp timestamp){}",
+  "methodSignature": "setLastModified(Timestamp)",
+  "sourceCode": "public void setLastModified(Timestamp timestamp) {\n\t\tlastModified = timestamp;\n\t\t\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Timestamp"
+  ],
+  "dependentMethods": {
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public void setLastModified(Timestamp timestamp) {\n    lastModified = timestamp;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,58 @@
+{
+  "className": "TextTool",
+  "methodName": "mouseDown",
+  "brief": "public void mouseDown(MouseEvent e, int x, int y)\r\n   {}",
+  "methodSignature": "mouseDown(MouseEvent, int, int)",
+  "sourceCode": "public void mouseDown(MouseEvent e, int x, int y)\n    {\n\t    TextHolder textHolder = null;\n\n\t    Figure pressedFigure = drawing().findFigureInside(x, y);\n\t    if (pressedFigure instanceof TextHolder) {\n\t        textHolder = (TextHolder) pressedFigure;\n\t        if (!textHolder.acceptsTyping())\n\t            textHolder = null;\n        }\n\t    if (textHolder != null) {\n\t        if (fTextField == null)\n\t\t\t    fTextField = new FloatingTextField();\n\t\t\t\n\t\t\tif (textHolder != getTypingTarget() && getTypingTarget() != null)\n\t\t\t    endEdit();\n\t\t\t\n\t\t\tfTextField.createOverlay((Container)view(), textHolder.getFont());\n\t\t\tfTextField.setBounds(fieldBounds(textHolder), textHolder.getText());\n\t\t\tsetTypingTarget(textHolder);\n\t\t\t\n\t\t\tview().checkDamage();\n\t        return;\n\t    }\n\t    if (getTypingTarget() != null) {\n\t        editor().toolDone();\n\t        endEdit();\n\t    } else {\n    \t    super.mouseDown(e, x, y);\n    \t    textHolder = (TextHolder)createdFigure();\n    \t    beginEdit(textHolder);\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "findFigureInside(int, int)"
+    ],
+    "CH.ifa.draw.standard.AbstractTool": [
+      "view()",
+      "drawing()",
+      "editor()"
+    ],
+    "CH.ifa.draw.standard.TextHolder": [
+      "getFont()",
+      "getText()",
+      "acceptsTyping()"
+    ],
+    "CH.ifa.draw.figures.TextTool": [
+      "endEdit()",
+      "setTypingTarget(TextHolder)",
+      "beginEdit(TextHolder)",
+      "getTypingTarget()",
+      "fieldBounds(TextHolder)"
+    ],
+    "CH.ifa.draw.util.FloatingTextField": [
+      "setBounds(Rectangle, String)",
+      "createOverlay(Container, Font)"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "checkDamage()"
+    ],
+    "CH.ifa.draw.framework.DrawingEditor": [
+      "toolDone()"
+    ],
+    "CH.ifa.draw.standard.CreationTool": [
+      "mouseDown(MouseEvent, int, int)",
+      "createdFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * If the pressed figure is a TextHolder it can be edited otherwise\n * a new text figure is created.\n */\npublic void mouseDown(MouseEvent e, int x, int y) {\n    TextHolder textHolder = null;\n    Figure pressedFigure = drawing().findFigureInside(x, y);\n    if (pressedFigure instanceof TextHolder) {\n        textHolder = (TextHolder) pressedFigure;\n        if (!textHolder.acceptsTyping())\n            textHolder = null;\n    }\n    if (textHolder != null) {\n        if (fTextField == null)\n            fTextField = new FloatingTextField();\n        if (textHolder != getTypingTarget() && getTypingTarget() != null)\n            endEdit();\n        fTextField.createOverlay((Container) view(), textHolder.getFont());\n        fTextField.setBounds(fieldBounds(textHolder), textHolder.getText());\n        setTypingTarget(textHolder);\n        view().checkDamage();\n        return;\n    }\n    if (getTypingTarget() != null) {\n        editor().toolDone();\n        endEdit();\n    } else {\n        super.mouseDown(e, x, y);\n        textHolder = (TextHolder) createdFigure();\n        beginEdit(textHolder);\n    }\n}",
+  "method_comment": "\n     * If the pressed figure is a TextHolder it can be edited otherwise\n     * a new text figure is created.\n     ",
+  "method_annotation": ""
+}

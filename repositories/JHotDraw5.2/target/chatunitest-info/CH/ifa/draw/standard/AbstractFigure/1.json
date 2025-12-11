@@ -1,0 +1,21 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "basicMoveBy",
+  "brief": "protected abstract void basicMoveBy(int dx, int dy);",
+  "methodSignature": "basicMoveBy(int, int)",
+  "sourceCode": "protected abstract void basicMoveBy(int dx, int dy);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": true,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Moves the figure. This is the\n * method that subclassers override. Clients usually\n * call displayBox.\n * @see #moveBy\n */\nprotected abstract void basicMoveBy(int dx, int dy);",
+  "method_comment": "\n     * Moves the figure. This is the\n     * method that subclassers override. Clients usually\n     * call displayBox.\n     * @see #moveBy\n     ",
+  "method_annotation": ""
+}

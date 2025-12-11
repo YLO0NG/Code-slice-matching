@@ -1,0 +1,20 @@
+{
+  "className": "CounterPanel",
+  "methodName": "setTotal",
+  "brief": "public void setTotal(int value){}",
+  "methodSignature": "setTotal(int)",
+  "sourceCode": "public void setTotal(int value) {\r\n\t\tfTotal= value;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setTotal(int value) {\r\n    fTotal = value;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "getStartConnector",
+  "brief": "protected Connector getStartConnector(){}",
+  "methodSignature": "getStartConnector()",
+  "sourceCode": "protected Connector getStartConnector() {\n        return fStartConnector;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "protected Connector getStartConnector() {\n    return fStartConnector;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

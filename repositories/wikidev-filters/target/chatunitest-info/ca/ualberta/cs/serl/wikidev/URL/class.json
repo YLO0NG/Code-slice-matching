@@ -1,0 +1,70 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.URL",
+  "className": "URL",
+  "index": 44,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev;",
+  "classSignature": "public class URL",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [
+    "private String url;",
+    "private String host;",
+    "private String entityType;",
+    "private String projectName;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getHost()": "0",
+    "setHost(String)": "1",
+    "getUrl()": "2",
+    "setUrl(String)": "3",
+    "getEntityType()": "4",
+    "setEntityType(String)": "5",
+    "getProjectName()": "6",
+    "setProjectName(String)": "7"
+  },
+  "methodsBrief": [
+    "public String getHost(){}",
+    "public void setHost(String host){}",
+    "public String getUrl(){}",
+    "public void setUrl(String url){}",
+    "public String getEntityType(){}",
+    "public void setEntityType(String entityType){}",
+    "public String getProjectName(){}",
+    "public void setProjectName(String projectName){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "getHost()",
+    "setHost(String)",
+    "getUrl()",
+    "setUrl(String)",
+    "getEntityType()",
+    "setEntityType(String)",
+    "getProjectName()",
+    "setProjectName(String)"
+  ],
+  "getterSetterBrief": [
+    "public String getHost(){}",
+    "public void setHost(String host){}",
+    "public String getUrl(){}",
+    "public void setUrl(String url){}",
+    "public String getEntityType(){}",
+    "public void setEntityType(String entityType){}",
+    "public String getProjectName(){}",
+    "public void setProjectName(String projectName){}"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev;\n\n/**\n * @author   User\n */\npublic class URL {\n\n    /**\n     * @uml.property  name=\"url\"\n     */\n    private String url;\n\n    /**\n     * @uml.property  name=\"host\"\n     */\n    private String host;\n\n    /**\n     * @uml.property  name=\"entityType\"\n     */\n    private String entityType;\n\n    /**\n     * @uml.property  name=\"projectName\"\n     */\n    private String projectName;\n\n    /**\n     * @return\n     * @uml.property  name=\"host\"\n     */\n    public String getHost() {\n        return host;\n    }\n\n    /**\n     * @param  host\n     * @uml.property  name=\"host\"\n     */\n    public void setHost(String host) {\n        this.host = host;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"url\"\n     */\n    public String getUrl() {\n        return url;\n    }\n\n    /**\n     * @param  url\n     * @uml.property  name=\"url\"\n     */\n    public void setUrl(String url) {\n        this.url = url;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"entityType\"\n     */\n    public String getEntityType() {\n        return entityType;\n    }\n\n    /**\n     * @param  entityType\n     * @uml.property  name=\"entityType\"\n     */\n    public void setEntityType(String entityType) {\n        this.entityType = entityType;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"projectName\"\n     */\n    public String getProjectName() {\n        return projectName;\n    }\n\n    /**\n     * @param  projectName\n     * @uml.property  name=\"projectName\"\n     */\n    public void setProjectName(String projectName) {\n        this.projectName = projectName;\n    }\n}\n",
+  "classDeclarationCode": "/**\n * @author   User\n */\npublic class URL {\n\n    /**\n     * @uml.property  name=\"url\"\n     */\n    private String url;\n\n    /**\n     * @uml.property  name=\"host\"\n     */\n    private String host;\n\n    /**\n     * @uml.property  name=\"entityType\"\n     */\n    private String entityType;\n\n    /**\n     * @uml.property  name=\"projectName\"\n     */\n    private String projectName;\n\n    /**\n     * @return\n     * @uml.property  name=\"host\"\n     */\n    public String getHost() {\n        return host;\n    }\n\n    /**\n     * @param  host\n     * @uml.property  name=\"host\"\n     */\n    public void setHost(String host) {\n        this.host = host;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"url\"\n     */\n    public String getUrl() {\n        return url;\n    }\n\n    /**\n     * @param  url\n     * @uml.property  name=\"url\"\n     */\n    public void setUrl(String url) {\n        this.url = url;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"entityType\"\n     */\n    public String getEntityType() {\n        return entityType;\n    }\n\n    /**\n     * @param  entityType\n     * @uml.property  name=\"entityType\"\n     */\n    public void setEntityType(String entityType) {\n        this.entityType = entityType;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"projectName\"\n     */\n    public String getProjectName() {\n        return projectName;\n    }\n\n    /**\n     * @param  projectName\n     * @uml.property  name=\"projectName\"\n     */\n    public void setProjectName(String projectName) {\n        this.projectName = projectName;\n    }\n}",
+  "subClasses": []
+}

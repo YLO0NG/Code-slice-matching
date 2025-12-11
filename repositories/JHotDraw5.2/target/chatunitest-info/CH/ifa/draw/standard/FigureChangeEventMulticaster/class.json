@@ -1,0 +1,70 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.FigureChangeEventMulticaster",
+  "className": "FigureChangeEventMulticaster",
+  "index": 126,
+  "modifier": "[public ]",
+  "extend": "[AWTEventMulticaster]",
+  "implement": "[FigureChangeListener]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public class FigureChangeEventMulticaster",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import java.awt.*;",
+    "import java.awt.event.*;",
+    "import java.util.*;",
+    "import java.io.*;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "AWTEventMulticaster"
+  ],
+  "implementedTypes": [
+    "FigureChangeListener"
+  ],
+  "methodSigs": {
+    "figureInvalidated(FigureChangeEvent)": "0",
+    "figureRequestRemove(FigureChangeEvent)": "1",
+    "figureRequestUpdate(FigureChangeEvent)": "2",
+    "figureChanged(FigureChangeEvent)": "3",
+    "figureRemoved(FigureChangeEvent)": "4",
+    "add(FigureChangeListener, FigureChangeListener)": "5",
+    "remove(FigureChangeListener, FigureChangeListener)": "6",
+    "remove(EventListener)": "7",
+    "addInternal(FigureChangeListener, FigureChangeListener)": "8",
+    "removeInternal(EventListener, EventListener)": "9",
+    "FigureChangeEventMulticaster(EventListener, EventListener)": "10"
+  },
+  "methodsBrief": [
+    "public void figureInvalidated(FigureChangeEvent e){}",
+    "public void figureRequestRemove(FigureChangeEvent e){}",
+    "public void figureRequestUpdate(FigureChangeEvent e){}",
+    "public void figureChanged(FigureChangeEvent e){}",
+    "public void figureRemoved(FigureChangeEvent e){}",
+    "public static FigureChangeListener add(FigureChangeListener a, FigureChangeListener b){}",
+    "public static FigureChangeListener remove(FigureChangeListener l, FigureChangeListener oldl){}",
+    "protected EventListener remove(EventListener oldl)\r\n   {}",
+    "protected static EventListener addInternal(FigureChangeListener a, FigureChangeListener b){}",
+    "protected static EventListener removeInternal(EventListener l, EventListener oldl){}",
+    "public FigureChangeEventMulticaster(EventListener a, EventListener b){}"
+  ],
+  "constructorSigs": [
+    "FigureChangeEventMulticaster(EventListener, EventListener)"
+  ],
+  "constructorBrief": [
+    "public FigureChangeEventMulticaster(EventListener a, EventListener b){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.util.EventListener": []
+  },
+  "compilationUnitCode": "/*\n * @(#)FigureChangeEventMulticaster.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\nimport java.awt.*;\nimport java.awt.event.*;\nimport java.util.*;\nimport java.io.*;\n\n/**\n * Manages a list of FigureChangeListeners to be notified of\n * specific FigureChangeEvents.\n */\npublic class FigureChangeEventMulticaster extends AWTEventMulticaster implements FigureChangeListener {\n\n    public FigureChangeEventMulticaster(EventListener a, EventListener b) {\n        super(a, b);\n    }\n\n    public void figureInvalidated(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureInvalidated(e);\n        ((FigureChangeListener) b).figureInvalidated(e);\n    }\n\n    public void figureRequestRemove(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureRequestRemove(e);\n        ((FigureChangeListener) b).figureRequestRemove(e);\n    }\n\n    public void figureRequestUpdate(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureRequestUpdate(e);\n        ((FigureChangeListener) b).figureRequestUpdate(e);\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureChanged(e);\n        ((FigureChangeListener) b).figureChanged(e);\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureRemoved(e);\n        ((FigureChangeListener) b).figureRemoved(e);\n    }\n\n    public static FigureChangeListener add(FigureChangeListener a, FigureChangeListener b) {\n        return (FigureChangeListener) addInternal(a, b);\n    }\n\n    public static FigureChangeListener remove(FigureChangeListener l, FigureChangeListener oldl) {\n        return (FigureChangeListener) removeInternal(l, oldl);\n    }\n\n    protected EventListener remove(EventListener oldl) {\n        if (oldl == a)\n            return b;\n        if (oldl == b)\n            return a;\n        EventListener a2 = removeInternal((FigureChangeListener) a, oldl);\n        EventListener b2 = removeInternal((FigureChangeListener) b, oldl);\n        if (a2 == a && b2 == b)\n            return this;\n        else {\n            FigureChangeListener a1 = (FigureChangeListener) a2;\n            FigureChangeListener b1 = (FigureChangeListener) b2;\n            if (a1 == null)\n                return b1;\n            if (b1 == null)\n                return a1;\n            return new FigureChangeEventMulticaster(a1, b1);\n        }\n    }\n\n    protected static EventListener addInternal(FigureChangeListener a, FigureChangeListener b) {\n        if (a == null)\n            return b;\n        if (b == null)\n            return a;\n        return new FigureChangeEventMulticaster(a, b);\n    }\n\n    protected static EventListener removeInternal(EventListener l, EventListener oldl) {\n        if (l == oldl || l == null) {\n            return null;\n        } else if (l instanceof FigureChangeEventMulticaster) {\n            return ((FigureChangeEventMulticaster) l).remove(oldl);\n        } else {\n            // it's not here\n            return l;\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Manages a list of FigureChangeListeners to be notified of\n * specific FigureChangeEvents.\n */\npublic class FigureChangeEventMulticaster extends AWTEventMulticaster implements FigureChangeListener {\n\n    public FigureChangeEventMulticaster(EventListener a, EventListener b) {\n        super(a, b);\n    }\n\n    public void figureInvalidated(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureInvalidated(e);\n        ((FigureChangeListener) b).figureInvalidated(e);\n    }\n\n    public void figureRequestRemove(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureRequestRemove(e);\n        ((FigureChangeListener) b).figureRequestRemove(e);\n    }\n\n    public void figureRequestUpdate(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureRequestUpdate(e);\n        ((FigureChangeListener) b).figureRequestUpdate(e);\n    }\n\n    public void figureChanged(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureChanged(e);\n        ((FigureChangeListener) b).figureChanged(e);\n    }\n\n    public void figureRemoved(FigureChangeEvent e) {\n        ((FigureChangeListener) a).figureRemoved(e);\n        ((FigureChangeListener) b).figureRemoved(e);\n    }\n\n    public static FigureChangeListener add(FigureChangeListener a, FigureChangeListener b) {\n        return (FigureChangeListener) addInternal(a, b);\n    }\n\n    public static FigureChangeListener remove(FigureChangeListener l, FigureChangeListener oldl) {\n        return (FigureChangeListener) removeInternal(l, oldl);\n    }\n\n    protected EventListener remove(EventListener oldl) {\n        if (oldl == a)\n            return b;\n        if (oldl == b)\n            return a;\n        EventListener a2 = removeInternal((FigureChangeListener) a, oldl);\n        EventListener b2 = removeInternal((FigureChangeListener) b, oldl);\n        if (a2 == a && b2 == b)\n            return this;\n        else {\n            FigureChangeListener a1 = (FigureChangeListener) a2;\n            FigureChangeListener b1 = (FigureChangeListener) b2;\n            if (a1 == null)\n                return b1;\n            if (b1 == null)\n                return a1;\n            return new FigureChangeEventMulticaster(a1, b1);\n        }\n    }\n\n    protected static EventListener addInternal(FigureChangeListener a, FigureChangeListener b) {\n        if (a == null)\n            return b;\n        if (b == null)\n            return a;\n        return new FigureChangeEventMulticaster(a, b);\n    }\n\n    protected static EventListener removeInternal(EventListener l, EventListener oldl) {\n        if (l == oldl || l == null) {\n            return null;\n        } else if (l instanceof FigureChangeEventMulticaster) {\n            return ((FigureChangeEventMulticaster) l).remove(oldl);\n        } else {\n            // it's not here\n            return l;\n        }\n    }\n}",
+  "subClasses": []
+}

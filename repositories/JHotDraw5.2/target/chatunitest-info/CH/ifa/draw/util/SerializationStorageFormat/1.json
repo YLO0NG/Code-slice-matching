@@ -1,0 +1,22 @@
+{
+  "className": "SerializationStorageFormat",
+  "methodName": "createFileDescription",
+  "brief": "public String createFileDescription(){}",
+  "methodSignature": "createFileDescription()",
+  "sourceCode": "public String createFileDescription() {\n\t\treturn \"Serialization (\" + getFileExtension() + \")\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.util.StandardStorageFormat": [
+      "getFileExtension()"
+    ]
+  },
+  "full_method_info": "/**\n * Factory method to create a file description for the file type when displaying the\n * associated FileFilter.\n *\n * @return new file description\n */\npublic String createFileDescription() {\n    return \"Serialization (\" + getFileExtension() + \")\";\n}",
+  "method_comment": "\n\t * Factory method to create a file description for the file type when displaying the\n\t * associated FileFilter.\n\t *\n\t * @return new file description\n\t ",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "addError",
+  "brief": "void addError(Test t){}",
+  "methodSignature": "addError(Test)",
+  "sourceCode": "void addError(Test t) {\r\n\t\tfErrors.put(t, t);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Hashtable": [
+      "put(K, V)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Remembers a test error\r\n */\r\nvoid addError(Test t) {\r\n    fErrors.put(t, t);\r\n}",
+  "method_comment": "\r\n\t * Remembers a test error\r\n\t ",
+  "method_annotation": ""
+}

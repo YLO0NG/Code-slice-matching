@@ -1,0 +1,24 @@
+{
+  "className": "TestListener",
+  "methodName": "addFailure",
+  "brief": "public void addFailure(Test test, AssertionFailedError t);",
+  "methodSignature": "addFailure(Test, AssertionFailedError)",
+  "sourceCode": "public void addFailure(Test test, AssertionFailedError t);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test",
+    "AssertionFailedError"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "junit.framework.AssertionFailedError": []
+  },
+  "full_method_info": "/**\r\n * A failure occurred.\r\n */\r\npublic void addFailure(Test test, AssertionFailedError t);",
+  "method_comment": "\r\n \t * A failure occurred.\r\n \t ",
+  "method_annotation": ""
+}

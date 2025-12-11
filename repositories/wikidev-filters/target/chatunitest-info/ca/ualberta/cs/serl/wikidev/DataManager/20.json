@@ -1,0 +1,54 @@
+{
+  "className": "DataManager",
+  "methodName": "writeArtifactInCluster",
+  "brief": "public static void writeArtifactInCluster(Cluster cluster) throws SQLException{}",
+  "methodSignature": "writeArtifactInCluster(Cluster)",
+  "sourceCode": "public static void writeArtifactInCluster(Cluster cluster) throws SQLException {\n    \tProject project = DataManager.getProjectByID(cluster.getProject());\n    \tint clusterid = DataManager.getClusterID(cluster);\n    \tfor(IArtifact artifact : cluster.getArtifacts()) {\n    \t\tString type = \"\";\n    \t\tint id = 0;\n    \t\tClusterPoint point = cluster.getCoordinates().get(artifact);\n    \t\tif(artifact instanceof ChangeSet) {\n    \t\t\ttype = \"ChangeSet\";\n    \t\t\tChangeSet changeset = (ChangeSet)artifact;\n    \t\t\tid = changeset.getRevision();\n    \t\t}\n    \t\telse if(artifact instanceof Ticket) {\n    \t\t\ttype = \"Ticket\";\n    \t\t\tTicket ticket = (Ticket)artifact;\n    \t\t\tid = ticket.getTicketID();\n    \t\t}\n    \t\telse if(artifact instanceof Message) {\n    \t\t\ttype = \"Message\";\n    \t\t\tMessage message = (Message)artifact;\n    \t\t\tid = message.getCommunicationID();\n    \t\t}\n    \t\telse if(artifact instanceof Wiki) {\n    \t\t\ttype = \"Wiki\";\n    \t\t\tWiki wiki = (Wiki)artifact;\n    \t\t\tid = wiki.getPage_id();\n    \t\t}\n\t        String sqlStmt = QueryBuilder.insertArtifactInCluster(type, clusterid, project.getProjectName(), id, point);\n\t        statement.executeUpdate(sqlStmt);\n\t        //conn.commit();\n    \t}\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Cluster"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getProject()",
+      "getArtifacts()",
+      "getCoordinates()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.DataManager": [
+      "getClusterID(Cluster)",
+      "getProjectByID(int)"
+    ],
+    "java.util.HashMap": [
+      "get(Object)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.ChangeSet": [
+      "getRevision()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Ticket": [
+      "getTicketID()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Message": [
+      "getCommunicationID()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.artifacts.Wiki": [
+      "getPage_id()"
+    ],
+    "ca.ualberta.cs.serl.wikidev.QueryBuilder": [
+      "insertArtifactInCluster(String, int, String, int, ClusterPoint)"
+    ],
+    "ca.ualberta.cs.serl.wikidev.Project": [
+      "getProjectName()"
+    ],
+    "java.sql.Statement": [
+      "executeUpdate(String)"
+    ]
+  },
+  "full_method_info": "public static void writeArtifactInCluster(Cluster cluster) throws SQLException {\n    Project project = DataManager.getProjectByID(cluster.getProject());\n    int clusterid = DataManager.getClusterID(cluster);\n    for (IArtifact artifact : cluster.getArtifacts()) {\n        String type = \"\";\n        int id = 0;\n        ClusterPoint point = cluster.getCoordinates().get(artifact);\n        if (artifact instanceof ChangeSet) {\n            type = \"ChangeSet\";\n            ChangeSet changeset = (ChangeSet) artifact;\n            id = changeset.getRevision();\n        } else if (artifact instanceof Ticket) {\n            type = \"Ticket\";\n            Ticket ticket = (Ticket) artifact;\n            id = ticket.getTicketID();\n        } else if (artifact instanceof Message) {\n            type = \"Message\";\n            Message message = (Message) artifact;\n            id = message.getCommunicationID();\n        } else if (artifact instanceof Wiki) {\n            type = \"Wiki\";\n            Wiki wiki = (Wiki) artifact;\n            id = wiki.getPage_id();\n        }\n        String sqlStmt = QueryBuilder.insertArtifactInCluster(type, clusterid, project.getProjectName(), id, point);\n        statement.executeUpdate(sqlStmt);\n        // conn.commit();\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,25 @@
+{
+  "className": "DrawApplication",
+  "methodName": "addListeners",
+  "brief": "protected void addListeners(){}",
+  "methodSignature": "addListeners()",
+  "sourceCode": "protected void addListeners() {\n\t    addWindowListener(\n            new WindowAdapter() {\n                public void windowClosing(WindowEvent event) {\n                    exit();\n                }\n            }\n        );\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Window": [
+      "addWindowListener(WindowListener)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "exit()"
+    ]
+  },
+  "full_method_info": "/**\n * Registers the listeners for this window\n */\nprotected void addListeners() {\n    addWindowListener(new WindowAdapter() {\n\n        public void windowClosing(WindowEvent event) {\n            exit();\n        }\n    });\n}",
+  "method_comment": "\n     * Registers the listeners for this window\n     ",
+  "method_annotation": ""
+}

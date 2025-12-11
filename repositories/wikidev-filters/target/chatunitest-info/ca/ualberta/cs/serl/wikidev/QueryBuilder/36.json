@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectRevisionsByWikiID",
+  "brief": "public static String selectRevisionsByWikiID(int page_id){}",
+  "methodSignature": "selectRevisionsByWikiID(int)",
+  "sourceCode": "public static String selectRevisionsByWikiID(int page_id) {\n\t\treturn \"select * from mw_revision where rev_page=\\'\"+page_id+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/*private static String getProjectName(int projectid) {\n\t\tif(projectid<10) {\n\t\t\treturn \"team0\"+projectid;\n\t\t}\n\t\telse {\n\t\t\treturn \"team\"+projectid;\n\t\t}\n\t}*/\npublic static String selectRevisionsByWikiID(int page_id) {\n    return \"select * from mw_revision where rev_page=\\'\" + page_id + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

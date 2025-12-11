@@ -1,0 +1,16 @@
+{
+  "targetClass": "CH.ifa.draw.util.StorableOutput",
+  "targetMethod": "writeStorable(Storable)",
+  "dependentFields": {
+    "CH.ifa.draw.util.StorableOutput": "private PrintWriter     fStream;\nprivate Vector          fMap;\nprivate int             fIndent;",
+    "CH.ifa.draw.util.Storable": ""
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.util.StorableOutput": "private void decrementIndent(){}\nprivate void startNewLine(){}\nprivate void map(Storable storable){}\nprivate void space(){}\nprivate void incrementIndent(){}\nprivate boolean mapped(Storable storable){}",
+    "CH.ifa.draw.util.Storable": "public void write(StorableOutput dw);"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.util.StorableOutput": "private void decrementIndent() {\n        fIndent -= 4;\n        if (fIndent < 0) fIndent = 0;\n    }\nprivate void startNewLine() {\n        fStream.println();\n        for (int i=0; i<fIndent; i++)\n            space();\n    }\nprivate void map(Storable storable) {\n        if (!fMap.contains(storable))\n            fMap.addElement(storable);\n    }\nprivate void space() {\n        fStream.print(' ');\n    }\nprivate void incrementIndent() {\n        fIndent += 4;\n    }\nprivate boolean mapped(Storable storable) {\n        return fMap.contains(storable);\n    }",
+    "CH.ifa.draw.util.Storable": "* Writes the object to the StorableOutput.\n     \npublic void write(StorableOutput dw);"
+  }
+}

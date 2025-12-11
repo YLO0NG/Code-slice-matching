@@ -1,0 +1,29 @@
+{
+  "className": "SourceClass",
+  "methodName": "SourceClass",
+  "brief": "public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID){}",
+  "methodSignature": "SourceClass(int, String, Timestamp, int, Timestamp, String, int)",
+  "sourceCode": "public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID) {\n\t\tthis.classID = classID;\n\t\tthis.className = className;\n\t\tthis.dateCreated = dateCreated;\n\t\t//this.ownerID = ownerID;\n\t\tthis.timestamp = lastModified;\n\t\t//this.url = url;\n\t\t//this.projectID = projectID;\n\t\tthis.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n\t\t//this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n\t}",
+  "useField": true,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "String",
+    "Timestamp",
+    "int",
+    "Timestamp",
+    "String",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "full_method_info": "public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID) {\n    this.classID = classID;\n    this.className = className;\n    this.dateCreated = dateCreated;\n    // this.ownerID = ownerID;\n    this.timestamp = lastModified;\n    // this.url = url;\n    // this.projectID = projectID;\n    this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n    // this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

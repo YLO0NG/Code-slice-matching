@@ -1,0 +1,24 @@
+{
+  "className": "Stemmer",
+  "methodName": "cons",
+  "brief": "private final boolean cons(int i)\r\n  {}",
+  "methodSignature": "cons(int)",
+  "sourceCode": "private final boolean cons(int i)\n   {  switch (b[i])\n      {  case 'a': case 'e': case 'i': case 'o': case 'u': return false;\n         case 'y': return (i==0) ? true : !cons(i-1);\n         default: return true;\n      }\n   }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Stemmer": [
+      "cons(int)"
+    ]
+  },
+  "full_method_info": "/* cons(i) is true <=> b[i] is a consonant. */\nprivate final boolean cons(int i) {\n    switch(b[i]) {\n        case 'a':\n        case 'e':\n        case 'i':\n        case 'o':\n        case 'u':\n            return false;\n        case 'y':\n            return (i == 0) ? true : !cons(i - 1);\n        default:\n            return true;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

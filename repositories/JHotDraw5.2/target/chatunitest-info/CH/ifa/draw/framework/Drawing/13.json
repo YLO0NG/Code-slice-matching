@@ -1,0 +1,22 @@
+{
+  "className": "Drawing",
+  "methodName": "addAll",
+  "brief": "public void addAll(Vector newFigures);",
+  "methodSignature": "addAll(Vector)",
+  "sourceCode": "public void addAll(Vector newFigures);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Vector"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": []
+  },
+  "full_method_info": "/**\n * Adds a vector of figures.\n */\npublic void addAll(Vector newFigures);",
+  "method_comment": "\n     * Adds a vector of figures.\n     ",
+  "method_annotation": ""
+}

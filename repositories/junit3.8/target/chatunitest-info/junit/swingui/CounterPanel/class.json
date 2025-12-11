@@ -1,0 +1,84 @@
+{
+  "fullClassName": "junit.swingui.CounterPanel",
+  "className": "CounterPanel",
+  "index": 34,
+  "modifier": "[public ]",
+  "extend": "[JPanel]",
+  "implement": "[]",
+  "packageName": "junit.swingui",
+  "packageDeclaration": "package junit.swingui;",
+  "classSignature": "public class CounterPanel",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.awt.*;",
+    "import javax.swing.*;"
+  ],
+  "fields": [
+    "private JTextField fNumberOfErrors;",
+    "private JTextField fNumberOfFailures;",
+    "private JTextField fNumberOfRuns;",
+    "private Icon fFailureIcon= TestRunner.getIconResource(getClass(), \"icons/failure.gif\");",
+    "private Icon fErrorIcon= TestRunner.getIconResource(getClass(), \"icons/error.gif\");",
+    "private int fTotal;"
+  ],
+  "superClasses": [
+    "JPanel"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createOutputField(int)": "0",
+    "addToGrid(Component, int, int, int, int, double, double, int, int, Insets)": "1",
+    "reset()": "2",
+    "setTotal(int)": "3",
+    "setRunValue(int)": "4",
+    "setErrorValue(int)": "5",
+    "setFailureValue(int)": "6",
+    "asString(int)": "7",
+    "setLabelValue(JTextField, int)": "8",
+    "CounterPanel()": "9"
+  },
+  "methodsBrief": [
+    "private JTextField createOutputField(int width){}",
+    "public void addToGrid(Component comp,\r\r\n\t    \tint gridx, int gridy, int gridwidth, int gridheight,\r\r\n\t\t\tdouble weightx, double weighty,\r\r\n\t\t\tint anchor, int fill,\r\r\n\t\t\tInsets insets){}",
+    "public void reset(){}",
+    "public void setTotal(int value){}",
+    "public void setRunValue(int value){}",
+    "public void setErrorValue(int value){}",
+    "public void setFailureValue(int value){}",
+    "private String asString(int value){}",
+    "private void setLabelValue(JTextField label, int value){}",
+    "public CounterPanel(){}"
+  ],
+  "constructorSigs": [
+    "CounterPanel()"
+  ],
+  "constructorBrief": [
+    "public CounterPanel(){}"
+  ],
+  "getterSetterSigs": [
+    "setTotal(int)",
+    "setRunValue(int)",
+    "setErrorValue(int)",
+    "setFailureValue(int)",
+    "setLabelValue(JTextField, int)"
+  ],
+  "getterSetterBrief": [
+    "public void setTotal(int value){}",
+    "public void setRunValue(int value){}",
+    "public void setErrorValue(int value){}",
+    "public void setFailureValue(int value){}",
+    "private void setLabelValue(JTextField label, int value){}"
+  ],
+  "constructorDeps": {
+    "junit.swingui.CounterPanel": [
+      "createOutputField(int)",
+      "addToGrid(Component, int, int, int, int, double, double, int, int, Insets)"
+    ]
+  },
+  "compilationUnitCode": "package junit.swingui;\r\n\r\nimport java.awt.*;\r\nimport javax.swing.*;\r\n\r\n/**\r\n * A panel with test run counters\r\n */\r\npublic class CounterPanel extends JPanel {\r\n\r\n    private JTextField fNumberOfErrors;\r\n\r\n    private JTextField fNumberOfFailures;\r\n\r\n    private JTextField fNumberOfRuns;\r\n\r\n    private Icon fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n\r\n    private Icon fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n\r\n    private int fTotal;\r\n\r\n    public CounterPanel() {\r\n        super(new GridBagLayout());\r\n        fNumberOfErrors = createOutputField(5);\r\n        fNumberOfFailures = createOutputField(5);\r\n        fNumberOfRuns = createOutputField(9);\r\n        addToGrid(new JLabel(\"Runs:\", JLabel.CENTER), 0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0));\r\n        addToGrid(fNumberOfRuns, 1, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n        addToGrid(new JLabel(\"Errors:\", fErrorIcon, SwingConstants.LEFT), 2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 8, 0, 0));\r\n        addToGrid(fNumberOfErrors, 3, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n        addToGrid(new JLabel(\"Failures:\", fFailureIcon, SwingConstants.LEFT), 4, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 8, 0, 0));\r\n        addToGrid(fNumberOfFailures, 5, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n    }\r\n\r\n    private JTextField createOutputField(int width) {\r\n        JTextField field = new JTextField(\"0\", width);\r\n        // force a fixed layout to avoid accidental hiding on relayout\r\n        field.setMinimumSize(field.getPreferredSize());\r\n        field.setMaximumSize(field.getPreferredSize());\r\n        field.setHorizontalAlignment(JTextField.LEFT);\r\n        field.setFont(StatusLine.BOLD_FONT);\r\n        field.setEditable(false);\r\n        field.setBorder(BorderFactory.createEmptyBorder());\r\n        return field;\r\n    }\r\n\r\n    public void addToGrid(Component comp, int gridx, int gridy, int gridwidth, int gridheight, double weightx, double weighty, int anchor, int fill, Insets insets) {\r\n        GridBagConstraints constraints = new GridBagConstraints();\r\n        constraints.gridx = gridx;\r\n        constraints.gridy = gridy;\r\n        constraints.gridwidth = gridwidth;\r\n        constraints.gridheight = gridheight;\r\n        constraints.weightx = weightx;\r\n        constraints.weighty = weighty;\r\n        constraints.anchor = anchor;\r\n        constraints.fill = fill;\r\n        constraints.insets = insets;\r\n        add(comp, constraints);\r\n    }\r\n\r\n    public void reset() {\r\n        setLabelValue(fNumberOfErrors, 0);\r\n        setLabelValue(fNumberOfFailures, 0);\r\n        setLabelValue(fNumberOfRuns, 0);\r\n        fTotal = 0;\r\n    }\r\n\r\n    public void setTotal(int value) {\r\n        fTotal = value;\r\n    }\r\n\r\n    public void setRunValue(int value) {\r\n        fNumberOfRuns.setText(Integer.toString(value) + \"/\" + fTotal);\r\n    }\r\n\r\n    public void setErrorValue(int value) {\r\n        setLabelValue(fNumberOfErrors, value);\r\n    }\r\n\r\n    public void setFailureValue(int value) {\r\n        setLabelValue(fNumberOfFailures, value);\r\n    }\r\n\r\n    private String asString(int value) {\r\n        return Integer.toString(value);\r\n    }\r\n\r\n    private void setLabelValue(JTextField label, int value) {\r\n        label.setText(Integer.toString(value));\r\n    }\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A panel with test run counters\r\n */\r\npublic class CounterPanel extends JPanel {\r\n\r\n    private JTextField fNumberOfErrors;\r\n\r\n    private JTextField fNumberOfFailures;\r\n\r\n    private JTextField fNumberOfRuns;\r\n\r\n    private Icon fFailureIcon = TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\r\n\r\n    private Icon fErrorIcon = TestRunner.getIconResource(getClass(), \"icons/error.gif\");\r\n\r\n    private int fTotal;\r\n\r\n    public CounterPanel() {\r\n        super(new GridBagLayout());\r\n        fNumberOfErrors = createOutputField(5);\r\n        fNumberOfFailures = createOutputField(5);\r\n        fNumberOfRuns = createOutputField(9);\r\n        addToGrid(new JLabel(\"Runs:\", JLabel.CENTER), 0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0));\r\n        addToGrid(fNumberOfRuns, 1, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n        addToGrid(new JLabel(\"Errors:\", fErrorIcon, SwingConstants.LEFT), 2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 8, 0, 0));\r\n        addToGrid(fNumberOfErrors, 3, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n        addToGrid(new JLabel(\"Failures:\", fFailureIcon, SwingConstants.LEFT), 4, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 8, 0, 0));\r\n        addToGrid(fNumberOfFailures, 5, 0, 1, 1, 0.33, 0.0, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 8, 0, 0));\r\n    }\r\n\r\n    private JTextField createOutputField(int width) {\r\n        JTextField field = new JTextField(\"0\", width);\r\n        // force a fixed layout to avoid accidental hiding on relayout\r\n        field.setMinimumSize(field.getPreferredSize());\r\n        field.setMaximumSize(field.getPreferredSize());\r\n        field.setHorizontalAlignment(JTextField.LEFT);\r\n        field.setFont(StatusLine.BOLD_FONT);\r\n        field.setEditable(false);\r\n        field.setBorder(BorderFactory.createEmptyBorder());\r\n        return field;\r\n    }\r\n\r\n    public void addToGrid(Component comp, int gridx, int gridy, int gridwidth, int gridheight, double weightx, double weighty, int anchor, int fill, Insets insets) {\r\n        GridBagConstraints constraints = new GridBagConstraints();\r\n        constraints.gridx = gridx;\r\n        constraints.gridy = gridy;\r\n        constraints.gridwidth = gridwidth;\r\n        constraints.gridheight = gridheight;\r\n        constraints.weightx = weightx;\r\n        constraints.weighty = weighty;\r\n        constraints.anchor = anchor;\r\n        constraints.fill = fill;\r\n        constraints.insets = insets;\r\n        add(comp, constraints);\r\n    }\r\n\r\n    public void reset() {\r\n        setLabelValue(fNumberOfErrors, 0);\r\n        setLabelValue(fNumberOfFailures, 0);\r\n        setLabelValue(fNumberOfRuns, 0);\r\n        fTotal = 0;\r\n    }\r\n\r\n    public void setTotal(int value) {\r\n        fTotal = value;\r\n    }\r\n\r\n    public void setRunValue(int value) {\r\n        fNumberOfRuns.setText(Integer.toString(value) + \"/\" + fTotal);\r\n    }\r\n\r\n    public void setErrorValue(int value) {\r\n        setLabelValue(fNumberOfErrors, value);\r\n    }\r\n\r\n    public void setFailureValue(int value) {\r\n        setLabelValue(fNumberOfFailures, value);\r\n    }\r\n\r\n    private String asString(int value) {\r\n        return Integer.toString(value);\r\n    }\r\n\r\n    private void setLabelValue(JTextField label, int value) {\r\n        label.setText(Integer.toString(value));\r\n    }\r\n}",
+  "subClasses": []
+}

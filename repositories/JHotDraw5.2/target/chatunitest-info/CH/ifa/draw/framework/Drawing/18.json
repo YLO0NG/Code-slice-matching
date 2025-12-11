@@ -1,0 +1,23 @@
+{
+  "className": "Drawing",
+  "methodName": "replace",
+  "brief": "public void replace(Figure figure, Figure replacement);",
+  "methodSignature": "replace(Figure, Figure)",
+  "sourceCode": "public void replace(Figure figure, Figure replacement);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Replaces a figure in the drawing without\n * removing it from the drawing.\n */\npublic void replace(Figure figure, Figure replacement);",
+  "method_comment": "\n     * Replaces a figure in the drawing without\n     * removing it from the drawing.\n     ",
+  "method_annotation": ""
+}

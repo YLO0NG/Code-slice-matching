@@ -1,0 +1,30 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createColorChoice",
+  "brief": "protected JComboBox createColorChoice(String attribute){}",
+  "methodSignature": "createColorChoice(String)",
+  "sourceCode": "protected JComboBox createColorChoice(String attribute) {\n        CommandChoice choice = new CommandChoice();\n        for (int i=0; i<ColorMap.size(); i++)\n            choice.addItem(\n                new ChangeAttributeCommand(\n                    ColorMap.name(i),\n                    attribute,\n                    ColorMap.color(i),\n                    fView\n                )\n            );\n        return choice;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "CH.ifa.draw.util.ColorMap": [
+      "name(int)",
+      "color(int)",
+      "size()"
+    ],
+    "CH.ifa.draw.util.CommandChoice": [
+      "addItem(Command)"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the color choice for the given attribute.\n */\nprotected JComboBox createColorChoice(String attribute) {\n    CommandChoice choice = new CommandChoice();\n    for (int i = 0; i < ColorMap.size(); i++) choice.addItem(new ChangeAttributeCommand(ColorMap.name(i), attribute, ColorMap.color(i), fView));\n    return choice;\n}",
+  "method_comment": "\n     * Creates the color choice for the given attribute.\n     ",
+  "method_annotation": ""
+}

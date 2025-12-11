@@ -1,0 +1,60 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.FigureTransferCommand",
+  "className": "FigureTransferCommand",
+  "index": 128,
+  "modifier": "[abstract ]",
+  "extend": "[Command]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "abstract class FigureTransferCommand",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import java.util.*;",
+    "import CH.ifa.draw.util.*;",
+    "import CH.ifa.draw.framework.*;"
+  ],
+  "fields": [
+    "protected DrawingView fView;"
+  ],
+  "superClasses": [
+    "Command"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "deleteSelection()": "0",
+    "copySelection()": "1",
+    "insertFigures(Vector, int, int)": "2",
+    "FigureTransferCommand(String, DrawingView)": "3"
+  },
+  "methodsBrief": [
+    "protected void deleteSelection(){}",
+    "protected void copySelection(){}",
+    "protected void insertFigures(Vector figures, int dx, int dy){}",
+    "protected FigureTransferCommand(String name, DrawingView view){}"
+  ],
+  "constructorSigs": [
+    "FigureTransferCommand(String, DrawingView)"
+  ],
+  "constructorBrief": [
+    "protected FigureTransferCommand(String name, DrawingView view){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "CH.ifa.draw.framework.DrawingView": []
+  },
+  "compilationUnitCode": "/*\n * @(#)FigureTransferCommand.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport java.util.*;\nimport CH.ifa.draw.util.*;\nimport CH.ifa.draw.framework.*;\n\n/**\n * Common base clase for commands that transfer figures\n * between a drawing and the clipboard.\n */\nabstract class FigureTransferCommand extends Command {\n\n    protected DrawingView fView;\n\n    protected FigureTransferCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }\n\n    /**\n     * Deletes the selection from the drawing.\n     */\n    protected void deleteSelection() {\n        fView.drawing().removeAll(fView.selection());\n        fView.clearSelection();\n    }\n\n    /**\n     * Copies the selection to the clipboard.\n     */\n    protected void copySelection() {\n        FigureSelection selection = fView.getFigureSelection();\n        Clipboard.getClipboard().setContents(selection);\n    }\n\n    /**\n     * Inserts a vector of figures and translates them by the\n     * given offset.\n     */\n    protected void insertFigures(Vector figures, int dx, int dy) {\n        FigureEnumeration e = new FigureEnumerator(figures);\n        while (e.hasMoreElements()) {\n            Figure figure = e.nextFigure();\n            figure.moveBy(dx, dy);\n            figure = fView.add(figure);\n            fView.addToSelection(figure);\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * Common base clase for commands that transfer figures\n * between a drawing and the clipboard.\n */\nabstract class FigureTransferCommand extends Command {\n\n    protected DrawingView fView;\n\n    protected FigureTransferCommand(String name, DrawingView view) {\n        super(name);\n        fView = view;\n    }\n\n    /**\n     * Deletes the selection from the drawing.\n     */\n    protected void deleteSelection() {\n        fView.drawing().removeAll(fView.selection());\n        fView.clearSelection();\n    }\n\n    /**\n     * Copies the selection to the clipboard.\n     */\n    protected void copySelection() {\n        FigureSelection selection = fView.getFigureSelection();\n        Clipboard.getClipboard().setContents(selection);\n    }\n\n    /**\n     * Inserts a vector of figures and translates them by the\n     * given offset.\n     */\n    protected void insertFigures(Vector figures, int dx, int dy) {\n        FigureEnumeration e = new FigureEnumerator(figures);\n        while (e.hasMoreElements()) {\n            Figure figure = e.nextFigure();\n            figure.moveBy(dx, dy);\n            figure = fView.add(figure);\n            fView.addToSelection(figure);\n        }\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.standard.CopyCommand",
+    "CH.ifa.draw.standard.CutCommand",
+    "CH.ifa.draw.standard.DeleteCommand",
+    "CH.ifa.draw.standard.DuplicateCommand",
+    "CH.ifa.draw.standard.PasteCommand"
+  ]
+}

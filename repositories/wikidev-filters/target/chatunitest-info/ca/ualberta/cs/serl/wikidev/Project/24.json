@@ -1,0 +1,18 @@
+{
+  "className": "Project",
+  "methodName": "getUsers",
+  "brief": "public Set<User> getUsers(){}",
+  "methodSignature": "getUsers()",
+  "sourceCode": "public Set<User> getUsers() {\n\t\treturn users;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"users\"\n */\npublic Set<User> getUsers() {\n    return users;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"users\"\n\t ",
+  "method_annotation": ""
+}

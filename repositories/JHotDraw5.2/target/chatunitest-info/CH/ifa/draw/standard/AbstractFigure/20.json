@@ -1,0 +1,28 @@
+{
+  "className": "AbstractFigure",
+  "methodName": "invalidate",
+  "brief": "public void invalidate(){}",
+  "methodSignature": "invalidate()",
+  "sourceCode": "public void invalidate() {\n        if (fListener != null) {\n            Rectangle r = displayBox();\n            r.grow(Handle.HANDLESIZE, Handle.HANDLESIZE);\n            fListener.figureInvalidated(new FigureChangeEvent(this, r));\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.AbstractFigure": [
+      "displayBox()"
+    ],
+    "java.awt.Rectangle": [
+      "grow(int, int)"
+    ],
+    "CH.ifa.draw.framework.FigureChangeListener": [
+      "figureInvalidated(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Invalidates the figure. This method informs the listeners\n * that the figure's current display box is invalid and should be\n * refreshed.\n */\npublic void invalidate() {\n    if (fListener != null) {\n        Rectangle r = displayBox();\n        r.grow(Handle.HANDLESIZE, Handle.HANDLESIZE);\n        fListener.figureInvalidated(new FigureChangeEvent(this, r));\n    }\n}",
+  "method_comment": "\n     * Invalidates the figure. This method informs the listeners\n     * that the figure's current display box is invalid and should be\n     * refreshed.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,65 @@
+{
+  "fullClassName": "CH.ifa.draw.samples.javadraw.JavaDrawViewer",
+  "className": "JavaDrawViewer",
+  "index": 79,
+  "modifier": "[public ]",
+  "extend": "[JApplet]",
+  "implement": "[DrawingEditor]",
+  "packageName": "CH.ifa.draw.samples.javadraw",
+  "packageDeclaration": "package CH.ifa.draw.samples.javadraw;",
+  "classSignature": "public  class JavaDrawViewer",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.*;",
+    "import java.applet.Applet;",
+    "import java.awt.*;",
+    "import java.awt.event.MouseEvent;",
+    "import java.util.*;",
+    "import java.io.*;",
+    "import java.net.*;",
+    "import CH.ifa.draw.framework.*;",
+    "import CH.ifa.draw.standard.*;",
+    "import CH.ifa.draw.util.*;"
+  ],
+  "fields": [
+    "private Drawing         fDrawing;",
+    "private Tool            fTool;",
+    "private StandardDrawingView fView;",
+    "private Iconkit         fIconkit;"
+  ],
+  "superClasses": [
+    "JApplet"
+  ],
+  "implementedTypes": [
+    "DrawingEditor"
+  ],
+  "methodSigs": {
+    "init()": "0",
+    "loadDrawing(String)": "1",
+    "view()": "2",
+    "drawing()": "3",
+    "tool()": "4",
+    "toolDone()": "5",
+    "selectionChanged(DrawingView)": "6"
+  },
+  "methodsBrief": [
+    "public void init(){}",
+    "private void loadDrawing(String filename){}",
+    "public DrawingView view(){}",
+    "public Drawing drawing(){}",
+    "public Tool tool(){}",
+    "public void toolDone(){}",
+    "public void selectionChanged(DrawingView view){}"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)JavaDrawViewer.java 5.2\n *\n */\npackage CH.ifa.draw.samples.javadraw;\n\nimport javax.swing.*;\nimport java.applet.Applet;\nimport java.awt.*;\nimport java.awt.event.MouseEvent;\nimport java.util.*;\nimport java.io.*;\nimport java.net.*;\nimport CH.ifa.draw.framework.*;\nimport CH.ifa.draw.standard.*;\nimport CH.ifa.draw.util.*;\n\npublic class JavaDrawViewer extends JApplet implements DrawingEditor {\n\n    private Drawing fDrawing;\n\n    private Tool fTool;\n\n    private StandardDrawingView fView;\n\n    private Iconkit fIconkit;\n\n    public void init() {\n        getContentPane().setLayout(new BorderLayout());\n        fView = new StandardDrawingView(this, 400, 370);\n        getContentPane().add(\"Center\", fView);\n        fTool = new FollowURLTool(view(), this);\n        fIconkit = new Iconkit(this);\n        String filename = getParameter(\"Drawing\");\n        if (filename != null) {\n            try {\n                URL url = new URL(getCodeBase(), filename);\n                InputStream stream = url.openStream();\n                StorableInput reader = new StorableInput(stream);\n                fDrawing = (Drawing) reader.readStorable();\n            } catch (IOException e) {\n                fDrawing = new StandardDrawing();\n                System.out.println(\"Error when Loading: \" + e);\n                showStatus(\"Error when Loading: \" + e);\n            }\n            fView.setDrawing(fDrawing);\n        } else\n            showStatus(\"Unable to load drawing\");\n    }\n\n    private void loadDrawing(String filename) {\n        try {\n            URL url = new URL(getCodeBase(), filename);\n            InputStream stream = url.openStream();\n            StorableInput reader = new StorableInput(stream);\n            fDrawing = (Drawing) reader.readStorable();\n        } catch (IOException e) {\n            fDrawing = new StandardDrawing();\n            System.out.println(\"Error when Loading: \" + e);\n            showStatus(\"Error when Loading: \" + e);\n        }\n    }\n\n    /**\n     * Gets the editor's drawing view.\n     */\n    public DrawingView view() {\n        return fView;\n    }\n\n    /**\n     * Gets the editor's drawing.\n     */\n    public Drawing drawing() {\n        return fDrawing;\n    }\n\n    /**\n     * Gets the current the tool (there is only one):\n     */\n    public Tool tool() {\n        return fTool;\n    }\n\n    /**\n     * Sets the editor's default tool. Do nothing since we only have one tool.\n     */\n    public void toolDone() {\n    }\n\n    /**\n     * Ignore selection changes, we don't show any selection\n     */\n    public void selectionChanged(DrawingView view) {\n    }\n}\n",
+  "classDeclarationCode": "public class JavaDrawViewer extends JApplet implements DrawingEditor {\n\n    private Drawing fDrawing;\n\n    private Tool fTool;\n\n    private StandardDrawingView fView;\n\n    private Iconkit fIconkit;\n\n    public void init() {\n        getContentPane().setLayout(new BorderLayout());\n        fView = new StandardDrawingView(this, 400, 370);\n        getContentPane().add(\"Center\", fView);\n        fTool = new FollowURLTool(view(), this);\n        fIconkit = new Iconkit(this);\n        String filename = getParameter(\"Drawing\");\n        if (filename != null) {\n            try {\n                URL url = new URL(getCodeBase(), filename);\n                InputStream stream = url.openStream();\n                StorableInput reader = new StorableInput(stream);\n                fDrawing = (Drawing) reader.readStorable();\n            } catch (IOException e) {\n                fDrawing = new StandardDrawing();\n                System.out.println(\"Error when Loading: \" + e);\n                showStatus(\"Error when Loading: \" + e);\n            }\n            fView.setDrawing(fDrawing);\n        } else\n            showStatus(\"Unable to load drawing\");\n    }\n\n    private void loadDrawing(String filename) {\n        try {\n            URL url = new URL(getCodeBase(), filename);\n            InputStream stream = url.openStream();\n            StorableInput reader = new StorableInput(stream);\n            fDrawing = (Drawing) reader.readStorable();\n        } catch (IOException e) {\n            fDrawing = new StandardDrawing();\n            System.out.println(\"Error when Loading: \" + e);\n            showStatus(\"Error when Loading: \" + e);\n        }\n    }\n\n    /**\n     * Gets the editor's drawing view.\n     */\n    public DrawingView view() {\n        return fView;\n    }\n\n    /**\n     * Gets the editor's drawing.\n     */\n    public Drawing drawing() {\n        return fDrawing;\n    }\n\n    /**\n     * Gets the current the tool (there is only one):\n     */\n    public Tool tool() {\n        return fTool;\n    }\n\n    /**\n     * Sets the editor's default tool. Do nothing since we only have one tool.\n     */\n    public void toolDone() {\n    }\n\n    /**\n     * Ignore selection changes, we don't show any selection\n     */\n    public void selectionChanged(DrawingView view) {\n    }\n}",
+  "subClasses": []
+}

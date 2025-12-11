@@ -1,0 +1,72 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.AbstractHandle",
+  "className": "AbstractHandle",
+  "index": 94,
+  "modifier": "[public , abstract ]",
+  "extend": "[]",
+  "implement": "[Handle]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "public abstract class AbstractHandle",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": true,
+  "imports": [
+    "import CH.ifa.draw.framework.*;",
+    "import java.awt.*;"
+  ],
+  "fields": [
+    "public static final int HANDLESIZE = 8;",
+    "private Figure fOwner;"
+  ],
+  "superClasses": [],
+  "implementedTypes": [
+    "Handle"
+  ],
+  "methodSigs": {
+    "locate()": "0",
+    "invokeStart(int, int, Drawing)": "1",
+    "invokeStart(int, int, DrawingView)": "2",
+    "invokeStep(int, int, Drawing)": "3",
+    "invokeStep(int, int, int, int, DrawingView)": "4",
+    "invokeEnd(int, int, int, int, DrawingView)": "5",
+    "invokeEnd(int, int, Drawing)": "6",
+    "owner()": "7",
+    "displayBox()": "8",
+    "containsPoint(int, int)": "9",
+    "draw(Graphics)": "10",
+    "AbstractHandle(Figure)": "11"
+  },
+  "methodsBrief": [
+    "public abstract Point locate();",
+    "public void invokeStart(int  x, int  y, Drawing drawing){}",
+    "public void invokeStart(int  x, int  y, DrawingView view){}",
+    "public void invokeStep (int dx, int dy, Drawing drawing){}",
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "public void invokeEnd  (int dx, int dy, Drawing drawing){}",
+    "public Figure owner(){}",
+    "public Rectangle displayBox(){}",
+    "public boolean containsPoint(int x, int y){}",
+    "public void draw(Graphics g){}",
+    "public AbstractHandle(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "AbstractHandle(Figure)"
+  ],
+  "constructorBrief": [
+    "public AbstractHandle(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "compilationUnitCode": "/*\n * @(#)AbstractHandle.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport CH.ifa.draw.framework.*;\nimport java.awt.*;\n\n/**\n * AbstractHandle provides defaulf implementation for the\n * Handle interface.\n *\n * @see Figure\n * @see Handle\n */\npublic abstract class AbstractHandle implements Handle {\n\n    /**\n     * The standard size of a handle.\n     */\n    public static final int HANDLESIZE = 8;\n\n    private Figure fOwner;\n\n    public AbstractHandle(Figure owner) {\n        fOwner = owner;\n    }\n\n    /**\n     * Locates the handle on the figure. The handle is drawn\n     * centered around the returned point.\n     */\n    public abstract Point locate();\n\n    /**\n     * @ deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     */\n    public void invokeStart(int x, int y, Drawing drawing) {\n    }\n\n    /**\n     * @ deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     * @param view the handles container\n     */\n    public void invokeStart(int x, int y, DrawingView view) {\n        invokeStart(x, y, view.drawing());\n    }\n\n    /**\n     * @ deprecated As of version 4.1,\n     * use invokeStep(x, y, anchorX, anchorY, drawingView)\n     *\n     * Tracks a step of the interaction.\n     * @param dx x delta of this step\n     * @param dy y delta of this step\n     */\n    public void invokeStep(int dx, int dy, Drawing drawing) {\n    }\n\n    /**\n     * Tracks a step of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        invokeStep(x - anchorX, y - anchorY, view.drawing());\n    }\n\n    /**\n     * Tracks the end of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        invokeEnd(x - anchorX, y - anchorY, view.drawing());\n    }\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeEnd(x, y, anchorX, anchorY, drawingView).\n     *\n     * Tracks the end of the interaction.\n     */\n    public void invokeEnd(int dx, int dy, Drawing drawing) {\n    }\n\n    /**\n     * Gets the handle's owner.\n     */\n    public Figure owner() {\n        return fOwner;\n    }\n\n    /**\n     * Gets the display box of the handle.\n     */\n    public Rectangle displayBox() {\n        Point p = locate();\n        return new Rectangle(p.x - HANDLESIZE / 2, p.y - HANDLESIZE / 2, HANDLESIZE, HANDLESIZE);\n    }\n\n    /**\n     * Tests if a point is contained in the handle.\n     */\n    public boolean containsPoint(int x, int y) {\n        return displayBox().contains(x, y);\n    }\n\n    /**\n     * Draws this handle.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.white);\n        g.fillRect(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n}\n",
+  "classDeclarationCode": "/**\n * AbstractHandle provides defaulf implementation for the\n * Handle interface.\n *\n * @see Figure\n * @see Handle\n */\npublic abstract class AbstractHandle implements Handle {\n\n    /**\n     * The standard size of a handle.\n     */\n    public static final int HANDLESIZE = 8;\n\n    private Figure fOwner;\n\n    public AbstractHandle(Figure owner) {\n        fOwner = owner;\n    }\n\n    /**\n     * Locates the handle on the figure. The handle is drawn\n     * centered around the returned point.\n     */\n    public abstract Point locate();\n\n    /**\n     * @ deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     */\n    public void invokeStart(int x, int y, Drawing drawing) {\n    }\n\n    /**\n     * @ deprecated As of version 4.1,\n     * use invokeStart(x, y, drawingView)\n     * Tracks the start of the interaction. The default implementation\n     * does nothing.\n     * @param x the x position where the interaction started\n     * @param y the y position where the interaction started\n     * @param view the handles container\n     */\n    public void invokeStart(int x, int y, DrawingView view) {\n        invokeStart(x, y, view.drawing());\n    }\n\n    /**\n     * @ deprecated As of version 4.1,\n     * use invokeStep(x, y, anchorX, anchorY, drawingView)\n     *\n     * Tracks a step of the interaction.\n     * @param dx x delta of this step\n     * @param dy y delta of this step\n     */\n    public void invokeStep(int dx, int dy, Drawing drawing) {\n    }\n\n    /**\n     * Tracks a step of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        invokeStep(x - anchorX, y - anchorY, view.drawing());\n    }\n\n    /**\n     * Tracks the end of the interaction.\n     * @param x the current x position\n     * @param y the current y position\n     * @param anchorX the x position where the interaction started\n     * @param anchorY the y position where the interaction started\n     */\n    public void invokeEnd(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        invokeEnd(x - anchorX, y - anchorY, view.drawing());\n    }\n\n    /**\n     * @deprecated As of version 4.1,\n     * use invokeEnd(x, y, anchorX, anchorY, drawingView).\n     *\n     * Tracks the end of the interaction.\n     */\n    public void invokeEnd(int dx, int dy, Drawing drawing) {\n    }\n\n    /**\n     * Gets the handle's owner.\n     */\n    public Figure owner() {\n        return fOwner;\n    }\n\n    /**\n     * Gets the display box of the handle.\n     */\n    public Rectangle displayBox() {\n        Point p = locate();\n        return new Rectangle(p.x - HANDLESIZE / 2, p.y - HANDLESIZE / 2, HANDLESIZE, HANDLESIZE);\n    }\n\n    /**\n     * Tests if a point is contained in the handle.\n     */\n    public boolean containsPoint(int x, int y) {\n        return displayBox().contains(x, y);\n    }\n\n    /**\n     * Draws this handle.\n     */\n    public void draw(Graphics g) {\n        Rectangle r = displayBox();\n        g.setColor(Color.white);\n        g.fillRect(r.x, r.y, r.width, r.height);\n        g.setColor(Color.black);\n        g.drawRect(r.x, r.y, r.width, r.height);\n    }\n}",
+  "subClasses": [
+    "CH.ifa.draw.standard.ChangeConnectionHandle",
+    "CH.ifa.draw.standard.LocatorHandle"
+  ]
+}

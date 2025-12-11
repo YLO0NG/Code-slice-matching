@@ -1,0 +1,25 @@
+{
+  "className": "CommandMenu",
+  "methodName": "remove",
+  "brief": "public synchronized void remove(MenuItem item){}",
+  "methodSignature": "remove(MenuItem)",
+  "sourceCode": "public synchronized void remove(MenuItem item) {\n        System.out.println(\"not implemented\");\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MenuItem"
+  ],
+  "dependentMethods": {
+    "java.awt.MenuItem": [],
+    "java.io.PrintStream": [
+      "println(String)"
+    ]
+  },
+  "full_method_info": "public synchronized void remove(MenuItem item) {\n    System.out.println(\"not implemented\");\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

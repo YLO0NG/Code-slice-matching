@@ -1,0 +1,39 @@
+{
+  "className": "NodeFigure",
+  "methodName": "findConnector",
+  "brief": "private Connector findConnector(int x, int y){}",
+  "methodSignature": "findConnector(int, int)",
+  "sourceCode": "private Connector findConnector(int x, int y) {\n        // return closest connector\n        long min = Long.MAX_VALUE;\n        Connector closest = null;\n        Enumeration e = connectors().elements();\n        while (e.hasMoreElements()) {\n            Connector c = (Connector)e.nextElement();\n            Point p2 = Geom.center(c.displayBox());\n            long d = Geom.length2(x, y, p2.x, p2.y);\n            if (d < min) {\n                min = d;\n                closest = c;\n            }\n        }\n        return closest;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.util.Vector": [
+      "elements()"
+    ],
+    "CH.ifa.draw.samples.net.NodeFigure": [
+      "connectors()"
+    ],
+    "java.util.Enumeration": [
+      "nextElement()",
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.util.Geom": [
+      "length2(int, int, int, int)",
+      "center(Rectangle)"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "private Connector findConnector(int x, int y) {\n    // return closest connector\n    long min = Long.MAX_VALUE;\n    Connector closest = null;\n    Enumeration e = connectors().elements();\n    while (e.hasMoreElements()) {\n        Connector c = (Connector) e.nextElement();\n        Point p2 = Geom.center(c.displayBox());\n        long d = Geom.length2(x, y, p2.x, p2.y);\n        if (d < min) {\n            min = d;\n            closest = c;\n        }\n    }\n    return closest;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,21 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "connectorAt",
+  "brief": "public Connector connectorAt(int x, int y){}",
+  "methodSignature": "connectorAt(int, int)",
+  "sourceCode": "public Connector connectorAt(int x, int y) {\n    return new ChopPolygonConnector(this);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public Connector connectorAt(int x, int y) {\n    return new ChopPolygonConnector(this);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

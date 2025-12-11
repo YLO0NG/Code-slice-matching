@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "addForeground",
+  "brief": "public void addForeground(Painter painter) {}",
+  "methodSignature": "addForeground(Painter)",
+  "sourceCode": "public void addForeground(Painter painter)  {\n        if (fForegrounds == null)\n            fForegrounds = new Vector(3);\n        fForegrounds.addElement(painter);\n        repaint();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Painter"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Painter": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ],
+    "java.awt.Component": [
+      "repaint()"
+    ]
+  },
+  "full_method_info": "/**\n * Adds a foreground.\n */\npublic void addForeground(Painter painter) {\n    if (fForegrounds == null)\n        fForegrounds = new Vector(3);\n    fForegrounds.addElement(painter);\n    repaint();\n}",
+  "method_comment": "\n     * Adds a foreground.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,24 @@
+{
+  "className": "Project",
+  "methodName": "addChangeset",
+  "brief": "public void addChangeset(ChangeSet changeset){}",
+  "methodSignature": "addChangeset(ChangeSet)",
+  "sourceCode": "public void addChangeset(ChangeSet changeset) {\n\t\tthis.changesets.add(changeset);\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ChangeSet"
+  ],
+  "dependentMethods": {
+    "java.util.Set": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addChangeset(ChangeSet changeset) {\n    this.changesets.add(changeset);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

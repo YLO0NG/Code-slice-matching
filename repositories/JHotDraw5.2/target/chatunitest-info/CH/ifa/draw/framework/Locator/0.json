@@ -1,0 +1,22 @@
+{
+  "className": "Locator",
+  "methodName": "locate",
+  "brief": "public Point locate(Figure owner);",
+  "methodSignature": "locate(Figure)",
+  "sourceCode": "public Point locate(Figure owner);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Locates a position on the passed figure.\n * @return a point on the figure.\n */\npublic Point locate(Figure owner);",
+  "method_comment": "\n     * Locates a position on the passed figure.\n     * @return a point on the figure.\n     ",
+  "method_annotation": ""
+}

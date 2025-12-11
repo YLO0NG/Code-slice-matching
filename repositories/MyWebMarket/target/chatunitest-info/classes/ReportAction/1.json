@@ -1,0 +1,22 @@
+{
+  "className": "ReportAction",
+  "methodName": "setInputStream",
+  "brief": "public void setInputStream( InputStream fileInputStream ){}",
+  "methodSignature": "setInputStream(InputStream)",
+  "sourceCode": "public void setInputStream( InputStream fileInputStream ) {\n\t\tthis.inputStream = fileInputStream;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "InputStream"
+  ],
+  "dependentMethods": {
+    "java.io.InputStream": []
+  },
+  "full_method_info": "public void setInputStream(InputStream fileInputStream) {\n    this.inputStream = fileInputStream;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

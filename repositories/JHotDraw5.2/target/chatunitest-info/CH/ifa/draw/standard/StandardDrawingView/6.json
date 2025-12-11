@@ -1,0 +1,28 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "remove",
+  "brief": "public Figure remove(Figure figure){}",
+  "methodSignature": "remove(Figure)",
+  "sourceCode": "public Figure remove(Figure figure) {\n        return drawing().remove(figure);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.framework.Drawing": [
+      "remove(Figure)"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "drawing()"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a figure from the drawing.\n * @return the removed figure\n */\npublic Figure remove(Figure figure) {\n    return drawing().remove(figure);\n}",
+  "method_comment": "\n     * Removes a figure from the drawing.\n     * @return the removed figure\n     ",
+  "method_annotation": ""
+}

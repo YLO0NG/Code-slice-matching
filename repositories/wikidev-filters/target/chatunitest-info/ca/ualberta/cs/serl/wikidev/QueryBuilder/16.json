@@ -1,0 +1,20 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectUserByID",
+  "brief": "public static String selectUserByID(int userID){}",
+  "methodSignature": "selectUserByID(int)",
+  "sourceCode": "public static String selectUserByID(int userID) {\n\t\treturn \"select * from mw_user where user_id=\"+userID;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public static String selectUserByID(int userID) {\n    return \"select * from mw_user where user_id=\" + userID;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

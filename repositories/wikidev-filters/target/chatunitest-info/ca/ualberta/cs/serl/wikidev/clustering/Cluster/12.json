@@ -1,0 +1,20 @@
+{
+  "className": "Cluster",
+  "methodName": "setIndex",
+  "brief": "public void setIndex(int index){}",
+  "methodSignature": "setIndex(int)",
+  "sourceCode": "public void setIndex(int index) {\n\t\tthis.index = index;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param index\n * @uml.property  name=\"index\"\n */\npublic void setIndex(int index) {\n    this.index = index;\n}",
+  "method_comment": "\n\t * @param index\n\t * @uml.property  name=\"index\"\n\t ",
+  "method_annotation": ""
+}

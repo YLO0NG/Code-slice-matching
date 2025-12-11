@@ -1,0 +1,25 @@
+{
+  "className": "TestResult",
+  "methodName": "addListener",
+  "brief": "public synchronized void addListener(TestListener listener){}",
+  "methodSignature": "addListener(TestListener)",
+  "sourceCode": "public synchronized void addListener(TestListener listener) {\r\n\t\tfListeners.addElement(listener);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestListener"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestListener": [],
+    "java.util.Vector": [
+      "addElement(E)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Registers a TestListener\r\n */\r\npublic synchronized void addListener(TestListener listener) {\r\n    fListeners.addElement(listener);\r\n}",
+  "method_comment": "\r\n\t * Registers a TestListener\r\n\t ",
+  "method_annotation": ""
+}

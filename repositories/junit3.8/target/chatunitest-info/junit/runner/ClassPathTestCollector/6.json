@@ -1,0 +1,28 @@
+{
+  "className": "ClassPathTestCollector",
+  "methodName": "classNameFromFile",
+  "brief": "protected String classNameFromFile(String classFileName){}",
+  "methodSignature": "classNameFromFile(String)",
+  "sourceCode": "protected String classNameFromFile(String classFileName) {\r\n\t\t// convert /a/b.class to a.b\r\n\t\tString s= classFileName.substring(0, classFileName.length()-SUFFIX_LENGTH);\r\n\t\tString s2= s.replace(File.separatorChar, '.');\r\n\t\tif (s2.startsWith(\".\"))\r\n\t\t\treturn s2.substring(1);\r\n\t\treturn s2;\r\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "startsWith(String)",
+      "substring(int)",
+      "substring(int, int)",
+      "replace(char, char)",
+      "length()"
+    ]
+  },
+  "full_method_info": "protected String classNameFromFile(String classFileName) {\r\n    // convert /a/b.class to a.b\r\n    String s = classFileName.substring(0, classFileName.length() - SUFFIX_LENGTH);\r\n    String s2 = s.replace(File.separatorChar, '.');\r\n    if (s2.startsWith(\".\"))\r\n        return s2.substring(1);\r\n    return s2;\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

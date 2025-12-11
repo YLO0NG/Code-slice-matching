@@ -1,0 +1,28 @@
+{
+  "className": "PertDependency",
+  "methodName": "handles",
+  "brief": "public Vector handles(){}",
+  "methodSignature": "handles()",
+  "sourceCode": "public Vector handles() {\n        Vector handles = super.handles();\n        // don't allow to reconnect the starting figure\n        handles.setElementAt(\n            new NullHandle(this, PolyLineFigure.locator(0)), 0);\n        return handles;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.figures.LineConnection": [
+      "handles()"
+    ],
+    "java.util.Vector": [
+      "setElementAt(E, int)"
+    ],
+    "CH.ifa.draw.figures.PolyLineFigure": [
+      "locator(int)"
+    ]
+  },
+  "full_method_info": "public Vector handles() {\n    Vector handles = super.handles();\n    // don't allow to reconnect the starting figure\n    handles.setElementAt(new NullHandle(this, PolyLineFigure.locator(0)), 0);\n    return handles;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

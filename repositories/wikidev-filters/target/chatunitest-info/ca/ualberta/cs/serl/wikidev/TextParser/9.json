@@ -1,0 +1,22 @@
+{
+  "className": "TextParser",
+  "methodName": "parseFile",
+  "brief": "public void parseFile(File file){}",
+  "methodSignature": "parseFile(File)",
+  "sourceCode": "public void parseFile(File file){}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "File"
+  ],
+  "dependentMethods": {
+    "java.io.File": []
+  },
+  "full_method_info": "public void parseFile(File file) {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

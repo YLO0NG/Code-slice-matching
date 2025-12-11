@@ -1,0 +1,18 @@
+{
+  "className": "AuthenticationInterceptor",
+  "methodName": "init",
+  "brief": "public void init(){}",
+  "methodSignature": "init()",
+  "sourceCode": "public void init() {\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public void init() {\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

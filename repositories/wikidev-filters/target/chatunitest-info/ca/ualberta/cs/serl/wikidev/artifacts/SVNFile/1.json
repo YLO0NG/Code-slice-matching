@@ -1,0 +1,25 @@
+{
+  "className": "SVNFile",
+  "methodName": "addUser",
+  "brief": "public void addUser(User user){}",
+  "methodSignature": "addUser(User)",
+  "sourceCode": "public void addUser(User user) {\n\t\tusers.add(user);\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "User"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.User": [],
+    "java.util.TreeSet": [
+      "add(E)"
+    ]
+  },
+  "full_method_info": "public void addUser(User user) {\n    users.add(user);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

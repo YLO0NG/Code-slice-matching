@@ -1,0 +1,30 @@
+{
+  "className": "NetApp",
+  "methodName": "createTools",
+  "brief": "protected void createTools(JToolBar palette){}",
+  "methodSignature": "createTools(JToolBar)",
+  "sourceCode": "protected void createTools(JToolBar palette) {\n        super.createTools(palette);\n\n        Tool tool = new TextTool(view(), new NodeFigure());\n        palette.add(createToolButton(IMAGES+\"TEXT\", \"Text Tool\", tool));\n\n        tool = new CreationTool(view(), new NodeFigure());\n        palette.add(createToolButton(IMAGES+\"RECT\", \"Create Org Unit\", tool));\n\n        tool = new ConnectionTool(view(), new LineConnection());\n        palette.add(createToolButton(IMAGES+\"CONN\", \"Connection Tool\", tool));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "JToolBar"
+  ],
+  "dependentMethods": {
+    "javax.swing.JToolBar": [],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()",
+      "createTools(JToolBar)",
+      "createToolButton(String, String, Tool)"
+    ],
+    "java.awt.Container": [
+      "add(Component)"
+    ]
+  },
+  "full_method_info": "protected void createTools(JToolBar palette) {\n    super.createTools(palette);\n    Tool tool = new TextTool(view(), new NodeFigure());\n    palette.add(createToolButton(IMAGES + \"TEXT\", \"Text Tool\", tool));\n    tool = new CreationTool(view(), new NodeFigure());\n    palette.add(createToolButton(IMAGES + \"RECT\", \"Create Org Unit\", tool));\n    tool = new ConnectionTool(view(), new LineConnection());\n    palette.add(createToolButton(IMAGES + \"CONN\", \"Connection Tool\", tool));\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

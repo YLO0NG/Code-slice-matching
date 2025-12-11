@@ -1,0 +1,25 @@
+{
+  "className": "TestHierarchyRunView",
+  "methodName": "testSelected",
+  "brief": "protected void testSelected(){}",
+  "methodSignature": "testSelected()",
+  "sourceCode": "protected void testSelected() {\r\n\t\tfTestContext.handleTestSelected(getSelectedTest());\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "junit.swingui.TestRunContext": [
+      "handleTestSelected(Test)"
+    ],
+    "junit.swingui.TestHierarchyRunView": [
+      "getSelectedTest()"
+    ]
+  },
+  "full_method_info": "protected void testSelected() {\r\n    fTestContext.handleTestSelected(getSelectedTest());\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

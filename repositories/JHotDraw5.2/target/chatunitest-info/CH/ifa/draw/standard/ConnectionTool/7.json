@@ -1,0 +1,37 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "findTarget",
+  "brief": "protected Figure findTarget(int x, int y, Drawing drawing){}",
+  "methodSignature": "findTarget(int, int, Drawing)",
+  "sourceCode": "protected Figure findTarget(int x, int y, Drawing drawing) {\n        Figure target = findConnectableFigure(x, y, drawing);\n        Figure start = fStartConnector.owner();\n\n        if (target != null\n             && fConnection != null\n             && target.canConnect()\n             && !target.includes(start)\n             && fConnection.canConnect(start, target))\n            return target;\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Drawing"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Drawing": [],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "findConnectableFigure(int, int, Drawing)"
+    ],
+    "CH.ifa.draw.framework.Connector": [
+      "owner()"
+    ],
+    "CH.ifa.draw.framework.Figure": [
+      "canConnect()",
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.framework.ConnectionFigure": [
+      "canConnect(Figure, Figure)"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a connectable figure target.\n */\nprotected Figure findTarget(int x, int y, Drawing drawing) {\n    Figure target = findConnectableFigure(x, y, drawing);\n    Figure start = fStartConnector.owner();\n    if (target != null && fConnection != null && target.canConnect() && !target.includes(start) && fConnection.canConnect(start, target))\n        return target;\n    return null;\n}",
+  "method_comment": "\n     * Finds a connectable figure target.\n     ",
+  "method_annotation": ""
+}

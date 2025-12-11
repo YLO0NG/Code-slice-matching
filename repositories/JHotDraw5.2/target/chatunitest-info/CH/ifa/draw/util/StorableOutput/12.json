@@ -1,0 +1,25 @@
+{
+  "className": "StorableOutput",
+  "methodName": "startNewLine",
+  "brief": "private void startNewLine(){}",
+  "methodSignature": "startNewLine()",
+  "sourceCode": "private void startNewLine() {\n        fStream.println();\n        for (int i=0; i<fIndent; i++)\n            space();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.PrintWriter": [
+      "println()"
+    ],
+    "CH.ifa.draw.util.StorableOutput": [
+      "space()"
+    ]
+  },
+  "full_method_info": "private void startNewLine() {\n    fStream.println();\n    for (int i = 0; i < fIndent; i++) space();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

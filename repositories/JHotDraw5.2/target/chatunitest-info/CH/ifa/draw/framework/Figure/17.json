@@ -1,0 +1,22 @@
+{
+  "className": "Figure",
+  "methodName": "removeFromContainer",
+  "brief": "public void removeFromContainer(FigureChangeListener c);",
+  "methodSignature": "removeFromContainer(FigureChangeListener)",
+  "sourceCode": "public void removeFromContainer(FigureChangeListener c);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeListener"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeListener": []
+  },
+  "full_method_info": "/**\n * Removes a figure from the given container and unregisters\n * it as a change listener.\n */\npublic void removeFromContainer(FigureChangeListener c);",
+  "method_comment": "\n     * Removes a figure from the given container and unregisters\n     * it as a change listener.\n     ",
+  "method_annotation": ""
+}

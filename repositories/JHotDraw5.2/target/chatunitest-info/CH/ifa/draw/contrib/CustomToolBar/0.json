@@ -1,0 +1,23 @@
+{
+  "className": "CustomToolBar",
+  "methodName": "switchToolBar",
+  "brief": "public void switchToolBar(){}",
+  "methodSignature": "switchToolBar()",
+  "sourceCode": "public void switchToolBar() {\n        if (currentTools == standardTools) {\n            switchToEditTools();\n        }\n        else {\n            switchToStandardTools();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.CustomToolBar": [
+      "switchToStandardTools()",
+      "switchToEditTools()"
+    ]
+  },
+  "full_method_info": "/**\n * Switch between the two available palettes with tools\n */\npublic void switchToolBar() {\n    if (currentTools == standardTools) {\n        switchToEditTools();\n    } else {\n        switchToStandardTools();\n    }\n}",
+  "method_comment": "\n\t * Switch between the two available palettes with tools\n\t ",
+  "method_annotation": ""
+}

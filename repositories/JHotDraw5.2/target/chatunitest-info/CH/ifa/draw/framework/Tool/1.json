@@ -1,0 +1,18 @@
+{
+  "className": "Tool",
+  "methodName": "deactivate",
+  "brief": "public void deactivate();",
+  "methodSignature": "deactivate()",
+  "sourceCode": "public void deactivate();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Deactivates the tool. This method is called whenever the user\n * switches to another tool. Use this method to do some clean-up\n * when the tool is switched. Subclassers should always call\n * super.deactivate.\n */\npublic void deactivate();",
+  "method_comment": "\n     * Deactivates the tool. This method is called whenever the user\n     * switches to another tool. Use this method to do some clean-up\n     * when the tool is switched. Subclassers should always call\n     * super.deactivate.\n     ",
+  "method_annotation": ""
+}

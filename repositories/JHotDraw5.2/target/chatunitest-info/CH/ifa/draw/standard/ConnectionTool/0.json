@@ -1,0 +1,27 @@
+{
+  "className": "ConnectionTool",
+  "methodName": "mouseMove",
+  "brief": "public void mouseMove(MouseEvent e, int x, int y){}",
+  "methodSignature": "mouseMove(MouseEvent, int, int)",
+  "sourceCode": "public void mouseMove(MouseEvent e, int x, int y) {\n        trackConnectors(e, x, y);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": [],
+    "CH.ifa.draw.standard.ConnectionTool": [
+      "trackConnectors(MouseEvent, int, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Handles mouse move events in the drawing view.\n */\npublic void mouseMove(MouseEvent e, int x, int y) {\n    trackConnectors(e, x, y);\n}",
+  "method_comment": "\n     * Handles mouse move events in the drawing view.\n     ",
+  "method_annotation": ""
+}

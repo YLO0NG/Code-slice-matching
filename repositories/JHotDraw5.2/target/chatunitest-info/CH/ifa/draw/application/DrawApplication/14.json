@@ -1,0 +1,29 @@
+{
+  "className": "DrawApplication",
+  "methodName": "createFontMenu",
+  "brief": "protected JMenu createFontMenu(){}",
+  "methodSignature": "createFontMenu()",
+  "sourceCode": "protected JMenu createFontMenu() {\n        CommandMenu menu = new CommandMenu(\"Font\");\n        String fonts[] = Toolkit.getDefaultToolkit().getFontList();\n        for (int i = 0; i < fonts.length; i++)\n            menu.add(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i],  view()));\n        return menu;\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Toolkit": [
+      "getDefaultToolkit()",
+      "getFontList()"
+    ],
+    "CH.ifa.draw.util.CommandMenu": [
+      "add(Command)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()"
+    ]
+  },
+  "full_method_info": "/**\n * Creates the fonts menus. It installs all available fonts\n * supported by the toolkit implementation.\n */\nprotected JMenu createFontMenu() {\n    CommandMenu menu = new CommandMenu(\"Font\");\n    String[] fonts = Toolkit.getDefaultToolkit().getFontList();\n    for (int i = 0; i < fonts.length; i++) menu.add(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i], view()));\n    return menu;\n}",
+  "method_comment": "\n     * Creates the fonts menus. It installs all available fonts\n     * supported by the toolkit implementation.\n     ",
+  "method_annotation": ""
+}

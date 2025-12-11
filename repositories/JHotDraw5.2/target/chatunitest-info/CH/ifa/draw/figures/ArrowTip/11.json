@@ -1,0 +1,18 @@
+{
+  "className": "ArrowTip",
+  "methodName": "ArrowTip",
+  "brief": "public ArrowTip(){}",
+  "methodSignature": "ArrowTip()",
+  "sourceCode": "public ArrowTip() {\n\t    this(0.40, 8, 8);  // this(0.35, 15, 12);\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public ArrowTip() {\n    // this(0.35, 15, 12);\n    this(0.40, 8, 8);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

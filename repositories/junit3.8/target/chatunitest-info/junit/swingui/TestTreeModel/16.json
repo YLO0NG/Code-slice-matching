@@ -1,0 +1,25 @@
+{
+  "className": "TestTreeModel",
+  "methodName": "isFailure",
+  "brief": "boolean isFailure(Test t){}",
+  "methodSignature": "isFailure(Test)",
+  "sourceCode": "boolean isFailure(Test t) {\r\n\t\treturn (fFailures != null) && fFailures.get(t) != null;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Test"
+  ],
+  "dependentMethods": {
+    "junit.framework.Test": [],
+    "java.util.Hashtable": [
+      "get(Object)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Tests whether a test was a failure\r\n */\r\nboolean isFailure(Test t) {\r\n    return (fFailures != null) && fFailures.get(t) != null;\r\n}",
+  "method_comment": "\r\n\t * Tests whether a test was a failure\r\n\t ",
+  "method_annotation": ""
+}

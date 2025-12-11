@@ -1,0 +1,27 @@
+{
+  "className": "RoundRectangleFigure",
+  "methodName": "drawBackground",
+  "brief": "public void drawBackground(Graphics g){}",
+  "methodSignature": "drawBackground(Graphics)",
+  "sourceCode": "public void drawBackground(Graphics g) {\n        Rectangle r = displayBox();\n        g.fillRoundRect(r.x, r.y, r.width, r.height, fArcWidth, fArcHeight);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillRoundRect(int, int, int, int, int, int)"
+    ],
+    "CH.ifa.draw.figures.RoundRectangleFigure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "public void drawBackground(Graphics g) {\n    Rectangle r = displayBox();\n    g.fillRoundRect(r.x, r.y, r.width, r.height, fArcWidth, fArcHeight);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

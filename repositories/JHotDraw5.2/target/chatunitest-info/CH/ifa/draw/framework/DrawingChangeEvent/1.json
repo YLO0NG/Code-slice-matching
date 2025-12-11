@@ -1,0 +1,18 @@
+{
+  "className": "DrawingChangeEvent",
+  "methodName": "getInvalidatedRectangle",
+  "brief": "public Rectangle getInvalidatedRectangle(){}",
+  "methodSignature": "getInvalidatedRectangle()",
+  "sourceCode": "public Rectangle getInvalidatedRectangle() {\n        return fRectangle;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n *  Gets the changed rectangle\n */\npublic Rectangle getInvalidatedRectangle() {\n    return fRectangle;\n}",
+  "method_comment": "\n     *  Gets the changed rectangle\n     ",
+  "method_annotation": ""
+}

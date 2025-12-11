@@ -1,0 +1,18 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "getDesktop",
+  "brief": "public JComponent getDesktop(){}",
+  "methodSignature": "getDesktop()",
+  "sourceCode": "public JComponent getDesktop() {\n\t\treturn desktop;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get the component, in which the content is embedded. This component\n * acts as a desktop for the content.\n */\npublic JComponent getDesktop() {\n    return desktop;\n}",
+  "method_comment": "\n\t* Get the component, in which the content is embedded. This component\n\t* acts as a desktop for the content.\n\t",
+  "method_annotation": ""
+}

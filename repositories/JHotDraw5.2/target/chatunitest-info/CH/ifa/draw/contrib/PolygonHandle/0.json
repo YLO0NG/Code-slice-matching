@@ -1,0 +1,32 @@
+{
+  "className": "PolygonHandle",
+  "methodName": "invokeStep",
+  "brief": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+  "methodSignature": "invokeStep(int, int, int, int, DrawingView)",
+  "sourceCode": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {\n    myOwner().setPointAt(new Point(x, y), fIndex);\n  }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "int",
+    "int",
+    "DrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.DrawingView": [],
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "setPointAt(Point, int)"
+    ],
+    "CH.ifa.draw.contrib.PolygonHandle": [
+      "myOwner()"
+    ]
+  },
+  "full_method_info": "public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n    myOwner().setPointAt(new Point(x, y), fIndex);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

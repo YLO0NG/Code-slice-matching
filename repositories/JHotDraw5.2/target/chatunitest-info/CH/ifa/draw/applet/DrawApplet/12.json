@@ -1,0 +1,18 @@
+{
+  "className": "DrawApplet",
+  "methodName": "createDrawingView",
+  "brief": "protected StandardDrawingView createDrawingView(){}",
+  "methodSignature": "createDrawingView()",
+  "sourceCode": "protected StandardDrawingView createDrawingView() {\n        return new StandardDrawingView(this, 410, 370);\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Creates the drawing view used in this application.\n * You need to override this method to use a DrawingView\n * subclass in your application. By default a standard\n * DrawingView is returned.\n */\nprotected StandardDrawingView createDrawingView() {\n    return new StandardDrawingView(this, 410, 370);\n}",
+  "method_comment": "\n     * Creates the drawing view used in this application.\n     * You need to override this method to use a DrawingView\n     * subclass in your application. By default a standard\n     * DrawingView is returned.\n     ",
+  "method_annotation": ""
+}

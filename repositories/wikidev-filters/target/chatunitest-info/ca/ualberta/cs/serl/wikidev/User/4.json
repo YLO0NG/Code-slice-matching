@@ -1,0 +1,20 @@
+{
+  "className": "User",
+  "methodName": "setProjects",
+  "brief": "public void setProjects(ArrayList<Project> projects){}",
+  "methodSignature": "setProjects(ArrayList)",
+  "sourceCode": "public void setProjects(ArrayList<Project> projects) {\n\t\tthis.projects = projects;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ArrayList<Project>"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "public void setProjects(ArrayList<Project> projects) {\n    this.projects = projects;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

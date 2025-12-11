@@ -1,0 +1,18 @@
+{
+  "className": "CustomToolBar",
+  "methodName": "switchToStandardTools",
+  "brief": "public void switchToStandardTools(){}",
+  "methodSignature": "switchToStandardTools()",
+  "sourceCode": "public void switchToStandardTools() {\n        if (currentTools != standardTools) {\n            currentTools = standardTools;\n            needsUpdate = true;\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Select the palette with the standard tools\n */\npublic void switchToStandardTools() {\n    if (currentTools != standardTools) {\n        currentTools = standardTools;\n        needsUpdate = true;\n    }\n}",
+  "method_comment": "\n     * Select the palette with the standard tools\n     ",
+  "method_annotation": ""
+}

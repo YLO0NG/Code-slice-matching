@@ -1,0 +1,18 @@
+{
+  "className": "SourceClass",
+  "methodName": "getEditors",
+  "brief": "public ArrayList<User> getEditors(){}",
+  "methodSignature": "getEditors()",
+  "sourceCode": "public ArrayList<User> getEditors() {\n\t\treturn editors;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"editors\"\n */\npublic ArrayList<User> getEditors() {\n    return editors;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"editors\"\n\t ",
+  "method_annotation": ""
+}

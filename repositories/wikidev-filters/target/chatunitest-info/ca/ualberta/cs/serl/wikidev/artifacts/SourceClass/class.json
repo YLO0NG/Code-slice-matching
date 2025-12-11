@@ -1,0 +1,86 @@
+{
+  "fullClassName": "ca.ualberta.cs.serl.wikidev.artifacts.SourceClass",
+  "className": "SourceClass",
+  "index": 6,
+  "modifier": "[public ]",
+  "extend": "[IArtifact]",
+  "implement": "[]",
+  "packageName": "ca.ualberta.cs.serl.wikidev.artifacts",
+  "packageDeclaration": "package ca.ualberta.cs.serl.wikidev.artifacts;",
+  "classSignature": "public class SourceClass",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import java.sql.Timestamp;",
+    "import java.util.ArrayList;",
+    "import java.util.Date;",
+    "import java.util.HashMap;",
+    "import java.util.HashSet;",
+    "import java.util.Set;",
+    "import java.util.TreeSet;",
+    "import ca.ualberta.cs.serl.wikidev.User;"
+  ],
+  "fields": [
+    "private int classID;",
+    "private String className;",
+    "private ArrayList<User> editors;",
+    "private Timestamp dateCreated;",
+    "private ArrayList<SourceClass> parents;",
+    "private ArrayList<SourceClass> childs;",
+    "private ArrayList<SourceClass> referenced;",
+    "private HashMap<User, Integer> usageWeights;"
+  ],
+  "superClasses": [
+    "IArtifact"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "getClassName()": "0",
+    "getClassID()": "1",
+    "getEditors()": "2",
+    "setEditors(ArrayList)": "3",
+    "getAssociatedUsers()": "4",
+    "toString()": "5",
+    "compareTo(IArtifact)": "6",
+    "SourceClass(int, String, Timestamp, int, Timestamp, String, int)": "7"
+  },
+  "methodsBrief": [
+    "public String getClassName(){}",
+    "public int getClassID(){}",
+    "public ArrayList<User> getEditors(){}",
+    "public void setEditors(ArrayList<User> editors){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}",
+    "public String toString(){}",
+    "public int compareTo(IArtifact o){}",
+    "public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID){}"
+  ],
+  "constructorSigs": [
+    "SourceClass(int, String, Timestamp, int, Timestamp, String, int)"
+  ],
+  "constructorBrief": [
+    "public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID){}"
+  ],
+  "getterSetterSigs": [
+    "getClassName()",
+    "getClassID()",
+    "getEditors()",
+    "setEditors(ArrayList)",
+    "getAssociatedUsers()"
+  ],
+  "getterSetterBrief": [
+    "public String getClassName(){}",
+    "public int getClassID(){}",
+    "public ArrayList<User> getEditors(){}",
+    "public void setEditors(ArrayList<User> editors){}",
+    "@Override\r\n\tpublic Set<User> getAssociatedUsers(){}"
+  ],
+  "constructorDeps": {
+    "java.lang.String": [],
+    "java.sql.Timestamp": []
+  },
+  "compilationUnitCode": "package ca.ualberta.cs.serl.wikidev.artifacts;\n\nimport java.sql.Timestamp;\nimport java.util.ArrayList;\nimport java.util.Date;\nimport java.util.HashMap;\nimport java.util.HashSet;\nimport java.util.Set;\nimport java.util.TreeSet;\nimport ca.ualberta.cs.serl.wikidev.User;\n\n/**\n * @author   User\n */\npublic class SourceClass extends IArtifact {\n\n    /**\n     * @uml.property  name=\"classID\"\n     */\n    private int classID;\n\n    /**\n     * @uml.property  name=\"className\"\n     */\n    private String className;\n\n    /**\n     * @uml.property  name=\"editors\"\n     */\n    private ArrayList<User> editors;\n\n    /**\n     * @uml.property  name=\"dateCreated\"\n     */\n    private Timestamp dateCreated;\n\n    /**\n     * @uml.property  name=\"parents\"\n     */\n    private ArrayList<SourceClass> parents;\n\n    /**\n     * @uml.property  name=\"childs\"\n     */\n    private ArrayList<SourceClass> childs;\n\n    /**\n     * @uml.property  name=\"referenced\"\n     */\n    private ArrayList<SourceClass> referenced;\n\n    /**\n     * @uml.property  name=\"usageWeights\"\n     */\n    private HashMap<User, Integer> usageWeights;\n\n    public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID) {\n        this.classID = classID;\n        this.className = className;\n        this.dateCreated = dateCreated;\n        // this.ownerID = ownerID;\n        this.timestamp = lastModified;\n        // this.url = url;\n        // this.projectID = projectID;\n        this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n        // this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"className\"\n     */\n    public String getClassName() {\n        return className;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"classID\"\n     */\n    public int getClassID() {\n        return classID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"editors\"\n     */\n    public ArrayList<User> getEditors() {\n        return editors;\n    }\n\n    /**\n     * @param  editors\n     * @uml.property  name=\"editors\"\n     */\n    public void setEditors(ArrayList<User> editors) {\n        this.editors = editors;\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        users.add(owner);\n        users.addAll(editors);\n        return users;\n    }\n\n    public String toString() {\n        // +\": \"+className;\n        return \"SourceClass \" + classID + \" \" + super.toString();\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof SourceClass) {\n            if (this.equals((SourceClass) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * @author   User\n */\npublic class SourceClass extends IArtifact {\n\n    /**\n     * @uml.property  name=\"classID\"\n     */\n    private int classID;\n\n    /**\n     * @uml.property  name=\"className\"\n     */\n    private String className;\n\n    /**\n     * @uml.property  name=\"editors\"\n     */\n    private ArrayList<User> editors;\n\n    /**\n     * @uml.property  name=\"dateCreated\"\n     */\n    private Timestamp dateCreated;\n\n    /**\n     * @uml.property  name=\"parents\"\n     */\n    private ArrayList<SourceClass> parents;\n\n    /**\n     * @uml.property  name=\"childs\"\n     */\n    private ArrayList<SourceClass> childs;\n\n    /**\n     * @uml.property  name=\"referenced\"\n     */\n    private ArrayList<SourceClass> referenced;\n\n    /**\n     * @uml.property  name=\"usageWeights\"\n     */\n    private HashMap<User, Integer> usageWeights;\n\n    public SourceClass(int classID, String className, Timestamp dateCreated, int ownerID, Timestamp lastModified, String url, int projectID) {\n        this.classID = classID;\n        this.className = className;\n        this.dateCreated = dateCreated;\n        // this.ownerID = ownerID;\n        this.timestamp = lastModified;\n        // this.url = url;\n        // this.projectID = projectID;\n        this.directlyRelatedArtifacts = new ArrayList<RelatedArtifact>();\n        // this.indirectlyRelatedArtifacts = new HashMap<IArtifact, HashMap<IArtifact, Integer>>();\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"className\"\n     */\n    public String getClassName() {\n        return className;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"classID\"\n     */\n    public int getClassID() {\n        return classID;\n    }\n\n    /**\n     * @return\n     * @uml.property  name=\"editors\"\n     */\n    public ArrayList<User> getEditors() {\n        return editors;\n    }\n\n    /**\n     * @param  editors\n     * @uml.property  name=\"editors\"\n     */\n    public void setEditors(ArrayList<User> editors) {\n        this.editors = editors;\n    }\n\n    @Override\n    public Set<User> getAssociatedUsers() {\n        Set<User> users = new TreeSet<User>();\n        users.add(owner);\n        users.addAll(editors);\n        return users;\n    }\n\n    public String toString() {\n        // +\": \"+className;\n        return \"SourceClass \" + classID + \" \" + super.toString();\n    }\n\n    public int compareTo(IArtifact o) {\n        if (o instanceof SourceClass) {\n            if (this.equals((SourceClass) o)) {\n                return 0;\n            } else {\n                return 1;\n            }\n        } else {\n            return 1;\n        }\n    }\n}",
+  "subClasses": []
+}

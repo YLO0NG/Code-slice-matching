@@ -1,0 +1,31 @@
+{
+  "className": "DrawApplication",
+  "methodName": "newLookAndFeel",
+  "brief": "private void newLookAndFeel(String landf){}",
+  "methodSignature": "newLookAndFeel(String)",
+  "sourceCode": "private void newLookAndFeel(String landf) {\n        try {\n            UIManager.setLookAndFeel(landf);\n            SwingUtilities.updateComponentTreeUI(this);\n        }\n        catch (Exception e) {\n            System.err.println(e);\n        }\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [],
+    "javax.swing.UIManager": [
+      "setLookAndFeel(String)"
+    ],
+    "javax.swing.SwingUtilities": [
+      "updateComponentTreeUI(Component)"
+    ],
+    "java.io.PrintStream": [
+      "println(Object)"
+    ]
+  },
+  "full_method_info": "/**\n * Switch to a new Look&Feel\n */\nprivate void newLookAndFeel(String landf) {\n    try {\n        UIManager.setLookAndFeel(landf);\n        SwingUtilities.updateComponentTreeUI(this);\n    } catch (Exception e) {\n        System.err.println(e);\n    }\n}",
+  "method_comment": "\n\t * Switch to a new Look&Feel\n\t ",
+  "method_annotation": ""
+}

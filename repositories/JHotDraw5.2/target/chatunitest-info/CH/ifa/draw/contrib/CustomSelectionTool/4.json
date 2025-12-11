@@ -1,0 +1,24 @@
+{
+  "className": "CustomSelectionTool",
+  "methodName": "handleMouseUp",
+  "brief": "protected void handleMouseUp(MouseEvent e, int x, int y){}",
+  "methodSignature": "handleMouseUp(MouseEvent, int, int)",
+  "sourceCode": "protected void handleMouseUp(MouseEvent e, int x, int y) {\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MouseEvent",
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.awt.event.MouseEvent": []
+  },
+  "full_method_info": "/**\n * Hook method which can be overriden by subclasses to provide\n * specialised behaviour in the event of a mouse up.\n */\nprotected void handleMouseUp(MouseEvent e, int x, int y) {\n}",
+  "method_comment": "\n\t * Hook method which can be overriden by subclasses to provide\n\t * specialised behaviour in the event of a mouse up.\n\t ",
+  "method_annotation": ""
+}

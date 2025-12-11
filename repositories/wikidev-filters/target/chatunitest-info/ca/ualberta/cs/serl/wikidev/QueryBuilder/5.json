@@ -1,0 +1,37 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "insertIntoClusters",
+  "brief": "public static String insertIntoClusters(Cluster cluster, String projectname){}",
+  "methodSignature": "insertIntoClusters(Cluster, String)",
+  "sourceCode": "public static String insertIntoClusters(Cluster cluster, String projectname) {\n\t\treturn \"insert into wikidev_clusters (clusterid, project_name, clusterindex, terms, from_date, to_date, cluster_set_name, threshold) values (null, \\'\"+projectname+\"\\', \"+cluster.getIndex()+\", \\'\"\n\t\t+Dictionary.concatStrings(cluster.getWords())+\"\\', \\'\"+cluster.getFromdate().toString()+\"\\', \\'\"+cluster.getTodate().toString()+\"\\', \\'\"+cluster.getCluster_set_name()+\"\\', \\'\"+cluster.getThreshold()+\"\\')\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Cluster",
+    "String"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.Cluster": [
+      "getWords()",
+      "getThreshold()",
+      "getFromdate()",
+      "getTodate()",
+      "getIndex()",
+      "getCluster_set_name()"
+    ],
+    "java.lang.String": [],
+    "ca.ualberta.cs.serl.wikidev.Dictionary": [
+      "concatStrings(String>)"
+    ],
+    "java.sql.Timestamp": [
+      "toString()"
+    ]
+  },
+  "full_method_info": "public static String insertIntoClusters(Cluster cluster, String projectname) {\n    return \"insert into wikidev_clusters (clusterid, project_name, clusterindex, terms, from_date, to_date, cluster_set_name, threshold) values (null, \\'\" + projectname + \"\\', \" + cluster.getIndex() + \", \\'\" + Dictionary.concatStrings(cluster.getWords()) + \"\\', \\'\" + cluster.getFromdate().toString() + \"\\', \\'\" + cluster.getTodate().toString() + \"\\', \\'\" + cluster.getCluster_set_name() + \"\\', \\'\" + cluster.getThreshold() + \"\\')\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

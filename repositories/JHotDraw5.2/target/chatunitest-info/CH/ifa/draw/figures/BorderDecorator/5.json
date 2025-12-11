@@ -1,0 +1,34 @@
+{
+  "className": "BorderDecorator",
+  "methodName": "figureInvalidated",
+  "brief": "public void figureInvalidated(FigureChangeEvent e){}",
+  "methodSignature": "figureInvalidated(FigureChangeEvent)",
+  "sourceCode": "public void figureInvalidated(FigureChangeEvent e) {\n        Rectangle rect = e.getInvalidatedRectangle();\n        rect.grow(getBorderOffset().x, getBorderOffset().y);\n        super.figureInvalidated(new FigureChangeEvent(e.getFigure(), rect));\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "FigureChangeEvent"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.FigureChangeEvent": [
+      "getInvalidatedRectangle()",
+      "getFigure()"
+    ],
+    "java.awt.Rectangle": [
+      "grow(int, int)"
+    ],
+    "CH.ifa.draw.figures.BorderDecorator": [
+      "getBorderOffset()"
+    ],
+    "CH.ifa.draw.standard.DecoratorFigure": [
+      "figureInvalidated(FigureChangeEvent)"
+    ]
+  },
+  "full_method_info": "/**\n * Invalidates the figure extended by its border.\n */\npublic void figureInvalidated(FigureChangeEvent e) {\n    Rectangle rect = e.getInvalidatedRectangle();\n    rect.grow(getBorderOffset().x, getBorderOffset().y);\n    super.figureInvalidated(new FigureChangeEvent(e.getFigure(), rect));\n}",
+  "method_comment": "\n     * Invalidates the figure extended by its border.\n     ",
+  "method_annotation": ""
+}

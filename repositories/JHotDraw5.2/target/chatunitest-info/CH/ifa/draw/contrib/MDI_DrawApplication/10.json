@@ -1,0 +1,40 @@
+{
+  "className": "MDI_DrawApplication",
+  "methodName": "activateFrame",
+  "brief": "public void activateFrame(MDI_InternalFrame newFrame){}",
+  "methodSignature": "activateFrame(MDI_InternalFrame)",
+  "sourceCode": "public void activateFrame(MDI_InternalFrame newFrame) {\n\t\tif (currentFrame != newFrame) {\n\t\t\t// check, whether drawing has been already initialised\n\t\t\tif (newFrame.getDrawingView().drawing() != null) {\n\t\t\t\tnewFrame.getDrawingView().unfreezeView();\n\t\t\t}\n\t\t\tbackupDrawingView.setDrawing(view().drawing());\n\t\t\tcurrentFrame.replaceDrawingView(backupDrawingView);\n\t\t\tcurrentFrame.validate();\n\t\t\tcurrentFrame.getDrawingView().freezeView();\n\t\t\tsetDrawing(newFrame.getDrawingView().drawing());\n\t\t\tbackupDrawingView = newFrame.replaceDrawingView((StandardDrawingView)view());\n\t\t\tcurrentFrame = newFrame;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "MDI_InternalFrame"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.MDI_InternalFrame": [
+      "replaceDrawingView(StandardDrawingView)",
+      "getDrawingView()"
+    ],
+    "CH.ifa.draw.framework.DrawingView": [
+      "drawing()",
+      "freezeView()",
+      "unfreezeView()"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "setDrawing(Drawing)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()",
+      "setDrawing(Drawing)"
+    ],
+    "java.awt.Container": [
+      "validate()"
+    ]
+  },
+  "full_method_info": "/**\n * Activate an internal frame upon which the selected tools operate.\n * The currently activated DrawgingView is backed up for later restorage.\n */\npublic void activateFrame(MDI_InternalFrame newFrame) {\n    if (currentFrame != newFrame) {\n        // check, whether drawing has been already initialised\n        if (newFrame.getDrawingView().drawing() != null) {\n            newFrame.getDrawingView().unfreezeView();\n        }\n        backupDrawingView.setDrawing(view().drawing());\n        currentFrame.replaceDrawingView(backupDrawingView);\n        currentFrame.validate();\n        currentFrame.getDrawingView().freezeView();\n        setDrawing(newFrame.getDrawingView().drawing());\n        backupDrawingView = newFrame.replaceDrawingView((StandardDrawingView) view());\n        currentFrame = newFrame;\n    }\n}",
+  "method_comment": "\n\t* Activate an internal frame upon which the selected tools operate.\n\t* The currently activated DrawgingView is backed up for later restorage.\n\t",
+  "method_annotation": ""
+}

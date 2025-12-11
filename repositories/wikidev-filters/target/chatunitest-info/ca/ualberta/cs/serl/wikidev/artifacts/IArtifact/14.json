@@ -1,0 +1,22 @@
+{
+  "className": "IArtifact",
+  "methodName": "setDocument",
+  "brief": "public void setDocument(Document document){}",
+  "methodSignature": "setDocument(Document)",
+  "sourceCode": "public void setDocument(Document document) {\n\t\tthis.document = document;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Document"
+  ],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.Document": []
+  },
+  "full_method_info": "/**\n * @param document\n * @uml.property  name=\"document\"\n */\npublic void setDocument(Document document) {\n    this.document = document;\n}",
+  "method_comment": "\n\t * @param document\n\t * @uml.property  name=\"document\"\n\t ",
+  "method_annotation": ""
+}

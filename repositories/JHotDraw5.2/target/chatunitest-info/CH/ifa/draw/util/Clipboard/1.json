@@ -1,0 +1,22 @@
+{
+  "className": "Clipboard",
+  "methodName": "setContents",
+  "brief": "public void setContents(Object contents){}",
+  "methodSignature": "setContents(Object)",
+  "sourceCode": "public void setContents(Object contents) {\n        fContents = contents;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Object"
+  ],
+  "dependentMethods": {
+    "java.lang.Object": []
+  },
+  "full_method_info": "/**\n * Sets the contents of the clipboard.\n */\npublic void setContents(Object contents) {\n    fContents = contents;\n}",
+  "method_comment": "\n     * Sets the contents of the clipboard.\n     ",
+  "method_annotation": ""
+}

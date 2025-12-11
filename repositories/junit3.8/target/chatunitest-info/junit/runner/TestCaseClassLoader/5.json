@@ -1,0 +1,33 @@
+{
+  "className": "TestCaseClassLoader",
+  "methodName": "lookupClassData",
+  "brief": "private byte[] lookupClassData(String className) throws ClassNotFoundException{}",
+  "methodSignature": "lookupClassData(String)",
+  "sourceCode": "private byte[] lookupClassData(String className) throws ClassNotFoundException {\r\n\t\tbyte[] data= null;\r\n\t\tfor (int i= 0; i < fPathItems.size(); i++) {\r\n\t\t\tString path= (String) fPathItems.elementAt(i);\r\n\t\t\tString fileName= className.replace('.', '/')+\".class\";\r\n\t\t\tif (isJar(path)) {\r\n\t\t\t\tdata= loadJarData(path, fileName);\r\n\t\t\t} else {\r\n\t\t\t\tdata= loadFileData(path, fileName);\r\n\t\t\t}\r\n\t\t\tif (data != null)\r\n\t\t\t\treturn data;\r\n\t\t}\r\n\t\tthrow new ClassNotFoundException(className);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "replace(char, char)"
+    ],
+    "java.util.Vector": [
+      "elementAt(int)",
+      "size()"
+    ],
+    "junit.runner.TestCaseClassLoader": [
+      "isJar(String)",
+      "loadFileData(String, String)",
+      "loadJarData(String, String)"
+    ]
+  },
+  "full_method_info": "private byte[] lookupClassData(String className) throws ClassNotFoundException {\r\n    byte[] data = null;\r\n    for (int i = 0; i < fPathItems.size(); i++) {\r\n        String path = (String) fPathItems.elementAt(i);\r\n        String fileName = className.replace('.', '/') + \".class\";\r\n        if (isJar(path)) {\r\n            data = loadJarData(path, fileName);\r\n        } else {\r\n            data = loadFileData(path, fileName);\r\n        }\r\n        if (data != null)\r\n            return data;\r\n    }\r\n    throw new ClassNotFoundException(className);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

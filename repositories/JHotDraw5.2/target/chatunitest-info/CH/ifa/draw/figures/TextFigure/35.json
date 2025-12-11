@@ -1,0 +1,20 @@
+{
+  "className": "TextFigure",
+  "methodName": "setCurrentFontSize",
+  "brief": "static public void setCurrentFontSize(int size){}",
+  "methodSignature": "setCurrentFontSize(int)",
+  "sourceCode": "static public void setCurrentFontSize(int size) {\n        fgCurrentFontSize = size;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Sets the current font size.\n */\nstatic public void setCurrentFontSize(int size) {\n    fgCurrentFontSize = size;\n}",
+  "method_comment": "\n     * Sets the current font size.\n     ",
+  "method_annotation": ""
+}

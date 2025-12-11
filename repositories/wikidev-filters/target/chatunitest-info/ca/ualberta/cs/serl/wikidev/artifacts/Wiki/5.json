@@ -1,0 +1,20 @@
+{
+  "className": "Wiki",
+  "methodName": "setProjectID",
+  "brief": "public void setProjectID(int project){}",
+  "methodSignature": "setProjectID(int)",
+  "sourceCode": "public void setProjectID(int project) {\n\t\tthis.project = project;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int"
+  ],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @param project\n * @uml.property  name=\"project\"\n */\npublic void setProjectID(int project) {\n    this.project = project;\n}",
+  "method_comment": "\n\t * @param project\n\t * @uml.property  name=\"project\"\n\t ",
+  "method_annotation": ""
+}

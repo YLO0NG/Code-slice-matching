@@ -1,0 +1,22 @@
+{
+  "className": "DrawingView",
+  "methodName": "removeFromSelection",
+  "brief": "public void removeFromSelection(Figure figure);",
+  "methodSignature": "removeFromSelection(Figure)",
+  "sourceCode": "public void removeFromSelection(Figure figure);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": []
+  },
+  "full_method_info": "/**\n * Removes a figure from the selection.\n */\npublic void removeFromSelection(Figure figure);",
+  "method_comment": "\n     * Removes a figure from the selection.\n     ",
+  "method_annotation": ""
+}

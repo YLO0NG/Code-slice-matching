@@ -1,0 +1,36 @@
+{
+  "className": "CompositeFigure",
+  "methodName": "findFigureWithout",
+  "brief": "public Figure findFigureWithout(int x, int y, Figure without){}",
+  "methodSignature": "findFigureWithout(int, int, Figure)",
+  "sourceCode": "public Figure findFigureWithout(int x, int y, Figure without) {\n        if (without == null) {\n        \tFigureEnumeration k1 = figuresReverse();\n\t\t\twhile (k1.hasMoreElements()) {\n\t\t\t    Figure figure1 = k1.nextFigure();\n\t\t\t    if (figure1.containsPoint(x, y))\n\t\t\t        return figure1;\n\t\t\t}\n\t\t\treturn null;\n\t\t}\n        FigureEnumeration k = figuresReverse();\n        while (k.hasMoreElements()) {\n            Figure figure = k.nextFigure();\n            if (figure.containsPoint(x, y) && !figure.includes(without))\n                return figure;\n        }\n        return null;\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int",
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "containsPoint(int, int)",
+      "includes(Figure)"
+    ],
+    "CH.ifa.draw.standard.CompositeFigure": [
+      "figuresReverse()"
+    ],
+    "java.util.Enumeration": [
+      "hasMoreElements()"
+    ],
+    "CH.ifa.draw.framework.FigureEnumeration": [
+      "nextFigure()"
+    ]
+  },
+  "full_method_info": "/**\n * Finds a top level Figure, but supresses the passed\n * in figure. Use this method to ignore a figure\n * that is temporarily inserted into the drawing.\n * @param x the x coordinate\n * @param y the y coordinate\n * @param without the figure to be ignored during\n * the find.\n */\npublic Figure findFigureWithout(int x, int y, Figure without) {\n    if (without == null) {\n        FigureEnumeration k1 = figuresReverse();\n        while (k1.hasMoreElements()) {\n            Figure figure1 = k1.nextFigure();\n            if (figure1.containsPoint(x, y))\n                return figure1;\n        }\n        return null;\n    }\n    FigureEnumeration k = figuresReverse();\n    while (k.hasMoreElements()) {\n        Figure figure = k.nextFigure();\n        if (figure.containsPoint(x, y) && !figure.includes(without))\n            return figure;\n    }\n    return null;\n}",
+  "method_comment": "\n     * Finds a top level Figure, but supresses the passed\n     * in figure. Use this method to ignore a figure\n     * that is temporarily inserted into the drawing.\n     * @param x the x coordinate\n     * @param y the y coordinate\n     * @param without the figure to be ignored during\n     * the find.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "ImageFigure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        return new Rectangle(\n            fDisplayBox.x,\n            fDisplayBox.y,\n            fDisplayBox.width,\n            fDisplayBox.height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public Rectangle displayBox() {\n    return new Rectangle(fDisplayBox.x, fDisplayBox.y, fDisplayBox.width, fDisplayBox.height);\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,23 @@
+{
+  "className": "TestRunListener",
+  "methodName": "testRunStarted",
+  "brief": "public void testRunStarted(String testSuiteName, int testCount);",
+  "methodSignature": "testRunStarted(String, int)",
+  "sourceCode": "public void testRunStarted(String testSuiteName, int testCount);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "int"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public void testRunStarted(String testSuiteName, int testCount);",
+  "method_comment": "",
+  "method_annotation": ""
+}

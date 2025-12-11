@@ -1,0 +1,28 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "createRightComponent",
+  "brief": "protected void createRightComponent(StandardDrawingView view){}",
+  "methodSignature": "createRightComponent(StandardDrawingView)",
+  "sourceCode": "protected void createRightComponent(StandardDrawingView view) {\n        setRightComponent(super.createContents(view));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": [
+      "setRightComponent(JComponent)"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "createContents(StandardDrawingView)"
+    ]
+  },
+  "full_method_info": "/**\n * Method which creates the right component for the JSplitPane.\n * Subclasses may override this method but should call setLeftComponent()\n * to associate the created component with the JSplitPane.\n */\nprotected void createRightComponent(StandardDrawingView view) {\n    setRightComponent(super.createContents(view));\n}",
+  "method_comment": "\n     * Method which creates the right component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     ",
+  "method_annotation": ""
+}

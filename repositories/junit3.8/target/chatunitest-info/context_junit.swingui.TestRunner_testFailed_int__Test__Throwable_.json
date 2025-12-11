@@ -1,0 +1,22 @@
+{
+  "targetClass": "junit.swingui.TestRunner",
+  "targetMethod": "testFailed(int, Test, Throwable)",
+  "dependentFields": {
+    "junit.framework.Test": "",
+    "junit.swingui.CounterPanel": "private JTextField fNumberOfErrors;\nprivate JTextField fNumberOfFailures;\nprivate JTextField fNumberOfRuns;\nprivate Icon fFailureIcon= TestRunner.getIconResource(getClass(), \"icons/failure.gif\");\nprivate Icon fErrorIcon= TestRunner.getIconResource(getClass(), \"icons/error.gif\");\nprivate int fTotal;",
+    "junit.framework.TestResult": "protected Vector fFailures;\nprotected Vector fErrors;\nprotected Vector fListeners;\nprotected int fRunTests;\nprivate boolean fStop;",
+    "junit.swingui.TestRunner": "private static Font PLAIN_FONT= StatusLine.PLAIN_FONT;\nprivate static Font BOLD_FONT= StatusLine.BOLD_FONT;\nprivate static final int GAP= 4;\nprivate static final int HISTORY_LENGTH= 5;\nprotected JFrame fFrame;\nprivate Thread fRunner;\nprivate TestResult fTestResult;\nprivate JComboBox fSuiteCombo;\nprivate ProgressBar fProgressIndicator;\nprivate DefaultListModel fFailures;\nprivate JLabel fLogo;\nprivate CounterPanel fCounterPanel;\nprivate JButton fRun;\nprivate JButton fQuitButton;\nprivate JButton fRerunButton;\nprivate StatusLine fStatusLine;\nprivate FailureDetailView fFailureView;\nprivate JTabbedPane fTestViewTab;\nprivate JCheckBox fUseLoadingRunner;\nprivate Vector fTestRunViews= new Vector();\nprivate static final String TESTCOLLECTOR_KEY= \"TestCollectorClass\";\nprivate static final String FAILUREDETAILVIEW_KEY= \"FailureViewClass\";"
+  },
+  "dependentMethods": {
+    "junit.framework.Test": "",
+    "junit.swingui.CounterPanel": "public void setErrorValue(int value){}\npublic void setFailureValue(int value){}",
+    "junit.framework.TestResult": "public synchronized int failureCount(){}\npublic synchronized int errorCount(){}",
+    "junit.swingui.TestRunner": "private void revealFailure(Test test){}\nprivate void appendFailure(String kind, Test test, Throwable t){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.Test": "",
+    "junit.swingui.CounterPanel": "public void setErrorValue(int value) {\r\n\t\tsetLabelValue(fNumberOfErrors, value);\r\n\t}\npublic void setFailureValue(int value) {\r\n\t\tsetLabelValue(fNumberOfFailures, value);\r\n\t}",
+    "junit.framework.TestResult": "* Gets the number of detected failures.\r\n\t \npublic synchronized int failureCount() {\r\n\t\treturn fFailures.size();\r\n\t}\n\r\n\t * Gets the number of detected errors.\r\n\t \npublic synchronized int errorCount() {\r\n\t\treturn fErrors.size();\r\n\t}",
+    "junit.swingui.TestRunner": "private void revealFailure(Test test) {\r\n\t\tfor (Enumeration e= fTestRunViews.elements(); e.hasMoreElements(); ) {\r\n\t\t\tTestRunView v= (TestRunView) e.nextElement();\r\n\t\t\tv.revealFailure(test);\r\n\t\t}\r\n\t}\nprivate void appendFailure(String kind, Test test, Throwable t) {\r\n\t\tfFailures.addElement(new TestFailure(test, t));\r\n\t\tif (fFailures.size() == 1)\r\n\t\t\trevealFailure(test);\r\n\t}"
+  }
+}

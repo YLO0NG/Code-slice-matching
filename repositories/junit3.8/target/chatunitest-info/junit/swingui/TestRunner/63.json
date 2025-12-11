@@ -1,0 +1,22 @@
+{
+  "className": "TestRunner",
+  "methodName": "about",
+  "brief": "private void about(){}",
+  "methodSignature": "about()",
+  "sourceCode": "private void about() {\r\n\t\tAboutDialog about= new AboutDialog(fFrame);\r\n\t\tabout.show();\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.Dialog": [
+      "show()"
+    ]
+  },
+  "full_method_info": "private void about() {\r\n    AboutDialog about = new AboutDialog(fFrame);\r\n    about.show();\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

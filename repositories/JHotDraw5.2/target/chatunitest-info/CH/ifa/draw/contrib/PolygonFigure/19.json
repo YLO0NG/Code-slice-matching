@@ -1,0 +1,26 @@
+{
+  "className": "PolygonFigure",
+  "methodName": "splitSegment",
+  "brief": "public int splitSegment(int x, int y){}",
+  "methodSignature": "splitSegment(int, int)",
+  "sourceCode": "public int splitSegment(int x, int y) {\n    double dist = TOO_CLOSE;\n\tint best = -1;\n\t\n\tfor (int i1 = 0; i1 < fPoly.npoints; i1++) {\n\t  int n = (i1 + 1) % fPoly.npoints;\n\t  double d =  distanceFromLine(fPoly.xpoints[i1], fPoly.ypoints[i1],\n\t                               fPoly.xpoints[n], fPoly.ypoints[n],\n\t                               x, y);\n\t  if (d < dist) {\n\t    dist = d;\n\t    best = i1;\n\t  }\n\t}\n\tint i = best;\n    if (i != -1) {\n      insertPointAt(new Point(x, y), i+1);\n      return i + 1;\n    }\n    else\n      return -1;\n  }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "int",
+    "int"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.contrib.PolygonFigure": [
+      "distanceFromLine(int, int, int, int, int, int)",
+      "insertPointAt(Point, int)"
+    ]
+  },
+  "full_method_info": "/**\n * Splits the segment at the given point if a segment was hit.\n * @return the index of the segment or -1 if no segment was hit.\n */\npublic int splitSegment(int x, int y) {\n    double dist = TOO_CLOSE;\n    int best = -1;\n    for (int i1 = 0; i1 < fPoly.npoints; i1++) {\n        int n = (i1 + 1) % fPoly.npoints;\n        double d = distanceFromLine(fPoly.xpoints[i1], fPoly.ypoints[i1], fPoly.xpoints[n], fPoly.ypoints[n], x, y);\n        if (d < dist) {\n            dist = d;\n            best = i1;\n        }\n    }\n    int i = best;\n    if (i != -1) {\n        insertPointAt(new Point(x, y), i + 1);\n        return i + 1;\n    } else\n        return -1;\n}",
+  "method_comment": "\n   * Splits the segment at the given point if a segment was hit.\n   * @return the index of the segment or -1 if no segment was hit.\n   ",
+  "method_annotation": ""
+}

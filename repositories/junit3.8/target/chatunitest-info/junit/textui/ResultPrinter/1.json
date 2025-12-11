@@ -1,0 +1,26 @@
+{
+  "className": "ResultPrinter",
+  "methodName": "printWaitPrompt",
+  "brief": "void printWaitPrompt(){}",
+  "methodSignature": "printWaitPrompt()",
+  "sourceCode": "void printWaitPrompt() {\r\n\t\tgetWriter().println();\r\n\t\tgetWriter().println(\"<RETURN> to continue\");\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.io.PrintStream": [
+      "println(String)",
+      "println()"
+    ],
+    "junit.textui.ResultPrinter": [
+      "getWriter()"
+    ]
+  },
+  "full_method_info": "void printWaitPrompt() {\r\n    getWriter().println();\r\n    getWriter().println(\"<RETURN> to continue\");\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,26 @@
+{
+  "className": "Dictionary",
+  "methodName": "matchesWord",
+  "brief": "public static boolean matchesWord(String word, String keyword){}",
+  "methodSignature": "matchesWord(String, String)",
+  "sourceCode": "public static boolean matchesWord(String word, String keyword) {\n\t\tkeyword = keyword.toLowerCase();\n\t\tString wordLowerCase = word.toLowerCase();\n\t\tif(wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n\t\t\treturn true;\n\t\t} else {\n\t\t\treturn false;\n\t\t}\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String",
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "toLowerCase()",
+      "contains(CharSequence)"
+    ]
+  },
+  "full_method_info": "public static boolean matchesWord(String word, String keyword) {\n    keyword = keyword.toLowerCase();\n    String wordLowerCase = word.toLowerCase();\n    if (wordLowerCase.contains(keyword) || keyword.contains(wordLowerCase)) {\n        return true;\n    } else {\n        return false;\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

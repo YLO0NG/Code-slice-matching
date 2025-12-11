@@ -1,0 +1,22 @@
+{
+  "className": "QueryBuilder",
+  "methodName": "selectUserByUserName",
+  "brief": "public static String selectUserByUserName(String userName){}",
+  "methodSignature": "selectUserByUserName(String)",
+  "sourceCode": "public static String selectUserByUserName(String userName) {\n\t\treturn \"select user_id,user_name,user_real_name from mw_user where user_name=\\'\"+userName+\"\\'\";\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public static String selectUserByUserName(String userName) {\n    return \"select user_id,user_name,user_real_name from mw_user where user_name=\\'\" + userName + \"\\'\";\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

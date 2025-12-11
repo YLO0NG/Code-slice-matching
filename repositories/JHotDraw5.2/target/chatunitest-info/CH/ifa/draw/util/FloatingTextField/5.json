@@ -1,0 +1,22 @@
+{
+  "className": "FloatingTextField",
+  "methodName": "getText",
+  "brief": "public String getText(){}",
+  "methodSignature": "getText()",
+  "sourceCode": "public String getText() {\n        return fEditWidget.getText();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "java.awt.TextComponent": [
+      "getText()"
+    ]
+  },
+  "full_method_info": "/**\n * Gets the text contents of the overlay.\n */\npublic String getText() {\n    return fEditWidget.getText();\n}",
+  "method_comment": "\n     * Gets the text contents of the overlay.\n     ",
+  "method_annotation": ""
+}

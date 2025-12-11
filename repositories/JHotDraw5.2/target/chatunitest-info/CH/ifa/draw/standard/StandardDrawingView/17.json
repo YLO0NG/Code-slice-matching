@@ -1,0 +1,31 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "removeFromSelection",
+  "brief": "public void removeFromSelection(Figure figure){}",
+  "methodSignature": "removeFromSelection(Figure)",
+  "sourceCode": "public void removeFromSelection(Figure figure) {\n        if (fSelection.contains(figure)) {\n            fSelection.removeElement(figure);\n            fSelectionHandles = null;\n            figure.invalidate();\n            selectionChanged();\n        }\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Figure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "invalidate()"
+    ],
+    "java.util.Vector": [
+      "removeElement(Object)",
+      "contains(Object)"
+    ],
+    "CH.ifa.draw.standard.StandardDrawingView": [
+      "selectionChanged()"
+    ]
+  },
+  "full_method_info": "/**\n * Removes a figure from the selection.\n */\npublic void removeFromSelection(Figure figure) {\n    if (fSelection.contains(figure)) {\n        fSelection.removeElement(figure);\n        fSelectionHandles = null;\n        figure.invalidate();\n        selectionChanged();\n    }\n}",
+  "method_comment": "\n     * Removes a figure from the selection.\n     ",
+  "method_annotation": ""
+}

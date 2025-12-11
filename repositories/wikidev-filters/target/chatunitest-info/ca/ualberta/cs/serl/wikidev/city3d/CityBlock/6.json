@@ -1,0 +1,18 @@
+{
+  "className": "CityBlock",
+  "methodName": "getArtifacts",
+  "brief": "public HashMap<IArtifact, Integer> getArtifacts(){}",
+  "methodSignature": "getArtifacts()",
+  "sourceCode": "public HashMap<IArtifact, Integer> getArtifacts() {\n\t\treturn artifacts;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "public HashMap<IArtifact, Integer> getArtifacts() {\n    return artifacts;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

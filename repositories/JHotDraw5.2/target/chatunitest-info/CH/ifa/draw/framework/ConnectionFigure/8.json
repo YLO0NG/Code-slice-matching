@@ -1,0 +1,22 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "connectsSame",
+  "brief": "public boolean connectsSame(ConnectionFigure other);",
+  "methodSignature": "connectsSame(ConnectionFigure)",
+  "sourceCode": "public boolean connectsSame(ConnectionFigure other);",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "ConnectionFigure"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.ConnectionFigure": []
+  },
+  "full_method_info": "/**\n * Checks if the ConnectionFigure connects the same figures.\n */\npublic boolean connectsSame(ConnectionFigure other);",
+  "method_comment": "\n     * Checks if the ConnectionFigure connects the same figures.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,18 @@
+{
+  "className": "IArtifact",
+  "methodName": "getDirectlyRelatedArtifacts",
+  "brief": "public ArrayList<RelatedArtifact> getDirectlyRelatedArtifacts(){}",
+  "methodSignature": "getDirectlyRelatedArtifacts()",
+  "sourceCode": "public ArrayList<RelatedArtifact> getDirectlyRelatedArtifacts() {\n\t\treturn directlyRelatedArtifacts;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/*public void addIndirectlyRelatedArtifact(IArtifact artifact, IArtifact source) {\n\t\tif(!indirectlyRelatedArtifacts.containsKey(artifact)) {\n\t\t\tHashMap<IArtifact, Integer> map = new HashMap<IArtifact, Integer>();\n\t\t\tmap.put(source, 1);\n\t\t\tindirectlyRelatedArtifacts.put(artifact, map);\n\t\t}\n\t\telse {\n\t\t\tHashMap<IArtifact, Integer> map = indirectlyRelatedArtifacts.get(artifact);\n\t\t\tif(map.containsKey(source)) {\n\t\t\t\tmap.put(source, map.get(source)+1);\n\t\t\t\tindirectlyRelatedArtifacts.put(artifact, map);\n\t\t\t}\n\t\t\telse {\n\t\t\t\tmap.put(source, 1);\n\t\t\t\tindirectlyRelatedArtifacts.put(artifact, map);\n\t\t\t}\n\t\t}\n\t}*/\n/*public HashMap<IArtifact, Integer> getRelatedArtifactsWithWeights() {\n\t\tHashMap<IArtifact, Integer> weightMap = new HashMap<IArtifact, Integer>();\n\t\tfor(IArtifact artifact : indirectlyRelatedArtifacts.keySet()) {\n\t\t\tint paths = 0;\n\t\t\tHashMap<IArtifact, Integer> map = indirectlyRelatedArtifacts.get(artifact);\n\t\t\tfor(IArtifact source : map.keySet()) {\n\t\t\t\tpaths += map.get(source);\n\t\t\t}\n\t\t\tweightMap.put(artifact, paths);\n\t\t}\n\t\treturn weightMap;\n\t}*/\n/*public int getNumberofRelatedArtifacts() {\n\t\treturn directlyRelatedArtifacts.size() + indirectlyRelatedArtifacts.size();\n\t}*/\npublic ArrayList<RelatedArtifact> getDirectlyRelatedArtifacts() {\n    return directlyRelatedArtifacts;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

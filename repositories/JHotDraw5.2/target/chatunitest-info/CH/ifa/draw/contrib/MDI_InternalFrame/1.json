@@ -1,0 +1,18 @@
+{
+  "className": "MDI_InternalFrame",
+  "methodName": "getDrawingView",
+  "brief": "public DrawingView getDrawingView(){}",
+  "methodSignature": "getDrawingView()",
+  "sourceCode": "public DrawingView getDrawingView() {\n\t\treturn internalDrawingView;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Get the drawing view which represents the internal frame\n *\n * @param   newInternalDrawingView  drawing view for this internal frame\n */\npublic DrawingView getDrawingView() {\n    return internalDrawingView;\n}",
+  "method_comment": "\n\t * Get the drawing view which represents the internal frame\n\t *\n\t * @param   newInternalDrawingView  drawing view for this internal frame\n\t ",
+  "method_annotation": ""
+}

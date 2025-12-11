@@ -1,0 +1,18 @@
+{
+  "className": "TicketChange",
+  "methodName": "getOldValue",
+  "brief": "public String getOldValue(){}",
+  "methodSignature": "getOldValue()",
+  "sourceCode": "public String getOldValue() {\n\t\treturn oldValue;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * @return\n * @uml.property  name=\"oldValue\"\n */\npublic String getOldValue() {\n    return oldValue;\n}",
+  "method_comment": "\n\t * @return\n\t * @uml.property  name=\"oldValue\"\n\t ",
+  "method_annotation": ""
+}

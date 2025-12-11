@@ -1,0 +1,29 @@
+{
+  "className": "StandardDrawingView",
+  "methodName": "drawBackground",
+  "brief": "public void drawBackground(Graphics g){}",
+  "methodSignature": "drawBackground(Graphics)",
+  "sourceCode": "public void drawBackground(Graphics g) {\n        g.setColor(getBackground());\n        g.fillRect(0, 0, getBounds().width, getBounds().height);\n    }",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Graphics"
+  ],
+  "dependentMethods": {
+    "java.awt.Graphics": [
+      "fillRect(int, int, int, int)",
+      "setColor(Color)"
+    ],
+    "java.awt.Component": [
+      "getBounds()",
+      "getBackground()"
+    ]
+  },
+  "full_method_info": "/**\n * Draws the background. If a background pattern is set it\n * is used to fill the background. Otherwise the background\n * is filled in the background color.\n */\npublic void drawBackground(Graphics g) {\n    g.setColor(getBackground());\n    g.fillRect(0, 0, getBounds().width, getBounds().height);\n}",
+  "method_comment": "\n     * Draws the background. If a background pattern is set it\n     * is used to fill the background. Otherwise the background\n     * is filled in the background color.\n     ",
+  "method_annotation": ""
+}

@@ -1,0 +1,22 @@
+{
+  "className": "DecoratorFigure",
+  "methodName": "displayBox",
+  "brief": "public Rectangle displayBox(){}",
+  "methodSignature": "displayBox()",
+  "sourceCode": "public Rectangle displayBox() {\n        return fComponent.displayBox();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": [
+      "displayBox()"
+    ]
+  },
+  "full_method_info": "/**\n * Forwards displayBox to its contained figure.\n */\npublic Rectangle displayBox() {\n    return fComponent.displayBox();\n}",
+  "method_comment": "\n     * Forwards displayBox to its contained figure.\n     ",
+  "method_annotation": ""
+}

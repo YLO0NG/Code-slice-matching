@@ -1,0 +1,29 @@
+{
+  "className": "JavaDrawApp",
+  "methodName": "createWindowMenu",
+  "brief": "protected JMenu createWindowMenu(){}",
+  "methodSignature": "createWindowMenu()",
+  "sourceCode": "protected JMenu createWindowMenu() {\n\t\tJMenu menu = new JMenu(\"Window\");\n\t\tJMenuItem mi = new JMenuItem(\"New View\");\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            newView();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\t\tmi = new JMenuItem(\"New Window\");\n\t\tmi.addActionListener(\n\t\t    new ActionListener() {\n\t\t        public void actionPerformed(ActionEvent event) {\n\t\t            newWindow();\n\t\t        }\n\t\t    }\n\t\t);\n\t\tmenu.add(mi);\n\t\treturn menu;\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "javax.swing.AbstractButton": [
+      "addActionListener(ActionListener)"
+    ],
+    "CH.ifa.draw.contrib.MDI_DrawApplication": [
+      "newView()",
+      "newWindow()"
+    ],
+    "javax.swing.JMenu": [
+      "add(JMenuItem)"
+    ]
+  },
+  "full_method_info": "protected JMenu createWindowMenu() {\n    JMenu menu = new JMenu(\"Window\");\n    JMenuItem mi = new JMenuItem(\"New View\");\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            newView();\n        }\n    });\n    menu.add(mi);\n    mi = new JMenuItem(\"New Window\");\n    mi.addActionListener(new ActionListener() {\n\n        public void actionPerformed(ActionEvent event) {\n            newWindow();\n        }\n    });\n    menu.add(mi);\n    return menu;\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

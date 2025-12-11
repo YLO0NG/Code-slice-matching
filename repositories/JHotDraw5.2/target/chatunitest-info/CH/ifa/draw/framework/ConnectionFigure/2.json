@@ -1,0 +1,18 @@
+{
+  "className": "ConnectionFigure",
+  "methodName": "updateConnection",
+  "brief": "public void updateConnection();",
+  "methodSignature": "updateConnection()",
+  "sourceCode": "public void updateConnection();",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {},
+  "full_method_info": "/**\n * Updates the connection\n */\npublic void updateConnection();",
+  "method_comment": "\n     * Updates the connection\n     ",
+  "method_annotation": ""
+}

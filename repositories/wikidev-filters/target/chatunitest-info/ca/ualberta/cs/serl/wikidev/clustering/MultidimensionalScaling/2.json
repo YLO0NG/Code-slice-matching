@@ -1,0 +1,25 @@
+{
+  "className": "MultidimensionalScaling",
+  "methodName": "getHMatrix",
+  "brief": "private void getHMatrix(){}",
+  "methodSignature": "getHMatrix()",
+  "sourceCode": "private void getHMatrix() {\n\t\tdouble[][] identity = MatrixOperator.identity(distanceMatrix.length);\n\t\tdouble[] one = MatrixOperator.oneVector(distanceMatrix.length);\n\t\t//double[][] transposeOne = MatrixOperator.transpose(one);\n\t\tdouble[] scaled = MatrixOperator.scaleVector(one, (1.0/distanceMatrix.length));\n\t\tdouble oneProduct = MatrixOperator.vectorProduct(scaled, one);\n\t\tfor(int i=0; i<distanceMatrix.length; i++) {\n\t\t\tfor(int j=0; j<distanceMatrix.length; j++) {\n\t\t\t\thMatrix[i][j] = identity[i][j] - oneProduct;\n\t\t\t}\n\t\t}\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator": [
+      "oneVector(int)",
+      "vectorProduct(double[], double[])",
+      "scaleVector(double[], double)",
+      "identity(int)"
+    ]
+  },
+  "full_method_info": "private void getHMatrix() {\n    double[][] identity = MatrixOperator.identity(distanceMatrix.length);\n    double[] one = MatrixOperator.oneVector(distanceMatrix.length);\n    // double[][] transposeOne = MatrixOperator.transpose(one);\n    double[] scaled = MatrixOperator.scaleVector(one, (1.0 / distanceMatrix.length));\n    double oneProduct = MatrixOperator.vectorProduct(scaled, one);\n    for (int i = 0; i < distanceMatrix.length; i++) {\n        for (int j = 0; j < distanceMatrix.length; j++) {\n            hMatrix[i][j] = identity[i][j] - oneProduct;\n        }\n    }\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

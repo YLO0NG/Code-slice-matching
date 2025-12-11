@@ -1,0 +1,43 @@
+{
+  "className": "DrawApplication",
+  "methodName": "print",
+  "brief": "public void print(){}",
+  "methodSignature": "print()",
+  "sourceCode": "public void print() {\n        tool().deactivate();\n        PrintJob printJob = getToolkit().getPrintJob(this, \"Print Drawing\", null);\n\n        if (printJob != null) {\n            Graphics pg = printJob.getGraphics();\n\n            if (pg != null) {\n                ((StandardDrawingView)view()).printAll(pg);\n                pg.dispose(); // flush page\n            }\n            printJob.end();\n        }\n        tool().activate();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [],
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Tool": [
+      "deactivate()",
+      "activate()"
+    ],
+    "CH.ifa.draw.application.DrawApplication": [
+      "view()",
+      "tool()"
+    ],
+    "java.awt.Toolkit": [
+      "getPrintJob(Frame, String, Properties)"
+    ],
+    "java.awt.Window": [
+      "getToolkit()"
+    ],
+    "java.awt.PrintJob": [
+      "getGraphics()",
+      "end()"
+    ],
+    "javax.swing.JComponent": [
+      "printAll(Graphics)"
+    ],
+    "java.awt.Graphics": [
+      "dispose()"
+    ]
+  },
+  "full_method_info": "/**\n * Prints the drawing.\n */\npublic void print() {\n    tool().deactivate();\n    PrintJob printJob = getToolkit().getPrintJob(this, \"Print Drawing\", null);\n    if (printJob != null) {\n        Graphics pg = printJob.getGraphics();\n        if (pg != null) {\n            ((StandardDrawingView) view()).printAll(pg);\n            // flush page\n            pg.dispose();\n        }\n        printJob.end();\n    }\n    tool().activate();\n}",
+  "method_comment": "\n     * Prints the drawing.\n     ",
+  "method_annotation": ""
+}

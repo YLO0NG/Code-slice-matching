@@ -1,0 +1,25 @@
+{
+  "className": "SplitPaneDrawApplication",
+  "methodName": "createLeftComponent",
+  "brief": "protected void createLeftComponent(StandardDrawingView view){}",
+  "methodSignature": "createLeftComponent(StandardDrawingView)",
+  "sourceCode": "protected void createLeftComponent(StandardDrawingView view) {\n    \tsetLeftComponent(new JScrollPane(new JList()));\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": false,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "StandardDrawingView"
+  ],
+  "dependentMethods": {
+    "CH.ifa.draw.standard.StandardDrawingView": [],
+    "CH.ifa.draw.contrib.SplitPaneDrawApplication": [
+      "setLeftComponent(JComponent)"
+    ]
+  },
+  "full_method_info": "/**\n * Method which creates the left component for the JSplitPane.\n * Subclasses may override this method but should call setLeftComponent()\n * to associate the created component with the JSplitPane.\n */\nprotected void createLeftComponent(StandardDrawingView view) {\n    setLeftComponent(new JScrollPane(new JList()));\n}",
+  "method_comment": "\n     * Method which creates the left component for the JSplitPane.\n     * Subclasses may override this method but should call setLeftComponent()\n     * to associate the created component with the JSplitPane.\n     ",
+  "method_annotation": ""
+}

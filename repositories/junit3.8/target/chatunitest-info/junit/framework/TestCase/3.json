@@ -1,0 +1,24 @@
+{
+  "className": "TestCase",
+  "methodName": "run",
+  "brief": "public void run(TestResult result){}",
+  "methodSignature": "run(TestResult)",
+  "sourceCode": "public void run(TestResult result) {\r\n\t\tresult.run(this);\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "TestResult"
+  ],
+  "dependentMethods": {
+    "junit.framework.TestResult": [
+      "run(TestCase)"
+    ]
+  },
+  "full_method_info": "/**\r\n * Runs the test case and collects the results in TestResult.\r\n */\r\npublic void run(TestResult result) {\r\n    result.run(this);\r\n}",
+  "method_comment": "\r\n\t * Runs the test case and collects the results in TestResult.\r\n\t ",
+  "method_annotation": ""
+}

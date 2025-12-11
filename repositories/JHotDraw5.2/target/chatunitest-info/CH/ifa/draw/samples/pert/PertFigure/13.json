@@ -1,0 +1,29 @@
+{
+  "className": "PertFigure",
+  "methodName": "basicDisplayBox",
+  "brief": "public void basicDisplayBox(Point origin, Point corner){}",
+  "methodSignature": "basicDisplayBox(Point, Point)",
+  "sourceCode": "public void basicDisplayBox(Point origin, Point corner) {\n        fDisplayBox = new Rectangle(origin);\n        fDisplayBox.add(corner);\n        layout();\n    }",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "Point",
+    "Point"
+  ],
+  "dependentMethods": {
+    "java.awt.Point": [],
+    "java.awt.Rectangle": [
+      "add(Point)"
+    ],
+    "CH.ifa.draw.samples.pert.PertFigure": [
+      "layout()"
+    ]
+  },
+  "full_method_info": "public void basicDisplayBox(Point origin, Point corner) {\n    fDisplayBox = new Rectangle(origin);\n    fDisplayBox.add(corner);\n    layout();\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

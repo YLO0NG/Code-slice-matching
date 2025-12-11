@@ -1,0 +1,25 @@
+{
+  "className": "BaseTestRunner",
+  "methodName": "truncate",
+  "brief": "public static String truncate(String s){}",
+  "methodSignature": "truncate(String)",
+  "sourceCode": "public static String truncate(String s) {\r\n\t\tif (fgMaxMessageLength != -1 && s.length() > fgMaxMessageLength)\r\n\t\t\ts= s.substring(0, fgMaxMessageLength)+\"...\";\r\n\t\treturn s;\r\n\t}",
+  "useField": false,
+  "isConstructor": false,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": [
+      "substring(int, int)",
+      "length()"
+    ]
+  },
+  "full_method_info": "/**\r\n * Truncates a String to the maximum length.\r\n */\r\npublic static String truncate(String s) {\r\n    if (fgMaxMessageLength != -1 && s.length() > fgMaxMessageLength)\r\n        s = s.substring(0, fgMaxMessageLength) + \"...\";\r\n    return s;\r\n}",
+  "method_comment": "\r\n\t * Truncates a String to the maximum length.\r\n\t ",
+  "method_annotation": ""
+}

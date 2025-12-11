@@ -1,0 +1,51 @@
+{
+  "fullClassName": "CH.ifa.draw.util.SerializationStorageFormat",
+  "className": "SerializationStorageFormat",
+  "index": 164,
+  "modifier": "[public ]",
+  "extend": "[StandardStorageFormat]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.util",
+  "packageDeclaration": "package CH.ifa.draw.util;",
+  "classSignature": "public class SerializationStorageFormat",
+  "hasConstructor": true,
+  "isPublic": true,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import javax.swing.filechooser.FileFilter;",
+    "import java.io.*;",
+    "import CH.ifa.draw.framework.Drawing;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "StandardStorageFormat"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "createFileExtension()": "0",
+    "createFileDescription()": "1",
+    "store(String, Drawing)": "2",
+    "restore(String)": "3",
+    "SerializationStorageFormat()": "4"
+  },
+  "methodsBrief": [
+    "protected String createFileExtension(){}",
+    "public String createFileDescription(){}",
+    "public String store(String fileName, Drawing saveDrawing) throws IOException{}",
+    "public Drawing restore(String fileName) throws IOException{}",
+    "public SerializationStorageFormat(){}"
+  ],
+  "constructorSigs": [
+    "SerializationStorageFormat()"
+  ],
+  "constructorBrief": [
+    "public SerializationStorageFormat(){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)SerializationStorageFormat.java 5.2\n *\n */\npackage CH.ifa.draw.util;\n\nimport javax.swing.filechooser.FileFilter;\nimport java.io.*;\nimport CH.ifa.draw.framework.Drawing;\n\n/**\n * A SerializationStorageFormat is a straight-forward file format to store and restore\n * Drawings. It uses Java's serialization mechanism to store Drawings. The SerializationStorageFormat\n * has the file extension \"ser\" (e.g. my_picasso.ser).\n *\n * @author Wolfram Kaiser\n */\npublic class SerializationStorageFormat extends StandardStorageFormat {\n\n    public SerializationStorageFormat() {\n        super();\n    }\n\n    /**\n     * Factory method to create the file extension recognized by the FileFilter for this\n     * SerializationStorageFormat. The SerializationStorageFormat has the file extension \"ser\"\n     * (e.g. my_picasso.ser).\n     *\n     * @return new file extension\n     */\n    protected String createFileExtension() {\n        return \"ser\";\n    }\n\n    /**\n     * Factory method to create a file description for the file type when displaying the\n     * associated FileFilter.\n     *\n     * @return new file description\n     */\n    public String createFileDescription() {\n        return \"Serialization (\" + getFileExtension() + \")\";\n    }\n\n    /**\n     * Store a Drawing under a given name. The name should be valid with regard to the FileFilter\n     * that means, it should already contain the appropriate file extension.\n     *\n     * @param fileName file name of the Drawing under which it should be stored\n     * @param saveDrawing drawing to be saved\n     */\n    public String store(String fileName, Drawing saveDrawing) throws IOException {\n        FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n        ObjectOutput output = new ObjectOutputStream(stream);\n        output.writeObject(saveDrawing);\n        output.close();\n        return adjustFileName(fileName);\n    }\n\n    /**\n     * Restore a Drawing from a file with a given name. The name must be should with regard to the\n     * FileFilter that means, it should have the appropriate file extension.\n     *\n     * @param name of the file in which the Drawing has been saved\n     * @return restored Drawing\n     */\n    public Drawing restore(String fileName) throws IOException {\n        try {\n            FileInputStream stream = new FileInputStream(fileName);\n            ObjectInput input = new ObjectInputStream(stream);\n            return (Drawing) input.readObject();\n        } catch (ClassNotFoundException exception) {\n            throw new IOException(\"Could not restore drawing '\" + fileName + \"': class not found!\");\n        }\n    }\n}\n",
+  "classDeclarationCode": "/**\n * A SerializationStorageFormat is a straight-forward file format to store and restore\n * Drawings. It uses Java's serialization mechanism to store Drawings. The SerializationStorageFormat\n * has the file extension \"ser\" (e.g. my_picasso.ser).\n *\n * @author Wolfram Kaiser\n */\npublic class SerializationStorageFormat extends StandardStorageFormat {\n\n    public SerializationStorageFormat() {\n        super();\n    }\n\n    /**\n     * Factory method to create the file extension recognized by the FileFilter for this\n     * SerializationStorageFormat. The SerializationStorageFormat has the file extension \"ser\"\n     * (e.g. my_picasso.ser).\n     *\n     * @return new file extension\n     */\n    protected String createFileExtension() {\n        return \"ser\";\n    }\n\n    /**\n     * Factory method to create a file description for the file type when displaying the\n     * associated FileFilter.\n     *\n     * @return new file description\n     */\n    public String createFileDescription() {\n        return \"Serialization (\" + getFileExtension() + \")\";\n    }\n\n    /**\n     * Store a Drawing under a given name. The name should be valid with regard to the FileFilter\n     * that means, it should already contain the appropriate file extension.\n     *\n     * @param fileName file name of the Drawing under which it should be stored\n     * @param saveDrawing drawing to be saved\n     */\n    public String store(String fileName, Drawing saveDrawing) throws IOException {\n        FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));\n        ObjectOutput output = new ObjectOutputStream(stream);\n        output.writeObject(saveDrawing);\n        output.close();\n        return adjustFileName(fileName);\n    }\n\n    /**\n     * Restore a Drawing from a file with a given name. The name must be should with regard to the\n     * FileFilter that means, it should have the appropriate file extension.\n     *\n     * @param name of the file in which the Drawing has been saved\n     * @return restored Drawing\n     */\n    public Drawing restore(String fileName) throws IOException {\n        try {\n            FileInputStream stream = new FileInputStream(fileName);\n            ObjectInput input = new ObjectInputStream(stream);\n            return (Drawing) input.readObject();\n        } catch (ClassNotFoundException exception) {\n            throw new IOException(\"Could not restore drawing '\" + fileName + \"': class not found!\");\n        }\n    }\n}",
+  "subClasses": []
+}

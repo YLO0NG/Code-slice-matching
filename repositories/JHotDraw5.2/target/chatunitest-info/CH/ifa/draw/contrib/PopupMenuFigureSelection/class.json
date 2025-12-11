@@ -1,0 +1,43 @@
+{
+  "fullClassName": "CH.ifa.draw.contrib.PopupMenuFigureSelection",
+  "className": "PopupMenuFigureSelection",
+  "index": 16,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.contrib",
+  "packageDeclaration": "package CH.ifa.draw.contrib;",
+  "classSignature": "public interface PopupMenuFigureSelection",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.framework.Figure;"
+  ],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "setSelectedFigure(Figure)": "0",
+    "getSelectedFigure()": "1"
+  },
+  "methodsBrief": [
+    "public void setSelectedFigure(Figure newSelectedFigure);",
+    "public Figure getSelectedFigure();"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [
+    "setSelectedFigure(Figure)",
+    "getSelectedFigure()"
+  ],
+  "getterSetterBrief": [
+    "public void setSelectedFigure(Figure newSelectedFigure);",
+    "public Figure getSelectedFigure();"
+  ],
+  "constructorDeps": {},
+  "compilationUnitCode": "/*\n * @(#)PopupMenuFigureSelection.java 5.2\n *\n */\npackage CH.ifa.draw.contrib;\n\nimport CH.ifa.draw.framework.Figure;\n\n/**\n * An interface which allows a popup menu to interact with its Figure to\n * which it is associated.\n *\n * @author      Wolfram Kaiser\n * @version     JHotDraw 5.2        31.08.1999\n */\npublic interface PopupMenuFigureSelection {\n\n    /**\n     * Set the figure which was selected when the popup menu was invoked.\n     *\n     * @param   newSelectedFigure   figure which is selected (typically be a SelectionTool)\n     */\n    public void setSelectedFigure(Figure newSelectedFigure);\n\n    /**\n     * Get the figure which was selected when the popup menu was invoked.\n     *\n     * @return  figure which is selected (typically be a SelectionTool)\n     */\n    public Figure getSelectedFigure();\n}\n",
+  "classDeclarationCode": "/**\n * An interface which allows a popup menu to interact with its Figure to\n * which it is associated.\n *\n * @author      Wolfram Kaiser\n * @version     JHotDraw 5.2        31.08.1999\n */\npublic interface PopupMenuFigureSelection {\n\n    /**\n     * Set the figure which was selected when the popup menu was invoked.\n     *\n     * @param   newSelectedFigure   figure which is selected (typically be a SelectionTool)\n     */\n    public void setSelectedFigure(Figure newSelectedFigure);\n\n    /**\n     * Get the figure which was selected when the popup menu was invoked.\n     *\n     * @return  figure which is selected (typically be a SelectionTool)\n     */\n    public Figure getSelectedFigure();\n}",
+  "subClasses": []
+}

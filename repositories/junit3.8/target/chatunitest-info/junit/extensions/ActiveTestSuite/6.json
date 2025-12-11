@@ -1,0 +1,22 @@
+{
+  "className": "ActiveTestSuite",
+  "methodName": "ActiveTestSuite",
+  "brief": "public ActiveTestSuite(String name){}",
+  "methodSignature": "ActiveTestSuite(String)",
+  "sourceCode": "public ActiveTestSuite(String name) {\r\n\t\tsuper (name);\r\n\t}",
+  "useField": false,
+  "isConstructor": true,
+  "isGetSet": false,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "public ActiveTestSuite(String name) {\r\n    super(name);\r\n}",
+  "method_comment": "",
+  "method_annotation": ""
+}

@@ -1,0 +1,50 @@
+{
+  "fullClassName": "CH.ifa.draw.standard.SouthEastHandle",
+  "className": "SouthEastHandle",
+  "index": 104,
+  "modifier": "[]",
+  "extend": "[LocatorHandle]",
+  "implement": "[]",
+  "packageName": "CH.ifa.draw.standard",
+  "packageDeclaration": "package CH.ifa.draw.standard;",
+  "classSignature": "class SouthEastHandle",
+  "hasConstructor": true,
+  "isPublic": false,
+  "isInterface": false,
+  "isAbstract": false,
+  "imports": [
+    "import CH.ifa.draw.framework.*;",
+    "import java.awt.*;",
+    "import java.util.Vector;"
+  ],
+  "fields": [],
+  "superClasses": [
+    "LocatorHandle"
+  ],
+  "implementedTypes": [],
+  "methodSigs": {
+    "invokeStep(int, int, int, int, DrawingView)": "0",
+    "SouthEastHandle(Figure)": "1"
+  },
+  "methodsBrief": [
+    "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view){}",
+    "SouthEastHandle(Figure owner){}"
+  ],
+  "constructorSigs": [
+    "SouthEastHandle(Figure)"
+  ],
+  "constructorBrief": [
+    "SouthEastHandle(Figure owner){}"
+  ],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {
+    "CH.ifa.draw.framework.Figure": [],
+    "CH.ifa.draw.standard.RelativeLocator": [
+      "southEast()"
+    ]
+  },
+  "compilationUnitCode": "/*\n * @(#)BoxHandleKit.java 5.2\n *\n */\npackage CH.ifa.draw.standard;\n\nimport CH.ifa.draw.framework.*;\nimport java.awt.*;\nimport java.util.Vector;\n\n/**\n * A set of utility methods to create Handles for the common\n * locations on a figure's display box.\n * @see Handle\n */\n// TBD: use anonymous inner classes (had some problems with JDK 1.1)\npublic class BoxHandleKit {\n\n    /**\n     * Fills the given Vector with handles at each corner of a\n     * figure.\n     */\n    static public void addCornerHandles(Figure f, Vector handles) {\n        handles.addElement(southEast(f));\n        handles.addElement(southWest(f));\n        handles.addElement(northEast(f));\n        handles.addElement(northWest(f));\n    }\n\n    /**\n     * Fills the given Vector with handles at each corner\n     * and the north, south, east, and west of the figure.\n     */\n    static public void addHandles(Figure f, Vector handles) {\n        handles.addElement(southEast(f));\n        handles.addElement(southWest(f));\n        handles.addElement(northEast(f));\n        handles.addElement(northWest(f));\n        handles.addElement(south(f));\n        handles.addElement(north(f));\n        handles.addElement(east(f));\n        handles.addElement(west(f));\n    }\n\n    static public Handle south(Figure owner) {\n        return new SouthHandle(owner);\n    }\n\n    static public Handle southEast(Figure owner) {\n        return new SouthEastHandle(owner);\n    }\n\n    static public Handle southWest(Figure owner) {\n        return new SouthWestHandle(owner);\n    }\n\n    static public Handle north(Figure owner) {\n        return new NorthHandle(owner);\n    }\n\n    static public Handle northEast(Figure owner) {\n        return new NorthEastHandle(owner);\n    }\n\n    static public Handle northWest(Figure owner) {\n        return new NorthWestHandle(owner);\n    }\n\n    static public Handle east(Figure owner) {\n        return new EastHandle(owner);\n    }\n\n    static public Handle west(Figure owner) {\n        return new WestHandle(owner);\n    }\n}\n\nclass NorthEastHandle extends LocatorHandle {\n\n    NorthEastHandle(Figure owner) {\n        super(owner, RelativeLocator.northEast());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(r.x, Math.min(r.y + r.height, y)), new Point(Math.max(r.x, x), r.y + r.height));\n    }\n}\n\nclass EastHandle extends LocatorHandle {\n\n    EastHandle(Figure owner) {\n        super(owner, RelativeLocator.east());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(r.x, r.y), new Point(Math.max(r.x, x), r.y + r.height));\n    }\n}\n\nclass NorthHandle extends LocatorHandle {\n\n    NorthHandle(Figure owner) {\n        super(owner, RelativeLocator.north());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(r.x, Math.min(r.y + r.height, y)), new Point(r.x + r.width, r.y + r.height));\n    }\n}\n\nclass NorthWestHandle extends LocatorHandle {\n\n    NorthWestHandle(Figure owner) {\n        super(owner, RelativeLocator.northWest());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(Math.min(r.x + r.width, x), Math.min(r.y + r.height, y)), new Point(r.x + r.width, r.y + r.height));\n    }\n}\n\nclass SouthEastHandle extends LocatorHandle {\n\n    SouthEastHandle(Figure owner) {\n        super(owner, RelativeLocator.southEast());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(r.x, r.y), new Point(Math.max(r.x, x), Math.max(r.y, y)));\n    }\n}\n\nclass SouthHandle extends LocatorHandle {\n\n    SouthHandle(Figure owner) {\n        super(owner, RelativeLocator.south());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(r.x, r.y), new Point(r.x + r.width, Math.max(r.y, y)));\n    }\n}\n\nclass SouthWestHandle extends LocatorHandle {\n\n    SouthWestHandle(Figure owner) {\n        super(owner, RelativeLocator.southWest());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(Math.min(r.x + r.width, x), r.y), new Point(r.x + r.width, Math.max(r.y, y)));\n    }\n}\n\nclass WestHandle extends LocatorHandle {\n\n    WestHandle(Figure owner) {\n        super(owner, RelativeLocator.west());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(Math.min(r.x + r.width, x), r.y), new Point(r.x + r.width, r.y + r.height));\n    }\n}\n",
+  "classDeclarationCode": "class SouthEastHandle extends LocatorHandle {\n\n    SouthEastHandle(Figure owner) {\n        super(owner, RelativeLocator.southEast());\n    }\n\n    public void invokeStep(int x, int y, int anchorX, int anchorY, DrawingView view) {\n        Rectangle r = owner().displayBox();\n        owner().displayBox(new Point(r.x, r.y), new Point(Math.max(r.x, x), Math.max(r.y, y)));\n    }\n}",
+  "subClasses": []
+}

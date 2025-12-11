@@ -1,0 +1,22 @@
+{
+  "className": "ChangeSetDetail",
+  "methodName": "setKind",
+  "brief": "public void setKind(String kind){}",
+  "methodSignature": "setKind(String)",
+  "sourceCode": "public void setKind(String kind) {\n\t\tthis.kind = kind;\n\t}",
+  "useField": true,
+  "isConstructor": false,
+  "isGetSet": true,
+  "isPublic": true,
+  "isBoolean": false,
+  "isAbstract": false,
+  "parameters": [
+    "String"
+  ],
+  "dependentMethods": {
+    "java.lang.String": []
+  },
+  "full_method_info": "/**\n * @param kind\n * @uml.property  name=\"kind\"\n */\npublic void setKind(String kind) {\n    this.kind = kind;\n}",
+  "method_comment": "\n\t * @param kind\n\t * @uml.property  name=\"kind\"\n\t ",
+  "method_annotation": ""
+}

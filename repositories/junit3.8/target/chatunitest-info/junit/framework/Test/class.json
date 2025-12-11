@@ -1,0 +1,35 @@
+{
+  "fullClassName": "junit.framework.Test",
+  "className": "Test",
+  "index": 13,
+  "modifier": "[public ]",
+  "extend": "[]",
+  "implement": "[]",
+  "packageName": "junit.framework",
+  "packageDeclaration": "package junit.framework;",
+  "classSignature": "public interface Test",
+  "hasConstructor": false,
+  "isPublic": true,
+  "isInterface": true,
+  "isAbstract": false,
+  "imports": [],
+  "fields": [],
+  "superClasses": [],
+  "implementedTypes": [],
+  "methodSigs": {
+    "countTestCases()": "0",
+    "run(TestResult)": "1"
+  },
+  "methodsBrief": [
+    "public abstract int countTestCases();",
+    "public abstract void run(TestResult result);"
+  ],
+  "constructorSigs": [],
+  "constructorBrief": [],
+  "getterSetterSigs": [],
+  "getterSetterBrief": [],
+  "constructorDeps": {},
+  "compilationUnitCode": "package junit.framework;\r\n\r\n/**\r\n * A <em>Test</em> can be run and collect its results.\r\n *\r\n * @see TestResult\r\n */\r\npublic interface Test {\r\n\r\n    /**\r\n     * Counts the number of test cases that will be run by this test.\r\n     */\r\n    public abstract int countTestCases();\r\n\r\n    /**\r\n     * Runs a test and collects its result in a TestResult instance.\r\n     */\r\n    public abstract void run(TestResult result);\r\n}\r\n",
+  "classDeclarationCode": "/**\r\n * A <em>Test</em> can be run and collect its results.\r\n *\r\n * @see TestResult\r\n */\r\npublic interface Test {\r\n\r\n    /**\r\n     * Counts the number of test cases that will be run by this test.\r\n     */\r\n    public abstract int countTestCases();\r\n\r\n    /**\r\n     * Runs a test and collects its result in a TestResult instance.\r\n     */\r\n    public abstract void run(TestResult result);\r\n}",
+  "subClasses": []
+}
