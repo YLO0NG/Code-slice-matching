@@ -1164,20 +1164,40 @@
         "function_name": "updateDurations()",
         "code_lines": [
             {
-                "line": 234,
-                "code": "            ((PertFigure) i.nextElement()).updateDurations();"
-            },
-            {
-                "line": 235,
-                "code": "    }"
-            },
-            {
-                "line": 236,
-                "code": ""
-            },
-            {
                 "line": 237,
                 "code": "    public void updateDurations() {"
+            },
+            {
+                "line": 238,
+                "code": "        int newEnd = start()+duration();"
+            },
+            {
+                "line": 239,
+                "code": "        if (newEnd != end()) {"
+            },
+            {
+                "line": 240,
+                "code": "            setEnd(newEnd);"
+            },
+            {
+                "line": 241,
+                "code": "            Enumeration i = fPostTasks.elements();"
+            },
+            {
+                "line": 242,
+                "code": "\t\t\twhile (i.hasMoreElements())"
+            },
+            {
+                "line": 243,
+                "code": "\t\t\t    ((PertFigure) i.nextElement()).updateDurations();"
+            },
+            {
+                "line": 244,
+                "code": "        }"
+            },
+            {
+                "line": 245,
+                "code": "    }"
             }
         ]
     },
@@ -1310,24 +1330,44 @@
         "function_name": "initialize()",
         "code_lines": [
             {
-                "line": 24,
-                "code": "        initialize();"
+                "line": 127,
+                "code": "    private void initialize() {"
             },
             {
-                "line": 25,
-                "code": "        fConnectors = null;"
+                "line": 128,
+                "code": "        setText(\"node\");"
             },
             {
-                "line": 26,
+                "line": 129,
+                "code": "        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);"
+            },
+            {
+                "line": 130,
+                "code": "        setFont(fb);"
+            },
+            {
+                "line": 131,
+                "code": "        fConnectors = new Vector(4);"
+            },
+            {
+                "line": 132,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()) );"
+            },
+            {
+                "line": 133,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()) );"
+            },
+            {
+                "line": 134,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()) );"
+            },
+            {
+                "line": 135,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()) );"
+            },
+            {
+                "line": 136,
                 "code": "    }"
-            },
-            {
-                "line": 27,
-                "code": ""
-            },
-            {
-                "line": 28,
-                "code": "    public Rectangle displayBox() {"
             }
         ]
     },
@@ -3012,20 +3052,164 @@
         "function_name": "updatePoints()",
         "code_lines": [
             {
-                "line": 33,
-                "code": "        updatePoints();"
+                "line": 57,
+                "code": "    protected void updatePoints() {"
             },
             {
-                "line": 34,
-                "code": "    }"
+                "line": 58,
+                "code": "        willChange();"
             },
             {
-                "line": 35,
+                "line": 59,
+                "code": "        Point start = startPoint();"
+            },
+            {
+                "line": 60,
+                "code": "        Point end = endPoint();"
+            },
+            {
+                "line": 61,
+                "code": "        fPoints.removeAllElements();"
+            },
+            {
+                "line": 62,
+                "code": "        fPoints.addElement(start);"
+            },
+            {
+                "line": 63,
                 "code": ""
             },
             {
-                "line": 36,
-                "code": "    public void layoutConnection() {"
+                "line": 64,
+                "code": "        if (start.x == end.x || start.y == end.y) {"
+            },
+            {
+                "line": 65,
+                "code": "            fPoints.addElement(end);"
+            },
+            {
+                "line": 66,
+                "code": "        }"
+            },
+            {
+                "line": 67,
+                "code": "        else {"
+            },
+            {
+                "line": 68,
+                "code": "            Rectangle r1 = start().owner().displayBox();"
+            },
+            {
+                "line": 69,
+                "code": "            Rectangle r2 = end().owner().displayBox();"
+            },
+            {
+                "line": 70,
+                "code": ""
+            },
+            {
+                "line": 71,
+                "code": "            int x1, y1, x2, y2;"
+            },
+            {
+                "line": 72,
+                "code": "            int direction = 0;"
+            },
+            {
+                "line": 73,
+                "code": "\t\t\tint vx = r2.x + r2.width/2 - (r1.x + r1.width/2);"
+            },
+            {
+                "line": 74,
+                "code": "\t\t\tint vy = r2.y + r2.height/2 - (r1.y + r1.height/2);"
+            },
+            {
+                "line": 75,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 76,
+                "code": "\t\t\tif (vy < vx && vx > -vy)"
+            },
+            {
+                "line": 77,
+                "code": "\t\t\t    direction = Geom.EAST;"
+            },
+            {
+                "line": 78,
+                "code": "\t\t\telse if (vy > vx && vy > -vx)"
+            },
+            {
+                "line": 79,
+                "code": "\t\t\t    direction = Geom.NORTH;"
+            },
+            {
+                "line": 80,
+                "code": "\t\t\telse if (vx < vy && vx < -vy)"
+            },
+            {
+                "line": 81,
+                "code": "\t\t\t    direction = Geom.WEST;"
+            },
+            {
+                "line": 82,
+                "code": "\t\t\telse"
+            },
+            {
+                "line": 83,
+                "code": "\t\t\t    direction = Geom.SOUTH;"
+            },
+            {
+                "line": 84,
+                "code": "            int dir = direction;"
+            },
+            {
+                "line": 85,
+                "code": "            if (dir == Geom.NORTH || dir == Geom.SOUTH) {"
+            },
+            {
+                "line": 86,
+                "code": "                fPoints.addElement(new Point(start.x, (start.y + end.y)/2));"
+            },
+            {
+                "line": 87,
+                "code": "                fPoints.addElement(new Point(end.x, (start.y + end.y)/2));"
+            },
+            {
+                "line": 88,
+                "code": "            }"
+            },
+            {
+                "line": 89,
+                "code": "            else {"
+            },
+            {
+                "line": 90,
+                "code": "                fPoints.addElement(new Point((start.x + end.x)/2, start.y));"
+            },
+            {
+                "line": 91,
+                "code": "                fPoints.addElement(new Point((start.x + end.x)/2, end.y));"
+            },
+            {
+                "line": 92,
+                "code": "            }"
+            },
+            {
+                "line": 93,
+                "code": "            fPoints.addElement(end);"
+            },
+            {
+                "line": 94,
+                "code": "        }"
+            },
+            {
+                "line": 95,
+                "code": "        changed();"
+            },
+            {
+                "line": 96,
+                "code": "    }"
             }
         ]
     },
@@ -4164,44 +4348,112 @@
         "function_name": "promptOpen()",
         "code_lines": [
             {
-                "line": 218,
-                "code": "\t\t            promptOpen();"
+                "line": 691,
+                "code": "    public void promptOpen() {"
             },
             {
-                "line": 219,
-                "code": "\t\t        }"
+                "line": 692,
+                "code": "    \ttoolDone();"
             },
             {
-                "line": 220,
-                "code": "\t\t    }"
+                "line": 693,
+                "code": "        JFileChooser openDialog = createOpenFileChooser();"
             },
             {
-                "line": 221,
-                "code": "\t\t);"
+                "line": 694,
+                "code": "        getStorageFormatManager().registerFileFilters(openDialog);"
             },
             {
-                "line": 222,
-                "code": "\t\tmenu.add(mi);"
+                "line": 695,
+                "code": "        if (openDialog.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {"
             },
             {
-                "line": 223,
-                "code": ""
+                "line": 696,
+                "code": "            StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(openDialog.getFileFilter());"
             },
             {
-                "line": 224,
-                "code": "\t\tmi = new JMenuItem(\"Save As...\", new MenuShortcut('s').getKey());"
+                "line": 697,
+                "code": "            if (foundFormat != null) {"
             },
             {
-                "line": 225,
-                "code": "\t\tmi.addActionListener("
+                "line": 698,
+                "code": "                String file = openDialog.getSelectedFile().getAbsolutePath();"
             },
             {
-                "line": 226,
-                "code": "\t\t    new ActionListener() {"
+                "line": 699,
+                "code": "\t\t\t\ttry {"
             },
             {
-                "line": 227,
-                "code": "\t\t        public void actionPerformed(ActionEvent event) {"
+                "line": 700,
+                "code": "\t\t\t\t    Drawing restoredDrawing = foundFormat.restore(file);"
+            },
+            {
+                "line": 701,
+                "code": "\t\t\t\t    if (restoredDrawing != null) {"
+            },
+            {
+                "line": 702,
+                "code": "\t\t\t\t        newWindow();"
+            },
+            {
+                "line": 703,
+                "code": "\t\t\t\t        setDrawing(restoredDrawing);"
+            },
+            {
+                "line": 704,
+                "code": "\t\t\t\t        setDrawingTitle(file);"
+            },
+            {
+                "line": 705,
+                "code": "\t\t\t\t    }"
+            },
+            {
+                "line": 706,
+                "code": "\t\t\t\t    else {"
+            },
+            {
+                "line": 707,
+                "code": "\t\t\t\t       showStatus(\"Unknown file type: could not open file '\" + file + \"'\");"
+            },
+            {
+                "line": 708,
+                "code": "\t\t\t\t    }"
+            },
+            {
+                "line": 709,
+                "code": "\t\t\t\t} catch (IOException e) {"
+            },
+            {
+                "line": 710,
+                "code": "\t\t\t\t    showStatus(\"Error: \" + e);"
+            },
+            {
+                "line": 711,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 712,
+                "code": "            }"
+            },
+            {
+                "line": 713,
+                "code": "            else {"
+            },
+            {
+                "line": 714,
+                "code": "                showStatus(\"Not a valid file format: \" + openDialog.getFileFilter().getDescription());"
+            },
+            {
+                "line": 715,
+                "code": "            }"
+            },
+            {
+                "line": 716,
+                "code": "        }"
+            },
+            {
+                "line": 717,
+                "code": "    }"
             }
         ]
     },
@@ -4210,48 +4462,72 @@
         "function_name": "promptSaveAs()",
         "code_lines": [
             {
-                "line": 228,
-                "code": "\t\t            promptSaveAs();"
+                "line": 722,
+                "code": "    public void promptSaveAs() {"
             },
             {
-                "line": 229,
-                "code": "\t\t        }"
+                "line": 723,
+                "code": "        toolDone();"
             },
             {
-                "line": 230,
-                "code": "\t\t    }"
+                "line": 724,
+                "code": "        JFileChooser saveDialog1 = new JFileChooser();"
             },
             {
-                "line": 231,
-                "code": "\t\t);"
+                "line": 725,
+                "code": "\t\tsaveDialog1.setDialogTitle(\"Save File...\");"
             },
             {
-                "line": 232,
-                "code": "\t\tmenu.add(mi);"
+                "line": 726,
+                "code": "        JFileChooser saveDialog = saveDialog1;"
             },
             {
-                "line": 233,
+                "line": 727,
+                "code": "        getStorageFormatManager().registerFileFilters(saveDialog);"
+            },
+            {
+                "line": 728,
                 "code": ""
             },
             {
-                "line": 234,
-                "code": "\t\tmenu.addSeparator();"
+                "line": 729,
+                "code": "        if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {"
             },
             {
-                "line": 235,
-                "code": "\t\tmi = new JMenuItem(\"Print...\", new MenuShortcut('p').getKey());"
+                "line": 730,
+                "code": "            StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());"
             },
             {
-                "line": 236,
-                "code": "\t\tmi.addActionListener("
+                "line": 731,
+                "code": "            if (foundFormat != null) {"
             },
             {
-                "line": 237,
-                "code": "\t\t    new ActionListener() {"
+                "line": 732,
+                "code": "                saveDrawing(foundFormat, saveDialog.getSelectedFile().getAbsolutePath());"
             },
             {
-                "line": 238,
-                "code": "\t\t        public void actionPerformed(ActionEvent event) {"
+                "line": 733,
+                "code": "            }"
+            },
+            {
+                "line": 734,
+                "code": "            else {"
+            },
+            {
+                "line": 735,
+                "code": "                showStatus(\"Not a valid file format: \" + saveDialog.getFileFilter().getDescription());"
+            },
+            {
+                "line": 736,
+                "code": "            }"
+            },
+            {
+                "line": 737,
+                "code": "        }"
+            },
+            {
+                "line": 738,
+                "code": "    }"
             }
         ]
     },

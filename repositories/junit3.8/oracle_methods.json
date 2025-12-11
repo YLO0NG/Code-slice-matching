@@ -2806,52 +2806,204 @@
         "function_name": "createCounterPanel()",
         "code_lines": [
             {
-                "line": 270,
-                "code": "\t\tPanel numbersPanel= createCounterPanel();"
+                "line": 344,
+                "code": "\tprotected Panel createCounterPanel() {"
             },
             {
-                "line": 271,
-                "code": ""
+                "line": 345,
+                "code": "\t\tPanel numbersPanel= new Panel(new GridBagLayout());"
             },
             {
-                "line": 272,
-                "code": "\t\t//---- fourth section"
+                "line": 346,
+                "code": "\t\t/*{*/GridBagConstraints constraints= new GridBagConstraints();"
             },
             {
-                "line": 273,
-                "code": "\t\tLabel failureLabel= new Label(\"Errors and Failures:\");"
+                "line": 347,
+                "code": "\t\tconstraints.gridx= 0;"
             },
             {
-                "line": 274,
-                "code": ""
+                "line": 348,
+                "code": "\t\tconstraints.gridy= 0;"
             },
             {
-                "line": 275,
-                "code": "\t\tfFailureList= new List(5);"
+                "line": 349,
+                "code": "\t\tconstraints.gridwidth= 1;"
             },
             {
-                "line": 276,
-                "code": "\t\tfFailureList.addItemListener("
+                "line": 350,
+                "code": "\t\tconstraints.gridheight= 1;"
             },
             {
-                "line": 277,
-                "code": "\t\t\tnew ItemListener() {"
+                "line": 351,
+                "code": "\t\tconstraints.weightx= 0.0;"
             },
             {
-                "line": 278,
-                "code": "\t\t\t\tpublic void itemStateChanged(ItemEvent e) {"
+                "line": 352,
+                "code": "\t\tconstraints.weighty= 0.0;"
             },
             {
-                "line": 279,
-                "code": "\t\t\t\t\tfailureSelected();"
+                "line": 353,
+                "code": "\t\tconstraints.anchor= GridBagConstraints.CENTER;"
             },
             {
-                "line": 280,
-                "code": "\t\t\t\t}"
+                "line": 354,
+                "code": "\t\tconstraints.fill= GridBagConstraints.NONE;"
             },
             {
-                "line": 281,
-                "code": "\t\t\t}"
+                "line": 355,
+                "code": "\t\tconstraints.insets= new Insets(0, 0, 0, 0);"
+            },
+            {
+                "line": 356,
+                "code": "\t\tnumbersPanel.add(new Label(\"Runs:\"), constraints);/*}*/\t"
+            },
+            {
+                "line": 357,
+                "code": "\t\taddToCounterPanel("
+            },
+            {
+                "line": 358,
+                "code": "\t\t\tnumbersPanel,"
+            },
+            {
+                "line": 359,
+                "code": "\t\t\tfNumberOfRuns, "
+            },
+            {
+                "line": 360,
+                "code": "          \t1, 0, 1, 1, 0.33, 0.0,"
+            },
+            {
+                "line": 361,
+                "code": "          \tGridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,"
+            },
+            {
+                "line": 362,
+                "code": "          \tnew Insets(0, 8, 0, 40)"
+            },
+            {
+                "line": 363,
+                "code": "\t\t);"
+            },
+            {
+                "line": 364,
+                "code": "\t\taddToCounterPanel("
+            },
+            {
+                "line": 365,
+                "code": "\t\t\tnumbersPanel,"
+            },
+            {
+                "line": 366,
+                "code": "\t\t\tnew Label(\"Errors:\"),"
+            },
+            {
+                "line": 367,
+                "code": "          \t2, 0, 1, 1, 0.0, 0.0,"
+            },
+            {
+                "line": 368,
+                "code": "          \tGridBagConstraints.CENTER, GridBagConstraints.NONE,"
+            },
+            {
+                "line": 369,
+                "code": "          \tnew Insets(0, 8, 0, 0)"
+            },
+            {
+                "line": 370,
+                "code": "\t\t);"
+            },
+            {
+                "line": 371,
+                "code": "\t\taddToCounterPanel("
+            },
+            {
+                "line": 372,
+                "code": "\t\t\tnumbersPanel,"
+            },
+            {
+                "line": 373,
+                "code": "\t\t\tfNumberOfErrors,"
+            },
+            {
+                "line": 374,
+                "code": "          \t3, 0, 1, 1, 0.33, 0.0,"
+            },
+            {
+                "line": 375,
+                "code": "          \tGridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,"
+            },
+            {
+                "line": 376,
+                "code": "          \tnew Insets(0, 8, 0, 40)"
+            },
+            {
+                "line": 377,
+                "code": "\t\t);"
+            },
+            {
+                "line": 378,
+                "code": "\t\taddToCounterPanel("
+            },
+            {
+                "line": 379,
+                "code": "\t\t\tnumbersPanel,"
+            },
+            {
+                "line": 380,
+                "code": "\t\t\tnew Label(\"Failures:\"),"
+            },
+            {
+                "line": 381,
+                "code": "          \t4, 0, 1, 1, 0.0, 0.0,"
+            },
+            {
+                "line": 382,
+                "code": "          \tGridBagConstraints.CENTER, GridBagConstraints.NONE,"
+            },
+            {
+                "line": 383,
+                "code": "          \tnew Insets(0, 8, 0, 0)"
+            },
+            {
+                "line": 384,
+                "code": "\t\t);\t"
+            },
+            {
+                "line": 385,
+                "code": "\t\taddToCounterPanel("
+            },
+            {
+                "line": 386,
+                "code": "\t\t\tnumbersPanel,"
+            },
+            {
+                "line": 387,
+                "code": "\t\t\tfNumberOfFailures,"
+            },
+            {
+                "line": 388,
+                "code": "          \t5, 0, 1, 1, 0.33, 0.0,"
+            },
+            {
+                "line": 389,
+                "code": "          \tGridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL,"
+            },
+            {
+                "line": 390,
+                "code": "          \tnew Insets(0, 8, 0, 0) "
+            },
+            {
+                "line": 391,
+                "code": "\t\t);"
+            },
+            {
+                "line": 392,
+                "code": "\t\treturn numbersPanel;"
+            },
+            {
+                "line": 393,
+                "code": "\t}"
             }
         ]
     },
@@ -2860,128 +3012,64 @@
         "function_name": "reset()",
         "code_lines": [
             {
-                "line": 197,
-                "code": "\t\t\t\t\t\treset();"
+                "line": 482,
+                "code": "\tprotected void reset() {"
             },
             {
-                "line": 198,
-                "code": "\t\t\t\t\t"
+                "line": 483,
+                "code": "\t\tsetLabelValue(fNumberOfErrors, 0);"
             },
             {
-                "line": 199,
-                "code": "\t\t\t\t\t\tshowInfo(\"Load Test Case...\");"
+                "line": 484,
+                "code": "\t\tsetLabelValue(fNumberOfFailures, 0);"
             },
             {
-                "line": 200,
-                "code": "\t\t\t\t\t"
+                "line": 485,
+                "code": "\t\tsetLabelValue(fNumberOfRuns, 0);"
             },
             {
-                "line": 201,
-                "code": "\t\t\t\t\t\tfinal Test testSuite= getTest(fSuiteField.getText());"
+                "line": 486,
+                "code": "\t\t/*{*/fProgressIndicator.fProgressX= 1;"
             },
             {
-                "line": 202,
-                "code": "\t\t\t\t\t\tif (testSuite != null) {"
+                "line": 487,
+                "code": "\t\tfProgressIndicator.fProgress= 0;"
             },
             {
-                "line": 203,
-                "code": "\t\t\t\t\t\t\tfRunner= new Thread() {"
+                "line": 488,
+                "code": "\t\tfProgressIndicator.fError= false;"
             },
             {
-                "line": 204,
-                "code": "\t\t\t\t\t\t\t\tpublic void run() {"
+                "line": 489,
+                "code": "\t\tfProgressIndicator.paint(fProgressIndicator.getGraphics());/*}*/"
             },
             {
-                "line": 205,
-                "code": "\t\t\t\t\t\t\t\t\tfTestResult= createTestResult();"
+                "line": 490,
+                "code": "\t\tfRerunButton.setEnabled(false);"
             },
             {
-                "line": 206,
-                "code": "\t\t\t\t\t\t\t\t\tfTestResult.addListener(TestRunner.this);"
+                "line": 491,
+                "code": "\t\tfFailureList.removeAll();"
             },
             {
-                "line": 207,
-                "code": "\t\t\t\t\t\t\t\t\tfProgressIndicator.start(testSuite.countTestCases());"
+                "line": 492,
+                "code": "\t\tfExceptions= new Vector(10);"
             },
             {
-                "line": 208,
-                "code": "\t\t\t\t\t\t\t\t\tshowInfo(\"Running...\");"
+                "line": 493,
+                "code": "\t\tfFailedTests= new Vector(10);"
             },
             {
-                "line": 209,
-                "code": "\t\t\t\t\t"
+                "line": 494,
+                "code": "\t\tfTraceArea.setText(\"\");"
             },
             {
-                "line": 210,
-                "code": "\t\t\t\t\t\t\t\t\tlong startTime= System.currentTimeMillis();"
+                "line": 495,
+                "code": ""
             },
             {
-                "line": 211,
-                "code": "\t\t\t\t\t\t\t\t\ttestSuite.run(fTestResult);"
-            },
-            {
-                "line": 212,
-                "code": "\t\t\t\t\t"
-            },
-            {
-                "line": 213,
-                "code": "\t\t\t\t\t\t\t\t\tif (fTestResult.shouldStop()) {"
-            },
-            {
-                "line": 214,
-                "code": "\t\t\t\t\t\t\t\t\t\tshowStatus(\"Stopped\");"
-            },
-            {
-                "line": 215,
-                "code": "\t\t\t\t\t\t\t\t\t} else {"
-            },
-            {
-                "line": 216,
-                "code": "\t\t\t\t\t\t\t\t\t\tlong endTime= System.currentTimeMillis();"
-            },
-            {
-                "line": 217,
-                "code": "\t\t\t\t\t\t\t\t\t\tlong runTime= endTime-startTime;"
-            },
-            {
-                "line": 218,
-                "code": "\t\t\t\t\t\t\t\t\t\tshowInfo(\"Finished: \" + elapsedTimeAsString(runTime) + \" seconds\");"
-            },
-            {
-                "line": 219,
-                "code": "\t\t\t\t\t\t\t\t\t}"
-            },
-            {
-                "line": 220,
-                "code": "\t\t\t\t\t\t\t\t\tfTestResult= null;"
-            },
-            {
-                "line": 221,
-                "code": "\t\t\t\t\t\t\t\t\tfRun.setLabel(\"Run\");"
-            },
-            {
-                "line": 222,
-                "code": "\t\t\t\t\t\t\t\t\tfRunner= null;"
-            },
-            {
-                "line": 223,
-                "code": "\t\t\t\t\t\t\t\t\tSystem.gc();"
-            },
-            {
-                "line": 224,
-                "code": "\t\t\t\t\t\t\t\t}"
-            },
-            {
-                "line": 225,
-                "code": "\t\t\t\t\t\t\t};"
-            },
-            {
-                "line": 226,
-                "code": "\t\t\t\t\t\t\tfRunner.start();"
-            },
-            {
-                "line": 227,
-                "code": "\t\t\t\t\t\t}"
+                "line": 496,
+                "code": "\t}"
             }
         ]
     }

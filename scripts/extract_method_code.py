@@ -171,6 +171,11 @@ def find_method_in_file(file_path, method_name, target_param_types):
             if paren_end != -1:
                 params_content = params_str[:paren_end]
                 
+                # Check if it looks like a method call or abstract method (ends with ;)
+                after_paren = params_str[paren_end+1:].strip()
+                if after_paren.startswith(';'):
+                    continue
+                
                 if match_params(params_content, target_param_types):
                     return extract_method_body(lines, i)
                     

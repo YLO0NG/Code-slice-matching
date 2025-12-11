@@ -874,24 +874,108 @@
         "function_name": "input()",
         "code_lines": [
             {
-                "line": 78,
-                "code": "\t\treturn this.input();"
+                "line": 82,
+                "code": "\tpublic String input() throws Exception {"
             },
             {
-                "line": 79,
-                "code": "\t}"
+                "line": 83,
+                "code": "\t\tlogger.info( \"Starting input()\" ); //f:log"
             },
             {
-                "line": 80,
+                "line": 84,
+                "code": "\t\tthis.task = SystemConstants.CR_MODE;"
+            },
+            {
+                "line": 85,
                 "code": ""
             },
             {
-                "line": 81,
-                "code": "\t@Override"
+                "line": 86,
+                "code": "\t\tthis.purchaseOrder = null;"
             },
             {
-                "line": 82,
-                "code": "\tpublic String input() throws Exception {"
+                "line": 87,
+                "code": ""
+            },
+            {
+                "line": 88,
+                "code": "\t\tSession sess = HibernateUtil.getSessionFactory().openSession(); //f:hibernate"
+            },
+            {
+                "line": 89,
+                "code": "\t\tTransaction t = sess.beginTransaction(); //f:hibernate"
+            },
+            {
+                "line": 90,
+                "code": ""
+            },
+            {
+                "line": 91,
+                "code": "\t\tCriteria criteria = sess.createCriteria( Customer.class ); //f:hibernate"
+            },
+            {
+                "line": 92,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 93,
+                "code": "\t\tList<Customer> lc = (List<Customer>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 94,
+                "code": "\t\tActionContext.getContext().getSession().put( \"listCustomer\", lc );"
+            },
+            {
+                "line": 95,
+                "code": ""
+            },
+            {
+                "line": 96,
+                "code": "\t\tcriteria = sess.createCriteria( Product.class ); //f:hibernate"
+            },
+            {
+                "line": 97,
+                "code": "\t\t@SuppressWarnings(\"unchecked\")"
+            },
+            {
+                "line": 98,
+                "code": "\t\tList<Product> lp = (List<Product>) criteria.list(); //f:hibernate"
+            },
+            {
+                "line": 99,
+                "code": ""
+            },
+            {
+                "line": 100,
+                "code": "\t\tt.commit(); //f:hibernate"
+            },
+            {
+                "line": 101,
+                "code": "\t\tsess.close(); //f:hibernate"
+            },
+            {
+                "line": 102,
+                "code": ""
+            },
+            {
+                "line": 103,
+                "code": "\t\tActionContext.getContext().getSession().put( \"listProduct\", lp );"
+            },
+            {
+                "line": 104,
+                "code": ""
+            },
+            {
+                "line": 105,
+                "code": "\t\tlogger.info( \"Finishing input()\" ); //f:log"
+            },
+            {
+                "line": 106,
+                "code": "\t\treturn INPUT;"
+            },
+            {
+                "line": 107,
+                "code": "\t}"
             }
         ]
     },
@@ -1724,24 +1808,60 @@
         "function_name": "input()",
         "code_lines": [
             {
-                "line": 50,
-                "code": "\t\treturn this.input();"
+                "line": 54,
+                "code": "\tpublic String input() throws Exception {"
             },
             {
-                "line": 51,
-                "code": "\t}"
+                "line": 55,
+                "code": "\t\tlogger.info( \"Starting input()\" ); //f:log"
             },
             {
-                "line": 52,
+                "line": 56,
+                "code": "\t\tSchedulerFactory sf = new StdSchedulerFactory(); //f:quartz"
+            },
+            {
+                "line": 57,
+                "code": "\t\tScheduler sc = sf.getScheduler(); //f:quartz"
+            },
+            {
+                "line": 58,
                 "code": ""
             },
             {
-                "line": 53,
-                "code": "\t@Override"
+                "line": 59,
+                "code": "\t\tJobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) ); //f:quartz"
             },
             {
-                "line": 54,
-                "code": "\tpublic String input() throws Exception {"
+                "line": 60,
+                "code": ""
+            },
+            {
+                "line": 61,
+                "code": "\t\tif ( job != null ) { //f:quartz"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\tthis.timeInterval = job.getJobDataMap().getIntValue( \"timeInterval\" ); //f:quartz"
+            },
+            {
+                "line": 63,
+                "code": "\t\t} //f:quartz"
+            },
+            {
+                "line": 64,
+                "code": ""
+            },
+            {
+                "line": 65,
+                "code": "\t\tlogger.info( \"Finishing input()\" ); //f:log"
+            },
+            {
+                "line": 66,
+                "code": "\t\treturn super.input();"
+            },
+            {
+                "line": 67,
+                "code": "\t}"
             }
         ]
     },
