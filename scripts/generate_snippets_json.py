@@ -137,9 +137,17 @@ def load_oracle_signatures(oracle_path):
             if not line: continue
             parts = line.split('\t')
             if len(parts) >= 2:
+                start_offset = -1
+                if len(parts) >= 3:
+                    # Parse offset info from parts[2] e.g. "e1686:140;"
+                    match = re.search(r'e(\d+):', parts[2])
+                    if match:
+                        start_offset = int(match.group(1))
+
                 signatures.append({
                     'class_name': parts[0],
-                    'raw_signature': parts[1]
+                    'raw_signature': parts[1],
+                    'start_offset': start_offset
                 })
     return signatures
 
@@ -169,28 +177,6 @@ def process_project(base_dir, project_name):
                 class_name = row['class_name']
                 simple_function_name = row['function_name']
                 
-                # Try to find signature in oracle.txt first
-                formatted_signature = None
-                
-                # Search forward in original_signatures
-                # We use a local index to avoid O(N^2) if the files are sorted similarly
-                # But if they are not, we might miss it. 
-                # Let's just search from 0 if not found, or better, just search all if list is small.
-                # Given the size, linear search from 0 is fine for each row.
-                
-                for sig_entry in original_signatures:
-                    if sig_entry['class_name'] == class_name:
-                        # Check if function name is in raw signature
-                        if re.search(r'\b' + re.escape(simple_function_name) + r'\s*\(', sig_entry['raw_signature']):
-                            formatted_signature = format_function_signature(sig_entry['raw_signature'])
-                            break
-                        # Special case for constructors
-                        short_class = class_name.split('.')[-1]
-                        if simple_function_name == short_class:
-                             if re.search(r'\b' + re.escape(simple_function_name) + r'\s*\(', sig_entry['raw_signature']):
-                                formatted_signature = format_function_signature(sig_entry['raw_signature'])
-                                break
-                
                 try:
                     start_offset = int(row['offset_start'])
                     end_offset = int(row['offset_end'])
@@ -204,6 +190,32 @@ def process_project(base_dir, project_name):
                     print(f"  Skipping invalid entry {class_name}.{simple_function_name}")
                     continue
 
+                # Try to find signature in oracle.txt first
+                formatted_signature = None
+                
+                # First pass: try exact offset match (or close enough)
+                for sig_entry in original_signatures:
+                    if sig_entry['class_name'] == class_name:
+                        if sig_entry['start_offset'] != -1:
+                            if abs(sig_entry['start_offset'] - start_offset) < 5: # Allow small diff
+                                formatted_signature = format_function_signature(sig_entry['raw_signature'])
+                                break
+                
+                # Second pass: if not found, try name matching
+                if not formatted_signature:
+                    for sig_entry in original_signatures:
+                        if sig_entry['class_name'] == class_name:
+                            # Check if function name is in raw signature
+                            if re.search(r'\b' + re.escape(simple_function_name) + r'\s*\(', sig_entry['raw_signature']):
+                                formatted_signature = format_function_signature(sig_entry['raw_signature'])
+                                break
+                            # Special case for constructors
+                            short_class = class_name.split('.')[-1]
+                            if simple_function_name == short_class:
+                                if re.search(r'\b' + re.escape(simple_function_name) + r'\s*\(', sig_entry['raw_signature']):
+                                    formatted_signature = format_function_signature(sig_entry['raw_signature'])
+                                    break
+                
                 file_path = get_file_path(repo_root, class_name, project_name)
                 
                 if not os.path.exists(file_path):

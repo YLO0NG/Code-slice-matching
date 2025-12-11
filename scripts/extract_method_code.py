@@ -146,16 +146,18 @@ def extract_method_body(lines, start_line_idx):
         
     return []
 
-def find_method_in_file(file_path, method_name, target_param_types):
+def find_method_in_file(file_path, method_name, target_param_types, start_line=None):
     if not os.path.exists(file_path):
         return None
         
     with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
         lines = f.readlines()
         
-    for i, line in enumerate(lines):
+    def check_line(i):
+        if i < 0 or i >= len(lines): return None
+        line = lines[i]
         if method_name not in line:
-            continue
+            return None
             
         pattern = r'\b' + re.escape(method_name) + r'\s*\((.*)'
         match = re.search(pattern, line)
@@ -174,10 +176,28 @@ def find_method_in_file(file_path, method_name, target_param_types):
                 # Check if it looks like a method call or abstract method (ends with ;)
                 after_paren = params_str[paren_end+1:].strip()
                 if after_paren.startswith(';'):
-                    continue
+                    return None
                 
                 if match_params(params_content, target_param_types):
                     return extract_method_body(lines, i)
+        return None
+
+    # Try start_line first if provided
+    if start_line is not None:
+        # Try exact line and a small window around it
+        # line_start in json is 1-based
+        idx = start_line - 1
+        
+        # Check window of +/- 5 lines
+        for offset in range(-5, 6):
+            result = check_line(idx + offset)
+            if result:
+                return result
+
+    for i, line in enumerate(lines):
+        result = check_line(i)
+        if result:
+            return result
                     
     return None
 
@@ -227,7 +247,7 @@ def process_project(base_dir, project_name):
             sig_key = f"{class_name}::{function_name}"
             if sig_key in seen_signatures:
                 continue
-            seen_signatures.add(sig_key)
+            # seen_signatures.add(sig_key) # Moved to after successful extraction
 
             start_line = item.get('line_start')
             code_snippet = item.get('code_snippet', '')
@@ -241,7 +261,7 @@ def process_project(base_dir, project_name):
             file_path = get_file_path(repo_root, class_name, project_name)
             
             # Try to extract full method body
-            code_lines = find_method_in_file(file_path, simple_name, param_types)
+            code_lines = find_method_in_file(file_path, simple_name, param_types, start_line)
             
             if not code_lines:
                 print(f"  Method not found: {class_name}.{function_name}. Skipping.")
@@ -253,6 +273,7 @@ def process_project(base_dir, project_name):
                 "function_name": function_name,
                 "code_lines": code_lines
             })
+            seen_signatures.add(sig_key)
             
         with open(output_json_path, 'w', encoding='utf-8') as f:
             json.dump(annotated_data, f, indent=4, ensure_ascii=False)

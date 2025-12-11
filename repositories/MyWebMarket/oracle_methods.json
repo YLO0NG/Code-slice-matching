@@ -874,10 +874,6 @@
         "function_name": "input()",
         "code_lines": [
             {
-                "line": 82,
-                "code": "\tpublic String input() throws Exception {"
-            },
-            {
                 "line": 83,
                 "code": "\t\tlogger.info( \"Starting input()\" ); //f:log"
             },
@@ -976,6 +972,14 @@
             {
                 "line": 107,
                 "code": "\t}"
+            },
+            {
+                "line": 108,
+                "code": ""
+            },
+            {
+                "line": 109,
+                "code": "\tpublic String find() throws Exception {"
             }
         ]
     },

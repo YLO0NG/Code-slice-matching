@@ -127,14 +127,14 @@
     },
     {
         "class_name": "junit.framework.Assert",
-        "function_name": "assertEquals(String, Object, Object)",
+        "function_name": "assertEquals(String, double, double, double)",
         "line_start": 102,
         "line_end": 105,
         "code_snippet": "String formatted= \"\";\r\n\t\t\t\tif (message != null)\r\n\t\t\t\t\tformatted= message+\" \";\r\n\t\t\t\tfail(formatted+\"expected:<\"+new Double(expected)+\"> but was:<\"+new Double(actual)+\">\");"
     },
     {
         "class_name": "junit.framework.Assert",
-        "function_name": "assertEquals(String, Object, Object)",
+        "function_name": "assertEquals(String, float, float, float)",
         "line_start": 127,
         "line_end": 130,
         "code_snippet": "String formatted= \"\";\r\n\t\t\t\tif (message != null)\r\n\t\t\t\t\tformatted= message+\" \";\r\n\t\t\t\tfail(formatted+\"expected:<\"+new Float(expected)+\"> but was:<\"+new Float(actual)+\">\");"

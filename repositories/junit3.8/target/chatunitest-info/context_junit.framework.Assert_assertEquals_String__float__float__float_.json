@@ -1,0 +1,13 @@
+{
+  "targetClass": "junit.framework.Assert",
+  "targetMethod": "assertEquals(String, float, float, float)",
+  "dependentFields": {
+    "junit.framework.Assert": ""
+  },
+  "dependentMethods": {
+    "junit.framework.Assert": "static public void fail(String message){}\nstatic private void failNotEquals(String message, Object expected, Object actual){}"
+  },
+  "dependentMethodBodies": {
+    "junit.framework.Assert": "* Fails a test with the given message.\r\n\t \nstatic public void fail(String message) {\r\n\t\tthrow new AssertionFailedError(message);\r\n\t}\nstatic private void failNotEquals(String message, Object expected, Object actual) {\r\n\t\tString formatted= \"\";\r\n\t\tif (message != null)\r\n\t\t\tformatted= message+\" \";\r\n\t\tfail(formatted+\"expected:<\"+expected+\"> but was:<\"+actual+\">\");\r\n\t}"
+  }
+}

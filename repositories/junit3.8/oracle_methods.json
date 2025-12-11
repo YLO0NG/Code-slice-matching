@@ -1836,6 +1836,122 @@
         ]
     },
     {
+        "class_name": "junit.framework.Assert",
+        "function_name": "assertEquals(String, double, double, double)",
+        "code_lines": [
+            {
+                "line": 97,
+                "code": "\tstatic public void assertEquals(String message, double expected, double actual, double delta) {"
+            },
+            {
+                "line": 98,
+                "code": "\t\t// handle infinity specially since subtracting to infinite values gives NaN and the"
+            },
+            {
+                "line": 99,
+                "code": "\t\t// the following test fails"
+            },
+            {
+                "line": 100,
+                "code": "\t\tif (Double.isInfinite(expected)) {"
+            },
+            {
+                "line": 101,
+                "code": "\t\t\tif (!(expected == actual)) {"
+            },
+            {
+                "line": 102,
+                "code": "\t\t\t\t/*{*/String formatted= \"\";"
+            },
+            {
+                "line": 103,
+                "code": "\t\t\t\tif (message != null)"
+            },
+            {
+                "line": 104,
+                "code": "\t\t\t\t\tformatted= message+\" \";"
+            },
+            {
+                "line": 105,
+                "code": "\t\t\t\tfail(formatted+\"expected:<\"+new Double(expected)+\"> but was:<\"+new Double(actual)+\">\");/*}*/"
+            },
+            {
+                "line": 106,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 107,
+                "code": "\t\t} else if (!(Math.abs(expected-actual) <= delta)) // Because comparison with NaN always returns false"
+            },
+            {
+                "line": 108,
+                "code": "\t\t\tfailNotEquals(message, new Double(expected), new Double(actual));"
+            },
+            {
+                "line": 109,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "junit.framework.Assert",
+        "function_name": "assertEquals(String, float, float, float)",
+        "code_lines": [
+            {
+                "line": 122,
+                "code": "\tstatic public void assertEquals(String message, float expected, float actual, float delta) {"
+            },
+            {
+                "line": 123,
+                "code": " \t\t// handle infinity specially since subtracting to infinite values gives NaN and the"
+            },
+            {
+                "line": 124,
+                "code": "\t\t// the following test fails"
+            },
+            {
+                "line": 125,
+                "code": "\t\tif (Float.isInfinite(expected)) {"
+            },
+            {
+                "line": 126,
+                "code": "\t\t\tif (!(expected == actual)) {"
+            },
+            {
+                "line": 127,
+                "code": "\t\t\t\t/*{*/String formatted= \"\";"
+            },
+            {
+                "line": 128,
+                "code": "\t\t\t\tif (message != null)"
+            },
+            {
+                "line": 129,
+                "code": "\t\t\t\t\tformatted= message+\" \";"
+            },
+            {
+                "line": 130,
+                "code": "\t\t\t\tfail(formatted+\"expected:<\"+new Float(expected)+\"> but was:<\"+new Float(actual)+\">\");/*}*/"
+            },
+            {
+                "line": 131,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 132,
+                "code": "\t\t} else if (!(Math.abs(expected-actual) <= delta))"
+            },
+            {
+                "line": 133,
+                "code": "      \t\tfailNotEquals(message, new Float(expected), new Float(actual));"
+            },
+            {
+                "line": 134,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
         "class_name": "junit.awtui.TestRunner",
         "function_name": "testFailed(int, Test, Throwable)",
         "code_lines": [
