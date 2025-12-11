@@ -16,3 +16,13 @@
 4. No Match (无匹配):理论上不存在，除非出现错误
    含义：Oracle 中的目标方法与任何 LLM 生成的切片在行号上都没有重叠。
    解释：LLM 生成的切片完全避开了该方法所在的行，或者生成的行号信息有误。
+
+
+每个项目中：
+LLM_slices.json:LLM的切片结果
+
+oracle_snippets.json:Oracle的代码切片
+
+oracle_methods.json:Oracle代码切片对应的目标方法,带行数
+
+oracle_refined_evaluated.csv:评估结果文件
