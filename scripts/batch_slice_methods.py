@@ -5,8 +5,7 @@ from openai import OpenAI
 
 # Initialize OpenAI client
 # Using the key provided in the example attachment
-client = OpenAI(base_url="https://api.gptsapi.net/v1",
-      api_key="sk-ZhM56a7a1ae32618d1a227532b3771a3d6487c5b688MViWa") 
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY")) 
 
 BASE_DIR = r"d:\tools\Code slice matching"
 REPOS_DIR = os.path.join(BASE_DIR, "repositories")
