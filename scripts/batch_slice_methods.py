@@ -2,6 +2,13 @@ import os
 import json
 import time
 from openai import OpenAI
+import re
+ 
+# Retry settings for transient API failures
+MAX_RETRIES = 3
+INITIAL_RETRY_DELAY = 1  # seconds
+BACKOFF_FACTOR = 2
+
 
 # Initialize OpenAI client
 # Using the key provided in the example attachment
@@ -11,7 +18,6 @@ BASE_DIR = r"d:\tools\Code slice matching"
 REPOS_DIR = os.path.join(BASE_DIR, "repositories")
 PROMPT_FILE = os.path.join(BASE_DIR, "prompt.txt")
 
-import re
 
 def simplify_signature(sig):
     """
@@ -75,9 +81,14 @@ def slice_method(method_data, dependencies, prompt_template, model="gpt-4o"):
                 {"role": "user", "content": prompt}
             ],
             temperature=0.3,
-            max_tokens=4096
+            max_completion_tokens=4096
         )
-        
+
+        # Defensive: ensure response has choices
+        if not response or not getattr(response, 'choices', None) or len(response.choices) == 0:
+            print(f"  Warning: Empty or malformed response for {method_data.get('function_name')}")
+            return None
+
         content = response.choices[0].message.content
         
         # Parse response
@@ -96,8 +107,9 @@ def slice_method(method_data, dependencies, prompt_template, model="gpt-4o"):
             json_str = content[json_start:json_end].strip()
             try:
                 result["slices"] = json.loads(json_str)
-            except json.JSONDecodeError:
-                print(f"  Warning: Failed to parse JSON for {method_data.get('function_name')}")
+            except json.JSONDecodeError as e:
+                print(f"  Warning: Failed to parse JSON for {method_data.get('function_name')}: {e}")
+                print(f"Response content: {content}")
         else:
             result["analysis"] = content
             
@@ -150,7 +162,18 @@ def process_project(project_name):
             dependencies = {"message": "Context information not available"}
 
         result = slice_method(method, dependencies, prompt_template)
-        
+
+        # If initial call failed (None), retry with exponential backoff
+        if result is None:
+            retries = 0
+            delay = INITIAL_RETRY_DELAY
+            while retries < MAX_RETRIES and result is None:
+                retries += 1
+                print(f"    Retry {retries}/{MAX_RETRIES} for {class_name}::{function_name} after {delay}s")
+                time.sleep(delay)
+                result = slice_method(method, dependencies, prompt_template)
+                delay *= BACKOFF_FACTOR
+
         if result:
             # Combine original method info with result
             method_result = {
@@ -159,6 +182,17 @@ def process_project(project_name):
                 "analysis": result["analysis"],
                 "slices": result["slices"],
                 "full_response": result["full_response"]
+            }
+            all_results.append(method_result)
+        else:
+            # After retries still failed — record a stub result so we know it failed
+            print(f"    Failed after {MAX_RETRIES} retries: {class_name}::{function_name}")
+            method_result = {
+                "class_name": class_name,
+                "function_name": function_name,
+                "analysis": "Error: failed after retries",
+                "slices": [],
+                "full_response": ""
             }
             all_results.append(method_result)
             

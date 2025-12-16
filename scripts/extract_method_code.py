@@ -158,7 +158,15 @@ def find_method_in_file(file_path, method_name, target_param_types, start_line=N
         line = lines[i]
         if method_name not in line:
             return None
-            
+        # Avoid matching method *calls* like obj.methodName(...)
+        # Require that the character before the method name is whitespace or start-of-line,
+        # which is typical for declarations (e.g. "protected JMenu methodName(").
+        idx = line.find(method_name)
+        if idx > 0:
+            char_before = line[idx-1]
+            if not char_before.isspace():
+                return None
+
         pattern = r'\b' + re.escape(method_name) + r'\s*\((.*)'
         match = re.search(pattern, line)
         if match:

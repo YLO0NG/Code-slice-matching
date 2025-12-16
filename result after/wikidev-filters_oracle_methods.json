@@ -1,0 +1,2866 @@
+[
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical",
+        "function_name": "clustering(ArrayList<IArtifact>)",
+        "code_lines": [
+            {
+                "line": 25,
+                "code": "\tpublic ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts) {"
+            },
+            {
+                "line": 26,
+                "code": "\t\tArrayList<Cluster> clusters = new ArrayList<Cluster>();"
+            },
+            {
+                "line": 27,
+                "code": "\t\tfor(IArtifact artifact : artifacts) {"
+            },
+            {
+                "line": 28,
+                "code": "\t\t\tCluster cluster = new Cluster();"
+            },
+            {
+                "line": 29,
+                "code": "\t\t\tcluster.addArtifact(artifact);"
+            },
+            {
+                "line": 30,
+                "code": "\t\t\tclusters.add(cluster);"
+            },
+            {
+                "line": 31,
+                "code": "\t\t}"
+            },
+            {
+                "line": 32,
+                "code": "\t\twhile(clusters.size()>2) {"
+            },
+            {
+                "line": 33,
+                "code": "\t\t\tdouble minVal = 2.0;"
+            },
+            {
+                "line": 34,
+                "code": "\t\t\tint minRow = 0;"
+            },
+            {
+                "line": 35,
+                "code": "\t\t\tint minCol = 1;"
+            },
+            {
+                "line": 36,
+                "code": "\t\t\tfor(int i=0; i<distanceMatrix.length;i++) {"
+            },
+            {
+                "line": 37,
+                "code": "\t\t\t\tfor(int j=0;j<distanceMatrix.length;j++) {"
+            },
+            {
+                "line": 38,
+                "code": "\t\t\t\t\tif (i != j) {"
+            },
+            {
+                "line": 39,
+                "code": "\t\t\t\t\t\tif (distanceMatrix[i][j] < minVal) {"
+            },
+            {
+                "line": 40,
+                "code": "\t\t\t\t\t\t\tminVal = distanceMatrix[i][j];"
+            },
+            {
+                "line": 41,
+                "code": "\t\t\t\t\t\t\tminRow = i;"
+            },
+            {
+                "line": 42,
+                "code": "\t\t\t\t\t\t\tminCol = j;"
+            },
+            {
+                "line": 43,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 44,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 45,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 46,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 47,
+                "code": "\t\t\tif(minVal >= THRESHOLD) break;"
+            },
+            {
+                "line": 48,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 49,
+                "code": "\t\t\tif(minRow < minCol) {"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\t\tclusters.get(minRow).addArtifacts(clusters.get(minCol).getArtifacts());"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\t\tdouble[] newDistances = new double[distanceMatrix.length-1];"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\t\tfor(int i=0;i<distanceMatrix.length;i++) {"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\t\t\t\tif (i != minCol) {"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t\t\t\t\tif (i != minRow) {"
+            },
+            {
+                "line": 55,
+                "code": "\t\t\t\t\t\t\t\tif (distanceMatrix[minRow][i] < distanceMatrix[minCol][i]) {"
+            },
+            {
+                "line": 56,
+                "code": "\t\t\t\t\t\t\t\t\tif (i > minCol) {"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minRow][i];"
+            },
+            {
+                "line": 58,
+                "code": "\t\t\t\t\t\t\t\t\t} else {"
+            },
+            {
+                "line": 59,
+                "code": "\t\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minRow][i];"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\t\t\t\t\t\t} else {"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\t\t\t\t\t\t\tif (i > minCol) {"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minCol][i];"
+            },
+            {
+                "line": 64,
+                "code": "\t\t\t\t\t\t\t\t\t} else {"
+            },
+            {
+                "line": 65,
+                "code": "\t\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minCol][i];"
+            },
+            {
+                "line": 66,
+                "code": "\t\t\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 67,
+                "code": "\t\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 68,
+                "code": "\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 69,
+                "code": "\t\t\t\t\t\t\telse {"
+            },
+            {
+                "line": 70,
+                "code": "\t\t\t\t\t\t\t\tnewDistances[i] = 0.0;"
+            },
+            {
+                "line": 71,
+                "code": "\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 72,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 73,
+                "code": "\t\t\t\t\t\t"
+            },
+            {
+                "line": 74,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 75,
+                "code": "\t\t\t\t"
+            },
+            {
+                "line": 76,
+                "code": "\t\t\t\tdistanceMatrix = deleteRows(distanceMatrix, minRow, minCol);"
+            },
+            {
+                "line": 77,
+                "code": "\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minCol);"
+            },
+            {
+                "line": 78,
+                "code": "\t\t\t\tdistanceMatrix = insertRows(distanceMatrix, minRow, newDistances);"
+            },
+            {
+                "line": 79,
+                "code": "\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minRow);"
+            },
+            {
+                "line": 80,
+                "code": "\t\t\t\tdistanceMatrix = insertColumns(distanceMatrix, minRow, newDistances);"
+            },
+            {
+                "line": 81,
+                "code": "\t\t\t\tclusters.remove(minCol);"
+            },
+            {
+                "line": 82,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 83,
+                "code": "\t\t\telse {"
+            },
+            {
+                "line": 84,
+                "code": "\t\t\t\tclusters.get(minCol).addArtifacts(clusters.get(minRow).getArtifacts());"
+            },
+            {
+                "line": 85,
+                "code": "\t\t\t\tdouble[] newDistances = new double[distanceMatrix.length-1];"
+            },
+            {
+                "line": 86,
+                "code": "\t\t\t\tfor(int i=0;i<distanceMatrix.length;i++) {"
+            },
+            {
+                "line": 87,
+                "code": "\t\t\t\t\tif (i != minRow) {"
+            },
+            {
+                "line": 88,
+                "code": "\t\t\t\t\t\tif (i != minCol) {"
+            },
+            {
+                "line": 89,
+                "code": "\t\t\t\t\t\t\tif (distanceMatrix[minRow][i] < distanceMatrix[minCol][i]) {"
+            },
+            {
+                "line": 90,
+                "code": "\t\t\t\t\t\t\t\tif (i > minRow) {"
+            },
+            {
+                "line": 91,
+                "code": "\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minRow][i];"
+            },
+            {
+                "line": 92,
+                "code": "\t\t\t\t\t\t\t\t} else {"
+            },
+            {
+                "line": 93,
+                "code": "\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minRow][i];"
+            },
+            {
+                "line": 94,
+                "code": "\t\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 95,
+                "code": "\t\t\t\t\t\t\t} else {"
+            },
+            {
+                "line": 96,
+                "code": "\t\t\t\t\t\t\t\tif (i > minRow) {"
+            },
+            {
+                "line": 97,
+                "code": "\t\t\t\t\t\t\t\t\tnewDistances[i - 1] = distanceMatrix[minCol][i];"
+            },
+            {
+                "line": 98,
+                "code": "\t\t\t\t\t\t\t\t} else {"
+            },
+            {
+                "line": 99,
+                "code": "\t\t\t\t\t\t\t\t\tnewDistances[i] = distanceMatrix[minCol][i];"
+            },
+            {
+                "line": 100,
+                "code": "\t\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 101,
+                "code": "\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 102,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 103,
+                "code": "\t\t\t\t\t\telse {"
+            },
+            {
+                "line": 104,
+                "code": "\t\t\t\t\t\t\tnewDistances[i] = 0.0;"
+            },
+            {
+                "line": 105,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 106,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 107,
+                "code": "\t\t\t\t\t"
+            },
+            {
+                "line": 108,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 109,
+                "code": "\t\t\t\tdistanceMatrix = deleteRows(distanceMatrix, minRow, minCol);"
+            },
+            {
+                "line": 110,
+                "code": "\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minCol);"
+            },
+            {
+                "line": 111,
+                "code": "\t\t\t\tdistanceMatrix = insertRows(distanceMatrix, minCol, newDistances);"
+            },
+            {
+                "line": 112,
+                "code": "\t\t\t\tdistanceMatrix = deleteColumns(distanceMatrix, minRow);"
+            },
+            {
+                "line": 113,
+                "code": "\t\t\t\tdistanceMatrix = insertColumns(distanceMatrix, minCol, newDistances);"
+            },
+            {
+                "line": 114,
+                "code": "\t\t\t\tclusters.remove(minRow);"
+            },
+            {
+                "line": 115,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 116,
+                "code": "\t\t}"
+            },
+            {
+                "line": 117,
+                "code": "\t\treturn clusters;"
+            },
+            {
+                "line": 118,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getFiedlerVector(double[][])",
+        "code_lines": [
+            {
+                "line": 24,
+                "code": "\tpublic static double[] getFiedlerVector(double[][] A) {"
+            },
+            {
+                "line": 25,
+                "code": "        //D - degree matrix"
+            },
+            {
+                "line": 26,
+                "code": "        double[][] D = new double[A.length][A[0].length];"
+            },
+            {
+                "line": 27,
+                "code": "        //L - Laplacian matrix"
+            },
+            {
+                "line": 28,
+                "code": "        double[][] L = new double[A.length][A[0].length];"
+            },
+            {
+                "line": 29,
+                "code": ""
+            },
+            {
+                "line": 30,
+                "code": "        //sumRow is row matrix, each column i in sumRow contains"
+            },
+            {
+                "line": 31,
+                "code": "        //the sum value of column i in the adjacency matrix"
+            },
+            {
+                "line": 32,
+                "code": "        double[] sumRow = sum(A);"
+            },
+            {
+                "line": 33,
+                "code": "        //fill the degree matrix with the degrees of each node."
+            },
+            {
+                "line": 34,
+                "code": "        for(int i = 0; i < D[0].length;i++) {"
+            },
+            {
+                "line": 35,
+                "code": "            D[i][i] = sumRow[i];"
+            },
+            {
+                "line": 36,
+                "code": "        }"
+            },
+            {
+                "line": 37,
+                "code": "        //L = D - A"
+            },
+            {
+                "line": 38,
+                "code": "        L = minus(D,A);"
+            },
+            {
+                "line": 39,
+                "code": ""
+            },
+            {
+                "line": 40,
+                "code": "        EigenvalueDecomposition LEigenDec = eigen(L);"
+            },
+            {
+                "line": 41,
+                "code": ""
+            },
+            {
+                "line": 42,
+                "code": "        //diagonal eigenvalue matrix"
+            },
+            {
+                "line": 43,
+                "code": "        Matrix eigenValues = LEigenDec.getD();"
+            },
+            {
+                "line": 44,
+                "code": "        //eigenvector matrix"
+            },
+            {
+                "line": 45,
+                "code": "        Matrix eigenVectors = LEigenDec.getV();"
+            },
+            {
+                "line": 46,
+                "code": ""
+            },
+            {
+                "line": 47,
+                "code": "        //keys are the Eigen values sorted in ascending order "
+            },
+            {
+                "line": 48,
+                "code": "        //values are the corresponding positions in eigenValues matrix"
+            },
+            {
+                "line": 49,
+                "code": "        TreeMap<Double,Integer> sortedEigenValues = new TreeMap<Double,Integer>();"
+            },
+            {
+                "line": 50,
+                "code": ""
+            },
+            {
+                "line": 51,
+                "code": "        for(int i = 0; i <eigenValues.getColumnDimension(); i++) {"
+            },
+            {
+                "line": 52,
+                "code": "            //\\E1\\EB\\EB\\DC\\E6\\EF\\F5\\EC\\E5 \\F0\\F1\\FC\\F3\\E7\\EC\\EF \\F3\\F4\\E9\\F2 \\E1\\F1\\ED\\E7\\F4\\E9\\EA\\DD\\F2 \\F4\\E9\\EC\\DD\\F2"
+            },
+            {
+                "line": 53,
+                "code": "            double value;"
+            },
+            {
+                "line": 54,
+                "code": "            if(eigenValues.get(i,i) < 0.0)"
+            },
+            {
+                "line": 55,
+                "code": "                value = -eigenValues.get(i,i);"
+            },
+            {
+                "line": 56,
+                "code": "            else"
+            },
+            {
+                "line": 57,
+                "code": "                value = eigenValues.get(i,i);"
+            },
+            {
+                "line": 58,
+                "code": ""
+            },
+            {
+                "line": 59,
+                "code": "            sortedEigenValues.put(value,i);"
+            },
+            {
+                "line": 60,
+                "code": "        }"
+            },
+            {
+                "line": 61,
+                "code": ""
+            },
+            {
+                "line": 62,
+                "code": "        Set<Double> keySet = sortedEigenValues.keySet();"
+            },
+            {
+                "line": 63,
+                "code": "        Iterator<Double> keyIt = keySet.iterator();"
+            },
+            {
+                "line": 64,
+                "code": "        int minIndex = 0;"
+            },
+            {
+                "line": 65,
+                "code": "        double threshold = 0.00001;"
+            },
+            {
+                "line": 66,
+                "code": "        while(keyIt.hasNext()) {"
+            },
+            {
+                "line": 67,
+                "code": "            Double key = keyIt.next();"
+            },
+            {
+                "line": 68,
+                "code": "            if(key> threshold) {"
+            },
+            {
+                "line": 69,
+                "code": "                minIndex = sortedEigenValues.get(key);"
+            },
+            {
+                "line": 70,
+                "code": "                break;"
+            },
+            {
+                "line": 71,
+                "code": "            }"
+            },
+            {
+                "line": 72,
+                "code": "        }"
+            },
+            {
+                "line": 73,
+                "code": "        double[][] eigenVectors2=new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];"
+            },
+            {
+                "line": 74,
+                "code": "        for(int i=0;i<eigenVectors.getRowDimension();i++) {"
+            },
+            {
+                "line": 75,
+                "code": "        \tfor(int j=0;j<eigenVectors.getColumnDimension();j++) {"
+            },
+            {
+                "line": 76,
+                "code": "        \t\teigenVectors2[i][j] = eigenVectors.get(i,j);"
+            },
+            {
+                "line": 77,
+                "code": "        \t}"
+            },
+            {
+                "line": 78,
+                "code": "        }"
+            },
+            {
+                "line": 79,
+                "code": "        return DoubleArray.getColumnCopy(eigenVectors2,minIndex);"
+            },
+            {
+                "line": 80,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+        "function_name": "getRelationships()",
+        "code_lines": [
+            {
+                "line": 98,
+                "code": "\tpublic void getRelationships() throws SQLException {"
+            },
+            {
+                "line": 99,
+                "code": "\t\tArrayList<String> buffers = new ArrayList<String>();"
+            },
+            {
+                "line": 100,
+                "code": "\t\tfor(IArtifact artifact : artifacts) {"
+            },
+            {
+                "line": 101,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 102,
+                "code": "\t\t\tif(artifact instanceof Ticket) {"
+            },
+            {
+                "line": 103,
+                "code": "\t\t\t\tTextParser parser = new TextParser();"
+            },
+            {
+                "line": 104,
+                "code": "\t\t\t\tTicket ticket = (Ticket)artifact;"
+            },
+            {
+                "line": 105,
+                "code": "\t\t\t\tparser.parseTextInWords(ticket.getDesription().toLowerCase());"
+            },
+            {
+                "line": 106,
+                "code": "\t\t\t\tparser.parseTextInWords(ticket.getSummary().toLowerCase());"
+            },
+            {
+                "line": 107,
+                "code": "\t\t\t\tdocuments.add(new Document(parser.getWords(), ticket.toString()));"
+            },
+            {
+                "line": 108,
+                "code": "\t\t\t\tticket.setDocument(new Document(parser.getWords(), ticket.toString()));"
+            },
+            {
+                "line": 109,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 110,
+                "code": "\t\t\telse if(artifact instanceof ChangeSet) {"
+            },
+            {
+                "line": 111,
+                "code": "\t\t\t\tTextParser parser = new TextParser();"
+            },
+            {
+                "line": 112,
+                "code": "\t\t\t\tChangeSet changeset = (ChangeSet)artifact;"
+            },
+            {
+                "line": 113,
+                "code": "\t\t\t\t//relateChangeSetToTicket(changeset);"
+            },
+            {
+                "line": 114,
+                "code": "\t\t\t\tparser.parseTextInWords(changeset.getComment().toLowerCase());"
+            },
+            {
+                "line": 115,
+                "code": "\t\t\t\tdocuments.add(new Document(parser.getWords(), changeset.toString()));"
+            },
+            {
+                "line": 116,
+                "code": "\t\t\t\tchangeset.setDocument(new Document(parser.getWords(), changeset.toString()));"
+            },
+            {
+                "line": 117,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\telse if (artifact instanceof Message) {"
+            },
+            {
+                "line": 119,
+                "code": "\t\t\t\tTextParser parser = new TextParser();"
+            },
+            {
+                "line": 120,
+                "code": "\t\t\t\tMessage communication = (Message)artifact;"
+            },
+            {
+                "line": 121,
+                "code": "\t\t\t\tparser.parseTextInWords(communication.getSubject().toLowerCase());"
+            },
+            {
+                "line": 122,
+                "code": "\t\t\t\tparser.parseTextInWords(communication.getBody().toLowerCase());"
+            },
+            {
+                "line": 123,
+                "code": "\t\t\t\tdocuments.add(new Document(parser.getWords(), communication.toString()));"
+            },
+            {
+                "line": 124,
+                "code": "\t\t\t\tcommunication.setDocument(new Document(parser.getWords(), communication.toString()));"
+            },
+            {
+                "line": 125,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 126,
+                "code": "\t\t\telse if (artifact instanceof Wiki) {"
+            },
+            {
+                "line": 127,
+                "code": "\t\t\t\tWiki wiki = (Wiki)artifact;"
+            },
+            {
+                "line": 128,
+                "code": "\t\t\t\t\tTextParser parser = new TextParser();"
+            },
+            {
+                "line": 129,
+                "code": "\t\t\t\t\tString text = \"\";"
+            },
+            {
+                "line": 130,
+                "code": "\t\t\t\t\tfor (WikiRevision revision : wiki.getRevisions()) {"
+            },
+            {
+                "line": 131,
+                "code": "\t\t\t\t\t\ttext += revision.getRev_text();"
+            },
+            {
+                "line": 132,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 133,
+                "code": "\t\t\t\t\tparser.parseTextInWords(text.toLowerCase());"
+            },
+            {
+                "line": 134,
+                "code": "\t\t\t\t\tdocuments.add(new Document(parser.getWords(), wiki.toString()));"
+            },
+            {
+                "line": 135,
+                "code": "\t\t\t\t\twiki.setDocument(new Document(parser.getWords(), wiki.toString()));"
+            },
+            {
+                "line": 136,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 137,
+                "code": "\t\t}"
+            },
+            {
+                "line": 138,
+                "code": "\t\t"
+            },
+            {
+                "line": 139,
+                "code": "\t\tfor(IArtifact artifact : artifacts) {"
+            },
+            {
+                "line": 140,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 141,
+                "code": "\t\t\tif(artifact instanceof Ticket) {"
+            },
+            {
+                "line": 142,
+                "code": "\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 143,
+                "code": "\t\t\t\tTicket ticket = (Ticket)artifact;"
+            },
+            {
+                "line": 144,
+                "code": "\t\t\t\tparser.parseTextInWords(ticket.getDesription().toLowerCase());"
+            },
+            {
+                "line": 145,
+                "code": "\t\t\t\tparser.parseTextInWords(ticket.getSummary().toLowerCase());"
+            },
+            {
+                "line": 146,
+                "code": "\t\t\t\tticket.getDocument().setTfidf(parser.calculateTFIDF());"
+            },
+            {
+                "line": 147,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 148,
+                "code": "\t\t\telse if(artifact instanceof ChangeSet) {"
+            },
+            {
+                "line": 149,
+                "code": "\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 150,
+                "code": "\t\t\t\tChangeSet changeset = (ChangeSet)artifact;"
+            },
+            {
+                "line": 151,
+                "code": "\t\t\t\tparser.parseTextInWords(changeset.getComment().toLowerCase());"
+            },
+            {
+                "line": 152,
+                "code": "\t\t\t\tchangeset.getDocument().setTfidf(parser.calculateTFIDF());"
+            },
+            {
+                "line": 153,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 154,
+                "code": "\t\t\telse if (artifact instanceof Message) {"
+            },
+            {
+                "line": 155,
+                "code": "\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 156,
+                "code": "\t\t\t\tMessage communication = (Message)artifact;"
+            },
+            {
+                "line": 157,
+                "code": "\t\t\t\tparser.parseTextInWords(communication.getSubject().toLowerCase());"
+            },
+            {
+                "line": 158,
+                "code": "\t\t\t\tparser.parseTextInWords(communication.getBody().toLowerCase());"
+            },
+            {
+                "line": 159,
+                "code": "\t\t\t\tcommunication.getDocument().setTfidf(parser.calculateTFIDF());"
+            },
+            {
+                "line": 160,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 161,
+                "code": "\t\t\telse if (artifact instanceof Wiki) {"
+            },
+            {
+                "line": 162,
+                "code": "\t\t\t\tWiki wiki = (Wiki)artifact;"
+            },
+            {
+                "line": 163,
+                "code": "\t\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 164,
+                "code": "\t\t\t\t\tString text = \"\";"
+            },
+            {
+                "line": 165,
+                "code": "\t\t\t\t\tfor (WikiRevision revision : wiki.getRevisions()) {"
+            },
+            {
+                "line": 166,
+                "code": "\t\t\t\t\t\ttext += revision.getRev_text();"
+            },
+            {
+                "line": 167,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 168,
+                "code": "\t\t\t\t\tparser.parseTextInWords(text.toLowerCase());"
+            },
+            {
+                "line": 169,
+                "code": "\t\t\t\t\twiki.getDocument().setTfidf(parser.calculateTFIDF());"
+            },
+            {
+                "line": 170,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 171,
+                "code": "\t\t}"
+            },
+            {
+                "line": 172,
+                "code": "\t\t"
+            },
+            {
+                "line": 173,
+                "code": "\t\tfor(IArtifact artifact : artifacts) {"
+            },
+            {
+                "line": 174,
+                "code": "\t\t\tSystem.out.println(\"Relationships: \"+artifact.toString());"
+            },
+            {
+                "line": 175,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 176,
+                "code": "\t\t\tsourceArtifact = artifact;"
+            },
+            {
+                "line": 177,
+                "code": "\t\t\tproject = artifact.getProject();"
+            },
+            {
+                "line": 178,
+                "code": "\t\t\tgetGenericRelationships(sourceArtifact);"
+            },
+            {
+                "line": 179,
+                "code": "\t\t\tif(sourceArtifact instanceof Ticket) {"
+            },
+            {
+                "line": 180,
+                "code": "\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 181,
+                "code": "\t\t\t\tTicket ticket = (Ticket)sourceArtifact;"
+            },
+            {
+                "line": 182,
+                "code": "\t\t\t\tparser.parseTextInWords(ticket.getDesription().toLowerCase());"
+            },
+            {
+                "line": 183,
+                "code": "\t\t\t\tbuffers.add(ticket.getDesription().toLowerCase());"
+            },
+            {
+                "line": 184,
+                "code": "\t\t\t\tparser.parseTextInWords(ticket.getSummary().toLowerCase());"
+            },
+            {
+                "line": 185,
+                "code": "\t\t\t\tbuffers.add(ticket.getSummary().toLowerCase());"
+            },
+            {
+                "line": 186,
+                "code": "\t\t\t\tmineRelationshipsFromText();"
+            },
+            {
+                "line": 187,
+                "code": "\t\t\t\t/*for(URL url : parser.getUrls()) {"
+            },
+            {
+                "line": 188,
+                "code": "\t\t\t\t\tmineRelationshipsFromURL(url);"
+            },
+            {
+                "line": 189,
+                "code": "\t\t\t\t}*/"
+            },
+            {
+                "line": 190,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 191,
+                "code": "\t\t\telse if(sourceArtifact instanceof ChangeSet) {"
+            },
+            {
+                "line": 192,
+                "code": "\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 193,
+                "code": "\t\t\t\tChangeSet changeset = (ChangeSet)sourceArtifact;"
+            },
+            {
+                "line": 194,
+                "code": "\t\t\t\t//relateChangeSetToTicket(changeset);"
+            },
+            {
+                "line": 195,
+                "code": "\t\t\t\tparser.parseTextInWords(changeset.getComment().toLowerCase());"
+            },
+            {
+                "line": 196,
+                "code": "\t\t\t\tbuffers.add(changeset.getComment().toLowerCase());"
+            },
+            {
+                "line": 197,
+                "code": "\t\t\t\tmineRelationshipsFromText();"
+            },
+            {
+                "line": 198,
+                "code": "\t\t\t\t/*for(URL url : parser.getUrls()) {"
+            },
+            {
+                "line": 199,
+                "code": "\t\t\t\t\tmineRelationshipsFromURL(url);"
+            },
+            {
+                "line": 200,
+                "code": "\t\t\t\t}*/"
+            },
+            {
+                "line": 201,
+                "code": "\t\t\t\t"
+            },
+            {
+                "line": 202,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 203,
+                "code": "\t\t\telse if (sourceArtifact instanceof Message) {"
+            },
+            {
+                "line": 204,
+                "code": "\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 205,
+                "code": "\t\t\t\tMessage communication = (Message)sourceArtifact;"
+            },
+            {
+                "line": 206,
+                "code": "\t\t\t\tparser.parseTextInWords(communication.getSubject().toLowerCase());"
+            },
+            {
+                "line": 207,
+                "code": "\t\t\t\tbuffers.add(communication.getSubject().toLowerCase());"
+            },
+            {
+                "line": 208,
+                "code": "\t\t\t\tparser.parseTextInWords(communication.getBody().toLowerCase());"
+            },
+            {
+                "line": 209,
+                "code": "\t\t\t\tbuffers.add(communication.getBody().toLowerCase());"
+            },
+            {
+                "line": 210,
+                "code": "\t\t\t\tmineRelationshipsFromText();"
+            },
+            {
+                "line": 211,
+                "code": "\t\t\t\t/*for(URL url : parser.getUrls()) {"
+            },
+            {
+                "line": 212,
+                "code": "\t\t\t\t\tmineRelationshipsFromURL(url);"
+            },
+            {
+                "line": 213,
+                "code": "\t\t\t\t}*/"
+            },
+            {
+                "line": 214,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 215,
+                "code": "\t\t\telse if (sourceArtifact instanceof Wiki) {"
+            },
+            {
+                "line": 216,
+                "code": "\t\t\t\tWiki wiki = (Wiki)sourceArtifact;"
+            },
+            {
+                "line": 217,
+                "code": "\t\t\t\t\tTextParser parser = new TextParser(documents);"
+            },
+            {
+                "line": 218,
+                "code": "\t\t\t\t\tString text = \"\";"
+            },
+            {
+                "line": 219,
+                "code": "\t\t\t\t\tfor (WikiRevision revision : wiki.getRevisions()) {"
+            },
+            {
+                "line": 220,
+                "code": "\t\t\t\t\t\ttext += revision.getRev_text();"
+            },
+            {
+                "line": 221,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 222,
+                "code": "\t\t\t\t\tparser.parseTextInWords(text.toLowerCase());"
+            },
+            {
+                "line": 223,
+                "code": "\t\t\t\t\tbuffers.add(text.toLowerCase());"
+            },
+            {
+                "line": 224,
+                "code": "\t\t\t\t\tmineRelationshipsFromText();"
+            },
+            {
+                "line": 225,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 226,
+                "code": "\t\t}"
+            },
+            {
+                "line": 227,
+                "code": "\t\t//saveResults(buffers, project.toString());"
+            },
+            {
+                "line": 228,
+                "code": "\t\t//System.out.println(\"done\");"
+            },
+            {
+                "line": 229,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.ClusteringMain",
+        "function_name": "main(String[])",
+        "code_lines": [
+            {
+                "line": 18,
+                "code": "\tpublic static void main(String[] args) {"
+            },
+            {
+                "line": 19,
+                "code": "\t\ttry {"
+            },
+            {
+                "line": 20,
+                "code": "\t\t\tString[] args2 = {"
+            },
+            {
+                "line": 21,
+                "code": "\t\t\t\t\t\"jdbc:mysql://hypatia.cs.ualberta.ca/wikidev_ucosp\","
+            },
+            {
+                "line": 22,
+                "code": "\t\t\t\t\t\"fokaefs\", \"filimon9786#7@gr\", \"2009-09-01 00:00:00\","
+            },
+            {
+                "line": 23,
+                "code": "\t\t\t\t\t\"2010-01-01 00:00:00\", \"1\", \"weekly\", \"-lb\", \"0.05\", \"-ub\","
+            },
+            {
+                "line": 24,
+                "code": "\t\t\t\t\t\"0.95\", \"-i\", \"0.05\" };"
+            },
+            {
+                "line": 25,
+                "code": "\t\t\tInvocationParser ip = new InvocationParser();"
+            },
+            {
+                "line": 26,
+                "code": "\t\t\tip.parseArgs(args2);"
+            },
+            {
+                "line": 27,
+                "code": "\t\t\tString databaseName = ip.getDatabaseName();"
+            },
+            {
+                "line": 28,
+                "code": "\t\t\tString username = ip.getUsername();"
+            },
+            {
+                "line": 29,
+                "code": "\t\t\tString password = ip.getPassword();"
+            },
+            {
+                "line": 30,
+                "code": "\t\t\tDataManager.openTheConnection(username, password, databaseName);"
+            },
+            {
+                "line": 31,
+                "code": "\t\t\tString fromdate = ip.getFromdate();"
+            },
+            {
+                "line": 32,
+                "code": "\t\t\tString todate = ip.getTodate();"
+            },
+            {
+                "line": 33,
+                "code": "\t\t\t//String fromdate = DataManager.getTheEarlierstTimeOfActivity().toString();"
+            },
+            {
+                "line": 34,
+                "code": "\t\t\t//String todate = DataManager.getTheLatestTimeOfActivity().toString();"
+            },
+            {
+                "line": 35,
+                "code": "\t\t\t//String fromdate = \"2009-09-01 00:00:00\";"
+            },
+            {
+                "line": 36,
+                "code": "\t\t\t//String todate = \"2010-01-01 00:00:00\";"
+            },
+            {
+                "line": 37,
+                "code": "\t\t\tint project = ip.getProject();"
+            },
+            {
+                "line": 38,
+                "code": "\t\t\tString window = ip.getWindow();"
+            },
+            {
+                "line": 39,
+                "code": "\t\t\tdouble lowerBound = ip.getLowerBound();"
+            },
+            {
+                "line": 40,
+                "code": "\t\t\tdouble upperBound = ip.getUpperBound();"
+            },
+            {
+                "line": 41,
+                "code": "\t\t\tdouble interval = ip.getInterval();"
+            },
+            {
+                "line": 42,
+                "code": "\t\t\tString week = \"week\";"
+            },
+            {
+                "line": 43,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 44,
+                "code": "\t\t\tTimestamp firstWeek = new Timestamp(Timestamp.valueOf(fromdate).getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS);"
+            },
+            {
+                "line": 45,
+                "code": "\t\t\tTimestamp previousWeek = Timestamp.valueOf(fromdate);"
+            },
+            {
+                "line": 46,
+                "code": "\t\t\tfor(long l=firstWeek.getTime(); l<Timestamp.valueOf(todate).getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS; l+=DataManager.WEEK_INTERVAL_IN_MILLIS) {"
+            },
+            {
+                "line": 47,
+                "code": "\t\t\t\tif(l>Timestamp.valueOf(todate).getTime()) {"
+            },
+            {
+                "line": 48,
+                "code": "\t\t\t\t\tl = Timestamp.valueOf(todate).getTime();"
+            },
+            {
+                "line": 49,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\t\t"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\t\tTimestamp nextWeek = new Timestamp(l);"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\t\tSystem.out.println(\"From \"+previousWeek.toString()+\" to \"+nextWeek.toString());"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\t\tArrayList<Cluster> totalClusters = new ArrayList<Cluster>();"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t\tArrayList<IArtifact> newArtifacts = DataManager.getArtifactsBetweenDates(previousWeek.toString(), nextWeek.toString(), project);"
+            },
+            {
+                "line": 55,
+                "code": "\t\t\t\tRelationshipMiner rm = new RelationshipMiner(newArtifacts);"
+            },
+            {
+                "line": 56,
+                "code": "\t\t\t\trm.getRelationships();"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\t\tdouble[][] distanceMatrix = rm.getDistanceMatrix();"
+            },
+            {
+                "line": 58,
+                "code": "\t\t\t\t//System.out.println(\"Clustering start\");"
+            },
+            {
+                "line": 59,
+                "code": "\t\t\t\tfor (double threshold = lowerBound; threshold <= upperBound; threshold+=interval) {"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\t\t\tdouble[][] coords = new double[distanceMatrix.length][distanceMatrix.length];"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\t\t\tClustering clustering = Clustering.getInstance(0,"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\t\t\t\t\tdistanceMatrix, threshold);"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\t\t\tArrayList<Cluster> clusters = clustering"
+            },
+            {
+                "line": 64,
+                "code": "\t\t\t\t\t\t\t.clustering(newArtifacts);"
+            },
+            {
+                "line": 65,
+                "code": "\t\t\t\t\tif (clusters != null) {"
+            },
+            {
+                "line": 66,
+                "code": "\t\t\t\t\t\tArrayList<Cluster> finalClusters = new ArrayList<Cluster>();"
+            },
+            {
+                "line": 67,
+                "code": "\t\t\t\t\t\tfor (Cluster cluster : clusters) {"
+            },
+            {
+                "line": 68,
+                "code": "\t\t\t\t\t\t\tif (cluster.getArtifacts().size() > 1) {"
+            },
+            {
+                "line": 69,
+                "code": "\t\t\t\t\t\t\t\tif (!totalClusters.contains(cluster)) {"
+            },
+            {
+                "line": 70,
+                "code": "\t\t\t\t\t\t\t\t\tfinalClusters.add(cluster);"
+            },
+            {
+                "line": 71,
+                "code": "\t\t\t\t\t\t\t\t\ttotalClusters.add(cluster);"
+            },
+            {
+                "line": 72,
+                "code": "\t\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 73,
+                "code": "\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 74,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 75,
+                "code": "\t\t\t\t\t\tif (distanceMatrix.length > 0 && !finalClusters.isEmpty()) {"
+            },
+            {
+                "line": 76,
+                "code": "\t\t\t\t\t\t\tMultidimensionalScaling mds = new MultidimensionalScaling("
+            },
+            {
+                "line": 77,
+                "code": "\t\t\t\t\t\t\t\t\tdistanceMatrix);"
+            },
+            {
+                "line": 78,
+                "code": "\t\t\t\t\t\t\tdouble[][] mdsCoords = mds.cMDS();"
+            },
+            {
+                "line": 79,
+                "code": "\t\t\t\t\t\t\tSammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);"
+            },
+            {
+                "line": 80,
+                "code": "\t\t\t\t\t\t\tsammon.CreateMapping();"
+            },
+            {
+                "line": 81,
+                "code": "\t\t\t\t\t\t\tcoords = sammon.getProjection();"
+            },
+            {
+                "line": 82,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 83,
+                "code": "\t\t\t\t\t\tint index = 1;"
+            },
+            {
+                "line": 84,
+                "code": "\t\t\t\t\t\tint clustered = 0;"
+            },
+            {
+                "line": 85,
+                "code": "\t\t\t\t\t\tfor (Cluster cluster : finalClusters) {"
+            },
+            {
+                "line": 86,
+                "code": "\t\t\t\t\t\t\tfor(IArtifact artifact : cluster.getArtifacts()) {"
+            },
+            {
+                "line": 87,
+                "code": "\t\t\t\t\t\t\t\tint j = newArtifacts.indexOf(artifact);"
+            },
+            {
+                "line": 88,
+                "code": "\t\t\t\t\t\t\t\tcluster.addCoordinate(artifact, new ClusterPoint(coords[j][0], coords[j][1]));"
+            },
+            {
+                "line": 89,
+                "code": "\t\t\t\t\t\t\t}"
+            },
+            {
+                "line": 90,
+                "code": "\t\t\t\t\t\t\tclustered += cluster.getArtifacts().size();"
+            },
+            {
+                "line": 91,
+                "code": "\t\t\t\t\t\t\tcluster.setUsersAndWords();"
+            },
+            {
+                "line": 92,
+                "code": "\t\t\t\t\t\t\tcluster.setIndex(index);"
+            },
+            {
+                "line": 93,
+                "code": "\t\t\t\t\t\t\tcluster.setFromdate(Timestamp.valueOf(fromdate));"
+            },
+            {
+                "line": 94,
+                "code": "\t\t\t\t\t\t\tcluster.setTodate(Timestamp.valueOf(todate));"
+            },
+            {
+                "line": 95,
+                "code": "\t\t\t\t\t\t\tcluster.setProject(project);"
+            },
+            {
+                "line": 96,
+                "code": "\t\t\t\t\t\t\tcluster.setCluster_set_name(window);"
+            },
+            {
+                "line": 97,
+                "code": "\t\t\t\t\t\t\tcluster.setThreshold(threshold);"
+            },
+            {
+                "line": 98,
+                "code": "\t\t\t\t\t\t\tindex++;"
+            },
+            {
+                "line": 99,
+                "code": "\t\t\t\t\t\t\t//System.out.println(\"Writing cluster\");"
+            },
+            {
+                "line": 100,
+                "code": "\t\t\t\t\t\t\tDataManager.writeCluster(cluster);"
+            },
+            {
+                "line": 101,
+                "code": "\t\t\t\t\t\t}"
+            },
+            {
+                "line": 102,
+                "code": "\t\t\t\t\t\tDataManager.writeClusterPerProject(project,clustered, newArtifacts.size(), previousWeek.toString() ,nextWeek.toString(), window, threshold);"
+            },
+            {
+                "line": 103,
+                "code": "\t\t\t\t\t\t//printClusters(finalClusters, week+threshold);"
+            },
+            {
+                "line": 104,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 105,
+                "code": "\t\t\t\t\t//System.out.println(\"Clustering end\");"
+            },
+            {
+                "line": 106,
+                "code": "\t\t\t\t\t//rm.printResults(project);"
+            },
+            {
+                "line": 107,
+                "code": "\t\t\t\t\t"
+            },
+            {
+                "line": 108,
+                "code": "\t\t\t\t\t"
+            },
+            {
+                "line": 109,
+                "code": "\t\t\t\t\t//System.out.println(\"Finish!!!!\");"
+            },
+            {
+                "line": 110,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 111,
+                "code": "\t\t\t\t"
+            },
+            {
+                "line": 112,
+                "code": "\t\t\t\t"
+            },
+            {
+                "line": 113,
+                "code": "\t\t\t\tSystem.out.println(\"Success!!!\");"
+            },
+            {
+                "line": 114,
+                "code": "\t\t\t\tpreviousWeek = nextWeek;"
+            },
+            {
+                "line": 115,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 116,
+                "code": "\t\t\tDataManager.closeTheConnection();"
+            },
+            {
+                "line": 117,
+                "code": "\t\t} catch (Exception e) {"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\te.printStackTrace();"
+            },
+            {
+                "line": 119,
+                "code": "\t\t}"
+            },
+            {
+                "line": 120,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+        "function_name": "getArtifactByTypeAndID(IArtifact, int)",
+        "code_lines": [
+            {
+                "line": 248,
+                "code": "\tprivate static IArtifact getArtifactByTypeAndID(IArtifact anArtifact, int projectid) throws SQLException{"
+            },
+            {
+                "line": 249,
+                "code": "\t\tProject project = DataManager.getProjectByID(projectid);"
+            },
+            {
+                "line": 250,
+                "code": "    \tString sqlStmt = QueryBuilder.selectArtifactByTypeAndID(anArtifact.getType(), anArtifact.getId(), projectid);"
+            },
+            {
+                "line": 251,
+                "code": "\t\tResultSet res = null;"
+            },
+            {
+                "line": 252,
+                "code": "\t\tIArtifact artifact = null;"
+            },
+            {
+                "line": 253,
+                "code": "\t\tres = statement.executeQuery(sqlStmt);"
+            },
+            {
+                "line": 254,
+                "code": "\t\twhile (res.next()) {"
+            },
+            {
+                "line": 255,
+                "code": "\t\t\tif (anArtifact.getType().equals(\"ChangeSet\")) {"
+            },
+            {
+                "line": 256,
+                "code": "\t\t\t\tartifact = new ChangeSet(res.getInt(\"id\"), res"
+            },
+            {
+                "line": 257,
+                "code": "\t\t\t\t\t\t.getString(\"comment\"), res"
+            },
+            {
+                "line": 258,
+                "code": "\t\t\t\t\t\t.getString(\"externalauthor\"), res"
+            },
+            {
+                "line": 259,
+                "code": "\t\t\t\t\t\t.getInt(\"externalsystem_id\"), res"
+            },
+            {
+                "line": 260,
+                "code": "\t\t\t\t\t\t.getTimestamp(\"timestamp\"), res.getInt(\"rev\"),"
+            },
+            {
+                "line": 261,
+                "code": "\t\t\t\t\t\tres.getInt(\"project_id\"));"
+            },
+            {
+                "line": 262,
+                "code": "\t\t\t} else if (anArtifact.getType().equals(\"Ticket\")) {"
+            },
+            {
+                "line": 263,
+                "code": "\t\t\t\tartifact = new Ticket(res.getTimestamp(\"created\"), res"
+            },
+            {
+                "line": 264,
+                "code": "\t\t\t\t\t\t.getString(\"description\"), res"
+            },
+            {
+                "line": 265,
+                "code": "\t\t\t\t\t\t.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"), "
+            },
+            {
+                "line": 266,
+                "code": "\t\t\t\t\t\tres.getString(\"summary\"),"
+            },
+            {
+                "line": 267,
+                "code": "\t\t\t\t\t\tres.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));"
+            },
+            {
+                "line": 268,
+                "code": "\t\t\t} else if (anArtifact.getType().equals(\"Wiki\")) {"
+            },
+            {
+                "line": 269,
+                "code": "\t\t\t\tartifact = new Wiki(res.getInt(\"page_id\"), res.getInt(\"page_namespace\"), res.getString(\"page_title\"), res.getTimestamp(\"page_touched\"));"
+            },
+            {
+                "line": 270,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 271,
+                "code": "\t\t\telse if(anArtifact.getType().equals(\"Message\")) {"
+            },
+            {
+                "line": 272,
+                "code": "            \tartifact = new Message(res.getString(\"address\"), res.getString(\"author\"), res.getString(\"body\"), res.getInt(\"id\"),"
+            },
+            {
+                "line": 273,
+                "code": "\t\t\t\t\t\tres.getInt(\"deleted\"), res.getString(\"mid_header\"), "
+            },
+            {
+                "line": 274,
+                "code": "\t\t\t\t\t\tres.getInt(\"project_id\"),  res.getString(\"subject\"), res.getTimestamp(\"date\"), res.getString(\"user_name\"), res.getString(\"refid_header\"));;"
+            },
+            {
+                "line": 275,
+                "code": "            }"
+            },
+            {
+                "line": 276,
+                "code": "\t\t}"
+            },
+            {
+                "line": 277,
+                "code": "\t\tif(res !=null) res.close();"
+            },
+            {
+                "line": 278,
+                "code": "\t\t\tif (artifact instanceof ChangeSet) {"
+            },
+            {
+                "line": 279,
+                "code": "\t\t\t\tChangeSet changeSet = (ChangeSet)artifact;"
+            },
+            {
+                "line": 280,
+                "code": "\t\t\t\tchangeSet.setOwner(getUserByUserName(changeSet.getExternalAuthorUserName()));"
+            },
+            {
+                "line": 281,
+                "code": "\t\t\t\tchangeSet.setProject(project);"
+            },
+            {
+                "line": 282,
+                "code": "\t\t\t\tchangeSet.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeSet.getRevision(), changeSet.getExternalSystemID()));"
+            },
+            {
+                "line": 283,
+                "code": "\t\t\t\tfor(ChangeSetDetail detail : changeSet.getChangesetDetails()) {"
+            },
+            {
+                "line": 284,
+                "code": "\t\t\t\t\tdetail.setTimestamp(changeSet.getTimestamp());"
+            },
+            {
+                "line": 285,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 286,
+                "code": "\t\t\t\tchangeSet.setAuthorForChangeSetDetails();"
+            },
+            {
+                "line": 287,
+                "code": "\t\t\t\tchangeSet.setType(\"ChangeSet\");"
+            },
+            {
+                "line": 288,
+                "code": "\t\t\t\tproject.addChangeset(changeSet);"
+            },
+            {
+                "line": 289,
+                "code": "\t\t\t} else if (artifact instanceof Ticket) {"
+            },
+            {
+                "line": 290,
+                "code": "\t\t\t\tTicket ticket = (Ticket)artifact;"
+            },
+            {
+                "line": 291,
+                "code": "\t\t\t\tticket.setOwner(getUserByUserName(ticket.getOwnerName()));"
+            },
+            {
+                "line": 292,
+                "code": "\t\t\t\tticket.setReporter(getUserByUserName(ticket.getReporterName()));"
+            },
+            {
+                "line": 293,
+                "code": "\t\t\t\tticket.setTicketChanges(getTicketChangesByTicketID(ticket"
+            },
+            {
+                "line": 294,
+                "code": "\t\t\t\t\t\t.getTicketID()));"
+            },
+            {
+                "line": 295,
+                "code": "\t\t\t\tticket.setProject(project);"
+            },
+            {
+                "line": 296,
+                "code": "\t\t\t\tticket.setType(\"Ticket\");"
+            },
+            {
+                "line": 297,
+                "code": "\t\t\t\tproject.addTicket(ticket);"
+            },
+            {
+                "line": 298,
+                "code": "\t\t\t} else if (artifact instanceof Message) {"
+            },
+            {
+                "line": 299,
+                "code": "\t\t\t\tMessage communication = (Message)artifact;"
+            },
+            {
+                "line": 300,
+                "code": "\t\t\t\tUser user = getUserByUserName(communication"
+            },
+            {
+                "line": 301,
+                "code": "\t\t\t\t\t\t.getUser_name());"
+            },
+            {
+                "line": 302,
+                "code": "\t\t\t\tcommunication.setOwner(user);"
+            },
+            {
+                "line": 303,
+                "code": "\t\t\t\tuser.setUserRealName(communication.getAuthor());"
+            },
+            {
+                "line": 304,
+                "code": "\t\t\t\tcommunication.setProject(project);"
+            },
+            {
+                "line": 305,
+                "code": "\t\t\t\tcommunication.setType(\"Message\");"
+            },
+            {
+                "line": 306,
+                "code": "\t\t\t\tproject.addMessage(communication);"
+            },
+            {
+                "line": 307,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 308,
+                "code": "\t\t\telse if(artifact instanceof Wiki) {"
+            },
+            {
+                "line": 309,
+                "code": "\t        \tWiki wiki = (Wiki)artifact;"
+            },
+            {
+                "line": 310,
+                "code": "\t        \twiki.setRevisions(getRevisionsByWikiID(wiki.getPage_id()));"
+            },
+            {
+                "line": 311,
+                "code": "\t        \twiki.setProject(DataManager.getProjectByName(getProjectNamespaceByNamespaceID(wiki.getPage_namespace_id())));"
+            },
+            {
+                "line": 312,
+                "code": "\t        \twiki.setProjectID(wiki.getProject().getProjectID());"
+            },
+            {
+                "line": 313,
+                "code": "\t        \twiki.setType(\"Wiki\");"
+            },
+            {
+                "line": 314,
+                "code": "\t        }"
+            },
+            {
+                "line": 315,
+                "code": "\t\treturn artifact;"
+            },
+            {
+                "line": 316,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+        "function_name": "relateChangeSetToTicket(ChangeSet)",
+        "code_lines": [
+            {
+                "line": 290,
+                "code": "\tpublic void relateChangeSetToTicket(ChangeSet changeset) throws SQLException {"
+            },
+            {
+                "line": 291,
+                "code": "\t\tArrayList<String> ids = new ArrayList<String>();"
+            },
+            {
+                "line": 292,
+                "code": "\t\tString comment = changeset.getComment();"
+            },
+            {
+                "line": 293,
+                "code": "\t\tString ticketid = \"\";"
+            },
+            {
+                "line": 294,
+                "code": "\t\tString pattern = \"[0-9]\";"
+            },
+            {
+                "line": 295,
+                "code": "\t\tfor(int i=0;i<comment.length(); i++) {"
+            },
+            {
+                "line": 296,
+                "code": "\t\t\tif(comment.charAt(i) == '#') {"
+            },
+            {
+                "line": 297,
+                "code": "\t\t\t\tint j=i+1;"
+            },
+            {
+                "line": 298,
+                "code": "\t\t\t\tString ch = comment.substring(j, j+1);"
+            },
+            {
+                "line": 299,
+                "code": "\t\t\t\twhile(ch.matches(pattern)) {"
+            },
+            {
+                "line": 300,
+                "code": "\t\t\t\t\tticketid += ch;"
+            },
+            {
+                "line": 301,
+                "code": "\t\t\t\t\tj++;"
+            },
+            {
+                "line": 302,
+                "code": "\t\t\t\t\tif (j<comment.length()) {"
+            },
+            {
+                "line": 303,
+                "code": "\t\t\t\t\t\tch = comment.substring(j, j + 1);"
+            },
+            {
+                "line": 304,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 305,
+                "code": "\t\t\t\t\telse {"
+            },
+            {
+                "line": 306,
+                "code": "\t\t\t\t\t\tbreak;"
+            },
+            {
+                "line": 307,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 308,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 309,
+                "code": "\t\t\t\tids.add(ticketid);"
+            },
+            {
+                "line": 310,
+                "code": "\t\t\t\tticketid = \"\";"
+            },
+            {
+                "line": 311,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 312,
+                "code": "\t\t}"
+            },
+            {
+                "line": 313,
+                "code": "\t\tfor (String ticket_id : ids) {"
+            },
+            {
+                "line": 314,
+                "code": "\t\t\tif (!ticket_id.equals(\"\")) {"
+            },
+            {
+                "line": 315,
+                "code": "\t\t\t\tint id = Integer.parseInt(ticket_id);"
+            },
+            {
+                "line": 316,
+                "code": "\t\t\t\tProject project = DataManager.getProjectByExternalSystem(changeset.getExternalSystemID());"
+            },
+            {
+                "line": 317,
+                "code": "\t\t\t\tTicket ticket = DataManager.getTicketByDrID(project.getProjectID(), id);"
+            },
+            {
+                "line": 318,
+                "code": "\t\t\t\tif (ticket != null) {"
+            },
+            {
+                "line": 319,
+                "code": "\t\t\t\t\trelateArtifacts(ticket, changeset, 0, \"<TicketReference>\");"
+            },
+            {
+                "line": 320,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 321,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 322,
+                "code": "\t\t}"
+            },
+            {
+                "line": 323,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "getLayout(ArrayList<IArtifact>, double[][])",
+        "code_lines": [
+            {
+                "line": 33,
+                "code": "\tprotected void getLayout(ArrayList<IArtifact> newArtifacts, double[][] distanceMatrix) throws IOException {"
+            },
+            {
+                "line": 34,
+                "code": "\t\tdouble[][] coords = null;"
+            },
+            {
+                "line": 35,
+                "code": "\t\tif (distanceMatrix.length > 0) {"
+            },
+            {
+                "line": 36,
+                "code": "\t\t\tMultidimensionalScaling mds = new MultidimensionalScaling("
+            },
+            {
+                "line": 37,
+                "code": "\t\t\t\t\tdistanceMatrix);"
+            },
+            {
+                "line": 38,
+                "code": "\t\t\tdouble[][] mdsCoords = mds.cMDS();"
+            },
+            {
+                "line": 39,
+                "code": "\t\t\tSammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);"
+            },
+            {
+                "line": 40,
+                "code": "\t\t\tsammon.CreateMapping();"
+            },
+            {
+                "line": 41,
+                "code": "\t\t\tcoords = sammon.getProjection();"
+            },
+            {
+                "line": 42,
+                "code": "\t\t}"
+            },
+            {
+                "line": 43,
+                "code": "\t\tfor (int i = 0; i < newArtifacts.size(); i++) {"
+            },
+            {
+                "line": 44,
+                "code": "\t\t\tnewArtifacts.get(i).setCoords(coords[i]);"
+            },
+            {
+                "line": 45,
+                "code": "\t\t}"
+            },
+            {
+                "line": 46,
+                "code": "\t\tSystem.out.print(\"x<-c(\");"
+            },
+            {
+                "line": 47,
+                "code": "\t\tdouble maxX = 0;"
+            },
+            {
+                "line": 48,
+                "code": "\t\tdouble minX = Double.MAX_VALUE;"
+            },
+            {
+                "line": 49,
+                "code": "\t\tdouble maxY = 0;"
+            },
+            {
+                "line": 50,
+                "code": "\t\tdouble minY = Double.MAX_VALUE;"
+            },
+            {
+                "line": 51,
+                "code": "\t\tfor (int i = 0; i < coords.length; i++) {"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\tfor (int j = 0; j < coords[0].length; j++) {"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\t\tif (j == 0) {"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t\t\tif (coords[i][j] > maxX) {"
+            },
+            {
+                "line": 55,
+                "code": "\t\t\t\t\t\tmaxX = coords[i][j];"
+            },
+            {
+                "line": 56,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\t\t\tif (coords[i][j] < minX) {"
+            },
+            {
+                "line": 58,
+                "code": "\t\t\t\t\t\tminX = coords[i][j];"
+            },
+            {
+                "line": 59,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\t\t} else {"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\t\t\tif (coords[i][j] > maxY) {"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\t\t\t\tmaxY = coords[i][j];"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 64,
+                "code": "\t\t\t\t\tif (coords[i][j] < minY) {"
+            },
+            {
+                "line": 65,
+                "code": "\t\t\t\t\t\tminY = coords[i][j];"
+            },
+            {
+                "line": 66,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 67,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 68,
+                "code": "\t\t\t\tSystem.out.print((float) coords[i][j] + \", \");"
+            },
+            {
+                "line": 69,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 70,
+                "code": "\t\t}"
+            },
+            {
+                "line": 71,
+                "code": "\t\tSystem.out.println(\")\");"
+            },
+            {
+                "line": 72,
+                "code": ""
+            },
+            {
+                "line": 73,
+                "code": "\t\tdouble rangeX = Math.ceil(maxX - minX);"
+            },
+            {
+                "line": 74,
+                "code": "\t\tdouble rangeY = Math.ceil(maxY - minY);"
+            },
+            {
+                "line": 75,
+                "code": "\t\tdouble range = 0;"
+            },
+            {
+                "line": 76,
+                "code": "\t\tif (rangeX > rangeY) {"
+            },
+            {
+                "line": 77,
+                "code": "\t\t\trange = rangeX;"
+            },
+            {
+                "line": 78,
+                "code": "\t\t} else {"
+            },
+            {
+                "line": 79,
+                "code": "\t\t\trange = rangeY;"
+            },
+            {
+                "line": 80,
+                "code": "\t\t}"
+            },
+            {
+                "line": 81,
+                "code": "\t\tdouble blocks = Math.ceil(Math"
+            },
+            {
+                "line": 82,
+                "code": "\t\t\t\t.sqrt(Math.ceil(newArtifacts.size() / 16))) + 2;"
+            },
+            {
+                "line": 83,
+                "code": ""
+            },
+            {
+                "line": 84,
+                "code": "\t\tcityBlockInitialization(newArtifacts, coords, minX, minY, range, blocks);"
+            },
+            {
+                "line": 85,
+                "code": ""
+            },
+            {
+                "line": 86,
+                "code": "\t\tredistributeBuildings();"
+            },
+            {
+                "line": 87,
+                "code": ""
+            },
+            {
+                "line": 88,
+                "code": "\t\tpushBuildings(minX, minY, range);"
+            },
+            {
+                "line": 89,
+                "code": ""
+            },
+            {
+                "line": 90,
+                "code": "\t\t//printCityBlocks(cityBlocks);"
+            },
+            {
+                "line": 91,
+                "code": "\t\tSystem.out.println(\"Blocks done\");"
+            },
+            {
+                "line": 92,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "cityBlockInitialization(ArrayList<IArtifact>, double[][], double, double, double, double)",
+        "code_lines": [
+            {
+                "line": 94,
+                "code": "\tprivate void cityBlockInitialization(ArrayList<IArtifact> newArtifacts,"
+            },
+            {
+                "line": 95,
+                "code": "\t\t\tdouble[][] coords, double minX, double minY, double range,"
+            },
+            {
+                "line": 96,
+                "code": "\t\t\tdouble blocks) {"
+            },
+            {
+                "line": 97,
+                "code": "\t\tthis.cityBlocks = new ArrayList<CityBlock>();"
+            },
+            {
+                "line": 98,
+                "code": "\t\tfor (int i = 0; i < blocks; i++) {"
+            },
+            {
+                "line": 99,
+                "code": "\t\t\tfor (int j = 0; j < blocks; j++) {"
+            },
+            {
+                "line": 100,
+                "code": "\t\t\t\tdouble[] center = { minX + i * (range / 16) + (range / 16) / 2,"
+            },
+            {
+                "line": 101,
+                "code": "\t\t\t\t\t\tminY + j * (range / 16) + (range / 16) / 2 };"
+            },
+            {
+                "line": 102,
+                "code": "\t\t\t\tCityBlock cityblock = new CityBlock(new Point(i, j));"
+            },
+            {
+                "line": 103,
+                "code": "\t\t\t\tcityblock.setCenter(center);"
+            },
+            {
+                "line": 104,
+                "code": "\t\t\t\tcityBlocks.add(cityblock);"
+            },
+            {
+                "line": 105,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 106,
+                "code": "\t\t}"
+            },
+            {
+                "line": 107,
+                "code": "\t\tdouble r = range / blocks;"
+            },
+            {
+                "line": 108,
+                "code": "\t\tfor (int i = 0; i < newArtifacts.size(); i++) {"
+            },
+            {
+                "line": 109,
+                "code": "\t\t\tassignArtifactToCityBlock(newArtifacts.get(i), coords[i][0],"
+            },
+            {
+                "line": 110,
+                "code": "\t\t\t\t\tcoords[i][1], minX, minY, blocks, r);"
+            },
+            {
+                "line": 111,
+                "code": "\t\t}"
+            },
+            {
+                "line": 112,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout",
+        "function_name": "printCityBlocks(ArrayList<CityBlock>, HashMap<SVNFile, Integer>)",
+        "code_lines": [
+            {
+                "line": 342,
+                "code": "\tpublic static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<SVNFile, Integer> fileCount)"
+            },
+            {
+                "line": 343,
+                "code": "\t\t\tthrows IOException {"
+            },
+            {
+                "line": 344,
+                "code": "\t\t// BufferedWriter out = new BufferedWriter(new"
+            },
+            {
+                "line": 345,
+                "code": "\t\t// FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));"
+            },
+            {
+                "line": 346,
+                "code": "\t\tBufferedWriter out = new BufferedWriter("
+            },
+            {
+                "line": 347,
+                "code": "\t\t\t\tnew FileWriter("
+            },
+            {
+                "line": 348,
+                "code": "\t\t\t\t\t\t\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\industrialBlocks.txt\"));"
+            },
+            {
+                "line": 349,
+                "code": "\t\tint index = 1;"
+            },
+            {
+                "line": 350,
+                "code": "\t\tout.write(\"\"+Math.sqrt(blocks.size()));"
+            },
+            {
+                "line": 351,
+                "code": "\t\tout.newLine();"
+            },
+            {
+                "line": 352,
+                "code": "\t\tfor (CityBlock block : blocks) {"
+            },
+            {
+                "line": 353,
+                "code": "\t\t\tfor (IArtifact artifact : block.getArtifacts().keySet()) {"
+            },
+            {
+                "line": 354,
+                "code": "\t\t\t\tString type = \"\"+index+\"\\t\";"
+            },
+            {
+                "line": 355,
+                "code": "\t\t\t\tint height = 0;"
+            },
+            {
+                "line": 356,
+                "code": "\t\t\t\tString line = \"\";"
+            },
+            {
+                "line": 357,
+                "code": "\t\t\t\tif (artifact instanceof SVNFile) {"
+            },
+            {
+                "line": 358,
+                "code": "\t\t\t\t\tSVNFile file = (SVNFile)artifact;"
+            },
+            {
+                "line": 359,
+                "code": "\t\t\t\t\ttype += file.getType();"
+            },
+            {
+                "line": 360,
+                "code": "\t\t\t\t\theight = fileCount.get(file);"
+            },
+            {
+                "line": 361,
+                "code": "\t\t\t\t\tline += type + \"\\t\" + block.getIndex().x + \"\\t\""
+            },
+            {
+                "line": 362,
+                "code": "\t\t\t\t\t+ block.getIndex().y + \"\\t\""
+            },
+            {
+                "line": 363,
+                "code": "\t\t\t\t\t+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";"
+            },
+            {
+                "line": 364,
+                "code": "\t\t\t\t\tfor(User user : file.getUsers()) {"
+            },
+            {
+                "line": 365,
+                "code": "\t\t\t\t\t\tline += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";"
+            },
+            {
+                "line": 366,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 367,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 368,
+                "code": "\t\t\t\tout.write(line);"
+            },
+            {
+                "line": 369,
+                "code": "\t\t\t\tout.newLine();"
+            },
+            {
+                "line": 370,
+                "code": "\t\t\t\tindex++;"
+            },
+            {
+                "line": 371,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 372,
+                "code": "\t\t}"
+            },
+            {
+                "line": 373,
+                "code": "\t\tout.close();"
+            },
+            {
+                "line": 374,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+        "function_name": "pushBuildings(double, double, double)",
+        "code_lines": [
+            {
+                "line": 114,
+                "code": "\tprivate void pushBuildings(double minX, double minY, double range) {"
+            },
+            {
+                "line": 115,
+                "code": "\t\tfor (CityBlock block : cityBlocks) {"
+            },
+            {
+                "line": 116,
+                "code": "\t\t\tif (block.getArtifacts().size() > 4"
+            },
+            {
+                "line": 117,
+                "code": "\t\t\t\t\t&& block.getArtifacts().size() <= 16) {"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\t\tdouble blockMinX = minX + block.getIndex().x * (range / 16);"
+            },
+            {
+                "line": 119,
+                "code": "\t\t\t\tdouble blockMaxX = minX + (block.getIndex().x + 1)"
+            },
+            {
+                "line": 120,
+                "code": "\t\t\t\t\t\t* (range / 16);"
+            },
+            {
+                "line": 121,
+                "code": "\t\t\t\tdouble blockMinY = minY + block.getIndex().y * (range / 16);"
+            },
+            {
+                "line": 122,
+                "code": "\t\t\t\tdouble blockMaxY = minY + (block.getIndex().y + 1)"
+            },
+            {
+                "line": 123,
+                "code": "\t\t\t\t\t\t* (range / 16);"
+            },
+            {
+                "line": 124,
+                "code": "\t\t\t\tdouble rX = Math.ceil(blockMaxX - blockMinX);"
+            },
+            {
+                "line": 125,
+                "code": "\t\t\t\tdouble rY = Math.ceil(blockMaxY - blockMinY);"
+            },
+            {
+                "line": 126,
+                "code": "\t\t\t\tdouble blockR = 0;"
+            },
+            {
+                "line": 127,
+                "code": "\t\t\t\tif (rX > rY) {"
+            },
+            {
+                "line": 128,
+                "code": "\t\t\t\t\tblockR = rX;"
+            },
+            {
+                "line": 129,
+                "code": "\t\t\t\t} else {"
+            },
+            {
+                "line": 130,
+                "code": "\t\t\t\t\tblockR = rY;"
+            },
+            {
+                "line": 131,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 132,
+                "code": "\t\t\t\tdouble[][] subblockCenters = new double[16][3];"
+            },
+            {
+                "line": 133,
+                "code": "\t\t\t\tfor (int i = 0; i < 4; i++) {"
+            },
+            {
+                "line": 134,
+                "code": "\t\t\t\t\tfor (int j = 0; j < 4; j++) {"
+            },
+            {
+                "line": 135,
+                "code": "\t\t\t\t\t\tdouble[] subCenter = {"
+            },
+            {
+                "line": 136,
+                "code": "\t\t\t\t\t\t\t\tblockMinX + i * blockR + blockR / 2,"
+            },
+            {
+                "line": 137,
+                "code": "\t\t\t\t\t\t\t\tblockMinY + j * blockR + blockR / 2, 0 };"
+            },
+            {
+                "line": 138,
+                "code": "\t\t\t\t\t\tsubblockCenters[j + i * 4] = subCenter;"
+            },
+            {
+                "line": 139,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 140,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 141,
+                "code": "\t\t\t\tredistributeArtifactsInBlock(block, subblockCenters);"
+            },
+            {
+                "line": 142,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 143,
+                "code": "\t\t}"
+            },
+            {
+                "line": 144,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.city3d.CityLayout",
+        "function_name": "printCityBlocks(ArrayList<CityBlock>, HashMap<Message, Integer>)",
+        "code_lines": [
+            {
+                "line": 199,
+                "code": "\tpublic static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<Message, Integer> messageCount)"
+            },
+            {
+                "line": 200,
+                "code": "\t\t\tthrows IOException {"
+            },
+            {
+                "line": 201,
+                "code": "\t\t// BufferedWriter out = new BufferedWriter(new"
+            },
+            {
+                "line": 202,
+                "code": "\t\t// FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\ucosp\\\\clusters\"+week+\".txt\"));"
+            },
+            {
+                "line": 203,
+                "code": "\t\tBufferedWriter out = new BufferedWriter("
+            },
+            {
+                "line": 204,
+                "code": "\t\t\t\tnew FileWriter("
+            },
+            {
+                "line": 205,
+                "code": "\t\t\t\t\t\t\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\cityBlocks.txt\"));"
+            },
+            {
+                "line": 206,
+                "code": "\t\tint index = 1;"
+            },
+            {
+                "line": 207,
+                "code": "\t\tout.write(\"\"+Math.sqrt(blocks.size()));"
+            },
+            {
+                "line": 208,
+                "code": "\t\tout.newLine();"
+            },
+            {
+                "line": 209,
+                "code": "\t\tfor (CityBlock block : blocks) {"
+            },
+            {
+                "line": 210,
+                "code": "\t\t\tfor (IArtifact artifact : block.getArtifacts().keySet()) {"
+            },
+            {
+                "line": 211,
+                "code": "\t\t\t\tString type = \"\"+index+\"\\t\";"
+            },
+            {
+                "line": 212,
+                "code": "\t\t\t\tint height = 0;"
+            },
+            {
+                "line": 213,
+                "code": "\t\t\t\tString line = \"\";"
+            },
+            {
+                "line": 214,
+                "code": "\t\t\t\tif (artifact instanceof Ticket) {"
+            },
+            {
+                "line": 215,
+                "code": "\t\t\t\t\tTicket ticket = (Ticket)artifact;"
+            },
+            {
+                "line": 216,
+                "code": "\t\t\t\t\ttype += \"Ticket\";"
+            },
+            {
+                "line": 217,
+                "code": "\t\t\t\t\theight = 6-ticket.getPriority();"
+            },
+            {
+                "line": 218,
+                "code": "\t\t\t\t} else if (artifact instanceof Message) {"
+            },
+            {
+                "line": 219,
+                "code": "\t\t\t\t\ttype += \"Message\";"
+            },
+            {
+                "line": 220,
+                "code": "\t\t\t\t\tMessage message = (Message)artifact;"
+            },
+            {
+                "line": 221,
+                "code": "\t\t\t\t\theight = messageCount.get(message);"
+            },
+            {
+                "line": 222,
+                "code": "\t\t\t\t} else if (artifact instanceof Wiki) {"
+            },
+            {
+                "line": 223,
+                "code": "\t\t\t\t\tWiki wiki = (Wiki)artifact;"
+            },
+            {
+                "line": 224,
+                "code": "\t\t\t\t\ttype += \"Wiki\";"
+            },
+            {
+                "line": 225,
+                "code": "\t\t\t\t\theight = wiki.getRevisions().size();"
+            },
+            {
+                "line": 226,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 227,
+                "code": "\t\t\t\tline += type + \"\\t\" + block.getIndex().x + \"\\t\""
+            },
+            {
+                "line": 228,
+                "code": "\t\t\t\t+ block.getIndex().y + \"\\t\""
+            },
+            {
+                "line": 229,
+                "code": "\t\t\t\t+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";"
+            },
+            {
+                "line": 230,
+                "code": "\t\t\t\tfor(User user : artifact.getAssociatedUsers()) {"
+            },
+            {
+                "line": 231,
+                "code": "\t\t\t\t\tline += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";"
+            },
+            {
+                "line": 232,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 233,
+                "code": "\t\t\t\tout.write(line);"
+            },
+            {
+                "line": 234,
+                "code": "\t\t\t\tout.newLine();"
+            },
+            {
+                "line": 235,
+                "code": "\t\t\t\tindex++;"
+            },
+            {
+                "line": 236,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 237,
+                "code": "\t\t}"
+            },
+            {
+                "line": 238,
+                "code": "\t\tout.close();"
+            },
+            {
+                "line": 239,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+        "function_name": "getConnectedComponents()",
+        "code_lines": [
+            {
+                "line": 268,
+                "code": "\tpublic static TreeMap<Integer, ArrayList<Integer>> getConnectedComponents() {"
+            },
+            {
+                "line": 269,
+                "code": "\t       int[] component = new int[adjacencyMatrix.length];"
+            },
+            {
+                "line": 270,
+                "code": "\t       int cn = 0;"
+            },
+            {
+                "line": 271,
+                "code": ""
+            },
+            {
+                "line": 272,
+                "code": "\t       for(int i=0; i<component.length; i++) {"
+            },
+            {
+                "line": 273,
+                "code": "\t           if(component[i] == 0) {"
+            },
+            {
+                "line": 274,
+                "code": "\t               cn++;"
+            },
+            {
+                "line": 275,
+                "code": "\t               dfs(component,i,cn);"
+            },
+            {
+                "line": 276,
+                "code": "\t           }"
+            },
+            {
+                "line": 277,
+                "code": "\t       }"
+            },
+            {
+                "line": 278,
+                "code": ""
+            },
+            {
+                "line": 279,
+                "code": "\t       TreeMap<Integer, ArrayList<Integer>> map = new TreeMap<Integer, ArrayList<Integer>>();"
+            },
+            {
+                "line": 280,
+                "code": "\t       for(int i=0; i<component.length; i++) {"
+            },
+            {
+                "line": 281,
+                "code": "\t           if(!map.containsKey(component[i])) {"
+            },
+            {
+                "line": 282,
+                "code": "\t               ArrayList<Integer> l = new ArrayList<Integer>();"
+            },
+            {
+                "line": 283,
+                "code": "\t               l.add(i);"
+            },
+            {
+                "line": 284,
+                "code": "\t               map.put(component[i],l);"
+            },
+            {
+                "line": 285,
+                "code": "\t           }"
+            },
+            {
+                "line": 286,
+                "code": "\t           else {"
+            },
+            {
+                "line": 287,
+                "code": "\t               ArrayList<Integer> l = map.get(component[i]);"
+            },
+            {
+                "line": 288,
+                "code": "\t               l.add(i);"
+            },
+            {
+                "line": 289,
+                "code": "\t           }"
+            },
+            {
+                "line": 290,
+                "code": "\t       }"
+            },
+            {
+                "line": 291,
+                "code": "\t       return map;"
+            },
+            {
+                "line": 292,
+                "code": "\t   }"
+            }
+        ]
+    }
+]
