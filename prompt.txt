@@ -11,6 +11,41 @@ Here are the basic details about the method
 
 Please decompose the method under test following the instructions:
 
+[Critical Slicing Rules — must follow]
+A. Unit-of-Work over Syntax:
+
+Prefer business/task boundaries rather than blank lines, comments, or formatting.
+
+Statements that belong to the same "work unit" must stay together.
+
+B. Resource / Transaction Atomicity:
+
+Do NOT fragment a resource lifecycle or transaction flow.
+
+Keep patterns like: acquire/open -> configure/build -> execute/use -> commit/rollback -> close/release in ONE slice whenever possible.
+
+C. Data-flow Closure (Def-Use):
+
+A slice must not "use" a variable/resource without including its nearest definition/acquisition in the same slice,
+OR explicitly treat it as an input precondition (and list it in Step 2 env settings).
+
+D. Control-flow Closure:
+
+Do not produce isolated one-line slices that are just "return/throw".
+
+Guard + fallback patterns (e.g., if(cond) return X; return null;) should be treated as ONE decision unit slice.
+
+E. Anti One-liner Slices:
+
+Avoid 1–2 line slices unless they are truly independent side effects (e.g., logging/metrics) or pure validation with immediate exit.
+
+Merge adjacent micro-slices if they share the same key variable/resource or the same control predicate.
+
+F. Ignore Blank Lines / Comments as Cut Signals:
+
+Blank lines and comments must not be used as splitting boundaries.
+
+[Task]
 1. Summarise the focal method
 2. List necessary env settings to run the focal method
    - Invoked parameters and fields

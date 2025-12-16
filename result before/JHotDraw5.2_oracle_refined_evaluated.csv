@@ -1,0 +1,57 @@
+class_name,function_name,offset_start,offset_end,line_start,line_end,match_type,matched_slice_count,matched_slice_ids,matched_slice_ranges
+CH.ifa.draw.util.StorableOutput,writeStorable,993,1102,47,52,Inside One LLM Slice,1,2,46-54
+CH.ifa.draw.util.StandardStorageFormat,store,4367,4492,165,170,Inside One LLM Slice,1,5,165-170
+CH.ifa.draw.util.Iconkit,getImage,3823,3910,132,134,Covers Multiple,2,3;4,131-133;134-134
+CH.ifa.draw.util.Geom,angleToPoint,3489,3617,139,145,Inside One LLM Slice,1,3,137-147
+CH.ifa.draw.standard.StandardDrawingView,setDrawing,4449,4891,178,189,Covers Multiple,2,3;4,178-184;185-189
+CH.ifa.draw.standard.StandardDrawingView,findHandle,9949,10375,381,392,Covers Multiple,2,1;2,381-390;392-398
+CH.ifa.draw.standard.StandardDrawingView,constrainPoint,11428,11674,437,445,Covers Multiple,2,1;2,436-437;438-445
+CH.ifa.draw.standard.PasteCommand,execute,912,1124,37,42,Covers Multiple,2,4;5,37-40;42-43
+CH.ifa.draw.standard.FigureChangeEventMulticaster,remove,2102,2322,74,78,Inside One LLM Slice,1,5,73-79
+CH.ifa.draw.standard.ConnectionTool,mouseDrag,3231,3802,116,138,Covers Multiple,4,2;3;4;5,115-121;123-130;132-136;138-141
+CH.ifa.draw.standard.CompositeFigure,findFigureWithout,6434,6637,241,247,Inside One LLM Slice,1,1,240-248
+CH.ifa.draw.standard.CompositeFigure,findFigure,7237,7475,266,273,Inside One LLM Slice,1,1,265-274
+CH.ifa.draw.standard.BoxHandleKit,addHandles,913,1054,38,41,Covers Multiple,4,1;2;3;4,38-38;39-39;40-40;41-41
+CH.ifa.draw.samples.pert.PertFigure,update,5904,6016,210,214,Inside One LLM Slice,1,1,209-215
+CH.ifa.draw.samples.pert.PertFigure,updateDurations,6607,6733,241,243,Inside One LLM Slice,1,4,241-243
+CH.ifa.draw.samples.pert.PertFigure,write,7363,7515,267,270,Covers Multiple,2,3;4,267-267;268-270
+CH.ifa.draw.samples.pert.PertFigure,read,8039,8193,289,293,Inside One LLM Slice,1,4,289-293
+CH.ifa.draw.samples.net.NodeFigure,initialize,3875,4221,131,135,Covers Multiple,5,3;4;5;6;7,131-131;132-132;133-133;134-134;135-135
+CH.ifa.draw.samples.javadraw.URLTool,mouseDown,797,1374,37,54,Covers Multiple,3,2;3;4,36-46;48-49;50-55
+CH.ifa.draw.samples.javadraw.URLTool,beginEdit,2056,2193,85,89,Inside One LLM Slice,1,2,84-89
+CH.ifa.draw.samples.javadraw.JavaDrawViewer,init,912,1298,39,48,Inside One LLM Slice,1,4,37-51
+CH.ifa.draw.samples.javadraw.JavaDrawApplet,createButtons,2780,2864,83,86,Inside One LLM Slice,1,3,80-89
+CH.ifa.draw.samples.javadraw.JavaDrawApp,createAnimationMenu,3467,3627,112,115,Inside One LLM Slice,1,2,107-119
+CH.ifa.draw.figures.TextTool,mouseDown,1258,1624,49,59,Inside One LLM Slice,1,3,48-61
+CH.ifa.draw.figures.TextTool,beginEdit,2942,3255,111,120,Inside One LLM Slice,1,2,110-120
+CH.ifa.draw.figures.TextFigure,setAttribute,3527,3638,148,151,Inside One LLM Slice,1,2,146-152
+CH.ifa.draw.figures.TextFigure,connect,7824,8105,287,297,Inside One LLM Slice,1,4,287-297
+CH.ifa.draw.figures.ScribbleTool,mouseDown,1439,1699,60,69,Covers Multiple,3,2;3;4,56-61;62-66;67-69
+CH.ifa.draw.figures.RadiusHandle,invokeStep,886,1034,37,43,Covers Multiple,2,2;3,36-37;38-43
+CH.ifa.draw.figures.PolyLineFigure,draw,4703,5120,193,202,Covers Multiple,2,3;4,193-197;198-202
+CH.ifa.draw.figures.PolyLineFigure,write,8828,8939,318,320,Inside One LLM Slice,1,5,318-320
+CH.ifa.draw.figures.InsertImageCommand,execute,819,957,37,40,Covers Multiple,3,1;2;3,37-38;39-39;40-40
+CH.ifa.draw.figures.GroupCommand,execute,875,986,41,43,Inside One LLM Slice,1,4,40-43
+CH.ifa.draw.figures.ElbowHandle,invokeStep,993,1702,42,62,Inside One LLM Slice,1,4,41-64
+CH.ifa.draw.figures.ElbowHandle,constrainX,3323,3459,115,121,Inside One LLM Slice,1,4,114-122
+CH.ifa.draw.figures.ElbowHandle,constrainY,4224,4361,144,150,Inside One LLM Slice,1,4,143-151
+CH.ifa.draw.figures.ElbowConnection,updatePoints,1841,2228,72,84,Inside One LLM Slice,1,6,67-94
+CH.ifa.draw.figures.AttributeFigure,getAttribute,3724,3826,136,138,Covers Multiple,2,2;3,136-137;138-138
+CH.ifa.draw.figures.AbstractLineDecoration,write,1667,1872,64,70,Inside One LLM Slice,1,1,63-74
+CH.ifa.draw.contrib.SplitPaneDrawApplication,createContents,1448,1687,60,63,Inside One LLM Slice,1,5,59-64
+CH.ifa.draw.contrib.PolygonTool,mouseDown,1570,1863,70,80,Covers Multiple,2,3;4,66-77;79-80
+CH.ifa.draw.contrib.PolygonFigure,scaleRotate,4449,4739,192,201,Inside One LLM Slice,1,2,192-201
+CH.ifa.draw.contrib.PolygonFigure,splitSegment,6759,7134,268,281,Covers Multiple,3,1;2;3,267-269;271-280;281-285
+CH.ifa.draw.contrib.PolygonFigure,chop,12538,12728,481,488,Inside One LLM Slice,1,1,481-488
+CH.ifa.draw.contrib.DiamondFigure,draw,953,1181,42,48,Covers Multiple,2,1;2,42-42;43-48
+CH.ifa.draw.contrib.CustomSelectionTool,mouseDown,1565,1931,51,60,Covers Multiple,3,1;2;3,50-51;52-55;57-59
+CH.ifa.draw.contrib.CustomSelectionTool,mouseUp,2925,3291,94,103,Inside One LLM Slice,1,1,93-104
+CH.ifa.draw.contrib.CustomSelectionTool,handlePopupMenu,4797,5423,155,168,Inside One LLM Slice,1,3,154-169
+CH.ifa.draw.application.DrawApplication,promptOpen,21128,21586,698,711,Covers Multiple,4,5;6;7;8,697-700;701-705;706-708;709-711
+CH.ifa.draw.application.DrawApplication,promptSaveAs,21877,22016,724,726,Inside One LLM Slice,1,2,724-726
+CH.ifa.draw.applet.DrawApplet,init,1981,3076,71,94,Inside One LLM Slice,1,4,70-94
+CH.ifa.draw.applet.DrawApplet,createAttributeChoices,5470,5739,163,167,Inside One LLM Slice,1,5,162-168
+CH.ifa.draw.applet.DrawApplet,loadDrawing,13339,13585,435,442,Covers Multiple,2,3;4,435-435;436-442
+CH.ifa.draw.applet.DrawApplet,readDrawing,13843,14308,452,465,Inside One LLM Slice,1,3,451-465
+CH.ifa.draw.applet.DrawApplet,readFromStorableInput,14781,14854,480,482,Inside One LLM Slice,1,4,479-483
+CH.ifa.draw.applet.DrawApplet,readFromObjectInput,15318,15391,496,498,Inside One LLM Slice,1,2,495-499

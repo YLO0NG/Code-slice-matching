@@ -26,3 +26,13 @@ oracle_snippets.json:Oracle的代码切片
 oracle_methods.json:Oracle代码切片对应的目标方法,带行数
 
 oracle_refined_evaluated.csv:评估结果文件
+
+
+
+项目名称 | 总片段数 (Snippets) | Inside One | Covers Multiple
+---------|--------------------|------------|---------------
+JHotDraw5.2 | 56 | 35 | 21
+wikidev-filters | 26 | 21 | 5
+JUnit 3.8 | 25 | 19 | 6
+MyWebMarket | 24 | 0 | 24
+**总计** | **131** | **75** | **56**

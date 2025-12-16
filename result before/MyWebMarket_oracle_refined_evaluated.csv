@@ -1,0 +1,25 @@
+class_name,function_name,offset_start,offset_end,line_start,line_end,match_type,matched_slice_count,matched_slice_ids,matched_slice_ranges
+classes.CustomerAction,find,2359,2994,88,101,Covers Multiple,5,2;3;4;5;6,88-89;91-91;93-96;98-99;100-101
+classes.CustomerAction,save,3229,3457,111,117,Covers Multiple,3,2;3;4,111-112;114-114;116-117
+classes.CustomerAction,update,3758,3988,128,134,Covers Multiple,3,2;3;4,128-129;131-131;133-134
+classes.CustomerAction,delete,4293,4523,145,151,Covers Multiple,3,2;3;4,145-146;148-148;150-151
+classes.CustomerAction,edit,4898,5149,164,169,Covers Multiple,3,3;4;5,164-165;167-167;168-169
+classes.LoginAction,execute,1447,1926,46,57,Covers Multiple,5,1;2;3;4;5,45-46;47-47;49-52;54-54;56-57
+classes.ProductAction,find,2449,3078,90,103,Covers Multiple,6,2;3;4;5;6;7,90-91;93-93;95-95;96-98;100-101;102-103
+classes.ProductAction,save,3313,3540,113,119,Covers Multiple,3,2;3;4,113-114;116-116;118-119
+classes.ProductAction,update,3840,4069,130,136,Covers Multiple,3,2;3;4,130-131;133-133;135-136
+classes.ProductAction,delete,4373,4602,147,153,Covers Multiple,3,2;3;4,147-148;150-150;152-153
+classes.ProductAction,edit,4976,5225,166,172,Covers Multiple,3,3;4;5,166-167;169-169;171-172
+classes.PurchaseOrderAction,input,2460,3054,88,101,Covers Multiple,4,2;3;4;5,88-89;91-94;96-98;100-101
+classes.PurchaseOrderAction,find,3292,4228,111,129,Covers Multiple,6,1;2;3;4;5;6,110-112;114-116;117-119;121-123;125-127;128-129
+classes.PurchaseOrderAction,save,4464,4693,139,145,Covers Multiple,2,1;2,138-140;142-145
+classes.PurchaseOrderAction,update,5177,5407,162,167,Covers Multiple,2,1;2,161-163;164-167
+classes.PurchaseOrderAction,delete,5842,6073,182,188,Covers Multiple,3,2;3;4,182-183;185-185;187-188
+classes.PurchaseOrderAction,edit,6445,6713,200,206,Covers Multiple,3,3;4;5,200-201;203-203;205-206
+classes.PurchaseOrderAjax,getProductPrice,461,935,15,28,Covers Multiple,4,2;3;4;5,15-16;18-23;25-25;27-28
+classes.ReportAction,productReport,2603,3149,77,89,Covers Multiple,3,4;5;6,77-78;80-86;88-89
+classes.ReportAction,customerReport,4176,4723,116,128,Covers Multiple,3,5;6;7,116-117;119-125;127-128
+classes.SchedulerAction,input,1759,2081,56,63,Covers Multiple,3,2;3;4,56-57;59-59;61-63
+classes.SchedulerAction,schedule,2264,3008,72,87,Covers Multiple,5,2;3;4;5;6,72-73;75-79;81-82;84-85;87-87
+classes.SupplyMailJob,execute,922,1354,33,42,Covers Multiple,4,2;3;4;5,33-34;36-37;39-40;41-42
+classes.SupplyMailJob,execute,1505,2413,48,70,Covers Multiple,5,7;8;9;10;11,48-52;54-57;59-63;65-67;68-70
