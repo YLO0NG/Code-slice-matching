@@ -1,0 +1,7005 @@
+[
+  {
+    "class_name": "CH.ifa.draw.util.StorableOutput",
+    "method_name": "writeStorable(Storable)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 40,
+        "end_line": 44,
+        "defs": [],
+        "uses": [
+          "NULL",
+          "storable",
+          "fStream",
+          "space",
+          "print"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 46,
+        "end_line": 54,
+        "defs": [
+          "ref"
+        ],
+        "uses": [
+          "storable",
+          "indexOf",
+          "mapped",
+          "fMap",
+          "fStream",
+          "REF",
+          "space",
+          "print"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 56,
+        "end_line": 63,
+        "defs": [],
+        "uses": [
+          "startNewLine",
+          "decrementIndent",
+          "storable",
+          "incrementIndent",
+          "getClass",
+          "getName",
+          "write",
+          "map",
+          "fStream",
+          "space",
+          "print"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.util.StandardStorageFormat",
+    "method_name": "store(String, Drawing)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 161,
+        "end_line": 161,
+        "defs": [
+          "stream"
+        ],
+        "uses": [
+          "adjustFileName",
+          "fileName",
+          "FileOutputStream"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 162,
+        "end_line": 163,
+        "defs": [
+          "output"
+        ],
+        "uses": [
+          "StorableOutput",
+          "stream",
+          "writeStorable",
+          "saveDrawing"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 164,
+        "end_line": 164,
+        "defs": [],
+        "uses": [
+          "output",
+          "close"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 165,
+        "end_line": 170,
+        "defs": [],
+        "uses": [
+          "getFileExtension",
+          "fileName",
+          "hasCorrectFileExtension"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "stream"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "output"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.util.Iconkit",
+    "method_name": "getImage(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 126,
+        "end_line": 128,
+        "defs": [
+          "image"
+        ],
+        "uses": [
+          "Image",
+          "filename",
+          "basicGetImage"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 130,
+        "end_line": 133,
+        "defs": [],
+        "uses": [
+          "Image",
+          "filename",
+          "fMap",
+          "containsKey",
+          "get",
+          "fComponent",
+          "loadRegisteredImages"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 134,
+        "end_line": 134,
+        "defs": [],
+        "uses": [],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.util.Geom",
+    "method_name": "angleToPoint(Rectangle, double)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 132,
+        "end_line": 134,
+        "defs": [
+          "e",
+          "si",
+          "co"
+        ],
+        "uses": [
+          "Math",
+          "angle",
+          "cos",
+          "sin"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 136,
+        "end_line": 136,
+        "defs": [
+          "x"
+        ],
+        "uses": [
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 137,
+        "end_line": 147,
+        "defs": [
+          "value",
+          "max"
+        ],
+        "uses": [
+          "Math",
+          "e",
+          "x",
+          "r",
+          "co",
+          "si",
+          "width",
+          "abs"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 148,
+        "end_line": 152,
+        "defs": [],
+        "uses": [
+          "height",
+          "Math",
+          "e",
+          "r",
+          "co",
+          "range",
+          "y",
+          "si",
+          "abs"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 153,
+        "end_line": 153,
+        "defs": [],
+        "uses": [
+          "x",
+          "Point",
+          "r",
+          "y"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "e",
+          "si",
+          "co"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "e",
+          "si",
+          "co"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "x"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "x"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+    "method_name": "setDrawing(Drawing)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 169,
+        "end_line": 172,
+        "defs": [],
+        "uses": [
+          "removeDrawingChangeListener",
+          "fDrawing",
+          "clearSelection"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 174,
+        "end_line": 176,
+        "defs": [],
+        "uses": [
+          "addDrawingChangeListener",
+          "d",
+          "fDrawing"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 178,
+        "end_line": 184,
+        "defs": [
+          "k",
+          "r",
+          "d1"
+        ],
+        "uses": [
+          "hasMoreElements",
+          "max",
+          "Dimension",
+          "y",
+          "width",
+          "drawing",
+          "height",
+          "Math",
+          "figures",
+          "x",
+          "displayBox",
+          "Rectangle",
+          "FigureEnumeration",
+          "nextFigure"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 185,
+        "end_line": 189,
+        "defs": [],
+        "uses": [
+          "setSize",
+          "d1",
+          "height",
+          "fViewSize",
+          "width"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 190,
+        "end_line": 190,
+        "defs": [],
+        "uses": [
+          "repaint"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "d1"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+    "method_name": "findHandle(int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 381,
+        "end_line": 390,
+        "defs": [
+          "figure",
+          "kk",
+          "k1"
+        ],
+        "uses": [
+          "nextElement",
+          "handles",
+          "Figure",
+          "hasMoreElements",
+          "Vector",
+          "nextFigure",
+          "addElement",
+          "fSelectionHandles",
+          "elements",
+          "FigureEnumeration",
+          "selectionElements",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 392,
+        "end_line": 398,
+        "defs": [
+          "k"
+        ],
+        "uses": [
+          "containsPoint",
+          "handle",
+          "elements",
+          "nextElement",
+          "x",
+          "Handle",
+          "hasMoreElements",
+          "y",
+          "fSelectionHandles",
+          "Enumeration"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+    "method_name": "constrainPoint(Point)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 436,
+        "end_line": 438,
+        "defs": [
+          "value",
+          "size",
+          "max"
+        ],
+        "uses": [
+          "getSize",
+          "p",
+          "x",
+          "Dimension",
+          "width"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 439,
+        "end_line": 445,
+        "defs": [],
+        "uses": [
+          "p",
+          "x",
+          "value",
+          "max"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 446,
+        "end_line": 446,
+        "defs": [],
+        "uses": [
+          "range",
+          "height",
+          "Geom",
+          "p",
+          "y",
+          "size"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 448,
+        "end_line": 450,
+        "defs": [],
+        "uses": [
+          "p",
+          "constrainPoint",
+          "fConstrainer"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "value",
+          "max"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "size"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.PasteCommand",
+    "method_name": "execute()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 31,
+        "end_line": 32,
+        "defs": [
+          "selection",
+          "lastClick"
+        ],
+        "uses": [
+          "Point",
+          "fView",
+          "Clipboard",
+          "getContents",
+          "getClipboard",
+          "FigureSelection"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 33,
+        "end_line": 36,
+        "defs": [
+          "figures"
+        ],
+        "uses": [
+          "size",
+          "Vector",
+          "selection",
+          "getData",
+          "TYPE",
+          "FigureSelection"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 37,
+        "end_line": 40,
+        "defs": [
+          "k",
+          "r1"
+        ],
+        "uses": [
+          "add",
+          "nextElement",
+          "figures",
+          "Figure",
+          "hasMoreElements",
+          "displayBox",
+          "Rectangle",
+          "elements",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 43,
+        "end_line": 43,
+        "defs": [],
+        "uses": [
+          "fView",
+          "clearSelection"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 45,
+        "end_line": 46,
+        "defs": [],
+        "uses": [
+          "insertFigures",
+          "figures",
+          "x",
+          "r",
+          "checkDamage",
+          "lastClick",
+          "fView",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "selection"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "lastClick"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "figures"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "figures"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.FigureChangeEventMulticaster",
+    "method_name": "remove(EventListener)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 65,
+        "end_line": 66,
+        "defs": [],
+        "uses": [
+          "a",
+          "b",
+          "oldl"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 67,
+        "end_line": 68,
+        "defs": [],
+        "uses": [
+          "a",
+          "b",
+          "oldl"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 69,
+        "end_line": 70,
+        "defs": [
+          "b2",
+          "a2"
+        ],
+        "uses": [
+          "a",
+          "removeInternal",
+          "EventListener",
+          "b",
+          "oldl",
+          "FigureChangeListener"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 71,
+        "end_line": 72,
+        "defs": [],
+        "uses": [
+          "b",
+          "a",
+          "b2",
+          "a2"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 73,
+        "end_line": 79,
+        "defs": [
+          "a1",
+          "b1"
+        ],
+        "uses": [
+          "FigureChangeEventMulticaster",
+          "b2",
+          "a2",
+          "FigureChangeListener"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "b2",
+          "a2"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "b2",
+          "a2"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.ConnectionTool",
+    "method_name": "mouseDrag(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 114,
+        "end_line": 114,
+        "defs": [
+          "p"
+        ],
+        "uses": [
+          "getX",
+          "e",
+          "getY",
+          "Point"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 115,
+        "end_line": 121,
+        "defs": [
+          "c"
+        ],
+        "uses": [
+          "findTarget",
+          "drawing",
+          "findSource",
+          "x",
+          "Figure",
+          "fStartConnector",
+          "y",
+          "fConnection"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 123,
+        "end_line": 130,
+        "defs": [],
+        "uses": [
+          "figure",
+          "connectorVisibility",
+          "mouse",
+          "fTarget",
+          "track",
+          "containing",
+          "the",
+          "c"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 132,
+        "end_line": 136,
+        "defs": [
+          "cc"
+        ],
+        "uses": [
+          "e",
+          "getY",
+          "getX",
+          "Connector",
+          "fConnectorTarget",
+          "findConnector",
+          "c"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 138,
+        "end_line": 141,
+        "defs": [],
+        "uses": [
+          "p",
+          "x",
+          "Geom",
+          "center",
+          "checkDamage",
+          "view",
+          "displayBox",
+          "endPoint",
+          "fConnectorTarget",
+          "y",
+          "fConnection"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 143,
+        "end_line": 146,
+        "defs": [
+          "pp"
+        ],
+        "uses": [
+          "fSplitPoint",
+          "x",
+          "fEditedConnection",
+          "setPointAt",
+          "Point",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "p"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "c"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "c"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.CompositeFigure",
+    "method_name": "findFigureWithout(int, int, Figure)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 240,
+        "end_line": 248,
+        "defs": [
+          "figure1",
+          "k1"
+        ],
+        "uses": [
+          "containsPoint",
+          "x",
+          "figuresReverse",
+          "hasMoreElements",
+          "Figure",
+          "y",
+          "FigureEnumeration",
+          "without",
+          "nextFigure"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 249,
+        "end_line": 255,
+        "defs": [
+          "figure",
+          "k"
+        ],
+        "uses": [
+          "containsPoint",
+          "includes",
+          "x",
+          "figuresReverse",
+          "hasMoreElements",
+          "Figure",
+          "y",
+          "FigureEnumeration",
+          "without",
+          "nextFigure"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.CompositeFigure",
+    "method_name": "findFigure(Rectangle, Figure)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 265,
+        "end_line": 274,
+        "defs": [
+          "figure1",
+          "k1",
+          "fr1"
+        ],
+        "uses": [
+          "r",
+          "Figure",
+          "figuresReverse",
+          "hasMoreElements",
+          "displayBox",
+          "Rectangle",
+          "intersects",
+          "FigureEnumeration",
+          "without",
+          "nextFigure"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 275,
+        "end_line": 282,
+        "defs": [
+          "figure",
+          "k",
+          "fr"
+        ],
+        "uses": [
+          "r",
+          "Figure",
+          "figuresReverse",
+          "hasMoreElements",
+          "displayBox",
+          "Rectangle",
+          "intersects",
+          "includes",
+          "FigureEnumeration",
+          "without",
+          "nextFigure"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.standard.BoxHandleKit",
+    "method_name": "addHandles(Figure, Vector)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 38,
+        "end_line": 41,
+        "defs": [],
+        "uses": [
+          "f",
+          "southEast",
+          "northEast",
+          "addElement",
+          "handles",
+          "northWest",
+          "southWest"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 42,
+        "end_line": 45,
+        "defs": [],
+        "uses": [
+          "f",
+          "east",
+          "south",
+          "west",
+          "addElement",
+          "handles",
+          "north"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+    "method_name": "update(FigureChangeEvent)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 209,
+        "end_line": 215,
+        "defs": [
+          "newEnd"
+        ],
+        "uses": [
+          "e",
+          "setEnd",
+          "start",
+          "getFigure",
+          "figureAt",
+          "duration",
+          "end",
+          "notifyPostTasks"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 216,
+        "end_line": 219,
+        "defs": [],
+        "uses": [
+          "changed",
+          "layout",
+          "needsLayout"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+    "method_name": "updateDurations()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 238,
+        "end_line": 238,
+        "defs": [
+          "newEnd"
+        ],
+        "uses": [
+          "duration",
+          "start"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 239,
+        "end_line": 240,
+        "defs": [],
+        "uses": [
+          "end",
+          "newEnd",
+          "setEnd"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 241,
+        "end_line": 243,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "nextElement",
+          "fPostTasks",
+          "PertFigure",
+          "updateDurations",
+          "hasMoreElements",
+          "elements",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "newEnd"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+    "method_name": "write(StorableOutput)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 261,
+        "end_line": 261,
+        "defs": [],
+        "uses": [
+          "dw",
+          "write"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 262,
+        "end_line": 265,
+        "defs": [],
+        "uses": [
+          "fDisplayBox",
+          "y",
+          "height",
+          "writeInt",
+          "x",
+          "width",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 267,
+        "end_line": 270,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "writeInt",
+          "nextElement",
+          "fPreTasks",
+          "size",
+          "hasMoreElements",
+          "writeStorable",
+          "elements",
+          "Storable",
+          "dw",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 271,
+        "end_line": 271,
+        "defs": [],
+        "uses": [
+          "fPostTasks",
+          "writeTasks",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+    "method_name": "read(StorableInput)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 282,
+        "end_line": 282,
+        "defs": [],
+        "uses": [
+          "dr",
+          "read"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 283,
+        "end_line": 287,
+        "defs": [],
+        "uses": [
+          "dr",
+          "fDisplayBox",
+          "Rectangle",
+          "readInt"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 288,
+        "end_line": 288,
+        "defs": [],
+        "uses": [
+          "layout"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 289,
+        "end_line": 293,
+        "defs": [
+          "i",
+          "size",
+          "v"
+        ],
+        "uses": [
+          "fPreTasks",
+          "Figure",
+          "Vector",
+          "dr",
+          "readStorable",
+          "addElement",
+          "readInt"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 294,
+        "end_line": 294,
+        "defs": [],
+        "uses": [
+          "dr",
+          "fPostTasks",
+          "readTasks"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.net.NodeFigure",
+    "method_name": "initialize()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 128,
+        "end_line": 128,
+        "defs": [],
+        "uses": [
+          "node",
+          "setText"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 129,
+        "end_line": 130,
+        "defs": [
+          "fb"
+        ],
+        "uses": [
+          "Helvetica",
+          "setFont",
+          "BOLD",
+          "Font"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 131,
+        "end_line": 135,
+        "defs": [],
+        "uses": [
+          "south",
+          "west",
+          "east",
+          "RelativeLocator",
+          "Vector",
+          "LocatorConnector",
+          "fConnectors",
+          "addElement",
+          "north"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
+    "method_name": "mouseDown(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 33,
+        "end_line": 35,
+        "defs": [
+          "pressedFigure"
+        ],
+        "uses": [
+          "drawing",
+          "x",
+          "Figure",
+          "findFigureInside",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 36,
+        "end_line": 46,
+        "defs": [
+          "event"
+        ],
+        "uses": [
+          "FloatingTextField",
+          "actionPerformed",
+          "endAction",
+          "addActionListener",
+          "fTextField",
+          "ActionListener",
+          "ActionEvent",
+          "pressedFigure"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 48,
+        "end_line": 49,
+        "defs": [],
+        "uses": [
+          "endEdit",
+          "pressedFigure",
+          "fURLTarget"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 50,
+        "end_line": 55,
+        "defs": [],
+        "uses": [
+          "fieldBounds",
+          "createOverlay",
+          "fURLTarget",
+          "Container",
+          "getURL",
+          "setBounds",
+          "view",
+          "fTextField",
+          "pressedFigure"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 56,
+        "end_line": 57,
+        "defs": [],
+        "uses": [
+          "endEdit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "pressedFigure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "pressedFigure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "pressedFigure"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
+    "method_name": "beginEdit(Figure)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 73,
+        "end_line": 82,
+        "defs": [
+          "event"
+        ],
+        "uses": [
+          "FloatingTextField",
+          "actionPerformed",
+          "endAction",
+          "addActionListener",
+          "fTextField",
+          "ActionListener",
+          "ActionEvent"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 84,
+        "end_line": 89,
+        "defs": [],
+        "uses": [
+          "figure",
+          "getText",
+          "fURLTarget",
+          "fTextField",
+          "setURL",
+          "endOverlay"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 90,
+        "end_line": 94,
+        "defs": [],
+        "uses": [
+          "figure",
+          "fieldBounds",
+          "createOverlay",
+          "fURLTarget",
+          "Container",
+          "getURL",
+          "setBounds",
+          "view",
+          "fTextField"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawViewer",
+    "method_name": "init()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 30,
+        "end_line": 32,
+        "defs": [],
+        "uses": [
+          "BorderLayout",
+          "fView",
+          "add",
+          "Center",
+          "StandardDrawingView",
+          "setLayout",
+          "getContentPane"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 33,
+        "end_line": 35,
+        "defs": [],
+        "uses": [
+          "view",
+          "fIconkit",
+          "Iconkit",
+          "fTool",
+          "FollowURLTool"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 37,
+        "end_line": 51,
+        "defs": [
+          "url",
+          "filename",
+          "when",
+          "e",
+          "stream",
+          "to",
+          "reader"
+        ],
+        "uses": [
+          "readStorable",
+          "fView",
+          "Drawing",
+          "StandardDrawing",
+          "Unable",
+          "IOException",
+          "Error",
+          "drawing",
+          "fDrawing",
+          "InputStream",
+          "out",
+          "showStatus",
+          "setDrawing",
+          "String",
+          "getCodeBase",
+          "StorableInput",
+          "URL",
+          "System",
+          "getParameter",
+          "openStream",
+          "load",
+          "Loading",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApplet",
+    "method_name": "createButtons(JPanel)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 78,
+        "end_line": 78,
+        "defs": [],
+        "uses": [
+          "panel",
+          "createButtons"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 79,
+        "end_line": 89,
+        "defs": [
+          "event"
+        ],
+        "uses": [
+          "fAnimator",
+          "actionPerformed",
+          "startAnimation",
+          "endAnimation",
+          "addActionListener",
+          "fAnimationButton",
+          "Start",
+          "ActionListener",
+          "JButton",
+          "ActionEvent",
+          "Animation"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 90,
+        "end_line": 90,
+        "defs": [],
+        "uses": [
+          "fAnimationButton",
+          "panel",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApp",
+    "method_name": "createAnimationMenu()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 106,
+        "end_line": 119,
+        "defs": [
+          "event",
+          "createAnimationMenu",
+          "mi",
+          "menu"
+        ],
+        "uses": [
+          "Animatable",
+          "drawing",
+          "Animator",
+          "JMenu",
+          "fAnimator",
+          "actionPerformed",
+          "start",
+          "view",
+          "addActionListener",
+          "JMenuItem",
+          "Start",
+          "ActionEvent",
+          "ActionListener",
+          "Animation",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 121,
+        "end_line": 129,
+        "defs": [
+          "event"
+        ],
+        "uses": [
+          "menu",
+          "actionPerformed",
+          "JMenuItem",
+          "addActionListener",
+          "endAnimation",
+          "Stop",
+          "ActionListener",
+          "mi",
+          "ActionEvent",
+          "Animation",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 130,
+        "end_line": 131,
+        "defs": [],
+        "uses": [
+          "menu"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "mi",
+          "menu"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.TextTool",
+    "method_name": "mouseDown(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 40,
+        "end_line": 47,
+        "defs": [
+          "pressedFigure",
+          "textHolder"
+        ],
+        "uses": [
+          "drawing",
+          "x",
+          "Figure",
+          "TextHolder",
+          "findFigureInside",
+          "y",
+          "acceptsTyping"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 48,
+        "end_line": 61,
+        "defs": [],
+        "uses": [
+          "fieldBounds",
+          "createOverlay",
+          "FloatingTextField",
+          "Container",
+          "setBounds",
+          "getFont",
+          "setTypingTarget",
+          "checkDamage",
+          "endEdit",
+          "view",
+          "fTextField",
+          "getText",
+          "textHolder",
+          "getTypingTarget"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 62,
+        "end_line": 69,
+        "defs": [],
+        "uses": [
+          "createdFigure",
+          "beginEdit",
+          "e",
+          "editor",
+          "x",
+          "endEdit",
+          "TextHolder",
+          "mouseDown",
+          "y",
+          "toolDone",
+          "getTypingTarget",
+          "textHolder"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "textHolder"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "textHolder"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.TextTool",
+    "method_name": "beginEdit(TextHolder)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 107,
+        "end_line": 108,
+        "defs": [],
+        "uses": [
+          "FloatingTextField",
+          "fTextField"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 110,
+        "end_line": 120,
+        "defs": [],
+        "uses": [
+          "figure",
+          "drawing",
+          "length",
+          "Figure",
+          "setTypingTarget",
+          "checkDamage",
+          "view",
+          "setText",
+          "fTextField",
+          "getText",
+          "endOverlay",
+          "remove",
+          "getTypingTarget"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 122,
+        "end_line": 124,
+        "defs": [],
+        "uses": [
+          "figure",
+          "fieldBounds",
+          "createOverlay",
+          "Container",
+          "setBounds",
+          "getFont",
+          "setTypingTarget",
+          "view",
+          "fTextField",
+          "getText"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 126,
+        "end_line": 126,
+        "defs": [],
+        "uses": [
+          "view",
+          "checkDamage"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.TextFigure",
+    "method_name": "setAttribute(String, Object)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 145,
+        "end_line": 152,
+        "defs": [
+          "font",
+          "s"
+        ],
+        "uses": [
+          "willChange",
+          "Integer",
+          "getFont",
+          "equals",
+          "value",
+          "name",
+          "FontSize",
+          "getStyle",
+          "intValue",
+          "changed",
+          "markDirty",
+          "getName",
+          "fFont",
+          "Font"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 153,
+        "end_line": 161,
+        "defs": [
+          "s",
+          "style"
+        ],
+        "uses": [
+          "FontStyle",
+          "intValue",
+          "getSize",
+          "Integer",
+          "PLAIN",
+          "equals",
+          "value",
+          "getName",
+          "name",
+          "setFont",
+          "getStyle",
+          "font",
+          "Font"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 162,
+        "end_line": 165,
+        "defs": [
+          "n"
+        ],
+        "uses": [
+          "getSize",
+          "font",
+          "equals",
+          "value",
+          "FontName",
+          "String",
+          "name",
+          "setFont",
+          "getStyle",
+          "Font"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 166,
+        "end_line": 167,
+        "defs": [],
+        "uses": [
+          "name",
+          "setAttribute",
+          "value"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "font"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "font"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.TextFigure",
+    "method_name": "connect(Figure)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 281,
+        "end_line": 282,
+        "defs": [],
+        "uses": [
+          "fObservedFigure",
+          "removeFigureChangeListener"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 284,
+        "end_line": 285,
+        "defs": [],
+        "uses": [
+          "fObservedFigure",
+          "figure",
+          "connectedTextLocator",
+          "fLocator",
+          "OffsetLocator"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 286,
+        "end_line": 286,
+        "defs": [],
+        "uses": [
+          "fObservedFigure",
+          "addFigureChangeListener"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 287,
+        "end_line": 297,
+        "defs": [
+          "p"
+        ],
+        "uses": [
+          "fObservedFigure",
+          "willChange",
+          "locate",
+          "x",
+          "height",
+          "changed",
+          "size",
+          "fOriginY",
+          "Point",
+          "fLocator",
+          "fOriginX",
+          "y",
+          "basicMoveBy",
+          "width"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ScribbleTool",
+    "method_name": "mouseDown(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 52,
+        "end_line": 55,
+        "defs": [],
+        "uses": [
+          "getClickCount",
+          "fScribble",
+          "e",
+          "editor",
+          "toolDone"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 56,
+        "end_line": 64,
+        "defs": [
+          "x1",
+          "y1"
+        ],
+        "uses": [
+          "e",
+          "getY",
+          "view",
+          "getX",
+          "PolyLineFigure",
+          "fScribble",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 65,
+        "end_line": 69,
+        "defs": [],
+        "uses": [
+          "y1",
+          "fLastY",
+          "fScribble",
+          "fLastX",
+          "x1",
+          "addPoint"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "x1",
+          "y1"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.RadiusHandle",
+    "method_name": "invokeStep(int, int, int, int, DrawingView)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 34,
+        "end_line": 35,
+        "defs": [
+          "dx",
+          "dy"
+        ],
+        "uses": [
+          "anchorY",
+          "x",
+          "y",
+          "anchorX"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 36,
+        "end_line": 37,
+        "defs": [
+          "r",
+          "max"
+        ],
+        "uses": [
+          "fOwner",
+          "displayBox",
+          "Rectangle",
+          "width"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 38,
+        "end_line": 43,
+        "defs": [
+          "value",
+          "rx"
+        ],
+        "uses": [
+          "x",
+          "dx",
+          "max",
+          "fRadius"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 44,
+        "end_line": 44,
+        "defs": [
+          "ry"
+        ],
+        "uses": [
+          "dy",
+          "fRadius",
+          "height",
+          "r",
+          "Geom",
+          "range",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 45,
+        "end_line": 45,
+        "defs": [],
+        "uses": [
+          "fOwner",
+          "setArc",
+          "ry",
+          "rx"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "dx"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "dy"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "max"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "r"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "rx"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "ry"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.PolyLineFigure",
+    "method_name": "draw(Graphics)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 186,
+        "end_line": 186,
+        "defs": [],
+        "uses": [
+          "setColor",
+          "getFrameColor",
+          "g"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 187,
+        "end_line": 192,
+        "defs": [
+          "p1",
+          "i"
+        ],
+        "uses": [
+          "p2",
+          "g",
+          "x",
+          "size",
+          "Point",
+          "elementAt",
+          "fPoints",
+          "y",
+          "drawLine"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 193,
+        "end_line": 197,
+        "defs": [
+          "p21",
+          "p11"
+        ],
+        "uses": [
+          "g",
+          "x",
+          "Point",
+          "elementAt",
+          "fPoints",
+          "getStartDecoration",
+          "y",
+          "draw"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 198,
+        "end_line": 202,
+        "defs": [
+          "p3",
+          "p4"
+        ],
+        "uses": [
+          "g",
+          "x",
+          "size",
+          "Point",
+          "getEndDecoration",
+          "elementAt",
+          "fPoints",
+          "y",
+          "draw"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.PolyLineFigure",
+    "method_name": "write(StorableOutput)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 308,
+        "end_line": 308,
+        "defs": [],
+        "uses": [
+          "dw",
+          "write"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 309,
+        "end_line": 309,
+        "defs": [],
+        "uses": [
+          "writeInt",
+          "dw",
+          "size",
+          "fPoints"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 310,
+        "end_line": 315,
+        "defs": [
+          "p",
+          "k"
+        ],
+        "uses": [
+          "elements",
+          "writeInt",
+          "nextElement",
+          "x",
+          "hasMoreElements",
+          "Point",
+          "fPoints",
+          "y",
+          "dw",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 316,
+        "end_line": 317,
+        "defs": [],
+        "uses": [
+          "fStartDecoration",
+          "fEndDecoration",
+          "writeStorable",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 318,
+        "end_line": 320,
+        "defs": [],
+        "uses": [
+          "getBlue",
+          "fFrameColor",
+          "writeInt",
+          "getGreen",
+          "getRed",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.InsertImageCommand",
+    "method_name": "execute()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 37,
+        "end_line": 38,
+        "defs": [
+          "r"
+        ],
+        "uses": [
+          "Iconkit",
+          "fImage",
+          "registerImage",
+          "instance"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 39,
+        "end_line": 39,
+        "defs": [],
+        "uses": [
+          "loadRegisteredImages",
+          "fView",
+          "r",
+          "Component"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 40,
+        "end_line": 40,
+        "defs": [
+          "image"
+        ],
+        "uses": [
+          "Image",
+          "fImage",
+          "getImage",
+          "r"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 41,
+        "end_line": 42,
+        "defs": [
+          "figure"
+        ],
+        "uses": [
+          "fImage",
+          "image",
+          "fView",
+          "lastClick",
+          "ImageFigure",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 43,
+        "end_line": 45,
+        "defs": [],
+        "uses": [
+          "figure",
+          "fView",
+          "addToSelection",
+          "clearSelection",
+          "checkDamage"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "r"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "r"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "image"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.GroupCommand",
+    "method_name": "execute()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 34,
+        "end_line": 35,
+        "defs": [
+          "drawing",
+          "selected"
+        ],
+        "uses": [
+          "fView",
+          "Drawing",
+          "Vector",
+          "selectionZOrdered"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 36,
+        "end_line": 38,
+        "defs": [],
+        "uses": [
+          "drawing",
+          "fView",
+          "selected",
+          "size",
+          "clearSelection",
+          "orphanAll"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 40,
+        "end_line": 43,
+        "defs": [
+          "k",
+          "group"
+        ],
+        "uses": [
+          "add",
+          "nextElement",
+          "Figure",
+          "hasMoreElements",
+          "GroupFigure",
+          "elements",
+          "Enumeration",
+          "selected"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 44,
+        "end_line": 45,
+        "defs": [],
+        "uses": [
+          "drawing",
+          "fView",
+          "addToSelection",
+          "group",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 46,
+        "end_line": 46,
+        "defs": [],
+        "uses": [
+          "fView",
+          "checkDamage"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "drawing",
+          "selected"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "selected"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "drawing"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "group"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ElbowHandle",
+    "method_name": "invokeStep(int, int, int, int, DrawingView)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 33,
+        "end_line": 35,
+        "defs": [
+          "p2",
+          "p1",
+          "line"
+        ],
+        "uses": [
+          "fSegment",
+          "Point",
+          "ownerConnection",
+          "pointAt",
+          "LineConnection"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 36,
+        "end_line": 37,
+        "defs": [
+          "ddy",
+          "ddx"
+        ],
+        "uses": [
+          "x",
+          "y",
+          "fLastY",
+          "fLastX"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 41,
+        "end_line": 64,
+        "defs": [
+          "i2",
+          "endFigure",
+          "cx",
+          "start",
+          "i1",
+          "startFigure",
+          "end",
+          "x1",
+          "line1",
+          "r1x"
+        ],
+        "uses": [
+          "fSegment",
+          "Figure",
+          "p1",
+          "pointCount",
+          "r2width",
+          "y",
+          "left",
+          "p2",
+          "r1width",
+          "displayBox",
+          "Rectangle",
+          "isVertical",
+          "np1",
+          "np2",
+          "Point",
+          "connectionInsets",
+          "range",
+          "r2x",
+          "LineConnection",
+          "width",
+          "Insets",
+          "owner",
+          "x",
+          "right",
+          "ownerConnection",
+          "Geom",
+          "ddx"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 65,
+        "end_line": 69,
+        "defs": [
+          "cy"
+        ],
+        "uses": [
+          "p2",
+          "ddy",
+          "np2",
+          "np1",
+          "x",
+          "constrainY",
+          "Point",
+          "p1",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 70,
+        "end_line": 73,
+        "defs": [],
+        "uses": [
+          "fSegment",
+          "np1",
+          "np2",
+          "fLastY",
+          "x",
+          "setPointAt",
+          "line",
+          "fLastX",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "p2",
+          "p1"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "p2",
+          "p1"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "line"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "ddx"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "ddy"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ElbowHandle",
+    "method_name": "constrainX(int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 99,
+        "end_line": 101,
+        "defs": [
+          "endFigure",
+          "line",
+          "startFigure"
+        ],
+        "uses": [
+          "owner",
+          "Figure",
+          "start",
+          "ownerConnection",
+          "end",
+          "LineConnection"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 102,
+        "end_line": 105,
+        "defs": [
+          "end",
+          "i1",
+          "i2",
+          "start"
+        ],
+        "uses": [
+          "endFigure",
+          "Insets",
+          "displayBox",
+          "Rectangle",
+          "startFigure",
+          "connectionInsets"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 107,
+        "end_line": 109,
+        "defs": [
+          "r1x"
+        ],
+        "uses": [
+          "x",
+          "r1width",
+          "right",
+          "i1",
+          "start",
+          "left",
+          "width"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 111,
+        "end_line": 112,
+        "defs": [
+          "r2x"
+        ],
+        "uses": [
+          "i2",
+          "x",
+          "right",
+          "end",
+          "r2width",
+          "left",
+          "width"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 114,
+        "end_line": 122,
+        "defs": [
+          "value",
+          "max"
+        ],
+        "uses": [
+          "x",
+          "fSegment",
+          "r1width",
+          "r1x"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 123,
+        "end_line": 124,
+        "defs": [],
+        "uses": [
+          "fSegment",
+          "x",
+          "Geom",
+          "line",
+          "range",
+          "r2x",
+          "pointCount",
+          "r2width"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 125,
+        "end_line": 125,
+        "defs": [],
+        "uses": [
+          "x"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "endFigure",
+          "startFigure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "line"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 1,
+        "type": "DD",
+        "vars": [
+          "end",
+          "start"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "i1",
+          "start"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "end",
+          "i2"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "r1x"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "r2x"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ElbowHandle",
+    "method_name": "constrainY(int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 129,
+        "end_line": 131,
+        "defs": [
+          "endFigure",
+          "line",
+          "startFigure"
+        ],
+        "uses": [
+          "owner",
+          "Figure",
+          "start",
+          "ownerConnection",
+          "end",
+          "LineConnection"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 132,
+        "end_line": 135,
+        "defs": [
+          "end",
+          "i1",
+          "i2",
+          "start"
+        ],
+        "uses": [
+          "endFigure",
+          "Insets",
+          "displayBox",
+          "Rectangle",
+          "startFigure",
+          "connectionInsets"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 137,
+        "end_line": 141,
+        "defs": [
+          "r1y"
+        ],
+        "uses": [
+          "i2",
+          "r1height",
+          "height",
+          "bottom",
+          "start",
+          "i1",
+          "top",
+          "end",
+          "y",
+          "r2y",
+          "r2height"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 143,
+        "end_line": 151,
+        "defs": [
+          "value",
+          "max"
+        ],
+        "uses": [
+          "r1height",
+          "fSegment",
+          "r1y",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 152,
+        "end_line": 153,
+        "defs": [],
+        "uses": [
+          "fSegment",
+          "y",
+          "line",
+          "range",
+          "pointCount",
+          "Geom",
+          "r2y",
+          "r2height"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 154,
+        "end_line": 154,
+        "defs": [],
+        "uses": [
+          "y"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "endFigure",
+          "startFigure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "line"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 1,
+        "type": "DD",
+        "vars": [
+          "end",
+          "start"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "end",
+          "i1",
+          "i2",
+          "start"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "r1y"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ElbowConnection",
+    "method_name": "updatePoints()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 57,
+        "end_line": 60,
+        "defs": [
+          "end",
+          "start"
+        ],
+        "uses": [
+          "willChange",
+          "updatePoints",
+          "startPoint",
+          "Point",
+          "endPoint"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 61,
+        "end_line": 62,
+        "defs": [],
+        "uses": [
+          "addElement",
+          "removeAllElements",
+          "fPoints",
+          "start"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 64,
+        "end_line": 66,
+        "defs": [],
+        "uses": [
+          "y",
+          "fPoints",
+          "addElement",
+          "end",
+          "x",
+          "start"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 67,
+        "end_line": 94,
+        "defs": [
+          "r2",
+          "vy",
+          "r1",
+          "vx",
+          "direction",
+          "x1",
+          "dir"
+        ],
+        "uses": [
+          "x2",
+          "end",
+          "y",
+          "addElement",
+          "y1",
+          "NORTH",
+          "height",
+          "displayBox",
+          "Rectangle",
+          "EAST",
+          "WEST",
+          "Point",
+          "fPoints",
+          "width",
+          "owner",
+          "x",
+          "start",
+          "SOUTH",
+          "Geom",
+          "y2"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 95,
+        "end_line": 96,
+        "defs": [],
+        "uses": [
+          "changed"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "start"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "end",
+          "start"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "end",
+          "start"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.AttributeFigure",
+    "method_name": "getAttribute(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 132,
+        "end_line": 135,
+        "defs": [],
+        "uses": [
+          "fAttributes",
+          "name",
+          "hasDefined",
+          "get"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 136,
+        "end_line": 138,
+        "defs": [],
+        "uses": [
+          "fgDefaultAttributes",
+          "name",
+          "get",
+          "initializeAttributes"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.AbstractLineDecoration",
+    "method_name": "write(StorableOutput)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 63,
+        "end_line": 74,
+        "defs": [
+          "color"
+        ],
+        "uses": [
+          "getRed",
+          "FillColor",
+          "writeInt",
+          "getGreen",
+          "getFillColor",
+          "writeString",
+          "noFillColor",
+          "getBlue",
+          "Color",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 76,
+        "end_line": 81,
+        "defs": [],
+        "uses": [
+          "writeColor",
+          "BorderColor",
+          "FigureAttributes",
+          "writeString",
+          "getBorderColor",
+          "noBorderColor",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.SplitPaneDrawApplication",
+    "method_name": "createContents(StandardDrawingView)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 46,
+        "end_line": 48,
+        "defs": [
+          "view",
+          "createContents"
+        ],
+        "uses": [
+          "JComponent",
+          "StandardDrawingView",
+          "createLeftComponent",
+          "createRightComponent"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 50,
+        "end_line": 52,
+        "defs": [],
+        "uses": [
+          "getRightComponent",
+          "view",
+          "getLeftComponent",
+          "createContents"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 53,
+        "end_line": 55,
+        "defs": [],
+        "uses": [
+          "getRightComponent",
+          "getLeftComponent"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 56,
+        "end_line": 58,
+        "defs": [],
+        "uses": [
+          "getRightComponent",
+          "getLeftComponent"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 59,
+        "end_line": 64,
+        "defs": [
+          "dividedContents"
+        ],
+        "uses": [
+          "getLeftComponent",
+          "HORIZONTAL_SPLIT",
+          "setAlignmentX",
+          "setOneTouchExpandable",
+          "LEFT_ALIGNMENT",
+          "getRightComponent",
+          "JSplitPane"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "view",
+          "createContents"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.PolygonTool",
+    "method_name": "mouseDown(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 56,
+        "end_line": 57,
+        "defs": [],
+        "uses": [
+          "e",
+          "getY",
+          "getX",
+          "y",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 59,
+        "end_line": 64,
+        "defs": [],
+        "uses": [
+          "getClickCount",
+          "fPolygon",
+          "e",
+          "editor",
+          "toolDone",
+          "smoothPoints"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 66,
+        "end_line": 81,
+        "defs": [
+          "x1",
+          "y1"
+        ],
+        "uses": [
+          "add",
+          "fLastY",
+          "e",
+          "getY",
+          "PolygonFigure",
+          "view",
+          "getX",
+          "fLastX",
+          "fPolygon",
+          "addPoint"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+    "method_name": "scaleRotate(Point, Polygon, Point)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 191,
+        "end_line": 194,
+        "defs": [
+          "sx",
+          "sy",
+          "n1"
+        ],
+        "uses": [
+          "willChange",
+          "npoints",
+          "originalPolygon"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 195,
+        "end_line": 198,
+        "defs": [
+          "i1"
+        ],
+        "uses": [
+          "originalPolygon",
+          "xpoints",
+          "n1",
+          "sx",
+          "sy",
+          "ypoints"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 201,
+        "end_line": 202,
+        "defs": [
+          "anchorLen",
+          "ctr"
+        ],
+        "uses": [
+          "y",
+          "x",
+          "length",
+          "anchor",
+          "Point",
+          "n1",
+          "Geom",
+          "sx",
+          "sy"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 204,
+        "end_line": 210,
+        "defs": [
+          "rotation",
+          "newLen",
+          "anchorAngle",
+          "ratio",
+          "newAngle"
+        ],
+        "uses": [
+          "y",
+          "ctr",
+          "p",
+          "x",
+          "length",
+          "anchorLen",
+          "Math",
+          "Geom",
+          "anchor",
+          "atan2"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 212,
+        "end_line": 223,
+        "defs": [
+          "x",
+          "l",
+          "a",
+          "n",
+          "y",
+          "i"
+        ],
+        "uses": [
+          "ys",
+          "rotation",
+          "ctr",
+          "Math",
+          "length",
+          "xs",
+          "xpoints",
+          "cos",
+          "originalPolygon",
+          "sin",
+          "Geom",
+          "npoints",
+          "ypoints",
+          "atan2",
+          "ratio"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 224,
+        "end_line": 224,
+        "defs": [],
+        "uses": [
+          "n",
+          "fPoly",
+          "Polygon",
+          "ys",
+          "xs"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 225,
+        "end_line": 226,
+        "defs": [],
+        "uses": [
+          "changed"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sx",
+          "sy",
+          "n1"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sx",
+          "sy",
+          "n1"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "anchorLen",
+          "ctr"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "ctr"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "rotation",
+          "ratio"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "x",
+          "y"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "n"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+    "method_name": "splitSegment(int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 267,
+        "end_line": 269,
+        "defs": [
+          "dist",
+          "x",
+          "best",
+          "splitSegment",
+          "y"
+        ],
+        "uses": [
+          "TOO_CLOSE"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 271,
+        "end_line": 280,
+        "defs": [
+          "n",
+          "d",
+          "i1"
+        ],
+        "uses": [
+          "distanceFromLine",
+          "dist",
+          "x",
+          "best",
+          "xpoints",
+          "fPoly",
+          "ypoints",
+          "y",
+          "npoints"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 281,
+        "end_line": 285,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "x",
+          "best",
+          "insertPointAt",
+          "Point",
+          "y"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 286,
+        "end_line": 288,
+        "defs": [],
+        "uses": [],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "x",
+          "y",
+          "dist",
+          "best"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "x",
+          "y",
+          "best"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+    "method_name": "chop(Polygon, Point)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 480,
+        "end_line": 488,
+        "defs": [
+          "chop",
+          "poly",
+          "ctr",
+          "p",
+          "i1",
+          "n",
+          "sx",
+          "sy"
+        ],
+        "uses": [
+          "xpoints",
+          "Point",
+          "Polygon",
+          "ypoints",
+          "npoints"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 489,
+        "end_line": 491,
+        "defs": [
+          "cy",
+          "cx",
+          "len"
+        ],
+        "uses": [
+          "MAX_VALUE",
+          "Long"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 495,
+        "end_line": 513,
+        "defs": [
+          "chop",
+          "i",
+          "nxt",
+          "cl"
+        ],
+        "uses": [
+          "intersect",
+          "poly",
+          "ctr",
+          "p",
+          "x",
+          "xpoints",
+          "Geom",
+          "cx",
+          "Point",
+          "len",
+          "cy",
+          "y",
+          "npoints",
+          "ypoints",
+          "length2"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 516,
+        "end_line": 524,
+        "defs": [
+          "l",
+          "i"
+        ],
+        "uses": [
+          "poly",
+          "anyway",
+          "npoints",
+          "p",
+          "x",
+          "xpoints",
+          "Geom",
+          "cx",
+          "len",
+          "cy",
+          "y",
+          "ypoints",
+          "length2"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 526,
+        "end_line": 527,
+        "defs": [],
+        "uses": [
+          "cy",
+          "Point",
+          "cx"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "p",
+          "poly",
+          "ctr"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "p",
+          "poly"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "cy",
+          "cx",
+          "len"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "cy",
+          "cx",
+          "len"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "cy",
+          "cx"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.DiamondFigure",
+    "method_name": "draw(Graphics)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 42,
+        "end_line": 43,
+        "defs": [
+          "p1",
+          "r"
+        ],
+        "uses": [
+          "Polygon",
+          "displayBox",
+          "Rectangle"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 44,
+        "end_line": 47,
+        "defs": [],
+        "uses": [
+          "p1",
+          "y",
+          "height",
+          "x",
+          "r",
+          "width",
+          "addPoint"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 48,
+        "end_line": 48,
+        "defs": [
+          "p"
+        ],
+        "uses": [
+          "Polygon",
+          "p1"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 49,
+        "end_line": 50,
+        "defs": [],
+        "uses": [
+          "g",
+          "setColor",
+          "fillPolygon",
+          "p",
+          "getFillColor"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 51,
+        "end_line": 52,
+        "defs": [],
+        "uses": [
+          "getFrameColor",
+          "g",
+          "drawPolygon",
+          "setColor",
+          "p"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "p1",
+          "r"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "p1"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "p"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "p"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+    "method_name": "mouseDown(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 50,
+        "end_line": 51,
+        "defs": [
+          "figure"
+        ],
+        "uses": [
+          "drawing",
+          "e",
+          "getY",
+          "isPopupTrigger",
+          "Figure",
+          "getX",
+          "findFigure"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 52,
+        "end_line": 56,
+        "defs": [
+          "attribute"
+        ],
+        "uses": [
+          "figure",
+          "drawing",
+          "Object",
+          "getAttribute",
+          "e",
+          "getY",
+          "Figure",
+          "getX",
+          "findFigureInside",
+          "POPUP_MENU"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 57,
+        "end_line": 59,
+        "defs": [],
+        "uses": [
+          "figure",
+          "getY",
+          "showPopupMenu",
+          "getX",
+          "e",
+          "getComponent"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 62,
+        "end_line": 65,
+        "defs": [],
+        "uses": [
+          "x",
+          "y",
+          "handleMouseDown",
+          "mouseDown",
+          "e"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+    "method_name": "mouseUp(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 93,
+        "end_line": 104,
+        "defs": [
+          "figure",
+          "attribute"
+        ],
+        "uses": [
+          "drawing",
+          "showPopupMenu",
+          "findFigure",
+          "Object",
+          "e",
+          "isPopupTrigger",
+          "getY",
+          "getAttribute",
+          "Figure",
+          "getComponent",
+          "getX",
+          "findFigureInside",
+          "POPUP_MENU"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 105,
+        "end_line": 107,
+        "defs": [],
+        "uses": [
+          "x",
+          "handleMouseDoubleClick",
+          "getClickCount",
+          "y",
+          "e"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 108,
+        "end_line": 112,
+        "defs": [],
+        "uses": [
+          "x",
+          "handleMouseUp",
+          "y",
+          "handleMouseClick",
+          "e",
+          "mouseUp"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+    "method_name": "handlePopupMenu(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 148,
+        "end_line": 152,
+        "defs": [
+          "figure",
+          "attribute"
+        ],
+        "uses": [
+          "drawing",
+          "findFigure",
+          "Object",
+          "e",
+          "getY",
+          "getAttribute",
+          "Figure",
+          "getX",
+          "findFigureInside",
+          "POPUP_MENU"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 154,
+        "end_line": 160,
+        "defs": [
+          "attribute1",
+          "comp",
+          "popup"
+        ],
+        "uses": [
+          "figure",
+          "JPopupMenu",
+          "PopupMenuFigureSelection",
+          "Object",
+          "Component",
+          "e",
+          "getAttribute",
+          "setSelectedFigure",
+          "Figure",
+          "getComponent",
+          "POPUP_MENU"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 162,
+        "end_line": 167,
+        "defs": [
+          "newLocation",
+          "frames"
+        ],
+        "uses": [
+          "adjustOffsets",
+          "getParent",
+          "e",
+          "getY",
+          "Point",
+          "MDI",
+          "setInvoker",
+          "setLocation",
+          "setVisible",
+          "offsets",
+          "popup",
+          "comp",
+          "getX",
+          "internal",
+          "calculate"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "comp",
+          "popup"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.application.DrawApplication",
+    "method_name": "promptOpen()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 692,
+        "end_line": 692,
+        "defs": [],
+        "uses": [
+          "toolDone"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 693,
+        "end_line": 694,
+        "defs": [
+          "openDialog"
+        ],
+        "uses": [
+          "registerFileFilters",
+          "JFileChooser",
+          "createOpenFileChooser",
+          "getStorageFormatManager"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 695,
+        "end_line": 695,
+        "defs": [],
+        "uses": [
+          "openDialog",
+          "JFileChooser",
+          "showOpenDialog",
+          "APPROVE_OPTION"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 696,
+        "end_line": 697,
+        "defs": [
+          "foundFormat"
+        ],
+        "uses": [
+          "StorageFormat",
+          "openDialog",
+          "getStorageFormatManager",
+          "getFileFilter",
+          "findStorageFormat"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 698,
+        "end_line": 711,
+        "defs": [
+          "e",
+          "restoredDrawing",
+          "file"
+        ],
+        "uses": [
+          "setDrawingTitle",
+          "showStatus",
+          "openDialog",
+          "setDrawing",
+          "String",
+          "newWindow",
+          "Drawing",
+          "restore",
+          "IOException",
+          "Error",
+          "could",
+          "type",
+          "getSelectedFile",
+          "open",
+          "foundFormat",
+          "not",
+          "Unknown",
+          "getAbsolutePath"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 712,
+        "end_line": 715,
+        "defs": [
+          "a"
+        ],
+        "uses": [
+          "format",
+          "getDescription",
+          "showStatus",
+          "valid",
+          "file",
+          "openDialog",
+          "getFileFilter",
+          "Not"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "openDialog"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "openDialog"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "openDialog"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "openDialog"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "foundFormat"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "file"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.application.DrawApplication",
+    "method_name": "promptSaveAs()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 723,
+        "end_line": 723,
+        "defs": [],
+        "uses": [
+          "toolDone"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 724,
+        "end_line": 726,
+        "defs": [
+          "saveDialog1",
+          "saveDialog"
+        ],
+        "uses": [
+          "Save",
+          "JFileChooser",
+          "setDialogTitle",
+          "File"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 727,
+        "end_line": 727,
+        "defs": [],
+        "uses": [
+          "registerFileFilters",
+          "saveDialog",
+          "getStorageFormatManager"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 729,
+        "end_line": 737,
+        "defs": [
+          "a",
+          "foundFormat"
+        ],
+        "uses": [
+          "showStatus",
+          "getFileFilter",
+          "findStorageFormat",
+          "format",
+          "JFileChooser",
+          "getDescription",
+          "StorageFormat",
+          "APPROVE_OPTION",
+          "getSelectedFile",
+          "showSaveDialog",
+          "getStorageFormatManager",
+          "file",
+          "valid",
+          "Not",
+          "saveDialog",
+          "saveDrawing",
+          "getAbsolutePath"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "saveDialog"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "saveDialog"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "init()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 64,
+        "end_line": 66,
+        "defs": [],
+        "uses": [
+          "BorderLayout",
+          "fIconkit",
+          "Iconkit",
+          "setLayout",
+          "getContentPane"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 68,
+        "end_line": 68,
+        "defs": [],
+        "uses": [
+          "createDrawingView",
+          "fView"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 70,
+        "end_line": 81,
+        "defs": [
+          "attributes"
+        ],
+        "uses": [
+          "JLabel",
+          "createAttributesPanel",
+          "Pen",
+          "Text",
+          "fFrameColor",
+          "Fill",
+          "FillColor",
+          "fFillColor",
+          "TextColor",
+          "fTextColor",
+          "createColorChoice",
+          "JPanel",
+          "FrameColor",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 83,
+        "end_line": 90,
+        "defs": [
+          "choice"
+        ],
+        "uses": [
+          "ARROW_TIP_NONE",
+          "JLabel",
+          "ARROW_TIP_BOTH",
+          "Integer",
+          "Both",
+          "End",
+          "CommandChoice",
+          "fView",
+          "at",
+          "Start",
+          "ARROW_TIP_START",
+          "ChangeAttributeCommand",
+          "ARROW_TIP_END",
+          "PolyLineFigure",
+          "attributes",
+          "fArrowChoice",
+          "ArrowMode",
+          "Arrow",
+          "addItem",
+          "none",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 92,
+        "end_line": 95,
+        "defs": [],
+        "uses": [
+          "attributes",
+          "createFontChoice",
+          "JLabel",
+          "fFontChoice",
+          "Font",
+          "getContentPane",
+          "North",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 97,
+        "end_line": 99,
+        "defs": [
+          "toolPanel"
+        ],
+        "uses": [
+          "add",
+          "West",
+          "createTools",
+          "createToolPalette",
+          "JPanel",
+          "getContentPane"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 101,
+        "end_line": 101,
+        "defs": [],
+        "uses": [
+          "getContentPane",
+          "fView",
+          "Center",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 102,
+        "end_line": 104,
+        "defs": [
+          "buttonPalette"
+        ],
+        "uses": [
+          "South",
+          "add",
+          "createButtons",
+          "createButtonPanel",
+          "JPanel",
+          "getContentPane"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 106,
+        "end_line": 109,
+        "defs": [],
+        "uses": [
+          "initDrawing",
+          "setupAttributes"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "attributes"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "attributes"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "createAttributeChoices(JPanel)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 141,
+        "end_line": 143,
+        "defs": [],
+        "uses": [
+          "JLabel",
+          "createColorChoice",
+          "Fill",
+          "FillColor",
+          "fFillColor",
+          "panel",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 145,
+        "end_line": 147,
+        "defs": [],
+        "uses": [
+          "JLabel",
+          "fTextColor",
+          "createColorChoice",
+          "Text",
+          "TextColor",
+          "panel",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 149,
+        "end_line": 151,
+        "defs": [],
+        "uses": [
+          "JLabel",
+          "Pen",
+          "createColorChoice",
+          "fFrameColor",
+          "FrameColor",
+          "panel",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 153,
+        "end_line": 160,
+        "defs": [
+          "choice"
+        ],
+        "uses": [
+          "ARROW_TIP_NONE",
+          "JLabel",
+          "ARROW_TIP_BOTH",
+          "Integer",
+          "Both",
+          "panel",
+          "End",
+          "CommandChoice",
+          "fView",
+          "at",
+          "Start",
+          "ARROW_TIP_START",
+          "ChangeAttributeCommand",
+          "ARROW_TIP_END",
+          "PolyLineFigure",
+          "fArrowChoice",
+          "ArrowMode",
+          "Arrow",
+          "addItem",
+          "none",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 162,
+        "end_line": 168,
+        "defs": [
+          "fonts",
+          "choice1",
+          "i"
+        ],
+        "uses": [
+          "JLabel",
+          "fFontChoice",
+          "FontName",
+          "panel",
+          "CommandChoice",
+          "String",
+          "fView",
+          "Toolkit",
+          "ChangeAttributeCommand",
+          "getDefaultToolkit",
+          "Font",
+          "length",
+          "addItem",
+          "getFontList",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "loadDrawing(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 427,
+        "end_line": 431,
+        "defs": [],
+        "uses": [
+          "initDrawing",
+          "fDrawing",
+          "param",
+          "fgUntitled",
+          "release"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 433,
+        "end_line": 434,
+        "defs": [
+          "filename"
+        ],
+        "uses": [
+          "getParameter",
+          "String",
+          "param"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 435,
+        "end_line": 436,
+        "defs": [
+          "type"
+        ],
+        "uses": [
+          "String",
+          "filename",
+          "toolDone",
+          "guessType"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 437,
+        "end_line": 443,
+        "defs": [
+          "file"
+        ],
+        "uses": [
+          "type",
+          "filename",
+          "storable",
+          "readFromObjectInput",
+          "showStatus",
+          "equals",
+          "serialized",
+          "readFromStorableInput",
+          "Unknown"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "filename"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "filename"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "type"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "readDrawing(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 447,
+        "end_line": 447,
+        "defs": [],
+        "uses": [
+          "toolDone"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 448,
+        "end_line": 448,
+        "defs": [
+          "type"
+        ],
+        "uses": [
+          "String",
+          "guessType",
+          "filename"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 449,
+        "end_line": 450,
+        "defs": [],
+        "uses": [
+          "type",
+          "filename",
+          "storable",
+          "readFromStorableInput",
+          "equals"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 451,
+        "end_line": 465,
+        "defs": [
+          "url",
+          "e",
+          "stream",
+          "not",
+          "input"
+        ],
+        "uses": [
+          "ObjectInputStream",
+          "found",
+          "equals",
+          "showStatus",
+          "release",
+          "ClassNotFoundException",
+          "setDrawing",
+          "Class",
+          "fView",
+          "Drawing",
+          "readObject",
+          "IOException",
+          "Error",
+          "getCodeBase",
+          "URL",
+          "initDrawing",
+          "filename",
+          "type",
+          "ObjectInput",
+          "openStream",
+          "fDrawing",
+          "serialized",
+          "InputStream"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 466,
+        "end_line": 467,
+        "defs": [
+          "file"
+        ],
+        "uses": [
+          "Unknown",
+          "showStatus",
+          "type"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "type"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "type"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "type"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "readFromStorableInput(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 471,
+        "end_line": 474,
+        "defs": [
+          "url",
+          "stream",
+          "input"
+        ],
+        "uses": [
+          "filename",
+          "openStream",
+          "getCodeBase",
+          "InputStream",
+          "URL",
+          "StorableInput"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 475,
+        "end_line": 478,
+        "defs": [],
+        "uses": [
+          "readStorable",
+          "fView",
+          "Drawing",
+          "fDrawing",
+          "input",
+          "release",
+          "setDrawing"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 479,
+        "end_line": 483,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "showStatus",
+          "createDrawing",
+          "setDrawing",
+          "fView",
+          "fDrawing",
+          "IOException",
+          "toolDone",
+          "Error"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "input"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "readFromObjectInput(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 488,
+        "end_line": 494,
+        "defs": [
+          "url",
+          "stream",
+          "input"
+        ],
+        "uses": [
+          "ObjectInputStream",
+          "release",
+          "setDrawing",
+          "fView",
+          "Drawing",
+          "readObject",
+          "getCodeBase",
+          "URL",
+          "filename",
+          "ObjectInput",
+          "openStream",
+          "fDrawing",
+          "InputStream"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 495,
+        "end_line": 499,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "showStatus",
+          "createDrawing",
+          "setDrawing",
+          "fView",
+          "fDrawing",
+          "IOException",
+          "toolDone",
+          "Error"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 500,
+        "end_line": 502,
+        "defs": [
+          "e",
+          "not"
+        ],
+        "uses": [
+          "initDrawing",
+          "found",
+          "showStatus",
+          "ClassNotFoundException",
+          "Class"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  }
+]

@@ -40,8 +40,8 @@ MyWebMarket | 24 | 0 | 24
 
 
 
-项目名称 (Project),总代码片段数 (Total Snippets),单切片完整包含 (Inside One Slice),跨越多个切片 (Covers Multiple),部分重叠 (Partial Overlap),平均覆盖切片数 (Avg Matched Slices)
-JHotDraw5.2,56,38 (67.9%),17 (30.4%),1 (1.8%),1.46
-MyWebMarket,24,2 (8.3%),22 (91.7%),0 (0%),3.04
-wikidev-filters,26,22 (84.6%),4 (15.4%),0 (0%),1.15
-junit3.8,25,19 (76.0%),6 (24.0%),0 (0%),1.32
+项目名称 (Project),总代码片段数 (Total Snippets),单切片完整包含 (Inside One Slice),跨越多个切片 (Covers Multiple),部分重叠 (Partial Overlap)
+JHotDraw5.2,56,38 (67.9%),17 (30.4%),1 (1.8%)
+MyWebMarket,24,2 (8.3%),22 (91.7%),0 (0%)
+wikidev-filters,26,22 (84.6%),4 (15.4%),0 (0%)
+junit3.8,25,19 (76.0%),6 (24.0%),0 (0%)

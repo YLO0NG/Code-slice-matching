@@ -1,0 +1,4632 @@
+[
+  {
+    "class_name": "classes.CustomerAction",
+    "method_name": "find()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 87,
+        "end_line": 87,
+        "defs": [
+          "find"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 88,
+        "end_line": 89,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 91,
+        "end_line": 91,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "Criteria",
+          "Customer",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 93,
+        "end_line": 96,
+        "defs": [],
+        "uses": [
+          "f",
+          "criteria",
+          "Restrictions",
+          "getId",
+          "excludeZeroes",
+          "Example",
+          "ANYWHERE",
+          "ignoreCase",
+          "enableLike",
+          "create",
+          "customer",
+          "MatchMode",
+          "idEq",
+          "hibernate",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 98,
+        "end_line": 99,
+        "defs": [],
+        "uses": [
+          "SuppressWarnings",
+          "criteria",
+          "f",
+          "list",
+          "List",
+          "l",
+          "unchecked",
+          "Customer",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 100,
+        "end_line": 101,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 102,
+        "end_line": 102,
+        "defs": [],
+        "uses": [
+          "l",
+          "put",
+          "list",
+          "request"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 104,
+        "end_line": 104,
+        "defs": [],
+        "uses": [
+          "CR_MODE",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 105,
+        "end_line": 106,
+        "defs": [
+          "find"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.CustomerAction",
+    "method_name": "save()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 110,
+        "end_line": 110,
+        "defs": [
+          "save"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 111,
+        "end_line": 112,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 114,
+        "end_line": 114,
+        "defs": [],
+        "uses": [
+          "f",
+          "customer",
+          "save",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 116,
+        "end_line": 117,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 119,
+        "end_line": 120,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "saveSuccessful",
+          "addActionMessage",
+          "String",
+          "getText",
+          "customer",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 122,
+        "end_line": 123,
+        "defs": [
+          "save"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "save"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "save"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.CustomerAction",
+    "method_name": "update()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 127,
+        "end_line": 127,
+        "defs": [
+          "update"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 128,
+        "end_line": 129,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 131,
+        "end_line": 131,
+        "defs": [],
+        "uses": [
+          "f",
+          "update",
+          "hibernate",
+          "sess",
+          "customer"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 133,
+        "end_line": 134,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 136,
+        "end_line": 137,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "addActionMessage",
+          "String",
+          "getText",
+          "updateSuccessful",
+          "customer",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 139,
+        "end_line": 140,
+        "defs": [
+          "update"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "update"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "update"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.CustomerAction",
+    "method_name": "delete()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 144,
+        "end_line": 146,
+        "defs": [
+          "sess",
+          "t",
+          "delete"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Starting",
+          "Transaction",
+          "info",
+          "hibernate",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 148,
+        "end_line": 148,
+        "defs": [],
+        "uses": [
+          "f",
+          "customer",
+          "delete",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 150,
+        "end_line": 151,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 153,
+        "end_line": 154,
+        "defs": [],
+        "uses": [
+          "CR_MODE",
+          "addActionMessage",
+          "String",
+          "getText",
+          "task",
+          "customer",
+          "SystemConstants",
+          "deleteSuccessful"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 156,
+        "end_line": 157,
+        "defs": [
+          "delete"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "input",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "delete"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "delete"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.CustomerAction",
+    "method_name": "edit()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 161,
+        "end_line": 162,
+        "defs": [
+          "edit",
+          "id"
+        ],
+        "uses": [
+          "f",
+          "Integer",
+          "get",
+          "Starting",
+          "info",
+          "log",
+          "valueOf",
+          "logger",
+          "parameters"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 164,
+        "end_line": 169,
+        "defs": [
+          "c",
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "id",
+          "Transaction",
+          "Customer",
+          "hibernate",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "close",
+          "get",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 171,
+        "end_line": 171,
+        "defs": [],
+        "uses": [
+          "c",
+          "setCustomer"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 173,
+        "end_line": 175,
+        "defs": [
+          "edit"
+        ],
+        "uses": [
+          "f",
+          "UD_MODE",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "id"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "c"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.LoginAction",
+    "method_name": "execute()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 45,
+        "end_line": 47,
+        "defs": [
+          "execute",
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Starting",
+          "Transaction",
+          "info",
+          "hibernate",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 49,
+        "end_line": 52,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "Restrictions",
+          "eq",
+          "password",
+          "User",
+          "Criteria",
+          "getPassword",
+          "user",
+          "getUsername",
+          "sess",
+          "idEq",
+          "hibernate",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 54,
+        "end_line": 57,
+        "defs": [
+          "user"
+        ],
+        "uses": [
+          "f",
+          "criteria",
+          "t",
+          "User",
+          "close",
+          "commit",
+          "uniqueResult",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 59,
+        "end_line": 63,
+        "defs": [
+          "execute"
+        ],
+        "uses": [
+          "f",
+          "put",
+          "Finishing",
+          "SUCCESS",
+          "user",
+          "getSession",
+          "ActionContext",
+          "Success",
+          "AUTHENTICATED_USER",
+          "info",
+          "getContext",
+          "log",
+          "logger",
+          "SystemConstants"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 65,
+        "end_line": 67,
+        "defs": [
+          "execute"
+        ],
+        "uses": [
+          "f",
+          "Failure",
+          "login",
+          "Finishing",
+          "getText",
+          "addActionError",
+          "info",
+          "INPUT",
+          "log",
+          "failure",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "user"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "user"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ProductAction",
+    "method_name": "find()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 89,
+        "end_line": 89,
+        "defs": [
+          "find"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 90,
+        "end_line": 91,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 93,
+        "end_line": 98,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "Restrictions",
+          "Criteria",
+          "getId",
+          "excludeZeroes",
+          "Example",
+          "enableLike",
+          "product",
+          "MatchMode",
+          "idEq",
+          "hibernate",
+          "ANYWHERE",
+          "ignoreCase",
+          "create",
+          "sess",
+          "Product",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 100,
+        "end_line": 101,
+        "defs": [],
+        "uses": [
+          "SuppressWarnings",
+          "criteria",
+          "f",
+          "list",
+          "List",
+          "l",
+          "unchecked",
+          "Product",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 102,
+        "end_line": 103,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 104,
+        "end_line": 104,
+        "defs": [],
+        "uses": [
+          "l",
+          "put",
+          "list",
+          "request"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 106,
+        "end_line": 107,
+        "defs": [
+          "find"
+        ],
+        "uses": [
+          "f",
+          "CR_MODE",
+          "Finishing",
+          "info",
+          "log",
+          "logger",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 108,
+        "end_line": 108,
+        "defs": [],
+        "uses": [
+          "INPUT"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ProductAction",
+    "method_name": "save()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 112,
+        "end_line": 112,
+        "defs": [
+          "save"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 113,
+        "end_line": 114,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 116,
+        "end_line": 116,
+        "defs": [],
+        "uses": [
+          "f",
+          "product",
+          "save",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 118,
+        "end_line": 119,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 121,
+        "end_line": 122,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "saveSuccessful",
+          "addActionMessage",
+          "String",
+          "product",
+          "getText",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 124,
+        "end_line": 125,
+        "defs": [
+          "save"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "save"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "save"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ProductAction",
+    "method_name": "update()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 129,
+        "end_line": 129,
+        "defs": [
+          "update"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 130,
+        "end_line": 131,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 133,
+        "end_line": 133,
+        "defs": [],
+        "uses": [
+          "f",
+          "product",
+          "update",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 135,
+        "end_line": 136,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 138,
+        "end_line": 139,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "addActionMessage",
+          "String",
+          "product",
+          "getText",
+          "updateSuccessful",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 141,
+        "end_line": 142,
+        "defs": [
+          "update"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "update"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "update"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ProductAction",
+    "method_name": "delete()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 146,
+        "end_line": 146,
+        "defs": [
+          "delete"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 147,
+        "end_line": 148,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 150,
+        "end_line": 150,
+        "defs": [],
+        "uses": [
+          "f",
+          "product",
+          "delete",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 152,
+        "end_line": 153,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 155,
+        "end_line": 156,
+        "defs": [],
+        "uses": [
+          "CR_MODE",
+          "addActionMessage",
+          "String",
+          "product",
+          "getText",
+          "task",
+          "SystemConstants",
+          "deleteSuccessful"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 158,
+        "end_line": 159,
+        "defs": [
+          "delete"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "input",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "delete"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "delete"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ProductAction",
+    "method_name": "edit()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 163,
+        "end_line": 164,
+        "defs": [
+          "edit",
+          "id"
+        ],
+        "uses": [
+          "f",
+          "Integer",
+          "get",
+          "Starting",
+          "info",
+          "log",
+          "valueOf",
+          "logger",
+          "parameters"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 166,
+        "end_line": 167,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 169,
+        "end_line": 169,
+        "defs": [
+          "p"
+        ],
+        "uses": [
+          "f",
+          "get",
+          "id",
+          "sess",
+          "Product",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 171,
+        "end_line": 172,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 174,
+        "end_line": 177,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "setProduct",
+          "p",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 178,
+        "end_line": 179,
+        "defs": [
+          "edit"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "id"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "p"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAction",
+    "method_name": "input()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 83,
+        "end_line": 86,
+        "defs": [
+          "input"
+        ],
+        "uses": [
+          "f",
+          "CR_MODE",
+          "purchaseOrder",
+          "Starting",
+          "info",
+          "log",
+          "logger",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 88,
+        "end_line": 89,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 91,
+        "end_line": 94,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "SuppressWarnings",
+          "list",
+          "Criteria",
+          "lc",
+          "listCustomer",
+          "ActionContext",
+          "getContext",
+          "Customer",
+          "hibernate",
+          "unchecked",
+          "put",
+          "List",
+          "getSession",
+          "sess"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 96,
+        "end_line": 103,
+        "defs": [],
+        "uses": [
+          "createCriteria",
+          "criteria",
+          "f",
+          "SuppressWarnings",
+          "list",
+          "ActionContext",
+          "getContext",
+          "hibernate",
+          "lp",
+          "unchecked",
+          "put",
+          "listProduct",
+          "List",
+          "getSession",
+          "sess",
+          "Product"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 100,
+        "end_line": 101,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 105,
+        "end_line": 106,
+        "defs": [
+          "input"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAction",
+    "method_name": "find()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 110,
+        "end_line": 112,
+        "defs": [
+          "sess",
+          "find",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Starting",
+          "Transaction",
+          "info",
+          "hibernate",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 114,
+        "end_line": 116,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "Criteria",
+          "excludeZeroes",
+          "purchaseOrder",
+          "Example",
+          "PurchaseOrder",
+          "enableLike",
+          "MatchMode",
+          "hibernate",
+          "ANYWHERE",
+          "ignoreCase",
+          "create",
+          "sess",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 117,
+        "end_line": 119,
+        "defs": [],
+        "uses": [
+          "f",
+          "criteria",
+          "Restrictions",
+          "getId",
+          "purchaseOrder",
+          "idEq",
+          "hibernate",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 121,
+        "end_line": 123,
+        "defs": [],
+        "uses": [
+          "getCustomer",
+          "f",
+          "criteria",
+          "Restrictions",
+          "eq",
+          "getId",
+          "purchaseOrder",
+          "hibernate",
+          "customer",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 125,
+        "end_line": 129,
+        "defs": [],
+        "uses": [
+          "f",
+          "criteria",
+          "SuppressWarnings",
+          "setResultTransformer",
+          "list",
+          "Criteria",
+          "DISTINCT_ROOT_ENTITY",
+          "l",
+          "PurchaseOrder",
+          "hibernate",
+          "unchecked",
+          "t",
+          "List",
+          "close",
+          "commit",
+          "sess"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 130,
+        "end_line": 134,
+        "defs": [
+          "input"
+        ],
+        "uses": [
+          "f",
+          "put",
+          "CR_MODE",
+          "Finishing",
+          "list",
+          "l",
+          "request",
+          "info",
+          "INPUT",
+          "log",
+          "logger",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAction",
+    "method_name": "save()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 138,
+        "end_line": 140,
+        "defs": [
+          "sess",
+          "t",
+          "save"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Starting",
+          "Transaction",
+          "info",
+          "hibernate",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 142,
+        "end_line": 145,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "save",
+          "close",
+          "purchaseOrder",
+          "commit",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 147,
+        "end_line": 147,
+        "defs": [],
+        "uses": [
+          "setOrderDate",
+          "purchaseOrder",
+          "Date"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 149,
+        "end_line": 151,
+        "defs": [
+          "item"
+        ],
+        "uses": [
+          "PurchaseOrderItem",
+          "setPurchaseOrder",
+          "purchaseOrder",
+          "getPurchaseOrderItems"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 153,
+        "end_line": 154,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "saveSuccessful",
+          "order",
+          "addActionMessage",
+          "String",
+          "getText",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 156,
+        "end_line": 157,
+        "defs": [
+          "save"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t",
+          "save"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "save"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAction",
+    "method_name": "update()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 161,
+        "end_line": 163,
+        "defs": [
+          "sess",
+          "update",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Starting",
+          "Transaction",
+          "info",
+          "hibernate",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 164,
+        "end_line": 167,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "close",
+          "purchaseOrder",
+          "commit",
+          "update",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 169,
+        "end_line": 171,
+        "defs": [
+          "item"
+        ],
+        "uses": [
+          "PurchaseOrderItem",
+          "setPurchaseOrder",
+          "purchaseOrder",
+          "getPurchaseOrderItems"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 173,
+        "end_line": 174,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "order",
+          "addActionMessage",
+          "String",
+          "getText",
+          "updateSuccessful",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 176,
+        "end_line": 177,
+        "defs": [
+          "update"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "update",
+          "t"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "update"
+        ]
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAction",
+    "method_name": "delete()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 181,
+        "end_line": 183,
+        "defs": [
+          "sess",
+          "t",
+          "delete"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Starting",
+          "Transaction",
+          "info",
+          "hibernate",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 185,
+        "end_line": 188,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "delete",
+          "close",
+          "purchaseOrder",
+          "commit",
+          "sess",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 190,
+        "end_line": 192,
+        "defs": [
+          "delete"
+        ],
+        "uses": [
+          "f",
+          "CR_MODE",
+          "Finishing",
+          "task",
+          "order",
+          "addActionMessage",
+          "String",
+          "getText",
+          "info",
+          "log",
+          "logger",
+          "SystemConstants",
+          "deleteSuccessful"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 193,
+        "end_line": 193,
+        "defs": [],
+        "uses": [
+          "input"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t",
+          "delete"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "delete"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAction",
+    "method_name": "edit()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 197,
+        "end_line": 198,
+        "defs": [
+          "edit",
+          "id"
+        ],
+        "uses": [
+          "f",
+          "Integer",
+          "get",
+          "Starting",
+          "info",
+          "log",
+          "valueOf",
+          "logger",
+          "parameters"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 200,
+        "end_line": 203,
+        "defs": [
+          "po",
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "get",
+          "PurchaseOrder",
+          "id",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 205,
+        "end_line": 206,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 208,
+        "end_line": 210,
+        "defs": [],
+        "uses": [
+          "UD_MODE",
+          "setPurchaseOrder",
+          "po",
+          "SystemConstants",
+          "task"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 211,
+        "end_line": 212,
+        "defs": [
+          "edit"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "id"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "t",
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "po"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.PurchaseOrderAjax",
+    "method_name": "getProductPrice(Integer)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 14,
+        "end_line": 14,
+        "defs": [
+          "getProductPrice"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 15,
+        "end_line": 16,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 18,
+        "end_line": 23,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "Restrictions",
+          "Criteria",
+          "price",
+          "id",
+          "Projections",
+          "hibernate",
+          "setProjection",
+          "eq",
+          "idProduct",
+          "property",
+          "sess",
+          "Product",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 25,
+        "end_line": 25,
+        "defs": [
+          "price"
+        ],
+        "uses": [
+          "f",
+          "criteria",
+          "Double",
+          "uniqueResult",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 27,
+        "end_line": 28,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 29,
+        "end_line": 30,
+        "defs": [
+          "getProductPrice"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "price",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "price"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "price"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ReportAction",
+    "method_name": "productReport()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 66,
+        "end_line": 66,
+        "defs": [
+          "productReport"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 68,
+        "end_line": 69,
+        "defs": [
+          "sc",
+          "ac"
+        ],
+        "uses": [
+          "StrutsStatics",
+          "ServletContext",
+          "get",
+          "ActionContext",
+          "SERVLET_CONTEXT",
+          "getContext"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 71,
+        "end_line": 71,
+        "defs": [
+          "jasperReport"
+        ],
+        "uses": [
+          "f",
+          "INF",
+          "jr",
+          "WEB",
+          "classes",
+          "sc",
+          "compileReport",
+          "xml",
+          "ProductReport",
+          "JasperReport",
+          "getResourceAsStream",
+          "JasperCompileManager"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 73,
+        "end_line": 75,
+        "defs": [
+          "of"
+        ],
+        "uses": [
+          "f",
+          "Products",
+          "put",
+          "jr",
+          "Object",
+          "HashMap",
+          "List",
+          "Date",
+          "parameters",
+          "Map",
+          "String",
+          "ReportTitle",
+          "DataFile",
+          "toString"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 77,
+        "end_line": 78,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 80,
+        "end_line": 82,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "f",
+          "setProjection",
+          "Criteria",
+          "price",
+          "property",
+          "name",
+          "id",
+          "Projections",
+          "projectionList",
+          "sess",
+          "Product",
+          "hibernate",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 85,
+        "end_line": 86,
+        "defs": [],
+        "uses": [
+          "SuppressWarnings",
+          "criteria",
+          "f",
+          "Object",
+          "List",
+          "list",
+          "l",
+          "unchecked",
+          "hibernate"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 88,
+        "end_line": 89,
+        "defs": [],
+        "uses": [
+          "f",
+          "t",
+          "hibernate",
+          "sess",
+          "close",
+          "commit"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 91,
+        "end_line": 91,
+        "defs": [
+          "ds"
+        ],
+        "uses": [
+          "f",
+          "jr",
+          "HibernateQueryResultDataSource",
+          "l",
+          "Id",
+          "String",
+          "Name",
+          "Price"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 10,
+        "label": "Slice 10",
+        "start_line": 93,
+        "end_line": 93,
+        "defs": [
+          "jasperPrint"
+        ],
+        "uses": [
+          "f",
+          "jr",
+          "ds",
+          "JasperFillManager",
+          "fillReport",
+          "JasperPrint",
+          "jasperReport",
+          "parameters"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 11,
+        "label": "Slice 11",
+        "start_line": 95,
+        "end_line": 95,
+        "defs": [
+          "b"
+        ],
+        "uses": [
+          "exportReportToPdf",
+          "f",
+          "jasperPrint",
+          "jr",
+          "JasperExportManager"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 12,
+        "label": "Slice 12",
+        "start_line": 97,
+        "end_line": 97,
+        "defs": [],
+        "uses": [
+          "inputStream",
+          "ByteArrayInputStream",
+          "b"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 13,
+        "label": "Slice 13",
+        "start_line": 99,
+        "end_line": 100,
+        "defs": [
+          "productReport"
+        ],
+        "uses": [
+          "f",
+          "download",
+          "Finishing",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sc"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 10,
+        "type": "DD",
+        "vars": [
+          "jasperReport"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "DD",
+        "vars": [
+          "ds"
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "DD",
+        "vars": [
+          "jasperPrint"
+        ]
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "DD",
+        "vars": [
+          "b"
+        ]
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.ReportAction",
+    "method_name": "customerReport()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 105,
+        "end_line": 108,
+        "defs": [
+          "sc",
+          "customerReport",
+          "ac"
+        ],
+        "uses": [
+          "StrutsStatics",
+          "ServletContext",
+          "get",
+          "ActionContext",
+          "Starting",
+          "info",
+          "SERVLET_CONTEXT",
+          "getContext",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 110,
+        "end_line": 110,
+        "defs": [
+          "jasperReport"
+        ],
+        "uses": [
+          "INF",
+          "WEB",
+          "classes",
+          "sc",
+          "CustomerReport",
+          "compileReport",
+          "xml",
+          "JasperReport",
+          "getResourceAsStream",
+          "JasperCompileManager"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 112,
+        "end_line": 114,
+        "defs": [
+          "of"
+        ],
+        "uses": [
+          "put",
+          "Object",
+          "List",
+          "HashMap",
+          "Date",
+          "parameters",
+          "Map",
+          "String",
+          "ReportTitle",
+          "Customers",
+          "DataFile",
+          "toString"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 116,
+        "end_line": 117,
+        "defs": [
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "beginTransaction",
+          "HibernateUtil",
+          "Session",
+          "getSessionFactory",
+          "openSession",
+          "Transaction"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 119,
+        "end_line": 121,
+        "defs": [
+          "criteria"
+        ],
+        "uses": [
+          "createCriteria",
+          "setProjection",
+          "Criteria",
+          "property",
+          "sess",
+          "name",
+          "id",
+          "Projections",
+          "projectionList",
+          "Customer",
+          "phone",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 124,
+        "end_line": 128,
+        "defs": [],
+        "uses": [
+          "SuppressWarnings",
+          "criteria",
+          "t",
+          "Object",
+          "List",
+          "list",
+          "l",
+          "close",
+          "commit",
+          "sess",
+          "unchecked"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 130,
+        "end_line": 130,
+        "defs": [
+          "ds"
+        ],
+        "uses": [
+          "HibernateQueryResultDataSource",
+          "l",
+          "Phone",
+          "Id",
+          "String",
+          "Name"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 132,
+        "end_line": 132,
+        "defs": [
+          "jasperPrint"
+        ],
+        "uses": [
+          "ds",
+          "JasperFillManager",
+          "fillReport",
+          "JasperPrint",
+          "jasperReport",
+          "parameters"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 134,
+        "end_line": 134,
+        "defs": [
+          "b"
+        ],
+        "uses": [
+          "exportReportToPdf",
+          "jasperPrint",
+          "JasperExportManager"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 10,
+        "label": "Slice 10",
+        "start_line": 136,
+        "end_line": 136,
+        "defs": [],
+        "uses": [
+          "inputStream",
+          "ByteArrayInputStream",
+          "b"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 11,
+        "label": "Slice 11",
+        "start_line": 138,
+        "end_line": 139,
+        "defs": [
+          "customerReport"
+        ],
+        "uses": [
+          "logger",
+          "download",
+          "Finishing",
+          "info"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sc"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "jasperReport"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "sess"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "sess",
+          "t"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "criteria"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "ds"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "DD",
+        "vars": [
+          "jasperPrint"
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "DD",
+        "vars": [
+          "b"
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.SchedulerAction",
+    "method_name": "input()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 55,
+        "end_line": 55,
+        "defs": [
+          "input"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 56,
+        "end_line": 57,
+        "defs": [
+          "sc",
+          "sf"
+        ],
+        "uses": [
+          "f",
+          "Scheduler",
+          "StdSchedulerFactory",
+          "getScheduler",
+          "quartz",
+          "SchedulerFactory"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 59,
+        "end_line": 59,
+        "defs": [
+          "job"
+        ],
+        "uses": [
+          "f",
+          "supplyMailJob",
+          "getJobDetail",
+          "jobKey",
+          "JobKey",
+          "sc",
+          "group",
+          "JobDetail",
+          "quartz"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 61,
+        "end_line": 63,
+        "defs": [],
+        "uses": [
+          "f",
+          "getJobDataMap",
+          "timeInterval",
+          "job",
+          "getIntValue",
+          "quartz"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 65,
+        "end_line": 66,
+        "defs": [
+          "input"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sc"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "job"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.SchedulerAction",
+    "method_name": "schedule()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 70,
+        "end_line": 70,
+        "defs": [
+          "schedule"
+        ],
+        "uses": [
+          "f",
+          "Starting",
+          "info",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 72,
+        "end_line": 73,
+        "defs": [
+          "sc",
+          "sf"
+        ],
+        "uses": [
+          "f",
+          "Scheduler",
+          "StdSchedulerFactory",
+          "getScheduler",
+          "quartz",
+          "SchedulerFactory"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 75,
+        "end_line": 79,
+        "defs": [
+          "job"
+        ],
+        "uses": [
+          "f",
+          "supplyMailJob",
+          "getJobDetail",
+          "jobKey",
+          "JobKey",
+          "sc",
+          "group",
+          "JobDetail",
+          "deleteJob",
+          "quartz"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 81,
+        "end_line": 82,
+        "defs": [],
+        "uses": [
+          "f",
+          "supplyMailJob",
+          "put",
+          "timeInterval",
+          "newJob",
+          "SupplyMailJob",
+          "build",
+          "getJobDataMap",
+          "group",
+          "job",
+          "quartz",
+          "withIdentity"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 84,
+        "end_line": 85,
+        "defs": [
+          "trigger"
+        ],
+        "uses": [
+          "f",
+          "Trigger",
+          "newTrigger",
+          "startNow",
+          "timeInterval",
+          "supplyMailTrigger",
+          "cronSchedule",
+          "build",
+          "group",
+          "withSchedule",
+          "CronScheduleBuilder",
+          "quartz",
+          "withIdentity"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 87,
+        "end_line": 87,
+        "defs": [],
+        "uses": [
+          "f",
+          "scheduleJob",
+          "job",
+          "sc",
+          "quartz",
+          "trigger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 89,
+        "end_line": 90,
+        "defs": [
+          "schedule"
+        ],
+        "uses": [
+          "f",
+          "Finishing",
+          "info",
+          "INPUT",
+          "log",
+          "logger"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "sc"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "sc"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "job"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "job"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "trigger"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "classes.SupplyMailJob",
+    "method_name": "execute(JobExecutionContext)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 31,
+        "end_line": 31,
+        "defs": [
+          "execute"
+        ],
+        "uses": [
+          "f",
+          "in",
+          "Starting",
+          "info",
+          "job",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 33,
+        "end_line": 42,
+        "defs": [
+          "criteria",
+          "sess",
+          "t"
+        ],
+        "uses": [
+          "f",
+          "createCriteria",
+          "SuppressWarnings",
+          "beginTransaction",
+          "HibernateUtil",
+          "Restrictions",
+          "Criteria",
+          "list",
+          "l",
+          "Transaction",
+          "supply",
+          "unchecked",
+          "hibernate",
+          "Session",
+          "getSessionFactory",
+          "List",
+          "openSession",
+          "close",
+          "commit",
+          "lt",
+          "Product",
+          "org",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 44,
+        "end_line": 46,
+        "defs": [
+          "str",
+          "following"
+        ],
+        "uses": [
+          "The",
+          "products",
+          "append",
+          "getting",
+          "l",
+          "StringBuilder",
+          "n",
+          "are",
+          "isEmpty",
+          "over"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 48,
+        "end_line": 54,
+        "defs": [
+          "session",
+          "props"
+        ],
+        "uses": [
+          "f",
+          "smtp",
+          "Session",
+          "terra",
+          "Properties",
+          "javax",
+          "host",
+          "setProperty",
+          "mail",
+          "getInstance",
+          "auth",
+          "port",
+          "submitter"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 56,
+        "end_line": 70,
+        "defs": [
+          "msg",
+          "mex",
+          "of"
+        ],
+        "uses": [
+          "f",
+          "address",
+          "InternetAddress",
+          "Products",
+          "MimeMessage",
+          "session",
+          "setRecipients",
+          "printStackTrace",
+          "Message",
+          "mail",
+          "setText",
+          "Supply",
+          "RecipientType",
+          "setSentDate",
+          "toString",
+          "MessagingException",
+          "Date",
+          "setSubject",
+          "Transport",
+          "setFrom",
+          "send",
+          "to",
+          "TO",
+          "from",
+          "str",
+          "Low"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 72,
+        "end_line": 74,
+        "defs": [
+          "p"
+        ],
+        "uses": [
+          "t",
+          "append",
+          "l",
+          "getSupply",
+          "getName",
+          "n",
+          "Product",
+          "str"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 77,
+        "end_line": 77,
+        "defs": [
+          "execute"
+        ],
+        "uses": [
+          "f",
+          "in",
+          "Finishing",
+          "info",
+          "job",
+          "log",
+          "logger"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "t"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "str"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "str"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "session"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      }
+    ]
+  }
+]

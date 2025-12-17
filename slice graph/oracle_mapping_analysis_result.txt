@@ -1,0 +1,940 @@
+
+============================================================
+Project: JHotDraw5.2
+============================================================
+
+>>> Method: writeStorable (Oracle Lines: 47-52)
+    Mapped Slices: [2]
+      - Slice 2: L46-54
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: store (Oracle Lines: 165-170)
+    Mapped Slices: [4]
+      - Slice 4: L165-170
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getImage (Oracle Lines: 132-134)
+    Mapped Slices: [2, 3]
+      - Slice 2: L130-133
+      - Slice 3: L134-134
+    Relationships (Edges between slices):
+      2 -> 3 [CD, Reason: GuardCheck]
+      2 -> 3 [CF]
+
+>>> Method: angleToPoint (Oracle Lines: 139-145)
+    Mapped Slices: [3]
+      - Slice 3: L137-147
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: setDrawing (Oracle Lines: 178-189)
+    Mapped Slices: [3, 4]
+      - Slice 3: L178-184
+      - Slice 4: L185-189
+    Relationships (Edges between slices):
+      3 -> 4 [DD, Vars: ['d1']]
+      3 -> 4 [CF]
+
+>>> Method: findHandle (Oracle Lines: 381-392)
+    Mapped Slices: [1]
+      - Slice 1: L381-390
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: constrainPoint (Oracle Lines: 437-445)
+    Mapped Slices: [1, 2]
+      - Slice 1: L436-438
+      - Slice 2: L439-445
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['value', 'max']]
+      1 -> 2 [CF]
+
+>>> Method: execute (Oracle Lines: 37-42)
+    Mapped Slices: [3]
+      - Slice 3: L37-40
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: remove (Oracle Lines: 74-78)
+    Mapped Slices: [5]
+      - Slice 5: L73-79
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: mouseDrag (Oracle Lines: 116-138)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L115-121
+      - Slice 3: L123-130
+      - Slice 4: L132-136
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['c']]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['c']]
+      2 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CF]
+
+>>> Method: findFigureWithout (Oracle Lines: 241-247)
+    Mapped Slices: [1]
+      - Slice 1: L240-248
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: findFigure (Oracle Lines: 266-273)
+    Mapped Slices: [1]
+      - Slice 1: L265-274
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: addHandles (Oracle Lines: 38-41)
+    Mapped Slices: [1]
+      - Slice 1: L38-41
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: update (Oracle Lines: 210-214)
+    Mapped Slices: [1]
+      - Slice 1: L209-215
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: updateDurations (Oracle Lines: 241-243)
+    Mapped Slices: [3]
+      - Slice 3: L241-243
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: write (Oracle Lines: 267-270)
+    Mapped Slices: [3]
+      - Slice 3: L267-270
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: read (Oracle Lines: 289-293)
+    Mapped Slices: [4]
+      - Slice 4: L289-293
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: initialize (Oracle Lines: 131-135)
+    Mapped Slices: [3]
+      - Slice 3: L131-135
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: mouseDown (Oracle Lines: 37-54)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L36-46
+      - Slice 3: L48-49
+      - Slice 4: L50-55
+    Relationships (Edges between slices):
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+      2 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CF]
+
+>>> Method: beginEdit (Oracle Lines: 85-89)
+    Mapped Slices: [2]
+      - Slice 2: L84-89
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: init (Oracle Lines: 39-48)
+    Mapped Slices: [3]
+      - Slice 3: L37-51
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createButtons (Oracle Lines: 83-86)
+    Mapped Slices: [2]
+      - Slice 2: L79-89
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createAnimationMenu (Oracle Lines: 112-115)
+    Mapped Slices: [1]
+      - Slice 1: L106-119
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: mouseDown (Oracle Lines: 49-59)
+    Mapped Slices: [2]
+      - Slice 2: L48-61
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: beginEdit (Oracle Lines: 111-120)
+    Mapped Slices: [2]
+      - Slice 2: L110-120
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: setAttribute (Oracle Lines: 148-151)
+    Mapped Slices: [1]
+      - Slice 1: L145-152
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: connect (Oracle Lines: 287-297)
+    Mapped Slices: [4]
+      - Slice 4: L287-297
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: mouseDown (Oracle Lines: 60-69)
+    Mapped Slices: [2, 3]
+      - Slice 2: L56-64
+      - Slice 3: L65-69
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['x1', 'y1']]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+
+>>> Method: invokeStep (Oracle Lines: 37-43)
+    Mapped Slices: [2, 3]
+      - Slice 2: L36-37
+      - Slice 3: L38-43
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['max']]
+      2 -> 3 [CF]
+
+>>> Method: draw (Oracle Lines: 193-202)
+    Mapped Slices: [3, 4]
+      - Slice 3: L193-197
+      - Slice 4: L198-202
+    Relationships (Edges between slices):
+      3 -> 4 [CF]
+
+>>> Method: write (Oracle Lines: 318-320)
+    Mapped Slices: [5]
+      - Slice 5: L318-320
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: execute (Oracle Lines: 37-40)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L37-38
+      - Slice 2: L39-39
+      - Slice 3: L40-40
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['r']]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['r']]
+      2 -> 3 [CF]
+
+>>> Method: execute (Oracle Lines: 41-43)
+    Mapped Slices: [3]
+      - Slice 3: L40-43
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: invokeStep (Oracle Lines: 42-62)
+    Mapped Slices: [3]
+      - Slice 3: L41-64
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: constrainX (Oracle Lines: 115-121)
+    Mapped Slices: [5]
+      - Slice 5: L114-122
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: constrainY (Oracle Lines: 144-150)
+    Mapped Slices: [4]
+      - Slice 4: L143-151
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: updatePoints (Oracle Lines: 72-84)
+    Mapped Slices: [4]
+      - Slice 4: L67-94
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getAttribute (Oracle Lines: 136-138)
+    Mapped Slices: [2]
+      - Slice 2: L136-138
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: write (Oracle Lines: 64-70)
+    Mapped Slices: [1]
+      - Slice 1: L63-74
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createContents (Oracle Lines: 60-63)
+    Mapped Slices: [5]
+      - Slice 5: L59-64
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: mouseDown (Oracle Lines: 70-80)
+    Mapped Slices: [3]
+      - Slice 3: L66-81
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: scaleRotate (Oracle Lines: 192-201)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L191-194
+      - Slice 2: L195-198
+      - Slice 3: L201-202
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sx', 'sy', 'n1']]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['sx', 'sy', 'n1']]
+      2 -> 3 [CF]
+
+>>> Method: splitSegment (Oracle Lines: 268-281)
+    Mapped Slices: [1, 2]
+      - Slice 1: L267-269
+      - Slice 2: L271-280
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['x', 'y', 'dist', 'best']]
+      1 -> 2 [CF]
+
+>>> Method: chop (Oracle Lines: 481-488)
+    Mapped Slices: [1]
+      - Slice 1: L480-488
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: draw (Oracle Lines: 42-48)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L42-43
+      - Slice 2: L44-47
+      - Slice 3: L48-48
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['p1', 'r']]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['p1']]
+      2 -> 3 [CF]
+
+>>> Method: mouseDown (Oracle Lines: 51-60)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L50-51
+      - Slice 2: L52-56
+      - Slice 3: L57-59
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['figure']]
+      1 -> 2 [CD, Reason: Nesting]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['figure']]
+      1 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+
+>>> Method: mouseUp (Oracle Lines: 94-103)
+    Mapped Slices: [1]
+      - Slice 1: L93-104
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: handlePopupMenu (Oracle Lines: 155-168)
+    Mapped Slices: [2, 3]
+      - Slice 2: L154-160
+      - Slice 3: L162-167
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['comp', 'popup']]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+
+>>> Method: promptOpen (Oracle Lines: 698-711)
+    Mapped Slices: [5]
+      - Slice 5: L698-711
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: promptSaveAs (Oracle Lines: 724-726)
+    Mapped Slices: [2]
+      - Slice 2: L724-726
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: init (Oracle Lines: 71-94)
+    Mapped Slices: [3, 4, 5]
+      - Slice 3: L70-81
+      - Slice 4: L83-90
+      - Slice 5: L92-95
+    Relationships (Edges between slices):
+      3 -> 4 [DD, Vars: ['attributes']]
+      3 -> 4 [CF]
+      3 -> 5 [DD, Vars: ['attributes']]
+      4 -> 5 [CF]
+
+>>> Method: createAttributeChoices (Oracle Lines: 163-167)
+    Mapped Slices: [5]
+      - Slice 5: L162-168
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: loadDrawing (Oracle Lines: 435-442)
+    Mapped Slices: [3, 4]
+      - Slice 3: L435-436
+      - Slice 4: L437-443
+    Relationships (Edges between slices):
+      3 -> 4 [DD, Vars: ['type']]
+      3 -> 4 [CF]
+
+>>> Method: readDrawing (Oracle Lines: 452-465)
+    Mapped Slices: [4]
+      - Slice 4: L451-465
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: readFromStorableInput (Oracle Lines: 480-482)
+    Mapped Slices: [3]
+      - Slice 3: L479-483
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: readFromObjectInput (Oracle Lines: 496-498)
+    Mapped Slices: [2]
+      - Slice 2: L495-499
+    Relationships: None (Independent slices or single slice)
+
+============================================================
+Project: junit3.8
+============================================================
+
+>>> Method: start (Oracle Lines: 172-181)
+    Mapped Slices: [4, 5]
+      - Slice 4: L170-178
+      - Slice 5: L179-181
+    Relationships (Edges between slices):
+      4 -> 5 [DD, Vars: ['result']]
+      4 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CF]
+
+>>> Method: print (Oracle Lines: 30-42)
+    Mapped Slices: [4, 5]
+      - Slice 4: L30-41
+      - Slice 5: L42-42
+    Relationships (Edges between slices):
+      4 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CF]
+
+>>> Method: testFailed (Oracle Lines: 70-72)
+    Mapped Slices: [5]
+      - Slice 5: L68-73
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: addToHistory (Oracle Lines: 117-121)
+    Mapped Slices: [3, 4]
+      - Slice 3: L117-119
+      - Slice 4: L120-121
+    Relationships (Edges between slices):
+      3 -> 4 [DD, Vars: ['historyLength']]
+      3 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CF]
+
+>>> Method: createFailedPanel (Oracle Lines: 176-179)
+    Mapped Slices: [3]
+      - Slice 3: L173-182
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createJUnitMenu (Oracle Lines: 224-230)
+    Mapped Slices: [4]
+      - Slice 4: L220-235
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createFrame (Oracle Lines: 250-256)
+    Mapped Slices: [3]
+      - Slice 3: L247-259
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createQuitButton (Oracle Lines: 294-300)
+    Mapped Slices: [2]
+      - Slice 2: L291-303
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createRunButton (Oracle Lines: 313-325)
+    Mapped Slices: [3, 4, 5]
+      - Slice 3: L313-314
+      - Slice 4: L315-320
+      - Slice 5: L321-324
+    Relationships (Edges between slices):
+      3 -> 4 [CF]
+      4 -> 5 [DD, Vars: ['suiteName', 'testSuite']]
+      4 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CF]
+
+>>> Method: createSuiteCombo (Oracle Lines: 359-371)
+    Mapped Slices: [2]
+      - Slice 2: L354-374
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createUI (Oracle Lines: 451-462)
+    Mapped Slices: [8]
+      - Slice 8: L450-484
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: runSuite (Oracle Lines: 652-656)
+    Mapped Slices: [2]
+      - Slice 2: L650-656
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: runTest (Oracle Lines: 676-680)
+    Mapped Slices: [2]
+      - Slice 2: L675-680
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: terminate (Oracle Lines: 827-836)
+    Mapped Slices: [2]
+      - Slice 2: L826-836
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getPreferences (Oracle Lines: 38-49)
+    Mapped Slices: [2]
+      - Slice 2: L38-49
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: run (Oracle Lines: 103-109)
+    Mapped Slices: [1, 2]
+      - Slice 1: L103-106
+      - Slice 2: L107-109
+    Relationships (Edges between slices):
+      1 -> 2 [CF]
+
+>>> Method: runProtected (Oracle Lines: 133-136)
+    Mapped Slices: [2]
+      - Slice 2: L132-136
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: assertEquals (Oracle Lines: 64-67)
+    Mapped Slices: [3, 4]
+      - Slice 3: L64-66
+      - Slice 4: L67-67
+    Relationships (Edges between slices):
+      3 -> 4 [DD, Vars: ['formatted']]
+      3 -> 4 [CF]
+
+>>> Method: assertEquals (Oracle Lines: 102-105)
+    Mapped Slices: [1]
+      - Slice 1: L100-107
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: assertEquals (Oracle Lines: 127-130)
+    Mapped Slices: [1]
+      - Slice 1: L125-131
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: testFailed (Oracle Lines: 70-82)
+    Mapped Slices: [1]
+      - Slice 1: L68-83
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createJUnitMenu (Oracle Lines: 128-131)
+    Mapped Slices: [1]
+      - Slice 1: L122-135
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createUI (Oracle Lines: 191-228)
+    Mapped Slices: [5]
+      - Slice 5: L180-231
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: createCounterPanel (Oracle Lines: 346-356)
+    Mapped Slices: [1]
+      - Slice 1: L344-356
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: reset (Oracle Lines: 486-489)
+    Mapped Slices: [2]
+      - Slice 2: L486-489
+    Relationships: None (Independent slices or single slice)
+
+============================================================
+Project: MyWebMarket
+============================================================
+
+>>> Method: find (Oracle Lines: 88-101)
+    Mapped Slices: [2, 3, 4, 5, 6]
+      - Slice 2: L88-89
+      - Slice 3: L91-91
+      - Slice 4: L93-96
+      - Slice 5: L98-99
+      - Slice 6: L100-101
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 6 [DD, Vars: ['sess', 't']]
+      3 -> 4 [DD, Vars: ['criteria']]
+      3 -> 4 [CF]
+      3 -> 5 [DD, Vars: ['criteria']]
+      4 -> 5 [CF]
+      5 -> 6 [CF]
+
+>>> Method: save (Oracle Lines: 111-117)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L111-112
+      - Slice 3: L114-114
+      - Slice 4: L116-117
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess', 't']]
+      3 -> 4 [CF]
+
+>>> Method: update (Oracle Lines: 128-134)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L128-129
+      - Slice 3: L131-131
+      - Slice 4: L133-134
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess', 't']]
+      3 -> 4 [CF]
+
+>>> Method: delete (Oracle Lines: 145-151)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L144-146
+      - Slice 2: L148-148
+      - Slice 3: L150-151
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sess', 'delete']]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['sess', 't']]
+      2 -> 3 [CF]
+
+>>> Method: edit (Oracle Lines: 164-169)
+    Mapped Slices: [2]
+      - Slice 2: L164-169
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: execute (Oracle Lines: 46-57)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L45-47
+      - Slice 2: L49-52
+      - Slice 3: L54-57
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sess']]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['sess', 't']]
+      2 -> 3 [DD, Vars: ['criteria']]
+      2 -> 3 [CF]
+      3 -> 2 [DD, Vars: ['user']]
+
+>>> Method: find (Oracle Lines: 90-103)
+    Mapped Slices: [2, 3, 4, 5]
+      - Slice 2: L90-91
+      - Slice 3: L93-98
+      - Slice 4: L100-101
+      - Slice 5: L102-103
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 5 [DD, Vars: ['sess', 't']]
+      3 -> 4 [DD, Vars: ['criteria']]
+      3 -> 4 [CF]
+      4 -> 5 [CF]
+
+>>> Method: save (Oracle Lines: 113-119)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L113-114
+      - Slice 3: L116-116
+      - Slice 4: L118-119
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess', 't']]
+      3 -> 4 [CF]
+
+>>> Method: update (Oracle Lines: 130-136)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L130-131
+      - Slice 3: L133-133
+      - Slice 4: L135-136
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess', 't']]
+      3 -> 4 [CF]
+
+>>> Method: delete (Oracle Lines: 147-153)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L147-148
+      - Slice 3: L150-150
+      - Slice 4: L152-153
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess', 't']]
+      3 -> 4 [CF]
+
+>>> Method: edit (Oracle Lines: 166-172)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L166-167
+      - Slice 3: L169-169
+      - Slice 4: L171-172
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess', 't']]
+      3 -> 4 [CF]
+
+>>> Method: input (Oracle Lines: 88-101)
+    Mapped Slices: [2, 3, 4, 5]
+      - Slice 2: L88-89
+      - Slice 3: L91-94
+      - Slice 4: L96-103
+      - Slice 5: L100-101
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sess']]
+      2 -> 5 [DD, Vars: ['sess', 't']]
+      3 -> 4 [DD, Vars: ['criteria']]
+      3 -> 4 [CF]
+      4 -> 5 [CF]
+
+>>> Method: find (Oracle Lines: 111-129)
+    Mapped Slices: [1, 2, 3, 4, 5]
+      - Slice 1: L110-112
+      - Slice 2: L114-116
+      - Slice 3: L117-119
+      - Slice 4: L121-123
+      - Slice 5: L125-129
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sess']]
+      1 -> 2 [CF]
+      1 -> 5 [DD, Vars: ['sess', 't']]
+      2 -> 3 [DD, Vars: ['criteria']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['criteria']]
+      2 -> 5 [DD, Vars: ['criteria']]
+      3 -> 4 [CF]
+      4 -> 5 [CF]
+
+>>> Method: save (Oracle Lines: 139-145)
+    Mapped Slices: [1, 2]
+      - Slice 1: L138-140
+      - Slice 2: L142-145
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sess', 't', 'save']]
+      1 -> 2 [CF]
+
+>>> Method: update (Oracle Lines: 162-167)
+    Mapped Slices: [1, 2]
+      - Slice 1: L161-163
+      - Slice 2: L164-167
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sess', 'update', 't']]
+      1 -> 2 [CF]
+
+>>> Method: delete (Oracle Lines: 182-188)
+    Mapped Slices: [1, 2]
+      - Slice 1: L181-183
+      - Slice 2: L185-188
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['sess', 't', 'delete']]
+      1 -> 2 [CF]
+
+>>> Method: edit (Oracle Lines: 200-206)
+    Mapped Slices: [2, 3]
+      - Slice 2: L200-203
+      - Slice 3: L205-206
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['t', 'sess']]
+      2 -> 3 [CF]
+
+>>> Method: getProductPrice (Oracle Lines: 15-28)
+    Mapped Slices: [2, 3, 4, 5]
+      - Slice 2: L15-16
+      - Slice 3: L18-23
+      - Slice 4: L25-25
+      - Slice 5: L27-28
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sess']]
+      2 -> 3 [CF]
+      2 -> 5 [DD, Vars: ['sess', 't']]
+      3 -> 4 [DD, Vars: ['criteria']]
+      3 -> 4 [CF]
+      4 -> 3 [DD, Vars: ['price']]
+      4 -> 5 [CF]
+
+>>> Method: productReport (Oracle Lines: 77-89)
+    Mapped Slices: [5, 6, 7, 8]
+      - Slice 5: L77-78
+      - Slice 6: L80-82
+      - Slice 7: L85-86
+      - Slice 8: L88-89
+    Relationships (Edges between slices):
+      5 -> 6 [DD, Vars: ['sess']]
+      5 -> 6 [CF]
+      5 -> 8 [DD, Vars: ['sess', 't']]
+      6 -> 7 [DD, Vars: ['criteria']]
+      6 -> 7 [CF]
+      7 -> 8 [CF]
+
+>>> Method: customerReport (Oracle Lines: 116-128)
+    Mapped Slices: [4, 5, 6]
+      - Slice 4: L116-117
+      - Slice 5: L119-121
+      - Slice 6: L124-128
+    Relationships (Edges between slices):
+      4 -> 5 [DD, Vars: ['sess']]
+      4 -> 5 [CF]
+      4 -> 6 [DD, Vars: ['sess', 't']]
+      5 -> 6 [DD, Vars: ['criteria']]
+      5 -> 6 [CF]
+
+>>> Method: input (Oracle Lines: 56-63)
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L56-57
+      - Slice 3: L59-59
+      - Slice 4: L61-63
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sc']]
+      2 -> 3 [CF]
+      3 -> 4 [DD, Vars: ['job']]
+      3 -> 4 [CF]
+
+>>> Method: schedule (Oracle Lines: 72-87)
+    Mapped Slices: [2, 3, 4, 5, 6]
+      - Slice 2: L72-73
+      - Slice 3: L75-79
+      - Slice 4: L81-82
+      - Slice 5: L84-85
+      - Slice 6: L87-87
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['sc']]
+      2 -> 3 [CF]
+      2 -> 6 [DD, Vars: ['sc']]
+      3 -> 4 [DD, Vars: ['job']]
+      3 -> 4 [CF]
+      3 -> 6 [DD, Vars: ['job']]
+      4 -> 5 [CF]
+      5 -> 6 [DD, Vars: ['trigger']]
+      5 -> 6 [CF]
+
+>>> Method: execute (Oracle Lines: 33-42)
+    Mapped Slices: [2]
+      - Slice 2: L33-42
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: execute (Oracle Lines: 48-70)
+    Mapped Slices: [4, 5]
+      - Slice 4: L48-54
+      - Slice 5: L56-70
+    Relationships (Edges between slices):
+      4 -> 5 [DD, Vars: ['session']]
+      4 -> 5 [CF]
+
+============================================================
+Project: wikidev-filters
+============================================================
+
+>>> Method: clustering (Oracle Lines: 26-31)
+    Mapped Slices: [1]
+      - Slice 1: L26-31
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: clustering (Oracle Lines: 50-81)
+    Mapped Slices: [3]
+      - Slice 3: L49-82
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: clustering (Oracle Lines: 84-114)
+    Mapped Slices: [4]
+      - Slice 4: L83-115
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getFiedlerVector (Oracle Lines: 26-38)
+    Mapped Slices: [1, 2]
+      - Slice 1: L24-36
+      - Slice 2: L38-38
+    Relationships (Edges between slices):
+      1 -> 2 [CD, Reason: Nesting]
+      1 -> 2 [CF]
+
+>>> Method: getFiedlerVector (Oracle Lines: 49-60)
+    Mapped Slices: [4]
+      - Slice 4: L49-60
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getFiedlerVector (Oracle Lines: 62-72)
+    Mapped Slices: [5]
+      - Slice 5: L62-72
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getFiedlerVector (Oracle Lines: 73-78)
+    Mapped Slices: [6]
+      - Slice 6: L73-79
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getRelationships (Oracle Lines: 100-137)
+    Mapped Slices: [1]
+      - Slice 1: L99-137
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getRelationships (Oracle Lines: 139-171)
+    Mapped Slices: [2]
+      - Slice 2: L139-171
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getRelationships (Oracle Lines: 173-226)
+    Mapped Slices: [3]
+      - Slice 3: L173-226
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: main (Oracle Lines: 67-74)
+    Mapped Slices: [5]
+      - Slice 5: L59-81
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: main (Oracle Lines: 76-81)
+    Mapped Slices: [5]
+      - Slice 5: L59-81
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getArtifactByTypeAndID (Oracle Lines: 255-275)
+    Mapped Slices: [3]
+      - Slice 3: L254-275
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getArtifactByTypeAndID (Oracle Lines: 278-314)
+    Mapped Slices: [5]
+      - Slice 5: L278-314
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getArtifactByTypeAndID (Oracle Lines: 290-297)
+    Mapped Slices: [5]
+      - Slice 5: L278-314
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getArtifactByTypeAndID (Oracle Lines: 309-313)
+    Mapped Slices: [5]
+      - Slice 5: L278-314
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getArtifactByTypeAndID (Oracle Lines: 299-306)
+    Mapped Slices: [5]
+      - Slice 5: L278-314
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: relateChangeSetToTicket (Oracle Lines: 295-312)
+    Mapped Slices: [2]
+      - Slice 2: L295-312
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getLayout (Oracle Lines: 34-42)
+    Mapped Slices: [1]
+      - Slice 1: L34-42
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: getLayout (Oracle Lines: 73-80)
+    Mapped Slices: [4]
+      - Slice 4: L73-80
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: cityBlockInitialization (Oracle Lines: 97-106)
+    Mapped Slices: [1]
+      - Slice 1: L97-106
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: printCityBlocks (Oracle Lines: 354-367)
+    Mapped Slices: [2, 3]
+      - Slice 2: L352-356
+      - Slice 3: L357-367
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['type', 'artifact', 'height', 'line', 'block']]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+
+>>> Method: pushBuildings (Oracle Lines: 124-131)
+    Mapped Slices: [3]
+      - Slice 3: L124-131
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: pushBuildings (Oracle Lines: 132-140)
+    Mapped Slices: [4]
+      - Slice 4: L132-140
+    Relationships: None (Independent slices or single slice)
+
+>>> Method: printCityBlocks (Oracle Lines: 211-232)
+    Mapped Slices: [3, 4]
+      - Slice 3: L209-226
+      - Slice 4: L227-235
+    Relationships (Edges between slices):
+      3 -> 4 [DD, Vars: ['type', 'artifact', 'height', 'line', 'block']]
+      3 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CF]
+
+>>> Method: getConnectedComponents (Oracle Lines: 269-277)
+    Mapped Slices: [1, 2]
+      - Slice 1: L269-270
+      - Slice 2: L272-277
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['cn']]
+      1 -> 2 [CF]

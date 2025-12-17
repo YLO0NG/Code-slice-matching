@@ -1,0 +1,3911 @@
+[
+  {
+    "class_name": "junit.textui.TestRunner",
+    "method_name": "start(String[])",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 153,
+        "end_line": 154,
+        "defs": [
+          "wait",
+          "testCase"
+        ],
+        "uses": [
+          "String"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 156,
+        "end_line": 165,
+        "defs": [
+          "and",
+          "i"
+        ],
+        "uses": [
+          "extractClassName",
+          "Beck",
+          "err",
+          "equals",
+          "Erich",
+          "args",
+          "by",
+          "id",
+          "testCase",
+          "Gamma",
+          "v",
+          "JUnit",
+          "System",
+          "Kent",
+          "length",
+          "wait",
+          "Version",
+          "c",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 167,
+        "end_line": 168,
+        "defs": [
+          "class"
+        ],
+        "uses": [
+          "of",
+          "is",
+          "Exception",
+          "wait",
+          "equals",
+          "testCaseName",
+          "Usage",
+          "where",
+          "name",
+          "testCase",
+          "the",
+          "TestRunner",
+          "TestCase"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 170,
+        "end_line": 178,
+        "defs": [
+          "suite",
+          "endTime",
+          "startTime",
+          "result",
+          "runTime"
+        ],
+        "uses": [
+          "addListener",
+          "System",
+          "createTestResult",
+          "TestResult",
+          "run",
+          "getTest",
+          "Test",
+          "testCase",
+          "print",
+          "fPrinter",
+          "currentTimeMillis"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 179,
+        "end_line": 181,
+        "defs": [],
+        "uses": [
+          "pause",
+          "wait",
+          "result"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 182,
+        "end_line": 185,
+        "defs": [
+          "e",
+          "not"
+        ],
+        "uses": [
+          "Could",
+          "test",
+          "Exception",
+          "run",
+          "suite",
+          "create",
+          "and"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "wait",
+          "testCase"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "wait",
+          "testCase"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "testCase"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "wait"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "and"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "result"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "suite"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.textui.ResultPrinter",
+    "method_name": "print(TestResult, long)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 27,
+        "end_line": 27,
+        "defs": [],
+        "uses": [
+          "printHeader",
+          "runTime"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 28,
+        "end_line": 28,
+        "defs": [],
+        "uses": [
+          "result",
+          "printErrors"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 29,
+        "end_line": 29,
+        "defs": [],
+        "uses": [
+          "printFailures",
+          "result"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 30,
+        "end_line": 41,
+        "defs": [
+          "run"
+        ],
+        "uses": [
+          "errorCount",
+          "s",
+          "runCount",
+          "test",
+          "FAILURES",
+          "Errors",
+          "getWriter",
+          "result",
+          "Tests",
+          "print",
+          "Failures",
+          "failureCount",
+          "OK",
+          "println",
+          "wasSuccessful"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 42,
+        "end_line": 42,
+        "defs": [],
+        "uses": [
+          "getWriter",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "testFailed(int, Test, Throwable)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 64,
+        "end_line": 64,
+        "defs": [],
+        "uses": [
+          "invokeLater",
+          "SwingUtilities"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 65,
+        "end_line": 65,
+        "defs": [],
+        "uses": [
+          "Runnable"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 66,
+        "end_line": 66,
+        "defs": [],
+        "uses": [
+          "run"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 67,
+        "end_line": 67,
+        "defs": [],
+        "uses": [
+          "status"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 68,
+        "end_line": 73,
+        "defs": [],
+        "uses": [
+          "fCounterPanel",
+          "errorCount",
+          "t",
+          "STATUS_ERROR",
+          "test",
+          "TestRunListener",
+          "size",
+          "setErrorValue",
+          "fTestResult",
+          "addElement",
+          "revealFailure",
+          "TestFailure",
+          "fFailures"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 74,
+        "end_line": 77,
+        "defs": [],
+        "uses": [
+          "t",
+          "Failure",
+          "appendFailure",
+          "failureCount",
+          "STATUS_FAILURE",
+          "test",
+          "TestRunListener",
+          "fTestResult",
+          "setFailureValue",
+          "fCounterPanel"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 78,
+        "end_line": 79,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 80,
+        "end_line": 81,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 82,
+        "end_line": 82,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "addToHistory(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 107,
+        "end_line": 114,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "insertItemAt",
+          "removeItemAt",
+          "equals",
+          "setSelectedIndex",
+          "suite",
+          "fSuiteCombo",
+          "getItemCount",
+          "getItemAt"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 115,
+        "end_line": 116,
+        "defs": [],
+        "uses": [
+          "insertItemAt",
+          "fSuiteCombo",
+          "suite",
+          "setSelectedIndex"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 117,
+        "end_line": 119,
+        "defs": [
+          "historyLength"
+        ],
+        "uses": [
+          "HISTORY_LENGTH",
+          "maxhistory",
+          "getPreference"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 120,
+        "end_line": 121,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "getItemCount",
+          "fSuiteCombo",
+          "removeItemAt",
+          "historyLength"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "historyLength"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createFailedPanel()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 169,
+        "end_line": 171,
+        "defs": [
+          "createFailedPanel",
+          "failedPanel"
+        ],
+        "uses": [
+          "Run",
+          "JPanel",
+          "JButton",
+          "fRerunButton",
+          "GridLayout"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 172,
+        "end_line": 172,
+        "defs": [],
+        "uses": [
+          "setEnabled",
+          "fRerunButton"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 173,
+        "end_line": 182,
+        "defs": [
+          "e",
+          "view",
+          "rerunTest"
+        ],
+        "uses": [
+          "TestRunView",
+          "getSelectedIndex",
+          "actionPerformed",
+          "getSelectedTest",
+          "fTestRunViews",
+          "addActionListener",
+          "elementAt",
+          "ActionEvent",
+          "Test",
+          "fTestViewTab",
+          "ActionListener",
+          "fRerunButton"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 183,
+        "end_line": 185,
+        "defs": [],
+        "uses": [
+          "fRerunButton",
+          "failedPanel",
+          "add"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "failedPanel"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createJUnitMenu()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 206,
+        "end_line": 207,
+        "defs": [
+          "menu"
+        ],
+        "uses": [
+          "J",
+          "JUnit",
+          "JMenu",
+          "setMnemonic"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 208,
+        "end_line": 217,
+        "defs": [
+          "event",
+          "mi1"
+        ],
+        "uses": [
+          "menu",
+          "actionPerformed",
+          "A",
+          "JMenuItem",
+          "addActionListener",
+          "About",
+          "ActionListener",
+          "setMnemonic",
+          "ActionEvent",
+          "about",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 219,
+        "end_line": 219,
+        "defs": [],
+        "uses": [
+          "addSeparator",
+          "menu"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 220,
+        "end_line": 235,
+        "defs": [
+          "mi2",
+          "e",
+          "event"
+        ],
+        "uses": [
+          "Couldn",
+          "out",
+          "save",
+          "test",
+          "exit",
+          "history",
+          "addActionListener",
+          "ActionEvent",
+          "setMnemonic",
+          "ActionListener",
+          "IOException",
+          "menu",
+          "t",
+          "Exit",
+          "System",
+          "x",
+          "fFrame",
+          "run",
+          "actionPerformed",
+          "JMenuItem",
+          "saveHistory",
+          "dispose",
+          "println",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 237,
+        "end_line": 237,
+        "defs": [],
+        "uses": [
+          "menu"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createFrame(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 240,
+        "end_line": 244,
+        "defs": [
+          "title",
+          "frame",
+          "icon",
+          "createFrame"
+        ],
+        "uses": [
+          "Image",
+          "setIconImage",
+          "JUnit",
+          "loadFrameIcon",
+          "JFrame",
+          "String"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 245,
+        "end_line": 245,
+        "defs": [],
+        "uses": [
+          "BorderLayout",
+          "frame",
+          "setLayout",
+          "getContentPane"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 247,
+        "end_line": 259,
+        "defs": [
+          "e",
+          "e1"
+        ],
+        "uses": [
+          "Couldn",
+          "out",
+          "save",
+          "test",
+          "exit",
+          "history",
+          "frame",
+          "IOException",
+          "windowClosing",
+          "WindowAdapter",
+          "t",
+          "System",
+          "fFrame",
+          "run",
+          "WindowEvent",
+          "addWindowListener",
+          "saveHistory",
+          "dispose",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 260,
+        "end_line": 260,
+        "defs": [],
+        "uses": [
+          "frame"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createQuitButton()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 290,
+        "end_line": 290,
+        "defs": [
+          "quit"
+        ],
+        "uses": [
+          "Exit",
+          "JButton"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 291,
+        "end_line": 303,
+        "defs": [
+          "e",
+          "e1"
+        ],
+        "uses": [
+          "Couldn",
+          "out",
+          "save",
+          "test",
+          "exit",
+          "history",
+          "addActionListener",
+          "ActionEvent",
+          "ActionListener",
+          "IOException",
+          "t",
+          "quit",
+          "System",
+          "fFrame",
+          "run",
+          "actionPerformed",
+          "saveHistory",
+          "dispose",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 304,
+        "end_line": 304,
+        "defs": [],
+        "uses": [
+          "quit"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "quit"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "quit"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createRunButton()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 307,
+        "end_line": 309,
+        "defs": [
+          "run",
+          "createRunButton"
+        ],
+        "uses": [
+          "Run",
+          "setEnabled",
+          "JButton"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 310,
+        "end_line": 312,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "run",
+          "actionPerformed",
+          "addActionListener",
+          "ActionListener",
+          "ActionEvent"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 313,
+        "end_line": 314,
+        "defs": [],
+        "uses": [
+          "fRunner",
+          "fTestResult",
+          "stop"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 315,
+        "end_line": 320,
+        "defs": [
+          "suiteName",
+          "testSuite"
+        ],
+        "uses": [
+          "shouldReload",
+          "Case",
+          "reset",
+          "setLoading",
+          "String",
+          "getTest",
+          "Test",
+          "showInfo",
+          "Load",
+          "getSuiteText"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 321,
+        "end_line": 324,
+        "defs": [],
+        "uses": [
+          "addToHistory",
+          "suiteName",
+          "doRunTest",
+          "testSuite"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 325,
+        "end_line": 330,
+        "defs": [],
+        "uses": [
+          "run"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "run"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "run"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "suiteName",
+          "testSuite"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createSuiteCombo()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 349,
+        "end_line": 352,
+        "defs": [
+          "combo",
+          "createSuiteCombo"
+        ],
+        "uses": [
+          "JComboBox",
+          "setLightWeightPopupEnabled",
+          "setEditable"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 354,
+        "end_line": 374,
+        "defs": [
+          "e",
+          "suiteName",
+          "testSuite"
+        ],
+        "uses": [
+          "VK_ENTER",
+          "Case",
+          "shouldReload",
+          "textChanged",
+          "getEditorComponent",
+          "String",
+          "addKeyListener",
+          "showInfo",
+          "addToHistory",
+          "Load",
+          "getSuiteText",
+          "getEditor",
+          "KeyAdapter",
+          "getKeyChar",
+          "setLoading",
+          "reset",
+          "stop",
+          "KeyEvent",
+          "getTest",
+          "doRunTest",
+          "fRunner",
+          "Test",
+          "fTestResult",
+          "combo",
+          "keyTyped"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 375,
+        "end_line": 379,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "first",
+          "fails",
+          "loadHistory",
+          "time",
+          "the",
+          "combo",
+          "IOException"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 380,
+        "end_line": 388,
+        "defs": [
+          "event"
+        ],
+        "uses": [
+          "addItemListener",
+          "textChanged",
+          "SELECTED",
+          "ItemEvent",
+          "ItemListener",
+          "itemStateChanged",
+          "combo",
+          "getStateChange"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 389,
+        "end_line": 390,
+        "defs": [],
+        "uses": [
+          "combo"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "combo"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "combo"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "combo"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "combo"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "createUI(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 422,
+        "end_line": 426,
+        "defs": [
+          "suiteName",
+          "frame",
+          "mb",
+          "createUI"
+        ],
+        "uses": [
+          "JMenuBar",
+          "createFrame",
+          "JUnit",
+          "JFrame",
+          "setJMenuBar",
+          "String",
+          "createMenus"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 428,
+        "end_line": 432,
+        "defs": [
+          "browseButton",
+          "suiteLabel",
+          "class"
+        ],
+        "uses": [
+          "JLabel",
+          "getRootPane",
+          "Component",
+          "fRun",
+          "createBrowseButton",
+          "setDefaultButton",
+          "name",
+          "frame",
+          "fSuiteCombo",
+          "Test",
+          "createSuiteCombo",
+          "createRunButton"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 434,
+        "end_line": 435,
+        "defs": [],
+        "uses": [
+          "createUseLoaderCheckBox",
+          "ProgressBar",
+          "fProgressIndicator",
+          "fUseLoadingRunner"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 436,
+        "end_line": 438,
+        "defs": [],
+        "uses": [
+          "DefaultListModel",
+          "fFailures",
+          "fCounterPanel",
+          "createCounterPanel"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 440,
+        "end_line": 441,
+        "defs": [
+          "failedPanel"
+        ],
+        "uses": [
+          "fTestViewTab",
+          "createFailedPanel",
+          "createTestRunViews",
+          "JPanel"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 443,
+        "end_line": 444,
+        "defs": [
+          "tracePane"
+        ],
+        "uses": [
+          "createFailureDetailView",
+          "fFailureView",
+          "HORIZONTAL_SCROLLBAR_ALWAYS",
+          "JScrollPane",
+          "getComponent",
+          "VERTICAL_SCROLLBAR_ALWAYS"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 446,
+        "end_line": 448,
+        "defs": [],
+        "uses": [
+          "fQuitButton",
+          "fLogo",
+          "createLogo",
+          "fStatusLine",
+          "createQuitButton",
+          "createStatusLine"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 450,
+        "end_line": 484,
+        "defs": [
+          "fill",
+          "c",
+          "panel",
+          "splitter"
+        ],
+        "uses": [
+          "JLabel",
+          "fProgressIndicator",
+          "GAP",
+          "fQuitButton",
+          "JSeparator",
+          "gridx",
+          "JPanel",
+          "GridBagConstraints",
+          "JSplitPane",
+          "NORTH",
+          "fUseLoadingRunner",
+          "tracePane",
+          "failedPanel",
+          "gridwidth",
+          "fSuiteCombo",
+          "addGrid",
+          "fTestViewTab",
+          "anchor",
+          "fCounterPanel",
+          "NONE",
+          "WEST",
+          "fRun",
+          "GridBagLayout",
+          "fLogo",
+          "weightx",
+          "CENTER",
+          "fStatusLine",
+          "VERTICAL_SPLIT",
+          "Insets",
+          "gridy",
+          "BOTH",
+          "Results",
+          "insets",
+          "weighty",
+          "suiteLabel",
+          "VERTICAL",
+          "HORIZONTAL",
+          "browseButton",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 486,
+        "end_line": 490,
+        "defs": [],
+        "uses": [
+          "frame",
+          "setLocation",
+          "setContentPane",
+          "panel",
+          "pack"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 9,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "browseButton",
+          "suiteLabel"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "failedPanel"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "tracePane"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "DD",
+        "vars": [
+          "panel"
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "runSuite()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 648,
+        "end_line": 649,
+        "defs": [],
+        "uses": [
+          "fRunner",
+          "fTestResult",
+          "stop"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 650,
+        "end_line": 656,
+        "defs": [],
+        "uses": [
+          "shouldReload",
+          "fCounterPanel",
+          "fProgressIndicator",
+          "fFailureView",
+          "reset",
+          "setLoading",
+          "clear",
+          "setEnabled",
+          "fRerunButton",
+          "fFailures"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 657,
+        "end_line": 658,
+        "defs": [
+          "suiteName"
+        ],
+        "uses": [
+          "Case",
+          "String",
+          "Test",
+          "showInfo",
+          "Load",
+          "getSuiteText"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 659,
+        "end_line": 659,
+        "defs": [
+          "testSuite"
+        ],
+        "uses": [
+          "suiteName",
+          "getTest",
+          "Test"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 660,
+        "end_line": 663,
+        "defs": [],
+        "uses": [
+          "addToHistory",
+          "suiteName",
+          "doRunTest",
+          "testSuite"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "suiteName"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "suiteName"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "testSuite"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "runTest(Test)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 673,
+        "end_line": 674,
+        "defs": [],
+        "uses": [
+          "fRunner",
+          "fTestResult",
+          "stop"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 675,
+        "end_line": 680,
+        "defs": [],
+        "uses": [
+          "fCounterPanel",
+          "fProgressIndicator",
+          "fFailureView",
+          "reset",
+          "clear",
+          "setEnabled",
+          "fRerunButton",
+          "fFailures"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 681,
+        "end_line": 683,
+        "defs": [],
+        "uses": [
+          "doRunTest",
+          "testSuite"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.swingui.TestRunner",
+    "method_name": "terminate()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 825,
+        "end_line": 825,
+        "defs": [],
+        "uses": [
+          "dispose",
+          "fFrame"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 826,
+        "end_line": 836,
+        "defs": [
+          "testsuite",
+          "i",
+          "bw"
+        ],
+        "uses": [
+          "getSettingsFile",
+          "BufferedWriter",
+          "length",
+          "close",
+          "newLine",
+          "write",
+          "String",
+          "fSuiteCombo",
+          "getItemCount",
+          "getItemAt",
+          "FileWriter",
+          "toString"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 837,
+        "end_line": 839,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "Couldn",
+          "out",
+          "t",
+          "System",
+          "save",
+          "test",
+          "run",
+          "history",
+          "IOException",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 840,
+        "end_line": 840,
+        "defs": [],
+        "uses": [
+          "exit",
+          "System"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.runner.BaseTestRunner",
+    "method_name": "getPreferences()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 34,
+        "end_line": 37,
+        "defs": [],
+        "uses": [
+          "loading",
+          "put",
+          "fPreferences",
+          "Properties",
+          "filterstack"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 38,
+        "end_line": 49,
+        "defs": [
+          "is",
+          "e",
+          "e1"
+        ],
+        "uses": [
+          "getPreferences",
+          "Properties",
+          "close",
+          "load",
+          "FileInputStream",
+          "getPreferencesFile",
+          "IOException",
+          "setPreferences",
+          "InputStream"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 51,
+        "end_line": 51,
+        "defs": [],
+        "uses": [
+          "fPreferences"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.framework.TestResult",
+    "method_name": "run(TestCase)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 103,
+        "end_line": 106,
+        "defs": [
+          "count"
+        ],
+        "uses": [
+          "test",
+          "fRunTests",
+          "countTestCases"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 107,
+        "end_line": 109,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "startTest",
+          "cloneListeners",
+          "nextElement",
+          "test",
+          "hasMoreElements",
+          "elements",
+          "TestListener",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 110,
+        "end_line": 114,
+        "defs": [
+          "p"
+        ],
+        "uses": [
+          "runBare",
+          "Protectable",
+          "Throwable",
+          "test",
+          "protect"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 115,
+        "end_line": 115,
+        "defs": [],
+        "uses": [
+          "p",
+          "test",
+          "runProtected"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 117,
+        "end_line": 117,
+        "defs": [],
+        "uses": [
+          "test",
+          "endTest"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "p"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.framework.TestResult",
+    "method_name": "runProtected(Test, Protectable)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 129,
+        "end_line": 130,
+        "defs": [],
+        "uses": [
+          "p",
+          "protect"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 132,
+        "end_line": 136,
+        "defs": [
+          "e",
+          "e1"
+        ],
+        "uses": [
+          "addFailure",
+          "cloneListeners",
+          "nextElement",
+          "test",
+          "AssertionFailedError",
+          "hasMoreElements",
+          "addElement",
+          "elements",
+          "TestFailure",
+          "TestListener",
+          "fFailures",
+          "Enumeration"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 138,
+        "end_line": 139,
+        "defs": [
+          "by",
+          "e"
+        ],
+        "uses": [
+          "t",
+          "ThreadDeath",
+          "don",
+          "accident"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 141,
+        "end_line": 142,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "Throwable",
+          "test",
+          "addError"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.framework.Assert",
+    "method_name": "assertEquals(String, Object, Object)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 60,
+        "end_line": 61,
+        "defs": [],
+        "uses": [
+          "expected",
+          "actual"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 62,
+        "end_line": 63,
+        "defs": [],
+        "uses": [
+          "expected",
+          "actual",
+          "equals"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 64,
+        "end_line": 66,
+        "defs": [
+          "formatted"
+        ],
+        "uses": [
+          "String",
+          "message"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 67,
+        "end_line": 67,
+        "defs": [],
+        "uses": [
+          "expected",
+          "was",
+          "actual",
+          "formatted",
+          "but",
+          "fail"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "formatted"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.framework.Assert",
+    "method_name": "assertEquals(String, double, double, double)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 100,
+        "end_line": 107,
+        "defs": [
+          "formatted"
+        ],
+        "uses": [
+          "isInfinite",
+          "was",
+          "expected",
+          "but",
+          "Double",
+          "actual",
+          "String",
+          "fail",
+          "message"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 107,
+        "end_line": 108,
+        "defs": [
+          "comparison",
+          "always"
+        ],
+        "uses": [
+          "expected",
+          "with",
+          "delta",
+          "returns",
+          "failNotEquals",
+          "Math",
+          "Double",
+          "actual",
+          "NaN",
+          "Because",
+          "message",
+          "abs"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.framework.Assert",
+    "method_name": "assertEquals(String, float, float, float)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 125,
+        "end_line": 131,
+        "defs": [
+          "formatted"
+        ],
+        "uses": [
+          "isInfinite",
+          "was",
+          "expected",
+          "but",
+          "actual",
+          "Float",
+          "String",
+          "fail",
+          "message"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 132,
+        "end_line": 133,
+        "defs": [],
+        "uses": [
+          "expected",
+          "failNotEquals",
+          "delta",
+          "Math",
+          "actual",
+          "Float",
+          "message",
+          "abs"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.awtui.TestRunner",
+    "method_name": "testFailed(int, Test, Throwable)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 68,
+        "end_line": 83,
+        "defs": [
+          "kind",
+          "msg"
+        ],
+        "uses": [
+          "errorCount",
+          "Integer",
+          "test",
+          "truncate",
+          "getMessage",
+          "String",
+          "setText",
+          "fFailureList",
+          "STATUS_ERROR",
+          "fExceptions",
+          "Error",
+          "toString",
+          "fFailedTests",
+          "failureSelected",
+          "t",
+          "fNumberOfErrors",
+          "TestRunListener",
+          "select",
+          "fTestResult",
+          "getItemCount",
+          "addElement",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 84,
+        "end_line": 87,
+        "defs": [],
+        "uses": [
+          "t",
+          "Failure",
+          "fNumberOfFailures",
+          "Integer",
+          "appendFailure",
+          "failureCount",
+          "STATUS_FAILURE",
+          "test",
+          "TestRunListener",
+          "setText",
+          "fTestResult",
+          "toString"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.awtui.TestRunner",
+    "method_name": "createJUnitMenu()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 122,
+        "end_line": 135,
+        "defs": [
+          "createJUnitMenu",
+          "event",
+          "about",
+          "mi",
+          "menu"
+        ],
+        "uses": [
+          "AboutDialog",
+          "JUnit",
+          "setVisible",
+          "fFrame",
+          "actionPerformed",
+          "MenuItem",
+          "addActionListener",
+          "Menu",
+          "setLocation",
+          "ActionEvent",
+          "About",
+          "ActionListener",
+          "setModal",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 137,
+        "end_line": 146,
+        "defs": [
+          "event"
+        ],
+        "uses": [
+          "menu",
+          "Exit",
+          "System",
+          "exit",
+          "actionPerformed",
+          "MenuItem",
+          "addActionListener",
+          "ActionListener",
+          "mi",
+          "ActionEvent",
+          "addSeparator",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 147,
+        "end_line": 148,
+        "defs": [],
+        "uses": [
+          "menu"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "menu",
+          "mi"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.awtui.TestRunner",
+    "method_name": "createUI(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 157,
+        "end_line": 161,
+        "defs": [
+          "suiteName",
+          "frame",
+          "icon",
+          "createUI"
+        ],
+        "uses": [
+          "Image",
+          "setIconImage",
+          "JUnit",
+          "loadFrameIcon",
+          "String",
+          "Frame"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 163,
+        "end_line": 165,
+        "defs": [
+          "finalFrame"
+        ],
+        "uses": [
+          "SystemColor",
+          "setBackground",
+          "setLayout",
+          "BorderLayout",
+          "frame",
+          "control",
+          "Frame"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 167,
+        "end_line": 174,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "System",
+          "exit",
+          "WindowEvent",
+          "addWindowListener",
+          "finalFrame",
+          "frame",
+          "windowClosing",
+          "dispose",
+          "WindowAdapter"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 176,
+        "end_line": 178,
+        "defs": [
+          "mb"
+        ],
+        "uses": [
+          "createMenus",
+          "frame",
+          "MenuBar",
+          "setMenuBar"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 180,
+        "end_line": 231,
+        "defs": [
+          "e",
+          "testSuite",
+          "suiteLabel",
+          "endTime",
+          "startTime",
+          "class",
+          "runTime"
+        ],
+        "uses": [
+          "Case",
+          "currentTimeMillis",
+          "fProgressIndicator",
+          "PLAIN_FONT",
+          "createTestResult",
+          "name",
+          "addActionListener",
+          "Running",
+          "ActionEvent",
+          "Load",
+          "addListener",
+          "requestFocus",
+          "countTestCases",
+          "setLoading",
+          "run",
+          "gc",
+          "stop",
+          "getTest",
+          "fRunner",
+          "Test",
+          "shouldReload",
+          "Initializing",
+          "setColumns",
+          "fRun",
+          "Run",
+          "suiteName",
+          "showStatus",
+          "selectAll",
+          "setFont",
+          "shouldStop",
+          "ActionListener",
+          "showInfo",
+          "Thread",
+          "TestRunner",
+          "System",
+          "TextField",
+          "seconds",
+          "fSuiteField",
+          "reset",
+          "actionPerformed",
+          "setLabel",
+          "Label",
+          "start",
+          "elapsedTimeAsString",
+          "Stop",
+          "fTestResult",
+          "getText",
+          "Stopped",
+          "Finished"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 232,
+        "end_line": 239,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "setEnabled",
+          "TextEvent",
+          "fRun",
+          "fSuiteField",
+          "length",
+          "TextListener",
+          "addTextListener",
+          "setText",
+          "getText",
+          "textValueChanged",
+          "fStatusLine"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 240,
+        "end_line": 248,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "setEnabled",
+          "fRun",
+          "Run",
+          "actionPerformed",
+          "addActionListener",
+          "ActionListener",
+          "ActionEvent",
+          "runSuite",
+          "Button"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 249,
+        "end_line": 252,
+        "defs": [
+          "classes",
+          "useLoader"
+        ],
+        "uses": [
+          "inVAJava",
+          "Checkbox",
+          "fUseLoadingRunner",
+          "every",
+          "run",
+          "Reload",
+          "setVisible",
+          "useReloadingTestSuiteLoader"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 255,
+        "end_line": 270,
+        "defs": [
+          "numbersPanel"
+        ],
+        "uses": [
+          "fNumberOfFailures",
+          "fProgressIndicator",
+          "RIGHT",
+          "fNumberOfErrors",
+          "PLAIN_FONT",
+          "ProgressBar",
+          "Panel",
+          "Label",
+          "createCounterPanel",
+          "setFont",
+          "setText",
+          "fNumberOfRuns"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 10,
+        "label": "Slice 10",
+        "start_line": 273,
+        "end_line": 282,
+        "defs": [
+          "e",
+          "and",
+          "failureLabel"
+        ],
+        "uses": [
+          "failureSelected",
+          "Failures",
+          "addItemListener",
+          "List",
+          "ItemEvent",
+          "Errors",
+          "Label",
+          "ItemListener",
+          "itemStateChanged",
+          "fFailureList"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 11,
+        "label": "Slice 11",
+        "start_line": 283,
+        "end_line": 291,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "Run",
+          "actionPerformed",
+          "rerun",
+          "addActionListener",
+          "ActionListener",
+          "ActionEvent",
+          "setEnabled",
+          "fRerunButton",
+          "Button"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 12,
+        "label": "Slice 12",
+        "start_line": 293,
+        "end_line": 298,
+        "defs": [
+          "failedPanel"
+        ],
+        "uses": [
+          "setColumns",
+          "setRows",
+          "Panel",
+          "fTraceArea",
+          "TextArea",
+          "fRerunButton",
+          "GridLayout",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 13,
+        "label": "Slice 13",
+        "start_line": 301,
+        "end_line": 313,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "PLAIN_FONT",
+          "exit",
+          "addActionListener",
+          "setFont",
+          "fQuitButton",
+          "ActionEvent",
+          "ActionListener",
+          "fStatusLine",
+          "Color",
+          "Exit",
+          "System",
+          "TextField",
+          "setForeground",
+          "actionPerformed",
+          "red",
+          "setEditable",
+          "Button"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 14,
+        "label": "Slice 14",
+        "start_line": 316,
+        "end_line": 337,
+        "defs": [
+          "panel"
+        ],
+        "uses": [
+          "fProgressIndicator",
+          "WEST",
+          "fRun",
+          "Panel",
+          "GridBagLayout",
+          "fQuitButton",
+          "fFailureList",
+          "failureLabel",
+          "fTraceArea",
+          "fLogo",
+          "CENTER",
+          "fStatusLine",
+          "GridBagConstraints",
+          "NORTH",
+          "fUseLoadingRunner",
+          "fSuiteField",
+          "BOTH",
+          "failedPanel",
+          "Logo",
+          "numbersPanel",
+          "suiteLabel",
+          "HORIZONTAL",
+          "addGrid",
+          "NONE"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 15,
+        "label": "Slice 15",
+        "start_line": 339,
+        "end_line": 342,
+        "defs": [],
+        "uses": [
+          "BorderLayout",
+          "frame",
+          "add",
+          "panel",
+          "pack",
+          "CENTER"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "suiteName"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 15,
+        "type": "DD",
+        "vars": [
+          "frame"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 15,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 9,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 10,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 11,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 12,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 13,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 14,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "finalFrame"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 14,
+        "type": "DD",
+        "vars": [
+          "suiteLabel"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 14,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 14,
+        "type": "DD",
+        "vars": [
+          "failureLabel"
+        ]
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 14,
+        "type": "DD",
+        "vars": [
+          "failedPanel"
+        ]
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "DD",
+        "vars": [
+          "panel"
+        ]
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.awtui.TestRunner",
+    "method_name": "createCounterPanel()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 344,
+        "end_line": 356,
+        "defs": [
+          "constraints",
+          "numbersPanel",
+          "createCounterPanel"
+        ],
+        "uses": [
+          "Runs",
+          "gridheight",
+          "Panel",
+          "GridBagLayout",
+          "gridx",
+          "weightx",
+          "CENTER",
+          "GridBagConstraints",
+          "add",
+          "Insets",
+          "gridy",
+          "gridwidth",
+          "insets",
+          "Label",
+          "weighty",
+          "fill",
+          "anchor",
+          "NONE"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 357,
+        "end_line": 363,
+        "defs": [],
+        "uses": [
+          "numbersPanel",
+          "Insets",
+          "HORIZONTAL",
+          "addToCounterPanel",
+          "CENTER",
+          "GridBagConstraints",
+          "fNumberOfRuns"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 364,
+        "end_line": 370,
+        "defs": [],
+        "uses": [
+          "Insets",
+          "addToCounterPanel",
+          "Label",
+          "Errors",
+          "numbersPanel",
+          "CENTER",
+          "GridBagConstraints",
+          "NONE"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 371,
+        "end_line": 377,
+        "defs": [],
+        "uses": [
+          "numbersPanel",
+          "Insets",
+          "fNumberOfErrors",
+          "addToCounterPanel",
+          "HORIZONTAL",
+          "GridBagConstraints",
+          "CENTER"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 378,
+        "end_line": 384,
+        "defs": [],
+        "uses": [
+          "Failures",
+          "Insets",
+          "addToCounterPanel",
+          "Label",
+          "numbersPanel",
+          "CENTER",
+          "GridBagConstraints",
+          "NONE"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 385,
+        "end_line": 391,
+        "defs": [],
+        "uses": [
+          "numbersPanel",
+          "fNumberOfFailures",
+          "Insets",
+          "HORIZONTAL",
+          "addToCounterPanel",
+          "CENTER",
+          "GridBagConstraints"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 392,
+        "end_line": 392,
+        "defs": [],
+        "uses": [
+          "numbersPanel"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "numbersPanel"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "junit.awtui.TestRunner",
+    "method_name": "reset()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 483,
+        "end_line": 485,
+        "defs": [],
+        "uses": [
+          "setLabelValue",
+          "fNumberOfFailures",
+          "fNumberOfErrors",
+          "fNumberOfRuns"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 486,
+        "end_line": 489,
+        "defs": [],
+        "uses": [
+          "getGraphics",
+          "fProgressIndicator",
+          "paint",
+          "fProgress",
+          "fProgressX",
+          "fError"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 490,
+        "end_line": 490,
+        "defs": [],
+        "uses": [
+          "setEnabled",
+          "fRerunButton"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 491,
+        "end_line": 493,
+        "defs": [],
+        "uses": [
+          "removeAll",
+          "fFailureList",
+          "fExceptions",
+          "fFailedTests",
+          "Vector"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 494,
+        "end_line": 494,
+        "defs": [],
+        "uses": [
+          "setText",
+          "fTraceArea"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  }
+]

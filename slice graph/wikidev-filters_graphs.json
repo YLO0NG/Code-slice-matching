@@ -1,0 +1,2530 @@
+[
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.clustering.Hierarchical",
+    "method_name": "clustering(ArrayList<IArtifact>)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 26,
+        "end_line": 31,
+        "defs": [
+          "cluster",
+          "artifact"
+        ],
+        "uses": [
+          "IArtifact",
+          "artifacts",
+          "ArrayList",
+          "Cluster",
+          "clusters",
+          "addArtifact",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 32,
+        "end_line": 47,
+        "defs": [
+          "minVal",
+          "minCol",
+          "minRow",
+          "j",
+          "i"
+        ],
+        "uses": [
+          "THRESHOLD",
+          "length",
+          "size",
+          "clusters",
+          "distanceMatrix"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 49,
+        "end_line": 82,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "insertRows",
+          "minCol",
+          "insertColumns",
+          "minRow",
+          "addArtifacts",
+          "getArtifacts",
+          "get",
+          "length",
+          "deleteRows",
+          "newDistances",
+          "clusters",
+          "distanceMatrix",
+          "remove",
+          "deleteColumns"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 83,
+        "end_line": 115,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "insertRows",
+          "minCol",
+          "insertColumns",
+          "minRow",
+          "addArtifacts",
+          "getArtifacts",
+          "get",
+          "length",
+          "deleteRows",
+          "newDistances",
+          "clusters",
+          "distanceMatrix",
+          "remove",
+          "deleteColumns"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 117,
+        "end_line": 117,
+        "defs": [],
+        "uses": [
+          "clusters"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "minRow",
+          "minCol"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "minRow",
+          "minCol"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+    "method_name": "getFiedlerVector(double[][])",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 24,
+        "end_line": 36,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "sum",
+          "sumRow",
+          "getFiedlerVector",
+          "length",
+          "A",
+          "L",
+          "D"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 38,
+        "end_line": 38,
+        "defs": [],
+        "uses": [
+          "A",
+          "L",
+          "minus",
+          "D"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 40,
+        "end_line": 45,
+        "defs": [
+          "eigenValues",
+          "eigenVectors"
+        ],
+        "uses": [
+          "Matrix",
+          "EigenvalueDecomposition",
+          "LEigenDec",
+          "L",
+          "eigen",
+          "getV",
+          "getD"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 49,
+        "end_line": 60,
+        "defs": [
+          "i",
+          "value"
+        ],
+        "uses": [
+          "put",
+          "sortedEigenValues",
+          "Integer",
+          "TreeMap",
+          "eigenValues",
+          "getColumnDimension",
+          "Double",
+          "get"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 62,
+        "end_line": 72,
+        "defs": [
+          "minIndex",
+          "threshold",
+          "key"
+        ],
+        "uses": [
+          "keySet",
+          "sortedEigenValues",
+          "Iterator",
+          "keyIt",
+          "Double",
+          "get",
+          "next",
+          "hasNext",
+          "iterator",
+          "Set"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 73,
+        "end_line": 79,
+        "defs": [
+          "j",
+          "i"
+        ],
+        "uses": [
+          "minIndex",
+          "eigenVectors2",
+          "getColumnDimension",
+          "DoubleArray",
+          "get",
+          "eigenVectors",
+          "getRowDimension",
+          "getColumnCopy"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "eigenValues"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "eigenVectors"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "minIndex"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+    "method_name": "getRelationships()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 99,
+        "end_line": 137,
+        "defs": [
+          "revision",
+          "artifact",
+          "text",
+          "ticket",
+          "wiki",
+          "parser",
+          "changeset",
+          "communication"
+        ],
+        "uses": [
+          "parseTextInWords",
+          "TextParser",
+          "getSummary",
+          "Message",
+          "toLowerCase",
+          "getDesription",
+          "toString",
+          "getWords",
+          "ChangeSet",
+          "artifacts",
+          "WikiRevision",
+          "getRevisions",
+          "Document",
+          "getComment",
+          "Wiki",
+          "ArrayList",
+          "String",
+          "documents",
+          "setDocument",
+          "Ticket",
+          "getBody",
+          "getSubject",
+          "IArtifact",
+          "buffers",
+          "getRev_text",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 139,
+        "end_line": 171,
+        "defs": [
+          "revision",
+          "artifact",
+          "text",
+          "ticket",
+          "wiki",
+          "parser",
+          "changeset",
+          "communication"
+        ],
+        "uses": [
+          "parseTextInWords",
+          "TextParser",
+          "getSummary",
+          "Message",
+          "getDocument",
+          "calculateTFIDF",
+          "toLowerCase",
+          "getDesription",
+          "ChangeSet",
+          "artifacts",
+          "WikiRevision",
+          "setTfidf",
+          "getRevisions",
+          "getComment",
+          "Wiki",
+          "String",
+          "documents",
+          "Ticket",
+          "getBody",
+          "getSubject",
+          "IArtifact",
+          "getRev_text"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 173,
+        "end_line": 226,
+        "defs": [
+          "revision",
+          "artifact",
+          "text",
+          "ticket",
+          "wiki",
+          "parser",
+          "changeset",
+          "communication"
+        ],
+        "uses": [
+          "parseTextInWords",
+          "TextParser",
+          "sourceArtifact",
+          "getGenericRelationships",
+          "getSummary",
+          "Message",
+          "toLowerCase",
+          "getDesription",
+          "toString",
+          "add",
+          "ChangeSet",
+          "artifacts",
+          "WikiRevision",
+          "getRevisions",
+          "getComment",
+          "out",
+          "Wiki",
+          "String",
+          "documents",
+          "Relationships",
+          "getProject",
+          "Ticket",
+          "getSubject",
+          "getBody",
+          "System",
+          "IArtifact",
+          "mineRelationshipsFromText",
+          "project",
+          "buffers",
+          "println",
+          "getRev_text"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.ClusteringMain",
+    "method_name": "main(String[])",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 19,
+        "end_line": 30,
+        "defs": [
+          "ip",
+          "password",
+          "databaseName",
+          "username"
+        ],
+        "uses": [
+          "cs",
+          "lb",
+          "jdbc",
+          "wikidev_ucosp",
+          "hypatia",
+          "ca",
+          "getUsername",
+          "gr",
+          "String",
+          "parseArgs",
+          "i",
+          "filimon9786",
+          "weekly",
+          "getPassword",
+          "fokaefs",
+          "ub",
+          "mysql",
+          "ualberta",
+          "openTheConnection",
+          "args2",
+          "DataManager",
+          "getDatabaseName",
+          "InvocationParser"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 31,
+        "end_line": 41,
+        "defs": [
+          "upperBound",
+          "lowerBound",
+          "todate",
+          "project",
+          "window",
+          "interval",
+          "fromdate"
+        ],
+        "uses": [
+          "getUpperBound",
+          "getWindow",
+          "getLowerBound",
+          "String",
+          "getFromdate",
+          "getProject",
+          "ip",
+          "getTodate",
+          "getInterval"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 44,
+        "end_line": 52,
+        "defs": [
+          "l",
+          "nextWeek",
+          "firstWeek",
+          "previousWeek"
+        ],
+        "uses": [
+          "out",
+          "System",
+          "WEEK_INTERVAL_IN_MILLIS",
+          "todate",
+          "getTime",
+          "DataManager",
+          "fromdate",
+          "Timestamp",
+          "to",
+          "valueOf",
+          "toString",
+          "From",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 53,
+        "end_line": 57,
+        "defs": [
+          "rm"
+        ],
+        "uses": [
+          "newArtifacts",
+          "ArrayList",
+          "nextWeek",
+          "getRelationships",
+          "previousWeek",
+          "distanceMatrix",
+          "RelationshipMiner",
+          "toString",
+          "getArtifactsBetweenDates",
+          "IArtifact",
+          "Cluster",
+          "project",
+          "DataManager",
+          "getDistanceMatrix",
+          "totalClusters"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 59,
+        "end_line": 81,
+        "defs": [
+          "sammon",
+          "clustering",
+          "mds",
+          "threshold",
+          "cluster"
+        ],
+        "uses": [
+          "SammonsProjection",
+          "finalClusters",
+          "newArtifacts",
+          "CreateMapping",
+          "cMDS",
+          "coords",
+          "ArrayList",
+          "contains",
+          "getProjection",
+          "getInstance",
+          "clusters",
+          "MultidimensionalScaling",
+          "distanceMatrix",
+          "upperBound",
+          "add",
+          "lowerBound",
+          "length",
+          "getArtifacts",
+          "size",
+          "Cluster",
+          "mdsCoords",
+          "isEmpty",
+          "interval",
+          "totalClusters",
+          "Clustering"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 83,
+        "end_line": 102,
+        "defs": [
+          "artifact",
+          "clustered",
+          "j",
+          "cluster",
+          "index"
+        ],
+        "uses": [
+          "newArtifacts",
+          "writeClusterPerProject",
+          "coords",
+          "nextWeek",
+          "previousWeek",
+          "setIndex",
+          "valueOf",
+          "toString",
+          "fromdate",
+          "setUsersAndWords",
+          "getArtifacts",
+          "setFromdate",
+          "todate",
+          "Cluster",
+          "addCoordinate",
+          "ClusterPoint",
+          "threshold",
+          "setThreshold",
+          "setProject",
+          "finalClusters",
+          "setCluster_set_name",
+          "window",
+          "Timestamp",
+          "IArtifact",
+          "indexOf",
+          "size",
+          "writeCluster",
+          "project",
+          "DataManager",
+          "setTodate"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 114,
+        "end_line": 116,
+        "defs": [],
+        "uses": [
+          "previousWeek",
+          "nextWeek",
+          "DataManager",
+          "closeTheConnection"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 117,
+        "end_line": 118,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "printStackTrace",
+          "Exception"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "ip"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "fromdate",
+          "todate"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "project"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "interval",
+          "upperBound",
+          "lowerBound"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "project",
+          "window",
+          "fromdate",
+          "todate"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "nextWeek",
+          "previousWeek"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "nextWeek",
+          "previousWeek"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "nextWeek",
+          "previousWeek"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "threshold"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
+    "method_name": "getArtifactByTypeAndID(IArtifact, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 249,
+        "end_line": 250,
+        "defs": [
+          "project",
+          "sqlStmt"
+        ],
+        "uses": [
+          "Project",
+          "getId",
+          "getType",
+          "getProjectByID",
+          "QueryBuilder",
+          "anArtifact",
+          "projectid",
+          "DataManager",
+          "String",
+          "selectArtifactByTypeAndID"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 251,
+        "end_line": 253,
+        "defs": [
+          "res",
+          "artifact"
+        ],
+        "uses": [
+          "IArtifact",
+          "executeQuery",
+          "statement",
+          "sqlStmt",
+          "ResultSet"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 254,
+        "end_line": 275,
+        "defs": [],
+        "uses": [
+          "address",
+          "owner_name",
+          "description",
+          "equals",
+          "Message",
+          "anArtifact",
+          "getString",
+          "created",
+          "id",
+          "page_id",
+          "reporter",
+          "getInt",
+          "ChangeSet",
+          "externalauthor",
+          "artifact",
+          "project_ticket_id",
+          "page_namespace",
+          "page_title",
+          "deleted",
+          "page_touched",
+          "author",
+          "mid_header",
+          "res",
+          "refid_header",
+          "comment",
+          "summary",
+          "last_modified",
+          "Wiki",
+          "getType",
+          "getTimestamp",
+          "next",
+          "timestamp",
+          "project_id",
+          "priority",
+          "Ticket",
+          "subject",
+          "rev",
+          "externalsystem_id",
+          "date",
+          "body",
+          "user_name"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 277,
+        "end_line": 277,
+        "defs": [],
+        "uses": [
+          "res",
+          "close"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 278,
+        "end_line": 314,
+        "defs": [
+          "user",
+          "ticket",
+          "wiki",
+          "changeSet",
+          "communication",
+          "detail"
+        ],
+        "uses": [
+          "getUserByUserName",
+          "getProjectNamespaceByNamespaceID",
+          "getReporterName",
+          "Message",
+          "getUser_name",
+          "getChangeSetDetailsByRevAndProject",
+          "getExternalAuthorUserName",
+          "getExternalSystemID",
+          "setRevisions",
+          "getChangesetDetails",
+          "ChangeSet",
+          "artifact",
+          "addTicket",
+          "getProjectID",
+          "setOwner",
+          "addChangeset",
+          "getProjectByName",
+          "getTicketID",
+          "setChangesetDetails",
+          "setProject",
+          "User",
+          "Wiki",
+          "setTicketChanges",
+          "getRevision",
+          "getTimestamp",
+          "setReporter",
+          "setAuthorForChangeSetDetails",
+          "setType",
+          "getAuthor",
+          "getProject",
+          "Ticket",
+          "setProjectID",
+          "addMessage",
+          "getTicketChangesByTicketID",
+          "getPage_id",
+          "setTimestamp",
+          "project",
+          "ChangeSetDetail",
+          "DataManager",
+          "getPage_namespace_id",
+          "setUserRealName",
+          "getRevisionsByWikiID",
+          "getOwnerName"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 315,
+        "end_line": 315,
+        "defs": [],
+        "uses": [
+          "artifact"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "sqlStmt"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "project"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "res",
+          "artifact"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "res"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "artifact"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "artifact"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
+    "method_name": "relateChangeSetToTicket(ChangeSet)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 291,
+        "end_line": 294,
+        "defs": [
+          "ticketid",
+          "pattern",
+          "comment"
+        ],
+        "uses": [
+          "getComment",
+          "ArrayList",
+          "String",
+          "ids",
+          "changeset"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 295,
+        "end_line": 312,
+        "defs": [
+          "j",
+          "i",
+          "ch"
+        ],
+        "uses": [
+          "substring",
+          "matches",
+          "comment",
+          "charAt",
+          "length",
+          "pattern",
+          "String",
+          "ids",
+          "ticketid",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 313,
+        "end_line": 322,
+        "defs": [
+          "project",
+          "id",
+          "ticket"
+        ],
+        "uses": [
+          "relateArtifacts",
+          "TicketReference",
+          "Integer",
+          "ticket_id",
+          "equals",
+          "String",
+          "ids",
+          "changeset",
+          "getExternalSystemID",
+          "Ticket",
+          "getTicketByDrID",
+          "Project",
+          "parseInt",
+          "getProjectByExternalSystem",
+          "getProjectID",
+          "DataManager"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "ticketid",
+          "pattern",
+          "comment"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+    "method_name": "getLayout(ArrayList<IArtifact>, double[][])",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 34,
+        "end_line": 42,
+        "defs": [
+          "sammon",
+          "mds"
+        ],
+        "uses": [
+          "SammonsProjection",
+          "CreateMapping",
+          "cMDS",
+          "length",
+          "coords",
+          "mdsCoords",
+          "getProjection",
+          "MultidimensionalScaling",
+          "distanceMatrix"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 43,
+        "end_line": 45,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "newArtifacts",
+          "setCoords",
+          "get",
+          "size",
+          "coords"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 46,
+        "end_line": 71,
+        "defs": [
+          "maxY",
+          "minX",
+          "minY",
+          "maxX",
+          "j",
+          "i"
+        ],
+        "uses": [
+          "MAX_VALUE",
+          "out",
+          "System",
+          "x",
+          "length",
+          "Double",
+          "coords",
+          "c",
+          "print",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 73,
+        "end_line": 80,
+        "defs": [
+          "rangeX",
+          "range",
+          "rangeY"
+        ],
+        "uses": [
+          "maxY",
+          "minX",
+          "Math",
+          "minY",
+          "ceil",
+          "maxX"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 81,
+        "end_line": 84,
+        "defs": [
+          "blocks"
+        ],
+        "uses": [
+          "newArtifacts",
+          "minX",
+          "Math",
+          "minY",
+          "cityBlockInitialization",
+          "size",
+          "coords",
+          "ceil",
+          "range",
+          "sqrt"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 86,
+        "end_line": 86,
+        "defs": [],
+        "uses": [
+          "redistributeBuildings"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 88,
+        "end_line": 88,
+        "defs": [],
+        "uses": [
+          "minY",
+          "pushBuildings",
+          "range",
+          "minX"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 91,
+        "end_line": 91,
+        "defs": [
+          "done"
+        ],
+        "uses": [
+          "out",
+          "Blocks",
+          "System",
+          "println"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "maxX",
+          "minY",
+          "maxY",
+          "minX"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "minY",
+          "minX"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "minY",
+          "minX"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "range"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "range"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+    "method_name": "cityBlockInitialization(ArrayList<IArtifact>, double[][], double, double, double, double)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 97,
+        "end_line": 106,
+        "defs": [
+          "j",
+          "i",
+          "cityblock"
+        ],
+        "uses": [
+          "CityBlock",
+          "blocks",
+          "minX",
+          "minY",
+          "cityBlocks",
+          "center",
+          "ArrayList",
+          "Point",
+          "setCenter",
+          "range",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 107,
+        "end_line": 111,
+        "defs": [
+          "i",
+          "r"
+        ],
+        "uses": [
+          "assignArtifactToCityBlock",
+          "blocks",
+          "newArtifacts",
+          "minX",
+          "minY",
+          "get",
+          "size",
+          "coords",
+          "range"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout",
+    "method_name": "printCityBlocks(ArrayList<CityBlock>, HashMap<SVNFile, Integer>)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 346,
+        "end_line": 351,
+        "defs": [
+          "out",
+          "and",
+          "index"
+        ],
+        "uses": [
+          "Fokaefs",
+          "newLine",
+          "c301f09",
+          "write",
+          "wikidev",
+          "FileWriter",
+          "files",
+          "Documents",
+          "Marios",
+          "blocks",
+          "txt",
+          "C",
+          "Math",
+          "BufferedWriter",
+          "size",
+          "industrialBlocks",
+          "Desktop",
+          "Settings",
+          "sqrt"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 352,
+        "end_line": 356,
+        "defs": [
+          "type",
+          "artifact",
+          "height",
+          "line",
+          "block"
+        ],
+        "uses": [
+          "t",
+          "keySet",
+          "IArtifact",
+          "CityBlock",
+          "blocks",
+          "getArtifacts",
+          "String",
+          "index"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 357,
+        "end_line": 367,
+        "defs": [
+          "user",
+          "file"
+        ],
+        "uses": [
+          "SVNFile",
+          "User",
+          "getType",
+          "getColor",
+          "line",
+          "getIndex",
+          "block",
+          "y",
+          "getRed",
+          "getUsers",
+          "type",
+          "t",
+          "artifact",
+          "height",
+          "x",
+          "getGreen",
+          "getArtifacts",
+          "get",
+          "getUserName",
+          "getBlue",
+          "fileCount"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 368,
+        "end_line": 370,
+        "defs": [],
+        "uses": [
+          "out",
+          "line",
+          "newLine",
+          "index",
+          "write"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 373,
+        "end_line": 373,
+        "defs": [],
+        "uses": [
+          "out",
+          "close"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "index"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "out",
+          "index"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "out"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "type",
+          "artifact",
+          "height",
+          "line",
+          "block"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "line"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
+    "method_name": "pushBuildings(double, double, double)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 115,
+        "end_line": 117,
+        "defs": [
+          "block"
+        ],
+        "uses": [
+          "cityBlocks",
+          "getArtifacts",
+          "CityBlock",
+          "size"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 118,
+        "end_line": 123,
+        "defs": [
+          "blockMaxY",
+          "blockMaxX",
+          "blockMinY",
+          "blockMinX"
+        ],
+        "uses": [
+          "minX",
+          "x",
+          "minY",
+          "getIndex",
+          "range",
+          "block",
+          "y"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 124,
+        "end_line": 131,
+        "defs": [
+          "rY",
+          "blockR",
+          "rX"
+        ],
+        "uses": [
+          "blockMaxY",
+          "blockMaxX",
+          "Math",
+          "blockMinY",
+          "ceil",
+          "blockMinX"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 132,
+        "end_line": 140,
+        "defs": [
+          "j",
+          "i"
+        ],
+        "uses": [
+          "blockR",
+          "blockMinY",
+          "subblockCenters",
+          "subCenter",
+          "blockMinX"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 141,
+        "end_line": 141,
+        "defs": [],
+        "uses": [
+          "redistributeArtifactsInBlock",
+          "subblockCenters",
+          "block"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 142,
+        "end_line": 143,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "block"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "block"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "blockMaxY",
+          "blockMaxX",
+          "blockMinY",
+          "blockMinX"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "blockMinY",
+          "blockMinX"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "blockR"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.city3d.CityLayout",
+    "method_name": "printCityBlocks(ArrayList<CityBlock>, HashMap<Message, Integer>)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 203,
+        "end_line": 206,
+        "defs": [
+          "out",
+          "and",
+          "index"
+        ],
+        "uses": [
+          "Fokaefs",
+          "c301f09",
+          "cityBlocks",
+          "wikidev",
+          "FileWriter",
+          "files",
+          "Documents",
+          "Marios",
+          "txt",
+          "C",
+          "BufferedWriter",
+          "Desktop",
+          "Settings"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 207,
+        "end_line": 208,
+        "defs": [],
+        "uses": [
+          "out",
+          "blocks",
+          "Math",
+          "newLine",
+          "size",
+          "sqrt",
+          "write"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 209,
+        "end_line": 226,
+        "defs": [
+          "type",
+          "artifact",
+          "height",
+          "ticket",
+          "wiki",
+          "line",
+          "block",
+          "message"
+        ],
+        "uses": [
+          "t",
+          "CityBlock",
+          "IArtifact",
+          "getPriority",
+          "blocks",
+          "Wiki",
+          "keySet",
+          "getArtifacts",
+          "get",
+          "size",
+          "Message",
+          "String",
+          "getRevisions",
+          "Ticket",
+          "index",
+          "messageCount"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 227,
+        "end_line": 235,
+        "defs": [
+          "user"
+        ],
+        "uses": [
+          "out",
+          "User",
+          "newLine",
+          "getColor",
+          "write",
+          "line",
+          "getIndex",
+          "block",
+          "y",
+          "getRed",
+          "type",
+          "t",
+          "artifact",
+          "height",
+          "x",
+          "getGreen",
+          "getArtifacts",
+          "get",
+          "getUserName",
+          "getBlue",
+          "getAssociatedUsers",
+          "index"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 238,
+        "end_line": 238,
+        "defs": [],
+        "uses": [
+          "out",
+          "close"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "out"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "index"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "out",
+          "index"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "out"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "type",
+          "artifact",
+          "height",
+          "line",
+          "block"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
+    "method_name": "getConnectedComponents()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 269,
+        "end_line": 270,
+        "defs": [
+          "cn"
+        ],
+        "uses": [
+          "adjacencyMatrix",
+          "length",
+          "component"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 272,
+        "end_line": 277,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "length",
+          "dfs",
+          "cn",
+          "component"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 279,
+        "end_line": 279,
+        "defs": [],
+        "uses": [
+          "ArrayList",
+          "map",
+          "Integer",
+          "TreeMap"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 280,
+        "end_line": 290,
+        "defs": [
+          "i"
+        ],
+        "uses": [
+          "put",
+          "Integer",
+          "component",
+          "l",
+          "length",
+          "get",
+          "ArrayList",
+          "map",
+          "containsKey",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 291,
+        "end_line": 291,
+        "defs": [],
+        "uses": [
+          "map"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "cn"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  }
+]

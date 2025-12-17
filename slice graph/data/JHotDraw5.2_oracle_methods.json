@@ -1,0 +1,5266 @@
+[
+    {
+        "class_name": "CH.ifa.draw.util.StorableOutput",
+        "function_name": "writeStorable(Storable)",
+        "code_lines": [
+            {
+                "line": 39,
+                "code": "    public void writeStorable(Storable storable) {"
+            },
+            {
+                "line": 40,
+                "code": "        if (storable == null) {"
+            },
+            {
+                "line": 41,
+                "code": "            fStream.print(\"NULL\");"
+            },
+            {
+                "line": 42,
+                "code": "            space();"
+            },
+            {
+                "line": 43,
+                "code": "            return;"
+            },
+            {
+                "line": 44,
+                "code": "        }"
+            },
+            {
+                "line": 45,
+                "code": ""
+            },
+            {
+                "line": 46,
+                "code": "        if (mapped(storable)) {"
+            },
+            {
+                "line": 47,
+                "code": "            int ref = fMap.indexOf(storable);"
+            },
+            {
+                "line": 48,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 49,
+                "code": "\t\t\tfStream.print(\"REF\");"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\tspace();"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\tfStream.print(ref);"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\tspace();"
+            },
+            {
+                "line": 53,
+                "code": "            return;"
+            },
+            {
+                "line": 54,
+                "code": "        }"
+            },
+            {
+                "line": 55,
+                "code": ""
+            },
+            {
+                "line": 56,
+                "code": "        incrementIndent();"
+            },
+            {
+                "line": 57,
+                "code": "        startNewLine();"
+            },
+            {
+                "line": 58,
+                "code": "        map(storable);"
+            },
+            {
+                "line": 59,
+                "code": "        fStream.print(storable.getClass().getName());"
+            },
+            {
+                "line": 60,
+                "code": "        space();"
+            },
+            {
+                "line": 61,
+                "code": "        storable.write(this);"
+            },
+            {
+                "line": 62,
+                "code": "        space();"
+            },
+            {
+                "line": 63,
+                "code": "        decrementIndent();"
+            },
+            {
+                "line": 64,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.util.StandardStorageFormat",
+        "function_name": "store(String, Drawing)",
+        "code_lines": [
+            {
+                "line": 160,
+                "code": "\tpublic String store(String fileName, Drawing saveDrawing) throws IOException {"
+            },
+            {
+                "line": 161,
+                "code": "\t\tFileOutputStream stream = new FileOutputStream(adjustFileName(fileName));"
+            },
+            {
+                "line": 162,
+                "code": "\t\tStorableOutput output = new StorableOutput(stream);"
+            },
+            {
+                "line": 163,
+                "code": "\t\toutput.writeStorable(saveDrawing);"
+            },
+            {
+                "line": 164,
+                "code": "\t\toutput.close();"
+            },
+            {
+                "line": 165,
+                "code": "\t\tif (!hasCorrectFileExtension(fileName)) {"
+            },
+            {
+                "line": 166,
+                "code": "\t\t\treturn fileName + \".\" + getFileExtension();"
+            },
+            {
+                "line": 167,
+                "code": "\t\t}"
+            },
+            {
+                "line": 168,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 169,
+                "code": "\t\t\treturn fileName;"
+            },
+            {
+                "line": 170,
+                "code": "\t\t}"
+            },
+            {
+                "line": 171,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.util.Iconkit",
+        "function_name": "getImage(String)",
+        "code_lines": [
+            {
+                "line": 125,
+                "code": "    public Image getImage(String filename) {"
+            },
+            {
+                "line": 126,
+                "code": "        Image image = basicGetImage(filename);"
+            },
+            {
+                "line": 127,
+                "code": "        if (image != null)"
+            },
+            {
+                "line": 128,
+                "code": "            return image;"
+            },
+            {
+                "line": 129,
+                "code": "        // load registered images and try again"
+            },
+            {
+                "line": 130,
+                "code": "        loadRegisteredImages(fComponent);"
+            },
+            {
+                "line": 131,
+                "code": "        // try again"
+            },
+            {
+                "line": 132,
+                "code": "        if (fMap.containsKey(filename))"
+            },
+            {
+                "line": 133,
+                "code": "\t\t    return (Image) fMap.get(filename);"
+            },
+            {
+                "line": 134,
+                "code": "\t\treturn null;"
+            },
+            {
+                "line": 135,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.util.Geom",
+        "function_name": "angleToPoint(Rectangle, double)",
+        "code_lines": [
+            {
+                "line": 131,
+                "code": "    static public Point angleToPoint(Rectangle r, double angle) {"
+            },
+            {
+                "line": 132,
+                "code": "        double si = Math.sin(angle);"
+            },
+            {
+                "line": 133,
+                "code": "        double co = Math.cos(angle);"
+            },
+            {
+                "line": 134,
+                "code": "        double e = 0.0001;"
+            },
+            {
+                "line": 135,
+                "code": ""
+            },
+            {
+                "line": 136,
+                "code": "    \tint x= 0, y= 0;"
+            },
+            {
+                "line": 137,
+                "code": "\t    if (Math.abs(si) > e) {"
+            },
+            {
+                "line": 138,
+                "code": "\t\t    x= (int) ((1.0 + co/Math.abs(si))/2.0 * r.width);"
+            },
+            {
+                "line": 139,
+                "code": "\t\t    int max = r.width;"
+            },
+            {
+                "line": 140,
+                "code": "\t\t\tint value = x;"
+            },
+            {
+                "line": 141,
+                "code": "\t\t\tif (value < 0)"
+            },
+            {
+                "line": 142,
+                "code": "\t\t\t    value = 0;"
+            },
+            {
+                "line": 143,
+                "code": "\t\t\tif (value > max)"
+            },
+            {
+                "line": 144,
+                "code": "\t\t\t    value = max;"
+            },
+            {
+                "line": 145,
+                "code": "\t\t    x= value;"
+            },
+            {
+                "line": 146,
+                "code": "\t    } else if (co >= 0.0)"
+            },
+            {
+                "line": 147,
+                "code": "\t\t    x= r.width;"
+            },
+            {
+                "line": 148,
+                "code": "\t    if (Math.abs(co) > e) {"
+            },
+            {
+                "line": 149,
+                "code": "\t\t    y= (int) ((1.0 + si/Math.abs(co))/2.0 * r.height);"
+            },
+            {
+                "line": 150,
+                "code": "\t\t    y= range(0, r.height, y);"
+            },
+            {
+                "line": 151,
+                "code": "\t    } else if (si >= 0.0)"
+            },
+            {
+                "line": 152,
+                "code": "\t\t    y= r.height;"
+            },
+            {
+                "line": 153,
+                "code": "\t    return new Point(r.x + x, r.y + y);"
+            },
+            {
+                "line": 154,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+        "function_name": "setDrawing(Drawing)",
+        "code_lines": [
+            {
+                "line": 168,
+                "code": "    public void setDrawing(Drawing d) {"
+            },
+            {
+                "line": 169,
+                "code": "        if (fDrawing != null) {"
+            },
+            {
+                "line": 170,
+                "code": "            clearSelection();"
+            },
+            {
+                "line": 171,
+                "code": "            fDrawing.removeDrawingChangeListener(this);"
+            },
+            {
+                "line": 172,
+                "code": "        }"
+            },
+            {
+                "line": 173,
+                "code": ""
+            },
+            {
+                "line": 174,
+                "code": "        fDrawing = d;"
+            },
+            {
+                "line": 175,
+                "code": "        if (fDrawing != null)"
+            },
+            {
+                "line": 176,
+                "code": "            fDrawing.addDrawingChangeListener(this);"
+            },
+            {
+                "line": 177,
+                "code": ""
+            },
+            {
+                "line": 178,
+                "code": "        FigureEnumeration k = drawing().figures();"
+            },
+            {
+                "line": 179,
+                "code": "\t\tDimension d1 = new Dimension(0, 0);"
+            },
+            {
+                "line": 180,
+                "code": "\t\twhile (k.hasMoreElements()) {"
+            },
+            {
+                "line": 181,
+                "code": "\t\t    Rectangle r = k.nextFigure().displayBox();"
+            },
+            {
+                "line": 182,
+                "code": "\t\t    d1.width = Math.max(d1.width, r.x+r.width);"
+            },
+            {
+                "line": 183,
+                "code": "\t\t    d1.height = Math.max(d1.height, r.y+r.height);"
+            },
+            {
+                "line": 184,
+                "code": "\t\t}"
+            },
+            {
+                "line": 185,
+                "code": "\t\tif (fViewSize.height < d1.height || fViewSize.width < d1.width) {"
+            },
+            {
+                "line": 186,
+                "code": "\t\t    fViewSize.height = d1.height+10;"
+            },
+            {
+                "line": 187,
+                "code": "\t\t    fViewSize.width = d1.width+10;"
+            },
+            {
+                "line": 188,
+                "code": "\t\t    setSize(fViewSize);"
+            },
+            {
+                "line": 189,
+                "code": "\t\t}"
+            },
+            {
+                "line": 190,
+                "code": "        repaint();"
+            },
+            {
+                "line": 191,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+        "function_name": "findHandle(int, int)",
+        "code_lines": [
+            {
+                "line": 379,
+                "code": "    public Handle findHandle(int x, int y) {"
+            },
+            {
+                "line": 380,
+                "code": "        Handle handle;"
+            },
+            {
+                "line": 381,
+                "code": "        if (fSelectionHandles == null) {"
+            },
+            {
+                "line": 382,
+                "code": "\t\t    fSelectionHandles = new Vector();"
+            },
+            {
+                "line": 383,
+                "code": "\t\t    FigureEnumeration k1 = selectionElements();"
+            },
+            {
+                "line": 384,
+                "code": "\t\t    while (k1.hasMoreElements()) {"
+            },
+            {
+                "line": 385,
+                "code": "\t\t        Figure figure = k1.nextFigure();"
+            },
+            {
+                "line": 386,
+                "code": "\t\t        Enumeration kk = figure.handles().elements();"
+            },
+            {
+                "line": 387,
+                "code": "\t\t        while (kk.hasMoreElements())"
+            },
+            {
+                "line": 388,
+                "code": "\t\t            fSelectionHandles.addElement(kk.nextElement());"
+            },
+            {
+                "line": 389,
+                "code": "\t\t    }"
+            },
+            {
+                "line": 390,
+                "code": "\t\t}"
+            },
+            {
+                "line": 391,
+                "code": ""
+            },
+            {
+                "line": 392,
+                "code": "        Enumeration k = fSelectionHandles.elements();"
+            },
+            {
+                "line": 393,
+                "code": "        while (k.hasMoreElements()) {"
+            },
+            {
+                "line": 394,
+                "code": "            handle = (Handle) k.nextElement();"
+            },
+            {
+                "line": 395,
+                "code": "            if (handle.containsPoint(x, y))"
+            },
+            {
+                "line": 396,
+                "code": "                return handle;"
+            },
+            {
+                "line": 397,
+                "code": "        }"
+            },
+            {
+                "line": 398,
+                "code": "        return null;"
+            },
+            {
+                "line": 399,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.StandardDrawingView",
+        "function_name": "constrainPoint(Point)",
+        "code_lines": [
+            {
+                "line": 434,
+                "code": "    protected Point constrainPoint(Point p) {"
+            },
+            {
+                "line": 435,
+                "code": "        // constrin to view size"
+            },
+            {
+                "line": 436,
+                "code": "        Dimension size = getSize();"
+            },
+            {
+                "line": 437,
+                "code": "        int max = size.width;"
+            },
+            {
+                "line": 438,
+                "code": "\t\tint value = p.x;"
+            },
+            {
+                "line": 439,
+                "code": "\t\tif (value < 1)"
+            },
+            {
+                "line": 440,
+                "code": "\t\t    value = 1;"
+            },
+            {
+                "line": 441,
+                "code": "\t\tif (value > max)"
+            },
+            {
+                "line": 442,
+                "code": "\t\t    value = max;"
+            },
+            {
+                "line": 443,
+                "code": "        //p.x = Math.min(size.width, Math.max(1, p.x));"
+            },
+            {
+                "line": 444,
+                "code": "        //p.y = Math.min(size.height, Math.max(1, p.y));"
+            },
+            {
+                "line": 445,
+                "code": "        p.x = value;"
+            },
+            {
+                "line": 446,
+                "code": "        p.y = Geom.range(1, size.height, p.y);"
+            },
+            {
+                "line": 447,
+                "code": ""
+            },
+            {
+                "line": 448,
+                "code": "        if (fConstrainer != null )"
+            },
+            {
+                "line": 449,
+                "code": "            return fConstrainer.constrainPoint(p);"
+            },
+            {
+                "line": 450,
+                "code": "        return p;"
+            },
+            {
+                "line": 451,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.PasteCommand",
+        "function_name": "execute()",
+        "code_lines": [
+            {
+                "line": 30,
+                "code": "    public void execute() {"
+            },
+            {
+                "line": 31,
+                "code": "        Point lastClick = fView.lastClick();"
+            },
+            {
+                "line": 32,
+                "code": "        FigureSelection selection = (FigureSelection)Clipboard.getClipboard().getContents();"
+            },
+            {
+                "line": 33,
+                "code": "        if (selection != null) {"
+            },
+            {
+                "line": 34,
+                "code": "            Vector figures = (Vector)selection.getData(FigureSelection.TYPE);"
+            },
+            {
+                "line": 35,
+                "code": "            if (figures.size() == 0)"
+            },
+            {
+                "line": 36,
+                "code": "                return;"
+            },
+            {
+                "line": 37,
+                "code": "            Enumeration k = figures.elements();"
+            },
+            {
+                "line": 38,
+                "code": "\t\t\tRectangle r1 = ((Figure) k.nextElement()).displayBox();"
+            },
+            {
+                "line": 39,
+                "code": "\t\t\twhile (k.hasMoreElements())"
+            },
+            {
+                "line": 40,
+                "code": "\t\t\t    r1.add(((Figure) k.nextElement()).displayBox());"
+            },
+            {
+                "line": 41,
+                "code": ""
+            },
+            {
+                "line": 42,
+                "code": "            Rectangle r = r1;"
+            },
+            {
+                "line": 43,
+                "code": "            fView.clearSelection();"
+            },
+            {
+                "line": 44,
+                "code": ""
+            },
+            {
+                "line": 45,
+                "code": "            insertFigures(figures, lastClick.x-r.x, lastClick.y-r.y);"
+            },
+            {
+                "line": 46,
+                "code": "            fView.checkDamage();"
+            },
+            {
+                "line": 47,
+                "code": "        }"
+            },
+            {
+                "line": 48,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.FigureChangeEventMulticaster",
+        "function_name": "remove(EventListener)",
+        "code_lines": [
+            {
+                "line": 63,
+                "code": "    protected EventListener remove(EventListener oldl)"
+            },
+            {
+                "line": 64,
+                "code": "    {"
+            },
+            {
+                "line": 65,
+                "code": "        if (oldl == a)"
+            },
+            {
+                "line": 66,
+                "code": "            return b;"
+            },
+            {
+                "line": 67,
+                "code": "        if (oldl == b)"
+            },
+            {
+                "line": 68,
+                "code": "            return a;"
+            },
+            {
+                "line": 69,
+                "code": "        EventListener a2 = removeInternal((FigureChangeListener)a, oldl);"
+            },
+            {
+                "line": 70,
+                "code": "        EventListener b2 = removeInternal((FigureChangeListener)b, oldl);"
+            },
+            {
+                "line": 71,
+                "code": "        if (a2 == a && b2 == b)"
+            },
+            {
+                "line": 72,
+                "code": "            return this;"
+            },
+            {
+                "line": 73,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 74,
+                "code": "\t\t\tFigureChangeListener a1 = (FigureChangeListener)a2;"
+            },
+            {
+                "line": 75,
+                "code": "\t\t\tFigureChangeListener b1 = (FigureChangeListener)b2;"
+            },
+            {
+                "line": 76,
+                "code": "\t\t\tif (a1 == null)  return b1;"
+            },
+            {
+                "line": 77,
+                "code": "\t\t\tif (b1 == null)  return a1;"
+            },
+            {
+                "line": 78,
+                "code": "\t\t\treturn new FigureChangeEventMulticaster(a1, b1);"
+            },
+            {
+                "line": 79,
+                "code": "\t\t}"
+            },
+            {
+                "line": 80,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.ConnectionTool",
+        "function_name": "mouseDrag(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 113,
+                "code": "    public void mouseDrag(MouseEvent e, int x, int y) {"
+            },
+            {
+                "line": 114,
+                "code": "        Point p = new Point(e.getX(), e.getY());"
+            },
+            {
+                "line": 115,
+                "code": "        if (fConnection != null) {"
+            },
+            {
+                "line": 116,
+                "code": "            Figure c = null;"
+            },
+            {
+                "line": 117,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\tif (fStartConnector == null)"
+            },
+            {
+                "line": 119,
+                "code": "\t\t\t    c = findSource(x, y, drawing());"
+            },
+            {
+                "line": 120,
+                "code": "\t\t\telse"
+            },
+            {
+                "line": 121,
+                "code": "\t\t\t    c = findTarget(x, y, drawing());"
+            },
+            {
+                "line": 122,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 123,
+                "code": "\t\t\t// track the figure containing the mouse"
+            },
+            {
+                "line": 124,
+                "code": "\t\t\tif (c != fTarget) {"
+            },
+            {
+                "line": 125,
+                "code": "\t\t\t    if (fTarget != null)"
+            },
+            {
+                "line": 126,
+                "code": "\t\t\t        fTarget.connectorVisibility(false);"
+            },
+            {
+                "line": 127,
+                "code": "\t\t\t    fTarget = c;"
+            },
+            {
+                "line": 128,
+                "code": "\t\t\t    if (fTarget != null)"
+            },
+            {
+                "line": 129,
+                "code": "\t\t\t        fTarget.connectorVisibility(true);"
+            },
+            {
+                "line": 130,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 131,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 132,
+                "code": "\t\t\tConnector cc = null;"
+            },
+            {
+                "line": 133,
+                "code": "\t\t\tif (c != null)"
+            },
+            {
+                "line": 134,
+                "code": "\t\t\t    cc = findConnector(e.getX(), e.getY(), c);"
+            },
+            {
+                "line": 135,
+                "code": "\t\t\tif (cc != fConnectorTarget)"
+            },
+            {
+                "line": 136,
+                "code": "\t\t\t    fConnectorTarget = cc;"
+            },
+            {
+                "line": 137,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 138,
+                "code": "\t\t\tview().checkDamage();"
+            },
+            {
+                "line": 139,
+                "code": "            if (fConnectorTarget != null)"
+            },
+            {
+                "line": 140,
+                "code": "                p = Geom.center(fConnectorTarget.displayBox());"
+            },
+            {
+                "line": 141,
+                "code": "            fConnection.endPoint(p.x, p.y);"
+            },
+            {
+                "line": 142,
+                "code": "        }"
+            },
+            {
+                "line": 143,
+                "code": "        else if (fEditedConnection != null) {"
+            },
+            {
+                "line": 144,
+                "code": "            Point pp = new Point(x, y);"
+            },
+            {
+                "line": 145,
+                "code": "            fEditedConnection.setPointAt(pp, fSplitPoint);"
+            },
+            {
+                "line": 146,
+                "code": "        }"
+            },
+            {
+                "line": 147,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.CompositeFigure",
+        "function_name": "findFigureWithout(int, int, Figure)",
+        "code_lines": [
+            {
+                "line": 239,
+                "code": "    public Figure findFigureWithout(int x, int y, Figure without) {"
+            },
+            {
+                "line": 240,
+                "code": "        if (without == null) {"
+            },
+            {
+                "line": 241,
+                "code": "        \tFigureEnumeration k1 = figuresReverse();"
+            },
+            {
+                "line": 242,
+                "code": "\t\t\twhile (k1.hasMoreElements()) {"
+            },
+            {
+                "line": 243,
+                "code": "\t\t\t    Figure figure1 = k1.nextFigure();"
+            },
+            {
+                "line": 244,
+                "code": "\t\t\t    if (figure1.containsPoint(x, y))"
+            },
+            {
+                "line": 245,
+                "code": "\t\t\t        return figure1;"
+            },
+            {
+                "line": 246,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 247,
+                "code": "\t\t\treturn null;"
+            },
+            {
+                "line": 248,
+                "code": "\t\t}"
+            },
+            {
+                "line": 249,
+                "code": "        FigureEnumeration k = figuresReverse();"
+            },
+            {
+                "line": 250,
+                "code": "        while (k.hasMoreElements()) {"
+            },
+            {
+                "line": 251,
+                "code": "            Figure figure = k.nextFigure();"
+            },
+            {
+                "line": 252,
+                "code": "            if (figure.containsPoint(x, y) && !figure.includes(without))"
+            },
+            {
+                "line": 253,
+                "code": "                return figure;"
+            },
+            {
+                "line": 254,
+                "code": "        }"
+            },
+            {
+                "line": 255,
+                "code": "        return null;"
+            },
+            {
+                "line": 256,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.CompositeFigure",
+        "function_name": "findFigure(Rectangle, Figure)",
+        "code_lines": [
+            {
+                "line": 264,
+                "code": "    public Figure findFigure(Rectangle r, Figure without) {"
+            },
+            {
+                "line": 265,
+                "code": "        if (without == null) {"
+            },
+            {
+                "line": 266,
+                "code": "        \tFigureEnumeration k1 = figuresReverse();"
+            },
+            {
+                "line": 267,
+                "code": "\t\t\twhile (k1.hasMoreElements()) {"
+            },
+            {
+                "line": 268,
+                "code": "\t\t\t    Figure figure1 = k1.nextFigure();"
+            },
+            {
+                "line": 269,
+                "code": "\t\t\t    Rectangle fr1 = figure1.displayBox();"
+            },
+            {
+                "line": 270,
+                "code": "\t\t\t    if (r.intersects(fr1))"
+            },
+            {
+                "line": 271,
+                "code": "\t\t\t        return figure1;"
+            },
+            {
+                "line": 272,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 273,
+                "code": "\t\t\treturn null;"
+            },
+            {
+                "line": 274,
+                "code": "\t\t}"
+            },
+            {
+                "line": 275,
+                "code": "        FigureEnumeration k = figuresReverse();"
+            },
+            {
+                "line": 276,
+                "code": "        while (k.hasMoreElements()) {"
+            },
+            {
+                "line": 277,
+                "code": "            Figure figure = k.nextFigure();"
+            },
+            {
+                "line": 278,
+                "code": "            Rectangle fr = figure.displayBox();"
+            },
+            {
+                "line": 279,
+                "code": "            if (r.intersects(fr) && !figure.includes(without))"
+            },
+            {
+                "line": 280,
+                "code": "                return figure;"
+            },
+            {
+                "line": 281,
+                "code": "        }"
+            },
+            {
+                "line": 282,
+                "code": "        return null;"
+            },
+            {
+                "line": 283,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.standard.BoxHandleKit",
+        "function_name": "addHandles(Figure, Vector)",
+        "code_lines": [
+            {
+                "line": 37,
+                "code": "    static public void addHandles(Figure f, Vector handles) {"
+            },
+            {
+                "line": 38,
+                "code": "        handles.addElement(southEast(f));"
+            },
+            {
+                "line": 39,
+                "code": "\t\thandles.addElement(southWest(f));"
+            },
+            {
+                "line": 40,
+                "code": "\t\thandles.addElement(northEast(f));"
+            },
+            {
+                "line": 41,
+                "code": "\t\thandles.addElement(northWest(f));"
+            },
+            {
+                "line": 42,
+                "code": "        handles.addElement(south(f));"
+            },
+            {
+                "line": 43,
+                "code": "        handles.addElement(north(f));"
+            },
+            {
+                "line": 44,
+                "code": "        handles.addElement(east(f));"
+            },
+            {
+                "line": 45,
+                "code": "        handles.addElement(west(f));"
+            },
+            {
+                "line": 46,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "update(FigureChangeEvent)",
+        "code_lines": [
+            {
+                "line": 208,
+                "code": "    public void update(FigureChangeEvent e) {"
+            },
+            {
+                "line": 209,
+                "code": "        if (e.getFigure() == figureAt(1)) {"
+            },
+            {
+                "line": 210,
+                "code": "        \tint newEnd = start()+duration();"
+            },
+            {
+                "line": 211,
+                "code": "\t\t\tif (newEnd != end()) {"
+            },
+            {
+                "line": 212,
+                "code": "\t\t\t    setEnd(newEnd);"
+            },
+            {
+                "line": 213,
+                "code": "\t\t\t    notifyPostTasks();"
+            },
+            {
+                "line": 214,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 215,
+                "code": "\t\t}"
+            },
+            {
+                "line": 216,
+                "code": "        if (needsLayout()) {"
+            },
+            {
+                "line": 217,
+                "code": "            layout();"
+            },
+            {
+                "line": 218,
+                "code": "            changed();"
+            },
+            {
+                "line": 219,
+                "code": "        }"
+            },
+            {
+                "line": 220,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "updateDurations()",
+        "code_lines": [
+            {
+                "line": 237,
+                "code": "    public void updateDurations() {"
+            },
+            {
+                "line": 238,
+                "code": "        int newEnd = start()+duration();"
+            },
+            {
+                "line": 239,
+                "code": "        if (newEnd != end()) {"
+            },
+            {
+                "line": 240,
+                "code": "            setEnd(newEnd);"
+            },
+            {
+                "line": 241,
+                "code": "            Enumeration i = fPostTasks.elements();"
+            },
+            {
+                "line": 242,
+                "code": "\t\t\twhile (i.hasMoreElements())"
+            },
+            {
+                "line": 243,
+                "code": "\t\t\t    ((PertFigure) i.nextElement()).updateDurations();"
+            },
+            {
+                "line": 244,
+                "code": "        }"
+            },
+            {
+                "line": 245,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "write(StorableOutput)",
+        "code_lines": [
+            {
+                "line": 260,
+                "code": "    public void write(StorableOutput dw) {"
+            },
+            {
+                "line": 261,
+                "code": "        super.write(dw);"
+            },
+            {
+                "line": 262,
+                "code": "        dw.writeInt(fDisplayBox.x);"
+            },
+            {
+                "line": 263,
+                "code": "        dw.writeInt(fDisplayBox.y);"
+            },
+            {
+                "line": 264,
+                "code": "        dw.writeInt(fDisplayBox.width);"
+            },
+            {
+                "line": 265,
+                "code": "        dw.writeInt(fDisplayBox.height);"
+            },
+            {
+                "line": 266,
+                "code": ""
+            },
+            {
+                "line": 267,
+                "code": "        dw.writeInt(fPreTasks.size());"
+            },
+            {
+                "line": 268,
+                "code": "\t\tEnumeration i = fPreTasks.elements();"
+            },
+            {
+                "line": 269,
+                "code": "\t\twhile (i.hasMoreElements())"
+            },
+            {
+                "line": 270,
+                "code": "\t\t    dw.writeStorable((Storable) i.nextElement());"
+            },
+            {
+                "line": 271,
+                "code": "        writeTasks(dw, fPostTasks);"
+            },
+            {
+                "line": 272,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.pert.PertFigure",
+        "function_name": "read(StorableInput)",
+        "code_lines": [
+            {
+                "line": 281,
+                "code": "    public void read(StorableInput dr) throws IOException {"
+            },
+            {
+                "line": 282,
+                "code": "        super.read(dr);"
+            },
+            {
+                "line": 283,
+                "code": "        fDisplayBox = new Rectangle("
+            },
+            {
+                "line": 284,
+                "code": "            dr.readInt(),"
+            },
+            {
+                "line": 285,
+                "code": "            dr.readInt(),"
+            },
+            {
+                "line": 286,
+                "code": "            dr.readInt(),"
+            },
+            {
+                "line": 287,
+                "code": "            dr.readInt());"
+            },
+            {
+                "line": 288,
+                "code": "        layout();"
+            },
+            {
+                "line": 289,
+                "code": "        int size = dr.readInt();"
+            },
+            {
+                "line": 290,
+                "code": "\t\tVector v = new Vector(size);"
+            },
+            {
+                "line": 291,
+                "code": "\t\tfor (int i=0; i<size; i++)"
+            },
+            {
+                "line": 292,
+                "code": "\t\t    v.addElement((Figure)dr.readStorable());"
+            },
+            {
+                "line": 293,
+                "code": "        fPreTasks = v;"
+            },
+            {
+                "line": 294,
+                "code": "        fPostTasks = readTasks(dr);"
+            },
+            {
+                "line": 295,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.net.NodeFigure",
+        "function_name": "initialize()",
+        "code_lines": [
+            {
+                "line": 127,
+                "code": "    private void initialize() {"
+            },
+            {
+                "line": 128,
+                "code": "        setText(\"node\");"
+            },
+            {
+                "line": 129,
+                "code": "        Font fb = new Font(\"Helvetica\", Font.BOLD, 12);"
+            },
+            {
+                "line": 130,
+                "code": "        setFont(fb);"
+            },
+            {
+                "line": 131,
+                "code": "        fConnectors = new Vector(4);"
+            },
+            {
+                "line": 132,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()) );"
+            },
+            {
+                "line": 133,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()) );"
+            },
+            {
+                "line": 134,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()) );"
+            },
+            {
+                "line": 135,
+                "code": "\t\tfConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()) );"
+            },
+            {
+                "line": 136,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 31,
+                "code": "    public void mouseDown(MouseEvent e, int x, int y)"
+            },
+            {
+                "line": 32,
+                "code": "    {"
+            },
+            {
+                "line": 33,
+                "code": "\t    Figure pressedFigure;"
+            },
+            {
+                "line": 34,
+                "code": ""
+            },
+            {
+                "line": 35,
+                "code": "\t    pressedFigure =  drawing().findFigureInside(x, y);"
+            },
+            {
+                "line": 36,
+                "code": "\t    if (pressedFigure != null) {"
+            },
+            {
+                "line": 37,
+                "code": "\t        if (fTextField == null) {"
+            },
+            {
+                "line": 38,
+                "code": "\t\t\t    fTextField = new FloatingTextField();"
+            },
+            {
+                "line": 39,
+                "code": "\t\t\t    fTextField.addActionListener("
+            },
+            {
+                "line": 40,
+                "code": "\t\t\t        new ActionListener() {"
+            },
+            {
+                "line": 41,
+                "code": "\t\t\t            public void actionPerformed(ActionEvent event) {"
+            },
+            {
+                "line": 42,
+                "code": "\t\t\t                endAction(event);"
+            },
+            {
+                "line": 43,
+                "code": "\t\t\t            }"
+            },
+            {
+                "line": 44,
+                "code": "\t\t\t        }"
+            },
+            {
+                "line": 45,
+                "code": "\t\t\t    );"
+            },
+            {
+                "line": 46,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 47,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 48,
+                "code": "\t\t\tif (pressedFigure != fURLTarget && fURLTarget != null)"
+            },
+            {
+                "line": 49,
+                "code": "\t\t\t    endEdit();"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\tif (pressedFigure != fURLTarget) {"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\t    fTextField.createOverlay((Container)view());"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\t    fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\t    fURLTarget = pressedFigure;"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 55,
+                "code": "\t        return;"
+            },
+            {
+                "line": 56,
+                "code": "\t    }"
+            },
+            {
+                "line": 57,
+                "code": "\t    endEdit();"
+            },
+            {
+                "line": 58,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
+        "function_name": "beginEdit(Figure)",
+        "code_lines": [
+            {
+                "line": 72,
+                "code": "    private void beginEdit(Figure figure) {"
+            },
+            {
+                "line": 73,
+                "code": "        if (fTextField == null) {"
+            },
+            {
+                "line": 74,
+                "code": "            fTextField = new FloatingTextField();"
+            },
+            {
+                "line": 75,
+                "code": "\t\t    fTextField.addActionListener("
+            },
+            {
+                "line": 76,
+                "code": "\t\t        new ActionListener() {"
+            },
+            {
+                "line": 77,
+                "code": "\t\t            public void actionPerformed(ActionEvent event) {"
+            },
+            {
+                "line": 78,
+                "code": "\t\t                endAction(event);"
+            },
+            {
+                "line": 79,
+                "code": "\t\t            }"
+            },
+            {
+                "line": 80,
+                "code": "\t\t        }"
+            },
+            {
+                "line": 81,
+                "code": "\t\t    );"
+            },
+            {
+                "line": 82,
+                "code": "        }"
+            },
+            {
+                "line": 83,
+                "code": ""
+            },
+            {
+                "line": 84,
+                "code": "\t    if (figure != fURLTarget && fURLTarget != null)"
+            },
+            {
+                "line": 85,
+                "code": "\t    \tif (fURLTarget != null) {"
+            },
+            {
+                "line": 86,
+                "code": "\t\t\t    setURL(fURLTarget, fTextField.getText());"
+            },
+            {
+                "line": 87,
+                "code": "\t\t\t    fURLTarget = null;"
+            },
+            {
+                "line": 88,
+                "code": "\t\t\t    fTextField.endOverlay();"
+            },
+            {
+                "line": 89,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 90,
+                "code": "        if (figure != fURLTarget) {"
+            },
+            {
+                "line": 91,
+                "code": "            fTextField.createOverlay((Container)view());"
+            },
+            {
+                "line": 92,
+                "code": "\t        fTextField.setBounds(fieldBounds(figure), getURL(figure));"
+            },
+            {
+                "line": 93,
+                "code": "\t        fURLTarget = figure;"
+            },
+            {
+                "line": 94,
+                "code": "\t    }"
+            },
+            {
+                "line": 95,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawViewer",
+        "function_name": "init()",
+        "code_lines": [
+            {
+                "line": 29,
+                "code": "    public void init() {"
+            },
+            {
+                "line": 30,
+                "code": "\t\tgetContentPane().setLayout(new BorderLayout());"
+            },
+            {
+                "line": 31,
+                "code": "\t    fView = new StandardDrawingView(this, 400, 370);"
+            },
+            {
+                "line": 32,
+                "code": "        getContentPane().add(\"Center\", fView);"
+            },
+            {
+                "line": 33,
+                "code": "        fTool = new FollowURLTool(view(), this);"
+            },
+            {
+                "line": 34,
+                "code": ""
+            },
+            {
+                "line": 35,
+                "code": "        fIconkit = new Iconkit(this);"
+            },
+            {
+                "line": 36,
+                "code": ""
+            },
+            {
+                "line": 37,
+                "code": "        String filename = getParameter(\"Drawing\");"
+            },
+            {
+                "line": 38,
+                "code": "        if (filename != null) {"
+            },
+            {
+                "line": 39,
+                "code": "\t\t    try {"
+            },
+            {
+                "line": 40,
+                "code": "\t\t\t    URL url = new URL(getCodeBase(), filename);"
+            },
+            {
+                "line": 41,
+                "code": "\t\t\t    InputStream stream = url.openStream();"
+            },
+            {
+                "line": 42,
+                "code": "\t\t\t    StorableInput reader = new StorableInput(stream);"
+            },
+            {
+                "line": 43,
+                "code": "\t\t\t    fDrawing = (Drawing)reader.readStorable();"
+            },
+            {
+                "line": 44,
+                "code": "\t\t\t} catch (IOException e) {"
+            },
+            {
+                "line": 45,
+                "code": "\t\t\t    fDrawing = new StandardDrawing();"
+            },
+            {
+                "line": 46,
+                "code": "\t\t\t    System.out.println(\"Error when Loading: \" + e);"
+            },
+            {
+                "line": 47,
+                "code": "\t\t\t    showStatus(\"Error when Loading: \" + e);"
+            },
+            {
+                "line": 48,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 49,
+                "code": "            fView.setDrawing(fDrawing);"
+            },
+            {
+                "line": 50,
+                "code": "\t\t} else"
+            },
+            {
+                "line": 51,
+                "code": "\t\t    showStatus(\"Unable to load drawing\");"
+            },
+            {
+                "line": 52,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApplet",
+        "function_name": "createButtons(JPanel)",
+        "code_lines": [
+            {
+                "line": 77,
+                "code": "    protected void createButtons(JPanel panel) {"
+            },
+            {
+                "line": 78,
+                "code": "        super.createButtons(panel);"
+            },
+            {
+                "line": 79,
+                "code": "        fAnimationButton = new JButton(\"Start Animation\");"
+            },
+            {
+                "line": 80,
+                "code": "\t\tfAnimationButton.addActionListener("
+            },
+            {
+                "line": 81,
+                "code": "\t\t    new ActionListener() {"
+            },
+            {
+                "line": 82,
+                "code": "\t\t        public void actionPerformed(ActionEvent event) {"
+            },
+            {
+                "line": 83,
+                "code": "\t\t            if (fAnimator != null)"
+            },
+            {
+                "line": 84,
+                "code": "\t\t\t\t\t    endAnimation();"
+            },
+            {
+                "line": 85,
+                "code": "\t\t\t\t\telse"
+            },
+            {
+                "line": 86,
+                "code": "\t\t\t\t\t    startAnimation();"
+            },
+            {
+                "line": 87,
+                "code": "\t\t        }"
+            },
+            {
+                "line": 88,
+                "code": "\t\t    }"
+            },
+            {
+                "line": 89,
+                "code": "\t\t);"
+            },
+            {
+                "line": 90,
+                "code": "        panel.add(fAnimationButton);"
+            },
+            {
+                "line": 91,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApp",
+        "function_name": "createAnimationMenu()",
+        "code_lines": [
+            {
+                "line": 106,
+                "code": "    protected JMenu createAnimationMenu() {"
+            },
+            {
+                "line": 107,
+                "code": "\t\tJMenu menu = new JMenu(\"Animation\");"
+            },
+            {
+                "line": 108,
+                "code": "\t\tJMenuItem mi = new JMenuItem(\"Start Animation\");"
+            },
+            {
+                "line": 109,
+                "code": "\t\tmi.addActionListener("
+            },
+            {
+                "line": 110,
+                "code": "\t\t    new ActionListener() {"
+            },
+            {
+                "line": 111,
+                "code": "\t\t        public void actionPerformed(ActionEvent event) {"
+            },
+            {
+                "line": 112,
+                "code": "\t\t            if (drawing() instanceof Animatable && fAnimator == null) {"
+            },
+            {
+                "line": 113,
+                "code": "\t\t\t\t\t    fAnimator = new Animator((Animatable)drawing(), view());"
+            },
+            {
+                "line": 114,
+                "code": "\t\t\t\t\t    fAnimator.start();"
+            },
+            {
+                "line": 115,
+                "code": "\t\t\t\t\t}"
+            },
+            {
+                "line": 116,
+                "code": "\t\t        }"
+            },
+            {
+                "line": 117,
+                "code": "\t\t    }"
+            },
+            {
+                "line": 118,
+                "code": "\t\t);"
+            },
+            {
+                "line": 119,
+                "code": "\t\tmenu.add(mi);"
+            },
+            {
+                "line": 120,
+                "code": ""
+            },
+            {
+                "line": 121,
+                "code": "\t\tmi = new JMenuItem(\"Stop Animation\");"
+            },
+            {
+                "line": 122,
+                "code": "\t\tmi.addActionListener("
+            },
+            {
+                "line": 123,
+                "code": "\t\t    new ActionListener() {"
+            },
+            {
+                "line": 124,
+                "code": "\t\t        public void actionPerformed(ActionEvent event) {"
+            },
+            {
+                "line": 125,
+                "code": "\t\t            endAnimation();"
+            },
+            {
+                "line": 126,
+                "code": "\t\t        }"
+            },
+            {
+                "line": 127,
+                "code": "\t\t    }"
+            },
+            {
+                "line": 128,
+                "code": "\t\t);"
+            },
+            {
+                "line": 129,
+                "code": "\t\tmenu.add(mi);"
+            },
+            {
+                "line": 130,
+                "code": "\t\treturn menu;"
+            },
+            {
+                "line": 131,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 38,
+                "code": "    public void mouseDown(MouseEvent e, int x, int y)"
+            },
+            {
+                "line": 39,
+                "code": "    {"
+            },
+            {
+                "line": 40,
+                "code": "\t    TextHolder textHolder = null;"
+            },
+            {
+                "line": 41,
+                "code": ""
+            },
+            {
+                "line": 42,
+                "code": "\t    Figure pressedFigure = drawing().findFigureInside(x, y);"
+            },
+            {
+                "line": 43,
+                "code": "\t    if (pressedFigure instanceof TextHolder) {"
+            },
+            {
+                "line": 44,
+                "code": "\t        textHolder = (TextHolder) pressedFigure;"
+            },
+            {
+                "line": 45,
+                "code": "\t        if (!textHolder.acceptsTyping())"
+            },
+            {
+                "line": 46,
+                "code": "\t            textHolder = null;"
+            },
+            {
+                "line": 47,
+                "code": "        }"
+            },
+            {
+                "line": 48,
+                "code": "\t    if (textHolder != null) {"
+            },
+            {
+                "line": 49,
+                "code": "\t        if (fTextField == null)"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\t    fTextField = new FloatingTextField();"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\tif (textHolder != getTypingTarget() && getTypingTarget() != null)"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\t    endEdit();"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 55,
+                "code": "\t\t\tfTextField.createOverlay((Container)view(), textHolder.getFont());"
+            },
+            {
+                "line": 56,
+                "code": "\t\t\tfTextField.setBounds(fieldBounds(textHolder), textHolder.getText());"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\tsetTypingTarget(textHolder);"
+            },
+            {
+                "line": 58,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 59,
+                "code": "\t\t\tview().checkDamage();"
+            },
+            {
+                "line": 60,
+                "code": "\t        return;"
+            },
+            {
+                "line": 61,
+                "code": "\t    }"
+            },
+            {
+                "line": 62,
+                "code": "\t    if (getTypingTarget() != null) {"
+            },
+            {
+                "line": 63,
+                "code": "\t        editor().toolDone();"
+            },
+            {
+                "line": 64,
+                "code": "\t        endEdit();"
+            },
+            {
+                "line": 65,
+                "code": "\t    } else {"
+            },
+            {
+                "line": 66,
+                "code": "    \t    super.mouseDown(e, x, y);"
+            },
+            {
+                "line": 67,
+                "code": "    \t    textHolder = (TextHolder)createdFigure();"
+            },
+            {
+                "line": 68,
+                "code": "    \t    beginEdit(textHolder);"
+            },
+            {
+                "line": 69,
+                "code": "        }"
+            },
+            {
+                "line": 70,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextTool",
+        "function_name": "beginEdit(TextHolder)",
+        "code_lines": [
+            {
+                "line": 106,
+                "code": "    protected void beginEdit(TextHolder figure) {"
+            },
+            {
+                "line": 107,
+                "code": "        if (fTextField == null)"
+            },
+            {
+                "line": 108,
+                "code": "            fTextField = new FloatingTextField();"
+            },
+            {
+                "line": 109,
+                "code": ""
+            },
+            {
+                "line": 110,
+                "code": "\t    if (figure != getTypingTarget() && getTypingTarget() != null)"
+            },
+            {
+                "line": 111,
+                "code": "\t    \tif (getTypingTarget() != null) {"
+            },
+            {
+                "line": 112,
+                "code": "\t\t\t    if (fTextField.getText().length() > 0)"
+            },
+            {
+                "line": 113,
+                "code": "\t\t\t        getTypingTarget().setText(fTextField.getText());"
+            },
+            {
+                "line": 114,
+                "code": "\t\t\t    else {"
+            },
+            {
+                "line": 115,
+                "code": "\t\t\t        drawing().remove((Figure)getTypingTarget());"
+            },
+            {
+                "line": 116,
+                "code": "\t\t\t    }"
+            },
+            {
+                "line": 117,
+                "code": "\t\t\t    setTypingTarget(null);"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\t    fTextField.endOverlay();"
+            },
+            {
+                "line": 119,
+                "code": "\t\t\t    view().checkDamage();"
+            },
+            {
+                "line": 120,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 121,
+                "code": ""
+            },
+            {
+                "line": 122,
+                "code": "        fTextField.createOverlay((Container)view(), figure.getFont());"
+            },
+            {
+                "line": 123,
+                "code": "\t    fTextField.setBounds(fieldBounds(figure), figure.getText());"
+            },
+            {
+                "line": 124,
+                "code": "\t    setTypingTarget(figure);"
+            },
+            {
+                "line": 125,
+                "code": ""
+            },
+            {
+                "line": 126,
+                "code": "\t    view().checkDamage();"
+            },
+            {
+                "line": 127,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextFigure",
+        "function_name": "setAttribute(String, Object)",
+        "code_lines": [
+            {
+                "line": 144,
+                "code": "    public void setAttribute(String name, Object value) {"
+            },
+            {
+                "line": 145,
+                "code": "        Font font = getFont();"
+            },
+            {
+                "line": 146,
+                "code": "        if (name.equals(\"FontSize\")) {"
+            },
+            {
+                "line": 147,
+                "code": "            Integer s = (Integer)value;"
+            },
+            {
+                "line": 148,
+                "code": "            willChange();"
+            },
+            {
+                "line": 149,
+                "code": "\t\t\tfFont = new Font(font.getName(), font.getStyle(), s.intValue());"
+            },
+            {
+                "line": 150,
+                "code": "\t\t\tmarkDirty();"
+            },
+            {
+                "line": 151,
+                "code": "\t\t\tchanged();"
+            },
+            {
+                "line": 152,
+                "code": "        }"
+            },
+            {
+                "line": 153,
+                "code": "        else if (name.equals(\"FontStyle\")) {"
+            },
+            {
+                "line": 154,
+                "code": "            Integer s = (Integer)value;"
+            },
+            {
+                "line": 155,
+                "code": "            int style = font.getStyle();"
+            },
+            {
+                "line": 156,
+                "code": "            if (s.intValue() == Font.PLAIN)"
+            },
+            {
+                "line": 157,
+                "code": "                style = font.PLAIN;"
+            },
+            {
+                "line": 158,
+                "code": "            else"
+            },
+            {
+                "line": 159,
+                "code": "                style = style ^ s.intValue();"
+            },
+            {
+                "line": 160,
+                "code": "            setFont(new Font(font.getName(), style, font.getSize()) );"
+            },
+            {
+                "line": 161,
+                "code": "        }"
+            },
+            {
+                "line": 162,
+                "code": "        else if (name.equals(\"FontName\")) {"
+            },
+            {
+                "line": 163,
+                "code": "            String n = (String)value;"
+            },
+            {
+                "line": 164,
+                "code": "            setFont(new Font(n, font.getStyle(), font.getSize()) );"
+            },
+            {
+                "line": 165,
+                "code": "        }"
+            },
+            {
+                "line": 166,
+                "code": "        else"
+            },
+            {
+                "line": 167,
+                "code": "            super.setAttribute(name, value);"
+            },
+            {
+                "line": 168,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.TextFigure",
+        "function_name": "connect(Figure)",
+        "code_lines": [
+            {
+                "line": 280,
+                "code": "    public void connect(Figure figure) {"
+            },
+            {
+                "line": 281,
+                "code": "        if (fObservedFigure != null)"
+            },
+            {
+                "line": 282,
+                "code": "            fObservedFigure.removeFigureChangeListener(this);"
+            },
+            {
+                "line": 283,
+                "code": ""
+            },
+            {
+                "line": 284,
+                "code": "        fObservedFigure = figure;"
+            },
+            {
+                "line": 285,
+                "code": "        fLocator = new OffsetLocator(figure.connectedTextLocator(this));"
+            },
+            {
+                "line": 286,
+                "code": "        fObservedFigure.addFigureChangeListener(this);"
+            },
+            {
+                "line": 287,
+                "code": "        if (fLocator != null) {"
+            },
+            {
+                "line": 288,
+                "code": "\t\t    Point p = fLocator.locate(fObservedFigure);"
+            },
+            {
+                "line": 289,
+                "code": "\t\t    p.x -= size().width/2 + fOriginX;"
+            },
+            {
+                "line": 290,
+                "code": "\t\t    p.y -= size().height/2 + fOriginY;"
+            },
+            {
+                "line": 291,
+                "code": "\t\t"
+            },
+            {
+                "line": 292,
+                "code": "\t\t    if (p.x != 0 || p.y != 0) {"
+            },
+            {
+                "line": 293,
+                "code": "\t\t        willChange();"
+            },
+            {
+                "line": 294,
+                "code": "\t\t        basicMoveBy(p.x, p.y);"
+            },
+            {
+                "line": 295,
+                "code": "\t\t        changed();"
+            },
+            {
+                "line": 296,
+                "code": "\t\t    }"
+            },
+            {
+                "line": 297,
+                "code": "\t\t}"
+            },
+            {
+                "line": 298,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ScribbleTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 51,
+                "code": "    public void mouseDown(MouseEvent e, int x, int y) {"
+            },
+            {
+                "line": 52,
+                "code": "        if (e.getClickCount() >= 2) {"
+            },
+            {
+                "line": 53,
+                "code": "            fScribble = null;"
+            },
+            {
+                "line": 54,
+                "code": "            editor().toolDone();"
+            },
+            {
+                "line": 55,
+                "code": "        }"
+            },
+            {
+                "line": 56,
+                "code": "        else {"
+            },
+            {
+                "line": 57,
+                "code": "            // use original event coordinates to avoid"
+            },
+            {
+                "line": 58,
+                "code": "            // supress that the scribble is constrained to"
+            },
+            {
+                "line": 59,
+                "code": "            // the grid"
+            },
+            {
+                "line": 60,
+                "code": "            int x1 = e.getX();"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\tint y1 = e.getY();"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\tif (fScribble == null) {"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\t    fScribble = new PolyLineFigure(x1, y1);"
+            },
+            {
+                "line": 64,
+                "code": "\t\t\t    view().add(fScribble);"
+            },
+            {
+                "line": 65,
+                "code": "\t\t\t} else if (fLastX != x1 || fLastY != y1)"
+            },
+            {
+                "line": 66,
+                "code": "\t\t\t    fScribble.addPoint(x1, y1);"
+            },
+            {
+                "line": 67,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 68,
+                "code": "\t\t\tfLastX = x1;"
+            },
+            {
+                "line": 69,
+                "code": "\t\t\tfLastY = y1;"
+            },
+            {
+                "line": 70,
+                "code": "        }"
+            },
+            {
+                "line": 71,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.RadiusHandle",
+        "function_name": "invokeStep(int, int, int, int, DrawingView)",
+        "code_lines": [
+            {
+                "line": 33,
+                "code": "    public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {"
+            },
+            {
+                "line": 34,
+                "code": "        int dx = x-anchorX;"
+            },
+            {
+                "line": 35,
+                "code": "        int dy = y-anchorY;"
+            },
+            {
+                "line": 36,
+                "code": "        Rectangle r = fOwner.displayBox();"
+            },
+            {
+                "line": 37,
+                "code": "        int max = r.width;"
+            },
+            {
+                "line": 38,
+                "code": "\t\tint value = 2*(fRadius.x + dx);"
+            },
+            {
+                "line": 39,
+                "code": "\t\tif (value < 0)"
+            },
+            {
+                "line": 40,
+                "code": "\t\t    value = 0;"
+            },
+            {
+                "line": 41,
+                "code": "\t\tif (value > max)"
+            },
+            {
+                "line": 42,
+                "code": "\t\t    value = max;"
+            },
+            {
+                "line": 43,
+                "code": "        int rx = value;"
+            },
+            {
+                "line": 44,
+                "code": "        int ry = Geom.range(0, r.height, 2*(fRadius.y + dy));"
+            },
+            {
+                "line": 45,
+                "code": "        fOwner.setArc(rx, ry);"
+            },
+            {
+                "line": 46,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.PolyLineFigure",
+        "function_name": "draw(Graphics)",
+        "code_lines": [
+            {
+                "line": 185,
+                "code": "    public void draw(Graphics g) {"
+            },
+            {
+                "line": 186,
+                "code": "        g.setColor(getFrameColor());"
+            },
+            {
+                "line": 187,
+                "code": "        Point p1, p2;"
+            },
+            {
+                "line": 188,
+                "code": "        for (int i = 0; i < fPoints.size()-1; i++) {"
+            },
+            {
+                "line": 189,
+                "code": "            p1 = (Point) fPoints.elementAt(i);"
+            },
+            {
+                "line": 190,
+                "code": "            p2 = (Point) fPoints.elementAt(i+1);"
+            },
+            {
+                "line": 191,
+                "code": "\t\t\tdrawLine(g, p1.x, p1.y, p2.x, p2.y);"
+            },
+            {
+                "line": 192,
+                "code": "        }"
+            },
+            {
+                "line": 193,
+                "code": "        if (getStartDecoration() != null) {"
+            },
+            {
+                "line": 194,
+                "code": "\t\t    Point p11 = (Point)fPoints.elementAt(0);"
+            },
+            {
+                "line": 195,
+                "code": "\t\t    Point p21 = (Point)fPoints.elementAt(1);"
+            },
+            {
+                "line": 196,
+                "code": "\t\t    getStartDecoration().draw(g, p11.x, p11.y, p21.x, p21.y);"
+            },
+            {
+                "line": 197,
+                "code": "\t\t}"
+            },
+            {
+                "line": 198,
+                "code": "\t\tif (getEndDecoration() != null) {"
+            },
+            {
+                "line": 199,
+                "code": "\t\t    Point p3 = (Point)fPoints.elementAt(fPoints.size()-2);"
+            },
+            {
+                "line": 200,
+                "code": "\t\t    Point p4 = (Point)fPoints.elementAt(fPoints.size()-1);"
+            },
+            {
+                "line": 201,
+                "code": "\t\t    getEndDecoration().draw(g, p4.x, p4.y, p3.x, p3.y);"
+            },
+            {
+                "line": 202,
+                "code": "\t\t}"
+            },
+            {
+                "line": 203,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.PolyLineFigure",
+        "function_name": "write(StorableOutput)",
+        "code_lines": [
+            {
+                "line": 307,
+                "code": "    public void write(StorableOutput dw) {"
+            },
+            {
+                "line": 308,
+                "code": "        super.write(dw);"
+            },
+            {
+                "line": 309,
+                "code": "        dw.writeInt(fPoints.size());"
+            },
+            {
+                "line": 310,
+                "code": "        Enumeration k = fPoints.elements();"
+            },
+            {
+                "line": 311,
+                "code": "        while (k.hasMoreElements()) {"
+            },
+            {
+                "line": 312,
+                "code": "            Point p = (Point) k.nextElement();"
+            },
+            {
+                "line": 313,
+                "code": "            dw.writeInt(p.x);"
+            },
+            {
+                "line": 314,
+                "code": "            dw.writeInt(p.y);"
+            },
+            {
+                "line": 315,
+                "code": "        }"
+            },
+            {
+                "line": 316,
+                "code": "        dw.writeStorable(fStartDecoration);"
+            },
+            {
+                "line": 317,
+                "code": "        dw.writeStorable(fEndDecoration);"
+            },
+            {
+                "line": 318,
+                "code": "        dw.writeInt(fFrameColor.getRed());"
+            },
+            {
+                "line": 319,
+                "code": "\t\tdw.writeInt(fFrameColor.getGreen());"
+            },
+            {
+                "line": 320,
+                "code": "\t\tdw.writeInt(fFrameColor.getBlue());"
+            },
+            {
+                "line": 321,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.InsertImageCommand",
+        "function_name": "execute()",
+        "code_lines": [
+            {
+                "line": 35,
+                "code": "    public void execute() {"
+            },
+            {
+                "line": 36,
+                "code": "        // ugly cast to component, but AWT wants and Component instead of an ImageObserver..."
+            },
+            {
+                "line": 37,
+                "code": "        Iconkit r = Iconkit.instance();"
+            },
+            {
+                "line": 38,
+                "code": "\t\tr.registerImage(fImage);"
+            },
+            {
+                "line": 39,
+                "code": "\t\tr.loadRegisteredImages((Component)fView);"
+            },
+            {
+                "line": 40,
+                "code": "\t\tImage image = r.getImage(fImage);"
+            },
+            {
+                "line": 41,
+                "code": "        ImageFigure figure = new ImageFigure(image, fImage, fView.lastClick());"
+            },
+            {
+                "line": 42,
+                "code": "        fView.add(figure);"
+            },
+            {
+                "line": 43,
+                "code": "        fView.clearSelection();"
+            },
+            {
+                "line": 44,
+                "code": "        fView.addToSelection(figure);"
+            },
+            {
+                "line": 45,
+                "code": "        fView.checkDamage();"
+            },
+            {
+                "line": 46,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.GroupCommand",
+        "function_name": "execute()",
+        "code_lines": [
+            {
+                "line": 33,
+                "code": "    public void execute() {"
+            },
+            {
+                "line": 34,
+                "code": "        Vector selected = fView.selectionZOrdered();"
+            },
+            {
+                "line": 35,
+                "code": "        Drawing drawing = fView.drawing();"
+            },
+            {
+                "line": 36,
+                "code": "        if (selected.size() > 0) {"
+            },
+            {
+                "line": 37,
+                "code": "            fView.clearSelection();"
+            },
+            {
+                "line": 38,
+                "code": "            drawing.orphanAll(selected);"
+            },
+            {
+                "line": 39,
+                "code": ""
+            },
+            {
+                "line": 40,
+                "code": "            GroupFigure group = new GroupFigure();"
+            },
+            {
+                "line": 41,
+                "code": "            Enumeration k = selected.elements();"
+            },
+            {
+                "line": 42,
+                "code": "\t\t\twhile (k.hasMoreElements())"
+            },
+            {
+                "line": 43,
+                "code": "\t\t\t    group.add((Figure) k.nextElement());"
+            },
+            {
+                "line": 44,
+                "code": "            fView.addToSelection(drawing.add(group));"
+            },
+            {
+                "line": 45,
+                "code": "        }"
+            },
+            {
+                "line": 46,
+                "code": "        fView.checkDamage();"
+            },
+            {
+                "line": 47,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowHandle",
+        "function_name": "invokeStep(int, int, int, int, DrawingView)",
+        "code_lines": [
+            {
+                "line": 32,
+                "code": "    public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {"
+            },
+            {
+                "line": 33,
+                "code": "        LineConnection line = ownerConnection();"
+            },
+            {
+                "line": 34,
+                "code": "        Point p1 = line.pointAt(fSegment);"
+            },
+            {
+                "line": 35,
+                "code": "        Point p2 = line.pointAt(fSegment+1);"
+            },
+            {
+                "line": 36,
+                "code": "        int ddx = x - fLastX;"
+            },
+            {
+                "line": 37,
+                "code": "        int ddy = y - fLastY;"
+            },
+            {
+                "line": 38,
+                "code": ""
+            },
+            {
+                "line": 39,
+                "code": "        Point np1;"
+            },
+            {
+                "line": 40,
+                "code": "        Point np2;"
+            },
+            {
+                "line": 41,
+                "code": "        if (isVertical(p1, p2)) {"
+            },
+            {
+                "line": 42,
+                "code": "            int x1 = p1.x + ddx;"
+            },
+            {
+                "line": 43,
+                "code": "\t\t\tLineConnection line1 = ownerConnection();"
+            },
+            {
+                "line": 44,
+                "code": "\t\t\tFigure startFigure = line1.start().owner();"
+            },
+            {
+                "line": 45,
+                "code": "\t\t\tFigure endFigure = line1.end().owner();"
+            },
+            {
+                "line": 46,
+                "code": "\t\t\tRectangle start = startFigure.displayBox();"
+            },
+            {
+                "line": 47,
+                "code": "\t\t\tRectangle end = endFigure.displayBox();"
+            },
+            {
+                "line": 48,
+                "code": "\t\t\tInsets i1 = startFigure.connectionInsets();"
+            },
+            {
+                "line": 49,
+                "code": "\t\t\tInsets i2 = endFigure.connectionInsets();"
+            },
+            {
+                "line": 50,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\tint r1x, r1width, r2x, r2width;"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\tr1x = start.x + i1.left;"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\tr1width = start.width - i1.left - i1.right-1;"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 55,
+                "code": "\t\t\tr2x = end.x + i2.left;"
+            },
+            {
+                "line": 56,
+                "code": "\t\t\tr2width = end.width - i2.left - i2.right-1;"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 58,
+                "code": "\t\t\tif (fSegment == 0)"
+            },
+            {
+                "line": 59,
+                "code": "\t\t\t    x1 = Geom.range(r1x, r1x + r1width, x1);"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\tif (fSegment == line1.pointCount()-2)"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\t    x1 = Geom.range(r2x, r2x + r2width, x1);"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\tint cx = x1;"
+            },
+            {
+                "line": 63,
+                "code": "            np1 = new Point(cx, p1.y);"
+            },
+            {
+                "line": 64,
+                "code": "            np2 = new Point(cx, p2.y);"
+            },
+            {
+                "line": 65,
+                "code": "        } else {"
+            },
+            {
+                "line": 66,
+                "code": "            int cy = constrainY(p1.y + ddy);"
+            },
+            {
+                "line": 67,
+                "code": "            np1 = new Point(p1.x, cy);"
+            },
+            {
+                "line": 68,
+                "code": "            np2 = new Point(p2.x, cy);"
+            },
+            {
+                "line": 69,
+                "code": "        }"
+            },
+            {
+                "line": 70,
+                "code": "        line.setPointAt(np1, fSegment);"
+            },
+            {
+                "line": 71,
+                "code": "        line.setPointAt(np2, fSegment+1);"
+            },
+            {
+                "line": 72,
+                "code": "        fLastX = x;"
+            },
+            {
+                "line": 73,
+                "code": "        fLastY = y;"
+            },
+            {
+                "line": 74,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowHandle",
+        "function_name": "constrainX(int)",
+        "code_lines": [
+            {
+                "line": 98,
+                "code": "    private int constrainX(int x) {"
+            },
+            {
+                "line": 99,
+                "code": "        LineConnection line = ownerConnection();"
+            },
+            {
+                "line": 100,
+                "code": "        Figure startFigure = line.start().owner();"
+            },
+            {
+                "line": 101,
+                "code": "        Figure endFigure = line.end().owner();"
+            },
+            {
+                "line": 102,
+                "code": "        Rectangle start = startFigure.displayBox();"
+            },
+            {
+                "line": 103,
+                "code": "        Rectangle end = endFigure.displayBox();"
+            },
+            {
+                "line": 104,
+                "code": "        Insets i1 = startFigure.connectionInsets();"
+            },
+            {
+                "line": 105,
+                "code": "        Insets i2 = endFigure.connectionInsets();"
+            },
+            {
+                "line": 106,
+                "code": ""
+            },
+            {
+                "line": 107,
+                "code": "        int r1x, r1width, r2x, r2width;"
+            },
+            {
+                "line": 108,
+                "code": "        r1x = start.x + i1.left;"
+            },
+            {
+                "line": 109,
+                "code": "        r1width = start.width - i1.left - i1.right-1;"
+            },
+            {
+                "line": 110,
+                "code": ""
+            },
+            {
+                "line": 111,
+                "code": "        r2x = end.x + i2.left;"
+            },
+            {
+                "line": 112,
+                "code": "        r2width = end.width - i2.left - i2.right-1;"
+            },
+            {
+                "line": 113,
+                "code": ""
+            },
+            {
+                "line": 114,
+                "code": "        if (fSegment == 0) {"
+            },
+            {
+                "line": 115,
+                "code": "        \tint max = r1x + r1width;"
+            },
+            {
+                "line": 116,
+                "code": "\t\t\tint value = x;"
+            },
+            {
+                "line": 117,
+                "code": "\t\t\tif (value < r1x)"
+            },
+            {
+                "line": 118,
+                "code": "\t\t\t    value = r1x;"
+            },
+            {
+                "line": 119,
+                "code": "\t\t\tif (value > max)"
+            },
+            {
+                "line": 120,
+                "code": "\t\t\t    value = max;"
+            },
+            {
+                "line": 121,
+                "code": "\t\t\tx = value;"
+            },
+            {
+                "line": 122,
+                "code": "\t\t}"
+            },
+            {
+                "line": 123,
+                "code": "        if (fSegment == line.pointCount()-2)"
+            },
+            {
+                "line": 124,
+                "code": "            x = Geom.range(r2x, r2x + r2width, x);"
+            },
+            {
+                "line": 125,
+                "code": "        return x;"
+            },
+            {
+                "line": 126,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowHandle",
+        "function_name": "constrainY(int)",
+        "code_lines": [
+            {
+                "line": 128,
+                "code": "    private int constrainY(int y) {"
+            },
+            {
+                "line": 129,
+                "code": "        LineConnection line = ownerConnection();"
+            },
+            {
+                "line": 130,
+                "code": "        Figure startFigure = line.start().owner();"
+            },
+            {
+                "line": 131,
+                "code": "        Figure endFigure = line.end().owner();"
+            },
+            {
+                "line": 132,
+                "code": "        Rectangle start = startFigure.displayBox();"
+            },
+            {
+                "line": 133,
+                "code": "        Rectangle end = endFigure.displayBox();"
+            },
+            {
+                "line": 134,
+                "code": "        Insets i1 = startFigure.connectionInsets();"
+            },
+            {
+                "line": 135,
+                "code": "        Insets i2 = endFigure.connectionInsets();"
+            },
+            {
+                "line": 136,
+                "code": ""
+            },
+            {
+                "line": 137,
+                "code": "        int r1y, r1height, r2y, r2height;"
+            },
+            {
+                "line": 138,
+                "code": "        r1y = start.y + i1.top;"
+            },
+            {
+                "line": 139,
+                "code": "        r1height = start.height - i1.top - i1.bottom-1;"
+            },
+            {
+                "line": 140,
+                "code": "        r2y = end.y + i2.top;"
+            },
+            {
+                "line": 141,
+                "code": "        r2height = end.height - i2.top - i2.bottom-1;"
+            },
+            {
+                "line": 142,
+                "code": ""
+            },
+            {
+                "line": 143,
+                "code": "        if (fSegment == 0) {"
+            },
+            {
+                "line": 144,
+                "code": "        \tint max = r1y + r1height;"
+            },
+            {
+                "line": 145,
+                "code": "\t\t\tint value = y;"
+            },
+            {
+                "line": 146,
+                "code": "\t\t\tif (value < r1y)"
+            },
+            {
+                "line": 147,
+                "code": "\t\t\t    value = r1y;"
+            },
+            {
+                "line": 148,
+                "code": "\t\t\tif (value > max)"
+            },
+            {
+                "line": 149,
+                "code": "\t\t\t    value = max;"
+            },
+            {
+                "line": 150,
+                "code": "\t\t\ty = value;"
+            },
+            {
+                "line": 151,
+                "code": "\t\t}"
+            },
+            {
+                "line": 152,
+                "code": "        if (fSegment == line.pointCount()-2)"
+            },
+            {
+                "line": 153,
+                "code": "            y = Geom.range(r2y, r2y + r2height, y);"
+            },
+            {
+                "line": 154,
+                "code": "        return y;"
+            },
+            {
+                "line": 155,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.ElbowConnection",
+        "function_name": "updatePoints()",
+        "code_lines": [
+            {
+                "line": 57,
+                "code": "    protected void updatePoints() {"
+            },
+            {
+                "line": 58,
+                "code": "        willChange();"
+            },
+            {
+                "line": 59,
+                "code": "        Point start = startPoint();"
+            },
+            {
+                "line": 60,
+                "code": "        Point end = endPoint();"
+            },
+            {
+                "line": 61,
+                "code": "        fPoints.removeAllElements();"
+            },
+            {
+                "line": 62,
+                "code": "        fPoints.addElement(start);"
+            },
+            {
+                "line": 63,
+                "code": ""
+            },
+            {
+                "line": 64,
+                "code": "        if (start.x == end.x || start.y == end.y) {"
+            },
+            {
+                "line": 65,
+                "code": "            fPoints.addElement(end);"
+            },
+            {
+                "line": 66,
+                "code": "        }"
+            },
+            {
+                "line": 67,
+                "code": "        else {"
+            },
+            {
+                "line": 68,
+                "code": "            Rectangle r1 = start().owner().displayBox();"
+            },
+            {
+                "line": 69,
+                "code": "            Rectangle r2 = end().owner().displayBox();"
+            },
+            {
+                "line": 70,
+                "code": ""
+            },
+            {
+                "line": 71,
+                "code": "            int x1, y1, x2, y2;"
+            },
+            {
+                "line": 72,
+                "code": "            int direction = 0;"
+            },
+            {
+                "line": 73,
+                "code": "\t\t\tint vx = r2.x + r2.width/2 - (r1.x + r1.width/2);"
+            },
+            {
+                "line": 74,
+                "code": "\t\t\tint vy = r2.y + r2.height/2 - (r1.y + r1.height/2);"
+            },
+            {
+                "line": 75,
+                "code": "\t\t\t"
+            },
+            {
+                "line": 76,
+                "code": "\t\t\tif (vy < vx && vx > -vy)"
+            },
+            {
+                "line": 77,
+                "code": "\t\t\t    direction = Geom.EAST;"
+            },
+            {
+                "line": 78,
+                "code": "\t\t\telse if (vy > vx && vy > -vx)"
+            },
+            {
+                "line": 79,
+                "code": "\t\t\t    direction = Geom.NORTH;"
+            },
+            {
+                "line": 80,
+                "code": "\t\t\telse if (vx < vy && vx < -vy)"
+            },
+            {
+                "line": 81,
+                "code": "\t\t\t    direction = Geom.WEST;"
+            },
+            {
+                "line": 82,
+                "code": "\t\t\telse"
+            },
+            {
+                "line": 83,
+                "code": "\t\t\t    direction = Geom.SOUTH;"
+            },
+            {
+                "line": 84,
+                "code": "            int dir = direction;"
+            },
+            {
+                "line": 85,
+                "code": "            if (dir == Geom.NORTH || dir == Geom.SOUTH) {"
+            },
+            {
+                "line": 86,
+                "code": "                fPoints.addElement(new Point(start.x, (start.y + end.y)/2));"
+            },
+            {
+                "line": 87,
+                "code": "                fPoints.addElement(new Point(end.x, (start.y + end.y)/2));"
+            },
+            {
+                "line": 88,
+                "code": "            }"
+            },
+            {
+                "line": 89,
+                "code": "            else {"
+            },
+            {
+                "line": 90,
+                "code": "                fPoints.addElement(new Point((start.x + end.x)/2, start.y));"
+            },
+            {
+                "line": 91,
+                "code": "                fPoints.addElement(new Point((start.x + end.x)/2, end.y));"
+            },
+            {
+                "line": 92,
+                "code": "            }"
+            },
+            {
+                "line": 93,
+                "code": "            fPoints.addElement(end);"
+            },
+            {
+                "line": 94,
+                "code": "        }"
+            },
+            {
+                "line": 95,
+                "code": "        changed();"
+            },
+            {
+                "line": 96,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.AttributeFigure",
+        "function_name": "getAttribute(String)",
+        "code_lines": [
+            {
+                "line": 131,
+                "code": "    public Object getAttribute(String name) {"
+            },
+            {
+                "line": 132,
+                "code": "        if (fAttributes != null) {"
+            },
+            {
+                "line": 133,
+                "code": "            if (fAttributes.hasDefined(name))"
+            },
+            {
+                "line": 134,
+                "code": "                return fAttributes.get(name);"
+            },
+            {
+                "line": 135,
+                "code": "        }"
+            },
+            {
+                "line": 136,
+                "code": "        if (fgDefaultAttributes == null)"
+            },
+            {
+                "line": 137,
+                "code": "\t\t    initializeAttributes();"
+            },
+            {
+                "line": 138,
+                "code": "\t\treturn fgDefaultAttributes.get(name);"
+            },
+            {
+                "line": 139,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.figures.AbstractLineDecoration",
+        "function_name": "write(StorableOutput)",
+        "code_lines": [
+            {
+                "line": 62,
+                "code": "    public void write(StorableOutput dw) {"
+            },
+            {
+                "line": 63,
+                "code": "\t\tif (getFillColor() != null) {"
+            },
+            {
+                "line": 64,
+                "code": "\t\t\tColor color = getFillColor();"
+            },
+            {
+                "line": 65,
+                "code": "\t\t\tif (color != null) {"
+            },
+            {
+                "line": 66,
+                "code": "\t\t\t    dw.writeString(\"FillColor\");"
+            },
+            {
+                "line": 67,
+                "code": "\t\t\t    dw.writeInt(color.getRed());"
+            },
+            {
+                "line": 68,
+                "code": "\t\t\t    dw.writeInt(color.getGreen());"
+            },
+            {
+                "line": 69,
+                "code": "\t\t\t    dw.writeInt(color.getBlue());"
+            },
+            {
+                "line": 70,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 71,
+                "code": "\t\t}"
+            },
+            {
+                "line": 72,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 73,
+                "code": "\t\t\tdw.writeString(\"noFillColor\");"
+            },
+            {
+                "line": 74,
+                "code": "\t\t}"
+            },
+            {
+                "line": 75,
+                "code": "\t\t"
+            },
+            {
+                "line": 76,
+                "code": "\t\tif (getBorderColor() != null) {"
+            },
+            {
+                "line": 77,
+                "code": "\t\t\tFigureAttributes.writeColor(dw, \"BorderColor\", getBorderColor());"
+            },
+            {
+                "line": 78,
+                "code": "\t\t}"
+            },
+            {
+                "line": 79,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 80,
+                "code": "\t\t\tdw.writeString(\"noBorderColor\");"
+            },
+            {
+                "line": 81,
+                "code": "\t\t}"
+            },
+            {
+                "line": 82,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.SplitPaneDrawApplication",
+        "function_name": "createContents(StandardDrawingView)",
+        "code_lines": [
+            {
+                "line": 46,
+                "code": "    protected JComponent createContents(StandardDrawingView view) {"
+            },
+            {
+                "line": 47,
+                "code": "\t\tcreateLeftComponent(view);"
+            },
+            {
+                "line": 48,
+                "code": "\t\tcreateRightComponent(view);"
+            },
+            {
+                "line": 49,
+                "code": ""
+            },
+            {
+                "line": 50,
+                "code": "\t\tif ((getLeftComponent() == null) && (getRightComponent() == null)) {"
+            },
+            {
+                "line": 51,
+                "code": "\t\t\treturn super.createContents(view);"
+            },
+            {
+                "line": 52,
+                "code": "\t\t}"
+            },
+            {
+                "line": 53,
+                "code": "\t\telse if (getLeftComponent() == null) {"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\treturn getRightComponent();"
+            },
+            {
+                "line": 55,
+                "code": "\t\t}"
+            },
+            {
+                "line": 56,
+                "code": "\t\telse if (getRightComponent() == null) {"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\treturn getLeftComponent();"
+            },
+            {
+                "line": 58,
+                "code": "\t\t}"
+            },
+            {
+                "line": 59,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\tJSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());"
+            },
+            {
+                "line": 61,
+                "code": "\t\t\tdividedContents.setAlignmentX(LEFT_ALIGNMENT);"
+            },
+            {
+                "line": 62,
+                "code": "\t\t\tdividedContents.setOneTouchExpandable(true);"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\treturn dividedContents;"
+            },
+            {
+                "line": 64,
+                "code": "\t\t}"
+            },
+            {
+                "line": 65,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 54,
+                "code": "  public void mouseDown(MouseEvent e, int x, int y) {"
+            },
+            {
+                "line": 55,
+                "code": "    // replace pts by actual event pts"
+            },
+            {
+                "line": 56,
+                "code": "    x = e.getX();"
+            },
+            {
+                "line": 57,
+                "code": "    y = e.getY();"
+            },
+            {
+                "line": 58,
+                "code": ""
+            },
+            {
+                "line": 59,
+                "code": "    if (e.getClickCount() >= 2) {"
+            },
+            {
+                "line": 60,
+                "code": "        if (fPolygon != null) {"
+            },
+            {
+                "line": 61,
+                "code": "            fPolygon.smoothPoints();"
+            },
+            {
+                "line": 62,
+                "code": "            editor().toolDone();"
+            },
+            {
+                "line": 63,
+                "code": "        }"
+            },
+            {
+                "line": 64,
+                "code": "        fPolygon = null;"
+            },
+            {
+                "line": 65,
+                "code": ""
+            },
+            {
+                "line": 66,
+                "code": "    } else {"
+            },
+            {
+                "line": 67,
+                "code": "        // use original event coordinates to avoid"
+            },
+            {
+                "line": 68,
+                "code": "        // supress that the scribble is constrained to"
+            },
+            {
+                "line": 69,
+                "code": "        // the grid"
+            },
+            {
+                "line": 70,
+                "code": "        int x1 = e.getX();"
+            },
+            {
+                "line": 71,
+                "code": "\t\tint y1 = e.getY();"
+            },
+            {
+                "line": 72,
+                "code": "\t\tif (fPolygon == null) {"
+            },
+            {
+                "line": 73,
+                "code": "\t\t      fPolygon = new PolygonFigure(x1, y1);"
+            },
+            {
+                "line": 74,
+                "code": "\t\t      view().add(fPolygon);"
+            },
+            {
+                "line": 75,
+                "code": "\t\t      fPolygon.addPoint(x1, y1);"
+            },
+            {
+                "line": 76,
+                "code": "\t\t  } else if (fLastX != x1 || fLastY != y1)"
+            },
+            {
+                "line": 77,
+                "code": "\t\t      fPolygon.addPoint(x1, y1);"
+            },
+            {
+                "line": 78,
+                "code": "\t\t"
+            },
+            {
+                "line": 79,
+                "code": "\t\t  fLastX = x1;"
+            },
+            {
+                "line": 80,
+                "code": "\t\t  fLastY = y1;"
+            },
+            {
+                "line": 81,
+                "code": "    }"
+            },
+            {
+                "line": 82,
+                "code": "  }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+        "function_name": "scaleRotate(Point, Polygon, Point)",
+        "code_lines": [
+            {
+                "line": 190,
+                "code": "  public  void scaleRotate(Point anchor, Polygon originalPolygon, Point p) {"
+            },
+            {
+                "line": 191,
+                "code": "    willChange();"
+            },
+            {
+                "line": 192,
+                "code": "    long sx = 0;"
+            },
+            {
+                "line": 193,
+                "code": "\tlong sy = 0;"
+            },
+            {
+                "line": 194,
+                "code": "\tint n1 = originalPolygon.npoints;"
+            },
+            {
+                "line": 195,
+                "code": "\tfor (int i1 = 0; i1 < n1; i1++) {"
+            },
+            {
+                "line": 196,
+                "code": "\t  sx += originalPolygon.xpoints[i1];"
+            },
+            {
+                "line": 197,
+                "code": "\t  sy += originalPolygon.ypoints[i1];"
+            },
+            {
+                "line": 198,
+                "code": "\t}"
+            },
+            {
+                "line": 199,
+                "code": ""
+            },
+            {
+                "line": 200,
+                "code": "    // use center to determine relative angles and lengths"
+            },
+            {
+                "line": 201,
+                "code": "    Point ctr = new Point((int)(sx/n1), (int)(sy/n1));"
+            },
+            {
+                "line": 202,
+                "code": "    double anchorLen = Geom.length(ctr.x, ctr.y, anchor.x, anchor.y);"
+            },
+            {
+                "line": 203,
+                "code": ""
+            },
+            {
+                "line": 204,
+                "code": "    if (anchorLen > 0.0) {"
+            },
+            {
+                "line": 205,
+                "code": "      double newLen = Geom.length(ctr.x, ctr.y, p.x, p.y);"
+            },
+            {
+                "line": 206,
+                "code": "      double ratio = newLen / anchorLen;"
+            },
+            {
+                "line": 207,
+                "code": ""
+            },
+            {
+                "line": 208,
+                "code": "      double anchorAngle = Math.atan2(anchor.y - ctr.y, anchor.x - ctr.x);"
+            },
+            {
+                "line": 209,
+                "code": "      double newAngle = Math.atan2(p.y - ctr.y, p.x - ctr.x);"
+            },
+            {
+                "line": 210,
+                "code": "      double rotation = newAngle - anchorAngle;"
+            },
+            {
+                "line": 211,
+                "code": ""
+            },
+            {
+                "line": 212,
+                "code": "      int n = originalPolygon.npoints;"
+            },
+            {
+                "line": 213,
+                "code": "      int[] xs = new int[n];"
+            },
+            {
+                "line": 214,
+                "code": "      int[] ys = new int[n];"
+            },
+            {
+                "line": 215,
+                "code": ""
+            },
+            {
+                "line": 216,
+                "code": "      for (int i = 0; i < n; ++i) {"
+            },
+            {
+                "line": 217,
+                "code": "        int x = originalPolygon.xpoints[i];"
+            },
+            {
+                "line": 218,
+                "code": "        int y = originalPolygon.ypoints[i];"
+            },
+            {
+                "line": 219,
+                "code": "        double l = Geom.length(ctr.x, ctr.y, x, y) * ratio;"
+            },
+            {
+                "line": 220,
+                "code": "        double a = Math.atan2(y - ctr.y, x - ctr.x) + rotation;"
+            },
+            {
+                "line": 221,
+                "code": "        xs[i] = (int)(ctr.x + l * Math.cos(a) + 0.5);"
+            },
+            {
+                "line": 222,
+                "code": "        ys[i] = (int)(ctr.y + l * Math.sin(a) + 0.5);"
+            },
+            {
+                "line": 223,
+                "code": "      }"
+            },
+            {
+                "line": 224,
+                "code": "      fPoly =  new Polygon(xs, ys, n);"
+            },
+            {
+                "line": 225,
+                "code": "    }"
+            },
+            {
+                "line": 226,
+                "code": "    changed();"
+            },
+            {
+                "line": 227,
+                "code": "  }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+        "function_name": "splitSegment(int, int)",
+        "code_lines": [
+            {
+                "line": 267,
+                "code": "  public int splitSegment(int x, int y) {"
+            },
+            {
+                "line": 268,
+                "code": "    double dist = TOO_CLOSE;"
+            },
+            {
+                "line": 269,
+                "code": "\tint best = -1;"
+            },
+            {
+                "line": 270,
+                "code": "\t"
+            },
+            {
+                "line": 271,
+                "code": "\tfor (int i1 = 0; i1 < fPoly.npoints; i1++) {"
+            },
+            {
+                "line": 272,
+                "code": "\t  int n = (i1 + 1) % fPoly.npoints;"
+            },
+            {
+                "line": 273,
+                "code": "\t  double d =  distanceFromLine(fPoly.xpoints[i1], fPoly.ypoints[i1],"
+            },
+            {
+                "line": 274,
+                "code": "\t                               fPoly.xpoints[n], fPoly.ypoints[n],"
+            },
+            {
+                "line": 275,
+                "code": "\t                               x, y);"
+            },
+            {
+                "line": 276,
+                "code": "\t  if (d < dist) {"
+            },
+            {
+                "line": 277,
+                "code": "\t    dist = d;"
+            },
+            {
+                "line": 278,
+                "code": "\t    best = i1;"
+            },
+            {
+                "line": 279,
+                "code": "\t  }"
+            },
+            {
+                "line": 280,
+                "code": "\t}"
+            },
+            {
+                "line": 281,
+                "code": "\tint i = best;"
+            },
+            {
+                "line": 282,
+                "code": "    if (i != -1) {"
+            },
+            {
+                "line": 283,
+                "code": "      insertPointAt(new Point(x, y), i+1);"
+            },
+            {
+                "line": 284,
+                "code": "      return i + 1;"
+            },
+            {
+                "line": 285,
+                "code": "    }"
+            },
+            {
+                "line": 286,
+                "code": "    else"
+            },
+            {
+                "line": 287,
+                "code": "      return -1;"
+            },
+            {
+                "line": 288,
+                "code": "  }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.PolygonFigure",
+        "function_name": "chop(Polygon, Point)",
+        "code_lines": [
+            {
+                "line": 480,
+                "code": "  public static Point chop(Polygon poly, Point p) {"
+            },
+            {
+                "line": 481,
+                "code": "    long sx = 0;"
+            },
+            {
+                "line": 482,
+                "code": "\tlong sy = 0;"
+            },
+            {
+                "line": 483,
+                "code": "\tint n = poly.npoints;"
+            },
+            {
+                "line": 484,
+                "code": "\tfor (int i1 = 0; i1 < n; i1++) {"
+            },
+            {
+                "line": 485,
+                "code": "\t  sx += poly.xpoints[i1];"
+            },
+            {
+                "line": 486,
+                "code": "\t  sy += poly.ypoints[i1];"
+            },
+            {
+                "line": 487,
+                "code": "\t}"
+            },
+            {
+                "line": 488,
+                "code": "\tPoint ctr = new Point((int)(sx/n), (int)(sy/n));"
+            },
+            {
+                "line": 489,
+                "code": "    int cx = -1;"
+            },
+            {
+                "line": 490,
+                "code": "    int cy = -1;"
+            },
+            {
+                "line": 491,
+                "code": "    long len = Long.MAX_VALUE;"
+            },
+            {
+                "line": 492,
+                "code": ""
+            },
+            {
+                "line": 493,
+                "code": "    // Try for points along edge"
+            },
+            {
+                "line": 494,
+                "code": ""
+            },
+            {
+                "line": 495,
+                "code": "    for (int i = 0; i < poly.npoints; ++i) {"
+            },
+            {
+                "line": 496,
+                "code": "      int nxt = (i + 1) % poly.npoints;"
+            },
+            {
+                "line": 497,
+                "code": "      Point chop = Geom.intersect(poly.xpoints[i],"
+            },
+            {
+                "line": 498,
+                "code": "                             poly.ypoints[i],"
+            },
+            {
+                "line": 499,
+                "code": "                             poly.xpoints[nxt],"
+            },
+            {
+                "line": 500,
+                "code": "                             poly.ypoints[nxt],"
+            },
+            {
+                "line": 501,
+                "code": "                             p.x,"
+            },
+            {
+                "line": 502,
+                "code": "                             p.y,"
+            },
+            {
+                "line": 503,
+                "code": "                             ctr.x,"
+            },
+            {
+                "line": 504,
+                "code": "                             ctr.y);"
+            },
+            {
+                "line": 505,
+                "code": "      if (chop != null) {"
+            },
+            {
+                "line": 506,
+                "code": "        long cl = Geom.length2(chop.x, chop.y, p.x, p.y);"
+            },
+            {
+                "line": 507,
+                "code": "        if (cl < len) {"
+            },
+            {
+                "line": 508,
+                "code": "          len = cl;"
+            },
+            {
+                "line": 509,
+                "code": "          cx = chop.x;"
+            },
+            {
+                "line": 510,
+                "code": "          cy = chop.y;"
+            },
+            {
+                "line": 511,
+                "code": "        }"
+            },
+            {
+                "line": 512,
+                "code": "      }"
+            },
+            {
+                "line": 513,
+                "code": "    }"
+            },
+            {
+                "line": 514,
+                "code": "    // if none found, pick closest vertex"
+            },
+            {
+                "line": 515,
+                "code": "    //if (len ==  Long.MAX_VALUE) {"
+            },
+            {
+                "line": 516,
+                "code": "    { // try anyway"
+            },
+            {
+                "line": 517,
+                "code": "      for (int i = 0; i < poly.npoints; ++i) {"
+            },
+            {
+                "line": 518,
+                "code": "        long l = Geom.length2(poly.xpoints[i], poly.ypoints[i], p.x, p.y);"
+            },
+            {
+                "line": 519,
+                "code": "        if (l < len) {"
+            },
+            {
+                "line": 520,
+                "code": "          len = l;"
+            },
+            {
+                "line": 521,
+                "code": "          cx = poly.xpoints[i];"
+            },
+            {
+                "line": 522,
+                "code": "          cy = poly.ypoints[i];"
+            },
+            {
+                "line": 523,
+                "code": "        }"
+            },
+            {
+                "line": 524,
+                "code": "      }"
+            },
+            {
+                "line": 525,
+                "code": "    }"
+            },
+            {
+                "line": 526,
+                "code": "    return new Point(cx, cy);"
+            },
+            {
+                "line": 527,
+                "code": "  }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.DiamondFigure",
+        "function_name": "draw(Graphics)",
+        "code_lines": [
+            {
+                "line": 41,
+                "code": "  public void draw(Graphics g) {"
+            },
+            {
+                "line": 42,
+                "code": "    Rectangle r = displayBox();"
+            },
+            {
+                "line": 43,
+                "code": "\tPolygon p1 = new Polygon();"
+            },
+            {
+                "line": 44,
+                "code": "\tp1.addPoint(r.x, r.y+r.height/2);"
+            },
+            {
+                "line": 45,
+                "code": "\tp1.addPoint(r.x+r.width/2, r.y);"
+            },
+            {
+                "line": 46,
+                "code": "\tp1.addPoint(r.x+r.width, r.y+r.height/2);"
+            },
+            {
+                "line": 47,
+                "code": "\tp1.addPoint(r.x+r.width/2, r.y+r.height);"
+            },
+            {
+                "line": 48,
+                "code": "\tPolygon p = p1;"
+            },
+            {
+                "line": 49,
+                "code": "    g.setColor(getFillColor());"
+            },
+            {
+                "line": 50,
+                "code": "    g.fillPolygon(p);"
+            },
+            {
+                "line": 51,
+                "code": "    g.setColor(getFrameColor());"
+            },
+            {
+                "line": 52,
+                "code": "    g.drawPolygon(p);"
+            },
+            {
+                "line": 53,
+                "code": "  }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+        "function_name": "mouseDown(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 48,
+                "code": "\tpublic void mouseDown(MouseEvent e, int x, int y) {"
+            },
+            {
+                "line": 49,
+                "code": "\t\t// isPopupTrigger() at mouseDown() is only notified at UNIX systems"
+            },
+            {
+                "line": 50,
+                "code": "\t\tif (e.isPopupTrigger()) {"
+            },
+            {
+                "line": 51,
+                "code": "\t\t    Figure figure = drawing().findFigure(e.getX(), e.getY());"
+            },
+            {
+                "line": 52,
+                "code": "\t\t\tif (figure != null) {"
+            },
+            {
+                "line": 53,
+                "code": "\t\t\t    Object attribute = figure.getAttribute(Figure.POPUP_MENU);"
+            },
+            {
+                "line": 54,
+                "code": "\t\t\t    if (attribute == null) {"
+            },
+            {
+                "line": 55,
+                "code": "\t\t\t        figure = drawing().findFigureInside(e.getX(), e.getY());"
+            },
+            {
+                "line": 56,
+                "code": "\t\t\t    }"
+            },
+            {
+                "line": 57,
+                "code": "\t\t\t\tif (figure != null) {"
+            },
+            {
+                "line": 58,
+                "code": "\t\t\t    \tshowPopupMenu(figure, e.getX(), e.getY(), e.getComponent());"
+            },
+            {
+                "line": 59,
+                "code": "\t\t\t    }"
+            },
+            {
+                "line": 60,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 61,
+                "code": "\t\t}"
+            },
+            {
+                "line": 62,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 63,
+                "code": "\t\t\tsuper.mouseDown(e, x, y);"
+            },
+            {
+                "line": 64,
+                "code": "\t\t\thandleMouseDown(e, x, y);"
+            },
+            {
+                "line": 65,
+                "code": "\t\t}"
+            },
+            {
+                "line": 66,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+        "function_name": "mouseUp(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 92,
+                "code": "\tpublic void mouseUp(MouseEvent e, int x, int y) {"
+            },
+            {
+                "line": 93,
+                "code": "\t\tif (e.isPopupTrigger()) {"
+            },
+            {
+                "line": 94,
+                "code": "\t\t    Figure figure = drawing().findFigure(e.getX(), e.getY());"
+            },
+            {
+                "line": 95,
+                "code": "\t\t\tif (figure != null) {"
+            },
+            {
+                "line": 96,
+                "code": "\t\t\t    Object attribute = figure.getAttribute(Figure.POPUP_MENU);"
+            },
+            {
+                "line": 97,
+                "code": "\t\t\t    if (attribute == null) {"
+            },
+            {
+                "line": 98,
+                "code": "\t\t\t        figure = drawing().findFigureInside(e.getX(), e.getY());"
+            },
+            {
+                "line": 99,
+                "code": "\t\t\t    }"
+            },
+            {
+                "line": 100,
+                "code": "\t\t\t\tif (figure != null) {"
+            },
+            {
+                "line": 101,
+                "code": "\t\t\t    \tshowPopupMenu(figure, e.getX(), e.getY(), e.getComponent());"
+            },
+            {
+                "line": 102,
+                "code": "\t\t\t    }"
+            },
+            {
+                "line": 103,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 104,
+                "code": "\t\t}"
+            },
+            {
+                "line": 105,
+                "code": "\t\telse if (e.getClickCount() == 2) {"
+            },
+            {
+                "line": 106,
+                "code": "\t\t\thandleMouseDoubleClick(e, x, y);"
+            },
+            {
+                "line": 107,
+                "code": "\t\t}"
+            },
+            {
+                "line": 108,
+                "code": "\t\telse {"
+            },
+            {
+                "line": 109,
+                "code": "\t\t\tsuper.mouseUp(e, x, y);"
+            },
+            {
+                "line": 110,
+                "code": "\t\t\thandleMouseUp(e, x, y);"
+            },
+            {
+                "line": 111,
+                "code": "\t\t\thandleMouseClick(e, x, y);"
+            },
+            {
+                "line": 112,
+                "code": "\t\t}"
+            },
+            {
+                "line": 113,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+        "function_name": "handlePopupMenu(MouseEvent, int, int)",
+        "code_lines": [
+            {
+                "line": 147,
+                "code": "\tprotected void handlePopupMenu(MouseEvent e, int x, int y) {"
+            },
+            {
+                "line": 148,
+                "code": "\t\tFigure figure = drawing().findFigure(e.getX(), e.getY());"
+            },
+            {
+                "line": 149,
+                "code": "        if (figure != null) {"
+            },
+            {
+                "line": 150,
+                "code": "            Object attribute = figure.getAttribute(Figure.POPUP_MENU);"
+            },
+            {
+                "line": 151,
+                "code": "            if (attribute == null) {"
+            },
+            {
+                "line": 152,
+                "code": "                figure = drawing().findFigureInside(e.getX(), e.getY());"
+            },
+            {
+                "line": 153,
+                "code": "            }"
+            },
+            {
+                "line": 154,
+                "code": "        \tif (figure != null) {"
+            },
+            {
+                "line": 155,
+                "code": "            \tComponent comp = e.getComponent();"
+            },
+            {
+                "line": 156,
+                "code": "\t\t\t\tObject attribute1 = figure.getAttribute(Figure.POPUP_MENU);"
+            },
+            {
+                "line": 157,
+                "code": "\t\t\t\tif ((attribute1 != null) && (attribute1 instanceof JPopupMenu)) {"
+            },
+            {
+                "line": 158,
+                "code": "\t\t\t\t    JPopupMenu popup = (JPopupMenu)attribute1;"
+            },
+            {
+                "line": 159,
+                "code": "\t\t\t\t    if (popup instanceof PopupMenuFigureSelection) {"
+            },
+            {
+                "line": 160,
+                "code": "\t\t\t\t        ((PopupMenuFigureSelection)popup).setSelectedFigure(figure);"
+            },
+            {
+                "line": 161,
+                "code": "\t\t\t\t    }"
+            },
+            {
+                "line": 162,
+                "code": "\t\t\t\t    // calculate offsets for internal MDI frames"
+            },
+            {
+                "line": 163,
+                "code": "\t\t\t\t    Point newLocation = new Point(e.getX(), e.getY());"
+            },
+            {
+                "line": 164,
+                "code": "\t\t\t\t    adjustOffsets(comp.getParent(), newLocation);"
+            },
+            {
+                "line": 165,
+                "code": "\t\t\t\t\tpopup.setLocation(newLocation);"
+            },
+            {
+                "line": 166,
+                "code": "\t\t\t\t\tpopup.setInvoker(comp);"
+            },
+            {
+                "line": 167,
+                "code": "\t\t\t\t\tpopup.setVisible(true);"
+            },
+            {
+                "line": 168,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 169,
+                "code": "            }"
+            },
+            {
+                "line": 170,
+                "code": "\t\t}"
+            },
+            {
+                "line": 171,
+                "code": "\t}"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.application.DrawApplication",
+        "function_name": "promptOpen()",
+        "code_lines": [
+            {
+                "line": 691,
+                "code": "    public void promptOpen() {"
+            },
+            {
+                "line": 692,
+                "code": "    \ttoolDone();"
+            },
+            {
+                "line": 693,
+                "code": "        JFileChooser openDialog = createOpenFileChooser();"
+            },
+            {
+                "line": 694,
+                "code": "        getStorageFormatManager().registerFileFilters(openDialog);"
+            },
+            {
+                "line": 695,
+                "code": "        if (openDialog.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {"
+            },
+            {
+                "line": 696,
+                "code": "            StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(openDialog.getFileFilter());"
+            },
+            {
+                "line": 697,
+                "code": "            if (foundFormat != null) {"
+            },
+            {
+                "line": 698,
+                "code": "                String file = openDialog.getSelectedFile().getAbsolutePath();"
+            },
+            {
+                "line": 699,
+                "code": "\t\t\t\ttry {"
+            },
+            {
+                "line": 700,
+                "code": "\t\t\t\t    Drawing restoredDrawing = foundFormat.restore(file);"
+            },
+            {
+                "line": 701,
+                "code": "\t\t\t\t    if (restoredDrawing != null) {"
+            },
+            {
+                "line": 702,
+                "code": "\t\t\t\t        newWindow();"
+            },
+            {
+                "line": 703,
+                "code": "\t\t\t\t        setDrawing(restoredDrawing);"
+            },
+            {
+                "line": 704,
+                "code": "\t\t\t\t        setDrawingTitle(file);"
+            },
+            {
+                "line": 705,
+                "code": "\t\t\t\t    }"
+            },
+            {
+                "line": 706,
+                "code": "\t\t\t\t    else {"
+            },
+            {
+                "line": 707,
+                "code": "\t\t\t\t       showStatus(\"Unknown file type: could not open file '\" + file + \"'\");"
+            },
+            {
+                "line": 708,
+                "code": "\t\t\t\t    }"
+            },
+            {
+                "line": 709,
+                "code": "\t\t\t\t} catch (IOException e) {"
+            },
+            {
+                "line": 710,
+                "code": "\t\t\t\t    showStatus(\"Error: \" + e);"
+            },
+            {
+                "line": 711,
+                "code": "\t\t\t\t}"
+            },
+            {
+                "line": 712,
+                "code": "            }"
+            },
+            {
+                "line": 713,
+                "code": "            else {"
+            },
+            {
+                "line": 714,
+                "code": "                showStatus(\"Not a valid file format: \" + openDialog.getFileFilter().getDescription());"
+            },
+            {
+                "line": 715,
+                "code": "            }"
+            },
+            {
+                "line": 716,
+                "code": "        }"
+            },
+            {
+                "line": 717,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.application.DrawApplication",
+        "function_name": "promptSaveAs()",
+        "code_lines": [
+            {
+                "line": 722,
+                "code": "    public void promptSaveAs() {"
+            },
+            {
+                "line": 723,
+                "code": "        toolDone();"
+            },
+            {
+                "line": 724,
+                "code": "        JFileChooser saveDialog1 = new JFileChooser();"
+            },
+            {
+                "line": 725,
+                "code": "\t\tsaveDialog1.setDialogTitle(\"Save File...\");"
+            },
+            {
+                "line": 726,
+                "code": "        JFileChooser saveDialog = saveDialog1;"
+            },
+            {
+                "line": 727,
+                "code": "        getStorageFormatManager().registerFileFilters(saveDialog);"
+            },
+            {
+                "line": 728,
+                "code": ""
+            },
+            {
+                "line": 729,
+                "code": "        if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {"
+            },
+            {
+                "line": 730,
+                "code": "            StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());"
+            },
+            {
+                "line": 731,
+                "code": "            if (foundFormat != null) {"
+            },
+            {
+                "line": 732,
+                "code": "                saveDrawing(foundFormat, saveDialog.getSelectedFile().getAbsolutePath());"
+            },
+            {
+                "line": 733,
+                "code": "            }"
+            },
+            {
+                "line": 734,
+                "code": "            else {"
+            },
+            {
+                "line": 735,
+                "code": "                showStatus(\"Not a valid file format: \" + saveDialog.getFileFilter().getDescription());"
+            },
+            {
+                "line": 736,
+                "code": "            }"
+            },
+            {
+                "line": 737,
+                "code": "        }"
+            },
+            {
+                "line": 738,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "init()",
+        "code_lines": [
+            {
+                "line": 63,
+                "code": "    public void init() {"
+            },
+            {
+                "line": 64,
+                "code": "        fIconkit = new Iconkit(this);"
+            },
+            {
+                "line": 65,
+                "code": ""
+            },
+            {
+                "line": 66,
+                "code": "\t\tgetContentPane().setLayout(new BorderLayout());"
+            },
+            {
+                "line": 67,
+                "code": ""
+            },
+            {
+                "line": 68,
+                "code": "        fView = createDrawingView();"
+            },
+            {
+                "line": 69,
+                "code": "        "
+            },
+            {
+                "line": 70,
+                "code": "        JPanel attributes = createAttributesPanel();"
+            },
+            {
+                "line": 71,
+                "code": "        attributes.add(new JLabel(\"Fill\"));"
+            },
+            {
+                "line": 72,
+                "code": "\t\tfFillColor = createColorChoice(\"FillColor\");"
+            },
+            {
+                "line": 73,
+                "code": "\t\tattributes.add(fFillColor);"
+            },
+            {
+                "line": 74,
+                "code": "\t\t"
+            },
+            {
+                "line": 75,
+                "code": "\t\tattributes.add(new JLabel(\"Text\"));"
+            },
+            {
+                "line": 76,
+                "code": "\t\tfTextColor = createColorChoice(\"TextColor\");"
+            },
+            {
+                "line": 77,
+                "code": "\t\tattributes.add(fTextColor);"
+            },
+            {
+                "line": 78,
+                "code": "\t\t"
+            },
+            {
+                "line": 79,
+                "code": "\t\tattributes.add(new JLabel(\"Pen\"));"
+            },
+            {
+                "line": 80,
+                "code": "\t\tfFrameColor = createColorChoice(\"FrameColor\");"
+            },
+            {
+                "line": 81,
+                "code": "\t\tattributes.add(fFrameColor);"
+            },
+            {
+                "line": 82,
+                "code": "\t\t"
+            },
+            {
+                "line": 83,
+                "code": "\t\tattributes.add(new JLabel(\"Arrow\"));"
+            },
+            {
+                "line": 84,
+                "code": "\t\tCommandChoice choice = new CommandChoice();"
+            },
+            {
+                "line": 85,
+                "code": "\t\tfArrowChoice = choice;"
+            },
+            {
+                "line": 86,
+                "code": "\t\tchoice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));"
+            },
+            {
+                "line": 87,
+                "code": "\t\tchoice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));"
+            },
+            {
+                "line": 88,
+                "code": "\t\tchoice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));"
+            },
+            {
+                "line": 89,
+                "code": "\t\tchoice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));"
+            },
+            {
+                "line": 90,
+                "code": "\t\tattributes.add(fArrowChoice);"
+            },
+            {
+                "line": 91,
+                "code": "\t\t"
+            },
+            {
+                "line": 92,
+                "code": "\t\tattributes.add(new JLabel(\"Font\"));"
+            },
+            {
+                "line": 93,
+                "code": "\t\tfFontChoice = createFontChoice();"
+            },
+            {
+                "line": 94,
+                "code": "\t\tattributes.add(fFontChoice);"
+            },
+            {
+                "line": 95,
+                "code": "        getContentPane().add(\"North\", attributes);"
+            },
+            {
+                "line": 96,
+                "code": ""
+            },
+            {
+                "line": 97,
+                "code": "        JPanel toolPanel = createToolPalette();"
+            },
+            {
+                "line": 98,
+                "code": "        createTools(toolPanel);"
+            },
+            {
+                "line": 99,
+                "code": "        getContentPane().add(\"West\", toolPanel);"
+            },
+            {
+                "line": 100,
+                "code": ""
+            },
+            {
+                "line": 101,
+                "code": "        getContentPane().add(\"Center\", fView);"
+            },
+            {
+                "line": 102,
+                "code": "        JPanel buttonPalette = createButtonPanel();"
+            },
+            {
+                "line": 103,
+                "code": "        createButtons(buttonPalette);"
+            },
+            {
+                "line": 104,
+                "code": "        getContentPane().add(\"South\", buttonPalette);"
+            },
+            {
+                "line": 105,
+                "code": ""
+            },
+            {
+                "line": 106,
+                "code": "        initDrawing();"
+            },
+            {
+                "line": 107,
+                "code": "        // JFC should have its own internal double buffering..."
+            },
+            {
+                "line": 108,
+                "code": "        //setBufferedDisplayUpdate();"
+            },
+            {
+                "line": 109,
+                "code": "        setupAttributes();"
+            },
+            {
+                "line": 110,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "createAttributeChoices(JPanel)",
+        "code_lines": [
+            {
+                "line": 140,
+                "code": "    protected void createAttributeChoices(JPanel panel) {"
+            },
+            {
+                "line": 141,
+                "code": "        panel.add(new JLabel(\"Fill\"));"
+            },
+            {
+                "line": 142,
+                "code": "        fFillColor = createColorChoice(\"FillColor\");"
+            },
+            {
+                "line": 143,
+                "code": "        panel.add(fFillColor);"
+            },
+            {
+                "line": 144,
+                "code": ""
+            },
+            {
+                "line": 145,
+                "code": "        panel.add(new JLabel(\"Text\"));"
+            },
+            {
+                "line": 146,
+                "code": "        fTextColor = createColorChoice(\"TextColor\");"
+            },
+            {
+                "line": 147,
+                "code": "        panel.add(fTextColor);"
+            },
+            {
+                "line": 148,
+                "code": ""
+            },
+            {
+                "line": 149,
+                "code": "        panel.add(new JLabel(\"Pen\"));"
+            },
+            {
+                "line": 150,
+                "code": "        fFrameColor = createColorChoice(\"FrameColor\");"
+            },
+            {
+                "line": 151,
+                "code": "        panel.add(fFrameColor);"
+            },
+            {
+                "line": 152,
+                "code": ""
+            },
+            {
+                "line": 153,
+                "code": "        panel.add(new JLabel(\"Arrow\"));"
+            },
+            {
+                "line": 154,
+                "code": "        CommandChoice choice = new CommandChoice();"
+            },
+            {
+                "line": 155,
+                "code": "        fArrowChoice = choice;"
+            },
+            {
+                "line": 156,
+                "code": "        choice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));"
+            },
+            {
+                "line": 157,
+                "code": "        choice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));"
+            },
+            {
+                "line": 158,
+                "code": "        choice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));"
+            },
+            {
+                "line": 159,
+                "code": "        choice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));"
+            },
+            {
+                "line": 160,
+                "code": "        panel.add(fArrowChoice);"
+            },
+            {
+                "line": 161,
+                "code": ""
+            },
+            {
+                "line": 162,
+                "code": "        panel.add(new JLabel(\"Font\"));"
+            },
+            {
+                "line": 163,
+                "code": "        CommandChoice choice1 = new CommandChoice();"
+            },
+            {
+                "line": 164,
+                "code": "\t\tString fonts[] = Toolkit.getDefaultToolkit().getFontList();"
+            },
+            {
+                "line": 165,
+                "code": "\t\tfor (int i = 0; i < fonts.length; i++)"
+            },
+            {
+                "line": 166,
+                "code": "\t\t    choice1.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i],  fView));"
+            },
+            {
+                "line": 167,
+                "code": "        fFontChoice = choice1;"
+            },
+            {
+                "line": 168,
+                "code": "        panel.add(fFontChoice);"
+            },
+            {
+                "line": 169,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "loadDrawing(String)",
+        "code_lines": [
+            {
+                "line": 426,
+                "code": "    protected void loadDrawing(String param) {"
+            },
+            {
+                "line": 427,
+                "code": "        if (param == fgUntitled) {"
+            },
+            {
+                "line": 428,
+                "code": "            fDrawing.release();"
+            },
+            {
+                "line": 429,
+                "code": "            initDrawing();"
+            },
+            {
+                "line": 430,
+                "code": "            return;"
+            },
+            {
+                "line": 431,
+                "code": "        }"
+            },
+            {
+                "line": 432,
+                "code": ""
+            },
+            {
+                "line": 433,
+                "code": "        String filename = getParameter(param);"
+            },
+            {
+                "line": 434,
+                "code": "        if (filename != null) {"
+            },
+            {
+                "line": 435,
+                "code": "        \ttoolDone();"
+            },
+            {
+                "line": 436,
+                "code": "\t\t\tString type = guessType(filename);"
+            },
+            {
+                "line": 437,
+                "code": "\t\t\tif (type.equals(\"storable\"))"
+            },
+            {
+                "line": 438,
+                "code": "\t\t\t    readFromStorableInput(filename);"
+            },
+            {
+                "line": 439,
+                "code": "\t\t\telse if (type.equals(\"serialized\"))"
+            },
+            {
+                "line": 440,
+                "code": "\t\t\t    readFromObjectInput(filename);"
+            },
+            {
+                "line": 441,
+                "code": "\t\t\telse"
+            },
+            {
+                "line": 442,
+                "code": "\t\t\t    showStatus(\"Unknown file type\");"
+            },
+            {
+                "line": 443,
+                "code": "\t\t}"
+            },
+            {
+                "line": 444,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "readDrawing(String)",
+        "code_lines": [
+            {
+                "line": 446,
+                "code": "    private void readDrawing(String filename) {"
+            },
+            {
+                "line": 447,
+                "code": "        toolDone();"
+            },
+            {
+                "line": 448,
+                "code": "        String type = guessType(filename);"
+            },
+            {
+                "line": 449,
+                "code": "        if (type.equals(\"storable\"))"
+            },
+            {
+                "line": 450,
+                "code": "            readFromStorableInput(filename);"
+            },
+            {
+                "line": 451,
+                "code": "        else if (type.equals(\"serialized\"))"
+            },
+            {
+                "line": 452,
+                "code": "        \ttry {"
+            },
+            {
+                "line": 453,
+                "code": "\t\t\t    URL url = new URL(getCodeBase(), filename);"
+            },
+            {
+                "line": 454,
+                "code": "\t\t\t    InputStream stream = url.openStream();"
+            },
+            {
+                "line": 455,
+                "code": "\t\t\t    ObjectInput input = new ObjectInputStream(stream);"
+            },
+            {
+                "line": 456,
+                "code": "\t\t\t    fDrawing.release();"
+            },
+            {
+                "line": 457,
+                "code": "\t\t\t    fDrawing = (Drawing)input.readObject();"
+            },
+            {
+                "line": 458,
+                "code": "\t\t\t    fView.setDrawing(fDrawing);"
+            },
+            {
+                "line": 459,
+                "code": "\t\t\t} catch (IOException e) {"
+            },
+            {
+                "line": 460,
+                "code": "\t\t\t    initDrawing();"
+            },
+            {
+                "line": 461,
+                "code": "\t\t\t    showStatus(\"Error: \" + e);"
+            },
+            {
+                "line": 462,
+                "code": "\t\t\t} catch (ClassNotFoundException e) {"
+            },
+            {
+                "line": 463,
+                "code": "\t\t\t    initDrawing();"
+            },
+            {
+                "line": 464,
+                "code": "\t\t\t    showStatus(\"Class not found: \" + e);"
+            },
+            {
+                "line": 465,
+                "code": "\t\t\t}"
+            },
+            {
+                "line": 466,
+                "code": "\t\telse"
+            },
+            {
+                "line": 467,
+                "code": "            showStatus(\"Unknown file type\");"
+            },
+            {
+                "line": 468,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "readFromStorableInput(String)",
+        "code_lines": [
+            {
+                "line": 470,
+                "code": "    private void readFromStorableInput(String filename) {"
+            },
+            {
+                "line": 471,
+                "code": "        try {"
+            },
+            {
+                "line": 472,
+                "code": "            URL url = new URL(getCodeBase(), filename);"
+            },
+            {
+                "line": 473,
+                "code": "            InputStream stream = url.openStream();"
+            },
+            {
+                "line": 474,
+                "code": "            StorableInput input = new StorableInput(stream);"
+            },
+            {
+                "line": 475,
+                "code": "            fDrawing.release();"
+            },
+            {
+                "line": 476,
+                "code": ""
+            },
+            {
+                "line": 477,
+                "code": "            fDrawing = (Drawing)input.readStorable();"
+            },
+            {
+                "line": 478,
+                "code": "            fView.setDrawing(fDrawing);"
+            },
+            {
+                "line": 479,
+                "code": "        } catch (IOException e) {"
+            },
+            {
+                "line": 480,
+                "code": "            fDrawing = createDrawing();"
+            },
+            {
+                "line": 481,
+                "code": "\t\t\tfView.setDrawing(fDrawing);"
+            },
+            {
+                "line": 482,
+                "code": "\t\t\ttoolDone();"
+            },
+            {
+                "line": 483,
+                "code": "            showStatus(\"Error:\"+e);"
+            },
+            {
+                "line": 484,
+                "code": "        }"
+            },
+            {
+                "line": 485,
+                "code": "    }"
+            }
+        ]
+    },
+    {
+        "class_name": "CH.ifa.draw.applet.DrawApplet",
+        "function_name": "readFromObjectInput(String)",
+        "code_lines": [
+            {
+                "line": 487,
+                "code": "    private void readFromObjectInput(String filename) {"
+            },
+            {
+                "line": 488,
+                "code": "        try {"
+            },
+            {
+                "line": 489,
+                "code": "            URL url = new URL(getCodeBase(), filename);"
+            },
+            {
+                "line": 490,
+                "code": "            InputStream stream = url.openStream();"
+            },
+            {
+                "line": 491,
+                "code": "            ObjectInput input = new ObjectInputStream(stream);"
+            },
+            {
+                "line": 492,
+                "code": "            fDrawing.release();"
+            },
+            {
+                "line": 493,
+                "code": "            fDrawing = (Drawing)input.readObject();"
+            },
+            {
+                "line": 494,
+                "code": "            fView.setDrawing(fDrawing);"
+            },
+            {
+                "line": 495,
+                "code": "        } catch (IOException e) {"
+            },
+            {
+                "line": 496,
+                "code": "            fDrawing = createDrawing();"
+            },
+            {
+                "line": 497,
+                "code": "\t\t\tfView.setDrawing(fDrawing);"
+            },
+            {
+                "line": 498,
+                "code": "\t\t\ttoolDone();"
+            },
+            {
+                "line": 499,
+                "code": "            showStatus(\"Error: \" + e);"
+            },
+            {
+                "line": 500,
+                "code": "        } catch (ClassNotFoundException e) {"
+            },
+            {
+                "line": 501,
+                "code": "            initDrawing();"
+            },
+            {
+                "line": 502,
+                "code": "            showStatus(\"Class not found: \" + e);"
+            },
+            {
+                "line": 503,
+                "code": "        }"
+            },
+            {
+                "line": 504,
+                "code": "    }"
+            }
+        ]
+    }
+]
