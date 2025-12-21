@@ -1,0 +1,25 @@
+{
+  "targetClass": "CH.ifa.draw.standard.PasteCommand",
+  "targetMethod": "execute()",
+  "dependentFields": {
+    "CH.ifa.draw.framework.Figure": "public static String POPUP_MENU = \"POPUP_MENU\";",
+    "CH.ifa.draw.framework.DrawingView": "",
+    "CH.ifa.draw.standard.FigureTransferCommand": "protected DrawingView fView;",
+    "CH.ifa.draw.util.Clipboard": "static Clipboard fgClipboard = new Clipboard();\nprivate Object fContents;",
+    "CH.ifa.draw.framework.FigureSelection": "private byte[] fData;\npublic final static String TYPE = \"CH.ifa.draw.Figures\";"
+  },
+  "dependentMethods": {
+    "CH.ifa.draw.framework.Figure": "public Rectangle displayBox();",
+    "CH.ifa.draw.framework.DrawingView": "public void clearSelection();\npublic Point lastClick();\npublic void checkDamage();",
+    "CH.ifa.draw.standard.FigureTransferCommand": "protected void insertFigures(Vector figures, int dx, int dy){}",
+    "CH.ifa.draw.util.Clipboard": "static public Clipboard getClipboard(){}\npublic Object getContents(){}",
+    "CH.ifa.draw.framework.FigureSelection": "public Object getData(String type){}"
+  },
+  "dependentMethodBodies": {
+    "CH.ifa.draw.framework.Figure": "* Gets the display box of a figure\n     * @see #basicDisplayBox\n     \npublic Rectangle displayBox();",
+    "CH.ifa.draw.framework.DrawingView": "* Clears the current selection.\n     \npublic void clearSelection();\n\n     * Gets the position of the last click inside the view.\n     \npublic Point lastClick();\n\n     * Checks whether the drawing has some accumulated damage\n     \npublic void checkDamage();",
+    "CH.ifa.draw.standard.FigureTransferCommand": "* Inserts a vector of figures and translates them by the\n    * given offset.\n    \nprotected void insertFigures(Vector figures, int dx, int dy) {\n        FigureEnumeration e = new FigureEnumerator(figures);\n        while (e.hasMoreElements()) {\n            Figure figure = e.nextFigure();\n            figure.moveBy(dx, dy);\n            figure = fView.add(figure);\n            fView.addToSelection(figure);\n        }\n    }",
+    "CH.ifa.draw.util.Clipboard": "* Gets the clipboard.\n     \nstatic public Clipboard getClipboard() {\n        return fgClipboard;\n    }\n\n     * Gets the contents of the clipboard.\n     \npublic Object getContents() {\n        return fContents;\n    }",
+    "CH.ifa.draw.framework.FigureSelection": "* Gets the data of the selection. The result is returned\n     * as a Vector of Figures.\n     *\n     * @return a copy of the figure selection.\n     \npublic Object getData(String type) {\n        if (type.equals(TYPE)) {\n            InputStream input = new ByteArrayInputStream(fData);\n            Vector result = new Vector(10);\n            StorableInput reader = new StorableInput(input);\n            int numRead = 0;\n            try {\n                int count = reader.readInt();\n                while (numRead < count) {\n                    Figure newFigure = (Figure) reader.readStorable();\n                    result.addElement(newFigure);\n                    numRead++;\n                }\n            } catch (IOException e) {\n                System.out.println(e.toString());\n            }\n            return result;\n        }\n        return null;\n    }"
+  }
+}

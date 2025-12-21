@@ -2,48 +2,52 @@ Please help me break down the method into multiple slices.
 The target method is provided with line numbers.
 
 Here are the basic details about the method
+
+Focal Method (with line numbers):
 ```json
 {{ focal method }}
 ```
+
+Dependencies:
 ```json
 {{ dependencies }}
+```
+
+Code Context Graph (CCG): This graph contains nodes (statements) and edges representing Data Dependency (DD), Control Dependency (CD), and Control Flow (CF).
+```
+{{ code_context_graph }}
 ```
 
 Please decompose the method under test following the instructions:
 
 [Critical Slicing Rules — must follow]
-A. Unit-of-Work over Syntax:
+A. Task-Based Granularity:
 
-Prefer business/task boundaries rather than blank lines, comments, or formatting.
+Prioritize business logic steps. Each slice must correspond to a clear subtask (e.g., validation, initialization, computation, or state update).
 
-Statements that belong to the same "work unit" must stay together.
+B. Control Flow Extraction Policy:
 
-B. Resource / Transaction Atomicity:
+Decouple Headers from Bodies: Do not forcedly bundle control-flow headers (e.g., if, for, try) with their bodies if the body performs a standalone task.
 
-Do NOT fragment a resource lifecycle or transaction flow.
+If the logic inside a control structure is a functional unit, slice the body separately. This avoids disrupting the original method's flow (preventing Semantic Errors).
 
-Keep patterns like: acquire/open -> configure/build -> execute/use -> commit/rollback -> close/release in ONE slice whenever possible.
+C. Syntactic Integrity (Zero-Error Guard):
 
-C. Data-flow Closure (Def-Use):
+Every slice must be syntactically complete. Never truncate code in a way that leaves braces {} unbalanced or expressions incomplete.
 
-A slice must not "use" a variable/resource without including its nearest definition/acquisition in the same slice,
-OR explicitly treat it as an input precondition (and list it in Step 2 env settings).
+Ensure all brackets opened within a slice are closed within the same slice to avoid compilation errors.
 
-D. Control-flow Closure:
+D. Data Flow Awareness:
 
-Do not produce isolated one-line slices that are just "return/throw".
+Identify the Input (variables defined outside used inside) and Output (modified variables needed later) for each slice.
 
-Guard + fallback patterns (e.g., if(cond) return X; return null;) should be treated as ONE decision unit slice.
+Maintain high cohesion; statements within a slice should be related by data flow.
 
-E. Anti One-liner Slices:
+E. Exhaustive Statement Coverage (No Omissions):
 
-Avoid 1–2 line slices unless they are truly independent side effects (e.g., logging/metrics) or pure validation with immediate exit.
+Zero Omission: Every single statement and line of executable code from the focal method must be assigned to a slice.
 
-Merge adjacent micro-slices if they share the same key variable/resource or the same control predicate.
-
-F. Ignore Blank Lines / Comments as Cut Signals:
-
-Blank lines and comments must not be used as splitting boundaries.
+No statement can be ignored or skipped. The union of all slices must represent 100% of the original method's code to ensure functional equivalence after refactoring.
 
 [Task]
 1. Summarise the focal method

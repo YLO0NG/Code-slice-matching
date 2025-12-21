@@ -1,0 +1,86 @@
+Please help me break down the method into multiple slices.
+The target method is provided with line numbers.
+
+Here are the basic details about the method
+```json
+{{ focal method }}
+```
+```json
+{{ dependencies }}
+```
+
+Please decompose the method under test following the instructions:
+
+[Critical Slicing Rules — must follow]
+A. Unit-of-Work over Syntax:
+
+Prefer business/task boundaries rather than blank lines, comments, or formatting.
+
+Statements that belong to the same "work unit" must stay together.
+
+B. Resource / Transaction Atomicity:
+
+Do NOT fragment a resource lifecycle or transaction flow.
+
+Keep patterns like: acquire/open -> configure/build -> execute/use -> commit/rollback -> close/release in ONE slice whenever possible.
+
+C. Data-flow Closure (Def-Use):
+
+A slice must not "use" a variable/resource without including its nearest definition/acquisition in the same slice,
+OR explicitly treat it as an input precondition (and list it in Step 2 env settings).
+
+D. Control-flow Closure:
+
+Do not produce isolated one-line slices that are just "return/throw".
+
+Guard + fallback patterns (e.g., if(cond) return X; return null;) should be treated as ONE decision unit slice.
+
+E. Anti One-liner Slices:
+
+Avoid 1–2 line slices unless they are truly independent side effects (e.g., logging/metrics) or pure validation with immediate exit.
+
+Merge adjacent micro-slices if they share the same key variable/resource or the same control predicate.
+
+F. Ignore Blank Lines / Comments as Cut Signals:
+
+Blank lines and comments must not be used as splitting boundaries.
+
+G. Zero-Loss Coverage (Exhaustiveness):
+
+EVERY single line of code from the method body (including assignments, empty-looking logic, and bridging variables) MUST be included in exactly one slice. No lines should be skipped.
+
+H. Bridge Logic Preservation:
+
+Simple assignments like `r = r1` or `x = lastClick.x` are vital for the "Def-Use" chain. They must be bundled with the slice that consumes the new variable or the slice that produces the source value.
+
+[Task]
+1. Summarise the focal method
+2. List necessary env settings to run the focal method
+   - Invoked parameters and fields
+   - Invoked methods
+3. Decompose the focal method into multiple problem-solving steps
+   3.1 describe the subtask of the slice
+   3.2 replicate the corresponding code statements
+   3.3 identify the start and end line numbers of the slice
+
+Please output following the format: Please first provide the analysis for Step 1 and Step 2 in Markdown format. Then, output the decomposition results (Step 3) strictly in the following JSON format:
+
+```json
+[
+  {
+    "id": 1,
+    "description": "<The subtask description of slice 1 in natural language>",
+    "code": "<The replicated code statements of slice 1, keeping original indentation>",
+    "start_line": <The start line number>,
+    "end_line": <The end line number>
+  },
+  {
+    "id": 2,
+    "description": "<The subtask description of slice 2>",
+    "code": "<The replicated code statements of slice 2>",
+    "start_line": <The start line number>,
+    "end_line": <The end line number>
+  }
+  // ... more slices if necessary
+]
+```

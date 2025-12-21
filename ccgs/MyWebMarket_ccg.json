@@ -1,0 +1,6382 @@
+[
+  {
+    "method_name": "destroy",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\AuthenticationInterceptor.java",
+    "nodes": [],
+    "edges": []
+  },
+  {
+    "method_name": "init",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\AuthenticationInterceptor.java",
+    "nodes": [],
+    "edges": []
+  },
+  {
+    "method_name": "intercept",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\AuthenticationInterceptor.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting verifying user\" );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Map session = actionInvocation.getInvocationContext().getSession();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "User user = (User) session.get(SystemConstants.AUTHENTICATED_USER);",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "boolean isAuthenticated = (null != user);",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "if ( isAuthenticated )",
+        "line_num": 10,
+        "node_type": "predicate"
+      },
+      {
+        "id": 5,
+        "statement": "logger.info( \"Finishing verifying user -- verified\" );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "return actionInvocation.invoke();",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "logger.info( \"Finishing verifying user -- unverified\" );",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "return Action.LOGIN;",
+        "line_num": 16,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.id;",
+        "line_num": 4,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.id = id;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getName",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.name;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setName",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.name = nome;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getAddress",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return address;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setAddress",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.address = address;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getPhone",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return phone;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPhone",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.phone = phone;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getEmail",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return email;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setEmail",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.email = email;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "toString",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Customer.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.id + \"\\t\" + this.name + \"\\t\" + this.address + \"\\t\" + this.phone + \"\\t\" + this.email;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setRequest",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "request = map;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setParameters",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.parameters = parameters;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getCustomer",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return customer;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setCustomer",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.customer = customer;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getTask",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.task;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setTask",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.task = task;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.input();",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "input",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "this.customer = null;",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "return super.input();",
+        "line_num": 7,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "find",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting find()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Criteria criteria = sess.createCriteria( Customer.class );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "criteria.add( Example.create( this.customer ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "if ( this.customer.getId() != null )",
+        "line_num": 9,
+        "node_type": "predicate"
+      },
+      {
+        "id": 6,
+        "statement": "criteria.add( Restrictions.idEq( this.customer.getId() ) );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Customer> l = (List<Customer>) criteria.list();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "t.commit();",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "sess.close();",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "request.put( \"list\", l );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 19,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "logger.info( \"Finishing find()\" );",
+        "line_num": 20,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "return INPUT;",
+        "line_num": 21,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "save",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting save()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.save( this.customer );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"saveSuccessful\", new String[]{\"customer\"})  );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing save()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return INPUT;",
+        "line_num": 15,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "update",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting update()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.update( this.customer );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"updateSuccessful\", new String[]{\"customer\"})  );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing update()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return INPUT;",
+        "line_num": 15,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "delete",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting delete()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.delete( this.customer );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"deleteSuccessful\", new String[]{\"customer\"})  );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing delete()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return this.input();",
+        "line_num": 15,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "edit",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\CustomerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting edit()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Integer id = Integer.valueOf( this.parameters.get( \"id\" )[0] );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "Customer c = (Customer) sess.get( Customer.class, id );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "t.commit();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "sess.close();",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.setCustomer( c );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing edit()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "return INPUT;",
+        "line_num": 16,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getFieldValue",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\HibernateQueryResultDataSource.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "Object value = null;",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "int index = getFieldIndex( field.getName() );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "if ( index > -1 )",
+        "line_num": 4,
+        "node_type": "predicate"
+      },
+      {
+        "id": 3,
+        "statement": "Object[] values = (Object[]) currentValue;",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "value = values[index];",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "return value;",
+        "line_num": 8,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD"
+      }
+    ]
+  },
+  {
+    "method_name": "next",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\HibernateQueryResultDataSource.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "currentValue = iterator.hasNext() ? iterator.next() : null;",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "return (currentValue != null);",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getFieldIndex",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\HibernateQueryResultDataSource.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "int index = -1;",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "for ( int i = 0; i < fields.length; i++ )",
+        "line_num": 3,
+        "node_type": "predicate"
+      },
+      {
+        "id": 2,
+        "statement": "int i = 0;",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "if ( fields[i].equals( field ) )",
+        "line_num": 4,
+        "node_type": "predicate"
+      },
+      {
+        "id": 4,
+        "statement": "index = i;",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "break;",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "return index;",
+        "line_num": 9,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD"
+      }
+    ]
+  },
+  {
+    "method_name": "buildSessionFactory",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\HibernateUtil.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return new Configuration().configure().buildSessionFactory();",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getSessionFactory",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\HibernateUtil.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return sessionFactory;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getUser",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\LoginAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.user;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setUser",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\LoginAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.user = user;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\LoginAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting execute()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Criteria criteria = sess.createCriteria( User.class );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "criteria.add( Restrictions.idEq( this.user.getUsername() ) );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "criteria.add( Restrictions.eq( \"password\", this.user.getPassword() ) );",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "User user = (User) criteria.uniqueResult();",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "t.commit();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "sess.close();",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "if ( user != null )",
+        "line_num": 16,
+        "node_type": "predicate"
+      },
+      {
+        "id": 10,
+        "statement": "ActionContext.getContext().getSession().put( SystemConstants.AUTHENTICATED_USER, user );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "logger.info( \"Finishing execute() -- Success\" );",
+        "line_num": 18,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "return SUCCESS;",
+        "line_num": 19,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "this.addActionError( this.getText( \"login.failure\" ) );",
+        "line_num": 22,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "logger.info( \"Finishing execute() -- Failure\" );",
+        "line_num": 23,
+        "node_type": "statement"
+      },
+      {
+        "id": 15,
+        "statement": "return INPUT;",
+        "line_num": 24,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CD"
+      },
+      {
+        "from": 9,
+        "to": 11,
+        "type": "CD"
+      },
+      {
+        "from": 9,
+        "to": 12,
+        "type": "CD"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "logoff",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\LoginAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting logoff()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "ActionContext.getContext().getSession().clear();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "logger.info( \"Finishing logoff()\" );",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "return INPUT;",
+        "line_num": 5,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.id;",
+        "line_num": 4,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.id = id;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getName",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.name;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setName",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.name = nome;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getPrice",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.price;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPrice",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.price = preco;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getSupply",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.supply;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setSupply",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.supply = estoque;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "toString",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\Product.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.id + \"\\t\" + this.name + \"\\t\" + this.price + \"\\t\" + this.supply;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setRequest",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "request = map;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setParameters",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.parameters = parameters;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getProduct",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.product;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setProduct",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.product = product;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getTask",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.task;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setTask",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.task = task;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.input();",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "input",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting input()\" );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "this.product = null;",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "logger.info( \"Finishing input()\" );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "return super.input();",
+        "line_num": 9,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "find",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting find()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Criteria criteria = sess.createCriteria( Product.class );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "criteria.add( Example.create( this.product ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "if ( this.product.getId() != null )",
+        "line_num": 9,
+        "node_type": "predicate"
+      },
+      {
+        "id": 6,
+        "statement": "criteria.add( Restrictions.idEq( this.product.getId() ) );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Product> l = (List<Product>) criteria.list();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "t.commit();",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "sess.close();",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "request.put( \"list\", l );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 19,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "logger.info( \"Finishing find()\" );",
+        "line_num": 20,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "return INPUT;",
+        "line_num": 21,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "save",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting save()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.save( this.product );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"saveSuccessful\", new String[]{\"product\"})  );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing save()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return INPUT;",
+        "line_num": 15,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "update",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting update()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.update( this.product );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"updateSuccessful\", new String[]{\"product\"})  );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing update()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return INPUT;",
+        "line_num": 15,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "delete",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting delete()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.delete( this.product );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"deleteSuccessful\", new String[]{\"product\"})  );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing delete()\" );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return this.input();",
+        "line_num": 15,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "edit",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ProductAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting edit()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Integer id = Integer.valueOf( this.parameters.get( \"id\" )[0] );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "Product p = (Product) sess.get( Product.class, id );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "t.commit();",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "sess.close();",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.setProduct( p );",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "logger.info( \"Finishing edit()\" );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "return INPUT;",
+        "line_num": 18,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.id;",
+        "line_num": 6,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.id = id;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getCustomer",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return customer;",
+        "line_num": 4,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setCustomer",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.customer = customer;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getOrderDate",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return orderDate;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setOrderDate",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.orderDate = orderDate;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getDiscount",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return discount;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setDiscount",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.discount = discount;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getPurchaseOrderItems",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return purchaseOrderItems;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPurchaseOrderItems",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.purchaseOrderItems = purchaseOrderItems;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "toString",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrder.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.id + \"\\t\" + this.customer.getName() + \"\\t\" + this.orderDate + \"\\t\" + this.discount;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setRequest",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "request = map;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setParameters",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.parameters = parameters;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getPurchaseOrder",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.purchaseOrder;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPurchaseOrder",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.purchaseOrder = purchaseOrder;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getTask",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.task;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setTask",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.task = task;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.input();",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "input",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting input()\" );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "this.purchaseOrder = null;",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "Criteria criteria = sess.createCriteria( Customer.class );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Customer> lc = (List<Customer>) criteria.list();",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "ActionContext.getContext().getSession().put( \"listCustomer\", lc );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "criteria = sess.createCriteria( Product.class );",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Product> lp = (List<Product>) criteria.list();",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "t.commit();",
+        "line_num": 20,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "sess.close();",
+        "line_num": 21,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "ActionContext.getContext().getSession().put( \"listProduct\", lp );",
+        "line_num": 23,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "logger.info( \"Finishing input()\" );",
+        "line_num": 25,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "return INPUT;",
+        "line_num": 26,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 11,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "find",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting find()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Criteria criteria = sess.createCriteria( PurchaseOrder.class );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "criteria.add( Example.create( this.purchaseOrder ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "if ( this.purchaseOrder.getId() != null )",
+        "line_num": 9,
+        "node_type": "predicate"
+      },
+      {
+        "id": 6,
+        "statement": "criteria.add( Restrictions.idEq( this.purchaseOrder.getId() ) );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "if ( this.purchaseOrder.getCustomer().getId() != null )",
+        "line_num": 13,
+        "node_type": "predicate"
+      },
+      {
+        "id": 8,
+        "statement": "criteria.add( Restrictions.eq( \"customer\", this.purchaseOrder.getCustomer() ) );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "criteria.setResultTransformer( Criteria.DISTINCT_ROOT_ENTITY );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<PurchaseOrder> l = (List<PurchaseOrder>) criteria.list();",
+        "line_num": 18,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "t.commit();",
+        "line_num": 20,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "sess.close();",
+        "line_num": 21,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "request.put( \"list\", l );",
+        "line_num": 22,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 24,
+        "node_type": "statement"
+      },
+      {
+        "id": 15,
+        "statement": "logger.info( \"Finishing input()\" );",
+        "line_num": 25,
+        "node_type": "statement"
+      },
+      {
+        "id": 16,
+        "statement": "return INPUT;",
+        "line_num": 26,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 11,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 13,
+        "type": "DD"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "CF"
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "save",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting save()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.save( this.purchaseOrder );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.purchaseOrder.setOrderDate( new Date() );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "for (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems())",
+        "line_num": 13,
+        "node_type": "predicate"
+      },
+      {
+        "id": 8,
+        "statement": "item.setPurchaseOrder( this.purchaseOrder );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "this.addActionMessage( this.getText( \"saveSuccessful\", new String[] { \"order\" } ) );",
+        "line_num": 18,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "logger.info( \"Finishing save()\" );",
+        "line_num": 20,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "return INPUT;",
+        "line_num": 21,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "update",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting update()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.update( this.purchaseOrder );",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 7,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "for (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems())",
+        "line_num": 10,
+        "node_type": "predicate"
+      },
+      {
+        "id": 7,
+        "statement": "item.setPurchaseOrder( this.purchaseOrder );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "this.addActionMessage( this.getText( \"updateSuccessful\", new String[] { \"order\" } ) );",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "logger.info( \"Finishing update()\" );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "return INPUT;",
+        "line_num": 18,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CD"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "delete",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting delete()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "sess.delete( this.purchaseOrder );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "t.commit();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "sess.close();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "this.task = SystemConstants.CR_MODE;",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.addActionMessage( this.getText( \"deleteSuccessful\", new String[] { \"order\" } ) );",
+        "line_num": 12,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "logger.info( \"Finishing delete()\" );",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "return this.input();",
+        "line_num": 14,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "edit",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting edit()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Integer id = Integer.valueOf( this.parameters.get( \"id\" )[0] );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "PurchaseOrder po = (PurchaseOrder) sess.get( PurchaseOrder.class, id );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "t.commit();",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "sess.close();",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "this.setPurchaseOrder( po );",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "this.task = SystemConstants.UD_MODE;",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "logger.info( \"Finishing edit()\" );",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "return INPUT;",
+        "line_num": 17,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "validate",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting validate()\" );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "super.validate();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "int i = 0;",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "for ( Iterator<PurchaseOrderItem> it = this.purchaseOrder.getPurchaseOrderItems().iterator(); it.hasNext(); i++ )",
+        "line_num": 7,
+        "node_type": "predicate"
+      },
+      {
+        "id": 4,
+        "statement": "Iterator<PurchaseOrderItem> it = this.purchaseOrder.getPurchaseOrderItems().iterator();",
+        "line_num": 7,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "PurchaseOrderItem item = it.next();",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "if ( item.getProduct().getId() != null || item.getPrice() != null \n\t\t\t\t\t|| item.getQuantity() != null || i == 0 )",
+        "line_num": 10,
+        "node_type": "predicate"
+      },
+      {
+        "id": 7,
+        "statement": "if ( item.getProduct().getId() == null )",
+        "line_num": 12,
+        "node_type": "predicate"
+      },
+      {
+        "id": 8,
+        "statement": "this.addFieldError( \"item\" + i + \"_product\", getText( \"requiredspecific\", new String[] { \"Product\" } ) );",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "if ( item.getPrice() == null )",
+        "line_num": 15,
+        "node_type": "predicate"
+      },
+      {
+        "id": 10,
+        "statement": "this.addFieldError( \"item\" + i + \"_price\", getText( \"requiredspecific\", new String[] { \"Price\" } ) );",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "if ( item.getQuantity() == null )",
+        "line_num": 18,
+        "node_type": "predicate"
+      },
+      {
+        "id": 12,
+        "statement": "this.addFieldError( \"item\" + i + \"_quantity\", getText( \"requiredspecific\", new String[] { \"Quantity\" } ) );",
+        "line_num": 19,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "it.remove();",
+        "line_num": 22,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "logger.info( \"Finishing validate()\" );",
+        "line_num": 25,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 9,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 10,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 11,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 12,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "type": "CD"
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 11,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 9,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 10,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 11,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 12,
+        "type": "CD"
+      },
+      {
+        "from": 6,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 13,
+        "type": "CD"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CD"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CD"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getProductPrice",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderAjax.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting getProductPrice()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Criteria criteria = sess.createCriteria( Product.class );",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "criteria.setProjection( Projections.property( \"price\" ) );",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "criteria.add( Restrictions.eq( \"id\", idProduct ) );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "Double price = (Double) criteria.uniqueResult();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "t.commit();",
+        "line_num": 15,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "sess.close();",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "logger.info( \"Finishing getProductPrice()\" );",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "return price;",
+        "line_num": 18,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getPurchaseOrder",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return purchaseOrder;",
+        "line_num": 5,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPurchaseOrder",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.purchaseOrder = purchaseOrder;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return id;",
+        "line_num": 6,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setId",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.id = id;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getProduct",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return product;",
+        "line_num": 4,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setProduct",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.product = product;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getPrice",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return price;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPrice",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.price = price;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getQuantity",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return quantity;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setQuantity",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\PurchaseOrderItem.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.quantity = quantity;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getInputStream",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ReportAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.inputStream;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setInputStream",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ReportAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.inputStream = fileInputStream;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ReportAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.input();",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "productReport",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ReportAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting productReport()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "ActionContext ac = ActionContext.getContext();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "ServletContext sc = (ServletContext) ac.get( StrutsStatics.SERVLET_CONTEXT );",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "JasperReport jasperReport = JasperCompileManager.compileReport( sc.getResourceAsStream( \"/WEB-INF/classes/ProductReport.xml\" ) );",
+        "line_num": 7,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "Map<String, Object> parameters = new HashMap<String, Object>();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "parameters.put( \"ReportTitle\", \"List of Products\" );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "parameters.put( \"DataFile\", new Date().toString() );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "Criteria criteria = sess.createCriteria( Product.class );",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "criteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"price\" ) ) );",
+        "line_num": 18,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Object[]> l = (List<Object[]>) criteria.list();",
+        "line_num": 21,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "t.commit();",
+        "line_num": 24,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "sess.close();",
+        "line_num": 25,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Price\" });",
+        "line_num": 27,
+        "node_type": "statement"
+      },
+      {
+        "id": 15,
+        "statement": "JasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport, parameters, ds );",
+        "line_num": 29,
+        "node_type": "statement"
+      },
+      {
+        "id": 16,
+        "statement": "byte b[] = JasperExportManager.exportReportToPdf( jasperPrint );",
+        "line_num": 31,
+        "node_type": "statement"
+      },
+      {
+        "id": 17,
+        "statement": "this.inputStream = new ByteArrayInputStream( b );",
+        "line_num": 33,
+        "node_type": "statement"
+      },
+      {
+        "id": 18,
+        "statement": "logger.info( \"Finishing productReport()\" );",
+        "line_num": 35,
+        "node_type": "statement"
+      },
+      {
+        "id": 19,
+        "statement": "return \"download\";",
+        "line_num": 36,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 13,
+        "type": "DD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 11,
+        "type": "DD"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 14,
+        "type": "DD"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "type": "CF"
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "type": "DD"
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "type": "CF"
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "type": "CF"
+      },
+      {
+        "from": 18,
+        "to": 19,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "customerReport",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\ReportAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting customerReport()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "ActionContext ac = ActionContext.getContext();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "ServletContext sc = (ServletContext) ac.get( StrutsStatics.SERVLET_CONTEXT );",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "JasperReport jasperReport = JasperCompileManager.compileReport( sc.getResourceAsStream( \"/WEB-INF/classes/CustomerReport.xml\" ) );",
+        "line_num": 7,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "Map<String, Object> parameters = new HashMap<String, Object>();",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "parameters.put( \"ReportTitle\", \"List of Customers\" );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "parameters.put( \"DataFile\", new Date().toString() );",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "Criteria criteria = sess.createCriteria( Customer.class );",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "criteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"phone\" ) ) );",
+        "line_num": 18,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Object[]> l = (List<Object[]>) criteria.list();",
+        "line_num": 21,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "t.commit();",
+        "line_num": 24,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "sess.close();",
+        "line_num": 25,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Phone\" });",
+        "line_num": 27,
+        "node_type": "statement"
+      },
+      {
+        "id": 15,
+        "statement": "JasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport, parameters, ds );",
+        "line_num": 29,
+        "node_type": "statement"
+      },
+      {
+        "id": 16,
+        "statement": "byte b[] = JasperExportManager.exportReportToPdf( jasperPrint );",
+        "line_num": 31,
+        "node_type": "statement"
+      },
+      {
+        "id": 17,
+        "statement": "this.inputStream = new ByteArrayInputStream( b );",
+        "line_num": 33,
+        "node_type": "statement"
+      },
+      {
+        "id": 18,
+        "statement": "logger.info( \"Finishing customerReport()\" );",
+        "line_num": 35,
+        "node_type": "statement"
+      },
+      {
+        "id": 19,
+        "statement": "return \"download\";",
+        "line_num": 36,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 13,
+        "type": "DD"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 11,
+        "type": "DD"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 14,
+        "type": "DD"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "type": "CF"
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "type": "DD"
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "type": "CF"
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "type": "CF"
+      },
+      {
+        "from": 18,
+        "to": 19,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getTimeInterval",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\SchedulerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.timeInterval;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setTimeInterval",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\SchedulerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.timeInterval = timeInterval;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\SchedulerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return this.input();",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "input",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\SchedulerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting input()\" );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "SchedulerFactory sf = new StdSchedulerFactory();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Scheduler sc = sf.getScheduler();",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "JobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) );",
+        "line_num": 7,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "if ( job != null )",
+        "line_num": 9,
+        "node_type": "predicate"
+      },
+      {
+        "id": 5,
+        "statement": "this.timeInterval = job.getJobDataMap().getIntValue( \"timeInterval\" );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "logger.info( \"Finishing input()\" );",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "return super.input();",
+        "line_num": 14,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "schedule",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\SchedulerAction.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting schedule()\" );",
+        "line_num": 2,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "SchedulerFactory sf = new StdSchedulerFactory();",
+        "line_num": 4,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Scheduler sc = sf.getScheduler();",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "JobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) );",
+        "line_num": 7,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "if ( job != null )",
+        "line_num": 9,
+        "node_type": "predicate"
+      },
+      {
+        "id": 5,
+        "statement": "sc.deleteJob( JobKey.jobKey( \"supplyMailJob\", \"group\" ) );",
+        "line_num": 10,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "job = newJob( SupplyMailJob.class ).withIdentity( \"supplyMailJob\", \"group\" ).build();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "job.getJobDataMap().put( \"timeInterval\", this.timeInterval );",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "Trigger trigger = newTrigger().withIdentity( \"supplyMailTrigger\", \"group\" ).startNow().withSchedule( CronScheduleBuilder.cronSchedule( \"0 0/\"\n\t\t\t\t+ (this.timeInterval * 60) + \" * * * ?\" ) ).build();",
+        "line_num": 16,
+        "node_type": "statement"
+      },
+      {
+        "id": 9,
+        "statement": "sc.scheduleJob( job, trigger );",
+        "line_num": 19,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "logger.info( \"Finishing schedule()\" );",
+        "line_num": 21,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "return INPUT;",
+        "line_num": 22,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "execute",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\SupplyMailJob.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "logger.info( \"Starting execute() in job\" );",
+        "line_num": 3,
+        "node_type": "statement"
+      },
+      {
+        "id": 1,
+        "statement": "org.hibernate.Session sess = HibernateUtil.getSessionFactory().openSession();",
+        "line_num": 5,
+        "node_type": "statement"
+      },
+      {
+        "id": 2,
+        "statement": "Transaction t = sess.beginTransaction();",
+        "line_num": 6,
+        "node_type": "statement"
+      },
+      {
+        "id": 3,
+        "statement": "Criteria criteria = sess.createCriteria( Product.class );",
+        "line_num": 8,
+        "node_type": "statement"
+      },
+      {
+        "id": 4,
+        "statement": "criteria.add( Restrictions.lt( \"supply\", 5 ) );",
+        "line_num": 9,
+        "node_type": "statement"
+      },
+      {
+        "id": 5,
+        "statement": "@SuppressWarnings(\"unchecked\")\n\t\tList<Product> l = (List<Product>) criteria.list();",
+        "line_num": 11,
+        "node_type": "statement"
+      },
+      {
+        "id": 6,
+        "statement": "t.commit();",
+        "line_num": 13,
+        "node_type": "statement"
+      },
+      {
+        "id": 7,
+        "statement": "sess.close();",
+        "line_num": 14,
+        "node_type": "statement"
+      },
+      {
+        "id": 8,
+        "statement": "if ( !l.isEmpty() )",
+        "line_num": 16,
+        "node_type": "predicate"
+      },
+      {
+        "id": 9,
+        "statement": "StringBuilder str = new StringBuilder();",
+        "line_num": 17,
+        "node_type": "statement"
+      },
+      {
+        "id": 10,
+        "statement": "str.append( \"The following products are getting over:\\n\" );",
+        "line_num": 18,
+        "node_type": "statement"
+      },
+      {
+        "id": 11,
+        "statement": "Properties props = new Properties();",
+        "line_num": 20,
+        "node_type": "statement"
+      },
+      {
+        "id": 12,
+        "statement": "props.setProperty( \"mail.smtp.submitter\", \"terra\" );",
+        "line_num": 21,
+        "node_type": "statement"
+      },
+      {
+        "id": 13,
+        "statement": "props.setProperty( \"mail.smtp.auth\", \"false\" );",
+        "line_num": 22,
+        "node_type": "statement"
+      },
+      {
+        "id": 14,
+        "statement": "props.setProperty( \"mail.smtp.host\", this.host );",
+        "line_num": 23,
+        "node_type": "statement"
+      },
+      {
+        "id": 15,
+        "statement": "props.setProperty( \"mail.smtp.port\", \"25\" );",
+        "line_num": 24,
+        "node_type": "statement"
+      },
+      {
+        "id": 16,
+        "statement": "javax.mail.Session session = javax.mail.Session.getInstance( props );",
+        "line_num": 26,
+        "node_type": "statement"
+      },
+      {
+        "id": 17,
+        "statement": "try",
+        "line_num": 28,
+        "node_type": "statement"
+      },
+      {
+        "id": 18,
+        "statement": "Message msg = new MimeMessage( session );",
+        "line_num": 29,
+        "node_type": "statement"
+      },
+      {
+        "id": 19,
+        "statement": "msg.setFrom( new InternetAddress( this.from ) );",
+        "line_num": 31,
+        "node_type": "statement"
+      },
+      {
+        "id": 20,
+        "statement": "InternetAddress[] address = { new InternetAddress( this.to ) };",
+        "line_num": 32,
+        "node_type": "statement"
+      },
+      {
+        "id": 21,
+        "statement": "msg.setRecipients( Message.RecipientType.TO, address );",
+        "line_num": 33,
+        "node_type": "statement"
+      },
+      {
+        "id": 22,
+        "statement": "msg.setSubject( \"Low Supply of Products\" );",
+        "line_num": 34,
+        "node_type": "statement"
+      },
+      {
+        "id": 23,
+        "statement": "msg.setSentDate( new Date() );",
+        "line_num": 35,
+        "node_type": "statement"
+      },
+      {
+        "id": 24,
+        "statement": "msg.setText( str.toString() );",
+        "line_num": 37,
+        "node_type": "statement"
+      },
+      {
+        "id": 25,
+        "statement": "Transport.send( msg );",
+        "line_num": 39,
+        "node_type": "statement"
+      },
+      {
+        "id": 26,
+        "statement": "catch (MessagingException mex)",
+        "line_num": 40,
+        "node_type": "statement"
+      },
+      {
+        "id": 27,
+        "statement": "mex.printStackTrace();",
+        "line_num": 41,
+        "node_type": "statement"
+      },
+      {
+        "id": 28,
+        "statement": "for ( Product p : l )",
+        "line_num": 44,
+        "node_type": "predicate"
+      },
+      {
+        "id": 29,
+        "statement": "str.append( p.getName() + \"\\t\\t\" + p.getSupply() + \"\\n\" );",
+        "line_num": 45,
+        "node_type": "statement"
+      },
+      {
+        "id": 30,
+        "statement": "logger.info( \"Finishing execute() in job\" );",
+        "line_num": 49,
+        "node_type": "statement"
+      }
+    ],
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD"
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "DD"
+      },
+      {
+        "from": 2,
+        "to": 29,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "DD"
+      },
+      {
+        "from": 5,
+        "to": 28,
+        "type": "DD"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 10,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 11,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 12,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 13,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 14,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 15,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 16,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 17,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 18,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 19,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 20,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 21,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 22,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 23,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 24,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 25,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 26,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 27,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 28,
+        "type": "CD"
+      },
+      {
+        "from": 8,
+        "to": 29,
+        "type": "CD"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 24,
+        "type": "DD"
+      },
+      {
+        "from": 9,
+        "to": 29,
+        "type": "DD"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "DD"
+      },
+      {
+        "from": 11,
+        "to": 13,
+        "type": "DD"
+      },
+      {
+        "from": 11,
+        "to": 14,
+        "type": "DD"
+      },
+      {
+        "from": 11,
+        "to": 15,
+        "type": "DD"
+      },
+      {
+        "from": 11,
+        "to": 16,
+        "type": "DD"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
+        "type": "CF"
+      },
+      {
+        "from": 14,
+        "to": 15,
+        "type": "CF"
+      },
+      {
+        "from": 15,
+        "to": 16,
+        "type": "CF"
+      },
+      {
+        "from": 16,
+        "to": 17,
+        "type": "CF"
+      },
+      {
+        "from": 16,
+        "to": 18,
+        "type": "DD"
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "type": "CF"
+      },
+      {
+        "from": 17,
+        "to": 18,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 19,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 20,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 21,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 22,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 23,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 24,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 25,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 26,
+        "type": "CD"
+      },
+      {
+        "from": 17,
+        "to": 27,
+        "type": "CD"
+      },
+      {
+        "from": 18,
+        "to": 19,
+        "type": "CF"
+      },
+      {
+        "from": 18,
+        "to": 19,
+        "type": "DD"
+      },
+      {
+        "from": 18,
+        "to": 21,
+        "type": "DD"
+      },
+      {
+        "from": 18,
+        "to": 22,
+        "type": "DD"
+      },
+      {
+        "from": 18,
+        "to": 23,
+        "type": "DD"
+      },
+      {
+        "from": 18,
+        "to": 24,
+        "type": "DD"
+      },
+      {
+        "from": 18,
+        "to": 25,
+        "type": "DD"
+      },
+      {
+        "from": 19,
+        "to": 20,
+        "type": "CF"
+      },
+      {
+        "from": 20,
+        "to": 21,
+        "type": "CF"
+      },
+      {
+        "from": 20,
+        "to": 21,
+        "type": "DD"
+      },
+      {
+        "from": 21,
+        "to": 22,
+        "type": "CF"
+      },
+      {
+        "from": 22,
+        "to": 23,
+        "type": "CF"
+      },
+      {
+        "from": 23,
+        "to": 24,
+        "type": "CF"
+      },
+      {
+        "from": 24,
+        "to": 25,
+        "type": "CF"
+      },
+      {
+        "from": 25,
+        "to": 26,
+        "type": "CF"
+      },
+      {
+        "from": 26,
+        "to": 27,
+        "type": "CF"
+      },
+      {
+        "from": 27,
+        "to": 28,
+        "type": "CF"
+      },
+      {
+        "from": 28,
+        "to": 29,
+        "type": "CF"
+      },
+      {
+        "from": 28,
+        "to": 29,
+        "type": "CD"
+      },
+      {
+        "from": 29,
+        "to": 30,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "method_name": "getUsername",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\User.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return username;",
+        "line_num": 4,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setUsername",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\User.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.username = username;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "getPassword",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\User.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "return password;",
+        "line_num": 3,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  },
+  {
+    "method_name": "setPassword",
+    "file_path": "./repositories/MyWebMarket\\src\\classes\\User.java",
+    "nodes": [
+      {
+        "id": 0,
+        "statement": "this.password = password;",
+        "line_num": 2,
+        "node_type": "statement"
+      }
+    ],
+    "edges": []
+  }
+]
