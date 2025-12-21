@@ -9,8 +9,8 @@
         "start_line": 153,
         "end_line": 154,
         "defs": [
-          "wait",
-          "testCase"
+          "testCase",
+          "wait"
         ],
         "uses": [
           "String"
@@ -24,29 +24,29 @@
         "start_line": 156,
         "end_line": 165,
         "defs": [
-          "and",
-          "i"
+          "i",
+          "and"
         ],
         "uses": [
+          "testCase",
+          "by",
+          "v",
           "extractClassName",
-          "Beck",
-          "err",
-          "equals",
+          "id",
+          "c",
+          "JUnit",
           "Erich",
           "args",
-          "by",
-          "id",
-          "testCase",
-          "Gamma",
-          "v",
-          "JUnit",
-          "System",
-          "Kent",
-          "length",
-          "wait",
+          "err",
           "Version",
-          "c",
-          "println"
+          "length",
+          "Gamma",
+          "println",
+          "System",
+          "wait",
+          "equals",
+          "Kent",
+          "Beck"
         ],
         "is_terminal": false,
         "has_control": true
@@ -60,19 +60,19 @@
           "class"
         ],
         "uses": [
-          "of",
-          "is",
-          "Exception",
-          "wait",
-          "equals",
-          "testCaseName",
-          "Usage",
-          "where",
-          "name",
           "testCase",
-          "the",
+          "where",
+          "testCaseName",
+          "Exception",
           "TestRunner",
-          "TestCase"
+          "wait",
+          "is",
+          "of",
+          "TestCase",
+          "equals",
+          "Usage",
+          "name",
+          "the"
         ],
         "is_terminal": true,
         "has_control": true
@@ -85,22 +85,22 @@
         "defs": [
           "suite",
           "endTime",
+          "runTime",
           "startTime",
-          "result",
-          "runTime"
+          "result"
         ],
         "uses": [
-          "addListener",
+          "testCase",
           "System",
+          "addListener",
+          "print",
           "createTestResult",
-          "TestResult",
           "run",
           "getTest",
           "Test",
-          "testCase",
-          "print",
-          "fPrinter",
-          "currentTimeMillis"
+          "TestResult",
+          "currentTimeMillis",
+          "fPrinter"
         ],
         "is_terminal": false,
         "has_control": true
@@ -125,17 +125,17 @@
         "start_line": 182,
         "end_line": 185,
         "defs": [
-          "e",
-          "not"
+          "not",
+          "e"
         ],
         "uses": [
-          "Could",
+          "suite",
           "test",
+          "and",
+          "Could",
           "Exception",
           "run",
-          "suite",
-          "create",
-          "and"
+          "create"
         ],
         "is_terminal": true,
         "has_control": true
@@ -147,8 +147,8 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "wait",
-          "testCase"
+          "testCase",
+          "wait"
         ]
       },
       {
@@ -161,8 +161,8 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "wait",
-          "testCase"
+          "testCase",
+          "wait"
         ]
       },
       {
@@ -280,8 +280,8 @@
         "end_line": 27,
         "defs": [],
         "uses": [
-          "printHeader",
-          "runTime"
+          "runTime",
+          "printHeader"
         ],
         "is_terminal": false,
         "has_control": false
@@ -306,8 +306,8 @@
         "end_line": 29,
         "defs": [],
         "uses": [
-          "printFailures",
-          "result"
+          "result",
+          "printFailures"
         ],
         "is_terminal": false,
         "has_control": false
@@ -321,20 +321,20 @@
           "run"
         ],
         "uses": [
-          "errorCount",
+          "failureCount",
           "s",
-          "runCount",
+          "Failures",
           "test",
           "FAILURES",
-          "Errors",
-          "getWriter",
           "result",
+          "errorCount",
           "Tests",
-          "print",
-          "Failures",
-          "failureCount",
-          "OK",
           "println",
+          "Errors",
+          "print",
+          "getWriter",
+          "runCount",
+          "OK",
           "wasSuccessful"
         ],
         "is_terminal": false,
@@ -394,8 +394,8 @@
         "end_line": 64,
         "defs": [],
         "uses": [
-          "invokeLater",
-          "SwingUtilities"
+          "SwingUtilities",
+          "invokeLater"
         ],
         "is_terminal": false,
         "has_control": false
@@ -443,19 +443,19 @@
         "end_line": 73,
         "defs": [],
         "uses": [
+          "setErrorValue",
+          "addElement",
+          "test",
+          "TestRunListener",
           "fCounterPanel",
           "errorCount",
           "t",
-          "STATUS_ERROR",
-          "test",
-          "TestRunListener",
           "size",
-          "setErrorValue",
-          "fTestResult",
-          "addElement",
-          "revealFailure",
           "TestFailure",
-          "fFailures"
+          "fFailures",
+          "STATUS_ERROR",
+          "revealFailure",
+          "fTestResult"
         ],
         "is_terminal": false,
         "has_control": true
@@ -467,16 +467,16 @@
         "end_line": 77,
         "defs": [],
         "uses": [
-          "t",
-          "Failure",
-          "appendFailure",
+          "setFailureValue",
           "failureCount",
-          "STATUS_FAILURE",
           "test",
           "TestRunListener",
-          "fTestResult",
-          "setFailureValue",
-          "fCounterPanel"
+          "fCounterPanel",
+          "t",
+          "appendFailure",
+          "STATUS_FAILURE",
+          "Failure",
+          "fTestResult"
         ],
         "is_terminal": false,
         "has_control": true
@@ -586,14 +586,14 @@
           "i"
         ],
         "uses": [
-          "insertItemAt",
-          "removeItemAt",
-          "equals",
-          "setSelectedIndex",
           "suite",
-          "fSuiteCombo",
           "getItemCount",
-          "getItemAt"
+          "setSelectedIndex",
+          "insertItemAt",
+          "equals",
+          "fSuiteCombo",
+          "getItemAt",
+          "removeItemAt"
         ],
         "is_terminal": true,
         "has_control": true
@@ -605,10 +605,10 @@
         "end_line": 116,
         "defs": [],
         "uses": [
-          "insertItemAt",
-          "fSuiteCombo",
           "suite",
-          "setSelectedIndex"
+          "insertItemAt",
+          "setSelectedIndex",
+          "fSuiteCombo"
         ],
         "is_terminal": false,
         "has_control": false
@@ -622,8 +622,8 @@
           "historyLength"
         ],
         "uses": [
-          "HISTORY_LENGTH",
           "maxhistory",
+          "HISTORY_LENGTH",
           "getPreference"
         ],
         "is_terminal": false,
@@ -638,10 +638,10 @@
           "i"
         ],
         "uses": [
-          "getItemCount",
+          "historyLength",
           "fSuiteCombo",
-          "removeItemAt",
-          "historyLength"
+          "getItemCount",
+          "removeItemAt"
         ],
         "is_terminal": false,
         "has_control": true
@@ -707,14 +707,14 @@
         "start_line": 169,
         "end_line": 171,
         "defs": [
-          "createFailedPanel",
-          "failedPanel"
+          "failedPanel",
+          "createFailedPanel"
         ],
         "uses": [
-          "Run",
           "JPanel",
-          "JButton",
           "fRerunButton",
+          "Run",
+          "JButton",
           "GridLayout"
         ],
         "is_terminal": false,
@@ -727,8 +727,8 @@
         "end_line": 172,
         "defs": [],
         "uses": [
-          "setEnabled",
-          "fRerunButton"
+          "fRerunButton",
+          "setEnabled"
         ],
         "is_terminal": false,
         "has_control": false
@@ -739,23 +739,23 @@
         "start_line": 173,
         "end_line": 182,
         "defs": [
-          "e",
           "view",
+          "e",
           "rerunTest"
         ],
         "uses": [
-          "TestRunView",
-          "getSelectedIndex",
-          "actionPerformed",
-          "getSelectedTest",
-          "fTestRunViews",
-          "addActionListener",
-          "elementAt",
           "ActionEvent",
-          "Test",
-          "fTestViewTab",
+          "getSelectedTest",
+          "TestRunView",
+          "actionPerformed",
+          "fRerunButton",
+          "getSelectedIndex",
           "ActionListener",
-          "fRerunButton"
+          "addActionListener",
+          "fTestRunViews",
+          "elementAt",
+          "Test",
+          "fTestViewTab"
         ],
         "is_terminal": false,
         "has_control": true
@@ -768,8 +768,8 @@
         "defs": [],
         "uses": [
           "fRerunButton",
-          "failedPanel",
-          "add"
+          "add",
+          "failedPanel"
         ],
         "is_terminal": true,
         "has_control": false
@@ -814,9 +814,9 @@
           "menu"
         ],
         "uses": [
-          "J",
           "JUnit",
           "JMenu",
+          "J",
           "setMnemonic"
         ],
         "is_terminal": false,
@@ -828,21 +828,21 @@
         "start_line": 208,
         "end_line": 217,
         "defs": [
-          "event",
-          "mi1"
+          "mi1",
+          "event"
         ],
         "uses": [
-          "menu",
-          "actionPerformed",
-          "A",
-          "JMenuItem",
-          "addActionListener",
-          "About",
-          "ActionListener",
-          "setMnemonic",
           "ActionEvent",
-          "about",
-          "add"
+          "A",
+          "menu",
+          "About",
+          "actionPerformed",
+          "ActionListener",
+          "addActionListener",
+          "setMnemonic",
+          "JMenuItem",
+          "add",
+          "about"
         ],
         "is_terminal": false,
         "has_control": false
@@ -854,8 +854,8 @@
         "end_line": 219,
         "defs": [],
         "uses": [
-          "addSeparator",
-          "menu"
+          "menu",
+          "addSeparator"
         ],
         "is_terminal": false,
         "has_control": false
@@ -871,30 +871,30 @@
           "event"
         ],
         "uses": [
-          "Couldn",
-          "out",
-          "save",
-          "test",
-          "exit",
-          "history",
-          "addActionListener",
           "ActionEvent",
-          "setMnemonic",
-          "ActionListener",
+          "exit",
+          "test",
           "IOException",
-          "menu",
+          "save",
           "t",
-          "Exit",
-          "System",
-          "x",
-          "fFrame",
-          "run",
-          "actionPerformed",
+          "addActionListener",
+          "history",
           "JMenuItem",
+          "add",
           "saveHistory",
-          "dispose",
           "println",
-          "add"
+          "System",
+          "out",
+          "fFrame",
+          "dispose",
+          "run",
+          "menu",
+          "Couldn",
+          "actionPerformed",
+          "ActionListener",
+          "setMnemonic",
+          "Exit",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -977,18 +977,18 @@
         "start_line": 240,
         "end_line": 244,
         "defs": [
-          "title",
           "frame",
           "icon",
+          "title",
           "createFrame"
         ],
         "uses": [
           "Image",
           "setIconImage",
-          "JUnit",
-          "loadFrameIcon",
           "JFrame",
-          "String"
+          "JUnit",
+          "String",
+          "loadFrameIcon"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1000,10 +1000,10 @@
         "end_line": 245,
         "defs": [],
         "uses": [
-          "BorderLayout",
           "frame",
-          "setLayout",
-          "getContentPane"
+          "getContentPane",
+          "BorderLayout",
+          "setLayout"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1014,29 +1014,29 @@
         "start_line": 247,
         "end_line": 259,
         "defs": [
-          "e",
-          "e1"
+          "e1",
+          "e"
         ],
         "uses": [
-          "Couldn",
-          "out",
-          "save",
-          "test",
-          "exit",
-          "history",
           "frame",
+          "exit",
+          "test",
           "IOException",
-          "windowClosing",
           "WindowAdapter",
+          "save",
+          "addWindowListener",
           "t",
+          "history",
+          "saveHistory",
+          "println",
+          "windowClosing",
           "System",
+          "out",
           "fFrame",
+          "dispose",
           "run",
           "WindowEvent",
-          "addWindowListener",
-          "saveHistory",
-          "dispose",
-          "println"
+          "Couldn"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1139,29 +1139,29 @@
         "start_line": 291,
         "end_line": 303,
         "defs": [
-          "e",
-          "e1"
+          "e1",
+          "e"
         ],
         "uses": [
-          "Couldn",
-          "out",
-          "save",
-          "test",
-          "exit",
-          "history",
-          "addActionListener",
           "ActionEvent",
-          "ActionListener",
+          "exit",
+          "test",
           "IOException",
-          "t",
           "quit",
-          "System",
-          "fFrame",
-          "run",
-          "actionPerformed",
+          "save",
+          "t",
+          "addActionListener",
+          "history",
           "saveHistory",
+          "println",
+          "System",
+          "out",
+          "fFrame",
           "dispose",
-          "println"
+          "run",
+          "Couldn",
+          "actionPerformed",
+          "ActionListener"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1223,8 +1223,8 @@
         ],
         "uses": [
           "Run",
-          "setEnabled",
-          "JButton"
+          "JButton",
+          "setEnabled"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1238,11 +1238,11 @@
           "e"
         ],
         "uses": [
+          "ActionEvent",
           "run",
           "actionPerformed",
-          "addActionListener",
           "ActionListener",
-          "ActionEvent"
+          "addActionListener"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1254,9 +1254,9 @@
         "end_line": 314,
         "defs": [],
         "uses": [
-          "fRunner",
+          "stop",
           "fTestResult",
-          "stop"
+          "fRunner"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1271,16 +1271,16 @@
           "testSuite"
         ],
         "uses": [
-          "shouldReload",
-          "Case",
+          "Load",
           "reset",
+          "Case",
           "setLoading",
+          "showInfo",
+          "shouldReload",
+          "getSuiteText",
           "String",
           "getTest",
-          "Test",
-          "showInfo",
-          "Load",
-          "getSuiteText"
+          "Test"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1292,10 +1292,10 @@
         "end_line": 324,
         "defs": [],
         "uses": [
-          "addToHistory",
-          "suiteName",
           "doRunTest",
-          "testSuite"
+          "suiteName",
+          "testSuite",
+          "addToHistory"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1388,13 +1388,13 @@
         "start_line": 349,
         "end_line": 352,
         "defs": [
-          "combo",
-          "createSuiteCombo"
+          "createSuiteCombo",
+          "combo"
         ],
         "uses": [
+          "setEditable",
           "JComboBox",
-          "setLightWeightPopupEnabled",
-          "setEditable"
+          "setLightWeightPopupEnabled"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1405,36 +1405,36 @@
         "start_line": 354,
         "end_line": 374,
         "defs": [
-          "e",
           "suiteName",
+          "e",
           "testSuite"
         ],
         "uses": [
-          "VK_ENTER",
-          "Case",
-          "shouldReload",
-          "textChanged",
-          "getEditorComponent",
-          "String",
-          "addKeyListener",
-          "showInfo",
-          "addToHistory",
-          "Load",
-          "getSuiteText",
           "getEditor",
-          "KeyAdapter",
-          "getKeyChar",
-          "setLoading",
-          "reset",
-          "stop",
+          "Load",
           "KeyEvent",
-          "getTest",
-          "doRunTest",
+          "addToHistory",
           "fRunner",
-          "Test",
+          "reset",
+          "showInfo",
+          "getSuiteText",
+          "getEditorComponent",
+          "getKeyChar",
+          "String",
+          "VK_ENTER",
           "fTestResult",
+          "KeyAdapter",
+          "stop",
           "combo",
-          "keyTyped"
+          "addKeyListener",
+          "Case",
+          "doRunTest",
+          "keyTyped",
+          "setLoading",
+          "shouldReload",
+          "getTest",
+          "textChanged",
+          "Test"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1448,13 +1448,13 @@
           "e"
         ],
         "uses": [
-          "first",
-          "fails",
-          "loadHistory",
-          "time",
-          "the",
+          "IOException",
           "combo",
-          "IOException"
+          "first",
+          "time",
+          "loadHistory",
+          "fails",
+          "the"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1468,13 +1468,13 @@
           "event"
         ],
         "uses": [
-          "addItemListener",
-          "textChanged",
-          "SELECTED",
-          "ItemEvent",
-          "ItemListener",
           "itemStateChanged",
+          "ItemEvent",
           "combo",
+          "ItemListener",
+          "addItemListener",
+          "SELECTED",
+          "textChanged",
           "getStateChange"
         ],
         "is_terminal": false,
@@ -1558,19 +1558,19 @@
         "start_line": 422,
         "end_line": 426,
         "defs": [
-          "suiteName",
           "frame",
+          "suiteName",
           "mb",
           "createUI"
         ],
         "uses": [
-          "JMenuBar",
-          "createFrame",
-          "JUnit",
           "JFrame",
-          "setJMenuBar",
+          "createMenus",
+          "JUnit",
+          "createFrame",
           "String",
-          "createMenus"
+          "JMenuBar",
+          "setJMenuBar"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1581,23 +1581,23 @@
         "start_line": 428,
         "end_line": 432,
         "defs": [
-          "browseButton",
+          "class",
           "suiteLabel",
-          "class"
+          "browseButton"
         ],
         "uses": [
-          "JLabel",
-          "getRootPane",
+          "frame",
           "Component",
-          "fRun",
           "createBrowseButton",
+          "createRunButton",
+          "JLabel",
+          "fRun",
+          "fSuiteCombo",
+          "createSuiteCombo",
+          "Test",
           "setDefaultButton",
           "name",
-          "frame",
-          "fSuiteCombo",
-          "Test",
-          "createSuiteCombo",
-          "createRunButton"
+          "getRootPane"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1609,9 +1609,9 @@
         "end_line": 435,
         "defs": [],
         "uses": [
-          "createUseLoaderCheckBox",
-          "ProgressBar",
           "fProgressIndicator",
+          "ProgressBar",
+          "createUseLoaderCheckBox",
           "fUseLoadingRunner"
         ],
         "is_terminal": false,
@@ -1624,10 +1624,10 @@
         "end_line": 438,
         "defs": [],
         "uses": [
-          "DefaultListModel",
           "fFailures",
-          "fCounterPanel",
-          "createCounterPanel"
+          "DefaultListModel",
+          "createCounterPanel",
+          "fCounterPanel"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1641,10 +1641,10 @@
           "failedPanel"
         ],
         "uses": [
+          "JPanel",
           "fTestViewTab",
-          "createFailedPanel",
           "createTestRunViews",
-          "JPanel"
+          "createFailedPanel"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1658,12 +1658,12 @@
           "tracePane"
         ],
         "uses": [
+          "VERTICAL_SCROLLBAR_ALWAYS",
           "createFailureDetailView",
-          "fFailureView",
-          "HORIZONTAL_SCROLLBAR_ALWAYS",
           "JScrollPane",
           "getComponent",
-          "VERTICAL_SCROLLBAR_ALWAYS"
+          "fFailureView",
+          "HORIZONTAL_SCROLLBAR_ALWAYS"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1676,11 +1676,11 @@
         "defs": [],
         "uses": [
           "fQuitButton",
-          "fLogo",
-          "createLogo",
-          "fStatusLine",
+          "createStatusLine",
           "createQuitButton",
-          "createStatusLine"
+          "createLogo",
+          "fLogo",
+          "fStatusLine"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1691,51 +1691,51 @@
         "start_line": 450,
         "end_line": 484,
         "defs": [
-          "fill",
-          "c",
           "panel",
-          "splitter"
+          "fill",
+          "splitter",
+          "c"
         ],
         "uses": [
-          "JLabel",
-          "fProgressIndicator",
-          "GAP",
-          "fQuitButton",
-          "JSeparator",
-          "gridx",
-          "JPanel",
-          "GridBagConstraints",
-          "JSplitPane",
-          "NORTH",
-          "fUseLoadingRunner",
-          "tracePane",
-          "failedPanel",
-          "gridwidth",
-          "fSuiteCombo",
-          "addGrid",
-          "fTestViewTab",
-          "anchor",
-          "fCounterPanel",
-          "NONE",
-          "WEST",
-          "fRun",
-          "GridBagLayout",
-          "fLogo",
-          "weightx",
-          "CENTER",
-          "fStatusLine",
-          "VERTICAL_SPLIT",
-          "Insets",
-          "gridy",
-          "BOTH",
           "Results",
-          "insets",
-          "weighty",
-          "suiteLabel",
-          "VERTICAL",
+          "BOTH",
+          "tracePane",
           "HORIZONTAL",
+          "Insets",
+          "JSplitPane",
+          "insets",
+          "fProgressIndicator",
+          "VERTICAL",
+          "CENTER",
+          "add",
+          "suiteLabel",
+          "gridx",
+          "weightx",
+          "fLogo",
+          "fRun",
+          "addGrid",
+          "gridwidth",
+          "anchor",
+          "weighty",
+          "gridy",
+          "fCounterPanel",
+          "GAP",
+          "GridBagConstraints",
+          "fQuitButton",
+          "fTestViewTab",
+          "WEST",
+          "fSuiteCombo",
+          "fUseLoadingRunner",
           "browseButton",
-          "add"
+          "JPanel",
+          "GridBagLayout",
+          "VERTICAL_SPLIT",
+          "NORTH",
+          "JSeparator",
+          "fStatusLine",
+          "JLabel",
+          "NONE",
+          "failedPanel"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1749,8 +1749,8 @@
         "uses": [
           "frame",
           "setLocation",
-          "setContentPane",
           "panel",
+          "setContentPane",
           "pack"
         ],
         "is_terminal": true,
@@ -1784,8 +1784,8 @@
         "to": 8,
         "type": "DD",
         "vars": [
-          "browseButton",
-          "suiteLabel"
+          "suiteLabel",
+          "browseButton"
         ]
       },
       {
@@ -1860,9 +1860,9 @@
         "end_line": 649,
         "defs": [],
         "uses": [
-          "fRunner",
+          "stop",
           "fTestResult",
-          "stop"
+          "fRunner"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1874,15 +1874,15 @@
         "end_line": 656,
         "defs": [],
         "uses": [
+          "reset",
+          "clear",
+          "setLoading",
           "shouldReload",
           "fCounterPanel",
           "fProgressIndicator",
-          "fFailureView",
-          "reset",
-          "setLoading",
-          "clear",
-          "setEnabled",
           "fRerunButton",
+          "fFailureView",
+          "setEnabled",
           "fFailures"
         ],
         "is_terminal": false,
@@ -1897,12 +1897,12 @@
           "suiteName"
         ],
         "uses": [
-          "Case",
-          "String",
-          "Test",
-          "showInfo",
           "Load",
-          "getSuiteText"
+          "Case",
+          "showInfo",
+          "getSuiteText",
+          "String",
+          "Test"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1916,9 +1916,9 @@
           "testSuite"
         ],
         "uses": [
-          "suiteName",
+          "Test",
           "getTest",
-          "Test"
+          "suiteName"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1930,10 +1930,10 @@
         "end_line": 663,
         "defs": [],
         "uses": [
-          "addToHistory",
-          "suiteName",
           "doRunTest",
-          "testSuite"
+          "suiteName",
+          "testSuite",
+          "addToHistory"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2021,9 +2021,9 @@
         "end_line": 674,
         "defs": [],
         "uses": [
-          "fRunner",
+          "stop",
           "fTestResult",
-          "stop"
+          "fRunner"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2035,13 +2035,13 @@
         "end_line": 680,
         "defs": [],
         "uses": [
-          "fCounterPanel",
-          "fProgressIndicator",
-          "fFailureView",
           "reset",
           "clear",
-          "setEnabled",
+          "fCounterPanel",
+          "fProgressIndicator",
           "fRerunButton",
+          "fFailureView",
+          "setEnabled",
           "fFailures"
         ],
         "is_terminal": false,
@@ -2109,23 +2109,23 @@
         "start_line": 826,
         "end_line": 836,
         "defs": [
-          "testsuite",
           "i",
+          "testsuite",
           "bw"
         ],
         "uses": [
-          "getSettingsFile",
-          "BufferedWriter",
-          "length",
+          "getItemCount",
           "close",
           "newLine",
-          "write",
-          "String",
-          "fSuiteCombo",
-          "getItemCount",
-          "getItemAt",
+          "getSettingsFile",
+          "BufferedWriter",
           "FileWriter",
-          "toString"
+          "String",
+          "toString",
+          "write",
+          "length",
+          "fSuiteCombo",
+          "getItemAt"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2139,15 +2139,15 @@
           "e"
         ],
         "uses": [
-          "Couldn",
-          "out",
-          "t",
           "System",
-          "save",
+          "out",
+          "IOException",
           "test",
           "run",
+          "Couldn",
+          "save",
+          "t",
           "history",
-          "IOException",
           "println"
         ],
         "is_terminal": false,
@@ -2160,8 +2160,8 @@
         "end_line": 840,
         "defs": [],
         "uses": [
-          "exit",
-          "System"
+          "System",
+          "exit"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2202,11 +2202,11 @@
         "end_line": 37,
         "defs": [],
         "uses": [
-          "loading",
-          "put",
           "fPreferences",
-          "Properties",
-          "filterstack"
+          "put",
+          "loading",
+          "filterstack",
+          "Properties"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2217,19 +2217,19 @@
         "start_line": 38,
         "end_line": 49,
         "defs": [
-          "is",
+          "e1",
           "e",
-          "e1"
+          "is"
         ],
         "uses": [
+          "IOException",
           "getPreferences",
-          "Properties",
           "close",
+          "Properties",
           "load",
+          "setPreferences",
           "FileInputStream",
           "getPreferencesFile",
-          "IOException",
-          "setPreferences",
           "InputStream"
         ],
         "is_terminal": false,
@@ -2286,9 +2286,9 @@
           "count"
         ],
         "uses": [
-          "test",
           "fRunTests",
-          "countTestCases"
+          "countTestCases",
+          "test"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2302,14 +2302,14 @@
           "e"
         ],
         "uses": [
-          "startTest",
-          "cloneListeners",
-          "nextElement",
-          "test",
-          "hasMoreElements",
-          "elements",
           "TestListener",
-          "Enumeration"
+          "test",
+          "nextElement",
+          "Enumeration",
+          "cloneListeners",
+          "startTest",
+          "hasMoreElements",
+          "elements"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2323,11 +2323,11 @@
           "p"
         ],
         "uses": [
-          "runBare",
+          "test",
           "Protectable",
           "Throwable",
-          "test",
-          "protect"
+          "protect",
+          "runBare"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2339,9 +2339,9 @@
         "end_line": 115,
         "defs": [],
         "uses": [
-          "p",
           "test",
-          "runProtected"
+          "runProtected",
+          "p"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2353,8 +2353,8 @@
         "end_line": 117,
         "defs": [],
         "uses": [
-          "test",
-          "endTest"
+          "endTest",
+          "test"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2414,22 +2414,22 @@
         "start_line": 132,
         "end_line": 136,
         "defs": [
-          "e",
-          "e1"
+          "e1",
+          "e"
         ],
         "uses": [
+          "addElement",
           "addFailure",
-          "cloneListeners",
-          "nextElement",
+          "TestListener",
           "test",
+          "nextElement",
+          "Enumeration",
+          "cloneListeners",
           "AssertionFailedError",
           "hasMoreElements",
-          "addElement",
           "elements",
           "TestFailure",
-          "TestListener",
-          "fFailures",
-          "Enumeration"
+          "fFailures"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2440,13 +2440,13 @@
         "start_line": 138,
         "end_line": 139,
         "defs": [
-          "by",
-          "e"
+          "e",
+          "by"
         ],
         "uses": [
-          "t",
           "ThreadDeath",
           "don",
+          "t",
           "accident"
         ],
         "is_terminal": true,
@@ -2461,9 +2461,9 @@
           "e"
         ],
         "uses": [
-          "Throwable",
+          "addError",
           "test",
-          "addError"
+          "Throwable"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2569,8 +2569,8 @@
           "formatted"
         ],
         "uses": [
-          "String",
-          "message"
+          "message",
+          "String"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2583,11 +2583,11 @@
         "defs": [],
         "uses": [
           "expected",
-          "was",
-          "actual",
-          "formatted",
           "but",
-          "fail"
+          "formatted",
+          "actual",
+          "fail",
+          "was"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2663,14 +2663,14 @@
         ],
         "uses": [
           "isInfinite",
-          "was",
           "expected",
           "but",
-          "Double",
-          "actual",
           "String",
+          "actual",
           "fail",
-          "message"
+          "message",
+          "Double",
+          "was"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2681,22 +2681,22 @@
         "start_line": 107,
         "end_line": 108,
         "defs": [
-          "comparison",
-          "always"
+          "always",
+          "comparison"
         ],
         "uses": [
-          "expected",
-          "with",
-          "delta",
-          "returns",
-          "failNotEquals",
-          "Math",
-          "Double",
-          "actual",
           "NaN",
           "Because",
+          "failNotEquals",
+          "expected",
+          "Math",
+          "with",
+          "actual",
+          "delta",
           "message",
-          "abs"
+          "Double",
+          "abs",
+          "returns"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2724,14 +2724,14 @@
         ],
         "uses": [
           "isInfinite",
-          "was",
-          "expected",
-          "but",
-          "actual",
           "Float",
+          "but",
+          "expected",
           "String",
+          "actual",
           "fail",
-          "message"
+          "message",
+          "was"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2743,12 +2743,12 @@
         "end_line": 133,
         "defs": [],
         "uses": [
-          "expected",
+          "Float",
           "failNotEquals",
-          "delta",
+          "expected",
           "Math",
           "actual",
-          "Float",
+          "delta",
           "message",
           "abs"
         ],
@@ -2778,28 +2778,28 @@
           "msg"
         ],
         "uses": [
-          "errorCount",
+          "addElement",
           "Integer",
+          "getItemCount",
           "test",
-          "truncate",
-          "getMessage",
+          "TestRunListener",
           "String",
-          "setText",
+          "t",
           "fFailureList",
           "STATUS_ERROR",
-          "fExceptions",
-          "Error",
           "toString",
-          "fFailedTests",
-          "failureSelected",
-          "t",
           "fNumberOfErrors",
-          "TestRunListener",
-          "select",
+          "add",
           "fTestResult",
-          "getItemCount",
-          "addElement",
-          "add"
+          "errorCount",
+          "failureSelected",
+          "fExceptions",
+          "select",
+          "getMessage",
+          "setText",
+          "truncate",
+          "Error",
+          "fFailedTests"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2811,18 +2811,18 @@
         "end_line": 87,
         "defs": [],
         "uses": [
-          "t",
-          "Failure",
-          "fNumberOfFailures",
-          "Integer",
-          "appendFailure",
           "failureCount",
-          "STATUS_FAILURE",
+          "Integer",
+          "fNumberOfFailures",
           "test",
           "TestRunListener",
           "setText",
-          "fTestResult",
-          "toString"
+          "t",
+          "appendFailure",
+          "STATUS_FAILURE",
+          "toString",
+          "Failure",
+          "fTestResult"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2846,26 +2846,26 @@
         "start_line": 122,
         "end_line": 135,
         "defs": [
+          "menu",
           "createJUnitMenu",
-          "event",
-          "about",
           "mi",
-          "menu"
+          "event",
+          "about"
         ],
         "uses": [
+          "ActionEvent",
+          "setModal",
+          "fFrame",
+          "Menu",
+          "About",
           "AboutDialog",
           "JUnit",
-          "setVisible",
-          "fFrame",
-          "actionPerformed",
-          "MenuItem",
-          "addActionListener",
-          "Menu",
           "setLocation",
-          "ActionEvent",
-          "About",
+          "MenuItem",
+          "actionPerformed",
           "ActionListener",
-          "setModal",
+          "addActionListener",
+          "setVisible",
           "add"
         ],
         "is_terminal": false,
@@ -2880,17 +2880,17 @@
           "event"
         ],
         "uses": [
-          "menu",
-          "Exit",
+          "ActionEvent",
           "System",
           "exit",
-          "actionPerformed",
-          "MenuItem",
-          "addActionListener",
-          "ActionListener",
-          "mi",
-          "ActionEvent",
           "addSeparator",
+          "menu",
+          "actionPerformed",
+          "mi",
+          "MenuItem",
+          "ActionListener",
+          "Exit",
+          "addActionListener",
           "add"
         ],
         "is_terminal": false,
@@ -2915,8 +2915,8 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "menu",
-          "mi"
+          "mi",
+          "menu"
         ]
       },
       {
@@ -2949,8 +2949,8 @@
         "start_line": 157,
         "end_line": 161,
         "defs": [
-          "suiteName",
           "frame",
+          "suiteName",
           "icon",
           "createUI"
         ],
@@ -2958,8 +2958,8 @@
           "Image",
           "setIconImage",
           "JUnit",
-          "loadFrameIcon",
           "String",
+          "loadFrameIcon",
           "Frame"
         ],
         "is_terminal": false,
@@ -2974,12 +2974,12 @@
           "finalFrame"
         ],
         "uses": [
-          "SystemColor",
-          "setBackground",
-          "setLayout",
-          "BorderLayout",
           "frame",
+          "setBackground",
           "control",
+          "setLayout",
+          "SystemColor",
+          "BorderLayout",
           "Frame"
         ],
         "is_terminal": false,
@@ -2994,15 +2994,15 @@
           "e"
         ],
         "uses": [
-          "System",
-          "exit",
-          "WindowEvent",
-          "addWindowListener",
-          "finalFrame",
           "frame",
           "windowClosing",
+          "exit",
+          "System",
+          "finalFrame",
+          "WindowEvent",
           "dispose",
-          "WindowAdapter"
+          "WindowAdapter",
+          "addWindowListener"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3016,10 +3016,10 @@
           "mb"
         ],
         "uses": [
-          "createMenus",
           "frame",
-          "MenuBar",
-          "setMenuBar"
+          "setMenuBar",
+          "createMenus",
+          "MenuBar"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3030,64 +3030,64 @@
         "start_line": 180,
         "end_line": 231,
         "defs": [
-          "e",
           "testSuite",
-          "suiteLabel",
           "endTime",
-          "startTime",
           "class",
-          "runTime"
+          "runTime",
+          "startTime",
+          "e",
+          "suiteLabel"
         ],
         "uses": [
-          "Case",
-          "currentTimeMillis",
-          "fProgressIndicator",
-          "PLAIN_FONT",
-          "createTestResult",
-          "name",
-          "addActionListener",
-          "Running",
           "ActionEvent",
           "Load",
-          "addListener",
-          "requestFocus",
-          "countTestCases",
-          "setLoading",
-          "run",
-          "gc",
-          "stop",
-          "getTest",
-          "fRunner",
-          "Test",
-          "shouldReload",
-          "Initializing",
-          "setColumns",
-          "fRun",
-          "Run",
-          "suiteName",
-          "showStatus",
-          "selectAll",
-          "setFont",
-          "shouldStop",
-          "ActionListener",
-          "showInfo",
-          "Thread",
-          "TestRunner",
-          "System",
+          "Finished",
           "TextField",
+          "fRunner",
+          "PLAIN_FONT",
+          "fProgressIndicator",
+          "countTestCases",
+          "Initializing",
+          "addActionListener",
+          "showStatus",
+          "shouldStop",
+          "fTestResult",
+          "System",
+          "setFont",
+          "Thread",
+          "elapsedTimeAsString",
           "seconds",
+          "suiteName",
+          "run",
+          "setLoading",
+          "shouldReload",
+          "requestFocus",
+          "fRun",
+          "Stop",
+          "Running",
+          "setLabel",
+          "getTest",
+          "selectAll",
+          "currentTimeMillis",
           "fSuiteField",
           "reset",
-          "actionPerformed",
-          "setLabel",
+          "createTestResult",
+          "setColumns",
+          "showInfo",
           "Label",
-          "start",
-          "elapsedTimeAsString",
-          "Stop",
-          "fTestResult",
           "getText",
+          "Run",
+          "name",
+          "start",
+          "gc",
           "Stopped",
-          "Finished"
+          "addListener",
+          "stop",
+          "Case",
+          "TestRunner",
+          "actionPerformed",
+          "ActionListener",
+          "Test"
         ],
         "is_terminal": false,
         "has_control": true
@@ -3101,17 +3101,17 @@
           "e"
         ],
         "uses": [
-          "setEnabled",
           "TextEvent",
-          "fRun",
           "fSuiteField",
-          "length",
           "TextListener",
           "addTextListener",
-          "setText",
+          "fStatusLine",
+          "fRun",
           "getText",
+          "setText",
+          "setEnabled",
           "textValueChanged",
-          "fStatusLine"
+          "length"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3125,15 +3125,15 @@
           "e"
         ],
         "uses": [
-          "setEnabled",
-          "fRun",
-          "Run",
-          "actionPerformed",
-          "addActionListener",
-          "ActionListener",
           "ActionEvent",
-          "runSuite",
-          "Button"
+          "Button",
+          "fRun",
+          "actionPerformed",
+          "Run",
+          "ActionListener",
+          "addActionListener",
+          "setEnabled",
+          "runSuite"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3148,14 +3148,14 @@
           "useLoader"
         ],
         "uses": [
-          "inVAJava",
           "Checkbox",
-          "fUseLoadingRunner",
-          "every",
-          "run",
           "Reload",
-          "setVisible",
-          "useReloadingTestSuiteLoader"
+          "inVAJava",
+          "run",
+          "useReloadingTestSuiteLoader",
+          "every",
+          "fUseLoadingRunner",
+          "setVisible"
         ],
         "is_terminal": false,
         "has_control": true
@@ -3169,18 +3169,18 @@
           "numbersPanel"
         ],
         "uses": [
-          "fNumberOfFailures",
-          "fProgressIndicator",
-          "RIGHT",
-          "fNumberOfErrors",
-          "PLAIN_FONT",
-          "ProgressBar",
-          "Panel",
-          "Label",
-          "createCounterPanel",
           "setFont",
+          "createCounterPanel",
+          "fNumberOfFailures",
+          "PLAIN_FONT",
+          "fNumberOfRuns",
+          "Label",
+          "fProgressIndicator",
+          "ProgressBar",
           "setText",
-          "fNumberOfRuns"
+          "Panel",
+          "fNumberOfErrors",
+          "RIGHT"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3191,21 +3191,21 @@
         "start_line": 273,
         "end_line": 282,
         "defs": [
-          "e",
           "and",
-          "failureLabel"
+          "failureLabel",
+          "e"
         ],
         "uses": [
-          "failureSelected",
-          "Failures",
-          "addItemListener",
-          "List",
-          "ItemEvent",
           "Errors",
-          "Label",
+          "ItemEvent",
+          "Failures",
           "ItemListener",
-          "itemStateChanged",
-          "fFailureList"
+          "Label",
+          "addItemListener",
+          "fFailureList",
+          "failureSelected",
+          "List",
+          "itemStateChanged"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3219,15 +3219,15 @@
           "e"
         ],
         "uses": [
-          "Run",
-          "actionPerformed",
-          "rerun",
-          "addActionListener",
-          "ActionListener",
           "ActionEvent",
-          "setEnabled",
+          "Button",
+          "actionPerformed",
           "fRerunButton",
-          "Button"
+          "Run",
+          "ActionListener",
+          "addActionListener",
+          "setEnabled",
+          "rerun"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3243,11 +3243,11 @@
         "uses": [
           "setColumns",
           "setRows",
-          "Panel",
+          "fRerunButton",
           "fTraceArea",
           "TextArea",
-          "fRerunButton",
           "GridLayout",
+          "Panel",
           "add"
         ],
         "is_terminal": false,
@@ -3262,23 +3262,23 @@
           "e"
         ],
         "uses": [
-          "PLAIN_FONT",
-          "exit",
-          "addActionListener",
-          "setFont",
-          "fQuitButton",
           "ActionEvent",
-          "ActionListener",
-          "fStatusLine",
-          "Color",
-          "Exit",
-          "System",
+          "exit",
           "TextField",
-          "setForeground",
+          "Button",
+          "PLAIN_FONT",
+          "addActionListener",
+          "fQuitButton",
+          "System",
+          "setFont",
+          "Color",
+          "fStatusLine",
           "actionPerformed",
           "red",
+          "ActionListener",
+          "Exit",
           "setEditable",
-          "Button"
+          "setForeground"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3292,30 +3292,30 @@
           "panel"
         ],
         "uses": [
+          "BOTH",
+          "HORIZONTAL",
+          "fSuiteField",
           "fProgressIndicator",
-          "WEST",
-          "fRun",
-          "Panel",
-          "GridBagLayout",
-          "fQuitButton",
-          "fFailureList",
+          "GridBagConstraints",
           "failureLabel",
           "fTraceArea",
-          "fLogo",
+          "fQuitButton",
+          "fFailureList",
           "CENTER",
-          "fStatusLine",
-          "GridBagConstraints",
-          "NORTH",
           "fUseLoadingRunner",
-          "fSuiteField",
-          "BOTH",
-          "failedPanel",
-          "Logo",
-          "numbersPanel",
+          "WEST",
           "suiteLabel",
-          "HORIZONTAL",
+          "Logo",
+          "GridBagLayout",
+          "NORTH",
+          "fLogo",
+          "fStatusLine",
+          "fRun",
+          "NONE",
           "addGrid",
-          "NONE"
+          "numbersPanel",
+          "Panel",
+          "failedPanel"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3327,12 +3327,12 @@
         "end_line": 342,
         "defs": [],
         "uses": [
-          "BorderLayout",
           "frame",
-          "add",
           "panel",
+          "BorderLayout",
           "pack",
-          "CENTER"
+          "CENTER",
+          "add"
         ],
         "is_terminal": true,
         "has_control": false
@@ -3594,28 +3594,28 @@
         "end_line": 356,
         "defs": [
           "constraints",
-          "numbersPanel",
-          "createCounterPanel"
+          "createCounterPanel",
+          "numbersPanel"
         ],
         "uses": [
           "Runs",
-          "gridheight",
-          "Panel",
-          "GridBagLayout",
-          "gridx",
-          "weightx",
-          "CENTER",
-          "GridBagConstraints",
-          "add",
-          "Insets",
           "gridy",
-          "gridwidth",
+          "Insets",
           "insets",
+          "Panel",
           "Label",
-          "weighty",
           "fill",
+          "GridBagConstraints",
+          "CENTER",
+          "add",
+          "gridx",
+          "GridBagLayout",
+          "gridheight",
+          "weightx",
+          "NONE",
+          "gridwidth",
           "anchor",
-          "NONE"
+          "weighty"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3627,12 +3627,12 @@
         "end_line": 363,
         "defs": [],
         "uses": [
-          "numbersPanel",
-          "Insets",
-          "HORIZONTAL",
-          "addToCounterPanel",
-          "CENTER",
           "GridBagConstraints",
+          "HORIZONTAL",
+          "numbersPanel",
+          "addToCounterPanel",
+          "Insets",
+          "CENTER",
           "fNumberOfRuns"
         ],
         "is_terminal": false,
@@ -3645,14 +3645,14 @@
         "end_line": 370,
         "defs": [],
         "uses": [
-          "Insets",
-          "addToCounterPanel",
-          "Label",
           "Errors",
-          "numbersPanel",
-          "CENTER",
+          "Insets",
+          "Label",
+          "NONE",
           "GridBagConstraints",
-          "NONE"
+          "numbersPanel",
+          "addToCounterPanel",
+          "CENTER"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3664,13 +3664,13 @@
         "end_line": 377,
         "defs": [],
         "uses": [
-          "numbersPanel",
-          "Insets",
-          "fNumberOfErrors",
-          "addToCounterPanel",
-          "HORIZONTAL",
           "GridBagConstraints",
-          "CENTER"
+          "HORIZONTAL",
+          "numbersPanel",
+          "addToCounterPanel",
+          "Insets",
+          "CENTER",
+          "fNumberOfErrors"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3684,12 +3684,12 @@
         "uses": [
           "Failures",
           "Insets",
-          "addToCounterPanel",
           "Label",
-          "numbersPanel",
-          "CENTER",
+          "NONE",
           "GridBagConstraints",
-          "NONE"
+          "numbersPanel",
+          "addToCounterPanel",
+          "CENTER"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3701,13 +3701,13 @@
         "end_line": 391,
         "defs": [],
         "uses": [
-          "numbersPanel",
+          "GridBagConstraints",
           "fNumberOfFailures",
-          "Insets",
           "HORIZONTAL",
+          "numbersPanel",
           "addToCounterPanel",
-          "CENTER",
-          "GridBagConstraints"
+          "Insets",
+          "CENTER"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3819,8 +3819,8 @@
         "uses": [
           "setLabelValue",
           "fNumberOfFailures",
-          "fNumberOfErrors",
-          "fNumberOfRuns"
+          "fNumberOfRuns",
+          "fNumberOfErrors"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3832,12 +3832,12 @@
         "end_line": 489,
         "defs": [],
         "uses": [
-          "getGraphics",
           "fProgressIndicator",
-          "paint",
           "fProgress",
-          "fProgressX",
-          "fError"
+          "getGraphics",
+          "fError",
+          "paint",
+          "fProgressX"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3849,8 +3849,8 @@
         "end_line": 490,
         "defs": [],
         "uses": [
-          "setEnabled",
-          "fRerunButton"
+          "fRerunButton",
+          "setEnabled"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3862,11 +3862,11 @@
         "end_line": 493,
         "defs": [],
         "uses": [
-          "removeAll",
-          "fFailureList",
           "fExceptions",
           "fFailedTests",
-          "Vector"
+          "fFailureList",
+          "Vector",
+          "removeAll"
         ],
         "is_terminal": false,
         "has_control": false

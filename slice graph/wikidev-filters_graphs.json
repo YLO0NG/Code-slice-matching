@@ -13,12 +13,12 @@
           "artifact"
         ],
         "uses": [
-          "IArtifact",
-          "artifacts",
           "ArrayList",
           "Cluster",
-          "clusters",
           "addArtifact",
+          "IArtifact",
+          "clusters",
+          "artifacts",
           "add"
         ],
         "is_terminal": false,
@@ -30,18 +30,18 @@
         "start_line": 32,
         "end_line": 47,
         "defs": [
-          "minVal",
-          "minCol",
-          "minRow",
+          "i",
           "j",
-          "i"
+          "minRow",
+          "minCol",
+          "minVal"
         ],
         "uses": [
           "THRESHOLD",
-          "length",
+          "distanceMatrix",
           "size",
           "clusters",
-          "distanceMatrix"
+          "length"
         ],
         "is_terminal": false,
         "has_control": true
@@ -55,20 +55,20 @@
           "i"
         ],
         "uses": [
+          "distanceMatrix",
+          "deleteColumns",
           "insertRows",
           "minCol",
-          "insertColumns",
-          "minRow",
-          "addArtifacts",
           "getArtifacts",
           "get",
-          "length",
-          "deleteRows",
+          "insertColumns",
           "newDistances",
+          "deleteRows",
+          "minRow",
+          "addArtifacts",
           "clusters",
-          "distanceMatrix",
-          "remove",
-          "deleteColumns"
+          "length",
+          "remove"
         ],
         "is_terminal": false,
         "has_control": true
@@ -82,20 +82,20 @@
           "i"
         ],
         "uses": [
+          "distanceMatrix",
+          "deleteColumns",
           "insertRows",
           "minCol",
-          "insertColumns",
-          "minRow",
-          "addArtifacts",
           "getArtifacts",
           "get",
-          "length",
-          "deleteRows",
+          "insertColumns",
           "newDistances",
+          "deleteRows",
+          "minRow",
+          "addArtifacts",
           "clusters",
-          "distanceMatrix",
-          "remove",
-          "deleteColumns"
+          "length",
+          "remove"
         ],
         "is_terminal": false,
         "has_control": true
@@ -124,8 +124,8 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "minRow",
-          "minCol"
+          "minCol",
+          "minRow"
         ]
       },
       {
@@ -144,8 +144,8 @@
         "to": 4,
         "type": "DD",
         "vars": [
-          "minRow",
-          "minCol"
+          "minCol",
+          "minRow"
         ]
       },
       {
@@ -185,13 +185,13 @@
           "i"
         ],
         "uses": [
-          "sum",
-          "sumRow",
-          "getFiedlerVector",
-          "length",
           "A",
+          "getFiedlerVector",
           "L",
-          "D"
+          "sumRow",
+          "D",
+          "length",
+          "sum"
         ],
         "is_terminal": false,
         "has_control": true
@@ -204,9 +204,9 @@
         "defs": [],
         "uses": [
           "A",
+          "D",
           "L",
-          "minus",
-          "D"
+          "minus"
         ],
         "is_terminal": false,
         "has_control": false
@@ -224,10 +224,10 @@
           "Matrix",
           "EigenvalueDecomposition",
           "LEigenDec",
-          "L",
           "eigen",
-          "getV",
-          "getD"
+          "L",
+          "getD",
+          "getV"
         ],
         "is_terminal": false,
         "has_control": false
@@ -243,13 +243,13 @@
         ],
         "uses": [
           "put",
-          "sortedEigenValues",
           "Integer",
-          "TreeMap",
-          "eigenValues",
           "getColumnDimension",
-          "Double",
-          "get"
+          "get",
+          "eigenValues",
+          "TreeMap",
+          "sortedEigenValues",
+          "Double"
         ],
         "is_terminal": false,
         "has_control": true
@@ -260,21 +260,21 @@
         "start_line": 62,
         "end_line": 72,
         "defs": [
-          "minIndex",
           "threshold",
-          "key"
+          "key",
+          "minIndex"
         ],
         "uses": [
           "keySet",
+          "keyIt",
+          "get",
+          "Set",
+          "iterator",
+          "hasNext",
           "sortedEigenValues",
           "Iterator",
-          "keyIt",
           "Double",
-          "get",
-          "next",
-          "hasNext",
-          "iterator",
-          "Set"
+          "next"
         ],
         "is_terminal": false,
         "has_control": true
@@ -285,18 +285,18 @@
         "start_line": 73,
         "end_line": 79,
         "defs": [
-          "j",
-          "i"
+          "i",
+          "j"
         ],
         "uses": [
-          "minIndex",
-          "eigenVectors2",
+          "getColumnCopy",
           "getColumnDimension",
-          "DoubleArray",
-          "get",
-          "eigenVectors",
           "getRowDimension",
-          "getColumnCopy"
+          "get",
+          "eigenVectors2",
+          "minIndex",
+          "DoubleArray",
+          "eigenVectors"
         ],
         "is_terminal": true,
         "has_control": true
@@ -394,42 +394,42 @@
         "start_line": 99,
         "end_line": 137,
         "defs": [
-          "revision",
+          "changeset",
+          "wiki",
           "artifact",
+          "revision",
+          "parser",
           "text",
           "ticket",
-          "wiki",
-          "parser",
-          "changeset",
           "communication"
         ],
         "uses": [
-          "parseTextInWords",
-          "TextParser",
-          "getSummary",
-          "Message",
-          "toLowerCase",
-          "getDesription",
-          "toString",
-          "getWords",
-          "ChangeSet",
-          "artifacts",
-          "WikiRevision",
-          "getRevisions",
-          "Document",
-          "getComment",
-          "Wiki",
-          "ArrayList",
-          "String",
-          "documents",
-          "setDocument",
           "Ticket",
-          "getBody",
-          "getSubject",
-          "IArtifact",
+          "toLowerCase",
+          "toString",
+          "add",
           "buffers",
+          "ArrayList",
+          "Wiki",
+          "getSubject",
+          "documents",
+          "artifacts",
+          "Message",
+          "getDesription",
           "getRev_text",
-          "add"
+          "getComment",
+          "WikiRevision",
+          "String",
+          "IArtifact",
+          "getSummary",
+          "Document",
+          "ChangeSet",
+          "setDocument",
+          "TextParser",
+          "parseTextInWords",
+          "getRevisions",
+          "getWords",
+          "getBody"
         ],
         "is_terminal": false,
         "has_control": true
@@ -440,38 +440,38 @@
         "start_line": 139,
         "end_line": 171,
         "defs": [
-          "revision",
+          "changeset",
+          "wiki",
           "artifact",
+          "revision",
+          "parser",
           "text",
           "ticket",
-          "wiki",
-          "parser",
-          "changeset",
           "communication"
         ],
         "uses": [
-          "parseTextInWords",
-          "TextParser",
-          "getSummary",
-          "Message",
-          "getDocument",
-          "calculateTFIDF",
-          "toLowerCase",
-          "getDesription",
-          "ChangeSet",
-          "artifacts",
-          "WikiRevision",
-          "setTfidf",
-          "getRevisions",
-          "getComment",
-          "Wiki",
-          "String",
-          "documents",
           "Ticket",
-          "getBody",
+          "toLowerCase",
+          "Wiki",
           "getSubject",
+          "documents",
+          "artifacts",
+          "Message",
+          "getDesription",
+          "getRev_text",
+          "getComment",
+          "WikiRevision",
+          "String",
           "IArtifact",
-          "getRev_text"
+          "setTfidf",
+          "calculateTFIDF",
+          "getSummary",
+          "getDocument",
+          "ChangeSet",
+          "TextParser",
+          "parseTextInWords",
+          "getRevisions",
+          "getBody"
         ],
         "is_terminal": false,
         "has_control": true
@@ -482,47 +482,47 @@
         "start_line": 173,
         "end_line": 226,
         "defs": [
-          "revision",
+          "changeset",
+          "wiki",
           "artifact",
+          "revision",
+          "parser",
           "text",
           "ticket",
-          "wiki",
-          "parser",
-          "changeset",
           "communication"
         ],
         "uses": [
-          "parseTextInWords",
-          "TextParser",
-          "sourceArtifact",
-          "getGenericRelationships",
-          "getSummary",
-          "Message",
+          "Ticket",
           "toLowerCase",
-          "getDesription",
           "toString",
           "add",
-          "ChangeSet",
-          "artifacts",
-          "WikiRevision",
-          "getRevisions",
-          "getComment",
-          "out",
-          "Wiki",
-          "String",
-          "documents",
-          "Relationships",
-          "getProject",
-          "Ticket",
-          "getSubject",
-          "getBody",
-          "System",
-          "IArtifact",
-          "mineRelationshipsFromText",
-          "project",
           "buffers",
+          "System",
+          "out",
+          "mineRelationshipsFromText",
+          "Wiki",
+          "project",
+          "getSubject",
+          "documents",
+          "artifacts",
+          "getProject",
+          "Message",
+          "getDesription",
+          "getRev_text",
+          "getComment",
+          "getGenericRelationships",
+          "WikiRevision",
+          "String",
+          "IArtifact",
+          "sourceArtifact",
+          "getSummary",
           "println",
-          "getRev_text"
+          "ChangeSet",
+          "TextParser",
+          "parseTextInWords",
+          "getRevisions",
+          "Relationships",
+          "getBody"
         ],
         "is_terminal": false,
         "has_control": true
@@ -552,34 +552,34 @@
         "end_line": 30,
         "defs": [
           "ip",
-          "password",
+          "username",
           "databaseName",
-          "username"
+          "password"
         ],
         "uses": [
-          "cs",
-          "lb",
-          "jdbc",
-          "wikidev_ucosp",
-          "hypatia",
-          "ca",
-          "getUsername",
-          "gr",
-          "String",
-          "parseArgs",
+          "getDatabaseName",
           "i",
-          "filimon9786",
-          "weekly",
-          "getPassword",
-          "fokaefs",
-          "ub",
+          "jdbc",
           "mysql",
-          "ualberta",
           "openTheConnection",
           "args2",
+          "ualberta",
+          "filimon9786",
+          "gr",
+          "getUsername",
+          "fokaefs",
+          "InvocationParser",
+          "String",
+          "getPassword",
+          "hypatia",
+          "parseArgs",
+          "wikidev_ucosp",
+          "cs",
+          "ca",
           "DataManager",
-          "getDatabaseName",
-          "InvocationParser"
+          "weekly",
+          "ub",
+          "lb"
         ],
         "is_terminal": false,
         "has_control": true
@@ -590,24 +590,24 @@
         "start_line": 31,
         "end_line": 41,
         "defs": [
-          "upperBound",
           "lowerBound",
-          "todate",
-          "project",
           "window",
-          "interval",
-          "fromdate"
+          "fromdate",
+          "project",
+          "upperBound",
+          "todate",
+          "interval"
         ],
         "uses": [
           "getUpperBound",
-          "getWindow",
-          "getLowerBound",
-          "String",
           "getFromdate",
-          "getProject",
-          "ip",
+          "getInterval",
+          "getWindow",
+          "String",
           "getTodate",
-          "getInterval"
+          "ip",
+          "getLowerBound",
+          "getProject"
         ],
         "is_terminal": false,
         "has_control": false
@@ -618,25 +618,25 @@
         "start_line": 44,
         "end_line": 52,
         "defs": [
-          "l",
-          "nextWeek",
           "firstWeek",
+          "nextWeek",
+          "l",
           "previousWeek"
         ],
         "uses": [
-          "out",
-          "System",
-          "WEEK_INTERVAL_IN_MILLIS",
-          "todate",
-          "getTime",
-          "DataManager",
-          "fromdate",
-          "Timestamp",
           "to",
-          "valueOf",
-          "toString",
+          "System",
+          "out",
+          "Timestamp",
           "From",
-          "println"
+          "fromdate",
+          "DataManager",
+          "valueOf",
+          "WEEK_INTERVAL_IN_MILLIS",
+          "getTime",
+          "toString",
+          "println",
+          "todate"
         ],
         "is_terminal": false,
         "has_control": true
@@ -650,21 +650,21 @@
           "rm"
         ],
         "uses": [
-          "newArtifacts",
-          "ArrayList",
-          "nextWeek",
           "getRelationships",
-          "previousWeek",
-          "distanceMatrix",
-          "RelationshipMiner",
-          "toString",
-          "getArtifactsBetweenDates",
-          "IArtifact",
-          "Cluster",
-          "project",
-          "DataManager",
           "getDistanceMatrix",
-          "totalClusters"
+          "IArtifact",
+          "RelationshipMiner",
+          "previousWeek",
+          "toString",
+          "newArtifacts",
+          "distanceMatrix",
+          "ArrayList",
+          "totalClusters",
+          "Cluster",
+          "DataManager",
+          "nextWeek",
+          "project",
+          "getArtifactsBetweenDates"
         ],
         "is_terminal": false,
         "has_control": false
@@ -676,37 +676,37 @@
         "end_line": 81,
         "defs": [
           "sammon",
-          "clustering",
           "mds",
+          "clustering",
           "threshold",
           "cluster"
         ],
         "uses": [
-          "SammonsProjection",
-          "finalClusters",
-          "newArtifacts",
+          "getProjection",
           "CreateMapping",
           "cMDS",
-          "coords",
-          "ArrayList",
-          "contains",
-          "getProjection",
-          "getInstance",
-          "clusters",
-          "MultidimensionalScaling",
-          "distanceMatrix",
-          "upperBound",
-          "add",
-          "lowerBound",
-          "length",
-          "getArtifacts",
-          "size",
-          "Cluster",
-          "mdsCoords",
           "isEmpty",
-          "interval",
+          "contains",
+          "getInstance",
+          "mdsCoords",
+          "size",
+          "finalClusters",
+          "clusters",
+          "getArtifacts",
+          "length",
+          "newArtifacts",
+          "add",
+          "SammonsProjection",
+          "lowerBound",
+          "coords",
+          "distanceMatrix",
+          "ArrayList",
           "totalClusters",
-          "Clustering"
+          "Cluster",
+          "MultidimensionalScaling",
+          "Clustering",
+          "upperBound",
+          "interval"
         ],
         "is_terminal": false,
         "has_control": true
@@ -719,41 +719,41 @@
         "defs": [
           "artifact",
           "clustered",
-          "j",
           "cluster",
+          "j",
           "index"
         ],
         "uses": [
-          "newArtifacts",
-          "writeClusterPerProject",
-          "coords",
-          "nextWeek",
-          "previousWeek",
-          "setIndex",
-          "valueOf",
-          "toString",
-          "fromdate",
-          "setUsersAndWords",
-          "getArtifacts",
-          "setFromdate",
-          "todate",
-          "Cluster",
-          "addCoordinate",
-          "ClusterPoint",
-          "threshold",
-          "setThreshold",
-          "setProject",
-          "finalClusters",
-          "setCluster_set_name",
-          "window",
-          "Timestamp",
-          "IArtifact",
-          "indexOf",
-          "size",
           "writeCluster",
+          "writeClusterPerProject",
+          "size",
+          "toString",
+          "newArtifacts",
+          "coords",
+          "setUsersAndWords",
+          "indexOf",
+          "setIndex",
+          "Cluster",
           "project",
           "DataManager",
-          "setTodate"
+          "todate",
+          "setTodate",
+          "setFromdate",
+          "Timestamp",
+          "addCoordinate",
+          "valueOf",
+          "IArtifact",
+          "finalClusters",
+          "previousWeek",
+          "getArtifacts",
+          "setCluster_set_name",
+          "ClusterPoint",
+          "window",
+          "fromdate",
+          "threshold",
+          "nextWeek",
+          "setProject",
+          "setThreshold"
         ],
         "is_terminal": false,
         "has_control": true
@@ -872,9 +872,9 @@
         "to": 5,
         "type": "DD",
         "vars": [
-          "interval",
+          "lowerBound",
           "upperBound",
-          "lowerBound"
+          "interval"
         ]
       },
       {
@@ -882,9 +882,9 @@
         "to": 6,
         "type": "DD",
         "vars": [
-          "project",
           "window",
           "fromdate",
+          "project",
           "todate"
         ]
       },
@@ -893,8 +893,8 @@
         "to": 4,
         "type": "DD",
         "vars": [
-          "nextWeek",
-          "previousWeek"
+          "previousWeek",
+          "nextWeek"
         ]
       },
       {
@@ -913,8 +913,8 @@
         "to": 6,
         "type": "DD",
         "vars": [
-          "nextWeek",
-          "previousWeek"
+          "previousWeek",
+          "nextWeek"
         ]
       },
       {
@@ -928,8 +928,8 @@
         "to": 7,
         "type": "DD",
         "vars": [
-          "nextWeek",
-          "previousWeek"
+          "previousWeek",
+          "nextWeek"
         ]
       },
       {
@@ -1026,20 +1026,20 @@
         "start_line": 249,
         "end_line": 250,
         "defs": [
-          "project",
-          "sqlStmt"
+          "sqlStmt",
+          "project"
         ],
         "uses": [
-          "Project",
-          "getId",
-          "getType",
           "getProjectByID",
           "QueryBuilder",
+          "selectArtifactByTypeAndID",
           "anArtifact",
-          "projectid",
           "DataManager",
+          "projectid",
           "String",
-          "selectArtifactByTypeAndID"
+          "Project",
+          "getType",
+          "getId"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1054,10 +1054,10 @@
           "artifact"
         ],
         "uses": [
-          "IArtifact",
-          "executeQuery",
-          "statement",
           "sqlStmt",
+          "statement",
+          "executeQuery",
+          "IArtifact",
           "ResultSet"
         ],
         "is_terminal": false,
@@ -1070,47 +1070,47 @@
         "end_line": 275,
         "defs": [],
         "uses": [
-          "address",
-          "owner_name",
           "description",
+          "deleted",
+          "Ticket",
+          "mid_header",
+          "id",
+          "project_id",
+          "externalsystem_id",
+          "refid_header",
+          "created",
+          "getType",
+          "page_id",
+          "next",
+          "priority",
+          "page_namespace",
+          "summary",
+          "page_touched",
+          "subject",
+          "artifact",
+          "Wiki",
           "equals",
+          "address",
+          "author",
+          "page_title",
+          "user_name",
           "Message",
+          "getInt",
           "anArtifact",
           "getString",
-          "created",
-          "id",
-          "page_id",
-          "reporter",
-          "getInt",
+          "last_modified",
+          "timestamp",
+          "comment",
+          "getTimestamp",
+          "owner_name",
           "ChangeSet",
           "externalauthor",
-          "artifact",
-          "project_ticket_id",
-          "page_namespace",
-          "page_title",
-          "deleted",
-          "page_touched",
-          "author",
-          "mid_header",
-          "res",
-          "refid_header",
-          "comment",
-          "summary",
-          "last_modified",
-          "Wiki",
-          "getType",
-          "getTimestamp",
-          "next",
-          "timestamp",
-          "project_id",
-          "priority",
-          "Ticket",
-          "subject",
           "rev",
-          "externalsystem_id",
-          "date",
           "body",
-          "user_name"
+          "date",
+          "reporter",
+          "project_ticket_id",
+          "res"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1122,8 +1122,8 @@
         "end_line": 277,
         "defs": [],
         "uses": [
-          "res",
-          "close"
+          "close",
+          "res"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1134,57 +1134,57 @@
         "start_line": 278,
         "end_line": 314,
         "defs": [
-          "user",
-          "ticket",
           "wiki",
+          "user",
           "changeSet",
+          "ticket",
           "communication",
           "detail"
         ],
         "uses": [
-          "getUserByUserName",
-          "getProjectNamespaceByNamespaceID",
-          "getReporterName",
-          "Message",
-          "getUser_name",
-          "getChangeSetDetailsByRevAndProject",
-          "getExternalAuthorUserName",
-          "getExternalSystemID",
-          "setRevisions",
-          "getChangesetDetails",
-          "ChangeSet",
-          "artifact",
-          "addTicket",
-          "getProjectID",
-          "setOwner",
-          "addChangeset",
-          "getProjectByName",
-          "getTicketID",
-          "setChangesetDetails",
-          "setProject",
-          "User",
-          "Wiki",
-          "setTicketChanges",
-          "getRevision",
-          "getTimestamp",
-          "setReporter",
-          "setAuthorForChangeSetDetails",
-          "setType",
-          "getAuthor",
-          "getProject",
           "Ticket",
+          "setTicketChanges",
+          "setChangesetDetails",
+          "setAuthorForChangeSetDetails",
+          "getProjectByName",
+          "getChangeSetDetailsByRevAndProject",
+          "getAuthor",
           "setProjectID",
-          "addMessage",
           "getTicketChangesByTicketID",
-          "getPage_id",
-          "setTimestamp",
-          "project",
-          "ChangeSetDetail",
-          "DataManager",
+          "User",
+          "getRevision",
           "getPage_namespace_id",
+          "artifact",
+          "Wiki",
+          "project",
+          "DataManager",
+          "setOwner",
+          "getProjectID",
+          "setTimestamp",
+          "getOwnerName",
+          "getProject",
+          "Message",
           "setUserRealName",
+          "setType",
+          "setReporter",
+          "getChangesetDetails",
+          "addChangeset",
+          "getPage_id",
+          "addTicket",
+          "getProjectNamespaceByNamespaceID",
+          "getTicketID",
+          "getTimestamp",
+          "ChangeSet",
+          "getExternalSystemID",
+          "getExternalAuthorUserName",
+          "getUserByUserName",
+          "ChangeSetDetail",
+          "addMessage",
           "getRevisionsByWikiID",
-          "getOwnerName"
+          "getReporterName",
+          "getUser_name",
+          "setRevisions",
+          "setProject"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1307,16 +1307,16 @@
         "start_line": 291,
         "end_line": 294,
         "defs": [
-          "ticketid",
           "pattern",
-          "comment"
+          "comment",
+          "ticketid"
         ],
         "uses": [
-          "getComment",
+          "changeset",
           "ArrayList",
-          "String",
+          "getComment",
           "ids",
-          "changeset"
+          "String"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1327,20 +1327,20 @@
         "start_line": 295,
         "end_line": 312,
         "defs": [
-          "j",
+          "ch",
           "i",
-          "ch"
+          "j"
         ],
         "uses": [
           "substring",
           "matches",
+          "ids",
+          "String",
           "comment",
           "charAt",
-          "length",
-          "pattern",
-          "String",
-          "ids",
           "ticketid",
+          "pattern",
+          "length",
           "add"
         ],
         "is_terminal": false,
@@ -1353,26 +1353,26 @@
         "end_line": 322,
         "defs": [
           "project",
-          "id",
-          "ticket"
+          "ticket",
+          "id"
         ],
         "uses": [
+          "parseInt",
           "relateArtifacts",
-          "TicketReference",
-          "Integer",
-          "ticket_id",
-          "equals",
-          "String",
-          "ids",
-          "changeset",
-          "getExternalSystemID",
           "Ticket",
           "getTicketByDrID",
-          "Project",
-          "parseInt",
+          "Integer",
+          "TicketReference",
+          "String",
+          "changeset",
           "getProjectByExternalSystem",
-          "getProjectID",
-          "DataManager"
+          "getExternalSystemID",
+          "ticket_id",
+          "ids",
+          "equals",
+          "DataManager",
+          "Project",
+          "getProjectID"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1384,9 +1384,9 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "ticketid",
           "pattern",
-          "comment"
+          "comment",
+          "ticketid"
         ]
       },
       {
@@ -1411,19 +1411,19 @@
         "start_line": 34,
         "end_line": 42,
         "defs": [
-          "sammon",
-          "mds"
+          "mds",
+          "sammon"
         ],
         "uses": [
-          "SammonsProjection",
+          "coords",
+          "getProjection",
+          "distanceMatrix",
           "CreateMapping",
           "cMDS",
-          "length",
-          "coords",
-          "mdsCoords",
-          "getProjection",
           "MultidimensionalScaling",
-          "distanceMatrix"
+          "mdsCoords",
+          "length",
+          "SammonsProjection"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1437,11 +1437,11 @@
           "i"
         ],
         "uses": [
-          "newArtifacts",
+          "coords",
           "setCoords",
           "get",
           "size",
-          "coords"
+          "newArtifacts"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1452,23 +1452,23 @@
         "start_line": 46,
         "end_line": 71,
         "defs": [
-          "maxY",
-          "minX",
+          "i",
           "minY",
           "maxX",
+          "maxY",
           "j",
-          "i"
+          "minX"
         ],
         "uses": [
-          "MAX_VALUE",
-          "out",
-          "System",
-          "x",
-          "length",
-          "Double",
           "coords",
-          "c",
           "print",
+          "System",
+          "out",
+          "c",
+          "MAX_VALUE",
+          "Double",
+          "length",
+          "x",
           "println"
         ],
         "is_terminal": false,
@@ -1480,17 +1480,17 @@
         "start_line": 73,
         "end_line": 80,
         "defs": [
+          "rangeY",
           "rangeX",
-          "range",
-          "rangeY"
+          "range"
         ],
         "uses": [
-          "maxY",
-          "minX",
-          "Math",
-          "minY",
           "ceil",
-          "maxX"
+          "minY",
+          "maxX",
+          "Math",
+          "maxY",
+          "minX"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1504,16 +1504,16 @@
           "blocks"
         ],
         "uses": [
-          "newArtifacts",
-          "minX",
-          "Math",
-          "minY",
-          "cityBlockInitialization",
-          "size",
           "coords",
+          "cityBlockInitialization",
           "ceil",
+          "minY",
+          "Math",
+          "sqrt",
+          "size",
           "range",
-          "sqrt"
+          "newArtifacts",
+          "minX"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1537,10 +1537,10 @@
         "end_line": 88,
         "defs": [],
         "uses": [
-          "minY",
-          "pushBuildings",
           "range",
-          "minX"
+          "pushBuildings",
+          "minX",
+          "minY"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1554,9 +1554,9 @@
           "done"
         ],
         "uses": [
+          "System",
           "out",
           "Blocks",
-          "System",
           "println"
         ],
         "is_terminal": false,
@@ -1580,9 +1580,9 @@
         "type": "DD",
         "vars": [
           "maxX",
-          "minY",
           "maxY",
-          "minX"
+          "minX",
+          "minY"
         ]
       },
       {
@@ -1595,8 +1595,8 @@
         "to": 5,
         "type": "DD",
         "vars": [
-          "minY",
-          "minX"
+          "minX",
+          "minY"
         ]
       },
       {
@@ -1604,8 +1604,8 @@
         "to": 7,
         "type": "DD",
         "vars": [
-          "minY",
-          "minX"
+          "minX",
+          "minY"
         ]
       },
       {
@@ -1656,22 +1656,22 @@
         "start_line": 97,
         "end_line": 106,
         "defs": [
-          "j",
           "i",
+          "j",
           "cityblock"
         ],
         "uses": [
-          "CityBlock",
           "blocks",
-          "minX",
-          "minY",
-          "cityBlocks",
-          "center",
           "ArrayList",
-          "Point",
+          "cityBlocks",
           "setCenter",
-          "range",
-          "add"
+          "add",
+          "minY",
+          "center",
+          "CityBlock",
+          "Point",
+          "minX",
+          "range"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1686,15 +1686,15 @@
           "r"
         ],
         "uses": [
-          "assignArtifactToCityBlock",
-          "blocks",
-          "newArtifacts",
-          "minX",
-          "minY",
-          "get",
-          "size",
           "coords",
-          "range"
+          "blocks",
+          "assignArtifactToCityBlock",
+          "get",
+          "minY",
+          "size",
+          "range",
+          "newArtifacts",
+          "minX"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1718,30 +1718,30 @@
         "start_line": 346,
         "end_line": 351,
         "defs": [
-          "out",
           "and",
+          "out",
           "index"
         ],
         "uses": [
+          "txt",
+          "c301f09",
+          "FileWriter",
+          "Desktop",
+          "size",
+          "Settings",
+          "BufferedWriter",
+          "industrialBlocks",
+          "write",
+          "blocks",
+          "Marios",
           "Fokaefs",
           "newLine",
-          "c301f09",
-          "write",
-          "wikidev",
-          "FileWriter",
-          "files",
-          "Documents",
-          "Marios",
-          "blocks",
-          "txt",
-          "C",
           "Math",
-          "BufferedWriter",
-          "size",
-          "industrialBlocks",
-          "Desktop",
-          "Settings",
-          "sqrt"
+          "files",
+          "sqrt",
+          "Documents",
+          "wikidev",
+          "C"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1754,18 +1754,18 @@
         "defs": [
           "type",
           "artifact",
+          "block",
           "height",
-          "line",
-          "block"
+          "line"
         ],
         "uses": [
-          "t",
           "keySet",
-          "IArtifact",
-          "CityBlock",
           "blocks",
-          "getArtifacts",
           "String",
+          "t",
+          "IArtifact",
+          "getArtifacts",
+          "CityBlock",
           "index"
         ],
         "is_terminal": false,
@@ -1777,31 +1777,31 @@
         "start_line": 357,
         "end_line": 367,
         "defs": [
-          "user",
-          "file"
+          "file",
+          "user"
         ],
         "uses": [
-          "SVNFile",
-          "User",
-          "getType",
-          "getColor",
-          "line",
-          "getIndex",
-          "block",
-          "y",
-          "getRed",
-          "getUsers",
           "type",
+          "get",
+          "User",
           "t",
+          "block",
+          "getIndex",
+          "getType",
+          "getRed",
+          "getArtifacts",
+          "getGreen",
+          "getUserName",
+          "line",
+          "getUsers",
+          "getBlue",
           "artifact",
+          "y",
+          "SVNFile",
+          "fileCount",
           "height",
           "x",
-          "getGreen",
-          "getArtifacts",
-          "get",
-          "getUserName",
-          "getBlue",
-          "fileCount"
+          "getColor"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1814,10 +1814,10 @@
         "defs": [],
         "uses": [
           "out",
-          "line",
+          "write",
           "newLine",
           "index",
-          "write"
+          "line"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1874,9 +1874,9 @@
         "vars": [
           "type",
           "artifact",
+          "block",
           "height",
-          "line",
-          "block"
+          "line"
         ]
       },
       {
@@ -1953,8 +1953,8 @@
           "block"
         ],
         "uses": [
-          "cityBlocks",
           "getArtifacts",
+          "cityBlocks",
           "CityBlock",
           "size"
         ],
@@ -1967,19 +1967,19 @@
         "start_line": 118,
         "end_line": 123,
         "defs": [
-          "blockMaxY",
-          "blockMaxX",
+          "blockMinX",
           "blockMinY",
-          "blockMinX"
+          "blockMaxX",
+          "blockMaxY"
         ],
         "uses": [
-          "minX",
-          "x",
           "minY",
+          "y",
+          "x",
           "getIndex",
-          "range",
           "block",
-          "y"
+          "range",
+          "minX"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1990,17 +1990,17 @@
         "start_line": 124,
         "end_line": 131,
         "defs": [
-          "rY",
+          "rX",
           "blockR",
-          "rX"
+          "rY"
         ],
         "uses": [
-          "blockMaxY",
-          "blockMaxX",
-          "Math",
           "blockMinY",
+          "blockMinX",
           "ceil",
-          "blockMinX"
+          "blockMaxY",
+          "Math",
+          "blockMaxX"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2011,15 +2011,15 @@
         "start_line": 132,
         "end_line": 140,
         "defs": [
-          "j",
-          "i"
+          "i",
+          "j"
         ],
         "uses": [
-          "blockR",
+          "subCenter",
           "blockMinY",
           "subblockCenters",
-          "subCenter",
-          "blockMinX"
+          "blockMinX",
+          "blockR"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2031,8 +2031,8 @@
         "end_line": 141,
         "defs": [],
         "uses": [
-          "redistributeArtifactsInBlock",
           "subblockCenters",
+          "redistributeArtifactsInBlock",
           "block"
         ],
         "is_terminal": false,
@@ -2136,10 +2136,10 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "blockMaxY",
-          "blockMaxX",
+          "blockMinX",
           "blockMinY",
-          "blockMinX"
+          "blockMaxX",
+          "blockMaxY"
         ]
       },
       {
@@ -2152,8 +2152,8 @@
         "to": 4,
         "type": "DD",
         "vars": [
-          "blockMinY",
-          "blockMinX"
+          "blockMinX",
+          "blockMinY"
         ]
       },
       {
@@ -2191,24 +2191,24 @@
         "start_line": 203,
         "end_line": 206,
         "defs": [
-          "out",
           "and",
+          "out",
           "index"
         ],
         "uses": [
-          "Fokaefs",
+          "txt",
           "c301f09",
-          "cityBlocks",
-          "wikidev",
           "FileWriter",
+          "Desktop",
+          "Settings",
+          "BufferedWriter",
+          "Marios",
+          "cityBlocks",
+          "Fokaefs",
           "files",
           "Documents",
-          "Marios",
-          "txt",
-          "C",
-          "BufferedWriter",
-          "Desktop",
-          "Settings"
+          "wikidev",
+          "C"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2220,13 +2220,13 @@
         "end_line": 208,
         "defs": [],
         "uses": [
+          "Math",
           "out",
           "blocks",
-          "Math",
-          "newLine",
-          "size",
           "sqrt",
-          "write"
+          "size",
+          "write",
+          "newLine"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2237,32 +2237,32 @@
         "start_line": 209,
         "end_line": 226,
         "defs": [
+          "wiki",
           "type",
           "artifact",
-          "height",
-          "ticket",
-          "wiki",
-          "line",
           "block",
-          "message"
+          "ticket",
+          "message",
+          "height",
+          "line"
         ],
         "uses": [
-          "t",
-          "CityBlock",
-          "IArtifact",
-          "getPriority",
-          "blocks",
-          "Wiki",
           "keySet",
-          "getArtifacts",
-          "get",
-          "size",
           "Message",
-          "String",
-          "getRevisions",
+          "blocks",
           "Ticket",
-          "index",
-          "messageCount"
+          "messageCount",
+          "getPriority",
+          "get",
+          "getRevisions",
+          "Wiki",
+          "String",
+          "t",
+          "size",
+          "IArtifact",
+          "getArtifacts",
+          "CityBlock",
+          "index"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2276,28 +2276,28 @@
           "user"
         ],
         "uses": [
-          "out",
-          "User",
-          "newLine",
-          "getColor",
-          "write",
-          "line",
-          "getIndex",
-          "block",
-          "y",
-          "getRed",
           "type",
+          "get",
+          "index",
+          "User",
           "t",
+          "block",
+          "getIndex",
+          "getRed",
+          "write",
+          "getArtifacts",
+          "getGreen",
+          "getUserName",
+          "line",
+          "out",
+          "getBlue",
+          "newLine",
           "artifact",
+          "y",
+          "getAssociatedUsers",
           "height",
           "x",
-          "getGreen",
-          "getArtifacts",
-          "get",
-          "getUserName",
-          "getBlue",
-          "getAssociatedUsers",
-          "index"
+          "getColor"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2367,9 +2367,9 @@
         "vars": [
           "type",
           "artifact",
+          "block",
           "height",
-          "line",
-          "block"
+          "line"
         ]
       },
       {
@@ -2437,10 +2437,10 @@
           "i"
         ],
         "uses": [
+          "component",
           "length",
-          "dfs",
           "cn",
-          "component"
+          "dfs"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2453,9 +2453,9 @@
         "defs": [],
         "uses": [
           "ArrayList",
+          "TreeMap",
           "map",
-          "Integer",
-          "TreeMap"
+          "Integer"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2469,16 +2469,16 @@
           "i"
         ],
         "uses": [
-          "put",
-          "Integer",
-          "component",
-          "l",
-          "length",
-          "get",
-          "ArrayList",
           "map",
-          "containsKey",
-          "add"
+          "l",
+          "Integer",
+          "put",
+          "ArrayList",
+          "get",
+          "length",
+          "component",
+          "add",
+          "containsKey"
         ],
         "is_terminal": false,
         "has_control": true

@@ -9,17 +9,17 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: store (Oracle Lines: 165-170)
-    Mapped Slices: [4]
-      - Slice 4: L165-170
+    Mapped Slices: [5]
+      - Slice 5: L165-170
     Relationships: None (Independent slices or single slice)
 
 >>> Method: getImage (Oracle Lines: 132-134)
-    Mapped Slices: [2, 3]
-      - Slice 2: L130-133
-      - Slice 3: L134-134
+    Mapped Slices: [4, 5]
+      - Slice 4: L131-133
+      - Slice 5: L134-134
     Relationships (Edges between slices):
-      2 -> 3 [CD, Reason: GuardCheck]
-      2 -> 3 [CF]
+      4 -> 5 [CD, Reason: GuardCheck]
+      4 -> 5 [CF]
 
 >>> Method: angleToPoint (Oracle Lines: 139-145)
     Mapped Slices: [3]
@@ -27,30 +27,39 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: setDrawing (Oracle Lines: 178-189)
-    Mapped Slices: [3, 4]
-      - Slice 3: L178-184
-      - Slice 4: L185-189
+    Mapped Slices: [4, 5, 6]
+      - Slice 4: L178-179
+      - Slice 5: L180-184
+      - Slice 6: L185-189
     Relationships (Edges between slices):
-      3 -> 4 [DD, Vars: ['d1']]
-      3 -> 4 [CF]
+      4 -> 5 [DD, Vars: ['k', 'd1']]
+      4 -> 5 [CF]
+      4 -> 6 [DD, Vars: ['d1']]
+      5 -> 6 [CF]
 
 >>> Method: findHandle (Oracle Lines: 381-392)
-    Mapped Slices: [1]
-      - Slice 1: L381-390
+    Mapped Slices: [2]
+      - Slice 2: L381-390
     Relationships: None (Independent slices or single slice)
 
 >>> Method: constrainPoint (Oracle Lines: 437-445)
-    Mapped Slices: [1, 2]
+    Mapped Slices: [1, 2, 3]
       - Slice 1: L436-438
-      - Slice 2: L439-445
+      - Slice 2: L439-442
+      - Slice 3: L445-445
     Relationships (Edges between slices):
-      1 -> 2 [DD, Vars: ['value', 'max']]
+      1 -> 2 [DD, Vars: ['max', 'value']]
       1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['value']]
+      2 -> 3 [CF]
 
 >>> Method: execute (Oracle Lines: 37-42)
-    Mapped Slices: [3]
-      - Slice 3: L37-40
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [4, 5]
+      - Slice 4: L37-40
+      - Slice 5: L42-43
+    Relationships (Edges between slices):
+      4 -> 5 [DD, Vars: ['r1']]
+      4 -> 5 [CF]
 
 >>> Method: remove (Oracle Lines: 74-78)
     Mapped Slices: [5]
@@ -58,17 +67,21 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: mouseDrag (Oracle Lines: 116-138)
-    Mapped Slices: [2, 3, 4]
-      - Slice 2: L115-121
-      - Slice 3: L123-130
-      - Slice 4: L132-136
+    Mapped Slices: [2, 3, 4, 5]
+      - Slice 2: L115-116
+      - Slice 3: L118-121
+      - Slice 4: L123-130
+      - Slice 5: L132-136
     Relationships (Edges between slices):
       2 -> 3 [DD, Vars: ['c']]
       2 -> 3 [CD, Reason: Nesting]
       2 -> 3 [CF]
       2 -> 4 [DD, Vars: ['c']]
       2 -> 4 [CD, Reason: Nesting]
+      2 -> 5 [DD, Vars: ['c']]
+      2 -> 5 [CD, Reason: Nesting]
       3 -> 4 [CF]
+      4 -> 5 [CF]
 
 >>> Method: findFigureWithout (Oracle Lines: 241-247)
     Mapped Slices: [1]
@@ -76,24 +89,47 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: findFigure (Oracle Lines: 266-273)
-    Mapped Slices: [1]
-      - Slice 1: L265-274
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [1, 2]
+      - Slice 1: L265-266
+      - Slice 2: L267-274
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['k1']]
+      1 -> 2 [CD, Reason: Nesting]
+      1 -> 2 [CF]
 
 >>> Method: addHandles (Oracle Lines: 38-41)
-    Mapped Slices: [1]
-      - Slice 1: L38-41
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [1, 2, 3, 4]
+      - Slice 1: L38-38
+      - Slice 2: L39-39
+      - Slice 3: L40-40
+      - Slice 4: L41-41
+    Relationships (Edges between slices):
+      1 -> 2 [CF]
+      2 -> 3 [CF]
+      3 -> 4 [CF]
 
 >>> Method: update (Oracle Lines: 210-214)
-    Mapped Slices: [1]
-      - Slice 1: L209-215
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [2, 3, 4, 5]
+      - Slice 2: L210-210
+      - Slice 3: L211-211
+      - Slice 4: L212-213
+      - Slice 5: L214-214
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['newEnd']]
+      2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['newEnd']]
+      3 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CF]
+      3 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CF]
 
 >>> Method: updateDurations (Oracle Lines: 241-243)
-    Mapped Slices: [3]
-      - Slice 3: L241-243
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [4, 5]
+      - Slice 4: L241-241
+      - Slice 5: L242-243
+    Relationships (Edges between slices):
+      4 -> 5 [DD, Vars: ['i']]
+      4 -> 5 [CF]
 
 >>> Method: write (Oracle Lines: 267-270)
     Mapped Slices: [3]
@@ -111,15 +147,15 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: mouseDown (Oracle Lines: 37-54)
-    Mapped Slices: [2, 3, 4]
-      - Slice 2: L36-46
-      - Slice 3: L48-49
-      - Slice 4: L50-55
+    Mapped Slices: [3, 4, 5]
+      - Slice 3: L36-45
+      - Slice 4: L48-49
+      - Slice 5: L50-54
     Relationships (Edges between slices):
-      2 -> 3 [CD, Reason: Nesting]
-      2 -> 3 [CF]
-      2 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CD, Reason: Nesting]
       3 -> 4 [CF]
+      3 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CF]
 
 >>> Method: beginEdit (Oracle Lines: 85-89)
     Mapped Slices: [2]
@@ -127,23 +163,23 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: init (Oracle Lines: 39-48)
-    Mapped Slices: [3]
-      - Slice 3: L37-51
+    Mapped Slices: [4]
+      - Slice 4: L38-49
     Relationships: None (Independent slices or single slice)
 
 >>> Method: createButtons (Oracle Lines: 83-86)
-    Mapped Slices: [2]
-      - Slice 2: L79-89
+    Mapped Slices: [3]
+      - Slice 3: L80-89
     Relationships: None (Independent slices or single slice)
 
 >>> Method: createAnimationMenu (Oracle Lines: 112-115)
-    Mapped Slices: [1]
-      - Slice 1: L106-119
+    Mapped Slices: [2]
+      - Slice 2: L108-119
     Relationships: None (Independent slices or single slice)
 
 >>> Method: mouseDown (Oracle Lines: 49-59)
-    Mapped Slices: [2]
-      - Slice 2: L48-61
+    Mapped Slices: [4]
+      - Slice 4: L48-60
     Relationships: None (Independent slices or single slice)
 
 >>> Method: beginEdit (Oracle Lines: 111-120)
@@ -152,23 +188,28 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: setAttribute (Oracle Lines: 148-151)
-    Mapped Slices: [1]
-      - Slice 1: L145-152
+    Mapped Slices: [2]
+      - Slice 2: L146-152
     Relationships: None (Independent slices or single slice)
 
 >>> Method: connect (Oracle Lines: 287-297)
-    Mapped Slices: [4]
-      - Slice 4: L287-297
+    Mapped Slices: [3]
+      - Slice 3: L287-297
     Relationships: None (Independent slices or single slice)
 
 >>> Method: mouseDown (Oracle Lines: 60-69)
-    Mapped Slices: [2, 3]
-      - Slice 2: L56-64
-      - Slice 3: L65-69
+    Mapped Slices: [2, 3, 4, 5]
+      - Slice 2: L60-61
+      - Slice 3: L62-64
+      - Slice 4: L65-66
+      - Slice 5: L68-69
     Relationships (Edges between slices):
-      2 -> 3 [DD, Vars: ['x1', 'y1']]
-      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [DD, Vars: ['y1', 'x1']]
       2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['y1', 'x1']]
+      2 -> 5 [DD, Vars: ['y1', 'x1']]
+      3 -> 4 [CF]
+      4 -> 5 [CF]
 
 >>> Method: invokeStep (Oracle Lines: 37-43)
     Mapped Slices: [2, 3]
@@ -186,8 +227,8 @@ Project: JHotDraw5.2
       3 -> 4 [CF]
 
 >>> Method: write (Oracle Lines: 318-320)
-    Mapped Slices: [5]
-      - Slice 5: L318-320
+    Mapped Slices: [7]
+      - Slice 7: L318-320
     Relationships: None (Independent slices or single slice)
 
 >>> Method: execute (Oracle Lines: 37-40)
@@ -203,17 +244,17 @@ Project: JHotDraw5.2
 
 >>> Method: execute (Oracle Lines: 41-43)
     Mapped Slices: [3]
-      - Slice 3: L40-43
+      - Slice 3: L40-45
     Relationships: None (Independent slices or single slice)
 
 >>> Method: invokeStep (Oracle Lines: 42-62)
-    Mapped Slices: [3]
-      - Slice 3: L41-64
+    Mapped Slices: [4]
+      - Slice 4: L41-64
     Relationships: None (Independent slices or single slice)
 
 >>> Method: constrainX (Oracle Lines: 115-121)
-    Mapped Slices: [5]
-      - Slice 5: L114-122
+    Mapped Slices: [4]
+      - Slice 4: L114-122
     Relationships: None (Independent slices or single slice)
 
 >>> Method: constrainY (Oracle Lines: 144-150)
@@ -222,18 +263,20 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: updatePoints (Oracle Lines: 72-84)
-    Mapped Slices: [4]
-      - Slice 4: L67-94
+    Mapped Slices: [5]
+      - Slice 5: L71-83
     Relationships: None (Independent slices or single slice)
 
 >>> Method: getAttribute (Oracle Lines: 136-138)
-    Mapped Slices: [2]
-      - Slice 2: L136-138
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [2, 3]
+      - Slice 2: L136-137
+      - Slice 3: L138-138
+    Relationships (Edges between slices):
+      2 -> 3 [CF]
 
 >>> Method: write (Oracle Lines: 64-70)
     Mapped Slices: [1]
-      - Slice 1: L63-74
+      - Slice 1: L63-71
     Relationships: None (Independent slices or single slice)
 
 >>> Method: createContents (Oracle Lines: 60-63)
@@ -242,50 +285,67 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: mouseDown (Oracle Lines: 70-80)
-    Mapped Slices: [3]
-      - Slice 3: L66-81
+    Mapped Slices: [5]
+      - Slice 5: L70-80
     Relationships: None (Independent slices or single slice)
 
 >>> Method: scaleRotate (Oracle Lines: 192-201)
-    Mapped Slices: [1, 2, 3]
-      - Slice 1: L191-194
-      - Slice 2: L195-198
-      - Slice 3: L201-202
+    Mapped Slices: [2, 3, 4]
+      - Slice 2: L192-194
+      - Slice 3: L195-198
+      - Slice 4: L201-202
     Relationships (Edges between slices):
-      1 -> 2 [DD, Vars: ['sx', 'sy', 'n1']]
-      1 -> 2 [CF]
-      1 -> 3 [DD, Vars: ['sx', 'sy', 'n1']]
+      2 -> 3 [DD, Vars: ['sx', 'n1', 'sy']]
       2 -> 3 [CF]
+      2 -> 4 [DD, Vars: ['sx', 'n1', 'sy']]
+      3 -> 4 [CF]
 
 >>> Method: splitSegment (Oracle Lines: 268-281)
     Mapped Slices: [1, 2]
-      - Slice 1: L267-269
+      - Slice 1: L268-269
       - Slice 2: L271-280
     Relationships (Edges between slices):
-      1 -> 2 [DD, Vars: ['x', 'y', 'dist', 'best']]
+      1 -> 2 [DD, Vars: ['dist', 'best']]
       1 -> 2 [CF]
 
 >>> Method: chop (Oracle Lines: 481-488)
     Mapped Slices: [1]
-      - Slice 1: L480-488
+      - Slice 1: L481-488
     Relationships: None (Independent slices or single slice)
 
 >>> Method: draw (Oracle Lines: 42-48)
-    Mapped Slices: [1, 2, 3]
-      - Slice 1: L42-43
-      - Slice 2: L44-47
-      - Slice 3: L48-48
+    Mapped Slices: [1, 2]
+      - Slice 1: L42-42
+      - Slice 2: L43-48
     Relationships (Edges between slices):
-      1 -> 2 [DD, Vars: ['p1', 'r']]
+      1 -> 2 [DD, Vars: ['r']]
       1 -> 2 [CF]
-      1 -> 3 [DD, Vars: ['p1']]
-      2 -> 3 [CF]
 
 >>> Method: mouseDown (Oracle Lines: 51-60)
-    Mapped Slices: [1, 2, 3]
+    Mapped Slices: [1, 2, 3, 4]
       - Slice 1: L50-51
-      - Slice 2: L52-56
-      - Slice 3: L57-59
+      - Slice 2: L52-53
+      - Slice 3: L54-56
+      - Slice 4: L57-59
+    Relationships (Edges between slices):
+      1 -> 2 [DD, Vars: ['figure']]
+      1 -> 2 [CD, Reason: Nesting]
+      1 -> 2 [CF]
+      1 -> 3 [DD, Vars: ['figure']]
+      1 -> 3 [CD, Reason: Nesting]
+      1 -> 4 [DD, Vars: ['figure']]
+      1 -> 4 [CD, Reason: Nesting]
+      2 -> 3 [DD, Vars: ['attribute']]
+      2 -> 3 [CD, Reason: Nesting]
+      2 -> 3 [CF]
+      2 -> 4 [CD, Reason: Nesting]
+      3 -> 4 [CF]
+
+>>> Method: mouseUp (Oracle Lines: 94-103)
+    Mapped Slices: [1, 2, 3]
+      - Slice 1: L93-94
+      - Slice 2: L95-99
+      - Slice 3: L100-102
     Relationships (Edges between slices):
       1 -> 2 [DD, Vars: ['figure']]
       1 -> 2 [CD, Reason: Nesting]
@@ -295,41 +355,70 @@ Project: JHotDraw5.2
       2 -> 3 [CD, Reason: Nesting]
       2 -> 3 [CF]
 
->>> Method: mouseUp (Oracle Lines: 94-103)
-    Mapped Slices: [1]
-      - Slice 1: L93-104
-    Relationships: None (Independent slices or single slice)
-
 >>> Method: handlePopupMenu (Oracle Lines: 155-168)
-    Mapped Slices: [2, 3]
-      - Slice 2: L154-160
-      - Slice 3: L162-167
+    Mapped Slices: [4, 5, 6, 7, 8]
+      - Slice 4: L154-155
+      - Slice 5: L156-157
+      - Slice 6: L158-161
+      - Slice 7: L162-164
+      - Slice 8: L165-168
     Relationships (Edges between slices):
-      2 -> 3 [DD, Vars: ['comp', 'popup']]
-      2 -> 3 [CD, Reason: Nesting]
-      2 -> 3 [CD, Reason: Nesting]
-      2 -> 3 [CF]
+      4 -> 7 [DD, Vars: ['comp']]
+      4 -> 7 [CD, Reason: Nesting]
+      4 -> 8 [DD, Vars: ['comp']]
+      4 -> 8 [CD, Reason: Nesting]
+      4 -> 5 [CD, Reason: Nesting]
+      4 -> 5 [CF]
+      4 -> 6 [CD, Reason: Nesting]
+      5 -> 6 [DD, Vars: ['attribute1']]
+      5 -> 6 [CD, Reason: Nesting]
+      5 -> 6 [CF]
+      5 -> 7 [CD, Reason: Nesting]
+      5 -> 8 [CD, Reason: Nesting]
+      6 -> 8 [DD, Vars: ['popup']]
+      6 -> 7 [CF]
+      7 -> 8 [DD, Vars: ['newLocation']]
+      7 -> 8 [CF]
 
 >>> Method: promptOpen (Oracle Lines: 698-711)
-    Mapped Slices: [5]
-      - Slice 5: L698-711
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [7, 8, 9, 10, 11, 12]
+      - Slice 7: L698-698
+      - Slice 8: L699-700
+      - Slice 9: L701-701
+      - Slice 10: L702-704
+      - Slice 11: L705-708
+      - Slice 12: L709-711
+    Relationships (Edges between slices):
+      7 -> 8 [DD, Vars: ['file']]
+      7 -> 8 [CF]
+      7 -> 10 [DD, Vars: ['file']]
+      8 -> 9 [DD, Vars: ['restoredDrawing']]
+      8 -> 9 [CD, Reason: Nesting]
+      8 -> 9 [CF]
+      8 -> 10 [DD, Vars: ['restoredDrawing']]
+      8 -> 10 [CD, Reason: Nesting]
+      8 -> 11 [CD, Reason: Nesting]
+      8 -> 12 [CD, Reason: Nesting]
+      9 -> 10 [CD, Reason: Nesting]
+      9 -> 10 [CF]
+      9 -> 11 [CD, Reason: Nesting]
+      10 -> 11 [CF]
+      11 -> 8 [DD, Vars: ['file']]
+      11 -> 10 [DD, Vars: ['file']]
+      11 -> 12 [CF]
 
 >>> Method: promptSaveAs (Oracle Lines: 724-726)
-    Mapped Slices: [2]
-      - Slice 2: L724-726
-    Relationships: None (Independent slices or single slice)
+    Mapped Slices: [2, 3]
+      - Slice 2: L724-725
+      - Slice 3: L726-726
+    Relationships (Edges between slices):
+      2 -> 3 [DD, Vars: ['saveDialog1']]
+      2 -> 3 [CF]
 
 >>> Method: init (Oracle Lines: 71-94)
-    Mapped Slices: [3, 4, 5]
-      - Slice 3: L70-81
-      - Slice 4: L83-90
-      - Slice 5: L92-95
-    Relationships (Edges between slices):
-      3 -> 4 [DD, Vars: ['attributes']]
-      3 -> 4 [CF]
-      3 -> 5 [DD, Vars: ['attributes']]
-      4 -> 5 [CF]
+    Mapped Slices: [3]
+      - Slice 3: L70-95
+    Relationships: None (Independent slices or single slice)
 
 >>> Method: createAttributeChoices (Oracle Lines: 163-167)
     Mapped Slices: [5]
@@ -337,12 +426,20 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: loadDrawing (Oracle Lines: 435-442)
-    Mapped Slices: [3, 4]
-      - Slice 3: L435-436
-      - Slice 4: L437-443
+    Mapped Slices: [4, 5, 6, 7, 8]
+      - Slice 4: L435-435
+      - Slice 5: L436-436
+      - Slice 6: L437-438
+      - Slice 7: L439-440
+      - Slice 8: L441-442
     Relationships (Edges between slices):
-      3 -> 4 [DD, Vars: ['type']]
-      3 -> 4 [CF]
+      4 -> 5 [CF]
+      5 -> 6 [DD, Vars: ['type']]
+      5 -> 6 [CF]
+      5 -> 7 [DD, Vars: ['type']]
+      5 -> 8 [DD, Vars: ['type']]
+      6 -> 7 [CF]
+      7 -> 8 [CF]
 
 >>> Method: readDrawing (Oracle Lines: 452-465)
     Mapped Slices: [4]
@@ -350,13 +447,13 @@ Project: JHotDraw5.2
     Relationships: None (Independent slices or single slice)
 
 >>> Method: readFromStorableInput (Oracle Lines: 480-482)
-    Mapped Slices: [3]
-      - Slice 3: L479-483
+    Mapped Slices: [4]
+      - Slice 4: L479-484
     Relationships: None (Independent slices or single slice)
 
 >>> Method: readFromObjectInput (Oracle Lines: 496-498)
-    Mapped Slices: [2]
-      - Slice 2: L495-499
+    Mapped Slices: [3]
+      - Slice 3: L495-499
     Relationships: None (Independent slices or single slice)
 
 ============================================================
@@ -679,7 +776,7 @@ Project: MyWebMarket
       - Slice 1: L138-140
       - Slice 2: L142-145
     Relationships (Edges between slices):
-      1 -> 2 [DD, Vars: ['sess', 't', 'save']]
+      1 -> 2 [DD, Vars: ['save', 'sess', 't']]
       1 -> 2 [CF]
 
 >>> Method: update (Oracle Lines: 162-167)
@@ -695,7 +792,7 @@ Project: MyWebMarket
       - Slice 1: L181-183
       - Slice 2: L185-188
     Relationships (Edges between slices):
-      1 -> 2 [DD, Vars: ['sess', 't', 'delete']]
+      1 -> 2 [DD, Vars: ['sess', 'delete', 't']]
       1 -> 2 [CF]
 
 >>> Method: edit (Oracle Lines: 200-206)
@@ -703,7 +800,7 @@ Project: MyWebMarket
       - Slice 2: L200-203
       - Slice 3: L205-206
     Relationships (Edges between slices):
-      2 -> 3 [DD, Vars: ['t', 'sess']]
+      2 -> 3 [DD, Vars: ['sess', 't']]
       2 -> 3 [CF]
 
 >>> Method: getProductPrice (Oracle Lines: 15-28)
@@ -906,7 +1003,7 @@ Project: wikidev-filters
       - Slice 2: L352-356
       - Slice 3: L357-367
     Relationships (Edges between slices):
-      2 -> 3 [DD, Vars: ['type', 'artifact', 'height', 'line', 'block']]
+      2 -> 3 [DD, Vars: ['type', 'artifact', 'block', 'height', 'line']]
       2 -> 3 [CD, Reason: Nesting]
       2 -> 3 [CD, Reason: Nesting]
       2 -> 3 [CF]
@@ -926,7 +1023,7 @@ Project: wikidev-filters
       - Slice 3: L209-226
       - Slice 4: L227-235
     Relationships (Edges between slices):
-      3 -> 4 [DD, Vars: ['type', 'artifact', 'height', 'line', 'block']]
+      3 -> 4 [DD, Vars: ['type', 'artifact', 'block', 'height', 'line']]
       3 -> 4 [CD, Reason: Nesting]
       3 -> 4 [CD, Reason: Nesting]
       3 -> 4 [CF]

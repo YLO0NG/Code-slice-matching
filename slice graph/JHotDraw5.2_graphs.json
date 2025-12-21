@@ -10,11 +10,11 @@
         "end_line": 44,
         "defs": [],
         "uses": [
-          "NULL",
-          "storable",
-          "fStream",
+          "print",
           "space",
-          "print"
+          "storable",
+          "NULL",
+          "fStream"
         ],
         "is_terminal": true,
         "has_control": true
@@ -28,14 +28,14 @@
           "ref"
         ],
         "uses": [
-          "storable",
-          "indexOf",
-          "mapped",
-          "fMap",
-          "fStream",
-          "REF",
+          "print",
           "space",
-          "print"
+          "indexOf",
+          "REF",
+          "mapped",
+          "storable",
+          "fStream",
+          "fMap"
         ],
         "is_terminal": true,
         "has_control": true
@@ -47,17 +47,17 @@
         "end_line": 63,
         "defs": [],
         "uses": [
-          "startNewLine",
           "decrementIndent",
-          "storable",
-          "incrementIndent",
-          "getClass",
-          "getName",
-          "write",
+          "print",
           "map",
-          "fStream",
+          "incrementIndent",
+          "getName",
           "space",
-          "print"
+          "startNewLine",
+          "getClass",
+          "fStream",
+          "storable",
+          "write"
         ],
         "is_terminal": false,
         "has_control": false
@@ -118,15 +118,13 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 162,
-        "end_line": 163,
+        "end_line": 162,
         "defs": [
           "output"
         ],
         "uses": [
-          "StorableOutput",
           "stream",
-          "writeStorable",
-          "saveDrawing"
+          "StorableOutput"
         ],
         "is_terminal": false,
         "has_control": false
@@ -134,6 +132,20 @@
       {
         "id": 3,
         "label": "Slice 3",
+        "start_line": 163,
+        "end_line": 163,
+        "defs": [],
+        "uses": [
+          "output",
+          "writeStorable",
+          "saveDrawing"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 164,
         "end_line": 164,
         "defs": [],
@@ -145,15 +157,15 @@
         "has_control": false
       },
       {
-        "id": 4,
-        "label": "Slice 4",
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 165,
         "end_line": 170,
         "defs": [],
         "uses": [
           "getFileExtension",
-          "fileName",
-          "hasCorrectFileExtension"
+          "hasCorrectFileExtension",
+          "fileName"
         ],
         "is_terminal": true,
         "has_control": true
@@ -187,8 +199,21 @@
         "type": "CF"
       },
       {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "output"
+        ]
+      },
+      {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -201,32 +226,26 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 126,
-        "end_line": 128,
+        "end_line": 126,
         "defs": [
           "image"
         ],
         "uses": [
           "Image",
-          "filename",
-          "basicGetImage"
+          "basicGetImage",
+          "filename"
         ],
-        "is_terminal": true,
-        "has_control": true
+        "is_terminal": false,
+        "has_control": false
       },
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 130,
-        "end_line": 133,
+        "start_line": 127,
+        "end_line": 128,
         "defs": [],
         "uses": [
-          "Image",
-          "filename",
-          "fMap",
-          "containsKey",
-          "get",
-          "fComponent",
-          "loadRegisteredImages"
+          "image"
         ],
         "is_terminal": true,
         "has_control": true
@@ -234,6 +253,41 @@
       {
         "id": 3,
         "label": "Slice 3",
+        "start_line": 129,
+        "end_line": 130,
+        "defs": [],
+        "uses": [
+          "images",
+          "load",
+          "fComponent",
+          "registered",
+          "and",
+          "again",
+          "loadRegisteredImages"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 131,
+        "end_line": 133,
+        "defs": [],
+        "uses": [
+          "Image",
+          "fMap",
+          "get",
+          "filename",
+          "again",
+          "containsKey"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 134,
         "end_line": 134,
         "defs": [],
@@ -246,8 +300,10 @@
       {
         "from": 1,
         "to": 2,
-        "type": "CD",
-        "reason": "GuardCheck"
+        "type": "DD",
+        "vars": [
+          "image"
+        ]
       },
       {
         "from": 1,
@@ -255,12 +311,6 @@
         "type": "CF"
       },
       {
-        "from": 1,
-        "to": 3,
-        "type": "CD",
-        "reason": "GuardCheck"
-      },
-      {
         "from": 2,
         "to": 3,
         "type": "CD",
@@ -269,6 +319,34 @@
       {
         "from": 2,
         "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -288,10 +366,10 @@
           "co"
         ],
         "uses": [
-          "Math",
-          "angle",
           "cos",
-          "sin"
+          "Math",
+          "sin",
+          "angle"
         ],
         "is_terminal": false,
         "has_control": false
@@ -316,18 +394,18 @@
         "start_line": 137,
         "end_line": 147,
         "defs": [
-          "value",
-          "max"
+          "max",
+          "value"
         ],
         "uses": [
           "Math",
-          "e",
           "x",
           "r",
-          "co",
-          "si",
           "width",
-          "abs"
+          "e",
+          "si",
+          "abs",
+          "co"
         ],
         "is_terminal": false,
         "has_control": true
@@ -339,14 +417,14 @@
         "end_line": 152,
         "defs": [],
         "uses": [
-          "height",
           "Math",
-          "e",
+          "y",
           "r",
           "co",
           "range",
-          "y",
+          "e",
           "si",
+          "height",
           "abs"
         ],
         "is_terminal": false,
@@ -359,10 +437,10 @@
         "end_line": 153,
         "defs": [],
         "uses": [
-          "x",
+          "y",
           "Point",
           "r",
-          "y"
+          "x"
         ],
         "is_terminal": true,
         "has_control": false
@@ -438,9 +516,9 @@
         "end_line": 172,
         "defs": [],
         "uses": [
-          "removeDrawingChangeListener",
           "fDrawing",
-          "clearSelection"
+          "clearSelection",
+          "removeDrawingChangeListener"
         ],
         "is_terminal": false,
         "has_control": true
@@ -449,41 +527,24 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 174,
-        "end_line": 176,
+        "end_line": 174,
         "defs": [],
         "uses": [
-          "addDrawingChangeListener",
           "d",
           "fDrawing"
         ],
         "is_terminal": false,
-        "has_control": true
+        "has_control": false
       },
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 178,
-        "end_line": 184,
-        "defs": [
-          "k",
-          "r",
-          "d1"
-        ],
+        "start_line": 175,
+        "end_line": 176,
+        "defs": [],
         "uses": [
-          "hasMoreElements",
-          "max",
-          "Dimension",
-          "y",
-          "width",
-          "drawing",
-          "height",
-          "Math",
-          "figures",
-          "x",
-          "displayBox",
-          "Rectangle",
-          "FigureEnumeration",
-          "nextFigure"
+          "fDrawing",
+          "addDrawingChangeListener"
         ],
         "is_terminal": false,
         "has_control": true
@@ -491,22 +552,65 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 185,
-        "end_line": 189,
-        "defs": [],
+        "start_line": 178,
+        "end_line": 179,
+        "defs": [
+          "k",
+          "d1"
+        ],
         "uses": [
-          "setSize",
+          "FigureEnumeration",
+          "figures",
+          "drawing",
+          "Dimension"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 180,
+        "end_line": 184,
+        "defs": [
+          "r"
+        ],
+        "uses": [
+          "nextFigure",
+          "max",
+          "hasMoreElements",
+          "Math",
+          "y",
+          "Rectangle",
           "d1",
+          "displayBox",
+          "k",
+          "width",
           "height",
-          "fViewSize",
-          "width"
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 5,
-        "label": "Slice 5",
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 185,
+        "end_line": 189,
+        "defs": [],
+        "uses": [
+          "setSize",
+          "fViewSize",
+          "width",
+          "height",
+          "d1"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
         "start_line": 190,
         "end_line": 190,
         "defs": [],
@@ -531,19 +635,38 @@
       {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "k",
+          "d1"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
         "type": "DD",
         "vars": [
           "d1"
         ]
       },
       {
-        "from": 3,
-        "to": 4,
+        "from": 5,
+        "to": 6,
         "type": "CF"
       },
       {
-        "from": 4,
-        "to": 5,
+        "from": 6,
+        "to": 7,
         "type": "CF"
       }
     ]
@@ -555,58 +678,106 @@
       {
         "id": 1,
         "label": "Slice 1",
+        "start_line": 380,
+        "end_line": 380,
+        "defs": [
+          "handle"
+        ],
+        "uses": [
+          "Handle"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
         "start_line": 381,
         "end_line": 390,
         "defs": [
-          "figure",
+          "k1",
           "kk",
-          "k1"
+          "figure"
         ],
         "uses": [
-          "nextElement",
-          "handles",
-          "Figure",
-          "hasMoreElements",
-          "Vector",
           "nextFigure",
           "addElement",
-          "fSelectionHandles",
-          "elements",
-          "FigureEnumeration",
           "selectionElements",
-          "Enumeration"
+          "nextElement",
+          "Enumeration",
+          "FigureEnumeration",
+          "hasMoreElements",
+          "fSelectionHandles",
+          "Figure",
+          "elements",
+          "Vector",
+          "handles"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 2,
-        "label": "Slice 2",
+        "id": 3,
+        "label": "Slice 3",
         "start_line": 392,
-        "end_line": 398,
+        "end_line": 397,
         "defs": [
           "k"
         ],
         "uses": [
-          "containsPoint",
           "handle",
-          "elements",
           "nextElement",
-          "x",
-          "Handle",
+          "Enumeration",
           "hasMoreElements",
           "y",
+          "Handle",
           "fSelectionHandles",
-          "Enumeration"
+          "elements",
+          "containsPoint",
+          "x"
         ],
         "is_terminal": true,
         "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 398,
+        "end_line": 398,
+        "defs": [],
+        "uses": [],
+        "is_terminal": true,
+        "has_control": false
       }
     ],
     "edges": [
       {
         "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "handle"
+        ]
+      },
+      {
+        "from": 1,
         "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
         "type": "CF"
       }
     ]
@@ -621,16 +792,16 @@
         "start_line": 436,
         "end_line": 438,
         "defs": [
+          "max",
           "value",
-          "size",
-          "max"
+          "size"
         ],
         "uses": [
-          "getSize",
           "p",
+          "getSize",
+          "width",
           "x",
-          "Dimension",
-          "width"
+          "Dimension"
         ],
         "is_terminal": false,
         "has_control": false
@@ -639,13 +810,11 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 439,
-        "end_line": 445,
+        "end_line": 442,
         "defs": [],
         "uses": [
-          "p",
-          "x",
-          "value",
-          "max"
+          "max",
+          "value"
         ],
         "is_terminal": false,
         "has_control": true
@@ -653,16 +822,13 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 446,
-        "end_line": 446,
+        "start_line": 445,
+        "end_line": 445,
         "defs": [],
         "uses": [
-          "range",
-          "height",
-          "Geom",
+          "value",
           "p",
-          "y",
-          "size"
+          "x"
         ],
         "is_terminal": false,
         "has_control": false
@@ -670,16 +836,45 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 448,
-        "end_line": 450,
+        "start_line": 446,
+        "end_line": 446,
         "defs": [],
         "uses": [
+          "y",
+          "size",
+          "height",
+          "range",
           "p",
+          "Geom"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 448,
+        "end_line": 449,
+        "defs": [],
+        "uses": [
+          "fConstrainer",
           "constrainPoint",
-          "fConstrainer"
+          "p"
         ],
         "is_terminal": true,
         "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 450,
+        "end_line": 450,
+        "defs": [],
+        "uses": [
+          "p"
+        ],
+        "is_terminal": true,
+        "has_control": false
       }
     ],
     "edges": [
@@ -688,8 +883,8 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "value",
-          "max"
+          "max",
+          "value"
         ]
       },
       {
@@ -700,6 +895,14 @@
       {
         "from": 1,
         "to": 3,
+        "type": "DD",
+        "vars": [
+          "value"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
         "type": "DD",
         "vars": [
           "size"
@@ -713,6 +916,22 @@
       {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 5,
+        "to": 6,
         "type": "CF"
       }
     ]
@@ -725,18 +944,13 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 31,
-        "end_line": 32,
+        "end_line": 31,
         "defs": [
-          "selection",
           "lastClick"
         ],
         "uses": [
-          "Point",
           "fView",
-          "Clipboard",
-          "getContents",
-          "getClipboard",
-          "FigureSelection"
+          "Point"
         ],
         "is_terminal": false,
         "has_control": false
@@ -744,73 +958,105 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 33,
+        "start_line": 32,
+        "end_line": 33,
+        "defs": [
+          "selection"
+        ],
+        "uses": [
+          "getContents",
+          "FigureSelection",
+          "Clipboard",
+          "getClipboard"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 34,
         "end_line": 36,
         "defs": [
           "figures"
         ],
         "uses": [
-          "size",
-          "Vector",
-          "selection",
           "getData",
+          "selection",
+          "size",
           "TYPE",
+          "Vector",
           "FigureSelection"
         ],
         "is_terminal": true,
         "has_control": true
       },
       {
-        "id": 3,
-        "label": "Slice 3",
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 37,
         "end_line": 40,
         "defs": [
-          "k",
-          "r1"
+          "r1",
+          "k"
         ],
         "uses": [
-          "add",
           "nextElement",
+          "Enumeration",
           "figures",
-          "Figure",
           "hasMoreElements",
-          "displayBox",
-          "Rectangle",
+          "Figure",
           "elements",
-          "Enumeration"
+          "Rectangle",
+          "displayBox",
+          "add"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 4,
-        "label": "Slice 4",
-        "start_line": 43,
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 42,
         "end_line": 43,
-        "defs": [],
+        "defs": [
+          "r"
+        ],
         "uses": [
+          "clearSelection",
+          "r1",
           "fView",
-          "clearSelection"
+          "Rectangle"
         ],
         "is_terminal": false,
         "has_control": false
       },
       {
-        "id": 5,
-        "label": "Slice 5",
+        "id": 6,
+        "label": "Slice 6",
         "start_line": 45,
+        "end_line": 45,
+        "defs": [],
+        "uses": [
+          "figures",
+          "y",
+          "r",
+          "insertFigures",
+          "lastClick",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 46,
         "end_line": 46,
         "defs": [],
         "uses": [
-          "insertFigures",
-          "figures",
-          "x",
-          "r",
           "checkDamage",
-          "lastClick",
-          "fView",
-          "y"
+          "fView"
         ],
         "is_terminal": false,
         "has_control": false
@@ -819,31 +1065,23 @@
     "edges": [
       {
         "from": 1,
-        "to": 2,
-        "type": "DD",
-        "vars": [
-          "selection"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CF"
-      },
-      {
-        "from": 1,
-        "to": 5,
+        "to": 6,
         "type": "DD",
         "vars": [
           "lastClick"
         ]
       },
       {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
         "from": 2,
         "to": 3,
         "type": "DD",
         "vars": [
-          "figures"
+          "selection"
         ]
       },
       {
@@ -851,37 +1089,11 @@
         "to": 3,
         "type": "CD",
         "reason": "Nesting"
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CD",
-        "reason": "GuardCheck"
       },
       {
         "from": 2,
         "to": 3,
         "type": "CF"
-      },
-      {
-        "from": 2,
-        "to": 5,
-        "type": "DD",
-        "vars": [
-          "figures"
-        ]
-      },
-      {
-        "from": 2,
-        "to": 5,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 2,
-        "to": 5,
-        "type": "CD",
-        "reason": "GuardCheck"
       },
       {
         "from": 2,
@@ -891,6 +1103,32 @@
       },
       {
         "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "figures"
+        ]
+      },
+      {
+        "from": 3,
         "to": 4,
         "type": "CD",
         "reason": "GuardCheck"
@@ -901,8 +1139,60 @@
         "type": "CF"
       },
       {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "figures"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
         "from": 4,
         "to": 5,
+        "type": "DD",
+        "vars": [
+          "r1"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "r"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
         "type": "CF"
       }
     ]
@@ -918,9 +1208,9 @@
         "end_line": 66,
         "defs": [],
         "uses": [
+          "oldl",
           "a",
-          "b",
-          "oldl"
+          "b"
         ],
         "is_terminal": true,
         "has_control": true
@@ -932,9 +1222,9 @@
         "end_line": 68,
         "defs": [],
         "uses": [
+          "oldl",
           "a",
-          "b",
-          "oldl"
+          "b"
         ],
         "is_terminal": true,
         "has_control": true
@@ -945,15 +1235,15 @@
         "start_line": 69,
         "end_line": 70,
         "defs": [
-          "b2",
-          "a2"
+          "a2",
+          "b2"
         ],
         "uses": [
+          "oldl",
           "a",
-          "removeInternal",
           "EventListener",
           "b",
-          "oldl",
+          "removeInternal",
           "FigureChangeListener"
         ],
         "is_terminal": false,
@@ -966,10 +1256,10 @@
         "end_line": 72,
         "defs": [],
         "uses": [
-          "b",
+          "a2",
           "a",
-          "b2",
-          "a2"
+          "b",
+          "b2"
         ],
         "is_terminal": true,
         "has_control": true
@@ -984,10 +1274,10 @@
           "b1"
         ],
         "uses": [
-          "FigureChangeEventMulticaster",
-          "b2",
           "a2",
-          "FigureChangeListener"
+          "b2",
+          "FigureChangeListener",
+          "FigureChangeEventMulticaster"
         ],
         "is_terminal": true,
         "has_control": true
@@ -1051,8 +1341,8 @@
         "to": 4,
         "type": "DD",
         "vars": [
-          "b2",
-          "a2"
+          "a2",
+          "b2"
         ]
       },
       {
@@ -1065,8 +1355,8 @@
         "to": 5,
         "type": "DD",
         "vars": [
-          "b2",
-          "a2"
+          "a2",
+          "b2"
         ]
       },
       {
@@ -1095,10 +1385,10 @@
           "p"
         ],
         "uses": [
-          "getX",
           "e",
           "getY",
-          "Point"
+          "Point",
+          "getX"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1107,19 +1397,13 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 115,
-        "end_line": 121,
+        "end_line": 116,
         "defs": [
           "c"
         ],
         "uses": [
-          "findTarget",
-          "drawing",
-          "findSource",
-          "x",
-          "Figure",
-          "fStartConnector",
-          "y",
-          "fConnection"
+          "fConnection",
+          "Figure"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1127,18 +1411,17 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 123,
-        "end_line": 130,
+        "start_line": 118,
+        "end_line": 121,
         "defs": [],
         "uses": [
-          "figure",
-          "connectorVisibility",
-          "mouse",
-          "fTarget",
-          "track",
-          "containing",
-          "the",
-          "c"
+          "y",
+          "findSource",
+          "drawing",
+          "findTarget",
+          "c",
+          "fStartConnector",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1146,19 +1429,18 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 132,
-        "end_line": 136,
-        "defs": [
-          "cc"
-        ],
+        "start_line": 123,
+        "end_line": 130,
+        "defs": [],
         "uses": [
-          "e",
-          "getY",
-          "getX",
-          "Connector",
-          "fConnectorTarget",
-          "findConnector",
-          "c"
+          "connectorVisibility",
+          "track",
+          "fTarget",
+          "c",
+          "containing",
+          "mouse",
+          "figure",
+          "the"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1166,21 +1448,19 @@
       {
         "id": 5,
         "label": "Slice 5",
-        "start_line": 138,
-        "end_line": 141,
-        "defs": [],
+        "start_line": 132,
+        "end_line": 136,
+        "defs": [
+          "cc"
+        ],
         "uses": [
-          "p",
-          "x",
-          "Geom",
-          "center",
-          "checkDamage",
-          "view",
-          "displayBox",
-          "endPoint",
-          "fConnectorTarget",
-          "y",
-          "fConnection"
+          "c",
+          "findConnector",
+          "getY",
+          "getX",
+          "Connector",
+          "e",
+          "fConnectorTarget"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1188,6 +1468,28 @@
       {
         "id": 6,
         "label": "Slice 6",
+        "start_line": 138,
+        "end_line": 141,
+        "defs": [],
+        "uses": [
+          "fConnection",
+          "view",
+          "p",
+          "Geom",
+          "endPoint",
+          "checkDamage",
+          "y",
+          "center",
+          "displayBox",
+          "x",
+          "fConnectorTarget"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
         "start_line": 143,
         "end_line": 146,
         "defs": [
@@ -1195,11 +1497,11 @@
         ],
         "uses": [
           "fSplitPoint",
-          "x",
-          "fEditedConnection",
+          "y",
           "setPointAt",
+          "fEditedConnection",
           "Point",
-          "y"
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1208,7 +1510,7 @@
     "edges": [
       {
         "from": 1,
-        "to": 5,
+        "to": 6,
         "type": "DD",
         "vars": [
           "p"
@@ -1255,12 +1557,26 @@
       {
         "from": 2,
         "to": 5,
+        "type": "DD",
+        "vars": [
+          "c"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
         "type": "CD",
         "reason": "Nesting"
       },
       {
         "from": 2,
         "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 7,
         "type": "CD",
         "reason": "Nesting"
       },
@@ -1278,6 +1594,11 @@
         "from": 5,
         "to": 6,
         "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
       }
     ]
   },
@@ -1291,19 +1612,19 @@
         "start_line": 240,
         "end_line": 248,
         "defs": [
-          "figure1",
-          "k1"
+          "k1",
+          "figure1"
         ],
         "uses": [
-          "containsPoint",
-          "x",
+          "nextFigure",
           "figuresReverse",
-          "hasMoreElements",
-          "Figure",
-          "y",
-          "FigureEnumeration",
           "without",
-          "nextFigure"
+          "FigureEnumeration",
+          "hasMoreElements",
+          "y",
+          "Figure",
+          "containsPoint",
+          "x"
         ],
         "is_terminal": true,
         "has_control": true
@@ -1314,20 +1635,20 @@
         "start_line": 249,
         "end_line": 255,
         "defs": [
-          "figure",
-          "k"
+          "k",
+          "figure"
         ],
         "uses": [
-          "containsPoint",
+          "nextFigure",
           "includes",
-          "x",
           "figuresReverse",
-          "hasMoreElements",
-          "Figure",
-          "y",
           "FigureEnumeration",
-          "without",
-          "nextFigure"
+          "hasMoreElements",
+          "x",
+          "y",
+          "Figure",
+          "containsPoint",
+          "without"
         ],
         "is_terminal": true,
         "has_control": true
@@ -1355,49 +1676,75 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 265,
-        "end_line": 274,
+        "end_line": 266,
         "defs": [
-          "figure1",
-          "k1",
-          "fr1"
+          "k1"
         ],
         "uses": [
-          "r",
-          "Figure",
-          "figuresReverse",
-          "hasMoreElements",
-          "displayBox",
-          "Rectangle",
-          "intersects",
           "FigureEnumeration",
-          "without",
-          "nextFigure"
+          "figuresReverse",
+          "without"
         ],
-        "is_terminal": true,
+        "is_terminal": false,
         "has_control": true
       },
       {
         "id": 2,
         "label": "Slice 2",
+        "start_line": 267,
+        "end_line": 274,
+        "defs": [
+          "fr1",
+          "figure1"
+        ],
+        "uses": [
+          "nextFigure",
+          "hasMoreElements",
+          "Figure",
+          "r",
+          "intersects",
+          "Rectangle",
+          "k1",
+          "displayBox"
+        ],
+        "is_terminal": true,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
         "start_line": 275,
+        "end_line": 275,
+        "defs": [
+          "k"
+        ],
+        "uses": [
+          "FigureEnumeration",
+          "figuresReverse"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 276,
         "end_line": 282,
         "defs": [
           "figure",
-          "k",
           "fr"
         ],
         "uses": [
-          "r",
-          "Figure",
-          "figuresReverse",
-          "hasMoreElements",
-          "displayBox",
-          "Rectangle",
-          "intersects",
+          "nextFigure",
           "includes",
-          "FigureEnumeration",
-          "without",
-          "nextFigure"
+          "hasMoreElements",
+          "Figure",
+          "r",
+          "intersects",
+          "Rectangle",
+          "displayBox",
+          "k",
+          "without"
         ],
         "is_terminal": true,
         "has_control": true
@@ -1407,12 +1754,50 @@
       {
         "from": 1,
         "to": 2,
-        "type": "CD",
-        "reason": "GuardCheck"
+        "type": "DD",
+        "vars": [
+          "k1"
+        ]
       },
       {
         "from": 1,
         "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "k"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
         "type": "CF"
       }
     ]
@@ -1425,16 +1810,13 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 38,
-        "end_line": 41,
+        "end_line": 38,
         "defs": [],
         "uses": [
+          "addElement",
           "f",
           "southEast",
-          "northEast",
-          "addElement",
-          "handles",
-          "northWest",
-          "southWest"
+          "handles"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1442,17 +1824,104 @@
       {
         "id": 2,
         "label": "Slice 2",
+        "start_line": 39,
+        "end_line": 39,
+        "defs": [],
+        "uses": [
+          "addElement",
+          "f",
+          "southWest",
+          "handles"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 40,
+        "end_line": 40,
+        "defs": [],
+        "uses": [
+          "northEast",
+          "addElement",
+          "f",
+          "handles"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 41,
+        "end_line": 41,
+        "defs": [],
+        "uses": [
+          "handles",
+          "addElement",
+          "f",
+          "northWest"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 42,
+        "end_line": 42,
+        "defs": [],
+        "uses": [
+          "south",
+          "addElement",
+          "f",
+          "handles"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 43,
+        "end_line": 43,
+        "defs": [],
+        "uses": [
+          "addElement",
+          "f",
+          "north",
+          "handles"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 44,
+        "end_line": 44,
+        "defs": [],
+        "uses": [
+          "east",
+          "addElement",
+          "f",
+          "handles"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 45,
         "end_line": 45,
         "defs": [],
         "uses": [
-          "f",
-          "east",
-          "south",
-          "west",
           "addElement",
-          "handles",
-          "north"
+          "f",
+          "west",
+          "handles"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1462,6 +1931,36 @@
       {
         "from": 1,
         "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
         "type": "CF"
       }
     ]
@@ -1474,19 +1973,12 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 209,
-        "end_line": 215,
-        "defs": [
-          "newEnd"
-        ],
+        "end_line": 209,
+        "defs": [],
         "uses": [
           "e",
-          "setEnd",
-          "start",
-          "getFigure",
           "figureAt",
-          "duration",
-          "end",
-          "notifyPostTasks"
+          "getFigure"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1494,22 +1986,207 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 216,
-        "end_line": 219,
+        "start_line": 210,
+        "end_line": 210,
+        "defs": [
+          "newEnd"
+        ],
+        "uses": [
+          "start",
+          "duration"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 211,
+        "end_line": 211,
         "defs": [],
         "uses": [
-          "changed",
-          "layout",
+          "newEnd",
+          "end"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 212,
+        "end_line": 213,
+        "defs": [],
+        "uses": [
+          "setEnd",
+          "notifyPostTasks",
+          "newEnd"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 214,
+        "end_line": 214,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 216,
+        "end_line": 216,
+        "defs": [],
+        "uses": [
           "needsLayout"
         ],
         "is_terminal": false,
         "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 217,
+        "end_line": 218,
+        "defs": [],
+        "uses": [
+          "layout",
+          "changed"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 219,
+        "end_line": 219,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
       }
     ],
     "edges": [
       {
         "from": 1,
         "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "newEnd"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "newEnd"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 7,
+        "to": 8,
         "type": "CF"
       }
     ]
@@ -1527,8 +2204,8 @@
           "newEnd"
         ],
         "uses": [
-          "duration",
-          "start"
+          "start",
+          "duration"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1537,12 +2214,11 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 239,
-        "end_line": 240,
+        "end_line": 239,
         "defs": [],
         "uses": [
-          "end",
           "newEnd",
-          "setEnd"
+          "end"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1550,22 +2226,57 @@
       {
         "id": 3,
         "label": "Slice 3",
+        "start_line": 240,
+        "end_line": 240,
+        "defs": [],
+        "uses": [
+          "setEnd",
+          "newEnd"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 241,
-        "end_line": 243,
+        "end_line": 241,
         "defs": [
           "i"
         ],
         "uses": [
-          "nextElement",
           "fPostTasks",
-          "PertFigure",
-          "updateDurations",
-          "hasMoreElements",
           "elements",
           "Enumeration"
         ],
         "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 242,
+        "end_line": 243,
+        "defs": [],
+        "uses": [
+          "hasMoreElements",
+          "i",
+          "updateDurations",
+          "nextElement",
+          "PertFigure"
+        ],
+        "is_terminal": false,
         "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 244,
+        "end_line": 244,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
       }
     ],
     "edges": [
@@ -1583,6 +2294,14 @@
         "type": "CF"
       },
       {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "newEnd"
+        ]
+      },
+      {
         "from": 2,
         "to": 3,
         "type": "CD",
@@ -1591,6 +2310,47 @@
       {
         "from": 2,
         "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "i"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
         "type": "CF"
       }
     ]
@@ -1606,8 +2366,8 @@
         "end_line": 261,
         "defs": [],
         "uses": [
-          "dw",
-          "write"
+          "write",
+          "dw"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1619,13 +2379,13 @@
         "end_line": 265,
         "defs": [],
         "uses": [
-          "fDisplayBox",
-          "y",
           "height",
-          "writeInt",
-          "x",
+          "y",
           "width",
-          "dw"
+          "fDisplayBox",
+          "dw",
+          "writeInt",
+          "x"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1639,16 +2399,16 @@
           "i"
         ],
         "uses": [
-          "writeInt",
-          "nextElement",
-          "fPreTasks",
-          "size",
-          "hasMoreElements",
-          "writeStorable",
-          "elements",
           "Storable",
+          "nextElement",
+          "Enumeration",
+          "writeStorable",
           "dw",
-          "Enumeration"
+          "hasMoreElements",
+          "size",
+          "elements",
+          "fPreTasks",
+          "writeInt"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1697,8 +2457,8 @@
         "end_line": 282,
         "defs": [],
         "uses": [
-          "dr",
-          "read"
+          "read",
+          "dr"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1710,10 +2470,10 @@
         "end_line": 287,
         "defs": [],
         "uses": [
-          "dr",
           "fDisplayBox",
-          "Rectangle",
-          "readInt"
+          "readInt",
+          "dr",
+          "Rectangle"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1737,17 +2497,17 @@
         "end_line": 293,
         "defs": [
           "i",
-          "size",
-          "v"
+          "v",
+          "size"
         ],
         "uses": [
-          "fPreTasks",
-          "Figure",
-          "Vector",
-          "dr",
-          "readStorable",
           "addElement",
-          "readInt"
+          "readInt",
+          "readStorable",
+          "Figure",
+          "dr",
+          "Vector",
+          "fPreTasks"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1759,8 +2519,8 @@
         "end_line": 294,
         "defs": [],
         "uses": [
-          "dr",
           "fPostTasks",
+          "dr",
           "readTasks"
         ],
         "is_terminal": false,
@@ -1816,10 +2576,10 @@
           "fb"
         ],
         "uses": [
-          "Helvetica",
+          "Font",
           "setFont",
-          "BOLD",
-          "Font"
+          "Helvetica",
+          "BOLD"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1831,14 +2591,14 @@
         "end_line": 135,
         "defs": [],
         "uses": [
-          "south",
-          "west",
-          "east",
-          "RelativeLocator",
-          "Vector",
-          "LocatorConnector",
-          "fConnectors",
           "addElement",
+          "RelativeLocator",
+          "west",
+          "south",
+          "fConnectors",
+          "LocatorConnector",
+          "east",
+          "Vector",
           "north"
         ],
         "is_terminal": false,
@@ -1866,16 +2626,12 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 33,
-        "end_line": 35,
+        "end_line": 33,
         "defs": [
           "pressedFigure"
         ],
         "uses": [
-          "drawing",
-          "x",
-          "Figure",
-          "findFigureInside",
-          "y"
+          "Figure"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1883,34 +2639,36 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 36,
-        "end_line": 46,
-        "defs": [
-          "event"
-        ],
+        "start_line": 35,
+        "end_line": 35,
+        "defs": [],
         "uses": [
-          "FloatingTextField",
-          "actionPerformed",
-          "endAction",
-          "addActionListener",
-          "fTextField",
-          "ActionListener",
-          "ActionEvent",
-          "pressedFigure"
+          "y",
+          "drawing",
+          "findFigureInside",
+          "pressedFigure",
+          "x"
         ],
         "is_terminal": false,
-        "has_control": true
+        "has_control": false
       },
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 48,
-        "end_line": 49,
-        "defs": [],
+        "start_line": 36,
+        "end_line": 45,
+        "defs": [
+          "event"
+        ],
         "uses": [
-          "endEdit",
-          "pressedFigure",
-          "fURLTarget"
+          "ActionEvent",
+          "fTextField",
+          "FloatingTextField",
+          "actionPerformed",
+          "endAction",
+          "ActionListener",
+          "addActionListener",
+          "pressedFigure"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1918,27 +2676,51 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 50,
-        "end_line": 55,
+        "start_line": 48,
+        "end_line": 49,
         "defs": [],
         "uses": [
-          "fieldBounds",
-          "createOverlay",
           "fURLTarget",
-          "Container",
-          "getURL",
-          "setBounds",
-          "view",
-          "fTextField",
-          "pressedFigure"
+          "pressedFigure",
+          "endEdit"
         ],
-        "is_terminal": true,
+        "is_terminal": false,
         "has_control": true
       },
       {
         "id": 5,
         "label": "Slice 5",
-        "start_line": 56,
+        "start_line": 50,
+        "end_line": 54,
+        "defs": [],
+        "uses": [
+          "fieldBounds",
+          "getURL",
+          "fURLTarget",
+          "Container",
+          "view",
+          "fTextField",
+          "setBounds",
+          "createOverlay",
+          "pressedFigure"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 55,
+        "end_line": 55,
+        "defs": [],
+        "uses": [],
+        "is_terminal": true,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 57,
         "end_line": 57,
         "defs": [],
         "uses": [
@@ -1979,10 +2761,12 @@
         ]
       },
       {
-        "from": 2,
-        "to": 3,
-        "type": "CD",
-        "reason": "Nesting"
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "pressedFigure"
+        ]
       },
       {
         "from": 2,
@@ -1990,14 +2774,8 @@
         "type": "CF"
       },
       {
-        "from": 2,
+        "from": 3,
         "to": 4,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 2,
-        "to": 5,
         "type": "CD",
         "reason": "Nesting"
       },
@@ -2007,14 +2785,42 @@
         "type": "CF"
       },
       {
-        "from": 4,
+        "from": 3,
         "to": 5,
         "type": "CD",
-        "reason": "GuardCheck"
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
       },
       {
         "from": 4,
         "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 6,
+        "to": 7,
         "type": "CF"
       }
     ]
@@ -2032,13 +2838,13 @@
           "event"
         ],
         "uses": [
+          "ActionEvent",
+          "fTextField",
           "FloatingTextField",
           "actionPerformed",
           "endAction",
-          "addActionListener",
-          "fTextField",
           "ActionListener",
-          "ActionEvent"
+          "addActionListener"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2050,12 +2856,12 @@
         "end_line": 89,
         "defs": [],
         "uses": [
-          "figure",
           "getText",
-          "fURLTarget",
-          "fTextField",
+          "endOverlay",
           "setURL",
-          "endOverlay"
+          "figure",
+          "fURLTarget",
+          "fTextField"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2067,15 +2873,15 @@
         "end_line": 94,
         "defs": [],
         "uses": [
-          "figure",
           "fieldBounds",
-          "createOverlay",
+          "getURL",
           "fURLTarget",
           "Container",
-          "getURL",
-          "setBounds",
           "view",
-          "fTextField"
+          "fTextField",
+          "setBounds",
+          "figure",
+          "createOverlay"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2105,13 +2911,13 @@
         "end_line": 32,
         "defs": [],
         "uses": [
-          "BorderLayout",
+          "getContentPane",
           "fView",
-          "add",
-          "Center",
           "StandardDrawingView",
-          "setLayout",
-          "getContentPane"
+          "Center",
+          "add",
+          "BorderLayout",
+          "setLayout"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2123,10 +2929,10 @@
         "end_line": 35,
         "defs": [],
         "uses": [
-          "view",
-          "fIconkit",
           "Iconkit",
           "fTool",
+          "fIconkit",
+          "view",
           "FollowURLTool"
         ],
         "is_terminal": false,
@@ -2136,40 +2942,67 @@
         "id": 3,
         "label": "Slice 3",
         "start_line": 37,
-        "end_line": 51,
+        "end_line": 37,
         "defs": [
-          "url",
-          "filename",
-          "when",
-          "e",
-          "stream",
-          "to",
-          "reader"
+          "filename"
         ],
         "uses": [
-          "readStorable",
-          "fView",
           "Drawing",
+          "String",
+          "getParameter"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 38,
+        "end_line": 49,
+        "defs": [
+          "url",
+          "reader",
+          "stream",
+          "e",
+          "when"
+        ],
+        "uses": [
           "StandardDrawing",
-          "Unable",
           "IOException",
-          "Error",
-          "drawing",
-          "fDrawing",
-          "InputStream",
-          "out",
+          "openStream",
+          "readStorable",
+          "StorableInput",
           "showStatus",
           "setDrawing",
-          "String",
-          "getCodeBase",
-          "StorableInput",
-          "URL",
+          "println",
+          "fDrawing",
           "System",
-          "getParameter",
-          "openStream",
-          "load",
+          "out",
+          "fView",
           "Loading",
-          "println"
+          "URL",
+          "getCodeBase",
+          "Drawing",
+          "filename",
+          "InputStream",
+          "Error"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 50,
+        "end_line": 51,
+        "defs": [
+          "to"
+        ],
+        "uses": [
+          "load",
+          "Unable",
+          "drawing",
+          "showStatus"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2184,6 +3017,24 @@
       {
         "from": 2,
         "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "filename"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -2209,36 +3060,48 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 79,
+        "end_line": 79,
+        "defs": [],
+        "uses": [
+          "fAnimationButton",
+          "Start",
+          "Animation",
+          "JButton"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 80,
         "end_line": 89,
         "defs": [
           "event"
         ],
         "uses": [
-          "fAnimator",
-          "actionPerformed",
-          "startAnimation",
-          "endAnimation",
-          "addActionListener",
-          "fAnimationButton",
-          "Start",
-          "ActionListener",
-          "JButton",
           "ActionEvent",
-          "Animation"
+          "startAnimation",
+          "actionPerformed",
+          "fAnimator",
+          "ActionListener",
+          "addActionListener",
+          "endAnimation",
+          "fAnimationButton"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 3,
-        "label": "Slice 3",
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 90,
         "end_line": 90,
         "defs": [],
         "uses": [
-          "fAnimationButton",
           "panel",
-          "add"
+          "add",
+          "fAnimationButton"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2254,6 +3117,11 @@
         "from": 2,
         "to": 3,
         "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
       }
     ]
   },
@@ -2265,60 +3133,74 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 106,
-        "end_line": 119,
+        "end_line": 107,
         "defs": [
-          "event",
           "createAnimationMenu",
-          "mi",
           "menu"
         ],
         "uses": [
+          "JMenu",
+          "Animation"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 108,
+        "end_line": 119,
+        "defs": [
+          "mi",
+          "event"
+        ],
+        "uses": [
+          "ActionEvent",
+          "Animation",
+          "Animator",
+          "fAnimator",
+          "addActionListener",
+          "start",
+          "JMenuItem",
+          "add",
           "Animatable",
           "drawing",
-          "Animator",
-          "JMenu",
-          "fAnimator",
-          "actionPerformed",
-          "start",
+          "menu",
           "view",
-          "addActionListener",
-          "JMenuItem",
-          "Start",
-          "ActionEvent",
+          "actionPerformed",
           "ActionListener",
-          "Animation",
-          "add"
+          "Start"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 2,
-        "label": "Slice 2",
+        "id": 3,
+        "label": "Slice 3",
         "start_line": 121,
         "end_line": 129,
         "defs": [
           "event"
         ],
         "uses": [
-          "menu",
-          "actionPerformed",
-          "JMenuItem",
-          "addActionListener",
-          "endAnimation",
-          "Stop",
-          "ActionListener",
-          "mi",
           "ActionEvent",
           "Animation",
+          "menu",
+          "Stop",
+          "actionPerformed",
+          "mi",
+          "ActionListener",
+          "addActionListener",
+          "endAnimation",
+          "JMenuItem",
           "add"
         ],
         "is_terminal": false,
         "has_control": false
       },
       {
-        "id": 3,
-        "label": "Slice 3",
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 130,
         "end_line": 131,
         "defs": [],
@@ -2335,15 +3217,8 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "mi",
           "menu"
         ]
-      },
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CD",
-        "reason": "Nesting"
       },
       {
         "from": 1,
@@ -2360,13 +3235,28 @@
       },
       {
         "from": 1,
-        "to": 3,
-        "type": "CD",
-        "reason": "Nesting"
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "menu"
+        ]
       },
       {
         "from": 2,
         "to": 3,
+        "type": "DD",
+        "vars": [
+          "mi"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
         "type": "CF"
       }
     ]
@@ -2379,67 +3269,93 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 40,
-        "end_line": 47,
+        "end_line": 40,
         "defs": [
-          "pressedFigure",
           "textHolder"
         ],
         "uses": [
+          "TextHolder"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 42,
+        "end_line": 42,
+        "defs": [
+          "pressedFigure"
+        ],
+        "uses": [
           "drawing",
-          "x",
-          "Figure",
-          "TextHolder",
-          "findFigureInside",
           "y",
-          "acceptsTyping"
+          "Figure",
+          "findFigureInside",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 43,
+        "end_line": 47,
+        "defs": [],
+        "uses": [
+          "textHolder",
+          "acceptsTyping",
+          "TextHolder",
+          "pressedFigure"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 2,
-        "label": "Slice 2",
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 48,
-        "end_line": 61,
+        "end_line": 60,
         "defs": [],
         "uses": [
-          "fieldBounds",
-          "createOverlay",
-          "FloatingTextField",
-          "Container",
-          "setBounds",
-          "getFont",
           "setTypingTarget",
-          "checkDamage",
+          "fieldBounds",
           "endEdit",
+          "textHolder",
+          "Container",
           "view",
           "fTextField",
+          "setBounds",
+          "FloatingTextField",
           "getText",
-          "textHolder",
+          "checkDamage",
+          "getFont",
+          "createOverlay",
           "getTypingTarget"
         ],
         "is_terminal": true,
         "has_control": true
       },
       {
-        "id": 3,
-        "label": "Slice 3",
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 62,
         "end_line": 69,
         "defs": [],
         "uses": [
+          "mouseDown",
+          "endEdit",
+          "textHolder",
           "createdFigure",
+          "y",
+          "TextHolder",
+          "toolDone",
+          "editor",
+          "getTypingTarget",
           "beginEdit",
           "e",
-          "editor",
-          "x",
-          "endEdit",
-          "TextHolder",
-          "mouseDown",
-          "y",
-          "toolDone",
-          "getTypingTarget",
-          "textHolder"
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2448,7 +3364,23 @@
     "edges": [
       {
         "from": 1,
-        "to": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "textHolder"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "textHolder"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
         "type": "DD",
         "vars": [
           "textHolder"
@@ -2460,22 +3392,32 @@
         "type": "CF"
       },
       {
-        "from": 1,
+        "from": 2,
         "to": 3,
         "type": "DD",
         "vars": [
-          "textHolder"
+          "pressedFigure"
         ]
       },
       {
         "from": 2,
         "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CD",
         "reason": "GuardCheck"
       },
       {
-        "from": 2,
-        "to": 3,
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -2491,8 +3433,8 @@
         "end_line": 108,
         "defs": [],
         "uses": [
-          "FloatingTextField",
-          "fTextField"
+          "fTextField",
+          "FloatingTextField"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2504,19 +3446,19 @@
         "end_line": 120,
         "defs": [],
         "uses": [
-          "figure",
-          "drawing",
-          "length",
-          "Figure",
           "setTypingTarget",
-          "checkDamage",
+          "endOverlay",
+          "drawing",
           "view",
-          "setText",
           "fTextField",
           "getText",
-          "endOverlay",
-          "remove",
-          "getTypingTarget"
+          "checkDamage",
+          "setText",
+          "figure",
+          "Figure",
+          "getTypingTarget",
+          "length",
+          "remove"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2525,19 +3467,18 @@
         "id": 3,
         "label": "Slice 3",
         "start_line": 122,
-        "end_line": 124,
+        "end_line": 123,
         "defs": [],
         "uses": [
-          "figure",
           "fieldBounds",
-          "createOverlay",
           "Container",
-          "setBounds",
-          "getFont",
-          "setTypingTarget",
           "view",
           "fTextField",
-          "getText"
+          "setBounds",
+          "getText",
+          "getFont",
+          "figure",
+          "createOverlay"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2545,12 +3486,14 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 126,
+        "start_line": 124,
         "end_line": 126,
         "defs": [],
         "uses": [
+          "setTypingTarget",
+          "checkDamage",
           "view",
-          "checkDamage"
+          "figure"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2582,53 +3525,40 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 145,
-        "end_line": 152,
+        "end_line": 145,
         "defs": [
-          "font",
-          "s"
+          "font"
         ],
         "uses": [
-          "willChange",
-          "Integer",
           "getFont",
-          "equals",
-          "value",
-          "name",
-          "FontSize",
-          "getStyle",
-          "intValue",
-          "changed",
-          "markDirty",
-          "getName",
-          "fFont",
           "Font"
         ],
         "is_terminal": false,
-        "has_control": true
+        "has_control": false
       },
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 153,
-        "end_line": 161,
+        "start_line": 146,
+        "end_line": 152,
         "defs": [
-          "s",
-          "style"
+          "s"
         ],
         "uses": [
-          "FontStyle",
-          "intValue",
-          "getSize",
-          "Integer",
-          "PLAIN",
-          "equals",
-          "value",
           "getName",
-          "name",
-          "setFont",
-          "getStyle",
+          "Integer",
+          "markDirty",
+          "FontSize",
+          "intValue",
+          "changed",
+          "value",
+          "willChange",
+          "equals",
           "font",
-          "Font"
+          "Font",
+          "name",
+          "getStyle",
+          "fFont"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2636,22 +3566,26 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 162,
-        "end_line": 165,
+        "start_line": 153,
+        "end_line": 161,
         "defs": [
-          "n"
+          "style",
+          "s"
         ],
         "uses": [
-          "getSize",
-          "font",
-          "equals",
-          "value",
-          "FontName",
-          "String",
-          "name",
+          "getName",
           "setFont",
+          "Integer",
+          "PLAIN",
+          "intValue",
+          "value",
+          "FontStyle",
+          "equals",
+          "font",
+          "getSize",
+          "Font",
           "getStyle",
-          "Font"
+          "name"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2659,12 +3593,35 @@
       {
         "id": 4,
         "label": "Slice 4",
+        "start_line": 162,
+        "end_line": 165,
+        "defs": [
+          "n"
+        ],
+        "uses": [
+          "setFont",
+          "FontName",
+          "value",
+          "equals",
+          "String",
+          "font",
+          "Font",
+          "getSize",
+          "getStyle",
+          "name"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 166,
         "end_line": 167,
         "defs": [],
         "uses": [
-          "name",
           "setAttribute",
+          "name",
           "value"
         ],
         "is_terminal": false,
@@ -2694,6 +3651,14 @@
         ]
       },
       {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "font"
+        ]
+      },
+      {
         "from": 2,
         "to": 3,
         "type": "CF"
@@ -2701,6 +3666,11 @@
       {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -2716,8 +3686,8 @@
         "end_line": 282,
         "defs": [],
         "uses": [
-          "fObservedFigure",
-          "removeFigureChangeListener"
+          "removeFigureChangeListener",
+          "fObservedFigure"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2726,14 +3696,15 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 284,
-        "end_line": 285,
+        "end_line": 286,
         "defs": [],
         "uses": [
           "fObservedFigure",
+          "addFigureChangeListener",
           "figure",
-          "connectedTextLocator",
+          "OffsetLocator",
           "fLocator",
-          "OffsetLocator"
+          "connectedTextLocator"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2741,39 +3712,26 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 286,
-        "end_line": 286,
-        "defs": [],
-        "uses": [
-          "fObservedFigure",
-          "addFigureChangeListener"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 4,
-        "label": "Slice 4",
         "start_line": 287,
         "end_line": 297,
         "defs": [
           "p"
         ],
         "uses": [
-          "fObservedFigure",
-          "willChange",
-          "locate",
-          "x",
-          "height",
-          "changed",
-          "size",
+          "fOriginX",
+          "basicMoveBy",
           "fOriginY",
           "Point",
-          "fLocator",
-          "fOriginX",
+          "willChange",
+          "changed",
           "y",
-          "basicMoveBy",
-          "width"
+          "fObservedFigure",
+          "locate",
+          "size",
+          "fLocator",
+          "width",
+          "height",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2788,11 +3746,6 @@
       {
         "from": 2,
         "to": 3,
-        "type": "CF"
-      },
-      {
-        "from": 3,
-        "to": 4,
         "type": "CF"
       }
     ]
@@ -2808,11 +3761,11 @@
         "end_line": 55,
         "defs": [],
         "uses": [
-          "getClickCount",
-          "fScribble",
-          "e",
+          "toolDone",
           "editor",
-          "toolDone"
+          "getClickCount",
+          "e",
+          "fScribble"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2820,40 +3773,68 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 56,
-        "end_line": 64,
+        "start_line": 60,
+        "end_line": 61,
         "defs": [
-          "x1",
-          "y1"
+          "y1",
+          "x1"
         ],
         "uses": [
           "e",
           "getY",
-          "view",
-          "getX",
+          "getX"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 62,
+        "end_line": 64,
+        "defs": [],
+        "uses": [
           "PolyLineFigure",
-          "fScribble",
-          "add"
+          "y1",
+          "x1",
+          "view",
+          "add",
+          "fScribble"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 3,
-        "label": "Slice 3",
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 65,
-        "end_line": 69,
+        "end_line": 66,
         "defs": [],
         "uses": [
           "y1",
+          "addPoint",
           "fLastY",
-          "fScribble",
-          "fLastX",
           "x1",
-          "addPoint"
+          "fLastX",
+          "fScribble"
         ],
         "is_terminal": false,
         "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 68,
+        "end_line": 69,
+        "defs": [],
+        "uses": [
+          "fLastY",
+          "y1",
+          "x1",
+          "fLastX"
+        ],
+        "is_terminal": false,
+        "has_control": false
       }
     ],
     "edges": [
@@ -2867,19 +3848,41 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "x1",
-          "y1"
+          "y1",
+          "x1"
         ]
       },
       {
         "from": 2,
         "to": 3,
-        "type": "CD",
-        "reason": "Nesting"
+        "type": "CF"
       },
       {
         "from": 2,
-        "to": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "y1",
+          "x1"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "y1",
+          "x1"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -2898,9 +3901,9 @@
           "dy"
         ],
         "uses": [
+          "y",
           "anchorY",
           "x",
-          "y",
           "anchorX"
         ],
         "is_terminal": false,
@@ -2912,14 +3915,14 @@
         "start_line": 36,
         "end_line": 37,
         "defs": [
-          "r",
-          "max"
+          "max",
+          "r"
         ],
         "uses": [
           "fOwner",
+          "width",
           "displayBox",
-          "Rectangle",
-          "width"
+          "Rectangle"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2930,13 +3933,13 @@
         "start_line": 38,
         "end_line": 43,
         "defs": [
-          "value",
-          "rx"
+          "rx",
+          "value"
         ],
         "uses": [
-          "x",
-          "dx",
           "max",
+          "dx",
+          "x",
           "fRadius"
         ],
         "is_terminal": false,
@@ -2951,13 +3954,13 @@
           "ry"
         ],
         "uses": [
-          "dy",
           "fRadius",
-          "height",
-          "r",
           "Geom",
+          "y",
+          "r",
           "range",
-          "y"
+          "height",
+          "dy"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2971,8 +3974,8 @@
         "uses": [
           "fOwner",
           "setArc",
-          "ry",
-          "rx"
+          "rx",
+          "ry"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3060,9 +4063,9 @@
         "end_line": 186,
         "defs": [],
         "uses": [
-          "setColor",
+          "g",
           "getFrameColor",
-          "g"
+          "setColor"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3073,19 +4076,19 @@
         "start_line": 187,
         "end_line": 192,
         "defs": [
-          "p1",
-          "i"
+          "i",
+          "p1"
         ],
         "uses": [
-          "p2",
-          "g",
-          "x",
-          "size",
-          "Point",
-          "elementAt",
           "fPoints",
+          "g",
           "y",
-          "drawLine"
+          "elementAt",
+          "size",
+          "drawLine",
+          "p2",
+          "Point",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -3100,14 +4103,14 @@
           "p11"
         ],
         "uses": [
-          "g",
-          "x",
-          "Point",
-          "elementAt",
-          "fPoints",
           "getStartDecoration",
+          "fPoints",
+          "draw",
+          "g",
           "y",
-          "draw"
+          "elementAt",
+          "Point",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -3122,15 +4125,15 @@
           "p4"
         ],
         "uses": [
+          "getEndDecoration",
+          "fPoints",
+          "draw",
           "g",
-          "x",
+          "y",
+          "elementAt",
           "size",
           "Point",
-          "getEndDecoration",
-          "elementAt",
-          "fPoints",
-          "y",
-          "draw"
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -3165,8 +4168,8 @@
         "end_line": 308,
         "defs": [],
         "uses": [
-          "dw",
-          "write"
+          "write",
+          "dw"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3180,8 +4183,8 @@
         "uses": [
           "writeInt",
           "dw",
-          "size",
-          "fPoints"
+          "fPoints",
+          "size"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3190,494 +4193,35 @@
         "id": 3,
         "label": "Slice 3",
         "start_line": 310,
-        "end_line": 315,
+        "end_line": 310,
         "defs": [
-          "p",
           "k"
         ],
         "uses": [
-          "elements",
-          "writeInt",
-          "nextElement",
-          "x",
-          "hasMoreElements",
-          "Point",
-          "fPoints",
-          "y",
-          "dw",
-          "Enumeration"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 4,
-        "label": "Slice 4",
-        "start_line": 316,
-        "end_line": 317,
-        "defs": [],
-        "uses": [
-          "fStartDecoration",
-          "fEndDecoration",
-          "writeStorable",
-          "dw"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 5,
-        "label": "Slice 5",
-        "start_line": 318,
-        "end_line": 320,
-        "defs": [],
-        "uses": [
-          "getBlue",
-          "fFrameColor",
-          "writeInt",
-          "getGreen",
-          "getRed",
-          "dw"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      }
-    ],
-    "edges": [
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CF"
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CF"
-      },
-      {
-        "from": 3,
-        "to": 4,
-        "type": "CF"
-      },
-      {
-        "from": 4,
-        "to": 5,
-        "type": "CF"
-      }
-    ]
-  },
-  {
-    "class_name": "CH.ifa.draw.figures.InsertImageCommand",
-    "method_name": "execute()",
-    "nodes": [
-      {
-        "id": 1,
-        "label": "Slice 1",
-        "start_line": 37,
-        "end_line": 38,
-        "defs": [
-          "r"
-        ],
-        "uses": [
-          "Iconkit",
-          "fImage",
-          "registerImage",
-          "instance"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 2,
-        "label": "Slice 2",
-        "start_line": 39,
-        "end_line": 39,
-        "defs": [],
-        "uses": [
-          "loadRegisteredImages",
-          "fView",
-          "r",
-          "Component"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 40,
-        "end_line": 40,
-        "defs": [
-          "image"
-        ],
-        "uses": [
-          "Image",
-          "fImage",
-          "getImage",
-          "r"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 4,
-        "label": "Slice 4",
-        "start_line": 41,
-        "end_line": 42,
-        "defs": [
-          "figure"
-        ],
-        "uses": [
-          "fImage",
-          "image",
-          "fView",
-          "lastClick",
-          "ImageFigure",
-          "add"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 5,
-        "label": "Slice 5",
-        "start_line": 43,
-        "end_line": 45,
-        "defs": [],
-        "uses": [
-          "figure",
-          "fView",
-          "addToSelection",
-          "clearSelection",
-          "checkDamage"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      }
-    ],
-    "edges": [
-      {
-        "from": 1,
-        "to": 2,
-        "type": "DD",
-        "vars": [
-          "r"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CF"
-      },
-      {
-        "from": 1,
-        "to": 3,
-        "type": "DD",
-        "vars": [
-          "r"
-        ]
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CF"
-      },
-      {
-        "from": 3,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "image"
-        ]
-      },
-      {
-        "from": 3,
-        "to": 4,
-        "type": "CF"
-      },
-      {
-        "from": 4,
-        "to": 5,
-        "type": "DD",
-        "vars": [
-          "figure"
-        ]
-      },
-      {
-        "from": 4,
-        "to": 5,
-        "type": "CF"
-      }
-    ]
-  },
-  {
-    "class_name": "CH.ifa.draw.figures.GroupCommand",
-    "method_name": "execute()",
-    "nodes": [
-      {
-        "id": 1,
-        "label": "Slice 1",
-        "start_line": 34,
-        "end_line": 35,
-        "defs": [
-          "drawing",
-          "selected"
-        ],
-        "uses": [
-          "fView",
-          "Drawing",
-          "Vector",
-          "selectionZOrdered"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 2,
-        "label": "Slice 2",
-        "start_line": 36,
-        "end_line": 38,
-        "defs": [],
-        "uses": [
-          "drawing",
-          "fView",
-          "selected",
-          "size",
-          "clearSelection",
-          "orphanAll"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 40,
-        "end_line": 43,
-        "defs": [
-          "k",
-          "group"
-        ],
-        "uses": [
-          "add",
-          "nextElement",
-          "Figure",
-          "hasMoreElements",
-          "GroupFigure",
-          "elements",
           "Enumeration",
-          "selected"
+          "fPoints",
+          "elements"
         ],
         "is_terminal": false,
-        "has_control": true
+        "has_control": false
       },
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 44,
-        "end_line": 45,
-        "defs": [],
-        "uses": [
-          "drawing",
-          "fView",
-          "addToSelection",
-          "group",
-          "add"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 5,
-        "label": "Slice 5",
-        "start_line": 46,
-        "end_line": 46,
-        "defs": [],
-        "uses": [
-          "fView",
-          "checkDamage"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      }
-    ],
-    "edges": [
-      {
-        "from": 1,
-        "to": 2,
-        "type": "DD",
-        "vars": [
-          "drawing",
-          "selected"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CF"
-      },
-      {
-        "from": 1,
-        "to": 3,
-        "type": "DD",
-        "vars": [
-          "selected"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "drawing"
-        ]
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CF"
-      },
-      {
-        "from": 2,
-        "to": 4,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 3,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "group"
-        ]
-      },
-      {
-        "from": 3,
-        "to": 4,
-        "type": "CF"
-      },
-      {
-        "from": 4,
-        "to": 5,
-        "type": "CF"
-      }
-    ]
-  },
-  {
-    "class_name": "CH.ifa.draw.figures.ElbowHandle",
-    "method_name": "invokeStep(int, int, int, int, DrawingView)",
-    "nodes": [
-      {
-        "id": 1,
-        "label": "Slice 1",
-        "start_line": 33,
-        "end_line": 35,
+        "start_line": 311,
+        "end_line": 315,
         "defs": [
-          "p2",
-          "p1",
-          "line"
+          "p"
         ],
         "uses": [
-          "fSegment",
+          "nextElement",
+          "dw",
           "Point",
-          "ownerConnection",
-          "pointAt",
-          "LineConnection"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 2,
-        "label": "Slice 2",
-        "start_line": 36,
-        "end_line": 37,
-        "defs": [
-          "ddy",
-          "ddx"
-        ],
-        "uses": [
-          "x",
+          "hasMoreElements",
           "y",
-          "fLastY",
-          "fLastX"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 41,
-        "end_line": 64,
-        "defs": [
-          "i2",
-          "endFigure",
-          "cx",
-          "start",
-          "i1",
-          "startFigure",
-          "end",
-          "x1",
-          "line1",
-          "r1x"
-        ],
-        "uses": [
-          "fSegment",
-          "Figure",
-          "p1",
-          "pointCount",
-          "r2width",
-          "y",
-          "left",
-          "p2",
-          "r1width",
-          "displayBox",
-          "Rectangle",
-          "isVertical",
-          "np1",
-          "np2",
-          "Point",
-          "connectionInsets",
-          "range",
-          "r2x",
-          "LineConnection",
-          "width",
-          "Insets",
-          "owner",
-          "x",
-          "right",
-          "ownerConnection",
-          "Geom",
-          "ddx"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 4,
-        "label": "Slice 4",
-        "start_line": 65,
-        "end_line": 69,
-        "defs": [
-          "cy"
-        ],
-        "uses": [
-          "p2",
-          "ddy",
-          "np2",
-          "np1",
-          "x",
-          "constrainY",
-          "Point",
-          "p1",
-          "y"
+          "k",
+          "writeInt",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -3685,223 +4229,46 @@
       {
         "id": 5,
         "label": "Slice 5",
-        "start_line": 70,
-        "end_line": 73,
+        "start_line": 316,
+        "end_line": 316,
         "defs": [],
         "uses": [
-          "fSegment",
-          "np1",
-          "np2",
-          "fLastY",
-          "x",
-          "setPointAt",
-          "line",
-          "fLastX",
-          "y"
+          "writeStorable",
+          "dw",
+          "fStartDecoration"
         ],
         "is_terminal": false,
         "has_control": false
-      }
-    ],
-    "edges": [
-      {
-        "from": 1,
-        "to": 3,
-        "type": "DD",
-        "vars": [
-          "p2",
-          "p1"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "p2",
-          "p1"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 5,
-        "type": "DD",
-        "vars": [
-          "line"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CF"
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "DD",
-        "vars": [
-          "ddx"
-        ]
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CF"
-      },
-      {
-        "from": 2,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "ddy"
-        ]
-      },
-      {
-        "from": 3,
-        "to": 4,
-        "type": "CF"
-      },
-      {
-        "from": 4,
-        "to": 5,
-        "type": "CF"
-      }
-    ]
-  },
-  {
-    "class_name": "CH.ifa.draw.figures.ElbowHandle",
-    "method_name": "constrainX(int)",
-    "nodes": [
-      {
-        "id": 1,
-        "label": "Slice 1",
-        "start_line": 99,
-        "end_line": 101,
-        "defs": [
-          "endFigure",
-          "line",
-          "startFigure"
-        ],
-        "uses": [
-          "owner",
-          "Figure",
-          "start",
-          "ownerConnection",
-          "end",
-          "LineConnection"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 2,
-        "label": "Slice 2",
-        "start_line": 102,
-        "end_line": 105,
-        "defs": [
-          "end",
-          "i1",
-          "i2",
-          "start"
-        ],
-        "uses": [
-          "endFigure",
-          "Insets",
-          "displayBox",
-          "Rectangle",
-          "startFigure",
-          "connectionInsets"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 107,
-        "end_line": 109,
-        "defs": [
-          "r1x"
-        ],
-        "uses": [
-          "x",
-          "r1width",
-          "right",
-          "i1",
-          "start",
-          "left",
-          "width"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 4,
-        "label": "Slice 4",
-        "start_line": 111,
-        "end_line": 112,
-        "defs": [
-          "r2x"
-        ],
-        "uses": [
-          "i2",
-          "x",
-          "right",
-          "end",
-          "r2width",
-          "left",
-          "width"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 5,
-        "label": "Slice 5",
-        "start_line": 114,
-        "end_line": 122,
-        "defs": [
-          "value",
-          "max"
-        ],
-        "uses": [
-          "x",
-          "fSegment",
-          "r1width",
-          "r1x"
-        ],
-        "is_terminal": false,
-        "has_control": true
       },
       {
         "id": 6,
         "label": "Slice 6",
-        "start_line": 123,
-        "end_line": 124,
+        "start_line": 317,
+        "end_line": 317,
         "defs": [],
         "uses": [
-          "fSegment",
-          "x",
-          "Geom",
-          "line",
-          "range",
-          "r2x",
-          "pointCount",
-          "r2width"
+          "writeStorable",
+          "dw",
+          "fEndDecoration"
         ],
         "is_terminal": false,
-        "has_control": true
+        "has_control": false
       },
       {
         "id": 7,
         "label": "Slice 7",
-        "start_line": 125,
-        "end_line": 125,
+        "start_line": 318,
+        "end_line": 320,
         "defs": [],
         "uses": [
-          "x"
+          "getGreen",
+          "getRed",
+          "fFrameColor",
+          "getBlue",
+          "dw",
+          "writeInt"
         ],
-        "is_terminal": true,
+        "is_terminal": false,
         "has_control": false
       }
     ],
@@ -3909,42 +4276,7 @@
       {
         "from": 1,
         "to": 2,
-        "type": "DD",
-        "vars": [
-          "endFigure",
-          "startFigure"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 2,
         "type": "CF"
-      },
-      {
-        "from": 1,
-        "to": 6,
-        "type": "DD",
-        "vars": [
-          "line"
-        ]
-      },
-      {
-        "from": 2,
-        "to": 1,
-        "type": "DD",
-        "vars": [
-          "end",
-          "start"
-        ]
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "DD",
-        "vars": [
-          "i1",
-          "start"
-        ]
       },
       {
         "from": 2,
@@ -3952,34 +4284,17 @@
         "type": "CF"
       },
       {
-        "from": 2,
+        "from": 3,
         "to": 4,
         "type": "DD",
         "vars": [
-          "end",
-          "i2"
-        ]
-      },
-      {
-        "from": 3,
-        "to": 5,
-        "type": "DD",
-        "vars": [
-          "r1x"
+          "k"
         ]
       },
       {
         "from": 3,
         "to": 4,
         "type": "CF"
-      },
-      {
-        "from": 4,
-        "to": 6,
-        "type": "DD",
-        "vars": [
-          "r2x"
-        ]
       },
       {
         "from": 4,
@@ -3999,6 +4314,727 @@
     ]
   },
   {
+    "class_name": "CH.ifa.draw.figures.InsertImageCommand",
+    "method_name": "execute()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 37,
+        "end_line": 38,
+        "defs": [
+          "r"
+        ],
+        "uses": [
+          "Iconkit",
+          "instance",
+          "fImage",
+          "registerImage"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 39,
+        "end_line": 39,
+        "defs": [],
+        "uses": [
+          "r",
+          "Component",
+          "fView",
+          "loadRegisteredImages"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 40,
+        "end_line": 40,
+        "defs": [
+          "image"
+        ],
+        "uses": [
+          "Image",
+          "fImage",
+          "r",
+          "getImage"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 41,
+        "end_line": 42,
+        "defs": [
+          "figure"
+        ],
+        "uses": [
+          "fView",
+          "lastClick",
+          "fImage",
+          "image",
+          "add",
+          "ImageFigure"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 43,
+        "end_line": 44,
+        "defs": [],
+        "uses": [
+          "addToSelection",
+          "clearSelection",
+          "fView",
+          "figure"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 45,
+        "end_line": 45,
+        "defs": [],
+        "uses": [
+          "checkDamage",
+          "fView"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "r"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "r"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "image"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.GroupCommand",
+    "method_name": "execute()",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 34,
+        "end_line": 35,
+        "defs": [
+          "drawing",
+          "selected"
+        ],
+        "uses": [
+          "Vector",
+          "Drawing",
+          "fView",
+          "selectionZOrdered"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 36,
+        "end_line": 38,
+        "defs": [],
+        "uses": [
+          "fView",
+          "drawing",
+          "selected",
+          "size",
+          "orphanAll",
+          "clearSelection"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 40,
+        "end_line": 45,
+        "defs": [
+          "group",
+          "k"
+        ],
+        "uses": [
+          "fView",
+          "drawing",
+          "selected",
+          "nextElement",
+          "Enumeration",
+          "hasMoreElements",
+          "addToSelection",
+          "Figure",
+          "elements",
+          "GroupFigure",
+          "add"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 46,
+        "end_line": 46,
+        "defs": [],
+        "uses": [
+          "checkDamage",
+          "fView"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "drawing",
+          "selected"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "drawing",
+          "selected"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ElbowHandle",
+    "method_name": "invokeStep(int, int, int, int, DrawingView)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 33,
+        "end_line": 35,
+        "defs": [
+          "p1",
+          "p2",
+          "line"
+        ],
+        "uses": [
+          "fSegment",
+          "pointAt",
+          "ownerConnection",
+          "LineConnection",
+          "Point"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 36,
+        "end_line": 37,
+        "defs": [
+          "ddx",
+          "ddy"
+        ],
+        "uses": [
+          "fLastY",
+          "y",
+          "fLastX",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 39,
+        "end_line": 40,
+        "defs": [
+          "np1",
+          "np2"
+        ],
+        "uses": [
+          "Point"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 41,
+        "end_line": 64,
+        "defs": [
+          "r1x",
+          "startFigure",
+          "cx",
+          "endFigure",
+          "i1",
+          "i2",
+          "line1",
+          "start",
+          "x1",
+          "end"
+        ],
+        "uses": [
+          "isVertical",
+          "right",
+          "Insets",
+          "Geom",
+          "np2",
+          "range",
+          "pointCount",
+          "width",
+          "r2x",
+          "r1width",
+          "fSegment",
+          "np1",
+          "p1",
+          "y",
+          "displayBox",
+          "connectionInsets",
+          "ownerConnection",
+          "Figure",
+          "Rectangle",
+          "ddx",
+          "p2",
+          "LineConnection",
+          "Point",
+          "r2width",
+          "left",
+          "owner",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 65,
+        "end_line": 69,
+        "defs": [
+          "cy"
+        ],
+        "uses": [
+          "np1",
+          "constrainY",
+          "p1",
+          "y",
+          "np2",
+          "ddy",
+          "p2",
+          "Point",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 70,
+        "end_line": 73,
+        "defs": [],
+        "uses": [
+          "fSegment",
+          "np1",
+          "fLastY",
+          "fLastX",
+          "setPointAt",
+          "y",
+          "np2",
+          "x",
+          "line"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "p1",
+          "p2"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "p1",
+          "p2"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "line"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "ddx"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "ddy"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "np1",
+          "np2"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "np1",
+          "np2"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "np1",
+          "np2"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.figures.ElbowHandle",
+    "method_name": "constrainX(int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 99,
+        "end_line": 101,
+        "defs": [
+          "startFigure",
+          "endFigure",
+          "line"
+        ],
+        "uses": [
+          "ownerConnection",
+          "Figure",
+          "start",
+          "owner",
+          "LineConnection",
+          "end"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 102,
+        "end_line": 105,
+        "defs": [
+          "start",
+          "i2",
+          "i1",
+          "end"
+        ],
+        "uses": [
+          "connectionInsets",
+          "startFigure",
+          "Insets",
+          "endFigure",
+          "Rectangle",
+          "displayBox"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 107,
+        "end_line": 112,
+        "defs": [
+          "r1x"
+        ],
+        "uses": [
+          "r1width",
+          "right",
+          "r2width",
+          "i1",
+          "i2",
+          "x",
+          "left",
+          "start",
+          "r2x",
+          "width",
+          "end"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 114,
+        "end_line": 122,
+        "defs": [
+          "max",
+          "value"
+        ],
+        "uses": [
+          "fSegment",
+          "r1x",
+          "x",
+          "r1width"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 123,
+        "end_line": 124,
+        "defs": [],
+        "uses": [
+          "fSegment",
+          "r2width",
+          "Geom",
+          "r2x",
+          "pointCount",
+          "line",
+          "x",
+          "range"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 125,
+        "end_line": 125,
+        "defs": [],
+        "uses": [
+          "x"
+        ],
+        "is_terminal": true,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "startFigure",
+          "endFigure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "line"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 1,
+        "type": "DD",
+        "vars": [
+          "start",
+          "end"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "start",
+          "i2",
+          "i1",
+          "end"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "r1x"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      }
+    ]
+  },
+  {
     "class_name": "CH.ifa.draw.figures.ElbowHandle",
     "method_name": "constrainY(int)",
     "nodes": [
@@ -4008,17 +5044,17 @@
         "start_line": 129,
         "end_line": 131,
         "defs": [
+          "startFigure",
           "endFigure",
-          "line",
-          "startFigure"
+          "line"
         ],
         "uses": [
-          "owner",
+          "ownerConnection",
           "Figure",
           "start",
-          "ownerConnection",
-          "end",
-          "LineConnection"
+          "owner",
+          "LineConnection",
+          "end"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4029,18 +5065,18 @@
         "start_line": 132,
         "end_line": 135,
         "defs": [
-          "end",
-          "i1",
+          "start",
           "i2",
-          "start"
+          "i1",
+          "end"
         ],
         "uses": [
-          "endFigure",
-          "Insets",
-          "displayBox",
-          "Rectangle",
+          "connectionInsets",
           "startFigure",
-          "connectionInsets"
+          "Insets",
+          "endFigure",
+          "Rectangle",
+          "displayBox"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4054,17 +5090,17 @@
           "r1y"
         ],
         "uses": [
-          "i2",
           "r1height",
-          "height",
-          "bottom",
-          "start",
-          "i1",
-          "top",
-          "end",
-          "y",
           "r2y",
-          "r2height"
+          "r2height",
+          "i1",
+          "i2",
+          "y",
+          "top",
+          "start",
+          "bottom",
+          "height",
+          "end"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4075,14 +5111,14 @@
         "start_line": 143,
         "end_line": 151,
         "defs": [
-          "value",
-          "max"
+          "max",
+          "value"
         ],
         "uses": [
-          "r1height",
           "fSegment",
-          "r1y",
-          "y"
+          "y",
+          "r1height",
+          "r1y"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4095,13 +5131,13 @@
         "defs": [],
         "uses": [
           "fSegment",
+          "r2y",
+          "Geom",
+          "r2height",
           "y",
-          "line",
           "range",
           "pointCount",
-          "Geom",
-          "r2y",
-          "r2height"
+          "line"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4125,8 +5161,8 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "endFigure",
-          "startFigure"
+          "startFigure",
+          "endFigure"
         ]
       },
       {
@@ -4147,8 +5183,8 @@
         "to": 1,
         "type": "DD",
         "vars": [
-          "end",
-          "start"
+          "start",
+          "end"
         ]
       },
       {
@@ -4156,10 +5192,10 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "end",
-          "i1",
+          "start",
           "i2",
-          "start"
+          "i1",
+          "end"
         ]
       },
       {
@@ -4199,18 +5235,17 @@
       {
         "id": 1,
         "label": "Slice 1",
-        "start_line": 57,
+        "start_line": 58,
         "end_line": 60,
         "defs": [
-          "end",
-          "start"
+          "start",
+          "end"
         ],
         "uses": [
-          "willChange",
-          "updatePoints",
           "startPoint",
           "Point",
-          "endPoint"
+          "endPoint",
+          "willChange"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4222,10 +5257,10 @@
         "end_line": 62,
         "defs": [],
         "uses": [
-          "addElement",
+          "start",
           "removeAllElements",
-          "fPoints",
-          "start"
+          "addElement",
+          "fPoints"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4237,12 +5272,12 @@
         "end_line": 66,
         "defs": [],
         "uses": [
-          "y",
-          "fPoints",
           "addElement",
-          "end",
+          "y",
           "x",
-          "start"
+          "fPoints",
+          "start",
+          "end"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4250,47 +5285,81 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 67,
-        "end_line": 94,
+        "start_line": 68,
+        "end_line": 69,
         "defs": [
-          "r2",
-          "vy",
           "r1",
-          "vx",
-          "direction",
-          "x1",
-          "dir"
+          "r2"
         ],
         "uses": [
-          "x2",
-          "end",
-          "y",
-          "addElement",
-          "y1",
-          "NORTH",
-          "height",
-          "displayBox",
           "Rectangle",
-          "EAST",
-          "WEST",
-          "Point",
-          "fPoints",
-          "width",
-          "owner",
-          "x",
           "start",
+          "owner",
+          "displayBox",
+          "end"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 71,
+        "end_line": 83,
+        "defs": [
+          "vy",
+          "x1",
+          "vx",
+          "direction"
+        ],
+        "uses": [
+          "y1",
+          "y2",
+          "r1",
+          "x2",
           "SOUTH",
+          "NORTH",
+          "r2",
           "Geom",
-          "y2"
+          "EAST",
+          "y",
+          "WEST",
+          "width",
+          "height",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 5,
-        "label": "Slice 5",
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 84,
+        "end_line": 93,
+        "defs": [
+          "dir"
+        ],
+        "uses": [
+          "addElement",
+          "fPoints",
+          "SOUTH",
+          "NORTH",
+          "Geom",
+          "y",
+          "x",
+          "direction",
+          "start",
+          "Point",
+          "end"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
         "start_line": 95,
-        "end_line": 96,
+        "end_line": 95,
         "defs": [],
         "uses": [
           "changed"
@@ -4318,8 +5387,8 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "end",
-          "start"
+          "start",
+          "end"
         ]
       },
       {
@@ -4327,8 +5396,17 @@
         "to": 4,
         "type": "DD",
         "vars": [
-          "end",
-          "start"
+          "start",
+          "end"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "start",
+          "end"
         ]
       },
       {
@@ -4344,6 +5422,33 @@
       {
         "from": 4,
         "to": 5,
+        "type": "DD",
+        "vars": [
+          "r1",
+          "r2"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "direction"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 7,
         "type": "CF"
       }
     ]
@@ -4359,10 +5464,10 @@
         "end_line": 135,
         "defs": [],
         "uses": [
-          "fAttributes",
-          "name",
           "hasDefined",
-          "get"
+          "get",
+          "name",
+          "fAttributes"
         ],
         "is_terminal": true,
         "has_control": true
@@ -4371,16 +5476,28 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 136,
+        "end_line": 137,
+        "defs": [],
+        "uses": [
+          "initializeAttributes",
+          "fgDefaultAttributes"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 138,
         "end_line": 138,
         "defs": [],
         "uses": [
-          "fgDefaultAttributes",
-          "name",
           "get",
-          "initializeAttributes"
+          "name",
+          "fgDefaultAttributes"
         ],
         "is_terminal": true,
-        "has_control": true
+        "has_control": false
       }
     ],
     "edges": [
@@ -4394,6 +5511,17 @@
         "from": 1,
         "to": 2,
         "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
       }
     ]
   },
@@ -4405,21 +5533,20 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 63,
-        "end_line": 74,
+        "end_line": 71,
         "defs": [
           "color"
         ],
         "uses": [
-          "getRed",
           "FillColor",
-          "writeInt",
-          "getGreen",
+          "Color",
+          "getBlue",
+          "dw",
           "getFillColor",
           "writeString",
-          "noFillColor",
-          "getBlue",
-          "Color",
-          "dw"
+          "getRed",
+          "getGreen",
+          "writeInt"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4427,17 +5554,43 @@
       {
         "id": 2,
         "label": "Slice 2",
+        "start_line": 72,
+        "end_line": 74,
+        "defs": [],
+        "uses": [
+          "writeString",
+          "dw",
+          "noFillColor"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
         "start_line": 76,
+        "end_line": 78,
+        "defs": [],
+        "uses": [
+          "FigureAttributes",
+          "BorderColor",
+          "getBorderColor",
+          "writeColor",
+          "dw"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 79,
         "end_line": 81,
         "defs": [],
         "uses": [
-          "writeColor",
-          "BorderColor",
-          "FigureAttributes",
           "writeString",
-          "getBorderColor",
-          "noBorderColor",
-          "dw"
+          "dw",
+          "noBorderColor"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4447,6 +5600,16 @@
       {
         "from": 1,
         "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
         "type": "CF"
       }
     ]
@@ -4458,17 +5621,13 @@
       {
         "id": 1,
         "label": "Slice 1",
-        "start_line": 46,
+        "start_line": 47,
         "end_line": 48,
-        "defs": [
-          "view",
-          "createContents"
-        ],
+        "defs": [],
         "uses": [
-          "JComponent",
-          "StandardDrawingView",
-          "createLeftComponent",
-          "createRightComponent"
+          "createRightComponent",
+          "view",
+          "createLeftComponent"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4480,10 +5639,10 @@
         "end_line": 52,
         "defs": [],
         "uses": [
-          "getRightComponent",
+          "createContents",
           "view",
-          "getLeftComponent",
-          "createContents"
+          "getRightComponent",
+          "getLeftComponent"
         ],
         "is_terminal": true,
         "has_control": true
@@ -4495,8 +5654,8 @@
         "end_line": 55,
         "defs": [],
         "uses": [
-          "getRightComponent",
-          "getLeftComponent"
+          "getLeftComponent",
+          "getRightComponent"
         ],
         "is_terminal": true,
         "has_control": true
@@ -4523,28 +5682,19 @@
           "dividedContents"
         ],
         "uses": [
-          "getLeftComponent",
-          "HORIZONTAL_SPLIT",
-          "setAlignmentX",
           "setOneTouchExpandable",
-          "LEFT_ALIGNMENT",
+          "HORIZONTAL_SPLIT",
+          "JSplitPane",
+          "setAlignmentX",
+          "getLeftComponent",
           "getRightComponent",
-          "JSplitPane"
+          "LEFT_ALIGNMENT"
         ],
         "is_terminal": true,
         "has_control": true
       }
     ],
     "edges": [
-      {
-        "from": 1,
-        "to": 2,
-        "type": "DD",
-        "vars": [
-          "view",
-          "createContents"
-        ]
-      },
       {
         "from": 1,
         "to": 2,
@@ -4614,10 +5764,10 @@
         "end_line": 57,
         "defs": [],
         "uses": [
-          "e",
+          "y",
           "getY",
           "getX",
-          "y",
+          "e",
           "x"
         ],
         "is_terminal": false,
@@ -4627,15 +5777,11 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 59,
-        "end_line": 64,
+        "end_line": 59,
         "defs": [],
         "uses": [
           "getClickCount",
-          "fPolygon",
-          "e",
-          "editor",
-          "toolDone",
-          "smoothPoints"
+          "e"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4643,23 +5789,50 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 66,
-        "end_line": 81,
+        "start_line": 60,
+        "end_line": 63,
+        "defs": [],
+        "uses": [
+          "fPolygon",
+          "smoothPoints",
+          "toolDone",
+          "editor"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 64,
+        "end_line": 64,
+        "defs": [],
+        "uses": [
+          "fPolygon"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 70,
+        "end_line": 80,
         "defs": [
-          "x1",
-          "y1"
+          "y1",
+          "x1"
         ],
         "uses": [
-          "add",
+          "addPoint",
           "fLastY",
-          "e",
-          "getY",
-          "PolygonFigure",
           "view",
-          "getX",
           "fLastX",
-          "fPolygon",
-          "addPoint"
+          "PolygonFigure",
+          "getY",
+          "getX",
+          "e",
+          "add",
+          "fPolygon"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4674,6 +5847,34 @@
       {
         "from": 2,
         "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -4686,16 +5887,10 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 191,
-        "end_line": 194,
-        "defs": [
-          "sx",
-          "sy",
-          "n1"
-        ],
+        "end_line": 191,
+        "defs": [],
         "uses": [
-          "willChange",
-          "npoints",
-          "originalPolygon"
+          "willChange"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4703,25 +5898,42 @@
       {
         "id": 2,
         "label": "Slice 2",
+        "start_line": 192,
+        "end_line": 194,
+        "defs": [
+          "sx",
+          "n1",
+          "sy"
+        ],
+        "uses": [
+          "originalPolygon",
+          "npoints"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
         "start_line": 195,
         "end_line": 198,
         "defs": [
           "i1"
         ],
         "uses": [
-          "originalPolygon",
-          "xpoints",
           "n1",
           "sx",
-          "sy",
-          "ypoints"
+          "originalPolygon",
+          "xpoints",
+          "ypoints",
+          "sy"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 3,
-        "label": "Slice 3",
+        "id": 4,
+        "label": "Slice 4",
         "start_line": 201,
         "end_line": 202,
         "defs": [
@@ -4729,75 +5941,42 @@
           "ctr"
         ],
         "uses": [
-          "y",
-          "x",
-          "length",
-          "anchor",
-          "Point",
           "n1",
-          "Geom",
           "sx",
+          "Geom",
+          "y",
+          "anchor",
+          "length",
+          "Point",
+          "x",
           "sy"
         ],
         "is_terminal": false,
         "has_control": false
       },
       {
-        "id": 4,
-        "label": "Slice 4",
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 204,
         "end_line": 210,
         "defs": [
-          "rotation",
+          "newAngle",
+          "ratio",
           "newLen",
           "anchorAngle",
-          "ratio",
-          "newAngle"
+          "rotation"
         ],
         "uses": [
-          "y",
-          "ctr",
-          "p",
-          "x",
-          "length",
-          "anchorLen",
-          "Math",
-          "Geom",
-          "anchor",
-          "atan2"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 5,
-        "label": "Slice 5",
-        "start_line": 212,
-        "end_line": 223,
-        "defs": [
-          "x",
-          "l",
-          "a",
-          "n",
-          "y",
-          "i"
-        ],
-        "uses": [
-          "ys",
-          "rotation",
-          "ctr",
-          "Math",
-          "length",
-          "xs",
-          "xpoints",
-          "cos",
-          "originalPolygon",
-          "sin",
-          "Geom",
-          "npoints",
-          "ypoints",
           "atan2",
-          "ratio"
+          "ctr",
+          "anchorLen",
+          "p",
+          "Geom",
+          "Math",
+          "y",
+          "anchor",
+          "length",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4805,15 +5984,16 @@
       {
         "id": 6,
         "label": "Slice 6",
-        "start_line": 224,
-        "end_line": 224,
-        "defs": [],
+        "start_line": 212,
+        "end_line": 214,
+        "defs": [
+          "n"
+        ],
         "uses": [
-          "n",
-          "fPoly",
-          "Polygon",
           "ys",
-          "xs"
+          "originalPolygon",
+          "xs",
+          "npoints"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4821,7 +6001,55 @@
       {
         "id": 7,
         "label": "Slice 7",
-        "start_line": 225,
+        "start_line": 216,
+        "end_line": 223,
+        "defs": [
+          "i",
+          "l",
+          "a",
+          "y",
+          "x"
+        ],
+        "uses": [
+          "cos",
+          "atan2",
+          "rotation",
+          "ratio",
+          "ctr",
+          "n",
+          "sin",
+          "originalPolygon",
+          "Geom",
+          "Math",
+          "xpoints",
+          "ys",
+          "ypoints",
+          "length",
+          "xs"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 224,
+        "end_line": 225,
+        "defs": [],
+        "uses": [
+          "Polygon",
+          "ys",
+          "n",
+          "xs",
+          "fPoly"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 226,
         "end_line": 226,
         "defs": [],
         "uses": [
@@ -4835,26 +6063,16 @@
       {
         "from": 1,
         "to": 2,
-        "type": "DD",
-        "vars": [
-          "sx",
-          "sy",
-          "n1"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 2,
         "type": "CF"
       },
       {
-        "from": 1,
+        "from": 2,
         "to": 3,
         "type": "DD",
         "vars": [
           "sx",
-          "sy",
-          "n1"
+          "n1",
+          "sy"
         ]
       },
       {
@@ -4863,8 +6081,23 @@
         "type": "CF"
       },
       {
+        "from": 2,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "sx",
+          "n1",
+          "sy"
+        ]
+      },
+      {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "DD",
         "vars": [
           "anchorLen",
@@ -4872,21 +6105,21 @@
         ]
       },
       {
-        "from": 3,
-        "to": 4,
+        "from": 4,
+        "to": 5,
         "type": "CF"
       },
       {
-        "from": 3,
-        "to": 5,
+        "from": 4,
+        "to": 7,
         "type": "DD",
         "vars": [
           "ctr"
         ]
       },
       {
-        "from": 4,
-        "to": 5,
+        "from": 5,
+        "to": 7,
         "type": "DD",
         "vars": [
           "rotation",
@@ -4894,62 +6127,75 @@
         ]
       },
       {
-        "from": 4,
-        "to": 5,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 4,
-        "to": 5,
-        "type": "CF"
-      },
-      {
-        "from": 4,
-        "to": 6,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 4,
+        "from": 5,
         "to": 7,
         "type": "CD",
         "reason": "Nesting"
       },
       {
         "from": 5,
-        "to": 3,
-        "type": "DD",
-        "vars": [
-          "x",
-          "y"
-        ]
-      },
-      {
-        "from": 5,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "x",
-          "y"
-        ]
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
       },
       {
         "from": 5,
         "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 7,
         "type": "DD",
         "vars": [
           "n"
         ]
       },
       {
-        "from": 5,
-        "to": 6,
+        "from": 6,
+        "to": 7,
         "type": "CF"
       },
       {
         "from": 6,
-        "to": 7,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "n"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "y",
+          "x"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "y",
+          "x"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
         "type": "CF"
       }
     ]
@@ -4961,14 +6207,11 @@
       {
         "id": 1,
         "label": "Slice 1",
-        "start_line": 267,
+        "start_line": 268,
         "end_line": 269,
         "defs": [
           "dist",
-          "x",
-          "best",
-          "splitSegment",
-          "y"
+          "best"
         ],
         "uses": [
           "TOO_CLOSE"
@@ -4982,20 +6225,20 @@
         "start_line": 271,
         "end_line": 280,
         "defs": [
-          "n",
+          "i1",
           "d",
-          "i1"
+          "n"
         ],
         "uses": [
-          "distanceFromLine",
-          "dist",
-          "x",
           "best",
-          "xpoints",
-          "fPoly",
-          "ypoints",
+          "npoints",
+          "dist",
           "y",
-          "npoints"
+          "distanceFromLine",
+          "xpoints",
+          "ypoints",
+          "fPoly",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5004,16 +6247,16 @@
         "id": 3,
         "label": "Slice 3",
         "start_line": 281,
-        "end_line": 285,
+        "end_line": 284,
         "defs": [
           "i"
         ],
         "uses": [
-          "x",
-          "best",
           "insertPointAt",
+          "best",
+          "y",
           "Point",
-          "y"
+          "x"
         ],
         "is_terminal": true,
         "has_control": true
@@ -5022,7 +6265,7 @@
         "id": 4,
         "label": "Slice 4",
         "start_line": 286,
-        "end_line": 288,
+        "end_line": 287,
         "defs": [],
         "uses": [],
         "is_terminal": true,
@@ -5035,8 +6278,6 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "x",
-          "y",
           "dist",
           "best"
         ]
@@ -5051,8 +6292,6 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "x",
-          "y",
           "best"
         ]
       },
@@ -5081,24 +6320,21 @@
       {
         "id": 1,
         "label": "Slice 1",
-        "start_line": 480,
+        "start_line": 481,
         "end_line": 488,
         "defs": [
-          "chop",
-          "poly",
           "ctr",
-          "p",
-          "i1",
-          "n",
           "sx",
+          "n",
+          "i1",
           "sy"
         ],
         "uses": [
+          "poly",
+          "npoints",
           "xpoints",
-          "Point",
-          "Polygon",
           "ypoints",
-          "npoints"
+          "Point"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5109,9 +6345,9 @@
         "start_line": 489,
         "end_line": 491,
         "defs": [
-          "cy",
+          "len",
           "cx",
-          "len"
+          "cy"
         ],
         "uses": [
           "MAX_VALUE",
@@ -5126,27 +6362,27 @@
         "start_line": 495,
         "end_line": 513,
         "defs": [
-          "chop",
           "i",
+          "cl",
           "nxt",
-          "cl"
+          "chop"
         ],
         "uses": [
-          "intersect",
-          "poly",
-          "ctr",
-          "p",
-          "x",
-          "xpoints",
-          "Geom",
-          "cx",
-          "Point",
           "len",
+          "ctr",
+          "intersect",
+          "length2",
+          "cx",
+          "poly",
+          "p",
+          "Geom",
+          "npoints",
           "cy",
           "y",
-          "npoints",
+          "xpoints",
           "ypoints",
-          "length2"
+          "Point",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5155,25 +6391,25 @@
         "id": 4,
         "label": "Slice 4",
         "start_line": 516,
-        "end_line": 524,
+        "end_line": 525,
         "defs": [
-          "l",
-          "i"
+          "i",
+          "l"
         ],
         "uses": [
-          "poly",
-          "anyway",
-          "npoints",
-          "p",
-          "x",
-          "xpoints",
-          "Geom",
-          "cx",
           "len",
+          "length2",
+          "cx",
+          "poly",
+          "p",
+          "Geom",
+          "npoints",
           "cy",
           "y",
+          "xpoints",
+          "anyway",
           "ypoints",
-          "length2"
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5182,12 +6418,12 @@
         "id": 5,
         "label": "Slice 5",
         "start_line": 526,
-        "end_line": 527,
+        "end_line": 526,
         "defs": [],
         "uses": [
-          "cy",
+          "cx",
           "Point",
-          "cx"
+          "cy"
         ],
         "is_terminal": true,
         "has_control": false
@@ -5199,57 +6435,22 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "p",
-          "poly",
           "ctr"
         ]
       },
       {
         "from": 1,
-        "to": 3,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 1,
-        "to": 4,
-        "type": "DD",
-        "vars": [
-          "p",
-          "poly"
-        ]
-      },
-      {
-        "from": 1,
-        "to": 4,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 1,
         "to": 2,
         "type": "CF"
-      },
-      {
-        "from": 1,
-        "to": 5,
-        "type": "CD",
-        "reason": "Nesting"
       },
       {
         "from": 2,
         "to": 3,
         "type": "DD",
         "vars": [
-          "cy",
+          "len",
           "cx",
-          "len"
+          "cy"
         ]
       },
       {
@@ -5262,9 +6463,9 @@
         "to": 4,
         "type": "DD",
         "vars": [
-          "cy",
+          "len",
           "cx",
-          "len"
+          "cy"
         ]
       },
       {
@@ -5272,8 +6473,8 @@
         "to": 5,
         "type": "DD",
         "vars": [
-          "cy",
-          "cx"
+          "cx",
+          "cy"
         ]
       },
       {
@@ -5296,13 +6497,11 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 42,
-        "end_line": 43,
+        "end_line": 42,
         "defs": [
-          "p1",
           "r"
         ],
         "uses": [
-          "Polygon",
           "displayBox",
           "Rectangle"
         ],
@@ -5312,17 +6511,20 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 44,
-        "end_line": 47,
-        "defs": [],
-        "uses": [
+        "start_line": 43,
+        "end_line": 48,
+        "defs": [
           "p1",
+          "p"
+        ],
+        "uses": [
+          "addPoint",
+          "Polygon",
           "y",
-          "height",
-          "x",
           "r",
           "width",
-          "addPoint"
+          "height",
+          "x"
         ],
         "is_terminal": false,
         "has_control": false
@@ -5330,14 +6532,15 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 48,
-        "end_line": 48,
-        "defs": [
-          "p"
-        ],
+        "start_line": 49,
+        "end_line": 50,
+        "defs": [],
         "uses": [
-          "Polygon",
-          "p1"
+          "getFillColor",
+          "p",
+          "fillPolygon",
+          "g",
+          "setColor"
         ],
         "is_terminal": false,
         "has_control": false
@@ -5345,31 +6548,15 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 49,
-        "end_line": 50,
-        "defs": [],
-        "uses": [
-          "g",
-          "setColor",
-          "fillPolygon",
-          "p",
-          "getFillColor"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 5,
-        "label": "Slice 5",
         "start_line": 51,
         "end_line": 52,
         "defs": [],
         "uses": [
-          "getFrameColor",
-          "g",
           "drawPolygon",
-          "setColor",
-          "p"
+          "g",
+          "p",
+          "getFrameColor",
+          "setColor"
         ],
         "is_terminal": false,
         "has_control": false
@@ -5381,7 +6568,6 @@
         "to": 2,
         "type": "DD",
         "vars": [
-          "p1",
           "r"
         ]
       },
@@ -5391,11 +6577,11 @@
         "type": "CF"
       },
       {
-        "from": 1,
+        "from": 2,
         "to": 3,
         "type": "DD",
         "vars": [
-          "p1"
+          "p"
         ]
       },
       {
@@ -5404,7 +6590,7 @@
         "type": "CF"
       },
       {
-        "from": 3,
+        "from": 2,
         "to": 4,
         "type": "DD",
         "vars": [
@@ -5414,19 +6600,6 @@
       {
         "from": 3,
         "to": 4,
-        "type": "CF"
-      },
-      {
-        "from": 3,
-        "to": 5,
-        "type": "DD",
-        "vars": [
-          "p"
-        ]
-      },
-      {
-        "from": 4,
-        "to": 5,
         "type": "CF"
       }
     ]
@@ -5445,12 +6618,12 @@
         ],
         "uses": [
           "drawing",
-          "e",
+          "findFigure",
           "getY",
-          "isPopupTrigger",
           "Figure",
           "getX",
-          "findFigure"
+          "isPopupTrigger",
+          "e"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5459,21 +6632,16 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 52,
-        "end_line": 56,
+        "end_line": 53,
         "defs": [
           "attribute"
         ],
         "uses": [
-          "figure",
-          "drawing",
-          "Object",
           "getAttribute",
-          "e",
-          "getY",
+          "Object",
+          "POPUP_MENU",
           "Figure",
-          "getX",
-          "findFigureInside",
-          "POPUP_MENU"
+          "figure"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5481,16 +6649,17 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 57,
-        "end_line": 59,
+        "start_line": 54,
+        "end_line": 56,
         "defs": [],
         "uses": [
-          "figure",
           "getY",
-          "showPopupMenu",
-          "getX",
+          "attribute",
+          "drawing",
+          "figure",
+          "findFigureInside",
           "e",
-          "getComponent"
+          "getX"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5498,15 +6667,32 @@
       {
         "id": 4,
         "label": "Slice 4",
+        "start_line": 57,
+        "end_line": 59,
+        "defs": [],
+        "uses": [
+          "getComponent",
+          "showPopupMenu",
+          "getY",
+          "figure",
+          "getX",
+          "e"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 62,
         "end_line": 65,
         "defs": [],
         "uses": [
-          "x",
-          "y",
           "handleMouseDown",
+          "y",
           "mouseDown",
-          "e"
+          "e",
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5549,8 +6735,30 @@
       {
         "from": 1,
         "to": 4,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
         "type": "CD",
         "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "attribute"
+        ]
       },
       {
         "from": 2,
@@ -5570,8 +6778,19 @@
         "reason": "Nesting"
       },
       {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
         "type": "CF"
       }
     ]
@@ -5584,25 +6803,18 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 93,
-        "end_line": 104,
+        "end_line": 94,
         "defs": [
-          "figure",
-          "attribute"
+          "figure"
         ],
         "uses": [
           "drawing",
-          "showPopupMenu",
           "findFigure",
-          "Object",
-          "e",
-          "isPopupTrigger",
           "getY",
-          "getAttribute",
           "Figure",
-          "getComponent",
           "getX",
-          "findFigureInside",
-          "POPUP_MENU"
+          "isPopupTrigger",
+          "e"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5610,14 +6822,21 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 105,
-        "end_line": 107,
-        "defs": [],
+        "start_line": 95,
+        "end_line": 99,
+        "defs": [
+          "attribute"
+        ],
         "uses": [
-          "x",
-          "handleMouseDoubleClick",
-          "getClickCount",
-          "y",
+          "getAttribute",
+          "drawing",
+          "Object",
+          "POPUP_MENU",
+          "Figure",
+          "figure",
+          "getY",
+          "getX",
+          "findFigureInside",
           "e"
         ],
         "is_terminal": false,
@@ -5626,113 +6845,49 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 108,
-        "end_line": 112,
+        "start_line": 100,
+        "end_line": 102,
         "defs": [],
         "uses": [
-          "x",
-          "handleMouseUp",
+          "getComponent",
+          "showPopupMenu",
+          "getY",
+          "figure",
+          "getX",
+          "e"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 105,
+        "end_line": 106,
+        "defs": [],
+        "uses": [
           "y",
+          "handleMouseDoubleClick",
+          "getClickCount",
+          "e",
+          "x"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 108,
+        "end_line": 111,
+        "defs": [],
+        "uses": [
+          "y",
+          "handleMouseUp",
+          "mouseUp",
           "handleMouseClick",
           "e",
-          "mouseUp"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      }
-    ],
-    "edges": [
-      {
-        "from": 1,
-        "to": 2,
-        "type": "CF"
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CF"
-      }
-    ]
-  },
-  {
-    "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
-    "method_name": "handlePopupMenu(MouseEvent, int, int)",
-    "nodes": [
-      {
-        "id": 1,
-        "label": "Slice 1",
-        "start_line": 148,
-        "end_line": 152,
-        "defs": [
-          "figure",
-          "attribute"
-        ],
-        "uses": [
-          "drawing",
-          "findFigure",
-          "Object",
-          "e",
-          "getY",
-          "getAttribute",
-          "Figure",
-          "getX",
-          "findFigureInside",
-          "POPUP_MENU"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 2,
-        "label": "Slice 2",
-        "start_line": 154,
-        "end_line": 160,
-        "defs": [
-          "attribute1",
-          "comp",
-          "popup"
-        ],
-        "uses": [
-          "figure",
-          "JPopupMenu",
-          "PopupMenuFigureSelection",
-          "Object",
-          "Component",
-          "e",
-          "getAttribute",
-          "setSelectedFigure",
-          "Figure",
-          "getComponent",
-          "POPUP_MENU"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 162,
-        "end_line": 167,
-        "defs": [
-          "newLocation",
-          "frames"
-        ],
-        "uses": [
-          "adjustOffsets",
-          "getParent",
-          "e",
-          "getY",
-          "Point",
-          "MDI",
-          "setInvoker",
-          "setLocation",
-          "setVisible",
-          "offsets",
-          "popup",
-          "comp",
-          "getX",
-          "internal",
-          "calculate"
+          "x"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5761,16 +6916,278 @@
       {
         "from": 1,
         "to": 3,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 5,
         "type": "CD",
         "reason": "Nesting"
       },
       {
         "from": 2,
         "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
+    "method_name": "handlePopupMenu(MouseEvent, int, int)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 148,
+        "end_line": 148,
+        "defs": [
+          "figure"
+        ],
+        "uses": [
+          "drawing",
+          "findFigure",
+          "getY",
+          "Figure",
+          "getX",
+          "e"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 149,
+        "end_line": 150,
+        "defs": [
+          "attribute"
+        ],
+        "uses": [
+          "getAttribute",
+          "Object",
+          "POPUP_MENU",
+          "Figure",
+          "figure"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 151,
+        "end_line": 153,
+        "defs": [],
+        "uses": [
+          "getY",
+          "attribute",
+          "drawing",
+          "figure",
+          "findFigureInside",
+          "e",
+          "getX"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 154,
+        "end_line": 155,
+        "defs": [
+          "comp"
+        ],
+        "uses": [
+          "getComponent",
+          "e",
+          "Component",
+          "figure"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 156,
+        "end_line": 157,
+        "defs": [
+          "attribute1"
+        ],
+        "uses": [
+          "getAttribute",
+          "Object",
+          "POPUP_MENU",
+          "Figure",
+          "figure",
+          "JPopupMenu"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 158,
+        "end_line": 161,
+        "defs": [
+          "popup"
+        ],
+        "uses": [
+          "setSelectedFigure",
+          "figure",
+          "attribute1",
+          "JPopupMenu",
+          "PopupMenuFigureSelection"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 162,
+        "end_line": 164,
+        "defs": [
+          "frames",
+          "newLocation"
+        ],
+        "uses": [
+          "internal",
+          "comp",
+          "calculate",
+          "e",
+          "getParent",
+          "MDI",
+          "getY",
+          "getX",
+          "adjustOffsets",
+          "Point",
+          "offsets"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 165,
+        "end_line": 168,
+        "defs": [],
+        "uses": [
+          "setLocation",
+          "newLocation",
+          "popup",
+          "setInvoker",
+          "comp",
+          "setVisible"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
         "type": "DD",
         "vars": [
-          "comp",
-          "popup"
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "figure"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "attribute"
         ]
       },
       {
@@ -5782,12 +7199,143 @@
       {
         "from": 2,
         "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 2,
+        "to": 4,
         "type": "CD",
         "reason": "Nesting"
       },
       {
         "from": 2,
-        "to": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "comp"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "comp"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "attribute1"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "popup"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "newLocation"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 8,
         "type": "CF"
       }
     ]
@@ -5812,15 +7360,13 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 693,
-        "end_line": 694,
+        "end_line": 693,
         "defs": [
           "openDialog"
         ],
         "uses": [
-          "registerFileFilters",
-          "JFileChooser",
           "createOpenFileChooser",
-          "getStorageFormatManager"
+          "JFileChooser"
         ],
         "is_terminal": false,
         "has_control": false
@@ -5828,32 +7374,28 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 695,
-        "end_line": 695,
+        "start_line": 694,
+        "end_line": 694,
         "defs": [],
         "uses": [
           "openDialog",
-          "JFileChooser",
-          "showOpenDialog",
-          "APPROVE_OPTION"
+          "getStorageFormatManager",
+          "registerFileFilters"
         ],
         "is_terminal": false,
-        "has_control": true
+        "has_control": false
       },
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 696,
-        "end_line": 697,
-        "defs": [
-          "foundFormat"
-        ],
+        "start_line": 695,
+        "end_line": 695,
+        "defs": [],
         "uses": [
-          "StorageFormat",
+          "showOpenDialog",
           "openDialog",
-          "getStorageFormatManager",
-          "getFileFilter",
-          "findStorageFormat"
+          "APPROVE_OPTION",
+          "JFileChooser"
         ],
         "is_terminal": false,
         "has_control": true
@@ -5861,56 +7403,160 @@
       {
         "id": 5,
         "label": "Slice 5",
-        "start_line": 698,
-        "end_line": 711,
+        "start_line": 696,
+        "end_line": 696,
         "defs": [
-          "e",
-          "restoredDrawing",
-          "file"
+          "foundFormat"
         ],
         "uses": [
-          "setDrawingTitle",
-          "showStatus",
           "openDialog",
-          "setDrawing",
-          "String",
-          "newWindow",
-          "Drawing",
-          "restore",
-          "IOException",
-          "Error",
-          "could",
-          "type",
-          "getSelectedFile",
-          "open",
-          "foundFormat",
-          "not",
-          "Unknown",
-          "getAbsolutePath"
+          "StorageFormat",
+          "getStorageFormatManager",
+          "getFileFilter",
+          "findStorageFormat"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 697,
+        "end_line": 697,
+        "defs": [],
+        "uses": [
+          "foundFormat"
         ],
         "is_terminal": false,
         "has_control": true
       },
       {
-        "id": 6,
-        "label": "Slice 6",
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 698,
+        "end_line": 698,
+        "defs": [
+          "file"
+        ],
+        "uses": [
+          "openDialog",
+          "String",
+          "getAbsolutePath",
+          "getSelectedFile"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 699,
+        "end_line": 700,
+        "defs": [
+          "restoredDrawing"
+        ],
+        "uses": [
+          "Drawing",
+          "foundFormat",
+          "file",
+          "restore"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 701,
+        "end_line": 701,
+        "defs": [],
+        "uses": [
+          "restoredDrawing"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 10,
+        "label": "Slice 10",
+        "start_line": 702,
+        "end_line": 704,
+        "defs": [],
+        "uses": [
+          "setDrawingTitle",
+          "setDrawing",
+          "file",
+          "restoredDrawing",
+          "newWindow"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 11,
+        "label": "Slice 11",
+        "start_line": 705,
+        "end_line": 708,
+        "defs": [
+          "file"
+        ],
+        "uses": [
+          "open",
+          "type",
+          "not",
+          "could",
+          "Unknown",
+          "showStatus"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 12,
+        "label": "Slice 12",
+        "start_line": 709,
+        "end_line": 711,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "showStatus",
+          "IOException",
+          "Error"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 13,
+        "label": "Slice 13",
         "start_line": 712,
         "end_line": 715,
         "defs": [
           "a"
         ],
         "uses": [
-          "format",
-          "getDescription",
-          "showStatus",
-          "valid",
-          "file",
           "openDialog",
+          "getDescription",
+          "file",
+          "valid",
+          "format",
           "getFileFilter",
+          "showStatus",
           "Not"
         ],
         "is_terminal": false,
         "has_control": true
+      },
+      {
+        "id": 14,
+        "label": "Slice 14",
+        "start_line": 716,
+        "end_line": 716,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
       }
     ],
     "edges": [
@@ -5950,7 +7596,15 @@
       },
       {
         "from": 2,
-        "to": 6,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "openDialog"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 13,
         "type": "DD",
         "vars": [
           "openDialog"
@@ -5959,62 +7613,274 @@
       {
         "from": 3,
         "to": 4,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 3,
-        "to": 4,
         "type": "CF"
       },
       {
-        "from": 3,
+        "from": 4,
         "to": 5,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 3,
-        "to": 6,
         "type": "CD",
         "reason": "Nesting"
       },
       {
         "from": 4,
         "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 4,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 9,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 10,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 11,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 12,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 14,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
         "type": "DD",
         "vars": [
           "foundFormat"
         ]
       },
       {
-        "from": 4,
-        "to": 5,
-        "type": "CD",
-        "reason": "Nesting"
-      },
-      {
-        "from": 4,
-        "to": 5,
+        "from": 5,
+        "to": 6,
         "type": "CF"
       },
       {
-        "from": 4,
-        "to": 6,
+        "from": 5,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "foundFormat"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
         "type": "CD",
         "reason": "Nesting"
       },
       {
-        "from": 5,
-        "to": 6,
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 6,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 9,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 10,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 11,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 12,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 13,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 7,
+        "to": 8,
         "type": "DD",
         "vars": [
           "file"
         ]
       },
       {
-        "from": 5,
-        "to": 6,
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 10,
+        "type": "DD",
+        "vars": [
+          "file"
+        ]
+      },
+      {
+        "from": 7,
+        "to": 13,
+        "type": "DD",
+        "vars": [
+          "file"
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "DD",
+        "vars": [
+          "restoredDrawing"
+        ]
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 8,
+        "to": 9,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 10,
+        "type": "DD",
+        "vars": [
+          "restoredDrawing"
+        ]
+      },
+      {
+        "from": 8,
+        "to": 10,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 8,
+        "to": 11,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 8,
+        "to": 12,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 9,
+        "to": 10,
+        "type": "CF"
+      },
+      {
+        "from": 9,
+        "to": 11,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 10,
+        "to": 11,
+        "type": "CF"
+      },
+      {
+        "from": 11,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "file"
+        ]
+      },
+      {
+        "from": 11,
+        "to": 10,
+        "type": "DD",
+        "vars": [
+          "file"
+        ]
+      },
+      {
+        "from": 11,
+        "to": 13,
+        "type": "DD",
+        "vars": [
+          "file"
+        ]
+      },
+      {
+        "from": 11,
+        "to": 12,
+        "type": "CF"
+      },
+      {
+        "from": 12,
+        "to": 13,
+        "type": "CF"
+      },
+      {
+        "from": 13,
+        "to": 14,
         "type": "CF"
       }
     ]
@@ -6039,16 +7905,15 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 724,
-        "end_line": 726,
+        "end_line": 725,
         "defs": [
-          "saveDialog1",
-          "saveDialog"
+          "saveDialog1"
         ],
         "uses": [
+          "File",
           "Save",
-          "JFileChooser",
           "setDialogTitle",
-          "File"
+          "JFileChooser"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6056,13 +7921,14 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 727,
-        "end_line": 727,
-        "defs": [],
+        "start_line": 726,
+        "end_line": 726,
+        "defs": [
+          "saveDialog"
+        ],
         "uses": [
-          "registerFileFilters",
-          "saveDialog",
-          "getStorageFormatManager"
+          "saveDialog1",
+          "JFileChooser"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6070,30 +7936,83 @@
       {
         "id": 4,
         "label": "Slice 4",
+        "start_line": 727,
+        "end_line": 727,
+        "defs": [],
+        "uses": [
+          "getStorageFormatManager",
+          "registerFileFilters",
+          "saveDialog"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
         "start_line": 729,
-        "end_line": 737,
+        "end_line": 729,
+        "defs": [],
+        "uses": [
+          "APPROVE_OPTION",
+          "saveDialog",
+          "JFileChooser",
+          "showSaveDialog"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
+        "start_line": 730,
+        "end_line": 730,
         "defs": [
-          "a",
           "foundFormat"
         ],
         "uses": [
-          "showStatus",
-          "getFileFilter",
-          "findStorageFormat",
-          "format",
-          "JFileChooser",
-          "getDescription",
+          "saveDialog",
           "StorageFormat",
-          "APPROVE_OPTION",
-          "getSelectedFile",
-          "showSaveDialog",
           "getStorageFormatManager",
-          "file",
-          "valid",
-          "Not",
+          "getFileFilter",
+          "findStorageFormat"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 731,
+        "end_line": 733,
+        "defs": [],
+        "uses": [
           "saveDialog",
           "saveDrawing",
-          "getAbsolutePath"
+          "foundFormat",
+          "getAbsolutePath",
+          "getSelectedFile"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 734,
+        "end_line": 736,
+        "defs": [
+          "a"
+        ],
+        "uses": [
+          "getDescription",
+          "saveDialog",
+          "file",
+          "valid",
+          "format",
+          "getFileFilter",
+          "showStatus",
+          "Not"
         ],
         "is_terminal": false,
         "has_control": true
@@ -6110,7 +8029,7 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "saveDialog"
+          "saveDialog1"
         ]
       },
       {
@@ -6119,7 +8038,7 @@
         "type": "CF"
       },
       {
-        "from": 2,
+        "from": 3,
         "to": 4,
         "type": "DD",
         "vars": [
@@ -6129,6 +8048,84 @@
       {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "DD",
+        "vars": [
+          "saveDialog"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "saveDialog"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "saveDialog"
+        ]
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "saveDialog"
+        ]
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "foundFormat"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
         "type": "CF"
       }
     ]
@@ -6144,11 +8141,11 @@
         "end_line": 66,
         "defs": [],
         "uses": [
-          "BorderLayout",
-          "fIconkit",
           "Iconkit",
-          "setLayout",
-          "getContentPane"
+          "getContentPane",
+          "fIconkit",
+          "BorderLayout",
+          "setLayout"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6160,8 +8157,8 @@
         "end_line": 68,
         "defs": [],
         "uses": [
-          "createDrawingView",
-          "fView"
+          "fView",
+          "createDrawingView"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6170,25 +8167,49 @@
         "id": 3,
         "label": "Slice 3",
         "start_line": 70,
-        "end_line": 81,
+        "end_line": 95,
         "defs": [
-          "attributes"
+          "attributes",
+          "choice"
         ],
         "uses": [
-          "JLabel",
-          "createAttributesPanel",
-          "Pen",
-          "Text",
-          "fFrameColor",
+          "fFontChoice",
           "Fill",
-          "FillColor",
-          "fFillColor",
-          "TextColor",
-          "fTextColor",
-          "createColorChoice",
-          "JPanel",
+          "CommandChoice",
           "FrameColor",
-          "add"
+          "TextColor",
+          "ARROW_TIP_END",
+          "North",
+          "createColorChoice",
+          "End",
+          "add",
+          "createAttributesPanel",
+          "FillColor",
+          "fFrameColor",
+          "ARROW_TIP_NONE",
+          "getContentPane",
+          "Pen",
+          "Start",
+          "Arrow",
+          "ChangeAttributeCommand",
+          "Integer",
+          "ARROW_TIP_BOTH",
+          "fArrowChoice",
+          "none",
+          "PolyLineFigure",
+          "ArrowMode",
+          "fTextColor",
+          "JPanel",
+          "at",
+          "ARROW_TIP_START",
+          "fView",
+          "JLabel",
+          "addItem",
+          "Both",
+          "Font",
+          "fFillColor",
+          "Text",
+          "createFontChoice"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6196,32 +8217,17 @@
       {
         "id": 4,
         "label": "Slice 4",
-        "start_line": 83,
-        "end_line": 90,
+        "start_line": 97,
+        "end_line": 99,
         "defs": [
-          "choice"
+          "toolPanel"
         ],
         "uses": [
-          "ARROW_TIP_NONE",
-          "JLabel",
-          "ARROW_TIP_BOTH",
-          "Integer",
-          "Both",
-          "End",
-          "CommandChoice",
-          "fView",
-          "at",
-          "Start",
-          "ARROW_TIP_START",
-          "ChangeAttributeCommand",
-          "ARROW_TIP_END",
-          "PolyLineFigure",
-          "attributes",
-          "fArrowChoice",
-          "ArrowMode",
-          "Arrow",
-          "addItem",
-          "none",
+          "JPanel",
+          "createToolPalette",
+          "createTools",
+          "getContentPane",
+          "West",
           "add"
         ],
         "is_terminal": false,
@@ -6230,18 +8236,14 @@
       {
         "id": 5,
         "label": "Slice 5",
-        "start_line": 92,
-        "end_line": 95,
+        "start_line": 101,
+        "end_line": 101,
         "defs": [],
         "uses": [
-          "attributes",
-          "createFontChoice",
-          "JLabel",
-          "fFontChoice",
-          "Font",
+          "Center",
+          "add",
           "getContentPane",
-          "North",
-          "add"
+          "fView"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6249,18 +8251,18 @@
       {
         "id": 6,
         "label": "Slice 6",
-        "start_line": 97,
-        "end_line": 99,
+        "start_line": 102,
+        "end_line": 104,
         "defs": [
-          "toolPanel"
+          "buttonPalette"
         ],
         "uses": [
-          "add",
-          "West",
-          "createTools",
-          "createToolPalette",
           "JPanel",
-          "getContentPane"
+          "South",
+          "createButtonPanel",
+          "getContentPane",
+          "createButtons",
+          "add"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6268,46 +8270,21 @@
       {
         "id": 7,
         "label": "Slice 7",
-        "start_line": 101,
-        "end_line": 101,
-        "defs": [],
-        "uses": [
-          "getContentPane",
-          "fView",
-          "Center",
-          "add"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 8,
-        "label": "Slice 8",
-        "start_line": 102,
-        "end_line": 104,
-        "defs": [
-          "buttonPalette"
-        ],
-        "uses": [
-          "South",
-          "add",
-          "createButtons",
-          "createButtonPanel",
-          "JPanel",
-          "getContentPane"
-        ],
-        "is_terminal": false,
-        "has_control": false
-      },
-      {
-        "id": 9,
-        "label": "Slice 9",
         "start_line": 106,
         "end_line": 109,
-        "defs": [],
+        "defs": [
+          "should",
+          "buffering"
+        ],
         "uses": [
+          "its",
+          "internal",
+          "own",
+          "setBufferedDisplayUpdate",
+          "JFC",
+          "setupAttributes",
           "initDrawing",
-          "setupAttributes"
+          "have"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6327,23 +8304,7 @@
       {
         "from": 3,
         "to": 4,
-        "type": "DD",
-        "vars": [
-          "attributes"
-        ]
-      },
-      {
-        "from": 3,
-        "to": 4,
         "type": "CF"
-      },
-      {
-        "from": 3,
-        "to": 5,
-        "type": "DD",
-        "vars": [
-          "attributes"
-        ]
       },
       {
         "from": 4,
@@ -6359,16 +8320,6 @@
         "from": 6,
         "to": 7,
         "type": "CF"
-      },
-      {
-        "from": 7,
-        "to": 8,
-        "type": "CF"
-      },
-      {
-        "from": 8,
-        "to": 9,
-        "type": "CF"
       }
     ]
   },
@@ -6383,13 +8334,13 @@
         "end_line": 143,
         "defs": [],
         "uses": [
-          "JLabel",
+          "FillColor",
+          "panel",
           "createColorChoice",
           "Fill",
-          "FillColor",
           "fFillColor",
-          "panel",
-          "add"
+          "add",
+          "JLabel"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6401,13 +8352,13 @@
         "end_line": 147,
         "defs": [],
         "uses": [
-          "JLabel",
-          "fTextColor",
+          "panel",
           "createColorChoice",
           "Text",
           "TextColor",
-          "panel",
-          "add"
+          "fTextColor",
+          "add",
+          "JLabel"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6419,13 +8370,13 @@
         "end_line": 151,
         "defs": [],
         "uses": [
-          "JLabel",
-          "Pen",
-          "createColorChoice",
-          "fFrameColor",
-          "FrameColor",
           "panel",
-          "add"
+          "createColorChoice",
+          "Pen",
+          "JLabel",
+          "fFrameColor",
+          "add",
+          "FrameColor"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6439,27 +8390,27 @@
           "choice"
         ],
         "uses": [
-          "ARROW_TIP_NONE",
-          "JLabel",
-          "ARROW_TIP_BOTH",
           "Integer",
-          "Both",
-          "panel",
-          "End",
           "CommandChoice",
-          "fView",
-          "at",
-          "Start",
-          "ARROW_TIP_START",
-          "ChangeAttributeCommand",
+          "ARROW_TIP_BOTH",
+          "fArrowChoice",
+          "none",
           "ARROW_TIP_END",
           "PolyLineFigure",
-          "fArrowChoice",
           "ArrowMode",
-          "Arrow",
+          "End",
+          "add",
+          "at",
+          "ARROW_TIP_START",
+          "fView",
+          "JLabel",
+          "panel",
+          "ARROW_TIP_NONE",
           "addItem",
-          "none",
-          "add"
+          "Both",
+          "Start",
+          "Arrow",
+          "ChangeAttributeCommand"
         ],
         "is_terminal": false,
         "has_control": false
@@ -6470,26 +8421,26 @@
         "start_line": 162,
         "end_line": 168,
         "defs": [
-          "fonts",
+          "i",
           "choice1",
-          "i"
+          "fonts"
         ],
         "uses": [
-          "JLabel",
           "fFontChoice",
-          "FontName",
-          "panel",
           "CommandChoice",
+          "FontName",
           "String",
-          "fView",
           "Toolkit",
-          "ChangeAttributeCommand",
-          "getDefaultToolkit",
-          "Font",
           "length",
+          "add",
+          "fView",
+          "getDefaultToolkit",
+          "JLabel",
+          "panel",
           "addItem",
+          "Font",
           "getFontList",
-          "add"
+          "ChangeAttributeCommand"
         ],
         "is_terminal": false,
         "has_control": true
@@ -6529,11 +8480,11 @@
         "end_line": 431,
         "defs": [],
         "uses": [
-          "initDrawing",
-          "fDrawing",
-          "param",
           "fgUntitled",
-          "release"
+          "fDrawing",
+          "release",
+          "param",
+          "initDrawing"
         ],
         "is_terminal": true,
         "has_control": true
@@ -6542,56 +8493,115 @@
         "id": 2,
         "label": "Slice 2",
         "start_line": 433,
-        "end_line": 434,
+        "end_line": 433,
         "defs": [
           "filename"
         ],
         "uses": [
+          "param",
           "getParameter",
-          "String",
-          "param"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 435,
-        "end_line": 436,
-        "defs": [
-          "type"
-        ],
-        "uses": [
-          "String",
-          "filename",
-          "toolDone",
-          "guessType"
+          "String"
         ],
         "is_terminal": false,
         "has_control": false
       },
       {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 434,
+        "end_line": 434,
+        "defs": [],
+        "uses": [
+          "filename"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
         "id": 4,
         "label": "Slice 4",
+        "start_line": 435,
+        "end_line": 435,
+        "defs": [],
+        "uses": [
+          "toolDone"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 5,
+        "label": "Slice 5",
+        "start_line": 436,
+        "end_line": 436,
+        "defs": [
+          "type"
+        ],
+        "uses": [
+          "guessType",
+          "String",
+          "filename"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 6,
+        "label": "Slice 6",
         "start_line": 437,
-        "end_line": 443,
+        "end_line": 438,
+        "defs": [],
+        "uses": [
+          "equals",
+          "storable",
+          "readFromStorableInput",
+          "type",
+          "filename"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 7,
+        "label": "Slice 7",
+        "start_line": 439,
+        "end_line": 440,
+        "defs": [],
+        "uses": [
+          "equals",
+          "serialized",
+          "readFromObjectInput",
+          "type",
+          "filename"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 8,
+        "label": "Slice 8",
+        "start_line": 441,
+        "end_line": 442,
         "defs": [
           "file"
         ],
         "uses": [
-          "type",
-          "filename",
-          "storable",
-          "readFromObjectInput",
+          "Unknown",
           "showStatus",
-          "equals",
-          "serialized",
-          "readFromStorableInput",
-          "Unknown"
+          "type"
         ],
         "is_terminal": false,
         "has_control": true
+      },
+      {
+        "id": 9,
+        "label": "Slice 9",
+        "start_line": 443,
+        "end_line": 443,
+        "defs": [],
+        "uses": [],
+        "is_terminal": false,
+        "has_control": false
       }
     ],
     "edges": [
@@ -6619,18 +8629,42 @@
         "reason": "GuardCheck"
       },
       {
+        "from": 1,
+        "to": 5,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 6,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 7,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 8,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
+        "from": 1,
+        "to": 9,
+        "type": "CD",
+        "reason": "GuardCheck"
+      },
+      {
         "from": 2,
         "to": 3,
         "type": "DD",
         "vars": [
           "filename"
         ]
-      },
-      {
-        "from": 2,
-        "to": 3,
-        "type": "CD",
-        "reason": "Nesting"
       },
       {
         "from": 2,
@@ -6639,7 +8673,7 @@
       },
       {
         "from": 2,
-        "to": 4,
+        "to": 5,
         "type": "DD",
         "vars": [
           "filename"
@@ -6647,6 +8681,22 @@
       },
       {
         "from": 2,
+        "to": 6,
+        "type": "DD",
+        "vars": [
+          "filename"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "filename"
+        ]
+      },
+      {
+        "from": 3,
         "to": 4,
         "type": "CD",
         "reason": "Nesting"
@@ -6654,14 +8704,85 @@
       {
         "from": 3,
         "to": 4,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 5,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 6,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 7,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 8,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 9,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 4,
+        "to": 5,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 6,
         "type": "DD",
         "vars": [
           "type"
         ]
       },
       {
-        "from": 3,
-        "to": 4,
+        "from": 5,
+        "to": 6,
+        "type": "CF"
+      },
+      {
+        "from": 5,
+        "to": 7,
+        "type": "DD",
+        "vars": [
+          "type"
+        ]
+      },
+      {
+        "from": 5,
+        "to": 8,
+        "type": "DD",
+        "vars": [
+          "type"
+        ]
+      },
+      {
+        "from": 6,
+        "to": 7,
+        "type": "CF"
+      },
+      {
+        "from": 7,
+        "to": 8,
+        "type": "CF"
+      },
+      {
+        "from": 8,
+        "to": 9,
         "type": "CF"
       }
     ]
@@ -6691,8 +8812,8 @@
           "type"
         ],
         "uses": [
-          "String",
           "guessType",
+          "String",
           "filename"
         ],
         "is_terminal": false,
@@ -6705,11 +8826,11 @@
         "end_line": 450,
         "defs": [],
         "uses": [
-          "type",
-          "filename",
+          "equals",
           "storable",
           "readFromStorableInput",
-          "equals"
+          "type",
+          "filename"
         ],
         "is_terminal": false,
         "has_control": true
@@ -6721,35 +8842,35 @@
         "end_line": 465,
         "defs": [
           "url",
-          "e",
+          "input",
           "stream",
           "not",
-          "input"
+          "e"
         ],
         "uses": [
-          "ObjectInputStream",
-          "found",
-          "equals",
-          "showStatus",
-          "release",
-          "ClassNotFoundException",
-          "setDrawing",
-          "Class",
-          "fView",
-          "Drawing",
-          "readObject",
           "IOException",
-          "Error",
-          "getCodeBase",
-          "URL",
-          "initDrawing",
-          "filename",
           "type",
-          "ObjectInput",
           "openStream",
-          "fDrawing",
+          "ClassNotFoundException",
+          "initDrawing",
+          "ObjectInputStream",
           "serialized",
-          "InputStream"
+          "release",
+          "ObjectInput",
+          "found",
+          "showStatus",
+          "setDrawing",
+          "fDrawing",
+          "fView",
+          "equals",
+          "URL",
+          "Class",
+          "getCodeBase",
+          "Drawing",
+          "filename",
+          "InputStream",
+          "readObject",
+          "Error"
         ],
         "is_terminal": false,
         "has_control": true
@@ -6826,19 +8947,17 @@
         "id": 1,
         "label": "Slice 1",
         "start_line": 471,
-        "end_line": 474,
+        "end_line": 473,
         "defs": [
-          "url",
           "stream",
-          "input"
+          "url"
         ],
         "uses": [
-          "filename",
           "openStream",
-          "getCodeBase",
-          "InputStream",
           "URL",
-          "StorableInput"
+          "getCodeBase",
+          "filename",
+          "InputStream"
         ],
         "is_terminal": false,
         "has_control": true
@@ -6846,16 +8965,150 @@
       {
         "id": 2,
         "label": "Slice 2",
-        "start_line": 475,
+        "start_line": 474,
+        "end_line": 475,
+        "defs": [
+          "input"
+        ],
+        "uses": [
+          "stream",
+          "fDrawing",
+          "release",
+          "StorableInput"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 3,
+        "label": "Slice 3",
+        "start_line": 477,
         "end_line": 478,
         "defs": [],
         "uses": [
+          "input",
+          "fDrawing",
+          "fView",
           "readStorable",
+          "Drawing",
+          "setDrawing"
+        ],
+        "is_terminal": false,
+        "has_control": false
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 479,
+        "end_line": 484,
+        "defs": [
+          "e"
+        ],
+        "uses": [
+          "fDrawing",
+          "setDrawing",
+          "fView",
+          "IOException",
+          "createDrawing",
+          "toolDone",
+          "showStatus",
+          "Error"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      }
+    ],
+    "edges": [
+      {
+        "from": 1,
+        "to": 2,
+        "type": "DD",
+        "vars": [
+          "stream"
+        ]
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "type": "CF"
+      },
+      {
+        "from": 1,
+        "to": 3,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 1,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "DD",
+        "vars": [
+          "input"
+        ]
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CF"
+      }
+    ]
+  },
+  {
+    "class_name": "CH.ifa.draw.applet.DrawApplet",
+    "method_name": "readFromObjectInput(String)",
+    "nodes": [
+      {
+        "id": 1,
+        "label": "Slice 1",
+        "start_line": 488,
+        "end_line": 491,
+        "defs": [
+          "stream",
+          "url",
+          "input"
+        ],
+        "uses": [
+          "openStream",
+          "ObjectInputStream",
+          "ObjectInput",
+          "URL",
+          "getCodeBase",
+          "filename",
+          "InputStream"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 2,
+        "label": "Slice 2",
+        "start_line": 492,
+        "end_line": 494,
+        "defs": [],
+        "uses": [
+          "input",
+          "fDrawing",
+          "release",
           "fView",
           "Drawing",
-          "fDrawing",
-          "input",
-          "release",
+          "readObject",
           "setDrawing"
         ],
         "is_terminal": false,
@@ -6864,20 +9117,39 @@
       {
         "id": 3,
         "label": "Slice 3",
-        "start_line": 479,
-        "end_line": 483,
+        "start_line": 495,
+        "end_line": 499,
         "defs": [
           "e"
         ],
         "uses": [
-          "showStatus",
-          "createDrawing",
+          "fDrawing",
           "setDrawing",
           "fView",
-          "fDrawing",
           "IOException",
+          "createDrawing",
           "toolDone",
+          "showStatus",
           "Error"
+        ],
+        "is_terminal": false,
+        "has_control": true
+      },
+      {
+        "id": 4,
+        "label": "Slice 4",
+        "start_line": 500,
+        "end_line": 502,
+        "defs": [
+          "not",
+          "e"
+        ],
+        "uses": [
+          "ClassNotFoundException",
+          "found",
+          "Class",
+          "showStatus",
+          "initDrawing"
         ],
         "is_terminal": false,
         "has_control": true
@@ -6910,94 +9182,25 @@
         "reason": "Nesting"
       },
       {
-        "from": 2,
-        "to": 3,
-        "type": "CF"
-      }
-    ]
-  },
-  {
-    "class_name": "CH.ifa.draw.applet.DrawApplet",
-    "method_name": "readFromObjectInput(String)",
-    "nodes": [
-      {
-        "id": 1,
-        "label": "Slice 1",
-        "start_line": 488,
-        "end_line": 494,
-        "defs": [
-          "url",
-          "stream",
-          "input"
-        ],
-        "uses": [
-          "ObjectInputStream",
-          "release",
-          "setDrawing",
-          "fView",
-          "Drawing",
-          "readObject",
-          "getCodeBase",
-          "URL",
-          "filename",
-          "ObjectInput",
-          "openStream",
-          "fDrawing",
-          "InputStream"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 2,
-        "label": "Slice 2",
-        "start_line": 495,
-        "end_line": 499,
-        "defs": [
-          "e"
-        ],
-        "uses": [
-          "showStatus",
-          "createDrawing",
-          "setDrawing",
-          "fView",
-          "fDrawing",
-          "IOException",
-          "toolDone",
-          "Error"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      },
-      {
-        "id": 3,
-        "label": "Slice 3",
-        "start_line": 500,
-        "end_line": 502,
-        "defs": [
-          "e",
-          "not"
-        ],
-        "uses": [
-          "initDrawing",
-          "found",
-          "showStatus",
-          "ClassNotFoundException",
-          "Class"
-        ],
-        "is_terminal": false,
-        "has_control": true
-      }
-    ],
-    "edges": [
-      {
         "from": 1,
-        "to": 2,
-        "type": "CF"
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
       },
       {
         "from": 2,
         "to": 3,
+        "type": "CF"
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "type": "CD",
+        "reason": "Nesting"
+      },
+      {
+        "from": 3,
+        "to": 4,
         "type": "CF"
       }
     ]

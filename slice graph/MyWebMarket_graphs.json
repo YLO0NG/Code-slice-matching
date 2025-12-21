@@ -12,11 +12,11 @@
           "find"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -31,14 +31,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -52,12 +52,12 @@
           "criteria"
         ],
         "uses": [
-          "createCriteria",
-          "f",
-          "Criteria",
           "Customer",
+          "hibernate",
+          "Criteria",
           "sess",
-          "hibernate"
+          "f",
+          "createCriteria"
         ],
         "is_terminal": false,
         "has_control": false
@@ -69,20 +69,20 @@
         "end_line": 96,
         "defs": [],
         "uses": [
-          "f",
-          "criteria",
-          "Restrictions",
-          "getId",
-          "excludeZeroes",
-          "Example",
-          "ANYWHERE",
-          "ignoreCase",
-          "enableLike",
-          "create",
           "customer",
-          "MatchMode",
-          "idEq",
+          "excludeZeroes",
           "hibernate",
+          "getId",
+          "MatchMode",
+          "ignoreCase",
+          "Example",
+          "create",
+          "criteria",
+          "enableLike",
+          "idEq",
+          "Restrictions",
+          "f",
+          "ANYWHERE",
           "add"
         ],
         "is_terminal": false,
@@ -95,15 +95,15 @@
         "end_line": 99,
         "defs": [],
         "uses": [
+          "l",
+          "Customer",
+          "hibernate",
+          "list",
           "SuppressWarnings",
           "criteria",
-          "f",
-          "list",
-          "List",
-          "l",
           "unchecked",
-          "Customer",
-          "hibernate"
+          "f",
+          "List"
         ],
         "is_terminal": false,
         "has_control": false
@@ -115,11 +115,11 @@
         "end_line": 101,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -133,9 +133,9 @@
         "defs": [],
         "uses": [
           "l",
-          "put",
+          "request",
           "list",
-          "request"
+          "put"
         ],
         "is_terminal": false,
         "has_control": false
@@ -147,8 +147,8 @@
         "end_line": 104,
         "defs": [],
         "uses": [
-          "CR_MODE",
           "SystemConstants",
+          "CR_MODE",
           "task"
         ],
         "is_terminal": false,
@@ -163,12 +163,12 @@
           "find"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -263,11 +263,11 @@
           "save"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -282,14 +282,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -301,10 +301,10 @@
         "end_line": 114,
         "defs": [],
         "uses": [
-          "f",
-          "customer",
           "save",
           "sess",
+          "customer",
+          "f",
           "hibernate"
         ],
         "is_terminal": false,
@@ -317,11 +317,11 @@
         "end_line": 117,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -335,13 +335,13 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "saveSuccessful",
-          "addActionMessage",
-          "String",
-          "getText",
-          "customer",
           "SystemConstants",
-          "task"
+          "addActionMessage",
+          "customer",
+          "task",
+          "saveSuccessful",
+          "getText",
+          "String"
         ],
         "is_terminal": false,
         "has_control": false
@@ -355,12 +355,12 @@
           "save"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -440,11 +440,11 @@
           "update"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -459,14 +459,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -478,11 +478,11 @@
         "end_line": 131,
         "defs": [],
         "uses": [
-          "f",
+          "sess",
+          "customer",
           "update",
           "hibernate",
-          "sess",
-          "customer"
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -494,11 +494,11 @@
         "end_line": 134,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -512,13 +512,13 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "addActionMessage",
-          "String",
-          "getText",
-          "updateSuccessful",
-          "customer",
           "SystemConstants",
-          "task"
+          "addActionMessage",
+          "customer",
+          "task",
+          "getText",
+          "String",
+          "updateSuccessful"
         ],
         "is_terminal": false,
         "has_control": false
@@ -532,12 +532,12 @@
           "update"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -615,22 +615,22 @@
         "end_line": 146,
         "defs": [
           "sess",
-          "t",
-          "delete"
+          "delete",
+          "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
+          "logger",
           "HibernateUtil",
-          "Session",
+          "info",
           "getSessionFactory",
-          "openSession",
+          "log",
+          "hibernate",
+          "Session",
           "Starting",
           "Transaction",
-          "info",
-          "hibernate",
-          "log",
-          "logger"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -642,11 +642,11 @@
         "end_line": 148,
         "defs": [],
         "uses": [
-          "f",
-          "customer",
-          "delete",
           "sess",
-          "hibernate"
+          "customer",
+          "f",
+          "hibernate",
+          "delete"
         ],
         "is_terminal": false,
         "has_control": false
@@ -658,11 +658,11 @@
         "end_line": 151,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -675,14 +675,14 @@
         "end_line": 154,
         "defs": [],
         "uses": [
+          "SystemConstants",
           "CR_MODE",
           "addActionMessage",
-          "String",
-          "getText",
-          "task",
           "customer",
-          "SystemConstants",
-          "deleteSuccessful"
+          "task",
+          "getText",
+          "deleteSuccessful",
+          "String"
         ],
         "is_terminal": false,
         "has_control": false
@@ -696,12 +696,12 @@
           "delete"
         ],
         "uses": [
-          "f",
-          "Finishing",
           "input",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -770,15 +770,15 @@
           "id"
         ],
         "uses": [
-          "f",
+          "parameters",
+          "logger",
           "Integer",
-          "get",
-          "Starting",
           "info",
           "log",
+          "get",
+          "Starting",
           "valueOf",
-          "logger",
-          "parameters"
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -789,24 +789,24 @@
         "start_line": 164,
         "end_line": 169,
         "defs": [
-          "c",
           "sess",
+          "c",
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "id",
-          "Transaction",
           "Customer",
+          "id",
+          "getSessionFactory",
+          "get",
+          "commit",
+          "close",
+          "Transaction",
+          "beginTransaction",
+          "f",
           "hibernate",
           "Session",
-          "getSessionFactory",
-          "openSession",
-          "close",
-          "get",
-          "commit"
+          "openSession"
         ],
         "is_terminal": false,
         "has_control": false
@@ -833,15 +833,15 @@
           "edit"
         ],
         "uses": [
-          "f",
           "UD_MODE",
-          "Finishing",
+          "logger",
+          "SystemConstants",
+          "task",
           "info",
           "INPUT",
           "log",
-          "logger",
-          "SystemConstants",
-          "task"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -896,18 +896,18 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
+          "logger",
           "HibernateUtil",
-          "Session",
+          "info",
           "getSessionFactory",
-          "openSession",
+          "log",
+          "hibernate",
+          "Session",
           "Starting",
           "Transaction",
-          "info",
-          "hibernate",
-          "log",
-          "logger"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -922,18 +922,18 @@
         ],
         "uses": [
           "createCriteria",
-          "f",
-          "Restrictions",
+          "hibernate",
           "eq",
-          "password",
-          "User",
-          "Criteria",
-          "getPassword",
           "user",
           "getUsername",
+          "Criteria",
           "sess",
+          "password",
+          "User",
+          "getPassword",
           "idEq",
-          "hibernate",
+          "Restrictions",
+          "f",
           "add"
         ],
         "is_terminal": false,
@@ -948,15 +948,15 @@
           "user"
         ],
         "uses": [
-          "f",
+          "uniqueResult",
+          "commit",
+          "hibernate",
+          "close",
+          "sess",
+          "User",
           "criteria",
           "t",
-          "User",
-          "close",
-          "commit",
-          "uniqueResult",
-          "sess",
-          "hibernate"
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -970,20 +970,20 @@
           "execute"
         ],
         "uses": [
-          "f",
+          "SystemConstants",
           "put",
-          "Finishing",
-          "SUCCESS",
-          "user",
+          "logger",
           "getSession",
-          "ActionContext",
+          "info",
+          "log",
+          "getContext",
+          "user",
           "Success",
           "AUTHENTICATED_USER",
-          "info",
-          "getContext",
-          "log",
-          "logger",
-          "SystemConstants"
+          "Finishing",
+          "ActionContext",
+          "SUCCESS",
+          "f"
         ],
         "is_terminal": true,
         "has_control": true
@@ -997,17 +997,17 @@
           "execute"
         ],
         "uses": [
-          "f",
-          "Failure",
-          "login",
-          "Finishing",
-          "getText",
+          "logger",
           "addActionError",
           "info",
           "INPUT",
+          "login",
           "log",
-          "failure",
-          "logger"
+          "getText",
+          "Finishing",
+          "f",
+          "Failure",
+          "failure"
         ],
         "is_terminal": true,
         "has_control": false
@@ -1096,11 +1096,11 @@
           "find"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1115,14 +1115,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1136,24 +1136,24 @@
           "criteria"
         ],
         "uses": [
-          "createCriteria",
-          "f",
-          "Restrictions",
-          "Criteria",
-          "getId",
-          "excludeZeroes",
-          "Example",
-          "enableLike",
           "product",
           "MatchMode",
-          "idEq",
-          "hibernate",
-          "ANYWHERE",
           "ignoreCase",
+          "Criteria",
+          "f",
+          "createCriteria",
+          "ANYWHERE",
+          "add",
+          "Restrictions",
+          "getId",
           "create",
+          "hibernate",
           "sess",
+          "Example",
+          "enableLike",
+          "idEq",
           "Product",
-          "add"
+          "excludeZeroes"
         ],
         "is_terminal": false,
         "has_control": true
@@ -1165,15 +1165,15 @@
         "end_line": 101,
         "defs": [],
         "uses": [
+          "l",
+          "hibernate",
+          "list",
           "SuppressWarnings",
           "criteria",
-          "f",
-          "list",
-          "List",
-          "l",
           "unchecked",
+          "f",
           "Product",
-          "hibernate"
+          "List"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1185,11 +1185,11 @@
         "end_line": 103,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -1203,9 +1203,9 @@
         "defs": [],
         "uses": [
           "l",
-          "put",
+          "request",
           "list",
-          "request"
+          "put"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1219,14 +1219,14 @@
           "find"
         ],
         "uses": [
-          "f",
+          "SystemConstants",
           "CR_MODE",
-          "Finishing",
+          "logger",
+          "task",
           "info",
           "log",
-          "logger",
-          "SystemConstants",
-          "task"
+          "Finishing",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1320,11 +1320,11 @@
           "save"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1339,14 +1339,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1358,11 +1358,11 @@
         "end_line": 116,
         "defs": [],
         "uses": [
-          "f",
-          "product",
           "save",
           "sess",
-          "hibernate"
+          "f",
+          "hibernate",
+          "product"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1374,11 +1374,11 @@
         "end_line": 119,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -1392,13 +1392,13 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "saveSuccessful",
+          "SystemConstants",
           "addActionMessage",
-          "String",
+          "task",
+          "saveSuccessful",
           "product",
           "getText",
-          "SystemConstants",
-          "task"
+          "String"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1412,12 +1412,12 @@
           "save"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -1497,11 +1497,11 @@
           "update"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1516,14 +1516,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1535,11 +1535,11 @@
         "end_line": 133,
         "defs": [],
         "uses": [
-          "f",
-          "product",
-          "update",
           "sess",
-          "hibernate"
+          "update",
+          "hibernate",
+          "product",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1551,11 +1551,11 @@
         "end_line": 136,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -1569,13 +1569,13 @@
         "defs": [],
         "uses": [
           "UD_MODE",
+          "SystemConstants",
           "addActionMessage",
-          "String",
+          "task",
           "product",
           "getText",
-          "updateSuccessful",
-          "SystemConstants",
-          "task"
+          "String",
+          "updateSuccessful"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1589,12 +1589,12 @@
           "update"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -1674,11 +1674,11 @@
           "delete"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1693,14 +1693,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1712,11 +1712,11 @@
         "end_line": 150,
         "defs": [],
         "uses": [
-          "f",
-          "product",
-          "delete",
           "sess",
-          "hibernate"
+          "delete",
+          "f",
+          "hibernate",
+          "product"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1728,11 +1728,11 @@
         "end_line": 153,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -1745,14 +1745,14 @@
         "end_line": 156,
         "defs": [],
         "uses": [
+          "SystemConstants",
           "CR_MODE",
           "addActionMessage",
-          "String",
+          "task",
           "product",
           "getText",
-          "task",
-          "SystemConstants",
-          "deleteSuccessful"
+          "deleteSuccessful",
+          "String"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1766,12 +1766,12 @@
           "delete"
         ],
         "uses": [
-          "f",
-          "Finishing",
           "input",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -1852,15 +1852,15 @@
           "id"
         ],
         "uses": [
-          "f",
+          "parameters",
+          "logger",
           "Integer",
-          "get",
-          "Starting",
           "info",
           "log",
+          "get",
+          "Starting",
           "valueOf",
-          "logger",
-          "parameters"
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1875,14 +1875,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1896,12 +1896,12 @@
           "p"
         ],
         "uses": [
-          "f",
-          "get",
           "id",
+          "get",
+          "hibernate",
           "sess",
-          "Product",
-          "hibernate"
+          "f",
+          "Product"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1913,11 +1913,11 @@
         "end_line": 172,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -1931,10 +1931,10 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "setProduct",
-          "p",
           "SystemConstants",
-          "task"
+          "task",
+          "p",
+          "setProduct"
         ],
         "is_terminal": false,
         "has_control": false
@@ -1948,12 +1948,12 @@
           "edit"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -2033,15 +2033,15 @@
           "input"
         ],
         "uses": [
-          "f",
-          "CR_MODE",
-          "purchaseOrder",
-          "Starting",
-          "info",
-          "log",
           "logger",
           "SystemConstants",
-          "task"
+          "CR_MODE",
+          "task",
+          "info",
+          "purchaseOrder",
+          "log",
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2056,14 +2056,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2077,22 +2077,22 @@
           "criteria"
         ],
         "uses": [
-          "createCriteria",
-          "f",
-          "SuppressWarnings",
-          "list",
-          "Criteria",
-          "lc",
-          "listCustomer",
-          "ActionContext",
-          "getContext",
-          "Customer",
-          "hibernate",
-          "unchecked",
           "put",
+          "Customer",
+          "Criteria",
+          "f",
+          "createCriteria",
           "List",
+          "lc",
           "getSession",
-          "sess"
+          "listCustomer",
+          "hibernate",
+          "list",
+          "getContext",
+          "SuppressWarnings",
+          "sess",
+          "ActionContext",
+          "unchecked"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2104,21 +2104,21 @@
         "end_line": 103,
         "defs": [],
         "uses": [
-          "createCriteria",
-          "criteria",
-          "f",
-          "SuppressWarnings",
-          "list",
-          "ActionContext",
-          "getContext",
-          "hibernate",
-          "lp",
-          "unchecked",
           "put",
+          "lp",
           "listProduct",
+          "f",
+          "createCriteria",
           "List",
           "getSession",
+          "hibernate",
+          "list",
+          "getContext",
+          "SuppressWarnings",
           "sess",
+          "ActionContext",
+          "criteria",
+          "unchecked",
           "Product"
         ],
         "is_terminal": false,
@@ -2131,11 +2131,11 @@
         "end_line": 101,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -2150,12 +2150,12 @@
           "input"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -2233,22 +2233,22 @@
         "end_line": 112,
         "defs": [
           "sess",
-          "find",
-          "t"
+          "t",
+          "find"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
+          "logger",
           "HibernateUtil",
-          "Session",
+          "info",
           "getSessionFactory",
-          "openSession",
+          "log",
+          "hibernate",
+          "Session",
           "Starting",
           "Transaction",
-          "info",
-          "hibernate",
-          "log",
-          "logger"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2262,21 +2262,21 @@
           "criteria"
         ],
         "uses": [
-          "createCriteria",
-          "f",
-          "Criteria",
-          "excludeZeroes",
           "purchaseOrder",
-          "Example",
-          "PurchaseOrder",
-          "enableLike",
           "MatchMode",
-          "hibernate",
-          "ANYWHERE",
           "ignoreCase",
+          "Criteria",
+          "f",
+          "createCriteria",
           "create",
+          "ANYWHERE",
+          "add",
+          "hibernate",
+          "PurchaseOrder",
           "sess",
-          "add"
+          "Example",
+          "enableLike",
+          "excludeZeroes"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2288,13 +2288,13 @@
         "end_line": 119,
         "defs": [],
         "uses": [
-          "f",
-          "criteria",
-          "Restrictions",
-          "getId",
           "purchaseOrder",
-          "idEq",
           "hibernate",
+          "criteria",
+          "idEq",
+          "Restrictions",
+          "f",
+          "getId",
           "add"
         ],
         "is_terminal": false,
@@ -2307,15 +2307,15 @@
         "end_line": 123,
         "defs": [],
         "uses": [
-          "getCustomer",
-          "f",
-          "criteria",
-          "Restrictions",
-          "eq",
-          "getId",
+          "customer",
           "purchaseOrder",
           "hibernate",
-          "customer",
+          "eq",
+          "getCustomer",
+          "criteria",
+          "Restrictions",
+          "f",
+          "getId",
           "add"
         ],
         "is_terminal": false,
@@ -2328,22 +2328,22 @@
         "end_line": 129,
         "defs": [],
         "uses": [
-          "f",
-          "criteria",
-          "SuppressWarnings",
           "setResultTransformer",
-          "list",
+          "commit",
+          "close",
           "Criteria",
+          "t",
+          "f",
+          "List",
           "DISTINCT_ROOT_ENTITY",
           "l",
           "PurchaseOrder",
           "hibernate",
-          "unchecked",
-          "t",
-          "List",
-          "close",
-          "commit",
-          "sess"
+          "list",
+          "SuppressWarnings",
+          "sess",
+          "criteria",
+          "unchecked"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2357,19 +2357,19 @@
           "input"
         ],
         "uses": [
-          "f",
-          "put",
-          "CR_MODE",
-          "Finishing",
-          "list",
+          "SystemConstants",
           "l",
-          "request",
+          "logger",
+          "CR_MODE",
+          "put",
+          "task",
           "info",
           "INPUT",
           "log",
-          "logger",
-          "SystemConstants",
-          "task"
+          "list",
+          "Finishing",
+          "f",
+          "request"
         ],
         "is_terminal": true,
         "has_control": false
@@ -2454,23 +2454,23 @@
         "start_line": 138,
         "end_line": 140,
         "defs": [
+          "save",
           "sess",
-          "t",
-          "save"
+          "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
+          "logger",
           "HibernateUtil",
-          "Session",
+          "info",
           "getSessionFactory",
-          "openSession",
+          "log",
+          "hibernate",
+          "Session",
           "Starting",
           "Transaction",
-          "info",
-          "hibernate",
-          "log",
-          "logger"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2482,14 +2482,14 @@
         "end_line": 145,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "save",
-          "close",
           "purchaseOrder",
           "commit",
+          "hibernate",
+          "close",
+          "save",
           "sess",
-          "hibernate"
+          "t",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2502,8 +2502,8 @@
         "defs": [],
         "uses": [
           "setOrderDate",
-          "purchaseOrder",
-          "Date"
+          "Date",
+          "purchaseOrder"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2519,8 +2519,8 @@
         "uses": [
           "PurchaseOrderItem",
           "setPurchaseOrder",
-          "purchaseOrder",
-          "getPurchaseOrderItems"
+          "getPurchaseOrderItems",
+          "purchaseOrder"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2533,13 +2533,13 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "saveSuccessful",
-          "order",
-          "addActionMessage",
-          "String",
-          "getText",
           "SystemConstants",
-          "task"
+          "addActionMessage",
+          "task",
+          "saveSuccessful",
+          "getText",
+          "String",
+          "order"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2553,12 +2553,12 @@
           "save"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -2570,9 +2570,9 @@
         "to": 2,
         "type": "DD",
         "vars": [
+          "save",
           "sess",
-          "t",
-          "save"
+          "t"
         ]
       },
       {
@@ -2625,18 +2625,18 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
+          "logger",
           "HibernateUtil",
-          "Session",
+          "info",
           "getSessionFactory",
-          "openSession",
+          "log",
+          "hibernate",
+          "Session",
           "Starting",
           "Transaction",
-          "info",
-          "hibernate",
-          "log",
-          "logger"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2648,14 +2648,14 @@
         "end_line": 167,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "close",
           "purchaseOrder",
-          "commit",
           "update",
+          "hibernate",
+          "close",
+          "commit",
           "sess",
-          "hibernate"
+          "t",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2671,8 +2671,8 @@
         "uses": [
           "PurchaseOrderItem",
           "setPurchaseOrder",
-          "purchaseOrder",
-          "getPurchaseOrderItems"
+          "getPurchaseOrderItems",
+          "purchaseOrder"
         ],
         "is_terminal": false,
         "has_control": true
@@ -2685,13 +2685,13 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "order",
-          "addActionMessage",
-          "String",
-          "getText",
-          "updateSuccessful",
           "SystemConstants",
-          "task"
+          "addActionMessage",
+          "task",
+          "getText",
+          "String",
+          "updateSuccessful",
+          "order"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2705,12 +2705,12 @@
           "update"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -2768,22 +2768,22 @@
         "end_line": 183,
         "defs": [
           "sess",
-          "t",
-          "delete"
+          "delete",
+          "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
+          "logger",
           "HibernateUtil",
-          "Session",
+          "info",
           "getSessionFactory",
-          "openSession",
+          "log",
+          "hibernate",
+          "Session",
           "Starting",
           "Transaction",
-          "info",
-          "hibernate",
-          "log",
-          "logger"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2795,14 +2795,14 @@
         "end_line": 188,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "delete",
-          "close",
           "purchaseOrder",
+          "close",
           "commit",
+          "hibernate",
+          "delete",
           "sess",
-          "hibernate"
+          "t",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2816,19 +2816,19 @@
           "delete"
         ],
         "uses": [
-          "f",
+          "SystemConstants",
           "CR_MODE",
-          "Finishing",
-          "task",
-          "order",
+          "logger",
           "addActionMessage",
-          "String",
-          "getText",
+          "task",
           "info",
           "log",
-          "logger",
-          "SystemConstants",
-          "deleteSuccessful"
+          "getText",
+          "deleteSuccessful",
+          "Finishing",
+          "String",
+          "f",
+          "order"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2853,8 +2853,8 @@
         "type": "DD",
         "vars": [
           "sess",
-          "t",
-          "delete"
+          "delete",
+          "t"
         ]
       },
       {
@@ -2896,15 +2896,15 @@
           "id"
         ],
         "uses": [
-          "f",
+          "parameters",
+          "logger",
           "Integer",
-          "get",
-          "Starting",
           "info",
           "log",
+          "get",
+          "Starting",
           "valueOf",
-          "logger",
-          "parameters"
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2915,22 +2915,22 @@
         "start_line": 200,
         "end_line": 203,
         "defs": [
-          "po",
           "sess",
+          "po",
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
-          "get",
-          "PurchaseOrder",
           "id",
+          "get",
+          "hibernate",
+          "PurchaseOrder",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2942,11 +2942,11 @@
         "end_line": 206,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -2960,10 +2960,10 @@
         "defs": [],
         "uses": [
           "UD_MODE",
-          "setPurchaseOrder",
-          "po",
           "SystemConstants",
-          "task"
+          "task",
+          "po",
+          "setPurchaseOrder"
         ],
         "is_terminal": false,
         "has_control": false
@@ -2977,12 +2977,12 @@
           "edit"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -3007,8 +3007,8 @@
         "to": 3,
         "type": "DD",
         "vars": [
-          "t",
-          "sess"
+          "sess",
+          "t"
         ]
       },
       {
@@ -3049,11 +3049,11 @@
           "getProductPrice"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3068,14 +3068,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3089,21 +3089,21 @@
           "criteria"
         ],
         "uses": [
-          "createCriteria",
+          "id",
+          "setProjection",
+          "Criteria",
           "f",
           "Restrictions",
-          "Criteria",
-          "price",
-          "id",
-          "Projections",
-          "hibernate",
-          "setProjection",
-          "eq",
-          "idProduct",
+          "createCriteria",
+          "add",
           "property",
+          "hibernate",
+          "eq",
           "sess",
+          "idProduct",
           "Product",
-          "add"
+          "price",
+          "Projections"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3117,11 +3117,11 @@
           "price"
         ],
         "uses": [
-          "f",
-          "criteria",
           "Double",
           "uniqueResult",
-          "hibernate"
+          "hibernate",
+          "criteria",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3133,11 +3133,11 @@
         "end_line": 28,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -3152,12 +3152,12 @@
           "getProductPrice"
         ],
         "uses": [
-          "f",
-          "Finishing",
-          "price",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Finishing",
+          "f",
+          "price"
         ],
         "is_terminal": true,
         "has_control": false
@@ -3245,11 +3245,11 @@
           "productReport"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3264,12 +3264,12 @@
           "ac"
         ],
         "uses": [
-          "StrutsStatics",
-          "ServletContext",
-          "get",
-          "ActionContext",
           "SERVLET_CONTEXT",
-          "getContext"
+          "StrutsStatics",
+          "get",
+          "getContext",
+          "ActionContext",
+          "ServletContext"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3283,18 +3283,18 @@
           "jasperReport"
         ],
         "uses": [
-          "f",
-          "INF",
-          "jr",
-          "WEB",
-          "classes",
-          "sc",
-          "compileReport",
-          "xml",
           "ProductReport",
-          "JasperReport",
+          "compileReport",
+          "sc",
+          "JasperCompileManager",
           "getResourceAsStream",
-          "JasperCompileManager"
+          "classes",
+          "WEB",
+          "JasperReport",
+          "xml",
+          "jr",
+          "f",
+          "INF"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3308,20 +3308,20 @@
           "of"
         ],
         "uses": [
-          "f",
-          "Products",
-          "put",
-          "jr",
-          "Object",
-          "HashMap",
-          "List",
-          "Date",
           "parameters",
-          "Map",
-          "String",
+          "put",
           "ReportTitle",
-          "DataFile",
-          "toString"
+          "Products",
+          "HashMap",
+          "Object",
+          "Date",
+          "List",
+          "String",
+          "Map",
+          "jr",
+          "f",
+          "toString",
+          "DataFile"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3336,14 +3336,14 @@
           "t"
         ],
         "uses": [
-          "f",
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
+          "hibernate",
+          "Session",
           "Transaction",
-          "hibernate"
+          "beginTransaction",
+          "openSession",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3357,20 +3357,20 @@
           "criteria"
         ],
         "uses": [
-          "createCriteria",
-          "f",
-          "setProjection",
-          "Criteria",
-          "price",
-          "property",
-          "name",
-          "id",
-          "Projections",
-          "projectionList",
-          "sess",
           "Product",
+          "property",
+          "id",
           "hibernate",
-          "add"
+          "setProjection",
+          "projectionList",
+          "Criteria",
+          "sess",
+          "name",
+          "f",
+          "createCriteria",
+          "price",
+          "add",
+          "Projections"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3382,15 +3382,15 @@
         "end_line": 86,
         "defs": [],
         "uses": [
+          "l",
+          "hibernate",
+          "Object",
+          "list",
           "SuppressWarnings",
           "criteria",
-          "f",
-          "Object",
-          "List",
-          "list",
-          "l",
           "unchecked",
-          "hibernate"
+          "f",
+          "List"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3402,11 +3402,11 @@
         "end_line": 89,
         "defs": [],
         "uses": [
-          "f",
-          "t",
-          "hibernate",
           "sess",
           "close",
+          "t",
+          "hibernate",
+          "f",
           "commit"
         ],
         "is_terminal": false,
@@ -3421,14 +3421,14 @@
           "ds"
         ],
         "uses": [
-          "f",
-          "jr",
-          "HibernateQueryResultDataSource",
           "l",
+          "Name",
+          "Price",
           "Id",
           "String",
-          "Name",
-          "Price"
+          "HibernateQueryResultDataSource",
+          "jr",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3442,14 +3442,14 @@
           "jasperPrint"
         ],
         "uses": [
-          "f",
-          "jr",
+          "JasperPrint",
+          "parameters",
           "ds",
           "JasperFillManager",
-          "fillReport",
-          "JasperPrint",
           "jasperReport",
-          "parameters"
+          "jr",
+          "f",
+          "fillReport"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3464,9 +3464,9 @@
         ],
         "uses": [
           "exportReportToPdf",
-          "f",
           "jasperPrint",
           "jr",
+          "f",
           "JasperExportManager"
         ],
         "is_terminal": false,
@@ -3495,12 +3495,12 @@
           "productReport"
         ],
         "uses": [
-          "f",
-          "download",
-          "Finishing",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Finishing",
+          "download",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -3649,15 +3649,15 @@
           "ac"
         ],
         "uses": [
-          "StrutsStatics",
-          "ServletContext",
-          "get",
-          "ActionContext",
-          "Starting",
-          "info",
           "SERVLET_CONTEXT",
+          "logger",
+          "info",
+          "StrutsStatics",
+          "get",
           "getContext",
-          "logger"
+          "Starting",
+          "ActionContext",
+          "ServletContext"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3671,16 +3671,16 @@
           "jasperReport"
         ],
         "uses": [
-          "INF",
-          "WEB",
-          "classes",
-          "sc",
           "CustomerReport",
           "compileReport",
-          "xml",
-          "JasperReport",
+          "sc",
+          "JasperCompileManager",
           "getResourceAsStream",
-          "JasperCompileManager"
+          "classes",
+          "WEB",
+          "JasperReport",
+          "xml",
+          "INF"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3694,18 +3694,18 @@
           "of"
         ],
         "uses": [
-          "put",
-          "Object",
-          "List",
-          "HashMap",
-          "Date",
           "parameters",
-          "Map",
-          "String",
+          "put",
           "ReportTitle",
-          "Customers",
+          "HashMap",
+          "Object",
+          "Date",
+          "List",
+          "String",
+          "Map",
           "DataFile",
-          "toString"
+          "toString",
+          "Customers"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3720,12 +3720,12 @@
           "t"
         ],
         "uses": [
-          "beginTransaction",
           "HibernateUtil",
-          "Session",
           "getSessionFactory",
-          "openSession",
-          "Transaction"
+          "Session",
+          "Transaction",
+          "beginTransaction",
+          "openSession"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3740,17 +3740,17 @@
         ],
         "uses": [
           "createCriteria",
-          "setProjection",
-          "Criteria",
           "property",
-          "sess",
-          "name",
-          "id",
-          "Projections",
-          "projectionList",
           "Customer",
+          "id",
+          "setProjection",
+          "projectionList",
+          "Criteria",
+          "sess",
           "phone",
-          "add"
+          "name",
+          "add",
+          "Projections"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3762,17 +3762,17 @@
         "end_line": 128,
         "defs": [],
         "uses": [
-          "SuppressWarnings",
-          "criteria",
-          "t",
-          "Object",
-          "List",
-          "list",
           "l",
           "close",
           "commit",
+          "Object",
+          "list",
+          "SuppressWarnings",
           "sess",
-          "unchecked"
+          "criteria",
+          "t",
+          "unchecked",
+          "List"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3786,12 +3786,12 @@
           "ds"
         ],
         "uses": [
-          "HibernateQueryResultDataSource",
           "l",
-          "Phone",
+          "Name",
           "Id",
           "String",
-          "Name"
+          "HibernateQueryResultDataSource",
+          "Phone"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3805,12 +3805,12 @@
           "jasperPrint"
         ],
         "uses": [
+          "JasperPrint",
+          "parameters",
           "ds",
           "JasperFillManager",
-          "fillReport",
-          "JasperPrint",
           "jasperReport",
-          "parameters"
+          "fillReport"
         ],
         "is_terminal": false,
         "has_control": false
@@ -3994,11 +3994,11 @@
           "input"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4013,12 +4013,12 @@
           "sf"
         ],
         "uses": [
-          "f",
           "Scheduler",
           "StdSchedulerFactory",
-          "getScheduler",
           "quartz",
-          "SchedulerFactory"
+          "getScheduler",
+          "SchedulerFactory",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4032,15 +4032,15 @@
           "job"
         ],
         "uses": [
-          "f",
+          "quartz",
+          "sc",
+          "jobKey",
+          "JobDetail",
+          "JobKey",
           "supplyMailJob",
           "getJobDetail",
-          "jobKey",
-          "JobKey",
-          "sc",
-          "group",
-          "JobDetail",
-          "quartz"
+          "f",
+          "group"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4052,12 +4052,12 @@
         "end_line": 63,
         "defs": [],
         "uses": [
-          "f",
+          "quartz",
           "getJobDataMap",
-          "timeInterval",
-          "job",
           "getIntValue",
-          "quartz"
+          "f",
+          "timeInterval",
+          "job"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4071,11 +4071,11 @@
           "input"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -4133,11 +4133,11 @@
           "schedule"
         ],
         "uses": [
-          "f",
-          "Starting",
+          "logger",
           "info",
           "log",
-          "logger"
+          "Starting",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4152,12 +4152,12 @@
           "sf"
         ],
         "uses": [
-          "f",
           "Scheduler",
           "StdSchedulerFactory",
-          "getScheduler",
           "quartz",
-          "SchedulerFactory"
+          "getScheduler",
+          "SchedulerFactory",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4171,16 +4171,16 @@
           "job"
         ],
         "uses": [
-          "f",
+          "quartz",
+          "sc",
+          "deleteJob",
+          "jobKey",
+          "JobDetail",
+          "JobKey",
           "supplyMailJob",
           "getJobDetail",
-          "jobKey",
-          "JobKey",
-          "sc",
-          "group",
-          "JobDetail",
-          "deleteJob",
-          "quartz"
+          "f",
+          "group"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4192,18 +4192,18 @@
         "end_line": 82,
         "defs": [],
         "uses": [
-          "f",
-          "supplyMailJob",
           "put",
-          "timeInterval",
-          "newJob",
-          "SupplyMailJob",
-          "build",
-          "getJobDataMap",
-          "group",
-          "job",
           "quartz",
-          "withIdentity"
+          "getJobDataMap",
+          "timeInterval",
+          "job",
+          "build",
+          "withIdentity",
+          "supplyMailJob",
+          "f",
+          "SupplyMailJob",
+          "group",
+          "newJob"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4217,19 +4217,19 @@
           "trigger"
         ],
         "uses": [
-          "f",
-          "Trigger",
+          "quartz",
           "newTrigger",
+          "Trigger",
           "startNow",
           "timeInterval",
-          "supplyMailTrigger",
+          "CronScheduleBuilder",
+          "withIdentity",
           "cronSchedule",
           "build",
+          "supplyMailTrigger",
+          "f",
           "group",
-          "withSchedule",
-          "CronScheduleBuilder",
-          "quartz",
-          "withIdentity"
+          "withSchedule"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4241,11 +4241,11 @@
         "end_line": 87,
         "defs": [],
         "uses": [
-          "f",
-          "scheduleJob",
-          "job",
-          "sc",
           "quartz",
+          "scheduleJob",
+          "sc",
+          "f",
+          "job",
           "trigger"
         ],
         "is_terminal": false,
@@ -4260,12 +4260,12 @@
           "schedule"
         ],
         "uses": [
-          "f",
-          "Finishing",
+          "logger",
           "info",
           "INPUT",
           "log",
-          "logger"
+          "Finishing",
+          "f"
         ],
         "is_terminal": true,
         "has_control": false
@@ -4357,13 +4357,13 @@
           "execute"
         ],
         "uses": [
-          "f",
-          "in",
-          "Starting",
+          "logger",
           "info",
-          "job",
           "log",
-          "logger"
+          "job",
+          "Starting",
+          "in",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4374,34 +4374,34 @@
         "start_line": 33,
         "end_line": 42,
         "defs": [
-          "criteria",
           "sess",
+          "criteria",
           "t"
         ],
         "uses": [
-          "f",
-          "createCriteria",
-          "SuppressWarnings",
-          "beginTransaction",
           "HibernateUtil",
-          "Restrictions",
-          "Criteria",
-          "list",
-          "l",
-          "Transaction",
-          "supply",
-          "unchecked",
-          "hibernate",
-          "Session",
           "getSessionFactory",
-          "List",
-          "openSession",
           "close",
           "commit",
+          "Criteria",
+          "Transaction",
+          "beginTransaction",
+          "f",
+          "createCriteria",
+          "Restrictions",
+          "add",
+          "List",
+          "l",
+          "supply",
+          "hibernate",
+          "list",
+          "Session",
+          "SuppressWarnings",
           "lt",
-          "Product",
           "org",
-          "add"
+          "unchecked",
+          "openSession",
+          "Product"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4416,16 +4416,16 @@
           "following"
         ],
         "uses": [
-          "The",
-          "products",
-          "append",
-          "getting",
           "l",
-          "StringBuilder",
-          "n",
-          "are",
+          "The",
+          "append",
           "isEmpty",
-          "over"
+          "n",
+          "StringBuilder",
+          "products",
+          "over",
+          "getting",
+          "are"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4440,19 +4440,19 @@
           "props"
         ],
         "uses": [
-          "f",
-          "smtp",
-          "Session",
           "terra",
-          "Properties",
-          "javax",
-          "host",
+          "auth",
           "setProperty",
           "mail",
-          "getInstance",
-          "auth",
+          "smtp",
+          "Properties",
           "port",
-          "submitter"
+          "Session",
+          "getInstance",
+          "submitter",
+          "host",
+          "f",
+          "javax"
         ],
         "is_terminal": false,
         "has_control": false
@@ -4463,37 +4463,37 @@
         "start_line": 56,
         "end_line": 70,
         "defs": [
-          "msg",
+          "of",
           "mex",
-          "of"
+          "msg"
         ],
         "uses": [
-          "f",
-          "address",
-          "InternetAddress",
-          "Products",
-          "MimeMessage",
-          "session",
-          "setRecipients",
-          "printStackTrace",
+          "send",
           "Message",
           "mail",
-          "setText",
-          "Supply",
-          "RecipientType",
-          "setSentDate",
-          "toString",
-          "MessagingException",
-          "Date",
-          "setSubject",
-          "Transport",
-          "setFrom",
-          "send",
-          "to",
-          "TO",
-          "from",
+          "Products",
           "str",
-          "Low"
+          "InternetAddress",
+          "Date",
+          "setSentDate",
+          "Low",
+          "setSubject",
+          "f",
+          "toString",
+          "setRecipients",
+          "Transport",
+          "TO",
+          "to",
+          "Supply",
+          "setFrom",
+          "from",
+          "session",
+          "RecipientType",
+          "address",
+          "printStackTrace",
+          "setText",
+          "MimeMessage",
+          "MessagingException"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4507,14 +4507,14 @@
           "p"
         ],
         "uses": [
-          "t",
-          "append",
           "l",
-          "getSupply",
           "getName",
+          "append",
           "n",
-          "Product",
-          "str"
+          "str",
+          "getSupply",
+          "t",
+          "Product"
         ],
         "is_terminal": false,
         "has_control": true
@@ -4528,13 +4528,13 @@
           "execute"
         ],
         "uses": [
-          "f",
-          "in",
-          "Finishing",
+          "logger",
           "info",
-          "job",
           "log",
-          "logger"
+          "job",
+          "Finishing",
+          "in",
+          "f"
         ],
         "is_terminal": false,
         "has_control": false
