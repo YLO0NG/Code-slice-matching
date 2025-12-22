@@ -91,7 +91,8 @@
                 "line": 107,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String find() throws Exception {logger.info( \"Starting find()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Customer.class );criteria.add( Example.create( this.customer ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) );if ( this.customer.getId() != null ) {criteria.add( Restrictions.idEq( this.customer.getId() ) );}@SuppressWarnings(\"unchecked\")List<Customer> l = (List<Customer>) criteria.list();t.commit();sess.close();request.put( \"list\", l );this.task = SystemConstants.CR_MODE;logger.info( \"Finishing find()\" );return INPUT;}"
     },
     {
         "class_name": "classes.CustomerAction",
@@ -161,7 +162,8 @@
                 "line": 124,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String save() throws Exception {logger.info( \"Starting save()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.save( this.customer );t.commit();sess.close();this.task = SystemConstants.UD_MODE;this.addActionMessage( this.getText( \"saveSuccessful\", new String[]{\"customer\"})  );logger.info( \"Finishing save()\" );return INPUT;}"
     },
     {
         "class_name": "classes.CustomerAction",
@@ -231,7 +233,8 @@
                 "line": 141,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String update() throws Exception {logger.info( \"Starting update()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.update( this.customer );t.commit();sess.close();this.task = SystemConstants.UD_MODE;this.addActionMessage( this.getText( \"updateSuccessful\", new String[]{\"customer\"})  );logger.info( \"Finishing update()\" );return INPUT;}"
     },
     {
         "class_name": "classes.CustomerAction",
@@ -301,7 +304,8 @@
                 "line": 158,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String delete() throws Exception {logger.info( \"Starting delete()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.delete( this.customer );t.commit();sess.close();this.task = SystemConstants.CR_MODE;this.addActionMessage( this.getText( \"deleteSuccessful\", new String[]{\"customer\"})  );logger.info( \"Finishing delete()\" );return this.input();}"
     },
     {
         "class_name": "classes.CustomerAction",
@@ -375,7 +379,8 @@
                 "line": 176,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String edit() throws Exception {logger.info( \"Starting edit()\" );Integer id = Integer.valueOf( this.parameters.get( \"id\" )[0] );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Customer c = (Customer) sess.get( Customer.class, id );t.commit();sess.close();this.setCustomer( c );logger.info( \"Finishing edit()\" );this.task = SystemConstants.UD_MODE;return INPUT;}"
     },
     {
         "class_name": "classes.LoginAction",
@@ -481,7 +486,8 @@
                 "line": 68,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String execute() throws Exception {logger.info( \"Starting execute()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( User.class );criteria.add( Restrictions.idEq( this.user.getUsername() ) );criteria.add( Restrictions.eq( \"password\", this.user.getPassword() ) );User user = (User) criteria.uniqueResult();t.commit();sess.close();if ( user != null ) {ActionContext.getContext().getSession().put( SystemConstants.AUTHENTICATED_USER, user );logger.info( \"Finishing execute() -- Success\" );return SUCCESS;}this.addActionError( this.getText( \"login.failure\" ) );logger.info( \"Finishing execute() -- Failure\" );return INPUT;}"
     },
     {
         "class_name": "classes.ProductAction",
@@ -575,7 +581,8 @@
                 "line": 109,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String find() throws Exception {logger.info( \"Starting find()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Product.class );criteria.add( Example.create( this.product ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) );if ( this.product.getId() != null ) {criteria.add( Restrictions.idEq( this.product.getId() ) );}@SuppressWarnings(\"unchecked\")List<Product> l = (List<Product>) criteria.list();t.commit();sess.close();request.put( \"list\", l );this.task = SystemConstants.CR_MODE;logger.info( \"Finishing find()\" );return INPUT;}"
     },
     {
         "class_name": "classes.ProductAction",
@@ -645,7 +652,8 @@
                 "line": 126,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String save() throws Exception {logger.info( \"Starting save()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.save( this.product );t.commit();sess.close();this.task = SystemConstants.UD_MODE;this.addActionMessage( this.getText( \"saveSuccessful\", new String[]{\"product\"})  );logger.info( \"Finishing save()\" );return INPUT;}"
     },
     {
         "class_name": "classes.ProductAction",
@@ -715,7 +723,8 @@
                 "line": 143,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String update() throws Exception {logger.info( \"Starting update()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.update( this.product );t.commit();sess.close();this.task = SystemConstants.UD_MODE;this.addActionMessage( this.getText( \"updateSuccessful\", new String[]{\"product\"})  );logger.info( \"Finishing update()\" );return INPUT;}"
     },
     {
         "class_name": "classes.ProductAction",
@@ -785,7 +794,8 @@
                 "line": 160,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String delete() throws Exception {logger.info( \"Starting delete()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.delete( this.product );t.commit();sess.close();this.task = SystemConstants.CR_MODE;this.addActionMessage( this.getText( \"deleteSuccessful\", new String[]{\"product\"})  );logger.info( \"Finishing delete()\" );return this.input();}"
     },
     {
         "class_name": "classes.ProductAction",
@@ -867,7 +877,8 @@
                 "line": 180,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String edit() throws Exception {logger.info( \"Starting edit()\" );Integer id = Integer.valueOf( this.parameters.get( \"id\" )[0] );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Product p = (Product) sess.get( Product.class, id );t.commit();sess.close();this.setProduct( p );this.task = SystemConstants.UD_MODE;logger.info( \"Finishing edit()\" );return INPUT;}"
     },
     {
         "class_name": "classes.PurchaseOrderAction",
@@ -981,7 +992,8 @@
                 "line": 109,
                 "code": "\tpublic String find() throws Exception {"
             }
-        ]
+        ],
+        "cleaned_code": "logger.info( \"Starting input()\" );this.task = SystemConstants.CR_MODE;this.purchaseOrder = null;Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Customer.class );@SuppressWarnings(\"unchecked\")List<Customer> lc = (List<Customer>) criteria.list();ActionContext.getContext().getSession().put( \"listCustomer\", lc );criteria = sess.createCriteria( Product.class );@SuppressWarnings(\"unchecked\")List<Product> lp = (List<Product>) criteria.list();t.commit();sess.close();ActionContext.getContext().getSession().put( \"listProduct\", lp );logger.info( \"Finishing input()\" );return INPUT;}public String find() throws Exception {"
     },
     {
         "class_name": "classes.PurchaseOrderAction",
@@ -1095,7 +1107,8 @@
                 "line": 135,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String find() throws Exception {logger.info( \"Starting find()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( PurchaseOrder.class );criteria.add( Example.create( this.purchaseOrder ).excludeZeroes().ignoreCase().enableLike( MatchMode.ANYWHERE ) );if ( this.purchaseOrder.getId() != null ) {criteria.add( Restrictions.idEq( this.purchaseOrder.getId() ) );}if ( this.purchaseOrder.getCustomer().getId() != null ) {criteria.add( Restrictions.eq( \"customer\", this.purchaseOrder.getCustomer() ) );}criteria.setResultTransformer( Criteria.DISTINCT_ROOT_ENTITY );@SuppressWarnings(\"unchecked\")List<PurchaseOrder> l = (List<PurchaseOrder>) criteria.list();t.commit();sess.close();request.put( \"list\", l );this.task = SystemConstants.CR_MODE;logger.info( \"Finishing input()\" );return INPUT;}"
     },
     {
         "class_name": "classes.PurchaseOrderAction",
@@ -1189,7 +1202,8 @@
                 "line": 158,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String save() throws Exception {logger.info( \"Starting save()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.save( this.purchaseOrder );t.commit();sess.close();this.purchaseOrder.setOrderDate( new Date() );for (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems()) {item.setPurchaseOrder( this.purchaseOrder );}this.task = SystemConstants.UD_MODE;this.addActionMessage( this.getText( \"saveSuccessful\", new String[] { \"order\" } ) );logger.info( \"Finishing save()\" );return INPUT;}"
     },
     {
         "class_name": "classes.PurchaseOrderAction",
@@ -1271,7 +1285,8 @@
                 "line": 178,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String update() throws Exception {logger.info( \"Starting update()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.update( this.purchaseOrder );t.commit();sess.close();for (PurchaseOrderItem item : this.purchaseOrder.getPurchaseOrderItems()){item.setPurchaseOrder( this.purchaseOrder );}this.task = SystemConstants.UD_MODE;this.addActionMessage( this.getText( \"updateSuccessful\", new String[] { \"order\" } ) );logger.info( \"Finishing update()\" );return INPUT;}"
     },
     {
         "class_name": "classes.PurchaseOrderAction",
@@ -1337,7 +1352,8 @@
                 "line": 194,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String delete() throws Exception {logger.info( \"Starting delete()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();sess.delete( this.purchaseOrder );t.commit();sess.close();this.task = SystemConstants.CR_MODE;this.addActionMessage( this.getText( \"deleteSuccessful\", new String[] { \"order\" } ) );logger.info( \"Finishing delete()\" );return this.input();}"
     },
     {
         "class_name": "classes.PurchaseOrderAction",
@@ -1415,7 +1431,8 @@
                 "line": 213,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String edit() throws Exception {logger.info( \"Starting edit()\" );Integer id = Integer.valueOf( this.parameters.get( \"id\" )[0] );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();PurchaseOrder po = (PurchaseOrder) sess.get( PurchaseOrder.class, id );t.commit();sess.close();this.setPurchaseOrder( po );this.task = SystemConstants.UD_MODE;logger.info( \"Finishing edit()\" );return INPUT;}"
     },
     {
         "class_name": "classes.PurchaseOrderAjax",
@@ -1497,7 +1514,8 @@
                 "line": 31,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public Double getProductPrice(Integer idProduct){logger.info( \"Starting getProductPrice()\" );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Product.class );criteria.setProjection( Projections.property( \"price\" ) );criteria.add( Restrictions.eq( \"id\", idProduct ) );Double price = (Double) criteria.uniqueResult();t.commit();sess.close();logger.info( \"Finishing getProductPrice()\" );return price;}"
     },
     {
         "class_name": "classes.ReportAction",
@@ -1651,7 +1669,8 @@
                 "line": 101,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String productReport() throws Exception {logger.info( \"Starting productReport()\" );ActionContext ac = ActionContext.getContext();ServletContext sc = (ServletContext) ac.get( StrutsStatics.SERVLET_CONTEXT );JasperReport jasperReport = JasperCompileManager.compileReport( sc.getResourceAsStream( \"/WEB-INF/classes/ProductReport.xml\" ) );Map<String, Object> parameters = new HashMap<String, Object>();parameters.put( \"ReportTitle\", \"List of Products\" );parameters.put( \"DataFile\", new Date().toString() );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Product.class );criteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"price\" ) ) );@SuppressWarnings(\"unchecked\")List<Object[]> l = (List<Object[]>) criteria.list();t.commit();sess.close();HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Price\" });JasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport, parameters, ds );byte b[] = JasperExportManager.exportReportToPdf( jasperPrint );this.inputStream = new ByteArrayInputStream( b );logger.info( \"Finishing productReport()\" );return \"download\";}"
     },
     {
         "class_name": "classes.ReportAction",
@@ -1805,7 +1824,8 @@
                 "line": 140,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String customerReport() throws Exception {logger.info( \"Starting customerReport()\" );ActionContext ac = ActionContext.getContext();ServletContext sc = (ServletContext) ac.get( StrutsStatics.SERVLET_CONTEXT );JasperReport jasperReport = JasperCompileManager.compileReport( sc.getResourceAsStream( \"/WEB-INF/classes/CustomerReport.xml\" ) );Map<String, Object> parameters = new HashMap<String, Object>();parameters.put( \"ReportTitle\", \"List of Customers\" );parameters.put( \"DataFile\", new Date().toString() );Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Customer.class );criteria.setProjection( Projections.projectionList().add( Projections.property( \"id\" ) ).add( Projections.property( \"name\" ) ).add( Projections.property( \"phone\" ) ) );@SuppressWarnings(\"unchecked\")List<Object[]> l = (List<Object[]>) criteria.list();t.commit();sess.close();HibernateQueryResultDataSource ds = new HibernateQueryResultDataSource(l, new String[] { \"Id\", \"Name\", \"Phone\" });JasperPrint jasperPrint = JasperFillManager.fillReport( jasperReport, parameters, ds );byte b[] = JasperExportManager.exportReportToPdf( jasperPrint );this.inputStream = new ByteArrayInputStream( b );logger.info( \"Finishing customerReport()\" );return \"download\";}"
     },
     {
         "class_name": "classes.SchedulerAction",
@@ -1867,7 +1887,8 @@
                 "line": 67,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String input() throws Exception {logger.info( \"Starting input()\" );SchedulerFactory sf = new StdSchedulerFactory();Scheduler sc = sf.getScheduler();JobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) );if ( job != null ) {this.timeInterval = job.getJobDataMap().getIntValue( \"timeInterval\" );}logger.info( \"Finishing input()\" );return super.input();}"
     },
     {
         "class_name": "classes.SchedulerAction",
@@ -1965,7 +1986,8 @@
                 "line": 91,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String schedule() throws Exception {logger.info( \"Starting schedule()\" );SchedulerFactory sf = new StdSchedulerFactory();Scheduler sc = sf.getScheduler();JobDetail job = sc.getJobDetail( JobKey.jobKey( \"supplyMailJob\", \"group\" ) );if ( job != null ) {sc.deleteJob( JobKey.jobKey( \"supplyMailJob\", \"group\" ) );}job = newJob( SupplyMailJob.class ).withIdentity( \"supplyMailJob\", \"group\" ).build();job.getJobDataMap().put( \"timeInterval\", this.timeInterval );Trigger trigger = newTrigger().withIdentity( \"supplyMailTrigger\", \"group\" ).startNow().withSchedule( CronScheduleBuilder.cronSchedule( \"0 0/\"+ (this.timeInterval * 60) + \" * * * ?\" ) ).build();sc.scheduleJob( job, trigger );logger.info( \"Finishing schedule()\" );return INPUT;}"
     },
     {
         "class_name": "classes.SupplyMailJob",
@@ -2171,6 +2193,7 @@
                 "line": 78,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public void execute( JobExecutionContext context )throws JobExecutionException {logger.info( \"Starting execute() in job\" );org.hibernate.Session sess = HibernateUtil.getSessionFactory().openSession();Transaction t = sess.beginTransaction();Criteria criteria = sess.createCriteria( Product.class );criteria.add( Restrictions.lt( \"supply\", 5 ) );@SuppressWarnings(\"unchecked\")List<Product> l = (List<Product>) criteria.list();t.commit();sess.close();if ( !l.isEmpty() ) {StringBuilder str = new StringBuilder();str.append( \"The following products are getting over:\\n\" );Properties props = new Properties();props.setProperty( \"mail.smtp.submitter\", \"terra\" );props.setProperty( \"mail.smtp.auth\", \"false\" );props.setProperty( \"mail.smtp.host\", this.host );props.setProperty( \"mail.smtp.port\", \"25\" );javax.mail.Session session = javax.mail.Session.getInstance( props );try {Message msg = new MimeMessage( session );msg.setFrom( new InternetAddress( this.from ) );InternetAddress[] address = { new InternetAddress( this.to ) };msg.setRecipients( Message.RecipientType.TO, address );msg.setSubject( \"Low Supply of Products\" );msg.setSentDate( new Date() );msg.setText( str.toString() );Transport.send( msg );} catch (MessagingException mex) {mex.printStackTrace();}for ( Product p : l ) {str.append( p.getName() + \"\\t\\t\" + p.getSupply() + \"\\n\" );}}logger.info( \"Finishing execute() in job\" );}"
     }
 ]

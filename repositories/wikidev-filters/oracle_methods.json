@@ -379,7 +379,8 @@
                 "line": 118,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public ArrayList<Cluster> clustering(ArrayList<IArtifact> artifacts) {ArrayList<Cluster> clusters = new ArrayList<Cluster>();for(IArtifact artifact : artifacts) {Cluster cluster = new Cluster();cluster.addArtifact(artifact);clusters.add(cluster);}while(clusters.size()>2) {double minVal = 2.0;int minRow = 0;int minCol = 1;for(int i=0; i<distanceMatrix.length;i++) {for(int j=0;j<distanceMatrix.length;j++) {if (i != j) {if (distanceMatrix[i][j] < minVal) {minVal = distanceMatrix[i][j];minRow = i;minCol = j;}}}}if(minVal >= THRESHOLD) break;if(minRow < minCol) {clusters.get(minRow).addArtifacts(clusters.get(minCol).getArtifacts());double[] newDistances = new double[distanceMatrix.length-1];for(int i=0;i<distanceMatrix.length;i++) {if (i != minCol) {if (i != minRow) {if (distanceMatrix[minRow][i] < distanceMatrix[minCol][i]) {if (i > minCol) {newDistances[i - 1] = distanceMatrix[minRow][i];} else {newDistances[i] = distanceMatrix[minRow][i];}} else {if (i > minCol) {newDistances[i - 1] = distanceMatrix[minCol][i];} else {newDistances[i] = distanceMatrix[minCol][i];}}}else {newDistances[i] = 0.0;}}}distanceMatrix = deleteRows(distanceMatrix, minRow, minCol);distanceMatrix = deleteColumns(distanceMatrix, minCol);distanceMatrix = insertRows(distanceMatrix, minRow, newDistances);distanceMatrix = deleteColumns(distanceMatrix, minRow);distanceMatrix = insertColumns(distanceMatrix, minRow, newDistances);clusters.remove(minCol);}else {clusters.get(minCol).addArtifacts(clusters.get(minRow).getArtifacts());double[] newDistances = new double[distanceMatrix.length-1];for(int i=0;i<distanceMatrix.length;i++) {if (i != minRow) {if (i != minCol) {if (distanceMatrix[minRow][i] < distanceMatrix[minCol][i]) {if (i > minRow) {newDistances[i - 1] = distanceMatrix[minRow][i];} else {newDistances[i] = distanceMatrix[minRow][i];}} else {if (i > minRow) {newDistances[i - 1] = distanceMatrix[minCol][i];} else {newDistances[i] = distanceMatrix[minCol][i];}}}else {newDistances[i] = 0.0;}}}distanceMatrix = deleteRows(distanceMatrix, minRow, minCol);distanceMatrix = deleteColumns(distanceMatrix, minCol);distanceMatrix = insertRows(distanceMatrix, minCol, newDistances);distanceMatrix = deleteColumns(distanceMatrix, minRow);distanceMatrix = insertColumns(distanceMatrix, minCol, newDistances);clusters.remove(minRow);}}return clusters;}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
@@ -613,7 +614,8 @@
                 "line": 80,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public static double[] getFiedlerVector(double[][] A) {double[][] D = new double[A.length][A[0].length];double[][] L = new double[A.length][A[0].length];double[] sumRow = sum(A);for(int i = 0; i < D[0].length;i++) {D[i][i] = sumRow[i];}L = minus(D,A);EigenvalueDecomposition LEigenDec = eigen(L);Matrix eigenValues = LEigenDec.getD();Matrix eigenVectors = LEigenDec.getV();TreeMap<Double,Integer> sortedEigenValues = new TreeMap<Double,Integer>();for(int i = 0; i <eigenValues.getColumnDimension(); i++) {double value;if(eigenValues.get(i,i) < 0.0)value = -eigenValues.get(i,i);elsevalue = eigenValues.get(i,i);sortedEigenValues.put(value,i);}Set<Double> keySet = sortedEigenValues.keySet();Iterator<Double> keyIt = keySet.iterator();int minIndex = 0;double threshold = 0.00001;while(keyIt.hasNext()) {Double key = keyIt.next();if(key> threshold) {minIndex = sortedEigenValues.get(key);break;}}double[][] eigenVectors2=new double[eigenVectors.getRowDimension()][eigenVectors.getColumnDimension()];for(int i=0;i<eigenVectors.getRowDimension();i++) {for(int j=0;j<eigenVectors.getColumnDimension();j++) {eigenVectors2[i][j] = eigenVectors.get(i,j);}}return DoubleArray.getColumnCopy(eigenVectors2,minIndex);}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
@@ -1147,7 +1149,8 @@
                 "line": 229,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public void getRelationships() throws SQLException {ArrayList<String> buffers = new ArrayList<String>();for(IArtifact artifact : artifacts) {if(artifact instanceof Ticket) {TextParser parser = new TextParser();Ticket ticket = (Ticket)artifact;parser.parseTextInWords(ticket.getDesription().toLowerCase());parser.parseTextInWords(ticket.getSummary().toLowerCase());documents.add(new Document(parser.getWords(), ticket.toString()));ticket.setDocument(new Document(parser.getWords(), ticket.toString()));}else if(artifact instanceof ChangeSet) {TextParser parser = new TextParser();ChangeSet changeset = (ChangeSet)artifact;parser.parseTextInWords(changeset.getComment().toLowerCase());documents.add(new Document(parser.getWords(), changeset.toString()));changeset.setDocument(new Document(parser.getWords(), changeset.toString()));}else if (artifact instanceof Message) {TextParser parser = new TextParser();Message communication = (Message)artifact;parser.parseTextInWords(communication.getSubject().toLowerCase());parser.parseTextInWords(communication.getBody().toLowerCase());documents.add(new Document(parser.getWords(), communication.toString()));communication.setDocument(new Document(parser.getWords(), communication.toString()));}else if (artifact instanceof Wiki) {Wiki wiki = (Wiki)artifact;TextParser parser = new TextParser();String text = \"\";for (WikiRevision revision : wiki.getRevisions()) {text += revision.getRev_text();}parser.parseTextInWords(text.toLowerCase());documents.add(new Document(parser.getWords(), wiki.toString()));wiki.setDocument(new Document(parser.getWords(), wiki.toString()));}}for(IArtifact artifact : artifacts) {if(artifact instanceof Ticket) {TextParser parser = new TextParser(documents);Ticket ticket = (Ticket)artifact;parser.parseTextInWords(ticket.getDesription().toLowerCase());parser.parseTextInWords(ticket.getSummary().toLowerCase());ticket.getDocument().setTfidf(parser.calculateTFIDF());}else if(artifact instanceof ChangeSet) {TextParser parser = new TextParser(documents);ChangeSet changeset = (ChangeSet)artifact;parser.parseTextInWords(changeset.getComment().toLowerCase());changeset.getDocument().setTfidf(parser.calculateTFIDF());}else if (artifact instanceof Message) {TextParser parser = new TextParser(documents);Message communication = (Message)artifact;parser.parseTextInWords(communication.getSubject().toLowerCase());parser.parseTextInWords(communication.getBody().toLowerCase());communication.getDocument().setTfidf(parser.calculateTFIDF());}else if (artifact instanceof Wiki) {Wiki wiki = (Wiki)artifact;TextParser parser = new TextParser(documents);String text = \"\";for (WikiRevision revision : wiki.getRevisions()) {text += revision.getRev_text();}parser.parseTextInWords(text.toLowerCase());wiki.getDocument().setTfidf(parser.calculateTFIDF());}}for(IArtifact artifact : artifacts) {System.out.println(\"Relationships: \"+artifact.toString());sourceArtifact = artifact;project = artifact.getProject();getGenericRelationships(sourceArtifact);if(sourceArtifact instanceof Ticket) {TextParser parser = new TextParser(documents);Ticket ticket = (Ticket)sourceArtifact;parser.parseTextInWords(ticket.getDesription().toLowerCase());buffers.add(ticket.getDesription().toLowerCase());parser.parseTextInWords(ticket.getSummary().toLowerCase());buffers.add(ticket.getSummary().toLowerCase());mineRelationshipsFromText();}else if(sourceArtifact instanceof ChangeSet) {TextParser parser = new TextParser(documents);ChangeSet changeset = (ChangeSet)sourceArtifact;parser.parseTextInWords(changeset.getComment().toLowerCase());buffers.add(changeset.getComment().toLowerCase());mineRelationshipsFromText();}else if (sourceArtifact instanceof Message) {TextParser parser = new TextParser(documents);Message communication = (Message)sourceArtifact;parser.parseTextInWords(communication.getSubject().toLowerCase());buffers.add(communication.getSubject().toLowerCase());parser.parseTextInWords(communication.getBody().toLowerCase());buffers.add(communication.getBody().toLowerCase());mineRelationshipsFromText();}else if (sourceArtifact instanceof Wiki) {Wiki wiki = (Wiki)sourceArtifact;TextParser parser = new TextParser(documents);String text = \"\";for (WikiRevision revision : wiki.getRevisions()) {text += revision.getRev_text();}parser.parseTextInWords(text.toLowerCase());buffers.add(text.toLowerCase());mineRelationshipsFromText();}}}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.ClusteringMain",
@@ -1565,7 +1568,8 @@
                 "line": 120,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public static void main(String[] args) {try {String[] args2 = {\"jdbc:mysql:\"fokaefs\", \"filimon9786#7@gr\", \"2009-09-01 00:00:00\",\"2010-01-01 00:00:00\", \"1\", \"weekly\", \"-lb\", \"0.05\", \"-ub\",\"0.95\", \"-i\", \"0.05\" };InvocationParser ip = new InvocationParser();ip.parseArgs(args2);String databaseName = ip.getDatabaseName();String username = ip.getUsername();String password = ip.getPassword();DataManager.openTheConnection(username, password, databaseName);String fromdate = ip.getFromdate();String todate = ip.getTodate();int project = ip.getProject();String window = ip.getWindow();double lowerBound = ip.getLowerBound();double upperBound = ip.getUpperBound();double interval = ip.getInterval();String week = \"week\";Timestamp firstWeek = new Timestamp(Timestamp.valueOf(fromdate).getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS);Timestamp previousWeek = Timestamp.valueOf(fromdate);for(long l=firstWeek.getTime(); l<Timestamp.valueOf(todate).getTime()+DataManager.WEEK_INTERVAL_IN_MILLIS; l+=DataManager.WEEK_INTERVAL_IN_MILLIS) {if(l>Timestamp.valueOf(todate).getTime()) {l = Timestamp.valueOf(todate).getTime();}Timestamp nextWeek = new Timestamp(l);System.out.println(\"From \"+previousWeek.toString()+\" to \"+nextWeek.toString());ArrayList<Cluster> totalClusters = new ArrayList<Cluster>();ArrayList<IArtifact> newArtifacts = DataManager.getArtifactsBetweenDates(previousWeek.toString(), nextWeek.toString(), project);RelationshipMiner rm = new RelationshipMiner(newArtifacts);rm.getRelationships();double[][] distanceMatrix = rm.getDistanceMatrix();for (double threshold = lowerBound; threshold <= upperBound; threshold+=interval) {double[][] coords = new double[distanceMatrix.length][distanceMatrix.length];Clustering clustering = Clustering.getInstance(0,distanceMatrix, threshold);ArrayList<Cluster> clusters = clustering.clustering(newArtifacts);if (clusters != null) {ArrayList<Cluster> finalClusters = new ArrayList<Cluster>();for (Cluster cluster : clusters) {if (cluster.getArtifacts().size() > 1) {if (!totalClusters.contains(cluster)) {finalClusters.add(cluster);totalClusters.add(cluster);}}}if (distanceMatrix.length > 0 && !finalClusters.isEmpty()) {MultidimensionalScaling mds = new MultidimensionalScaling(distanceMatrix);double[][] mdsCoords = mds.cMDS();SammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);sammon.CreateMapping();coords = sammon.getProjection();}int index = 1;int clustered = 0;for (Cluster cluster : finalClusters) {for(IArtifact artifact : cluster.getArtifacts()) {int j = newArtifacts.indexOf(artifact);cluster.addCoordinate(artifact, new ClusterPoint(coords[j][0], coords[j][1]));}clustered += cluster.getArtifacts().size();cluster.setUsersAndWords();cluster.setIndex(index);cluster.setFromdate(Timestamp.valueOf(fromdate));cluster.setTodate(Timestamp.valueOf(todate));cluster.setProject(project);cluster.setCluster_set_name(window);cluster.setThreshold(threshold);index++;DataManager.writeCluster(cluster);}DataManager.writeClusterPerProject(project,clustered, newArtifacts.size(), previousWeek.toString() ,nextWeek.toString(), window, threshold);}}System.out.println(\"Success!!!\");previousWeek = nextWeek;}DataManager.closeTheConnection();} catch (Exception e) {e.printStackTrace();}}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.DataManager",
@@ -1847,7 +1851,8 @@
                 "line": 316,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private static IArtifact getArtifactByTypeAndID(IArtifact anArtifact, int projectid) throws SQLException{Project project = DataManager.getProjectByID(projectid);String sqlStmt = QueryBuilder.selectArtifactByTypeAndID(anArtifact.getType(), anArtifact.getId(), projectid);ResultSet res = null;IArtifact artifact = null;res = statement.executeQuery(sqlStmt);while (res.next()) {if (anArtifact.getType().equals(\"ChangeSet\")) {artifact = new ChangeSet(res.getInt(\"id\"), res.getString(\"comment\"), res.getString(\"externalauthor\"), res.getInt(\"externalsystem_id\"), res.getTimestamp(\"timestamp\"), res.getInt(\"rev\"),res.getInt(\"project_id\"));} else if (anArtifact.getType().equals(\"Ticket\")) {artifact = new Ticket(res.getTimestamp(\"created\"), res.getString(\"description\"), res.getTimestamp(\"last_modified\"), res.getString(\"owner_name\"), res.getString(\"reporter\"),res.getString(\"summary\"),res.getInt(\"id\"), res.getInt(\"project_id\"), res.getInt(\"project_ticket_id\"), res.getString(\"priority\"));} else if (anArtifact.getType().equals(\"Wiki\")) {artifact = new Wiki(res.getInt(\"page_id\"), res.getInt(\"page_namespace\"), res.getString(\"page_title\"), res.getTimestamp(\"page_touched\"));}else if(anArtifact.getType().equals(\"Message\")) {artifact = new Message(res.getString(\"address\"), res.getString(\"author\"), res.getString(\"body\"), res.getInt(\"id\"),res.getInt(\"deleted\"), res.getString(\"mid_header\"),res.getInt(\"project_id\"),  res.getString(\"subject\"), res.getTimestamp(\"date\"), res.getString(\"user_name\"), res.getString(\"refid_header\"));;}}if(res !=null) res.close();if (artifact instanceof ChangeSet) {ChangeSet changeSet = (ChangeSet)artifact;changeSet.setOwner(getUserByUserName(changeSet.getExternalAuthorUserName()));changeSet.setProject(project);changeSet.setChangesetDetails(getChangeSetDetailsByRevAndProject(changeSet.getRevision(), changeSet.getExternalSystemID()));for(ChangeSetDetail detail : changeSet.getChangesetDetails()) {detail.setTimestamp(changeSet.getTimestamp());}changeSet.setAuthorForChangeSetDetails();changeSet.setType(\"ChangeSet\");project.addChangeset(changeSet);} else if (artifact instanceof Ticket) {Ticket ticket = (Ticket)artifact;ticket.setOwner(getUserByUserName(ticket.getOwnerName()));ticket.setReporter(getUserByUserName(ticket.getReporterName()));ticket.setTicketChanges(getTicketChangesByTicketID(ticket.getTicketID()));ticket.setProject(project);ticket.setType(\"Ticket\");project.addTicket(ticket);} else if (artifact instanceof Message) {Message communication = (Message)artifact;User user = getUserByUserName(communication.getUser_name());communication.setOwner(user);user.setUserRealName(communication.getAuthor());communication.setProject(project);communication.setType(\"Message\");project.addMessage(communication);}else if(artifact instanceof Wiki) {Wiki wiki = (Wiki)artifact;wiki.setRevisions(getRevisionsByWikiID(wiki.getPage_id()));wiki.setProject(DataManager.getProjectByName(getProjectNamespaceByNamespaceID(wiki.getPage_namespace_id())));wiki.setProjectID(wiki.getProject().getProjectID());wiki.setType(\"Wiki\");}return artifact;}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.RelationshipMiner",
@@ -1989,7 +1994,8 @@
                 "line": 323,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public void relateChangeSetToTicket(ChangeSet changeset) throws SQLException {ArrayList<String> ids = new ArrayList<String>();String comment = changeset.getComment();String ticketid = \"\";String pattern = \"[0-9]\";for(int i=0;i<comment.length(); i++) {if(comment.charAt(i) == '#') {int j=i+1;String ch = comment.substring(j, j+1);while(ch.matches(pattern)) {ticketid += ch;j++;if (j<comment.length()) {ch = comment.substring(j, j + 1);}else {break;}}ids.add(ticketid);ticketid = \"\";}}for (String ticket_id : ids) {if (!ticket_id.equals(\"\")) {int id = Integer.parseInt(ticket_id);Project project = DataManager.getProjectByExternalSystem(changeset.getExternalSystemID());Ticket ticket = DataManager.getTicketByDrID(project.getProjectID(), id);if (ticket != null) {relateArtifacts(ticket, changeset, 0, \"<TicketReference>\");}}}}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
@@ -2235,7 +2241,8 @@
                 "line": 92,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "protected void getLayout(ArrayList<IArtifact> newArtifacts, double[][] distanceMatrix) throws IOException {double[][] coords = null;if (distanceMatrix.length > 0) {MultidimensionalScaling mds = new MultidimensionalScaling(distanceMatrix);double[][] mdsCoords = mds.cMDS();SammonsProjection sammon = new SammonsProjection(mdsCoords, 2, 1000);sammon.CreateMapping();coords = sammon.getProjection();}for (int i = 0; i < newArtifacts.size(); i++) {newArtifacts.get(i).setCoords(coords[i]);}System.out.print(\"x<-c(\");double maxX = 0;double minX = Double.MAX_VALUE;double maxY = 0;double minY = Double.MAX_VALUE;for (int i = 0; i < coords.length; i++) {for (int j = 0; j < coords[0].length; j++) {if (j == 0) {if (coords[i][j] > maxX) {maxX = coords[i][j];}if (coords[i][j] < minX) {minX = coords[i][j];}} else {if (coords[i][j] > maxY) {maxY = coords[i][j];}if (coords[i][j] < minY) {minY = coords[i][j];}}System.out.print((float) coords[i][j] + \", \");}}System.out.println(\")\");double rangeX = Math.ceil(maxX - minX);double rangeY = Math.ceil(maxY - minY);double range = 0;if (rangeX > rangeY) {range = rangeX;} else {range = rangeY;}double blocks = Math.ceil(Math.sqrt(Math.ceil(newArtifacts.size() / 16))) + 2;cityBlockInitialization(newArtifacts, coords, minX, minY, range, blocks);redistributeBuildings();pushBuildings(minX, minY, range);System.out.println(\"Blocks done\");}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
@@ -2317,7 +2324,8 @@
                 "line": 112,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "private void cityBlockInitialization(ArrayList<IArtifact> newArtifacts,double[][] coords, double minX, double minY, double range,double blocks) {this.cityBlocks = new ArrayList<CityBlock>();for (int i = 0; i < blocks; i++) {for (int j = 0; j < blocks; j++) {double[] center = { minX + i * (range / 16) + (range / 16) / 2,minY + j * (range / 16) + (range / 16) / 2 };CityBlock cityblock = new CityBlock(new Point(i, j));cityblock.setCenter(center);cityBlocks.add(cityblock);}}double r = range / blocks;for (int i = 0; i < newArtifacts.size(); i++) {assignArtifactToCityBlock(newArtifacts.get(i), coords[i][0],coords[i][1], minX, minY, blocks, r);}}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.city3d.IndustrialLayout",
@@ -2455,7 +2463,8 @@
                 "line": 374,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<SVNFile, Integer> fileCount)throws IOException {BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\industrialBlocks.txt\"));int index = 1;out.write(\"\"+Math.sqrt(blocks.size()));out.newLine();for (CityBlock block : blocks) {for (IArtifact artifact : block.getArtifacts().keySet()) {String type = \"\"+index+\"\\t\";int height = 0;String line = \"\";if (artifact instanceof SVNFile) {SVNFile file = (SVNFile)artifact;type += file.getType();height = fileCount.get(file);line += type + \"\\t\" + block.getIndex().x + \"\\t\"+ block.getIndex().y + \"\\t\"+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";for(User user : file.getUsers()) {line += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";}}out.write(line);out.newLine();index++;}}out.close();}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.city3d.Layout",
@@ -2585,7 +2594,8 @@
                 "line": 144,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "private void pushBuildings(double minX, double minY, double range) {for (CityBlock block : cityBlocks) {if (block.getArtifacts().size() > 4&& block.getArtifacts().size() <= 16) {double blockMinX = minX + block.getIndex().x * (range / 16);double blockMaxX = minX + (block.getIndex().x + 1)* (range / 16);double blockMinY = minY + block.getIndex().y * (range / 16);double blockMaxY = minY + (block.getIndex().y + 1)* (range / 16);double rX = Math.ceil(blockMaxX - blockMinX);double rY = Math.ceil(blockMaxY - blockMinY);double blockR = 0;if (rX > rY) {blockR = rX;} else {blockR = rY;}double[][] subblockCenters = new double[16][3];for (int i = 0; i < 4; i++) {for (int j = 0; j < 4; j++) {double[] subCenter = {blockMinX + i * blockR + blockR / 2,blockMinY + j * blockR + blockR / 2, 0 };subblockCenters[j + i * 4] = subCenter;}}redistributeArtifactsInBlock(block, subblockCenters);}}}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.city3d.CityLayout",
@@ -2755,7 +2765,8 @@
                 "line": 239,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public static void printCityBlocks(ArrayList<CityBlock> blocks, HashMap<Message, Integer> messageCount)throws IOException {BufferedWriter out = new BufferedWriter(new FileWriter(\"C:\\\\Documents and Settings\\\\Marios Fokaefs\\\\Desktop\\\\wikidev-files\\\\c301f09\\\\cityBlocks.txt\"));int index = 1;out.write(\"\"+Math.sqrt(blocks.size()));out.newLine();for (CityBlock block : blocks) {for (IArtifact artifact : block.getArtifacts().keySet()) {String type = \"\"+index+\"\\t\";int height = 0;String line = \"\";if (artifact instanceof Ticket) {Ticket ticket = (Ticket)artifact;type += \"Ticket\";height = 6-ticket.getPriority();} else if (artifact instanceof Message) {type += \"Message\";Message message = (Message)artifact;height = messageCount.get(message);} else if (artifact instanceof Wiki) {Wiki wiki = (Wiki)artifact;type += \"Wiki\";height = wiki.getRevisions().size();}line += type + \"\\t\" + block.getIndex().x + \"\\t\"+ block.getIndex().y + \"\\t\"+ block.getArtifacts().get(artifact)+\"\\t\"+height+\"\\t\";for(User user : artifact.getAssociatedUsers()) {line += \"<\"+user.getUserName()+\", \"+user.getColor().getRed()+\", \"+user.getColor().getGreen()+\", \"+user.getColor().getBlue()+\"> \\t\";}out.write(line);out.newLine();index++;}}out.close();}"
     },
     {
         "class_name": "ca.ualberta.cs.serl.wikidev.clustering.MatrixOperator",
@@ -2861,6 +2872,7 @@
                 "line": 292,
                 "code": "\t   }"
             }
-        ]
+        ],
+        "cleaned_code": "public static TreeMap<Integer, ArrayList<Integer>> getConnectedComponents() {int[] component = new int[adjacencyMatrix.length];int cn = 0;for(int i=0; i<component.length; i++) {if(component[i] == 0) {cn++;dfs(component,i,cn);}}TreeMap<Integer, ArrayList<Integer>> map = new TreeMap<Integer, ArrayList<Integer>>();for(int i=0; i<component.length; i++) {if(!map.containsKey(component[i])) {ArrayList<Integer> l = new ArrayList<Integer>();l.add(i);map.put(component[i],l);}else {ArrayList<Integer> l = map.get(component[i]);l.add(i);}}return map;}"
     }
 ]

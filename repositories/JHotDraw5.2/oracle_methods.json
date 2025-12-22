@@ -107,7 +107,8 @@
                 "line": 64,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void writeStorable(Storable storable) {if (storable == null) {fStream.print(\"NULL\");space();return;}if (mapped(storable)) {int ref = fMap.indexOf(storable);fStream.print(\"REF\");space();fStream.print(ref);space();return;}incrementIndent();startNewLine();map(storable);fStream.print(storable.getClass().getName());space();storable.write(this);space();decrementIndent();}"
     },
     {
         "class_name": "CH.ifa.draw.util.StandardStorageFormat",
@@ -161,7 +162,8 @@
                 "line": 171,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public String store(String fileName, Drawing saveDrawing) throws IOException {FileOutputStream stream = new FileOutputStream(adjustFileName(fileName));StorableOutput output = new StorableOutput(stream);output.writeStorable(saveDrawing);output.close();if (!hasCorrectFileExtension(fileName)) {return fileName + \".\" + getFileExtension();}else {return fileName;}}"
     },
     {
         "class_name": "CH.ifa.draw.util.Iconkit",
@@ -211,7 +213,8 @@
                 "line": 135,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public Image getImage(String filename) {Image image = basicGetImage(filename);if (image != null)return image;loadRegisteredImages(fComponent);if (fMap.containsKey(filename))return (Image) fMap.get(filename);return null;}"
     },
     {
         "class_name": "CH.ifa.draw.util.Geom",
@@ -313,7 +316,8 @@
                 "line": 154,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "static public Point angleToPoint(Rectangle r, double angle) {double si = Math.sin(angle);double co = Math.cos(angle);double e = 0.0001;int x= 0, y= 0;if (Math.abs(si) > e) {x= (int) ((1.0 + co/Math.abs(si))/2.0 * r.width);int max = r.width;int value = x;if (value < 0)value = 0;if (value > max)value = max;x= value;} else if (co >= 0.0)x= r.width;if (Math.abs(co) > e) {y= (int) ((1.0 + si/Math.abs(co))/2.0 * r.height);y= range(0, r.height, y);} else if (si >= 0.0)y= r.height;return new Point(r.x + x, r.y + y);}"
     },
     {
         "class_name": "CH.ifa.draw.standard.StandardDrawingView",
@@ -415,7 +419,8 @@
                 "line": 191,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void setDrawing(Drawing d) {if (fDrawing != null) {clearSelection();fDrawing.removeDrawingChangeListener(this);}fDrawing = d;if (fDrawing != null)fDrawing.addDrawingChangeListener(this);FigureEnumeration k = drawing().figures();Dimension d1 = new Dimension(0, 0);while (k.hasMoreElements()) {Rectangle r = k.nextFigure().displayBox();d1.width = Math.max(d1.width, r.x+r.width);d1.height = Math.max(d1.height, r.y+r.height);}if (fViewSize.height < d1.height || fViewSize.width < d1.width) {fViewSize.height = d1.height+10;fViewSize.width = d1.width+10;setSize(fViewSize);}repaint();}"
     },
     {
         "class_name": "CH.ifa.draw.standard.StandardDrawingView",
@@ -505,7 +510,8 @@
                 "line": 399,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public Handle findHandle(int x, int y) {Handle handle;if (fSelectionHandles == null) {fSelectionHandles = new Vector();FigureEnumeration k1 = selectionElements();while (k1.hasMoreElements()) {Figure figure = k1.nextFigure();Enumeration kk = figure.handles().elements();while (kk.hasMoreElements())fSelectionHandles.addElement(kk.nextElement());}}Enumeration k = fSelectionHandles.elements();while (k.hasMoreElements()) {handle = (Handle) k.nextElement();if (handle.containsPoint(x, y))return handle;}return null;}"
     },
     {
         "class_name": "CH.ifa.draw.standard.StandardDrawingView",
@@ -583,7 +589,8 @@
                 "line": 451,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "protected Point constrainPoint(Point p) {Dimension size = getSize();int max = size.width;int value = p.x;if (value < 1)value = 1;if (value > max)value = max;p.x = value;p.y = Geom.range(1, size.height, p.y);if (fConstrainer != null )return fConstrainer.constrainPoint(p);return p;}"
     },
     {
         "class_name": "CH.ifa.draw.standard.PasteCommand",
@@ -665,7 +672,8 @@
                 "line": 48,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void execute() {Point lastClick = fView.lastClick();FigureSelection selection = (FigureSelection)Clipboard.getClipboard().getContents();if (selection != null) {Vector figures = (Vector)selection.getData(FigureSelection.TYPE);if (figures.size() == 0)return;Enumeration k = figures.elements();Rectangle r1 = ((Figure) k.nextElement()).displayBox();while (k.hasMoreElements())r1.add(((Figure) k.nextElement()).displayBox());Rectangle r = r1;fView.clearSelection();insertFigures(figures, lastClick.x-r.x, lastClick.y-r.y);fView.checkDamage();}}"
     },
     {
         "class_name": "CH.ifa.draw.standard.FigureChangeEventMulticaster",
@@ -743,7 +751,8 @@
                 "line": 80,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected EventListener remove(EventListener oldl){if (oldl == a)return b;if (oldl == b)return a;EventListener a2 = removeInternal((FigureChangeListener)a, oldl);EventListener b2 = removeInternal((FigureChangeListener)b, oldl);if (a2 == a && b2 == b)return this;else {FigureChangeListener a1 = (FigureChangeListener)a2;FigureChangeListener b1 = (FigureChangeListener)b2;if (a1 == null)  return b1;if (b1 == null)  return a1;return new FigureChangeEventMulticaster(a1, b1);}}"
     },
     {
         "class_name": "CH.ifa.draw.standard.ConnectionTool",
@@ -889,7 +898,8 @@
                 "line": 147,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseDrag(MouseEvent e, int x, int y) {Point p = new Point(e.getX(), e.getY());if (fConnection != null) {Figure c = null;if (fStartConnector == null)c = findSource(x, y, drawing());elsec = findTarget(x, y, drawing());if (c != fTarget) {if (fTarget != null)fTarget.connectorVisibility(false);fTarget = c;if (fTarget != null)fTarget.connectorVisibility(true);}Connector cc = null;if (c != null)cc = findConnector(e.getX(), e.getY(), c);if (cc != fConnectorTarget)fConnectorTarget = cc;view().checkDamage();if (fConnectorTarget != null)p = Geom.center(fConnectorTarget.displayBox());fConnection.endPoint(p.x, p.y);}else if (fEditedConnection != null) {Point pp = new Point(x, y);fEditedConnection.setPointAt(pp, fSplitPoint);}}"
     },
     {
         "class_name": "CH.ifa.draw.standard.CompositeFigure",
@@ -967,7 +977,8 @@
                 "line": 256,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public Figure findFigureWithout(int x, int y, Figure without) {if (without == null) {FigureEnumeration k1 = figuresReverse();while (k1.hasMoreElements()) {Figure figure1 = k1.nextFigure();if (figure1.containsPoint(x, y))return figure1;}return null;}FigureEnumeration k = figuresReverse();while (k.hasMoreElements()) {Figure figure = k.nextFigure();if (figure.containsPoint(x, y) && !figure.includes(without))return figure;}return null;}"
     },
     {
         "class_name": "CH.ifa.draw.standard.CompositeFigure",
@@ -1053,7 +1064,8 @@
                 "line": 283,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public Figure findFigure(Rectangle r, Figure without) {if (without == null) {FigureEnumeration k1 = figuresReverse();while (k1.hasMoreElements()) {Figure figure1 = k1.nextFigure();Rectangle fr1 = figure1.displayBox();if (r.intersects(fr1))return figure1;}return null;}FigureEnumeration k = figuresReverse();while (k.hasMoreElements()) {Figure figure = k.nextFigure();Rectangle fr = figure.displayBox();if (r.intersects(fr) && !figure.includes(without))return figure;}return null;}"
     },
     {
         "class_name": "CH.ifa.draw.standard.BoxHandleKit",
@@ -1099,7 +1111,8 @@
                 "line": 46,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "static public void addHandles(Figure f, Vector handles) {handles.addElement(southEast(f));handles.addElement(southWest(f));handles.addElement(northEast(f));handles.addElement(northWest(f));handles.addElement(south(f));handles.addElement(north(f));handles.addElement(east(f));handles.addElement(west(f));}"
     },
     {
         "class_name": "CH.ifa.draw.samples.pert.PertFigure",
@@ -1157,7 +1170,8 @@
                 "line": 220,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void update(FigureChangeEvent e) {if (e.getFigure() == figureAt(1)) {int newEnd = start()+duration();if (newEnd != end()) {setEnd(newEnd);notifyPostTasks();}}if (needsLayout()) {layout();changed();}}"
     },
     {
         "class_name": "CH.ifa.draw.samples.pert.PertFigure",
@@ -1199,7 +1213,8 @@
                 "line": 245,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void updateDurations() {int newEnd = start()+duration();if (newEnd != end()) {setEnd(newEnd);Enumeration i = fPostTasks.elements();while (i.hasMoreElements())((PertFigure) i.nextElement()).updateDurations();}}"
     },
     {
         "class_name": "CH.ifa.draw.samples.pert.PertFigure",
@@ -1257,7 +1272,8 @@
                 "line": 272,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void write(StorableOutput dw) {super.write(dw);dw.writeInt(fDisplayBox.x);dw.writeInt(fDisplayBox.y);dw.writeInt(fDisplayBox.width);dw.writeInt(fDisplayBox.height);dw.writeInt(fPreTasks.size());Enumeration i = fPreTasks.elements();while (i.hasMoreElements())dw.writeStorable((Storable) i.nextElement());writeTasks(dw, fPostTasks);}"
     },
     {
         "class_name": "CH.ifa.draw.samples.pert.PertFigure",
@@ -1323,7 +1339,8 @@
                 "line": 295,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void read(StorableInput dr) throws IOException {super.read(dr);fDisplayBox = new Rectangle(dr.readInt(),dr.readInt(),dr.readInt(),dr.readInt());layout();int size = dr.readInt();Vector v = new Vector(size);for (int i=0; i<size; i++)v.addElement((Figure)dr.readStorable());fPreTasks = v;fPostTasks = readTasks(dr);}"
     },
     {
         "class_name": "CH.ifa.draw.samples.net.NodeFigure",
@@ -1369,7 +1386,8 @@
                 "line": 136,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private void initialize() {setText(\"node\");Font fb = new Font(\"Helvetica\", Font.BOLD, 12);setFont(fb);fConnectors = new Vector(4);fConnectors.addElement(new LocatorConnector(this, RelativeLocator.north()) );fConnectors.addElement(new LocatorConnector(this, RelativeLocator.south()) );fConnectors.addElement(new LocatorConnector(this, RelativeLocator.west()) );fConnectors.addElement(new LocatorConnector(this, RelativeLocator.east()) );}"
     },
     {
         "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
@@ -1487,7 +1505,8 @@
                 "line": 58,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseDown(MouseEvent e, int x, int y){Figure pressedFigure;pressedFigure =  drawing().findFigureInside(x, y);if (pressedFigure != null) {if (fTextField == null) {fTextField = new FloatingTextField();fTextField.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent event) {endAction(event);}});}if (pressedFigure != fURLTarget && fURLTarget != null)endEdit();if (pressedFigure != fURLTarget) {fTextField.createOverlay((Container)view());fTextField.setBounds(fieldBounds(pressedFigure), getURL(pressedFigure));fURLTarget = pressedFigure;}return;}endEdit();}"
     },
     {
         "class_name": "CH.ifa.draw.samples.javadraw.URLTool",
@@ -1589,7 +1608,8 @@
                 "line": 95,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private void beginEdit(Figure figure) {if (fTextField == null) {fTextField = new FloatingTextField();fTextField.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent event) {endAction(event);}});}if (figure != fURLTarget && fURLTarget != null)if (fURLTarget != null) {setURL(fURLTarget, fTextField.getText());fURLTarget = null;fTextField.endOverlay();}if (figure != fURLTarget) {fTextField.createOverlay((Container)view());fTextField.setBounds(fieldBounds(figure), getURL(figure));fURLTarget = figure;}}"
     },
     {
         "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawViewer",
@@ -1691,7 +1711,8 @@
                 "line": 52,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void init() {getContentPane().setLayout(new BorderLayout());fView = new StandardDrawingView(this, 400, 370);getContentPane().add(\"Center\", fView);fTool = new FollowURLTool(view(), this);fIconkit = new Iconkit(this);String filename = getParameter(\"Drawing\");if (filename != null) {try {URL url = new URL(getCodeBase(), filename);InputStream stream = url.openStream();StorableInput reader = new StorableInput(stream);fDrawing = (Drawing)reader.readStorable();} catch (IOException e) {fDrawing = new StandardDrawing();System.out.println(\"Error when Loading: \" + e);showStatus(\"Error when Loading: \" + e);}fView.setDrawing(fDrawing);} elseshowStatus(\"Unable to load drawing\");}"
     },
     {
         "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApplet",
@@ -1757,7 +1778,8 @@
                 "line": 91,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected void createButtons(JPanel panel) {super.createButtons(panel);fAnimationButton = new JButton(\"Start Animation\");fAnimationButton.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent event) {if (fAnimator != null)endAnimation();elsestartAnimation();}});panel.add(fAnimationButton);}"
     },
     {
         "class_name": "CH.ifa.draw.samples.javadraw.JavaDrawApp",
@@ -1867,7 +1889,8 @@
                 "line": 131,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "protected JMenu createAnimationMenu() {JMenu menu = new JMenu(\"Animation\");JMenuItem mi = new JMenuItem(\"Start Animation\");mi.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent event) {if (drawing() instanceof Animatable && fAnimator == null) {fAnimator = new Animator((Animatable)drawing(), view());fAnimator.start();}}});menu.add(mi);mi = new JMenuItem(\"Stop Animation\");mi.addActionListener(new ActionListener() {public void actionPerformed(ActionEvent event) {endAnimation();}});menu.add(mi);return menu;}"
     },
     {
         "class_name": "CH.ifa.draw.figures.TextTool",
@@ -2005,7 +2028,8 @@
                 "line": 70,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseDown(MouseEvent e, int x, int y){TextHolder textHolder = null;Figure pressedFigure = drawing().findFigureInside(x, y);if (pressedFigure instanceof TextHolder) {textHolder = (TextHolder) pressedFigure;if (!textHolder.acceptsTyping())textHolder = null;}if (textHolder != null) {if (fTextField == null)fTextField = new FloatingTextField();if (textHolder != getTypingTarget() && getTypingTarget() != null)endEdit();fTextField.createOverlay((Container)view(), textHolder.getFont());fTextField.setBounds(fieldBounds(textHolder), textHolder.getText());setTypingTarget(textHolder);view().checkDamage();return;}if (getTypingTarget() != null) {editor().toolDone();endEdit();} else {super.mouseDown(e, x, y);textHolder = (TextHolder)createdFigure();beginEdit(textHolder);}}"
     },
     {
         "class_name": "CH.ifa.draw.figures.TextTool",
@@ -2099,7 +2123,8 @@
                 "line": 127,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected void beginEdit(TextHolder figure) {if (fTextField == null)fTextField = new FloatingTextField();if (figure != getTypingTarget() && getTypingTarget() != null)if (getTypingTarget() != null) {if (fTextField.getText().length() > 0)getTypingTarget().setText(fTextField.getText());else {drawing().remove((Figure)getTypingTarget());}setTypingTarget(null);fTextField.endOverlay();view().checkDamage();}fTextField.createOverlay((Container)view(), figure.getFont());fTextField.setBounds(fieldBounds(figure), figure.getText());setTypingTarget(figure);view().checkDamage();}"
     },
     {
         "class_name": "CH.ifa.draw.figures.TextFigure",
@@ -2205,7 +2230,8 @@
                 "line": 168,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void setAttribute(String name, Object value) {Font font = getFont();if (name.equals(\"FontSize\")) {Integer s = (Integer)value;willChange();fFont = new Font(font.getName(), font.getStyle(), s.intValue());markDirty();changed();}else if (name.equals(\"FontStyle\")) {Integer s = (Integer)value;int style = font.getStyle();if (s.intValue() == Font.PLAIN)style = font.PLAIN;elsestyle = style ^ s.intValue();setFont(new Font(font.getName(), style, font.getSize()) );}else if (name.equals(\"FontName\")) {String n = (String)value;setFont(new Font(n, font.getStyle(), font.getSize()) );}elsesuper.setAttribute(name, value);}"
     },
     {
         "class_name": "CH.ifa.draw.figures.TextFigure",
@@ -2287,7 +2313,8 @@
                 "line": 298,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void connect(Figure figure) {if (fObservedFigure != null)fObservedFigure.removeFigureChangeListener(this);fObservedFigure = figure;fLocator = new OffsetLocator(figure.connectedTextLocator(this));fObservedFigure.addFigureChangeListener(this);if (fLocator != null) {Point p = fLocator.locate(fObservedFigure);p.x -= size().width/2 + fOriginX;p.y -= size().height/2 + fOriginY;if (p.x != 0 || p.y != 0) {willChange();basicMoveBy(p.x, p.y);changed();}}}"
     },
     {
         "class_name": "CH.ifa.draw.figures.ScribbleTool",
@@ -2377,7 +2404,8 @@
                 "line": 71,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseDown(MouseEvent e, int x, int y) {if (e.getClickCount() >= 2) {fScribble = null;editor().toolDone();}else {int x1 = e.getX();int y1 = e.getY();if (fScribble == null) {fScribble = new PolyLineFigure(x1, y1);view().add(fScribble);} else if (fLastX != x1 || fLastY != y1)fScribble.addPoint(x1, y1);fLastX = x1;fLastY = y1;}}"
     },
     {
         "class_name": "CH.ifa.draw.figures.RadiusHandle",
@@ -2439,7 +2467,8 @@
                 "line": 46,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {int dx = x-anchorX;int dy = y-anchorY;Rectangle r = fOwner.displayBox();int max = r.width;int value = 2*(fRadius.x + dx);if (value < 0)value = 0;if (value > max)value = max;int rx = value;int ry = Geom.range(0, r.height, 2*(fRadius.y + dy));fOwner.setArc(rx, ry);}"
     },
     {
         "class_name": "CH.ifa.draw.figures.PolyLineFigure",
@@ -2521,7 +2550,8 @@
                 "line": 203,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void draw(Graphics g) {g.setColor(getFrameColor());Point p1, p2;for (int i = 0; i < fPoints.size()-1; i++) {p1 = (Point) fPoints.elementAt(i);p2 = (Point) fPoints.elementAt(i+1);drawLine(g, p1.x, p1.y, p2.x, p2.y);}if (getStartDecoration() != null) {Point p11 = (Point)fPoints.elementAt(0);Point p21 = (Point)fPoints.elementAt(1);getStartDecoration().draw(g, p11.x, p11.y, p21.x, p21.y);}if (getEndDecoration() != null) {Point p3 = (Point)fPoints.elementAt(fPoints.size()-2);Point p4 = (Point)fPoints.elementAt(fPoints.size()-1);getEndDecoration().draw(g, p4.x, p4.y, p3.x, p3.y);}}"
     },
     {
         "class_name": "CH.ifa.draw.figures.PolyLineFigure",
@@ -2587,7 +2617,8 @@
                 "line": 321,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void write(StorableOutput dw) {super.write(dw);dw.writeInt(fPoints.size());Enumeration k = fPoints.elements();while (k.hasMoreElements()) {Point p = (Point) k.nextElement();dw.writeInt(p.x);dw.writeInt(p.y);}dw.writeStorable(fStartDecoration);dw.writeStorable(fEndDecoration);dw.writeInt(fFrameColor.getRed());dw.writeInt(fFrameColor.getGreen());dw.writeInt(fFrameColor.getBlue());}"
     },
     {
         "class_name": "CH.ifa.draw.figures.InsertImageCommand",
@@ -2641,7 +2672,8 @@
                 "line": 46,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void execute() {Iconkit r = Iconkit.instance();r.registerImage(fImage);r.loadRegisteredImages((Component)fView);Image image = r.getImage(fImage);ImageFigure figure = new ImageFigure(image, fImage, fView.lastClick());fView.add(figure);fView.clearSelection();fView.addToSelection(figure);fView.checkDamage();}"
     },
     {
         "class_name": "CH.ifa.draw.figures.GroupCommand",
@@ -2707,7 +2739,8 @@
                 "line": 47,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void execute() {Vector selected = fView.selectionZOrdered();Drawing drawing = fView.drawing();if (selected.size() > 0) {fView.clearSelection();drawing.orphanAll(selected);GroupFigure group = new GroupFigure();Enumeration k = selected.elements();while (k.hasMoreElements())group.add((Figure) k.nextElement());fView.addToSelection(drawing.add(group));}fView.checkDamage();}"
     },
     {
         "class_name": "CH.ifa.draw.figures.ElbowHandle",
@@ -2885,7 +2918,8 @@
                 "line": 74,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void invokeStep (int x, int y, int anchorX, int anchorY, DrawingView view) {LineConnection line = ownerConnection();Point p1 = line.pointAt(fSegment);Point p2 = line.pointAt(fSegment+1);int ddx = x - fLastX;int ddy = y - fLastY;Point np1;Point np2;if (isVertical(p1, p2)) {int x1 = p1.x + ddx;LineConnection line1 = ownerConnection();Figure startFigure = line1.start().owner();Figure endFigure = line1.end().owner();Rectangle start = startFigure.displayBox();Rectangle end = endFigure.displayBox();Insets i1 = startFigure.connectionInsets();Insets i2 = endFigure.connectionInsets();int r1x, r1width, r2x, r2width;r1x = start.x + i1.left;r1width = start.width - i1.left - i1.right-1;r2x = end.x + i2.left;r2width = end.width - i2.left - i2.right-1;if (fSegment == 0)x1 = Geom.range(r1x, r1x + r1width, x1);if (fSegment == line1.pointCount()-2)x1 = Geom.range(r2x, r2x + r2width, x1);int cx = x1;np1 = new Point(cx, p1.y);np2 = new Point(cx, p2.y);} else {int cy = constrainY(p1.y + ddy);np1 = new Point(p1.x, cy);np2 = new Point(p2.x, cy);}line.setPointAt(np1, fSegment);line.setPointAt(np2, fSegment+1);fLastX = x;fLastY = y;}"
     },
     {
         "class_name": "CH.ifa.draw.figures.ElbowHandle",
@@ -3007,7 +3041,8 @@
                 "line": 126,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private int constrainX(int x) {LineConnection line = ownerConnection();Figure startFigure = line.start().owner();Figure endFigure = line.end().owner();Rectangle start = startFigure.displayBox();Rectangle end = endFigure.displayBox();Insets i1 = startFigure.connectionInsets();Insets i2 = endFigure.connectionInsets();int r1x, r1width, r2x, r2width;r1x = start.x + i1.left;r1width = start.width - i1.left - i1.right-1;r2x = end.x + i2.left;r2width = end.width - i2.left - i2.right-1;if (fSegment == 0) {int max = r1x + r1width;int value = x;if (value < r1x)value = r1x;if (value > max)value = max;x = value;}if (fSegment == line.pointCount()-2)x = Geom.range(r2x, r2x + r2width, x);return x;}"
     },
     {
         "class_name": "CH.ifa.draw.figures.ElbowHandle",
@@ -3125,7 +3160,8 @@
                 "line": 155,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private int constrainY(int y) {LineConnection line = ownerConnection();Figure startFigure = line.start().owner();Figure endFigure = line.end().owner();Rectangle start = startFigure.displayBox();Rectangle end = endFigure.displayBox();Insets i1 = startFigure.connectionInsets();Insets i2 = endFigure.connectionInsets();int r1y, r1height, r2y, r2height;r1y = start.y + i1.top;r1height = start.height - i1.top - i1.bottom-1;r2y = end.y + i2.top;r2height = end.height - i2.top - i2.bottom-1;if (fSegment == 0) {int max = r1y + r1height;int value = y;if (value < r1y)value = r1y;if (value > max)value = max;y = value;}if (fSegment == line.pointCount()-2)y = Geom.range(r2y, r2y + r2height, y);return y;}"
     },
     {
         "class_name": "CH.ifa.draw.figures.ElbowConnection",
@@ -3291,7 +3327,8 @@
                 "line": 96,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected void updatePoints() {willChange();Point start = startPoint();Point end = endPoint();fPoints.removeAllElements();fPoints.addElement(start);if (start.x == end.x || start.y == end.y) {fPoints.addElement(end);}else {Rectangle r1 = start().owner().displayBox();Rectangle r2 = end().owner().displayBox();int x1, y1, x2, y2;int direction = 0;int vx = r2.x + r2.width/2 - (r1.x + r1.width/2);int vy = r2.y + r2.height/2 - (r1.y + r1.height/2);if (vy < vx && vx > -vy)direction = Geom.EAST;else if (vy > vx && vy > -vx)direction = Geom.NORTH;else if (vx < vy && vx < -vy)direction = Geom.WEST;elsedirection = Geom.SOUTH;int dir = direction;if (dir == Geom.NORTH || dir == Geom.SOUTH) {fPoints.addElement(new Point(start.x, (start.y + end.y)/2));fPoints.addElement(new Point(end.x, (start.y + end.y)/2));}else {fPoints.addElement(new Point((start.x + end.x)/2, start.y));fPoints.addElement(new Point((start.x + end.x)/2, end.y));}fPoints.addElement(end);}changed();}"
     },
     {
         "class_name": "CH.ifa.draw.figures.AttributeFigure",
@@ -3333,7 +3370,8 @@
                 "line": 139,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public Object getAttribute(String name) {if (fAttributes != null) {if (fAttributes.hasDefined(name))return fAttributes.get(name);}if (fgDefaultAttributes == null)initializeAttributes();return fgDefaultAttributes.get(name);}"
     },
     {
         "class_name": "CH.ifa.draw.figures.AbstractLineDecoration",
@@ -3423,7 +3461,8 @@
                 "line": 82,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void write(StorableOutput dw) {if (getFillColor() != null) {Color color = getFillColor();if (color != null) {dw.writeString(\"FillColor\");dw.writeInt(color.getRed());dw.writeInt(color.getGreen());dw.writeInt(color.getBlue());}}else {dw.writeString(\"noFillColor\");}if (getBorderColor() != null) {FigureAttributes.writeColor(dw, \"BorderColor\", getBorderColor());}else {dw.writeString(\"noBorderColor\");}}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.SplitPaneDrawApplication",
@@ -3509,7 +3548,8 @@
                 "line": 65,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected JComponent createContents(StandardDrawingView view) {createLeftComponent(view);createRightComponent(view);if ((getLeftComponent() == null) && (getRightComponent() == null)) {return super.createContents(view);}else if (getLeftComponent() == null) {return getRightComponent();}else if (getRightComponent() == null) {return getLeftComponent();}else {JSplitPane dividedContents = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, getLeftComponent(), getRightComponent());dividedContents.setAlignmentX(LEFT_ALIGNMENT);dividedContents.setOneTouchExpandable(true);return dividedContents;}}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.PolygonTool",
@@ -3631,7 +3671,8 @@
                 "line": 82,
                 "code": "  }"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseDown(MouseEvent e, int x, int y) {x = e.getX();y = e.getY();if (e.getClickCount() >= 2) {if (fPolygon != null) {fPolygon.smoothPoints();editor().toolDone();}fPolygon = null;} else {int x1 = e.getX();int y1 = e.getY();if (fPolygon == null) {fPolygon = new PolygonFigure(x1, y1);view().add(fPolygon);fPolygon.addPoint(x1, y1);} else if (fLastX != x1 || fLastY != y1)fPolygon.addPoint(x1, y1);fLastX = x1;fLastY = y1;}}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.PolygonFigure",
@@ -3789,7 +3830,8 @@
                 "line": 227,
                 "code": "  }"
             }
-        ]
+        ],
+        "cleaned_code": "public  void scaleRotate(Point anchor, Polygon originalPolygon, Point p) {willChange();long sx = 0;long sy = 0;int n1 = originalPolygon.npoints;for (int i1 = 0; i1 < n1; i1++) {sx += originalPolygon.xpoints[i1];sy += originalPolygon.ypoints[i1];}Point ctr = new Point((int)(sx/n1), (int)(sy/n1));double anchorLen = Geom.length(ctr.x, ctr.y, anchor.x, anchor.y);if (anchorLen > 0.0) {double newLen = Geom.length(ctr.x, ctr.y, p.x, p.y);double ratio = newLen / anchorLen;double anchorAngle = Math.atan2(anchor.y - ctr.y, anchor.x - ctr.x);double newAngle = Math.atan2(p.y - ctr.y, p.x - ctr.x);double rotation = newAngle - anchorAngle;int n = originalPolygon.npoints;int[] xs = new int[n];int[] ys = new int[n];for (int i = 0; i < n; ++i) {int x = originalPolygon.xpoints[i];int y = originalPolygon.ypoints[i];double l = Geom.length(ctr.x, ctr.y, x, y) * ratio;double a = Math.atan2(y - ctr.y, x - ctr.x) + rotation;xs[i] = (int)(ctr.x + l * Math.cos(a) + 0.5);ys[i] = (int)(ctr.y + l * Math.sin(a) + 0.5);}fPoly =  new Polygon(xs, ys, n);}changed();}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.PolygonFigure",
@@ -3883,7 +3925,8 @@
                 "line": 288,
                 "code": "  }"
             }
-        ]
+        ],
+        "cleaned_code": "public int splitSegment(int x, int y) {double dist = TOO_CLOSE;int best = -1;for (int i1 = 0; i1 < fPoly.npoints; i1++) {int n = (i1 + 1) % fPoly.npoints;double d =  distanceFromLine(fPoly.xpoints[i1], fPoly.ypoints[i1],fPoly.xpoints[n], fPoly.ypoints[n],x, y);if (d < dist) {dist = d;best = i1;}}int i = best;if (i != -1) {insertPointAt(new Point(x, y), i+1);return i + 1;}elsereturn -1;}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.PolygonFigure",
@@ -4081,7 +4124,8 @@
                 "line": 527,
                 "code": "  }"
             }
-        ]
+        ],
+        "cleaned_code": "public static Point chop(Polygon poly, Point p) {long sx = 0;long sy = 0;int n = poly.npoints;for (int i1 = 0; i1 < n; i1++) {sx += poly.xpoints[i1];sy += poly.ypoints[i1];}Point ctr = new Point((int)(sx/n), (int)(sy/n));int cx = -1;int cy = -1;long len = Long.MAX_VALUE;for (int i = 0; i < poly.npoints; ++i) {int nxt = (i + 1) % poly.npoints;Point chop = Geom.intersect(poly.xpoints[i],poly.ypoints[i],poly.xpoints[nxt],poly.ypoints[nxt],p.x,p.y,ctr.x,ctr.y);if (chop != null) {long cl = Geom.length2(chop.x, chop.y, p.x, p.y);if (cl < len) {len = cl;cx = chop.x;cy = chop.y;}}}{for (int i = 0; i < poly.npoints; ++i) {long l = Geom.length2(poly.xpoints[i], poly.ypoints[i], p.x, p.y);if (l < len) {len = l;cx = poly.xpoints[i];cy = poly.ypoints[i];}}}return new Point(cx, cy);}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.DiamondFigure",
@@ -4139,7 +4183,8 @@
                 "line": 53,
                 "code": "  }"
             }
-        ]
+        ],
+        "cleaned_code": "public void draw(Graphics g) {Rectangle r = displayBox();Polygon p1 = new Polygon();p1.addPoint(r.x, r.y+r.height/2);p1.addPoint(r.x+r.width/2, r.y);p1.addPoint(r.x+r.width, r.y+r.height/2);p1.addPoint(r.x+r.width/2, r.y+r.height);Polygon p = p1;g.setColor(getFillColor());g.fillPolygon(p);g.setColor(getFrameColor());g.drawPolygon(p);}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
@@ -4221,7 +4266,8 @@
                 "line": 66,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseDown(MouseEvent e, int x, int y) {if (e.isPopupTrigger()) {Figure figure = drawing().findFigure(e.getX(), e.getY());if (figure != null) {Object attribute = figure.getAttribute(Figure.POPUP_MENU);if (attribute == null) {figure = drawing().findFigureInside(e.getX(), e.getY());}if (figure != null) {showPopupMenu(figure, e.getX(), e.getY(), e.getComponent());}}}else {super.mouseDown(e, x, y);handleMouseDown(e, x, y);}}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
@@ -4315,7 +4361,8 @@
                 "line": 113,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "public void mouseUp(MouseEvent e, int x, int y) {if (e.isPopupTrigger()) {Figure figure = drawing().findFigure(e.getX(), e.getY());if (figure != null) {Object attribute = figure.getAttribute(Figure.POPUP_MENU);if (attribute == null) {figure = drawing().findFigureInside(e.getX(), e.getY());}if (figure != null) {showPopupMenu(figure, e.getX(), e.getY(), e.getComponent());}}}else if (e.getClickCount() == 2) {handleMouseDoubleClick(e, x, y);}else {super.mouseUp(e, x, y);handleMouseUp(e, x, y);handleMouseClick(e, x, y);}}"
     },
     {
         "class_name": "CH.ifa.draw.contrib.CustomSelectionTool",
@@ -4421,7 +4468,8 @@
                 "line": 171,
                 "code": "\t}"
             }
-        ]
+        ],
+        "cleaned_code": "protected void handlePopupMenu(MouseEvent e, int x, int y) {Figure figure = drawing().findFigure(e.getX(), e.getY());if (figure != null) {Object attribute = figure.getAttribute(Figure.POPUP_MENU);if (attribute == null) {figure = drawing().findFigureInside(e.getX(), e.getY());}if (figure != null) {Component comp = e.getComponent();Object attribute1 = figure.getAttribute(Figure.POPUP_MENU);if ((attribute1 != null) && (attribute1 instanceof JPopupMenu)) {JPopupMenu popup = (JPopupMenu)attribute1;if (popup instanceof PopupMenuFigureSelection) {((PopupMenuFigureSelection)popup).setSelectedFigure(figure);}Point newLocation = new Point(e.getX(), e.getY());adjustOffsets(comp.getParent(), newLocation);popup.setLocation(newLocation);popup.setInvoker(comp);popup.setVisible(true);}}}}"
     },
     {
         "class_name": "CH.ifa.draw.application.DrawApplication",
@@ -4535,7 +4583,8 @@
                 "line": 717,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void promptOpen() {toolDone();JFileChooser openDialog = createOpenFileChooser();getStorageFormatManager().registerFileFilters(openDialog);if (openDialog.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(openDialog.getFileFilter());if (foundFormat != null) {String file = openDialog.getSelectedFile().getAbsolutePath();try {Drawing restoredDrawing = foundFormat.restore(file);if (restoredDrawing != null) {newWindow();setDrawing(restoredDrawing);setDrawingTitle(file);}else {showStatus(\"Unknown file type: could not open file '\" + file + \"'\");}} catch (IOException e) {showStatus(\"Error: \" + e);}}else {showStatus(\"Not a valid file format: \" + openDialog.getFileFilter().getDescription());}}}"
     },
     {
         "class_name": "CH.ifa.draw.application.DrawApplication",
@@ -4609,7 +4658,8 @@
                 "line": 738,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void promptSaveAs() {toolDone();JFileChooser saveDialog1 = new JFileChooser();saveDialog1.setDialogTitle(\"Save File...\");JFileChooser saveDialog = saveDialog1;getStorageFormatManager().registerFileFilters(saveDialog);if (saveDialog.showSaveDialog(this) == JFileChooser.APPROVE_OPTION) {StorageFormat foundFormat = getStorageFormatManager().findStorageFormat(saveDialog.getFileFilter());if (foundFormat != null) {saveDrawing(foundFormat, saveDialog.getSelectedFile().getAbsolutePath());}else {showStatus(\"Not a valid file format: \" + saveDialog.getFileFilter().getDescription());}}}"
     },
     {
         "class_name": "CH.ifa.draw.applet.DrawApplet",
@@ -4807,7 +4857,8 @@
                 "line": 110,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "public void init() {fIconkit = new Iconkit(this);getContentPane().setLayout(new BorderLayout());fView = createDrawingView();JPanel attributes = createAttributesPanel();attributes.add(new JLabel(\"Fill\"));fFillColor = createColorChoice(\"FillColor\");attributes.add(fFillColor);attributes.add(new JLabel(\"Text\"));fTextColor = createColorChoice(\"TextColor\");attributes.add(fTextColor);attributes.add(new JLabel(\"Pen\"));fFrameColor = createColorChoice(\"FrameColor\");attributes.add(fFrameColor);attributes.add(new JLabel(\"Arrow\"));CommandChoice choice = new CommandChoice();fArrowChoice = choice;choice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));choice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));choice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));choice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));attributes.add(fArrowChoice);attributes.add(new JLabel(\"Font\"));fFontChoice = createFontChoice();attributes.add(fFontChoice);getContentPane().add(\"North\", attributes);JPanel toolPanel = createToolPalette();createTools(toolPanel);getContentPane().add(\"West\", toolPanel);getContentPane().add(\"Center\", fView);JPanel buttonPalette = createButtonPanel();createButtons(buttonPalette);getContentPane().add(\"South\", buttonPalette);initDrawing();setupAttributes();}"
     },
     {
         "class_name": "CH.ifa.draw.applet.DrawApplet",
@@ -4933,7 +4984,8 @@
                 "line": 169,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected void createAttributeChoices(JPanel panel) {panel.add(new JLabel(\"Fill\"));fFillColor = createColorChoice(\"FillColor\");panel.add(fFillColor);panel.add(new JLabel(\"Text\"));fTextColor = createColorChoice(\"TextColor\");panel.add(fTextColor);panel.add(new JLabel(\"Pen\"));fFrameColor = createColorChoice(\"FrameColor\");panel.add(fFrameColor);panel.add(new JLabel(\"Arrow\"));CommandChoice choice = new CommandChoice();fArrowChoice = choice;choice.addItem(new ChangeAttributeCommand(\"none\",     \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_NONE),  fView));choice.addItem(new ChangeAttributeCommand(\"at Start\", \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_START), fView));choice.addItem(new ChangeAttributeCommand(\"at End\",   \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_END),   fView));choice.addItem(new ChangeAttributeCommand(\"at Both\",  \"ArrowMode\", new Integer(PolyLineFigure.ARROW_TIP_BOTH),  fView));panel.add(fArrowChoice);panel.add(new JLabel(\"Font\"));CommandChoice choice1 = new CommandChoice();String fonts[] = Toolkit.getDefaultToolkit().getFontList();for (int i = 0; i < fonts.length; i++)choice1.addItem(new ChangeAttributeCommand(fonts[i], \"FontName\", fonts[i],  fView));fFontChoice = choice1;panel.add(fFontChoice);}"
     },
     {
         "class_name": "CH.ifa.draw.applet.DrawApplet",
@@ -5015,7 +5067,8 @@
                 "line": 444,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "protected void loadDrawing(String param) {if (param == fgUntitled) {fDrawing.release();initDrawing();return;}String filename = getParameter(param);if (filename != null) {toolDone();String type = guessType(filename);if (type.equals(\"storable\"))readFromStorableInput(filename);else if (type.equals(\"serialized\"))readFromObjectInput(filename);elseshowStatus(\"Unknown file type\");}}"
     },
     {
         "class_name": "CH.ifa.draw.applet.DrawApplet",
@@ -5113,7 +5166,8 @@
                 "line": 468,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private void readDrawing(String filename) {toolDone();String type = guessType(filename);if (type.equals(\"storable\"))readFromStorableInput(filename);else if (type.equals(\"serialized\"))try {URL url = new URL(getCodeBase(), filename);InputStream stream = url.openStream();ObjectInput input = new ObjectInputStream(stream);fDrawing.release();fDrawing = (Drawing)input.readObject();fView.setDrawing(fDrawing);} catch (IOException e) {initDrawing();showStatus(\"Error: \" + e);} catch (ClassNotFoundException e) {initDrawing();showStatus(\"Class not found: \" + e);}elseshowStatus(\"Unknown file type\");}"
     },
     {
         "class_name": "CH.ifa.draw.applet.DrawApplet",
@@ -5183,7 +5237,8 @@
                 "line": 485,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private void readFromStorableInput(String filename) {try {URL url = new URL(getCodeBase(), filename);InputStream stream = url.openStream();StorableInput input = new StorableInput(stream);fDrawing.release();fDrawing = (Drawing)input.readStorable();fView.setDrawing(fDrawing);} catch (IOException e) {fDrawing = createDrawing();fView.setDrawing(fDrawing);toolDone();showStatus(\"Error:\"+e);}}"
     },
     {
         "class_name": "CH.ifa.draw.applet.DrawApplet",
@@ -5261,6 +5316,7 @@
                 "line": 504,
                 "code": "    }"
             }
-        ]
+        ],
+        "cleaned_code": "private void readFromObjectInput(String filename) {try {URL url = new URL(getCodeBase(), filename);InputStream stream = url.openStream();ObjectInput input = new ObjectInputStream(stream);fDrawing.release();fDrawing = (Drawing)input.readObject();fView.setDrawing(fDrawing);} catch (IOException e) {fDrawing = createDrawing();fView.setDrawing(fDrawing);toolDone();showStatus(\"Error: \" + e);} catch (ClassNotFoundException e) {initDrawing();showStatus(\"Class not found: \" + e);}}"
     }
 ]

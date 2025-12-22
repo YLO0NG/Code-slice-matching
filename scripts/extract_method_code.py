@@ -225,6 +225,24 @@ def format_snippet_fallback(snippet, start_line):
         current_line += 1
     return code_lines
 
+def get_cleaned_code(code_lines):
+    if not code_lines:
+        return ""
+    
+    # Join lines to handle block comments across lines
+    source = "\n".join([entry["code"] for entry in code_lines])
+    
+    # Remove block comments /* ... */
+    source = re.sub(r'/\*.*?\*/', '', source, flags=re.DOTALL)
+    
+    # Remove line comments // ...
+    source = re.sub(r'//.*', '', source)
+    
+    # Remove empty lines and indentation
+    cleaned_lines = [line.strip() for line in source.split('\n') if line.strip()]
+    
+    return "".join(cleaned_lines)
+
 def process_project(base_dir, project_name):
     repo_root = os.path.join(base_dir, project_name)
     input_json_path = os.path.join(repo_root, 'oracle_snippets.json')
@@ -279,7 +297,8 @@ def process_project(base_dir, project_name):
             annotated_data.append({
                 "class_name": class_name,
                 "function_name": function_name,
-                "code_lines": code_lines
+                "code_lines": code_lines,
+                "cleaned_code": get_cleaned_code(code_lines)
             })
             seen_signatures.add(sig_key)
             
